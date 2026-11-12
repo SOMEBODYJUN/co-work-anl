@@ -98,7 +98,7 @@
     "Flat: ordinary Hankel pullback, delta=0 iff same-rank, positive Boolean atom law and affine isolation pay original T for every atom; HS is support count, rational projection splitting is polynomial in explicit bit input.",
     "MILP: one T_k is maximum of all selected credible children values; selected actual action lies above this shared threshold. Exact original T[k] construction and all constraints agree.",
     "WC frontier: convex right-endpoint triangular sums plus B*c(B) baseline give W/(d+1)<=Phi_hat<=W; this needs a precise application relation rather than treating stability-only background absorption as a whole welfare theorem.",
-    "Two-person frontier: full SPE and empty external background plus actual disjointness give 4OPT<=5W from overlap tax; removing last-payoff balance is an additional strengthening, and target contribution must retain its exact subdomain.",
+    "Two-person: H=W+u/2 and K=2L+u/2 imply 5W/4 by 3:1 convex combination, with no L<=W/2 premise. Existing canonical ordinary-and-terminal-br-min has exactly this K and the same per-client slack, followed by background-to-root-sharp. This is a resolved duplicate comparison, not a new independent proof edge.",
     "Flow: complete ordered IC plus same-topic monotone graph gives W>=n v_n under H_root; the independent static minimax remainder gives OPT+R<=(2n-1)v_n. Fixed n>=2 follows, n=1 is direct BR. Q_fl and Q_st* need not coincide; no root-to-all-background upgrade.",
     "Flow obstacle scope: same sigma and true optimal pi are required for a Farkas separator. The 34-customer unique pi=(10,10,21,10,10,21)/82 yields positive saved weak/strong gaps102501/41 and307503/41; DR161/fullslot violate required same-topic arcs. These inspected obstacles do not refute H_root; no universal feasibility or customer counterexample absence is inferred."
   ],
@@ -108,8 +108,25 @@
         "M-9a01587f3f3c4924a7b145df31ada227",
         "customer-attraction/collision-free-terminal-support-exact-tax-and-balanced-payoff-bound"
       ],
-      "status": "独立定向审查已找到同一加权消去及非负slack的现存canonical链；不发布重复ALL草案，精确3D closure正在保存。",
-      "local_draft_task_id": "boss2-wave10-two-person-3b-8bcc55b7b9b96554"
+      "status": "closed in 3D by exact existing canonical chain; unpublished local duplicate draft is not a task",
+      "local_draft_task_id": "boss2-wave10-two-person-3b-8bcc55b7b9b96554",
+      "closure": {
+        "core_id": "M-9a01587f3f3c4924a7b145df31ada227",
+        "peer_id": "customer-attraction/collision-free-terminal-support-exact-tax-and-balanced-payoff-bound",
+        "reason": "已实读并核对该pair：m=2、零外部背景、完整SPE且actual I=0时，peer的末位支持上界K=2L+u/2与普通税H=W+u/2按1:3凸合给OPT₂≤5W/4，免除peer平衡推论单独需要的L≤W/2。然而canonical ca-two-tail-ordinary-and-terminal-br-min的explanation第2、3段已用同一末位BR证明完全相同K及余项、同一3:1凸合；canonical ca-two-tail-background-to-root-sharp已将其完整专门化到core并另证全有理锐性。这一pair的数学比较因此已由现役原生链覆盖；不新增重复ALL边。任意I、任意背景及任意m的额外结论没有由此次二源专门化冒领。",
+        "reuse_edges": [
+          {
+            "path": "map/edges/ca-two-tail-tax-min-round27-3b-533b7187478538d0/ca-two-tail-ordinary-and-terminal-br-min.json",
+            "sha256": "a021130802d9d3b8dcff1edc8b892a90fba3e9412f066a56f6e4ac9f17038817"
+          },
+          {
+            "path": "map/edges/ca-two-tail-tax-min-round27-3b-533b7187478538d0/ca-two-tail-background-to-root-sharp.json",
+            "sha256": "8d8ed2e6a7568cf94980e5a8d71bacf5e6274bef15292ec93b2459936af97b44"
+          }
+        ],
+        "follow_up_needed": false,
+        "implementation_note": "由Boss按当前3D/收据接口记录closed_overlaps或实际比较说明。此独立审查员未写任何正式边、收据、registry或任务状态。"
+      }
     },
     {
       "object_ids": [
@@ -153,6 +170,18 @@
     {
       "path": "research/workspaces/map-v2/Boss2/recovery-20261112-e8cf4c/zero-incidence-source-correction.json",
       "sha256": "6391bb84142804d2883cece5c33d72da8d9933f1b53e66d4818a54d23e2f5020"
+    },
+    {
+      "path": "research/workspaces/map-v2/Boss2/recovery-20261112-e8cf4c/query-goal-peer-3d-review.json",
+      "sha256": "2b78a93cabdc593c8d019cf74462a9a0f0cbbd06a0c8e4607c8388788936031b"
+    },
+    {
+      "path": "research/workspaces/map-v2/Boss2/recovery-20261112-e8cf4c/two-person-joint-tax-independent-review.json",
+      "sha256": "88108a557f84269a3de0049a6bc96ca4fe194cfc0a65c6fbb01f875d4bb26353"
+    },
+    {
+      "path": "research/workspaces/map-v2/Boss2/recovery-20261112-e8cf4c/weight-class-full-welfare-independent-review.json",
+      "sha256": "9243280764def59be3693c0b92edd2f60e30b88d974bdf0d760a78c14031e500"
     }
   ],
   "new_root_scientific_runs": 0,
@@ -161,6 +190,83 @@
     "affected_tasks": [
       "boss2-wave9-flat-3b-07eb1949e26f831f",
       "boss2-wave9-flow-3b-570a2d46e09c8394"
+    ]
+  },
+  "completion_state": "Three mature tasks are pushed/done and assembled. Source-only repairs remain distinct pending native successor delivery.",
+  "completion_evidence": {
+    "done_request_id": "786f8a07d03e4752aaee5b1296e6b2f3",
+    "done_remote_tip": "90e4ff1723256c59b1e87706b172c13fd67a2f6a",
+    "source_correction_pushed_head": "c5471cc1ccbfaa185819676e7443faf33dbf7fff",
+    "verified_task_bindings": [
+      {
+        "task_id": "boss2-ca65-completion-3b-3b-c0688ebbf8746b24",
+        "owner": "Boss2",
+        "definition_pin": "0868684aa2df50d3a12e7a149b2e01d646ec29d0988fb918f76b869ed835cff8",
+        "receipt_sha256": "0ca37b724abb2fc1f08646f4d198409c536198560ea17e13421a50e79647d69c",
+        "receipt_pin": "be5048dd60a08bdb5fee3a1f816564c8cbfe0d2dd0446f7bfc40cb308cb37af8",
+        "input_pins": {
+          "cag-offdiagonal-real-menu-comparisons-and-five-provider-point-separation": "a91f0779a2b888f1217dd875144410ebe270e60eeb4c30e681ec1dae9eacb5de",
+          "customer-attraction/sixty-five-label-exchangeable-terminal-lift-and-six-rational-completions": "59c71f4eb03df447ceb1d6f2de0b7843951c3e9195f747e2022da98265ae8d25"
+        },
+        "edge_ids": [
+          "ca-fixed437-same-family-exchangeable-average-to-universal-ordered-ic-contribution"
+        ],
+        "mathematical_review": "Root full mathematical review and fresh formal worker evidence; wave9-root-review.json"
+      },
+      {
+        "task_id": "boss2-wave9-flat-3b-07eb1949e26f831f",
+        "owner": "Boss2",
+        "definition_pin": "331782b11fe1dbb54944748b7b62091001c6c500fbd68beb8598083ee6d2da7a",
+        "receipt_sha256": "379f034eeb503c9b33d31ee20f536446d15a6b388c146ff1de0afdc4b69fdb11",
+        "receipt_pin": "a5ae8d4c2c507275e4af5966e98ee4ad60e43e3d83a8fd94b8cd3619407bbe8b",
+        "input_pins": {
+          "M-8a8102ce2db9454ba1ed5eae66e12724": "8c985cebfde20d2b788e4610e314e7fbdc6ca3525041db765165988c455715b9",
+          "UM-GLOBAL-MOMENT-NEARFLAT-EXTRACTION-v1": "3260dbb3dde9aa8112807f49374bf24da0c0af502b5285cbafbbf6a2655d8b2e",
+          "UM-PREFIX-ATOMIC-DECODING-v1": "8a54b4990271f92b3532688d041d6e81792fa3cc5a4fe8db671c45d50864f528"
+        },
+        "edge_ids": [
+          "um-positive-sparse-flat-to-original-t-hs-support-step"
+        ],
+        "mathematical_review": "Root full mathematical review and fresh formal worker evidence; wave9-root-review.json"
+      },
+      {
+        "task_id": "boss2-wave9-flow-3b-570a2d46e09c8394",
+        "owner": "Boss2",
+        "definition_pin": "706e2d2ef464b3b8f8a20cb0579d544d5e0914455afccaf734c6befeab8ec608",
+        "receipt_sha256": "002ef5a89b2160065a8acf69c113920f6d86c5225a8e3d48a1c5adab307af95e",
+        "receipt_pin": "f1bb77434c5d59bc2380059e309350182321c72749891d08092e3bc31e7b2b55",
+        "input_pins": {
+          "M-47c853fbc6c84223b683f6fcb277610b": "d2473cc4f9c7ae425a69c597526db01bf14b439971c842ff80a5348b649ef246",
+          "Q-CAG-HALF": "dccd5277f7b0c1bb4dcac17287010f1d012bb40c6244c51f24808c1519a4b5ea",
+          "customer-attraction/r3d253-fixed-background-static-security-remainder-review": "694c57debf2cb86a158b179a5a2da1d9d998a92867319af621d8113a9d336c68",
+          "CAG-MODEL": "3216d1db43ff83e0e0c9cf2479e79611277c9d9291a68e7f9b85ec4bb299dc5c",
+          "cag-full-tree-universal-payoff-arcs-and-finite-potential-review": "5e3bc2bce03040d0e2123dac99f605d56da8a79477e3e5b5dadd82491fb6b6d4",
+          "M-b347c9cc584140b4beb935d3c7a7a5fe": "300cc57b1da309745576746d4b82a06bd3411e9b37ce60a89974197f4b119b49",
+          "M-d20b652ba2b842b8a3b9fa65c5431ab5": "d4af5a2a129f57bf653eb3c8b8ea0c509ccd04d159a10d307f87c09af311c262",
+          "CA-STRONG-SECURITY-EXACT-M-EQUIV-v1": "0024833cc7649543567395dda97956d5f565c4ad0f453d4da158d6a414930734"
+        },
+        "edge_ids": [
+          "boss2-wave9-root-exact-transport-and-static-remainder-all-to-half"
+        ],
+        "mathematical_review": "Root full mathematical review and fresh formal worker evidence; wave9-root-review.json"
+      },
+      {
+        "task_id": "boss1-wave7-query-goal-3b-ea4d89410bd3b0ca",
+        "owner": "Boss1",
+        "definition_pin": "3ee9930789f7f05db0bfa8367f7149af82445f8c925f10f7556fc51fa845576e",
+        "receipt_sha256": "21f15eb387ae0103a3bd46d8e8565efa6b223c4aa576d2f48bec18b0132a5eb4",
+        "receipt_pin": "53651e3ef561a16f745de0aba9093c90b44a166ca2890ce0cb678579e19776c1",
+        "input_pins": {
+          "M-f1d873f3865f4b05a6d050762ebee457": "26fcaa6a2068c87a73780b9871d9a1d0012014f2db23864bc17bed72b6fea4cf",
+          "Q-CAG-HALF": "dccd5277f7b0c1bb4dcac17287010f1d012bb40c6244c51f24808c1519a4b5ea",
+          "R-3b9429e7635a48208e072c8f1597126a/child_query/general_query_row": "4730dfee64aeeb8b1ee6e44092cfd2328963b661cff67617fe1e6807250f8bb0"
+        },
+        "edge_ids": [
+          "cag-query-goal-ordered-l-implies-all-populations-half",
+          "cag-query-goal-row-implies-all-populations-half"
+        ],
+        "mathematical_review": "Root independently read both complete edge proofs, three source contracts and original ORDERED-L/ROW/HALF bodies; query-goal-peer-3d-review.json"
+      }
     ]
   }
 }

@@ -1,0 +1,90 @@
+{
+  "schema": "boss2-query-goal-peer-3d-review-v1",
+  "actor": "Boss2",
+  "created_at_utc": "2026-11-12T19:48:46.856294+00:00",
+  "task_id": "boss1-wave7-query-goal-3b-ea4d89410bd3b0ca",
+  "verdict": "adopt both independent conditional whole derivations, without promoting either premise or target truth status",
+  "task_ref": {
+    "path": "research/operations/map-v2/tasks/boss1-wave7-query-goal-3b-ea4d89410bd3b0ca.json",
+    "sha256": "8baeb471148fb89462fd25e7ecc8cc019eb8ce930e058a0cc44545dfd66f739c"
+  },
+  "definition_pin": "3ee9930789f7f05db0bfa8367f7149af82445f8c925f10f7556fc51fa845576e",
+  "receipt_ref": {
+    "path": "map/receipts/boss1-wave7-query-goal-3b-ea4d89410bd3b0ca.json",
+    "sha256": "21f15eb387ae0103a3bd46d8e8565efa6b223c4aa576d2f48bec18b0132a5eb4"
+  },
+  "receipt_pin": "53651e3ef561a16f745de0aba9093c90b44a166ca2890ce0cb678579e19776c1",
+  "input_pins": {
+    "M-f1d873f3865f4b05a6d050762ebee457": "26fcaa6a2068c87a73780b9871d9a1d0012014f2db23864bc17bed72b6fea4cf",
+    "Q-CAG-HALF": "dccd5277f7b0c1bb4dcac17287010f1d012bb40c6244c51f24808c1519a4b5ea",
+    "R-3b9429e7635a48208e072c8f1597126a/child_query/general_query_row": "4730dfee64aeeb8b1ee6e44092cfd2328963b661cff67617fe1e6807250f8bb0"
+  },
+  "assets": [
+    {
+      "path": "map/edges/boss1-wave7-query-goal-3b-ea4d89410bd3b0ca/ordered-l-implies-all-populations-half.json",
+      "sha256": "fa7a0407ed47839573e7b9fe4cd91cbf93dc9b000d67b4304ef95143210797da"
+    },
+    {
+      "path": "map/edges/boss1-wave7-query-goal-3b-ea4d89410bd3b0ca/row-implies-all-populations-half.json",
+      "sha256": "86d1f12b38077f6bbbed6a6738ac5120b880d32c5b3b9e77378009a4c5af7b71"
+    },
+    {
+      "path": "map/edges/boss1-wave7-query-goal-3b-ea4d89410bd3b0ca/math-review.md",
+      "sha256": "8ade0e3d50bf1043d9ebbeb7bc08631873f9db5f624bb9819a4335e8a2cecb97"
+    },
+    {
+      "path": "map/edges/boss1-wave7-query-goal-3b-ea4d89410bd3b0ca/read-manifest.json",
+      "sha256": "357647cc0aba43c7c543a67c79bf761783fb4fdec15f951862be8d645308368c"
+    }
+  ],
+  "edge_reviews": [
+    {
+      "edge_id": "cag-query-goal-ordered-l-implies-all-populations-half",
+      "path": "map/edges/boss1-wave7-query-goal-3b-ea4d89410bd3b0ca/ordered-l-implies-all-populations-half.json",
+      "sha256": "fa7a0407ed47839573e7b9fe4cd91cbf93dc9b000d67b4304ef95143210797da",
+      "edge_pin": "3d984b95a6cd092d481380063b40897b039e10dedbc9bf737d50a96498b49f50",
+      "status": "accepted",
+      "relation_mode": "conditional",
+      "scope": "whole",
+      "mathematical_reconstruction": [
+        "For every actual position i, the original sigma restriction after forced A is a complete child SPE, so it lies in the finite domain defining L_i(A); hence L_i(A)<=d_i^sigma(A).",
+        "Original actual-node IC gives d_i^sigma(A)<=u_i. No jointly compatible minimizing completions or actual-column equality is required.",
+        "Choose any attained optimal ordered m-tuple. The universal ORDERED-L premise gives OPT-W<=sum_i L_i(T_i)<=sum_i u_i=W; all arbitrary instances/policies/m and zero endpoints retained."
+      ],
+      "adopt": true
+    },
+    {
+      "edge_id": "cag-query-goal-row-implies-all-populations-half",
+      "path": "map/edges/boss1-wave7-query-goal-3b-ea4d89410bd3b0ca/row-implies-all-populations-half.json",
+      "sha256": "86d1f12b38077f6bbbed6a6738ac5120b880d32c5b3b9e77378009a4c5af7b71",
+      "edge_pin": "01583a423973238c8941a8e6247a1e229590d4c92376f2dae27f492404e5d590",
+      "status": "accepted",
+      "relation_mode": "conditional",
+      "scope": "whole",
+      "mathematical_reconstruction": [
+        "Choose an actual payoff minimizer i anywhere on the root path, with m*u_i<=W. Its actual continuation is the same root leaf, so ROW uses exactly root W.",
+        "Use original m indexed slots of one optimal tuple, including repetitions, at that same actual ordered node. Original sigma IC gives each q_i(T_j)<=u_i, and the actual query diagonal is fixed to u_i.",
+        "ROW implies OPT-W<=sum_j q_i(T_j)<=m*u_i<=W. Remaining-player slot counts, lowest credible diagonal replacements, frozen continuations and unproved RF-END root reachability are not used."
+      ],
+      "adopt": true
+    }
+  ],
+  "actual_root_reading": {
+    "full": [
+      "archives/customer-attraction/state/资源/最坏分母静态证书与同序可信矩阵的精确边界--资源.md",
+      "archives/customer-attraction/state/障碍/R-3b942一般查询行共同付款缺口--障碍.md",
+      "archives/customer-attraction/state/问题/任意人数完整均衡半覆盖--问题.md",
+      "map/edges/boss1-wave7-query-goal-3b-ea4d89410bd3b0ca/math-review.md"
+    ],
+    "also_read": "Three full current registry contracts, formal task/receipt, both full edge JSON payloads including exact conditions/roles/whole_result/derivation/evidence and current bindings. Common ordered-history model read fully earlier in this same conversation.",
+    "inherited": "Original fresh worker read all eleven declared source Markdown files. This Root review does not reattribute those other source/finite-probe readings or old code runs to itself.",
+    "scientific_program_runs": 0
+  },
+  "new_follow_up_tasks": [],
+  "open_obligations": [
+    "ORDERED-L universal lower bound across all credible continuations remains open.",
+    "ROW universal same-policy row payment remains open; endpoint balance only locates the missing common payment.",
+    "Q-CAG-HALF remains open for arbitrary population; two sufficient conditions are alternatives and not an ALL requirement."
+  ],
+  "comparison_with_current_root_flow": "H_root pays W>=n v_n through an exact graph/potential certificate then invokes independent static remainder. These two query candidates pay OPT-W directly by original IC. None of the three sufficient routes has been shown equivalent to either other; the flow proof retains its separate optimal-pi/independent-Q obligation."
+}

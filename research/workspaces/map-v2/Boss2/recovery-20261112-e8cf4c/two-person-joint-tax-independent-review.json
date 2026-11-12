@@ -1,0 +1,320 @@
+{
+  "schema": 1,
+  "review_type": "read-only-independent-semantic-and-deduplication-audit",
+  "clone": "/workspace/scratch/e8cf4ce833a5/co-work-anl-boss2",
+  "output_path": "/workspace/scratch/e8cf4ce833a5/two-person-joint-tax-independent-review.json",
+  "objects": [
+    "CA-TWO-REMAINING-TAX",
+    "customer-attraction/collision-free-terminal-support-exact-tax-and-balanced-payoff-bound",
+    "M-9a01587f3f3c4924a7b145df31ada227"
+  ],
+  "verdict": {
+    "mathematical_implication_valid": true,
+    "same_sigma_same_static_optimum": true,
+    "additional_last_payoff_balance_hypothesis_needed": false,
+    "new_independent_mathematical_route": false,
+    "new_direct_all_edge_recommended": false,
+    "disposition": "在3D比较说明中以现役原生链闭合此pair；不为source_ids的新组合新造重复ALL边。",
+    "reason": "原生ordinary-and-terminal-br-min边已经支付完全相同的K=2v+G、相同逐客户非负余项及E=(3H+K)/4；background-to-root-sharp边已经完整到目标。终端支持对象m=2、root I=0的式子是该K论证的同一专门化，不是独立证明路线。"
+  },
+  "exact_scoped_proposition": {
+    "statement": "任意有限单位客户集N、有限非空共同标签目录S及任意覆盖映射；恰两名单位提供者从零外部背景出发。对每份定义于全部有序历史的完整纯SPE σ，若实际标签(C,D)覆盖不交，令u=|cov(C)|、L=|cov(D)|、W=u+L，则对同一目录任意可重复标签比较对(T₁,T₂)，|cov(T₁)∪cov(T₂)|≤5W/4。因此OPT₂≤5W/4。W=0也满足乘法式。",
+    "contribution_to_target": "仅为目标M-9a01587f3f3c4924a7b145df31ada227的root、I=0、全称5/4数值上界子结论。",
+    "remaining_if_this_were_written_as_a_partial_target_edge": "本次两式加权消元仅支付root I=0的全称上界；没有由此完成任意I的8OPT₂≤10W+2I及全部有理比例sharpness，也不证明一般背景或任意人数。若要另述I=0锐性，还须接回并实核五客户端点或终端对象所引碰撞自由族的m=2存在性见证；不能把上界算术本身冒作存在证明。本次已全文读到目标文件与既有根边中的端点/复制/乘积论证，但不把它们归入新的二式消元路线。目标全结论早已由现役原生链及这些独立存在性论证完成。",
+    "uses_target_as_premise": false
+  },
+  "proof_checked": [
+    {
+      "step": 1,
+      "claim": "两个来源均可固定到同一σ与同一比较对。",
+      "details": "普通税取外部b=0、(A,B,T,S)=(C,D,T₁,T₂)。Q=σ₂(T₁)仍是真实离轨标签。终端支持在该σ的实际末位历史(C)使用D为BR；其中局部b=1_cov(C)是实际首人的负载，不是额外外部背景。比较(T₁,T₂)为同一有限共同目录的静态二槽覆盖。"
+    },
+    {
+      "step": 2,
+      "claim": "普通税H：|O|≤W+u/2=3W/2−L/2。",
+      "details": "普通税对所有比较对界住R₀(T₁,T₂)=|O|；R₀(C,D)=W，g₀(C,C)=u/2。该证明的三个SPE slack与两个非负交叠余项全在同一σ上。"
+    },
+    {
+      "step": 3,
+      "claim": "末位支持K：|O|≤2L+u/2=W/2+3L/2。",
+      "details": "末位BR对每个T_j给p_j=L−U₀(T_j,C)≥0。实际C,D不交，所以L=|D|，P=cov(C)，|P|=u。源式(2)取m=2即得K。其精确松弛为K−|O|=|P∖O|/2+p₁+p₂+D_O，D_O=Σ_{x∈O}(ν_x−1)/(1+1_P(x))≥0。"
+    },
+    {
+      "step": 4,
+      "claim": "以1/4乘K、3/4乘H得到5W/4。",
+      "details": "|O|≤(1/4)(W/2+3L/2)+(3/4)(3W/2−L/2)=5W/4。两权均非负且和为1；L的系数3/8−3/8=0。不要求L≤W/2。亦可先取min{H,K}，再用min≤(3H+K)/4。"
+    },
+    {
+      "step": 5,
+      "claim": "最大化不更换比较目标。",
+      "details": "有限非空标签目录使OPT₂=max_{(T₁,T₂)∈S²}|cov(T₁)∪cov(T₂)|达到。两式都对所有同一比较对成立，故可先同时应用后最大化，或直接对同一最优比较对应用。没有把非零背景F₂(b)或整叶福利混为OPT₂。"
+    }
+  ],
+  "terminal_formula_exact_identification": {
+    "answer": "是；源正文的福利上界(2)恰为既有K在m=2、root I=0的重述。字面标号(1)是更精确的恒等式，其对应余项也与既有K证书完全一致。",
+    "notation_mapping": {
+      "terminal_path_m": "2",
+      "terminal_prefix_P": "cov(C)",
+      "terminal_path_background_b": "1_cov(C)",
+      "ordinary_external_background_b": "0",
+      "terminal_L": "v=|cov(D)|",
+      "ordinary_G": "g₀(C,C)=|cov(C)|/2",
+      "ordinary_R": "R₀(T₁,T₂)=|O|"
+    },
+    "identity": "G−g₀(T₁,C)−g₀(T₂,C)+2g₀(T₁,T₂)=|cov(C)∖O|/2+D_O。",
+    "per_customer_verification": "若客户不在C而在两个比较主题，左右余项为1；若客户在C且在两个比较主题，均为1/2；若客户在C但不在O，均为1/2；其他会员情形均为0。故不是仅常数相同，而是同一精确slack账。",
+    "evidence": [
+      {
+        "path": "archives/customer-attraction/state/引理/无拥挤末位支持的精确税与平衡收益界--引理.md",
+        "sha256": "8361094b9f22dc52cc49d9962d80897a875d197850e88f52d7ea7d5fc3e087b1"
+      },
+      {
+        "path": "map/edges/ca-two-tail-tax-min-round27-3b-533b7187478538d0/ca-two-tail-ordinary-and-terminal-br-min.json",
+        "sha256": "a021130802d9d3b8dcff1edc8b892a90fba3e9412f066a56f6e4ac9f17038817"
+      }
+    ]
+  },
+  "boundary_and_model_checks": {
+    "label_aliases": "当前共同目录是标签集，cov不必单射。各主题/历史保留标签，集合表达只作用于cov；普通税的Q是同一σ在T₁标签之后的动作，Q也可在实际末位节点合法查询。没有把同覆盖异标签历史商掉，终端BR查询也逐标签合法。",
+    "empty_and_repeated_topics": "允许空覆盖标签、多空标签、重复标签及同覆盖异标签比较。普通税身份和终端重数ν式仍成立；重复非空比较通常增大D_O，不破坏上界。",
+    "zero_welfare": "W=0时C,D均空覆盖，末位实际收益L=0；实际末位BR迫所有合法标签覆盖为空，故OPT₂=0。不作I/W或OPT/W的0/0比值。",
+    "zero_first_payoff": "此root I=0域中u=0意味着C空覆盖。若L>0，首位改选D至少取得|D|/2>0，违反u=0的SPE最优性；因此完整SPE下u=0也落入W=0，但联合推导无需另用此论证。",
+    "no_balance_hypothesis": "L≤W/2不是完整SPE自动性质，也不是本证明前提。终端对象的平衡推论需要该额外假设；这里以普通税覆盖L较高分支。5/4取等时两个界的凸合迫L=W/2，等号必要性不应倒置为适用前提。",
+    "high_last_payoff_exact_example": {
+      "source": {
+        "path": "map/edges/ca-two-tail-tax-min-round27-3b-533b7187478538d0/ca-two-tail-ordinary-and-terminal-br-min.json",
+        "sha256": "a021130802d9d3b8dcff1edc8b892a90fba3e9412f066a56f6e4ac9f17038817"
+      },
+      "catalog_order": [
+        "C={0,1}",
+        "A={0,1,2}",
+        "B={0,1,3,4}",
+        "D={3,4,5}"
+      ],
+      "root_action": "C",
+      "terminal_replies_in_catalog_order": [
+        "D",
+        "B",
+        "B",
+        "B"
+      ],
+      "terminal_payoff_matrix_rows_first_action_columns_last_action": [
+        [
+          "1",
+          "2",
+          "3",
+          "3"
+        ],
+        [
+          "1",
+          "3/2",
+          "3",
+          "3"
+        ],
+        [
+          "1",
+          "2",
+          "2",
+          "2"
+        ],
+        [
+          "2",
+          "3",
+          "3",
+          "3/2"
+        ]
+      ],
+      "root_true_payoffs": [
+        "2",
+        "2",
+        "2",
+        "2"
+      ],
+      "actual": {
+        "u": "2",
+        "L": "3",
+        "W": "5",
+        "I": "0",
+        "OPT2": "6"
+      },
+      "check": "规定末位回复逐行达最大，根四真实收益全2；所以这是完整SPE且L=3>W/2=5/2。此次仅用独立Fraction逐项重算16个末位数和4个根数，不运行旧程序。"
+    },
+    "nonzero_background_limit": "普通税原对象对合法背景的比较量是剩余两人R_b，不是全叶覆盖。终端支持公式里的实际前缀负载不能与该外部b混用。本次root I=0识别不外推一般背景。",
+    "off_path_collisions": "仅实际C,D不交；真实离轨回复可拥挤，且普通税显式使用它们。无需所有分支碰撞自由。"
+  },
+  "deduplication": {
+    "search_scope": "解析当前clone内map/edges全部JSON的source_ids、target_ids及证据路径；与registry.edge_files的2232条canonical路径核成员。全文实读最相关四边及一个普通税context checks边；没有把所有2232边声称为全文数学审读。",
+    "exact_new_source_pair_present": false,
+    "mathematical_route_already_present": true,
+    "canonical_chain": [
+      {
+        "path": "map/edges/ca-two-tail-tax-min-round27-3b-533b7187478538d0/ca-two-tail-ordinary-and-terminal-br-min.json",
+        "sha256": "a021130802d9d3b8dcff1edc8b892a90fba3e9412f066a56f6e4ac9f17038817",
+        "edge_id": "ca-two-tail-ordinary-and-terminal-br-min",
+        "canonical": true,
+        "source_ids": [
+          "CA-TWO-REMAINING-TAX"
+        ],
+        "target_ids": [
+          "M-7cb4c41cb57e4e1f81d6d70c7befac71"
+        ],
+        "locator": "JSON explanation第1段定义H，第2段证明K及精确非负余项，第3段E=(3H+K)/4；whole_result为完整背景细化。",
+        "covered_scope": "所有合法整数外部背景、恰两剩余人、同一完整σ及每个比较对；在外部b=0且actual I=0时已包含此次H/K及5/4全称子结论。"
+      },
+      {
+        "path": "map/edges/ca-two-tail-tax-min-round27-3b-533b7187478538d0/ca-two-tail-background-to-root-sharp.json",
+        "sha256": "8d8ed2e6a7568cf94980e5a8d71bacf5e6274bef15292ec93b2459936af97b44",
+        "edge_id": "ca-two-tail-background-to-root-sharp",
+        "canonical": true,
+        "source_ids": [
+          "M-7cb4c41cb57e4e1f81d6d70c7befac71"
+        ],
+        "target_ids": [
+          "M-9a01587f3f3c4924a7b145df31ada227"
+        ],
+        "locator": "JSON explanation第1段为b=0覆盖识别与任意比较对最大化；后两段为两个完整SPE端点、复制及不交产品。whole_result覆盖完整目标。",
+        "covered_scope": "完整零背景根重叠上界8OPT₂≤10W+2I，加两锐端点与每个有理I/W的正福利取等族。I=0的5/4是其中专门化。"
+      }
+    ],
+    "other_terminal_incident_edges": [
+      {
+        "path": "map/edges/customer-attraction-3a-3a-0319bf472db4a8f8/disjoint-last-support-to-response-defect-welfare.json",
+        "sha256": "881fdfe8baf186c6fe7326a81921b0a5bd3a90f22bf3775d0f5e81146e781cf6",
+        "edge_id": "ca-rd9-disjoint-last-support-to-response-defect-welfare",
+        "canonical": true,
+        "role": "终端支持给响应缺陷目标的第二界；未提供此次新的独立5/4路线。"
+      },
+      {
+        "path": "map/edges/customer-attraction-3a-3a-c0d8496dbc098925/collision-free-sharp-balanced-terminal-tax.json",
+        "sha256": "5fa593e4b8c69190a4634acb5e12f9c962fc8e9c96255c907b1d46232a1dc500",
+        "edge_id": "ca-r36-collision-free-sharp-balanced-terminal-tax",
+        "canonical": true,
+        "role": "无拥挤族对任意m的等号见证；不把L≤W/m从所有SPE推出。"
+      }
+    ],
+    "why_not_a_new_independent_all_support": "把终端支持对象另列source_id，只是将原min边第2段已经完成的K中间论证挂到现有对象；源ordinary税加模型的完整SPE末位BR已足够重建它。相同K精确余项、相同3:1权、相同root覆盖识别均已存在。不存在新增独立数学路线，仅source_ids组合不同。",
+    "unpaid_difference_requiring_new_3b": null
+  },
+  "ready_for_3d_closure": {
+    "core_id": "M-9a01587f3f3c4924a7b145df31ada227",
+    "peer_id": "customer-attraction/collision-free-terminal-support-exact-tax-and-balanced-payoff-bound",
+    "reason": "已实读并核对该pair：m=2、零外部背景、完整SPE且actual I=0时，peer的末位支持上界K=2L+u/2与普通税H=W+u/2按1:3凸合给OPT₂≤5W/4，免除peer平衡推论单独需要的L≤W/2。然而canonical ca-two-tail-ordinary-and-terminal-br-min的explanation第2、3段已用同一末位BR证明完全相同K及余项、同一3:1凸合；canonical ca-two-tail-background-to-root-sharp已将其完整专门化到core并另证全有理锐性。这一pair的数学比较因此已由现役原生链覆盖；不新增重复ALL边。任意I、任意背景及任意m的额外结论没有由此次二源专门化冒领。",
+    "reuse_edges": [
+      {
+        "path": "map/edges/ca-two-tail-tax-min-round27-3b-533b7187478538d0/ca-two-tail-ordinary-and-terminal-br-min.json",
+        "sha256": "a021130802d9d3b8dcff1edc8b892a90fba3e9412f066a56f6e4ac9f17038817"
+      },
+      {
+        "path": "map/edges/ca-two-tail-tax-min-round27-3b-533b7187478538d0/ca-two-tail-background-to-root-sharp.json",
+        "sha256": "8d8ed2e6a7568cf94980e5a8d71bacf5e6274bef15292ec93b2459936af97b44"
+      }
+    ],
+    "follow_up_needed": false,
+    "implementation_note": "由Boss按当前3D/收据接口记录closed_overlaps或实际比较说明。此独立审查员未写任何正式边、收据、registry或任务状态。"
+  },
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/固定背景两人税界--引理.md",
+      "sha256": "7d1c4b0fb173cc539637300237d5050d241a85375e22fe807e3dbbfce424f07a"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/无拥挤末位支持的精确税与平衡收益界--引理.md",
+      "sha256": "8361094b9f22dc52cc49d9962d80897a875d197850e88f52d7ea7d5fc3e087b1"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/末两人新生重叠的顺序利润税界--定理.md",
+      "sha256": "5a97f86be20de9e0e6be6df59c49e1b3a0a1642c7b9e4b794bdcd354245f07a1"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/固定背景剩余收益与税--定义.md",
+      "sha256": "c752babf29ecf272b564fe9ff9883c77dcbf6d7fc5e3e501321fab8c5237b4ee"
+    },
+    {
+      "path": "map/edges/ca-two-tail-tax-min-round27-3b-533b7187478538d0/ca-two-tail-ordinary-and-terminal-br-min.json",
+      "sha256": "a021130802d9d3b8dcff1edc8b892a90fba3e9412f066a56f6e4ac9f17038817"
+    },
+    {
+      "path": "map/edges/ca-two-tail-tax-min-round27-3b-533b7187478538d0/ca-two-tail-background-to-root-sharp.json",
+      "sha256": "8d8ed2e6a7568cf94980e5a8d71bacf5e6274bef15292ec93b2459936af97b44"
+    }
+  ],
+  "reading_and_execution_disclosure": {
+    "inherited": "父任务给出端点、候选两式、1:3权及范围警戒；所以本审查不是对结论盲审。没有继承任何旧worker的数学已读声明来替代本次读证。",
+    "fresh_full_text_read": [
+      {
+        "path": "AGENTS.md",
+        "sha256": "20293db840f907c32f774b0d7f72450c56e6c0ad937720699d14f7c02e693cc9"
+      },
+      {
+        "path": "research/IMPLEMENTATION.md",
+        "sha256": "fb6613cd0c429f28b8bcfb1064076a629540cfbee8f7e3d670b0b39e78ff0d4b"
+      },
+      {
+        "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+        "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+      },
+      {
+        "path": "archives/customer-attraction/state/定义/固定背景剩余收益与税--定义.md",
+        "sha256": "c752babf29ecf272b564fe9ff9883c77dcbf6d7fc5e3e501321fab8c5237b4ee"
+      },
+      {
+        "path": "archives/customer-attraction/state/引理/固定背景两人税界--引理.md",
+        "sha256": "7d1c4b0fb173cc539637300237d5050d241a85375e22fe807e3dbbfce424f07a"
+      },
+      {
+        "path": "archives/customer-attraction/state/引理/无拥挤末位支持的精确税与平衡收益界--引理.md",
+        "sha256": "8361094b9f22dc52cc49d9962d80897a875d197850e88f52d7ea7d5fc3e087b1"
+      },
+      {
+        "path": "archives/customer-attraction/state/定理/末两人新生重叠的顺序利润税界--定理.md",
+        "sha256": "5a97f86be20de9e0e6be6df59c49e1b3a0a1642c7b9e4b794bdcd354245f07a1"
+      },
+      {
+        "path": "map/edges/ca-two-tail-tax-min-round27-3b-533b7187478538d0/ca-two-tail-ordinary-and-terminal-br-min.json",
+        "sha256": "a021130802d9d3b8dcff1edc8b892a90fba3e9412f066a56f6e4ac9f17038817"
+      },
+      {
+        "path": "map/edges/ca-two-tail-tax-min-round27-3b-533b7187478538d0/ca-two-tail-background-to-root-sharp.json",
+        "sha256": "8d8ed2e6a7568cf94980e5a8d71bacf5e6274bef15292ec93b2459936af97b44"
+      },
+      {
+        "path": "map/edges/customer-attraction-3a-3a-0319bf472db4a8f8/disjoint-last-support-to-response-defect-welfare.json",
+        "sha256": "881fdfe8baf186c6fe7326a81921b0a5bd3a90f22bf3775d0f5e81146e781cf6"
+      },
+      {
+        "path": "map/edges/customer-attraction-3a-3a-c0d8496dbc098925/collision-free-sharp-balanced-terminal-tax.json",
+        "sha256": "5fa593e4b8c69190a4634acb5e12f9c962fc8e9c96255c907b1d46232a1dc500"
+      },
+      {
+        "path": "map/edges/customer-attraction-3a-3a-725ae21a5945b7b7/first-step-failure-keeps-exact-last-two-tax.json",
+        "sha256": "f06b8b202f1452e1358469925f98b4320dddcfcde01c5ac86d1727fbb3bf1c57"
+      }
+    ],
+    "fresh_selective_metadata_read": {
+      "registry_snapshot": {
+        "path": "research/registry.json",
+        "sha256": "ee1db288523968e6a561ee9f4611d0ba4294826f4a3eb115853903a22cf49e7f"
+      },
+      "objects_read": [
+        "CA-TWO-REMAINING-TAX",
+        "customer-attraction/collision-free-terminal-support-exact-tax-and-balanced-payoff-bound",
+        "M-9a01587f3f3c4924a7b145df31ada227",
+        "M-7cb4c41cb57e4e1f81d6d70c7befac71"
+      ],
+      "canonical_edge_membership": "2232个路径结构核对",
+      "other_metadata": [
+        {
+          "path": "map/planned-boss2-wave10-two-person.json",
+          "sha256": "6236b5ce31b926525e54fb831f5b4fa7fcd4223267dd0dfd86661c0770c9b407"
+        }
+      ]
+    },
+    "not_fresh_read": "未读取/复跑R51原code、JSON、审计器正文、计算对象正文或无拥挤资源正文；未检验外部论文版本/新颖性。目标源文件的历史执行声明只是实读原文的一部分，不转记为本人执行。",
+    "new_computation": "仅一次自写的短Fraction运算核1/4和3/4的系数消去，以及已列四标签例16项末位收益与4项真实根收益。未重跑旧科学程序。",
+    "operations": "只读clone和本次唯一指定JSON输出；没有调用Git、work.py、凭据、队列API或写入正式边/registry。"
+  }
+}
