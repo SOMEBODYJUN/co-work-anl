@@ -1,0 +1,48 @@
+{
+  "edge_id": "eight-color-independent-set-v4-to-three-color-gap-8c728e95a224313d",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-922feb7b429f49d4b5f13ca51b34aae7"
+  ],
+  "target_ids": [
+    "M-d007675a9ed240898c90e831af80b092"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "有限非空无向图；目标整数k≥3先固定，再确定GS20 Lemma8的固定源palette C≥8，然后固定0<δ<1/C并调用八色小独立集硬度。使用Lemma8已证的多项式promise归约；所有常数在实例规模之前选定。",
+  "roles": {
+    "M-922feb7b429f49d4b5f13ca51b34aae7": "给出任意小固定δ下完整8-colorable与独立集比例<δ的NP-hard源承诺；颜色类界进一步支付8-colorable对非C-colorable的源合同。",
+    "M-d007675a9ed240898c90e831af80b092": "经GS20 Lemma8的有限arc-graph归约得到每个固定k的完整3-colorable对非k-colorable的NP-hard目标。"
+  },
+  "whole_result": "对每个固定整数k≥3，有限图上区分3-colorable与非k-colorable是NP-hard；YES保持完整合法着色，归约为固定参数下的确定性多项式。",
+  "explanation": "先固定目标k和Lemma8所需的源palette C，再选δ<1/C。若源NO图可C着色，最大颜色类就是比例至少1/C>δ的独立集，矛盾；YES保八色，故支付Graph-Coloring(C,8)。GS20 Lemma8将固定q=8对任意固定palette的硬度降到三色：一般步骤Graph-Coloring(b(t),b(c))≤pGraph-Coloring(t,c)，b(n)=binom(n,floor(n/2))；b(4)=6、b(6)=20≥8使两步一般归约得到四色YES，再用两次arc得到三色YES。可先取t4=2^(2^k)、C=b(b(t4))；最终若可k色，子集着色界反推四色阶段可t4色，与NO矛盾。完整方向、参数顺序及多项式性见comparison-proof.md。此推导不把同一八色输入直接声称为三色。",
+  "scope": "八色图小独立集承诺硬度到三色固定palette承诺硬度的完整单向蕴含；不附加最大度，不把k当随输入增长参数，不迁移到调度或SPE。",
+  "evidence": [
+    {
+      "path": "map/edges/boss5-localfix-repair-8c728e95a224313d/comparison-proof.md",
+      "sha256": "d1634e6dfcd5402be4adfe9b238df6a06dd1c7bdc96a1ea9f98b945be15896fe"
+    },
+    {
+      "path": "map/edges/unrelated-machines-3a-3a-19cf10a88593d40b/guruswami-sandeep-icalp2020.pdf",
+      "sha256": "1f7428d31ae66a1d6488444fa117b1265fd0cf305dbd237387961f7f2b0a97f4"
+    },
+    {
+      "path": "archives/unrelated-machines/state/文献/四对一与字母表soundness两篇文献整理--文献.md",
+      "sha256": "d0273adacbf4ccbb9d6cd954cdfd44dddb5f8a8e969067107f63c77bdaaf4b78",
+      "section": "2.1 主定理与可直接引用的结论"
+    }
+  ],
+  "reviewed_by": "Boss5/repair_8c/recovery",
+  "review_note": "恢复worker完整读当前v4同页正文与三对象记录，复用旧有效证明；重新读现存FMW提取pp4–6和AppendixB pp99–100、GS20全文并补齐截断段，目读既有62:9渲染图。历史worker范围与恢复新读在reading-ledger及comparison-proof分别记录。独立只读审查核Lemma8常数链、Theorem9完整合同和NP-hard量词通过；未重证FMW全部内核。当前canonical无等效exact4→八色边，故本包独立新交并逐旧资产替代；不等待或冒称9fa已done。",
+  "endpoint_pins": {
+    "M-922feb7b429f49d4b5f13ca51b34aae7": "551be6c145cf6c5ee53f5828c71aeef6fbd22f50a958928a01a802fe2b213aed",
+    "M-d007675a9ed240898c90e831af80b092": "99d7c06058a4c711748cbebb1e385f2fe1ce667604d22407eda463831c1f8edb"
+  },
+  "evidence_pins": {
+    "map/edges/boss5-localfix-repair-8c728e95a224313d/comparison-proof.md": "d1634e6dfcd5402be4adfe9b238df6a06dd1c7bdc96a1ea9f98b945be15896fe",
+    "map/edges/unrelated-machines-3a-3a-19cf10a88593d40b/guruswami-sandeep-icalp2020.pdf": "1f7428d31ae66a1d6488444fa117b1265fd0cf305dbd237387961f7f2b0a97f4",
+    "archives/unrelated-machines/state/文献/四对一与字母表soundness两篇文献整理--文献.md": "d0273adacbf4ccbb9d6cd954cdfd44dddb5f8a8e969067107f63c77bdaaf4b78"
+  },
+  "review_digest": "0986e9ca35be180e8d26427022ff03b88026c34c59e48919be70f9f9ad8fa9e8"
+}
