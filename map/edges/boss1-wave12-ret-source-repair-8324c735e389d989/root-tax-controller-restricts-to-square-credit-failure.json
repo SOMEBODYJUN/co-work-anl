@@ -1,0 +1,54 @@
+{
+  "edge_id": "cag-227-root-tax-controller-restricts-to-square-credit-failure",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "CA-ROOT-TAX-NO"
+  ],
+  "target_ids": [
+    "M-8a98d8d3ca9a42089dbad81715d6f020"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定四人六标签完整AAAF策略，余三人、实际h=A、当前规定A；指数精确为2。",
+  "roles": {
+    "CA-ROOT-TAX-NO": "认证61客户AAAF策略的每个有序历史，给真实h=A当前u=9和尾AF。",
+    "M-8a98d8d3ca9a42089dbad81715d6f020": "用相同目录计算静态F台阶，另用真实尾算平方信用。"
+  },
+  "explanation": "对原12兴趣型逐一按w c/(b+c)求和，A背景56个三槽尾最大36（ABC、ACD），AA背景21个二槽尾最大21（AC、BC、CD），二者是静态优化。信用在A外相消；A的30客旧负载为1且全在真尾A,F的并集中，故ΔH=30(1/4−1/9)=25/6。u+ΔH−(36−21)=−11/6。",
+  "scope": "指数2的单步背景利润Bellman候选。静态F最优尾的身份与实际可信尾明确分离。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/反例/四人实际根总税--反例.md",
+      "sha256": "2efa02ba1a7186cf23fcc29e0f70f6cbeb36ce5db6614960091b3233e5b5aab4",
+      "section": "被否定的公式与输入"
+    },
+    {
+      "path": "archives/customer-attraction/state/反例/四人实际根总税--反例.md",
+      "sha256": "2efa02ba1a7186cf23fcc29e0f70f6cbeb36ce5db6614960091b3233e5b5aab4",
+      "section": "实际根结果与可信稀释"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/比较池私有块与平方旧负载信用的原诊断--程序.md",
+      "sha256": "6a56e68dca66a3bf88797412577097bb0a399567b1d3f3afb6284db7c97a5a94",
+      "section": "平方旧负载信用的Bellman模板与精确负点"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/exchange-floor-and-square-credit-original-diagnostics-four-primary/local-point-check.json",
+      "sha256": "405fada8ac56e35f26b6b8939114aea25550690df1b80ff67e14de36af7f2ab0"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "本轮独立全文实读当前目标合同、原诊断、四人根税完整正文与local-point保存的全部77个静态值；RET新正文及独立CA-PREFIX解析族也已实读。核同一AAAF策略真实h=A/current A/u9；真实tail=AF；56/21静态多重集最大者与真实尾不混同，F差15、ΔH25/6、slack−11/6。目标数学陈述与诊断字节未变，仅登记版本/RET证据引用更新；本替换保whole_result。成熟全部历史SPE证明继承，未重跑原审计、枚举或solver。",
+  "whole_result": "复用原真实AAAF节点和精确局部尾计算，得到登记中F3(A)=36、F2(2A)=21、ΔH=25/6及严格违反−11/6的完整见证。",
+  "endpoint_pins": {
+    "CA-ROOT-TAX-NO": "9ccf2e6812603affa30850cacbcb50b716f4ddfbebd1f38ab7243559c859c29a",
+    "M-8a98d8d3ca9a42089dbad81715d6f020": "d9d408ea5b16543fdf7086faae0376ecc5993e30372ba3b2f504f6da3c9f2334"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/反例/四人实际根总税--反例.md": "2efa02ba1a7186cf23fcc29e0f70f6cbeb36ce5db6614960091b3233e5b5aab4",
+    "archives/customer-attraction/state/程序/比较池私有块与平方旧负载信用的原诊断--程序.md": "6a56e68dca66a3bf88797412577097bb0a399567b1d3f3afb6284db7c97a5a94",
+    "archives/customer-attraction/tools/evidence/exchange-floor-and-square-credit-original-diagnostics-four-primary/local-point-check.json": "405fada8ac56e35f26b6b8939114aea25550690df1b80ff67e14de36af7f2ab0"
+  },
+  "review_digest": "8edea134ba95ea106e59f89418ded64b6108d8fbe4440f685a77dbc961cc6807"
+}
