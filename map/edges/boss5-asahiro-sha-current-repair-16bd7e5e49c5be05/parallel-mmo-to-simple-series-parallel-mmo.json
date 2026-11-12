@@ -1,0 +1,53 @@
+{
+  "edge_id": "um-35169397-parallel-mmo-to-simple-series-parallel-mmo",
+  "kind": "transfers",
+  "status": "accepted",
+  "source_ids": [
+    "M-91ba949b418b4026aa3c2dc2e5a62834"
+  ],
+  "target_ids": [
+    "M-dcc092193be04e8b9b143a1ed5ba1d4d"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "源困难族为两点间独立正整数权边、半总和阈值 B>0。下述保可行性的替换本身适用于任意两点平行边实例的正整数阈值 B。每条边各用独立的两个新内点。",
+  "roles": {
+    "M-91ba949b418b4026aa3c2dc2e5a62834": "给出两点平行边精确阈值子族及其弱 NP 困难性。",
+    "M-dcc092193be04e8b9b143a1ed5ba1d4d": "把源子族的同阈值困难性搬入简单系列并行图，实现 Theorem 12 的三边路径构造。"
+  },
+  "explanation": "把权 w_i 的平行边替成 s–u_i–v_i–t，边权依次为 (w_i,B,w_i)。源可行时每个 w_i≤B，沿原方向定向整条路径。端点载荷原样，中间两点各付 B 或 w_i，故仍满足阈值。反向，若中心边从 u_i 指向 v_i，u_i 已付 B，正权 w_i 迫使 s→u_i；中心反向则迫使 t→v_i。按该被迫端点还原原边尾端，原图两点出度逐点不超过新图的对应出度。半总和子族中两点必恰为 B，故双向精确保 YES/NO。中心袋 {s,t} 下挂 {s,t,u_i} 再挂 {t,u_i,v_i}，得宽度 2，且每路内点独立，图简单且无 K4 minor。输出 2n+2 个点、3n 条边，位长多项式。若直接从 PARTITION 给整数合同，奇和及非法输入用固定简单 NO，空表用相应固定实例。简单系列并行类的固定宽树分解整数载荷 DP 给伪多项式界。",
+  "scope": "保共同精确阈值 B。n≥3 时选择三条路径并各收缩中边可得 K2,3 minor，故此构造超出简单外平面图。源困难性所需的是可变二进制权。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/资料/Asahiro等--图取向最小最大加权出度--资料.md",
+      "sha256": "3fe059248d81113e400a7c5fe3084cccc9eb53267d4c4f1a570e086bc1a06e0f",
+      "section": "4.1（多重）外平面图：弱 NP-困难"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资料/Asahiro等--图取向最小最大加权出度--资料.md",
+      "sha256": "3fe059248d81113e400a7c5fe3084cccc9eb53267d4c4f1a570e086bc1a06e0f",
+      "section": "4.2 简单系列并行图：弱 NP-困难"
+    },
+    {
+      "path": "research/registration/evidence/boss6-0104/asahiro-miyano-ono-2011.pdf",
+      "sha256": "5db93652d80fd92b6440e0a0e22edfdeb09f78e2b886c95cb4adf171c67ee147"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资料/Asahiro等--图取向最小最大加权出度--资料.md",
+      "sha256": "3fe059248d81113e400a7c5fe3084cccc9eb53267d4c4f1a570e086bc1a06e0f",
+      "section": "3. 有界树宽：伪多项式动态规划"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "Boss1 本轮实读当前 Asahiro 全文（重点§3安全DP、§4.1–4.2）、冻结作者稿模型及印页13–15 Theorem 11–12/Fig.4–5，并渲染目视该三页；复用成熟归约而不重跑科研枚举。逐路核 (w_i,B,w_i) 的前向取向、中心边尾端已付 B 后强制对应外边、反向解码仅降低端点载荷，核独立内点、2n+2点/3n边及宽2树分解。至少三路有 K2,3 minor，故不外推到简单外平面。弱标签只用当前§3显式配对子状态的安全伪多项式DP，不使用冻结 Theorem 10 未付的快速join指数；奇和/非法/空输入采用合法常量分支。本轮将两端 v4、当前全文 SHA 和审读绑定更新，完整数学语义不变。",
+  "whole_result": "两点平行 MMO 的精确阈值可行性经 (w_i,B,w_i) 三边路径替换传到同阈值的简单系列并行 MMO，故该简单图类弱 NP 困难。",
+  "endpoint_pins": {
+    "M-91ba949b418b4026aa3c2dc2e5a62834": "ae93438090367c13292d23e02b543d73bbd50224a27654b147b135b748408eba",
+    "M-dcc092193be04e8b9b143a1ed5ba1d4d": "a23cd4f1b9eecd584c58374f6a346e73d1911536cd5c8dd5c2276cd8d55f7116"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/资料/Asahiro等--图取向最小最大加权出度--资料.md": "3fe059248d81113e400a7c5fe3084cccc9eb53267d4c4f1a570e086bc1a06e0f",
+    "research/registration/evidence/boss6-0104/asahiro-miyano-ono-2011.pdf": "5db93652d80fd92b6440e0a0e22edfdeb09f78e2b886c95cb4adf171c67ee147"
+  },
+  "review_digest": "e035f4a7c4b4a8b23722623c88062e0e9b09adf97eb33a38115aea84cccadb06"
+}

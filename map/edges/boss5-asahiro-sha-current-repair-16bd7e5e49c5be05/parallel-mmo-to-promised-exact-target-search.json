@@ -1,0 +1,53 @@
+{
+  "edge_id": "um-35169397-parallel-mmo-to-promised-exact-target-search",
+  "kind": "transfers",
+  "status": "accepted",
+  "source_ids": [
+    "M-91ba949b418b4026aa3c2dc2e5a62834"
+  ],
+  "target_ids": [
+    "UM-UNKNOWN-TARGET-PARTITION-SEARCH-OBSTRUCTION-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "在两点平行 MMO 的困难子族取非空正整数 w_i、Σ_i w_i=2B、每个 w_i≤B；奇和及超大单件可直接判 NO，空表按约定直接处理。调度为显式普通不相关机器，任务不可拆，含资格仅本机的两件私有 anchor。寻找器在全部输入上有统一总位多项式时界，且每个符合承诺并有解的输入必须输出完整可行目标。",
+  "roles": {
+    "M-91ba949b418b4026aa3c2dc2e5a62834": "提供正二进制权的双点等权边定向困难族及同阈值半和判据。",
+    "UM-UNKNOWN-TARGET-PARTITION-SEARCH-OBSTRUCTION-v1": "承接保精确可行性的固定负荷平移，给出实际最大件承诺内的精确搜索障碍。"
+  },
+  "explanation": "把 s、t 作机器，权 w_i 边作两机皆可用且时长均 w_i 的作业，方向尾端就是作业所派机器。再在每机加一件仅本机可执行且时长 B 的 anchor，设 T=2B。每个方向对应唯一完整调度，减去各机固定的 B 恢复同一方向的出度，因此存在 C_max≤T 的目标当且仅当原方向两点都≤B。初态把所有 w_i 放到第一机，私有件各归本机，负荷 (3B,B)，实际最大已分配件两机皆 B。于是 C_max=3B≤2T、S_i≤T+M_i，且每个有限处理时长≤T。被剔除的奇和、超大件与空表可在调用前按 PARTITION 直接判定，保有困难性。若寻找器存在，运行后逐项核查输出的完整性、资格及精确负荷，YES 必通过而 NO 无可通过输出，故 PARTITION∈P。对已有目标 τ 的路径合同，恰有 B 的残余从第一机移到第二机，Q=(0,B)，U=4B，故两机 h_i=(S_i+Q_i−U)_+=0。",
+  "scope": "困难性只针对所述总位多项式确定性精确目标生成。固定 anchor 改变资格结构，允许的普通调度实例包含二端点同权残余和一端点私有件。给定目标的路径仍成立，此构造没有固定乘性近似间隔。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/资料/Asahiro等--图取向最小最大加权出度--资料.md",
+      "sha256": "3fe059248d81113e400a7c5fe3084cccc9eb53267d4c4f1a570e086bc1a06e0f",
+      "section": "4.1（多重）外平面图：弱 NP-困难"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资料/Asahiro等--图取向最小最大加权出度--资料.md",
+      "sha256": "3fe059248d81113e400a7c5fe3084cccc9eb53267d4c4f1a570e086bc1a06e0f",
+      "section": "1. MMO 模型和调度对应"
+    },
+    {
+      "path": "research/registration/evidence/boss6-0104/asahiro-miyano-ono-2011.pdf",
+      "sha256": "5db93652d80fd92b6440e0a0e22edfdeb09f78e2b886c95cb4adf171c67ee147"
+    },
+    {
+      "path": "archives/unrelated-machines/state/障碍/给定目标路径的未知整数搜索--障碍.md",
+      "sha256": "5382e2f89ff3e70e1e6b5b75f57028312238b0b655be47ec2ef6443d3b4b1d2e"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "Boss1 本轮实读当前 Asahiro 全文（重点§1及§4.1）、冻结作者稿§1.1/1.2、§2.1/2.2及印页13–15 Theorem 11–12/Fig.4–5，并实读目标障碍全文；对照成熟独立3D审查而不重跑历史枚举。核定私有 B anchor 的资格、固定负荷平移、初态 (3B,B)、实际已分配最大件恰 (B,B) 及全部有限端≤T。逐项核明全输入统一总位多项式时界和 YES 必输出完整可行目标两种量词，输出验证决定 PARTITION；NO 可无限运行的过程不在此结论。已给目标时 Q=(0,B)、U=4B、h=(0,0)，故不反驳给定目标路径。本轮按当前 M91 v4 和 Asahiro 全文 SHA 重审绑定，完整迁移语义不变。",
+  "whole_result": "双点平行 MMO 的精确阈值困难性经作业映射和每机固定 B 负荷转移到满足实际最大件初态承诺的精确未知目标生成。若所述总位多项式寻找器存在，则 P=NP。",
+  "endpoint_pins": {
+    "M-91ba949b418b4026aa3c2dc2e5a62834": "ae93438090367c13292d23e02b543d73bbd50224a27654b147b135b748408eba",
+    "UM-UNKNOWN-TARGET-PARTITION-SEARCH-OBSTRUCTION-v1": "ad443406701c850f8875133cc83ffd13a2399a7872bb54368221d8398e58963a"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/资料/Asahiro等--图取向最小最大加权出度--资料.md": "3fe059248d81113e400a7c5fe3084cccc9eb53267d4c4f1a570e086bc1a06e0f",
+    "research/registration/evidence/boss6-0104/asahiro-miyano-ono-2011.pdf": "5db93652d80fd92b6440e0a0e22edfdeb09f78e2b886c95cb4adf171c67ee147",
+    "archives/unrelated-machines/state/障碍/给定目标路径的未知整数搜索--障碍.md": "5382e2f89ff3e70e1e6b5b75f57028312238b0b655be47ec2ef6443d3b4b1d2e"
+  },
+  "review_digest": "199ecb46702356c86e7c75a3e68104ebd3f673179952bc93da84179bb012f4b0"
+}
