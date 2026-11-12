@@ -11,7 +11,7 @@
   ],
   "premises_mode": "all",
   "relation_mode": "conditional",
-  "conditions": "假设A_eta：对所取eta=min(1,16epsilon)，存在在所有两值restricted resource-matroid输入上按原oracle/数值合同多项式运行、输出原基且值≥OPT/(4+eta)的完整算法。当前71b686的合法递归入口修订/不可达排除仍未付；本边不证明A_eta。 目标是两值restricted job-matroid makespan：每项公共有限非负有理尺寸、归一化单调整数次模秩value-oracle、原整数polymatroid基。固定epsilon>0，取eta=min(1,16epsilon)（或不超过它的固定正有理数），alpha=4+eta。零尺寸/零秩项预处理，源算法只使用两值4+eta分支。多项式沿用原论文oracle及数值访问合同，不另强化任意二进制巨大重数的整体位复杂度，常数/次数可依赖固定epsilon。 源局部搜索的完整算法接口尚需修复每次递归入口合同；71b686的q≥16反例及后续修复由原Boss2任务负责。",
+  "conditions": "假设A_eta：对所取eta=min(1,16epsilon)，存在在所有两值restricted resource-matroid输入上按原oracle/数值合同多项式运行、输出原基且值≥OPT/(4+eta)的完整算法。当前71b686的完整算法修订及其证明仍未付；本边不证明A_eta。 目标是两值restricted job-matroid makespan：每项公共有限非负有理尺寸、归一化单调整数次模秩value-oracle、原整数polymatroid基。固定epsilon>0，取eta=min(1,16epsilon)（或不超过它的固定正有理数），alpha=4+eta。零尺寸/零秩项预处理，源算法只使用两值4+eta分支。多项式沿用原论文oracle及数值访问合同，不另强化任意二进制巨大重数的整体位复杂度，常数/次数可依赖固定epsilon。 源局部搜索的完整算法接口尚需修复每次递归入口合同；71b686的q≥16反例及后续修复由原Boss2任务负责。 最新a3 v3/open已接入外层可达反例，故条件仍是修订完整算法接口，不再把可达性列作未知。",
   "roles": {
     "M-a3feff9f6a574834925528d0f9d9d658": "外部完整算法接口A_eta；本包不以71b686的条件证书证明该接口。",
     "M-e7c107d268344ca592782a71e1925647": "提供alpha>=2时Santa算法到job算法的归约方向，含同值聚合/原项分解、封顶对偶和阈值框架。",
@@ -23,7 +23,7 @@
   "evidence": [
     {
       "path": "archives/unrelated-machines/state/算法/两值作业拟阵的四分之七加误差条件近似--算法.md",
-      "sha256": "43d19d1a98d521929c0adb75443d9115b279413a48ed7a245ab83c2193ddfea4"
+      "sha256": "0bd9496cdd2bf67b32d74e2f29468de53e0f57e3f53866ed5dbfac4c1fc3593e"
     },
     {
       "path": "research/registration/evidence/boss6-0104/bamas-et-al-2023-v1.pdf",
@@ -36,20 +36,25 @@
     {
       "path": "archives/unrelated-machines/tools/evidence/boss2-6405-blmrs-proof/rounding-slots-and-dual.md",
       "sha256": "9c7a4bfe21f216b57edfbce69b591aabf1a4d3a637510eba54411f7d62774bd1"
+    },
+    {
+      "path": "archives/unrelated-machines/state/反例/BLMRS规范搜索的外层可达递归重叠--反例.md",
+      "sha256": "c8c04a17f37b603201f8c265e57a051b934e9a43964fe7e380e65418414ad9fa"
     }
   ],
   "reviewed_by": "Boss5/matroid_transfers",
   "review_note": "完整核Lemma15/16两个方向及Proposition9的原项基回译；实读源局部搜索Section4、AppendixF结构/证书/运行时间及既有严格补证。独立核eta=min(1,16epsilon)及全部精度范围；没有将一般8+eta分支误送入两值桥，没有循环指向归约本身，没有拆失ALL联合前提。目标独立算法保证由父Boss分配正式身份。未绑定；父Boss统一审阅绑定。 父Boss核对算法方向、V−w门槛、聚合回译、固定epsilon参数与一侧完备阈值搜索，保原oracle复杂度合同。",
   "endpoint_pins": {
-    "M-57aea6b6d55243269c09c9ba8f026e87": "0dd046b5bd07a4bc9174a0ea8572dd11f87d136be1efba44028a580137cb3df2",
-    "M-a3feff9f6a574834925528d0f9d9d658": "41aec13327cb012d5d6739317141f856f7d95b3df59cd831d486548a7561839e",
+    "M-57aea6b6d55243269c09c9ba8f026e87": "8c7897d87832ab065a982d50e7fec8d2f4eee5c63eaa8c7591d28d880242c4f3",
+    "M-a3feff9f6a574834925528d0f9d9d658": "a75b5c172facac3d19078ee9bcb0d06f3642a8256d5f7aa8196f7553ded5df01",
     "M-e7c107d268344ca592782a71e1925647": "b07db459d993b150fd8a8d01c8cf01f689bde95a9689321d4c79bd9026d8881f"
   },
   "evidence_pins": {
-    "archives/unrelated-machines/state/算法/两值作业拟阵的四分之七加误差条件近似--算法.md": "43d19d1a98d521929c0adb75443d9115b279413a48ed7a245ab83c2193ddfea4",
+    "archives/unrelated-machines/state/算法/两值作业拟阵的四分之七加误差条件近似--算法.md": "0bd9496cdd2bf67b32d74e2f29468de53e0f57e3f53866ed5dbfac4c1fc3593e",
     "research/registration/evidence/boss6-0104/bamas-et-al-2023-v1.pdf": "fc907ac5159b3b20ae8498052c161f7aaf8d64114db84d7ef1947d6f1c6d4183",
     "map/edges/unrelated-machines-3a-3a-71b6862653595dda/rounding-and-search-certificate.md": "8c46153d08cfb56ecd77105c704f295d99d80fbe4e46cc1a7c6d290c821bbe51",
-    "archives/unrelated-machines/tools/evidence/boss2-6405-blmrs-proof/rounding-slots-and-dual.md": "9c7a4bfe21f216b57edfbce69b591aabf1a4d3a637510eba54411f7d62774bd1"
+    "archives/unrelated-machines/tools/evidence/boss2-6405-blmrs-proof/rounding-slots-and-dual.md": "9c7a4bfe21f216b57edfbce69b591aabf1a4d3a637510eba54411f7d62774bd1",
+    "archives/unrelated-machines/state/反例/BLMRS规范搜索的外层可达递归重叠--反例.md": "c8c04a17f37b603201f8c265e57a051b934e9a43964fe7e380e65418414ad9fa"
   },
-  "review_digest": "80954b5bc76418434748e97acebd0e276269b33d5352239096ef0d0ce53393e0"
+  "review_digest": "a8fec54cc91f7580c2e75c94269aefc91382ee47b578a4bf5cfdbbab718dccab"
 }
