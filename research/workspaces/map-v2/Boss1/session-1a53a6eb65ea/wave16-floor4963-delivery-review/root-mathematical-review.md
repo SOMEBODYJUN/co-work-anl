@@ -1,0 +1,25 @@
+# Boss1 mathematical review: fixed 4963-row floor point and strong PAIR
+
+The reviewed point has SHA256 `f6f4d5c28857e8e6350bdc8528daa6109122bce8a6fb00e8ac5c3150ffc42314`: 1905 columns, including one capacity parameter, 16 histogram types, 582 explicit joint-state coordinates, and 1306 auxiliary old R/R overlaps. It has O=1 and the exact W stated in the core. The worker's complete staged evidence reading remains separately recorded; Boss1 has read the complete core page, strong-PAIR lemma and its single-hidden-reply evidence page, old eight-cut page, and mixed-PAIR program page.
+
+## Necessary strong PAIR and the missing reply
+
+At the actual last-two-player node, use background b from the first four actual choices, C=A5 and D=A6. Write F(X)=Σ_X1/(b+1), G(X,Y)=Σ_(X∩Y)1/((b+1)(b+2)), U=F−G and H=u5+u6+G(C,C). For each forced legal T and legal query Q, let J be the same complete strategy's true final reply after T. The three inequalities are I1=u5−U(T,J), I2=U(J,T)−U(Q,T), and I3=u6−U(J,C). Their sum plus G(C,C)−G(C,J) is exactly H−F(T)−F(Q)+G(T,Q). The last term is nonnegative on C\J. Therefore the rule is necessary for every such complete SPE and does not freeze the deviation's final reply.
+
+For T=Z_e, J is in general another unrecorded reply, not the already stored R_e or Z_e. The identity eliminates it. Thus a negative fixed marginal PAIR value rules out every completion by such replies while those margins remain fixed. It does not refute the original finite graph's feasibility.
+
+The 30/30/6 indexed edge classes are ordered, retaining repeated labels and distinct indices with the same membership word. Each aggregate row pays its own n_g H. The eight old-grid outputs collapse to three distinct coefficient vectors: all/last coincide with one hidden player, and the two diagonal B queries coincide. Equality of a few evaluated slacks alone would not prove this; the mature all-coefficient evidence has that separate responsibility. The mixed menu has seven negative keys, including new queries to actual A6, and this is not a claim of seven linearly independent directions.
+
+## What auxiliary overlap repair can and cannot do
+
+The original graph imposes upper bounds v≤r_g,r_q but not all Fréchet lower bounds v≥r_g+r_q−h. At column 1205 the two R margins are both h>0 while v=0, directly violating common-space realization. This does not invalidate the stated 4963-row Fraction feasibility result.
+
+Changing every such auxiliary overlap to min(r_g,r_q) repairs these particular lower bounds and preserves the old rows where overlaps enter positively, but changes the original 1905-coordinate point. Every strong-PAIR cut in the reviewed old/mixed menus has coefficient zero on K and these auxiliary overlaps. It reads only histograms and R/Z marginal coordinates, with the old query membership fixed in each group. Therefore overlap-only lifting cannot repair any of those negative cuts. A jointly realized customer domain alone also does not supply all ordered-history IC.
+
+Later 4971-, 5043-, and 5108-row points are different weight vectors even where W and column descriptors agree. Their changed joint margins prevent carrying these old negative slacks over without fresh evaluation. The logical contribution must be fixed-input separation/nonextendibility under fixed margins, not a six-player half counterexample, global infeasibility, or exact optimum claim.
+
+## Exact rank of the six distinct negative rows
+
+The worker supplied a short additional analytic rank proof. Boss1 independently read the original descriptors at zero-based indices 117,118,142,145,151,166,169. Histogram 117 has actual bits 000000 and bucket counts H001=3,H010=2,H110=1. The six selected joint columns all have state 01. The six distinct negative keys, ordered as (1,0,0,5), (1,1,0,5), (1,1,0,8), (1,1,0,10), (1,1,1,5), (1,1,1,7), restrict to columns 118,142,145,151,166,169 as three diagonal blocks: [-6]; [[-6,-6,-6],[-3,-3,-6],[-6,-3,-6]]; and [[-3,-2],[-3,-1]]. Each entry follows directly from −m(1−q/2), since b=0. Their determinants are −6,−54,−3, giving the full minor −972. Thus the six vectors are linearly independent in the complete 1905-coordinate space. The seventh negative key (1,1,1,10) repeats the final row because the two diagonal B queries are the same. This is not a statement about independence modulo the old graph constraints or about six different mathematical mechanisms.
+
+All seven negative keys have member=1. Consequently their fixed values require only the histograms and the relevant Z-group margins, not the R margins or the R/Z correlations. This sharpens the preservation condition for these particular separations: even allowing R changes, arbitrary auxiliary overlap repair, new legal catalogue themes and new true final replies cannot complete a SPE while those histograms and Z margins remain fixed. Holding only W or only the histograms would not justify this exclusion. Boss1 read and approved the worker's full proof of this stronger, precisely delimited contribution.
