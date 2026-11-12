@@ -1,0 +1,73 @@
+{
+  "edge_id": "boss2-new21-common-q-checks-fixed-query-duality",
+  "kind": "checks",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/fractional-and-cone-auditor-contracts"
+  ],
+  "target_ids": [
+    "CA-SECURITY-CONE-DUAL"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "仅正文及原gzip指定21份完整有序形式σ：19份n5/k7、一份n5/k8、一份n6/k8。每份σ保全部真实改变后继IC，Kσ={w≥0:Γσw≥0}；Qσ是全部合法n−1整数静态槽上的概率，可重复/相关，不观察此次抽出的query，也不受actual回复菜单限制。每份内部同一Q支付全部a和整个Kσ，21份之间不要求同Q；λa、ra可依a而不依w。",
+  "roles": {
+    "customer-attraction/fractional-and-cone-auditor-contracts": "给21份固定完整σ的逐query共同Q、非负激励乘子和类型余项；直接给各自完整客户锥上W≥n v_n。",
+    "CA-SECURITY-CONE-DUAL": "固定σ,p的(T)接口接受21份具体成功输入；一般(A)⇔(T)及严格失败提取仍由其minimax/Farkas正文承担。"
+  },
+  "explanation": "原证书逐query有c/n−E_Q f_B(a)=Γσᵀλa+ra，λa,ra≥0。存储整数row为LΓ，L=lcm(1,…,n)=60，先除60恢复真实收益差；完全相同行去重后可把合并乘子放回任一真实(h,a)代表，其余完整Γ位置取0。对任意固定有理p，β_B(p)=Σa p_a f_B(a)，故取λ(p)=nΣa p_aλa、r(p)=nΣa p_ara，得到c−nE_Qβ_B(p)=Γσᵀλ(p)+r(p)，全有理非负；同一Qσ甚至不依p。该构造给一般接口在21个指定σ、全部p上的显式(T)实例，没有承担任意σ,p的逆向必要性证明、无证书严格分离或普遍证书存在。对target实际证明角色是checks/context；不把具体成功输入当一般等价定理的logical contribution。",
+  "scope": "accepted语境核验，覆盖指定21份σ内部整个非负质量锥和所有有理查询；不是21个客户点PASS，不升级为所有完整σ，不证明共同Q接口的必要性。无(T)的aggregate失败提取与half反例须另外判断，本包没有失败实例。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/资料/客户分数负载覆盖与固定策略锥的审计合同--资料.md",
+      "sha256": "0013a2a0986eb81e11735bc2a794e47e5f650cad43c173817a02a14f01ddb3aa",
+      "section": "21份新固定完整策略锥：输入、证书与严格量词"
+    },
+    {
+      "path": "tools/evidence/collaboration-model-and-cag-audit-primary/related-cones/760834c0f64c80b5ccc1",
+      "sha256": "a4e84d0478ba0ededabe547870ad0a4916cd05a78e686183ed6ef1b660583045"
+    },
+    {
+      "path": "tools/evidence/collaboration-model-and-cag-audit-primary/original/3e153d43f71d6ebd66e6/tests/audits/customer_attraction_new_security_cones.py",
+      "sha256": "52e8f2a93db13ed523014119c52d7d82333092eb1d084668481b26c0a38693c9"
+    },
+    {
+      "path": "tools/evidence/collaboration-model-and-cag-audit-primary/runs/new-cones-report.json",
+      "sha256": "cfaf3ac6bda723bccca5ff0da40d1778b3be1a67b5ba9fc88f6741154ed4ea7d"
+    },
+    {
+      "path": "tools/evidence/collaboration-model-and-cag-audit-primary/runs/new-cones-run.json",
+      "sha256": "0f80fd4788d7a4eb4e4b1f4d8b677b5dd3f1f4ee4db1b7931b693e0f9cd8ac88"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/完整策略锥的静态安全值对偶--定理.md",
+      "sha256": "b279e1f63f08b961365a2cbc0173530de7090fd1c7beefc1a42c585ef6e58cf5"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-2c3bfa8c793694f1/review.md",
+      "sha256": "34c8c2425bb1b0a93301990811afcebc5f9079b2056bbc262fa52ec4785475c3",
+      "section": "一般对偶接口：实际是checks/context"
+    }
+  ],
+  "reviewed_by": "Boss2",
+  "review_note": "fresh正式worker完整实读当前核心/三个read-added端点合同、core及dual自足正文、共同模型、全部核心异议、66行原审计与成熟绑定run/report；原gzip完整解析并新查看21项元数据/全部Q/λ块与根，未重建Γ或重放709573比较/20971残差。按一般target证明角色独立裁定checks/context，采用wave19对wave18原A类型的显式更正。当前canonical无core incident边，c385 selected三锥是不同输入，不冒作21覆盖。Root负责原生绑定与检查。 Root随后全文实读本边与support、当前核心/静态锐界/六人目标正文、原66行精确核验代码与原绑定成功事件，核清一般对偶接口的实例角色、同σ完整IC锥、同实例五静态槽、整数与有理齐次缩放及全部remaining；未重放成熟矩阵。",
+  "endpoint_pins": {
+    "CA-SECURITY-CONE-DUAL": "e31e80e9d89c7fad56eadbcbfd46a50af3857d6119eea8060c3a41a0cb987899",
+    "customer-attraction/fractional-and-cone-auditor-contracts": "c11bad6a52fd8dbb38e5a0cb845f9631008b7afe3026360fd709327e69f2debd"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/资料/客户分数负载覆盖与固定策略锥的审计合同--资料.md": "0013a2a0986eb81e11735bc2a794e47e5f650cad43c173817a02a14f01ddb3aa",
+    "tools/evidence/collaboration-model-and-cag-audit-primary/related-cones/760834c0f64c80b5ccc1": "a4e84d0478ba0ededabe547870ad0a4916cd05a78e686183ed6ef1b660583045",
+    "tools/evidence/collaboration-model-and-cag-audit-primary/original/3e153d43f71d6ebd66e6/tests/audits/customer_attraction_new_security_cones.py": "52e8f2a93db13ed523014119c52d7d82333092eb1d084668481b26c0a38693c9",
+    "tools/evidence/collaboration-model-and-cag-audit-primary/runs/new-cones-report.json": "cfaf3ac6bda723bccca5ff0da40d1778b3be1a67b5ba9fc88f6741154ed4ea7d",
+    "tools/evidence/collaboration-model-and-cag-audit-primary/runs/new-cones-run.json": "0f80fd4788d7a4eb4e4b1f4d8b677b5dd3f1f4ee4db1b7931b693e0f9cd8ac88",
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+    "archives/customer-attraction/state/定理/完整策略锥的静态安全值对偶--定理.md": "b279e1f63f08b961365a2cbc0173530de7090fd1c7beefc1a42c585ef6e58cf5",
+    "map/edges/customer-attraction-3a-3a-2c3bfa8c793694f1/review.md": "34c8c2425bb1b0a93301990811afcebc5f9079b2056bbc262fa52ec4785475c3"
+  },
+  "review_digest": "96a218a782d1d57d1c93f6ff4f8a806eb9fa9dbaac43b6618d681d04b660e3fe"
+}
