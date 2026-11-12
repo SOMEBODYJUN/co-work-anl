@@ -1,0 +1,972 @@
+{
+  "schema": 1,
+  "review_kind": "Read-only independent source-delta mathematical review, no primary claim or formal receipt",
+  "actor": "Boss1/zero_incidence_source_3d",
+  "frozen_at_utc": "2026-11-12T19:53:55.723925+00:00",
+  "repo": "/workspace/scratch/1a53a6eb65ea/co-work-anl-boss1",
+  "final_head": "90e4ff1723256c59b1e87706b172c13fd67a2f6a",
+  "initial_head": "2ed7ad475c5b5b0596e9f8aa763acc0d0231ff5a",
+  "scope": "Six changed records and shared zero-incidence proof summary only; new Boss2 flat/flow/ca65 done not reviewed.",
+  "full_mathematical_files_read": [
+    {
+      "path": "archives/unrelated-machines/state/审查/归一化菜单福利与配置证书双源审查--审查.md",
+      "sha256": "33bd31b883b26f49508808dd7175cd104f391b86642bff90ea2bce7f1142097b",
+      "bytes": 9737
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/规范化平菜单的CONFIG与正支撑LP双向保持--定理.md",
+      "sha256": "8bfbaa80b98546b6d1320e9760bb9491165e26a6cef1b6cd35eb86116c822f66",
+      "bytes": 10507
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/近完美归一化robust源四源审查--审查.md",
+      "sha256": "3fc6b21c3c331f5406792029de5c5ccd385cebc6a1040a1ea8589d48a9c8b5ce",
+      "bytes": 9752
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/归一化门控菜单v2三源精读与13-8算法版本审查--审查.md",
+      "sha256": "a4a7e0a28927697fa92175ad43d78a94c1bffdd967d447bc54606c172e493cc5",
+      "bytes": 14843
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/门控归一化FSLP四源清洗--审查.md",
+      "sha256": "2df6beb69a4f267953dd2298a41b153fd5110467acadde09df6b0601dca07b64",
+      "bytes": 11313
+    }
+  ],
+  "boss2_correction_ref": {
+    "path": "research/workspaces/map-v2/Boss2/recovery-20261112-e8cf4c/zero-incidence-source-correction.json",
+    "sha256": "6391bb84142804d2883cece5c33d72da8d9933f1b53e66d4818a54d23e2f5020",
+    "bytes": 4435
+  },
+  "boss2_impact_advisory_ref": {
+    "path": "research/workspaces/map-v2/Boss2/recovery-20261112-e8cf4c/zero-incidence-impact-3d.json",
+    "sha256": "57d2b973bb83bdb35e64a62b06731b2ba64e9e56266ffd523cea3884b34b7633",
+    "bytes": 65350
+  },
+  "boss2_impact_read_scope": "Conclusion, all six records, independent_math, eight effective done heads and seven superseded history records, active metadata, nine edge_reviews, wave9 and handoff/read-provenance boundaries; all nine identified edge JSON freshly fully read. Not a fresh full audit of all retained historic assets.",
+  "registry_ref": {
+    "path": "research/registry.json",
+    "sha256": "3ffd7d60889b7bacdaff6ab55840b94fef67f94b8d4f6289103e1d40bf4a8375",
+    "bytes": 16583987
+  },
+  "integration_ref_at_freeze": {
+    "path": "map/integration.json",
+    "sha256": "93c20f83f3bad11d7d12c3848f77e24a1728dbdf67cbf4292c22c7404583921a",
+    "bytes": 2074579
+  },
+  "six_sources": [
+    {
+      "object_id": "M-080d9b22ae87408f9a673a898c7a6dc3",
+      "version": 5,
+      "native_rr_pin": "d0b2a08064ea4ddb1eb3d096b576113c85d2effdc50f43593b10cf756e4c217a",
+      "old_version": 4,
+      "old_native_rr_pin": "5041d21ea4cc71de0cf1e759aade84c0cc09a86d8539510dc3683242679ff85c",
+      "changed_record_fields": [
+        "evidence",
+        "objections",
+        "version"
+      ],
+      "record": {
+        "object_id": "M-080d9b22ae87408f9a673a898c7a6dc3",
+        "version": 5,
+        "title": "SC单位helper路径在旧值不超过一时的实际值与有限配置阈值保持",
+        "kind": "theorem",
+        "truth_status": "proved",
+        "model": "非空有限SC agents、有限可空items、非负二进制有理加性估值。每个item按其不同正owner复制为ports，相邻ports间放一名unit-helper agent，helper对两个端copy值1、其余0；原agent只在自己的copy保原估值。无正owner和单正owner分别单独处理。",
+        "statement": "给任意旧实际分配且最低价值0<v≤1，可分配每条path的copy满足全部helpers且保持旧agents价值≥v；任意新实际正值分配可反向投影得到同样最低价值旧分配。故旧actualOPT≤1时新旧actualOPT精确相等（零端点另处理）。给旧有限CONFIG阈值0<t≤1可正向转新有限CONFIG；任意t>0的新有限CONFIG均可反向转旧同阈值有限CONFIG，因此若旧最高有限CONFIG阈值≤1，新旧该阈值精确相等。原agent行总价值不增，helper行总量2，每item正owner度≤3。",
+        "quantifiers": "对全部上述显式SC输入分别给actual与finite-CONFIG双向合同；两个精确最优值结论各自只在旧对应值≤1时成立。转换给定的有限有理证书，按其编码多项式。",
+        "assumptions": [
+          "正向只用0<v≤1或0<t≤1；零值/空items须分别处理",
+          "反向t>1时helper可同时占两端copy，不能擅自trim成singleton",
+          "正owner去重按agent身份，零价值端不作为路径owner"
+        ],
+        "scope": "一般SC item单位helper路径；不同于flat菜单资源路径或state-dummy实际值桥。",
+        "objections": "不能仅因输出item degree≤3就声称每旧agent row≤3；只在旧行本有上界时保该上界。最高finite-CONFIG与actualOPT是不同优化对象；无已知下界或未知最优值求解器承诺。 本轮按原主证明补全该审查页正向全任务调度：root pin留root、未选connector留root、未选selector去gate，其余incidence留private；原定理陈述、量词和truth_status不变。 共享审查§二.1已补明(1−λ)私有配置也包含零私有时间incidence jobs，使每个原job覆盖恰一；主正文原证明本已如此，所登记数学陈述及其适用域不变。",
+        "body": {
+          "path": "archives/unrelated-machines/state/定理/规范化平菜单的CONFIG与正支撑LP双向保持--定理.md",
+          "sha256": "8bfbaa80b98546b6d1320e9760bb9491165e26a6cef1b6cd35eb86116c822f66"
+        },
+        "evidence": [
+          {
+            "path": "archives/unrelated-machines/state/审查/规范化平菜单Exact与Proof版本核验--审查.md",
+            "sha256": "acd5fa40598e0e880083405a713752569671abefc20ac63d32576c6bc717cc84"
+          },
+          {
+            "path": "archives/unrelated-machines/state/审查/规范化平菜单row3degree9独立预Exact记录--审查.md",
+            "sha256": "29f6c62f6fdbc4dfbc6ad99d832c9a25b5527f044c572bd14c322acd3689e6a8"
+          },
+          {
+            "path": "archives/unrelated-machines/state/审查/规范化平菜单v1v3的独立与作者核验--审查.md",
+            "sha256": "61835242b90509d0f831c95ebb38f1b002779716de335568a4fcf01cfd1321e6"
+          },
+          {
+            "path": "archives/unrelated-machines/state/审查/归一化菜单福利与配置证书双源审查--审查.md",
+            "sha256": "33bd31b883b26f49508808dd7175cd104f391b86642bff90ea2bce7f1142097b"
+          },
+          {
+            "path": "archives/unrelated-machines/state/审查/归一化CONFIG有限证书三向桥的v3审读范围--审查.md",
+            "sha256": "2ee2f04fa427e1889073c25daaab373a8d4042f633aa78ca0fd76df80d9e996b"
+          }
+        ],
+        "sources": [
+          "archives/unrelated-machines/state/定理/规范化平菜单的CONFIG与正支撑LP双向保持--定理.md",
+          "legacy-container:row3-degree9-SC-path",
+          "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/notes/unrelated_machines/normalized_menu_full_support_lp_preservation_exact_only_review_v1.md#全文",
+          "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/notes/unrelated_machines/normalized_menu_full_support_lp_preservation_exact_only_review_v3.md#全文",
+          "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/notes/unrelated_machines/normalized_menu_full_support_lp_preservation_author_read_after_v1_v3.md#全文",
+          "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/notes/unrelated_machines/normalized_menu_configuration_certificate_preservation_canonical_scope_review_v3.md#全文",
+          "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/notes/unrelated_machines/normalized_menu_full_support_lp_preservation_exact_v1.md#全文",
+          "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/notes/unrelated_machines/normalized_menu_full_support_lp_preservation_exact_v2.md#全文",
+          "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/notes/unrelated_machines/normalized_menu_full_support_lp_preservation_exact_v3.md#全文",
+          "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/notes/unrelated_machines/normalized_menu_full_support_lp_preservation_proof_v1.md#全文",
+          "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/notes/unrelated_machines/normalized_menu_full_support_lp_preservation_proof_v3.md#全文",
+          "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/notes/unrelated_machines/row_three_degree_nine_sc_independent_pre_exact_research_v1.md",
+          "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:history/source/notes/unrelated_machines/row_three_degree_nine_sc_independent_pre_exact_research_v1.md"
+        ]
+      }
+    },
+    {
+      "object_id": "M-9452d445c1744d5eaac946ee974d2162",
+      "version": 4,
+      "native_rr_pin": "cddd9bf3289e55ce350e792f70fdfea147cf0b44bfc0da08d9355f0c40a48e64",
+      "old_version": 3,
+      "old_native_rr_pin": "4126eff22b627cb6b93e95ca4c20542452b045c2df488d91bdbb5f4fd99f4e32",
+      "changed_record_fields": [
+        "evidence",
+        "objections",
+        "version"
+      ],
+      "record": {
+        "object_id": "M-9452d445c1744d5eaac946ee974d2162",
+        "version": 4,
+        "title": "正支撑CONFIG可行而实际值1/D的有界行度归一化菜单族",
+        "kind": "theorem",
+        "truth_status": "proved",
+        "model": "每个显式整数D≥2的有限norm1菜单Q_D：一个主group有D个state，每state在其D个私有homes上各权1/D；每个home对应一个helper，在自身home g的unit state或共享A_a的unit state间选。共D²个helpers。再依正文施加binary tree/menu-port正规化N、state-dummy桥及SC unit-helper路径P_SC。",
+        "statement": "Q_D的actual菜单值恰1/D而positive-support FSLP可行。对应完整UM CONFIG(1)可行且actualOPT=2−1/D。经过N、state-dummy及P_SC后，所得SC的最高有限CONFIG阈值恰1而actualOPT恰1/D；每agent行总价值≤3，最终每item正owner度≤3（中间构造≤9）。构造和有限证书显式poly(D)大小，给出自足无界SC CONFIG/actual比族。",
+        "quantifiers": "对每个整数D≥2存在上述显式族和完整有限证书；精确值是各对应模型的值，不把它们混作UM最小化与SC最大化同一目标。",
+        "assumptions": [
+          "D按显式数值计规模，不能声称poly(log D)",
+          "全部菜单norm1，容量按正支撑",
+          "归一化、dummy及SCpath各自使用其准确≤1阈值前件"
+        ],
+        "scope": "自足参数gap族及已明确的有界行/item度正规化；与通用CONFIG等价和一般SC路径定理分别登记。",
+        "objections": "不是计算困难性或NP-hardness，也不满足额外actualOPT≥1 promise。外部Bansal–Sviridenko一般gap的抽象引用不是本自足证明前提；本批不声称复审其整篇论文。 本轮按原主证明补全该审查页正向全任务调度：root pin留root、未选connector留root、未选selector去gate，其余incidence留private；原定理陈述、量词和truth_status不变。 共享审查§二.1已补明(1−λ)私有配置也包含零私有时间incidence jobs，使每个原job覆盖恰一；主正文原证明本已如此，所登记数学陈述及其适用域不变。",
+        "body": {
+          "path": "archives/unrelated-machines/state/定理/规范化平菜单的CONFIG与正支撑LP双向保持--定理.md",
+          "sha256": "8bfbaa80b98546b6d1320e9760bb9491165e26a6cef1b6cd35eb86116c822f66"
+        },
+        "evidence": [
+          {
+            "path": "archives/unrelated-machines/state/审查/规范化平菜单Exact与Proof版本核验--审查.md",
+            "sha256": "acd5fa40598e0e880083405a713752569671abefc20ac63d32576c6bc717cc84"
+          },
+          {
+            "path": "archives/unrelated-machines/state/审查/规范化平菜单row3degree9独立预Exact记录--审查.md",
+            "sha256": "29f6c62f6fdbc4dfbc6ad99d832c9a25b5527f044c572bd14c322acd3689e6a8"
+          },
+          {
+            "path": "archives/unrelated-machines/state/审查/规范化平菜单v1v3的独立与作者核验--审查.md",
+            "sha256": "61835242b90509d0f831c95ebb38f1b002779716de335568a4fcf01cfd1321e6"
+          },
+          {
+            "path": "archives/unrelated-machines/state/审查/归一化菜单福利与配置证书双源审查--审查.md",
+            "sha256": "33bd31b883b26f49508808dd7175cd104f391b86642bff90ea2bce7f1142097b"
+          }
+        ],
+        "sources": [
+          "archives/unrelated-machines/state/定理/规范化平菜单的CONFIG与正支撑LP双向保持--定理.md",
+          "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/notes/unrelated_machines/normalized_menu_full_support_lp_preservation_exact_only_review_v1.md#全文",
+          "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/notes/unrelated_machines/normalized_menu_full_support_lp_preservation_exact_only_review_v3.md#全文",
+          "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/notes/unrelated_machines/normalized_menu_full_support_lp_preservation_author_read_after_v1_v3.md#全文",
+          "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/notes/unrelated_machines/normalized_menu_configuration_certificate_preservation_canonical_scope_review_v3.md#全文",
+          "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/notes/unrelated_machines/normalized_menu_full_support_lp_preservation_exact_v1.md#全文",
+          "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/notes/unrelated_machines/normalized_menu_full_support_lp_preservation_exact_v2.md#全文",
+          "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/notes/unrelated_machines/normalized_menu_full_support_lp_preservation_exact_v3.md#全文",
+          "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/notes/unrelated_machines/normalized_menu_full_support_lp_preservation_proof_v1.md#全文",
+          "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/notes/unrelated_machines/normalized_menu_full_support_lp_preservation_proof_v3.md#全文",
+          "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/notes/unrelated_machines/row_three_degree_nine_sc_independent_pre_exact_research_v1.md",
+          "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:history/source/notes/unrelated_machines/row_three_degree_nine_sc_independent_pre_exact_research_v1.md"
+        ]
+      }
+    },
+    {
+      "object_id": "M-f0619ab2e98f41eb9fa9c02a48c19aaa",
+      "version": 5,
+      "native_rr_pin": "7fe755e2d8d7e0dd39ba154180fa2f3344420f4bf0a951d533bf9e709337df8f",
+      "old_version": 4,
+      "old_native_rr_pin": "73cab4763a7fcab682efdc03aca50b35d091e600a350f1dab0e1840673aa184f",
+      "changed_record_fields": [
+        "evidence",
+        "objections",
+        "version"
+      ],
+      "record": {
+        "object_id": "M-f0619ab2e98f41eb9fa9c02a48c19aaa",
+        "version": 5,
+        "title": "规范化平菜单正支撑FSLP与UM/SC阈值一CONFIG等价及正规化保持",
+        "kind": "theorem",
+        "truth_status": "proved",
+        "model": "有限资源集、有限非空group及每组有限非空带索引state菜单；每state非负有理权和1。FSLP变量每组state概率和1，资源容量以state正支撑0/1 incidence计，不按权大小计。完整ordinary UM包括每group unit selector、全部正/零incidences和未选payload；state-dummy SC每state一个agent、资源items及每group K−1枚unit dummies。",
+        "statement": "FSLP可行当且仅当完整UM CONFIG(1)可行，当且仅当state-dummy SC CONFIG(1)可行。UM由selector配置恢复state概率并用正支撑饱和排斥，反向以完整state及未选payload构造有限有理配置；SC方向由每group K−1 dummies保证至少一个无dummy state，norm1把阈值1配置压至整正支撑。Binary-selector-tree和menu-port-path变换也显式双向保持正支撑FSLP，并保全部索引、零项和未用资源。给定任一有限有理证书可显式多项式转换。",
+        "quantifiers": "对全部上述norm1有限带索引菜单成立；各⇔都是可行性等价；算法合同只转换给定有限有理证书，不声称求解隐式指数CONFIG。",
+        "assumptions": [
+          "FSLP资源行必须是positive-support incidence，不能换weighted incidence",
+          "每个state总权恰1；每组菜单非空，重复state仍是不同索引",
+          "完整UM保selector、所有未选/零incidence及全部原任务",
+          "有限配置证书按实际支撑编码收费"
+        ],
+        "scope": "阈值1的UM/SC/FSLP精确接口，并把正文tree与menu-path作为同接口的正规化保持保留。",
+        "objections": "旧normalized-menu-full-support-LP-v1/v3及row3-degree9-SC-path是复合版本/构造来源，不能当作本精确Claim吞并SC一般路径与Q_D gap。此处不推出FSLP对actual allocations的积分性，也没有actualOPT≥1 promise或一般SC gap常数。 本轮按原主证明补全该审查页正向全任务调度：root pin留root、未选connector留root、未选selector去gate，其余incidence留private；原定理陈述、量词和truth_status不变。 共享审查§二.1已补明(1−λ)私有配置也包含零私有时间incidence jobs，使每个原job覆盖恰一；主正文原证明本已如此，所登记数学陈述及其适用域不变。",
+        "body": {
+          "path": "archives/unrelated-machines/state/定理/规范化平菜单的CONFIG与正支撑LP双向保持--定理.md",
+          "sha256": "8bfbaa80b98546b6d1320e9760bb9491165e26a6cef1b6cd35eb86116c822f66"
+        },
+        "evidence": [
+          {
+            "path": "archives/unrelated-machines/state/审查/规范化平菜单Exact与Proof版本核验--审查.md",
+            "sha256": "acd5fa40598e0e880083405a713752569671abefc20ac63d32576c6bc717cc84"
+          },
+          {
+            "path": "archives/unrelated-machines/state/审查/规范化平菜单row3degree9独立预Exact记录--审查.md",
+            "sha256": "29f6c62f6fdbc4dfbc6ad99d832c9a25b5527f044c572bd14c322acd3689e6a8"
+          },
+          {
+            "path": "archives/unrelated-machines/state/审查/规范化平菜单v1v3的独立与作者核验--审查.md",
+            "sha256": "61835242b90509d0f831c95ebb38f1b002779716de335568a4fcf01cfd1321e6"
+          },
+          {
+            "path": "archives/unrelated-machines/state/审查/归一化菜单福利与配置证书双源审查--审查.md",
+            "sha256": "33bd31b883b26f49508808dd7175cd104f391b86642bff90ea2bce7f1142097b"
+          },
+          {
+            "path": "archives/unrelated-machines/state/审查/归一化CONFIG有限证书三向桥的v3审读范围--审查.md",
+            "sha256": "2ee2f04fa427e1889073c25daaab373a8d4042f633aa78ca0fd76df80d9e996b"
+          }
+        ],
+        "sources": [
+          "archives/unrelated-machines/state/定理/规范化平菜单的CONFIG与正支撑LP双向保持--定理.md",
+          "legacy-container:normalized-menu-full-support-LP-v1",
+          "legacy-container:normalized-menu-full-support-LP-v3",
+          "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/notes/unrelated_machines/normalized_menu_full_support_lp_preservation_exact_only_review_v1.md#全文",
+          "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/notes/unrelated_machines/normalized_menu_full_support_lp_preservation_exact_only_review_v3.md#全文",
+          "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/notes/unrelated_machines/normalized_menu_full_support_lp_preservation_author_read_after_v1_v3.md#全文",
+          "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/notes/unrelated_machines/normalized_menu_configuration_certificate_preservation_canonical_scope_review_v3.md#全文",
+          "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/notes/unrelated_machines/normalized_menu_full_support_lp_preservation_exact_v1.md#全文",
+          "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/notes/unrelated_machines/normalized_menu_full_support_lp_preservation_exact_v2.md#全文",
+          "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/notes/unrelated_machines/normalized_menu_full_support_lp_preservation_exact_v3.md#全文",
+          "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/notes/unrelated_machines/normalized_menu_full_support_lp_preservation_proof_v1.md#全文",
+          "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/notes/unrelated_machines/normalized_menu_full_support_lp_preservation_proof_v3.md#全文",
+          "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/notes/unrelated_machines/row_three_degree_nine_sc_independent_pre_exact_research_v1.md",
+          "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:history/source/notes/unrelated_machines/row_three_degree_nine_sc_independent_pre_exact_research_v1.md"
+        ]
+      }
+    },
+    {
+      "object_id": "UM-NEAR-PERFECT-NORMALIZED-ROBUST-SOURCE-v1",
+      "version": 6,
+      "native_rr_pin": "3a0dc3aefc137b6c09a0d1af24714d66d7a6a899f385442caa2098c834e1517d",
+      "old_version": 5,
+      "old_native_rr_pin": "4dfe055bb9bcc7ce75cee4da19f61871b56a22c8b4f0f6e5df32c69d234fc642",
+      "changed_record_fields": [
+        "evidence",
+        "objections",
+        "version"
+      ],
+      "record": {
+        "object_id": "UM-NEAR-PERFECT-NORMALIZED-ROBUST-SOURCE-v1",
+        "version": 6,
+        "title": "近完美归一化robust源两种高阈值的精确LP判别",
+        "kind": "定理",
+        "truth_status": "proved",
+        "model": "有限非空组、每组非空显式indexed states、非负二进制有理资源权每state和恰1；全局不交资源bundles。",
+        "statement": "0≤η<1、0≤δ<1、0<γ≤1且(5/8)(1−η)≥γ+(1−γ)δ。YES有≥(1−η)n个质量1组；NO分别为每allocation的#{r≥δ}<γn或#{r>δ}<γn。福利LP最优L≥(1−η)n判YES，否则NO，两个promise分别正确。统一子域0<γ≤δ≤3/8、η≤1/40含三重等号。",
+        "quantifiers": "每个显式norm1输入和有理合域参数；两个NO合同分别全称量化全部真实allocation。",
+        "assumptions": [
+          "无额外coherence/标签相容/共享内部任务",
+          "福利LP总可行，非unit-FSLP",
+          "阈值比较精确有理且不要求组数整除"
+        ],
+        "scope": "完整/近完美显式robust源判别；均匀K束是特化。",
+        "objections": "δ0的NO≥为空类，η1/δ1域外。证明未提供NP-hard源可靠归约；隐式/非归一化/共享内部约束域外。 本轮按原主证明补全该审查页正向全任务调度：root pin留root、未选connector留root、未选selector去gate，其余incidence留private；原定理陈述、量词和truth_status不变。 共享审查§二.1已补明(1−λ)私有配置也包含零私有时间incidence jobs，使每个原job覆盖恰一；主正文原证明本已如此，所登记数学陈述及其适用域不变。",
+        "body": {
+          "path": "archives/unrelated-machines/state/审查/近完美归一化robust源四源审查--审查.md",
+          "sha256": "3fc6b21c3c331f5406792029de5c5ccd385cebc6a1040a1ea8589d48a9c8b5ce"
+        },
+        "evidence": [
+          {
+            "path": "archives/unrelated-machines/state/审查/归一化菜单福利与配置证书双源审查--审查.md",
+            "sha256": "33bd31b883b26f49508808dd7175cd104f391b86642bff90ea2bce7f1142097b",
+            "section": "一、归一化门控菜单的精确实际值"
+          },
+          {
+            "path": "archives/unrelated-machines/state/引理/显式均匀束robust源的福利排除域--引理.md",
+            "sha256": "433f623b79db8ac16c6a15e6a427512ac2c8245ebc24e024eb10d923746adf94"
+          },
+          {
+            "path": "archives/unrelated-machines/state/审查/归一化门控菜单福利源判别与比例纠错最终审查--审查.md",
+            "sha256": "c8cd2d4ba0018eb7b6336da9cb0d6834604f176e638f3d3e48b94f5bf3805456"
+          },
+          {
+            "path": "archives/unrelated-machines/state/审查/归一化门控福利证明与参数互补八源溯源--审查.md",
+            "sha256": "9e00d296c74e95a1e1bf35cc8e5a442333b1b212c53da563ffec5fabb3bda546",
+            "section": "4. robust 参数的互补纠错"
+          },
+          {
+            "path": "archives/unrelated-machines/state/审查/门控归一化FSLP四源清洗--审查.md",
+            "sha256": "2df6beb69a4f267953dd2298a41b153fd5110467acadde09df6b0601dca07b64",
+            "section": "四、robust 参数互补的正确量词"
+          },
+          {
+            "path": "archives/unrelated-machines/state/审查/归一化菜单福利与配置证书双源审查--审查.md",
+            "sha256": "33bd31b883b26f49508808dd7175cd104f391b86642bff90ea2bce7f1142097b"
+          },
+          {
+            "path": "archives/unrelated-machines/state/审查/归一化门控福利证明与参数互补八源溯源--审查.md",
+            "sha256": "9e00d296c74e95a1e1bf35cc8e5a442333b1b212c53da563ffec5fabb3bda546"
+          }
+        ],
+        "sources": [
+          "archives/unrelated-machines/state/审查/近完美归一化robust源四源审查--审查.md"
+        ]
+      }
+    },
+    {
+      "object_id": "UM-NORMALIZED-GATED-MENU-13-8-v2",
+      "version": 6,
+      "native_rr_pin": "94dffb9efd7fe5c0c5f91d33d7c8da06be50b259084298ec14fedcf1bf765be2",
+      "old_version": 5,
+      "old_native_rr_pin": "6d3f4a6a93839fad94221c9b552d5b42d25baa7d6931c1fb1b2381e90e781c52",
+      "changed_record_fields": [
+        "evidence",
+        "objections",
+        "version"
+      ],
+      "record": {
+        "object_id": "UM-NORMALIZED-GATED-MENU-13-8-v2",
+        "version": 6,
+        "title": "任意显式归一化门控类的未知OPT十三比八算法",
+        "kind": "定理",
+        "truth_status": "proved",
+        "model": "有限非空组、每组非空显式indexed states、非负二进制有理资源权每state和恰1；全局不交资源bundles。完整P_gate含根pin、connector、selector及全部listed incidence、零和未选state jobs。",
+        "statement": "只输入完整显式norm1菜单，解Σ_s z=1、0≤x≤z、Σ_gs x≤1的福利LP，按state/coin两阶段精确有理条件期望，福利≥(1−1/e)L。排序平衡提取并完整回填，C≤(13/8)OPT(P_gate)。全类不要求unit-FSLP，不承诺绝对C≤13/8。",
+        "quantifiers": "存在单一确定性总位多项式算法，针对该类全部输入；不输入OPT、β*、source YES或LP点。",
+        "assumptions": [
+          "使用显式标准有理LP",
+          "保所有原jobs和完整P_gate",
+          "条件化后仅重算精确乘积，不重用初始Σq≤1"
+        ],
+        "scope": "一般任意权gated v2；不同于flat及typed single-outer的同数值算法。",
+        "objections": "二次余量≥1/64；独立重构Σλ≤1/null与Exact每组等式区分。现有有限SciPy提案+Fraction认证不是生产有理LP后端。 本轮按原主证明补全该审查页正向全任务调度：root pin留root、未选connector留root、未选selector去gate，其余incidence留private；原定理陈述、量词和truth_status不变。 共享审查§二.1已补明(1−λ)私有配置也包含零私有时间incidence jobs，使每个原job覆盖恰一；主正文原证明本已如此，所登记数学陈述及其适用域不变。",
+        "body": {
+          "path": "archives/unrelated-machines/state/审查/归一化门控菜单v2三源精读与13-8算法版本审查--审查.md",
+          "sha256": "a4a7e0a28927697fa92175ad43d78a94c1bffdd967d447bc54606c172e493cc5"
+        },
+        "evidence": [
+          {
+            "path": "archives/unrelated-machines/state/审查/归一化菜单福利与配置证书双源审查--审查.md",
+            "sha256": "33bd31b883b26f49508808dd7175cd104f391b86642bff90ea2bce7f1142097b",
+            "section": "一、归一化门控菜单的精确实际值"
+          },
+          {
+            "path": "archives/unrelated-machines/state/审查/归一化门控菜单福利源判别与比例纠错最终审查--审查.md",
+            "sha256": "c8cd2d4ba0018eb7b6336da9cb0d6834604f176e638f3d3e48b94f5bf3805456"
+          },
+          {
+            "path": "archives/unrelated-machines/state/审查/归一化门控福利证明与参数互补八源溯源--审查.md",
+            "sha256": "9e00d296c74e95a1e1bf35cc8e5a442333b1b212c53da563ffec5fabb3bda546",
+            "section": "3. 13/8 调度及其适用域"
+          },
+          {
+            "path": "archives/unrelated-machines/state/审查/归一化门菜单福利与对数调色板padding有限审查--审查.md",
+            "sha256": "2cb3bd5dbcf56984be6875eddbe130c67d43524caaf92454fcf41c4e35566735",
+            "section": "2. `86f59227811df6eaaa43`：归一化 gated-menu 福利审计"
+          },
+          {
+            "path": "archives/unrelated-machines/state/审查/归一化门菜单福利与对数调色板padding有限审查--审查.md",
+            "sha256": "2cb3bd5dbcf56984be6875eddbe130c67d43524caaf92454fcf41c4e35566735",
+            "section": "3. `076d098cf0e1aba55e87`：独立重放的增量内容"
+          },
+          {
+            "path": "archives/unrelated-machines/state/计算/门控菜单福利双原程序的证书舍入与冻结输入重放--计算.md",
+            "sha256": "2c2eaf3c7686decf35cb73ed9a03f7f00d3f844f42d8df390be70879b1cf3d7e"
+          },
+          {
+            "path": "archives/unrelated-machines/state/审查/归一化菜单福利与配置证书双源审查--审查.md",
+            "sha256": "33bd31b883b26f49508808dd7175cd104f391b86642bff90ea2bce7f1142097b"
+          },
+          {
+            "path": "archives/unrelated-machines/state/审查/归一化门控福利证明与参数互补八源溯源--审查.md",
+            "sha256": "9e00d296c74e95a1e1bf35cc8e5a442333b1b212c53da563ffec5fabb3bda546"
+          }
+        ],
+        "sources": [
+          "archives/unrelated-machines/state/审查/归一化门控菜单v2三源精读与13-8算法版本审查--审查.md"
+        ]
+      }
+    },
+    {
+      "object_id": "UM-NORMALIZED-GATED-MENU-WELFARE-v1",
+      "version": 6,
+      "native_rr_pin": "db1912d2262298cc45f879dfb52c315f6d5e10c3da4571a4756f4577f6dc0876",
+      "old_version": 5,
+      "old_native_rr_pin": "64a46a21e39c5f17e14f814770a1f5132239b7b77cac312321c1ed92a2a21f63",
+      "changed_record_fields": [
+        "evidence",
+        "objections",
+        "version"
+      ],
+      "record": {
+        "object_id": "UM-NORMALIZED-GATED-MENU-WELFARE-v1",
+        "version": 6,
+        "title": "归一化完整门控值恒等及正支撑FSLP福利构造",
+        "kind": "定理",
+        "truth_status": "proved",
+        "model": "有限非空组、每组非空显式indexed states、非负二进制有理资源权每state和恰1；全局不交资源bundles。完整P_gate含根pin、connector、selector及全部listed incidence、零和未选state jobs。",
+        "statement": "β*=max_H,B min{|H|/n,min_{g∈H}v_g(B_g)}并含0，精确OPT(P_gate)=2−β*。给定正支撑unit-FSLP，可有理条件期望输出不交bundles，福利≥(1−1/e)n>5n/8；0≤δ<5/8时高组数>(5/8−δ)n/(1−δ)，故可构造绝对峰≤13/8。",
+        "quantifiers": "每个所述显式norm1输入；值恒等无FSLP前提，福利/绝对13/8部分要求一份可行unit-FSLP。",
+        "assumptions": [
+          "列容量按正支撑Σλ≤1而非Σpλ",
+          "P_gate四类机器互异，connector在根1/n及自身gate1，selector单位"
+        ],
+        "scope": "值桥与FSLP完整福利合同；与下一个任意gated比例13/8对象分开。",
+        "objections": "C<2才用资源unit独占，β0基线另证；FSLP可行不是全类前提。γ纠错另归既有high-low对象。 本轮按原主证明补全该审查页正向全任务调度：root pin留root、未选connector留root、未选selector去gate，其余incidence留private；原定理陈述、量词和truth_status不变。 共享审查§二.1已补明(1−λ)私有配置也包含零私有时间incidence jobs，使每个原job覆盖恰一；主正文原证明本已如此，所登记数学陈述及其适用域不变。",
+        "body": {
+          "path": "archives/unrelated-machines/state/审查/门控归一化FSLP四源清洗--审查.md",
+          "sha256": "2df6beb69a4f267953dd2298a41b153fd5110467acadde09df6b0601dca07b64"
+        },
+        "evidence": [
+          {
+            "path": "archives/unrelated-machines/state/审查/归一化菜单福利与配置证书双源审查--审查.md",
+            "sha256": "33bd31b883b26f49508808dd7175cd104f391b86642bff90ea2bce7f1142097b",
+            "section": "一、归一化门控菜单的精确实际值"
+          },
+          {
+            "path": "archives/unrelated-machines/state/审查/归一化门控菜单v2三源精读与13-8算法版本审查--审查.md",
+            "sha256": "a4a7e0a28927697fa92175ad43d78a94c1bffdd967d447bc54606c172e493cc5",
+            "section": "2. v2 Exact 的完整普通 gated 矩阵合同"
+          },
+          {
+            "path": "archives/unrelated-machines/state/审查/归一化门控菜单福利源判别与比例纠错最终审查--审查.md",
+            "sha256": "c8cd2d4ba0018eb7b6336da9cb0d6834604f176e638f3d3e48b94f5bf3805456"
+          },
+          {
+            "path": "archives/unrelated-machines/state/审查/归一化门控福利证明与参数互补八源溯源--审查.md",
+            "sha256": "9e00d296c74e95a1e1bf35cc8e5a442333b1b212c53da563ffec5fabb3bda546",
+            "section": "1. 有限正支撑模型与福利舍入"
+          },
+          {
+            "path": "archives/unrelated-machines/state/审查/归一化门控福利证明与参数互补八源溯源--审查.md",
+            "sha256": "9e00d296c74e95a1e1bf35cc8e5a442333b1b212c53da563ffec5fabb3bda546",
+            "section": "2. 完整 `P_gate` 的精确值"
+          },
+          {
+            "path": "archives/unrelated-machines/state/审查/归一化门菜单福利与对数调色板padding有限审查--审查.md",
+            "sha256": "2cb3bd5dbcf56984be6875eddbe130c67d43524caaf92454fcf41c4e35566735",
+            "section": "2. `86f59227811df6eaaa43`：归一化 gated-menu 福利审计"
+          },
+          {
+            "path": "archives/unrelated-machines/state/审查/归一化门菜单福利与对数调色板padding有限审查--审查.md",
+            "sha256": "2cb3bd5dbcf56984be6875eddbe130c67d43524caaf92454fcf41c4e35566735",
+            "section": "3. `076d098cf0e1aba55e87`：独立重放的增量内容"
+          },
+          {
+            "path": "archives/unrelated-machines/state/计算/门控菜单福利双原程序的证书舍入与冻结输入重放--计算.md",
+            "sha256": "2c2eaf3c7686decf35cb73ed9a03f7f00d3f844f42d8df390be70879b1cf3d7e"
+          },
+          {
+            "path": "archives/unrelated-machines/state/审查/归一化菜单福利与配置证书双源审查--审查.md",
+            "sha256": "33bd31b883b26f49508808dd7175cd104f391b86642bff90ea2bce7f1142097b"
+          },
+          {
+            "path": "archives/unrelated-machines/state/审查/归一化门控福利证明与参数互补八源溯源--审查.md",
+            "sha256": "9e00d296c74e95a1e1bf35cc8e5a442333b1b212c53da563ffec5fabb3bda546"
+          },
+          {
+            "path": "archives/unrelated-machines/state/审查/归一化门菜单福利独立语义证书程序审查--审查.md",
+            "sha256": "a70502a9b5fa665b53dc5bc12f2c10809c9d0ca9946551b135c6c275cd3e1ffe"
+          }
+        ],
+        "sources": [
+          "archives/unrelated-machines/state/审查/门控归一化FSLP四源清洗--审查.md"
+        ]
+      }
+    }
+  ],
+  "effective_done_heads": [
+    {
+      "task_id": "boss6-mlp-g-scope-repair-b2229510e88b478a",
+      "state": "done",
+      "owner": "Boss6",
+      "task_ref": {
+        "path": "research/operations/map-v2/tasks/boss6-mlp-g-scope-repair-b2229510e88b478a.json",
+        "sha256": "0e531655189c65c72d49f6324fb33222bb97cdcbad4507e936521a4884b0d5d8",
+        "bytes": 34173
+      },
+      "receipt_ref": {
+        "path": "map/receipts/boss6-mlp-g-scope-repair-b2229510e88b478a.json",
+        "sha256": "531b80dee7af90c013238605f3dccaa625d26ea7ea0a6c6925beddf339c3b192",
+        "bytes": 22164
+      },
+      "affected_input_pins": {
+        "M-080d9b22ae87408f9a673a898c7a6dc3": "5041d21ea4cc71de0cf1e759aade84c0cc09a86d8539510dc3683242679ff85c"
+      },
+      "affected_edge_paths": [
+        "map/edges/boss6-inf-chain-gap-3a-76ebd0d679385a1a/finite-unit-path-to-all-positive-infinity-chain.json",
+        "map/edges/unrelated-machines-3a-3a-826effc7485414e4/unit-helper-path-to-fixed-threshold-degree-three.json"
+      ],
+      "direct_successors": [],
+      "formal_repair_complete": false
+    },
+    {
+      "task_id": "unrelated-machines-3a-3a-3f8b771c0276b1b2",
+      "state": "done",
+      "owner": "Boss5",
+      "task_ref": {
+        "path": "research/operations/map-v2/tasks/unrelated-machines-3a-3a-3f8b771c0276b1b2.json",
+        "sha256": "e16332e5ef2c47a5f78ecdd1524020599afad19e19d3a10ed75c98eb08928aca",
+        "bytes": 46558
+      },
+      "receipt_ref": {
+        "path": "map/receipts/unrelated-machines-3a-3a-3f8b771c0276b1b2.json",
+        "sha256": "c2962f0593d416e8c401843a3624b82041edc3ee9515321e5e2e6e17d083359f",
+        "bytes": 15320
+      },
+      "affected_input_pins": {
+        "UM-NORMALIZED-GATED-MENU-13-8-v2": "6d3f4a6a93839fad94221c9b552d5b42d25baa7d6931c1fb1b2381e90e781c52",
+        "UM-NORMALIZED-GATED-MENU-WELFARE-v1": "64a46a21e39c5f17e14f814770a1f5132239b7b77cac312321c1ed92a2a21f63",
+        "UM-NEAR-PERFECT-NORMALIZED-ROBUST-SOURCE-v1": "4dfe055bb9bcc7ce75cee4da19f61871b56a22c8b4f0f6e5df32c69d234fc642"
+      },
+      "affected_edge_paths": [
+        "map/edges/unrelated-machines-3a-3a-3f8b771c0276b1b2/gated-value-bridge-to-full-unknown-opt-ratio.json",
+        "map/edges/unrelated-machines-3a-3a-3f8b771c0276b1b2/gated-general-welfare-proves-robust-two-threshold-decider.json"
+      ],
+      "direct_successors": [],
+      "formal_repair_complete": false
+    },
+    {
+      "task_id": "boss6-inf-chain-transfer-3b-ea6be0c00b1186cf",
+      "state": "done",
+      "owner": "Boss6",
+      "task_ref": {
+        "path": "research/operations/map-v2/tasks/boss6-inf-chain-transfer-3b-ea6be0c00b1186cf.json",
+        "sha256": "f502220b1c2679c9c4f90795baf337aab19b0326098718b11a0febd108d2bb03",
+        "bytes": 19511
+      },
+      "receipt_ref": {
+        "path": "map/receipts/boss6-inf-chain-transfer-3b-ea6be0c00b1186cf.json",
+        "sha256": "9359190309ca10493ff61c4e8d4832c711435b09d9d88d4e94dddc17da5931c0",
+        "bytes": 9158
+      },
+      "affected_input_pins": {
+        "M-080d9b22ae87408f9a673a898c7a6dc3": "5041d21ea4cc71de0cf1e759aade84c0cc09a86d8539510dc3683242679ff85c"
+      },
+      "affected_edge_paths": [
+        "map/edges/boss6-inf-chain-gap-3a-76ebd0d679385a1a/finite-unit-path-to-all-positive-infinity-chain.json",
+        "map/edges/unrelated-machines-3a-3a-826effc7485414e4/unit-helper-path-to-fixed-threshold-degree-three.json"
+      ],
+      "direct_successors": [],
+      "formal_repair_complete": false
+    },
+    {
+      "task_id": "unrelated-machines-3a-3a-cf566ee9cd0d2cf8",
+      "state": "done",
+      "owner": "Boss2",
+      "task_ref": {
+        "path": "research/operations/map-v2/tasks/unrelated-machines-3a-3a-cf566ee9cd0d2cf8.json",
+        "sha256": "12e0886d990f6a89c3a8a3c392ef6560ca089158cc2dec7ab51b8462d0bc81d2",
+        "bytes": 16747
+      },
+      "receipt_ref": {
+        "path": "map/receipts/unrelated-machines-3a-3a-cf566ee9cd0d2cf8.json",
+        "sha256": "95f7accd1dd1544869b6d459d381725e2be0fa364c7ff6c6d852ba9440e39019",
+        "bytes": 11853
+      },
+      "affected_input_pins": {
+        "UM-NORMALIZED-GATED-MENU-13-8-v2": "6d3f4a6a93839fad94221c9b552d5b42d25baa7d6931c1fb1b2381e90e781c52"
+      },
+      "affected_edge_paths": [
+        "map/edges/unrelated-machines-3a-3a-cf566ee9cd0d2cf8/xos-rounding-to-gated-menu-welfare.json"
+      ],
+      "direct_successors": [],
+      "formal_repair_complete": false
+    },
+    {
+      "task_id": "round20-um-macro-source-repair-repair-7adac135318f96e8",
+      "state": "done",
+      "owner": "Boss1",
+      "task_ref": {
+        "path": "research/operations/map-v2/tasks/round20-um-macro-source-repair-repair-7adac135318f96e8.json",
+        "sha256": "1aed19e1777cb9c987ad44a46d22600fa645bffd13fcf646340256228b93aaa0",
+        "bytes": 63910
+      },
+      "receipt_ref": {
+        "path": "map/receipts/round20-um-macro-source-repair-repair-7adac135318f96e8.json",
+        "sha256": "cc115c079c0c48dce6b3d5caebee679bcdba3597f985bbb9e7ec4af471e5b48f",
+        "bytes": 36962
+      },
+      "affected_input_pins": {
+        "M-9452d445c1744d5eaac946ee974d2162": "4f17391d9a650c85fd816ba6878831d96f6b046bc69a1e8a5e5bcf77749ccd41",
+        "M-f0619ab2e98f41eb9fa9c02a48c19aaa": "e1bf6c8c2a6ca9fc79e32fe027b5a0acd5dd33a00fbb0eef55d40490ae5a42d0",
+        "M-080d9b22ae87408f9a673a898c7a6dc3": "6cd5f3d8efacfcd5bf14b184ae5f1a65b5dc3a44f804ecdad53a5c117ccb42e7"
+      },
+      "affected_edge_paths": [
+        "map/edges/unrelated-machines-3a-3a-17669e4ba1771673/normalized-config-bridges-qd-degree-three.json"
+      ],
+      "direct_successors": [
+        {
+          "task_id": "boss2-wave9-macro-repair-3da3e018da6128bc",
+          "state": "handoff",
+          "owner": null,
+          "ref": {
+            "path": "research/operations/map-v2/tasks/boss2-wave9-macro-repair-3da3e018da6128bc.json",
+            "sha256": "d6513fb65acdf0255cccf84bb6f6a57737fbd754ab8f019f33389905254d7490",
+            "bytes": 26391
+          },
+          "six_source_input_pins": {
+            "M-9452d445c1744d5eaac946ee974d2162": "4126eff22b627cb6b93e95ca4c20542452b045c2df488d91bdbb5f4fd99f4e32",
+            "M-f0619ab2e98f41eb9fa9c02a48c19aaa": "73cab4763a7fcab682efdc03aca50b35d091e600a350f1dab0e1840673aa184f",
+            "M-080d9b22ae87408f9a673a898c7a6dc3": "5041d21ea4cc71de0cf1e759aade84c0cc09a86d8539510dc3683242679ff85c"
+          }
+        }
+      ],
+      "formal_repair_complete": false
+    },
+    {
+      "task_id": "boss5-localfix-repair-25d12f7253028f37",
+      "state": "done",
+      "owner": "Boss5",
+      "task_ref": {
+        "path": "research/operations/map-v2/tasks/boss5-localfix-repair-25d12f7253028f37.json",
+        "sha256": "236b34914f9ee1908df10e2f1721411092eae422e4aaee8c78c0c760e152e635",
+        "bytes": 70276
+      },
+      "receipt_ref": {
+        "path": "map/receipts/boss5-localfix-repair-25d12f7253028f37.json",
+        "sha256": "9cdd132056778fe13a99bca8426639f39207ffd7a4f759ae9f707200d542a6b2",
+        "bytes": 27548
+      },
+      "affected_input_pins": {
+        "UM-NEAR-PERFECT-NORMALIZED-ROBUST-SOURCE-v1": "4dfe055bb9bcc7ce75cee4da19f61871b56a22c8b4f0f6e5df32c69d234fc642"
+      },
+      "affected_edge_paths": [
+        "map/edges/unrelated-machines-3a-3a-1961b46f6545c308/partial-support-versus-welfare-lp.json"
+      ],
+      "direct_successors": [],
+      "formal_repair_complete": false
+    },
+    {
+      "task_id": "boss2-6405-source-repair-b61b3ed236a4a90b",
+      "state": "done",
+      "owner": "Boss2",
+      "task_ref": {
+        "path": "research/operations/map-v2/tasks/boss2-6405-source-repair-b61b3ed236a4a90b.json",
+        "sha256": "514a7d0333f62cc20841fae85a8bc2e3ed9e68b026c641b1ea9a8adb0875f9a8",
+        "bytes": 67542
+      },
+      "receipt_ref": {
+        "path": "map/receipts/boss2-6405-source-repair-b61b3ed236a4a90b.json",
+        "sha256": "3261df70bf480fd7b744b033b2f10f3367857aa05ed9c64d088c5814cb17d211",
+        "bytes": 39123
+      },
+      "affected_input_pins": {
+        "UM-NORMALIZED-GATED-MENU-WELFARE-v1": "64a46a21e39c5f17e14f814770a1f5132239b7b77cac312321c1ed92a2a21f63",
+        "UM-NORMALIZED-GATED-MENU-13-8-v2": "6d3f4a6a93839fad94221c9b552d5b42d25baa7d6931c1fb1b2381e90e781c52"
+      },
+      "affected_edge_paths": [
+        "map/edges/boss2-6405-source-repair-b61b3ed236a4a90b/welfare-to-general-ratio-value-bridge.json"
+      ],
+      "direct_successors": [],
+      "formal_repair_complete": false
+    },
+    {
+      "task_id": "boss5-474257b8-qd-decoder-3a-69d5a688c474b34c",
+      "state": "done",
+      "owner": "Boss5",
+      "task_ref": {
+        "path": "research/operations/map-v2/tasks/boss5-474257b8-qd-decoder-3a-69d5a688c474b34c.json",
+        "sha256": "5f8a8856a2f5fa5454d4bb12603fdb775f5450bf709445a2f97229fd6ab4e2ed",
+        "bytes": 7673
+      },
+      "receipt_ref": {
+        "path": "map/receipts/boss5-474257b8-qd-decoder-3a-69d5a688c474b34c.json",
+        "sha256": "80fe96ba3dc625ac9557c975885701db834743bd7071dd79509d259f102f84f2",
+        "bytes": 2319
+      },
+      "affected_input_pins": {
+        "M-9452d445c1744d5eaac946ee974d2162": "4f17391d9a650c85fd816ba6878831d96f6b046bc69a1e8a5e5bcf77749ccd41"
+      },
+      "affected_edge_paths": [
+        "map/edges/boss5-474257b8-qd-decoder-3a-69d5a688c474b34c/support.json"
+      ],
+      "direct_successors": [],
+      "formal_repair_complete": false
+    }
+  ],
+  "unique_affected_edges": [
+    {
+      "ref": {
+        "path": "map/edges/boss6-inf-chain-gap-3a-76ebd0d679385a1a/finite-unit-path-to-all-positive-infinity-chain.json",
+        "sha256": "5b8aa6f8347239ae09a0248efeac8cd406991dd7c13ff76b51ded4adb33bb6d3",
+        "bytes": 6830
+      },
+      "edge_id": "boss6-finite-unit-path-to-all-positive-infinity-chain",
+      "native_rr_pin": "ef61e584ead463551f7d1d22ea8e611833877d277acb55e76abf043bb1a7a842",
+      "endpoint_pins": {
+        "M-080d9b22ae87408f9a673a898c7a6dc3": "5041d21ea4cc71de0cf1e759aade84c0cc09a86d8539510dc3683242679ff85c",
+        "M-16209762a32e42e48ec20b76381b5e9d": "7eccabec57217ad462462ba0ca4da21e7e3928e2cf3d1859fedf609e00dc907e"
+      },
+      "changed_source_endpoint_ids": [
+        "M-080d9b22ae87408f9a673a898c7a6dc3"
+      ],
+      "shared_source_refs": [],
+      "fresh_read_scope": "Complete current edge JSON; only zero-incidence/source-contract delta adjudicated, unchanged historic external evidence inherited.",
+      "new_derivation_required_due_to_zero_delta": false,
+      "native_repair_done_by_this_review": false
+    },
+    {
+      "ref": {
+        "path": "map/edges/unrelated-machines-3a-3a-826effc7485414e4/unit-helper-path-to-fixed-threshold-degree-three.json",
+        "sha256": "a0a5434fbccfb8a92d89a62b8b60449e45dff5f6e50eb3c9b02b67a55ca343ef",
+        "bytes": 6325
+      },
+      "edge_id": "um-826e-unit-helper-path-to-fixed-threshold-degree-three",
+      "native_rr_pin": "d040f83c1eebf53a402f9660c65b6b3a1aaeb29cc4943bdb35054b82b71b16cf",
+      "endpoint_pins": {
+        "M-080d9b22ae87408f9a673a898c7a6dc3": "5041d21ea4cc71de0cf1e759aade84c0cc09a86d8539510dc3683242679ff85c",
+        "M-a9534c70ffa74fca9a91cd270468de3f": "608415f3a648158ae4b612cc7a9f2e21699ee3b73ef786908e0f40654b33fb44"
+      },
+      "changed_source_endpoint_ids": [
+        "M-080d9b22ae87408f9a673a898c7a6dc3"
+      ],
+      "shared_source_refs": [],
+      "fresh_read_scope": "Complete current edge JSON; only zero-incidence/source-contract delta adjudicated, unchanged historic external evidence inherited.",
+      "new_derivation_required_due_to_zero_delta": false,
+      "native_repair_done_by_this_review": false
+    },
+    {
+      "ref": {
+        "path": "map/edges/unrelated-machines-3a-3a-3f8b771c0276b1b2/gated-value-bridge-to-full-unknown-opt-ratio.json",
+        "sha256": "0aca202486ec97e11fd6cfbfbab62cb2e3fa7c8f24c095243158b5cf57cf980d",
+        "bytes": 4751
+      },
+      "edge_id": "um-3f8b771c-gated-value-bridge-to-full-unknown-opt-ratio",
+      "native_rr_pin": "cd0d9f9090462c5f527ca5c6c0d3a6825411e0f6c548a979d85736cf0d9d3585",
+      "endpoint_pins": {
+        "UM-NORMALIZED-GATED-MENU-13-8-v2": "6d3f4a6a93839fad94221c9b552d5b42d25baa7d6931c1fb1b2381e90e781c52",
+        "UM-NORMALIZED-GATED-MENU-WELFARE-v1": "64a46a21e39c5f17e14f814770a1f5132239b7b77cac312321c1ed92a2a21f63"
+      },
+      "changed_source_endpoint_ids": [
+        "UM-NORMALIZED-GATED-MENU-13-8-v2",
+        "UM-NORMALIZED-GATED-MENU-WELFARE-v1"
+      ],
+      "shared_source_refs": [
+        {
+          "path": "archives/unrelated-machines/state/审查/归一化菜单福利与配置证书双源审查--审查.md",
+          "sha256": "63629abaa5cd2bcc0e42ff051936b91882ea63c711dfdac231f238763b682255"
+        }
+      ],
+      "fresh_read_scope": "Complete current edge JSON; only zero-incidence/source-contract delta adjudicated, unchanged historic external evidence inherited.",
+      "new_derivation_required_due_to_zero_delta": false,
+      "native_repair_done_by_this_review": false
+    },
+    {
+      "ref": {
+        "path": "map/edges/unrelated-machines-3a-3a-3f8b771c0276b1b2/gated-general-welfare-proves-robust-two-threshold-decider.json",
+        "sha256": "84258aae16fe702448a76c055e649560b4065f1434cc8c0fc2aac831517297ed",
+        "bytes": 3924
+      },
+      "edge_id": "um-3f8b771c-gated-general-welfare-proves-robust-two-threshold-decider",
+      "native_rr_pin": "2234568138a846a637e9be62dbdaa4b77b4e2cf621ec3c862a9e003b3398b89f",
+      "endpoint_pins": {
+        "UM-NEAR-PERFECT-NORMALIZED-ROBUST-SOURCE-v1": "4dfe055bb9bcc7ce75cee4da19f61871b56a22c8b4f0f6e5df32c69d234fc642",
+        "UM-NORMALIZED-GATED-MENU-13-8-v2": "6d3f4a6a93839fad94221c9b552d5b42d25baa7d6931c1fb1b2381e90e781c52"
+      },
+      "changed_source_endpoint_ids": [
+        "UM-NEAR-PERFECT-NORMALIZED-ROBUST-SOURCE-v1",
+        "UM-NORMALIZED-GATED-MENU-13-8-v2"
+      ],
+      "shared_source_refs": [],
+      "fresh_read_scope": "Complete current edge JSON; only zero-incidence/source-contract delta adjudicated, unchanged historic external evidence inherited.",
+      "new_derivation_required_due_to_zero_delta": false,
+      "native_repair_done_by_this_review": false
+    },
+    {
+      "ref": {
+        "path": "map/edges/unrelated-machines-3a-3a-cf566ee9cd0d2cf8/xos-rounding-to-gated-menu-welfare.json",
+        "sha256": "6dfa0371128d78d140f68965c7c76095a6f8a90e3defc29cb40a590cafd3d861",
+        "bytes": 8464
+      },
+      "edge_id": "xos-independent-coefficient-rounding-to-gated-menu-welfare",
+      "native_rr_pin": "bc9ea6a215b6ba735ed413654b04d35e135e90eedb1cc4f31f808731088e29c8",
+      "endpoint_pins": {
+        "M-8fdee11afd164305a429734ee5ae705a": "5a4576c51598ca30c504ceff1d46a7f61cbf24c25cb4816468ee635b78297a7f",
+        "UM-NORMALIZED-GATED-MENU-13-8-v2": "6d3f4a6a93839fad94221c9b552d5b42d25baa7d6931c1fb1b2381e90e781c52"
+      },
+      "changed_source_endpoint_ids": [
+        "UM-NORMALIZED-GATED-MENU-13-8-v2"
+      ],
+      "shared_source_refs": [
+        {
+          "path": "archives/unrelated-machines/state/审查/归一化菜单福利与配置证书双源审查--审查.md",
+          "sha256": "63629abaa5cd2bcc0e42ff051936b91882ea63c711dfdac231f238763b682255",
+          "section": "一、归一化门控菜单的精确实际值"
+        }
+      ],
+      "fresh_read_scope": "Complete current edge JSON; only zero-incidence/source-contract delta adjudicated, unchanged historic external evidence inherited.",
+      "new_derivation_required_due_to_zero_delta": false,
+      "native_repair_done_by_this_review": false
+    },
+    {
+      "ref": {
+        "path": "map/edges/unrelated-machines-3a-3a-17669e4ba1771673/normalized-config-bridges-qd-degree-three.json",
+        "sha256": "4dca9371ef33db56efd5e792cae6f97e165e9dc892b52bbf9405c53a11e04418",
+        "bytes": 6511
+      },
+      "edge_id": "um-1766-normalized-config-bridges-give-qd-degree-three-certificate",
+      "native_rr_pin": "e75f3e43c604b0a02bbbd576357f6226baf993e760e6ef3b3aa9f3e7aebad8cd",
+      "endpoint_pins": {
+        "M-080d9b22ae87408f9a673a898c7a6dc3": "6cd5f3d8efacfcd5bf14b184ae5f1a65b5dc3a44f804ecdad53a5c117ccb42e7",
+        "M-9452d445c1744d5eaac946ee974d2162": "4f17391d9a650c85fd816ba6878831d96f6b046bc69a1e8a5e5bcf77749ccd41",
+        "M-f0619ab2e98f41eb9fa9c02a48c19aaa": "e1bf6c8c2a6ca9fc79e32fe027b5a0acd5dd33a00fbb0eef55d40490ae5a42d0"
+      },
+      "changed_source_endpoint_ids": [
+        "M-080d9b22ae87408f9a673a898c7a6dc3",
+        "M-9452d445c1744d5eaac946ee974d2162",
+        "M-f0619ab2e98f41eb9fa9c02a48c19aaa"
+      ],
+      "shared_source_refs": [
+        {
+          "path": "archives/unrelated-machines/state/审查/归一化菜单福利与配置证书双源审查--审查.md",
+          "sha256": "a5d9a684e8d8413457f5cf999e28b8a6aa93b140256be3031d6f3e2e02742195"
+        }
+      ],
+      "fresh_read_scope": "Complete current edge JSON; only zero-incidence/source-contract delta adjudicated, unchanged historic external evidence inherited.",
+      "new_derivation_required_due_to_zero_delta": false,
+      "native_repair_done_by_this_review": false
+    },
+    {
+      "ref": {
+        "path": "map/edges/unrelated-machines-3a-3a-1961b46f6545c308/partial-support-versus-welfare-lp.json",
+        "sha256": "17eaaa6ec2f4e077c9dc1aba615485af2df33baa86c9ad4a81aadf1c1211a00d",
+        "bytes": 4737
+      },
+      "edge_id": "um-1961b46f-partial-support-versus-welfare-lp",
+      "native_rr_pin": "1bc0020761dd951a68543f12035816a462d06bf3478fcfe453dfce0b275c1616",
+      "endpoint_pins": {
+        "UM-NEAR-PERFECT-NORMALIZED-ROBUST-SOURCE-v1": "4dfe055bb9bcc7ce75cee4da19f61871b56a22c8b4f0f6e5df32c69d234fc642",
+        "UM-NORMALIZED-MENU-PARTIAL-QUOTA-WELFARE-FLOOR-v1": "e14bd5eaa43b00f48389d3554f7cc8870d9364df0b8ee88481890108ff6dbeb5"
+      },
+      "changed_source_endpoint_ids": [
+        "UM-NEAR-PERFECT-NORMALIZED-ROBUST-SOURCE-v1"
+      ],
+      "shared_source_refs": [],
+      "fresh_read_scope": "Complete current edge JSON; only zero-incidence/source-contract delta adjudicated, unchanged historic external evidence inherited.",
+      "new_derivation_required_due_to_zero_delta": false,
+      "native_repair_done_by_this_review": false
+    },
+    {
+      "ref": {
+        "path": "map/edges/boss2-6405-source-repair-b61b3ed236a4a90b/welfare-to-general-ratio-value-bridge.json",
+        "sha256": "449fa4c45532c3868799b1ec8286b1584ba3eba61a6cba3cd28d8049d2dab283",
+        "bytes": 5646
+      },
+      "edge_id": "um-normalized-welfare-to-general-ratio-value-bridge",
+      "native_rr_pin": "95a53845e3625590be187d18b1a232a668c7dd31d8b900c1d18d6c7c6a756cfd",
+      "endpoint_pins": {
+        "UM-NORMALIZED-GATED-MENU-13-8-v2": "6d3f4a6a93839fad94221c9b552d5b42d25baa7d6931c1fb1b2381e90e781c52",
+        "UM-NORMALIZED-GATED-MENU-WELFARE-v1": "64a46a21e39c5f17e14f814770a1f5132239b7b77cac312321c1ed92a2a21f63"
+      },
+      "changed_source_endpoint_ids": [
+        "UM-NORMALIZED-GATED-MENU-13-8-v2",
+        "UM-NORMALIZED-GATED-MENU-WELFARE-v1"
+      ],
+      "shared_source_refs": [
+        {
+          "path": "archives/unrelated-machines/state/审查/归一化菜单福利与配置证书双源审查--审查.md",
+          "sha256": "63629abaa5cd2bcc0e42ff051936b91882ea63c711dfdac231f238763b682255",
+          "section": "一、归一化门控菜单的精确实际值"
+        }
+      ],
+      "fresh_read_scope": "Complete current edge JSON; only zero-incidence/source-contract delta adjudicated, unchanged historic external evidence inherited.",
+      "new_derivation_required_due_to_zero_delta": false,
+      "native_repair_done_by_this_review": false
+    },
+    {
+      "ref": {
+        "path": "map/edges/boss5-474257b8-qd-decoder-3a-69d5a688c474b34c/support.json",
+        "sha256": "92611abbd9eaf8072df600f345908257e578c54a06d7d1817d7ed6c6864e27a2",
+        "bytes": 9575
+      },
+      "edge_id": "b5-qd-and-private-tree-config-force-decoder-parameter-growth",
+      "native_rr_pin": "9e28d0999ef0b40e865234adf9a37aeff7ef5024358020abfe0fd39bd1ee22f3",
+      "endpoint_pins": {
+        "M-4bfb99ccca4f4f77a6aaee6882ef1170": "ffff30e05741e26c01e4451d09bdfb6d40401902d39594f7db2d775ddb904781",
+        "M-9452d445c1744d5eaac946ee974d2162": "4f17391d9a650c85fd816ba6878831d96f6b046bc69a1e8a5e5bcf77749ccd41",
+        "UM-Q-PRIVATE-TREE-BOUNDED-MULTIPLICITY-CONFIGURATION-FLOOR-v3": "ac628d8a3fbf87017b10a2aa913e6d6485c9f01ae2a3175f276c5017bb28a5a1"
+      },
+      "changed_source_endpoint_ids": [
+        "M-9452d445c1744d5eaac946ee974d2162"
+      ],
+      "shared_source_refs": [],
+      "fresh_read_scope": "Complete current edge JSON; only zero-incidence/source-contract delta adjudicated, unchanged historic external evidence inherited.",
+      "new_derivation_required_due_to_zero_delta": false,
+      "native_repair_done_by_this_review": false
+    }
+  ],
+  "active_or_handoff_tasks": [
+    {
+      "task_id": "boss2-wave9-macro-repair-3da3e018da6128bc",
+      "state": "handoff",
+      "owner": null,
+      "ref": {
+        "path": "research/operations/map-v2/tasks/boss2-wave9-macro-repair-3da3e018da6128bc.json",
+        "sha256": "d6513fb65acdf0255cccf84bb6f6a57737fbd754ab8f019f33389905254d7490",
+        "bytes": 26391
+      },
+      "supersedes": [
+        "round20-um-macro-source-repair-repair-7adac135318f96e8"
+      ],
+      "affected_input_pins": {
+        "M-9452d445c1744d5eaac946ee974d2162": "4126eff22b627cb6b93e95ca4c20542452b045c2df488d91bdbb5f4fd99f4e32",
+        "M-f0619ab2e98f41eb9fa9c02a48c19aaa": "73cab4763a7fcab682efdc03aca50b35d091e600a350f1dab0e1840673aa184f",
+        "M-080d9b22ae87408f9a673a898c7a6dc3": "5041d21ea4cc71de0cf1e759aade84c0cc09a86d8539510dc3683242679ff85c"
+      }
+    },
+    {
+      "task_id": "unrelated-machines-3a-3a-a56e5e8b03d8a1fd",
+      "state": "claimed",
+      "owner": "Boss3",
+      "ref": {
+        "path": "research/operations/map-v2/tasks/unrelated-machines-3a-3a-a56e5e8b03d8a1fd.json",
+        "sha256": "21efb5e57b3153a04f79adb5215897bbcdfc8303454c4a66843789c302f6ae68",
+        "bytes": 70155
+      },
+      "supersedes": [],
+      "affected_input_pins": {
+        "M-f0619ab2e98f41eb9fa9c02a48c19aaa": "73cab4763a7fcab682efdc03aca50b35d091e600a350f1dab0e1840673aa184f",
+        "M-080d9b22ae87408f9a673a898c7a6dc3": "5041d21ea4cc71de0cf1e759aade84c0cc09a86d8539510dc3683242679ff85c",
+        "M-9452d445c1744d5eaac946ee974d2162": "4126eff22b627cb6b93e95ca4c20542452b045c2df488d91bdbb5f4fd99f4e32"
+      }
+    }
+  ],
+  "superseded_history_no_separate_repair": [
+    "boss2-dgr-ratio-refresh-repair-5454691cffc3842f",
+    "boss3-sourcefix-repair-d1188acb9358b2e6",
+    "boss6-inf-chain-gap-3a-76ebd0d679385a1a",
+    "unrelated-machines-3a-3a-17669e4ba1771673",
+    "unrelated-machines-3a-3a-1961b46f6545c308",
+    "unrelated-machines-3a-3a-826effc7485414e4",
+    "unrelated-machines-3a-3a-e5b7b2ae27def807"
+  ],
+  "mathematical_result": "Minimal source correction accepted: zero private-time jobs require membership in both complementary private configurations for exact coverage; support, CONFIG thresholds, welfare LP and actual gated scheduling remain distinct and unchanged. No new mathematical open obligation from this delta.",
+  "formal_result": "Eight effective old done heads still need formal refresh/supersession. Only macro has existing handoff successor; it still binds old pins. No native queue or graph change made.",
+  "scientific_program_runs": 0,
+  "repository_mutations": false,
+  "source_review_ref": {
+    "path": "/workspace/scratch/1a53a6eb65ea/zero-incidence-source-3d/source-review.md",
+    "sha256": "76fb2b6a628160403c9eafb068e5c9502f9f41e5e688a54a55b413ac23ae2ace",
+    "bytes": 10304
+  }
+}
