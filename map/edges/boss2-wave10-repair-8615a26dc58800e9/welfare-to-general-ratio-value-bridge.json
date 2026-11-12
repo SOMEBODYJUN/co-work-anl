@@ -1,0 +1,63 @@
+{
+  "edge_id": "um-normalized-welfare-to-general-ratio-value-bridge",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "UM-NORMALIZED-GATED-MENU-WELFARE-v1"
+  ],
+  "target_ids": [
+    "UM-NORMALIZED-GATED-MENU-13-8-v2"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "相同有限显式norm1菜单与完整P_gate：root pin、各connector/selector及全部listed incidence均保留，四类机器互异；零incidence和未选state jobs仍执行。这里只复用不要求FSLP的值桥。",
+  "roles": {
+    "UM-NORMALIZED-GATED-MENU-WELFARE-v1": "提供OPT(P_gate)=2−β*的两向证明及给定H/bundles的全原任务调度回填。",
+    "UM-NORMALIZED-GATED-MENU-13-8-v2": "一般z/x福利LP及两阶段舍入利用该值桥，将排序得到的βhat转成实际峰并以β*表示真实OPT。"
+  },
+  "contribution": {
+    "result": "对目标的全部输入，不要求unit-FSLP，精确有OPT(P_gate)=2−β*∈[1,2]；任意显式不交bundle/选组H的平衡见证b可确定性回填为覆盖全部原jobs的Cmax≤2−b调度。因而目标排序提取的βhat确给Cmax≤2−βhat，比较分母为2−β*。",
+    "remaining": "目标全类13/8比率还需一般z/x福利LP、state/coin两阶段精确有理条件期望、W≥(1−1/e)L，以及W/n≤2βhat−βhat²、W*≥n(β*)²和13/8二次不等式。源的unit-FSLP绝对13/8部分不代替这些步骤。"
+  },
+  "explanation": "源的值恒等本来就无FSLP前提。给b>0见证，root pin留root；H中connector送gate、selector送达到bundle价值的private；H外connector留root、selector去gate。只将选中state在其bundle上的正incidence导出资源机；其余全部incidence（包括未选states与零incidence）留各自private。root峰2−|H|/n，选中private峰2−value，每个gate恰一个unit，其他private和资源机≤1；b=0用pin和全部connector留root、selector去gate、incidence全留private的完整峰二基线。反向任意C<2完整调度，connector在gate的组H满足|H|/n≥2−C；其selector被迫进private，至少2−C质量的positive incidence外送，resource unit在C<2时不能双占，得到全局不交bundles和β*≥2−C。root pin给OPT≥1。源与目标P_gate逐任务相同，故该两向桥可复用；新一般LP排序提取的前k组及其attaining states正是前向见证。这里不使用unit-FSLP存在、未知OPT输入或免费整数oracle，也不把其余jobs错送private。",
+  "scope": "一般显式归一化gated类的精确值和实际回填步骤；不是flat菜单保值变换，也不把FSLP存在提升为整数perfect completeness。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/审查/门控归一化FSLP四源清洗--审查.md",
+      "sha256": "2df6beb69a4f267953dd2298a41b153fd5110467acadde09df6b0601dca07b64"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/归一化门控菜单v2三源精读与13-8算法版本审查--审查.md",
+      "sha256": "a4a7e0a28927697fa92175ad43d78a94c1bffdd967d447bc54606c172e493cc5"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/归一化菜单福利与配置证书双源审查--审查.md",
+      "sha256": "33bd31b883b26f49508808dd7175cd104f391b86642bff90ea2bce7f1142097b",
+      "section": "一、归一化门控菜单的精确实际值"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/归一化门控福利证明与参数互补八源溯源--审查.md",
+      "sha256": "9e00d296c74e95a1e1bf35cc8e5a442333b1b212c53da563ffec5fabb3bda546",
+      "section": "2. 完整 `P_gate` 的精确值"
+    },
+    {
+      "path": "map/edges/boss2-6405-source-repair-b61b3ed236a4a90b/repair_mathematics.md",
+      "sha256": "7c502544752ae76be1dbf8b2fd2f3347c130181136892d6c8129705227b429d6",
+      "section": "完整门控值桥与两种福利保证"
+    }
+  ],
+  "reviewed_by": "Boss2",
+  "review_note": "本次为零incidence源摘要勘误的source-only定向接续。fresh实读当前两端点完整record、FSLP四源/福利配置双源/gated-v2/八源及比例纠错最终审查全文、主CONFIG定理对象与双向证书章节，逐类重核完整P_gate值恒等和回填；双源II.1互补private配置现含全部incidence含零jobs，使零job覆盖λ+(1−λ)=1，主证明原已正确。唯一改句不在本边引用的section一，但全文SHA须刷新；两个端点pins一并刷新。目标福利W≥5L/8须经排序得到平衡v=βhat后才由本边回填C≤2−v。继承前任成熟十一核心比较及历史有限矩阵/Fraction审计，不把其旧运行或全部52文件记成本次新读/新跑。最终数学status为accepted、unconditional、ALL；只交无FSLP值分母与完整回填的STEP，保contribution.result/remaining，不提升目标whole。旧repair_mathematics及audit的当前/本轮语言属前任历史时点。原生bind/check及最终review_digest由Boss统一执行。 Boss2主审另核旧四边数学与全部十一核心coverage，全文读取本轮数学note及新receipt；独立核全任务值桥、总福利与排序平衡质量、二次比较及保留step的范围。",
+  "endpoint_pins": {
+    "UM-NORMALIZED-GATED-MENU-13-8-v2": "94dffb9efd7fe5c0c5f91d33d7c8da06be50b259084298ec14fedcf1bf765be2",
+    "UM-NORMALIZED-GATED-MENU-WELFARE-v1": "db1912d2262298cc45f879dfb52c315f6d5e10c3da4571a4756f4577f6dc0876"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/审查/门控归一化FSLP四源清洗--审查.md": "2df6beb69a4f267953dd2298a41b153fd5110467acadde09df6b0601dca07b64",
+    "archives/unrelated-machines/state/审查/归一化门控菜单v2三源精读与13-8算法版本审查--审查.md": "a4a7e0a28927697fa92175ad43d78a94c1bffdd967d447bc54606c172e493cc5",
+    "archives/unrelated-machines/state/审查/归一化菜单福利与配置证书双源审查--审查.md": "33bd31b883b26f49508808dd7175cd104f391b86642bff90ea2bce7f1142097b",
+    "archives/unrelated-machines/state/审查/归一化门控福利证明与参数互补八源溯源--审查.md": "9e00d296c74e95a1e1bf35cc8e5a442333b1b212c53da563ffec5fabb3bda546",
+    "map/edges/boss2-6405-source-repair-b61b3ed236a4a90b/repair_mathematics.md": "7c502544752ae76be1dbf8b2fd2f3347c130181136892d6c8129705227b429d6"
+  },
+  "review_digest": "8379d9b03b0d1985228f9e66e783d91668f3ebce6a3cde0e9c7f1255b7166ea6"
+}

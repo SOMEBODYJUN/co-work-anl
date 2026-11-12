@@ -1,0 +1,60 @@
+{
+  "edge_id": "um-826e-unit-helper-path-to-fixed-threshold-degree-three",
+  "kind": "transfers",
+  "status": "accepted",
+  "source_ids": [
+    "M-080d9b22ae87408f9a673a898c7a6dc3"
+  ],
+  "target_ids": [
+    "M-a9534c70ffa74fca9a91cd270468de3f"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "数学阈值合同：任意有限实t>0、非空有限玩家和有限物品、非负加性估值及不可分单归属；helper直接值t，copy保原值。多项式编码合同：显式二进制有理原估值和有理t，复杂度计入全部编码长度；若采用文献符号∞原端，固定阈值处先封顶t使用有限源再恢复原copy值。只对正owner度d>3物品局部使用路径，所有新增helper计入玩家。",
+  "roles": {
+    "M-080d9b22ae87408f9a673a898c7a6dc3": "已登记的有限unit-helper路径及逐物品hole构造提供整数实际分配的正反向变换；forward所保目标≤1，不要求每原估值≤1，reverse只需helper正值。",
+    "M-a9534c70ffa74fca9a91cd270468de3f": "固定t缩放及仅高次物品局部应用后，得到DegreeThree的整数t可行性和原玩家见证双向保持、O(mn)组合规模与位多项式构造。"
+  },
+  "explanation": "数学上固定任意有限实t>0，直接在各helper端赋值t并复制原估值；源给出的逐物品左右matching公式只用正性、单归属与原值对应，逐项核验即对这样的实t成立，不借任意实数的有限编码。算法位复杂度另在二进制有理估值及有理t上计费：有限原估值先除以t，在目标1应用source body§4的逐物品构造，再乘回t；helper值变为t、旧玩家copy值恢复原值。source literal statement虽另有oldOPT≤1时精确值结论，本边不使用该结论：对任一旧达目标1的分配，即使旧OPT>1，每个旧owner仍拿自己的copy，全部旧效用保持，而每个新helper拿unit copy，所以新分配达到1。若原值含∞，先取vhat=min(v,t)；任一bundle原总值≥t当且仅当封顶后≥t，因为若有一端≥t则单件封顶t已足，否则全部不变。用有限vhat/t完成构造后把旧玩家copy恢复v；这正向准确恢复原效用，反向新t见证封顶仍达t，再按copy归原物品保持t，且原copy到旧值一一对应。局部性直接来自source证明：每个物品的copy和helper只在自己的链；因此仅对d>3物品建d copies和d−1 helpers，低度原物品及owner保持，绝不静默删已有helper。若旧物品给第r位owner，保c_r、给k<r的helper c_k、给k≥r的helper c_{k+1}，未用物品任留一hole。反向每位helper达到正t必至少占一份，d−1位helper占互异copy，至多一份正值服务旧玩家；逐物品合并不冲突且原玩家值保持。内部copy至多1旧端+2helper端，degree≤3。S=Σ_{d>3}(d−1)时n′=n+S,m′=m+S,E′=E+2S；通常n,m≥1时O(mn)，空物品正阈值直接NO。复制、精确有理缩放及t封顶按总编码多项式，不按t数值枚举。原文∞helper在这个固定t处可取t；不据此宣称任意OPT全值相等。",
+  "scope": "完整支持目标core v3的固定正阈值整数合同及见证/规模，不迁移到DegreeTwo或一般UM makespan；不把source的CONFIG加分性质代替核心整数结论，不声称任意OPT保持、玩家总正度3、新近似算法或hardness。",
+  "whole_result": "对每个非负加性MaxMin输入及任意给定有限实t>0，按高次物品逐一构造d份copy和d−1位相邻helper（helper值t），得到DegreeThree实例；n,m≥1时规模O(mn)，空物品的正阈值输入单列NO。整数t可行性与原玩家分配见证双向保持，高次旧物品至多一份copy正值服务原玩家。在显式二进制有理输入和有理t的编码合同内，构造为总位多项式；不宣称有限字符串可编码任意实数。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/定理/规范化平菜单的CONFIG与正支撑LP双向保持--定理.md",
+      "sha256": "8bfbaa80b98546b6d1320e9760bb9491165e26a6cef1b6cd35eb86116c822f66",
+      "section": "4. SC unit-helper 路径"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/retired-literature-pcsp-20261031/maxmin.pdf",
+      "sha256": "7f7b21ff08b37e8489e9f60527e9aa9458dc5cf4cd6cc6804869665c24d51f7f"
+    },
+    {
+      "path": "map/edges/unrelated-machines-3a-3a-826effc7485414e4/review.md",
+      "sha256": "f7533028541c7cae734ff24824ef68be565f24342466feb7a8ca3b1eba235f4a",
+      "section": "5. 既有 SC 单位路径到核心的完整缩放关系"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/归一化菜单福利与配置证书双源审查--审查.md",
+      "sha256": "33bd31b883b26f49508808dd7175cd104f391b86642bff90ea2bce7f1142097b",
+      "section": "1. FSLP 与完整 flat machine CONFIG(1)"
+    },
+    {
+      "path": "map/edges/boss2-wave10-repair-46ecca640d16d383/source-delta-review.md",
+      "sha256": "7bf1d58d73169199cf2bf12914f515598bf4f5e902179088f8e961a9c0369c02"
+    }
+  ],
+  "reviewed_by": "Boss2",
+  "review_note": "本次是对Boss6前任及祖先成熟whole数学/PDF指定页审读的明确继承；旧边与历史review原字节保留，不冒称旧PDF或全部算法证据为本次fresh阅读。新实读当前七完整合同、前任receipt、全部九prior assets、F未改完整主正文、A/B当前完整正文、当前审查II.1零job补句与两条受影响关系的完整matching/CONFIG/量词证明；按新source-delta-review逐项核实。零job在两份private配置均出现，覆盖lambda+(1-lambda)=1，主正文原已正确；该flat补句不进入unit-helper推导。原edge_id、ALL、unconditional及whole_result和全部数学字段均保持。F当前v5 pin为d0b2a08064ea4ddb1eb3d096b576113c85d2effdc50f43593b10cf756e4c217a；七input pins和旧资产/证据SHA已独立核。旧native binding字段已去除，最终native edge-bind/check及发布由Boss执行，本worker未执行。 Boss2主审另核当前端点合同、前任全覆盖与本轮定向说明、受影响推导及新旧数学字段差分；确认推导方向、whole或context范围和全部保留限制。",
+  "endpoint_pins": {
+    "M-080d9b22ae87408f9a673a898c7a6dc3": "d0b2a08064ea4ddb1eb3d096b576113c85d2effdc50f43593b10cf756e4c217a",
+    "M-a9534c70ffa74fca9a91cd270468de3f": "608415f3a648158ae4b612cc7a9f2e21699ee3b73ef786908e0f40654b33fb44"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/定理/规范化平菜单的CONFIG与正支撑LP双向保持--定理.md": "8bfbaa80b98546b6d1320e9760bb9491165e26a6cef1b6cd35eb86116c822f66",
+    "archives/unrelated-machines/tools/evidence/retired-literature-pcsp-20261031/maxmin.pdf": "7f7b21ff08b37e8489e9f60527e9aa9458dc5cf4cd6cc6804869665c24d51f7f",
+    "map/edges/unrelated-machines-3a-3a-826effc7485414e4/review.md": "f7533028541c7cae734ff24824ef68be565f24342466feb7a8ca3b1eba235f4a",
+    "archives/unrelated-machines/state/审查/归一化菜单福利与配置证书双源审查--审查.md": "33bd31b883b26f49508808dd7175cd104f391b86642bff90ea2bce7f1142097b",
+    "map/edges/boss2-wave10-repair-46ecca640d16d383/source-delta-review.md": "7bf1d58d73169199cf2bf12914f515598bf4f5e902179088f8e961a9c0369c02"
+  },
+  "review_digest": "285bff2da50443b41d92d3597b82b5215583d3ebd54e52e1e3367b0210ed1222"
+}
