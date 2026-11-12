@@ -1,0 +1,48 @@
+{
+  "status": "accepted",
+  "premises_mode": "all",
+  "reviewed_by": "Boss2 W5 CA-LOTTERY",
+  "review_note": "已实读本任务全部承重定义、正文、量词及证据；本边按comparison-proof的逐式推导与目标全陈述核对。无原数学程序重跑；程序结构校验另记，不代替证明。",
+  "edge_id": "ca-w5-lottery-fixed-marginals-to-covariance",
+  "kind": "implies",
+  "source_ids": [
+    "customer-attraction/auxiliary-winner-whole-row-envelope-and-unexposed-lotteries"
+  ],
+  "target_ids": [
+    "M-285ec530c81e42058a2e9e3866c5d04e"
+  ],
+  "relation_mode": "unconditional",
+  "conditions": "固定同一完整策略actual z和真实query y_(i,A)；按COV目标假设每客户独立抽均匀角色排列、同一客户所有叶共用排列；λ为有限非负随机系数且只依实际遗漏集合R的彩票。",
+  "roles": {
+    "customer-attraction/auxiliary-winner-whole-row-envelope-and-unexposed-lotteries": "给每个客户在各固定叶的1/c赢家边际及E G=Γ。",
+    "M-285ec530c81e42058a2e9e3866c5d04e": "独立客户与R信息条件消去非R协方差，得到完整COV-R恒等式，不删剩余债。"
+  },
+  "whole_result": "E[λG_(i,A)]=(Eλ)Γ_(i,A)−Σ_(x∈A∩R)Cov(λ,1{i在真实query y_(i,A)赢得x})；不属于A的指示补零后即目标Σ_(x∈R)写法。没有总协方差符号或付款结论。",
+  "explanation": "按客户独立复制源的赢家构造。写actual/query赢家指示X_x、Y_x，展开EλΣ(X−Y)=(Eλ)Γ+ΣCov(λ,X)−ΣCov(λ,Y)。非R客户的彩票与决定λ的R彩票独立，两项均零；R在actual无人覆盖，所以X恒零；query中x∉A也无当前赢家。余下正好目标负协方差和。完整解析在证据中，不需要重跑随机实现。",
+  "scope": "目标COV-R全恒等式及实际信息域；global共享排列或λ依非R彩票不在该推导范围，不蕴含weightedIC非负。",
+  "evidence": [
+    {
+      "path": "map/edges/customer-attraction-3a-3a-d2d520d432eef77d/comparison-proof.md",
+      "sha256": "72f89e3bf69dec8a55bf1da855c4d1d638bf9bdf0f8245fa5cabda02df034d92",
+      "section": "固定叶边际推出 COV-R 的完整结论"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/辅助赢家表示的整行包络与未曝光彩票--引理.md",
+      "sha256": "2ddc0b9dc7cecf85c8e3b1d89abe6e32a6d12b084f99452bb1364c787f5ec075"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+    }
+  ],
+  "endpoint_pins": {
+    "M-285ec530c81e42058a2e9e3866c5d04e": "3024ba818c6541f82d0d02d2f3e31aa41e43ff42451adb82521704cf2b0b389c",
+    "customer-attraction/auxiliary-winner-whole-row-envelope-and-unexposed-lotteries": "4ee405a1e2d859c69edc1c4fd591667f6a37288e8a84e0f9dc4c5f2f8cc53cc4"
+  },
+  "evidence_pins": {
+    "map/edges/customer-attraction-3a-3a-d2d520d432eef77d/comparison-proof.md": "72f89e3bf69dec8a55bf1da855c4d1d638bf9bdf0f8245fa5cabda02df034d92",
+    "archives/customer-attraction/state/引理/辅助赢家表示的整行包络与未曝光彩票--引理.md": "2ddc0b9dc7cecf85c8e3b1d89abe6e32a6d12b084f99452bb1364c787f5ec075",
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+  },
+  "review_digest": "cad04dfd38ec0f59db2c1e4f0d8d541d93ca35dca4646c45639485bfb25f3c99"
+}

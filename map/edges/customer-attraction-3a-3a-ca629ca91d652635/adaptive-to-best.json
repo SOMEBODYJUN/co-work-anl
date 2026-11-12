@@ -1,0 +1,50 @@
+{
+  "edge_id": "cag-ca629-adaptive-earliest-budget-implies-best-natural-budget",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/unit-source-priority-world-adaptive-cancellation-and-source-prepayment"
+  ],
+  "target_ids": [
+    "M-cc54bd50d00d42d4adfad56475e08ce3"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "原完整SPE、共同unit-priority世界、同一最优T/owner、固定actual Hall-A且保LOCAL-TOTAL的同一个Γ、原whole-IC确定价u_i/D_s；V_best只放宽原自然DAG的active-child路线，仍须无active child才能终止。source的普遍存在选择V_adapt≤W作为开放前提；不改变取消集合/价格，不使用自由query或提前停。",
+  "roles": {
+    "customer-attraction/unit-source-priority-world-adaptive-cancellation-and-source-prepayment": "开放前提：每份SPE存在同一个最优T/owner使自然earliest路由V_adapt≤W。",
+    "M-cc54bd50d00d42d4adfad56475e08ce3": "较宽自然路径候选；固定选择V_best≤V_adapt，故继承同一存在选择下≤W。"
+  },
+  "explanation": "对固定T/owner和每world U，earliest路由本来就在原自然DAG沿active child走到无active child终点。故每客户最小可达强制终止价v_x*(U)≤该earliest终点价r_s。对任一同Γ内γ，乘非负1−γ_x并求和，得到best目标≤earliest目标；对同一Γ取min，再取同一U期望，得V_best≤V_adapt。成本对源线性、没有query共享cap，有限DAG中每客户可同时选最低路径，之后按query汇成唯一确定A/D；有限排列世界使选择可测。于是source若对每份SPE有一个共同最优T/owner付V_adapt≤W，同一选择即付V_best≤W，保完整存在量词。没有逆向推导，也未无条件证明任一普遍预算。",
+  "scope": "完整目标M-cc54的自然最小可达终价候选在source开放预算为真时成立；只该同价格/同取消合同方向。",
+  "whole_result": "固定最优T/owner时V_best≤V_adapt；若每份原SPE存在一个共同最优T/owner令V_adapt≤W，则同一个T/owner使V_best≤W，完整推出较宽自然路由预算候选。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/候选/单位源优先级世界的适应取消与源预付--候选.md",
+      "sha256": "16920a3e32395f60cd86346be1564351a9d527db48d0395b33a9b273e263830a",
+      "section": "V_adapt与V_best都是开放费用候选"
+    },
+    {
+      "path": "archives/customer-attraction/state/审查/适应路径取消的条件比较与审查先验--审查.md",
+      "sha256": "6f67b8ace5ab100184e58a17acb01d0792a0dbbd491ebe0a10617a7e40388f9a",
+      "section": "费用比较中的价格版本说明"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-ca629ca91d652635/mathematical-comparison.md",
+      "sha256": "dad69607b6ab06e4460879bee4bb3154e99dff5fc2a6a8af68dd911c88f0bfb3",
+      "section": "3. V_adapt到V_best的条件整条方向"
+    }
+  ],
+  "reviewed_by": "Boss2",
+  "review_note": "Boss2 W5 CA-RELAY fresh worker按当前registry及任务pins逐组实读全部指定正文/必要证据，逐项比较实际推论与目标完整陈述。原数学程序/LP/BI/IC回放本轮均0；推导由本文解析及指定成熟证明承担，结构检查不替代数学。",
+  "endpoint_pins": {
+    "M-cc54bd50d00d42d4adfad56475e08ce3": "8e7a4d68435d7a54cd76e634e8dd88c26479b879fc21c1cf15cdcc5e57e5ce52",
+    "customer-attraction/unit-source-priority-world-adaptive-cancellation-and-source-prepayment": "846706ff7799e199c75fdaf68ff086e9d219a0d70b86848384b45b3199a11bcd"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/候选/单位源优先级世界的适应取消与源预付--候选.md": "16920a3e32395f60cd86346be1564351a9d527db48d0395b33a9b273e263830a",
+    "archives/customer-attraction/state/审查/适应路径取消的条件比较与审查先验--审查.md": "6f67b8ace5ab100184e58a17acb01d0792a0dbbd491ebe0a10617a7e40388f9a",
+    "map/edges/customer-attraction-3a-3a-ca629ca91d652635/mathematical-comparison.md": "dad69607b6ab06e4460879bee4bb3154e99dff5fc2a6a8af68dd911c88f0bfb3"
+  },
+  "review_digest": "b1121e87264411e930d5a78968b1e31fd5c93d0a7368831bc534210be63318af"
+}

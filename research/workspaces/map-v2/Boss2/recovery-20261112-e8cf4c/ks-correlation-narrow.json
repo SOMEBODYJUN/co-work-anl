@@ -1,0 +1,180 @@
+{
+  "schema": 1,
+  "reviewer": "Boss2 / fresh independent narrow review",
+  "date": "2026-11-12",
+  "clone_read_only": "/workspace/scratch/e8cf4ce833a5/co-work-anl-boss2",
+  "scope": "仅独立核查现役9fa超图边在0<theta<1/2、r_h=4^h>=4范围内调用的KS14相关空间常数、其后续使用，以及rho局部勘误不损有意义0<delta<=1/2的分离promise硬度。更大delta的登记域澄清由Boss另处置。不重跑成熟科学程序，不浏览外网，不修改Git、任务、源、边、registry。",
+  "verdict": {
+    "lemma_5_9_ii_as_printed": "false",
+    "exact_correlation": "rho(X ; (Y,Z)) = sqrt(theta), for every integer r>=1 and 0<theta<1",
+    "counterexample_is_valid_under_original_definition": true,
+    "current_hardness_survives_local_repair": true,
+    "qualification": "对现役实际范围0<theta<1/2、r_h=4^h>=4，替换二部相关参数为rho0=sqrt(theta)<1，并重新固定nu_h,gamma_h,tau_h,s_h,T,zeta即可保有意义0<delta<=1/2分离promise的完整hardness、perfect completeness、显式多项式规模和原参数先后。delta>1/2时原字面YES/NO类会重叠；内部取alpha<1/2仅给更强NO输出保证，不据此断言该较大delta域的分离promise。登记域澄清由Boss另处置。原PDF的字面普遍Lemma5.9另有原子范围及(iii)等号右端漏1-的问题，不能声称只改(ii)便修好其所有theta,r字面量词。",
+    "no_new_mathematical_premise": "此次修补无需新增猜想、源性质、simple图或常数最大度假设；仍为原两个共同前提的ALL。"
+  },
+  "source": {
+    "path": "map/edges/unrelated-machines-3a-3a-19cf10a88593d40b/khot-saket-1308.3247v2.pdf",
+    "sha256_verified": "2dcb03c6bc10dda5503452719c74bb57c5463e8b34bdbef5d06463cb7d74dc24",
+    "page_mapping": "物理页=印刷页+1",
+    "text_read": [
+      "物理17-22/印16-21：Definition5.1, Lemma5.2, Definition5.3, Lemmas5.5,5.7, Theorem5.8, DistributionD, Lemma5.9, §5.1-5.3.1, Lemmas5.10-5.14",
+      "物理23-26/印22-25：Lemma5.15、s、eta、Lemmas5.16-5.19、Eq.(24)-(33)、Choice of Parameters及最终解码率",
+      "物理8/印7：d-to-1定义、额外双正规假设及其脚注，仅读接口范围"
+    ],
+    "pages_visually_inspected": [
+      {
+        "physical": 17,
+        "printed": 16,
+        "items": "Definition5.1的L2归一及Definition5.3的下Gaussian稳定性函数"
+      },
+      {
+        "physical": 19,
+        "printed": 18,
+        "items": "D_{theta,r}完整定义、Lemma5.9(ii)、(iii)实际印式、其证明"
+      },
+      {
+        "physical": 22,
+        "printed": 21,
+        "items": "Lemma5.14的gamma/tau显示、Gamma_theta、Eq.(16),(17)"
+      },
+      {
+        "physical": 25,
+        "printed": 24,
+        "items": "Lemma5.18证明、Lemma5.19、Eq.(30)及第一个T条件"
+      },
+      {
+        "physical": 26,
+        "printed": 25,
+        "items": "第二个T条件、Eq.(31)-(33)、最终tau^2 gamma^2/(16r)和alpha^2 tau^2 gamma^2/(2048r)"
+      }
+    ],
+    "method": "本地pdftotext -layout及所列页PNG目视；未用文本抽取代替关键公式目视；未做数值/枚举/成熟科学程序。"
+  },
+  "original_definitions": {
+    "correlation_definition": "Definition5.1（物理17/印16）：rho(A,B)=sup |E[f(A)g(B)]|，其中Ef=Eg=0，E[f^2],E[g^2]<=1，f,g为L2函数。没有|g|<=1限制。",
+    "three_space_definition": "rho(X,Y,Z)=max{rho(X;Y,Z),rho(Y;X,Z),rho(Z;X,Y)}。",
+    "noise_notation": "本报告用theta表示原文§5测试噪声delta，用alpha表示原文独立集阈值epsilon，避免与最终目标delta混淆。",
+    "distribution": "先独立均匀抽X,Y_1^0,...,Y_r^0于{-1,1}，初置Z_i=-Y_i^0。以概率1-theta不修改；以概率theta独立均匀抽J∈[r]，把Y_J,Z_J都改为-X，其余Y_i=Y_i^0,Z_i=-Y_i^0。",
+    "printed_claim_and_proof": "Lemma5.9(ii)（物理19/印18）确实印rho(Omega1,Omega2×Omega3;D_{delta,r})<=delta；证明称X以概率1-delta独立于(Y,Z)。这不构成其L2归一相关量的delta上界。"
+  },
+  "exact_counterexample_and_upper_bound": {
+    "observable_event": "S={存在j:Y_j=Z_j}。未改时所有Y_j=-Z_j，修改时恰有唯一相等坐标J。因此S和S上的J都由(Y,Z)辨认，P(S)=theta。",
+    "conditional_expectation": "E[X|(Y,Z)]=-Y_J on S, and 0 on S^c；亦即m(Y,Z)=-sum_{j=1}^r Y_j 1{Y_j=Z_j}。",
+    "witness": "f(X)=X，g(Y,Z)=m(Y,Z)/sqrt(theta)=-sum_j Y_j 1{Y_j=Z_j}/sqrt(theta)。",
+    "normalization": [
+      "Ef=0，E[f^2]=1，因为X均匀二值。",
+      "Eg=0，因为Eg=E[E[X|Y,Z]]/sqrt(theta)=EX/sqrt(theta)=0。",
+      "E[g^2]=E[m^2]/theta=P(S)/theta=1。",
+      "E[fg]=E[m^2]/sqrt(theta)=sqrt(theta)。"
+    ],
+    "upper_bound_proof": "任意均值零f(X)均为aX，|a|<=1。对任意允许的g，|E[fg]|=|a E[m g]|<=||m||_2 ||g||_2<=sqrt(theta)，由Cauchy-Schwarz。与见证下界合得精确等式。",
+    "explicit_instance": "可取r=4、theta=1/4，此时g=2m，rho=1/2>1/4；它已在现役允许的测试范围内。",
+    "normalization_caution": "若把j读为固定预指定坐标，而S仍是全局修改事件，则-g=Y_j 1_S/sqrt(theta)一般仅给sqrt(theta)/r的协方差。达到sqrt(theta)的j必须是S上可观察的唯一J，或使用上面的求和写法。若S_j={Y_j=Z_j}为固定坐标事件，则其概率theta/r，对应正确归一是sqrt(theta/r)。",
+    "why_original_argument_fails": "修改分支在(Y,Z)中带有可观察标志。L2归一允许把该稀有分支放大1/sqrt(theta)，因此相关量为分支概率的平方根，不能按混合概率theta直接上界。"
+  },
+  "other_correlations_and_ranges": {
+    "minimum_atom_exact_interior": "对任意r>=1、0<theta<1，D中未修改原子概率a0=(1-theta)/2^(r+1)，修改原子概率a1=theta/(r*2^r)，两类支撑不交；最小正原子a=min(a0,a1)。",
+    "when_printed_xi_is_valid": "原文xi=theta/(r*2^r)=a1是最小原子的充要范围为theta<=r/(r+2)。现役r>=4且theta<1/2严格满足，故本应用不用改变xi_h。",
+    "literal_universal_range_warning": "Lemma5.9开头的any probability delta and integer r>0过宽。例如r=1、theta=2/5时未改原子为3/20，原xi=1/5，故(i)亦不成立。theta=0或1也不能获得整个三空间相关量<1。此处完整hardness从不使用这些范围。",
+    "three_space_connectedness_proof": "对0<theta<1，在((X,Y),Z)的支撑二部图中，未修改边把每个左点(x,y)连到z=-y。给定任意右点z及坐标j，取左点(x=z_j,y=-z)：它同时有未修改边到z和修改j的边到z翻转第j位所得z^j。故所有右点沿超立方体边连通；每个左点又有未改边接入。对((X,Z),Y)由Y,Z对称同理。Lemma5.2以最小原子a给这两个二部相关量<=1-a^2/2。",
+    "three_space_bound_after_repair": "rho(X;Y,Z)=sqrt(theta)也<=1-a^2/2：a<=(1-theta)/4，故a^2/2<=(1-theta)^2/32<=1-sqrt(theta)。于是rho(X,Y,Z)<=1-a^2/2。现役a=xi，所以原Lemma5.9(v)所用q_h=1-xi_h^2/2仍成立；无需把平滑引理的三元相关界改成sqrt(theta)。",
+    "pair_correlation_exact": "给定Y，Z以概率1-theta等于-Y，以概率theta把-Y中均匀一坐标翻转。Y,Z边缘均匀，Fourier角色chi_A的转移特征值lambda_A=(-1)^|A| (1-2theta|A|/r)。所以rho(Y;Z)=max_{1<=k<=r}|1-2theta k/r|；在0<theta<1/2时恰为1-2theta/r=1-eta。",
+    "lemma_5_18_supporting_detail": "物理25/印24页Lemma5.18证明引用Lemma5.9(iv)，但其显示的(1-eta)^(s/r)使用了比(iv)的1-xi^2/2更强的界。上条一行Fourier计算直接支付所需强界，原s及后续参数形式无需变化；若修补正文，宜明确补入这一事实，避免把较弱(iv)误称为直接推出该式。",
+    "additional_display_typo": "目视物理19/印18页(iii)实际印1-xi^2/2 = theta^2/(r^2*2^(2r+1))。等号右端漏了1-；正确为1-theta^2/(r^2*2^(2r+1))。后续实际需要并使用左侧1-xi^2/2。",
+    "scope_guard": "报告的完整hardness与参数修补裁决只认证现役0<theta<1/2、r_h=4^h>=4；一般原子公式仅用于解释为什么不沿用纸面any probability/r>0的额外范围，不把当前边的结论外推到该范围。"
+  },
+  "downstream_correction": [
+    {
+      "location": "Lemma5.14，物理22/印21，阈值tau、结论及Eq.(16),(17)",
+      "change": "将相关参数theta替换为rho0=sqrt(theta)；Gamma下标改rho0，tau指数分母1-theta改1-rho0。theta仍保留作为真实测试噪声，xi、eta不随此符号替换。"
+    },
+    {
+      "location": "Choice of Parameters Eq.(30)，物理25/印24",
+      "change": "Gamma_theta(alpha/2,(alpha/2)^(4/eta)/2-5nu)-2nu>0改为Gamma_rho0(...) -2nu>0，并据此重新选nu。rho0<1保证两个正边缘下Gaussian事件严格正，连续性保证这种nu存在。"
+    },
+    {
+      "location": "Lemma5.10（物理21/印20）及gamma",
+      "change": "相关参数为三空间的q=1-xi^2/2，修补后仍可用。gamma仍有c_gamma*nu*xi^2/log(1/nu)的量级，绝对常数吸收Lemma5.7及两次误差界；并非把gamma分母也机械改为1-rho0。"
+    },
+    {
+      "location": "Eq.(31)-(33)、最终解码（物理26/印25）",
+      "change": "公式形状不变，但nu,gamma,tau,s,T以及最终zeta均须按修正后的rho0重新固定。重用未经修正的旧数值阈值没有依据。"
+    }
+  ],
+  "complete_valid_parameter_order": {
+    "notation": "Gamma_rho指Definition5.3的下Gaussian稳定性函数；theta为测试噪声，delta为最终目标，alpha为内部独立集阈值，eta_h为相关噪声，eta_reg为双正规化误差。",
+    "steps": [
+      "先在有意义分离promise域固定0<delta<=1/2，取正有理alpha<delta，L=ceil(32 alpha^(-2))。对delta>1/2内部仍可取alpha<1/2获得更强NO输出保证，但这不构成原较大delta域的分离promise声明。",
+      "固定theta∈(0,1/2)，例如theta=1/4；rho0=sqrt(theta)<1。每个h=1,...,L-1设r_h=4^h、xi_h=theta/(r_h*2^r_h)、eta_h=2theta/r_h、b_h=(alpha/2)^(4/eta_h)。这些都只依赖已固定参数。",
+      "分别取0<nu_h<min(e^(-1),b_h/20)足够小，使Gamma_rho0(alpha/2,b_h/2-5nu_h)-2nu_h>0。存在性来自rho0<1及Gamma的正性、连续性。",
+      "取足够小统一绝对常数c_gamma>0，gamma_h=c_gamma*nu_h*xi_h^2/log(1/nu_h)，使Lemma5.10所需误差不超过nu_h。原显示1/2系数可由该通用绝对系数替代，结论不依赖其特定数值。",
+      "按Theorem5.8的正阈值取tau_h>0。一个保守且忠实于原Lemma5.14显示的充分形式为tau_h=nu_h^[C*log(1/xi_h)*log(1/nu_h)/(nu_h*(1-rho0))]，其中C>0为足够大的统一绝对常数。指数包含原印式额外的log(1/nu_h)，它只把阈值取得更小。",
+      "取整数s_h>=max{(r_h/xi_h)log(1/nu_h), (r_h/(2gamma_h))log(32r_h^2/tau_h)}。精确pair相关界1-eta_h保证Lemma5.18尾项；gamma_h和第二项保证平滑高阶尾项。",
+      "分别取T_h使4(s_h^2/T_h)^(1/4)<=min{b_h/2,alpha^2/128}，且2(s_h^2/T_h)^(1/4)<=tau_h/(16r_h^2)。例如T_h>=s_h^2*max{(8/b_h)^4,(512/alpha^2)^4,(32r_h^2/tau_h)^4}再向上取整。",
+      "有限h一次统一取整数T>=max{2,T_1,...,T_(L-1)}。此时各层对的good-neighbor、Eq.(31),(32)界同时成立。",
+      "取正有理zeta<min_h alpha^2*tau_h^2*gamma_h^2/(2048r_h)。有限个严格正常数的最小值仍正。",
+      "最后用FMW取源soundness zeta/2及相应常数字母表，再以eta_reg=zeta/2正规化；随后以已经固定的L,T完成typed多层化及测试、整数cloud展开。所有解析常数均在源字母表和输入规模之前固定。"
+    ],
+    "resulting_contradiction": "独立集权>=alpha产生至少alpha^2/128比例heavy-good IDs；修正后的Lemma5.14及Eq.(32)给Eq.(33)的tau_h/2，按顶点自己T_(1-gamma_h)函数的影响抽标签，每条heavy-good ID满足概率>=tau_h^2 gamma_h^2/(16r_h)。故该层对值>=alpha^2 tau_h^2 gamma_h^2/(2048r_h)>zeta，矛盾。",
+    "dimension_independence": "r_h虽随h变化，但h有限且在固定L后已固定；相关空间原子xi_h不依赖long-code维数K_l。nu_h,gamma_h,tau_h,s_h,T,zeta均无源字母表或输入规模依赖，因此没有选参循环。固定delta后所有展开指数与码长常数固定，确定性显式构造仍为多项式。"
+  },
+  "preserved_claims": {
+    "full_target": "对每个固定0<delta<=1/2，区分有限未加权3-uniform超图的完整2-colorable YES与不存在比例>=delta独立集的NO为NP-hard；本窄审确认rho修补不损该有意义分离promise域。",
+    "perfect_completeness": "真实D分布不改。满足投影的dictator坐标上，Y,Z未改则相反；若两者相同则等于-X，故三点不可能同色。rho0只修分析常数。",
+    "three_distinct_vertices": "r_h>=4且每fiber至多改一坐标，至少一未改位保Y,Z相反，故y!=z；x在另一层，故三点不同。",
+    "regularization_and_layering": "exact4、双正规化、typed层化、重数/ID计值、weak-density、smoothness、每对层值<=源值的组合论证均不使用错误rho<=theta，保留原证明。",
+    "unweighting": "码字有理权的完整整数cloud及完整三部超边展开仍精确保最大独立集比例和2-coloring，与相关分析常数无关。",
+    "scope": "保有意义0<delta<=1/2分离promise硬度、平行不同投影ID、任意有限输入度及当前有限未加权3-uniform域。不引入simple或常数最大度，不外推到其他调度/SPE模型。delta>1/2时K4^(3)为2-colorable且最大独立集比例1/2，说明原字面YES/NO类重叠；更大delta内部取alpha<1/2仅给更强NO输出保证。原FMW/KS的forall delta>0按任意小阈值惯例理解；登记域澄清由Boss另处置。"
+  },
+  "current_text_impact": {
+    "primary_edge": "map/edges/boss5-mz-visual-repair-9fa9ce8a7e4a75ec/exact-four-to-one-v4-and-biregularization-to-three-uniform-independent-set-9fa9ce8a7e4a75ec.json",
+    "edge_fields_to_refresh_if_parent_applies": [
+      "conditions：明列0<theta<1/2和rho0=sqrt(theta)，按修正后的Lemma5.14/Eq.(30)选择nu_h,gamma_h,tau_h,s_h。",
+      "explanation及review_note：写明原Lemma5.9(ii)纠正、相关量精确值、已重选阈值，不能继续无勘误地称原解析调用已完整核。",
+      "evidence/evidence_pins/review_digest及关联结构字段：若父Boss另行正式修改proof，应按仓库原生流程刷新；本报告不作任何写入。",
+      "source_ids、target_ids及premises_mode=all无需因rho修补改变；current whole_result与scope应按Boss最终精确登记的0<delta<=1/2分离promise域绑定，不能继续宣称其字面所有delta>0域绝不需变。"
+    ],
+    "primary_proof": "map/edges/boss5-mz-visual-repair-9fa9ce8a7e4a75ec/proof-review.md",
+    "primary_proof_lines": [
+      {
+        "line": 71,
+        "impact": "参数选择段需插入rho0修正、最小原子/三空间相关保留理由及修正Eq.(30)；原段仅称按KS14选择不能遮蔽源误式。"
+      },
+      {
+        "line": 78,
+        "impact": "维数独立性结论仍真，可保；应接新的正常数存在性证明。"
+      },
+      {
+        "line": 84,
+        "impact": "Lemma5.14调用明确指修正版；最终heavy-good及解码率形状可保。"
+      },
+      {
+        "line": 86,
+        "impact": "复用成熟解析引理的措辞应区分：通用Mossel工具复用，本分布相关量和局部修正版本次补证。"
+      },
+      {
+        "line": 101,
+        "impact": "rho修补后有意义0<delta<=1/2域的完整目标仍成立，不需因rho降为contribution或conditional；原字面所有delta>0分离promise的域澄清由Boss另处置。"
+      }
+    ],
+    "current_body": "archives/unrelated-machines/state/文献/四对一与字母表soundness两篇文献整理--文献.md",
+    "current_body_impact": "其第32行只陈述Corollary1.10目标，未写rho<=theta。单就本rho疑点，无需改变FMW/MZ共享body及其源数学证据；字面forall delta>0按任意小阈值惯例理解。本窄审不单独处理登记域，current whole_result/scope须由Boss按最终精确分离promise域绑定。",
+    "historical_support": "abad旧proof及19cf原边的原始历史字节不应无说明重写；现役proof须明确其KS14接口由新修正版接替。这里只定位影响，未改历史文件。",
+    "unaffected_current_graph_edges": "现役exact4→八色及八色→三色GS20图归约不使用此KS14三元测试；本疑点不影响它们，也不影响FMW源内核、独立双正规化或MZ比较。"
+  },
+  "ready_to_apply_proof_paragraph": "KS14物理19/印18页Lemma5.9(ii)的rho(X;Y,Z)<=theta须更正为精确rho0=sqrt(theta)：修改事件S及其唯一坐标J可从Y,Z辨认，E[X|Y,Z]=-Y_J 1_S，故其L2范数为sqrt(theta)，由条件期望的Cauchy-Schwarz同时得上界。这里r_h=4^h>=4、0<theta<1/2，xi_h=theta/(r_h 2^{r_h})仍是最小正原子；((X,Y),Z)支撑图沿Z的单坐标翻转连通，及Y,Z对称性保三空间相关<=1-xi_h^2/2。因此原平滑gamma量级不变。把Lemma5.14的Gamma下标及tau分母分别改为rho0、1-rho0，并按Gamma_rho0(alpha/2,(alpha/2)^{4/eta_h}/2-5nu_h)-2nu_h>0重新选nu_h，再顺序固定gamma_h,tau_h,s_h,T及zeta即可。所需Y,Z尾界可由其Fourier特征值(-1)^{|A|}(1-2theta|A|/r_h)直接得rho(Y;Z)=1-eta_h。最终每条heavy-good约束解码率仍为tau_h^2 gamma_h^2/(16r_h)，有意义0<delta<=1/2域的完整超图分离promise结论与原ALL前提均保持；更大delta内部取alpha<1/2仅给更强NO输出保证，字面登记域澄清由Boss另处置。",
+  "limitations": [
+    "本次是原分布及其后续解析接口的独立窄核查，不冒称重新证明FMW源内核或Mossel成熟不变性/超收缩定理。",
+    "精确相关量、原子、连通性和pair Fourier计算均在报告内给出解析证明，不以抽样或程序输出来断言。",
+    "本报告的应用裁决只覆盖现役0<theta<1/2、r_h=4^h>=4。原文any probability/r>0的普遍措辞并未获认证；端点theta=0,1不能使用rho<1的完整分析。",
+    "本窄审接受Root域核验：字面gap的分离域为0<delta<=1/2，delta>1/2会重叠，K4^(3)给2-colorable且最大独立集比例1/2的见证。这里仅修报告表述，不扩展数学审读或执行登记域修改。"
+  ],
+  "operations": {
+    "repo_writes": false,
+    "git_commands": false,
+    "queue_actions": false,
+    "external_browsing": false,
+    "scientific_programs": false,
+    "only_result_written": "/workspace/scratch/e8cf4ce833a5/ks-correlation-narrow.json"
+  }
+}
