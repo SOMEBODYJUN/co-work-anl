@@ -1,0 +1,54 @@
+{
+  "edge_id": "cag-e184-actual-spectrum-to-shared-omission-fraction",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "CA-ACTUAL-PRIVATE-SEAT-SPECTRUM-v1"
+  ],
+  "target_ids": [
+    "customer-attraction/optimal-coverage-shared-omission-fraction-private-seat-efficiency"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "m≥2，任意有限共同标签目录、完整纯SPE及任一最优m主题并集O；D=|O\\C|>0时α=D_s/D，其中全局私有性按原全部极大覆盖。",
+  "roles": {
+    "CA-ACTUAL-PRIVATE-SEAT-SPECTRUM-v1": "在同一份W预算内支付至多m个不同极大容器第一席，包含v_j/m余客户信用。",
+    "customer-attraction/optimal-coverage-shared-omission-fraction-private-seat-efficiency": "把第一席比较重数信用保到mW≥(m−1)D_p+Σ|B_j|，再推出α比率与对每个最优O的坏例必要条件。"
+  },
+  "explanation": "最优元组逐项静态扩到极大主题并合并重复容器，得到s≤m个不同B_j且并集仍恰O。每个O内全局私有遗漏属于唯一所选容器，故Σa_j=D_p。前m大席位和至少这些不同第一席之和，所以mW≥(m−1)D_p+Σ|B_j|≥(m−1)D_p+OPT。以I=|O∩C|和D_p=(1−α)(OPT−I)代入，得[m−(m−1)α]OPT≤mW+(m−1)(1−α)I≤[2m−1−(m−1)α]W。分母≥1为正。W>0时可除得目标比率；D0时OPT≤W，W0时根偏离任意非空主题的收益≥|T|/m将迫使全目录覆盖空，按乘法式处理。比率≤2等价于α≤1/(m−1)，故存在一个有利最优O即half；逆否为严格坏例对每个最优O都α>1/(m−1)，六人阈值1/5。",
+  "scope": "整条α推论及端点、存在/全称最优量词；不声称α>0的常数锐，不把比较元组中一次出现当全局私有，不二次支出W。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/实际遗漏私有席位谱与锐界--定理.md",
+      "sha256": "aa4b81ffda0f492eedaf8ad691acf68703d7ff8502a91b37d0eeea1461230719",
+      "section": "固定实际遗漏后的完整谱预算"
+    },
+    {
+      "path": "archives/customer-attraction/state/推论/最优覆盖共享遗漏占比的私有席位效率界--推论.md",
+      "sha256": "57d45293f147d48c7b762837e367f707de5cedd2f0dd43613ec99d9aadf3c0a2",
+      "section": "对象和实际遗漏"
+    },
+    {
+      "path": "archives/customer-attraction/state/推论/最优覆盖共享遗漏占比的私有席位效率界--推论.md",
+      "sha256": "57d45293f147d48c7b762837e367f707de5cedd2f0dd43613ec99d9aadf3c0a2",
+      "section": "比较主题先扩大，再合并相同容器"
+    },
+    {
+      "path": "archives/customer-attraction/state/推论/最优覆盖共享遗漏占比的私有席位效率界--推论.md",
+      "sha256": "57d45293f147d48c7b762837e367f707de5cedd2f0dd43613ec99d9aadf3c0a2",
+      "section": "全部代数、端点和六人条件"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "本包实际阅读当前登记陈述及所引完整证明，逐项核模型、量词、真实后继和结论范围；复用成熟解析/精确证据，未重跑LP、BI、原审计或数组。",
+  "whole_result": "对任一最优O，D>0且W>0时OPT_m/W≤[2m−1−(m−1)α]/[m−(m−1)α]；某一最优O的α≤1/(m−1)即half，严格反half必须每个最优O都超过该阈值；零遗漏/零福利按正文乘法边界。",
+  "endpoint_pins": {
+    "CA-ACTUAL-PRIVATE-SEAT-SPECTRUM-v1": "499a1caa4be25d9c2127574d30fd71d7b2cf0419d41bfa5a19e7c53877bb7ac2",
+    "customer-attraction/optimal-coverage-shared-omission-fraction-private-seat-efficiency": "9cb1b710f8aaeca65ea7e2fdc948130bc3ea2640c677bb8c24a0a53954c89842"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/实际遗漏私有席位谱与锐界--定理.md": "aa4b81ffda0f492eedaf8ad691acf68703d7ff8502a91b37d0eeea1461230719",
+    "archives/customer-attraction/state/推论/最优覆盖共享遗漏占比的私有席位效率界--推论.md": "57d45293f147d48c7b762837e367f707de5cedd2f0dd43613ec99d9aadf3c0a2"
+  },
+  "review_digest": "3f0d2644dd672b1ed0d79e4c39be06a4bfc11e69572981db5f838a4789ac30ca"
+}

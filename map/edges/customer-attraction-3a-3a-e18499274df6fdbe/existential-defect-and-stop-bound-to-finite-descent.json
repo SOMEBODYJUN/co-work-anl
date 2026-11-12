@@ -1,0 +1,57 @@
+{
+  "edge_id": "cag-e184-existential-defect-and-stop-bound-to-finite-descent",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/existential-optimal-omission-privatization-finite-incidence-descent",
+    "CA-OPTIMAL-PRIVATE-OMISSIONS-2M1-v1"
+  ],
+  "target_ids": [
+    "M-b5cee494fe4345d38ef62e876761dc37"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "假设源四合同中最弱E-defect在每轮可能出现的全部有限实例与每份完整纯SPE上普遍成立：∀I,σ∃真正最优C、逐单位C内原兴趣owner及新完整纯SPEτ，且Wτ≤Wσ。保有限原标签，允许别名；停止点使用SHARP的存在最优私有遗漏条件。",
+  "roles": {
+    "customer-attraction/existential-optimal-omission-privatization-finite-incidence-descent": "只使用开放的普遍E-defect层，负责每轮选某真正最优元组、逐单位owner、新完整SPE存在与福利不增；并提供合法私有化精确保持OPT。",
+    "CA-OPTIMAL-PRIVATE-OMISSIONS-2M1-v1": "负责停止点某个最优并集实际遗漏全为全局私有时的(2−1/m)锐上界。",
+    "M-b5cee494fe4345d38ef62e876761dc37": "联合两前提与严格整数关联下降，得到对全部初态的条件性锐界。"
+  },
+  "explanation": "定义L(I)=Σ_x|{a:x喜欢标签a}|为非负整数。每轮先取E-defect保证的最优O：若O\\actual为空或各遗漏客户仅喜欢一个标签，唯一标签不可能严格含于别的合法主题（否则客户也喜欢后者），故属于极大全局私有块，SHARP适用。否则至少一名待改造遗漏客户原有至少两兴趣，私有化到一个owner会使L严格减至少1，其余只删兴趣；真正最优C仍覆盖O且主题只缩小，OPT精确不变。E-defect保证新τ为完整SPE且W不增，所以下一轮可再调用普遍假设；允许更换最优C、owner与τ。有限下降必在上述私有停止点结束，应用SHARP，再以末态OPT=初态OPT、末W≤初W回传得初态OPT≤(2−1/m)W。旧终局收益不变仅是叶算术，不能代替每轮新SPE的存在；只要求最弱E-defect时不能单轮宣布新遗漏全私有。",
+  "scope": "整条条件性有限下降，所有m≥1、零客户/空遗漏/同覆盖别名；没有证明E-defect本身或无条件一般锐界。两个源为共同ALL前提，各自单独不充足。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/候选/存在最优遗漏私有化与有限关联下降--候选.md",
+      "sha256": "70fcb852c161cea21da922d3de1a10092367c506c3b467e8540c551b134c4a8a",
+      "section": "一步合法变换和承重存在量词"
+    },
+    {
+      "path": "archives/customer-attraction/state/候选/存在最优遗漏私有化与有限关联下降--候选.md",
+      "sha256": "70fcb852c161cea21da922d3de1a10092367c506c3b467e8540c551b134c4a8a",
+      "section": "最弱E-defect的条件性有限下降定理"
+    },
+    {
+      "path": "archives/customer-attraction/state/候选/存在最优遗漏私有化与有限关联下降--候选.md",
+      "sha256": "70fcb852c161cea21da922d3de1a10092367c506c3b467e8540c551b134c4a8a",
+      "section": "同覆盖标签不能直接商给定策略"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/实际遗漏私有席位谱与锐界--定理.md",
+      "sha256": "aa4b81ffda0f492eedaf8ad691acf68703d7ff8502a91b37d0eeea1461230719",
+      "section": "某个最优并集的遗漏全私有时的锐界"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "本包实际阅读当前登记陈述及所引完整证明，逐项核模型、量词、真实后继和结论范围；复用成熟解析/精确证据，未重跑LP、BI、原审计或数组。",
+  "whole_result": "若普遍E-defect及已证私有遗漏停止点锐界共同可用，则OPT精确保持、福利不增、标签关联严格下降直到私有停止点，从而全部初始实例/完整纯SPE满足OPT_m≤(2−1/m)W。关系论证完整，未证前提仍为E-defect。",
+  "endpoint_pins": {
+    "CA-OPTIMAL-PRIVATE-OMISSIONS-2M1-v1": "240b618158815f1fab6cc3ee78106d4c58e1d18b8b91d70df0fdb1d0a77238f7",
+    "M-b5cee494fe4345d38ef62e876761dc37": "7ced53f8e13fddfeb32824ec85e21e2cae9271e206625636fe6c146b5ac0af61",
+    "customer-attraction/existential-optimal-omission-privatization-finite-incidence-descent": "657fab01663039c45ecbae9416687b7b75cbb1ff057f8a78d8405303fc0585f0"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/候选/存在最优遗漏私有化与有限关联下降--候选.md": "70fcb852c161cea21da922d3de1a10092367c506c3b467e8540c551b134c4a8a",
+    "archives/customer-attraction/state/定理/实际遗漏私有席位谱与锐界--定理.md": "aa4b81ffda0f492eedaf8ad691acf68703d7ff8502a91b37d0eeea1461230719"
+  },
+  "review_digest": "cbea5631717a469c2423ec4eb856fb8ad9e0cb37307314f4ee5b3480ee0df8f5"
+}
