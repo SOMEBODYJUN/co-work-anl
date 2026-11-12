@@ -930,15 +930,10 @@ def _collaboration_scope(root, problem_path, declared=None):
 def _collaboration_route(root, inputs, declared_scope):
     fingerprint = pin(inputs)
     scope = _collaboration_scope(root, inputs['problem']['path'], declared_scope)
-    legacy = 'research/collaboration/P-' + fingerprint[:24]
-    shared = scope + '/collaboration/P-' + fingerprint[:24] if scope else None
-    return {'status': 'ready' if scope else 'scope-required',
+    return {'status': 'retired',
             'input_fingerprint': fingerprint, 'collaboration_scope': scope,
-            'shared_workspace': shared,
-            'shared_entry': shared + '/README.md' if shared else None,
-            'shared_entry_exists': bool(shared and (root / shared / 'README.md').is_file()),
-            'legacy_shared_workspace': legacy,
-            'legacy_shared_entry': legacy + '/README.md'}
+            'shared_workspace': None, 'shared_entry': None, 'shared_entry_exists': False,
+            'legacy_shared_workspace': None, 'legacy_shared_entry': None}
 
 
 def peers(root, run_id):
@@ -986,14 +981,12 @@ def peers(root, run_id):
     if len(scopes) > 1:
         scope_conflicts = [{key: row[key] for key in ('run_id', 'collaboration_scope', 'shared_entry', 'legacy_shared_entry')}
                            for row in matches if row['collaboration_scope']]
-        if route['collaboration_scope']:
-            route['status'] = 'scope-conflict'
     return {**route, 'inputs': inputs,
             'peer_runs': matches, 'same_target_different_definitions': related,
             'same_target_revisions': revisions,
             'scope_conflicts': scope_conflicts,
             'discovery_warnings': warnings,
-            'instruction': 'Sync safely, read the archive collaboration files and checkpoint your own concrete obligation and reusable input/output paths through the normal file workflow. A scope-required result has no active board: continue research and resume its mathematical breakpoint in a new open run that saves the explicit archive scope; do not edit the old packet. Nonempty scope_conflicts means exact-input runs declared different archive boards: read the listed entries and agree one current board, keeping earlier entries only as pointers, rather than claiming they already share a board. Legacy entries are pointers for locating earlier work. Exact source inputs are a discovery match, not proof of semantic equivalence or compatible coordinates; target revisions need mathematical comparison. Comparison runs retain their original input isolation. Declared states do not establish live agents. This command neither contacts peers nor claims work.'}
+            'instruction': 'Research boards and collaboration pages have been retired and deleted. Inspect peer RUNs, saved mathematical workspaces and exact inputs only; do not create or recreate a shared board. Research-agent design is paused until hypergraph closeout. Exact-source matching is not proof of mathematical equivalence; revisions and scope conflicts need source comparison. Saved states do not establish live agents. This command neither contacts peers nor claims work.'}
 
 
 def init_run(root, run_id, spec_file, registry=REGISTRY, *, mode='comparison'):

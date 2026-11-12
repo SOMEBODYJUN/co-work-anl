@@ -90,53 +90,7 @@ def clean_local(root):
 
 
 def apply(root,actor):
-    branch=config(root,'wcg.branch') or 'rebuild/research-v2';chat=config(root,'wcg.boardBranch') or 'wcg/board-cleanup-20261028'
-    if branch==chat:raise ValueError('Result and board branches must differ')
-    client=board.Board(root,branch=branch)
-    with client.scratch() as name:
-        directory=Path(name);client.setup(directory)
-        board.git(directory,'fetch','--quiet','--no-tags','--depth=1','origin',
-                  '+refs/heads/'+branch+':refs/remotes/origin/result',
-                  '+refs/heads/'+chat+':refs/remotes/origin/chat')
-        result_tip=board.git(directory,'rev-parse','refs/remotes/origin/result').stdout.decode().strip()
-        chat_tip=board.git(directory,'rev-parse','refs/remotes/origin/chat').stdout.decode().strip()
-        verify_write(directory,branch,result_tip)
-        board.git(directory,'checkout','--quiet','--detach',result_tip)
-        rules=directory/'cleanup/coordination.json'
-        if not rules.exists() or actor not in json.loads(rules.read_text()).get('coordinators',[]):
-            raise ValueError('Deploy the reviewed program/policy first; reset requires its named coordinator')
-        report=prepare_result(directory,actor,chat_tip)
-        board.git(directory,'add','-A','--','cleanup')
-        board.git(directory,'commit','--quiet','-m','协作重置：保留已交付成果，清空未完成预约 '+report['reset_id'])
-        result_commit=board.git(directory,'rev-parse','HEAD').stdout.decode().strip()
-        receipt_sha=digest(directory/'cleanup/reset-receipt.json')
-        board.git(directory,'checkout','--quiet','--detach',chat_tip)
-        prefix=directory/board.PREFIX
-        if prefix.is_symlink():raise ValueError('Board path must be ordinary')
-        if prefix.exists():shutil.rmtree(prefix)
-        board_client=board.Board(root,branch=chat);board_client.write_empty(directory)
-        text=('协作已重置。保留'+str(report['done_count'])+'条通过处置字段、冻结指纹和目标文件检查的已交付记录及正文/证据；未完成认领归零。'
-              '这不等于重新证明所有数学。新对话按提示词明确Boss编号并完成写权限检查后领取。成果与指纹清单：结果提交'+result_commit+'的cleanup/reset-receipt.json。')
-        asset={'branch':branch,'commit':result_commit,'path':'cleanup/reset-receipt.json','sha256':receipt_sha}
-        intent=board.make_intent(actor,'result',{'text':text,'save':'repository-cleanup','thread':'rebuild-v2','asset':asset},report['reset_id'])
-        event=dict(intent,schema=board.SCHEMA,seq=1,time=int(time.time()));state=board.transition(board.empty_state(),event)
-        (prefix/'events'/('00000001_'+event['id']+'.json')).write_text(board.encode(event))
-        (prefix/'BOARD.md').write_text(board.render(state))
-        board.git(directory,'add','-A','--',str(board.PREFIX));board.git(directory,'commit','--quiet','-m','重置当前公屏，仅保留已交付成果入口 '+report['reset_id'])
-        chat_commit=board.git(directory,'rev-parse','HEAD').stdout.decode().strip()
-        pushed=board.git(directory,'push','--atomic','--quiet','origin',
-                         result_commit+':refs/heads/'+branch,chat_commit+':refs/heads/'+chat,check=False)
-        if board.auth_rejected(pushed):raise board.AuthenticationError('Credential rejected; no reset success is confirmed')
-        if pushed.returncode:raise board.BoardError('Atomic reset not confirmed; no success reported. '+pushed.stderr.decode(errors='replace')[:700])
-        board.git(directory,'fetch','--quiet','--no-tags','origin',
-                  '+refs/heads/'+branch+':refs/remotes/origin/result',
-                  '+refs/heads/'+chat+':refs/remotes/origin/chat')
-        receipt=json.loads(board.git(directory,'show','refs/remotes/origin/result:cleanup/reset-receipt.json').stdout)
-        if receipt.get('reset_id')!=report['reset_id']:raise ValueError('Remote reset receipt differs; check actual state')
-        message=board.git(directory,'show','refs/remotes/origin/chat:'+str(board.PREFIX/'events'/('00000001_'+event['id']+'.json')))
-        if json.loads(message.stdout)['id']!=event['id']:raise ValueError('Remote board confirmation differs')
-        return {'status':'pushed','reset_id':report['reset_id'],'result_commit':result_commit,'board_commit':chat_commit,
-                'preserved_done':report['done_count'],'removed_unfinished_records':report['unfinished_count'],'board_events_after_reset':1}
+    raise ValueError('The old cleanup reset and its board are retired; preserve current hypergraph work and do not recreate or reset its board')
 
 
 def main():

@@ -6,7 +6,15 @@
 
 ## 研究入口
 
-恰六人半覆盖仍开放。用[数学研究 Main](../../../../prompts/research-runtime.md)启动，在 `start` 指定 `--save customer-attraction --subarchive six-providers`。新 RUN 引用[恰六人原题](问题--问题.md)和[共同目录完整历史模型](../../state/定义/共同目录完整历史模型--定义.md)，从当前要解决的证明义务选择已有对象和超边。
+恰六人半覆盖仍开放。当前先完成超边，研究Agent随后从头设计，见[暂停说明](../../../../prompts/research-runtime.md)。旧试跑合作公屏已删除；[原题](问题--问题.md)、[共同模型](../../state/定义/共同目录完整历史模型--定义.md)、实际研究文件和未完问题保留。
+
+已有数学与断点可直接打开：
+
+- Boss1：[主笔记](../../../../research/workspaces/six-boss1-20261111/main.md)、[普遍界证明](../../../../research/workspaces/six-boss1-20261111/main_v6_exact_audit/proof.md)、[真实末回复重查询族](../../../../research/workspaces/six-boss1-20261111/main_terminal_reply_requery/proof.md)。
+- Boss2：[主笔记及未完运输审查](../../../../research/workspaces/six-boss2-20261111-cross/main.md)、[一般收入合同与未付预算](../../../../research/workspaces/six-boss2-20261111-cross/coverage_bridge/formal_shared_rz_income_bridge_v1.md)。
+- 承重勘误：[全局X须保同一实际背景下的最大潜力条件](../../../../research/workspaces/six-boss1-20261111/visible_maximum_joint_v6_model_erratum.md)；[旧ROOT显示式漏加号的更正](../../../../research/workspaces/six-boss1-20261111/root270_replycaps_iter3_main_review.md)与[当前根付款证明](../../../../research/workspaces/six-boss1-20261111/main_root_reweighting/proof.md)。旧冻结证据须合读这些更正，不取消独立有效支持。
+
+Boss1主笔记提及的后继_stage目录不在当前已推送快照，不冒称其草稿已恢复；Boss2新矩阵仍待完整独立审查，未付预算不是半覆盖证明。保存的working不证明会话在线，后续从实际文件接续，不据旧公屏派工或重跑已认证计算。
 
 ## 内容位置
 

@@ -6,6 +6,6 @@
 | --- | --- |
 | 2.5.3：批量登记数学对象 | [02.5-3-register.md](02.5-3-register.md) |
 | 第三阶段：从内到外建立超边 | [03-map.md](03-map.md) |
-| 后续真正研究 | [research-runtime.md](research-runtime.md) |
+| 研究Agent（暂停，等待从头设计） | [research-runtime.md](research-runtime.md) |
 
-worker和Solver文件由执行者从仓库内部读取，用户不用另下载或粘贴。登记/构图按可用并发持续补位；研究Main与长线研究者持续推进，机动代理取证和独立挑战。已有RUN保数学与原输入接续，普通调度按现行设计调整；明确对照保其输入隔离。
+内部worker资料由执行者读取。当前构图按原任务继续，旧研究Agent不再启动；研究数学、输入和断点保留供后续设计取用，不据旧词重建公屏。
