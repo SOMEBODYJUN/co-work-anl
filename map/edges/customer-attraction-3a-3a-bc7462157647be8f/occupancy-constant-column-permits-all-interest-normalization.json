@@ -1,0 +1,42 @@
+{
+  "edge_id": "ca-bc74-occupancy-constant-column-permits-all-interest-normalization",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-60cc776fc561460eba78d5c348e4d9b2"
+  ],
+  "target_ids": [
+    "M-c5e0e28d6d62416fa33944cc91e60b98"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定n≥1、有限非空共同标签目录、非负精确客户质量及一份满足全部有序历史IC的完整σ；全兴趣型质量r。严格分离C_n>W_σ时才归一。",
+  "roles": {
+    "M-60cc776fc561460eba78d5c348e4d9b2": "将CCE可行约束表示成H_T−W的占用列",
+    "M-c5e0e28d6d62416fa33944cc91e60b98": "删除全兴趣型并W归一不损失严格强CCE反例存在性"
+  },
+  "explanation": "全兴趣客户在每个n人终局被全体覆盖，每位收益恒r/n；顺序所有真实IC和静态每人每固定偏离差都恒等抵消。占用LP的该客户每列W=r且对每T有H_T=(n+1)r/(n+1)=r，故全部H_T−W行该列0，CCE可行分布集合不变而目标每列减r；Cn与W都减r，差不变。若删后W′0，原根IC对任意标签a的真实偏离至少给其覆盖质量/n，但根actual收益0，迫所有合法标签质量0；非空兴趣全为零，Cn′0，矛盾严格差正。因此W′>0，正尺度乘1/W′保所有IC、CCE及正差；有理点清分母还原单位客户，整数删除仍整数。n1/k1退化也包含，严格分离条件使归一不会用空截面。",
+  "scope": "完整严格分离存在性约简；不声称任意固定形式σ删除后有W1可行截面。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/候选/较弱CCE福利桥的占用LP表示与边界--候选.md",
+      "sha256": "fdfb9a495a92df874869a8510aecbdce23d1c09b04873e06a62a6b8b624f554c"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/完整策略锥与静态粗相关对偶的交替接口--程序.md",
+      "sha256": "15eadc653bff7c35490e1d840f24be95044c809432b237c8ba2ee6d3485011c7"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "本次worker逐条实读当前钉定正文与任务必要证据，核同一完整有序σ、全部联合前提、真实后继与实际结论范围。所列本次Fraction校验见verification.md；历史程序/LP/BI未运行。此边证明目标整条陈述，未将发现范围当全域。",
+  "whole_result": "占用常数列与全部真实IC的常数抵消，完整证明NORM的删除、差不变、严格点W′>0、W′1缩放及有理清分母结论。",
+  "endpoint_pins": {
+    "M-60cc776fc561460eba78d5c348e4d9b2": "6132060befc8c47680cfd3327bf0286857ac5029bbb1357a05f06acef5920b46",
+    "M-c5e0e28d6d62416fa33944cc91e60b98": "d42d37f86d61ea34a6fe65675519a0b81e12fa344e26ccab1a25a1192933b9c8"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/候选/较弱CCE福利桥的占用LP表示与边界--候选.md": "fdfb9a495a92df874869a8510aecbdce23d1c09b04873e06a62a6b8b624f554c",
+    "archives/customer-attraction/state/程序/完整策略锥与静态粗相关对偶的交替接口--程序.md": "15eadc653bff7c35490e1d840f24be95044c809432b237c8ba2ee6d3485011c7"
+  },
+  "review_digest": "4c3d6f01ebc855e6f3d094a1f08b720615b904b57d8ce21881134cecf2522967"
+}

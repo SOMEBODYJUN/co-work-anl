@@ -1,0 +1,45 @@
+{
+  "edge_id": "ca-bc74-static-row-prices-evaluate-ten-customer-wallet",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "cag-all-adjacent-wallet-static-cashout"
+  ],
+  "target_ids": [
+    "ten-customer-repeated-actual-row-adjacent-wallet-failure"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "专化到TEN明示四块客户和actual(C,C,D)，保持所有其他actual行动冻结。最优三元组以A/D私有客户强制包含A和D。",
+  "roles": {
+    "cag-all-adjacent-wallet-static-cashout": "提供f_i=g+h(T∩Zi)及相邻C_j的精确静态公式",
+    "ten-customer-repeated-actual-row-adjacent-wallet-failure": "冻结矩阵、三强预算失败和存在版逃逸的数值部分"
+  },
+  "explanation": "六核心actual负载2，D三客户负载1，仅A私有客户负载0。f=g+h给两个C行(3,4,7/2,3/2)，D行(2,3,3,3)；退出只C→D，C_adj=6/(2·3)=1。行最大和11、共同A和11、最优(A,A,D)和11均超过W9+C_adj1。私有性使全部最优无序多重集仅CAD/AAD/ABD/ADD；用同一矩阵最小指派得15/2、17/2、8、6，故存在版可取(D,D,A)价6。静态消项本身在任一指派仍成立，预算失败不反它。",
+  "scope": "精确固定叶静态数值及失败目标，不将冻结矩阵认证为真SPE。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/全相邻退出钱包的静态消项与冻结行价格--引理.md",
+      "sha256": "3491cb227551e2570d98ab410819e80c913ef80fb990d04fd4e6a893d6661a22"
+    },
+    {
+      "path": "archives/customer-attraction/state/反例/十客户重复实际行的相邻钱包失败--反例.md",
+      "sha256": "ba2d071c3a74232a24eb2d0770101606d39e2b1e585262bb89838870e7893995"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "本次worker逐条实读当前钉定正文与任务必要证据，核同一完整有序σ、全部联合前提、真实后继与实际结论范围。所列本次Fraction校验见verification.md；历史程序/LP/BI未运行。此边仅交明确局部贡献，remaining保目标未付部分。",
+  "contribution": {
+    "result": "从全相邻行价公式得到TEN全部冻结矩阵、C_adj=1、三强式价11>10与最优指派minQ=6。",
+    "remaining": "TEN整条反例的21历史完整σ可信性、实际叶实现由其独立完整真实收益表承担；静态恒等式本身不能建立顺序SPE。"
+  },
+  "endpoint_pins": {
+    "cag-all-adjacent-wallet-static-cashout": "deba64fac1481bbc99a3947befc04a11341752f25a1a544d7b383c5ed05c11c9",
+    "ten-customer-repeated-actual-row-adjacent-wallet-failure": "2aa5d9df1f875c42bd0ef544b43677e6b6721a6afadb7277332b18126309a935"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/全相邻退出钱包的静态消项与冻结行价格--引理.md": "3491cb227551e2570d98ab410819e80c913ef80fb990d04fd4e6a893d6661a22",
+    "archives/customer-attraction/state/反例/十客户重复实际行的相邻钱包失败--反例.md": "ba2d071c3a74232a24eb2d0770101606d39e2b1e585262bb89838870e7893995"
+  },
+  "review_digest": "e39814a12225141539180a45be7812e6a9c45639ec2f2ce0a8997496085265f0"
+}

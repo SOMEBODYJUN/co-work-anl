@@ -1,0 +1,60 @@
+{
+  "edge_id": "ca-b7bf-petal-paid-pool-all-to-half",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-9f2ee4fe4a7f454f83c30456b204b8f6",
+    "M-a73c059007b34941839ba1683f0d4479"
+  ],
+  "target_ids": [
+    "Q-CAG-HALF"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "限定B给出的完整花瓣策略族并沿同一σ计算H；全p付款在此族已证。relation_mode因输入A自身是conditional对象而保conditional；族内没有额外开放付款假设。",
+  "roles": {
+    "M-9f2ee4fe4a7f454f83c30456b204b8f6": "提供全p付款后的分数minimax及(2−1/m)覆盖归约。",
+    "M-a73c059007b34941839ba1683f0d4479": "在原同一完整花瓣策略族上对全部p支付所需前件。",
+    "Q-CAG-HALF": "只在此无限参数族得到半覆盖及更强因子；其余实例仍开放。"
+  },
+  "explanation": "固定m≥2,K≥2及原全历史花瓣规则。B给同一σ的H_core=1−a/m、H_B=m−2+a/m、H_cj=ρ_j/m，Σρ=1−a，任意合法p均有P(p)≤2−a+a(1−b)/(2m−a)≤2=W/m。因而A的全部p前件在此族已由第二输入付清，可实例化得OPT_m≤(2−1/m)W≤2W。两输入必须共同使用：条件接口单独不支付任何σ；花瓣付款单独也不是一般最优覆盖minimax界。原花瓣实际W2m、精确OPT2m+min(K,m−1)还可更强，但本边只记录POOL接口真正推出的保证。",
+  "scope": "原花瓣C两客户、B有2(m−1)客户、K个私瓣及原全有序历史σ；每个预先固定的不同花瓣响应映射、每个p，包括概率边界。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/R-171池化响应负载Jensen信用与条件接口--引理.md",
+      "sha256": "e1aa463a90efcf3e762275425b7ba04cc5fb8f538d9db0245ada2640ffd1c2d2"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/R-171池化响应负载Jensen信用与条件接口--引理.md",
+      "sha256": "e1aa463a90efcf3e762275425b7ba04cc5fb8f538d9db0245ada2640ffd1c2d2",
+      "section": "两个校准与失败边界"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/R-171-security-core-20261031/original/pool_structural_checks.md",
+      "sha256": "72bc555caa4135339937f27e58624dec73be31774759e48683f9d8d1bfbb6b6b",
+      "section": "2. 新弱iid反例的整个多花瓣族，对全部p满足POOL"
+    },
+    {
+      "path": "archives/customer-attraction/state/证明/花瓣弱iid反族的显式阈值与渐近机制--证明.md",
+      "sha256": "10612b3cc46194c02896278722fbb5087817f8c2d6f207dd099c561975d5430e",
+      "section": "两参数目录与全部有序历史策略"
+    }
+  ],
+  "reviewed_by": "Boss1/b7bf-recovery-worker",
+  "review_note": "本轮逐项实读当前registry、任务固定版本、所列原陈述及承重证明；核了同一策略/真实后继/索引与背景量词。下述whole或局部贡献按目标整条陈述区分。有限核验的真实范围另见本包reading-ledger与finite-evidence-check，不借历史运行冒称本轮复跑。",
+  "contribution": {
+    "result": "对全部m≥2,K≥2原花瓣完整SPE族有OPT_m≤(2−1/m)W，从而half；这是一条两前提ALL的已完成特殊族归约。",
+    "remaining": "Q-CAG-HALF还要求任意共同目录和每份完整σ；一般全pPOOL已被635例否定，不能将此族的付款外推。"
+  },
+  "endpoint_pins": {
+    "M-9f2ee4fe4a7f454f83c30456b204b8f6": "f8959bda4b81a1da1262e4a65d8fff2e8827aff973b028882479dad509576a48",
+    "M-a73c059007b34941839ba1683f0d4479": "97bea580dcdeefa614bfd40e58f857889a5f541caa50b530a2e73d951e759a45",
+    "Q-CAG-HALF": "dccd5277f7b0c1bb4dcac17287010f1d012bb40c6244c51f24808c1519a4b5ea"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/R-171池化响应负载Jensen信用与条件接口--引理.md": "e1aa463a90efcf3e762275425b7ba04cc5fb8f538d9db0245ada2640ffd1c2d2",
+    "archives/customer-attraction/tools/evidence/R-171-security-core-20261031/original/pool_structural_checks.md": "72bc555caa4135339937f27e58624dec73be31774759e48683f9d8d1bfbb6b6b",
+    "archives/customer-attraction/state/证明/花瓣弱iid反族的显式阈值与渐近机制--证明.md": "10612b3cc46194c02896278722fbb5087817f8c2d6f207dd099c561975d5430e"
+  },
+  "review_digest": "b4ea8891ebbb6d2dd566c6f6e865ba2f2aa29f85fca78ce49363682584fbe864"
+}

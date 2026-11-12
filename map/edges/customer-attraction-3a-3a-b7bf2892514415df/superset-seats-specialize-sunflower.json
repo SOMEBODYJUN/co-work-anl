@@ -1,0 +1,58 @@
+{
+  "edge_id": "ca-b7bf-superset-seats-specialize-sunflower",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "CA-MAXIMA-SUPERSET-SEATS"
+  ],
+  "target_ids": [
+    "CA-SUNFLOWER-MAXIMA-2M1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "至少两个极大覆盖时共同core加两两不交非空花瓣；唯一极大按正文单独分支。归属映射固定且不合并有序历史。",
+  "roles": {
+    "CA-MAXIMA-SUPERSET-SEATS": "全部合法前缀的superset收益支配与第n大席位保底；不要求只选极大或PNE。",
+    "CA-SUNFLOWER-MAXIMA-2M1": "在共同核心及不交花瓣下分离一次core，得到完整锐界。"
+  },
+  "explanation": "至少两个不同极大主题时，B_j=C⊔P_j，w_j>0且v_j=c，于是一般席位f_j(k)=w_j/k+c/n；其第n大ν=μ+c/n，其中μ为私有w_j/k的第n大带重数值。SEAT给W≥nν=nμ+c。严格大于μ的席位数Σe_j≤n−1，且e_j≤n−1保证w_j≤(e_j+1)μ。任意≤n瓣之和≤(2n−1)μ；最优主题逐项扩张为极大，覆盖恰c加这些不交瓣，故OPT_n≤c+(2−1/n)(W−c)。s1时一般接口w=|B1|,v0，ν=|B1|/n给W≥|B1|，又覆盖不超过B1，所以W=OPT。n1及全零因此已含。锐性取一瓣n、n−1瓣1并附任意c：全选大瓣每人c/n+1，偏单位瓣的任意真实后继收益不超过此，离轨子树分别BI补齐，W=c+n、OPT=c+2n−1；n1固定真实c用两个私瓣1的极大主题。一般目录的v_j会重复共享客户，恰是此专化需要不交瓣/共同core的原因。",
+  "scope": "任意总人数n≥1，极大主题满足sunflower；所有内部子主题、同覆盖标签、历史依赖平局、空主题及全部合法前缀均保留。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/向日葵极大主题锐福利界--定理.md",
+      "sha256": "54df40904649036ee14ddff0f622bcf40791556e5e3743e00b05a384bd976cfc",
+      "section": "8. 任意共同目录可用的 superset 席位接口"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/向日葵极大主题锐福利界--定理.md",
+      "sha256": "54df40904649036ee14ddff0f622bcf40791556e5e3743e00b05a384bd976cfc",
+      "section": "1. 输入类与结论"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/向日葵极大主题锐福利界--定理.md",
+      "sha256": "54df40904649036ee14ddff0f622bcf40791556e5e3743e00b05a384bd976cfc",
+      "section": "3. 第 `n` 大私有席位与最优组合"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/向日葵极大主题锐福利界--定理.md",
+      "sha256": "54df40904649036ee14ddff0f622bcf40791556e5e3743e00b05a384bd976cfc",
+      "section": "4. 锐性"
+    },
+    {
+      "path": "archives/customer-attraction/state/审查/向日葵极大主题与席位引理审查--审查.md",
+      "sha256": "f2c091b9d99cc429a18e4dadd3c5cef58dd9a07191de6c57e5395a15f32c0e9b"
+    }
+  ],
+  "reviewed_by": "Boss1/b7bf-recovery-worker",
+  "review_note": "本轮逐项实读当前registry、任务固定版本、所列原陈述及承重证明；核了同一策略/真实后继/索引与背景量词。下述whole或局部贡献按目标整条陈述区分。有限核验的真实范围另见本包reading-ledger与finite-evidence-check，不借历史运行冒称本轮复跑。",
+  "whole_result": "每份此输入类完整纯SPE满足OPT_n≤c+(2−1/n)(W−c)≤(2−1/n)W；唯一极大时W=OPT_n，且每个n及任意指定core大小的系数按上述完整策略构造达到锐性。",
+  "endpoint_pins": {
+    "CA-MAXIMA-SUPERSET-SEATS": "84f04c8da55aca0ecf1907a918bc1499d57dd0e6c089947a763b0b2f80146466",
+    "CA-SUNFLOWER-MAXIMA-2M1": "b07a1492c8a969f63f7d3563637135b43dd79892f131e2d10dcf71ecfde12c6b"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/向日葵极大主题锐福利界--定理.md": "54df40904649036ee14ddff0f622bcf40791556e5e3743e00b05a384bd976cfc",
+    "archives/customer-attraction/state/审查/向日葵极大主题与席位引理审查--审查.md": "f2c091b9d99cc429a18e4dadd3c5cef58dd9a07191de6c57e5395a15f32c0e9b"
+  },
+  "review_digest": "213cc5f77ff9a080440fd484c38046370136678b03ed9f90024d10e8f2b8e342"
+}

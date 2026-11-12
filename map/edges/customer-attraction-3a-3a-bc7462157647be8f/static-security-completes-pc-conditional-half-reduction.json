@@ -1,0 +1,45 @@
+{
+  "edge_id": "ca-bc74-static-security-completes-pc-conditional-half-reduction",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/static-cce-uniform-deletion-security-lower-bound-and-strict-gap"
+  ],
+  "target_ids": [
+    "customer-attraction/cross-population-static-cce-mean-welfare-bridge"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "假设开放PC比较对某固定m人完整σ成立，保持同客户同目录；额外静态查询独立于全部m槽竞争背景，允许相关和重复。",
+  "roles": {
+    "customer-attraction/static-cce-uniform-deletion-security-lower-bound-and-strict-gap": "给C_(m+1)≥(m+1)v_(m+1)",
+    "customer-attraction/cross-population-static-cce-mean-welfare-bridge": "条件路线中的安全步及静态因子二，未付的仍是PC"
+  },
+  "explanation": "SEC置n=m+1给W/m≥C_(m+1)/(m+1)≥v_(m+1)。静态额外槽因子二可直接核：任意m槽竞争混合Q令L=Ec、M=max_TΣ_T1/(1+L)，Jensen使max_T E_Qf≥M。最优五/一般m比较重数d逐客户有1[d>0]≤(d+L)/(1+L)，d项≤mM；Q每元组m合法槽，L项=E_QΣ_A Σ_(x∈A)1/(1+L)≤mM。因此OPT_m≤2mM≤2m max_T E_Qf，取min_Q给OPT≤2m v_(m+1)。链得2W≥OPT。没有把Cn≥nv倒读成Cn=nv，三单例严格间隙也不反跨人数PC。",
+  "scope": "开放PC下完整half归约的已付静态部分；无PC无条件结论。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/静态粗相关均衡的安全下界与三单例严格间隙--引理.md",
+      "sha256": "05117b940130385530bfaa9aa741ea4ddbbbbc3e73206efe009e44b17253c221"
+    },
+    {
+      "path": "archives/customer-attraction/state/候选/跨人数静态粗相关均值与顺序福利比较--候选.md",
+      "sha256": "f453901abc453cbcf8b30ada9571f04805302a8b4b4e529647bfe16c709b6079"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "本次worker逐条实读当前钉定正文与任务必要证据，核同一完整有序σ、全部联合前提、真实后继与实际结论范围。所列本次Fraction校验见verification.md；历史程序/LP/BI未运行。此边仅交明确局部贡献，remaining保目标未付部分。",
+  "contribution": {
+    "result": "若PC成立，则静态安全下界与显式Jensen/合法m槽预算完整推出W≥m v_(m+1)≥OPT_m/2。",
+    "remaining": "PC目标本身W/m≥C_(m+1)/(m+1)仍须普遍真实σ付款；同人数强桥失败或有限九例正gap不解决它。"
+  },
+  "endpoint_pins": {
+    "customer-attraction/cross-population-static-cce-mean-welfare-bridge": "39bed872f2e76b1954d806f48e01058bbe84718e1478f70d0ba5d2990d327a92",
+    "customer-attraction/static-cce-uniform-deletion-security-lower-bound-and-strict-gap": "4a35ec037d245237f35c1f729e660aca9d510c96273741a730df54730de30c6f"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/静态粗相关均衡的安全下界与三单例严格间隙--引理.md": "05117b940130385530bfaa9aa741ea4ddbbbbc3e73206efe009e44b17253c221",
+    "archives/customer-attraction/state/候选/跨人数静态粗相关均值与顺序福利比较--候选.md": "f453901abc453cbcf8b30ada9571f04805302a8b4b4e529647bfe16c709b6079"
+  },
+  "review_digest": "e7b0c189472769d53f169f7ad96bc6cfa21d5219171429cd0d9612d3515117c7"
+}

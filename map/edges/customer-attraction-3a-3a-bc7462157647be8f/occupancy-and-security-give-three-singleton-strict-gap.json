@@ -1,0 +1,54 @@
+{
+  "edge_id": "ca-bc74-occupancy-and-security-give-three-singleton-strict-gap",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "M-60cc776fc561460eba78d5c348e4d9b2",
+    "customer-attraction/static-cce-uniform-deletion-security-lower-bound-and-strict-gap"
+  ],
+  "target_ids": [
+    "M-8093886eed9c4824be53388b7d10d78b"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "同一三个不交单客户标签、三名单位玩家；静态CCE允许相关与非对称，顺序比较另用完整SPE。",
+  "roles": {
+    "M-60cc776fc561460eba78d5c348e4d9b2": "精确占用LP及对偶，允许先玩家对称化",
+    "customer-attraction/static-cce-uniform-deletion-security-lower-bound-and-strict-gap": "每人安全下界与合法查询独立性，区别CCE值和安全值",
+    "M-8093886eed9c4824be53388b7d10d78b": "该固定输入v3=2/3、C3=21/10>2与全部顺序SPE W3"
+  },
+  "explanation": "均匀查询对两不同/同标签背景分别得2/3、7/9；均匀混合AB/AC/BC背景使每固定查询得2/3，故v3=2/3。占用LP再按标签置换平均，只三型300/210/111，其(W,H)为(1,7/3),(2,19/9),(3,2)。每型对偶表达W−(9/10)(W−H)≥21/10；CCE的E(W−H)≥0给EW≥21/10。按9/10取210、1/10取111并均匀排列标签/玩家，聚合slack0，逐人每固定查询slack为其三分之一，故合法CCE达到21/10。全部10占用列本次有理核同一对偶。顺序末位若有fresh严格优重复；第二位先fresh以免只得≤1/2，根任标签都1，故全部SPE三不同W3。安全一般界只给C3≥2，本例严格性不能反向抹掉。",
+  "scope": "SINGLE整条固定实例严格分离；不是PC/弱桥或half反例。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/候选/较弱CCE福利桥的占用LP表示与边界--候选.md",
+      "sha256": "fdfb9a495a92df874869a8510aecbdce23d1c09b04873e06a62a6b8b624f554c"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/静态粗相关均衡的安全下界与三单例严格间隙--引理.md",
+      "sha256": "05117b940130385530bfaa9aa741ea4ddbbbbc3e73206efe009e44b17253c221"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/静态粗相关均衡的安全下界与三单例严格间隙--引理.md",
+      "sha256": "05117b940130385530bfaa9aa741ea4ddbbbbc3e73206efe009e44b17253c221"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-bc7462157647be8f/verification.md",
+      "sha256": "b91c7f6d0d96e7008086c82cd68cfc467e1b1214f9b317e5b744ea61880c640e"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "本次worker逐条实读当前钉定正文与任务必要证据，核同一完整有序σ、全部联合前提、真实后继与实际结论范围。所列本次Fraction校验见verification.md；历史程序/LP/BI未运行。此边证明目标整条陈述，未将发现范围当全域。",
+  "whole_result": "ALL(占用LP,静态安全量词)在三个单例输入上完整推出v3=2/3、最低任意CCE=21/10>3v3=2、所列达到分布及全部顺序SPE福利3。",
+  "endpoint_pins": {
+    "M-60cc776fc561460eba78d5c348e4d9b2": "6132060befc8c47680cfd3327bf0286857ac5029bbb1357a05f06acef5920b46",
+    "M-8093886eed9c4824be53388b7d10d78b": "27d597dae166fb700728dadc565dacc07d3298868b69aea3c0a6d7e5d0bde9a1",
+    "customer-attraction/static-cce-uniform-deletion-security-lower-bound-and-strict-gap": "4a35ec037d245237f35c1f729e660aca9d510c96273741a730df54730de30c6f"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/候选/较弱CCE福利桥的占用LP表示与边界--候选.md": "fdfb9a495a92df874869a8510aecbdce23d1c09b04873e06a62a6b8b624f554c",
+    "archives/customer-attraction/state/引理/静态粗相关均衡的安全下界与三单例严格间隙--引理.md": "05117b940130385530bfaa9aa741ea4ddbbbbc3e73206efe009e44b17253c221",
+    "map/edges/customer-attraction-3a-3a-bc7462157647be8f/verification.md": "b91c7f6d0d96e7008086c82cd68cfc467e1b1214f9b317e5b744ea61880c640e"
+  },
+  "review_digest": "9f69d4299078a3b8751d3c6705ec08f260184daf304f0469d15ec48c8e20217c"
+}

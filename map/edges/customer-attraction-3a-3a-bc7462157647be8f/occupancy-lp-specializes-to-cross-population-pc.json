@@ -1,0 +1,50 @@
+{
+  "edge_id": "ca-bc74-occupancy-lp-specializes-to-cross-population-pc",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "M-60cc776fc561460eba78d5c348e4d9b2"
+  ],
+  "target_ids": [
+    "customer-attraction/cross-population-static-cce-mean-welfare-bridge"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "保持客户和整个目录，把占用定理人数参数置n=m+1；原m人完整σ仅供应独立标量W_σ/m。",
+  "roles": {
+    "M-60cc776fc561460eba78d5c348e4d9b2": "适用于所有正人数的精确任意CCE占用LP/对偶",
+    "customer-attraction/cross-population-static-cce-mean-welfare-bridge": "跨人数平均比较右侧可精确表示，动态不等式仍open"
+  },
+  "explanation": "对全部n槽多重集q，取h_n(0)=n，h_n(c>0)=(n+1)/(c+1)及R_T(q)=Σ_(x∈T)h_n(c_x)。LP minΣρW/n，ρ≥0、Σρ1、E(R_T−W)≤0，恰Cn/n。必要性各人约束相加，充分性对每q均匀打乱玩家，不能只验原不对称分布总和。将n置m+1就是PC中的同客户同目录静态端，没有把m人顺序σ的真实偏离冻结化。原九例51浮点support没有精确可行性，不能付PC不等式。",
+  "scope": "完成此follow-up指定对象对的表示比较；PC本身开放不是身份待决。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/候选/较弱CCE福利桥的占用LP表示与边界--候选.md",
+      "sha256": "fdfb9a495a92df874869a8510aecbdce23d1c09b04873e06a62a6b8b624f554c"
+    },
+    {
+      "path": "archives/customer-attraction/state/候选/跨人数静态粗相关均值与顺序福利比较--候选.md",
+      "sha256": "f453901abc453cbcf8b30ada9571f04805302a8b4b4e529647bfe16c709b6079"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/跨人数静态CCE原诊断的占用约束与浮点支持--程序.md",
+      "sha256": "ec1f29bcb4a0a0cb37dc0d10ed173fb11f7a91dd92e9976fd13861a84c0378f2"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "本次worker逐条实读当前钉定正文与任务必要证据，核同一完整有序σ、全部联合前提、真实后继与实际结论范围。所列本次Fraction校验见verification.md；历史程序/LP/BI未运行。此边仅交明确局部贡献，remaining保目标未付部分。",
+  "contribution": {
+    "result": "PC的C_(m+1)/(m+1)完全等于占用LP人数专化后的归一目标，适用全部相关/非对称CCE。",
+    "remaining": "要证PC还需从每份m人完整σ构造该LP的精确可行分布且平均福利≤W/m，或另给普遍上界；LP表示不供应这一动态付款。"
+  },
+  "endpoint_pins": {
+    "M-60cc776fc561460eba78d5c348e4d9b2": "6132060befc8c47680cfd3327bf0286857ac5029bbb1357a05f06acef5920b46",
+    "customer-attraction/cross-population-static-cce-mean-welfare-bridge": "39bed872f2e76b1954d806f48e01058bbe84718e1478f70d0ba5d2990d327a92"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/候选/较弱CCE福利桥的占用LP表示与边界--候选.md": "fdfb9a495a92df874869a8510aecbdce23d1c09b04873e06a62a6b8b624f554c",
+    "archives/customer-attraction/state/候选/跨人数静态粗相关均值与顺序福利比较--候选.md": "f453901abc453cbcf8b30ada9571f04805302a8b4b4e529647bfe16c709b6079",
+    "archives/customer-attraction/state/程序/跨人数静态CCE原诊断的占用约束与浮点支持--程序.md": "ec1f29bcb4a0a0cb37dc0d10ed173fb11f7a91dd92e9976fd13861a84c0378f2"
+  },
+  "review_digest": "847f394fba58b39875c136d3c3fb3ffcf225c0fe396b7ec71fe87a4dbeede7f6"
+}
