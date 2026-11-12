@@ -1,0 +1,57 @@
+{
+  "edge_id": "cag-ca629-hall-earliest-world-adaptive-source-net",
+  "kind": "transfers",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/actual-cancellation-simultaneous-source-payment-and-incoming-balance",
+    "customer-attraction/earliest-active-relay-predictable-absorption-and-row-envelope"
+  ],
+  "target_ids": [
+    "M-1d9022332b184d209dbe28f298d87faf"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "同一有限单位客户共同带标签目录、完整历史纯SPE、actual叶Z、同一最优合法T及owner Q；R=O\\C、I=O∩C、G=C\\O，r_i=|Q_i∩R|，g_i=u_i(G)。所有源共用iid连续Uniform角色priority，owner阈值激活，沿固定自然query DAG最早active路由；每world的γ(U)属于同一actual等分Hall-A可行集，且各owner总取消γ_i(U)≥min(g_i,r_i)。不放宽为裸Gamma，不固定逐客户delta，不使用随机winner收入。",
+  "roles": {
+    "customer-attraction/actual-cancellation-simultaneous-source-payment-and-incoming-balance": "给同一actual I/G容量的HYB/Hall网络、局部预送共同扩充、Γ非空以及Σγ=|G|与Ση=W的共同钱包。",
+    "customer-attraction/earliest-active-relay-predictable-absorption-and-row-envelope": "给unit源最早自然路由的固定p owner吸收1/c；条件owner阈值混合后保初始owner吸收概率1/c，不要求各客户独立。",
+    "M-1d9022332b184d209dbe28f298d87faf": "将固定取消的同时源预付转到可看完整world的γ(U)：平均可行且所有角色K_i^src≤u_i(I)+Eγ_i同时成立。"
+  },
+  "explanation": "先由Hall局部扩充取owner总下界Γ非空；线性容量、流守恒及总下界使Γ为固定紧凸集，任可测逐world选择的均值仍在Γ。对客户x条件U_owner=t，其他位独立Ber(1−t)，owner强制激活；earliest的源初始吸收概率混合后精确1/c_i(x)。不依γ的unit路由先定义，再以ρ_x(U)=1−γ_x(U)缩减吸收。因此A_i^src=EΣ_(x∈Q_i∩R)ρ_x(U)1_(owner初始吸收)≤Σ1/c_i(x)≤D_i(T_i)，无须γ与终点独立。D_i0时A_i0、费用置0；否则K_i^src=u_i A_i^src/D_i≤u_i。令η_i=I_i+Eγ_i，Ση=W。若g_i≤r_i，LOCAL-TOTAL给η_i≥I_i+g_i=u_i；若g_i>r_i，则每worldγ_i≥r_i且各γ_x≤1，迫Q_i∩R全部取消，K_i^src=0≤η_i。两分支对所有i在同一γ均值中同时成立，得完整目标。不能把终点概率上界乘Eρ；incoming仍未支付。",
+  "scope": "M-1d目标整条适应SOURCE-NET（含共同priority、相关γ、均值可行及同时钱包）；不推V_adapt/V_best≤W、incoming预算或half。",
+  "whole_result": "对任意原完整SPE、最优T/owner及同一actual Hall-A+LOCAL-TOTAL内任意world相关取消γ(U)，均值仍可行，η_i=u_i(I)+Eγ_i、Ση=W，原确定u_i/D_i价格下所有owner源当次吸收费同时K_i^src≤η_i。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/实际取消的同时源付款与入流余额--定理.md",
+      "sha256": "5759f87d02d0bacc5c61a5472806d6f464192bb97bcb18a1a3bf1e156a02ad7a"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/最早激活中继的可预测吸收与角色联合包络--定理.md",
+      "sha256": "5027f696f40ce14e2151f3d35710e1157f50ab47e977c486ed544cefb4151e8e"
+    },
+    {
+      "path": "archives/customer-attraction/state/候选/单位源优先级世界的适应取消与源预付--候选.md",
+      "sha256": "16920a3e32395f60cd86346be1564351a9d527db48d0395b33a9b273e263830a",
+      "section": "SOURCE-NET为何能在适应取消后保留"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-ca629ca91d652635/mathematical-comparison.md",
+      "sha256": "dad69607b6ab06e4460879bee4bb3154e99dff5fc2a6a8af68dd911c88f0bfb3",
+      "section": "2. 自然中继、unit世界与适应SOURCE-NET"
+    }
+  ],
+  "reviewed_by": "Boss2",
+  "review_note": "Boss2 W5 CA-RELAY fresh worker按当前registry及任务pins逐组实读全部指定正文/必要证据，逐项比较实际推论与目标完整陈述。原数学程序/LP/BI/IC回放本轮均0；推导由本文解析及指定成熟证明承担，结构检查不替代数学。",
+  "endpoint_pins": {
+    "M-1d9022332b184d209dbe28f298d87faf": "cadb37b67da083593fce0886da72e7118e5411d2d46a54d1140206bc11b39b99",
+    "customer-attraction/actual-cancellation-simultaneous-source-payment-and-incoming-balance": "6301d3ef5ca152ec47607ffd3a061649bb168671ccaaab725d8f88bd9d7f9257",
+    "customer-attraction/earliest-active-relay-predictable-absorption-and-row-envelope": "4520e471de682866028edff6b36294378135f71bfeab14f0b54de97b1b67280b"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/实际取消的同时源付款与入流余额--定理.md": "5759f87d02d0bacc5c61a5472806d6f464192bb97bcb18a1a3bf1e156a02ad7a",
+    "archives/customer-attraction/state/定理/最早激活中继的可预测吸收与角色联合包络--定理.md": "5027f696f40ce14e2151f3d35710e1157f50ab47e977c486ed544cefb4151e8e",
+    "archives/customer-attraction/state/候选/单位源优先级世界的适应取消与源预付--候选.md": "16920a3e32395f60cd86346be1564351a9d527db48d0395b33a9b273e263830a",
+    "map/edges/customer-attraction-3a-3a-ca629ca91d652635/mathematical-comparison.md": "dad69607b6ab06e4460879bee4bb3154e99dff5fc2a6a8af68dd911c88f0bfb3"
+  },
+  "review_digest": "350a9858bfbc352bf1c3cfb77517579e277bbf9ed45c34f99962ed6fb92a0cd9"
+}

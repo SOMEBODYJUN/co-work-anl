@@ -1,0 +1,51 @@
+{
+  "status": "accepted",
+  "premises_mode": "all",
+  "reviewed_by": "Boss2 W5 CA-LOTTERY",
+  "review_note": "已实读本任务全部承重定义、正文、量词及证据；本边按comparison-proof的逐式推导与目标全陈述核对。无原数学程序重跑；程序结构校验另记，不代替证明。",
+  "edge_id": "ca-w5-terminal-tax-definition-load-cap-contribution",
+  "kind": "implies",
+  "source_ids": [
+    "customer-attraction/residual-payoff-tax-calculus"
+  ],
+  "target_ids": [
+    "M-21b495b7e58840219b8452da00e263d2"
+  ],
+  "relation_mode": "unconditional",
+  "conditions": "根无外生背景，m≥1名单位玩家的实际完整终局负载c；τ含全部m槽，不取前m−1槽；W=0单独按零。",
+  "roles": {
+    "customer-attraction/residual-payoff-tax-calculus": "提供τ_b的分母差定义，取b=0、全部终局负载c识别τ(c)。",
+    "M-21b495b7e58840219b8452da00e263d2": "仅得到其税容量和候选若真时的数值因子；OPT付款仍是开放目标。"
+  },
+  "contribution": {
+    "result": "τ(c)=τ_0(c)=Σ_(c_x>0)c_x/(c_x+1)≤[m/(m+1)]W；因此若开放前提OPT_m≤W+τ(c)另外成立，就推出OPT_m≤[2−1/(m+1)]W。",
+    "remaining": "仍须对每份完整有序历史纯SPE证明OPT_m≤W+τ(c)。原IC的真实后继变化、共同完整行支付和actual租金尚未由这个代数上界控制；有限浮点锥与正余量保存点均非其证明。"
+  },
+  "explanation": "τ_b定义取b=0、ℓ=c逐项成为c/(c+1)，零项为0；每个覆盖客户有1≤c≤m，单调性给c/(c+1)≤m/(m+1)，对W个覆盖客户求和。将候选付款作为额外未付前提代入得目标的数值后果。此处明确只交局部贡献，未把前m−1槽税的较小常数用于全终局。",
+  "scope": "全终局税候选的容量与条件数值后果一步，不证明整条开放候选，不由截断税反例否定本候选。",
+  "evidence": [
+    {
+      "path": "map/edges/customer-attraction-3a-3a-d2d520d432eef77d/comparison-proof.md",
+      "sha256": "72f89e3bf69dec8a55bf1da855c4d1d638bf9bdf0f8245fa5cabda02df034d92",
+      "section": "终局税定义只支付数值后果"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/固定背景剩余收益与税--定义.md",
+      "sha256": "c752babf29ecf272b564fe9ff9883c77dcbf6d7fc5e3e501321fab8c5237b4ee"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/终局负载税两种搜索的原始合同与有限阴性--程序.md",
+      "sha256": "0581cfff731758cfa91954e94587c28e4f263dc2bc9dd04b81d5dd466c80dfa1"
+    }
+  ],
+  "endpoint_pins": {
+    "M-21b495b7e58840219b8452da00e263d2": "b279eee54893fd85e3bd074375ea0cdd0d545cbd4778dbd4a618eb5caf9d4100",
+    "customer-attraction/residual-payoff-tax-calculus": "779995a2df37d219c501e728531e3ca4b83eaa87e7deff2653d5d66dcd5e89ba"
+  },
+  "evidence_pins": {
+    "map/edges/customer-attraction-3a-3a-d2d520d432eef77d/comparison-proof.md": "72f89e3bf69dec8a55bf1da855c4d1d638bf9bdf0f8245fa5cabda02df034d92",
+    "archives/customer-attraction/state/定义/固定背景剩余收益与税--定义.md": "c752babf29ecf272b564fe9ff9883c77dcbf6d7fc5e3e501321fab8c5237b4ee",
+    "archives/customer-attraction/state/程序/终局负载税两种搜索的原始合同与有限阴性--程序.md": "0581cfff731758cfa91954e94587c28e4f263dc2bc9dd04b81d5dd466c80dfa1"
+  },
+  "review_digest": "eeba78dd525dd872a7adf9a7ec4fc2d82ca641ee147822b25a50f3ddaa1a7cb6"
+}

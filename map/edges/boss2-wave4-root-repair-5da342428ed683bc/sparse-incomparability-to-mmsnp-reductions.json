@@ -1,0 +1,51 @@
+{
+  "edge_id": "um-03312e-kun-sparse-incomparability-completes-csp-reductions",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-dcddc9883c494fea8a4b270fdc4b10c7"
+  ],
+  "target_ids": [
+    "M-e37dfe8f79184d5ba961c1e78cf3a558"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "在有限关系结构及确定性多项式时间归约的合同下，使用已证的 Feder–Vardi 高围长中间定理（冻结 PDF §5 Theorem 12）。对固定 MMSNP 语言 L ⊆ Rel(τ)，该定理给出固定有限类型 β 上的有限模板族 𝒯、常数 k 和两条归约。补查 Kun–Nešetřil《Forbidden lifts》Theorem 14，β 允许不同于 τ。",
+  "roles": {
+    "M-dcddc9883c494fea8a4b270fdc4b10c7": "给每个 β 型输入构造同类型的高围长实例，同时保持到有限模板族中每个模板的同态可行性。",
+    "M-e37dfe8f79184d5ba961c1e78cf3a558": "目标是 MMSNP 与有限模板 CSP 的双向确定性多项式时间归约。原印 Theorem 2 另把模板族放在输入语言的 τ 型。"
+  },
+  "explanation": "固定 L 后，从中间定理取得 L → CSP(𝒯) 的归约 f，以及只需处理围长至少 k 的 β 型输入的反向归约 g。取 t = 1 + max({0} ∪ {|T| : T ∈ 𝒯})。对任意有限 β 型 S，源定理用固定 β、t、k 构造 S′，使 girth(S′)>k 且对每个 T∈𝒯 有 S→T 当且仅当 S′→T。对模板逐一的等价取存在量词，得到 S∈CSP(𝒯) 当且仅当 S′∈CSP(𝒯)。故 S ↦ g(S′) 是由全部 β 型 CSP 实例到 L 的确定性多项式时间归约，f 保持前向。模板族空时上述析取恒假，t 仍为正整数。",
+  "scope": "对每个固定有限类型 τ 及其任意 MMSNP 语言 L，存在固定有限类型 β 和该类型的有限模板族 𝒯。多项式运行时间的参数合同固定 β、t、k。保证是存在同态的判定归约，模板是有限结构。 本边保留不依赖现代二分的异签名β步骤；有限模板族始终按存在一个模板的析取解释，不用模板不交并冒充其CSP。",
+  "contribution": {
+    "result": "由稀疏不可比算法和 Feder–Vardi 高围长中间定理，L 与某个固定有限类型 β 上的有限模板族 CSP(𝒯) 在确定性多项式时间下互归约。反向归约对任意有限 β 型实例都成立。",
+    "remaining": "本边本身不支付β→原τ的同签名编译，不能单靠高围长中间定理声称整个目标。当前完整同τ结论已由独立现役boss2-kun-modern-bridge-completes-fixed-signature支付：它另外使用有限模板二分、同态反链标记、τ型三色/P分支及低元剖面。旧follow-up任务boss2-kun-same-signature-3b-5d4dd1a8a16eca9d已经由done的map-repair-a78e71b42e9bd669有效替代，故不是仍未路由的比较；冻结2013作者论证中的同τ接口仍不由本条β步骤独自抽出。"
+  },
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/文献/稀疏CSP与平坦矩阵两篇文献整理--文献.md",
+      "sha256": "0b07529b7a2db2b592942290f8a9d8a3c030387c348afd5c772e0dbc1d00f254",
+      "section": "1. Kun：Constraints, MMSNP and Expander Relational Structures"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/retired-literature-structural-algebra-20261031/kun_mmsnp.pdf",
+      "sha256": "e6d37a035edb3cbaa3e246e5781a88c8a348eaaa16a57028dd8782dcf7373eea"
+    },
+    {
+      "path": "map/edges/map-repair-a78e71b42e9bd669/sparse-and-modern-dichotomy-complete-fixed-signature.json",
+      "sha256": "2add47337243ac22dc5da9d8c69537472820802e03606ed6ffacdcf632a0573a"
+    }
+  ],
+  "reviewed_by": "Boss2/root-wave4",
+  "review_note": "本次完整读旧任务/收据/边、当前四对象及共同中文正文，承接本会话已完成的Kun冻结全文及Kun–Nešetřil Theorem14审读，并完整复核当前现代同τ桥。逐式核f、g∘sparse、固定β/t/k、逐模板存在量词、空族及严格围长。当前v2/shared-body版本变化不改变该β步骤；只把旧仍欠同τ的流程描述接到已done现代桥，保作者原证接口与现代独立证明的区别。未重复旧科学计算。",
+  "endpoint_pins": {
+    "M-dcddc9883c494fea8a4b270fdc4b10c7": "d7d4efe1412c23438b3c478da7574fadf9d36fbf4edbff31177248a421331e4a",
+    "M-e37dfe8f79184d5ba961c1e78cf3a558": "0b180510308df6f911e049d3940293ba946379e5693bea94c500ee8109bb2d87"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/文献/稀疏CSP与平坦矩阵两篇文献整理--文献.md": "0b07529b7a2db2b592942290f8a9d8a3c030387c348afd5c772e0dbc1d00f254",
+    "archives/unrelated-machines/tools/evidence/retired-literature-structural-algebra-20261031/kun_mmsnp.pdf": "e6d37a035edb3cbaa3e246e5781a88c8a348eaaa16a57028dd8782dcf7373eea",
+    "map/edges/map-repair-a78e71b42e9bd669/sparse-and-modern-dichotomy-complete-fixed-signature.json": "2add47337243ac22dc5da9d8c69537472820802e03606ed6ffacdcf632a0573a"
+  },
+  "review_digest": "d83584ec36870ca0d3119b6a129c0d90a65b2097ecc59628b5f8f1a2da33ca75"
+}
