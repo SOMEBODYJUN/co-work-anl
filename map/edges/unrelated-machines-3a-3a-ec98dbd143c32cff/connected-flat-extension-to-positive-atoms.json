@@ -1,0 +1,49 @@
+{
+  "edge_id": "um-connected-flat-extension-to-positive-atomic-representation",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-d2f0e90baf4440cab9efbffecfee709e"
+  ],
+  "target_ids": [
+    "M-8a8102ce2db9454ba1ed5eae66e12724"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "在目标POS本来的实正子域内：任意含1且connected to 1的有限普通单项式集C，C+=C∪⋃i xiC；实Λ定义在Span(C+·C+)上，满足Hankel一致性，M_C+(Λ) PSD且rank M_C+=rank M_C=R。正性是目标原有且已给定的输入条件，不是由无正性唯一扩张凭空推出，也不是开放前提。不要求任意满秩列基B connected；不要求归一化、Boolean性或localizer。",
+  "roles": {
+    "M-d2f0e90baf4440cab9efbffecfee709e": "提供保持全部C+·C+数据且秩仍为R的实完整Hankel扩张；本关系使用其存在和秩，不把源定理不要求的正性当成源结论。",
+    "M-8a8102ce2db9454ba1ed5eae66e12724": "完整目标：在目标本来的正且稀疏rank-flat实数据域中，存在有限正原子测度表示原截断数据。"
+  },
+  "explanation": "实际数学句子：对目标POS所量化的每份实正、connected-to-1、sparse rank-flat Hankel数据，源EXT所给的秩R完整扩张必正，并由其R维实正商代数得到有限正原子表示，因此推出POS整条结论。\n\n先由源定理得到实完整泛函Λ̃，其Hankel矩阵扩展原C+·C+数据且完整秩为R。R=0时全矩为0，零测度表示全部输入。R>0时，从原PSD主矩M_C选R个独立列B⊆C；相应Gram主块G正定，不需要B connected。对任意有限单项式集F⊇C，完整秩R与C主块秩R使rank M_F=R。将B排在前面，M_F=[[G,U],[Uᵀ,W]]，G可逆且总秩等于rankG，所以Schur complement W−UᵀG⁻¹U=0；故M_F PSD。每个多项式的有限支撑都包含在这样的F中，因此Λ̃(p²)≥0对所有p成立。\n\n令K=ker H_Λ̃。Hankel结构使K为ideal；全矩PSD与Cauchy–Schwarz使K恰等于平方范数零空间。商代数A=R[x]/K具有正定内积<[p],[q]>=Λ̃(pq)，维数R。变量乘法M_i[p]=[x_i p]良定、实自伴且两两交换，可同时正交分解成joint eigenspaces E_s，joint eigenvalue z_s∈R^d两两不同。常数v=[1]循环，因为[p]=p(M)v张成A。对每个E_s，所有p(M)v的投影均为p(z_s)P_s v；循环性迫E_s=span(P_s v)，所以dimE_s=1且P_s v≠0。因而恰有R个实互异z_s，w_s=||P_s v||²>0，并对任意p有Λ̃(p)=<v,p(M)v>=Σ_s w_s p(z_s)。μ=Σ_s w_sδ_zs于是表示完整扩张，也保持全部原截断数据。\n\n该证明直接支付原PDF Theorem1.5到Theorem3.2之间的正性和有限秩表示步骤，不把Theorem1.1作为未列出的独立对象前提。归一化未要求，权和为Λ(1)；R=0已单独处理。有限正表示在R^d上成立；支撑在另外给定半代数集上时仍须相应localizer，不由本边免费给出。",
+  "scope": "同一实Hankel模型内的整条支持，覆盖POS原陈述的所有有限connected-to-1 C、所有正且rank-flat数据，包括非归一化与R=0。正性是目标自带子域条件，源EXT本身仍可用于非正数据。新边不声称任意表示测度唯一性、数值或有理提取算法、SDP/矩生成、原调度容量；后者另见已canonical的POS→NF δ0 contribution-step。",
+  "whole_result": "EXT在POS原有的实、正、connected-to-1、sparse rank-flat输入域上给完整秩R扩张；其全部有限主矩由Schur complement为零而PSD，R维正商代数的交换自伴乘法与循环常数给正有限原子测度，表示全部原C+·C+矩数据。R>0可取恰R个互异实原子，R=0取零测度，从而完整推出POS的表示测度结论。",
+  "evidence": [
+    {
+      "path": "map/edges/unrelated-machines-3a-3a-ec98dbd143c32cff/positive-flat-review.md",
+      "sha256": "beed75486c0e4a91e07faefab391f3c470ed55e1e8265732262dac1e015179e5",
+      "section": "1. 两个文献结论的准确区别"
+    },
+    {
+      "path": "archives/unrelated-machines/state/文献/稀疏CSP与平坦矩阵两篇文献整理--文献.md",
+      "sha256": "0b07529b7a2db2b592942290f8a9d8a3c030387c348afd5c772e0dbc1d00f254",
+      "section": "2. Laurent–Mourrain：A Sparse Flat Extension Theorem for Moment Matrices"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/retired-literature-structural-algebra-20261031/laurent_flat_extension.pdf",
+      "sha256": "a79a6aae70263cdc0b15415f838df666cfb99d6a00ef87bb1dae381493478fad"
+    }
+  ],
+  "reviewed_by": "Boss2 fresh worker positive-flat-original-threshold-support-count; Boss2 root",
+  "review_note": "本轮实读POS v2、EXT v2完整当前合同及实际pins，共享中文文献正文与冻结Laurent–Mourrain PDF必要定理和§2证明，目视p3/p9；检查Theorem1.4/1.5无正性唯一扩张、Theorem3.2正表示的区别。完整重建独立Gram基的Schur补全正性、Hankel核ideal与PSD商、实交换自伴乘法的同时分解、常数循环性迫一维joint eigenspaces、正权和原数据一致性、R0零测度。不调用未登记对象，不加connected列基假设，不声称算法或所有表示测度唯一。论证闭合，accepted/unconditional/whole； Boss2 root完整实读当前三合同、新边、全新support、ledger与receipt，并提出及独立重建同一Schur/正商代数证明：正定主块存在不要求列基连通；完整秩对任意有限主块迫零Schur补，Cauchy–Schwarz识别Hankel核，常数循环性排除高维joint eigenspace与零权，R0及未归一化均闭合。归一化signed rank2例仅界定正性必要；已有POS→NF只保原T的δ0算法步骤，未把存在性谱分解当作有理实现。Root未重复原PDF渲染或旧科学程序，PDF定理精读由本轮worker完成。",
+  "endpoint_pins": {
+    "M-8a8102ce2db9454ba1ed5eae66e12724": "8c985cebfde20d2b788e4610e314e7fbdc6ca3525041db765165988c455715b9",
+    "M-d2f0e90baf4440cab9efbffecfee709e": "a066527acf0feec7455d375787e9a60dbe8603fa27a7b32090db79d1c5d54fad"
+  },
+  "evidence_pins": {
+    "map/edges/unrelated-machines-3a-3a-ec98dbd143c32cff/positive-flat-review.md": "beed75486c0e4a91e07faefab391f3c470ed55e1e8265732262dac1e015179e5",
+    "archives/unrelated-machines/state/文献/稀疏CSP与平坦矩阵两篇文献整理--文献.md": "0b07529b7a2db2b592942290f8a9d8a3c030387c348afd5c772e0dbc1d00f254",
+    "archives/unrelated-machines/tools/evidence/retired-literature-structural-algebra-20261031/laurent_flat_extension.pdf": "a79a6aae70263cdc0b15415f838df666cfb99d6a00ef87bb1dae381493478fad"
+  },
+  "review_digest": "acd074acf5cd139ec7b188c77abbf2ada67d9ae8648d9af22f2d3c9f284dc960"
+}
