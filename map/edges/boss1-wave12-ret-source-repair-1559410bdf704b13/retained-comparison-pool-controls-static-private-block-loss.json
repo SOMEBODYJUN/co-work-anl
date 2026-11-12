@@ -1,0 +1,66 @@
+{
+  "edge_id": "retained-comparison-pool-controls-static-private-block-loss",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "optimal-comparison-pool-net-exchange-and-random-retention-identity"
+  ],
+  "target_ids": [
+    "customer-attraction/optimal-completion-private-block-ledger"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "任意有限共同标签目录，允许空主题、同覆盖异标签、零客户及重复比较槽。固定一个达到OPT_m的m槽索引元组，并集O；实际序列前缀并集C_t可任意，删除均匀随机排列的前t个比较索引。局部公式则重新以当前过去P及一份达到F_r(P)的r槽元组初始化，不把固定根池与各位置重选池混用。纯静态结论无需SPE。",
+  "roles": {
+    "optimal-comparison-pool-net-exchange-and-random-retention-identity": "保留SWAP的同客户lost−new和RET的索引删除概率、两项实际新增退款；源v3已把全前缀付款加强标为被已有完整SPE族反驳，组合恒等式保持proved。",
+    "customer-attraction/optimal-completion-private-block-ledger": "每个当前最优r槽补全的单槽可行交换产生ε_ij≥0，并把该静态信用接入另有真实同枝份额守恒及当前IC的完整账本。"
+  },
+  "explanation": "固定根最优池。对每个保留下来的m−t个比较索引J，C_t∪⋃_(j∈J)T_j都是F_(m−t)(C_t)的一份合法补全；故F_(m−t)(C_t)≥E|C_t∪⋃_(j∈J)T_j|。RET按同一客户给L_t=|O|−E|C_t∪⋃_(j∈J)T_j|=Σ_(x∈O∖C_t)binom(t,d_x)/binom(m,d_x)−|C_t∖O|，因|O|=OPT_m，得到静态缺额𝒮_t:=OPT_m−F_(m−t)(C_t)≤L_t。t=0二者为0；t=m无比较槽且F_0(C_m)=W，故𝒮_m=L_m=OPT_m−W。随机排列的是槽索引，重复标签仍按各槽计d_x；O外实际客户各退款一次。\n\n局部以P及当前最优r槽T重启，O_h=P∪⋃T、D_j=T_j∖(P∪⋃_(k≠j)T_k)、e=|S∖O_h|，H=F_(r−1)(P∪S)、δ_i=F_r(P)−H。同一客户的SWAP给lost−new=|D_j∖S|−e，交换后的r−1槽合法，ε_ij:=H−[F_r(P)+e−|D_j∖S|]≥0，故lost−new=δ_i+ε_ij；对均匀j取期望得到局部L_1=δ_i+(1/r)Σ_jε_ij。私有块仅相对于这一最优元组，重复槽可以使D_j为空，退款不能删除。局部重启给本节点静态信用，不产生一份全路径兼容的随机删池或真实付款。\n\n这条桥的结论不含L_t≤P_t。源v3使用已有CA-PREFIX-BALANCE-NO族：每个n≥4的唯一最优n槽支持为全部叶各一次，故所有客户d_x=1，首步𝒮_1=L_1=2(n−2)>P_1=n−1/n。差为n−4+1/n>0，n=4是4>15/4。此族恰使𝒮_t=L_t，所以反例否定的是全前缀收益付款加强；它不推翻本边静态上界、SWAP/RET或终点等号，也没有关闭另行开放的跨枝B?充分付款路线。",
+  "scope": "accepted/unconditional的局部贡献：固定最优根池的静态缺额上界及终点等号、当前最优池重启后的ε非负与单槽均值。原完整私有块账本的真实SPE步骤及任何全路径共同付款不由本边给出。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/最优比较池的净交换与随机保留恒等式--引理.md",
+      "sha256": "400665b8ed3932fb36b7562ced86c182c79852c58d2d2e254ccc87b77c0e0cbe"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/最优补全私有块交换与分支账本--引理.md",
+      "sha256": "5bdc6de1c6e8aa7163903d8339badd8b757e8c1836c21ae6d320c4fe99cc2d8e",
+      "section": "对象和总覆盖机会损失"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/最优补全私有块交换与分支账本--引理.md",
+      "sha256": "5bdc6de1c6e8aa7163903d8339badd8b757e8c1836c21ae6d320c4fe99cc2d8e",
+      "section": "不需要均衡假设的交换关系"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/最优补全私有块交换与分支账本--引理.md",
+      "sha256": "5bdc6de1c6e8aa7163903d8339badd8b757e8c1836c21ae6d320c4fe99cc2d8e",
+      "section": "一个真实强制分支的无重计恒等式"
+    },
+    {
+      "path": "archives/customer-attraction/state/反例/任意人数首步补全余额--反例.md",
+      "sha256": "b42e57e311686c2d737d6ade6642efaa05caa28dded02c9cf035ef0ed9c70072"
+    },
+    {
+      "path": "archives/customer-attraction/state/计算/四人首步余额完整策略证书--计算.md",
+      "sha256": "60616835c921d4c336019b9f5e107980ac35db330d9c78c3244057327a0e7a9c"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "RET21-SOURCE-REPAIR：本轮新读RET v3全文、私有块指定完整段、CA-PREFIX全部历史解析族及n4字面证书说明，核静态可行补全上界、局部同客户退款、重复索引、终点等号及全前缀加强的准确被否范围。其余成熟证据只在本轮合同/端点pin/证据pin/作用复核后继承，不称新跑。有效round55收据已指出L1>u1，因此这是既有反例漏接源状态的修复。",
+  "contribution": {
+    "result": "固定根最优索引池给𝒮_t=OPT_m−F_(m−t)(C_t)≤L_t，并在t=m给𝒮_m=L_m=OPT_m−W；以当前最优r槽池重启的单槽净交换给ε_ij≥0及局部L_1=δ_i+平均ε。",
+    "remaining": "完整LEDGER另需同一真实强制分支的私有块份额守恒、原σ当前IC与实际路径望远镜；跨分支共同付款仍开放。RET全前缀L_t≤P_t已被CA-PREFIX反驳，不能列为未证不变量或由本边取得；只要求终点L_m≤P_m即原half目标。"
+  },
+  "endpoint_pins": {
+    "customer-attraction/optimal-completion-private-block-ledger": "b8ef6b0b5064d9918e270459f616577f4908c5284dd91336563c7b40b07d133c",
+    "optimal-comparison-pool-net-exchange-and-random-retention-identity": "bc70276219fc89dec47233d96d34d864924263952d33c2deeaf870b5d3a10a39"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/最优比较池的净交换与随机保留恒等式--引理.md": "400665b8ed3932fb36b7562ced86c182c79852c58d2d2e254ccc87b77c0e0cbe",
+    "archives/customer-attraction/state/引理/最优补全私有块交换与分支账本--引理.md": "5bdc6de1c6e8aa7163903d8339badd8b757e8c1836c21ae6d320c4fe99cc2d8e",
+    "archives/customer-attraction/state/反例/任意人数首步补全余额--反例.md": "b42e57e311686c2d737d6ade6642efaa05caa28dded02c9cf035ef0ed9c70072",
+    "archives/customer-attraction/state/计算/四人首步余额完整策略证书--计算.md": "60616835c921d4c336019b9f5e107980ac35db330d9c78c3244057327a0e7a9c"
+  },
+  "review_digest": "c8ffc1684daebe13c0ecc764cc20fca9199c6cc38ec7f252ca01fe23d0e2a280"
+}
