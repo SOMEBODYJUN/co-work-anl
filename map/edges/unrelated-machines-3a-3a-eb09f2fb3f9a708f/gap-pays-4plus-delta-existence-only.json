@@ -1,0 +1,50 @@
+{
+  "edge_id": "cheng-mao-99over26-gap-to-4plus-delta-existence-only",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-b8540026a0fc4c52b209c4ce7311c25b"
+  ],
+  "target_ids": [
+    "M-af5cd39d12c444399b616e0d318c27be"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "同一有限restricted max-min allocation：每件资源至多分给一名玩家，v_pr∈{0,v_r}，T*为配置LP最大可行目标且T*≥OPT。对每个固定δ>0，本边只命中目标数值存在性；T*=0以任意合法分配处理，不在零目标上作归一化。",
+  "roles": {
+    "M-b8540026a0fc4c52b209c4ce7311c25b": "提供同一T*基准下每名玩家效用≥26T*/99的实际分配存在性；Appendix C还提供给定任意配置可行正目标T的有限Build/Contract构造，不提供多项式总clock。",
+    "M-af5cd39d12c444399b616e0d318c27be": "仅接收每固定δ>0时每名玩家效用≥T*/(4+δ)的数值存在性部分，保留其特定多项式Build/Collapse与未知目标接口的独立付款。"
+  },
+  "explanation": "若T*>0，取源端点提供的同一实际分配。对任意固定δ>0，26/99−1/(4+δ)=(5+26δ)/(99(4+δ))>0，所以每名玩家的实际效用≥26T*/99≥T*/(4+δ)。该分配事实上不依赖δ。T*=0时任意合法分配给所有玩家非负效用，直接得到目标0界。T*在此是数学比较基准，不是免费算法输入。\n\n为核清源端点可复用的算法范围，完整读Appendix C：其卡死反证只用CLP(1)可行而不依赖最优目标恰为1，因此对任意给定T>0且CLP(T)可行，按v/T归一化有限返回实际26T/99分配。Build可由fat图可达性、扫描可用thin资源及删除冗余得到λ-minimal edge；Contract最小t和路径由图搜索求出，无配置LP选取oracle。分段对偶价格支付全部配置，逐tuple收费≤3λ|Bi|，根dummy给严格正余量3λ；有限签名下降支付终止。support对PDF p23 Case2.2的151/65笔误采用已证141/65+1=206/65>3，对p24 g(c)漏乘c按g定义补c，两个现行合同及冻结来源字节不变。\n\n本边不把这些过程认成同一算法。Theorem1用β=γ²、μ=γ³、lazy update、limited blocking、canonical node-disjoint paths及层几何增长控制状态数；其对偶阈值R(γ)在小正γ时小于1/4，不能代入26/99；令γ=0又失去正增长和批量收缩参数。Appendix C只给有限签名数，不支付Theorem1的多项式总位时间或未知目标搜索。反方向Theorem1的每正δ数值保证至多趋近1/4，也不推出26/99。",
+  "scope": "同一restricted max-min与同一配置LP基准的数值存在性贡献；非目标整条算法合同。给定可行T的有限构造审计限Appendix C；单调用位复杂度讨论限二进制有理输入，不声称未知T*或同常数多项式算法已由本边获得。",
+  "contribution": {
+    "result": "对每个有限restricted实例及每个固定δ>0，源端点的同一实际分配已保证全部玩家效用≥T*/(4+δ)；T*=0单独处理。源Appendix C还在任意给定CLP(T)可行的正T上有限返回实际26T/99分配，选边和交替路径无需LP oracle。",
+    "remaining": "本边不证明目标Theorem1的具体Build/Collapse过程、canonical decomposition/lazy update/limited blocking不变量和几何层增长，也不证明固定δ的统一多项式总位运行时间poly(m,n)n^{poly(1/δ)}，或不把精确T*当免费输入的未知目标搜索合同。这些仍由目标独立的§3–4及Appendix A/B算法证明和其目标搜索接口承担；Appendix C的有限Build/Contract不等同该算法。"
+  },
+  "reviewed_by": "Boss2",
+  "review_note": "fresh数学worker完整实读两个v1合同、共同中文正文和28页冻结PDF文字，目视PDF22–27页；逐步重构任意可行T归一化、无LP选边/路径、Claim30全配置分段下界、Claim32半收费、正对偶余量、含dummy和末层零的有限签名界，以及Theorem1正参数状态数付款。原PDF两处小笔误按定义作最小代数澄清，不改冻结字节。未运行局部搜索、LP、旧科研程序或native绑定；Boss接回后执行正式edge-bind/check并刷新SHA。只宣称contribution，不宣称whole。 Root Boss2 independently read the complete final edge, support and receipt plus the current endpoint contracts/body, checked the numerical direction and zero branch, and directly extracted PDF pp22–24 and inspected p23 to verify the harmless 151/65 transcription. The finite signature proof, no-LP edge choice and total-clock distinction were checked mathematically. The source-specific full PDF reading remains attributed to the fresh worker. Native checks and final SHA are recorded separately; this remains only the numerical-existence contribution.",
+  "evidence": [
+    {
+      "path": "map/edges/unrelated-machines-3a-3a-eb09f2fb3f9a708f/support.md",
+      "sha256": "3b676dce201acc54e4373c88fd30a8f22f13f1c40fa46501638f1008faf04c48"
+    },
+    {
+      "path": "archives/unrelated-machines/state/文献/Cheng-Mao受限最大最小分配与配置LP--文献.md",
+      "sha256": "fa7375b5a1a8a5719b539df0192242461e713e6673735813a9f612dae7d1b574"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/registration-Boss5-0111-literature/cheng-mao.pdf",
+      "sha256": "ea99b29b0b05694d16fcf18b63fddcd9dc798aa6ef476ac0b78033c8eaf90e7a"
+    }
+  ],
+  "endpoint_pins": {
+    "M-af5cd39d12c444399b616e0d318c27be": "62077266d7b015a7d2ec0e854f173491f1d776d5d2dc840b88fb799d756ae49b",
+    "M-b8540026a0fc4c52b209c4ce7311c25b": "94f3d06211128043b9b86c0d8c73049abf17e2551c7a14a47f99729d2f89e31e"
+  },
+  "evidence_pins": {
+    "map/edges/unrelated-machines-3a-3a-eb09f2fb3f9a708f/support.md": "3b676dce201acc54e4373c88fd30a8f22f13f1c40fa46501638f1008faf04c48",
+    "archives/unrelated-machines/state/文献/Cheng-Mao受限最大最小分配与配置LP--文献.md": "fa7375b5a1a8a5719b539df0192242461e713e6673735813a9f612dae7d1b574",
+    "archives/unrelated-machines/tools/evidence/registration-Boss5-0111-literature/cheng-mao.pdf": "ea99b29b0b05694d16fcf18b63fddcd9dc798aa6ef476ac0b78033c8eaf90e7a"
+  },
+  "review_digest": "43d9daad89a3aa11ffff1707ccc90f6c082e94d65ed544cf8a849d2b8bbd3806"
+}
