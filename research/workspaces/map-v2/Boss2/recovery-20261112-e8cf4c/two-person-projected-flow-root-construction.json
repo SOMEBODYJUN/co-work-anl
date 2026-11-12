@@ -1,0 +1,71 @@
+{
+  "schema": "boss2-two-person-projected-flow-construction-v1",
+  "actor": "Boss2",
+  "status": "Exact mathematical construction, independently checked by a read-only worker; canonical deduplication and any formal 3B delivery remain separate.",
+  "question": "Can the existing two-person anonymous-potential cycle proof supply explicit nonnegative rational flow coefficients for the full K-projected independent-background method?",
+  "source_object_id": "cag-two-player-anonymous-potential-static-security-and-cycle-boundary",
+  "consumer_object_id": "M-47c853fbc6c84223b683f6fcb277610b",
+  "model": "Finite nonempty common label set L, n=2, any complete ordered formal strategy sigma. Write A=sigma(empty), beta(a)=sigma(a). No count-policy assumption, positivity, DR, self-crowding, or client representation is needed for the coordinate construction. To infer a numerical inequality, the actual IC arcs must be nonnegative and f must be a common deletion marginal. CAG is one such case and W then equals coverage.",
+  "quantifiers": "For every such sigma and every rational query pi in Delta(L), construct nonnegative rational lambda and a query-independent rational background Qbar with full K(d-div(lambda)-2 sum_b Qbar(b)s_b(pi))=0. The same Qbar works for every pi; lambda depends on pi. This is n=2 only, not universal H_root for all n.",
+  "definitions": {
+    "actual_terminal": "q*=e_A+e_beta(A)",
+    "forced_terminal": "q_a=e_a+e_beta(a)",
+    "demand": "d=delta_(q*,A)+delta_(q*,beta(A)); if A=beta(A), this is twice the same coordinate, exactly as occupancy demand requires.",
+    "projection": "K delta_(q,a)=epsilon_q-epsilon_(q-e_a), retaining all size-2 and size-1 potential coordinates.",
+    "cycle": "Choose any directed cycle of the finite function beta. Let rho be uniform on that cycle and zero elsewhere; beta_*rho=rho.",
+    "background": "Qbar(e_a)=(rho_a+1[a=A])/2. It has nonnegative rational mass summing to one and does not observe the realized query."
+  },
+  "flows": [
+    {
+      "arc": "R_a: (q_a,a) -> (q*,A)",
+      "actual_origin": "Root IC comparing prescribed A with forced a followed by the same beta.",
+      "mass": "rho_a"
+    },
+    {
+      "arc": "L_(a,b): (e_a+e_b,b) -> (q_a,beta(a))",
+      "actual_origin": "Last-player IC at the actual ordered history (a), comparing prescribed beta(a) with b.",
+      "mass": "rho_a*pi_b"
+    },
+    {
+      "arc": "L_(A,b): (e_A+e_b,b) -> (q*,beta(A))",
+      "actual_origin": "An additional copy of the same legitimate last-player comparison at the actual root history A.",
+      "mass": "pi_b, added to any mass from the previous row"
+    }
+  ],
+  "coordinate_proof": [
+    "Every coefficient is nonnegative rational. Repeated arcs receive summed masses. A coincident tail/head is zero and may be omitted; no unavailable comparison is created.",
+    "With head-minus-tail divergence, the R arcs contribute delta_(q*,A)-sum_a rho_a delta_(q_a,a).",
+    "The rho*pi last-player arcs contribute sum_a rho_a delta_(q_a,beta(a))-sum_(a,b)rho_a*pi_b delta_(e_a+e_b,b).",
+    "The additional actual-history last-player arcs contribute delta_(q*,beta(A))-sum_b pi_b delta_(e_A+e_b,b).",
+    "Therefore div(lambda)=d+C-2 sum_c Qbar(c)s_c(pi), where C=sum_a rho_a[delta_(q_a,beta(a))-delta_(q_a,a)].",
+    "Full K sends C to sum_a rho_a[epsilon_(e_beta(a))-epsilon_(e_a)], which is zero by beta_*rho=rho. Size-2 coordinates cancel within each summand, and all size-1 coordinates cancel by stationarity.",
+    "Thus d-div(lambda)-2 sum_c Qbar(c)s_c(pi)=-C has exactly zero full K projection. No LP solve, sampled identities, omitted potential layer, or arbitrary extra arc is used."
+  ],
+  "actual_new_guarantee": "The two-person branch has an explicit certificate inside the exact IC-only subgraph, hence also inside IC union the permitted universal same-label arcs by assigning zero to the latter. For any common deletion-potential table satisfying those ICs, W>=2 E_(pi,Qbar)f. For rational CAG payoffs choose a rational optimal query to obtain W>=2v_2. The numerical two-person guarantee and cycle background were already proved in the source; the new content to deduplicate is this explicit lambda/full-K input certificate.",
+  "scope_boundaries": [
+    "C need not vanish in ordinary payoff coordinates for a cycle of length at least three. The claim is full K-projected conservation, not ordinary graph conservation.",
+    "Only n=2 is covered. Higher-person H_root existence, all-background aggregate safety, and the general half problem remain separate.",
+    "The arbitrary formal-strategy coordinate identity does not certify that an arbitrary strategy is a CAG SPE. Nonnegative ICs and a shared deletion potential are required for the numerical consequence.",
+    "Rational query pi gives rational flows; general real anonymous payoffs need not have a rational optimal query. CAG payoffs are rational, so the rational-optimum application is valid there.",
+    "The construction uses at most O(|L|^2) explicit arc entries and a cycle of length at most |L|. It is a given-query certificate construction, not a claim about solving the higher-person optimization problem."
+  ],
+  "root_fresh_reading": [
+    {
+      "path": "archives/customer-attraction/state/定理/两人匿名势的静态安全支付与无势循环边界--定理.md",
+      "sha256": "17faab573696b99cc632b92e1f3e8c389d522867d553f7e1b34dfbcd7a988bb4",
+      "scope": "Full body, including cycle proof, exact-potential representation, nonpotential counterexamples and the distinct residual example."
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/单后继去相关恒等式--引理.md",
+      "sha256": "abc752a9c2d642eea7e6dc16500e24e9c7436119bb883441b86ecc43eb9ce365",
+      "scope": "Full body; existing numerical and last-two-role safety is not counted as a new proof."
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/全有序收益状态弧与势投影的运输求解器--程序.md",
+      "sha256": "2d4f0359039f36b94897bd26110a7b0b44a59ba667e023011af3347267993902",
+      "scope": "Full body; exact arc orientation, all history ordering, demand, product supply and both K layers. No old program was rerun."
+    }
+  ],
+  "independent_check": "wave11_two_person_security_precheck was first assigned the numerical/deduplication question. After Root supplied the explicit formula, the worker independently checked all three divergence components, signs, stationarity cancellation, nonnegative rationality, repeats and self-loop merging. This is a supplied-construction audit, not an independent blind discovery.",
+  "formal_disposition": "Do not infer primary coverage or create a duplicate edge from this workspace note. If no existing exact certificate relation is found, route a concrete 3B comparison as an anonymous-potential cycle input contribution to the general transport consumer, with generic method and higher n left separate."
+}
