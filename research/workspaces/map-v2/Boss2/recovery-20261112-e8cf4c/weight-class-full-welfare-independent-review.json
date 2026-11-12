@@ -1,0 +1,175 @@
+{
+  "schema": 1,
+  "reviewer": "Boss2 independent mathematical review worker",
+  "review_type": "Independent algebraic and domain audit of the supplied candidate after reading the original texts; not independent discovery and not a new blind review",
+  "repository_snapshot": "/workspace/scratch/e8cf4ce833a5/co-work-anl-boss2",
+  "operating_scope": {
+    "only_output": "/workspace/scratch/e8cf4ce833a5/weight-class-full-welfare-independent-review.json",
+    "repository_writes": 0,
+    "git_commands": 0,
+    "work_py_commands": 0,
+    "queue_mutations": 0,
+    "registry_mutations": 0,
+    "formal_edge_mutations": 0,
+    "credential_reads": 0,
+    "old_program_replays": 0,
+    "remote_state_checks": 0,
+    "subagents_spawned": 0
+  },
+  "verdict": {
+    "mathematics": "The proposed specialized finite-weight-class certificate and both stated guarantees are correct under the explicit domain below.",
+    "graph_scope": "A single application/input-class contribution from F and T to R is justified. It is not a whole proof of generic R, nor a claim that F/T imply generic R for arbitrary common scales. Use contribution.result/remaining and omit whole_result.",
+    "new_node_needed": false,
+    "fatal_defects_found": [],
+    "essential_presentation_repairs": [
+      "PhiHat_e(empty)=B_e c_e(B_e) is generally nonzero. Do not claim that PhiHat literally satisfies the opening F_e(empty)=0 hypothesis of R. Invoke R's mandatory-background extension and its marginal-plus-envelope proof, and separately prove the envelope for baseline coefficient 1.",
+      "The beta maximum is over movable players/classes only. Fixed players have no nontrivial deviations and no weight-class requirement; arbitrary fixed-player scales must not be allowed to inflate or invalidate the asserted maximum.",
+      "State finite real eta>=0. Local minimum yields approximate PNE and strict-improvement descent; the quality comparison needs a global minimum. No polynomial-time global optimization guarantee follows."
+    ]
+  },
+  "objects": {
+    "F": "WC-WEIGHT-CLASS-FIXED-BACKGROUND-v1",
+    "T": "WC-WEIGHT-CLASS-TRIANGULAR-POTENTIAL-v1",
+    "R": "weighted-congestion/common-scale-full-welfare-regularization"
+  },
+  "exact_domain": {
+    "game": "Finite positive real player weights, finite resources, nonempty finite resource-subset menus, with empty strategies allowed; each resource delay c_e has nonnegative real coefficients and degree at most an integer d>=2. Individual cost is the sum of resource delays and does not include an extra factor of the player's own weight. Deviations recompute the true new load including the deviator.",
+    "fixed_players": "Every absorbed player has exactly one legal strategy. Its strategy may be any resource subset including empty. B_e is the sum of these fixed weights using e and is independent of the state. A player with alternative strategies who merely does not move on a particular path is not covered by this absorption argument.",
+    "classes": "At least one movable player. Let k>=1 be the actual number of global distinct movable weights a_1>...>a_k, with the same class labels on every resource. Fixed-player weights do not count toward k. If only an upper bound on k is supplied, construct the certificate at the actual number first; do not silently identify actual-class prefix weights with a different root normalization.",
+    "social_objective": "W(s)=sum_e (B_e+X_e(s))c_e(B_e+X_e(s))=sum_all_players w_i C_i(s); OPT=min_s W(s). This is the full weighted social cost, not W_M=sum_e X_e c_e(B_e+X_e), and not the unweighted sum of individual costs.",
+    "parameter": "For each finite real eta>=0, use Psi_eta=PhiHat+eta W on the original complete legal state space."
+  },
+  "independent_derivation": [
+    {
+      "step": 1,
+      "claim": "The triangular weights form a convex combination and provide a resource-independent common player scale.",
+      "details": "Let A=A_(d,k) in [1,d) solve A=sum_(j=0)^(k-1)((d-1)/A)^j. Put t=(d-1)/A, lambda_r=t^(r-1)/A, S_j=sum_(r<=j)lambda_r. Then lambda_r>0, sum_r lambda_r=1, S_1=1/A, S_k=1, and min_j S_j=1/A. T proves S_j w_i c_e(B_e+Y)<=Delta_i F_e^opt<=A S_j w_i c_e(B_e+Y) for a class-j movable insertion. The shift c_e(B_e+x) preserves nonnegative coefficients and degree. Thus h_i=w_i S_class(i) is common across all resources, including resources where some other classes are absent."
+    },
+    {
+      "step": 2,
+      "claim": "Every ordered potential in the mixture has an integral lower bound and a monotone right-endpoint upper bound.",
+      "details": "For any current movable-user ordering v_1,...,v_n, let u_0=0 and u_l=sum_(q<=l)v_q, X=u_n. Its potential is P_(r,e)=sum_l v_l c_e(B_e+u_l). Nondecreasing c_e gives integral_(B_e)^(B_e+X)c_e(z)dz<=P_(r,e)<=X c_e(B_e+X), including X=0. Convexity is available for the earlier triangular exchange argument but is not needed for this envelope step. Since the lambda_r form a convex combination, the same two bounds hold for F_e^opt=sum_r lambda_r P_(r,e)."
+    },
+    {
+      "step": 3,
+      "claim": "The coefficient-1 fixed baseline gives the asserted stronger full-W envelope.",
+      "details": "Define PhiHat_e=F_e^opt+B_e c_e(B_e). Set L=B_e+X and G_e=L c_e(L). The lower chain is PhiHat_e>=B_e c_e(B_e)+integral_(B_e)^L c_e(z)dz>=integral_0^L c_e(z)dz>=L c_e(L)/(d+1). The middle inequality uses B_e c_e(B_e)>=integral_0^(B_e)c_e(z)dz. The last inequality holds term by term: integral_0^L a_p z^p dz=a_p L^(p+1)/(p+1)>=a_p L^(p+1)/(d+1). The upper chain is PhiHat_e<=B_e c_e(B_e)+X c_e(L)<=L c_e(L)=G_e. Summing over resources yields W/(d+1)<=PhiHat<=W. This proof includes pure-fixed resources, B_e=0, X=0, zero delays and W=0 without division. The baseline sum_e B_e c_e(B_e) is a state constant and changes neither local nor global minimizers for a fixed eta."
+    },
+    {
+      "step": 4,
+      "claim": "The full social marginal is valid in the original game with fixed background.",
+      "details": "For movable insertion weight w and new full load L=B_e+Y, the old full load is L-w>=0. For c(x)=x^p, G_e(new)-G_e(old)=L^(p+1)-(L-w)^(p+1)=w sum_(r=0)^p L^(p-r)(L-w)^r, so w c(L)<=Delta G_e<=(p+1)w c(L)<=(d+1)w c(L). Add nonnegative monomial coefficients, including p=0. This is the derivative-free form of R's full-W marginal and incorporates changes in the costs paid by fixed players. Adding the state-constant baseline leaves Delta F unchanged."
+    },
+    {
+      "step": 5,
+      "claim": "The claimed beta is a valid guarantee for every single-player local minimum and for strict-improvement descent.",
+      "details": "For a class-j movable player, Psi_eta has lower insertion scale w_i(S_j+eta) and upper insertion scale w_i(A S_j+eta(d+1)). Their ratio r_eta(S)=(A S+eta(d+1))/(S+eta) has derivative eta(A-(d+1))/(S+eta)^2<=0 since A<d<d+1. Thus max_j r_eta(S_j)=r_eta(1/A)=[1+eta(d+1)]/[1/A+eta]; eta=0 gives A for every class. For a true deviation split deleted, added and held resource costs as D,N,H>=0. The resource-state changes on held resources are zero. With h'_i=w_i(S_j+eta)>0, Delta Psi_eta<=h'_i(beta N-D)=h'_i[beta C_i(new)-C_i(old)-(beta-1)H]<=h'_i[beta C_i(new)-C_i(old)]. Therefore every strict beta improvement decreases Psi_eta, and any single-player local minimum is beta-PNE. Fixed players have no alternative strategy, so their constraints are tautological and they do not enter this maximum. If an all-player notation is desired for matching R's background subsection, choose fixed-player h_i/w_i=1/A; it adds no insertion obligations and no larger ratio."
+    },
+    {
+      "step": 6,
+      "claim": "Only a global minimum receives the asserted full-W quality guarantee.",
+      "details": "Let s_eta globally minimize Psi_eta and let o minimize W. The independently established m=1/(d+1), M=1 envelope gives [1/(d+1)+eta]W(s_eta)<=Psi_eta(s_eta)<=Psi_eta(o)<=[1+eta]W(o). Consequently W(s_eta)<=[(1+eta)/(1/(d+1)+eta)]OPT. The coefficient on the left is positive for all finite eta>=0. If OPT=0 the same chain gives W(s_eta)=0; no 0/0 ratio is used. A local minimum lacks the middle global comparison. Finite state space proves existence of these minimizers, not a polynomial algorithm to find a global one."
+    }
+  ],
+  "boundary_checks": [
+    "k=1: A=1, lambda_1=S_1=1, beta_eta=(1+eta(d+1))/(1+eta); eta=0 recovers exact stability and the stated (d+1) global quality bound.",
+    "eta=0 for every k: beta=A and the quality coefficient is d+1. The envelope is a sufficient guarantee, not a claim of an attained worst-case ratio.",
+    "eta>0 finite: A<=beta_eta<d+1 and 1<=(1+eta)/(1/(d+1)+eta)<=d+1. The formal limit eta->infinity is explanatory only and is not an allowed finite input.",
+    "No movable players: the state is unique and exact, and W=OPT. Treat separately and do not define A_(d,0) or a minimum over an empty class set.",
+    "d=0 or d=1: separate exact-potential arguments are available in T, but the proposed d>=2 root formula is not asserted there.",
+    "Empty strategies, positive-cost moves to zero, zero-polynomial resources, ties and pure-fixed resources all remain within the direct inequalities. No cost division is needed.",
+    "Only global class labels are used. Resource-specific reindexing or replacing k by the maximum number of classes on a single resource would lose the common h_i certificate."
+  ],
+  "baseline_and_original_text_assessment": {
+    "R_already_repaired": "R already contains the complete mandatory-background repair PhiHat_e=F_e^opt+q_min b_e c_e(b_e), its full-W marginal proof, and the re-proved coarse m=q_min/(d+1), M=alpha q_max envelope. There is no outstanding generic missing-baseline flaw to fix.",
+    "why_coefficient_1_is_allowed": "Here F_e^opt is specifically a convex combination of ordered right-endpoint sums. This additional structure proves the stronger envelope with the distinct coefficient-1 baseline. It is not an assertion that arbitrary constant baselines inherit R's old m/M. Relative to q_min=1/A, the two baselines differ by the state constant (1-1/A)sum_e B_e c_e(B_e); both preserve minimizers, but each envelope must be justified for its own normalization.",
+    "nonzero_empty_set_warning": "PhiHat_e(empty)=B_e c_e(B_e) can be positive, so it fails the literal normalized empty-set clause at the opening of R. The actual applicable text is R's mandatory-background extension, which explicitly explains that the recovered table is not an all-user normalized table and uses only relevant optional insertion bounds plus the full-W envelope. The candidate independently supplies exactly those inputs.",
+    "what_originals_already_contain": "T contains the complete common-scale triangular construction and F contains the exact fixed-background shift. R explicitly lists two-weight/finite-weight-class potentials among reusable inputs. The certificate-interface text already proves the ordered-sum envelope for a two-order W_M specialization and insists on restoring a baseline before claiming full W.",
+    "what_is_not_fully_written_as_one_application": "The read originals do not explicitly present this full finite-k, fixed-single-strategy-background certificate with coefficient-1 baseline, m=1/(d+1), M=1, and beta_eta=[1+eta(d+1)]/[1/A+eta] together. The missing work is a short specialization and independent envelope derivation, not an unproved new premise or a repair to R.",
+    "reuse_value": "The class has a closed analytic positive certificate; it needs no unresolved local-calibration YES query. It gives direct common scales, a valid normalization for the complete social objective and explicit tradeoff coefficients. This is meaningful application content even though it is an elementary consequence of the established mechanisms.",
+    "novelty_limit": "No global novelty, stronger universal existence threshold, compact efficient solver or external certification is claimed. No new registry object is required merely to store this application calculation."
+  },
+  "minimal_single_edge_recommendation": {
+    "kind": "transfers",
+    "source_ids": [
+      "WC-WEIGHT-CLASS-FIXED-BACKGROUND-v1",
+      "WC-WEIGHT-CLASS-TRIANGULAR-POTENTIAL-v1"
+    ],
+    "target_ids": [
+      "weighted-congestion/common-scale-full-welfare-regularization"
+    ],
+    "premises_mode": "all",
+    "classification": "Application/input-class contribution, not a whole-result support edge for generic R",
+    "conditions_text": "在d>=2、有限非负系数degree<=d费用、个人delay不乘自身weight的标准模型中，固定背景只来自真正单策略玩家，k>=1是全局可动权类数且类别排序跨资源一致；采用全体加权社会成本W。对每个有限实eta>=0。该输入类的共同尺度和完整W包络在本边中已解析支付，不附加尚未解决的局部YES条件。",
+    "roles": {
+      "WC-WEIGHT-CLASS-FIXED-BACKGROUND-v1": "提供真正固定玩家背景B_e的精确平移、原玩家真实成本/偏离身份和势拉回。",
+      "WC-WEIGHT-CLASS-TRIANGULAR-POTENTIAL-v1": "提供lambda凸组合、有序右端和及跨资源h_i=w_i S_class(i)的全部局部插入夹逼。",
+      "weighted-congestion/common-scale-full-welfare-regularization": "接收本输入类已支付的共同边际与重证包络；其必用背景扩展证明把它们转为完整原游戏的正则化稳定和仅全局最小具有的质量保证。"
+    },
+    "contribution": {
+      "result": "有限全局可动权类三角势在真正单策略固定玩家背景下，解析提供R的一类完整可用输入：取PhiHat=sum_e[F_e^opt+B_e c_e(B_e)]，虽PhiHat_e(empty)一般非零，仍由有序右Riemann和独立证明W/(d+1)<=PhiHat<=W，且常数基线不改变三角边际h_i c<=Delta PhiHat<=A_(d,k) h_i c，h_i=w_i S_class(i)。因此只应用R的必用背景扩展及其共同边际/完整偏离证明，对每个有限eta>=0，Psi_eta=PhiHat+eta W的每个单方局部最小点是beta_eta=[1+eta(d+1)]/[1/A_(d,k)+eta]-PNE，全部严格beta_eta改善降势；每个全局最小点另有W<=[(1+eta)/(1/(d+1)+eta)]OPT。beta最大只需遍历可动类别，固定玩家偏离恒真。",
+      "remaining": "本关系只支付有限全局可动权类、真正单策略背景这一输入子类，既不把F/T当作任意h_i、任意局部势的generic R全定理证明，也不把R自身列为其证明前提。一般R的社会边际、删增保留资源论证及其它输入类仍由R独立正文承担。本结论不给局部极小点的社会质量；质量必须具备全局最小性或另行有效的全局目标gap证书。有限状态存在不提供多项式求全局最小、移动次数界或紧凑输入高效算法。"
+    },
+    "whole_result": "DO NOT POPULATE: the entire generic target is not derived from F/T",
+    "noncircular_explanation": "The edge's source-side proof establishes only the concrete certificate (shift, common h, marginals and envelope) for this class. The target theorem is the independently proved consumer of that certificate. Referencing the target's existing background-extension proof to explain the application is not a source premise; do not include R in source_ids, and do not write an ALL(F,T,R)=>R support cycle. The stable/quality formulas may be re-derived in the explanation as above to make the application self-contained.",
+    "minimality": "Keep one edge carrying the joint input-class application and all extra envelope calculations. Do not split baseline, beta simplification or scalar arithmetic into new objects or separate edges. Do not label this specializes as a whole F/T=>R relation, since the general theorem is not a special case of the finite-class results. If a projection only accepts proof-of-whole edges, this application belongs among research leads/context there rather than being promoted to whole support. The current IMPLEMENTATION explicitly permits contribution scope, and the existing local-calibration-enables-full-welfare edge is an application-contribution precedent."
+  },
+  "local_dedup_assessment": {
+    "method": "Read the existing local-calibration-enables-full-welfare edge in full and inspected every local edge whose source or target included F, T or R. This is local evidence only, not a remote canonical-state claim.",
+    "existing_adjacent_edge": {
+      "path": "map/edges/weighted-congestion-3a-3a-2e6caa865d8f839c/local-calibration-enables-full-welfare.json",
+      "sha256": "49032de3b81700293fc42a76c5711974b7efcff9f8b58861238a04be3fd646d4",
+      "difference": "Its source is finite local calibration conditional on actually obtaining the full local YES certificate, and it uses the generic q_min baseline/coarse envelope. The proposed application supplies analytic finite-k scales and the separately proved coefficient-1 envelope; it is not a repeat of that open input obligation."
+    },
+    "existing_T_to_F_edge": {
+      "path": "map/edges/weighted-congestion-3a-3a-9fd1c1fae07348c6/triangular-potential-through-fixed-background.json",
+      "sha256": "ce3075ddc21f265bdea5c4d7cdd12bb7835e3ec26acd4429f832f9d3eca8e37d",
+      "difference": "Already gives stability, strict-A descent and the exact absorption; it does not claim the full-W regularized envelope or eta tradeoff. Do not reopen or rewrite it as if it were defective."
+    },
+    "F_or_T_to_R_found": false,
+    "limit": "Parent Boss must check current ownership, endpoint pins, supersession and duplicate remote work before any formal publication. This report is not a claimed-task worker receipt and grants no official coverage credit."
+  },
+  "actual_read_scope": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "20293db840f907c32f774b0d7f72450c56e6c0ad937720699d14f7c02e693cc9",
+      "scope": "Full local repository instructions; the parent task's explicit read-only restrictions govern this independent review."
+    },
+    {
+      "path": "research/IMPLEMENTATION.md",
+      "sha256": "fb6613cd0c429f28b8bcfb1064076a629540cfbee8f7e3d670b0b39e78ff0d4b",
+      "scope": "Registration identity rules and the full third-stage edge/whole-result/contribution/ALL semantics; no workflow commands were executed."
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/有限权类别三角排序势--定理.md",
+      "sha256": "4f6eb81eeda1730da6b72bdbc662ce5971ba0da66a0c040e02102231a4a3b7b2",
+      "scope": "Full theorem including root, order marginal and convex exchange proofs, triangular coefficients, true deviations, exact fixed background, boundary cases and rounding distinction."
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/共同尺度势的稳定与全社会成本正则化--定理.md",
+      "sha256": "c55c041ea1d065a2b74e19ebb84a36cc1e53b42f62f37380a5ad1da07cd29a5f",
+      "scope": "Full theorem including generic assumptions, social marginal, full deviation proof, m/M, finite eta, global quality and the already completed mandatory-background repair."
+    },
+    {
+      "path": "archives/weighted-congestion/state/定义/共同尺度稳定与社会质量的证书接口--定义.md",
+      "sha256": "c17d6fb0d93bd42814ce807198beee8fc96217c38d317228ea52b3dbfb1c9a23",
+      "scope": "Full interface text, particularly W_M versus full W, global versus local minima and common-scale requirements."
+    },
+    {
+      "path": "archives/weighted-congestion/state/计算/有限权类网格与固定背景取整的作者核验--计算.md",
+      "sha256": "6e74512df2a8f064853e09b39c7cd71433fc63c8f6d308eabc9f1aa3344b834a",
+      "scope": "Full computation account read for its actual evidence role and fixed-background example. No source program or historical run was re-executed; finite counts do not prove the general claim."
+    },
+    {
+      "path": "archives/weighted-congestion/state/审查/权类别排序势与共占高度的审查范围--审查.md",
+      "sha256": "5addca12a6cfc4cc59a84bbf40244d5f2ba884b4e3ea1401e195c7ead86a0b3a",
+      "scope": "Common model and triangular common-scale review section, rational upper-root and dynamic-rounding scope, plus version/evidence boundaries; unrelated historical two-weight reconstruction is not needed for this proof."
+    },
+    {
+      "path": "archives/weighted-congestion/state/资料/拥塞结构势与规范形账本的全部陈述--资料.md",
+      "sha256": "9e14b51a1e19062674f69602052761645c99f10e0b55d0215e5e84a4adf2314d",
+      "scope": "Model/version warnings and exact T/F/rounding ledger entries; unrelated ledger claims were not used as proof premises."
+    }
+  ],
+  "final_recommendation": "Proceed, if the task is formally owned and current, with exactly one contribution-scoped input-application edge and no new node. Include the nonnormalized-empty-set caveat, the independent coefficient-1 envelope, movable-only beta, finite eta and the global-quality condition. Reject any draft that claims F/T prove the complete generic R theorem, treats R as its own premise, reports an unresolved baseline bug, or promises efficient global minimization."
+}
