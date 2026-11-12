@@ -1,0 +1,46 @@
+{
+  "edge_id": "cag-2046-ordered-audit-checks-fixed-optimal-privatization",
+  "kind": "checks",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/closeout-e36c1d8ecce6a032ae020277"
+  ],
+  "target_ids": [
+    "customer-attraction/fixed-optimal-omission-privatization-complete-credibility-separation"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "同一原36单位客户、六标签X0,X1,X2,Y0,Y1,Y2、三名单位提供者；固定全Y最优C只改原叶遗漏的两名客户为唯一Y2兴趣。比较全X最优C′另建实例。保持全部有序历史及任意离轨平局。",
+  "roles": {
+    "customer-attraction/closeout-e36c1d8ecce6a032ae020277": "提供不导入发现者或规范求解器的独立单位展开有序历史审计合同与冻结完整报告。",
+    "customer-attraction/fixed-optimal-omission-privatization-complete-credibility-separation": "被逐项核对的固定C完整可信性分离；自审和后续独审仍是同一个底层游戏与同一数学对象。"
+  },
+  "explanation": "原独审按全部43历史×6动作保存258项含自身比较的核验摘要，原叶(X0,Y0,Y1)收益(10,12,12)、W34、OPT36。两原遗漏客户unit5和unit8分别喜欢{X1,Y2}、{X2,Y2}，固定C=全Y使owner都唯一为Y2，原叶数值保持。程序以完整有序history为缓存键，递推R(h)=并_a{z∈R(h,a):u_i(z)≥max_b min_{v∈R(h,b)}u_i(v)}。有限树上必要性来自所有未选分支仍是子SPE，充分性来自各未选分支可独立取达到最小值的子SPE，故允许重选全部离轨子树。冻结报告根门槛12：X0/X1/X2子SPE根收益上界10/11/11，均无根保留叶；三个Y根各保留两叶，全部新根叶恰六个Y排列、W36。独审还另取真正最优全X并确认原有序叶仍在新R(∅)，W34。它核对目标的固定全Y分离及存在最优量词边界，没有枚举全部完整策略图的主张。",
+  "scope": "仅是已保存有限精确审计对同一固定C反例的语境核对；不以程序或PASS替代一般逻辑边，不反驳存在某个最优C及新SPE的开放命题，也不反驳half。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/程序/指定最优私有化的有序历史独立审计--程序.md",
+      "sha256": "bdccc438caa94e0bca05e80c3532a5557fd4f145ce8bcf0d479c38ced486d53f"
+    },
+    {
+      "path": "archives/customer-attraction/state/反例/固定最优遗漏私有化的完整可信性分离--反例.md",
+      "sha256": "97dbab470028c21f5665072ed75fd901b2a7a62006f60f2756532557fb5911e9"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/boss5-credible-primary/README.md",
+      "sha256": "948d5ad7b36e95b9e51070024b0578fde958047938d135324a2ff563f3f035fa"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "实读源程序资源全文、目标反例全文及全部登记证据，并沿README读取e9ba99c6...原独审脚本、77f7ca61...完整4271B报告和原36客户输入。核递推必要充分逻辑、258含自身比较口径、全6Y叶和有利allX量词；未运行脚本/BI/新checker。此边明确checks/context，不承担逻辑覆盖。",
+  "endpoint_pins": {
+    "customer-attraction/closeout-e36c1d8ecce6a032ae020277": "dad35767e0d71873dd94919347af5b1f2724b58974f564c3d47b41bdab42cd16",
+    "customer-attraction/fixed-optimal-omission-privatization-complete-credibility-separation": "1dcb48088cef543d668ca37de304f2a2f7476271c8383499872ad0211d345daf"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/程序/指定最优私有化的有序历史独立审计--程序.md": "bdccc438caa94e0bca05e80c3532a5557fd4f145ce8bcf0d479c38ced486d53f",
+    "archives/customer-attraction/state/反例/固定最优遗漏私有化的完整可信性分离--反例.md": "97dbab470028c21f5665072ed75fd901b2a7a62006f60f2756532557fb5911e9",
+    "archives/customer-attraction/tools/evidence/boss5-credible-primary/README.md": "948d5ad7b36e95b9e51070024b0578fde958047938d135324a2ff563f3f035fa"
+  },
+  "review_digest": "c191c5569efd652d23c406b95d8d03b16f05dc132b5dca8717611fa3c57dc0d2"
+}
