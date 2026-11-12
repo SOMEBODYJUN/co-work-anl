@@ -10,7 +10,7 @@
   ],
   "premises_mode": "all",
   "relation_mode": "conditional",
-  "conditions": "restricted resource-matroid原公共有限非负值及整数polymatroid基合同。给定V>0、alpha≥2和互不相交重轻项：重项值≥V/(2alpha)，轻项值<V/(2alpha)；已给重项整数独立向量覆盖W，及U=E\\W上的轻项分数独立向量，每个U玩家轻值≥V/alpha。中间见证的构造和规范子程序是本边未提供的输入。",
+  "conditions": "同一 restricted resource-matroid 模型，公共有限非负有理值和整数 polymatroid 基。给定 V>0、alpha≥2。一般值入口：已给互不相交的重轻原项，重项值≥V/(2alpha)、轻项值<V/(2alpha)，重项整数独立向量覆盖 W，且 U=E\\W 上有每人值≥V/alpha 的轻项分数独立向量。另一个两值大阈值入口：已给原资源实例的有理分数基，每人值≥V，且最大项值 w<V/alpha。两种见证均作为输入。",
   "roles": {
     "M-737cbc9ea3b54c03b847026018cf5b19": "提供对每个合法给定分数基见证的减最大有限资源值舍入；独立向量先在限制底集上补基。",
     "M-a3feff9f6a574834925528d0f9d9d658": "只接受Lemma22一般值提升的最后收尾贡献，并非由舍入单独证明完整(8+epsilon)/(4+epsilon)算法。"
@@ -18,13 +18,13 @@
   "explanation": "先在原重项中补成整数基，W仍各有至少V/(2alpha)。轻项限制到U，把已给分数独立向量补成限制多拟阵的分数基，再调用资源减最大值舍入，U各得至少V/alpha−lightmax≥V/(2alpha)。将每个轻项的整数独立向量在原底集补为原基，非负性保证U收益不降；重轻原项不交，故全体玩家达到V/(2alpha)。U空直接完成；U非空且轻项空不可能有正值见证。另对两值大阈值分支，已给每人值V的整体分数基且最大值w<V/alpha时，舍入给V−w≥V(1−1/alpha)≥V/alpha。详细证明与规范oracle、证书、精度及两值桥的作用边界见独立正文。",
   "contribution": {
     "result": "已给上述重轻中间见证时，多项式恢复原项整数基分配且每人值≥V/(2alpha)；已给两值大阈值分数基时得到每人值≥V/alpha。一般值取规范alpha=4+epsilon/2后，这一步把混合见证收尾为8+epsilon保证。",
-    "remaining": "完整目标还需规范M/P子程序及其访问合同、所有结构不变量、阈值搜索/重轻解码和两值其他分支；本边不把这些视为舍入定理的结论。附属审读正文另自足修复冻结v1的C定义、combined-rank失败证书和递归计数，但这些修复本身不等于本边从source推出完整目标。"
+    "remaining": "完整目标还需规范 M/P 子程序及其访问合同、所有结构不变量、阈值搜索、重轻解码和其他两值分支。附证给出可在所列不变量下使用的 combined-rank 证书及递归计数，并以具体合法增广调用证明冻结 §4/Lemma30 在一次子调用只部分覆盖父 B0 后，下一递归可能违反输入不交性。主定理完整证明仍须处理这一环节。"
   },
   "scope": "Lemma22从规范中间见证到原整数分配的准确局部作用，保一般值2alpha与两值alpha的不同入口，不将规范无穷价值直接送进有限max_j v_j舍入。",
   "evidence": [
     {
       "path": "map/edges/unrelated-machines-3a-3a-71b6862653595dda/rounding-and-search-certificate.md",
-      "sha256": "3b0846c6179c8c0d0e4c8dfbc8c83b4cb7ec6d3aa2778a8b76873a5da384a51b"
+      "sha256": "8c46153d08cfb56ecd77105c704f295d99d80fbe4e46cc1a7c6d290c821bbe51"
     },
     {
       "path": "archives/unrelated-machines/tools/evidence/boss2-6405-blmrs-proof/rounding-slots-and-dual.md",
@@ -41,16 +41,16 @@
     }
   ],
   "reviewed_by": "Boss2/blmrs-rounding-worker",
-  "review_note": "完整读当前对象合同、冻结§4/AppendicesD,E,F与严格舍入证据。独立证明重轻收尾、两值大阈值边界；未把同论文或相似局部搜索当作蕴含。发现并精确修复C误含B0及空A会假success的退化分支，写出combined-rank证书和较稳健多项式递归计数，保留从原Lemma24–33调用的结构不变量边界。参数与补基小例用精确Python复核，程序检查不代替符号证明。",
+  "review_note": "Boss2 worker 独立核冻结 §4、Appendix E/F 与严格舍入证据，复用合法给定见证的重轻收尾和两值大阈值收尾。增广反例核实 Lemma30 所需的不交性可在下一次递归失效。证书与计数仅沿满足所列不变量的调用使用。",
   "endpoint_pins": {
     "M-737cbc9ea3b54c03b847026018cf5b19": "8cf0ef3b2e88c2a2e1253b318c333e212f60184c7482c182cee8e33434f8d758",
     "M-a3feff9f6a574834925528d0f9d9d658": "41aec13327cb012d5d6739317141f856f7d95b3df59cd831d486548a7561839e"
   },
   "evidence_pins": {
-    "map/edges/unrelated-machines-3a-3a-71b6862653595dda/rounding-and-search-certificate.md": "3b0846c6179c8c0d0e4c8dfbc8c83b4cb7ec6d3aa2778a8b76873a5da384a51b",
+    "map/edges/unrelated-machines-3a-3a-71b6862653595dda/rounding-and-search-certificate.md": "8c46153d08cfb56ecd77105c704f295d99d80fbe4e46cc1a7c6d290c821bbe51",
     "archives/unrelated-machines/tools/evidence/boss2-6405-blmrs-proof/rounding-slots-and-dual.md": "9c7a4bfe21f216b57edfbce69b591aabf1a4d3a637510eba54411f7d62774bd1",
     "research/registration/evidence/boss6-0104/bamas-et-al-2023-v1.pdf": "fc907ac5159b3b20ae8498052c161f7aaf8d64114db84d7ef1947d6f1c6d4183",
     "archives/unrelated-machines/state/资源/圣诞老人遇到Makespan与拟阵--资源.md": "c10eb8f230e2480fd83c7727b74e3035b33e29eafb5aca54b1023178e296734a"
   },
-  "review_digest": "c795b1ecc14eba215cb21ca9b376b8e4dfadf5a40582be2b483fad4484f5d4b7"
+  "review_digest": "f41025e3299e474dc735578cb25cbf247077f633b6c498a1d468968b606c8510"
 }

@@ -10,18 +10,18 @@
   ],
   "premises_mode": "all",
   "relation_mode": "unconditional",
-  "conditions": "原BLMRS restricted resource/job-matroid域：每项公共非负有限编码值或尺寸、整数polymatroid value-oracle、给定共同阈值的可行基凸包点；辅助确定性私有项仅在归约内部存在，解码逐个恢复全部原项basis。允许任意多值。零值及rank零项按证明处理。",
+  "conditions": "BLMRS restricted resource/job-matroid：非空有限玩家/机器集，每项有共同有限非负有理值或尺寸，归一化、单调、整数值次模秩由 value oracle 给出，输入为共同阈值 T 的可行有理分数基。任意有限种公共值，空项集约定最大项值为零。",
   "roles": {
     "M-737cbc9ea3b54c03b847026018cf5b19": "正向提供共同下界T的减最大单项值整数舍入；反向是由作业上界舍入恢复的完整接口。",
     "M-0a576e4d0f4647d18173160e6cbaad70": "正向由资源舍入构造共同上界T的加最大单项尺寸整数舍入及2近似；反向提供该舍入算法。"
   },
-  "whole_result": "两个完整多项式舍入接口等价：资源LP点的min≥T可舍入到min≥T−max_j v_j，当且仅当作业LP点的max≤T可舍入到max≤T+max_j p_j；作业端在删除rank零项后对最优LP点舍入得到2OPT保证。",
-  "explanation": "对每个原整数rank f_j设z_j(i)=f_j({i})、g_j(S)=z_j(S)+f_j(E\\S)−f_j(E)。z_j支配全部P_j，且B(g_j)=z_j−B(f_j)，同样适用于基凸包。设共同尺寸/值s_j、s=max s_j、C_i=Σs_j z_j(i)、C=max_i C_i。各玩家/机器补偿D_i=C−C_i=q_i s+r_i，由至多两个确定性私有项强制贡献q_i s和r_i：一个值s、private rank q_i的polymatroid和一个值r_i<s、private rank1的polymatroid；q_i二进制编码，故≤2|E|项且最大单项值不增。job→resource：L_i≤T时，若T≥C任取原basis即可；否则补基加补偿的分数资源值C−L_i≥C−T，调用资源减s舍入并扣确定性补偿，补回原基得负载≤T+s。resource→job：V_i≥T且V_i≤C_i≤C，补基加补偿的分数作业负载C−V_i≤C−T，其中C−T≥0；调用作业加s舍入并扣补偿、补回原基，得资源值≥T−s。零尺寸直接完成。两方向全部阈值、基合同、位复杂度及原项身份见完整证明。2近似另先删rank零作业；每活跃整数basis总量至少1，故pmax≤OPT，而非pmax≤给定LP阈值T；取LP最优F≤OPT得F+pmax≤2OPT。 当前两端v2新增严格槽与对偶必要证据；本双向变换不依赖冻结v1两相邻索引图的错误分数见证。",
-  "scope": "原restricted整数polymatroid域上两个完整给定分数见证的算法接口，连同job端2近似；不是仅有共同整数性背景，也不推广到一般unrelated端点尺寸。",
+  "whole_result": "两条给定分数基见证的多项式舍入接口等价。资源端由每人价值≥T的可行分数基输出原整数基且每人价值≥T−max_j v_j。作业端由每机负载≤T的可行分数基输出原整数基且每机负载≤T+max_j p_j。作业端在删除零秩项后对最优 LP 点舍入，得到 2OPT 保证。",
+  "explanation": "逐项取 K_j=f_j(E)、z_j=K_j·1_E、g_j(S)=K_j|S|+f_j(E\\S)−K_j。z_j 支配原 polymatroid 的全部独立向量，补集秩约束给出 B(g_j)=z_j−B(f_j)，整数基和基凸包均双向保持。保留每项的公共数值 s_j，令 C=Σ_j s_j K_j、s=max_j s_j，对偶在每坐标把原值或负载变成 C 减去该量。作业→资源：L_i≤T 时，对偶分数资源值≥max(0,C−T)，资源舍入后补回原作业整数基，负载≤C−max(0,C−T)+s≤T+s。资源→作业：T≤V_i≤C 时，对偶分数作业负载≤C−T，作业舍入后补回原资源整数基，价值≥T−s。两方向保持项数、最大项值和每项的完整原基，秩查询和二进制运算为多项式。证明另保留旧任务的单点上界 z_j(i)=f_j({i}) 与至多 2|E| 个二进制私有补偿项的变换。2近似先删零秩项，每个活跃整数基总重数至少一，故 s≤OPT。用次模最小化分离秩约束求 LP 最优阈值 F≤OPT，得到 F+s≤2OPT。严格槽与对偶证据支付两个 v2 端点，双向变换仅用合法舍入接口。",
+  "scope": "Definition 7/8 的公共值整数 polymatroid value-oracle 域上，覆盖两个完整给定点算法接口及作业端 2 近似。一般机器依赖尺寸与配置 LP 在适用域外。",
   "evidence": [
     {
       "path": "map/edges/unrelated-machines-3a-3a-566d00453361c959/complement-rounding-proof.md",
-      "sha256": "984f6badefcc0de62ac37a8c746ef82ac79cff577452e2b926f90336a6e73425"
+      "sha256": "bc6259d4c44a1c234f5c92c091d1aae458d3ed235cc28d38930b8bb43c8b56d6"
     },
     {
       "path": "archives/unrelated-machines/tools/evidence/boss2-6405-blmrs-proof/rounding-slots-and-dual.md",
@@ -30,18 +30,24 @@
     {
       "path": "research/registration/evidence/boss6-0104/bamas-et-al-2023-v1.pdf",
       "sha256": "fc907ac5159b3b20ae8498052c161f7aaf8d64114db84d7ef1947d6f1c6d4183"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/圣诞老人遇到Makespan与拟阵--资源.md",
+      "sha256": "c10eb8f230e2480fd83c7727b74e3035b33e29eafb5aca54b1023178e296734a",
+      "section": "5. 舍入接口"
     }
   ],
   "reviewed_by": "Boss2/blmrs-rounding-worker",
-  "review_note": "在当前两个v2端点及其新增必要证据上重审并复用原数学。完整实读严格槽替代证明、原PDF相关定义及Theorems21/23，明确原图分数见证缺口不再承重。逐式复核补基恒等式、公共阈值补偿、二进制大rank、非负阈值、原基解码与rank零/零值/2近似边界。三元素小rank穷举仅作算术核对，证明在独立补基正文中完整给出。",
+  "review_note": "对照 0104 登记批的 v1 合同及旧任务收据，实读当前 §5、严格槽/对偶证明和冻结 PDF 的相关定义、Theorems 21/23、Lemma 22。复核旧单点上界与私有补偿，并依当前证据 §3 写出逐项常向量双向桥。逐式核对补基、任给阈值、二进制秩、零秩项和 2 近似的边界。",
   "endpoint_pins": {
     "M-0a576e4d0f4647d18173160e6cbaad70": "3dc9e4fefd70e75055f18cfabea7f3b779e1c8a48fa9b5051374e2c9943bcb93",
     "M-737cbc9ea3b54c03b847026018cf5b19": "8cf0ef3b2e88c2a2e1253b318c333e212f60184c7482c182cee8e33434f8d758"
   },
   "evidence_pins": {
-    "map/edges/unrelated-machines-3a-3a-566d00453361c959/complement-rounding-proof.md": "984f6badefcc0de62ac37a8c746ef82ac79cff577452e2b926f90336a6e73425",
+    "map/edges/unrelated-machines-3a-3a-566d00453361c959/complement-rounding-proof.md": "bc6259d4c44a1c234f5c92c091d1aae458d3ed235cc28d38930b8bb43c8b56d6",
     "archives/unrelated-machines/tools/evidence/boss2-6405-blmrs-proof/rounding-slots-and-dual.md": "9c7a4bfe21f216b57edfbce69b591aabf1a4d3a637510eba54411f7d62774bd1",
-    "research/registration/evidence/boss6-0104/bamas-et-al-2023-v1.pdf": "fc907ac5159b3b20ae8498052c161f7aaf8d64114db84d7ef1947d6f1c6d4183"
+    "research/registration/evidence/boss6-0104/bamas-et-al-2023-v1.pdf": "fc907ac5159b3b20ae8498052c161f7aaf8d64114db84d7ef1947d6f1c6d4183",
+    "archives/unrelated-machines/state/资源/圣诞老人遇到Makespan与拟阵--资源.md": "c10eb8f230e2480fd83c7727b74e3035b33e29eafb5aca54b1023178e296734a"
   },
-  "review_digest": "f4dc4cd102d305404e9c935cc23b11263960ace385688f910bd3fbe09f60095a"
+  "review_digest": "6abe8ed7d04a4afdd5d245dc821677633d672cb8cf4fe20b47ebf942941fd56b"
 }
