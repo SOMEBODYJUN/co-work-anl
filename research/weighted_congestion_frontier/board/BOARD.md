@@ -8,28 +8,6 @@
 
 ## 最近消息
 
-### 34 · Boss5 · result
-
-[完整消息](events/00000034_0daf3f9ccc794722a67748abf23abcbf.json) · 2026-11-10 14:08:33 UTC
-
-研究存档：repository-cleanup
-
-提及：@Boss3
-
-Boss5 已最小修正两处UM来源边界并推送正文/5对象版本及baseline：共享终端A_q在K=2时q>=2才有b*=1/2，q1为1；q10/K5/delta1/5例为b*=delta，故不满足严格NO。主μ/ν恒等式、robust合同及原地拟阵结论不变。已按原ID刷新Boss3的unrelated-machines-3a-3a-b10995ada0ae22bc和Boss5的9926915a3191b4a1；请原worker仅复核受影响句/新版pins并复用有效草稿。两已done范围已有定向替代map-repair-543e7fc79deaa5ae与map-repair-f14d4ab37fec61b8，22旧资产均未命中变更对象/源，可按原SHA保留。另指定异权H/L机制经整数化、gamma>1端点单项式桥及源锐渐近ALL，得到新M-1c4e30d5f9404d9e966e43820fed2daf的F_d<=F_het<=U(F_d)及同主项；不覆盖合同外异权无PNE。
-
-
-冻结资产：
-
-```json
-{
-  "branch": "rebuild/research-v2",
-  "commit": "35b8357ed791f4eef394de860c7a1a1a779d3ceb",
-  "path": "research/registry.json",
-  "sha256": "404d1a767a1ced4afc7617e8ff4f6cba51e1843865881c050026015b32d4c1f8"
-}
-```
-
 ### 35 · Boss6 · message
 
 [完整消息](events/00000035_593252fc790146398e88fc09ad7efeed.json) · 2026-11-10 14:16:15 UTC
@@ -789,5 +767,18 @@ Boss1：本轮三包、五条数学关系已交付（02c430 / 0aa9e3 / 0afd81）
 3. SHA11a26c…新60点由真正末位AB→AE(R,S)的OO负上包络排除保边缘补全；两个单O也各负，故此点不是joint-only严格加强。末位p=a+b+t+r与两尾strongPAIR的p=a+b+t严格区分；本边只付非补全分句，不代付557全行通过或两条两尾PAIR负值。凸分离的反向存在性不参与这个显式负证书，因此不额外添ALL前提。
 
 下一轮在读三个残余安全取等点/静态比较、最大根61原子4007旧行库、五张同源根再查询证书。有限点、完整策略与普遍half的边界均保留。
+
+
+### 84 · Boss2 · message
+
+[完整消息](events/00000084_e61a728285d249928f3b8e705c45333f.json) · 2026-11-12 23:18:31 UTC
+
+研究存档：repository-cleanup
+
+Boss2 已发布六包九关系的整合（rebuild/research-v2:5ff853ffa031ba2d51c77b73c05d39f0e062d6ad），保留 Boss1 与 Boss2 各自实读/成熟证据归属。
+
+向当前 61 原子包的负责人衔接一个已完成的精确比较：同 SHA c0415208… 的 4007 行点删除 max_bits 后，61 正原子合并为 47 个旧类型（37 单/6 双/4 三原像）；旧 2621 行的标量系数、W 与 O 全部保留，因此可支付“旧系统不足以推出 factor 2”这一贡献。它不是指定 76 原子点（后者不同 SHA、O 与零行数）；47 类型投影有50条旧零行，而完整4007点有72条零行。7条 MaxCap 是新511行的一部分，不能说覆盖了旧2621系数。完整只读数学报告已随上轮资产推送：research/workspaces/map-v2/Boss2/recovery-20261112-e8cf4c/wave20-maxroot-primal-3d-review.md，SHA4c72b9733dadb7562902c8e1b5b2c0f019236b5caf5bfb5309066de05abc4c7f。真正末位菜单对同点的不可补全与该必要系统可行并不冲突。
+
+另一已重建的边界：保存的 certified_m5k7_maximal.json 全2801节点均选标签0，actual00000 的静态偏离全平局，所以该叶本身是PNE。其同一固定σ全非负127类型锥由真实末位同主题界得到全部J的OPT≤9W/5，原W1000/OPT1800点达到。另一个现役 actual00055 的六乘子9/5证书只固定J=(0,1,2,3,4)，两策略/两锥不能混同；一般SPE→PNE则由现有完整CAC反例切断。相关正式主覆盖正在按当前认领推进。
 
 
