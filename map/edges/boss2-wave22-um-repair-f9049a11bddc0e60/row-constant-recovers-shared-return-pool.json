@@ -1,0 +1,60 @@
+{
+  "edge_id": "um-5b0b7c-row-constant-recovers-shared-return-pool",
+  "kind": "transfers",
+  "status": "accepted",
+  "source_ids": [
+    "UM-COMMON-MULTIPLIER-UNKNOWN-B-EXACT-v1"
+  ],
+  "target_ids": [
+    "UM-SHARED-OUTSIDE-SMALL-QUERY-RETURN-POOL-EXACT-RELATION-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "整数k≥2，显式正二进制有理a_i满足Σ_i a_i≤1。2k台原机H、P_1,…,P_{k−1}、E_1,…,E_k互异。恰有2k件不可拆原任务，无其它任务、预载或资格。q_i仅能在H耗时a_i或在自身E_i耗时1，b_i仅能在自身E_i或任一P耗时1。固定任意S,T⊆[k]时，q_i进H当且仅当i∈S，b_i去E_i当且仅当i∈T。",
+  "roles": {
+    "UM-COMMON-MULTIPLIER-UNKNOWN-B-EXACT-v1": "固定S,T后，仅对尚待入池的b_i调用行常数整数容量判定，计入全部冻结机器。",
+    "UM-SHARED-OUTSIDE-SMALL-QUERY-RETURN-POOL-EXACT-RELATION-v1": "全模式最优值以池目的地ρ为优化变量。任意已给原分配的负载及低峰解码按其实际ρ计算。"
+  },
+  "explanation": "按S固定所有q，按T固定各自外端上的b，得到f_H=Σ_{i∈S}a_i、f_{E_i}=1_{i∉S}+1_{i∈T}、f_{P_r}=0。剩余n=k−|T|件b的资格仅为全部k−1台P，处理时间均1，故满足源算法的行常数结构。阈值B≥1时，完整调度存在当且仅当B≥max_i f_{E_i}且(k−1)⌊B⌋≥n。必要性来自冻结负载及池容量，充分性来自完全二部资格，可按索引依次填整数槽；n=0时由全机冻结峰直接判定。H已满足f_H≤1，且每份完整分配都有单位b，故OPT(S,T)=max{1,max_i f_{E_i},⌈n/(k−1)⌉}。当且仅当非空T⊆S时为1，否则为2。对给定任意实际ρ，L_H和L_{E_i}等于上述冻结负载，L_{P_r}=|ρ^{-1}(r)|。因此同一份σ满足C(σ)<2当且仅当C(σ)=1，当且仅当非空T⊆S且ρ单射。按原目的地解码即可，无需改动ρ。",
+  "scope": "固定全模式的计算保持全部原任务与实际共享E_i。好模式可有碰撞ρ，例如k=3、S=T={1}时将b_2、b_3同放P_1，实际峰为2。闭阈值B=2给每模式至少一份完整见证，实际峰还随ρ变化。H允许多件q共居，包含关系允许T严格小于S。k=1、额外外端或其他任务、机器同一化均改变合同。孤立全S=T=[k]始终可达峰1，外接公式的YES见证及任意低峰NO解码仍须另证。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/算法/机器固定倍率残余任务的精确阈值--算法.md",
+      "sha256": "9db65509f77762981aafaf4ce1200be9b968cb7c83e68df7ed8363836b343039",
+      "section": "精确搜索"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/共享返回池的全模式最优值与原样解码--定理.md",
+      "sha256": "1c057f49fa157fd28f795ca8d81e46881cdca494ce7bba66ba1711801eb2d711",
+      "section": "2. 每份实际分配的全机负载恒等式"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/共享返回池的全模式最优值与原样解码--定理.md",
+      "sha256": "1c057f49fa157fd28f795ca8d81e46881cdca494ce7bba66ba1711801eb2d711",
+      "section": "3. 全pattern精确最优值"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/共享返回池的全模式最优值与原样解码--定理.md",
+      "sha256": "1c057f49fa157fd28f795ca8d81e46881cdca494ce7bba66ba1711801eb2d711",
+      "section": "4. 给定实际C小于2时，无需改动ρ的原样解码"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/异权私有子句与共享直方图双源续审查--审查.md",
+      "sha256": "888ebaa8363455e8dcbb677037cfadb0062cb8006f0e6e1948bcf64e7a1eaeb8",
+      "section": "2.3 共享 outside 的真实边界"
+    }
+  ],
+  "reviewed_by": "Boss3",
+  "review_note": "对读现行v2登记、完整原矩阵及证明、改正后的共享outside摘要和行常数算法。冻结模式后核全机guard及空残余，分别证明全模式精确值和任意给定分配的实际负载与原样解码。",
+  "whole_result": "任意S,T下，行常数容量判定与全机冻结负载给OPT(S,T)=1当且仅当非空T⊆S，其余OPT(S,T)=2。给定任意完整原分配，负载恰由S、T及实际ρ给出。C<2蕴含这份分配本身峰1及非空T⊆S，且给定模式与ρ达到峰1的充要条件是非空T⊆S及ρ单射。",
+  "endpoint_pins": {
+    "UM-COMMON-MULTIPLIER-UNKNOWN-B-EXACT-v1": "af8f97e7b24e74f7ba5954756bdce07b2edddbf1abe7db3d95b8b6936ebb8203",
+    "UM-SHARED-OUTSIDE-SMALL-QUERY-RETURN-POOL-EXACT-RELATION-v1": "458ed4a70672b7f46af3d1aed351c7a76df3fd471e2106ef0094133cca6373fb"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/算法/机器固定倍率残余任务的精确阈值--算法.md": "9db65509f77762981aafaf4ce1200be9b968cb7c83e68df7ed8363836b343039",
+    "archives/unrelated-machines/state/定理/共享返回池的全模式最优值与原样解码--定理.md": "1c057f49fa157fd28f795ca8d81e46881cdca494ce7bba66ba1711801eb2d711",
+    "archives/unrelated-machines/state/审查/异权私有子句与共享直方图双源续审查--审查.md": "888ebaa8363455e8dcbb677037cfadb0062cb8006f0e6e1948bcf64e7a1eaeb8"
+  },
+  "review_digest": "330fce58db5a63aec71073d94e7626384c28b5a11f19c486cc2321169d452e60"
+}
