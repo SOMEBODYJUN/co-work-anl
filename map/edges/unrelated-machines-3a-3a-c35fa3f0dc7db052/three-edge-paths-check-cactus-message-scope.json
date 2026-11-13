@@ -1,0 +1,47 @@
+{
+  "edge_id": "um-c35fa3f0-three-edge-paths-check-cactus-message-scope",
+  "kind": "checks",
+  "status": "accepted",
+  "source_ids": [
+    "M-dcc092193be04e8b9b143a1ed5ba1d4d"
+  ],
+  "target_ids": [
+    "M-13581d45b027466aa2e4ab966402a1ca"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "源为 Theorem 12 的 n 条独立内点三边路径 s–u_i–v_i–t，边权 (a_i,B,a_i)，其中 B 为正整数、0<a_i≤B，零初载。每边权由尾端支付。讨论局部消息时只要求内点负载≤B，暂不检查 s、t 的预算。目标仙人掌算法在单个父割点处只向未处理部分传递该点的最小额外负载。",
+  "roles": {
+    "M-dcc092193be04e8b9b143a1ed5ba1d4d": "提供同权模型中具有两个共同终端的独立三边路径及中边满额强迫机制。",
+    "M-13581d45b027466aa2e4ab966402a1ca": "提供可用于单父割点的最小真实负载消息。源实例检查该消息逐坐标照搬到两终端时的适用边界。"
+  },
+  "explanation": "对一条路径，权 B 中边的尾端已耗完其容量，故相邻的权 a_i 外边必须从相应终端指入。每个内部可行取向的终端负载对逐坐标支配 (a_i,0) 或 (0,a_i)，这两个不可比的极小对分别由整路同向和反向实现。于是单路的两个坐标各自最小为 0，但 (0,0) 无见证。各路内点互不相交，可同时选择任意各路最小对；并行后极小对恰为 {(x,A−x):x=Σ_{i∈I}a_i, I⊆[n]}，其中 A=Σ_i a_i。确切地说，任意内部可行负载对可逐路换成不增两端负载的同向取向，所得对属于该集合；所有这些对真实可达且总和均为 A，所以不同的对互不支配。若 A=2B，接上两个终端各自的容量 B 等价于前沿包含 (B,B)。例如 a=(2,2,2)、B=3 时，前沿是 (0,6)、(2,4)、(4,2)、(6,0)；两坐标各自都可以为 0，而没有可行的全图取向。n≥3 时每条边位于 n−1 个不同简单环，整图不满足仙人掌条件；删 s 或 t 后留下 n 条共享另一终端的两边路径，成为树。该比较保存两个边界坐标的联立约束，并解释为什么已有单割点算法无法按逐坐标最小化直接处理这个图族。",
+  "scope": "只检查将同权 AlgCactus 的单割点最小负载消息逐坐标搬到上述两终端子图的做法。仙人掌正确性及其运行时间在原域成立。该边不提供一般两终端算法下界，也不重复已有 PARTITION 到系列并行图的完整困难性关系。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/资料/Asahiro等--图取向最小最大加权出度--资料.md",
+      "sha256": "3fe059248d81113e400a7c5fe3084cccc9eb53267d4c4f1a570e086bc1a06e0f",
+      "section": "2. 仙人掌图：精确决策和优化"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资料/Asahiro等--图取向最小最大加权出度--资料.md",
+      "sha256": "3fe059248d81113e400a7c5fe3084cccc9eb53267d4c4f1a570e086bc1a06e0f",
+      "section": "4.2 简单系列并行图：弱 NP-困难"
+    },
+    {
+      "path": "research/registration/evidence/boss6-0104/asahiro-miyano-ono-2011.pdf",
+      "sha256": "5db93652d80fd92b6440e0a0e22edfdeb09f78e2b886c95cb4adf171c67ee147"
+    }
+  ],
+  "reviewed_by": "Boss5",
+  "review_note": "按两端现行 v4 读完全 Asahiro 条目及冻结稿印页 4–11、14–15，目视 Fig.3、Fig.5；用印页 15 的中边强迫逐路独立重构两终端极小前沿，核两向、内部与全图容量的区别、三路反例及退化图类。与现行两点平行 MMO→简单系列并行 MMO 及块秩→同权仙人掌全结果边逐项查重，后两者的端点与数学作用不同。",
+  "endpoint_pins": {
+    "M-13581d45b027466aa2e4ab966402a1ca": "02f610d7fe9a9c2ee09fa05695e14a399b9c15f3f8fb9d1427c6ab430f642e9f",
+    "M-dcc092193be04e8b9b143a1ed5ba1d4d": "a23cd4f1b9eecd584c58374f6a346e73d1911536cd5c8dd5c2276cd8d55f7116"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/资料/Asahiro等--图取向最小最大加权出度--资料.md": "3fe059248d81113e400a7c5fe3084cccc9eb53267d4c4f1a570e086bc1a06e0f",
+    "research/registration/evidence/boss6-0104/asahiro-miyano-ono-2011.pdf": "5db93652d80fd92b6440e0a0e22edfdeb09f78e2b886c95cb4adf171c67ee147"
+  },
+  "review_digest": "c0f25a96e53a0a31847e685cf59094acb97b021837c2ab39122b053ec35504dc"
+}

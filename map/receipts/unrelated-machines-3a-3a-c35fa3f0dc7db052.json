@@ -4,21 +4,29 @@
     "M-13581d45b027466aa2e4ab966402a1ca": {
       "state": "isolated-after-review",
       "object_pin": "02f610d7fe9a9c2ee09fa05695e14a399b9c15f3f8fb9d1427c6ab430f642e9f",
-      "comparison_scope": "当前核心v4、简单系列并行困难性v4及PARTITION源v1。实读Asahiro资料全文（包括本轮已勘误的树宽DP节，仅不复用旧join时间界），冻结作者稿印页4–11的模型、Propositions 1–5、AlgCactus、Lemmas 6–8及Theorem 9，并完整核印页14–15的Theorem 12三边路径归约；Karp源的§1、§2和§4.1–4.3、§5.4–5.5由同包只读helper完整复核。检索本人Boss5工作区及现行边目录，未找到本c35fa包已有同题草稿；已读既有PARTITION→多重外平面→简单SP两边以避免重复。额外只读检查UM-TWO-CHOICE-BLOCK-RANK-EXACT-v1 v2及其唯一现有cactus-gap应用边，只比较准确输出与时间保证，不把它误作本包指定依赖。",
-      "reason": "本范围没有可准确写成核心整目标或局部证明贡献的已分配端点逻辑边。AlgCactus保持同边两端同权的实际出度账本：非gate可承受两环边时把两边转由它支付可交换而不增其它点负担；若某端f(u)+w(e)>K则该边必须由另一端支付；其余环中每个非gate不能有两个向外环边、但每个单环边都可支付，因此任一可行解在gate至少支付一条环边。选择gate较轻边作向外边、全环同向使gate取得最小可能环贡献，非gate也都满足阈值，故可和外部固定方向同时组合。路径逐叶同样以能吸收则吸收的支配规则保持最小父贡献。每块和每边只处理常数次，得论文算术比较模型中的O(|V|)决策及完整方向；零初载时上界2k给O(|V| log(k+1))决策调用总时间（k≥2时即原O(|V| log k)，k=1直接线性处理）。这些是核心自身的完整证明机制，并非从困难性源推出。SP归约对n个元素用n条独立内点的s–v_i–v_i′–t路径，边权(s_i,W,s_i)。中边出端已付W，迫使至少一个终端承担s_i；两终端总预算2W=Σs_i又迫每条路径恰付一次、各端各W，从而恢复PARTITION。n≥3时每条路径和任一其它路径形成一个简单环，每条边属于n−1≥2个环，故困难归约像违反仙人掌条件。n=1为树、n=2为单环，属于核心适用域且源分割本就可直接判定。PARTITION的NP完全性只承重该SP困难性；既不证明、不否定仙人掌算法，SP超类困难性也不向其cactus子类下传。未作P≠NP无条件障碍陈述，未把同名图类或同模型当作推导。"
+      "comparison_scope": "按当前任务定义读完整仙人掌 MMO v4、简单系列并行 MMO 困难性 v4、PARTITION v1 的登记合同。实读当前 Asahiro 条目全文及冻结稿印页 4–11、14–15，目视印页 8 Fig.3 和印页 15 Fig.5。复核 Karp 条目 §§1、2、4.1–4.3、5.4–5.5，目视 Karp 再版 PDF 第 20 页（原印页 100）的两附数构造。逐项核同权初载账本、单父割点消息与两终端联立负载、PATH→PARTITION 反向解码和二进制输入边界。与现行 PARTITION→多重外平面→简单系列并行链及已交付的块秩→同权仙人掌 whole 边查重。",
+      "reason": "本包在两个指定共享端点上新增 accepted/context 检查关系。对 B>0、0<a_i≤B 的权 (a_i,B,a_i) 三边路径，内部点满足 B 时，两个终端的极小负载对恰为 (a_i,0) 和 (0,a_i)。并联后恰为 (x,Σ_i a_i−x) 的可达子集和前沿，两个坐标分别最小的 (0,0) 无共同见证。总权 Σ_i a_i=2B 时全图可行性要求前沿含 (B,B)。例如 a=(2,2,2)、B=3 会被独立坐标最小值误判，实际前沿没有 (3,3)。当 n≥3，每条边属于 n−1 个环，超出仙人掌域；删任一终端就成为树。这个精确比较检查单父割点标量消息的外推界限，未构成对目标定理的逻辑证明或反驳。PARTITION 源给出该简单系列并行困难族的语言和编码，不提供仙人掌算法的证明；现行完整块秩→仙人掌证明已由具名 3B 承接和交付。"
     }
   },
-  "assets": [],
-  "closed_overlaps": [
+  "assets": [
+    {
+      "path": "map/edges/unrelated-machines-3a-3a-c35fa3f0dc7db052/three-edge-paths-check-cactus-message-scope.json",
+      "sha256": "2adf8f5ca9638418ad591f0d41ae9465e3a9cddf26266b995443d7b21ef94a6e"
+    }
+  ],
+  "closed_overlaps": [],
+  "comparison_dispositions": [
     {
       "core_id": "M-13581d45b027466aa2e4ab966402a1ca",
       "peer_id": "M-dcc092193be04e8b9b143a1ed5ba1d4d",
-      "reason": "完整核双向路径归约及cactus的gate消息。n≥3的困难实例为theta型块，一条边同时处于多个环；n≤2只有可直接判定的PARTITION小实例。成立的是结构适用边界语境，没有从简单SP弱NP困难到cactus困难的推导，也没有从cactus算法到整个SP精确算法的推导。已解决本范围比较，无需发布重复后续。"
+      "disposition": "checked-single-gate-message-scope",
+      "reason": "权 B 中边迫使某一终端支付 a_i。按所迫终端选择全路同向，使另一终端的额外支付归零而不增加任何终端负载。并联所需的相关性以真实可达极小对保留，见本包 checks 边。n≤2 时路径族落在树或单环内，源问题也可直接判定。"
     },
     {
       "core_id": "M-13581d45b027466aa2e4ab966402a1ca",
       "peer_id": "M-e8d9614430ab49fc99125452d10388f1",
-      "reason": "PARTITION源的binary语言、附数编码及边界均已核。Karp非平凡SUBSET SUM附数输出有n≥3、偶总和且每项小于半和；它经三边路径落到非cactus的SP困难族。与核心无直接证明或反驳作用，已有PARTITION→多重外平面→简单SP承重关系可复用其有效数学，勿重复造边。"
+      "disposition": "hardness-source-without-cactus-implication",
+      "reason": "按正 binary 整数列表及下标处理重复值。Karp 的非平凡 Subset Sum 实例 0<b<A 经两附数得到偶总和 2A+2、半和 A+1、至少三项、各项不超过半和。两附数总和 A+2，故必须分处两侧，反解原子集和 b。用该族进入 Theorem 12 的路径归约时，图不满足仙人掌条件。奇和、非法编码、空表可用固定合法 YES/NO 实例处理。归约困难性已由当前两条完整边表达，无需复制。"
     }
   ],
   "follow_up_tasks": [
@@ -28,23 +36,27 @@
     {
       "core_id": "M-13581d45b027466aa2e4ab966402a1ca",
       "peer_id": "UM-TWO-CHOICE-BLOCK-RANK-EXACT-v1",
-      "disposition": "published-follow-up",
-      "reason": "额外端点v2的2^b poly(L)粗界在cactus b≤1给精确位多项式可解性，但不能仅据此推出核心O(n)决策/O(nlogk)整目标；两算法最小父割点消息及逐规则复杂度比较已具体化。精确端点、比较问题、当前pins及实际已读证据保存于本任务边目录followup-proposal.json，该文件不是edge资产。具体比较已由该3B任务承接。",
-      "task_id": "boss5-cactus-blockrank-comparison-3b-b06dac924461f37d"
+      "disposition": "completed-published-follow-up",
+      "reason": "已交付的 3B 任务完整证明一般块秩消息的 b≤1 专化达到目标算术计时和原边方向回收。只在此处记录后续的实际结果，跨任务边按原任务的对象范围交付。",
+      "task_id": "boss5-cactus-blockrank-comparison-3b-b06dac924461f37d",
+      "edge_id": "um-b06dac92-blockrank-messages-transfer-full-symmetric-cactus-bound"
     }
   ],
   "source_review": {
     "same_file_current_sha256": "3fe059248d81113e400a7c5fe3084cccc9eb53267d4c4f1a570e086bc1a06e0f",
     "pdf_sha256": "5db93652d80fd92b6440e0a0e22edfdeb09f78e2b886c95cb4adf171c67ee147",
-    "source_math_correction_needed": false,
     "precision_notes": [
-      "O(n)保持论文按整数加法/比较计步的模型；不把任意binary大整数位操作视为常数。",
-      "优化调用数严格写O(log(k+1))并单独处理k=1；不由论文区间下界k误推所有权域上界为k的实例OPT≥k。实际下界应为w_max。",
-      "PDF Lemma6 Step2-1c的组件符号和伪码记账可直接以最小gate贡献交换论证解释；本轮验证实际算法保证，不依赖该处排印不精确的组件大小关系。",
-      "没有运行有限科学扫描或以程序PASS替代数学。"
+      "叶块处理的关键不变量是保留父割点及它已经承接的实际初载。在叶路径或剩余路径含父割点时，以父割点为根，仅消去非根端点，并把不能由叶端支付的边权转入其父账本。最终检查根账本，保留该割点供外部块使用。整个连通分量的根块没有父割点，可在检查最后节点后移除。",
+      "Fig.3 Step 2-2 的字面删除语句没有写明父割点例外。印页 7 说明叶环恰有一个 gate；印页 8 的 Step 2-1a、2-1c 分别排除消去真实 gate、只在无真实 gate 时从 G′ 删除 g；印页 9 的正确性证明还在剩余 G′ 中追踪含 g 的分量。这些上下文确立了作者意图。例 K=1、两条单位边 gu、gv，f(g)=0、f(u)=f(v)=1 时，两条边都只能由 g 支付，丢弃其跨块账本会丢失不可行性。建议在当前正文 §2 的叶路径规则补上父割点和最终检查这两句。按正确不变量，已登记定理及复杂度成立。",
+      "Step 2-1a 可交换到能付两边的非 gate，且只降低邻点负载。Step 2-1b 由端点超预算强制定向。前两步均不触发时，每个非 gate 可付任一单环边但最多付一条，计数迫使 gate 至少付一条。沿环同向可让 gate 只付较轻边，故得到真实最小可合并负载。",
+      "每条边和每块只处理常数次。零初载、权在 1…k 时，Lemma 8 给 OPT≤2k；OPT 的普适下界是实际最大边权，并非给定上界 k。整数二分 O(log(k+1)) 次，k≥2 即原 O(|V| log k)，k=1 为 O(|V|)。这些是整数算术和比较次数，二进制整数的位运算另计。"
     ]
   },
   "reviewed_by": "Boss5",
-  "review_note": "父Boss核对三边路径反向强制、非cactus边界和单环最小gate交换；本包无跨端点逻辑边，已发布具名3B比较以继续核算法消息及时间强度。 本轮按原PDF修正2-1c的准确方向，core与共享困难性对象仅相应SHA/版本刷新。",
-  "binding_status": "No new edge asset; no binding performed."
+  "review_note": "fresh 3A 数学复核在任务刷新后的三个当前 pins 上完成。已独立证明两终端极小负载前沿、给出逐坐标压缩失败的精确例并复核论文的父割点账本。指定端点的唯一新增资产是语境边。没有改动源文件、登记或已发布边。",
+  "validation": {
+    "edge_check": "edge-structure-valid-not-a-mathematical-verdict",
+    "proof_scope": "context",
+    "review_digest": "c0f25a96e53a0a31847e685cf59094acb97b021837c2ab39122b053ec35504dc"
+  }
 }
