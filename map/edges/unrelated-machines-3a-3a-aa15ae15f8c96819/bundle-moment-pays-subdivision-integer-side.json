@@ -1,0 +1,57 @@
+{
+  "edge_id": "um-aa15-bundle-moment-pays-subdivision-integer-side",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "UM-BUNDLE-MOMENT-v1"
+  ],
+  "target_ids": [
+    "UM-PAIR-SUBDIVISION-GAP-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "原两树族k≥4，末束k枚任务在父端u耗时1/k、在末端v耗时1，u的incoming耗时1。原强化按u/v两个完整配置施加二阶互补。细分每个原二端任务时新机两个端均取H=1。",
+  "roles": {
+    "UM-BUNDLE-MOMENT-v1": "给出原强化阈值θ_k及达到它的原实际Dirac调度，支付原两树普通OPT。",
+    "UM-PAIR-SUBDIVISION-GAP-v1": "用长度二替换的严格压回保整数阈值，再另构原CONFIG及新pair的分数侧。"
+  },
+  "explanation": "末束真实Dirac自动满足N_v=k−N_u，所以所有实际调度给原强化可行点。T<θ_k=2−1/k时v的各配置至多一件，E binom(N_v,2)=0，二阶等式强迫每个正质量u配置至少k−1件，incoming不容；向根逐层传播至根间任务无处执行。θ_k有完整原Dirac调度，故原整数OPT恰θ_k。细分后，峰<2时每个新机至多留一个子件，另一子件所在旧端恢复原任务且旧机负载不增；若细分峰<θ_k则与原最优矛盾。原θ_k调度反向让另一子件上新机，新增负载1≤θ_k，得到细分OPT′恰θ_k。旧二阶等式的并行末束语义不能只凭细分后每pair至多一共享任务的独立配置耦合恢复。",
+  "scope": "该边支付细分两树族k≥4的整数侧。T_PAIR只给≤1+1/k的分数阈值上界，未得等号。严格压回只保证C<2；不提供一般MC或强化层优化器。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/审查/成束计数闭包与细分保值的版本审查--审查.md",
+      "sha256": "b2e626bc505237dd6a8f1dd8fc2f9dde3665cc541ab90910cd6dfc1133b8ebc2",
+      "section": "末束二阶等式为什么切原两树证书"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/成束计数闭包与细分保值的版本审查--审查.md",
+      "sha256": "b2e626bc505237dd6a8f1dd8fc2f9dde3665cc541ab90910cd6dfc1133b8ebc2",
+      "section": "逐对配置耦合与通用细分的正确量词"
+    },
+    {
+      "path": "archives/unrelated-machines/state/程序/逐对配置细分的原审计与压回合同--程序.md",
+      "sha256": "7b9ee5a2ba56d12208636718af47fb37de8e9e0ff27af19026b2657491510e07",
+      "section": "二、实际调度的提升与严格压回域"
+    },
+    {
+      "path": "archives/unrelated-machines/state/程序/逐对配置细分的原审计与压回合同--程序.md",
+      "sha256": "7b9ee5a2ba56d12208636718af47fb37de8e9e0ff27af19026b2657491510e07",
+      "section": "五、旧配置的局部二阶遗漏残差"
+    }
+  ],
+  "reviewed_by": "Boss3",
+  "review_note": "复核T<θ的逐support非负推理、θ的Dirac有效性及严格压回域；不把原二阶cut转成新逐对耦合。",
+  "contribution": {
+    "result": "原二阶阈值θ_k经真实Dirac与严格压回成为两树长度二细分族的精确普通OPT′=θ_k。",
+    "remaining": "完整目标的任意P/H不等式、T≥H的CONFIG证书提升、简单图pair条件耦合、T_PAIR≤1+1/k及gap上界2分别另证。"
+  },
+  "endpoint_pins": {
+    "UM-BUNDLE-MOMENT-v1": "46a7502918f08de7010c477c8d5326f4090fb24fdf06cbca94fee102964d7259",
+    "UM-PAIR-SUBDIVISION-GAP-v1": "08b89a3dc365d0fa75263a4544a0fc97fc46d5c97af1e85227090381e6475205"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/审查/成束计数闭包与细分保值的版本审查--审查.md": "b2e626bc505237dd6a8f1dd8fc2f9dde3665cc541ab90910cd6dfc1133b8ebc2",
+    "archives/unrelated-machines/state/程序/逐对配置细分的原审计与压回合同--程序.md": "7b9ee5a2ba56d12208636718af47fb37de8e9e0ff27af19026b2657491510e07"
+  },
+  "review_digest": "1d6535fffc4c7a8cd091d212252f6cde6ce9dfd4b0c9a1ccdb02c66e51616f8c"
+}

@@ -1,0 +1,48 @@
+{
+  "edge_id": "um-b109-fixed-prefix-witness-correction",
+  "kind": "corrects",
+  "status": "accepted",
+  "source_ids": [
+    "M-031b8ef7202a4527b45d47605c6ac93a"
+  ],
+  "target_ids": [
+    "UM-THRESHOLD-COVER-JOINT-SLOT-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "T=1、τ=1/2，共同资格及等端私有重量；被比较的历史做法把 LP 计费覆盖替换为固定原顺序首次跨 d 的前缀。",
+  "roles": {
+    "M-031b8ef7202a4527b45d47605c6ac93a": "提供在同一个联合 LP 见证下擅换恢复子集的全参数真实负载反例。",
+    "UM-THRESHOLD-COVER-JOINT-SLOT-v1": "按原 X_h 回填保留 sink 收费；说明旧恢复更换失效的具体边界。"
+  },
+  "explanation": "r≥1，s=1/(10r)，5r 个 home 共一 sink。每宏强制本 home，时间 1/2+s，私有顺序一件 1/5 再 3r+1 件 s，故 W=1/2+s、d=s。已付一个小件的 LP sink 费用 5rs=1/2；替换为固定首件则实际费用为 r。每 home 移出两小件给真实峰 1；峰<1 迫每 home 迁出 >2s，重量为 s 的整数倍，sink 因而至少 3/2。原见证恢复的实际 home 为 1+s、sink 为 1/2。",
+  "scope": "只纠正这个恢复替换。固定 τ=1/2+δ 的加权组算法另外支付 home 的离散余量，有独立的出口控制。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/算法/门槛覆盖的同见证联合槽恢复--算法.md",
+      "sha256": "2ba9c9b10faf1aa7931c82ffdb278a301a148632f2de96a540c4d773de80d9f0",
+      "section": "撤回的前缀恢复与真实无界误差"
+    },
+    {
+      "path": "archives/unrelated-machines/state/算法/共同资格组的加权出口联合槽--算法.md",
+      "sha256": "494eef0d74c663d7049c65eb0a32b12696ec3a5c0168b47f85514305f8dfb15a",
+      "section": "实际前缀为何不超虚拟尺寸"
+    },
+    {
+      "path": "archives/unrelated-machines/state/计算/重配置比较依赖与恢复纠错的精确核验--计算.md",
+      "sha256": "fd6214366576af695ae14dae792ed47da779e379de3be0623e8d4e590ff2bb96"
+    }
+  ],
+  "reviewed_by": "Boss3",
+  "review_note": "核原任务和真实 OPT=1 的上下界，另比合法前缀算法所支付的 δT。",
+  "endpoint_pins": {
+    "M-031b8ef7202a4527b45d47605c6ac93a": "605e0dbc937ded993bcf3a61de55f4b05412ab6239e096072d2004239800ff95",
+    "UM-THRESHOLD-COVER-JOINT-SLOT-v1": "fb6ae47daf4d59f95268a72db48cd295c608a39564a9a42d0ddac1db569cb473"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/算法/门槛覆盖的同见证联合槽恢复--算法.md": "2ba9c9b10faf1aa7931c82ffdb278a301a148632f2de96a540c4d773de80d9f0",
+    "archives/unrelated-machines/state/算法/共同资格组的加权出口联合槽--算法.md": "494eef0d74c663d7049c65eb0a32b12696ec3a5c0168b47f85514305f8dfb15a",
+    "archives/unrelated-machines/state/计算/重配置比较依赖与恢复纠错的精确核验--计算.md": "fd6214366576af695ae14dae792ed47da779e379de3be0623e8d4e590ff2bb96"
+  },
+  "review_digest": "62492e4fce62511941a062fec1097de04f397d48058fe7d2ef5024ada52c1fbd"
+}

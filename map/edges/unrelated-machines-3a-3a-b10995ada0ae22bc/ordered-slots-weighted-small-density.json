@@ -1,0 +1,44 @@
+{
+  "edge_id": "um-b109-ordered-slots-weighted-small-density",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "UM-ST-ROUND-v1"
+  ],
+  "target_ids": [
+    "UM-WEIGHTED-SMALL-ST-BARRIER-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "非负有理/∞ 显式原矩阵，有限端≤1。0<β<1，0≤γ≤1。S_j={i:p_ij≤β}，R 为 S_j 非空的原任务，Q 为其余任务且各有限端均为 1。逐机 small 总量 s_i≤1，多 small 端任务在该机的总量 u_i≥γs_i。",
+  "roles": {
+    "UM-ST-ROUND-v1": "对 R 的给定分数点提供负载 ≤w_i+r_i 的同一完整小任务槽匹配。",
+    "UM-WEIGHTED-SMALL-ST-BARRIER-v1": "逐机密度先付分数行界，再把不交的 Q 任务匹配或以其失败证 OPT≥2。"
+  },
+  "explanation": "在每个 j∈R 的全部 S_j 上取质量 1/|S_j|，列和一；单端贡献原重量，多端贡献至多一半，故每机 w_i≤s_i−u_i/2≤1−γ/2。此点是 R 子矩阵在 T=1 的剪枝有理点且正支撑最大件 ≤β，ST 给完整 R 分配、逐机负载≤1−γ/2+β。另用 Q 的容量一二部匹配，成功每机追加至多一件单位任务，两组不交故覆盖全部原任务；失败时任何 C<2 的真实调度本身必诱导所缺的 Q 匹配。Q 空不追加；Q 非空时 OPT≥1。",
+  "scope": "保留逐机而非全局密度。Q 空时只是所述绝对上界；Q 非空且 β<γ/2 时上界给严格次二相对保证。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/定理/有序单位槽的支撑最大件舍入--定理.md",
+      "sha256": "996b2d634889c84f766cf186d5d71d8f55679e2e993e1648f34597dbf2d354a6",
+      "section": "槽、任务匹配及逐机收费"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/小任务联合槽与加权小端ST双源续审查--审查.md",
+      "sha256": "e51a9f639bc40bdc64af9185604a672378c624bdf6154de6e566c521bd0dc4a7",
+      "section": "3. 加权小端 ST 的多尺度障碍"
+    }
+  ],
+  "reviewed_by": "Boss3",
+  "review_note": "已核列质量、T=1 行容量、支撑最大件以及 Q 匹配失败的反证方向。",
+  "whole_result": "在所列逐机密度域，Q 无完整容量一匹配时 OPT≥2；否则确定性总位多项式输出完整原调度、峰≤2−γ/2+β。Q 空时峰≤1−γ/2+β，Q 非空且 β<γ/2 时得严格次二相对界。",
+  "endpoint_pins": {
+    "UM-ST-ROUND-v1": "8c4662c822ebd204e3b095934f8745464426df43fc2328a6bbc35063e4148ea1",
+    "UM-WEIGHTED-SMALL-ST-BARRIER-v1": "054150e0d9ce6d1aed215ee5030e6d6b1f44f585ae61ec26e453e640b12ce737"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/定理/有序单位槽的支撑最大件舍入--定理.md": "996b2d634889c84f766cf186d5d71d8f55679e2e993e1648f34597dbf2d354a6",
+    "archives/unrelated-machines/state/审查/小任务联合槽与加权小端ST双源续审查--审查.md": "e51a9f639bc40bdc64af9185604a672378c624bdf6154de6e566c521bd0dc4a7"
+  },
+  "review_digest": "e207086486d5f5d66d03fa6e53349e08c3d7e522076f5065c87d20301f5ef55d"
+}

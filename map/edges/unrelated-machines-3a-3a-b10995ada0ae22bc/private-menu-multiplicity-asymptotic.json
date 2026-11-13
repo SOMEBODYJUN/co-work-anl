@@ -1,0 +1,58 @@
+{
+  "edge_id": "um-b109-private-menu-multiplicity-asymptotic",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "UM-Q-PRIVATE-TREE-BOUNDED-MULTIPLICITY-CONFIGURATION-FLOOR-v3"
+  ],
+  "target_ids": [
+    "UM-PRIVATE-TREE-MULTIPLICITY-GAP-ASYMPTOTIC-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "任意整数μ≥2；非空roots与状态菜单，完全私有满d叉高h状态树、统一父端1/d、唯一子或外机单位端、无其它任务/预载。每完整state内每外机叶重数≤μ；跨状态与跨根可任意共享。CONFIG为全原任务的精确覆盖。",
+  "roles": {
+    "UM-Q-PRIVATE-TREE-BOUNDED-MULTIPLICITY-CONFIGURATION-FLOOR-v3": "对同一完整私有菜单树类的所有CONFIG阈值给逐实例上界，允许任意跨状态和跨根共享外机。",
+    "UM-PRIVATE-TREE-MULTIPLICITY-GAP-ASYMPTOTIC-v1": "在全部有限显式实例上取上确界，并用平星族补上下界。"
+  },
+  "explanation": "V3按每色出现次序划分rainbow叶类，用raw阻断数及共同λ的原叶重数容量满足Haxell，随后回填全部原任务，故对每个P∈C_μ有OPT/T_conf≤2−1/(μ+2)。下界另用同一域的d=μ,h=1、一个root及μ个state：第s态的μ枚叶各在本根耗1/μ、在其专属z_s耗1。T=1时每态根的selector单件与全叶配置权重分别为1/μ与1−1/μ，z_s的μ个单件配置各权1/μ。每行归一，selector与所有μ²叶覆盖恰一，且selector迫T_conf≥1。任何峰<2的实际调度中，selector所在态最多外送一叶，因此峰≥2−1/μ；送恰一叶并把其它所有叶父置达到该值。上下两界取上确界，再相减及乘μ夹逼，得到0≤G(μ)−(2−1/μ)≤2/[μ(μ+2)]和μ(2−G(μ))→1。",
+  "scope": "完整私有菜单树类的配置间隙与参数一阶渐近。固定μ的精确G(μ)和上确界是否达到仍未定。Haxell给有限存在性，平星输入须显式输出μ²+1件任务。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/定理/私有菜单树有界叶重数配置界--定理.md",
+      "sha256": "5b810c65140f9581fb362f8ff739b09f019a7c435a1bc2eb3d7a34d42c3041d3"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/菜单树重数配置间隙渐近--定理.md",
+      "sha256": "58e4c608ff702afe8e2237358b1bfa833418b0df723b506b604ee9eee7b0cf6b",
+      "section": "显式下界族的对象参数"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/菜单树重数配置间隙渐近--定理.md",
+      "sha256": "58e4c608ff702afe8e2237358b1bfa833418b0df723b506b604ee9eee7b0cf6b",
+      "section": "2. 下界族的精确实际最优值"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/菜单树重数配置间隙渐近--定理.md",
+      "sha256": "58e4c608ff702afe8e2237358b1bfa833418b0df723b506b604ee9eee7b0cf6b",
+      "section": "3. 上确界夹逼与整数参数极限"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/私有树有界重数v3四源精读与证明边界--审查.md",
+      "sha256": "fad498824aa96153a0ef0c0b4fdfd9cfac56bf0018abe8c48b2712a4cc1805f9"
+    }
+  ],
+  "reviewed_by": "Boss3",
+  "review_note": "核对同一每状态μ约束、V3对所有CONFIG阈值的上界、平星的逐行配置覆盖及完整最优调度。以精确有理数复核误差公式与端点。固定秩Haxell构造及固定μ锐性不由此得到。",
+  "whole_result": "对每整数μ≥2，C_μ的最坏配置间隙满足2−1/μ≤G(μ)≤2−1/(μ+2)及误差上界2/[μ(μ+2)]，整数μ→∞时μ(2−G(μ))→1。左界由本文完整平星实际与CONFIG见证，右界由V3全阈值结论。",
+  "endpoint_pins": {
+    "UM-PRIVATE-TREE-MULTIPLICITY-GAP-ASYMPTOTIC-v1": "e0773a46409cfa84a53470206d586c7e0581fee50302d258076be7b7f1f5ae9d",
+    "UM-Q-PRIVATE-TREE-BOUNDED-MULTIPLICITY-CONFIGURATION-FLOOR-v3": "ac628d8a3fbf87017b10a2aa913e6d6485c9f01ae2a3175f276c5017bb28a5a1"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/定理/私有菜单树有界叶重数配置界--定理.md": "5b810c65140f9581fb362f8ff739b09f019a7c435a1bc2eb3d7a34d42c3041d3",
+    "archives/unrelated-machines/state/定理/菜单树重数配置间隙渐近--定理.md": "58e4c608ff702afe8e2237358b1bfa833418b0df723b506b604ee9eee7b0cf6b",
+    "archives/unrelated-machines/state/审查/私有树有界重数v3四源精读与证明边界--审查.md": "fad498824aa96153a0ef0c0b4fdfd9cfac56bf0018abe8c48b2712a4cc1805f9"
+  },
+  "review_digest": "12fa32e0af66465768aa29877f6c4eb7146c7299c82dbbeb0bdece45d8cfee94"
+}

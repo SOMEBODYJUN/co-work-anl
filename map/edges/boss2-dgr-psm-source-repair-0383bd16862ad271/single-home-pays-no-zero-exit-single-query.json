@@ -1,0 +1,62 @@
+{
+  "edge_id": "um-boss3-dgr-repair-single-home-pays-no-zero-exit-single-query",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "UM-SINGLE-HOME-CASCADE-QUERY-SEPARATION-v2"
+  ],
+  "target_ids": [
+    "UM-TWO-WITNESS-QUERY-SEPARATION-v2"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "两份同矩阵实际见证、T>0；统一除以T后满足单home强初态、U各有限端为1、每个J恰一正小home、所有query走unit，并且第二见证没有J走零端（Z为空）。",
+  "roles": {
+    "UM-SINGLE-HOME-CASCADE-QUERY-SEPARATION-v2": "同一组增广路和非query闭包可按任意单query生成全任务实际调度。",
+    "UM-TWO-WITNESS-QUERY-SEPARATION-v2": "只支付一般双见证合同中的受限单query子域。"
+  },
+  "explanation": "取S={q}。把源定理的A_q和被这些翻转路径实际改派的U合并为A′_q。路径属于互不相交的B_q，故A′_q两两不交；所有A′_q中的任务均从原σ₀端去原σ₁端。Z为空使其他全部任务留σ₀端，包括未选query。回缩放后峰≤T+δ_q。对任意非负非query改派费（包括U），以A′_q定义实际费用，按不交性可求和至≤W，最少一条≤W/|Q|。构造和改派集合均与权无关。",
+  "scope": "只在上述严格home及Z为空子域；全查询子集的源定理另有较强作用。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/定理/单home级联的完整查询族与可加费用--定理.md",
+      "sha256": "cba2d566bd9c3d694d7d09e830e3264d7947953c6edf7c059686a34cc6ffa43e",
+      "section": "完整查询族定理"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/单home级联的完整查询族与可加费用--定理.md",
+      "sha256": "cba2d566bd9c3d694d7d09e830e3264d7947953c6edf7c059686a34cc6ffa43e",
+      "section": "单位匹配、单parent闭包与完整证明"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/单home级联的完整查询族与可加费用--定理.md",
+      "sha256": "cba2d566bd9c3d694d7d09e830e3264d7947953c6edf7c059686a34cc6ffa43e",
+      "section": "用途、限制与比较"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/双见证查询分离的染色证明与冻结审查边界--审查.md",
+      "sha256": "878018b18a1a8d425ca75187a352599c0ca22af15e9c436298c8d5587d363671",
+      "section": "1. 完整数学合同"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/双见证查询分离的染色证明与冻结审查边界--审查.md",
+      "sha256": "878018b18a1a8d425ca75187a352599c0ca22af15e9c436298c8d5587d363671",
+      "section": "2. 目标端阈值染色的自足证明"
+    }
+  ],
+  "reviewed_by": "Boss3",
+  "review_note": "核对D的两种定义、U的实际改派归属及费用对象。若Z非空，源构造统一移到零端，不能直接改写成一般定理中按单query不交的改派集合。 当前v2完整查询族在Z为空时，扩张改派集到各自不交的单位任务增广路后，任意费用可加。保留阈值及一般目标缺步。",
+  "contribution": {
+    "result": "严格单home且无Z的两见证输入可同时得到一般定理所需的不交单query支持，且峰加强为T+δ_q。",
+    "remaining": "对含Z或没有强初态/唯一正小端的输入，仍须一般目标端半阈值染色；源定理不能替代该论证。"
+  },
+  "endpoint_pins": {
+    "UM-SINGLE-HOME-CASCADE-QUERY-SEPARATION-v2": "77c11dc04174687643022603d987f491e1039ed6b6fe091668954992e7693f72",
+    "UM-TWO-WITNESS-QUERY-SEPARATION-v2": "06c8efe1249249949c418be69c17b2f4b8eda20030551950aaae3415abbdff8f"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/定理/单home级联的完整查询族与可加费用--定理.md": "cba2d566bd9c3d694d7d09e830e3264d7947953c6edf7c059686a34cc6ffa43e",
+    "archives/unrelated-machines/state/审查/双见证查询分离的染色证明与冻结审查边界--审查.md": "878018b18a1a8d425ca75187a352599c0ca22af15e9c436298c8d5587d363671"
+  },
+  "review_digest": "5ae62ff2316dbdd44763e468e9587c878268ee05385fdd3c800d11c8e04cf9c9"
+}

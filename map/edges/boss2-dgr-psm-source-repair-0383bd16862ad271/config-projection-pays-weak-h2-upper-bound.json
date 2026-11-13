@@ -1,0 +1,57 @@
+{
+  "edge_id": "um-boss3-dgr-repair-config-projection-pays-weak-h2-upper-bound",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "unrelated-machines/shmoys-tardos-generalized-assignment-cost-preserving-rounding"
+  ],
+  "target_ids": [
+    "UM-WEAK-H2-CONFIG-MOMENT-GAP-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "给任意弱H2(T)点，要求其同一一阶边际存在每机负载≤T的完整CONFIG行，且任务one-hot。不可用端无配置质量。",
+  "roles": {
+    "unrelated-machines/shmoys-tardos-generalized-assignment-cost-preserving-rounding": "将支撑边时间≤T且行负载≤T的分数指派舍入为完整实际调度。",
+    "UM-WEAK-H2-CONFIG-MOMENT-GAP-v1": "弱H2趋二下界配套的统一上界。"
+  },
+  "explanation": "从每台CONFIG行分布取x_ij=Σ_{C∋j}y_iC。one-hot给每任务列和1，行期望负载≤T；若p_ij>T则j不在任一该行合法配置，故x_ij=0。成本设为0，ST逐机界给L_i≤ℓ_i+r_i≤2T。该上界不使用L的二阶或更高阶信息；稀释星家族独立给ratio趋2，合并才识别上确界2。",
+  "scope": "任意满足该弱合同的阈值证书到整数OPT上界，包括T=0。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/资源/广义指派的费用保持与加性负载舍入--资源.md",
+      "sha256": "71aed70bc3061bc33c6b6ea89417693b76b58e8100a010c730a73407b845749a",
+      "section": "1. 模型、两个阈值与准确主结论"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/广义指派的费用保持与加性负载舍入--资源.md",
+      "sha256": "71aed70bc3061bc33c6b6ea89417693b76b58e8100a010c730a73407b845749a",
+      "section": "2. 有序槽与最小费用匹配：完整证明"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/弱H2强行矩与加权扇出边界双源审查--审查.md",
+      "sha256": "4f08c432e9e21e52f8dc623f17dd6bf50756d357687952bd297996242fe61902",
+      "section": "2.1 合同与参数族"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/弱H2强行矩与加权扇出边界双源审查--审查.md",
+      "sha256": "4f08c432e9e21e52f8dc623f17dd6bf50756d357687952bd297996242fe61902",
+      "section": "2.2 fractional multislice 与 PSD"
+    }
+  ],
+  "reviewed_by": "Boss3",
+  "review_note": "逐项核对CONFIG投影的合法支撑、负载及任务列约束，并把与稀释星独立下界的作用分开。 弱H2的一阶配置/有序槽推导与稀释星下界分别复核，强行矩变更不进入统一上界。",
+  "contribution": {
+    "result": "每个弱H2(T)可行输入都满足OPT≤2T。",
+    "remaining": "达到上确界还须独立证明稀释星在t处的共同M₂ PSD、负载localizer、共享一阶CONFIG及整数最优值2−1/k。"
+  },
+  "endpoint_pins": {
+    "UM-WEAK-H2-CONFIG-MOMENT-GAP-v1": "45266fb7e31cf1beeefb08cd847f6f990441ea40bed04efe57a4bf1813dc5ee6",
+    "unrelated-machines/shmoys-tardos-generalized-assignment-cost-preserving-rounding": "c12cff11f8d9d634441f752ebe101222ec0faba1d570a402caf2618f68edb356"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/资源/广义指派的费用保持与加性负载舍入--资源.md": "71aed70bc3061bc33c6b6ea89417693b76b58e8100a010c730a73407b845749a",
+    "archives/unrelated-machines/state/审查/弱H2强行矩与加权扇出边界双源审查--审查.md": "4f08c432e9e21e52f8dc623f17dd6bf50756d357687952bd297996242fe61902"
+  },
+  "review_digest": "27d45fcd0dcf63fdd6d44ca4dad802275eb96f19dbb5e51fa09e10213b19a5ef"
+}

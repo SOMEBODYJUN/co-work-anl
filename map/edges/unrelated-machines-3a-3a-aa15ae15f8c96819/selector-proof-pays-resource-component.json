@@ -1,0 +1,52 @@
+{
+  "edge_id": "um-aa15-selector-proof-pays-resource-component",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "UM-THREE-HOST-SELECTOR-THREE-HALVES-v1"
+  ],
+  "target_ids": [
+    "UM-ACTUAL-WITNESS-QUERY-FEE-CONTRACTS-RESOURCE-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "同一显式基础任务矩阵，a,b,c三台互异外接机、任意内部机、每有限处理时间非负；关闭保留原资格并增加不可迁移T预载，开放无预载。给only-a与only-b+c两份完整实际≤T调度，T≥0。",
+  "roles": {
+    "UM-THREE-HOST-SELECTOR-THREE-HALVES-v1": "半行颜色闭包和实际拼接给三外接受限定理及两任务锐例。",
+    "UM-ACTUAL-WITNESS-QUERY-FEE-CONTRACTS-RESOURCE-v1": "复用其三外接分支，另列加权多输出、同矩阵查询与无共同见证费用合同。"
+  },
+  "explanation": "用每任务第一见证源时长作为其从第一owner到第二owner的有向权，固定b/c不同色并经半行闭包得到每点同色权至少半行。令W为a的色类，恰含b/c之一。只开放W里的输出，a仍关闭；两端都在W的原任务取第二owner，其他任务留第一owner。W内最多收到第二见证的T，保留旧跨边负载≤T/2；a在第二见证已有T预载，内部基础负载为0，故即使新模式仍加a的T预载也至多3T/2。W外负载沿第一见证，保全部原任务。仅j_b在a用T/2或b用T、j_c在a用T/2或c用T的例子达到3T/2，T=0亦合法。",
+  "scope": "精确支付资源中的三外接调度分支。加权多输出、Santa效用对应、双见证费用分离和仅有singleton见证的共享费用分别有各自模型、量词及证明。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/审查/三外接选择器与单任务端口向下投影双源审查--审查.md",
+      "sha256": "373d2362b5f8fd859e3c2d8c73f1264f6aa745b197702fe4cd19c4b0b335e2fc",
+      "section": "一、三外接机器选择器的精确三半合同"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/给定实际见证的选择器查询与费用接口--资源.md",
+      "sha256": "e761b2f364f5cb2f866e207d7841a35ffb418af971fa9b3e31553cc331dcb28d",
+      "section": "三外接与加权多输出"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/三维匹配需求地板与三主机选择器双源审查--审查.md",
+      "sha256": "2f8c4c91af2bad2cc5f9862ff9b31c5b2f3c6e8809f4c8254713fb3f4add9335"
+    }
+  ],
+  "reviewed_by": "Boss3",
+  "review_note": "对照两份完整见证中的原任务端和a保留预载，独立复核锐例；每个输出模式与同矩阵查询分开。",
+  "contribution": {
+    "result": "在资源所述三外接双见证域中，确定性位多项式输出only-b或only-c的完整≤3T/2调度，并有两任务系数锐例。",
+    "remaining": "加权多输出求和界、Santa相反效用量词、同矩阵不交费用支持、无共同全开见证的模式费用等其余资源合同均需独立证明。"
+  },
+  "endpoint_pins": {
+    "UM-ACTUAL-WITNESS-QUERY-FEE-CONTRACTS-RESOURCE-v1": "9c55ce297189f89d7d49e960d8089ea1c034387d54f6be1cf1595533a0c76ec2",
+    "UM-THREE-HOST-SELECTOR-THREE-HALVES-v1": "f97f763eaee4201d4a8277ee3b6fd5bb9adc97dcb712cf49f7dc4f5d6ef25c0a"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/审查/三外接选择器与单任务端口向下投影双源审查--审查.md": "373d2362b5f8fd859e3c2d8c73f1264f6aa745b197702fe4cd19c4b0b335e2fc",
+    "archives/unrelated-machines/state/资源/给定实际见证的选择器查询与费用接口--资源.md": "e761b2f364f5cb2f866e207d7841a35ffb418af971fa9b3e31553cc331dcb28d",
+    "archives/unrelated-machines/state/审查/三维匹配需求地板与三主机选择器双源审查--审查.md": "2f8c4c91af2bad2cc5f9862ff9b31c5b2f3c6e8809f4c8254713fb3f4add9335"
+  },
+  "review_digest": "0d8208ad529b42f7ff8b7ea046969b53f5c3d6847a20f9122525d2bc0df80b4b"
+}

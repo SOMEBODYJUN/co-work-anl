@@ -1,0 +1,59 @@
+{
+  "edge_id": "um-b109-home-cycle-elimination-to-u-rooted-forest",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "UM-HOME-UNIT-CYCLE-ELIMINATION-v1"
+  ],
+  "target_ids": [
+    "UM-HOME-UNIT-ROOTED-FOREST-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "有限非空机器集和不交的U、J，给定完整合法原调度σ及Cmax(σ)≤C<2。U的所有合法时间为1，J有一个指定合法home，其home时间a_j∈[0,1]，其它合法端时间均1；外送弧带原任务标签。要保峰另需原U可达集R以外每台i的全部home总量b_i≤C。",
+  "roles": {
+    "UM-HOME-UNIT-CYCLE-ELIMINATION-v1": "提供只删除原简单环转移弧的逐机负载不增正规化，保全部U的实际原位置。",
+    "UM-HOME-UNIT-ROOTED-FOREST-v1": "提供按U实际落点的原可达森林、全任务回home规则和精确负载公式；保峰按R外预算判定。"
+  },
+  "explanation": "对原σ有转移入度d_i和实际U件数u_i之和≤1。于是U落点互异且转移入度0。每个原有向环的顶点已用其唯一入弧，原图中没有从环外进入该环的弧，且环顶点无U。因此所有删除的环弧和全部改派均在原U可达集R之外，去环保持R与R内负载。去环后的DAG仍入度≤1：每个非空弱分量含m个顶点，连通性给至少m−1条弧，DAG有零入度点且其它顶点入度≤1给至多m−1条弧，故该分量是一棵朝外根树。每件U落在一个不同分量的根，R正是这些分量。保留这些分量内的任务和全部U，令其他分量的J全部回home。原图也无R外入R的弧：R根入度0，其余R点已有一个来自可达前驱的unit。按前向可达性也无弧出R，故这与目标的按原home∈R规则完全一致，且R内负载精确为L_i(σ)，R外为b_i。若R外b_i≤C则保峰。全局b_i≤1在C≥1时直接给预算，C<1时没有unit执行，原任务全在home，因而预算同样成立。U为空时R为空。逐环、连通分量和回home均为显式输入位多项式。",
+  "scope": "从已给C<2的原任务调度，经逐环去除和弱分量裁剪，给出同一保U根森林的替代构造。原森林定理也可直接用单位入度和根可达性证明。任意负载的去环范围仍独立成立；C=2的平行入弧反例表明即使有home预算也不能推广同峰森林。",
+  "whole_result": "在目标的严格subtwo输入域，单home去环加单位入度和分量裁剪推出整条保U根森林定理：保U位置及home∈R的J原端，令其余J回home；R恰为|U|棵不交出树，R内原负载保持，R外为b_i；R外预算给Cmax≤C，全局b_i≤1充分，U空时R空。确定性总位多项式。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/定理/单home正规化与一般有向需求树实际恒等--定理.md",
+      "sha256": "b5a75fead51cc4a793936896a5366eaa9d059fd3d4a11bd522456b5a920092bc",
+      "section": "2. 任意负载的逐简单环消除"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/单home正规化与一般有向需求树实际恒等--定理.md",
+      "sha256": "b5a75fead51cc4a793936896a5366eaa9d059fd3d4a11bd522456b5a920092bc",
+      "section": "3. 严格小于二的保U根森林"
+    },
+    {
+      "path": "tools/evidence/um-home-unit-transit-and-envelope-primary/support/eef751243f82cd1689d6.md",
+      "sha256": "dd3a012c9e24eb64a6ddc4f8e953ccc787aa27cc8a6945a454af2357d5689fb8",
+      "section": "2. 去环证明及同时改派的边界"
+    },
+    {
+      "path": "tools/evidence/um-home-unit-transit-and-envelope-primary/support/eef751243f82cd1689d6.md",
+      "sha256": "dd3a012c9e24eb64a6ddc4f8e953ccc787aa27cc8a6945a454af2357d5689fb8",
+      "section": "3. 保 U 根正规化证明及其精确缺口"
+    },
+    {
+      "path": "tools/evidence/um-home-unit-transit-and-envelope-primary/support/eef751243f82cd1689d6.md",
+      "sha256": "dd3a012c9e24eb64a6ddc4f8e953ccc787aa27cc8a6945a454af2357d5689fb8",
+      "section": "同容量森林推广的锐阈值反例与运行入口"
+    }
+  ],
+  "reviewed_by": "Boss3/map-v2/b109/presence-home",
+  "review_note": "核对带原任务标签的平行弧、单环精确负载差、C<2时去环前后R相同、分量入度和R外预算。现行审查的token旧误述已有定向勘误，本边只用规范正文的前两个身份。",
+  "endpoint_pins": {
+    "UM-HOME-UNIT-CYCLE-ELIMINATION-v1": "c7373ee75e7ce4ec2f5b48640e28ce1f3411a92e487bdbdcd08143ddcbccb2d0",
+    "UM-HOME-UNIT-ROOTED-FOREST-v1": "82923c322767aedd6e46aaf94cbf07be4b718a119d18e3c65134664a6e28e104"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/定理/单home正规化与一般有向需求树实际恒等--定理.md": "b5a75fead51cc4a793936896a5366eaa9d059fd3d4a11bd522456b5a920092bc",
+    "tools/evidence/um-home-unit-transit-and-envelope-primary/support/eef751243f82cd1689d6.md": "dd3a012c9e24eb64a6ddc4f8e953ccc787aa27cc8a6945a454af2357d5689fb8"
+  },
+  "review_digest": "aca5443aea9957f7fd288d5fcebd162f1ed3a7222fb06e899a72dd266f3ab9b2"
+}

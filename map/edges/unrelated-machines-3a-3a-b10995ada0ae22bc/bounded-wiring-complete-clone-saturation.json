@@ -1,0 +1,57 @@
+{
+  "edge_id": "um-b109-bounded-wiring-complete-clone-saturation",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "UM-BOUNDED-MULTIPLICITY-CLONE-ENVELOPE-v1"
+  ],
+  "target_ids": [
+    "UM-COMPLETE-CLONE-MULTISET-PERIODICITY-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "有限显式UM输入，每任务至少一有限端。q,c≥1，c接线允许重复置换。先删任何存在零端的整个任务类型；若仍有正类型，令U为最短端时间和，K=floor(U/p_min)。空正型时取K=0且原任务全在零端回填。",
+  "roles": {
+    "UM-BOUNDED-MULTIPLICITY-CLONE-ENVELOPE-v1": "每个指定分母的MC_c有理点可实现为恰该复制数的某个c接线；所有这类接线是完整克隆的子资格图。",
+    "UM-COMPLETE-CLONE-MULTISET-PERIODICITY-v1": "完整克隆的O_q与t_+；本边给逐q恢复接口和阈值下限的承重步骤。"
+  },
+  "explanation": "固定q，完整B_q中的任何≤U调度在同一机器副本每正类型最多min(q,K)件，故经验配置在c≥min(q,K)时满足MC_c，且有公分母q。有界包络的实际见证恢复按该公分母q逐类型把不同任务副本双射到全部有标签槽，对每原incidence的使用星边分色并逐色补为置换，得到某个同q、同峰的c接线。删去的各零类型可另在一个原零端沿第一置换整型回填，其余原incidence可补任意合法置换；全删则两侧值均为0。反向任意c接线的实际调度都沿原边嵌入B_q。故该c条件下逐q最小接线OPT等于O_q，对每T的可行复制数也逐项相同。特别地固定c≥max(1,K)时对所有q成立；同时在[0,U]上正型MC_c与MC的配置域相同，故t_c=t_+。",
+  "scope": "针对固定复制数上所有可选接线的最小值，以及固定足够大cap时的序列相等。实现成本按q与显式输出计，每q可选不同接线。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/定理/有界重数克隆接线与共同循环坍缩--定理.md",
+      "sha256": "e0ab6cdb190a926bb7d5dfa871b2545e3e14e8f3c814a0327ec79b27e213e979",
+      "section": "9.2. Exact theorem and actual witness conversions"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/有界重数克隆接线与共同循环坍缩--定理.md",
+      "sha256": "e0ab6cdb190a926bb7d5dfa871b2545e3e14e8f3c814a0327ec79b27e213e979",
+      "section": "9.3. Genuine interpolation and its strictness"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/完整机器任务克隆的多重集与最终周期--定理.md",
+      "sha256": "e10f7b09c655e65477c3e9ed4b84e6f92f89bcf76d3e7d1ebd968726e333edda",
+      "section": "8.1 对象、零类型与精确陈述"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/完整机器任务克隆的多重集与最终周期--定理.md",
+      "sha256": "e10f7b09c655e65477c3e9ed4b84e6f92f89bcf76d3e7d1ebd968726e333edda",
+      "section": "8.2 有理配置与真实调度的双向恢复"
+    }
+  ],
+  "reviewed_by": "Boss3",
+  "review_note": "核对c≥min(q,K)而非只给全局阈值饱和，配置经验分母使用实际q，且分母整除q即可在q复制中实例化。核对零型可沿其指定零端的置换回填和双向资格包含。",
+  "contribution": {
+    "result": "对每q，c≥max(1,min(q,K))时min_{Q为同q的c接线} OPT(Q)=O_q；固定c≥max(1,K)时所有阈值的复制数集合逐项相同，且t_c=t_+。",
+    "remaining": "完整目标的有限阈值加法半群、gcd最小最终周期、limsup公式、分母位界及周期和首次达到构造仍各需完整克隆正文§8.3–8.5的独立论证。"
+  },
+  "endpoint_pins": {
+    "UM-BOUNDED-MULTIPLICITY-CLONE-ENVELOPE-v1": "087fe249fe2a874c870b92b82dcdea74db8fc2bb3a9923575fb677cc2c3dd607",
+    "UM-COMPLETE-CLONE-MULTISET-PERIODICITY-v1": "cba39d9c7796fc461943735682448caa4cc250be6e055a26ffc5e2cbd3763de8"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/定理/有界重数克隆接线与共同循环坍缩--定理.md": "e0ab6cdb190a926bb7d5dfa871b2545e3e14e8f3c814a0327ec79b27e213e979",
+    "archives/unrelated-machines/state/定理/完整机器任务克隆的多重集与最终周期--定理.md": "e10f7b09c655e65477c3e9ed4b84e6f92f89bcf76d3e7d1ebd968726e333edda"
+  },
+  "review_digest": "92f70efc83012802d9fc8bc4b8f73878143eff7a4fe5d2533680c4384ab52188"
+}

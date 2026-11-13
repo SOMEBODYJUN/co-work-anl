@@ -1,0 +1,59 @@
+{
+  "edge_id": "um-b109-bgw-freezing-and-slots-centralized-rounding",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-adee88db90b2410982b3fa0efd99273a",
+    "UM-ST-ROUND-v1"
+  ],
+  "target_ids": [
+    "unrelated-machines/distributed-load-balancing-mixed-packing-covering-bgw-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "BGW 正尺寸输入图，λ* 是原整数 OPT。假设强残余容量黑盒在失败时也保逐机 packing、拒绝可靠，满足分桶/参数合同，并已有显式有理最终证书。以 ε_0 表示内部精度。",
+  "roles": {
+    "M-adee88db90b2410982b3fa0efd99273a": "在强失败分支行界等前提下给完整分数覆盖、近最优行负载和支撑上界。",
+    "UM-ST-ROUND-v1": "显式有理分数点的中心式全局整数匹配及逐机实际负载。",
+    "unrelated-machines/distributed-load-balancing-mixed-packing-covering-bgw-v1": "供作者声明整数合同中的数值舍入部分；通信实现另付。"
+  },
+  "explanation": "各任务用其分数总质量除每个正端质量，覆盖变恰一，行负载只降且支撑不扩。给定统一阈值 T=max{max_i 分数行负载, 全部正支撑最大时间}，归一后是同一剪枝点，T≤(1+O(ε_0))λ*。按 ST 的精确有理中心式匹配恢复全部原任务，逐机峰≤分数行负载加该机支撑最大件，故 Cmax≤(2+O(ε_0))λ*。固定内部常数缩放可把 O(ε_0) 放到外部 ε 以内。",
+  "scope": "只证明条件性实际数值保证和给定显式有理证书的中心式恢复。单位槽 Hall 匹配本身未给输入图 CONGEST 多对数轮数。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/资源/分布式不相关机负载均衡与混合覆盖--资源.md",
+      "sha256": "14a35d7de8780b8695541b75019bfe089475c1a41aea18186d30590f5b72933c",
+      "section": "2. 未知目标下的冻结插值：可复用的条件机制"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/分布式不相关机负载均衡与混合覆盖--资源.md",
+      "sha256": "14a35d7de8780b8695541b75019bfe089475c1a41aea18186d30590f5b72933c",
+      "section": "3. 去掉尺寸比：清重边、保护带与所有偏移"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/有序单位槽的支撑最大件舍入--定理.md",
+      "sha256": "996b2d634889c84f766cf186d5d71d8f55679e2e993e1648f34597dbf2d354a6"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/分布式不相关机负载均衡与混合覆盖--资源.md",
+      "sha256": "14a35d7de8780b8695541b75019bfe089475c1a41aea18186d30590f5b72933c",
+      "section": "5. 有序小槽舍入与CONGEST匹配边界"
+    }
+  ],
+  "reviewed_by": "Boss3",
+  "review_note": "检查分数覆盖归一方向和支撑上界。冻结调用的失败行预算与并发短增广路选择仍是独立义务。",
+  "contribution": {
+    "result": "在所列强黑盒和显式证书前提下，中心式位多项式恢复完整实际调度并给峰≤(2+O(ε_0))λ*。",
+    "remaining": "仍需修复并证明任意执行 packing 的 MixPC 黑盒，付清短消息数值精度和实际并发匹配，再推出目标的 CONGEST 多对数轮数及完整输入合同。"
+  },
+  "endpoint_pins": {
+    "M-adee88db90b2410982b3fa0efd99273a": "ddd09490eb0eb93eab73985845e4bd4a15ea04329990a74d426fd37db40daddb",
+    "UM-ST-ROUND-v1": "8c4662c822ebd204e3b095934f8745464426df43fc2328a6bbc35063e4148ea1",
+    "unrelated-machines/distributed-load-balancing-mixed-packing-covering-bgw-v1": "76844a797a92e78b3278757974a895a66c08dc60b34a0e102b1fcd1f6ee4089f"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/资源/分布式不相关机负载均衡与混合覆盖--资源.md": "14a35d7de8780b8695541b75019bfe089475c1a41aea18186d30590f5b72933c",
+    "archives/unrelated-machines/state/定理/有序单位槽的支撑最大件舍入--定理.md": "996b2d634889c84f766cf186d5d71d8f55679e2e993e1648f34597dbf2d354a6"
+  },
+  "review_digest": "e0d7170924c73e928bcafb901e3c958e62ed7cec398d8dfd10a777a92bbd64e1"
+}

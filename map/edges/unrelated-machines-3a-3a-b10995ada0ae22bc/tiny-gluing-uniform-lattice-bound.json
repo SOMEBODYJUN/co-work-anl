@@ -1,0 +1,58 @@
+{
+  "edge_id": "um-b109-tiny-gluing-uniform-lattice-bound",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "UM-TWO-MEASUREMENT-TINY-PRESENCE-GLUING-v1"
+  ],
+  "target_ids": [
+    "UM-TWO-MEASUREMENT-UNIT-PRESENCE-SHARP-GLUING-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "对任意二进制整数k≥2，取a=1/k，T=1+1/k。有限加工时间属于{1,1/k}。同一显式实例给两份峰≤T的完整实际见证，两台不同测量机的单位占位在两见证分别为00和11。",
+  "roles": {
+    "UM-TWO-MEASUREMENT-TINY-PRESENCE-GLUING-v1": "在a=1/k的合法子域，为每个指定两位模式构造峰≤3T/2的完整原任务调度。",
+    "UM-TWO-MEASUREMENT-UNIT-PRESENCE-SHARP-GLUING-v1": "要求该子域的逐k上界B(k)，另要求逐k四机锐例和无模式约束的最优值。"
+  },
+  "explanation": "取不等tiny定理的构造输出。它保留两个测量位及每件原任务一次，所有有限加工时间均为1/k的整数倍，因此每机负载以及整解的最大负载都在(1/k)ℤ。乘k取整得Cmax≤⌊3(k+1)/2⌋/k=1+⌈(k+2)/2⌉/k。等式可按奇偶核对：偶k取下整数，奇k时3(k+1)/2已是整数。算法直接使用a=1/k的二进制有理表示，总位复杂度保持多项式。选择不等tiny定理的原job配对槽费用流实现时，仅使用两见证端，无需uniform的虚任务分解。此推导不需要锐族来支付上界，也不从tiny的统一系数锐性推出每个k的下界。",
+  "scope": "逐k uniform构造上界及位复杂度。用于给定两份真实完整见证的原任务胶合，两个测量位只读单位占位。",
+  "contribution": {
+    "result": "对每个k≥2和每个两位模式，不等tiny构造与1/k格整化共同给完整合法实际调度，峰≤B(k)。",
+    "remaining": "每个k的四机2k+6任务实例、两种mixed各自达到B(k)的下界及无模式约束OPT=T，由uniform锐族的直接构造证明。"
+  },
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/审查/tiny配对槽独立证明与重中端胶合的分域审查--审查.md",
+      "sha256": "2ab2890104c9a4c5100861da1c071262591c95586bd8b82561a7b52a158bc9b5",
+      "section": "Tiny：直接对原jobs配对槽，不靠virtual任务证明"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/uniform-presence-reset/comparisons/unit_presence_two_witness_sharp_gluing.md",
+      "sha256": "0b9ab7d50bba3b4b7c5825c6208e51d23d20cdb5460d8e7478a6ef866f986e00",
+      "section": "7. 任意不同tiny时间的三半系数推广"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/uniform-presence-reset/comparisons/unit_presence_two_witness_sharp_gluing.md",
+      "sha256": "0b9ab7d50bba3b4b7c5825c6208e51d23d20cdb5460d8e7478a6ef866f986e00",
+      "section": "1. 精确对象与结论"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/单位占位两见证胶合的原证与范围推进--审查.md",
+      "sha256": "37b6eedd567c910448011535b24956e2b05c07dbf33fa29037cc4762662b5ccd",
+      "section": "参数、显式锐族与复杂度"
+    }
+  ],
+  "reviewed_by": "Boss3/map-v2/b109/presence-home",
+  "review_note": "核对当前端点全文及配对槽费用流的完整任务恢复与同时逐机界。逐k上界由有理格整化独立推出。此关系的方向对应上界，另一个方向的odd-k例子只支付tiny锐性。",
+  "endpoint_pins": {
+    "UM-TWO-MEASUREMENT-TINY-PRESENCE-GLUING-v1": "f0fd0c30ad875e145d94752dab5243b00b5e447f1657c668cc492e3203d0c235",
+    "UM-TWO-MEASUREMENT-UNIT-PRESENCE-SHARP-GLUING-v1": "91e31c897fe93ab16c01e384d366f34ea0e9d78aaf4f1d42f7d4cf43e5eb47fb"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/审查/tiny配对槽独立证明与重中端胶合的分域审查--审查.md": "2ab2890104c9a4c5100861da1c071262591c95586bd8b82561a7b52a158bc9b5",
+    "archives/unrelated-machines/tools/evidence/uniform-presence-reset/comparisons/unit_presence_two_witness_sharp_gluing.md": "0b9ab7d50bba3b4b7c5825c6208e51d23d20cdb5460d8e7478a6ef866f986e00",
+    "archives/unrelated-machines/state/审查/单位占位两见证胶合的原证与范围推进--审查.md": "37b6eedd567c910448011535b24956e2b05c07dbf33fa29037cc4762662b5ccd"
+  },
+  "review_digest": "56d87d249c0acb8ef3631c3b8d80f3e6076486f290d0f329ed9d72335377dbef"
+}

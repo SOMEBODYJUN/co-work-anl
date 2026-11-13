@@ -1,0 +1,63 @@
+{
+  "edge_id": "um-b109-weighted-direct-cohabiting-fixed-half-specialization",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "unrelated-machines/direct-cohabiting-strict-identity-weighted-three-halves-schedule"
+  ],
+  "target_ids": [
+    "UM-DIRECT-COHABITING-SAT-COMPILER-SHARP-THREE-HALVES-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "取真实 x_i=y_i=1/2、dummy x_i=1、3/4<ρ<1。原 occurrence 各属一个 clause，clause 至少两个 occurrence，保变量环 padding≥3 及全部实际 q/b/u 端点与任务。空公式另有一 idle 机。",
+  "roles": {
+    "unrelated-machines/direct-cohabiting-strict-identity-weighted-three-halves-schedule": "异权同一原矩阵的峰≤1 SAT 当且仅当，且任意公式有完整峰≤3/2 调度。",
+    "UM-DIRECT-COHABITING-SAT-COMPILER-SHARP-THREE-HALVES-v1": "固定半权并加强 ρ 下界后继承的两个完整实际见证保证。"
+  },
+  "explanation": "这些半权参数满足异权正性和 x_i+y_i≤1；加强 ρ 域后原矩阵逐项相同。在异权 baseline/active 分类中每个 clause 都有 y_i=1/2，故全进 baseline，所有 b 留自身 C，全部 u 在各自实际 clause C 回填。全部 q 可取本位 M，给峰≤3/2。异权 ≤1 双向证明在同一矩阵仍给满足赋值到峰≤1 调度、以及从任意峰≤1 原调度到共同赋值。",
+  "scope": "固定半权保持原身份、资格与时间。严格三半解码及非空下界的加强需要半权专属计数。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/证明/直接共居的严格身份与异权三半共同调度--证明.md",
+      "sha256": "50bf346093ba62337fb868a59ac70891ffb0231a9bbd006e094ce23f49b45958",
+      "section": "1. 修改后的完整原矩阵"
+    },
+    {
+      "path": "archives/unrelated-machines/state/证明/直接共居的严格身份与异权三半共同调度--证明.md",
+      "sha256": "50bf346093ba62337fb868a59ac70891ffb0231a9bbd006e094ce23f49b45958",
+      "section": "3. 任意strict调度的同编号身份：两种完整计数"
+    },
+    {
+      "path": "archives/unrelated-machines/state/证明/直接共居的严格身份与异权三半共同调度--证明.md",
+      "sha256": "50bf346093ba62337fb868a59ac70891ffb0231a9bbd006e094ce23f49b45958",
+      "section": "7. 消去标签、恢复全部原任务与实际异权负载"
+    },
+    {
+      "path": "archives/unrelated-machines/state/证明/半权直接共居的精确三半间隔与双计数--证明.md",
+      "sha256": "cf847a1013dc257b06362e11754881cdfc80229ce55af489aa5893b767484f5a",
+      "section": "1. 完整原矩阵、域与所证精确值"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/查询返回三接口的最终认证范围与历史身份--审查.md",
+      "sha256": "b11476ff68106d5f6c99622822d2a0f84f666f9659370066eb590d522e426eb2",
+      "section": "4. general C终读与root C：同P特化，新增精确下界"
+    }
+  ],
+  "reviewed_by": "Boss3",
+  "review_note": "逐端核同一个 P、全 baseline 归约及严格阈值差别。已用原资格独立枚举所列四出现矛盾式的全部分配，普遍结论仍由证明承担。",
+  "contribution": {
+    "result": "固定半权原矩阵继承峰≤1 的 SAT 双向见证和任意公式峰≤3/2 的完整原调度，保空公式零值。",
+    "remaining": "精确 SAT OPT=1 仍需非空下界。精确 UNSAT OPT=3/2 与任意 C<3/2 解码仍需 q/b 全槽饱和和原 u 在半权 C 中排 unit b 的专属证明；异权的一阈值逆向并不自动加强。"
+  },
+  "endpoint_pins": {
+    "UM-DIRECT-COHABITING-SAT-COMPILER-SHARP-THREE-HALVES-v1": "3fefccabb9545d4659086e9f155f0774c028bf590f36345b5ea439f6885ab596",
+    "unrelated-machines/direct-cohabiting-strict-identity-weighted-three-halves-schedule": "4c5a952cc9b07ae1bac4c6e2373c3d68fb073b84f18fe74b93d65ff6981c784b"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/证明/直接共居的严格身份与异权三半共同调度--证明.md": "50bf346093ba62337fb868a59ac70891ffb0231a9bbd006e094ce23f49b45958",
+    "archives/unrelated-machines/state/证明/半权直接共居的精确三半间隔与双计数--证明.md": "cf847a1013dc257b06362e11754881cdfc80229ce55af489aa5893b767484f5a",
+    "archives/unrelated-machines/state/审查/查询返回三接口的最终认证范围与历史身份--审查.md": "b11476ff68106d5f6c99622822d2a0f84f666f9659370066eb590d522e426eb2"
+  },
+  "review_digest": "b386c36797bb8d18516d19909cb4e81257c6219e6d41d4aa17a0533393e3c1af"
+}

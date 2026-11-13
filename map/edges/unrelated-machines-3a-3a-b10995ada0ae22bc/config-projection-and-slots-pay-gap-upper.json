@@ -1,0 +1,55 @@
+{
+  "edge_id": "um-b109-config-projection-and-slots-pay-gap-upper",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "UM-MODEL-v1",
+    "UM-ST-ROUND-v1"
+  ],
+  "target_ids": [
+    "UM-CONF-GAP-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "有限显式非负有理/∞ 矩阵、每任务有合法端。配置族为同一 T 的实际可执行子集，向下封闭；取正 T_CONF 比率。",
+  "roles": {
+    "UM-MODEL-v1": "按向下封闭削去多余覆盖并将同一阈值的 CONFIG 证书边际投影为剪枝 LST。",
+    "UM-ST-ROUND-v1": "从该剪枝有理分数点输出真实整数调度，负载逐机至多分数行负载和正支撑最大件之和。",
+    "UM-CONF-GAP-v1": "承担趋二配置间隙中的普遍上界。"
+  },
+  "explanation": "将可行配置质量归一并逐任务删去超出 1 的覆盖。令 x_ij 为 i 含 j 的总配置质量；被用端时间和分数行负载均 ≤T，每任务质量一。用 ST 恢复所有原任务，得到峰≤2T。取 T=T_CONF（有限配置子集和使最小阈值达到），即得普遍上界。零阈值分支也可输出实际零峰。",
+  "scope": "只承接目标的普遍上界。CONFIG 可行性蕴含较小的剪枝 LP 可行性；构造不要求免费求解 CONFIG。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/定义/不相关机器与两个调度松弛--定义.md",
+      "sha256": "f83b0a531d9e9b98fcffa70c77962f2e2b61e112b2074646f4f7cc3179ac9a8b",
+      "section": "配置LP及向下封闭性"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/有序单位槽的支撑最大件舍入--定理.md",
+      "sha256": "996b2d634889c84f766cf186d5d71d8f55679e2e993e1648f34597dbf2d354a6"
+    },
+    {
+      "path": "archives/unrelated-machines/state/障碍/双树配置证书的趋二整数间隙--障碍.md",
+      "sha256": "9df495ce6a36239df905c8a8b6b4b7dc29778e68679e0c23f5ba79777dce73cf",
+      "section": "T=1+1/k的完整配置证书"
+    }
+  ],
+  "reviewed_by": "Boss3",
+  "review_note": "逐项核对边际投影、正支撑和上下界方向；双树证书 T_k 给 T_CONF≤T_k，不能从这份证书独自推出精确 T_CONF。",
+  "contribution": {
+    "result": "任意正 T_CONF 的该模型实例均有 OPT/T_CONF≤2；同一 T 的配置可行性足以保证实际峰≤2T。",
+    "remaining": "双树的 k≥4 原矩阵、实际 OPT=2−1/k、CONFIG(1+1/k) 有理证书及比率趋二须由目标的独立路径和配置递推证明。"
+  },
+  "endpoint_pins": {
+    "UM-CONF-GAP-v1": "d31eb419867e4badefa2ebc32ad88924ca17ef1b81727067e1c89c072108130f",
+    "UM-MODEL-v1": "9e0366033d2ab38fffe159771a178a29146f75c0d5c2cea92c0b1a307e6269c5",
+    "UM-ST-ROUND-v1": "8c4662c822ebd204e3b095934f8745464426df43fc2328a6bbc35063e4148ea1"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/定义/不相关机器与两个调度松弛--定义.md": "f83b0a531d9e9b98fcffa70c77962f2e2b61e112b2074646f4f7cc3179ac9a8b",
+    "archives/unrelated-machines/state/定理/有序单位槽的支撑最大件舍入--定理.md": "996b2d634889c84f766cf186d5d71d8f55679e2e993e1648f34597dbf2d354a6",
+    "archives/unrelated-machines/state/障碍/双树配置证书的趋二整数间隙--障碍.md": "9df495ce6a36239df905c8a8b6b4b7dc29778e68679e0c23f5ba79777dce73cf"
+  },
+  "review_digest": "1fec413f8c9d6c43e77eed5aba802d54d91eb6c68547f6698cf3b557f961e1b3"
+}

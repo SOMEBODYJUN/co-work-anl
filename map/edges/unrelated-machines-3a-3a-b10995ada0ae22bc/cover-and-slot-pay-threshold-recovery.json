@@ -1,0 +1,57 @@
+{
+  "edge_id": "um-b109-cover-and-slot-pay-threshold-recovery",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-99a53b4eb072418a8a291d8582a89646",
+    "UM-ST-ROUND-v1"
+  ],
+  "target_ids": [
+    "UM-THRESHOLD-COVER-JOINT-SLOT-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "有理 T>0、δ≥0、1/2≤τ<1、η>0。home 与 sink 不交，宏仅去 home 且全部有限宏端在 (T/2,T]。每原私有组只去自己的 home 和同一个 E_h，所有这些端时间均为 w_j，且 W_h≤T、w_j≤δT。未知尺度以正真实 OPT 满足这些结构为承诺，零峰先另行处理。",
+  "roles": {
+    "M-99a53b4eb072418a8a291d8582a89646": "逐原私有组返回满足未缩放需求的同一实际子集及其可计费重量。",
+    "UM-ST-ROUND-v1": "提供非增序单位槽的前一整槽收费和首槽支撑最大件项。联合选择的整数流由目标另行构造。",
+    "UM-THRESHOLD-COVER-JOINT-SLOT-v1": "联合生成宏位置、唯一接收槽和完整原任务输出，并接一侧完备阈值搜索。"
+  },
+  "explanation": "设 d_h=(W_h−τT)_+，取 FPTAS 的同一实际子集 X_h，费用 e_h≥d_h。任意小件首次跨越需求的超额至多 δT，所以 e_h≤(1+η)(1−τ+δ)T。真实 T 调度的占宏 home 至多一个宏，其真实私有出口 r_h≥d_h；对 d_h>0 将各 sink 的真实出口 r_hz 按 r_h 归一，给 y_hz，且 e_h y_hz≤(1+η)r_hz。未占宏 home 质量零，零需求用旁路。因此联合 LP 在 OPT≤T 时可行。\n每 sink 按 e_h 非增切 y 的单位槽；a 与 y 的交长给源→宏→home 的容量一拆点→sink槽→汇满分数流，整数满流同时选宏及同一 home 的一个合法接收槽。将付费的原 X_h 整组移到所选 sink，其余原任务留 home。每占宏 home ≤(1+τ)T，其余 home ≤T；非首槽按 ST 的前一完整槽收费，首槽加最大支撑 e_h，因此 sink ≤(1+η)(2−τ+δ)T。精确有理 LP、单位整数流、恢复及算术为总位长和 1/η 的多项式。\n未知 OPT 分支先逐任务检测零端；对正网格 t 只剪宏 p>t 并检查 W_h,w_j 的上界。t≥OPT 时真实 OPT 调度仍每 home 至多一宏，出口 ≥W_h−OPT/2≥W_h−τt，所以同一 LP 见证仍成立。已接受高端与虚拟拒绝低端二分；每次拒绝严格低于 OPT，终止的相邻高端 ≤OPT。相交两项得 τ*=((1+η)(2+δ)−1)/(2+η)；在 δ+η+δη<1 时 τ* 合法且 R*=(1+η)(3+δ)/(2+η)<2。",
+  "scope": "精确覆盖及槽收费为合取前提。真实资格、单宏计数、联合流和阈值搜索均在上文证明。给定见证的恢复代码与完整数学算法分别使用；结构生成和一般 UM 保证仍开放。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/算法/门槛覆盖的同见证联合槽恢复--算法.md",
+      "sha256": "2ba9c9b10faf1aa7931c82ffdb278a301a148632f2de96a540c4d773de80d9f0",
+      "section": "保精确覆盖的最小重量FPTAS"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/有序单位槽的支撑最大件舍入--定理.md",
+      "sha256": "996b2d634889c84f766cf186d5d71d8f55679e2e993e1648f34597dbf2d354a6",
+      "section": "槽、任务匹配及逐机收费"
+    },
+    {
+      "path": "archives/unrelated-machines/state/算法/门槛覆盖的同见证联合槽恢复--算法.md",
+      "sha256": "2ba9c9b10faf1aa7931c82ffdb278a301a148632f2de96a540c4d773de80d9f0",
+      "section": "同一个联合整数网络选宏和组的接收端"
+    },
+    {
+      "path": "archives/unrelated-machines/state/算法/门槛覆盖的同见证联合槽恢复--算法.md",
+      "sha256": "2ba9c9b10faf1aa7931c82ffdb278a301a148632f2de96a540c4d773de80d9f0",
+      "section": "未知OPT的一侧完备网格搜索"
+    }
+  ],
+  "reviewed_by": "Boss3",
+  "review_note": "复核需求不缩放、出口归一、同一网络与同一原 X_h、零成本旁路及非单调二分的拒绝方向。用 Fraction 检验交点和原反例族实际负载。",
+  "whole_result": "在所列结构下确定性总位 poly(input,1/η) 输出全部原任务峰值≤max{1+τ,(1+η)(2−τ+δ)}T，且 OPT≤T 必接受。在真实 OPT 尺度承诺下，一侧完备网格搜索得同因子乘 OPT；δ+η+δη<1 时给上述严格次二最优门槛。",
+  "endpoint_pins": {
+    "M-99a53b4eb072418a8a291d8582a89646": "3114a596f27c572bd8a077a50735d2a597ed33d5e3d51851116ee3b612c9cf8b",
+    "UM-ST-ROUND-v1": "8c4662c822ebd204e3b095934f8745464426df43fc2328a6bbc35063e4148ea1",
+    "UM-THRESHOLD-COVER-JOINT-SLOT-v1": "fb6ae47daf4d59f95268a72db48cd295c608a39564a9a42d0ddac1db569cb473"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/算法/门槛覆盖的同见证联合槽恢复--算法.md": "2ba9c9b10faf1aa7931c82ffdb278a301a148632f2de96a540c4d773de80d9f0",
+    "archives/unrelated-machines/state/定理/有序单位槽的支撑最大件舍入--定理.md": "996b2d634889c84f766cf186d5d71d8f55679e2e993e1648f34597dbf2d354a6"
+  },
+  "review_digest": "7d718d53b9945c31f3f19a81b9465c3a0fa93aaebfb32e14ca941d60cf478738"
+}
