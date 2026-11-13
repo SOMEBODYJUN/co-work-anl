@@ -1,0 +1,69 @@
+{
+  "edge_id": "ca-bd7-partition-price-identifies-52-client-dual-objective",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-b42f8521e5d140ba84dde0c86d5d47a3",
+    "B10-STATIC-OPTIMAL-ASSIGNMENT-NO-v1"
+  ],
+  "target_ids": [
+    "M-d9a1a2298ae04678ac0476c2ecbcb05d"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "四人六标签固定策略，实际(3,3,2,2)，固定比较标签集合{0,1,4,5}，固定槽分配(4,5,0,1)。客户按63个非空标签会员型给任意非负重数。",
+  "roles": {
+    "M-b42f8521e5d140ba84dde0c86d5d47a3": "逐客户取最小eligible冻结价，恰给R的线性目标坐标。",
+    "M-d9a1a2298ae04678ac0476c2ecbcb05d": "在同一完整策略锥上以真实IC非负组合和逐型余项封顶该目标。",
+    "B10-STATIC-OPTIMAL-ASSIGNMENT-NO-v1": "提供同一52客户类型重数及实际3322；完整259历史策略与全最优比较支持经真实IC/覆盖证明固定，避免混入另一个OPT同为52的实例。"
+  },
+  "explanation": "给会员型s，实际负载c_s=sum_i 1_{a_i∈s}。若没有eligible槽则b_s=0，否则b_s=min_{i:t_i∈s}1/(c_s+1−1_{a_i∈s})，直接来自一次收费恒等式。W的对应系数为w_s=1_{c_s>0}。故该固定匹配在任意类型质量n_s下的目标恰是Σ_s n_s b_s；将B10的22个正重数代入得固定匹配的R=263/12；对其24种最优指派取最小亦为263/12。相同匹配的整主题重复查询Q=48，且min Q=48>W=47>min R；固定锥上界约束的是R。原对偶以真IC矩阵G的非负乘子及63个非负剩余系数分解βw−b，β=281295/345586；没有比较最优性乘子，所以这份分解甚至无需弱最优性便在固定σ的全非负SPE锥上有效。",
+  "scope": "固定策略、固定目标标签与固定分配的分区冻结目标和证书接口。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/计算/弱匹配与分区查询的精确核验--计算.md",
+      "sha256": "788bff7c36a5c79aa3cd8a583cc65f192067734af47e6755500574416404fca1",
+      "section": "分区一次收费与超几何公式"
+    },
+    {
+      "path": "archives/customer-attraction/state/计算/弱匹配与分区查询的精确核验--计算.md",
+      "sha256": "788bff7c36a5c79aa3cd8a583cc65f192067734af47e6755500574416404fca1",
+      "section": "精确审计和固定策略锥证书"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/weak-partitioned-matching/original/12b564ff9623f5637894.source",
+      "sha256": "547ab68f741084a390d746400d8fe614070d23eed30a55aa3821aada9193d874"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/weak-matching-cone-attack-20261031/source/dependencies/static_matching_counterexample.json",
+      "sha256": "9e7cf1437a7b03fe89d843d4ae20efa3c6a4137373098ed1220d4370656a5245"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/weak-partitioned-matching/original/4de448732e82990e2003.source",
+      "sha256": "40c8c92d3e3328e8a6243b1d314fdb342ea8aad332ff8156416e7173d9c44e87"
+    },
+    {
+      "path": "archives/customer-attraction/state/反例/最优组合冻结匹配的一单位缺口--反例.md",
+      "sha256": "3d74c52a434d295a964e056c52b6231c62c7e4ef93cd9a8910d6c0b2b07af4a3"
+    }
+  ],
+  "reviewed_by": "Boss4",
+  "review_note": "对每一会员型核分母方向及一次收费目标。由完整固定策略重建1554行含自比较IC及去重排序行，Fraction复核15个正乘子、63个余项全非负、16个余项为零。",
+  "contribution": {
+    "result": "联合通用分区恒等式与同一B10实例识别固定策略锥证书的线性目标R；原52点在(4,5,0,1)的R=263/12而Q=48。",
+    "remaining": "恒等式本身不推出β上界；须另核βw−b=Gᵀμ+ρ的63坐标、μ,ρ≥0和同一完整策略真IC。原52点的24匹配全局最小值还须独立比较全部排列。"
+  },
+  "endpoint_pins": {
+    "B10-STATIC-OPTIMAL-ASSIGNMENT-NO-v1": "d9c5b36d52dd40291388ea4ad6cffe0b83330208bc7c42176bc81fffea43023d",
+    "M-b42f8521e5d140ba84dde0c86d5d47a3": "0899c30ce7d98aa074b819d5cde104dfd5de3d7c225c1121f7adbcafc9fea446",
+    "M-d9a1a2298ae04678ac0476c2ecbcb05d": "7c508236c2cba583f2d2fca865784b70b3d912bf7a074f38d3f2f01847237ab2"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/计算/弱匹配与分区查询的精确核验--计算.md": "788bff7c36a5c79aa3cd8a583cc65f192067734af47e6755500574416404fca1",
+    "archives/customer-attraction/tools/evidence/weak-partitioned-matching/original/12b564ff9623f5637894.source": "547ab68f741084a390d746400d8fe614070d23eed30a55aa3821aada9193d874",
+    "archives/customer-attraction/tools/evidence/weak-matching-cone-attack-20261031/source/dependencies/static_matching_counterexample.json": "9e7cf1437a7b03fe89d843d4ae20efa3c6a4137373098ed1220d4370656a5245",
+    "archives/customer-attraction/tools/evidence/weak-partitioned-matching/original/4de448732e82990e2003.source": "40c8c92d3e3328e8a6243b1d314fdb342ea8aad332ff8156416e7173d9c44e87",
+    "archives/customer-attraction/state/反例/最优组合冻结匹配的一单位缺口--反例.md": "3d74c52a434d295a964e056c52b6231c62c7e4ef93cd9a8910d6c0b2b07af4a3"
+  },
+  "review_digest": "6ad523fbaf7eb21bcbef057c7a52c2c57df5286bf469866f37382c7d9e7564ba"
+}

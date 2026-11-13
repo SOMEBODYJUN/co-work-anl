@@ -1,0 +1,56 @@
+{
+  "edge_id": "ca-bd7-optimal-slot-audit-checks-kernel-formulas",
+  "kind": "checks",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/independent-optimal-slot-event-and-parameter-kernel-exact-regression"
+  ],
+  "target_ids": [
+    "customer-attraction/optimal-slot-parameter-kernels-and-anchored-harmonic-budget"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "程序是只用标准库的固定常数有限审计，无目录、策略或求解器输入。目标定理一般陈述保最优合法m元组和共同参数。",
+  "roles": {
+    "customer-attraction/independent-optimal-slot-event-and-parameter-kernel-exact-regression": "枚举切换word和位置子集，逐Fraction检验有理核与边界。",
+    "customer-attraction/optimal-slot-parameter-kernels-and-anchored-harmonic-budget": "提供单客替槽事件、均匀配对概率、稳定Beta核及锚定等式的精确定义和解析全参数证明。"
+  },
+  "explanation": "同槽A/C共同会员使客户丢失事件为空，无交集时丢失为p^a(1−p)^c；代码在m=0,…,5与p=0,1/7,1/2,1的5460个单客事件重建该公式。91个位置子集比较验证P_m(a,c)=binom(m−a,c)/binom(m,c)的同一边际。c=0,…,8的五个正有理α给45次稳定核恒等式及界；α=0用9个直接调和有限和，完全锚定仅7个零残槽端点。−1/6是另记的局部重权算术。",
+  "scope": "BER事件公式、MATCH位置边际及KERNEL稳定表达的有限实现核；不验证目录最优性、一般部分锚定、真实SPE或FLOW。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/计算/最优替槽事件与参数核的独立精确回归--计算.md",
+      "sha256": "dab59657c74da415c80608236b8030b551b29313683390f460b8404b2bdf8f01"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/最优替槽的参数核与锚定调和预算--定理.md",
+      "sha256": "32fb23dce06ad178f155d5ef0afe5a95b37e98377809c8ee9b2febc774cb73ec"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/relay-closure-next-primary/original/research/workspaces/customer-attraction/R-cd789330fc7141299ac491bbb3ffa420/round3/relay/audit_optimal_exchange_review.py",
+      "sha256": "1733a7e8fb8db6825db86b21b4f6560d1e16a9b957d4347fa53e800e76576705"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/relay-closure-next-primary/original/research/workspaces/customer-attraction/R-cd789330fc7141299ac491bbb3ffa420/round3/relay/optimal_exchange_review_audit.json",
+      "sha256": "cf642a68cdf44040c748ea70a50453f1ad2da6109ef331c036ee0efd4ff432ac"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/relay-closure-next-primary/replay/execution-state.json",
+      "sha256": "69366438c3ca7bdbd8e950192599b70a0cef1605097f5e8eb053e81c3be9336b"
+    }
+  ],
+  "reviewed_by": "Boss4",
+  "review_note": "实读两端正文、4251B原实现与655B报告，核对循环计数、P_m分母、连续α一般证明与有限核的界线；未调用原程序重写报告。",
+  "endpoint_pins": {
+    "customer-attraction/independent-optimal-slot-event-and-parameter-kernel-exact-regression": "e9e41733688c974386cb7c5c5826570191b71cb803bde90d4d51d0749461895c",
+    "customer-attraction/optimal-slot-parameter-kernels-and-anchored-harmonic-budget": "3c43d4475a22975180e9b321f4cdd9898119044b9571d763366a5c9ddc49d468"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/计算/最优替槽事件与参数核的独立精确回归--计算.md": "dab59657c74da415c80608236b8030b551b29313683390f460b8404b2bdf8f01",
+    "archives/customer-attraction/state/定理/最优替槽的参数核与锚定调和预算--定理.md": "32fb23dce06ad178f155d5ef0afe5a95b37e98377809c8ee9b2febc774cb73ec",
+    "archives/customer-attraction/tools/evidence/relay-closure-next-primary/original/research/workspaces/customer-attraction/R-cd789330fc7141299ac491bbb3ffa420/round3/relay/audit_optimal_exchange_review.py": "1733a7e8fb8db6825db86b21b4f6560d1e16a9b957d4347fa53e800e76576705",
+    "archives/customer-attraction/tools/evidence/relay-closure-next-primary/original/research/workspaces/customer-attraction/R-cd789330fc7141299ac491bbb3ffa420/round3/relay/optimal_exchange_review_audit.json": "cf642a68cdf44040c748ea70a50453f1ad2da6109ef331c036ee0efd4ff432ac",
+    "archives/customer-attraction/tools/evidence/relay-closure-next-primary/replay/execution-state.json": "69366438c3ca7bdbd8e950192599b70a0cef1605097f5e8eb053e81c3be9336b"
+  },
+  "review_digest": "1a02f1f63c7e305a1a2ae77163f57444d744afa3ced7777484cbee4f367229b2"
+}

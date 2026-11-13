@@ -1,0 +1,52 @@
+{
+  "edge_id": "ca-bd7-q-identity-pays-52-client-matching-cost",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-d10f35ee6ac14ac1b41b948580a826bc"
+  ],
+  "target_ids": [
+    "B10-STATIC-OPTIMAL-ASSIGNMENT-NO-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "使用指定52单位客户的兴趣型重数和固定实际元组(3,3,2,2)，比较支持{0,1,4,5}。每个匹配删除当前实际槽并插入所分配主题，其余实际槽冻结；比较会员按出现收费。",
+  "roles": {
+    "M-d10f35ee6ac14ac1b41b948580a826bc": "给任意冻结匹配的基价A与同客删槽修正，以及均匀排列的精确平均。",
+    "B10-STATIC-OPTIMAL-ASSIGNMENT-NO-v1": "给指定客户重数、完整SPE和唯一最优支持；接受全部24个最优匹配的成本计算。"
+  },
+  "explanation": "对任一比较标签、任一实际槽，将其客户逐个按A项1/(c_x+1)加价，若原槽也覆盖该客户再加1/[c_x(c_x+1)]。在主题2槽对0、1、4、5的查询价分别为47/4、35/3、47/4、35/3，合计281/6。改分配到主题3槽对前三者各加1，给主题5只加1/6。必有两个比较标签去主题3槽；5在这两个槽中时得48，不在时得293/6，各12种。A=611/15、D=10给均值581/12，亦等于两值等权平均。",
+  "scope": "同一52客户实例、全部最优支持的全部冻结匹配。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/计算/弱匹配与分区查询的精确核验--计算.md",
+      "sha256": "788bff7c36a5c79aa3cd8a583cc65f192067734af47e6755500574416404fca1",
+      "section": "全主题冻结查询的精确恒等式"
+    },
+    {
+      "path": "archives/customer-attraction/state/反例/最优组合冻结匹配的一单位缺口--反例.md",
+      "sha256": "3d74c52a434d295a964e056c52b6231c62c7e4ef93cd9a8910d6c0b2b07af4a3",
+      "section": "全部24匹配为何只有两个值"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/weak-matching-cone-attack-20261031/source/dependencies/static_matching_counterexample.json",
+      "sha256": "9e7cf1437a7b03fe89d843d4ae20efa3c6a4137373098ed1220d4370656a5245"
+    }
+  ],
+  "reviewed_by": "Boss4",
+  "review_note": "按实际3/2槽价格分组穷尽24种匹配，核平均式。冻结收益不调用偏离分支，B10的真实SPE资格与OPT量词另由其正文负责。",
+  "contribution": {
+    "result": "精确得到全部24种冻结成本以及min Q=48>W=47的一单位缺口。",
+    "remaining": "完整反例还须该动作表在259个有序历史上为真实SPE，并由私人类型块证明{0,1,4,5}为唯一覆盖最优支持；通用计价式不负责这两点。"
+  },
+  "endpoint_pins": {
+    "B10-STATIC-OPTIMAL-ASSIGNMENT-NO-v1": "d9c5b36d52dd40291388ea4ad6cffe0b83330208bc7c42176bc81fffea43023d",
+    "M-d10f35ee6ac14ac1b41b948580a826bc": "642608ed9d16fa6576c784db58dba24cec0cd5c92e2284f6ece46d8570ae8f90"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/计算/弱匹配与分区查询的精确核验--计算.md": "788bff7c36a5c79aa3cd8a583cc65f192067734af47e6755500574416404fca1",
+    "archives/customer-attraction/state/反例/最优组合冻结匹配的一单位缺口--反例.md": "3d74c52a434d295a964e056c52b6231c62c7e4ef93cd9a8910d6c0b2b07af4a3",
+    "archives/customer-attraction/tools/evidence/weak-matching-cone-attack-20261031/source/dependencies/static_matching_counterexample.json": "9e7cf1437a7b03fe89d843d4ae20efa3c6a4137373098ed1220d4370656a5245"
+  },
+  "review_digest": "dfb7c40b8aea08170877e0f07d268bd4d69eb583464f14a16f697b1b582519d2"
+}

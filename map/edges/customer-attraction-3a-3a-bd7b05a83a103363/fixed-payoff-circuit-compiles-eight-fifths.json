@@ -1,0 +1,60 @@
+{
+  "edge_id": "ca-bd7-fixed-payoff-circuit-compiles-eight-fifths",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/fixed-complete-policy-payoff-circuit-nonnegative-flow-probe"
+  ],
+  "target_ids": [
+    "cag-fixed-policy-common-customer-payoff-circuits-eight-fifths-certificate"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定三位单位提供者、六个共同标签、43个有序节点完整策略σ，根路径034，比较124；抽象非负收益按终局计数及占用主题列坐标，所有偏离沿原σ真实完成。原始达到性取R=1；真实覆盖推论另需同一σ为SPE。",
+  "roles": {
+    "customer-attraction/fixed-complete-policy-payoff-circuit-nonnegative-flow-probe": "编译全部IC、稀释与零身份，恢复并精确核对同一运行的有理原始点及对偶。",
+    "cag-fixed-policy-common-customer-payoff-circuits-eight-fifths-certificate": "接收126坐标上的匹配原始可行点和8R/5−O齐次支付身份。"
+  },
+  "explanation": "每标签固定一个占用者，剩余两人给21个计数，共126坐标。程序用43×6条真实历史IC和6×21×20条逐客户锋利稀释组成I；逐客户PAIR、SIX给105个零行C。所保存有理y≥0逐行满足Iy≥0、Cy=0、R=1、O=8/5；第二阶段保存22项μ≥0、28项有符号θ与零余项，经逐126坐标确证8r/5−o=Iᵀμ+Cᵀθ。与任一可行y相乘即O≤8R/5；原始点达到，故归一抽象LP精确最优。任一真实客户游戏使这些I、C行有效，若固定σ是SPE，则O=|T1∪T2∪T4|、R=W，且R=0由同一齐次式直接覆盖。浮点发现以及第二LP的辅助成本不承担数学上界。",
+  "scope": "对指定完整策略和指定比较的抽象LP达到性及真实条件上界。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/程序/固定完整策略收益回路的非负流探针--程序.md",
+      "sha256": "e04569e781be4a370dd149a8dd2bb1b7182ee61bf9211bd23bb5aef4b8c55b2f"
+    },
+    {
+      "path": "archives/customer-attraction/state/计算/固定策略的共同客户收益回路与八比五证书--计算.md",
+      "sha256": "42c04709c6d9e9f5bdd99b0c0e92196ef9b859000adb49d9ac73a6bb4c427b40"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/fixed-policy-circuit-flow/original/circuit_flow_certificate.json",
+      "sha256": "94ec2dacce29244acfcd889d406fe37bac21cd7d6858db95ef049c5ff8e3b731"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/fixed-policy-circuit-flow/verify_certificate.py",
+      "sha256": "cec4b952f901bebbf21a568a194ff521cd2f74d91cfc10341da5a801fd9646ea"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/fixed-policy-circuit-flow/exact-certificate-audit.json",
+      "sha256": "8dcc429b5c7a929d7a681a9bc7afb485ec4f18f4701527c38626aaf664effdb8"
+    }
+  ],
+  "reviewed_by": "Boss4",
+  "review_note": "核对同一坐标与真实策略、对偶正负号、R=1及齐次R=0。独立Fraction核再次通过原JSON；第二LP只选择证书，未证明最少支持或其成本精确最优。",
+  "contribution": {
+    "result": "固定抽象松弛精确最优8/5，并给所有同σ为SPE的真实客户游戏的指定比较上界。",
+    "remaining": "目标对象还含指定达到点的非负共同客户不可实现性。另用该点四个支持值给C12+C14−C1−C124=−8/15，并用真实覆盖次模余项等于|(T2∩T4)\\T1|≥0排除该点；这是原始点的附加诊断。"
+  },
+  "endpoint_pins": {
+    "cag-fixed-policy-common-customer-payoff-circuits-eight-fifths-certificate": "9e96aee463f30d868e3e2bae647d70988719956f7d27620d6ee138d76cffb881",
+    "customer-attraction/fixed-complete-policy-payoff-circuit-nonnegative-flow-probe": "776111f8519fd0b3fedb2a11654bae268316ffbe080dbe8526aac1501d968b6a"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/程序/固定完整策略收益回路的非负流探针--程序.md": "e04569e781be4a370dd149a8dd2bb1b7182ee61bf9211bd23bb5aef4b8c55b2f",
+    "archives/customer-attraction/state/计算/固定策略的共同客户收益回路与八比五证书--计算.md": "42c04709c6d9e9f5bdd99b0c0e92196ef9b859000adb49d9ac73a6bb4c427b40",
+    "archives/customer-attraction/tools/evidence/fixed-policy-circuit-flow/original/circuit_flow_certificate.json": "94ec2dacce29244acfcd889d406fe37bac21cd7d6858db95ef049c5ff8e3b731",
+    "archives/customer-attraction/tools/evidence/fixed-policy-circuit-flow/verify_certificate.py": "cec4b952f901bebbf21a568a194ff521cd2f74d91cfc10341da5a801fd9646ea",
+    "archives/customer-attraction/tools/evidence/fixed-policy-circuit-flow/exact-certificate-audit.json": "8dcc429b5c7a929d7a681a9bc7afb485ec4f18f4701527c38626aaf664effdb8"
+  },
+  "review_digest": "013846c4676d2abcdb073e59c48c3d367bb935da3438283e56138957e44e7fbd"
+}
