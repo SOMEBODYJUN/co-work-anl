@@ -28,6 +28,32 @@ Root independently calculated v_T-(62825167/5000000000)(21/5)-286165527/20000000
 
 The worker reconstructed the specified 235 finite rows and supplied their exact slacks. Root reuses that declared finite computation, and does not represent the larger coefficient cube or the 3889-row generator as a new Root verification. The proper relation to the legal-row endpoint is checks/context, with the core comparison isolated-after-review and its explicit overlap closed by this domain distinction.
 
+## Concurrent delivered deltas examined for integration
+
+Root read the three newly delivered relation files and the two P7 repair reviews. Unchanged predecessor proofs remain credited to their original completed receipts.
+
+* Resource rounding supplies the small-maximum branch of the two-value resource/job bridge, as a contribution. For a legal fractional-basis witness of value at least V, the source rounding theorem loses at most the active maximum w. With alpha >= 2 and w < V/alpha, V-w > V(1-1/alpha) >= V/alpha. The more general sufficient bound is w <= V(1-1/alpha). This preserves the original full integer resource bases and does not pay the other branches or the whole bidirectional algorithm theorem. Root checked this reduction step and reused the established rounding theorem; it did not reread the entire frozen paper or execute a new rounding algorithm.
+* The P7-to-94/60 repair instantiates the same legal ordered-history inequality. For each fixed source, the two three-menu families contribute 3^2-2 each, and the four-menu family contributes 4^2-3, giving 27. Three fixed sources give 81 and the five-node indexed sum supplies 13 more, hence 94. Three sources times fifteen fixed labels plus fifteen indexed sums gives 60. These are named valid rows; aliases may coincide numerically. No averaging of p_i is allowed through the nonlinear F term, and D/J remain different full menus.
+* For the fixed 64-to-55 projection repair, the seven positive multipliers sum to 40844. A nonnegative hidden-state lift with fixed visible masses can only have its weighted aggregate at most the sum of visible masses times each atom's largest hidden coefficient. The recorded strictly negative exact upper bound excludes that particular lift. This remains a partial contribution: the old 5484-row feasibility certificate and other points are separate. Root read the finite report scope and the repair proof and reused the author's exact144-state/55-coefficient computation rather than claiming a fresh exhaustive run. The menu mixture adds no strict gain at this point because all d=1 and p is either0 or2, where the relevant F interval is linear; it is not a universal statement about mixtures.
+
+The P7 endpoint changed through an evidence-resource SHA refresh. The repaired relations do not use the corrected degenerate chord as an additional premise. None of these concurrent deliveries creates a new cross-archive model identification merely by being integrated together.
+
+Root also reconstructed the UM receipt's direct-oracle boundary. With a value1 rank-one resource forced to player1 and a value1/5 resource whose integer base has total5 units distributable between two players, the original optimum is1 and the normalized infinite/one optimum is5. For target/backend factor4, an integer oracle threshold b>=2 may legally reject because5<4b. At b=1, a normalized base with light units(4,1) and the heavy resource on player1 meets the threshold but translates to original minimum1/5<1/4. This checks failure of the stated direct output contract only: a decoder may change the allocation. It does not prove nonexistence of an approximation algorithm or invalidate the separate small-maximum rounding contribution. This distinction is necessary when consuming the full packet coverage.
+
+## Newly registered exact multiplier threshold
+
+Root read the complete new192-by24 threshold theorem and the old template/Farkas report. At tau=1 the four multipliers(1/2,1,1,1) are feasible. All three classes of old_cover coefficient have nonnegative tau slope, so the same vector remains feasible for every real tau<=1. For tau>1, the nonnegative vector z supported equally on rows12,24,154 has target pairing0, old_cover pairing2(tau-1), and all other column pairings nonnegative. Thus any feasible nonnegative multiplier vector must have lambda_old=0. The old eight-support y then has all remaining column pairings nonnegative but target pairing-6, a contradiction. Equivalently y+10z/(tau-1) has old_cover pairing48(tau-1)>0 and target-6. This supplies all real tau, and rational certificates for rational tau, without extrapolating the previous tau>=17/12 witness.
+
+This is an exact threshold for the specified proof template. The52-client genuine SPE covers the different conditioned-game failure range tau>=17/12. The interval1<tau<17/12 remains unclassified for that genuine-SPE conditional statement. A primary3A comparison for the new record must still be published/completed; source review alone does not fill missing coverage.
+
+## Independent lemma for the forthcoming fixed-policy comparison
+
+For a fixed complete strategy with exact true-IC matrix Gamma, let F(r)=W(r)-m v(r) on r>=0, sum(r)=1, Gamma r>=0. At r0 take an exact maximizing static query p0, so t0=v(r0)=min_B A_B(p0,r0). The fixed-p0 update LP minimizes W(r)-m t subject to those same strategy constraints and t<=A_B(p0,r) for every background B. The old pair(r0,t0) is feasible. For an exact optimal update(r1,t1), recomputing the static value gives
+
+    F(r1) <= W(r1)-m t1 <= F(r0).
+
+The first inequality uses v(r1)>=min_B A_B(p0,r1)>=t1; the second uses LP optimality and old feasibility. Thus the actual gap is nonincreasing under this exact alternation. This does not guarantee strict improvement, convergence to a global minimizer, or a bound for another strategy cone. A numerical update needs exact feasibility recovery before inheriting the complete-SPE interpretation. This lemma is mathematical preparation, not a new completed task or a certification of any of the four saved snapshots.
+
 ## Integration boundary
 
 Only the above actual mathematical deltas and subsequently reviewed final receipts can be cleared from pending integration. Unread concurrent changes, unfinished packets, open compensation theorems, and necessary-relaxation versus real-SPE gaps remain open.
