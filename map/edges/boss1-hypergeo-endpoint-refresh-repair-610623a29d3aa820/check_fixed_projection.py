@@ -7,6 +7,7 @@ from collections import defaultdict
 from fractions import Fraction as Q
 from hashlib import sha256
 from itertools import product
+from math import comb
 from pathlib import Path
 import json
 
@@ -169,6 +170,123 @@ for i, row in enumerate(projection["projected_atoms"]):
 assert seen == set(grouped)
 assert inner_outer_differ == [0, 15, 16, 17, 19, 23, 24, 42, 51]
 assert total == Q(projection["exact_projection_slack"]) < 0
+# The P7 coefficient table has one jump at first coverage and a constant
+# slope thereafter, with a second jump for p=1. Compare the old point's two menu positions separately.
+alpha = (Q(700), Q(625, 4), Q(116))
+beta = (Q(260), Q(260), Q(204))
+
+
+def choose(n, k):
+    return comb(n, k) if 0 <= k <= n else 0
+
+
+def mixed_cost(p, d, q, r):
+    denominator = choose(5, r)
+    shift = (5 - r) * q
+    mean = Q(r * d, 5) + shift
+    zero_probability = Q(choose(5 - d, r), denominator) if shift == 0 else Q(0)
+    at_least_two = sum(Q(choose(d, s) * choose(5 - d, r - s), denominator)
+                       for s in range(max(0, 2 - shift), r + 1))
+    value = beta[p] * mean + alpha[p] * (1 - zero_probability) + 10 * int(p == 1) * at_least_two
+    direct = sum(Q(choose(d, s) * choose(5 - d, r - s), denominator) * table[p][s + shift]
+                 for s in range(r + 1))
+    endpoint_average = Q(r, 5) * table[p][d] + Q(5 - r, 5) * table[p][5 * q]
+    strict = 0 < r < 5 and ((q == 0 and d >= 2)
+                             or (q == 1 and (d == 0 or (p == 1 and d == 1))))
+    assert value == direct and value >= endpoint_average, (p, d, q, r, value, direct, endpoint_average)
+    assert (value > endpoint_average) == strict
+    return value
+
+
+for p, d, q, r in product(range(3), range(6), range(2), range(6)):
+    assert table[p][d] == beta[p] * d + alpha[p] * int(d > 0) + 10 * int(p == 1 and d >= 2)
+    mixed_cost(p, d, q, r)
+
+labels = list("ABCDEUVWXY") + [f"z{i}" for i in range(5)]
+reply_menus = ["AB:mX", "AB:mY", "AE:mX", "AE:mY", "Sbranch:mU", "Sbranch:mV", "Sbranch:mW"]
+bank = ["OPT", *labels, *reply_menus]
+
+
+def comparison_counts(atom):
+    bits = dict(zip(labels, map(int, atom["bits"] + atom["max_bits"]), strict=True))
+    d, j = counts(atom)
+    menu_counts = {"OPT": d, **{name: 5 * bit for name, bit in bits.items()}}
+    ab_ae = [sum(n * state[i] for n, state in zip(atom[f"{branch}_hist"], states_ab, strict=True))
+             for branch, i in product(("AB", "AE"), (1, 2))]
+    second = [sum(n * state[i] for n, state in zip(atom["second_hist"], states_s, strict=True))
+              for i in (1, 2, 3)]
+    menu_counts.update(zip(reply_menus, [*ab_ae, *second], strict=True))
+    assert menu_counts["Sbranch:mW"] == j
+    return bits, menu_counts
+
+
+constant = Q(0)
+background_counts = [0, 0, 0]
+j_costs = {name: Q(0) for name in bank}
+d_costs = dict(j_costs)
+mixed_costs = {(name, r): Q(0) for name, r in product(labels, range(6))}
+mixed_gains = dict(mixed_costs)
+for atom in source["atoms"]:
+    mass = Q(atom["exact_mass"])
+    z = tuple(map(int, atom["max_bits"]))
+    p = sum(z[:2])
+    background_counts[p] += 1
+    u = Q(z[2], sum(z)) if z[2] else Q(0)
+    bits, menu_counts = comparison_counts(atom)
+    d = menu_counts["OPT"]
+    assert d == 1
+    constant += mass * (17040 * u + 1085 * z[0])
+    for name, count in menu_counts.items():
+        j_costs[name] += mass * Q(count, p + 3)
+        d_costs[name] += mass * table[p][count]
+    for name, bit in bits.items():
+        for r in range(6):
+            value = mixed_cost(p, d, bit, r)
+            gain = value - Q(r, 5) * table[p][d] - Q(5 - r, 5) * table[p][5 * bit]
+            assert gain == (0, 2, 4, 6, 6, 0)[r] * int(p == 1 and bit == 1)
+            mixed_gains[name, r] += mass * gain
+            mixed_costs[name, r] += mass * value
+
+assert background_counts == [45, 0, 19]
+assert not any(mixed_gains.values())
+assert len(bank) == 23
+best_j = max(j_costs, key=j_costs.get)
+assert best_j == "Sbranch:mW" and sum(v == j_costs[best_j] for v in j_costs.values()) == 1
+best_d = max(d_costs, key=d_costs.get)
+assert best_d == "OPT" and sum(v == d_costs[best_d] for v in d_costs.values()) == 1
+best_repeat_j = max(labels, key=j_costs.get)
+assert best_repeat_j == "U" and sum(j_costs[n] == j_costs[best_repeat_j] for n in labels) == 1
+base = constant - 2679 * j_costs[best_j]
+assert base - d_costs[best_d] == 40844 * total
+repeat_j_slack = constant - 2679 * j_costs[best_repeat_j] - d_costs[best_d]
+assert base - d_costs[best_d] < repeat_j_slack < 0
+mixed_slacks = {(name, r): base - cost for (name, r), cost in mixed_costs.items()}
+assert {key for key, slack in mixed_slacks.items() if slack < 0} == {
+    (name, r) for name, r in product(labels, (4, 5))}
+assert all(slack != 0 for slack in mixed_slacks.values())
+assert all(slack == 40844 * total for (name, r), slack in mixed_slacks.items() if r == 5)
+best_intermediate = min((key for key in mixed_slacks if 0 < key[1] < 5), key=mixed_slacks.get)
+assert best_intermediate == ("U", 4)
+assert sum(v == mixed_slacks[best_intermediate] for v in mixed_slacks.values()) == 1
+query_comparison = {
+    "scope": "Fixed 64-atom 5484 point, maximum-root third move only. No pricing outside the 23 listed menu candidates and 15 fixed Q labels.",
+    "mixed_coefficient_states": 216,
+    "original_d": 1,
+    "background_atom_counts": background_counts,
+    "mixed_gain_over_endpoints": [{"Q": name, "r": r, "gain": str(value)}
+                                  for (name, r), value in mixed_gains.items()],
+    "menu_bank": [{"menu": name, "j_cost": str(j_costs[name]), "d_cost": str(d_costs[name])}
+                  for name in bank],
+    "unique_best_j": best_j,
+    "unique_best_d": best_d,
+    "d_opt_and_best_j_slack": str(base - d_costs[best_d]),
+    "unique_best_repeated_j": best_repeat_j,
+    "d_opt_and_best_repeated_j_slack": str(repeat_j_slack),
+    "best_intermediate": {"Q": best_intermediate[0], "r": best_intermediate[1],
+                          "slack": str(mixed_slacks[best_intermediate])},
+    "mixed_slacks_at_best_j": [{"Q": name, "r": r, "slack": str(value)}
+                                for (name, r), value in mixed_slacks.items()],
+}
 report = {"status": "PASS", "task_id": TASK, "changed_input_ids": changed,
           "changed_registration_fields": changed_fields,
           "changed_registration_evidence": [{"old": a, "current": b} for a, b in changed_refs],
@@ -180,7 +298,7 @@ report = {"status": "PASS", "task_id": TASK, "changed_input_ids": changed,
           "inner_outer_mass_discrepancies": inner_outer_differ,
           "all_55_coefficients_and_witness_states_match": True,
           "W": str(welfare), "O": str(coverage), "projection_slack": str(total),
-          "projection_rows": rows,
+          "projection_rows": rows, "query_comparison": query_comparison,
           "not_executed": ["5484-row source recovery", "747-row LP", "game/SPE construction", "global pricing"],
           "limitation": "Only the specified fixed source and its fixed-mass HQR lift; no universal welfare bound."}
 path = OUT / "fixed-projection-check.json"
