@@ -598,9 +598,9 @@
       ]
     }
   },
-  "state": "claimed",
+  "state": "done",
   "owner": "Boss3",
-  "request_id": "7ee71eceb3cc443180a5e5fd006e2a9b",
+  "request_id": "860c7003fb384d29a72779e583fe9b83",
   "requests": {
     "81a0648c3de14140a1ae6370812f33c4": "plan",
     "5350b8556f7f480bb6bfbd37fd4076e7": "claim",
@@ -609,6 +609,243 @@
     "975679601aa247459fce46c2987c3454": "plan",
     "ad3bcde2ce4a4dfebf586d896eb0087b": "plan",
     "577b95914b55468c9c1b885b0777bc70": "read-add",
-    "7ee71eceb3cc443180a5e5fd006e2a9b": "plan"
+    "7ee71eceb3cc443180a5e5fd006e2a9b": "plan",
+    "860c7003fb384d29a72779e583fe9b83": "done"
+  },
+  "edge_paths": {
+    "um-5b0b7c-row-constant-specializes-to-common-size": "map/edges/unrelated-machines-3a-3a-5b0b7c469ae50024/row-constant-specializes-to-common-size.json",
+    "um-dba13-menu-bridge-to-take-continue-escape": "map/edges/unrelated-machines-3a-3a-dba13cc7b925cb48/menu-bridge-to-take-continue-escape.json",
+    "um-dba13-common-size-counts-pdm-dummies": "map/edges/unrelated-machines-3a-3a-dba13cc7b925cb48/common-size-counts-pdm-dummies.json",
+    "um-dba13-dag-oracle-single-cumulative-lp": "map/edges/unrelated-machines-3a-3a-dba13cc7b925cb48/dag-oracle-single-cumulative-lp.json",
+    "um-dba13-dag-oracle-parallel-cumulative-lp": "map/edges/unrelated-machines-3a-3a-dba13cc7b925cb48/dag-oracle-parallel-cumulative-lp.json",
+    "um-dba13-dag-oracle-unit-cumulative-lp": "map/edges/unrelated-machines-3a-3a-dba13cc7b925cb48/dag-oracle-unit-cumulative-lp.json",
+    "um-dba13-st-pays-frozen-reopen": "map/edges/unrelated-machines-3a-3a-dba13cc7b925cb48/st-pays-frozen-reopen.json",
+    "um-dba13-st-hall-pays-fixed-slot-obstruction": "map/edges/unrelated-machines-3a-3a-dba13cc7b925cb48/st-hall-pays-fixed-slot-obstruction.json",
+    "um-dba13-st-stays-in-minimum-work-support": "map/edges/unrelated-machines-3a-3a-dba13cc7b925cb48/st-stays-in-minimum-work-support.json",
+    "um-dba13-corridor-fixed-support-optimal-congestion": "map/edges/unrelated-machines-3a-3a-dba13cc7b925cb48/corridor-fixed-support-optimal-congestion.json",
+    "um-dba13-geometric-palette-preserves-fixed-slot-gap": "map/edges/unrelated-machines-3a-3a-dba13cc7b925cb48/geometric-palette-preserves-fixed-slot-gap.json",
+    "um-dba13-bernoulli-pays-xos-mask-expectation": "map/edges/unrelated-machines-3a-3a-dba13cc7b925cb48/bernoulli-pays-xos-mask-expectation.json",
+    "um-dba13-exit-matching-specializes-to-home-only": "map/edges/unrelated-machines-3a-3a-dba13cc7b925cb48/exit-matching-specializes-to-home-only.json",
+    "um-dba13-cardinality-and-st-bound-closure-pair-gap": "map/edges/unrelated-machines-3a-3a-dba13cc7b925cb48/cardinality-and-st-bound-closure-pair-gap.json"
+  },
+  "receipt": {
+    "coverage": {
+      "UM-WEIGHTED-MENU-STATE-DUMMY-SC-v1": {
+        "state": "linked",
+        "object_pin": "2c879de6da8fc4f936abd8d627dc3a1a3d0fc3269325307b426a37b40ff73923",
+        "comparison_scope": "归一化状态 dummy 的双向 Santa/完整 UM 解码，九组累计 take/continue 反例，归一化 CONFIG 的有限证书三向语义。",
+        "reason": "固定编译目标逐状态和为1，故菜单 V=2/5 经精确桥传为完整峰8/5。原三代理 Santa 的值是另一个独立输入。own dummy 的组身份、可任意外送的零效用和 t=0 分支均保留。",
+        "edge_ids": [
+          "um-dba13-menu-bridge-to-take-continue-escape"
+        ]
+      },
+      "M-271c52e5782242e190cbc8b56c952a92": {
+        "state": "linked",
+        "object_pin": "dbaca73bf02707917704dcb82a7ba4b64bd22087ff596b9088c68bd1d8cd8df2",
+        "comparison_scope": "Li Thm 1.4、累计 LP (16)、附录A/C.2/D和序多面体单容量 oracle。",
+        "reason": "oracle 每轮支付精确先后下的 MWU 聚合响应，单机列表按 C_j 及前缀工作量推出2+ε；原运行时间保 log p_max。",
+        "edge_ids": [
+          "um-dba13-dag-oracle-single-cumulative-lp"
+        ]
+      },
+      "UM-COMMON-SIZE-UNKNOWN-B-EXACT-v1": {
+        "state": "linked",
+        "object_pin": "c6a4faf21ec8a27785151e3d79df3fa6bf518106be33f71db6a7139c66385236",
+        "comparison_scope": "真实冻结核心 common-size、逐行常数扩展、头部充分证书以及 pDM 编译固定顶点后的 dummy 分配。",
+        "reason": "行常数边特化保全部真实冻结峰和资格；固定顶点后 pDM dummy 确落在共同尺寸整数流域。同一冻结问题若任务尺寸异质只能另用头部充分合同或额外结构。",
+        "edge_ids": [
+          "um-5b0b7c-row-constant-specializes-to-common-size",
+          "um-dba13-common-size-counts-pdm-dummies"
+        ]
+      },
+      "M-aa1e2e5787dd4f788630e62f130523b9": {
+        "state": "linked",
+        "object_pin": "8daf97653c55a60f67e9af15e9b3a49e93399b0c368c94122d1bb13e81def0b9",
+        "comparison_scope": "Li Thm 1.6、一般时长同机并行附录A/C.2/D及序多面体 oracle。",
+        "reason": "共享累计 LP 的聚合求解组件仍保先后；一般时长优先值、忙闲时估计和 log p_max 分析独立于单机或单位作业结果。",
+        "edge_ids": [
+          "um-dba13-dag-oracle-parallel-cumulative-lp"
+        ]
+      },
+      "UM-PARTIAL-SUM-TAKE-CONTINUE-FLAT-MENU-ACTUAL-ESCAPE-v1": {
+        "state": "linked",
+        "object_pin": "e32710a299c5b377124d40467e4c948173ae5a9f5a24a64cbcd8b09d341911df",
+        "comparison_scope": "固定三代理两物品、明示 take/off/accept 编译全矩阵与全部30件作业，比较归一化菜单值桥和 uniform-line 版本。",
+        "reason": "边支付目标菜单及完整调度值；由原三人对两件不可拆物品至多两位有正效用，原 Santa 的 OPT=0，故任意正值全员解码失败。反例只约束指定累计规则。",
+        "edge_ids": [
+          "um-dba13-menu-bridge-to-take-continue-escape"
+        ]
+      },
+      "UM-PDM-THRESHOLD-EXACT-v1": {
+        "state": "linked",
+        "object_pin": "e2f2c5b288ffb05878585535db17e07a85e012accfb359084ef5d98b411e0ed7",
+        "comparison_scope": "非退化 pDM 互素域、所有编译任务、精确阈值与同一矩阵形状的 NO 范围，比较共同尺寸残余及 ST 的较宽上界。",
+        "reason": "冻结任意顶点分配后的件数 iff 支持阈值证明，并给整个编译像实际峰至多 bd+d−1、精确统一相对上限7/6。YES/NO 仍需完美匹配刻画；旧13/12只是另一确切 NO 实例。",
+        "edge_ids": [
+          "um-dba13-common-size-counts-pdm-dummies"
+        ]
+      },
+      "UM-SHARED-SINK-JOINT-MACRO-v1": {
+        "state": "linked",
+        "object_pin": "715da2574599480160ee952778fd8f5919c38835ff1c48a6217a61130f4c0863",
+        "comparison_scope": "单共享 sink 模式成本、真正原任务回填、Hall 多汇点共同资格/等端体积、宏可退出的同一总预算特化。",
+        "reason": "固定一个共享 sink 后，全部真实模式成本可用一次标量匹配。Hall 槽件数要求共同资格与等体积，无法支付各私有任务可异的实际 sink 成本。禁止所有宏退出可将扩大的 matching 严格化简到原合同。",
+        "edge_ids": [
+          "um-dba13-exit-matching-specializes-to-home-only"
+        ]
+      },
+      "M-e8885334520c415bb4afb682ac8c31c8": {
+        "state": "linked",
+        "object_pin": "fe3345fa41803b989f56e467b5eeddc5b0f82c724cb5c7c7afcf07ba9e1a694e",
+        "comparison_scope": "Li Thm 1.5、附录D.2随机共同分位数和序多面体单容量 oracle。",
+        "reason": "精确先后的累计 LP 后端是实质共同组件；单位作业随机分位数的期望界还依赖外部极值引理，不写成每次输出或确定性保证。",
+        "edge_ids": [
+          "um-dba13-dag-oracle-unit-cumulative-lp"
+        ]
+      },
+      "UM-OPTIMAL-CONVEX-ST-SLOT-GAP-v1": {
+        "state": "linked",
+        "object_pin": "50a8b196d091563fd2a619297617947fc12372d93b27c7e30bcac699bd80364f",
+        "comparison_scope": "真实最优凸包均匀边际、所有固定单位槽匹配、槽外修复、同 n D_geo 字母表和最小工作面。",
+        "reason": "ST 保证同一固定槽图存在覆盖，计数付精确坏值；D_geo 中用同样凸分量和基数还能得到趋二。最小工作面以支撑缺边为另一机制，其槽未用尽。",
+        "edge_ids": [
+          "um-dba13-st-hall-pays-fixed-slot-obstruction",
+          "um-dba13-geometric-palette-preserves-fixed-slot-gap"
+        ]
+      },
+      "unrelated-machines/lovasz-schrijver-matrix-cones-setfunctions": {
+        "state": "isolated-after-review",
+        "object_pin": "31badecd11ea24a0423aa395d231e43cdf8e97146e119ee826fe50bda7224890",
+        "comparison_scope": "冻结 1989 CWI BS-R8925 的矩阵锥、stable-set、格 Möbius 三节；对照报告 §§1a–d、2c、3a–b 和现有 UM 证书。",
+        "reason": "该对象是提升/投影和稳定集固定层的文献身份。对偶锥星号、Lemma 2.7 的 (k+2)^−1·1 及强递减条件按报告原式采用；矩阵层次没有替代本包的配置耦合、计数闭包或实际调度解码。正文 v2 已按原报告修正，补了独立的三元素强递减逆向失败例。"
+      },
+      "UM-ST-ROUND-v1": {
+        "state": "linked",
+        "object_pin": "8c4662c822ebd204e3b095934f8745464426df43fc2328a6bbc35063e4148ea1",
+        "comparison_scope": "给定 T-剪枝 LST 的有序单位槽，固定槽紧例与最小工作面、冻结头部证书；比较 Li 小容量槽和 pDM。",
+        "reason": "同一完整整数匹配按前槽负载付后续槽，并保正支撑；给冻结余量充要域之外的充分恢复，解释两种局部近二输出为何兼容2T。Li 缩槽另外付 Hall 扩张及近线性复杂度。",
+        "edge_ids": [
+          "um-dba13-st-pays-frozen-reopen",
+          "um-dba13-st-hall-pays-fixed-slot-obstruction",
+          "um-dba13-st-stays-in-minimum-work-support",
+          "um-dba13-cardinality-and-st-bound-closure-pair-gap"
+        ]
+      },
+      "UM-MULTIINPUT-MISSING-ONE-COUNT-CANDIDATE-v1": {
+        "state": "isolated-after-review",
+        "object_pin": "c3a79f606a9b3e8b2cea57f8e4cbbea0dc05d9ec0be03e686a386b733803953a",
+        "comparison_scope": "多输入缺一严格半闭包全证明，和静态激活的源 cover/目标 packing、单输入两两预算及树锐例逐项比较。",
+        "reason": "严格半阈值与每列预算使各最小闭包不交；每输入最多排一索引，构造是完整静态拼接。不能用最终静态分配推出逐件迁移顺序。r>1 的两条 wire 可各坏到2T，直接排两两和≤3T 的无条件外推。保留两实际 YES 及关闭不删资格。"
+      },
+      "UM-DAG-CONGESTION-FLOW-v1": {
+        "state": "linked",
+        "object_pin": "4225f45cf4dc52e20ccb9518c005ea31c7087b31e81091336cf6224d986b31b9",
+        "comparison_scope": "旧共同供给、拆点裁流、固定 W 的最小 K 与激活 LP 合流反例，及 Li 特殊 DAG oracle。",
+        "reason": "直接算出旧合同的走廊最优 κ*=q，激活 LP 的正面边际不能支付共享 x 的真实入流帽。Li 流内部容量无穷，不能替代此共同转接/接收约束。",
+        "edge_ids": [
+          "um-dba13-corridor-fixed-support-optimal-congestion"
+        ]
+      },
+      "UM-MULTI-ACTIVATION-STATIC-COVER-v1": {
+        "state": "isolated-after-review",
+        "object_pin": "db1c434b1bb11d2c4c888dcf045035a6e77de20a4822d3bee94f5ae6703ab8b7",
+        "comparison_scope": "两给定实际调度的静态源 cover/目标 packing、保留边重写、两机三任务无首步和三机六任务有动态路径而无静态证书；比较缺一拼接、冻结修复。",
+        "reason": "逐迁负载恒为 S_i−D_i+P_i，安全需要共同子集；三机例区分静态充分与动态必要。缺一结果只给目标分配，冻结整件流只管最后负载，均不交同一动态见证。源/目标各行等时的有下界 circulation 是专门可计算域，零时长不除零。"
+      },
+      "UM-DENSE-GEOMETRIC-ALPHABET-EQUIVALENCE-v1": {
+        "state": "linked",
+        "object_pin": "34637c41b703d69c79431455bfc140561edd5a870c3a3239c186e1e92190737c",
+        "comparison_scope": "保持原 m,n 的精确有理幂、全输出哨兵排除、αb² 强式回译，比较稠密整数、加 padding 及固定单位槽反例。",
+        "reason": "固定槽真实最优凸包的趋二机制已经搬到同一 A_n，不借未知次二 backend。规范化本身是固定改善常数的算法存在性等价，不交 backend 或一般障碍。",
+        "edge_ids": [
+          "um-dba13-geometric-palette-preserves-fixed-slot-gap"
+        ]
+      },
+      "M-c5029512a3de4ef7aba8cb0b9ae0d37e": {
+        "state": "linked",
+        "object_pin": "1c384cb3dee93b66314637738ecfab08eeb476c2a02ef5b3cf31b904a30ea82b",
+        "comparison_scope": "有限非负 XOS 的独立保留推论、作者 v5 E2 有限格点候选掩码和旧整体条件合同。",
+        "reason": "单候选的 floor 权当一条显式加性 clause，保 singleton 帽、正期望及行内独立，推出局部对数期望。原 v5 的有限位 DP、joint fixing 与重匹配仍是独立义务。",
+        "edge_ids": [
+          "um-dba13-bernoulli-pays-xos-mask-expectation"
+        ]
+      },
+      "UM-MIN-WORK-FACE-SUPPORT-GAP-v1": {
+        "state": "linked",
+        "object_pin": "aa39f3ec80fbe16f0605e368accf63076d3f8a1a2aa6c707184243cb226b10fa",
+        "comparison_scope": "正扰动最小工作量整面、标准形 active 秩、任意点正支撑、q 小任务 off-home 阶梯，对照真实最优凸包固定槽。",
+        "reason": "ST 保证覆盖却只用给定正支撑，所有结果恰峰2m−1。末行负载 m−1+1/m、slack1；覆盖有 m−1 空槽，历史转述的相反符号和用满槽都不用。少量总工作量松弛可达 OPT。",
+        "edge_ids": [
+          "um-dba13-st-stays-in-minimum-work-support"
+        ]
+      },
+      "UM-CARDINALITY-CLOSURE-v1": {
+        "state": "linked",
+        "object_pin": "305f5ebbc7d2048c8370c1238f8d6450a38cfe551a4df9f7f91c13ca80482772",
+        "comparison_scope": "同轮旧域、强制剩余 R_v、严格阈值与各束 max_q，下降 T 的域包含、两树原族及细分后逐对配置耦合。",
+        "reason": "小 T 的幸存域包含于大 T。原平行束可逐层拒，简单图细分在证书 T_k 没有第一次删除；配合 ST 的逐对松弛上界，闭包→pair 的比值上确界仍2。",
+        "edge_ids": [
+          "um-dba13-cardinality-and-st-bound-closure-pair-gap"
+        ]
+      }
+    },
+    "assets": [
+      {
+        "path": "map/edges/unrelated-machines-3a-3a-5b0b7c469ae50024/row-constant-specializes-to-common-size.json",
+        "sha256": "a5171e6a2c52686d11cf8e26a4e907e50ff8b4165e9aa1e57d317fd0a2da4f74"
+      },
+      {
+        "path": "map/edges/unrelated-machines-3a-3a-dba13cc7b925cb48/menu-bridge-to-take-continue-escape.json",
+        "sha256": "6961de4f4003a6932fd5e79eeaf2fe3c3640e2312af12c238e41202e71cae6b6"
+      },
+      {
+        "path": "map/edges/unrelated-machines-3a-3a-dba13cc7b925cb48/common-size-counts-pdm-dummies.json",
+        "sha256": "92b2bbba8b6c7bbb7181d47576c16f880c43eed121e1ff167c6c5135a8090581"
+      },
+      {
+        "path": "map/edges/unrelated-machines-3a-3a-dba13cc7b925cb48/dag-oracle-single-cumulative-lp.json",
+        "sha256": "12f666c98c632481200b4755931728afc7dc7de0d34a944a1179ce6ca4abe5de"
+      },
+      {
+        "path": "map/edges/unrelated-machines-3a-3a-dba13cc7b925cb48/dag-oracle-parallel-cumulative-lp.json",
+        "sha256": "f9c47844f900abee2f6825e2b70817d2e903998fdda6773e2450bdffeb6e46e6"
+      },
+      {
+        "path": "map/edges/unrelated-machines-3a-3a-dba13cc7b925cb48/dag-oracle-unit-cumulative-lp.json",
+        "sha256": "58816ad0cfa09e9eab36552f0ebba312f2ec67b20e3aeee7c95ad1e73dc1572c"
+      },
+      {
+        "path": "map/edges/unrelated-machines-3a-3a-dba13cc7b925cb48/st-pays-frozen-reopen.json",
+        "sha256": "2bac10e539f23f920c9c8facca725f6a796b4885633da8d0aff8f0e6fde073a5"
+      },
+      {
+        "path": "map/edges/unrelated-machines-3a-3a-dba13cc7b925cb48/st-hall-pays-fixed-slot-obstruction.json",
+        "sha256": "93bcaed21303e8836db5ecc2963b24a85b076bd315fe0a26de7c0b820aa4f3da"
+      },
+      {
+        "path": "map/edges/unrelated-machines-3a-3a-dba13cc7b925cb48/st-stays-in-minimum-work-support.json",
+        "sha256": "749881db6f204f85d2ad6a7506d044d75e99ebffc9ca6ce009c7bbb09ac44c34"
+      },
+      {
+        "path": "map/edges/unrelated-machines-3a-3a-dba13cc7b925cb48/corridor-fixed-support-optimal-congestion.json",
+        "sha256": "dd795d565f52c6d1a557ae44165c77b2d5efc765f905f6ec2cea4f8a0768a9f8"
+      },
+      {
+        "path": "map/edges/unrelated-machines-3a-3a-dba13cc7b925cb48/geometric-palette-preserves-fixed-slot-gap.json",
+        "sha256": "2b5301de48839538d548b40011b107b4b92616296edef85d5b3224dd5cce1d76"
+      },
+      {
+        "path": "map/edges/unrelated-machines-3a-3a-dba13cc7b925cb48/bernoulli-pays-xos-mask-expectation.json",
+        "sha256": "2a47f088a7f72a5cef39121ad62235f52f5bca25f90552888fcf6785bed8691f"
+      },
+      {
+        "path": "map/edges/unrelated-machines-3a-3a-dba13cc7b925cb48/exit-matching-specializes-to-home-only.json",
+        "sha256": "bbffe56cddc4a2bc9020332644e697754cda08a9c38995f203ae09de5d6e4b88"
+      },
+      {
+        "path": "map/edges/unrelated-machines-3a-3a-dba13cc7b925cb48/cardinality-and-st-bound-closure-pair-gap.json",
+        "sha256": "3fe97698f134cada220ae56793789e9f88194a7fa623cb65e141ea76a6328a2a"
+      }
+    ]
   }
 }
