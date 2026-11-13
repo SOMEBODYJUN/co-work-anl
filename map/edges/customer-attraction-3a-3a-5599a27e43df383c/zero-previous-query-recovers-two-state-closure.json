@@ -1,0 +1,57 @@
+{
+  "edge_id": "cag-5599-zero-previous-query-recovers-two-state-closure",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/previous-theme-uniform-positive-price"
+  ],
+  "target_ids": [
+    "M-b233ef00a9c34e189817cdfb7a495107"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "同一有限单位客户、非空共同标签目录及完整有序历史纯SPE；固定合法源h，余k≥2、同一真实末回复映射C_h、actual末位账及共同K。固定静态合法菜单与全局非负权，取0≤θ<1、上一主题查询权ν=0，令σ=a₀及μ_cur=μ_self。",
+  "roles": {
+    "customer-attraction/previous-theme-uniform-positive-price": "四状态折扣预算为每一合法初态标签对提供上界；取ν=0后其代价对上一位a恒定。",
+    "M-b233ef00a9c34e189817cdfb7a495107": "接收同源一般二状态预算不等式和最大可行势，保相同强制主题、真实后继及全部付费项。"
+  },
+  "explanation": "ν=0时逐候选H₄(a,t,c,s)=H₂(t,c,s)，两预算相等。若V₂是二状态Bellman解，置V₄(a,t)=V₂(t)，则后继值V₄(t,c)=V₂(c)，对同一(c,s)集合取min正好给V₂(t)。四状态算子以θ收缩，故此提升是唯一固定点。于是对任何合法对(F,T)，S²上的四状态行即B≥(1−θ)ΣₓV₂,x(1_T(x))；非空共同目录使每个合法T都可取一个合法F。任意有限二状态次解经单调Bellman迭代不超过V₂，故其预算行也由此得到。F的逐客价差恒为零；这里保留的变量是T，而不是固定T后用零价给F定价。",
+  "scope": "任意尾长、任意非负源权的二状态一般折扣闭包。固定点和预算行完全吻合；结论仅对这一参数面。",
+  "contribution": {
+    "result": "四状态ν=0参数面恢复任意合法种子的同源二状态折扣预算、最大次解和原有零分子约定。",
+    "remaining": "目标的三候选显式消元、余二且σ=M时连续折扣的折点公式，以及5716/5727点的有限核验由目标正文另证。此特化不给ν>0的严格正价族比较。"
+  },
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/上一主题查询的统一正客户价格--引理.md",
+      "sha256": "93c29c6ed372346189dbaca9d6e5a172b942a9df39d53df9819f0be1e234707e",
+      "section": "上一主题查询给出的统一正客户价格"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/同源真实末回复的折扣闭包与二状态精确投影--引理.md",
+      "sha256": "a2aa6f407865993f693ff8338e2c038a7849643d04ed9078fc7c8e0e6f6b5d42",
+      "section": "二、单步真实预算：允许源权a0为零"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/同源真实末回复的折扣闭包与二状态精确投影--引理.md",
+      "sha256": "a2aa6f407865993f693ff8338e2c038a7849643d04ed9078fc7c8e0e6f6b5d42",
+      "section": "三、折扣闭包定理与有限最大值证明"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/同源真实末回复的折扣闭包与二状态精确投影--引理.md",
+      "sha256": "a2aa6f407865993f693ff8338e2c038a7849643d04ed9078fc7c8e0e6f6b5d42",
+      "section": "四、精确二状态消元与三个有理候选"
+    }
+  ],
+  "reviewed_by": "Boss2 map worker",
+  "review_note": "按两个正文逐一对齐M、q、零分子和固定菜单量词；独立核固定点提升、有限最大值和次解迭代。将一般合同与目标的有限证据分开。",
+  "endpoint_pins": {
+    "M-b233ef00a9c34e189817cdfb7a495107": "308401b736d5e278edb8a86a3dbfd2d3466aa1455f9c627b8b72069a9197c411",
+    "customer-attraction/previous-theme-uniform-positive-price": "24962fc0c94eb7f78eb85a36302358fed17f6ee17152fe5a36997bb97fa2612c"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/上一主题查询的统一正客户价格--引理.md": "93c29c6ed372346189dbaca9d6e5a172b942a9df39d53df9819f0be1e234707e",
+    "archives/customer-attraction/state/引理/同源真实末回复的折扣闭包与二状态精确投影--引理.md": "a2aa6f407865993f693ff8338e2c038a7849643d04ed9078fc7c8e0e6f6b5d42"
+  },
+  "review_digest": "a8fe0b8df365329d65696f80c5aae6c5ef04e488859386e58bef56da88122507"
+}
