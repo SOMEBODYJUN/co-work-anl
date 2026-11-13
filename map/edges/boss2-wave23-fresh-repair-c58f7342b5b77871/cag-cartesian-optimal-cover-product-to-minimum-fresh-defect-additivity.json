@@ -1,0 +1,66 @@
+{
+  "edge_id": "cag-cartesian-optimal-cover-product-to-minimum-fresh-defect-additivity",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-8dcfbe91a71b4d3a870f5d2cd0bced19"
+  ],
+  "target_ids": [
+    "cartesian-optimal-fresh-defect-and-three-regret-repair"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "有限个两两不交的单位客户坐标，各有有限非空带标签共同目录 S_j；联合目录等于完整标签积 ∏_j S_j，固定同一 m≥1。对每个合法实际有序 m 元组 B，以 c_x 记实际负载，g_c(T)=Σ_{x∈cov(T)}1/(1+c_x)，W=|{x:c_x>0}|，R₀=Σ_{x:c_x>0}1/(1+c_x)。K₀ 在所有覆盖达到 OPT_m 的合法有序 m 元组上最小化 Σ_i g_c(T_i)。保留空覆盖、重复行动及同覆盖异标签。",
+  "roles": {
+    "M-8dcfbe91a71b4d3a870f5d2cd0bced19": "提供完整带标签积上的 OPT_m 可加性及逐位置拼接方法。每个比较元组的覆盖也按不交坐标分解。",
+    "cartesian-optimal-fresh-defect-and-three-regret-repair": "登记 v2 的完整静态结论是 OPT_m、K₀、W、R₀ 和 D_f=K₀−W−R₀ 逐坐标可加，对任意给定联合实际元组成立。"
+  },
+  "whole_result": "联合覆盖最优有序 m 元组集合恰是各坐标覆盖最优有序 m 元组集合的积。在该集合上，K₀=Σ_jK₀,j，且 OPT_m=Σ_jOPT_m,j、W=Σ_jW_j、R₀=Σ_jR₀,j，故 D_f=Σ_jD_f,j。各量按固定的联合实际元组及其坐标投影计算，允许这些行动由任意联合策略产生。",
+  "explanation": "把联合有序 m 元组写成标签矩阵，逐列投影，反向逐行拼接，得到 (∏_j S_j)^m≅∏_j(S_j^m)。对任一比较元组 T，联合覆盖亏量 OPT_m−cover(T)=Σ_j(OPT_m,j−cover_j(T^j))。每项非负，故总亏量为零当且仅当各项均为零。对客户 x∈N_j，实际负载 c_x 由 B^j 决定，故比较费用为 Σ_i g_c(T_i)=Σ_jΣ_i g_{c^j}(T_i^j)。联合最优集合上的任一费用至少为 Σ_jK₀,j；每个有限非空坐标最优集合都取到自己的费用最小值，逐行拼接这些最小元组即取到联合等号。W 和 R₀ 是逐客户不交求和，D_f 随之相加。另一个动态结论有自己的条件：若每个完整分量纯 SPE 只读取本坐标有序历史，联合真实偏离的各坐标收益差由各自 SPE 支付，因此乘积策略为联合 SPE。任意耦合联合策略的后继则可能读取其他坐标的偏离，八客户例的分量投影有严格盈利偏离；静态证明只投影给定的实际元组和比较元组。",
+  "scope": "完整带标签积的静态 ADD。删去联合标签时最优元组可能无法任意拼接。S? 自留预算、三倍根修复和 RF? 属于各自的合同。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/审查/R-3d6f连续安全对数势分离与笛卡尔耦合--审查.md",
+      "sha256": "bc34f8a5e9ba464313af5cd483297ab817f6b49561627b1d8d38100b85ec2bf2",
+      "section": "4. 笛卡尔目录耦合审查"
+    },
+    {
+      "path": "research/registration/evidence/register-lead-recovered-evidence-01/cartesian_catalog_coupling.md",
+      "sha256": "32d0e918561b81ee7fd0be3cb7f69832d5911fccda672ad91c798e398cccfa44",
+      "section": "精确定义和成立的可加性"
+    },
+    {
+      "path": "research/registration/evidence/register-lead-recovered-evidence-01/cartesian_catalog_coupling.md",
+      "sha256": "32d0e918561b81ee7fd0be3cb7f69832d5911fccda672ad91c798e398cccfa44",
+      "section": "两名提供者的非分解完整 SPE"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+      "section": "输入和终局量"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/笛卡尔目录的最优查询缺陷与三倍根修复--引理.md",
+      "sha256": "d6b5c15a3f91fa7bde0f99502988127772fea3369e1519195cc86978b9e9bcf2",
+      "section": "完整笛卡尔目录的相加"
+    },
+    {
+      "path": "archives/customer-attraction/state/想法/最优覆盖查询的自留份额预算--想法.md",
+      "sha256": "32d2e88606a5ea2d831e3bef4972cbcd586f0bac26799aa8f570e9f133a5b678"
+    }
+  ],
+  "reviewed_by": "Boss3",
+  "review_note": "对照 v1/v2 登记、静态证明和更新后的预算证据。v2 增补无自留加强式 K₀≤W 的反例定位；五个 ADD 量的定义、量词与主证明不变。已逐项核对最优元组积、fresh 费用独立取最小、真实后继下的产品充分性以及耦合例的严格投影偏离。",
+  "endpoint_pins": {
+    "M-8dcfbe91a71b4d3a870f5d2cd0bced19": "4fc89dbbf69648bf1e5b9e08ddbad9d095b70894f8a7862e02435e26ec932c13",
+    "cartesian-optimal-fresh-defect-and-three-regret-repair": "6887bcc030aa47a075f38022789ff38b2b13e37492a2025b3ad9a9da1176912e"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/审查/R-3d6f连续安全对数势分离与笛卡尔耦合--审查.md": "bc34f8a5e9ba464313af5cd483297ab817f6b49561627b1d8d38100b85ec2bf2",
+    "research/registration/evidence/register-lead-recovered-evidence-01/cartesian_catalog_coupling.md": "32d0e918561b81ee7fd0be3cb7f69832d5911fccda672ad91c798e398cccfa44",
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+    "archives/customer-attraction/state/引理/笛卡尔目录的最优查询缺陷与三倍根修复--引理.md": "d6b5c15a3f91fa7bde0f99502988127772fea3369e1519195cc86978b9e9bcf2",
+    "archives/customer-attraction/state/想法/最优覆盖查询的自留份额预算--想法.md": "32d2e88606a5ea2d831e3bef4972cbcd586f0bac26799aa8f570e9f133a5b678"
+  },
+  "review_digest": "70ff1d445477b510c800638375356d5af5424964284b5ac310b3a92847769cc4"
+}

@@ -1,0 +1,87 @@
+{
+  "edge_id": "boss2-m7-specific-spe-implies-ent1-saic",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-7e204ccd7c6e4b7c8cbd5ddec64f5716"
+  ],
+  "target_ids": [
+    "M-05b51399a0114768921338b101578273"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "使用源对象指定的同一13名单位提供者、36名不同单位客户、六标签(A,B,T,D,E,P)的完整纯SPE及真实actual叶；查询价格固定为未缩放α=1的g(T)=Σ_T1/(1+c_x)。完整σ在全部有序历史定义，强制行动后沿同一σ真实后继，重复行动/弱平局保留。没有额外未证付款条件。",
+  "roles": {
+    "M-7e204ccd7c6e4b7c8cbd5ddec64f5716": "指定客户表A2/B2/T1/TD1/TE1/ADE3/BDE1/P25、成熟完整有序历史SPE证书及真实路径P^10,A,A,B的叶计数(2,1,0,0,0,10)。推导使用这一具体见证的实例及策略数据。",
+    "M-05b51399a0114768921338b101578273": "目标登记v3给同一完整SPE严格违反全称未缩放ENT1的反例、唯一违规单查询T，以及B=W−R0使SAIC与ENT1逐式等价的别名身份。"
+  },
+  "explanation": "沿原packet的实际children[action]得到P^10,A,A,B及叶计数(2,1,0,0,0,10)。资格由已保存的完整动作闭合、严格加深、真实终局与逆深度IC认证提供，涵盖27243压缩节点、18675决策节点、112050项含自身比较。逐类型得到5客户负载2、3客户负载1、25客户负载10及3客户未覆盖，所以W=33；十位P及两位A各得5/2，末位B得3。A/B/T/P覆盖全部36名客户，给OPT13=36。逐类型精确计算g=(5/3,3/2,3,5/2,5/2,25/11)，R0=5/3+3/2+25/11=359/66。T取M1=3，其他查询最多5/2，而5/2<2537/858=(W+R0)/13<3，因此唯一违规单查询为T，超额13M1−W−R0=37/66。任意实际负载下，c>0时c/(1+c)=1−1/(1+c)，c=0时贡献0，得B=W−R0；取J_T=g(T)，于是SAIC:m max_TJ_T+B≤2W逐式等价ENT1:mM1≤W+R0，并在同一见证上有同样的失败量。",
+  "scope": "源M-7e v3指定的完整有序历史SPE推出目标M-05 v3的未缩放ENT1/SAIC反例及唯一违规单查询。统一共同query和所有最优计数向量的粗δ预算有各自的反例量词；此边使用具体见证，抽象粗δ预算失败本身无法推出ENT1失败。half在本例余量30，六人限制与存在最优元组/排列的K0、P*、H4各自有额外域或量词。反向复原12个真实中继菜单及有限δ统计需要额外运算。",
+  "whole_result": "M-7e v3指定的完整13人36客户六标签有序历史纯SPE给actual=P^10,A,A,B、W=33、OPT13=36、前十二位各5/2及末位3。六个未缩放查询为(5/3,3/2,3,5/2,5/2,25/11)，R0=359/66，M1=3。T是唯一满足13g(T)>W+R0的目录查询，超额37/66。任意实际终局B=W−R0且J_T=g(T)，故SAIC:m max_TJ_T+B≤2W与ENT1:mM1≤W+R0逐式等价。同一完整SPE和唯一违规查询完整给出M-05 v3的反例及别名身份。",
+  "evidence": [
+    {
+      "path": "map/edges/customer-attraction-3a-3a-c986a138e6639b6f/review.md",
+      "sha256": "d5ac31ace8d8d71c33f16821e4e11793698ea6221ae0c4eae88958da25856b35"
+    },
+    {
+      "path": "archives/customer-attraction/state/障碍/R-171有符号delta选择与重叠信用边界--障碍.md",
+      "sha256": "323f30161344be541ef0bd6f0613c3ce2d3eb37263871730b7ba1158b705e8b2"
+    },
+    {
+      "path": "archives/customer-attraction/state/审查/实际终局插入预算与未缩放税桥的同一性--审查.md",
+      "sha256": "a57391ef0955e4fac8a7b49ebde98deadbc7c7a668f804ca2b0090562d30fd9f"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+    },
+    {
+      "path": "archives/customer-attraction/state/反例/实际均匀缩放负载的弱付款桥--反例.md",
+      "sha256": "32a7f769383211709c67373e85118ceb541b5e4d58d2bb3d826272ac3e332b1f"
+    },
+    {
+      "path": "archives/customer-attraction/state/审查/十三人静态宽限与最优组合平均的原独立审计--审查.md",
+      "sha256": "4567cc3cb8a8179f8fe1b2283bf9ef2d78e5aa20422926ef992d171a4cf8c22b"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/R-171-price13-20261031/original/refined_tax_k10_packet.json.gz",
+      "sha256": "bad2b15d1abe89d9fa8671df84de8638a4b1ca46279712baa5482abb2bdf18ce"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/R-171-price13-20261031/replay/packet13_all_nodes_audit.json.gz",
+      "sha256": "413b08a0ff864c409ce08932a4172bc259ff3ba9d0d1e3d27653ae194aeb87b5"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/R-171-price13-20261031/original/probe_signed_delta.py",
+      "sha256": "53c14148d65c4e7f35c44b77bdf6b9f6204f49507bf96c842a07f9a50e336252"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/R-171-price13-20261031/replay/signed_delta_report.json",
+      "sha256": "46e73447954de7f97a7f72a61fb24f12388dee54a0cffddb2d7f8b8716b47756"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/static-allowance-original-notes-and-independent-review-primary/source-root/research/workspaces/customer-attraction/R-a40925880381414dbaba3a8314be5f93/restore_attack/static_allowance_audit.json",
+      "sha256": "74cab9d8340c121a56392a47303abd77c7aeff15504a0030d812a36d9cd5e55f"
+    }
+  ],
+  "reviewed_by": "Boss3",
+  "review_note": "对照当前M-7e v3和M-05 v3登记、两份主正文、历史实读报告及精确证书。沿实际children[action]核14节点，重新按客户类型作Fraction代入和SAIC反算，核T唯一超过(W+R0)/13。复用成熟全历史资格，无全IC、2002枚举或原LP重跑。保留旧review.md作为历史实读证据，以本边的当前版本和唯一性计算完成重审。",
+  "endpoint_pins": {
+    "M-05b51399a0114768921338b101578273": "1696148ada6edd9876c465c195a4490d35242e747b05719128e8495f01e5bd13",
+    "M-7e204ccd7c6e4b7c8cbd5ddec64f5716": "008544b2506f11976f6144d22e945849206fed6dc9367c7511f169a03a5c012c"
+  },
+  "evidence_pins": {
+    "map/edges/customer-attraction-3a-3a-c986a138e6639b6f/review.md": "d5ac31ace8d8d71c33f16821e4e11793698ea6221ae0c4eae88958da25856b35",
+    "archives/customer-attraction/state/障碍/R-171有符号delta选择与重叠信用边界--障碍.md": "323f30161344be541ef0bd6f0613c3ce2d3eb37263871730b7ba1158b705e8b2",
+    "archives/customer-attraction/state/审查/实际终局插入预算与未缩放税桥的同一性--审查.md": "a57391ef0955e4fac8a7b49ebde98deadbc7c7a668f804ca2b0090562d30fd9f",
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+    "archives/customer-attraction/state/反例/实际均匀缩放负载的弱付款桥--反例.md": "32a7f769383211709c67373e85118ceb541b5e4d58d2bb3d826272ac3e332b1f",
+    "archives/customer-attraction/state/审查/十三人静态宽限与最优组合平均的原独立审计--审查.md": "4567cc3cb8a8179f8fe1b2283bf9ef2d78e5aa20422926ef992d171a4cf8c22b",
+    "archives/customer-attraction/tools/evidence/R-171-price13-20261031/original/refined_tax_k10_packet.json.gz": "bad2b15d1abe89d9fa8671df84de8638a4b1ca46279712baa5482abb2bdf18ce",
+    "archives/customer-attraction/tools/evidence/R-171-price13-20261031/replay/packet13_all_nodes_audit.json.gz": "413b08a0ff864c409ce08932a4172bc259ff3ba9d0d1e3d27653ae194aeb87b5",
+    "archives/customer-attraction/tools/evidence/R-171-price13-20261031/original/probe_signed_delta.py": "53c14148d65c4e7f35c44b77bdf6b9f6204f49507bf96c842a07f9a50e336252",
+    "archives/customer-attraction/tools/evidence/R-171-price13-20261031/replay/signed_delta_report.json": "46e73447954de7f97a7f72a61fb24f12388dee54a0cffddb2d7f8b8716b47756",
+    "archives/customer-attraction/tools/evidence/static-allowance-original-notes-and-independent-review-primary/source-root/research/workspaces/customer-attraction/R-a40925880381414dbaba3a8314be5f93/restore_attack/static_allowance_audit.json": "74cab9d8340c121a56392a47303abd77c7aeff15504a0030d812a36d9cd5e55f"
+  },
+  "review_digest": "d9c19f060f7710b0aa4964182c2ff64e16b642c9d6a51eb725475192b59cfeec"
+}
