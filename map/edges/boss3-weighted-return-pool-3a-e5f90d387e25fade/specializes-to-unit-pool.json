@@ -1,0 +1,49 @@
+{
+  "edge_id": "um-weighted-return-pool-specializes-to-unit-pool",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "UM-SHARED-OUTSIDE-WEIGHTED-RETURN-POOL-EXACT-v1"
+  ],
+  "target_ids": [
+    "UM-SHARED-OUTSIDE-SMALL-QUERY-RETURN-POOL-EXACT-RELATION-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "k≥2、a_i>0且Σa_i≤1；取每件返回任务在每台池机耗时b_i=1，保每个E_i的单位原共享端。",
+  "roles": {
+    "UM-SHARED-OUTSIDE-WEIGHTED-RETURN-POOL-EXACT-v1": "固定原模式并求异权池精确最小值，另给任意池去向的实际负载。",
+    "UM-SHARED-OUTSIDE-SMALL-QUERY-RETURN-POOL-EXACT-RELATION-v1": "保原任务、机器及目的地的特例。"
+  },
+  "explanation": "T空时k件单位返回任务挤k−1台，精确池峰2；T非空时可注入剩余任务到池，池峰≤1。E_i双单位恰当T不包含于S，H≤1且至少有一个单位返回任务，故整个模式最优为1当且仅当∅≠T⊆S。给定实际C<2，E和P负载为整数且至多1，迫相同条件；H≤1和单位任务下界说明原ρ已经峰1，无需改派。",
+  "scope": "同一组原机器和不可拆任务的目的地保持特化；不要求未知源公式解码。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/定理/共享外端的异权返回池精确峰值--定理.md",
+      "sha256": "622b412edc4661cebea5f0ba02cc7ee0bcd500ce787105ac8e29d43b6267dcfa",
+      "section": "两条原接口如何从同一公式得到"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/共享外端的异权返回池精确峰值--定理.md",
+      "sha256": "622b412edc4661cebea5f0ba02cc7ee0bcd500ce787105ac8e29d43b6267dcfa",
+      "section": "固定外端后求池最优"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/共享返回池的全模式最优值与原样解码--定理.md",
+      "sha256": "1c057f49fa157fd28f795ca8d81e46881cdca494ce7bba66ba1711801eb2d711",
+      "section": "3. 全pattern精确最优值"
+    }
+  ],
+  "whole_result": "对每个S,T，原负载公式逐项相同，∅≠T⊆S时最小峰1、其余2；任何给定实际C<2的原分配可原样解码且峰恰1。",
+  "reviewed_by": "Boss3",
+  "review_note": "已核固定模式最小值与给定池去向的区别，保全部原机负载及阈值的严格和闭端点。",
+  "endpoint_pins": {
+    "UM-SHARED-OUTSIDE-SMALL-QUERY-RETURN-POOL-EXACT-RELATION-v1": "458ed4a70672b7f46af3d1aed351c7a76df3fd471e2106ef0094133cca6373fb",
+    "UM-SHARED-OUTSIDE-WEIGHTED-RETURN-POOL-EXACT-v1": "1bac830d75863389b331cbc7f359b0442838e43ef5044e1b9207feb04eae1945"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/定理/共享外端的异权返回池精确峰值--定理.md": "622b412edc4661cebea5f0ba02cc7ee0bcd500ce787105ac8e29d43b6267dcfa",
+    "archives/unrelated-machines/state/定理/共享返回池的全模式最优值与原样解码--定理.md": "1c057f49fa157fd28f795ca8d81e46881cdca494ce7bba66ba1711801eb2d711"
+  },
+  "review_digest": "fa0c899690d534286e9e5b58e00c72409792ef9d868cce1a13eee5b2eb822de0"
+}

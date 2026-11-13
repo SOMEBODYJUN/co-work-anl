@@ -1,0 +1,49 @@
+{
+  "edge_id": "um-weighted-return-pool-specializes-to-four-job-spectrum",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "UM-SHARED-OUTSIDE-WEIGHTED-RETURN-POOL-EXACT-v1"
+  ],
+  "target_ids": [
+    "unrelated-machines/shared-outside-four-job-complete-load-spectrum"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "k=2，a_1=a_2=b_1=1、b_2=1−ε、0<ε<1；P_1就是原I，x_i=1_{i∈S}且y_i=1_{i∉T}。",
+  "roles": {
+    "UM-SHARED-OUTSIDE-WEIGHTED-RETURN-POOL-EXACT-v1": "固定原模式并求异权池精确最小值，另给任意池去向的实际负载。",
+    "unrelated-machines/shared-outside-four-job-complete-load-spectrum": "保原任务、机器及目的地的特例。"
+  },
+  "explanation": "只有一台池机，给定(S,T)的ρ唯一。七个含外端空内部对(x_i,y_i)=(0,0)的分配峰2。其余九个组合由每个i的(1,0),(0,1),(1,1)组成：两交替峰1，三个双query但不双b峰2，三个双b但不双query峰2−ε，全一峰2。完整cross的原E共居2，不归于内部可行性。",
+  "scope": "同一组原机器和不可拆任务的目的地保持特化；不要求未知源公式解码。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/定理/共享外端的异权返回池精确峰值--定理.md",
+      "sha256": "622b412edc4661cebea5f0ba02cc7ee0bcd500ce787105ac8e29d43b6267dcfa",
+      "section": "两条原接口如何从同一公式得到"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/共享外端的异权返回池精确峰值--定理.md",
+      "sha256": "622b412edc4661cebea5f0ba02cc7ee0bcd500ce787105ac8e29d43b6267dcfa",
+      "section": "固定外端后求池最优"
+    },
+    {
+      "path": "archives/unrelated-machines/state/构造/共享外端四任务环的完整负载谱--构造.md",
+      "sha256": "64755ab426534bfde30d30d4ea6559b164aa6e6c509e2c6ddd8f0537ea9eda89",
+      "section": "3. 四布尔变量给全部16个实际分配"
+    }
+  ],
+  "whole_result": "逐指派负载为(x_1+x_2,y_1+(1−ε)y_2,2−x_1−y_1,2−x_2−y_2)，全部16个分配按峰1、2−ε、2分成2、3、11，严格低于2−ε仅两aligned，闭阈值共五。",
+  "reviewed_by": "Boss3",
+  "review_note": "已核固定模式最小值与给定池去向的区别，保全部原机负载及阈值的严格和闭端点。",
+  "endpoint_pins": {
+    "UM-SHARED-OUTSIDE-WEIGHTED-RETURN-POOL-EXACT-v1": "1bac830d75863389b331cbc7f359b0442838e43ef5044e1b9207feb04eae1945",
+    "unrelated-machines/shared-outside-four-job-complete-load-spectrum": "4e44e48360dc44873f5d58df733814cb3d4d6cb3f42df533041b74b740d9035a"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/定理/共享外端的异权返回池精确峰值--定理.md": "622b412edc4661cebea5f0ba02cc7ee0bcd500ce787105ac8e29d43b6267dcfa",
+    "archives/unrelated-machines/state/构造/共享外端四任务环的完整负载谱--构造.md": "64755ab426534bfde30d30d4ea6559b164aa6e6c509e2c6ddd8f0537ea9eda89"
+  },
+  "review_digest": "dd18e182399804eea0c41da29e8e200312bc48ff595f073874ac90c67189e737"
+}

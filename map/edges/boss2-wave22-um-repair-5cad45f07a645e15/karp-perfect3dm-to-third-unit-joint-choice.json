@@ -1,0 +1,67 @@
+{
+  "status": "accepted",
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "reviewed_by": "Boss3/repair_5cad",
+  "review_note": "定向复核现行联合选择 v3、已更正重边资源、Karp 三坐标循环一致性及冻结主证明 §1–3a。原 Boss5 的主归约仍成立。另给每坐标出现的非退化域化约与端点的显式 parity NO 调度。新做小域精确整数交叉核验，通用结论由下述两向证明支付。",
+  "edge_id": "um-b5-scheduling-karp-perfect3dm-to-third-unit-joint-choice",
+  "kind": "transfers",
+  "source_ids": [
+    "UM-SOURCE-KARP-3DM"
+  ],
+  "target_ids": [
+    "UM-JOINT-CHOICE-NP-v1"
+  ],
+  "conditions": "每个先固定的有理 δ∈[0,1/3)。源为显式带位置标签的 perfect 3DM，X、Y、Z 各有 q≥0 个元素，E 为 s 条三元组。目标 T=1，仅有 1/3 与 1 两种有限时间，按原 T/2 固定 small/big 分界。H 是大边匹配，余任务 x 非负、各总质量 1，只在唯一 small 端且与 H 共享逐机容量 1+δ。",
+  "roles": {
+    "UM-SOURCE-KARP-3DM": "提供显式 perfect 3DM 的精确 NP 完全性及位置标签翻译。无孤立与 q≥2 的子域由本边显式预处理保证。",
+    "UM-JOINT-CHOICE-NP-v1": "当前 v3 对每个固定 δ∈[0,1/3) 的三分之一受限 (Aδ) 判定。原 q+3 共同源归约及双向证书得完整结论。"
+  },
+  "explanation": "每三元组 a 造机器 S_a，每个带坐标类型的元素造 E_(d,e)，另造共同机 R。q+3 个激活任务各在 R 用时 1/3、在任意 S_a 用时 1。每三元组的三枚关联任务各在自身 S_a 用时 1/3、在相应 E_(d,e) 用时 1。其余端不可用。机器数 s+3q+1、任务数 q+3+3s、有限端数 (q+3)(s+1)+6s，稠密和稀疏输出均为显式源输入的位多项式，数字常位。每个原任务有且仅有一个 small 端，必选大任务集为空，H 仍可非空。对整个受限矩阵域，任意 (Aδ) 见证的每个余任务质量在其唯一 small 端等于 1，与 H 合成完整实际调度。负载是 1/3 格点，故 ≤1+δ<4/3 即 ≤1。反向，任何峰≤1实际调度的时间 1 任务组成合法 H，余任务在唯一 small 端取 0/1 x。对构造实例，R 在峰≤1时最多留三个激活，至少 q 个激活去不同 S_a。每个已激活 S_a 上已有单位负载，三枚关联任务均去各自有类型元素机。元素机各最多接一件，3q 台机器迫激活数≤q。于是恰 q 个被激活三元组且逐坐标互异，给 perfect 3DM。给完美匹配的反向证书是 q 个激活各赴所选 S_a、余三枚留 R、所选三元组的关联任务各去元素机、未选三元组的关联任务留 S_a，完整峰恰 1。q=0 时仍是 R 上三件实际任务，合法 YES；孤立坐标仍有合法矩阵且无法产生完美匹配，正向解码给 NO。受限判定只猜 H，直接重建唯一 small 分配并精确验逐机负载，因此在 NP。\n\n限制源到 q≥2 且每个有类型坐标均出现仍为 NP 完全：q<2 可直接判定，孤立坐标直接判 NO，分别用固定非退化 YES {(0,0,0),(1,1,1)} 或固定非退化 NO 的四个偶校验三元组替代；其余实例保留。该子域的输出每台机器至少一个有限端、每任务同时有唯一 small 与至少一个 big 端。端点 δ=1/3 时原 q=1 空三元组 NO 可将四个激活全留 R，峰 4/3。即使要求非退化，q=2 的偶校验四元族 {(0,0,0),(0,1,1),(1,0,1),(1,1,0)} 仍是 NO，因为任两三元组共享一坐标。把五枚激活中的四枚留 R、一枚送 S_(0,0,0)，该三元组的三枚关联各去其有类型元素机，其余关联全留各自 S_a，完整峰 4/3。其 H 与 0/1 x 合法，直接证明此编译在闭端点失效。",
+  "scope": "传递精确阈值判定的 NP 完全性。若假设 P≠NP，任何总确定性位多项式算法在每个 OPT≤T 输入承诺给可验 (Aδ) 见证，也会经上述 NO 无见证和多项式验证决定 3DM。给定见证的通用有序槽界为 (3/2+δ)T，对应 ε=1/2−δ，故此三分之一窗口为 1/6<ε≤1/2；ε=1/6 是该充分路线参数换算的端点，此归约在端点失效。这里的唯一 small 子类见证本身已是整数调度。半单位的 δ<1/2 另用逐 x 构造。结论限共同 H 与残余容量接口，有限回溯为证据，普通近二 actual 调度算法不由这条边判定。",
+  "whole_result": "由带位置标签的显式 perfect 3DM 得：每个固定有理 δ∈[0,1/3)，在 T=1、有限处理时间 {1/3,1}、每任务唯一 small 端的类中，(Aδ) 存在当且仅当 OPT≤1，判定 NP 完全。q+3/R 编译双向保完美匹配，且可限到每机有有限端、每任务兼有 big 端的非退化子域。δ=1/3 有空三元组和无孤立偶校验 NO 两种峰 4/3 的见证，故该编译不延伸到端点。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/文献/Karp归约框架与完全问题--文献.md",
+      "sha256": "40c532477ca603c4366c545d4c41c39b056725b73e9a165ca1e8b21782792e1d",
+      "section": "5.2 原3DM归约的全部坐标与循环一致性"
+    },
+    {
+      "path": "archives/unrelated-machines/state/计算/唯一小端三维匹配的源程序与条件块切面--计算.md",
+      "sha256": "8969e70e0852cb47bd8b93aa56e10d19f05435ccd4c9ceff47c445c44545a3c9",
+      "section": "N为空的原三分之一归约"
+    },
+    {
+      "path": "archives/unrelated-machines/state/计算/共同大边补全双原程序与三分之一版本边界--计算.md",
+      "sha256": "99028c3e98b60e1a6b5a4ea94ef0025df85b83c1467f8e632b26aebffe74051f",
+      "section": "两种不同的3DM有限构造"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/共同匹配联合槽舍入与包络配置三源审查--审查.md",
+      "sha256": "d8ad15db9cdf52d26be477052626a1afd6b0d1106982081d19b82d81e500bb47",
+      "section": "2. 共同大边选择与条件块切面"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/重边必要过滤与共同补全选择的复杂度边界--资源.md",
+      "sha256": "4d04cfe33635c350c6f74c9998df01ee6f1f8bc0b6d362bb3b1ebc89b0ab1317"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/单邻域配额枚举的自由根需求与模型边界--资源.md",
+      "sha256": "9ae7519e4e77a8a180dbef4617f1fd9d9fe4712006a83c5a169166c6f5b060e4",
+      "section": "多label 3DM不能按邻域并集变成本模型"
+    }
+  ],
+  "endpoint_pins": {
+    "UM-JOINT-CHOICE-NP-v1": "e7ea6f117790efb096caff37cb3af2e59501058c85454c8ed205639bbd186cf9",
+    "UM-SOURCE-KARP-3DM": "2b455afb721fc3404464bed6944c36df19220c296dae72d7d0e9af032179e171"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/文献/Karp归约框架与完全问题--文献.md": "40c532477ca603c4366c545d4c41c39b056725b73e9a165ca1e8b21782792e1d",
+    "archives/unrelated-machines/state/计算/唯一小端三维匹配的源程序与条件块切面--计算.md": "8969e70e0852cb47bd8b93aa56e10d19f05435ccd4c9ceff47c445c44545a3c9",
+    "archives/unrelated-machines/state/计算/共同大边补全双原程序与三分之一版本边界--计算.md": "99028c3e98b60e1a6b5a4ea94ef0025df85b83c1467f8e632b26aebffe74051f",
+    "archives/unrelated-machines/state/审查/共同匹配联合槽舍入与包络配置三源审查--审查.md": "d8ad15db9cdf52d26be477052626a1afd6b0d1106982081d19b82d81e500bb47",
+    "archives/unrelated-machines/state/资源/重边必要过滤与共同补全选择的复杂度边界--资源.md": "4d04cfe33635c350c6f74c9998df01ee6f1f8bc0b6d362bb3b1ebc89b0ab1317",
+    "archives/unrelated-machines/state/资源/单邻域配额枚举的自由根需求与模型边界--资源.md": "9ae7519e4e77a8a180dbef4617f1fd9d9fe4712006a83c5a169166c6f5b060e4"
+  },
+  "review_digest": "863ec5bb01ccffa140144aba6bb4795b54ff294de7841a87ff978b070be3b47e"
+}
