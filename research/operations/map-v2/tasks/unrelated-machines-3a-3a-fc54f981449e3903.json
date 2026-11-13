@@ -119,14 +119,37 @@
       "budget_status": "reading-scope-expanded-reestimate"
     }
   },
-  "state": "claimed",
+  "state": "done",
   "owner": "Boss5",
-  "request_id": "4b8c86bc475643cab7cf68dacaa595a4",
+  "request_id": "b975fff0c06f427ea173c172dfc4831d",
   "requests": {
     "81a0648c3de14140a1ae6370812f33c4": "plan",
     "de2bdb60df5c43bf9ed2992d31867be8": "plan",
     "2ac8263eb359435ab33a66b36b2c7772": "claim",
     "96e2c2d796c24fe5ba450a7011c894a8": "read-add",
-    "4b8c86bc475643cab7cf68dacaa595a4": "plan"
+    "4b8c86bc475643cab7cf68dacaa595a4": "plan",
+    "b975fff0c06f427ea173c172dfc4831d": "done"
+  },
+  "edge_paths": {
+    "blmrs-resource-rounding-pays-two-value-bridge-small-maximum": "map/edges/unrelated-machines-3a-3a-fc54f981449e3903/resource-rounding-pays-small-maximum.json"
+  },
+  "receipt": {
+    "coverage": {
+      "M-e7c107d268344ca592782a71e1925647": {
+        "state": "linked",
+        "object_pin": "b07db459d993b150fd8a8d01c8cf01f689bde95a9689321d4c79bd9026d8881f",
+        "comparison_scope": "重审核心 v2、资源减最大项舍入 v2、作业加最大项舍入 v2、局部搜索 v3/open 和普通两值等价 v2 的完整登记陈述与相关中文章节。核同 SHA 的 BLMRS 2023 v1 PDF 的 Definitions 7/8、Proposition 9 与 Appendix A、Section 3 的 Lemma 15、Appendix D 的 Lemma 16、Appendix E 的 Theorems 21/23 与 Lemma 22；另读 §4 执行、Appendix F 的 Lemma 30 入口及普通两值的 Lemmas 12–14 与 Appendix C Lemmas 17–20。实读压缩槽严格补证、全项补基等价、外层可达反例及当前 conditional 迁移边，并独立核以下四个指定比较。",
+        "reason": "资源舍入给原基与 V−w≥V/α，且在 OPT_SC≥V 下可由秩分离求合法有理分数基，支付 Theorem 3 中 Lemma 16 的小最大值分支。作业加最大项舍入可在 p_max≤(1−1/α)T 的给定见证上达到所需 βT，但全域的二近似不能代入有限 α 的 β=2−1/α。普通两值 Theorem 2 允许同项的两种正值随玩家/机器变化；秩一只保双方共同的 restricted assignment 子域。局部搜索加核心桥的整条 7/4+ε 条件迁移已由 canonical 边 blmrs-two-value-santa-and-duality-transfer-seven-fourths-job 交付（map/edges/unrelated-machines-3a-3a-2cfc52a90592a978/two-value-santa-and-duality-transfer-job-guarantee.json）。当前 a3 v3/open 的入口、交换秩、证书和复杂度见 boss2-wave4-repair-8a7f75234096249d；外层可达已由 09e5f7fd803e7a8d 的精确反驳支付。\n\n冻结 Appendix E Lemma 22 第一部分的中间值分支 u<V/α≤w 使用规范 ∞/1 oracle，合同只给整数 b>0 的“输出值≥b，或正确证明无值≥γb 的解”。若目标系数为 α 而后端系数为 γ≤α，写 h=V/u。原 YES 只保证规范值≥ceil(h)；要直接保证输出可回译到原值≥V/α，需 b≥ceil(h/α)，而由 YES 保证不能合法拒绝需 γb≤ceil(h)。两式未必可同时满足。取 E={1,2}，大项值1且秩一强制给玩家1，小项值1/5且 f(S)=5 对任一非空 S，f(∅)=0。原 OPT_SC=V=1，规范最优为5。对 α=γ=4，或 0<η<1、α=4+η 且 γ=4+η/2，任意整数 b≥2 都可合法拒绝，因为 γb≥8>5；b=1 可合法输出重项给1、轻项基 (4,1)，规范最小值1，回译原最小值1/5<1/α。此例只检验 oracle 输出合同的直接调用，Theorem 4 的算法存在性仍 open。Theorem 3 的 Appendix D Lemma 16 改用 b=ceil(V/u)=5 的有限值 1 与 1/b 封顶对偶，实际 β 调度补回后逐人规范值≥1/α，无需把 b/α 向下取整；因此此缺口不进入该归约。\n\nγ<α 时，若 h≥αγ/(α−γ)，则 γ ceil(h/α)≤γh/α+γ≤h，余量在大 h 时足够，h=5 的上例在任意 0<η<1 仍存在。单独将轻秩乘 K 并保留后端重分配也不保证回译：取四人 G 与三人 D，重项为值1的 U_{3,7}，轻项值1/5，轻秩由 G 的共享容量5与 D 三个各容量5的单点块直和。原最优1（重给三位 G，其余一位 G 取共享5，各 D 取独占5；每份重基至少留一名 G，给上界1）。任意正整数 K 缩放轻秩后规范最优5K。若 γb′≤5K，因 γ≥4，后端可合法重给全部 D，轻给每位 G 至少 b′（4b′≤5K，余数补原缩放基）；保留该重分配的任一原整数回译使某个 G 最多领1份，低于 1/(4+η) 所需。若 γb′>5K，拒绝合法。这不排额外重新选择重分配的 decoder 或更强的规范后端。",
+        "edge_ids": [
+          "blmrs-resource-rounding-pays-two-value-bridge-small-maximum"
+        ]
+      }
+    },
+    "assets": [
+      {
+        "path": "map/edges/unrelated-machines-3a-3a-fc54f981449e3903/resource-rounding-pays-small-maximum.json",
+        "sha256": "77eca3182a3c71e88108bfecdf597ae3d4552530297244c33c29992a9bd0545a"
+      }
+    ]
   }
 }
