@@ -1,0 +1,57 @@
+{
+  "edge_id": "boss4-c2bacc-rounded-input-from-exact-recursion",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "CA-EXACT-PURE-SPE-ALL"
+  ],
+  "target_ids": [
+    "M-07e789541b6b4189b0f02f31935d2cf0"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定保存seed37381021/scale1000000的49个非零整数客户类型，p15/m5；全部完整历史/重复/离轨平局。以60倍支付作精确int64运算，total_clients*60<2^63保证无溢出。",
+  "roles": {
+    "CA-EXACT-PURE-SPE-ALL": "R(k)的必要/充分递推，计数仅缓存终局集合而不限制原策略。",
+    "M-07e789541b6b4189b0f02f31935d2cf0": "指定输入的唯一根计数、W/OPT及非可信ABCDE。"
+  },
+  "explanation": "对全部11628五槽终局算60倍均分支付，深度4/3/2/1/0的3060/680/120/15/1计数前缀均按M=max_a min_(q∈R(k+e_a))60U_a(q)原递推；每层最大R大小均1。根唯一计数为(0,0,0,0,0,1,0,0,0,0,2,0,1,0,1)，W1810296。遍历全部五不同标签支持给OPT2061696（更少支持可补槽），比例约分85904/75429。ABCDE计数W1000000却不在根R，故任何完整SPE都不能实现该路径。本轮从保存整数输入重算逐字段匹配；未把圆整前的LP策略转移为新输入策略。",
+  "scope": "只认证这个p15标签/m5玩家的有限输入，不给六人反例或原LP点的完整SPE实现。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/算法/完整历史纯SPE终局全集--算法.md",
+      "sha256": "667d6f319b1f325bd32538f6b0e5a8e95c1942e2ec97cbc76d7cbaef06b36954"
+    },
+    {
+      "path": "archives/customer-attraction/state/障碍/R-373d可信扫描与p15有限实例边界--障碍.md",
+      "sha256": "4dff5e0d0b836134fa756f5d9efbf803d69749f03bf8187e5e205adb5a6371c0"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/R-373d-credible2-20261031/source/materialized_seed37381021_scale1000000.json",
+      "sha256": "90f1ae96d1755d0ea35bb5aabdc61242ecab50ee798ffc0558f5b0ca73ab34a6"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-c2bacc91436360cf/verify-local.py",
+      "sha256": "7a0f4bee040d0e21165d3a1d179d7e77050d790e5382461cd3933857f7464fc0"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-c2bacc91436360cf/replay.json",
+      "sha256": "db244fcd3fcaa491db610ec45c59b27b8da66cf8bc7eed100e200d23be3632d1"
+    }
+  ],
+  "reviewed_by": "Boss4",
+  "review_note": "当前17输入pin已由research show逐个核同。连续实读范围、可逆证书视图及未付义务见reading-ledger.json；逐式核对本边方向和实际结论，有限重放不提升为一般结论。",
+  "whole_result": "精确全集递推在指定输入上证明M-07…整条有限陈述：唯一根计数、W1810296、OPT2061696、OPT/W85904/75429及ABCDE不为SPE终局。方向为一般递推→固定输入实例。",
+  "endpoint_pins": {
+    "CA-EXACT-PURE-SPE-ALL": "aaa77e1f9a928bc25a315e66e18f424418e64643ec3fdb8717cbc3adc6310056",
+    "M-07e789541b6b4189b0f02f31935d2cf0": "0165ca28dbcb25925cd4b8df1ff1ec1094b687d58123ffc971db06443c27a14d"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/算法/完整历史纯SPE终局全集--算法.md": "667d6f319b1f325bd32538f6b0e5a8e95c1942e2ec97cbc76d7cbaef06b36954",
+    "archives/customer-attraction/state/障碍/R-373d可信扫描与p15有限实例边界--障碍.md": "4dff5e0d0b836134fa756f5d9efbf803d69749f03bf8187e5e205adb5a6371c0",
+    "archives/customer-attraction/tools/evidence/R-373d-credible2-20261031/source/materialized_seed37381021_scale1000000.json": "90f1ae96d1755d0ea35bb5aabdc61242ecab50ee798ffc0558f5b0ca73ab34a6",
+    "map/edges/customer-attraction-3a-3a-c2bacc91436360cf/verify-local.py": "7a0f4bee040d0e21165d3a1d179d7e77050d790e5382461cd3933857f7464fc0",
+    "map/edges/customer-attraction-3a-3a-c2bacc91436360cf/replay.json": "db244fcd3fcaa491db610ec45c59b27b8da66cf8bc7eed100e200d23be3632d1"
+  },
+  "review_digest": "1969c3c49fb52735fd3cd614c0f28f1c3e2222938d622e3d753e27cdbecae42c"
+}

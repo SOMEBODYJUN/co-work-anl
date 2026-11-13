@@ -1,0 +1,72 @@
+{
+  "edge_id": "ordered-middle-jp-specializes-source3-nine-weights-and-fixed-point-cuts",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/ordered-middle-safe-joint-tail-projection"
+  ],
+  "target_ids": [
+    "M-5b02de002bba4ae89f2d3239f8239eb0"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "与源及目标相同的有限单位客户、有限非空共同标签目录、六名单位提供者均分模型；固定任意完整有序历史纯SPE σ。旧R必须是所列B-off、C-diag或C-off中同一σ的合法旧末回复；返回实际第三位历史强制T=R后的P,Q,Z也取同一σ的真实有序后继。K为全目录最大主题大小。保存负余量只针对SHA256 480f7a96c21bad34f01192f179306d2da05f84ae47dfd0c36c1cd79acd9c6a27的28原子点及绑定两套参数，不假设该点有SPE实现或旧1146行已重新认证。",
+  "roles": {
+    "customer-attraction/ordered-middle-safe-joint-tail-projection": "提供任意非负预算权的(JP)：源IC、真实中间SAFE、每个真尾的容量和实际前缀安全报价先按同一有序尾会员合账，再逐客户取尾态最小值。",
+    "M-5b02de002bba4ae89f2d3239f8239eb0": "以j=3的指定九权得到普遍S3；同JP的两份归一化有理参数经绑定28点的全部840个有名B-off索引精确评价，得到目标所陈述的两份固定点负余量。"
+  },
+  "explanation": "从一般(JP)取j=3、k=4，固定每个合法旧R后令T=R、Y1=P、Y2=Q、Y3=Z，旧背景b=a1+a2、实际末价背景ell=a1+...+a5、D=b+t+p+q+z。旧Ti、Ci、Yj均为合法目录标签；索引i,j不是玩家序号，重复/别名不改变其合法性。\n\n取源IC权285；P容量5、实际末位报价15；Q容量1、实际第三位安全报价96；Z实际第三位安全报价120；新第五位Q查旧Ci的SAFE权15；真末位Z分别查旧Ti、Ci、Yj的IC各10。九个非零参数全部非负，共同左费用是(285+96+120)u3+15u6+(5+1)K=501u3+15u6+6K。中间SAFE的报价分母保留b+t+p+2，末位IC的报价分母是b+t+p+q+1；不能用不同尾身份分别取极值。右端的真尾收益扣款合为−15q/D−30z/D，因此一般JP的单客户右端恰为G=(285t−15q−30z)/D+5p+q+15p/(ell+1)+(96q+120z)/(b+4)+15ci/(b+t+p+2)+10(ti+ci+yj)/(b+t+p+q+1)。逐客户枚举同一(p,q,z)八态即得S3。所有零分子项定义为0，D=0时t=p=q=z=0；此边没有删除实际未覆盖而回复覆盖的客户。每个旧回复独立合法，故可对30个B-off、6个C-diag或30个C-off有名索引求和，仍各保R身份。\n\nwith_middle保存参数λ=1，逐权乘285正好得到上段九权，故其八态值为G/285，归一化单查询费用为(167/95)u3+(1/19)u6+(2/95)K。terminal_only同样是JP合法特化：P容量与末价各1/27、Q容量与末价各1/27、Z第三位安全报价4/9、Z查询Ti的真末IC1/9，单查询费用为(13/9)u3+(2/27)u6+(2/27)K。两套权都在[0,32]，不需发现LP的精确最优性。\n\n对绑定点按16hist的八桶词展开六个有名索引，从完整R数组查B-off会员t，保28正有理原子质量。独立Fraction核逐套连续消费840项的全部atom/i/j、mass、8个values和minimum，重算各自6720尾值，再对30查询费用和加权最小值求和。两套完整lhs/rhs/slack与冻结审计及原参数文件逐字段相等；with_middle全部尾值另核G/285。精确差分别为−146129672243900981503240227398821917117622347435764203855123728165527/741678972113404627610324116306308868707026457568030208693863033109724及−66959999369870652474848551113695844074460002320808550131148702565955/351321618369507455183837739302988411492802006216435362012882489367764，均严格负。报告另保逐原子精确合计，并对8192个全布尔局部配置核九行展开身份。44个保存配置保留未参与这些权公式的Bi字段，不能把44配置数当作840客户。\n\n因此JP确实推出目标整条陈述：普遍S3合法性和一个固定点的两套有理负评价。负号排除该绑定边缘/标量被所述真实历史同时实现；没有由此认证旧1146必要行的可行性、点最优性或SPE，也没有由两负数大小推出行锥严格包含、全域主权、六人half或新的福利因子。",
+  "scope": "一般JP到第三位源指定九权及两份保存参数的精确特化。普遍S3对每份六人完整纯SPE及每个所列合法旧回复成立；两个负差仅是绑定28原子点上的有限评价。",
+  "whole_result": "从一般真实中间SAFE联合投影(JP)特化，得到目标的完整结论：对任意所列合法旧R，501u3+15u6+6K≥Σx min_(p,q,z) G；对绑定28原子点的30个有名B-off查询，with_middle和terminal_only两套合法有理权的归一化左减右分别精确等于正文所列两个严格负长分数。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/真实中间玩家安全行的联合尾会员投影--引理.md",
+      "sha256": "7b94f6368c3ae619b625efc44acdcedb66fabdbcc4c51b22b0cefe1623cb89cb"
+    },
+    {
+      "path": "archives/customer-attraction/state/资源/再查询二十八共同原子的版本与分离证据--资源.md",
+      "sha256": "d5372f295c8dc722f5cc5f09ad713d413a459108e6a9ab33d39dbcca8c1fcc72"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/middle-safe-and-zz-resume-primary/saved-cuts-audit.json",
+      "sha256": "9fb2ff3ba8d32a56b54779b699e0ed879ad4a2caa36745a77fe6bf73a2cdc7c9"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/middle-safe-and-zz-resume-primary/dependencies/research/workspaces/customer-attraction/R-a241704002304c95bca9ef95d516b61f/solo_six/source_requery_exact.json",
+      "sha256": "480f7a96c21bad34f01192f179306d2da05f84ae47dfd0c36c1cd79acd9c6a27"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/middle-safe-and-zz-resume-primary/original/research/workspaces/customer-attraction/R-68a6ffab8681474aa2228b770a56e263/attack/source_middle/cut_source3_B-off.json",
+      "sha256": "1e6fd7ace44de69e5ed07a75234b872cad19716d816bb76c7ba091507ffb71fb"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-35bde0c34c0bfe67/check-saved-values.py",
+      "sha256": "481d4b96b4c8e8c8ff185d2501ec186475d5b77059cee4bf01fbdc62664a0542"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-35bde0c34c0bfe67/exact-review.json",
+      "sha256": "fad37cf7a2e408660b87707185a5b700ec5c394b657e5bcd25c73ecd30bdb630"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-35bde0c34c0bfe67/reading-review.md",
+      "sha256": "8b37d49ecf66dc5b8125916f1f3e07105e3530719bb82b480a2c4d623310d1f3"
+    }
+  ],
+  "reviewed_by": "Boss4",
+  "review_note": "实读完整模型、核心/一般JP共同正文和28点版本资源；按JSON结构核全部证书term字段，并从绑定点和参数独立重建两套共1680项/13440个有理尾值、全部lhs/rhs/slack及8192个原始九行展开。未重跑发现LP或认证旧1146行；保真实有序后继、共享尾身份、K费用、固定点与全称结果的量词边界。",
+  "endpoint_pins": {
+    "M-5b02de002bba4ae89f2d3239f8239eb0": "223807a291dab7a8115bbde1670dea35b03c8dae3752e9746ea993b8870f8a85",
+    "customer-attraction/ordered-middle-safe-joint-tail-projection": "9cae23cb079dc6b0187fecadda8e50e652abef1decd90757f1d462e9a5f3ec41"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/真实中间玩家安全行的联合尾会员投影--引理.md": "7b94f6368c3ae619b625efc44acdcedb66fabdbcc4c51b22b0cefe1623cb89cb",
+    "archives/customer-attraction/state/资源/再查询二十八共同原子的版本与分离证据--资源.md": "d5372f295c8dc722f5cc5f09ad713d413a459108e6a9ab33d39dbcca8c1fcc72",
+    "archives/customer-attraction/tools/evidence/middle-safe-and-zz-resume-primary/saved-cuts-audit.json": "9fb2ff3ba8d32a56b54779b699e0ed879ad4a2caa36745a77fe6bf73a2cdc7c9",
+    "archives/customer-attraction/tools/evidence/middle-safe-and-zz-resume-primary/dependencies/research/workspaces/customer-attraction/R-a241704002304c95bca9ef95d516b61f/solo_six/source_requery_exact.json": "480f7a96c21bad34f01192f179306d2da05f84ae47dfd0c36c1cd79acd9c6a27",
+    "archives/customer-attraction/tools/evidence/middle-safe-and-zz-resume-primary/original/research/workspaces/customer-attraction/R-68a6ffab8681474aa2228b770a56e263/attack/source_middle/cut_source3_B-off.json": "1e6fd7ace44de69e5ed07a75234b872cad19716d816bb76c7ba091507ffb71fb",
+    "map/edges/customer-attraction-3a-3a-35bde0c34c0bfe67/check-saved-values.py": "481d4b96b4c8e8c8ff185d2501ec186475d5b77059cee4bf01fbdc62664a0542",
+    "map/edges/customer-attraction-3a-3a-35bde0c34c0bfe67/exact-review.json": "fad37cf7a2e408660b87707185a5b700ec5c394b657e5bcd25c73ecd30bdb630",
+    "map/edges/customer-attraction-3a-3a-35bde0c34c0bfe67/reading-review.md": "8b37d49ecf66dc5b8125916f1f3e07105e3530719bb82b480a2c4d623310d1f3"
+  },
+  "review_digest": "651890bee14a14d7e3b28d255e85d497e8bea8eaeb3c358e87029af34f15fbbe"
+}

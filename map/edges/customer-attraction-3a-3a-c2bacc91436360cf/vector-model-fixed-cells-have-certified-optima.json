@@ -1,0 +1,62 @@
+{
+  "edge_id": "boss4-c2bacc-vector-model-fixed-cells-have-certified-optima",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "cag-actual-player-normalized-full-tree-utility-vectors"
+  ],
+  "target_ids": [
+    "M-4fa458735f4a4ec4b9f59dfe0c372cb5"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定编号0…13完整动作图/选定J/实际位置j；Γ按该图全部真实后继IC去零去重并Fraction字典序排列，n为根实际j支付，c=cover(J)−Wroot。",
+  "roles": {
+    "cag-actual-player-normalized-full-tree-utility-vectors": "精确全树向量表示、uj>0归一及固定全部二元动作后的投影。",
+    "M-4fa458735f4a4ec4b9f59dfe0c372cb5": "14固定图/支持的匹配有理primal/dual，不是联合模型上界。"
+  },
+  "explanation": "固定动作后沿选中边消去全玩家向量，全部当前IC恰Γr≥0；uj=1恰nr=1。因此该固定单元投影恰r≥0,Γr≥0,nr=1。完整读796动作、14组μ/n/c/primal和全部坐标余项；本轮复用既有标准库Fraction verifier定义，重构796节点3919比较及行序hash。对每份μ≥0和beta n−Γᵀμ−c≥0给cr≤beta，归一primal可行取等，故β依次(0,0,0,1,2,2,2,2,2,2,0,0,1,1)。m4/j0两点公因子整数化后uj1/4只是尺度变化。B10商只保另构策略的覆盖路径，不能保持原alias固定图、恰p不同覆盖或该同图达到性。",
+  "scope": "仅固定14二元单元及各选定J；不穷尽自由联合模型，固定图也不能只靠自由模型两支持轨道替代所有J。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/等价/实际玩家归一的全树效用向量表示--等价.md",
+      "sha256": "0bbe98c6b29d3b3871cae92122a688ea6da393c85c605d4df0cb30f4e7a32b18"
+    },
+    {
+      "path": "archives/customer-attraction/state/计算/自由终局逐人归一模型的候选与对偶复核--计算.md",
+      "sha256": "e856896a7977383f64848ebf7ef09dff6a235ebc989ea9a423917f09cebeb854"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/full-tree-milp-candidate-audits-primary/replay-audit/replayed-exact-duals.json",
+      "sha256": "49b95f63793ad832b60fd79a78169e29982718708dba48dd31a75f07879ebcf9"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/full-tree-milp-candidate-audits-primary/replay-audit/exact_candidate_audit.json",
+      "sha256": "2c97695a7167f7ae10bcd8d96e4721c21e9a1428d39e832e74d43851abb7343d"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-c2bacc91436360cf/verify-local.py",
+      "sha256": "7a0f4bee040d0e21165d3a1d179d7e77050d790e5382461cd3933857f7464fc0"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-c2bacc91436360cf/replay.json",
+      "sha256": "db244fcd3fcaa491db610ec45c59b27b8da66cf8bc7eed100e200d23be3632d1"
+    }
+  ],
+  "reviewed_by": "Boss4",
+  "review_note": "当前17输入pin已由research show逐个核同。连续实读范围、可逆证书视图及未付义务见reading-ledger.json；逐式核对本边方向和实际结论，有限重放不提升为一般结论。",
+  "whole_result": "精确向量模型固定14动作单元后，通过完整匹配有理证书得到M-4fa…整条固定锥精确最优家族；不扩成自由MILP上界。",
+  "endpoint_pins": {
+    "M-4fa458735f4a4ec4b9f59dfe0c372cb5": "12915a12a17fefcc56c6ce0e841034b034aebccaf586242a2f0c2a3e31e2d323",
+    "cag-actual-player-normalized-full-tree-utility-vectors": "7d7670550b30854ead45c6a5a56e3ea9c3310cdde8ceb25e7ac5742f9d08ab34"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/等价/实际玩家归一的全树效用向量表示--等价.md": "0bbe98c6b29d3b3871cae92122a688ea6da393c85c605d4df0cb30f4e7a32b18",
+    "archives/customer-attraction/state/计算/自由终局逐人归一模型的候选与对偶复核--计算.md": "e856896a7977383f64848ebf7ef09dff6a235ebc989ea9a423917f09cebeb854",
+    "archives/customer-attraction/tools/evidence/full-tree-milp-candidate-audits-primary/replay-audit/replayed-exact-duals.json": "49b95f63793ad832b60fd79a78169e29982718708dba48dd31a75f07879ebcf9",
+    "archives/customer-attraction/tools/evidence/full-tree-milp-candidate-audits-primary/replay-audit/exact_candidate_audit.json": "2c97695a7167f7ae10bcd8d96e4721c21e9a1428d39e832e74d43851abb7343d",
+    "map/edges/customer-attraction-3a-3a-c2bacc91436360cf/verify-local.py": "7a0f4bee040d0e21165d3a1d179d7e77050d790e5382461cd3933857f7464fc0",
+    "map/edges/customer-attraction-3a-3a-c2bacc91436360cf/replay.json": "db244fcd3fcaa491db610ec45c59b27b8da66cf8bc7eed100e200d23be3632d1"
+  },
+  "review_digest": "d4e54a42b9ad3bbb145f1338b7e16d7cf9eef7ab9f3c754a3c711e9999cf7da4"
+}
