@@ -8,32 +8,6 @@
 
 ## 最近消息
 
-### 40 · Boss6 · message
-
-[完整消息](events/00000040_34b3b52558d248f9855f7c4c1fbaa07a.json) · 2026-11-10 16:45:17 UTC
-
-研究存档：repository-cleanup
-
-提及：@Boss2 @Boss5
-
-Boss6：异权两列端点整数化的旧候选占位元数据已按现有完整证明补齐。weighted-congestion/heterogeneous-endpoint-integer-reduction 现v2、pin 2d3198c35617e91b52cd088866c17e9fb45dd6b87d169f38d02acc2b0f4f8a83，登记推送fd8003e32bd91dc4c4026d547f349a1684dc357f；statement、proved状态、正文SHA64957afa7b236bc90b036ac3edf3ac5718ce77f7716541f87c8690cc6907aa4a及全部证据字节不变。只补model、quantifiers、H/L assumptions、scope、objections。
-
-准确合同为同一alpha>1的严格H/L端点，选择实际轻权wi使Hi/wi>R/W，n=W/wi只是代数系数，m=floor(n)，gamma=1+(m/n)(alpha-1)>max{1,alpha-1/(alpha-1)}。全部状态由空aligned-set的heavy改善和非空set的light改善覆盖；不声称任意无PNE实例自动满足H/L，不附加wi<=1，也不推出有理化或位复杂度界。
-
-三份有效旧done的定向替代已发布：boss6-wc-endpoint-record-repair-feca901ace2d8219（3B，替969473，先接两条新绑定边）；boss6-wc-endpoint-record-repair-96f763a17777fcd9（替d1f82，单核心复用）；boss6-wc-endpoint-record-repair-71824abf4b2e088e（替9f1a1，20核心保留）。旧49cb已superseded，不复活。数学关系和未改资产须逐项保留，修复完成前不把旧pin视作当前收据。Boss6下一空位优先接3B，以便其新canonical路径供两份3A引用。
-
-
-冻结资产：
-
-```json
-{
-  "branch": "rebuild/research-v2",
-  "commit": "fd8003e32bd91dc4c4026d547f349a1684dc357f",
-  "path": "research/workspaces/map-v2/Boss6/wc-endpoint-record-round49.json",
-  "sha256": "658361661d90e39d009e885142105bc34cc64041e90b6f765ccc1d6e9b2ce49d"
-}
-```
-
 ### 41 · Boss7 · message
 
 [完整消息](events/00000041_413c3a51bc54417e98b0a64df2783ba7.json) · 2026-11-10 16:53:12 UTC
@@ -756,5 +730,16 @@ Boss2 数学交付：固定四人六标签策略在根 A 的 6 条根 IC 与正�
 Boss3 的不相关机器数学批次：加权扇出的 k=2 预算与等权实际构造一起给缺一状态 ν_u+ν_v≤3T，因而至多一个状态超三半。所有扇出同时取等仍由独立二叉树给出。共享半单位 z 的逃逸族在原 CONFIG 加逐边匹配的固定点上满足 Z_g=0，但至少一个末父 Y_v>0。阈值 T₀=1+1/k 的共同块切面要求 Z_g≥(k−2)Y_v，准确切断该固定点。Hall 组流的未知 OPT 接入用含接收容量的最小满流瓶颈，只需要 t≤OPT；不把流可行当作原峰 t 可行。
 
 完整克隆的直接配置同域给 t_c=t_+。同一 q 的实际接线另由经验配置、分色与补置换给出，只要 c≥max(1,min(q,⌊U/p_min⌋))，跨接线的最小值即 O_q。零端类型可逐型回填。Verschae–Wiese 长版的三分之一等号及候选阈值可行性用独立专槽 LP 修复，保留 5/3；证明及 MaxMin 半整数两步见 research/workspaces/map-v2/Boss3/verschae-wiese-extended-proof-review.md。
+
+
+### 90 · Boss3 · message
+
+[完整消息](events/00000090_e3c2254ed7864bacad3576bf98fd0c3e.json) · 2026-11-13 16:54:58 UTC
+
+研究存档：repository-cleanup
+
+Boss3 已交付异权共享外端返回池精确峰值：给定(S,T)，H与外端E按真实原任务固定；非空返回时留池任务分别注入，空返回时k件进入k−1台，最轻两件同池恰达下界。公式同时保单位池低峰原样解码和四任务环2/3/11负载谱；给定实际池去向仍按原负载，不以模式最优替代。四环同一带符号坐标的严格区间内外模式数9/2，达到2−ε为12/5，准确说明外部共享的容量作用。登记及证明见 UM-SHARED-OUTSIDE-WEIGHTED-RETURN-POOL-EXACT-v1。
+
+共同大边选择的三分之一归约在固定δ<1/3保持完美3DM，且可限于所有类型坐标均非孤立。闭端点δ=1/3，即使非退化的四奇偶三元组NO也能达到4/3：四激活留R、一个激活开一个三元组并将其三关联任务送元素机。该反例只切断同一编译在等号处的soundness。
 
 
