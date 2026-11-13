@@ -1,0 +1,47 @@
+{
+  "edge_id": "cag-fresh-slot-zero-loss-to-optimal-actual-reserve-e8f9638e",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-e9b27ea7513440d796a02e92d254d714"
+  ],
+  "target_ids": [
+    "optimal-cover-fresh-self-reserve-budget"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "任意合法实际m槽叶B及任一在所有覆盖最优m槽元组中共同最小化fresh费用的T；使用零净损失门的全替换时要求W=OPT_m。该子域无需SPE。",
+  "roles": {
+    "M-e9b27ea7513440d796a02e92d254d714": "对全索引替换的零净覆盖损失给费用比较",
+    "optimal-cover-fresh-self-reserve-budget": "在actual本身覆盖最优的子域得到强于S?的预算"
+  },
+  "explanation": "令I=J=[m]，把所有T槽换成B槽。净覆盖损失为OPT_m−W；当其为零，GATE给K0≤Σ_j g_c(B_j)=Σ_(c_x>0)c_x/(1+c_x)=W−R0≤W+R0。重复索引及空主题可保留；零客户时各量为零。若实际叶不是覆盖最优，则全替换的净损失严格为正。对任意索引块，GATE的逆否给费用正超额迫使正净损失，不给单位损失价格。固定行冻结min-Q的COPY退款门量化另一选择域。",
+  "scope": "对所有W=OPT_m的合法实际叶成立的子域贡献；正净损失替换以及一般完整SPE预算仍须另付。",
+  "evidence": [
+    {
+      "path": "map/edges/boss2-wave23-fresh-repair-3457620624dcf240/review.md",
+      "sha256": "061c9ad4b11610ce07224581ec01a59a800482e5fe7eaa18b8021ae2c28cdf0e",
+      "section": "零净损失门和正损失的边界"
+    },
+    {
+      "path": "archives/customer-attraction/state/想法/最优覆盖查询的自留份额预算--想法.md",
+      "sha256": "32d2e88606a5ea2d831e3bef4972cbcd586f0bac26799aa8f570e9f133a5b678",
+      "section": "最优替换给出的门只覆盖零净损失"
+    }
+  ],
+  "reviewed_by": "Boss3 / fresh_3457",
+  "review_note": "对读GATE v2、fresh预算v3和旧冻结门，核等势索引、共同极小性、实际报价减退款的方向和全替换损失。",
+  "contribution": {
+    "result": "actual覆盖已最优时，K0≤W−R0，所以原K0≤W+R0成立。",
+    "remaining": "W<OPT_m时全替换净损失OPT_m−W>0。尚无由此零损失门给出的正损失付款；一般含自留预算保持开放。"
+  },
+  "endpoint_pins": {
+    "M-e9b27ea7513440d796a02e92d254d714": "fb8846e2db2fa5098ea76293425d96445a5504a2de7f804ffa7182df9c02c888",
+    "optimal-cover-fresh-self-reserve-budget": "c4711fd97240446ea1aaecb377a4de5ed484828e70a988567f7d4b8f71977401"
+  },
+  "evidence_pins": {
+    "map/edges/boss2-wave23-fresh-repair-3457620624dcf240/review.md": "061c9ad4b11610ce07224581ec01a59a800482e5fe7eaa18b8021ae2c28cdf0e",
+    "archives/customer-attraction/state/想法/最优覆盖查询的自留份额预算--想法.md": "32d2e88606a5ea2d831e3bef4972cbcd586f0bac26799aa8f570e9f133a5b678"
+  },
+  "review_digest": "56c257cd9da0b94459369ad13cf3655a82471fb6c2dae165d73d6a4da7ab21e2"
+}

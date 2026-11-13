@@ -1,0 +1,61 @@
+{
+  "edge_id": "cag-cb87d-insurer-and-cartesian-fresh-equivalence",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/multi-theme-independent-insurer-three-regret-repair-and-half-equivalence",
+    "cartesian-optimal-fresh-defect-and-three-regret-repair"
+  ],
+  "target_ids": [
+    "M-b3fae7777cce4dc6969d5de4ba5b4c3b"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "每个固定m≥2、全部有限单位客户标签目录及全部相应完整计划。fresh量定义g_c(T)=Σ_(x∈T)1/(1+c_x)、R0=Σ_(c_x>0)1/(1+c_x)、K0为覆盖达到OPT_m的全部m元组中fresh费用最小者，Df=K0−W−R0；R0不是合法背景剩余总利润。客户不交、联合目录含全部标签对，比较允许重复，根修复模式固定，全部有理块与旧客户共同清分母。 每个完整计划使用同一策略在不同根历史后的真实续局；覆盖最优必须用恰m槽。",
+  "roles": {
+    "customer-attraction/multi-theme-independent-insurer-three-regret-repair-and-half-equivalence": "提供保旧actual投影的完整纯SPE修复和保险实际负载X一次、Y m−1次；其动态可信性承重。",
+    "cartesian-optimal-fresh-defect-and-three-regret-repair": "在任意联合actual元组上使OPT/K0/W/fresh-R0/Df按坐标精确相加；min-fresh最优元组的任意合法配对承重。",
+    "M-b3fae7777cce4dc6969d5de4ba5b4c3b": "所得所有完整SPE的fresh预算与所有正深度SPE计划的三倍根遗憾fresh界两个普遍命题的等价。"
+  },
+  "explanation": "保险坐标actual为X,Y^(m−1)，故W_ins=(m+1)s，fresh-R0_ins=s+(m−1)s/m=(2−1/m)s。恰m个非空不交块须各取一次才能以m槽覆盖达到OPT，g(X)=s、g(Y)=(1−1/m)s、每个g(Z)=s，得K0_ins=(m−1/m)s、Df_ins=−3s。Cartesian源证明联合覆盖最优当且仅当两投影各最优，并可把两个min-fresh最优m元组任意按位置配对，所以K0及Df确实相加，无需联合策略坐标独立或均衡；缺边目录不能直接套用。与完整动态修复共同得Df_new=Df_old−3s。令F_m为全部实例每份完整SPE都有Df≤0，RF_m为全部正深度全SPE完整计划都有Df≤3Δ。若F_m成立，Δ>0取s=Δ全实例复制L，所得完整SPE给0≥Df_new=L(Df_old−3Δ)；Δ0直接用τ本身。若RF_m成立，任一完整SPE的Δ0立即得F_m。两个源共同使用，不能拆为各自单独足够。 新登记证据中的两人AB族只推翻K0≤W，十三人ENT1/SAIC只推翻m max_T g_c(T)≤W+R0；它们的带自留预算均通过。RES逐计划给D_f≥OPT_m−2W，故fresh预算可单向支付half及相应的3Δ根界。",
+  "scope": "完整证明固定m的fresh/RF等价。静态相加允许任意联合实际元组，动态修复要求每个联合根之后独立且固定的模式。带自留的普遍fresh预算仍开放；同减3s保持两个缺陷之间的差，已知单向蕴含由RES支付。",
+  "whole_result": "每个固定m≥2，普遍命题“所有有限单位客户共同标签目录实例每份完整纯SPE的Df=K0−W−R0≤0”当且仅当“所有有限实例每份全正深度为SPE的完整计划τ满足Df(τ)≤3Δ(τ)”。保险R0_ins=(2−1/m)s、K0_ins=(m−1/m)s、Df_ins=−3s，与完整Cartesian相加给Df_new=Df_old−3s；Δ>0取s=Δ并整体清分母，Δ0直接处理。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/笛卡尔目录的最优查询缺陷与三倍根修复--引理.md",
+      "sha256": "d6b5c15a3f91fa7bde0f99502988127772fea3369e1519195cc86978b9e9bcf2"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/多主题独立保险的三倍根修复与半覆盖等价--定理.md",
+      "sha256": "38c7925347ed877cc81eee372fa78b57ac7db566cb4860c728c4bdb1fbff8a1e"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+    },
+    {
+      "path": "archives/customer-attraction/state/想法/最优覆盖查询的自留份额预算--想法.md",
+      "sha256": "32d2e88606a5ea2d831e3bef4972cbcd586f0bac26799aa8f570e9f133a5b678"
+    },
+    {
+      "path": "map/edges/boss2-wave23-fresh-repair-54880dab1fbd01e4/review.md",
+      "sha256": "906e42db398a4e9132201a1207de9e8663cc78d016b7772f39c454c002add253",
+      "section": "独立保险与fresh根遗憾等价"
+    }
+  ],
+  "reviewed_by": "Boss3 / fresh_5488",
+  "review_note": "实读当前笛卡尔相加、独立保险、共同标签模型、自留预算全文及两种已知失败的承重段；重核正深度完整IC、根标签真实后继、恰m槽共同最小、整体清分母和Δ=0。Fraction核查含空标签、同覆盖异标签、m=1静态加法、m=2无Z和有Z永久退出；一般范围由解析证明承担。",
+  "endpoint_pins": {
+    "M-b3fae7777cce4dc6969d5de4ba5b4c3b": "7a36f05c3b8f2de42490cbfc9e6ac8b5882855bb0e09f5f0dfdf6919ed56203f",
+    "cartesian-optimal-fresh-defect-and-three-regret-repair": "6887bcc030aa47a075f38022789ff38b2b13e37492a2025b3ad9a9da1176912e",
+    "customer-attraction/multi-theme-independent-insurer-three-regret-repair-and-half-equivalence": "5c7b1b9fc970b3926c77e773d0fb9dc3cc5f518225578e8d85b1596dc67bdb05"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/笛卡尔目录的最优查询缺陷与三倍根修复--引理.md": "d6b5c15a3f91fa7bde0f99502988127772fea3369e1519195cc86978b9e9bcf2",
+    "archives/customer-attraction/state/定理/多主题独立保险的三倍根修复与半覆盖等价--定理.md": "38c7925347ed877cc81eee372fa78b57ac7db566cb4860c728c4bdb1fbff8a1e",
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+    "archives/customer-attraction/state/想法/最优覆盖查询的自留份额预算--想法.md": "32d2e88606a5ea2d831e3bef4972cbcd586f0bac26799aa8f570e9f133a5b678",
+    "map/edges/boss2-wave23-fresh-repair-54880dab1fbd01e4/review.md": "906e42db398a4e9132201a1207de9e8663cc78d016b7772f39c454c002add253"
+  },
+  "review_digest": "17eb20f311b64e67a50644f2d52caac1911fe36e68e4cd9cd35ac3808f4f852b"
+}
