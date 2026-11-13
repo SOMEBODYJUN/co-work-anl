@@ -4501,8 +4501,8 @@
     "map/edges/weighted-model-errata-repair-ce098c336867ec28/frontier-ledger-locates-multicolumn-contract.json"
   ],
   "baseline": {
-    "path": "research/registration/baseline-boss2-wave22-fresh-budget.json",
-    "sha256": "76bc391c1020482e5968848747e270e53b8143951887850cc0833f77c4d2ad0d"
+    "path": "research/registration/baseline-boss3-weighted-return-pool.json",
+    "sha256": "a18142f43d2ef4af392c3443c3c835c112f9868e220e747eaafcb038e707af7e"
   },
   "materials": [
     {
@@ -58594,6 +58594,15 @@
         "customer-attraction/old-cover-payment-factor-one-sharp-actual-spe"
       ],
       "reason": "同一冻结259节点策略的全历史有理校验及可重放代码。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/共享外端的异权返回池精确峰值--定理.md",
+      "sha256": "622b412edc4661cebea5f0ba02cc7ee0bcd500ce787105ac8e29d43b6267dcfa",
+      "disposition": "objects",
+      "object_ids": [
+        "UM-SHARED-OUTSIDE-WEIGHTED-RETURN-POOL-EXACT-v1"
+      ],
+      "reason": "Boss3 已证明固定外端后异权池的完整精确模式最优值，并逐任务核与两个原合同的特化。"
     }
   ],
   "objects": [
@@ -227300,6 +227309,30 @@
         "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/current/weighted_congestion/density_padding/optional_user_density_padding.md#What-the-reduction-does-and-does-not-show",
         "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/reviews/weighted_congestion/density_padding/review.md#6",
         "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/reviews/weighted_congestion/density_padding/review.md#6"
+      ]
+    },
+    {
+      "object_id": "UM-SHARED-OUTSIDE-WEIGHTED-RETURN-POOL-EXACT-v1",
+      "version": 1,
+      "title": "共享外端的异权返回池精确峰值",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "显式不相关机加工矩阵，原任务不可拆且恰执行一次，峰为全原机负载最大值。",
+      "statement": "固定查询集合 S 和返回集合 T，所有模式可完整安排，最小峰为 max{Σ_{i∈S}a_i, max_i(1_{i∉S}+1_{i∈T}), P(T)}。T非空时 P(T)=max_{i∉T}b_i（空集为0）；T空时 P(T)=max{max_i b_i,b_(1)+b_(2)}。对给定实际分配，以该分配的实际池负载取代 P(T)。显式算法构造每个模式的完整最优原分配。",
+      "quantifiers": "每个整数 k≥2、每个合法显式二进制正有理输入，所有 S,T⊆[k]；对任意池指派另有实际负载恒等式。",
+      "assumptions": [
+        "0<a_i,b_i≤1，允许 Σa_i>1",
+        "q_i 只有 H:a_i、E_i:1；r_i 只有每台 P_j:b_i、E_i:1；共 k−1 台同资格池、机器互异，无额外任务或预载"
+      ],
+      "scope": "按返回集合拆分 0 至 k−1 件的注入与 k 件只需一对碰撞的池调度。单位池小查询和四任务异权环分别是保持原目的地的专门化。",
+      "objections": "给定实际池指派可以高于模式最小值；一般权重允许零返回时严格峰小于二，也允许模式最优值小于一。改变池机处理时长或资格须另解。",
+      "body": {
+        "path": "archives/unrelated-machines/state/定理/共享外端的异权返回池精确峰值--定理.md",
+        "sha256": "622b412edc4661cebea5f0ba02cc7ee0bcd500ce787105ac8e29d43b6267dcfa"
+      },
+      "evidence": [],
+      "sources": [
+        "archives/unrelated-machines/state/定理/共享外端的异权返回池精确峰值--定理.md"
       ]
     }
   ],
