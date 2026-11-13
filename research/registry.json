@@ -4525,8 +4525,8 @@
     "map/edges/weighted-model-errata-repair-ce098c336867ec28/frontier-ledger-locates-multicolumn-contract.json"
   ],
   "baseline": {
-    "path": "research/registration/baseline-boss3-shared-tail-minimum.json",
-    "sha256": "20c60986b809543fed9845e9ce66c32a58babaa828938a51ebece54ef3b482ff"
+    "path": "research/registration/baseline-boss3-integer-maxmin-types.json",
+    "sha256": "dfe41ebb21f8f33be87e701118153dd44d08bb5ecf01f3d83d4bc13bd1496138"
   },
   "materials": [
     {
@@ -46216,9 +46216,10 @@
         "M-1faa497ce25c4543bfcfb7d5cc38e65f",
         "M-5b62656ffc7d46148690af86a2835eeb",
         "UM-CONF-GAP-v1",
-        "UM-VW2010-THEOREM12-BACKEND-PRECHECK-v1"
+        "UM-VW2010-THEOREM12-BACKEND-PRECHECK-v1",
+        "UM-KNOWN-OPTIMAL-LARGE-TYPES-INTEGER-MAXMIN-HALF-v1"
       ],
-      "reason": "全文实读；承载本批独立数学主对象并按精确Claim分开陈述/模型/量词，成熟完整证明复用。 本批新建8个精确外文对象；ST/双树gap/格点/Theorem12分别待0094/0100/0107既有主owner接证，未复制主record。\n全文实读；承载本批独立数学主对象并按精确Claim分开陈述/模型/量词，成熟完整证明复用。 本批新建8个精确外文对象；ST/双树gap/格点/Theorem12分别待0094/0100/0107既有主owner接证，未复制主record。 本次实读确认gap与VW12的本页精确section已在canonical各自v1 evidence，现显式补入这两个既有owner；原九个owner全部保留。ST和格点仍待Boss2/0094实际接R02/R03，不放入即时owner列表。此页承载八个既有独立主body，保持objects；外路由未闭不等于全页已闭合。"
+      "reason": "全文实读；承载本批独立数学主对象并按精确Claim分开陈述/模型/量词，成熟完整证明复用。 本批新建8个精确外文对象；ST/双树gap/格点/Theorem12分别待0094/0100/0107既有主owner接证，未复制主record。\n全文实读；承载本批独立数学主对象并按精确Claim分开陈述/模型/量词，成熟完整证明复用。 本批新建8个精确外文对象；ST/双树gap/格点/Theorem12分别待0094/0100/0107既有主owner接证，未复制主record。 本次实读确认gap与VW12的本页精确section已在canonical各自v1 evidence，现显式补入这两个既有owner；原九个owner全部保留。ST和格点仍待Boss2/0094实际接R02/R03，不放入即时owner列表。此页承载八个既有独立主body，保持objects；外路由未闭不等于全页已闭合。 同一冻结声明另给Boss3原整数MaxMin分型算法作为历史范围证据。"
     },
     {
       "path": "archives/unrelated-machines/state/资源/配置松弛的局部搜索与图平衡界--资源.md",
@@ -58639,6 +58640,15 @@
         "CA-SIX-SHARED-TAIL-SEPARATE-ROW-MINIMUM-GAP-v1"
       ],
       "reason": "Boss3精确核同六行的四态交集、尖锐下界及指定权256型有限极值。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/已知最优大端分型时的整数MaxMin二近似--定理.md",
+      "sha256": "0b74f29fb952114d9b6ce938043ac2d50cdf9f4d8c8e41c1fbe9d7024b83a9be",
+      "disposition": "objects",
+      "object_ids": [
+        "UM-KNOWN-OPTIMAL-LARGE-TYPES-INTEGER-MAXMIN-HALF-v1"
+      ],
+      "reason": "Boss3独立证明了原整数MaxMin分型及已知常数实际大端合同，保原冻结论文身份。"
     }
   ],
   "objects": [
@@ -227411,6 +227421,37 @@
       "sources": [
         "archives/customer-attraction/state/引理/六人共享真两尾联合消元与分行消元的精确差--引理.md",
         "research/workspaces/map-v2/Boss3/check-shared-tail-row-minimum.py"
+      ]
+    },
+    {
+      "object_id": "UM-KNOWN-OPTIMAL-LARGE-TYPES-INTEGER-MAXMIN-HALF-v1",
+      "version": 1,
+      "title": "已知最优大端分型时的整数MaxMin二近似",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "有限显式非负二进制有理加性MaxMin；整数原分配恰分全部物品。",
+      "statement": "给定某一整数最优分配的真实大端玩家类型，至多O(log n)位类型未知，确定性总位多项式可输出整数分配，逐玩家价值至少OPT/2。只承诺存在某份最优分配至多c位玩家取得大端（c固定）也给同一保证。大端定义p_ij≥OPT/2；全局潜在大资源至多c是后者的充分条件。",
+      "quantifiers": "全部显式有理输入、同一最优分配一致的类型信息；固定c及固定O(log n)上界常数，保零OPT和闭大端点。",
+      "assumptions": [
+        "所有处理值非负，原物品不可拆",
+        "给定类型与同一份原整数最优解一致，或满足所述固定c承诺"
+      ],
+      "scope": "原问题整数二近似。联合满槽匹配、分段未知阈值搜索和任意剩余物品回填全证。",
+      "objections": "一般输入无类型信息时未给二近似；原技术报告[23]字节身份和其它定理的特殊二次运行时间仍独立。",
+      "body": {
+        "path": "archives/unrelated-machines/state/定理/已知最优大端分型时的整数MaxMin二近似--定理.md",
+        "sha256": "0b74f29fb952114d9b6ce938043ac2d50cdf9f4d8c8e41c1fbe9d7024b83a9be"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/资源/配置LP在图平衡及不相关机中的间隙--资源.md",
+          "sha256": "0fcfc44edf52bb6f1d0bf459c9847540342f55c9f4d681588f32670d1c64de26",
+          "section": "半整数与其它可解情形：Theorems 13–16"
+        }
+      ],
+      "sources": [
+        "archives/unrelated-machines/state/定理/已知最优大端分型时的整数MaxMin二近似--定理.md",
+        "archives/unrelated-machines/state/资源/配置LP在图平衡及不相关机中的间隙--资源.md"
       ]
     }
   ],
