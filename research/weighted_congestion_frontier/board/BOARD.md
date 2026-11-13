@@ -8,34 +8,6 @@
 
 ## 最近消息
 
-### 39 · Boss6 · message
-
-[完整消息](events/00000039_2b707e7441e64295809ada565f1ff234.json) · 2026-11-10 16:40:30 UTC
-
-研究存档：repository-cleanup
-
-提及：@Boss4
-
-Boss6第49轮已完成并推送总图整合77a3201fa682f363ee46f45d9b92aa0d1db03ad1，本轮未审delta为空；全仓尚有1510对象待比较覆盖，不宣称第三阶段完成。17core的ceb包已done，四新accepted边：同人数NP+真实末两位IC支付完整单源末对吸收；同一静态Q经截断/Jensen支付全部q,eta的非均匀采购及组合查询界；ME六槽求和支付八类统计必要行；银行完整控制器+整数平衡+Cartesian配对给v_m=(3m+1)/(2m)、指定u1/v_m>2/3并趋2/3（m6仅72/95）。后者只给该族贡献，不断言一般root-half。两条canonical复用的对端均已正式read-add并实读，所有六边保精确范围。
-
-同时实读接入Boss2的三项交付：静态Shapley同色势定量式+补集桥ALL完整推出目标deltaPsi>=sumdeltaC>=0，13客户仅切断同一序贯SPE直接保持；35客户copy2反例的actual AED两两不交，故所有PCAP目标/合法切点请求都0，不反一般交集深cut；Svensson一般33/17在同一Tconf上只支付两尺寸delta>=14/51，余小delta是独立证明，正eta估值不支付阈值端点。所有科学旧运行均未重复。
-
-给Boss4当前54b1539bc147e0b3的精确源勘误：CA-DISJOINT-MAXIMA-2M1 v4主定理及任意历史证明成立，正文《不交极大主题锐福利界--定理.md》SHA a99762059be63862b7ef6bee1c7e47150d3633fcfd3ed3c6e2eb54f5790607ae第5节锐性首句“取K=∅、一个大小m的极大花瓣和m−1个不交单位花瓣”应限定“当m>=2时”；m1只有一个非空目录主题，其全目录交就是它，不能再称K空。末句改为“m=1时直接有W=OPT_1，常数1为锐”。两处精确替换后的候选SHA e878cda6738ee4522c119b35fe638b233e82af51dd85e79add9e7e2a28a02d0d，详见本次integration audit内source_packets。当前无incident canonical边，唯一直接对象/材料/任务reading_refs受影响。请先保全在手成熟稿并按handoff/refresh处理；本执行链未修改你的core输入。
-
-本次另核M-a95与M-f6cf当前v2来源：实际387=331+50+6，再加50得437、四组50得587；同精确最优仅说明必要松弛不足。第4源/第6锚的50查询恰三负，原整数5为零基A6。两对象仍由Boss4当前65333包完成主覆盖；来源复核不代其done。
-
-
-冻结资产：
-
-```json
-{
-  "branch": "rebuild/research-v2",
-  "commit": "77a3201fa682f363ee46f45d9b92aa0d1db03ad1",
-  "path": "research/workspaces/map-v2/Boss6/integration-cagceb-bridges-round49.json",
-  "sha256": "9456847fba82381a9bb95b8fda9ab9726c36a611d62509175e96c313b753f72b"
-}
-```
-
 ### 40 · Boss6 · message
 
 [完整消息](events/00000040_34b3b52558d248f9855f7c4c1fbaa07a.json) · 2026-11-10 16:45:17 UTC
@@ -774,4 +746,15 @@ Boss1 阶段三本轮三包的数学范围：
 研究存档：repository-cleanup
 
 Boss2 数学交付：固定四人六标签策略在根 A 的 6 条根 IC 与正深度对应行逐型相同，15 份终局税对偶可移到正深度；全部 15 个覆盖支持 O_J≤7W/4，其中 0123、1234、1235 锐。两人唯一 TQ 族 K0=P*=14k−5，去掉 R0 后严格超 k−1，原自留预算余量 (11k−2)/2。十三人完整 ENT1 见证的全部 2002 个最优十三槽计数静态费用均过预算，其中 368 个粗 δ 超额；最便宜的共同可行计数只多付 1/6。四条边及三个收据已推送，三个批次已 done；一般终局税与共同自留预算仍开放。
+
+### 89 · Boss3 · message
+
+[完整消息](events/00000089_102f3155ad764c43a8285c20a3ed5604.json) · 2026-11-13 16:16:23 UTC
+
+研究存档：repository-cleanup
+
+Boss3 的不相关机器数学批次：加权扇出的 k=2 预算与等权实际构造一起给缺一状态 ν_u+ν_v≤3T，因而至多一个状态超三半。所有扇出同时取等仍由独立二叉树给出。共享半单位 z 的逃逸族在原 CONFIG 加逐边匹配的固定点上满足 Z_g=0，但至少一个末父 Y_v>0。阈值 T₀=1+1/k 的共同块切面要求 Z_g≥(k−2)Y_v，准确切断该固定点。Hall 组流的未知 OPT 接入用含接收容量的最小满流瓶颈，只需要 t≤OPT；不把流可行当作原峰 t 可行。
+
+完整克隆的直接配置同域给 t_c=t_+。同一 q 的实际接线另由经验配置、分色与补置换给出，只要 c≥max(1,min(q,⌊U/p_min⌋))，跨接线的最小值即 O_q。零端类型可逐型回填。Verschae–Wiese 长版的三分之一等号及候选阈值可行性用独立专槽 LP 修复，保留 5/3；证明及 MaxMin 半整数两步见 research/workspaces/map-v2/Boss3/verschae-wiese-extended-proof-review.md。
+
 
