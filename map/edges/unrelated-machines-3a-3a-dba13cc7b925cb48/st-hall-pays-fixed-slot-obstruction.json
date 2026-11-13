@@ -1,0 +1,53 @@
+{
+  "edge_id": "um-dba13-st-hall-pays-fixed-slot-obstruction",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "UM-ST-ROUND-v1"
+  ],
+  "target_ids": [
+    "UM-OPTIMAL-CONVEX-ST-SLOT-GAP-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "m≥2 相同机器、给定真实最优调度均匀凸组合 x；单位槽定义、任意小任务平局顺序、只连正交长边。",
+  "roles": {
+    "UM-ST-ROUND-v1": "Hall保证所指定单位槽图确实有完整覆盖匹配。",
+    "UM-OPTIMAL-CONVEX-ST-SLOT-GAP-v1": "给定真最优凸包点，所有固定槽输出都产生精确坏值。"
+  },
+  "explanation": "源的分数交长每列总和1、每槽容量≤1，故完整覆盖匹配确实存在。由目标族 x_ij=1/m，每机 m 个单位槽；m² 任务等于全图槽数，任意覆盖用尽每台 m 槽。大任务所在机加 m−1 个 tiny，精确峰 2m/(m+1)。此计数对平局独立。",
+  "scope": "只覆盖目标的标准单位槽可匹配与匹配值推导。槽外修复、改变 x、直接返回给定分量均不受此边约束。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/定理/有序单位槽的支撑最大件舍入--定理.md",
+      "sha256": "996b2d634889c84f766cf186d5d71d8f55679e2e993e1648f34597dbf2d354a6",
+      "section": "槽、任务匹配及逐机收费"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/固定工作局部极小与真实凸包固定槽双源审查--审查.md",
+      "sha256": "40919541fb80f3562132fb920208da26f12ed7ee03850db566e1224d87badfd6",
+      "section": "5. 精确构造与所有槽匹配的值"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/真实凸分量固定槽的规范与独立原入口--资源.md",
+      "sha256": "b86caa2c416627440975782d5d0903553150bd4f0096858af300b08b0dcf799c",
+      "section": "原矩阵、真实凸分量和所有固定槽匹配"
+    }
+  ],
+  "reviewed_by": "Boss3",
+  "review_note": "按所列冻结正文复核同一输入、方向、边界和证明义务。此边中的完整算式与见证承担推导，有限核验按原记录范围使用。",
+  "contribution": {
+    "result": "任意合法平局生成的槽图有覆盖匹配且所有覆盖匹配都恰为2m/(m+1)，此步保原任务与单槽容量。",
+    "remaining": "仍须构造 m 个真实峰1的最优分量并验证其均匀边际为 x，才得到真实最优凸包前提。"
+  },
+  "endpoint_pins": {
+    "UM-OPTIMAL-CONVEX-ST-SLOT-GAP-v1": "50a8b196d091563fd2a619297617947fc12372d93b27c7e30bcac699bd80364f",
+    "UM-ST-ROUND-v1": "8c4662c822ebd204e3b095934f8745464426df43fc2328a6bbc35063e4148ea1"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/定理/有序单位槽的支撑最大件舍入--定理.md": "996b2d634889c84f766cf186d5d71d8f55679e2e993e1648f34597dbf2d354a6",
+    "archives/unrelated-machines/state/审查/固定工作局部极小与真实凸包固定槽双源审查--审查.md": "40919541fb80f3562132fb920208da26f12ed7ee03850db566e1224d87badfd6",
+    "archives/unrelated-machines/state/资源/真实凸分量固定槽的规范与独立原入口--资源.md": "b86caa2c416627440975782d5d0903553150bd4f0096858af300b08b0dcf799c"
+  },
+  "review_digest": "5429160edbb03dd1cf6295930f406beab9ad0362ad35f72e7725d2a91d76c539"
+}

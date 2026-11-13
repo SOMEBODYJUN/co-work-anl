@@ -1,0 +1,47 @@
+{
+  "edge_id": "um-dba13-corridor-fixed-support-optimal-congestion",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "UM-DAG-ACTIVATION-CORRIDOR-GAP-v1"
+  ],
+  "target_ids": [
+    "UM-DAG-CONGESTION-FLOW-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "旧 k≥K 共同流合同、整数 K≥1、任意含根支撑 W；走廊 q≥2，r 的每分支 v_i 经 q 个 w_ij 汇于共享 x_i 再到 t_i，需求 k_r=k_w=k_x=1、k_v=q、k_t=0。",
+  "roles": {
+    "UM-DAG-ACTIVATION-CORRIDOR-GAP-v1": "提供明确共享走廊、可行激活 LP 和实际 b*=1/q。",
+    "UM-DAG-CONGESTION-FLOW-v1": "给旧共同流的非根入流帽、正低点守恒和固定支撑提树，须区分与激活边际。"
+  },
+  "explanation": "若 2≤K<q，低根需正流故某 v_i 在 W。该点为高点，必须总出≥q；所有 w_ij 与 x_i 均为低点且非根，故 v_i 的全部正出流经 w_ij 守恒汇到 x_i，迫 I(x_i)≥q>K。若 K=1，根为高点，至少使用某 v_i；其出流≥q 而每个 w_ij 入≤1，需 q 个 w_ij 都在 W。这些 w_ij 各为无条件供给至少1的高点，唯一出边都到 x_i，又迫 I(x_i)≥q>1。反向 K=q 时取一条根到终端的完整路径，沿每弧送 q：低根发 q，唯一高点 v_i 发 q，w、x 守恒，非根入均≤q。",
+  "scope": "走廊上的所有支撑 W 的旧共同流整数参数最优值，且激活 LP 的可行性不能保证旧证书有常数 K。K=q 的证书与 b*=1/q 的真实树并存。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/资源/共同拥塞的支撑搜索与非单位分叉参数--资源.md",
+      "sha256": "cb185760afd237127e3dd7505bb828bf4ad02f5a737c69cd39fccead3a404d2b",
+      "section": "需求对象、单个根任务与共同流"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/rooted-dag-home-cycle-20261030/rooted_dag_congestion_flow.md",
+      "sha256": "32bdbb8c6fe3274d2facf4e9193a194c65d70102a8ae00a7429833a039adab73",
+      "section": "5. 证书搜索还缺什么：激活边际不够"
+    }
+  ],
+  "reviewed_by": "Boss3",
+  "review_note": "按所列冻结正文复核同一输入、方向、边界和证明义务。此边中的完整算式与见证承担推导，有限核验按原记录范围使用。",
+  "contribution": {
+    "result": "走廊族 min_W K=q。激活边际可行时，固定支撑工具仍可能需要随输入增长的 K。",
+    "remaining": "该族的计算只比较证书强度。对一般 DAG 如何选好 W、精确流判定和提树锐界仍各由原对象证明承担。"
+  },
+  "endpoint_pins": {
+    "UM-DAG-ACTIVATION-CORRIDOR-GAP-v1": "98b28af56705cbdb5e85ad1aee9ceaef2e5d26dc88ab7f75ddc1fb05bd4442c0",
+    "UM-DAG-CONGESTION-FLOW-v1": "4225f45cf4dc52e20ccb9518c005ea31c7087b31e81091336cf6224d986b31b9"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/资源/共同拥塞的支撑搜索与非单位分叉参数--资源.md": "cb185760afd237127e3dd7505bb828bf4ad02f5a737c69cd39fccead3a404d2b",
+    "archives/unrelated-machines/tools/evidence/rooted-dag-home-cycle-20261030/rooted_dag_congestion_flow.md": "32bdbb8c6fe3274d2facf4e9193a194c65d70102a8ae00a7429833a039adab73"
+  },
+  "review_digest": "430122dfe394fbab17fffd36612025debea538aa1abedebbd1c0a4c82b73222c"
+}

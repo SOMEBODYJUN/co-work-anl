@@ -1,0 +1,52 @@
+{
+  "edge_id": "um-dba13-st-stays-in-minimum-work-support",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "UM-ST-ROUND-v1"
+  ],
+  "target_ids": [
+    "UM-MIN-WORK-FACE-SUPPORT-GAP-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "目标的正扰动矩阵 m≥2，T=m+1/m；给最小总处理量整面中的任意 x，按标准有序槽正交长建图。",
+  "roles": {
+    "UM-ST-ROUND-v1": "给同一正支撑的 Hall 槽匹配和完整不可拆输出。",
+    "UM-MIN-WORK-FACE-SUPPORT-GAP-v1": "该面所有点正支撑共同固定、因而槽输出不能访问便宜近优调度所需的跨机小边。"
+  },
+  "explanation": "x 属于 T-剪枝 LST，源保证一个完整匹配，且任何槽正交长都来自 x_ij>0。最小面 S=0 固定全部小任务 home；大任务任一机 m，且与 m−1 件 home 小任务共存，输出精确 2m−1。每机 m 槽而总任务仅 m²−m+1，所有覆盖都空 m−1 槽；坏值由支撑固定。",
+  "scope": "在给定最小总工作量面上使用固定正支撑，不附加用满槽假设。真实最优凸包和允许工作量增加的接口另有边界。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/定理/有序单位槽的支撑最大件舍入--定理.md",
+      "sha256": "996b2d634889c84f766cf186d5d71d8f55679e2e993e1648f34597dbf2d354a6",
+      "section": "槽、任务匹配及逐机收费"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/最小工作面正扰动的标准形与范围复核--审查.md",
+      "sha256": "d9d80421dc87caf689fa615f0bda97c57a14f3d68a8df009a098b422588f74c3",
+      "section": "槽图不必用尽，坏值来自正支撑"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/最小工作面正扰动的标准形与范围复核--审查.md",
+      "sha256": "d9d80421dc87caf689fa615f0bda97c57a14f3d68a8df009a098b422588f74c3",
+      "section": "不是最优凸包的原矩阵与整个面"
+    }
+  ],
+  "reviewed_by": "Boss3",
+  "review_note": "按所列冻结正文复核同一输入、方向、边界和证明义务。此边中的完整算式与见证承担推导，有限核验按原记录范围使用。",
+  "contribution": {
+    "result": "给定整面任一点，ST 槽匹配存在，且任何该图的全覆盖输出峰恰2m−1。",
+    "remaining": "整个最小面的表征、独立实际 OPT 下界及允许 q 件 off-home 的精确阶梯由正扰动构造另证。"
+  },
+  "endpoint_pins": {
+    "UM-MIN-WORK-FACE-SUPPORT-GAP-v1": "aa39f3ec80fbe16f0605e368accf63076d3f8a1a2aa6c707184243cb226b10fa",
+    "UM-ST-ROUND-v1": "8c4662c822ebd204e3b095934f8745464426df43fc2328a6bbc35063e4148ea1"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/定理/有序单位槽的支撑最大件舍入--定理.md": "996b2d634889c84f766cf186d5d71d8f55679e2e993e1648f34597dbf2d354a6",
+    "archives/unrelated-machines/state/审查/最小工作面正扰动的标准形与范围复核--审查.md": "d9d80421dc87caf689fa615f0bda97c57a14f3d68a8df009a098b422588f74c3"
+  },
+  "review_digest": "bc94598c8856eee4e78c70d805f554b4d9927784e3104268720541346a767aae"
+}

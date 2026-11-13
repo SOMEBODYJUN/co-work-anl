@@ -1,0 +1,49 @@
+{
+  "edge_id": "um-dba13-exit-matching-specializes-to-home-only",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "UM-SHARED-SINK-MACRO-EXIT-v1"
+  ],
+  "target_ids": [
+    "UM-SHARED-SINK-JOINT-MACRO-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "只有一个共享 sink，宏仅 homes，有限宏边严格>T/2，私有任务各唯一 home、资格仅该 home/sink 的非空子集，T≥0，0<η≤1。",
+  "roles": {
+    "UM-SHARED-SINK-MACRO-EXIT-v1": "允许真实宏退出的全局 home/exit/dummy 匹配，付真实可选 cover 和一次 sink 预算。",
+    "UM-SHARED-SINK-JOINT-MACRO-v1": "禁止所有宏退出时的共同宏匹配，保持每个 home 模式和全原任务。"
+  },
+  "explanation": "禁用全部真实 macro→exit 边后，b 枚宏都占不同 home；b>h 时无真实 T 调度，b≤h 时原扩大匹配的 b 个退出位必各由一个零费 dummy 占用。删这些配对，把其余 h−b 个 dummy 重标成原空模式点。反向任一 home-only 完美匹配用 b 个额外 dummy 补退出位即可，费用和每个真实任务归属完全相同。局部 cover 含同一个精确真实覆盖子集，强制 sink 一次计费，T 调度提供总精确成本≤T。",
+  "scope": "禁止全部宏退出时保持 HOME≤T、sink≤(1+η)T、可靠 FAIL 和按1/η、输入位长多项式。允许宏退出时 b>h 不可用作拒绝。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/审查/Hall联合组流与共享汇点宏分配双源审查--审查.md",
+      "sha256": "fcaf1b512db9bc4f622c6ac88368b47274cd09af26f03eb3e042f43270cd78cd",
+      "section": "6. 定义域和基本模式"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/Hall联合组流与共享汇点宏分配双源审查--审查.md",
+      "sha256": "fcaf1b512db9bc4f622c6ac88368b47274cd09af26f03eb3e042f43270cd78cd",
+      "section": "7. 保覆盖背包与一次全局宏匹配"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/私有组退出池共同宏任务与有界profile联合选择最终审查--审查.md",
+      "sha256": "d290afc529015c1d9cae422a705cb76e22aee2d6096be6f85e4392d3dd5353f9",
+      "section": "1.2 从真实 T 调度得到全局见证"
+    }
+  ],
+  "reviewed_by": "Boss3",
+  "review_note": "按所列冻结正文复核同一输入、方向、边界和证明义务。此边中的完整算式与见证承担推导，有限核验按原记录范围使用。",
+  "whole_result": "宏退出合同特化为原 home-only 单汇点算法的完整保证和可等价化简的匹配。",
+  "endpoint_pins": {
+    "UM-SHARED-SINK-JOINT-MACRO-v1": "715da2574599480160ee952778fd8f5919c38835ff1c48a6217a61130f4c0863",
+    "UM-SHARED-SINK-MACRO-EXIT-v1": "b7cd33c2c9444a9415dc59b7d0f4514799de14061e0cb792aa6a003224dc7c12"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/审查/Hall联合组流与共享汇点宏分配双源审查--审查.md": "fcaf1b512db9bc4f622c6ac88368b47274cd09af26f03eb3e042f43270cd78cd",
+    "archives/unrelated-machines/state/审查/私有组退出池共同宏任务与有界profile联合选择最终审查--审查.md": "d290afc529015c1d9cae422a705cb76e22aee2d6096be6f85e4392d3dd5353f9"
+  },
+  "review_digest": "ba2a046849ef06b3aa357ee680043ea700b30a6665c4073ea786a974b7aab5bc"
+}

@@ -1,0 +1,53 @@
+{
+  "edge_id": "um-dba13-geometric-palette-preserves-fixed-slot-gap",
+  "kind": "transfers",
+  "status": "accepted",
+  "source_ids": [
+    "UM-DENSE-GEOMETRIC-ALPHABET-EQUIVALENCE-v1"
+  ],
+  "target_ids": [
+    "UM-OPTIMAL-CONVEX-ST-SLOT-GAP-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "m≥4，原 n=m² 不加任务。D_geo 字母表依实际 n 生成，h=bitlength(n)，b=1+1/h。小任务取普通表值1，大任务取普通表值 B_m=ceil(b^r)，r 最小满足 b^r≥m+1。",
+  "roles": {
+    "UM-DENSE-GEOMETRIC-ALPHABET-EQUIVALENCE-v1": "提供统一依实际任务数的稠密几何字母表及有理幂、取整范围。",
+    "UM-OPTIMAL-CONVEX-ST-SLOT-GAP-v1": "提供循环分配凸分量、均匀 x 与全覆盖单位槽基数障碍的原构造。"
+  },
+  "explanation": "因 m+1≤hn，r 在表范围，m+1≤B_m<b(m+1)+1，且 B_m/(m+1)→1。轮换大任务，每份分量的大任务机只收大任务，其余机器各收 m+1 件小任务，峰 B_m，为真实 OPT（大任务给下界）。平均仍 x_ij=1/m；行排序大件优先且每行 m 槽，完整覆盖必用尽。大任务机同时收到 m−1 件小任务，峰 B_m+m−1，比值 1+(m−1)/B_m→2。独立选择字母表中的整数保持同一原机/任务和最优凸分量；此处未调用未知近似 backend。",
+  "scope": "把固定标准槽障碍迁入同一 n 的 D_geo。所述比值是固定 x 下的实际匹配输出/真实 OPT。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/等价/同任务数对数平方字母表的调度等价--等价.md",
+      "sha256": "1736e095f721c909cb200d751cd5faa98c16977d4b4ac6dc38fb9d28bcc85393",
+      "section": "字母表的大小、范围与精确生成"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/固定工作局部极小与真实凸包固定槽双源审查--审查.md",
+      "sha256": "40919541fb80f3562132fb920208da26f12ed7ee03850db566e1224d87badfd6",
+      "section": "5. 精确构造与所有槽匹配的值"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/有序单位槽的支撑最大件舍入--定理.md",
+      "sha256": "996b2d634889c84f766cf186d5d71d8f55679e2e993e1648f34597dbf2d354a6",
+      "section": "槽、任务匹配及逐机收费"
+    }
+  ],
+  "reviewed_by": "Boss3",
+  "review_note": "按所列冻结正文复核同一输入、方向、边界和证明义务。此边中的完整算式与见证承担推导，有限核验按原记录范围使用。",
+  "contribution": {
+    "result": "D_geo 也有真实最优凸组合点，全部固定单位槽覆盖匹配比值趋2。",
+    "remaining": "此迁移保留的是趋二和凸包/槽机制，原归一化族的精确 2m/(m+1) 仍由原取值 1 和 1/(m+1) 支付。"
+  },
+  "endpoint_pins": {
+    "UM-DENSE-GEOMETRIC-ALPHABET-EQUIVALENCE-v1": "34637c41b703d69c79431455bfc140561edd5a870c3a3239c186e1e92190737c",
+    "UM-OPTIMAL-CONVEX-ST-SLOT-GAP-v1": "50a8b196d091563fd2a619297617947fc12372d93b27c7e30bcac699bd80364f"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/等价/同任务数对数平方字母表的调度等价--等价.md": "1736e095f721c909cb200d751cd5faa98c16977d4b4ac6dc38fb9d28bcc85393",
+    "archives/unrelated-machines/state/审查/固定工作局部极小与真实凸包固定槽双源审查--审查.md": "40919541fb80f3562132fb920208da26f12ed7ee03850db566e1224d87badfd6",
+    "archives/unrelated-machines/state/定理/有序单位槽的支撑最大件舍入--定理.md": "996b2d634889c84f766cf186d5d71d8f55679e2e993e1648f34597dbf2d354a6"
+  },
+  "review_digest": "a678479de2205557bf4574f7e51ce813bdd64a7bd77308c23aadd87ccd891c3e"
+}

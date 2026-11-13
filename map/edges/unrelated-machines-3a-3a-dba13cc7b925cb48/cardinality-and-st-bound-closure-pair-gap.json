@@ -1,0 +1,55 @@
+{
+  "edge_id": "um-dba13-cardinality-and-st-bound-closure-pair-gap",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "UM-CARDINALITY-CLOSURE-v1",
+    "UM-ST-ROUND-v1"
+  ],
+  "target_ids": [
+    "UM-PAIR-SUBDIVISION-GAP-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "正文两树族 k≥4、细分 H=1、简单二部机器资格，每原子任务恰两端。先在同 T 运行同步成束闭包，再对幸存域用逐机器对的互补配置耦合。",
+  "roles": {
+    "UM-CARDINALITY-CLOSURE-v1": "双域简单图且无初始强制时 reserve 没有首次删边，给出闭包前置不破坏证书。",
+    "UM-ST-ROUND-v1": "把幸存域的配置边际变成真实调度，给全类比值上界。",
+    "UM-PAIR-SUBDIVISION-GAP-v1": "保整数 OPT 和提升逐对配置证书的显式细分族。"
+  },
+  "explanation": "在 T_k=1+1/k，细分后所有端≤1，每任务双域、无平行束及强制项；每束至多一任务，q=0 时 K 空，q≥1 时尾和为0，故闭包不首删。细分证书给 T_pair≤T_k，且整数 OPT=2−1/k，给下界 (2−1/k)/(1+1/k)→2。对任意接受阈值，逐对证书的各行配置边际投影为同 T 剪枝 LST，在幸存域用 ST 得实际峰≤2T；端都是原有限端，所以对正阈值和其下确界成立。",
+  "scope": "此边说明先闭包再逐对耦合的最坏间隙上确界2，不断言 T_pair=T_k，也不排除真正全局重叠一致性或相对原 OPT 的算法。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/审查/成束计数闭包与细分保值的版本审查--审查.md",
+      "sha256": "b2e626bc505237dd6a8f1dd8fc2f9dde3665cc541ab90910cd6dfc1133b8ebc2",
+      "section": "强制剩余容量闭包：每一收费项精确定义"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/成束计数闭包与细分保值的版本审查--审查.md",
+      "sha256": "b2e626bc505237dd6a8f1dd8fc2f9dde3665cc541ab90910cd6dfc1133b8ebc2",
+      "section": "逐对配置耦合与通用细分的正确量词"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/有序单位槽的支撑最大件舍入--定理.md",
+      "sha256": "996b2d634889c84f766cf186d5d71d8f55679e2e993e1648f34597dbf2d354a6",
+      "section": "槽、任务匹配及逐机收费"
+    }
+  ],
+  "reviewed_by": "Boss3",
+  "review_note": "按所列冻结正文复核同一输入、方向、边界和证明义务。此边中的完整算式与见证承担推导，有限核验按原记录范围使用。",
+  "contribution": {
+    "result": "闭包→pair 接口在该正阈值输入类的比值上确界仍为2，给定见证的逐对耦合下界族不会被闭包删掉。",
+    "remaining": "逐对乘积耦合及任意 H 的细分双向保值是该目标的其他陈述，仍由其正文单独证明。"
+  },
+  "endpoint_pins": {
+    "UM-CARDINALITY-CLOSURE-v1": "305f5ebbc7d2048c8370c1238f8d6450a38cfe551a4df9f7f91c13ca80482772",
+    "UM-PAIR-SUBDIVISION-GAP-v1": "08b89a3dc365d0fa75263a4544a0fc97fc46d5c97af1e85227090381e6475205",
+    "UM-ST-ROUND-v1": "8c4662c822ebd204e3b095934f8745464426df43fc2328a6bbc35063e4148ea1"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/审查/成束计数闭包与细分保值的版本审查--审查.md": "b2e626bc505237dd6a8f1dd8fc2f9dde3665cc541ab90910cd6dfc1133b8ebc2",
+    "archives/unrelated-machines/state/定理/有序单位槽的支撑最大件舍入--定理.md": "996b2d634889c84f766cf186d5d71d8f55679e2e993e1648f34597dbf2d354a6"
+  },
+  "review_digest": "2de150d773c1e26304126b7cf28af136e695de51acfe6732c73b7231fdcea78b"
+}

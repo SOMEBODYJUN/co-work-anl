@@ -1,0 +1,46 @@
+{
+  "edge_id": "um-dba13-dag-oracle-unit-cumulative-lp",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-c0d0a5f2c8414e3fab9ebefca65252b8"
+  ],
+  "target_ids": [
+    "M-e8885334520c415bb4afb682ac8c31c8"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "Li 论文相同机上的显式 DAG 加权完工时间模型；原先后边不做免费传递闭包。累计变量包含时间层单调、先后及固定零/一边界；容量系数非负。目标误差按原MWU参数取加性精度。",
+  "roles": {
+    "M-c0d0a5f2c8414e3fab9ebefca65252b8": "提供 Q 内精确可行的聚合单容量近优响应及其特殊流证书。",
+    "M-e8885334520c415bb4afb682ac8c31c8": "需要先求累计完成 LP 的可舍入分数点，后接本目标专用列表。"
+  },
+  "explanation": "把每个累计变量作序多面体顶点，时间非降和前驱约束作方向边，固定值按边界预处理。MWU 用非负权把全部容量行聚成一条 by≤1，目标线性部分非负，正好落在 oracle 合同。每轮 y∈Q，凸平均仍精确满足先后，只有装填容量有1+O(η)增广，目标支付加性φ。共同随机分位数选优先值，仍由同一累计 LP；所引函数极值引理承担期望1+√2+ε，直接 F=C 只给3。",
+  "scope": "只给论文相应目标的累计 LP 求解组件。特殊流内部无限容量、源/汇结构和附录动态树的论文复杂度保留。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/资源/不相关机调度的近线性时间近似--资源.md",
+      "sha256": "8ae63c3da1fe4ad25051ad065c692da2c8ee1eb13c826e98f17f8b669e59b7c8",
+      "section": "6. 先后约束附录A、C.2、D：独立模型的完整去向"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/不相关机调度的近线性时间近似--资源.md",
+      "sha256": "8ae63c3da1fe4ad25051ad065c692da2c8ee1eb13c826e98f17f8b669e59b7c8",
+      "section": "7. DAG单容量oracle与特殊流：附录E–F"
+    }
+  ],
+  "reviewed_by": "Boss3",
+  "review_note": "按所列冻结正文复核同一输入、方向、边界和证明义务。此边中的完整算式与见证承担推导，有限核验按原记录范围使用。",
+  "contribution": {
+    "result": "同一精确序约束的单容量 oracle 可作累计 LP 的每轮聚合后端，得到保持全部先后约束的近似分数解。",
+    "remaining": "实际调度仍需累计 LP 的目标比较、相应列表/分位数舍入和该定理的复杂度分析；这些步骤由各自原文承担。"
+  },
+  "endpoint_pins": {
+    "M-c0d0a5f2c8414e3fab9ebefca65252b8": "194bd08650b87e8df9b35229529e60b64079cbddaa99720788c7bd2ea30a7e1b",
+    "M-e8885334520c415bb4afb682ac8c31c8": "fe3345fa41803b989f56e467b5eeddc5b0f82c724cb5c7c7afcf07ba9e1a694e"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/资源/不相关机调度的近线性时间近似--资源.md": "8ae63c3da1fe4ad25051ad065c692da2c8ee1eb13c826e98f17f8b669e59b7c8"
+  },
+  "review_digest": "22aa1f6e3bc94dc181c6c39d4cab17af27b4721c1f8e5f28ae6182c53d24d2dd"
+}

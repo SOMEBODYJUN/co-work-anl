@@ -1,0 +1,52 @@
+{
+  "edge_id": "um-dba13-common-size-counts-pdm-dummies",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "UM-COMMON-SIZE-UNKNOWN-B-EXACT-v1"
+  ],
+  "target_ids": [
+    "UM-PDM-THRESHOLD-EXACT-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "pDM 合法域 d≥3、整数 b>d、gcd(b,d)=1，d侧各n≥1、m≥n、每个顶点至少关联一边。固定任意完整顶点任务放置，真实冻结负载 f_e=bk_e，余任务为 D=b(m−n) 个全资格不可拆 dummy，各耗 d。",
+  "roles": {
+    "UM-COMMON-SIZE-UNKNOWN-B-EXACT-v1": "用真实冻结峰 guard 和整数件数满流精确处理共同尺寸残余，保原任务身份。",
+    "UM-PDM-THRESHOLD-EXACT-v1": "整工作量精确阈值编译，固定顶点放置后的剩余容量可显式算清。"
+  },
+  "explanation": "在 B≥max_e f_e 时，完整 dummy 分配 iff Σ_e min(D,floor((B−f_e)/d))≥D；D=0 直接返回 guard。T=bd 时令 R_e=T−bk_e≥0。因 ΣR_e=dD，未截整数容量总和为 D−Σ_e(R_e mod d)/d，故恰在各余数为0时可补全；截 D 不改满流。互素给 k_e∈{0,d}。在 B=T+d−1，各容量未截时至少 R_e/d，满流必存在。于是任意顶点选择都可按真实资格整化至 T+d−1，且 OPT/T≤1+(d−1)/(bd)≤7/6，最后一步用 b≥d+1 和 (d−2)(d−3)≥0。锐族 b=d+1、m=2d：把超边分成 d 对，第s对只在第s侧共用一个顶点，其他所有边-侧出现用独有顶点，各侧 n=2d−1。每对只能有一条入匹配，且任意顶点放置使每对恰一满行、一缺一顶点行。B=T+d−2 时满行不能接 dummy，缺一行各至多1，总共只能接 d<D=d+1。B=T+d−1 已由通用构造达界；d=3 达到7/6。",
+  "scope": "编译后的固定核心子程序及整个合法编译像的实际峰上界。共同尺寸满流没有负责选择能在 T 饱和的顶点放置。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/算法/冻结核心共同尺寸的未知阈值搜索--算法.md",
+      "sha256": "a04cd18e4b39b25f970a738741ca44871948439cb4da31574f27c65d5198aaa0",
+      "section": "判定、候选与证明"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/pDM阈值桥合法域编码长度与间隙方向审查--审查.md",
+      "sha256": "6ba1804c4f4a961d1e2b3bd5616d3ae60e18119b8876f78217d2b98564c32ad2",
+      "section": "2. 精确阈值 iff 的合法域"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/pDM阈值桥合法域编码长度与间隙方向审查--审查.md",
+      "sha256": "6ba1804c4f4a961d1e2b3bd5616d3ae60e18119b8876f78217d2b98564c32ad2",
+      "section": "5. 加一 NO 下界不是乘性 gap"
+    }
+  ],
+  "reviewed_by": "Boss3",
+  "review_note": "按所列冻结正文复核同一输入、方向、边界和证明义务。此边中的完整算式与见证承担推导，有限核验按原记录范围使用。",
+  "contribution": {
+    "result": "对任意固定顶点分配，dummy 完成的精确件数条件在 T 等价于每行顶点数为0或d；任意顶点分配可补全至 T+d−1。整个合法编译像上的最坏相对阈值7/6可达。",
+    "remaining": "完整 pDM iff 还需独立核对：存在各机顶点件数均为0或d的完整顶点分配，当且仅当被填满的 n 条边为完美 d 维匹配。"
+  },
+  "endpoint_pins": {
+    "UM-COMMON-SIZE-UNKNOWN-B-EXACT-v1": "c6a4faf21ec8a27785151e3d79df3fa6bf518106be33f71db6a7139c66385236",
+    "UM-PDM-THRESHOLD-EXACT-v1": "e2f2c5b288ffb05878585535db17e07a85e012accfb359084ef5d98b411e0ed7"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/算法/冻结核心共同尺寸的未知阈值搜索--算法.md": "a04cd18e4b39b25f970a738741ca44871948439cb4da31574f27c65d5198aaa0",
+    "archives/unrelated-machines/state/审查/pDM阈值桥合法域编码长度与间隙方向审查--审查.md": "6ba1804c4f4a961d1e2b3bd5616d3ae60e18119b8876f78217d2b98564c32ad2"
+  },
+  "review_digest": "3304a33a1656f319e9dc1881971ad23696c0d6546385aa9cf1579e9a7ad7ba37"
+}
