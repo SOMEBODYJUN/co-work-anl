@@ -1,0 +1,53 @@
+{
+  "edge_id": "ca-c8ed-same-root-vector-cannot-replace-ordered-plan",
+  "kind": "checks",
+  "status": "accepted",
+  "source_ids": [
+    "M-e7b5b6cd805f46f282543f7f92ef2aee"
+  ],
+  "target_ids": [
+    "M-eafb8914bd634392978b39318f65a059"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "同一23单位客户、五标签、三人输入；每个正深度完整纯SPE；比较使用同一规定根0。",
+  "roles": {
+    "M-e7b5b6cd805f46f282543f7f92ef2aee": "给V10、V11全表和相同根偏离收益向量，及仅重设V10根到0的精确实际叶。",
+    "M-eafb8914bd634392978b39318f65a059": "其固定计划重数锥实际覆盖列与真实偏离IC行必须读取完整有序计划。"
+  },
+  "explanation": "只把V10的根改成0，所有正深度策略与IC保持原样，根向量仍为(13/3,20/3,20/3,19/3,10/3)。与V11同根0，同u1=13/3、同Δ=7/3、同OPT₃=22，但在历史(0,1)分别选并列BR 2与1，叶(0,1,2)与(0,1,1)，W=22与19，故G=OPT−2W−3Δ分别−29与−23。更具体，锥在客户型{2,3}的actual覆盖系数分别1、0，在历史(0,1)改另一个并列动作的比较行给该型的遵循减偏离系数分别+1、−1。根向量、规定根和Δ不足以重建这两个真实锥。",
+  "scope": "对固定有序树锥输入的有限语义核验；未反驳目标编译合同，两个原点的严格阳性条件均不满足。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/资源/三人根缺陷三种子的完整历史计划与客户覆盖--资源.md",
+      "sha256": "148e01b16205cb0f1eea4cca6063dd37e4f234c054dbc5b998907e68b2df2965",
+      "section": "版本独有内容：同根收益向量掩盖不同续局"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/常数三根缺陷原发现与十二完整计划的独立回放--程序.md",
+      "sha256": "583e5282c698c50f8fac57d5950fa907062b7498ed7b73f8732402d9f34bb1b3",
+      "section": "固定source锥、共同根后悔变量与正点核验"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/three-player-root-defect-seed-plans/original/seed_source_m3_v1_0.json",
+      "sha256": "ddf3bc3187b17aeef05b3285edce8f92ebdcce9d707d16152659776937145263"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/three-player-root-defect-seed-plans/original/seed_source_m3_v1_1.json",
+      "sha256": "d4b67530138a47c2e22000dfeb9cfd706e97d9fb6e92e8b1f1d639f97aea9c35"
+    }
+  ],
+  "reviewed_by": "Boss4",
+  "review_note": "独立Fraction重建两原表及重设根0计划的每份150项正深度真实比较，最小余量均0；精确重算W、所有根收益及比较支持，并核(0,1)客户型{2,3}的单列系数。",
+  "endpoint_pins": {
+    "M-e7b5b6cd805f46f282543f7f92ef2aee": "2c07da80b126f15a9d9abd5539886d93b2eaa13d68903b5ce1d2f4b2dda2e3df",
+    "M-eafb8914bd634392978b39318f65a059": "f53929d7a9af845a91fd7905c463ebf456b754bb6f7ee324fab2d50da1e5552e"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/资源/三人根缺陷三种子的完整历史计划与客户覆盖--资源.md": "148e01b16205cb0f1eea4cca6063dd37e4f234c054dbc5b998907e68b2df2965",
+    "archives/customer-attraction/state/程序/常数三根缺陷原发现与十二完整计划的独立回放--程序.md": "583e5282c698c50f8fac57d5950fa907062b7498ed7b73f8732402d9f34bb1b3",
+    "archives/customer-attraction/tools/evidence/three-player-root-defect-seed-plans/original/seed_source_m3_v1_0.json": "ddf3bc3187b17aeef05b3285edce8f92ebdcce9d707d16152659776937145263",
+    "archives/customer-attraction/tools/evidence/three-player-root-defect-seed-plans/original/seed_source_m3_v1_1.json": "d4b67530138a47c2e22000dfeb9cfd706e97d9fb6e92e8b1f1d639f97aea9c35"
+  },
+  "review_digest": "3a679322378f07e49c1a2119ed251d84a8309bd44c6268cf13ca4a00bd149c57"
+}

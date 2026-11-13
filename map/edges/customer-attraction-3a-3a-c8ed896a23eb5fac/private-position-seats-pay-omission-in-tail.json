@@ -1,0 +1,46 @@
+{
+  "edge_id": "ca-c8ed-private-position-seats-pay-omission-in-tail",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/private-optimal-omission-plan-root-defect-and-tail-seat-bound"
+  ],
+  "target_ids": [
+    "M-ff83a44c6f3d4a3ba9df066b54c4d69a"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "m≥2；固定根可非最佳的完整有序计划，正深度均纯SPE；某个最优并集的全部遗漏落于至多q≤m−1个全局私有块。",
+  "roles": {
+    "customer-attraction/private-optimal-omission-plan-root-defect-and-tail-seat-bound": "任意固定实际遗漏私有子块的逐位置谱，正深度u_i≥λ_(m−i+1)。",
+    "M-ff83a44c6f3d4a3ba9df066b54c4d69a": "目标一般尾席位付款；其固定53支架另要辨认所有类型与实际叶。"
+  },
+  "explanation": "当q>0，取非空遗漏子块Q_j，前q大席位总和≥q个第一席总和≥Σa_j=D。最后q人的位置全部正深度，故Σ_(i=m−q+1)^m u_i≥Σ前q席≥D。用OPT=I+D、I≤W得到OPT≤2W−Σ_(i=1)^(m−q)u_i≤2W。q=0时D=0而OPT≤W。没有调用根IC或Δ。",
+  "scope": "目标一般尾部结论，固定53型支架还需要固定策略和支持验证。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/私有最优遗漏计划的单根缺陷与尾部席位界--引理.md",
+      "sha256": "91e35b4a8cc6f3326bdeadf470789e03694884b0ed0707f8afccad8e2c412a9d",
+      "section": "私有遗漏时根只损一次Δ"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/私有最优遗漏计划的单根缺陷与尾部席位界--引理.md",
+      "sha256": "91e35b4a8cc6f3326bdeadf470789e03694884b0ed0707f8afccad8e2c412a9d",
+      "section": "少于m个私有块时，尾部足以免根支付"
+    }
+  ],
+  "reviewed_by": "Boss4",
+  "review_note": "逐项核验q=0、q=m−1、首席多重性和实际利润分解；尾部第q大席位不支付根位。",
+  "contribution": {
+    "result": "在至多q≤m−1个非空全局私有遗漏块时，D由实际最后q人支付，并得目标半覆盖及扣减头部利润的较强上界。",
+    "remaining": "固定53类型、冻结后继τ、七根实际叶和任意可行重数子结论需要同一策略及兴趣型支持的覆盖恒等式。"
+  },
+  "endpoint_pins": {
+    "M-ff83a44c6f3d4a3ba9df066b54c4d69a": "49e9149d9f8c56ee9d6946a52b1fc9d0135cc366dbfb03022139c4efc63e359d",
+    "customer-attraction/private-optimal-omission-plan-root-defect-and-tail-seat-bound": "b21a87aa9df401bb4cf11a83353bdcd086038ed8cdaef6daff7b5157f390f036"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/私有最优遗漏计划的单根缺陷与尾部席位界--引理.md": "91e35b4a8cc6f3326bdeadf470789e03694884b0ed0707f8afccad8e2c412a9d"
+  },
+  "review_digest": "c81578b45a6fa33b86d5c7c2c642318f5f574bbaef23264493a79addc12bd98b"
+}

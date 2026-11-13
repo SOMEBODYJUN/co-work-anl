@@ -1,0 +1,49 @@
+{
+  "edge_id": "ca-c8ed-root-regret-shared-net-budget",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/private-optimal-omission-plan-root-defect-and-tail-seat-bound"
+  ],
+  "target_ids": [
+    "customer-attraction/shared-omission-minus-extra-coverage-net-defect-budget"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "同一有限单位客户共同目录；m≥2；给定完整正深度SPE计划与每个最优比较并集O。全局私有性相对整个目录的所有不同包含极大覆盖。",
+  "roles": {
+    "customer-attraction/private-optimal-omission-plan-root-defect-and-tail-seat-bound": "提供任取实际遗漏全局私有子块时的W+Δ谱预算；私有最优遗漏的附加条件无需用于该谱。",
+    "customer-attraction/shared-omission-minus-extra-coverage-net-defect-budget": "登记对象为Δ=0的全SPE净账；本推导并保根可失理性的精确扩张。"
+  },
+  "explanation": "置Q_j=P_j\\C，I=|O∩C|，D_p和D_s分别为O\\C的全局私有数和共享数，E=W−I。把O扩成至多m个极大覆盖B_j并仍得O；这些第一席有Σa_j=D_p、Σv_j≥I+D_s，故W+Δ≥Λ≥D_p+(I+D_s)/m。定义S_Δ=W+Δ−D_p−(I+D_s)/m≥0。代入OPT=I+D_p+D_s，得到OPT=(2−1/m)W+Δ+(1−1/m)(D_s−E)−S_Δ及m(2W+3Δ−OPT)=mS_Δ+W−(m−1)(D_s−E)+2mΔ。因而G>0须每个最优O满足D_s−E>(W+2mΔ+mS_Δ)/(m−1)。完整SPE取Δ=0即目标。m=1时单人最优性给W=OPT，故E=D_p+D_s且S=W−D_p−I−D_s=0；平局仍允许最优并集与实际不同。目标等式直接成立。",
+  "scope": "完整SPE为整条目标；正深度可信计划额外给一次根遗憾的净账及攻击必要阈值。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/私有最优遗漏计划的单根缺陷与尾部席位界--引理.md",
+      "sha256": "91e35b4a8cc6f3326bdeadf470789e03694884b0ed0707f8afccad8e2c412a9d",
+      "section": "私有遗漏时根只损一次Δ"
+    },
+    {
+      "path": "archives/customer-attraction/state/推论/共享遗漏减额外覆盖的净缺陷预算--推论.md",
+      "sha256": "ee1ffa04b1b48c50eaeb20f34f385c1871472c62e6ae0a4c0ca2004c8c57118b",
+      "section": "仅扩张比较元组的合法性"
+    },
+    {
+      "path": "archives/customer-attraction/state/推论/共享遗漏减额外覆盖的净缺陷预算--推论.md",
+      "sha256": "ee1ffa04b1b48c50eaeb20f34f385c1871472c62e6ae0a4c0ca2004c8c57118b",
+      "section": "保留额外覆盖的精确净差账"
+    }
+  ],
+  "reviewed_by": "Boss4",
+  "review_note": "核谱前提只要求Q固定且实际遗漏；独立重算I、D_p、D_s、E项系数及一次Δ与三倍保险之间的2mΔ差，核单人并列最优可有不同并集，按W=OPT单独处理。",
+  "whole_result": "从根放松谱得到全SPE登记净缺陷预算的全部不等式和恒等式，同时得到m≥2的根遗憾扩张。",
+  "endpoint_pins": {
+    "customer-attraction/private-optimal-omission-plan-root-defect-and-tail-seat-bound": "b21a87aa9df401bb4cf11a83353bdcd086038ed8cdaef6daff7b5157f390f036",
+    "customer-attraction/shared-omission-minus-extra-coverage-net-defect-budget": "21349ccdd1482c67c9a91d44a6a79051996e43ac67a169f4cefc0ab089254846"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/私有最优遗漏计划的单根缺陷与尾部席位界--引理.md": "91e35b4a8cc6f3326bdeadf470789e03694884b0ed0707f8afccad8e2c412a9d",
+    "archives/customer-attraction/state/推论/共享遗漏减额外覆盖的净缺陷预算--推论.md": "ee1ffa04b1b48c50eaeb20f34f385c1871472c62e6ae0a4c0ca2004c8c57118b"
+  },
+  "review_digest": "f75c22bc9b5a1ee0bdbce25525974fbc6574ba76f5f4ecfab85e778110661271"
+}

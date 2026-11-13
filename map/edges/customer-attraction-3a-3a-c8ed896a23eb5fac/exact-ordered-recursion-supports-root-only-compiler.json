@@ -1,0 +1,47 @@
+{
+  "edge_id": "ca-c8ed-exact-ordered-recursion-supports-root-only-compiler",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "CA-EXACT-PURE-SPE-ALL"
+  ],
+  "target_ids": [
+    "M-eafb8914bd634392978b39318f65a059"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "m≥2、p≥1，输入全标签共同目录和全部子局的可实现终局计数集合；指定根a及目标z∈R(e_a)。",
+  "roles": {
+    "CA-EXACT-PURE-SPE-ALL": "给R(q)递推、非空性和按有序子树的终局实现。",
+    "M-eafb8914bd634392978b39318f65a059": "先给指定根的完整正深度可信计划，再独立构建重数锥。"
+  },
+  "explanation": "为根孩子a指定目标z，其余根孩子b分别选使强制根利润U_b最小的z_b∈R(e_b)。对每个孩子逐有序历史按源定理展开：在当前q保留有U_c(目标)≥M(q)的合法下一动作c，其余动作分别接达到各自最低收益的真实子SPE。孩子的完整子树互不相交，可并置；在空根规定a，不施加U_a(z)≥M(0)。所有正深度节点因此是纯SPE，且该规范选择的实际根遗憾恰max(0,M(0)−U_a(z))，因为其它根收益为各自最小值、而U_a(z)≥该根孩子最小值。",
+  "scope": "目标的第一部分，计算缓存只存计数终局集合，输出保有序历史及合法平局。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/算法/完整历史纯SPE终局全集--算法.md",
+      "sha256": "667d6f319b1f325bd32538f6b0e5a8e95c1942e2ec97cbc76d7cbaef06b36954",
+      "section": "完整策略和指定有序路径"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/常数三根缺陷原发现与十二完整计划的独立回放--程序.md",
+      "sha256": "583e5282c698c50f8fac57d5950fa907062b7498ed7b73f8732402d9f34bb1b3",
+      "section": "从集合值子局到完整有序source计划"
+    }
+  ],
+  "reviewed_by": "Boss4",
+  "review_note": "复核R(q)充要方向、逐孩子独立实现、根子博弈仍可信以及规定根不支付自身门槛；比较了源码source_plan的同一展开。",
+  "contribution": {
+    "result": "从精确集合值递推构造指定根、指定可行子叶且全部正深度为SPE的完整计划，并给规范最小可信根遗憾。",
+    "remaining": "仍须另在固定计划上建立真实线性IC及共同d上界，核严格有理G>0、清分母与可选覆盖去别名。"
+  },
+  "endpoint_pins": {
+    "CA-EXACT-PURE-SPE-ALL": "aaa77e1f9a928bc25a315e66e18f424418e64643ec3fdb8717cbc3adc6310056",
+    "M-eafb8914bd634392978b39318f65a059": "f53929d7a9af845a91fd7905c463ebf456b754bb6f7ee324fab2d50da1e5552e"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/算法/完整历史纯SPE终局全集--算法.md": "667d6f319b1f325bd32538f6b0e5a8e95c1942e2ec97cbc76d7cbaef06b36954",
+    "archives/customer-attraction/state/程序/常数三根缺陷原发现与十二完整计划的独立回放--程序.md": "583e5282c698c50f8fac57d5950fa907062b7498ed7b73f8732402d9f34bb1b3"
+  },
+  "review_digest": "ae92edb9a12793f486b4070277d234ff621316a8b9a595f1b442a1ed80214f1f"
+}

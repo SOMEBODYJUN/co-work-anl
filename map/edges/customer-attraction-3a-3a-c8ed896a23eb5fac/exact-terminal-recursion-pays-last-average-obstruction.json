@@ -1,0 +1,59 @@
+{
+  "edge_id": "ca-c8ed-exact-terminal-recursion-pays-last-average-obstruction",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "CA-EXACT-PURE-SPE-ALL"
+  ],
+  "target_ids": [
+    "customer-attraction/minimum-welfare-full-spe-last-payoff-average-normalization-obstruction"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定正文34单位客户/六标签/三提供者输入，空根及完整有序历史纯SPE。以同一真实终局的单位均分收益比较。",
+  "roles": {
+    "CA-EXACT-PURE-SPE-ALL": "全集递推保证计数终局及其合法有序路径提升；对每个有序孩子可独立实现各最小收益。",
+    "customer-attraction/minimum-welfare-full-spe-last-payoff-average-normalization-obstruction": "用全部可实现有序终局否定可选择最小福利SPE满足末位平均的助手。"
+  },
+  "explanation": "每个有序历史h的子树收益只依最终计数和动作，但保持不同有序孩子分别拼接。对每个孩子a算min_{z∈R(ha)}u_i(z)，其最大值为M(h)；保孩子中u_i(z)≥M(h)的所有有序终局。充分性取其它孩子各自的最小收益SPE，必要性比较同一策略的真实孩子。按34客户类型从216叶逆推43决策节点，40根可实现终局的最小W=32，达到者恰034,043,134,143,301,310,401,410；全八末位67/6>32/3。六标签输入的最优覆盖34由025达到。",
+  "scope": "固定三人输入的存在型助手被否。计数相同只共享收益缓存，不能把不同路径的末位标签或平局合并。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/算法/完整历史纯SPE终局全集--算法.md",
+      "sha256": "667d6f319b1f325bd32538f6b0e5a8e95c1942e2ec97cbc76d7cbaef06b36954",
+      "section": "全集递推及完整证明"
+    },
+    {
+      "path": "archives/customer-attraction/state/算法/完整历史纯SPE终局全集--算法.md",
+      "sha256": "667d6f319b1f325bd32538f6b0e5a8e95c1942e2ec97cbc76d7cbaef06b36954",
+      "section": "完整策略和指定有序路径"
+    },
+    {
+      "path": "archives/customer-attraction/state/反例/最小福利完整均衡的末位平均归一化障碍--反例.md",
+      "sha256": "569a1b8115f940a8c33dd625a0e0d1a18ecfe451da89589cac19b9a0094b1b1f",
+      "section": "全部可实现终局的必要充分递归"
+    },
+    {
+      "path": "archives/customer-attraction/state/反例/最小福利完整均衡的末位平均归一化障碍--反例.md",
+      "sha256": "569a1b8115f940a8c33dd625a0e0d1a18ecfe451da89589cac19b9a0094b1b1f",
+      "section": "保存证书的全部关键值"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/mixed-sc-normalization-and-root-audits-primary/original/7ef78c6616cfd5c2c444--minimum_welfare_last_normalization_audit.json",
+      "sha256": "28c7ee96d3d875e868108d951dffba630e3e79c6eb21f27a672e98fd1b463487"
+    }
+  ],
+  "reviewed_by": "Boss4",
+  "review_note": "独立以Fraction对所有有序节点和叶重算必要充分递推，得到40根终局、W32、同样八端点及末位差1/2。",
+  "whole_result": "指定34客户游戏的所有福利最小完整纯SPE均违背u₃≤W/3，从而否定全称实例上的存在型归一化助手。",
+  "endpoint_pins": {
+    "CA-EXACT-PURE-SPE-ALL": "aaa77e1f9a928bc25a315e66e18f424418e64643ec3fdb8717cbc3adc6310056",
+    "customer-attraction/minimum-welfare-full-spe-last-payoff-average-normalization-obstruction": "08368918463e416914bb4f00f40aad2f227c857797fa6b5d4cf7753ff84e84d7"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/算法/完整历史纯SPE终局全集--算法.md": "667d6f319b1f325bd32538f6b0e5a8e95c1942e2ec97cbc76d7cbaef06b36954",
+    "archives/customer-attraction/state/反例/最小福利完整均衡的末位平均归一化障碍--反例.md": "569a1b8115f940a8c33dd625a0e0d1a18ecfe451da89589cac19b9a0094b1b1f",
+    "archives/customer-attraction/tools/evidence/mixed-sc-normalization-and-root-audits-primary/original/7ef78c6616cfd5c2c444--minimum_welfare_last_normalization_audit.json": "28c7ee96d3d875e868108d951dffba630e3e79c6eb21f27a672e98fd1b463487"
+  },
+  "review_digest": "17ed111a765f9ed8cd40417dd1978c42d985a5e53a6452643ee48c55da541d3e"
+}

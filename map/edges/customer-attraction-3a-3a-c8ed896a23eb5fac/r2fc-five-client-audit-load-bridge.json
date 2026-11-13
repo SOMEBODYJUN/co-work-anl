@@ -1,0 +1,49 @@
+{
+  "edge_id": "ca-c8ed-r2fc-five-client-audit-load-bridge",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/r2fc-global-proof-eight-source-audit"
+  ],
+  "target_ids": [
+    "CA-COLLISION-FREE-LOAD-PAYMENT-NO"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "两名单位提供者，五单位客户、共同目录四标签A/B/C/D及同一完整有序策略；f:非负整数→实数，f(0)=0且f(1)=1。",
+  "roles": {
+    "customer-attraction/r2fc-global-proof-eight-source-audit": "审计的五客户obstruction固定表给全部历史策略、精确矩阵、覆盖和负载。",
+    "CA-COLLISION-FREE-LOAD-PAYMENT-NO": "用同一真完整SPE统一排除所有指定f。"
+  },
+  "explanation": "obstruction的冻结主题A={0,1,2},B={0,1,3},C={0,1},D={3,4}。根C，四末位回复B,A,D,A；报告逐行末位最佳收益为2,2,2,3，根四个真实分支收益同为2，故全部五个有序节点为纯SPE。实际CD仅覆盖0,1,3,4且互不交，负载(1,1,0,1,1)。AD覆盖全部五客户，故OPT₂=5，而每个f都给4。",
+  "scope": "固定两人五客户反例，保全部15非自身偏离及20含自身比较；推论针对归一终局负载桥。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/计算/R-2fc全局证明八源的精确核查与工具边界--计算.md",
+      "sha256": "f6a9e6362ee77140969dd1937be8c331d0c11acf4c044df01b1c7e143a03de49",
+      "section": "碰撞自由完整SPE族"
+    },
+    {
+      "path": "archives/customer-attraction/state/反例/五客户无拥挤SPE负载桥障碍--反例.md",
+      "sha256": "5a25e57b77cbdb207bf8a7b01919e234f21da5266c418f1527625ea6f34b6fab",
+      "section": "全部末历史与根节点核验"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/R-2fc-global-proof-a-recovery-20261031/replay/obstruction/stdout.json",
+      "sha256": "dd946143d6d4aee7f381b69b6ab59be775ea2a35029aee42fb841ef9661287e9"
+    }
+  ],
+  "reviewed_by": "Boss4",
+  "review_note": "核过两份五客户原始目录和策略逐项一致；按该报告重算行最大值及真正AD上界。",
+  "whole_result": "两人五客户完整纯SPE见证使所有f(0)=0且f(1)=1的逐负载和4均严格低于最优覆盖5。",
+  "endpoint_pins": {
+    "CA-COLLISION-FREE-LOAD-PAYMENT-NO": "86bc134e0762895733eaeca1eb23d20ceb28e5174251db908028de5407511c84",
+    "customer-attraction/r2fc-global-proof-eight-source-audit": "9d02bd577cd4935eb5c05aec54dc2219b33121d8a81adaf64c8ce73da9479b6f"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/计算/R-2fc全局证明八源的精确核查与工具边界--计算.md": "f6a9e6362ee77140969dd1937be8c331d0c11acf4c044df01b1c7e143a03de49",
+    "archives/customer-attraction/state/反例/五客户无拥挤SPE负载桥障碍--反例.md": "5a25e57b77cbdb207bf8a7b01919e234f21da5266c418f1527625ea6f34b6fab",
+    "archives/customer-attraction/tools/evidence/R-2fc-global-proof-a-recovery-20261031/replay/obstruction/stdout.json": "dd946143d6d4aee7f381b69b6ab59be775ea2a35029aee42fb841ef9661287e9"
+  },
+  "review_digest": "754c15b8b4b5d8425ac093bb98420a9200928d599e48632c00add53800b4a690"
+}
