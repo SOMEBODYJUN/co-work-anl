@@ -273,11 +273,121 @@
       ]
     }
   },
-  "state": "claimed",
+  "state": "done",
   "owner": "Boss3",
-  "request_id": "3ff501a59f66471dba2bb6c40b6dbaa2",
+  "request_id": "5188888ca77b4bc2b059996a750ff69c",
   "requests": {
     "06d6a3c4a6c84219ae301fed56532402": "plan",
-    "3ff501a59f66471dba2bb6c40b6dbaa2": "claim"
+    "3ff501a59f66471dba2bb6c40b6dbaa2": "claim",
+    "5188888ca77b4bc2b059996a750ff69c": "done"
+  },
+  "edge_paths": {
+    "um-b5-scheduling-karp-perfect3dm-to-third-unit-joint-choice": "map/edges/boss2-wave22-um-repair-5cad45f07a645e15/karp-perfect3dm-to-third-unit-joint-choice.json",
+    "um-b5-scheduling-demand-floor-pays-parity-label-union-counterexample": "map/edges/unrelated-machines-3a-3a-9926915a3191b4a1/demand-floor-pays-parity-label-union-counterexample.json",
+    "um-r37-uniform-capacity-old-strict-exchange": "map/edges/unrelated-machines-3a-3a-1b7557db7c2d59cd/uniform-capacity-old-strict-exchange.json",
+    "um-a-474257b8-fixed-residual-lattice-specializes-occupation": "map/edges/unrelated-machines-3a-3a-3f971da9d312cddb/fixed-residual-lattice-specializes-occupation.json"
+  },
+  "receipt": {
+    "coverage": {
+      "unrelated-machines/fixed-literal-sa-unit-assignment-gap-two": {
+        "state": "isolated-after-review",
+        "object_pin": "090463ccc687381c17e37e47915bd034f0c03fcc68d608731453df54e7936be4",
+        "comparison_scope": "沿用 Boss5 同 pin 的成熟审读。独立comparison group：完整读取SA主障碍、完整MODEL定义和独立注入/裸阈值审查。核r轮=至多r−1个signed literals、m≥r、全部局部事件一致性/零事件/补literal容量乘式、位长、m=r端点；同时核同文CONFIG容量反证及裸r1/T<1负控制。按六核心精确ID及SA/literal关键词检索当前registry与canonical边，未找到本对象现成逻辑边。其余五组不作为SA推导前提。",
+        "reason": "参数化构造给证书T=1+1/(m−r+1)可行、实际OPT2、固定r比值趋2；未求精确SA最小阈值。只否定同T的统一低于二舍入；不是一般相对OPT近似不可能性。MODEL仅提供原问题/剪枝与CONFIG定义，不额外证明SA signed-moment构造，故不造模型hub。裸r1单任务T=1/m的gap=m要求全类2T上界保剪枝/阈值域；m>r时CONFIG不可行，m=r/T2保可行边界。完整原矩阵算法、足够增长层数和其他层级仍未排除。本实际比较范围内无值得独立建边的另一已读端点；不据此宣称全仓永无关系。"
+      },
+      "UM-3DM-DEMAND-FLOOR-OBSTRUCTION-v1": {
+        "state": "linked",
+        "object_pin": "3f436f156f978cbca9eab8de4afff1ad29295712512aee482eacac55fdffb6fc",
+        "edge_ids": [
+          "um-b5-scheduling-demand-floor-pays-parity-label-union-counterexample"
+        ],
+        "comparison_scope": "沿用 Boss5 同 pin 的成熟审读。独立comparison group：完整读取μ/ν源审查、资源标签缺陷审查、需求地板/三主机双源页；追加完整读取具名single-neighborhood-label-union-counterexample对象的body和evidence。对qK2 parity实例比较原多标签和并集模型，两侧typed资源独立核对。",
+        "reason": "新accepted whole边以μ2、ν1代闭式给原b*=1/2；并集模型直接把四typed资源分两组构造b*=1，完整支付无损合并失败。原均匀K放大同时压YES2/K，K2一终端层可遮蔽3DM gap；该边不把一般一致性gadget视为已得。q0软件约定不经bridge外推，真实终端根分支保1。原singleton Z错标Y只伤软件oracle，解析结构证明仍成立。本轮发现的A_q参数域笔误已由Boss最小修正，本core v3与本任务刷新pin已逐项核对；μ/ν主公式及证明不变。"
+      },
+      "UM-JOINT-CHOICE-NP-v1": {
+        "state": "linked",
+        "object_pin": "e7ea6f117790efb096caff37cb3af2e59501058c85454c8ed205639bbd186cf9",
+        "edge_ids": [
+          "um-b5-scheduling-karp-perfect3dm-to-third-unit-joint-choice"
+        ],
+        "comparison_scope": "实读现行 v3 主体、双程序边界、共同匹配三源审查的第 2 节及修订的重边资源，并复读冻结主证明第 1 至 3a 节与 Karp 文献第 5.2 节。比较精确三坐标源、原 q+3/R 构造、非退化子域及给定证书舍入的量词。单邻域页只取带类型的四条 parity triples 作为新端点测试的源输入。",
+        "reason": "完整正反编译、唯一 small 积分性、容量格点与 NP 验证均已付。q0 保三件实际任务，孤立坐标保合法 NO。源可以预处理到 q≥2 且每坐标出现，调度输出每机有有限端且每任务兼有 big 端。δ=1/3 的无孤立 parity NO 给显式峰 4/3，故该归约端点失败；按条件槽界对应 ε=1/6。另立半单位窗口与一般调度算法保各自合同。"
+      },
+      "UM-SINGLE-CAPACITY-QUERY-RETURN-INDEX-EXCHANGE-v1": {
+        "state": "linked",
+        "object_pin": "a5698d48ea958a4724c64533496b4b3be56d9a3d8c9b1abca3abf68d9d6b0923",
+        "edge_ids": [
+          "um-r37-uniform-capacity-old-strict-exchange"
+        ],
+        "comparison_scope": "沿用 Boss5 同 pin 的成熟审读。独立comparison group：完整读取v1原时间证明与历史尾审查；追加完整读取v2全部登记body/evidence（逐机统一定理、版本/五稿、平行元/双增广）。精确复用canonical uniform-capacity-old-strict-exchange.json，SHA ecefa379205957ebd0f769c432557826059ad2a19193c9c52eaaaa9b5c4e450f；本轮edge-check确认whole有效。",
+        "reason": "每finite原时间严格>B/2且≤T使每个X的weakB⇔资格matching⇔strictT；只在分析网络改为T后用v2，再恢复真实原p。共同C平行元与先qj后bi最多两搜索保全部A；无inactive承诺输出二选一，禁止inactive时得指定错配及反方向。原同机异权矩阵并非逐项含于v2。私有O_z完成所有原jobs才保外部峰；共享真实外端/模式相关A不免费外推。已存在精确whole边，不重复复制。"
+      },
+      "UM-RESIDUAL-THROUGHPUT-LATTICE-v1": {
+        "state": "linked",
+        "object_pin": "cd32211f2543cc3adaac3ff33e6915177a411ca8b38f0b4067d35b0e7e385f45",
+        "edge_ids": [
+          "um-a-474257b8-fixed-residual-lattice-specializes-occupation"
+        ],
+        "comparison_scope": "沿用 Boss5 同 pin 的成熟审读。独立comparison group：完整读取固定R最终审查及所列两项有限/程序证据；追加完整读取occupation图程序对象的全部body/evidence。精确复用canonical fixed-residual-lattice-specializes-occupation.json，SHA 7b7be1b3eeb9ecc0f18186d082dac56452efdbffb4810fb4f9001a5350ebd269；本轮edge-check确认step有效。",
+        "reason": "对偶(min价,max势)/(max价,min势)的可行闭包及逐坐标重排给全部c,d格次模，含零时间；代c(I)的反序join/meet得固定tiny占位g非增次模、D超模。复用边contribution明确只支付图程序的该格结构，remaining保D=内部边数的精确割/定向证明、整数补全iff独立集、OPT1及星图交换障碍。动态R(H)同时变动时2×2值2,1,1,2不继承该结构，原OPT1/2；近满吞吐亦不等全任务完成。"
+      },
+      "UM-KNAPSACK-MATROID-EXPONENTIAL-v1": {
+        "state": "isolated-after-review",
+        "object_pin": "e2a3e4709818f6eab0e23471a46b2054f199713fbb42fe5c5bcd18b70aa490e5",
+        "comparison_scope": "沿用 Boss5 同 pin 的成熟审读。独立comparison group：完整读取原地回路资源、KDM/指数两源精读及Knapsack有限审查。核任意同E拟阵含F的单回路分类、|D|≥r+1、所有w0边界坏集的覆盖计数、对数下界、覆盖数反向uniform+free构造、strict阈值区间与输入位长。相关registry检索及该完整有限审查中同页h=1 envelope仅作不同参数域比较，不借其k≤4有限表升级一般证明。",
+        "reason": "对所有合法k,r和任意静态原地拟阵组，覆盖计数及覆盖数身份已是普遍定理；16组/2674回路/109351检查只是有限验证。端点k7/9代码没穷举augmentation不使uniform+free结构证明开放。固定B<2选r=dk给expΩ(k)数量，输入L=Θ(k log k)只声称对L超多项式，不是expΩ(L)。h=1的另一envelope族对应r=0，超出本定理r≥1域，不能机械作特化/等价；这里无第二个已读登记端点的真实新推导，不造共同matroid词汇边。固定独立私有辅助须先证接受族为收缩限制才适用；共享/动态辅助、投影和全局调度坏集可扩展仍属域外或未付。本范围无边不等于全仓无潜在迁移。"
+      }
+    },
+    "assets": [
+      {
+        "path": "map/edges/boss2-wave22-um-repair-5cad45f07a645e15/karp-perfect3dm-to-third-unit-joint-choice.json",
+        "sha256": "7bbce470838e6b60ff04d38377f05be73aa988a02f03735ef0ec6d5b26dff4ac"
+      },
+      {
+        "path": "map/edges/unrelated-machines-3a-3a-9926915a3191b4a1/demand-floor-pays-parity-label-union-counterexample.json",
+        "sha256": "088911fca57a71cc93a564c6ff2dd4e888b59bb9e0601cd1a6cb61ff14fcc39d"
+      },
+      {
+        "path": "map/edges/unrelated-machines-3a-3a-1b7557db7c2d59cd/uniform-capacity-old-strict-exchange.json",
+        "sha256": "ecefa379205957ebd0f769c432557826059ad2a19193c9c52eaaaa9b5c4e450f"
+      },
+      {
+        "path": "map/edges/unrelated-machines-3a-3a-3f971da9d312cddb/fixed-residual-lattice-specializes-occupation.json",
+        "sha256": "7b7be1b3eeb9ecc0f18186d082dac56452efdbffb4810fb4f9001a5350ebd269"
+      }
+    ],
+    "supersession": {
+      "unrelated-machines-3a-3a-9926915a3191b4a1": {
+        "reason": "仅 UM-JOINT-CHOICE-NP-v1 在现行登记中改为 v3，重边资源证据已更正。保持旧数学身份，重新审核源、阈值和端点并用本包路径替换旧逻辑边。其余核心承接同 pin 已审覆盖。",
+        "assets": {
+          "map/edges/unrelated-machines-3a-3a-9926915a3191b4a1/karp-perfect3dm-to-third-unit-joint-choice.json": {
+            "disposition": "replaced",
+            "replacement_paths": [
+              "map/edges/boss2-wave22-um-repair-5cad45f07a645e15/karp-perfect3dm-to-third-unit-joint-choice.json"
+            ],
+            "reason": "旧 accepted 边目标 pin 已过时。新路径保原 edge_id 和完美匹配双向归约，绑定现行 v3 及更正后的资源，补足非退化域和端点的直接证书。历史文件保持原字节。"
+          },
+          "map/edges/unrelated-machines-3a-3a-9926915a3191b4a1/demand-floor-pays-parity-label-union-counterexample.json": {
+            "disposition": "retained",
+            "reason": "原需求树 μ/ν 公式与标签并集的显式反例均未改，当前 canonical、两端点及证据绑定仍有效。"
+          },
+          "map/edges/unrelated-machines-3a-3a-1b7557db7c2d59cd/uniform-capacity-old-strict-exchange.json": {
+            "disposition": "retained",
+            "reason": "逐机统一容量到旧同机异权单容量的资格匹配化约、逐原任务时间恢复及私有封装范围均未改，当前 canonical 原 SHA。"
+          },
+          "map/edges/unrelated-machines-3a-3a-3f971da9d312cddb/fixed-residual-lattice-specializes-occupation.json": {
+            "disposition": "retained",
+            "reason": "固定 R 对偶格不等式向占位缺口次/超模性质的原 proof-step 仍有效，精确图缺口和整数补全留给各自原证明，当前 canonical 原 SHA。"
+          }
+        }
+      }
+    },
+    "review_note": "上轮正式收据与旧 done 任务内嵌收据逐值一致，四旧资产均核原 SHA。现任务全部 11 端点 pin、32 段读取引用的 26 份文件哈希已核，和上轮相比仅联合选择端点 pin 更改。本轮复核该边完整数学，直接核其余成熟比较的承重论证及三条 canonical 资产。当前任务未声明 follow-up 对。",
+    "finite_check": {
+      "method": "本轮独立 Python 整数容量搜索按每件原任务列举全部可行机器，和单独的三坐标组合 oracle 对比；对正 δ 用精确 Fraction 将容量换算为三分之一格点。",
+      "cases": "δ=0 枚举 q=0,1,2 的全部 1、2、256 个三元组子族，分别 1、1、175 个 YES；另核 q=3 的非退化 YES、q=1/2 的空三元组边界以及 q=2 无孤立 YES/NO 在 δ=0、1/6、1/3−1/(10^60+7) 与 1/3 的对照。",
+      "endpoint_loads": "q=2 parity NO 的完整调度按 S_0…S_3、X_0,X_1,Y_0,Y_1,Z_0,Z_1、R 顺序，三分之一单位负载为 [3,3,3,3,3,0,3,0,3,0,4]，逐任务资格与大边匹配均直接核验。",
+      "limit": "这些有限检查只交叉核对构造。旧唯一小端 CLI 的 2438807 个 DFS 节点与独立程序的 26081 个缓存状态仍为各自历史范围，均未在本轮重跑。"
+    }
   }
 }
