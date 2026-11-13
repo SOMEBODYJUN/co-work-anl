@@ -1,0 +1,57 @@
+{
+  "edge_id": "cag-boss4-beeeb-all-outcomes-specializes-to-minimum-root-payment-failure",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "CA-EXACT-PURE-SPE-ALL"
+  ],
+  "target_ids": [
+    "customer-attraction/four-player-minimum-root-SPE-payoff-payment-failure"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "四名单位玩家、四标签，固定六类型人数{2}:2,{3}:1,{0}:3,{0,1,3}:5,{1,2,3}:2,{1}:1；比较同一输入所有完整历史纯SPE的最小首位收益。",
+  "roles": {
+    "CA-EXACT-PURE-SPE-ALL": "全集递推必要性、充分性、非空与逐有序历史证书展开，保证穷尽量词。",
+    "customer-attraction/four-player-minimum-root-SPE-payoff-payment-failure": "在固定14客户输入得到全部SPE根终局并否定W≥4r_min。"
+  },
+  "explanation": "对本固定输入将源R(k)展开为按有序前缀缓存的M(h)：叶M(h)={h}；每孩子取当前位收益最小，再取孩子门槛最大，并保所有收益不低于门槛的叶。相同计数可缓存集合，有序叶及子树策略仍分别展开。已保存标准库Fraction脚本正实施该递推，根全集恰{(1,3,0,0),(3,1,0,0)}（这里是有序标签叶，不是计数向量，也不是完整策略数）。逐客户计算两叶收益均(13/4,13/4,11/4,11/4)，故所有完整SPE的最小根收益确13/4；每叶W12。充分性拼接给一份完整85历史策略，保存340项真实含self比较全部非负。选四标签覆盖全部14客户故OPT4=14，而12−4·13/4=−1。这付清目标完整有限结论；没有把指定策略根收益直接冒作全SPE最小值。",
+  "scope": "源算法在该固定有理/整数输入的精确应用；只否根最小收益复制付款，不否half。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/算法/完整历史纯SPE终局全集--算法.md",
+      "sha256": "667d6f319b1f325bd32538f6b0e5a8e95c1942e2ec97cbc76d7cbaef06b36954"
+    },
+    {
+      "path": "archives/customer-attraction/state/反例/四人根最小均衡收益的总付款失败--反例.md",
+      "sha256": "dbdfc2dfe6e0ac8ed65755ab65f2491667970ba5e9ca51d21e07354df26b931a"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/root-minimum-payoff-primary/independent_check.py",
+      "sha256": "26645c584918d2ae9083055d1037d3166c21d27082ddeedf4675af314eb94373"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/root-minimum-payoff-primary/independent.stdout.json",
+      "sha256": "13b0fd7bd5d06d12f0b0955f7b24e76705fc1a5e3d1d3b4ec0b6337d48bd3dfe"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/root-minimum-payoff-primary/scan.json",
+      "sha256": "1665de193bcbbc218d830110565dafe0a530c59d0ef20d3a25a469a6fc9ac480"
+    }
+  ],
+  "reviewed_by": "Boss4-beeeb-fresh-math-worker",
+  "review_note": "已实读本边所列全部正文、量词和承重证据；保留完整有序历史、真实续局及固定输入边界。新边待Boss最终edge-bind/edge-check；未重跑历史优化或充分审计。",
+  "whole_result": "CA-EXACT-PURE-SPE-ALL在指定14客户四人游戏的全集递推及有序证书展开，完整给出目标两叶、全SPE r_min=13/4、W12<4r_min13、OPT4=14；这是固定输入的辅助付款反例。",
+  "endpoint_pins": {
+    "CA-EXACT-PURE-SPE-ALL": "aaa77e1f9a928bc25a315e66e18f424418e64643ec3fdb8717cbc3adc6310056",
+    "customer-attraction/four-player-minimum-root-SPE-payoff-payment-failure": "23973813cc6eab4a7b74b267793d8c451b148842a7e38cbf3d3f87547b463e5f"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/算法/完整历史纯SPE终局全集--算法.md": "667d6f319b1f325bd32538f6b0e5a8e95c1942e2ec97cbc76d7cbaef06b36954",
+    "archives/customer-attraction/state/反例/四人根最小均衡收益的总付款失败--反例.md": "dbdfc2dfe6e0ac8ed65755ab65f2491667970ba5e9ca51d21e07354df26b931a",
+    "archives/customer-attraction/tools/evidence/root-minimum-payoff-primary/independent_check.py": "26645c584918d2ae9083055d1037d3166c21d27082ddeedf4675af314eb94373",
+    "archives/customer-attraction/tools/evidence/root-minimum-payoff-primary/independent.stdout.json": "13b0fd7bd5d06d12f0b0955f7b24e76705fc1a5e3d1d3b4ec0b6337d48bd3dfe",
+    "archives/customer-attraction/tools/evidence/root-minimum-payoff-primary/scan.json": "1665de193bcbbc218d830110565dafe0a530c59d0ef20d3a25a469a6fc9ac480"
+  },
+  "review_digest": "abc8ab45ac9e9d79c55971c75ce6b07683681c88df35fb913e3db3e9afd13aae"
+}

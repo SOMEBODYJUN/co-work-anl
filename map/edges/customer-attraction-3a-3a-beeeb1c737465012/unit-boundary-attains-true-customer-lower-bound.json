@@ -1,0 +1,47 @@
+{
+  "edge_id": "cag-boss4-beeeb-unit-boundary-attains-true-customer-lower-bound",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-ba78ec702eca4553800fa409a32f9c12"
+  ],
+  "target_ids": [
+    "M-2afcbc9181084ab68a515fb2cabf94d4"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "原六标签完整σ、根034、固定比较124；允许同覆盖异标签0和3。归一实际福利R，不归一客户总数。",
+  "roles": {
+    "M-ba78ec702eca4553800fa409a32f9c12": "198个单位客户及完整σ的可行性、W138、C124198。",
+    "M-2afcbc9181084ab68a515fb2cabf94d4": "真客户固定策略锥最优值33/23的达到下界。"
+  },
+  "explanation": "将源的11种单位客户重数统一除138。固定完整策略的每条真实IC对质量齐次，故全部258 IC保非负，R变为1；J124覆盖全部198客户，故O=198/138=33/23。这是一份源目标63型共同非负质量可行点，证明max O≥33/23。标签0/3别名由目标允许，不能删掉标签再用原43历史。这个构造给达界下证，不提供任何锥上对偶；最优等号的上半仍由目标自己的9非零IC乘子证书承担。",
+  "scope": "只完成真客户固定σ/J最优性的下界/达到部分；不推广所有σ或J。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/构造/六标签固定策略的客户边界与分离逼近--构造.md",
+      "sha256": "868ad2f8aef259d6a1f4a44fa69d359245eecb2722f3d64842a19be3f479d652",
+      "section": "2. 清分母的198单位边界点"
+    },
+    {
+      "path": "archives/customer-attraction/state/障碍/同支持守恒与局部客户耦合的严格间隔--障碍.md",
+      "sha256": "9824cadf6ec0ec14ab078277b0458d10926c29f9b42a1c4388c4c1d92803de98",
+      "section": "2. 七个约束系统及精确值"
+    }
+  ],
+  "reviewed_by": "Boss4-beeeb-fresh-math-worker",
+  "review_note": "已实读本边所列全部正文、量词和承重证据；保留完整有序历史、真实续局及固定输入边界。新边待Boss最终edge-bind/edge-check；未重跑历史优化或充分审计。",
+  "contribution": {
+    "result": "真客户固定σ/J、R=1锥存在精确可行质量使O=33/23，故该值被达到。",
+    "remaining": "所有可行质量O≤33/23须保目标的精确对偶；source实例OPT3=198的证明只针对这个输入，不能替代固定J普遍上界。"
+  },
+  "endpoint_pins": {
+    "M-2afcbc9181084ab68a515fb2cabf94d4": "167db2e08076065b0f15a76eaefe76a2e1be9a2c717c559df4bdf641d055fa1e",
+    "M-ba78ec702eca4553800fa409a32f9c12": "ab57e7a9dff0d8f0f2d7a73ba6caac07eab5a2c0dacfb42d04eb75ae267ed2c5"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/构造/六标签固定策略的客户边界与分离逼近--构造.md": "868ad2f8aef259d6a1f4a44fa69d359245eecb2722f3d64842a19be3f479d652",
+    "archives/customer-attraction/state/障碍/同支持守恒与局部客户耦合的严格间隔--障碍.md": "9824cadf6ec0ec14ab078277b0458d10926c29f9b42a1c4388c4c1d92803de98"
+  },
+  "review_digest": "0ea76de13dc8468bc877a56a31f9d241da269c52b71e3dc4ded4943eccc5d6eb"
+}
