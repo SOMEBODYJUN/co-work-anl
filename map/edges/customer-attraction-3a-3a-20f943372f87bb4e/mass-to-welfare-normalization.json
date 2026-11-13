@@ -1,0 +1,55 @@
+{
+  "edge_id": "cag-20f943-mass-to-welfare-normalization-contribution",
+  "kind": "transfers",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/full-policy-cone-static-security-alternation-four-snapshots"
+  ],
+  "target_ids": [
+    "customer-attraction/credible-policy-cone-true-static-security-multiplicity-alternation-program"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "固定相同有限标签目录、人数m≥1和全部有序历史形式策略σ；客户类型只含非空mask，Γ为同σ真实偏离后继IC；本核心的r,t,p必须为精确可行输入，若需单位客户反例则须有理。全部m−1槽静态背景保留，不能替换为root/onpath菜单。",
+  "roles": {
+    "customer-attraction/full-policy-cone-static-security-alternation-four-snapshots": "提供Σr=1、Γr≥0的固定σ客户块及全部静态背景收益下界t；仅运输其精确可行性和攻击符号。",
+    "customer-attraction/credible-policy-cone-true-static-security-multiplicity-alternation-program": "接收第二块W=1约束下的精确可行点及v_m≥t、t>1/m时有理聚合攻击的局部保证；最大化t的解选择及运行合同仍由该对象自身承担。"
+  },
+  "explanation": "令M(r)=Σr，W(r)=c·r。非零r∈Kσ中必有W(r)>0：若W=0则根收益为0，根改选任一正质量类型T内标签，无论同σ续局如何至少获得r_T/m>0，违反根IC。故r↦s=r/W(r)、t↦τ=t/W(r)把总质量1客户块的每个精确可行点映到W(s)=1、s≥0、Γs≥0、所有背景β_B(p)·s≥τ的点，且同σ仍为完整SPE、v_m(s)≥τ。全部收益、IC松弛、W、v同乘1/W(r)，标签、m及σ不变；逆向s↦r=s/M(s)、τ↦t=τ/M(s)，两图互逆。m v_m(s)−1=[m v_m(r)−W(r)]/W(r)，因此严格攻击符号及有理清分母合同保留。固定p也同理，t>W(r)/m恰转为τ>1/m。此为目标对象精确可行更新保证的局部迁移。它没有把客户块最优解运输为最优解：总质量目标是m u_p−W，福利归一目标按同射线是u_p/W，分母W随射线改变；两程序的优化轨迹、停止规则和有限记录不等价。",
+  "scope": "只转移目标陈述中精确可行第二块及有理t>1/m的输出保证；非整条方法等价，非实际浮点可行性认证，非全局最优、强/弱普遍安全桥或half证明。",
+  "contribution": {
+    "result": "在固定σ、目录、m及全部真实IC/静态背景下，Σr=1精确可行客户块经(r,t)↦(r/W(r),t/W(r))提供目标W=1客户块的精确可行点，保同σ完整SPE及v_m≥t；t>W(r)/m时转为目标的t>1/m有理强聚合攻击合同。逆映射用总质量归一，故两截面的严格攻击可行射线相同。",
+    "remaining": "目标对象的最大化t步骤、最优更新选择、seed/完整策略采样、停止条件和有限运行记录不能由此迁移推出；两归一目标及交替轨迹并不等价。浮点结果须另行精确恢复，全局最优和一般W≥mv_m仍未由该贡献证明。"
+  },
+  "reviewed_by": "Boss6",
+  "review_note": "完整核对两方法v3的归一、两块LP及真实全历史/全部静态背景域，独立证明非零锥上W>0并逐式验证双向缩放。贡献仅对应目标陈述中的精确可行性和阈值输出保证；原四快照及W归一有限记录均未被升级为普遍结论。",
+  "evidence": [
+    {
+      "path": "map/edges/customer-attraction-3a-3a-20f943372f87bb4e/mathematical-review.md",
+      "sha256": "4dd333735fdcc923a43157f5a2a3ff7aebc2d41b8d4b5bd0a8d51a162dea47e2"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/完整策略锥聚合静态安全交替搜索与四个零间隙保存点--程序.md",
+      "sha256": "5e0ea12d41557a4ff5ca9a3dd6fa912410a24d643b16b9cb33511e7547b40fd7"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/真正静态安全值与客户重数的可信策略锥交替程序--程序.md",
+      "sha256": "943005af877ff55f904173ab5167c2a70cd9ef3624ac85030b00a9a873b4ab7a"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+    }
+  ],
+  "endpoint_pins": {
+    "customer-attraction/credible-policy-cone-true-static-security-multiplicity-alternation-program": "fcf872806ee3e1776e575ea54c7f6546be3aacb4e5c61903fc41a31dfc45c90f",
+    "customer-attraction/full-policy-cone-static-security-alternation-four-snapshots": "d5f38bd69b609f70645d64804f3c484b17c91cc88faed7cc01b1e24d69ca05de"
+  },
+  "evidence_pins": {
+    "map/edges/customer-attraction-3a-3a-20f943372f87bb4e/mathematical-review.md": "4dd333735fdcc923a43157f5a2a3ff7aebc2d41b8d4b5bd0a8d51a162dea47e2",
+    "archives/customer-attraction/state/程序/完整策略锥聚合静态安全交替搜索与四个零间隙保存点--程序.md": "5e0ea12d41557a4ff5ca9a3dd6fa912410a24d643b16b9cb33511e7547b40fd7",
+    "archives/customer-attraction/state/程序/真正静态安全值与客户重数的可信策略锥交替程序--程序.md": "943005af877ff55f904173ab5167c2a70cd9ef3624ac85030b00a9a873b4ab7a",
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+  },
+  "review_digest": "b598fc1fa4efd1c957024da826ca2c08b36d0d16256fdfd5f2cda41ca249e9a5"
+}
