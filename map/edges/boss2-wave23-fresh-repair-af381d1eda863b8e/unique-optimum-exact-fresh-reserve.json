@@ -1,0 +1,60 @@
+{
+  "edge_id": "cag-ab-unique-optimum-exact-fresh-reserve-budget-608b6e70",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/unique-optimal-omission-existence-counterexample-family"
+  ],
+  "target_ids": [
+    "optimal-cover-fresh-self-reserve-budget",
+    "M-16eddbd6da9a461686207660a3d8720b"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定两个单位提供者、源12类单位客户表与原共同目录A/B/T/Q/R/S。对每个整数k≥3，沿源给定完整历史纯SPE：根选A，末位在A/B/T/Q/R/S后依次选B/S/R/S/S/R，故actual为AB。k是客户重数参数。两种费用均固定同一原actual负载c。",
+  "roles": {
+    "customer-attraction/unique-optimal-omission-existence-counterexample-family": "提供12类客户表、原七历史策略的全部最优回复和根无增益，以及含重复的21对覆盖严格唯一性。",
+    "optimal-cover-fresh-self-reserve-budget": "确定恰两槽共同min-fresh费用及该族的精确自留余量，给去掉R0的更强式的合法见证。",
+    "M-16eddbd6da9a461686207660a3d8720b": "排除单槽最优后确定允许短元组的共同最小费用，并给同一自留余量和去掉R0的严格失败。"
+  },
+  "explanation": "设a=6k−2、b=7k−2、p=8k−2。源客户表的主题大小是(a,b,b,b,p,p)，在首主题X后选Y的末位收益为|Y|−|X∩Y|/2，六行最大值依次为b,b,b,b,a,a且均由指定回复达到；沿这些真实回复，根六个动作的收益均为a。故资格覆盖全部七个决策历史及每节点六个动作。A∩B为空，故实际覆盖C=A∪B上c=1、其余c=0，W=a+b=13k−4，自留R0=W/2。原21对枚举给最优TQ覆盖14k−4，其他对的最大覆盖仅14k−5。唯一最优无序对TQ对应两种有序元组TQ/QT；最大单主题p=8k−2<14k−4，故允许少于两槽没有新增最优组。T与Q互不相交，各有7k−2客户，且分别只有BTRS/BQRS一名客户在C中。于是g_c(T)=g_c(Q)=(7k−3)+1/2=7k−5/2。两种最小费用均为14k−5，也可按逐客户用L+I/2=(14k−6)+1重算。因此W+R0−K0=W+R0−P*=(11k−2)/2>0，而K0−W=P*−W=k−1>0。k=3时费用37、W35、R0=35/2、正余量31/2、无自留超额2。两人族的全遗漏L−W=k−2，与这里按1/(1+c)计费的超额差一名客户单位，动态遗漏付款沿真后继并使用不同账目。十三人旧例的13 max g−W−R0=37/66>0来自重复最大主题T且并集未达到OPT；该旧例P*=557/66、K0=724/33、W+R0=2537/66，两个最优元组预算均通过。",
+  "scope": "对每个整数k≥3的一份指定两人完整SPE，无该实例全部SPE量词。预算的两人域已有调和边，这里确定原族的精确最小费用、余量和无自留严格见证。两种一般自留预算保持open；动态遗漏、十三人单最大主题反例及half的原判定各按自己的量词。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/反例/唯一最优组合的全遗漏支付--反例.md",
+      "sha256": "a133fad7a04e571739537fe3bf8e06add9be54e81dd56461f4fe5cf3b76298a5"
+    },
+    {
+      "path": "archives/customer-attraction/state/想法/最优覆盖查询的自留份额预算--想法.md",
+      "sha256": "32d2e88606a5ea2d831e3bef4972cbcd586f0bac26799aa8f570e9f133a5b678"
+    },
+    {
+      "path": "archives/customer-attraction/state/资源/真实child价差的旧反例与最优查询量词--资源.md",
+      "sha256": "049a65d265733346acccf580bd9e49ed115767d2fc7ebc770e33553add2ef3c2",
+      "section": "新P*允许少于m槽，不能偷换为旧K0"
+    },
+    {
+      "path": "archives/customer-attraction/state/证明/终局净预算的元组支持量词与条件付款--证明.md",
+      "sha256": "48d94f566501f30480fbe1fd6b6f9f5451754ca7a9bb80c95d60c5887002d137",
+      "section": "71客户与全参数旧族：无符号失败不反净预算"
+    }
+  ],
+  "reviewed_by": "Boss3",
+  "review_note": "核当前三个登记合同、原12类表、指定全历史回复、21对覆盖和单槽上界，逐客户独立重算价格与自留。旧13人完整资格沿用原证，未重跑旧科学程序。旧终局净预算正文的Q−W算式与本次一致；本边明示其同时等于固定及允许短元组的真实最小fresh费用。 Boss3按当前v2/v3登记和原有序策略复核，以二进制有理价格重算TQ的两个端点；R0仍进入原候选，十三人另保两种不同最优支持费用。",
+  "contribution": {
+    "result": "在源族每个k≥3的原完整AB SPE上，K0=P*=14k−5，R0=(13k−4)/2，两个原预算余量均为(11k−2)/2>0；若将右端改成W，K0≤W和P*≤W都被同一完整SPE族以严格差k−1否定。",
+    "remaining": "一般人数的固定m槽及允许短元组共同最小费用上界仍需各自证明，或给满足原完整SPE量词且费用超过W+R0的见证。原族固定m=2和一份策略；其正余量仅给精确子域，无自留加强的失败不推原预算失败。"
+  },
+  "endpoint_pins": {
+    "M-16eddbd6da9a461686207660a3d8720b": "abc6bc24e30e0ffe3364f063cddabe91f9ac7cbc024f994e18b8f4e5d692d804",
+    "customer-attraction/unique-optimal-omission-existence-counterexample-family": "029c7aed54df2e026310baf4bb2b85c974e9c236edbc71a3e0d4f0cad65b0775",
+    "optimal-cover-fresh-self-reserve-budget": "c4711fd97240446ea1aaecb377a4de5ed484828e70a988567f7d4b8f71977401"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/反例/唯一最优组合的全遗漏支付--反例.md": "a133fad7a04e571739537fe3bf8e06add9be54e81dd56461f4fe5cf3b76298a5",
+    "archives/customer-attraction/state/想法/最优覆盖查询的自留份额预算--想法.md": "32d2e88606a5ea2d831e3bef4972cbcd586f0bac26799aa8f570e9f133a5b678",
+    "archives/customer-attraction/state/资源/真实child价差的旧反例与最优查询量词--资源.md": "049a65d265733346acccf580bd9e49ed115767d2fc7ebc770e33553add2ef3c2",
+    "archives/customer-attraction/state/证明/终局净预算的元组支持量词与条件付款--证明.md": "48d94f566501f30480fbe1fd6b6f9f5451754ca7a9bb80c95d60c5887002d137"
+  },
+  "review_digest": "ff4b0ac68e28c074fc647de65ad247ee8589a1e5eb281d9384d487a064653fb2"
+}

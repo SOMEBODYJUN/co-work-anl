@@ -1,0 +1,74 @@
+{
+  "edge_id": "um-r37-ordered-envelope-row-spread",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "UM-ST-ENVELOPE-CONFIG-IDENTITY-v1",
+    "UM-MODEL-v1"
+  ],
+  "target_ids": [
+    "UM-ROW-SPREAD-TWO-ROUND-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "显式不相关机输入有至少一台机器，每个原任务有至少一个有限端，有限加工时间为非负二进制有理数，∞端不可用，任务不可拆分。先把每个具有任一零端的任务分配至一个零端并从子问题删除。对删后每个非空行，所有有限加工时间落在某个[γ_i,2γ_i]，可固定取γ_i为该行的最小有限时间，各行尺度独立。空行无须γ_i。调用标准确定性精确有理LP与二分图匹配。",
+  "roles": {
+    "UM-ST-ENVELOPE-CONFIG-IDENTITY-v1": "提供一次全局覆盖匹配、ceil前缀槽数和每行L_i≤E_i≤ℓ_i+M_i。",
+    "UM-MODEL-v1": "定义原任务的有限端整分配、原OPT与目标T剪枝负载LP；任何实际T调度给必要LP的0/1证书。",
+    "UM-ROW-SPREAD-TWO-ROUND-v1": "在逐机跨度承诺下加必要前缀和总数约束，从一次共同槽匹配得到未知OPT下的实际三半算法。"
+  },
+  "explanation": "删零保持OPT：限制原调度至剩余任务只减负载，向剩余调度回填已选零端也不增负载；无剩余任务即返回。对T>0，剪∞和p_ij>T端，保非负、任务列和1、行负载ℓ_i≤T。逐行加严格p_ij>T/2的质量≤1和严格p_ij>T/3的质量≤2；非空行仅当T<4γ_i时加总质量≤floor(T/γ_i)。实际峰值≤T的分配满足上述全部约束：两个超过T/2或三个超过T/3都会超载，而每个有限端耗时至少γ_i。对任意可行有理点按行处理时间非增铺槽，片段与槽正交长才连边。交长构成任务需求1、槽容量1的分数匹配，由Hall有一个覆盖全任务的整数匹配。质量X≤整数k的前缀仅触及前ceil X≤k槽，因而任意覆盖匹配同时保两个重前缀和适用的总数界。令t=T/γ_i，缺失排名以0计，空行负载0。t<2时至多一件，剪枝使p≤T，且t<1时没有任务。2≤t<3时至多两件，首项≤T且第二项≤T/2。3≤t<4时至多三件，首项≤2γ_i≤2T/3，第二项≤T/2，第三项≤T/3，和≤3T/2。t≥4时M_i为全剩余行最大有限时间，包络差Σ_s(p_s−p_{s+1})(ceil X_s−X_s)≤M_i给L_i≤E_i≤ℓ_i+M_i≤T+2γ_i≤3T/2。槽端点零交长不造边，严格前缀将恰等于T/2、T/3的任务留在相应的弱排名界内。未知OPT时，取剩余正有限时间的有理gcd d：分母乘积D作共同分母，d=gcd(Dp_ij)/D，D和相关整数位长受总输入控制。U=Σ_j min_i p_ij来自逐任务最短端的实际调度，U与OPT都是d的整数倍。有剩余任务时T=0不可行而U可行。T增大使剪枝边扩大、负载上界升高、两个严格前缀缩小、总数上界不减直到移除，所以旧x仍可行。对k∈[0,U/d]二分，取最小可行格点T*=kd≤OPT；最优实际调度在OPT格点给可行证书。O(log(U/d+1))次显式多项式规模LP及其多项式位长有理点足够。每行最多n槽，每个正x区间长≤1仅触及至多两个槽；排序、增广匹配和回填均为确定性总位多项式，输出峰值≤3T*/2≤3OPT/2。",
+  "scope": "允许任意独立行尺度，含空任务、空行、零端回填和未知OPT。求解带计数的剪枝LST并使用有序包络，证明范围是删零后的逐行跨度二类；共同b且每行至多两枚非unit正资格另有独立合同。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/资源/槽包络凸化与共同提取的不同对象--资源.md",
+      "sha256": "2e5e5267c8a7aed22408fe87babe78ac80a4bcc11a38239648eb90256c26a19c",
+      "section": "单行定义及可提取性"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/capacity-half-slot-and-row-reviews/comparisons/joint_slot_prefix_rounding.md",
+      "sha256": "ab1a6cd8c7c3b5cceabc7a4a103d77180ee0465f722dddbeb277400cc2533be4",
+      "section": "2. 排序槽保留整数前缀计数"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/capacity-half-slot-and-row-reviews/comparisons/joint_slot_prefix_rounding.md",
+      "sha256": "ab1a6cd8c7c3b5cceabc7a4a103d77180ee0465f722dddbeb277400cc2533be4",
+      "section": "3. 显式必要LP与逐机负载界"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/capacity-half-slot-and-row-reviews/comparisons/joint_slot_prefix_rounding.md",
+      "sha256": "ab1a6cd8c7c3b5cceabc7a4a103d77180ee0465f722dddbeb277400cc2533be4",
+      "section": "4. 算法、目标搜索与总位复杂度"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定义/不相关机器与两个调度松弛--定义.md",
+      "sha256": "f83b0a531d9e9b98fcffa70c77962f2e2b61e112b2074646f4f7cc3179ac9a8b"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/联合选择槽舍入三源精读--审查.md",
+      "sha256": "46153e968f420228c6720dd4edd2025c1521fcbb527830de60792c01d161f258",
+      "section": "4. 逐机跨度≤2 的直接 3/2 算法"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/Hall联合流与前缀匹配增量审计--审查.md",
+      "sha256": "632d0fe761d9224e9cb194499f46b75ad0e799f5b3dde71d2abc4d4cb25256db",
+      "section": "5. Joint slot prefix：局部 envelope 与全局 parity 证书"
+    }
+  ],
+  "reviewed_by": "Boss3",
+  "review_note": "从当前登记、UM模型、包络公式和完整前缀证明独立重构零端等价、Hall共同覆盖、四段负载及未知目标二分。Hall审计第5节只供有限行级检查及单一parity证书；全称保证由上述论证承担。",
+  "whole_result": "对所有满足删零后逐机跨度二承诺的合法显式不相关机输入，存在确定性总位多项式算法在OPT未知时输出覆盖全部原任务的有限端整分配，且C_max≤3OPT/2。",
+  "endpoint_pins": {
+    "UM-MODEL-v1": "9e0366033d2ab38fffe159771a178a29146f75c0d5c2cea92c0b1a307e6269c5",
+    "UM-ROW-SPREAD-TWO-ROUND-v1": "3f6c1001f9896f3f850cd7773edea429fd726d7917e17d8aa1b3e6011c9074bb",
+    "UM-ST-ENVELOPE-CONFIG-IDENTITY-v1": "cb19e6e1237754a8203740739689cebc96785f7cff55cf69c7ff1ecf61c64ebf"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/资源/槽包络凸化与共同提取的不同对象--资源.md": "2e5e5267c8a7aed22408fe87babe78ac80a4bcc11a38239648eb90256c26a19c",
+    "archives/unrelated-machines/tools/evidence/capacity-half-slot-and-row-reviews/comparisons/joint_slot_prefix_rounding.md": "ab1a6cd8c7c3b5cceabc7a4a103d77180ee0465f722dddbeb277400cc2533be4",
+    "archives/unrelated-machines/state/定义/不相关机器与两个调度松弛--定义.md": "f83b0a531d9e9b98fcffa70c77962f2e2b61e112b2074646f4f7cc3179ac9a8b",
+    "archives/unrelated-machines/state/审查/联合选择槽舍入三源精读--审查.md": "46153e968f420228c6720dd4edd2025c1521fcbb527830de60792c01d161f258",
+    "archives/unrelated-machines/state/审查/Hall联合流与前缀匹配增量审计--审查.md": "632d0fe761d9224e9cb194499f46b75ad0e799f5b3dde71d2abc4d4cb25256db"
+  },
+  "review_digest": "7fd5fa7e53f7c370c2e7af19e0c355951295a413b1f4b96b471449aa9672b986"
+}
