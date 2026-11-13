@@ -1,0 +1,53 @@
+{
+  "edge_id": "um-dba13-menu-bridge-to-take-continue-escape",
+  "kind": "transfers",
+  "status": "accepted",
+  "source_ids": [
+    "UM-WEIGHTED-MENU-STATE-DUMMY-SC-v1"
+  ],
+  "target_ids": [
+    "UM-PARTIAL-SUM-TAKE-CONTINUE-FLAT-MENU-ACTUAL-ESCAPE-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定三位 agent、两件共享不可拆原物品及指定的九组 take/off/accept 编译，逐状态权和恰为1。全部选择器和 incidence 独立且逐件恢复。",
+  "roles": {
+    "UM-WEIGHTED-MENU-STATE-DUMMY-SC-v1": "给归一化完整菜单到原任务 UM 的精确值和实际解码。",
+    "UM-PARTIAL-SUM-TAKE-CONTINUE-FLAT-MENU-ACTUAL-ESCAPE-v1": "被编译目标的菜单/调度数值及其与另一个原 Santa 实例的差别。"
+  },
+  "explanation": "三条链各有 root、中间及末组三组。取每条链私有 x、y、z 分别给 root take1、中间 take2、末端 accept，选中状态的质量分别为2/5、3/5、1，束两两不交。若所有组选中质量严格超过2/5，任意 root 的 off 质量上限仅2/5，take1 则必须取得同一个 u1，三个 root 不能同时取得。于是 V=2/5。对全原任务的精确桥给峰8/5，保留9件 selector 和21件 incidence，包括未选状态任务；unit 外端不重用。",
+  "scope": "固定九组26机30作业的累计编译。菜单对应的状态代理 Santa 值为2/5，原三人 Santa 实例的最优值独立为0。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/审查/Santa受限桥与归一化菜单双源审查--审查.md",
+      "sha256": "f96a1038bc7dd23d2e88c6ed842203ee93778a1feb579883ceaf3b5235bf7dac",
+      "section": "二、归一化完整菜单的精确值桥"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/直线集合打包与统一端口停车双源审查--审查.md",
+      "sha256": "3f1cc70001adac7bbbcdd5c0815a851a30fe0d92e2271cad8f534dbfcea9fe92",
+      "section": "2. take/continue 的明确反例"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/uniform-de-version-history/comparisons/line_set_packing_and_take_continue_compilation_obstructions.md",
+      "sha256": "f740e8daec3e837c58b14ff227eb6835c1720e00f89639fc2b9595677b187633",
+      "section": "5. 全部30 jobs的达界与任意调度下界"
+    }
+  ],
+  "reviewed_by": "Boss3",
+  "review_note": "按所列冻结正文复核同一输入、方向、边界和证明义务。此边中的完整算式与见证承担推导，有限核验按原记录范围使用。",
+  "contribution": {
+    "result": "固定编译目标满足 V=2/5、完整 UM 最优值恰为8/5。",
+    "remaining": "原三人 Santa 零值来自两件不可拆物品的鸽巢原理，须独立于目标状态代理 Santa 建立，才得到正值保持解码失败。"
+  },
+  "endpoint_pins": {
+    "UM-PARTIAL-SUM-TAKE-CONTINUE-FLAT-MENU-ACTUAL-ESCAPE-v1": "e32710a299c5b377124d40467e4c948173ae5a9f5a24a64cbcd8b09d341911df",
+    "UM-WEIGHTED-MENU-STATE-DUMMY-SC-v1": "2c879de6da8fc4f936abd8d627dc3a1a3d0fc3269325307b426a37b40ff73923"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/审查/Santa受限桥与归一化菜单双源审查--审查.md": "f96a1038bc7dd23d2e88c6ed842203ee93778a1feb579883ceaf3b5235bf7dac",
+    "archives/unrelated-machines/state/审查/直线集合打包与统一端口停车双源审查--审查.md": "3f1cc70001adac7bbbcdd5c0815a851a30fe0d92e2271cad8f534dbfcea9fe92",
+    "archives/unrelated-machines/tools/evidence/uniform-de-version-history/comparisons/line_set_packing_and_take_continue_compilation_obstructions.md": "f740e8daec3e837c58b14ff227eb6835c1720e00f89639fc2b9595677b187633"
+  },
+  "review_digest": "19f67b9a7eb547844e4ce9bbdc3924097f1c976d2004237c1f1463c92c03270d"
+}

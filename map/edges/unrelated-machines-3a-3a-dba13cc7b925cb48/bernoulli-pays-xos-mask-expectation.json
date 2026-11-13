@@ -1,0 +1,58 @@
+{
+  "edge_id": "um-dba13-bernoulli-pays-xos-mask-expectation",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-c5029512a3de4ef7aba8cb0b9ae0d37e"
+  ],
+  "target_ids": [
+    "unrelated-machines/fractional-rematching-normalized-xos-robust-gap"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "固定作者 v5 E2 的正候选束和取到它的非负加性 clause、已有 V_i>0 与 ν_i>0。Q=210|B|；对候选 i，a_ij=floor(Qw_ij/V_i)/Q，β_i=ν_i/V_i，0≤a_ij≤β_i 且 Σ_j a_ij≥δ/12。独立逐物品抽标签，固定 round t_i 的单物品概率 p_i=δ(1−δ)^(t_i−1)>0。",
+  "roles": {
+    "M-c5029512a3de4ef7aba8cb0b9ae0d37e": "对一条显式加性 clause 的独立保留给移位对数期望。",
+    "unrelated-machines/fractional-rematching-normalized-xos-robust-gap": "旧条件合同 B/E2 的候选局部 mask 期望步骤，尚有外部及全局证明义务。"
+  },
+  "explanation": "把每行 a_ij 当一条加性 XOS 的权，移位 ν=β_i、V=1、保留集是与固定标签 t_i 相符的原物品。行内 Bernoulli 独立且统一 p_i；M_i=p_iΣ_j a_ij。源定理给 E log(1/(β_i+A_i))≤log(1/M_i)≤log(12/(δ p_i))。不同候选共享原物品时可相关，逐行相加只用期望线性性。",
+  "scope": "显式候选、固定标签和有限格点辅助单行。此边说明旧合同的局部期望，保持整体历史条件身份。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/定理/加权Bernoulli移位逆矩与XOS对数期望--定理.md",
+      "sha256": "a3138d987df91603f60a1d6b1abbdc480be39cec1384a924c120f2131a5f119b",
+      "section": "3. 加权缩放与对数期望"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/加权Bernoulli移位逆矩与XOS对数期望--定理.md",
+      "sha256": "a3138d987df91603f60a1d6b1abbdc480be39cec1384a924c120f2131a5f119b",
+      "section": "4. 显式非负 XOS 推论"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/分数重匹配与归一化XOS稳健缺口边界--定理.md",
+      "sha256": "05d4fbbde010e55a6b1fbb920d2f7e4d84743d1c8e50a3392a3d6918249a829b",
+      "section": "3.2 E2：显式 XOS rounding、mask 与 rematching"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/Boss7-fractional-restored/decoded/fractional_rematching_extension_statement_only_v5.md",
+      "sha256": "3160d7f7dc3265c7753ba558bb6cd21fe58fc5e2ea84562d2558ee852701154e",
+      "section": "B5. Candidate-local relative grid and deterministic label mask"
+    }
+  ],
+  "reviewed_by": "Boss3",
+  "review_note": "按所列冻结正文复核同一输入、方向、边界和证明义务。此边中的完整算式与见证承担推导，有限核验按原记录范围使用。",
+  "contribution": {
+    "result": "给定候选和标签概率的局部掩码对数期望界，且不要求候选间独立。",
+    "remaining": "仍需残余分数 lift、候选构造、有限位 mask DP 与误差控制、共用标签的确定性固定、比较重匹配和最终常数。"
+  },
+  "endpoint_pins": {
+    "M-c5029512a3de4ef7aba8cb0b9ae0d37e": "1c384cb3dee93b66314637738ecfab08eeb476c2a02ef5b3cf31b904a30ea82b",
+    "unrelated-machines/fractional-rematching-normalized-xos-robust-gap": "7ddad14088324d4802ee33c336222ee2a6e568e3736ab868956bc7d48d2eeb72"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/定理/加权Bernoulli移位逆矩与XOS对数期望--定理.md": "a3138d987df91603f60a1d6b1abbdc480be39cec1384a924c120f2131a5f119b",
+    "archives/unrelated-machines/state/定理/分数重匹配与归一化XOS稳健缺口边界--定理.md": "05d4fbbde010e55a6b1fbb920d2f7e4d84743d1c8e50a3392a3d6918249a829b",
+    "archives/unrelated-machines/tools/evidence/Boss7-fractional-restored/decoded/fractional_rematching_extension_statement_only_v5.md": "3160d7f7dc3265c7753ba558bb6cd21fe58fc5e2ea84562d2558ee852701154e"
+  },
+  "review_digest": "2b356807773a2f1f8d414eb6f390d2caee0e4123aafef2457a619c1ef96ec8e8"
+}
