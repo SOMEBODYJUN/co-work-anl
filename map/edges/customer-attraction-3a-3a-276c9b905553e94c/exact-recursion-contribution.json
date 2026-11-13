@@ -1,0 +1,120 @@
+{
+  "edge_id": "customer-attraction-five-preserved-paths-exact-recursion-certificate-contribution",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "CA-EXACT-PURE-SPE-ALL"
+  ],
+  "target_ids": [
+    "customer-attraction/five-player-last-payoff-eight-preserved-paths-and-new-full-policy-certificates"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定已保存的八条记录、七份非负整数单位客户输入；共同标签p=7、提供者m=5；只认证本次新构完整策略，完整历史域包含所有7^d个字面历史，保全部弱平局。scale=60整除1,…,5，使用任意精度整数。有限输入/指定路径前缀合法性已逐项精确核验，并非假设或原1000次试验重跑。",
+  "roles": {
+    "CA-EXACT-PURE-SPE-ALL": "给出终局集合递推的必要性、充分性、非空性及指定路径全有序树独立拼接；给出定义级真实后继IC的认证原则。",
+    "customer-attraction/five-player-last-payoff-eight-preserved-paths-and-new-full-policy-certificates": "目标对象中“八条保存path各可新构一份完整纯SPE及全树IC证书”的精确有限部分；历史随机报告仍保持其原有限身份。"
+  },
+  "contribution": {
+    "result": "对原八条保存路径22600、33666、44444、00055、00056、55006、33116、33661（其中trial707两path同输入），每条均存在且本包证据逐动作给出一份2801节点完整历史纯SPE；八图全部22408节点的134448非自身真实后继比较非负，133989严格、459平局。它们保原终局及60倍收益，福利依次148、152、52、103、104、79、87、87，均等于本输入全客户数及OPT。此为一般精确递推及独立IC认证在七份指定输入上的有限特化。",
+    "remaining": "目标整条还记录原seed20261022的1000试验历史报告、保存八次改进的过程、未存作者原策略及原比值最大字段。这些历史事实不由全集定理推出；本边没有重跑该扫描，没有恢复未存原图，也不提供未保存试验的认证。完整SPE构造部分已付清；任何一般人数/任意目录、所有五人实例的A:2u_i≥u_5、B:2Σ_{i<5}u_i≥4u_5或half结论仍须各自独立证明或精确反例，不由八个有限正例推出。"
+  },
+  "explanation": "1. 模型与算术对应。每份weights的第t−1项是兴趣掩码t的不同单位客户重数r_t，t=1,…,127；p=7、m=5，故终局q的选题a收益为U_a(q)=Σ_{t∋a}r_t/(Σ_{b∈t}q_b)。令V_a=60U_a，因出现的正分母在1,…,5内，V_a是准确整数。计数只用于收益和可实现终局全集缓存，policy仍按全部有序历史h索引。\n\n2. 全集到有序路径。按源定理，E(k)=∪_a{q∈E(k+e_a):V_a(q)≥T(k)}，T(k)=max_b min_{r∈E(k+e_b)}V_b(r)，终端E(q)={q}。本包独立计算七份输入的全部792计数状态，每条保存path的终局q在E(0)内，且各指定在轨前缀的下一标签a满足q∈E(k+e_a)和V_a(q)≥T(k)。因此所选孩子可继续实现q；对每个未选b取使V_b最小的可实现终局r_b。源定理的归纳给各孩子一份子SPE，有限最小值达到，不同有序孩子子树不交，可独立拼接。当前偏离收益V_b(r_b)≤T(k)≤V_a(q)，从而得到实现指定path的完整SPE。对离轨节点重复同一构造而不强制计数选择器。本包还重构其确定性选择并与保存八图的全部动作逐一相等；trial707共用同一输入E集合，但两个指定path产生不同新完整图。\n\n3. 独立字面IC。另一个不调用E成员资格的检查先按depth/lex完整解出每图1+7+49+343+2401=2801个行动。对每个h和每个a，沿保存的同一policy从h·a真实走到长度5终局z(h,a)，重新计算v_h(a)=V_a(count(z(h,a)))，核对全部收益payload与全部节点索引，逐项检查v_h(policy(h))≥v_h(a)。八图134448个非自身比较全部通过；各图严格/平局数依次(16773,33)、(16806,0)、(16806,0)、(16794,12)、(16801,5)、(16710,96)、(16650,156)、(16649,157)，合133989/459。每人只在自身层行动一次，任一子博弈内的一次单方策略偏离即该层真实节点换行动；所有节点最优性及完整子树归纳正是完整纯SPE。因此不是仅认证一条路径利润或冻结在轨后继的静态PNE比较。\n\n4. 福利及身份。新图根路径逐条等于原保存path，原60倍收益逐项相等；8份JSON的所有字段/数组被完整解析、计算比较，原报告全部八记录与summary的last-payoff字段亦逐项复核。八path覆盖每份输入所有客户，W分别为148、152、52、103、104、79、87、87，因OPT≤客户总数且这些path已达到客户总数，得各W=OPT。individual最大23/14、aggregate最大44/57只作这些保存记录的准确数值。原作者未存离轨动作；本次全图由确定性离轨选择新构，不能标成恢复作者原图或给原1000次所有未保存输入补证。完整原始机器JSON采用程序全遍历，不宣称逐行人工阅读全部原始转储。",
+  "scope": "有限七输入/八条已保存有序路径的新完整策略存在性及直接全历史IC证书；不把一个有限扫描升级为一般桥定理，且不枚举支持同一路径的所有完整σ。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/算法/完整历史纯SPE终局全集--算法.md",
+      "sha256": "667d6f319b1f325bd32538f6b0e5a8e95c1942e2ec97cbc76d7cbaef06b36954"
+    },
+    {
+      "path": "archives/customer-attraction/state/计算/五人末位两收益桥的八条保存路径与新完整证书--计算.md",
+      "sha256": "401c75558483217717e9261d33e06ae674d702a197d26563396e80f293765db8"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/rd28-exact-outcomes-and-static-backgrounds-primary/original/experiments/cex_last_half_probe.py",
+      "sha256": "175b31f4af3369d83ee489ed415bddd59db39ef0bd688652f2d6ae8af562c74c"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/rd28-exact-outcomes-and-static-backgrounds-primary/original/experiments/cex_last_half_probe.json",
+      "sha256": "4b860e90f25d0e4dc82ee63d14b6124ef1b89fd48a0517c0707c25c78737107e"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/rd28-exact-outcomes-and-static-backgrounds-primary/audit_fixed_records.py",
+      "sha256": "81378a8010653e0915ea4e14c85eebfeb4cc586d230d360f47602c9bcdcbb68d"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/rd28-exact-outcomes-and-static-backgrounds-primary/new-fixed-audit-001/data/summary.json",
+      "sha256": "ce8205deb0447e4795b1e4a086e71104c0870d224fb102a34a1f86e8725e78f9"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/rd28-exact-outcomes-and-static-backgrounds-primary/new-fixed-audit-001/data/last-record-00-new-policy.json",
+      "sha256": "65444e6ad2da37779d5ac59a3c3972a9079de4f16bd704abcd75e6d16910515a"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/rd28-exact-outcomes-and-static-backgrounds-primary/new-fixed-audit-001/data/last-record-01-new-policy.json",
+      "sha256": "64bfaa93ad3ef8a91c6ae645267f15e1b429251c52bf30051e86a0b1b63e52dc"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/rd28-exact-outcomes-and-static-backgrounds-primary/new-fixed-audit-001/data/last-record-02-new-policy.json",
+      "sha256": "1af61e93f0f4e3c0b9cf48c793f28adf1bce4d34a35d851e3e5574f72113a27a"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/rd28-exact-outcomes-and-static-backgrounds-primary/new-fixed-audit-001/data/last-record-03-new-policy.json",
+      "sha256": "3ce9e14547e662fe0c78595d78129238fb62a42670b1da54004f7e595388094b"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/rd28-exact-outcomes-and-static-backgrounds-primary/new-fixed-audit-001/data/last-record-04-new-policy.json",
+      "sha256": "c3ea03771e18444ebcc473ae2208900d5242c903ce5ef0e612a8d5bad27fb30e"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/rd28-exact-outcomes-and-static-backgrounds-primary/new-fixed-audit-001/data/last-record-05-new-policy.json",
+      "sha256": "e7e57b20a30bcf644a985e6c19e213b0962d611df3c992bc5464b20dd6e2882b"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/rd28-exact-outcomes-and-static-backgrounds-primary/new-fixed-audit-001/data/last-record-06-new-policy.json",
+      "sha256": "ec7d859e5174f9547e87d9d3c64704a5e256bf4d7cb5edb24a687037dbdec373"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/rd28-exact-outcomes-and-static-backgrounds-primary/new-fixed-audit-001/data/last-record-07-new-policy.json",
+      "sha256": "be42f490d3f850bf9b8e77595c07fb6beaff0948f5de27a50cef652ffbf4d757"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-276c9b905553e94c/verify-eight.py",
+      "sha256": "26d2575e91ff0540bc0ba8916b86f43d874b42cd092c9f689678406e4545c83c"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-276c9b905553e94c/verification-result.json",
+      "sha256": "5e47d861f63aa99429fc1c7bd4cbed0c25a44f0e9b6528b5154054412c173bac"
+    }
+  ],
+  "reviewed_by": "Boss6/five_certificates",
+  "review_note": "实读任务、AGENTS、worker提示词及IMPLEMENTATION；完整阅读两个核心正式正文、CAG模型、原3622B探针源码、固定核源码、原八记录JSON、summary及全集算法的完整主证明。额外定向读取closeout原1075B脚本，不import/执行。八个大策略JSON均完整机器解析并遍历所有条目/节点，独立直接IC与七输入精确递推/确定性构造分别核验，所有检查通过；不称逐行人工实读raw dump。算法对象的其它实现附件未作整体重审，仅使用自足主正文已完整证明的递推、拼接和定义级IC。",
+  "endpoint_pins": {
+    "CA-EXACT-PURE-SPE-ALL": "aaa77e1f9a928bc25a315e66e18f424418e64643ec3fdb8717cbc3adc6310056",
+    "customer-attraction/five-player-last-payoff-eight-preserved-paths-and-new-full-policy-certificates": "23d86bc4f36182e312927b3a70c739702d0b5da2848171fa7109c39150ee1f97"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/算法/完整历史纯SPE终局全集--算法.md": "667d6f319b1f325bd32538f6b0e5a8e95c1942e2ec97cbc76d7cbaef06b36954",
+    "archives/customer-attraction/state/计算/五人末位两收益桥的八条保存路径与新完整证书--计算.md": "401c75558483217717e9261d33e06ae674d702a197d26563396e80f293765db8",
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+    "archives/customer-attraction/tools/evidence/rd28-exact-outcomes-and-static-backgrounds-primary/original/experiments/cex_last_half_probe.py": "175b31f4af3369d83ee489ed415bddd59db39ef0bd688652f2d6ae8af562c74c",
+    "archives/customer-attraction/tools/evidence/rd28-exact-outcomes-and-static-backgrounds-primary/original/experiments/cex_last_half_probe.json": "4b860e90f25d0e4dc82ee63d14b6124ef1b89fd48a0517c0707c25c78737107e",
+    "archives/customer-attraction/tools/evidence/rd28-exact-outcomes-and-static-backgrounds-primary/audit_fixed_records.py": "81378a8010653e0915ea4e14c85eebfeb4cc586d230d360f47602c9bcdcbb68d",
+    "archives/customer-attraction/tools/evidence/rd28-exact-outcomes-and-static-backgrounds-primary/new-fixed-audit-001/data/summary.json": "ce8205deb0447e4795b1e4a086e71104c0870d224fb102a34a1f86e8725e78f9",
+    "archives/customer-attraction/tools/evidence/rd28-exact-outcomes-and-static-backgrounds-primary/new-fixed-audit-001/data/last-record-00-new-policy.json": "65444e6ad2da37779d5ac59a3c3972a9079de4f16bd704abcd75e6d16910515a",
+    "archives/customer-attraction/tools/evidence/rd28-exact-outcomes-and-static-backgrounds-primary/new-fixed-audit-001/data/last-record-01-new-policy.json": "64bfaa93ad3ef8a91c6ae645267f15e1b429251c52bf30051e86a0b1b63e52dc",
+    "archives/customer-attraction/tools/evidence/rd28-exact-outcomes-and-static-backgrounds-primary/new-fixed-audit-001/data/last-record-02-new-policy.json": "1af61e93f0f4e3c0b9cf48c793f28adf1bce4d34a35d851e3e5574f72113a27a",
+    "archives/customer-attraction/tools/evidence/rd28-exact-outcomes-and-static-backgrounds-primary/new-fixed-audit-001/data/last-record-03-new-policy.json": "3ce9e14547e662fe0c78595d78129238fb62a42670b1da54004f7e595388094b",
+    "archives/customer-attraction/tools/evidence/rd28-exact-outcomes-and-static-backgrounds-primary/new-fixed-audit-001/data/last-record-04-new-policy.json": "c3ea03771e18444ebcc473ae2208900d5242c903ce5ef0e612a8d5bad27fb30e",
+    "archives/customer-attraction/tools/evidence/rd28-exact-outcomes-and-static-backgrounds-primary/new-fixed-audit-001/data/last-record-05-new-policy.json": "e7e57b20a30bcf644a985e6c19e213b0962d611df3c992bc5464b20dd6e2882b",
+    "archives/customer-attraction/tools/evidence/rd28-exact-outcomes-and-static-backgrounds-primary/new-fixed-audit-001/data/last-record-06-new-policy.json": "ec7d859e5174f9547e87d9d3c64704a5e256bf4d7cb5edb24a687037dbdec373",
+    "archives/customer-attraction/tools/evidence/rd28-exact-outcomes-and-static-backgrounds-primary/new-fixed-audit-001/data/last-record-07-new-policy.json": "be42f490d3f850bf9b8e77595c07fb6beaff0948f5de27a50cef652ffbf4d757",
+    "map/edges/customer-attraction-3a-3a-276c9b905553e94c/verify-eight.py": "26d2575e91ff0540bc0ba8916b86f43d874b42cd092c9f689678406e4545c83c",
+    "map/edges/customer-attraction-3a-3a-276c9b905553e94c/verification-result.json": "5e47d861f63aa99429fc1c7bd4cbed0c25a44f0e9b6528b5154054412c173bac"
+  },
+  "review_digest": "2bbd913a90212c64fabc7d33b07bba92a46accda118ec472709e5b1a67c99862"
+}
