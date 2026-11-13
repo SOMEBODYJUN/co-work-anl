@@ -1,0 +1,68 @@
+{
+  "edge_id": "cag-8ee-fraction-audit-checks-fixed-group-dual",
+  "kind": "checks",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/closeout-a4259b00b35fe739f40a3bc5"
+  ],
+  "target_ids": [
+    "customer-attraction/three-player-six-label-fixed-group-policy-common-static-dual"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "空旧背景、三个单位提供者、六标签0…5、指定全43有序历史分组策略、全部63种非空兴趣类型；客户质量非负且满足完整真实IC。",
+  "roles": {
+    "customer-attraction/closeout-a4259b00b35fe739f40a3bc5": "保存同一冻结实例的浮点发现、独立Fraction原入口与逐系数精确输出。",
+    "customer-attraction/three-player-six-label-fixed-group-policy-common-static-dual": "由明确Q与非负完整IC乘子得指定策略整客户锥的静态上界。"
+  },
+  "explanation": "原Fraction入口固定Q(01)=Q(02)=Q(03)=1/3、33条明确非负整行乘子，对每查询与每类型检查r_at=c_t/3−E_Qρ_t−ℓ_at≥0。按任意非负客户质量求和，完整真实IC使L_a≥0，故每纯查询E_Qf_B(a)≤W/3且v_3≤W/3。四十三节点是有序策略定义，215项是非自身IC行的完整域，378项是六查询乘六十三类型的余项。另存浮点小分母输出包含14个负小量，原入口不提供最小分母证书。113客户的真实根局部反例确在同一策略锥，其固定Q上界为308/9<35。",
+  "scope": "冻结精确计算核验已登记固定策略定理；范围是单一完整策略与整个零背景客户锥。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/资源/固定分组共同静态对偶的发现与精确审计合同--资源.md",
+      "sha256": "064690dfd3a13d02e62cb2665dee64a4dffef6dcb0b2abe7258b577ddb3c0a52",
+      "section": "来源和数学身份"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/三人六标签固定分组策略的共同静态安全对偶--定理.md",
+      "sha256": "7a28e457fcb7f55cdde8a93fd313cd45f55d59cd33571507c57ff7427f5d4070"
+    },
+    {
+      "path": "archives/customer-attraction/state/反例/真实前缀逐步安全值付款--反例.md",
+      "sha256": "57b62e091da05acccef3e945f8bb7df1601dde49f20705f6800344b83d3ee1a1"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/root-fixed-group-common-static-dual/primary-original/6872af198112d93b8e51/audit_group_common_dual.py",
+      "sha256": "13ae0db70d91df921cd54deecb9fc833a4c45cfdb55ab3b44394a13c9ce61c0a"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/root-fixed-group-common-static-dual/primary-original/c87d6242f66b0cbb8703/group_common_dual_exact.json",
+      "sha256": "3d514e4cf2fc458043179b35915b56a1ab2c742a91a94dc1acba8c822f46f1ef"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/root-fixed-group-common-static-dual/primary-original/f3611f7c9fc0cdf8a24d/simple_common_dual_groups.json",
+      "sha256": "572dc6e3ba379313477e959a5be5cecccc6371513bf34a211e40e1a3fa046a92"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-8ee01d9bcec0bab9/review.md",
+      "sha256": "0c8abf3e9359853e134db61402df3a6dc3ad47d5b7b811f82deac54f4ad53bd5",
+      "section": "固定分组对偶的核验范围"
+    }
+  ],
+  "reviewed_by": "Boss3",
+  "review_note": "隔离重放原Fraction入口；输出文件与stdout均匹配原5530字节冻结件。检查相同完整策略、六静态查询与客户锥，未运行浮点发现器。",
+  "endpoint_pins": {
+    "customer-attraction/closeout-a4259b00b35fe739f40a3bc5": "aeb1c9cb41eec99602f8f313727687c5851b427e35bcdbeb5d1b2c4047ba9a15",
+    "customer-attraction/three-player-six-label-fixed-group-policy-common-static-dual": "4beca9bb39aa1592f0bbd1b70eb055e70d624fec8eed68b39a48bb5dc42fb919"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/资源/固定分组共同静态对偶的发现与精确审计合同--资源.md": "064690dfd3a13d02e62cb2665dee64a4dffef6dcb0b2abe7258b577ddb3c0a52",
+    "archives/customer-attraction/state/定理/三人六标签固定分组策略的共同静态安全对偶--定理.md": "7a28e457fcb7f55cdde8a93fd313cd45f55d59cd33571507c57ff7427f5d4070",
+    "archives/customer-attraction/state/反例/真实前缀逐步安全值付款--反例.md": "57b62e091da05acccef3e945f8bb7df1601dde49f20705f6800344b83d3ee1a1",
+    "archives/customer-attraction/tools/evidence/root-fixed-group-common-static-dual/primary-original/6872af198112d93b8e51/audit_group_common_dual.py": "13ae0db70d91df921cd54deecb9fc833a4c45cfdb55ab3b44394a13c9ce61c0a",
+    "archives/customer-attraction/tools/evidence/root-fixed-group-common-static-dual/primary-original/c87d6242f66b0cbb8703/group_common_dual_exact.json": "3d514e4cf2fc458043179b35915b56a1ab2c742a91a94dc1acba8c822f46f1ef",
+    "archives/customer-attraction/tools/evidence/root-fixed-group-common-static-dual/primary-original/f3611f7c9fc0cdf8a24d/simple_common_dual_groups.json": "572dc6e3ba379313477e959a5be5cecccc6371513bf34a211e40e1a3fa046a92",
+    "map/edges/customer-attraction-3a-3a-8ee01d9bcec0bab9/review.md": "0c8abf3e9359853e134db61402df3a6dc3ad47d5b7b811f82deac54f4ad53bd5"
+  },
+  "review_digest": "7b2b68294eb3764977f3a6993b10f3e38feb5db6ea1c860e20396b91f8eb806f"
+}

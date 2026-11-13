@@ -1,0 +1,43 @@
+{
+  "edge_id": "um-integer-maxmin-types-proves-few-potential-large-items",
+  "kind": "specializes",
+  "status": "accepted",
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "reviewed_by": "Boss3",
+  "source_ids": [
+    "UM-KNOWN-OPTIMAL-LARGE-TYPES-INTEGER-MAXMIN-HALF-v1"
+  ],
+  "target_ids": [
+    "M-5b62656ffc7d46148690af86a2835eeb"
+  ],
+  "conditions": "对固定c，在至少一个玩家端值≥OPT/2的全局物品集合基数至多c。",
+  "roles": {
+    "UM-KNOWN-OPTIMAL-LARGE-TYPES-INTEGER-MAXMIN-HALF-v1": "独立完整分型整数MaxMin算法，含阈值、匹配、回填和位复杂度。",
+    "M-5b62656ffc7d46148690af86a2835eeb": "冻结VW2010的实际算法声明及其原大端、整数输出量词。"
+  },
+  "explanation": "任一整数分配每物品至多交一位，所以任一最优解的大端玩家至多c位，枚举所有基数至多c的大机集合。 每个分型阈值T中大机专槽选择≥T/2的原物品，小机只分配<T/2端。共同满槽匹配保大机至少T/2、小机损失至多首槽T/2。按所有2p断点分段、在有理原效用格上最大化可行T；正确分型于OPT可行，匹配后合法回填全部原物品。零OPT独立可行。",
+  "scope": "完整数学保证保持同一不可拆加性模型及冻结声明的精确条件。冻结资料的文献身份与缺报告字节照旧。",
+  "whole_result": "对每个固定c、全局可能大资源集合至多c的全部合法输入，确定性总位多项式输出完整不可拆分配，每玩家至少整数OPT/2。",
+  "review_note": "对照冻结Theorems15–16与公开长版§5.3；长版常数未知类型措辞与原声明分开。新独立证明覆盖原声明；穷举和有理检查仅辅助审阅。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/定理/已知最优大端分型时的整数MaxMin二近似--定理.md",
+      "sha256": "0b74f29fb952114d9b6ce938043ac2d50cdf9f4d8c8e41c1fbe9d7024b83a9be"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/配置LP在图平衡及不相关机中的间隙--资源.md",
+      "sha256": "0fcfc44edf52bb6f1d0bf459c9847540342f55c9f4d681588f32670d1c64de26",
+      "section": "半整数与其它可解情形：Theorems 13–16"
+    }
+  ],
+  "endpoint_pins": {
+    "M-5b62656ffc7d46148690af86a2835eeb": "c2d786dcafd31c05c202a1b40727ea68189b28f0faf12a4e10b308edc0969b64",
+    "UM-KNOWN-OPTIMAL-LARGE-TYPES-INTEGER-MAXMIN-HALF-v1": "21f7515af38de7bd7b3d5c91d88ebc15e2f703b125fd821b065458074fdc962c"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/定理/已知最优大端分型时的整数MaxMin二近似--定理.md": "0b74f29fb952114d9b6ce938043ac2d50cdf9f4d8c8e41c1fbe9d7024b83a9be",
+    "archives/unrelated-machines/state/资源/配置LP在图平衡及不相关机中的间隙--资源.md": "0fcfc44edf52bb6f1d0bf459c9847540342f55c9f4d681588f32670d1c64de26"
+  },
+  "review_digest": "89fed64c61a9b21614c61e62f486a4335b0a26e6f6491e816469828bef961090"
+}

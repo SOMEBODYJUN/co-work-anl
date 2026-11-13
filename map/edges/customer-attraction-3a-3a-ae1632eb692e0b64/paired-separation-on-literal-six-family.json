@@ -1,0 +1,91 @@
+{
+  "edge_id": "ca-ae16-paired-separation-on-literal-six-family",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "CA-POTENTIAL-EXCLUSION-SAFETY-MARGIN-CANDIDATE-v1",
+    "M-d2bbce8dda9641f2b71f0f96ae1dc6e4"
+  ],
+  "target_ids": [
+    "M-2e6e17cb76dd454f8329f1542da5c6ac"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "给定已验证的621旧客户、两份指定六人完整有序策略，以及固定仅喜欢F的整数单位客户数J∈{509,…,516}；只使用核心内已验的具体输入和策略，绝不以已否单步全称式为前提。",
+  "roles": {
+    "CA-POTENTIAL-EXCLUSION-SAFETY-MARGIN-CANDIDATE-v1": "给原三人31动作、原六人9331动作以及同一真实路径上的单步失败；逐字恢复是由原表与保留守卫定义的第二个固定策略。",
+    "M-d2bbce8dda9641f2b71f0f96ae1dc6e4": "把同路连续两个强制一份的势损失无重账地合为强制两份的损失。",
+    "M-2e6e17cb76dd454f8329f1542da5c6ac": "一般相邻成对预算候选；该边只付两指定策略的全部实际相邻对。"
+  },
+  "explanation": "两完整策略都在该J域实际FFFABC。强制A_i和A_(i+1)各一份（F,F仍两份）时势损失等于E_i+E_(i+1)。逐位置真余额为(J/6,J/6,J/6,−1,139/2,0)，故五个相邻真余额为(J/3,J/3,J/6−1,137/2,139/2)，全严格正。J=510时位置3/4为84，位置4/5为137/2。原三人两个相邻真余额为137/2及139/2。",
+  "scope": "三人固定原策略实际ABC；六人固定冻结及逐字恢复两策略实际FFFABC，固定参数域内的全路径相邻节点。",
+  "contribution": {
+    "result": "本固定族同时达到严格单步失败与所有相邻对严格付款，量化第四位分别可由前、后真相邻余额支付。",
+    "remaining": "一般r>2和任意合法背景、任意完整有序SPE下的相邻预算仍需证明；现有强PAIR已承担一般r=2。"
+  },
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/反例/局部势排除损失的三人反例与六人实际嵌入--反例.md",
+      "sha256": "522e09a01a5ce4d25c5a55a452d45917b371a71c3310568dbb507c6b06e69a29"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/local-potential-exclusion-complete-certificates-primary/original/attack/potential_tax/esm_exact_obstruction.json",
+      "sha256": "3c083466f35a2ccfbc0451b0536d47dcea16593767691987178b172865a82379"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/local-potential-exclusion-complete-certificates-primary/original/attack/potential_tax/six_esm_embedding.json",
+      "sha256": "7ac7c0ff8706e598a146b6c0c780990d10c806dd5147fb313a476db79e863185"
+    },
+    {
+      "path": "archives/customer-attraction/state/审查/局部势排除接口的反驳与望远镜范围--审查.md",
+      "sha256": "c5a52df9ec9d91ed15115d4b9ca45992111190037f1dabccc37127d6b3a0f4d0",
+      "section": "Bellman望远镜没有被否定"
+    },
+    {
+      "path": "archives/customer-attraction/state/候选/相邻真实双主题的势排除预算--候选.md",
+      "sha256": "4446d1a419084245fe3b12e65a7cd44529633120a0a5c2044b81b52806b52f4b",
+      "section": "精确真节点与候选"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-ae1632eb692e0b64/mathematical-review.md",
+      "sha256": "96a68ac73a6a80036c7aae55daa35f5eedd840022dc7f40ada67e1472fafa53d",
+      "section": "在已冻结祖先下逐字恢复旧尾策略"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-ae1632eb692e0b64/mathematical-review.md",
+      "sha256": "96a68ac73a6a80036c7aae55daa35f5eedd840022dc7f40ada67e1472fafa53d",
+      "section": "F 私块大小的精确固定策略区间"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-ae1632eb692e0b64/mathematical-review.md",
+      "sha256": "96a68ac73a6a80036c7aae55daa35f5eedd840022dc7f40ada67e1472fafa53d",
+      "section": "分块势卷积与同路的成对和根余额"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-ae1632eb692e0b64/replay.py",
+      "sha256": "d1d46c8be212a9cfb932c3edccb0cefa3efd339749ee590e3645adcd63da4cd1"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-ae1632eb692e0b64/replay.txt",
+      "sha256": "5b52da351d8d05ad66314a829b220b23fc6a878691cf83c5e7db2b81aa40ef09"
+    }
+  ],
+  "reviewed_by": "Boss3/potential-exclusion-ae16",
+  "review_note": "实读现行全部承重陈述及精确输入。独立标准库 Fraction 重放三人155项、冻结与字面恢复六人各55,986项，逐项取同一有序策略真实后继；解析恒等式和定域量词由论证承担，计算仅认证明确固定策略与参数域。",
+  "endpoint_pins": {
+    "CA-POTENTIAL-EXCLUSION-SAFETY-MARGIN-CANDIDATE-v1": "1fb74da192b39774d5c48e468499e5a9454c2c5045094dd9dc195a108d065721",
+    "M-2e6e17cb76dd454f8329f1542da5c6ac": "05dd5f743fe516442219f11b09acabe52e6a32d2aff4ee36d3165b3897b4e12e",
+    "M-d2bbce8dda9641f2b71f0f96ae1dc6e4": "339197a7448bf638bef92088908a6687ab31cc158f3e5ad19f7170dc4846354b"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/反例/局部势排除损失的三人反例与六人实际嵌入--反例.md": "522e09a01a5ce4d25c5a55a452d45917b371a71c3310568dbb507c6b06e69a29",
+    "archives/customer-attraction/tools/evidence/local-potential-exclusion-complete-certificates-primary/original/attack/potential_tax/esm_exact_obstruction.json": "3c083466f35a2ccfbc0451b0536d47dcea16593767691987178b172865a82379",
+    "archives/customer-attraction/tools/evidence/local-potential-exclusion-complete-certificates-primary/original/attack/potential_tax/six_esm_embedding.json": "7ac7c0ff8706e598a146b6c0c780990d10c806dd5147fb313a476db79e863185",
+    "archives/customer-attraction/state/审查/局部势排除接口的反驳与望远镜范围--审查.md": "c5a52df9ec9d91ed15115d4b9ca45992111190037f1dabccc37127d6b3a0f4d0",
+    "archives/customer-attraction/state/候选/相邻真实双主题的势排除预算--候选.md": "4446d1a419084245fe3b12e65a7cd44529633120a0a5c2044b81b52806b52f4b",
+    "map/edges/customer-attraction-3a-3a-ae1632eb692e0b64/mathematical-review.md": "96a68ac73a6a80036c7aae55daa35f5eedd840022dc7f40ada67e1472fafa53d",
+    "map/edges/customer-attraction-3a-3a-ae1632eb692e0b64/replay.py": "d1d46c8be212a9cfb932c3edccb0cefa3efd339749ee590e3645adcd63da4cd1",
+    "map/edges/customer-attraction-3a-3a-ae1632eb692e0b64/replay.txt": "5b52da351d8d05ad66314a829b220b23fc6a878691cf83c5e7db2b81aa40ef09"
+  },
+  "review_digest": "1a706a0c581ed4b09f2c61713e1d4e9fdc2725ee9e3c8109ca441c4e832ef402"
+}
