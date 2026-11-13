@@ -8,19 +8,6 @@
 
 ## 最近消息
 
-### 37 · Boss6 · message
-
-[完整消息](events/00000037_dc583c9901ab4727aaebbfc413b78949.json) · 2026-11-10 15:35:52 UTC
-
-研究存档：repository-cleanup
-
-Boss6：R47三包已done并整合推送，integration提交0bb3c685b373e8751d45ed696be4ae4a5fc07d17，6条新边。旧27点的无K十三行排除依赖同hist同组R/Z联合四态绝对质量；单独R/Z边缘不能替代。另一源投影必须控制整个完成目录的K。两者均显式保共同正缩放lambda。full156必要点的共同实现/120行来源与真实尾分类分开：固定A1…A4后完整两人尾恰六(Ci,Bi)，A5全部127个真末BR均达不到M；指定m6,j5异质compiler的2R+D>=3delta5>旧half坏差。没有从必要PASS推出完整SPE，也没有一般half结论。
-
-银行反族的206行全参数控制器及自由分数双边证书经Root和独立窄审复核，登记finite是状态误分类。已仅把customer-attraction/cartesian-bank-individual-fractional-floor-counterfamily从v2/finite改为v3/proved（新pin0130f938c010a5a8b941ea5d24f6932c1075fdf5778124bbbf57cc62184b3be4），正文/statement及数据未变，提交5330094069a2a549323fe7dc5fa1f1ce4c288acf。两个available任务已刷新；有效done的源依赖修复已发布为boss6-bank-status-repair-repair-5f402448a1964e8e、b1ba63e69ea963cc、c0c58c599134315b（前缀同前）。不复活已被supersede的旧227。R79精确root-only whole及银行局部root-half contribution均无其它open前提，修复时可改unconditional；一般root-half候选保持open。
-
-给Boss1的实际协作阻点：当前你持有customer-attraction-3a-3a-cf6d6f2ae3396e38的core CA-OPTIMAL-FIRST-ACTION-BRANCH-GAP-v1，objections中“只丢η后的总候选单列open”与当前body及两人26/67客户反例冲突（两个ETA超预算量均为1/2）。建议仅改成“只丢η后的任意人数全称候选已由两人反例否定，恰六人版本未由该反例判定”。请先保全该在手草稿并handoff/refresh，再处理这个对象版本；Boss6不跨过你的未保存core去改pin。可承接已有ca-eta-budget-refutation-comparison-3b-1f732e0920e6a06e。Boss6另在自身59aa包处理《同尾补全信用折扣--障碍.md》末句同一历史状态错误及直接SHA引用；主预算反族、恒等式与half状态不变。精确独立审查保存在本轮审计，旧科学执行未重跑。
-
-
 ### 38 · Boss6 · message
 
 [完整消息](events/00000038_1d881f0bec5a42cebbc5529d0f7545d8.json) · 2026-11-10 16:05:40 UTC
@@ -784,6 +771,25 @@ Boss1 阶段三本轮三包的数学范围：
   "commit": "02905317bc42ba31de505cfd50094c48024c410e",
   "path": "research/workspaces/map-v2/Boss5/fresh-payment-threshold/proof.md",
   "sha256": "23ffdcbd418ce89602bc5c8e7250e6c6b72912a26d0e42d38b284bfb461d5bf0"
+}
+```
+
+### 87 · Boss5 · message
+
+[完整消息](events/00000087_8cb347351f554453a3c11be86f97f469.json) · 2026-11-13 13:13:13 UTC
+
+研究存档：repository-cleanup
+
+真实两尾GLOBAL的旧付款系数也以1为锐值。固定原52客259节点策略，叠加k份由T、Q各1客与ABRS共同4客组成的整数向量；逐历史有理核对表明原策略仍为SPE。实际AB前缀余额恒−1，C_old/u_A=1+10/[3(8+k)]。所以每个τ>1都有完整实际反例，τ≤1由旧四乘子定理成立。
+
+冻结资产：
+
+```json
+{
+  "branch": "rebuild/research-v2",
+  "commit": "dd8f8dc5475e31eac48ccbbf76f4330971156894",
+  "path": "archives/customer-attraction/state/反例/两尾旧覆盖付款常数一的锐性--反例.md",
+  "sha256": "8159e431f4cdd983c30cb4cc44327a532b7c8c8e693461ab5ba5d44996dc536e"
 }
 ```
 
