@@ -636,9 +636,9 @@
       "budget_status": "reading-scope-expanded-reestimate"
     }
   },
-  "state": "claimed",
+  "state": "done",
   "owner": "Boss3",
-  "request_id": "ad3bcde2ce4a4dfebf586d896eb0087b",
+  "request_id": "8e2c66ee30454724ac6aa011808d1c84",
   "requests": {
     "81a0648c3de14140a1ae6370812f33c4": "plan",
     "08814282fd94a204252cba8200f913c1": "plan",
@@ -650,6 +650,228 @@
     "ab71ef804d4f4f51828ade6f59b272fa": "plan",
     "975679601aa247459fce46c2987c3454": "plan",
     "ef12ec345f4d4ae2a4f5d0820fc7a54f": "plan",
-    "ad3bcde2ce4a4dfebf586d896eb0087b": "plan"
+    "ad3bcde2ce4a4dfebf586d896eb0087b": "plan",
+    "8e2c66ee30454724ac6aa011808d1c84": "done"
+  },
+  "edge_paths": {
+    "um-a56e5e8b-calibrated-slots-pay-fixed-density": "map/edges/unrelated-machines-3a-3a-a56e5e8b03d8a1fd/calibrated-slots-pay-fixed-density.json",
+    "um-a56e5e8b-closed-cycle-initialization-to-exact-escape": "map/edges/unrelated-machines-3a-3a-a56e5e8b03d8a1fd/closed-cycle-initialization-to-exact-escape.json",
+    "um-a56e5e8b-dag-oracle-pays-single-machine-precedence-lp": "map/edges/unrelated-machines-3a-3a-a56e5e8b03d8a1fd/dag-oracle-pays-single-machine-precedence-lp.json",
+    "um-a56e-finite-cover-gives-qd-unit-config": "map/edges/unrelated-machines-3a-3a-a56e5e8b03d8a1fd/finite-cover-gives-qd-unit-config.json",
+    "um-a56e5e8b-private-exchange-builds-clause-mode-library": "map/edges/unrelated-machines-3a-3a-a56e5e8b03d8a1fd/private-exchange-builds-clause-mode-library.json",
+    "um-a56e5e8b-query-v3-final-checks-counting-snapshot": "map/edges/unrelated-machines-3a-3a-a56e5e8b03d8a1fd/query-v3-final-checks-counting-snapshot.json",
+    "um-a56e5e8b-quota-theorem-pays-candidate-actual-matrix": "map/edges/unrelated-machines-3a-3a-a56e5e8b03d8a1fd/quota-theorem-pays-candidate-actual-matrix.json",
+    "um-a56e5e8b-seven-state-law-supplies-affine-owner-support": "map/edges/unrelated-machines-3a-3a-a56e5e8b03d8a1fd/seven-state-law-supplies-affine-owner-support.json",
+    "um-a56e5e8b-support-safe-step-can-leave-config": "map/edges/unrelated-machines-3a-3a-a56e5e8b03d8a1fd/support-safe-step-can-leave-config.json",
+    "um-a56e5e8b-three-value-selector-pays-stability-completeness": "map/edges/unrelated-machines-3a-3a-a56e5e8b03d8a1fd/three-value-selector-pays-stability-completeness.json",
+    "um-a56e5e8b-two-witness-separation-pays-private-exchange": "map/edges/unrelated-machines-3a-3a-a56e5e8b03d8a1fd/two-witness-separation-pays-private-exchange.json",
+    "um-a56e5e8b-uniform-reset-replay-checks-fixed-kernel": "map/edges/unrelated-machines-3a-3a-a56e5e8b03d8a1fd/uniform-reset-replay-checks-fixed-kernel.json",
+    "um-a56e5e8b-zero-positive-part-and-active-slots-pay-five-thirds": "map/edges/unrelated-machines-3a-3a-a56e5e8b03d8a1fd/zero-positive-part-and-active-slots-pay-five-thirds.json",
+    "um-a56e-normalized-config-bridges-qd-degree-three": "map/edges/unrelated-machines-3a-3a-a56e5e8b03d8a1fd/normalized-config-bridges-qd-degree-three.json"
+  },
+  "receipt": {
+    "coverage": {
+      "UM-UNIT-READOUT-CALIBRATED-SLOT-v1": {
+        "state": "linked",
+        "object_pin": "b486f619a4c67eae2986d977a1e692bf057f1a960786ac9700bfdbfa3e338667",
+        "comparison_scope": "强计数正式原文§1–4、正式原实现审查及三份矩阵；比较全轨 fixed-D、严格单位 LP 的选轨和早期半密度摘要。",
+        "reason": "强计数同一组 t 进入一张原任务—槽 Hall 图。逐机分数任务数不是工作量或 Σt≥rq；k4h1r2 的弱式可行但真实 OPT=7/4，k2h1r2 四叶共享 A2 的强式不可行但 OPT=1。额外 a d_c≤A_c 的严格 YES 必要性与固定 D 自产证书分开。选轨用同一槽机制但须先父置未选轨，不能全轨套强行。",
+        "edge_ids": [
+          "um-a56e5e8b-calibrated-slots-pay-fixed-density",
+          "um-a56e5e8b-zero-positive-part-and-active-slots-pay-five-thirds"
+        ]
+      },
+      "UM-UNIT-READOUT-BOUNDED-DENSITY-SUBTWO-v1": {
+        "state": "linked",
+        "object_pin": "f6e6c2663e047b0f9804b90473f7f607c14e540923f39f781784ceb10b3948e9",
+        "comparison_scope": "正式 fixed-D 原文及中文四源、双源和两源对照；对照强计数槽、仅给严格单位 LP 见证和闭合树 CONFIG 的有效密度。",
+        "reason": "k≥D 的全轨 x_h≤1/D 无需 YES；k<D 的叶路径匹配失败反证任意 C<2 后全父置正好达到 OPT2。闭合两树每终端 A=1 而 d=k，k 随 gap 参数增长时不处于同一固定 D 类。多小端密度流统计每件 small 资格数，此处 d_c 是全轨 arity，两保证的行条件不能互换。",
+        "edge_ids": [
+          "um-a56e5e8b-calibrated-slots-pay-fixed-density"
+        ]
+      },
+      "UM-UNIT-READOUT-STRICT-UNIT-GAP-v1": {
+        "state": "linked",
+        "object_pin": "e7d93d3a3a82f7fbd3f8edead92caac68c366ba3b07745c6ebd576d4e7780603",
+        "comparison_scope": "配置阈值原文§2–4、正部消元审查和原实现；比较原 strong LP、整轨 LP 和闭合树近单位阈值。",
+        "reason": "T=1 的零正部允许且只允许整轨 LP 投影；选最大 y 的真实轨密度≤2而未选轨可无界，独立恢复所有父置任务。k=1 整数流，k≥2 active-only 槽给五三 promise。T=1+1/k 时 incoming 可共放一枚小件，不能借整体缩放取得同一合同。代码只验证/舍入给定见证，求 LP 是数学算法。",
+        "edge_ids": [
+          "um-a56e5e8b-zero-positive-part-and-active-slots-pay-five-thirds"
+        ]
+      },
+      "UM-CLOSED-CYCLE-SINGLE-JOB-ESCAPE-THRESHOLD-v1": {
+        "state": "linked",
+        "object_pin": "81fd78d60a5d0feb5c156b9e3705204729a345ccc8a4e0354b320226be2d2faf",
+        "comparison_scope": "M4 的「后续闭环」、冻结审查§§2/4/5、两原端点/全超立方体证据和开链对照。",
+        "reason": "同一已识别 σ 的全部首步逐类计费，首步下界 B+c 与逆序腾空普通环的显式上界同值。目标是最优集合，S0 路径不逐个给任意指定最优端点；开链在尾端为空时的中性首步不移植到闭环。有限 Dijkstra 仅核三例，不承担全称。",
+        "edge_ids": [
+          "um-a56e5e8b-closed-cycle-initialization-to-exact-escape"
+        ]
+      },
+      "UM-OPT-HULL-CLOSED-CYCLE-WEAK-LOCAL-GAP-v1": {
+        "state": "linked",
+        "object_pin": "d56a47b34420e93fce8fc2960cf0e32bd7804e0f14ab4afd803d0a9339ba594b",
+        "comparison_scope": "M4 的「后续闭环」、冻结审查§§2/3/5、两原入口匹配与全最优归属 DP 证据，区分弱最大负载、严格 lex 和临时峰。",
+        "reason": "真 OPT1 凸包与全部 min-cost 槽匹配识别同一 σ。任意非平凡 C≤B 动作须整开一条原 inactive 环并支付至少 d+1 件任务及端点机；M4 的「新 tiny」过窄，因为只开 macro 且关闭特殊 g0 的 S1 是反例，普通 tiny 仅用于取到两界。固定 k 再增 d 才得线性支持比例。此初始化供精确单任务逃逸推导。",
+        "edge_ids": [
+          "um-a56e5e8b-closed-cycle-initialization-to-exact-escape"
+        ]
+      },
+      "UM-CONFIG-FINITE-COVER-v1": {
+        "state": "linked",
+        "object_pin": "1bf59dd6f4363cae059e7235902f03059125493f72e50b6ec867cbf91bb1577d",
+        "comparison_scope": "有限置换 cover 主文、激活/覆盖增量、q6 seed、独立复跑、完整配置边际及同本包完整原 Q_D 的模式矩阵比较。",
+        "reason": "每个固定同型 cover 的配置阈值不变且可提升原实际解；某接线可实现给定有理证书，q6 seed 的恒等接线未降 OPT。新增显式 D-cover 在 Q_D 上达峰1；同型峰1接线以计数迫使 D|q，故此族最小实现度 D；高围长用实现后正则群作用，短词非恒等需保障无固定点。一般最小度、显式多项式规模及 NO 译码仍无。",
+        "edge_ids": [
+          "um-a56e-finite-cover-gives-qd-unit-config"
+        ]
+      },
+      "UM-SELECTOR-TINY-ROOT-THREE-VALUES-v1": {
+        "state": "linked",
+        "object_pin": "672c7736976632cdc33de34e6482851f043fbd4552b743a25675fa85d9e0fdc0",
+        "comparison_scope": "小任务联合槽正式正文的固定三值矩阵和续审§2.3，比较原实际阈值、稳定分数证书选择及给证书舍入。",
+        "reason": "严格低于 1+1/ℓ 和 1+2/ℓ 分别解码 perfect 3DM 和覆盖 X 的二部匹配。真峰1调度给每行一个权1配置，支付稳定性完备性；OPT>1 时分数证书能否存在须另用 root 边际与 tiny 差，不能由实际值直接判断。",
+        "edge_ids": [
+          "um-a56e5e8b-three-value-selector-pays-stability-completeness"
+        ]
+      },
+      "unrelated-machines/independent-uniform-reset-two-original-programs-replay": {
+        "state": "isolated-after-review",
+        "object_pin": "4e473f1e270d736775ed248e2a2819498e3e44ac10d551f5cdc0f8c4cdc9168c",
+        "comparison_scope": "双原程序输入、精确世界分支、公式及一次复跑，与经典基线§7的早期候选和对称重置审查§2.3的最终符号阈值比较。",
+        "reason": "本边只检查 m=2q 的独立均匀 kernel：两程序的同任务 categorical 修正与不同任务条件同机率一致，q+1/q+2、q1及空残余按不同量词处理。固定推前2q、任意重耦合q及存在正概率负载2均与指定 q+2 阈值不同。有限复跑不推出一般符号定理。"
+      },
+      "M-c0d0a5f2c8414e3fab9ebefca65252b8": {
+        "state": "linked",
+        "object_pin": "194bd08650b87e8df9b35229529e60b64079cbddaa99720788c7bd2ea30a7e1b",
+        "comparison_scope": "Li 资源§§6–7、A.2/E.3/F.13；比较近似 DAG oracle、上层累计 precedence LP 与普通 UM Hall 槽和通用流。",
+        "reason": "序约束精确留在 Q；MWU 聚合非负容量且用加性目标误差。特殊流通过 handle 隔离新正流与后向支撑。只交给上层的分数解步骤，前缀工作界及实际列表排序另证。",
+        "edge_ids": [
+          "um-a56e5e8b-dag-oracle-pays-single-machine-precedence-lp"
+        ]
+      },
+      "UM-GENERAL-WEIGHTED-QUERY-RETURN-THREE-HALVES-EXCHANGE-v1": {
+        "state": "linked",
+        "object_pin": "0874d54b38b69306d9e68a110787e0922a81838797fc4dbfac5196073445dbbb",
+        "comparison_scope": "两种分析实例原证明、双构造和三接口审查；对照已登记双见证分离、严格匹配交换及私有子句+真实变量环全公式。",
+        "reason": "零化私有 outside 使两 query δ=0，不交支持保护同一 b_j，显式外移 q_i，恢复物理原端后外机同时≤T。逐机统一模型严格 T 使用容量匹配，不能代替任意异权。对全公式仅供每 clause 的有序 mode 库，真实环另需共同匹配。",
+        "edge_ids": [
+          "um-a56e5e8b-two-witness-separation-pays-private-exchange",
+          "um-a56e5e8b-private-exchange-builds-clause-mode-library"
+        ]
+      },
+      "M-bdd481ab565d4b3bbae3e5a594c6a397": {
+        "state": "isolated-after-review",
+        "object_pin": "4f5d344cdd0eccff668d2fbff22945009ba5ff44a0614e44795f0a0779f039ee",
+        "comparison_scope": "三件正时间矩阵、真实两原子、完整 CONFIG 投影和负载核；比较 conformal 保支撑和泛型端点例。",
+        "reason": "全部非零负载 circuit 均两任务，配置切向需三任务。明确 d=(1,−2,0) 可对 σ=(1,0,0) conformal 仍在一步后离开 CONFIG，所以它检查的是不能从保原子支撑推出配置保持；不反驳已登记的保支撑结论。"
+      },
+      "UM-SEVEN-STATE-STAR-AFFINE-BOOLEAN-BOUNDARY-v1": {
+        "state": "linked",
+        "object_pin": "f8830eca481059eb5e58b706d69c250e1c9bf4a2125ac16e28d420ff48488a9d",
+        "comparison_scope": "affine 作者Proof、Exact-first/作者read-after、Exact/Proof版本审查和最终 canonical 七态边界；对照全局二次原星 law 的支持。",
+        "reason": "原 law 支付 Ω₀ 每点正及不同 primitive bits 的四种 pair 正。共同 M3 Gram-null 需给新增实际端并乘到次数三，Boolean/次数四基础矩给 E[(f²−f)²]=0，再区分 h1/h≥2 与同机 pair-zero。固定背景结论不能合并为跨背景物理度界；AND 的忠实二次 Gram 另有局部化障碍。",
+        "edge_ids": [
+          "um-a56e5e8b-seven-state-law-supplies-affine-owner-support"
+        ]
+      },
+      "M-6b8271c4ff7842d9a7187743b0ae09b4": {
+        "state": "isolated-after-review",
+        "object_pin": "534328a0b98d094272e12a9475e243a6cc9a04eb5b0ff2d2889a88173c9cd813",
+        "comparison_scope": "同一原真 T 调度凸包、紧负载行相容、同符号核分解和三任务反例；比较一般核泛型一步候选。",
+        "reason": "对已存在目标 σ 的正向最大箱步保其原端，不输出未知 σ，也不保持 CONFIG 或松行。三任务最大步恰好验证保支撑同时离开 CONFIG；不能把泛型存在（也可能是 circuit）接作迭代点再生。"
+      },
+      "M-f0619ab2e98f41eb9fa9c02a48c19aaa": {
+        "state": "linked",
+        "object_pin": "7fe755e2d8d7e0dd39ba154180fa2f3344420f4bf0a951d533bf9e709337df8f",
+        "comparison_scope": "规范化平菜单主文及 Exact/Proof、独立预Exact、作者核验、福利和 v3 桥审查；复核已发布 Q_D 证书链。",
+        "reason": "同一显式共同 λ 经 tree 流、menu-port hole 和 state-dummy 双向保持正支撑证书，保零 job、重复索引和未用资源。对 Q_D 的局部分数贡献与整数 actual 论证分开；K−1 dummies 独立排除 t>1。",
+        "edge_ids": [
+          "um-a56e-normalized-config-bridges-qd-degree-three"
+        ]
+      },
+      "unrelated-machines/cotransversal-cross-layer-dense-small-review": {
+        "state": "linked",
+        "object_pin": "a41d208a85f07aa81a47fda2f28ad4faf87403d9c6508ce4af0087369e1039ba",
+        "comparison_scope": "原三源审查§3及后续共同核心—私有资源精确全层论证；比较候选三例的 c=K−s、q=⌈cK/s⌉ 和完整原任务计数。",
+        "reason": "全层 ν_t 及实际任务桥补齐此具体矩阵族的真实 OPT=2−s/K 与不交 OPT1。余横截有限配置和稠密小整数失败是分开的对象；未知源的全输入归约、NO 解码和无旁路尚未付。",
+        "edge_ids": [
+          "um-a56e5e8b-quota-theorem-pays-candidate-actual-matrix"
+        ]
+      },
+      "M-080d9b22ae87408f9a673a898c7a6dc3": {
+        "state": "linked",
+        "object_pin": "d0b2a08064ea4ddb1eb3d096b576113c85d2effdc50f43593b10cf756e4c217a",
+        "comparison_scope": "规范化平菜单主文§§3–5及五份证据；区分一般 SC item helper 路径与 flat 菜单 tree/port 路径。",
+        "reason": "同一联合关系中，旧 SC 阈值先由 K−1 dummies 给恰1，才使用路径的正向0<t≤1及任意t>0的反向；后者仅需 helper 非空，不强迫高阈值选满双 item。行总量保持让旧 row≤3 传递，末端 item owner≤3；实际1/D由独立整数值论证。",
+        "edge_ids": [
+          "um-a56e-normalized-config-bridges-qd-degree-three"
+        ]
+      },
+      "unrelated-machines/query-count-v3-endpoints-final-composition-contract": {
+        "state": "isolated-after-review",
+        "object_pin": "34f765027a44947497a6e168a23b7b6eeb40e9d91d152613cec80973f94a21fc",
+        "comparison_scope": "v3 近单位端点正文、计数版本审查和同 SHA 13950B canonical 前缀；对照固定染色 v2 及后来多见证§6。",
+        "reason": "重源机是聚合计数，heavy 是单件严格阈值。只有同一实际 good 集上的费用下界 F>0 和 W≤κF 同时成立才有 κ 的整数必要性。两份 final 认证§1–5的同一快照，零 η 及等值端点保留；本比较是有实际数学边界的 checks。"
+      }
+    },
+    "assets": [
+      {
+        "path": "map/edges/unrelated-machines-3a-3a-a56e5e8b03d8a1fd/calibrated-slots-pay-fixed-density.json",
+        "sha256": "70c07088616d92d3188871fa09ee96c95ac83fd462b097e61d72447f2133490b"
+      },
+      {
+        "path": "map/edges/unrelated-machines-3a-3a-a56e5e8b03d8a1fd/closed-cycle-initialization-to-exact-escape.json",
+        "sha256": "5ead5f81f52068c13f4fb2be14edb508cec533fcbc4cfaed78d148b922044e4f"
+      },
+      {
+        "path": "map/edges/unrelated-machines-3a-3a-a56e5e8b03d8a1fd/dag-oracle-pays-single-machine-precedence-lp.json",
+        "sha256": "6ffba93018263ebfd93d92b0e7185e096733942209f86b221f12022d511ae1eb"
+      },
+      {
+        "path": "map/edges/unrelated-machines-3a-3a-a56e5e8b03d8a1fd/finite-cover-gives-qd-unit-config.json",
+        "sha256": "a4bbf5e6576d8944fc65599de32f2d9b9918a130f7763a483d27612d44b49700"
+      },
+      {
+        "path": "map/edges/unrelated-machines-3a-3a-a56e5e8b03d8a1fd/private-exchange-builds-clause-mode-library.json",
+        "sha256": "427c7c8f955b2777d514c23d7d1975840d323125d1c03dfa4ed1674c15630975"
+      },
+      {
+        "path": "map/edges/unrelated-machines-3a-3a-a56e5e8b03d8a1fd/query-v3-final-checks-counting-snapshot.json",
+        "sha256": "bb06bd0b5a00285cb4fe512265e8f02d8b357e9c83e0ba6f101d2af608d16dee"
+      },
+      {
+        "path": "map/edges/unrelated-machines-3a-3a-a56e5e8b03d8a1fd/quota-theorem-pays-candidate-actual-matrix.json",
+        "sha256": "95d1e8078dd315a8958a206032b83250a3e12300a52e22768a48863a860f183a"
+      },
+      {
+        "path": "map/edges/unrelated-machines-3a-3a-a56e5e8b03d8a1fd/seven-state-law-supplies-affine-owner-support.json",
+        "sha256": "95443f1bda02bfd83612958241823d80d1ecf850833445c1a9e338a13b756398"
+      },
+      {
+        "path": "map/edges/unrelated-machines-3a-3a-a56e5e8b03d8a1fd/support-safe-step-can-leave-config.json",
+        "sha256": "15ee9213d450297374eea7a865884ec0fc4389837a945203a411f0976ae96c88"
+      },
+      {
+        "path": "map/edges/unrelated-machines-3a-3a-a56e5e8b03d8a1fd/three-value-selector-pays-stability-completeness.json",
+        "sha256": "af8bdb68d2c9b54eaf05a10556b8fdb4833a9373826367f03251c64c429c0378"
+      },
+      {
+        "path": "map/edges/unrelated-machines-3a-3a-a56e5e8b03d8a1fd/two-witness-separation-pays-private-exchange.json",
+        "sha256": "ec610dc7b6e88f0069b61d2c80dd29029d1904e4483a2d8cb16f34011ad0108b"
+      },
+      {
+        "path": "map/edges/unrelated-machines-3a-3a-a56e5e8b03d8a1fd/uniform-reset-replay-checks-fixed-kernel.json",
+        "sha256": "a65467553a42d9140fc6a304ce8d6a1ceab33e2fe2e1698be782c273303be28f"
+      },
+      {
+        "path": "map/edges/unrelated-machines-3a-3a-a56e5e8b03d8a1fd/zero-positive-part-and-active-slots-pay-five-thirds.json",
+        "sha256": "ae33f32f8d751e2a7cfd14d55a71544cedf9eea2b69b456346802ac53f6381e1"
+      },
+      {
+        "path": "map/edges/unrelated-machines-3a-3a-a56e5e8b03d8a1fd/normalized-config-bridges-qd-degree-three.json",
+        "sha256": "58cc5b6e1bc21b29ee88ff225be2a28df1fc01cda5293ad4d8104beb99598420"
+      }
+    ]
   }
 }

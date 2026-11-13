@@ -831,9 +831,9 @@
       ]
     }
   },
-  "state": "claimed",
+  "state": "done",
   "owner": "Boss3",
-  "request_id": "28942d94bb2949ae830b925643b57f69",
+  "request_id": "8e2c66ee30454724ac6aa011808d1c84",
   "requests": {
     "81a0648c3de14140a1ae6370812f33c4": "plan",
     "0471429a1a1f47239a2ae02a07333759": "plan",
@@ -844,6 +844,219 @@
     "897db316569c47c3b7cd4e76388a2573": "plan",
     "f5f37131faf445e19f26ffda9b332946": "read-add",
     "975679601aa247459fce46c2987c3454": "plan",
-    "28942d94bb2949ae830b925643b57f69": "read-add"
+    "28942d94bb2949ae830b925643b57f69": "read-add",
+    "8e2c66ee30454724ac6aa011808d1c84": "done"
+  },
+  "edge_paths": {
+    "um-b109-bgw-freezing-and-slots-centralized-rounding": "map/edges/unrelated-machines-3a-3a-b10995ada0ae22bc/bgw-freezing-and-slots-centralized-rounding.json",
+    "um-b109-bgw-print-packing-corrects-freezing-instantiation": "map/edges/unrelated-machines-3a-3a-b10995ada0ae22bc/bgw-print-packing-corrects-freezing-instantiation.json",
+    "um-b109-bounded-wiring-complete-clone-saturation": "map/edges/unrelated-machines-3a-3a-b10995ada0ae22bc/bounded-wiring-complete-clone-saturation.json",
+    "um-b109-collision-floor-pairwise-sharp": "map/edges/unrelated-machines-3a-3a-b10995ada0ae22bc/collision-floor-pairwise-sharp.json",
+    "um-b109-collision-floor-robust-no-multiplicity": "map/edges/unrelated-machines-3a-3a-b10995ada0ae22bc/collision-floor-robust-no-multiplicity.json",
+    "um-b109-config-projection-and-slots-pay-gap-upper": "map/edges/unrelated-machines-3a-3a-b10995ada0ae22bc/config-projection-and-slots-pay-gap-upper.json",
+    "um-b109-cover-and-slot-pay-threshold-recovery": "map/edges/unrelated-machines-3a-3a-b10995ada0ae22bc/cover-and-slot-pay-threshold-recovery.json",
+    "um-b109-directed-token-robust-bundle-promise": "map/edges/unrelated-machines-3a-3a-b10995ada0ae22bc/directed-token-robust-bundle-promise.json",
+    "um-b109-fixed-prefix-witness-correction": "map/edges/unrelated-machines-3a-3a-b10995ada0ae22bc/fixed-prefix-witness-correction.json",
+    "um-b109-home-cycle-elimination-to-u-rooted-forest": "map/edges/unrelated-machines-3a-3a-b10995ada0ae22bc/home-cycle-elimination-to-u-rooted-forest.json",
+    "um-b109-ordered-slots-weighted-small-density": "map/edges/unrelated-machines-3a-3a-b10995ada0ae22bc/ordered-slots-weighted-small-density.json",
+    "um-b109-private-menu-multiplicity-asymptotic": "map/edges/unrelated-machines-3a-3a-b10995ada0ae22bc/private-menu-multiplicity-asymptotic.json",
+    "um-b109-tiny-gluing-uniform-lattice-bound": "map/edges/unrelated-machines-3a-3a-b10995ada0ae22bc/tiny-gluing-uniform-lattice-bound.json",
+    "um-b109-weighted-direct-cohabiting-fixed-half-specialization": "map/edges/unrelated-machines-3a-3a-b10995ada0ae22bc/weighted-direct-cohabiting-fixed-half-specialization.json",
+    "um-a-474257b8-uniform-odd-k-pays-tiny-sharpness": "map/edges/unrelated-machines-3a-3a-3f971da9d312cddb/uniform-odd-k-pays-tiny-sharpness.json"
+  },
+  "receipt": {
+    "coverage": {
+      "M-031b8ef7202a4527b45d47605c6ac93a": {
+        "state": "isolated-after-review",
+        "object_pin": "605e0dbc937ded993bcf3a61de55f4b05412ab6239e096072d2004239800ff95",
+        "comparison_scope": "实读原门槛算法、旧前缀撤回与现行共同资格组加权算法、恢复核验及实际无界族；比较两个门槛与 sink 计费单位。",
+        "reason": "原 LP 已付同一小件时，固定 τ=1/2 的替换前缀令实际 sink 负载 r，而真实 OPT=1。已记录具体纠错边。目标当前算法使用原见证，固定 τ=1/2+δ 的另一算法单独支付离散余量。未找到可作此反例精确受否端点的独立旧规则对象。"
+      },
+      "M-99a53b4eb072418a8a291d8582a89646": {
+        "state": "linked",
+        "object_pin": "3114a596f27c572bd8a077a50735d2a597ed33d5e3d51851116ee3b612c9cf8b",
+        "comparison_scope": "实读两个 UB 候选、精确覆盖缩放 DP、给定 a/y 恢复与独立 oracle 审计，比较门槛恢复对实际子集的使用。",
+        "reason": "精确覆盖 FPTAS 付未缩放 d_h、实际 X_h、真实 e_h 和总位复杂度；联合槽与同一恢复另付。大单件不能替代对小件可覆盖的检查，零需求和不足总量分支保留。",
+        "edge_ids": [
+          "um-b109-cover-and-slot-pay-threshold-recovery"
+        ]
+      },
+      "UM-THRESHOLD-COVER-JOINT-SLOT-v1": {
+        "state": "linked",
+        "object_pin": "fb6ae47daf4d59f95268a72db48cd295c608a39564a9a42d0ddac1db569cb473",
+        "comparison_scope": "实读门槛算法全页、原模型、冻结恢复资源、两计算审计和 ST 槽收费；比较共同资格加权前缀及其不同余量。",
+        "reason": "精确覆盖与 ST 收费合取，加真实 T 见证归一化和共同整数流，给 R(τ) 的完整数学保证及未知 OPT 一侧完备搜索。固定原顺序前缀无界是另条纠错。现行软件只恢复给定 a/y 见证，不认证通用 LP 后端。",
+        "edge_ids": [
+          "um-b109-cover-and-slot-pay-threshold-recovery"
+        ]
+      },
+      "UM-TWO-MEASUREMENT-UNIT-PRESENCE-SHARP-GLUING-v1": {
+        "state": "linked",
+        "object_pin": "91e31c897fe93ab16c01e384d366f34ea0e9d78aaf4f1d42f7d4cf43e5eb47fb",
+        "comparison_scope": "实读原 uniform 九节、当前 canonical、匹配与整数费用流、四机族及 tiny 配对槽/加权舍入和 heavy-medium 合同；核对两份完整实际见证和全部原任务负载。",
+        "reason": "以 a=1/k 的 tiny 构造和 1/k 格整化给逐 k 上界。独立四机族给逐 k mixed 下界和 OPT=T；其中奇 k 向 tiny 提供统一 3/2 锐性。两份实际见证均是输入。",
+        "edge_ids": [
+          "um-b109-tiny-gluing-uniform-lattice-bound",
+          "um-a-474257b8-uniform-odd-k-pays-tiny-sharpness"
+        ]
+      },
+      "unrelated-machines/lst-fixed-two-processing-times": {
+        "state": "isolated-after-review",
+        "object_pin": "d99d7fdad7912c55e7118dcfd0e1fbfc81048da9de481016bc200179117b929c",
+        "comparison_scope": "实读 LST 冻结报告 §5 定理6–7及原文，并比较 §4 三维匹配的严格三半、pDM 阈值审查、普通有理/∞模型、ST 加性读出。",
+        "reason": "偶阈值用最大成对单位槽及完整端补齐；奇阈值私有 dummy 的交换需要非私有端时间 2。互素 p,q 的归约靠总最小工作饱和与 pa+qb=pq；一般 pDM 则保禁止端、另有不同比值和合法域。普通模型和 ST 只提供语境或近似，未得到本精确分类的额外同包逻辑边。"
+      },
+      "UM-HOME-UNIT-CYCLE-ELIMINATION-v1": {
+        "state": "linked",
+        "object_pin": "c7373ee75e7ce4ec2f5b48640e28ce1f3411a92e487bdbdcd08143ddcbccb2d0",
+        "comparison_scope": "实读单 home 规范、冻结 v2、同时返环、二阈值反例、token 勘误和有限程序审查；比较任意峰去环、C<2 保 U 森林及有向 token 桥。",
+        "reason": "去环只删 R 外原有标签环，保 R 及其中负载；所得 DAG 入度≤1，外部回 home 给保 U 森林，保峰要求 R 外各 b_i≤C。C=2 时森林失败不影响去环；token 解码直接用原 R。",
+        "edge_ids": [
+          "um-b109-home-cycle-elimination-to-u-rooted-forest"
+        ]
+      },
+      "M-adee88db90b2410982b3fa0efd99273a": {
+        "state": "linked",
+        "object_pin": "ddd09490eb0eb93eab73985845e4bd4a15ea04329990a74d426fd37db40daddb",
+        "comparison_scope": "实读 BGW v1 冻结插值、尺寸分桶、MixPC §4.1 及有限 Decimal 回放、附录小槽和本仓中心式 ST。比较行容量、可靠拒绝、支撑端、通信与位长。",
+        "reason": "强黑盒条件下的分数输出可经恰一覆盖归一化和中心式 ST 得实际 2+O(ε) 峰。印刷 Algorithm 7 的失败运行反例另行纠正黑盒实例化。短消息的数值预算和 CONGEST 并发匹配仍未付。",
+        "edge_ids": [
+          "um-b109-bgw-freezing-and-slots-centralized-rounding"
+        ]
+      },
+      "M-7b7cf6686cfc4a96be292656a0e61188": {
+        "state": "linked",
+        "object_pin": "06a7652db50f387c379751498b9a7043add9fced12496b13f0b358b23794f2d9",
+        "comparison_scope": "实读四层统一宽束 robust 合同、KDM 全配额与部分逃逸、一般有向 token 恒等和给定完整束的实际碰撞着色。",
+        "reason": "γ≤δ 使根与标签同时达到 NO 要求的两层 ceil，真实原调度得到 YES 1 或 NO >2−δ。低实际 Δ 反证严格 NO，故其要求每个完整束选择的 Δ≥⌊1/δ⌋+1。源 robust NO 和复杂度义务保留。",
+        "edge_ids": [
+          "um-b109-directed-token-robust-bundle-promise",
+          "um-b109-collision-floor-robust-no-multiplicity"
+        ]
+      },
+      "UM-PRIVATE-TREE-MULTIPLICITY-GAP-ASYMPTOTIC-v1": {
+        "state": "linked",
+        "object_pin": "e0773a46409cfa84a53470206d586c7e0581fee50302d258076be7b7f1f5ae9d",
+        "comparison_scope": "实读 V3 全阈值 rainbow 阻断及共同配置 λ/Haxell、独立四源审查、同模型平星原矩阵与精确证书。",
+        "reason": "V3 给任意原实例上界，平星真调度与完整 CONFIG 给下界，取上确界夹逼得一阶系数 1。固定 μ 精确值、最坏值可达性和一般实际算法未由此完成。",
+        "edge_ids": [
+          "um-b109-private-menu-multiplicity-asymptotic"
+        ]
+      },
+      "UM-MODEL-v1": {
+        "state": "linked",
+        "object_pin": "9e0366033d2ab38fffe159771a178a29146f75c0d5c2cea92c0b1a307e6269c5",
+        "comparison_scope": "实读普通不相关机模型及松弛、有序槽定理、双树精确整数值及 CONFIG 证明、规范实现和 pDM 边界。",
+        "reason": "同 T 下 CONFIG 先削多余覆盖再投影至剪枝 LST，ST 给实际峰≤2T，提供双树结果普遍上界。双树完整原矩阵、真 OPT 与给定 T 证书独立证明趋二下界。空任务和 OPT=0 各保合同，模型定义不作泛用 hub。",
+        "edge_ids": [
+          "um-b109-config-projection-and-slots-pay-gap-upper"
+        ]
+      },
+      "UM-BOUNDED-COLLISION-LABEL-FLOOR-v1": {
+        "state": "linked",
+        "object_pin": "1580d218ca08cac817f44914de8b6cd0ae98cc409131d8a19a802805e26bcf00",
+        "comparison_scope": "实读给定束颜色证明、二重锐例、原需求评分、DAG 任务桥与 strict robust NO。",
+        "reason": "逐资源分色给真实根树，二重各 K 均 b*=1/2、OPT=3/2，一般 Δ 所列锐例 K=1。颜色地板给 strict robust NO 的必要高重数约束。树的真实单父、原需求以及所给选择的实际重数承重。",
+        "edge_ids": [
+          "um-b109-collision-floor-pairwise-sharp",
+          "um-b109-collision-floor-robust-no-multiplicity"
+        ]
+      },
+      "UM-WEIGHTED-SMALL-ST-BARRIER-v1": {
+        "state": "linked",
+        "object_pin": "054150e0d9ce6d1aed215ee5030e6d6b1f44f585ae61ec26e453e640b12ce737",
+        "comparison_scope": "实读加权 small 密度、独立 Q 匹配、同页 tiny/big CONFIG 稳定舍入及选择边界、等值计数比较和 ST。",
+        "reason": "逐机 w_i≤s_i−u_i/2 的分数点由 ST 一次匹配舍入，另加 Q 的单位匹配；若 Q 无匹配则任一峰<2 的完整分配不可能。Q 空保绝对界，等值单位读出校准、CONFIG 稳定性和一般保证不随之迁移。",
+        "edge_ids": [
+          "um-b109-ordered-slots-weighted-small-density"
+        ]
+      },
+      "UM-COMPLETE-CLONE-MULTISET-PERIODICITY-v1": {
+        "state": "linked",
+        "object_pin": "cba39d9c7796fc461943735682448caa4cc250be6e055a26ffc5e2cbd3763de8",
+        "comparison_scope": "实读完整克隆 MC、半群周期、有限双 oracle、有界接线星边分色与零型回填，以及共同循环二接线坍缩。",
+        "reason": "逐 q 的最佳有界接线在 cap≥max(1,min(q,K)) 时达到 O_q，固定 cap≥max(1,K) 时全序列与完全克隆一致。周期/gcd、limsup、位界及指数首次达到仍由完整克隆原证明承担；最小化是跨可选接线。",
+        "edge_ids": [
+          "um-b109-bounded-wiring-complete-clone-saturation"
+        ]
+      },
+      "M-b51f7575d2f44fe3a73e3ad594af67c6": {
+        "state": "isolated-after-review",
+        "object_pin": "b22e91d7c01e628e42b6a2170076cd91a14d4eab02bff1f9597424b981f0d84c",
+        "comparison_scope": "实读 Bamas 冻结资料 §2–4、损失/页数与第二层连乘勘误，定位冻结 v2 PDF 的 Theorems 1、2、5 与 §4.1，比较一般有向需求树 token 桥与需求树参与/阈值导入审查。",
+        "reason": "深度三 shadow 分布的一轮 SA 与任意深度 path hierarchy 使用不同松弛。Theorem 2 的一处印刷 little-o 商与 §4.1 不一致，沿构造 εm=ω(log m) 及 m=Θ(log n) 使用登记的 ℓ=o(log n/loglog n)。整数损失 α 取小、保留比例 b=1/α 取大；token 恒等可搬整数侧的值，却没有给同层路径可行点到 UM CONFIG 或 LST 的迁移，也没有所需固定 δ 的 YES/NO 整数归约，故不据此写逻辑边。"
+      },
+      "UM-DIRECT-COHABITING-SAT-COMPILER-SHARP-THREE-HALVES-v1": {
+        "state": "linked",
+        "object_pin": "3fefccabb9545d4659086e9f155f0774c028bf590f36345b5ea439f6885ab596",
+        "comparison_scope": "实读固定半权全部原矩阵、两个身份计数和两个非空下界、statement-first 与终读历史、异权同矩阵证明及有限原资格回算。",
+        "reason": "异权特化保 ≤1 的双向证据与全公式实际 ≤3/2 上界；固定半权自己的 2N 槽饱和或 E/R 计数承担严格三半解码和非空下界。重复 occurrence、实际 q+u 共居、空式一闲机及等号 UNSAT 均保留。",
+        "edge_ids": [
+          "um-b109-weighted-direct-cohabiting-fixed-half-specialization"
+        ]
+      }
+    },
+    "assets": [
+      {
+        "path": "map/edges/unrelated-machines-3a-3a-b10995ada0ae22bc/bgw-freezing-and-slots-centralized-rounding.json",
+        "sha256": "2d90f248ad2ad673711b3bdcbb00b75b64d919414b0994c9ee86d4760cdb236a"
+      },
+      {
+        "path": "map/edges/unrelated-machines-3a-3a-b10995ada0ae22bc/bgw-print-packing-corrects-freezing-instantiation.json",
+        "sha256": "b5a4b10e2ca9baddda5e7cb487ba3daf0c40c0d802ec9cd6d3c29e78d66e7b17"
+      },
+      {
+        "path": "map/edges/unrelated-machines-3a-3a-b10995ada0ae22bc/bounded-wiring-complete-clone-saturation.json",
+        "sha256": "f3aa565c6507badc10df6d369f6fd37468062fa6446453352cc03fb283b516b1"
+      },
+      {
+        "path": "map/edges/unrelated-machines-3a-3a-b10995ada0ae22bc/collision-floor-pairwise-sharp.json",
+        "sha256": "520b1f91c02ad64e51661b1b533bb944850e3d35ef8419399e79d934c655a824"
+      },
+      {
+        "path": "map/edges/unrelated-machines-3a-3a-b10995ada0ae22bc/collision-floor-robust-no-multiplicity.json",
+        "sha256": "73eb81278cd3ddaa234cfd8d3aa46d1541604345cc9196b5aa7a4d9e76688f58"
+      },
+      {
+        "path": "map/edges/unrelated-machines-3a-3a-b10995ada0ae22bc/config-projection-and-slots-pay-gap-upper.json",
+        "sha256": "138e3079396527c8d03b14ecceaaba52058eccbc2651bfaaef41d169c9c608a9"
+      },
+      {
+        "path": "map/edges/unrelated-machines-3a-3a-b10995ada0ae22bc/cover-and-slot-pay-threshold-recovery.json",
+        "sha256": "c3c2f6fa40297ebc3f184c713a557fbad25d9397b9479708b809d9dcdba6876b"
+      },
+      {
+        "path": "map/edges/unrelated-machines-3a-3a-b10995ada0ae22bc/directed-token-robust-bundle-promise.json",
+        "sha256": "b7babc4254cc28a1cdf38e17bfe5f47436a8df2bd4f5f80b714c9f2d701824eb"
+      },
+      {
+        "path": "map/edges/unrelated-machines-3a-3a-b10995ada0ae22bc/fixed-prefix-witness-correction.json",
+        "sha256": "120f44c45a884c0df745419dcd88f1fa0bc78d26bce227922dba01b95e7a83a7"
+      },
+      {
+        "path": "map/edges/unrelated-machines-3a-3a-b10995ada0ae22bc/home-cycle-elimination-to-u-rooted-forest.json",
+        "sha256": "066be7b0520a28b9a5578bebe47dab12966ff225c338a50765c8c202a9a3d387"
+      },
+      {
+        "path": "map/edges/unrelated-machines-3a-3a-b10995ada0ae22bc/ordered-slots-weighted-small-density.json",
+        "sha256": "5d112851dac4e553d5d4bc17c5e2ec13a84dbb9148cf250cb6bcd773bc471998"
+      },
+      {
+        "path": "map/edges/unrelated-machines-3a-3a-b10995ada0ae22bc/private-menu-multiplicity-asymptotic.json",
+        "sha256": "c8eef06461f0e824f2759410ff19fa82751f8eac6c2602b5efe274874f2c6415"
+      },
+      {
+        "path": "map/edges/unrelated-machines-3a-3a-b10995ada0ae22bc/tiny-gluing-uniform-lattice-bound.json",
+        "sha256": "608c4db426f0aa8bc4fc25f8ce3c57d31b96ceed7fa6ed4e0569bededc60195c"
+      },
+      {
+        "path": "map/edges/unrelated-machines-3a-3a-b10995ada0ae22bc/weighted-direct-cohabiting-fixed-half-specialization.json",
+        "sha256": "2af0cf09cac605ff4ad5a01a43866add89791bd7952afa927dc7f4b5e7987132"
+      },
+      {
+        "path": "map/edges/unrelated-machines-3a-3a-3f971da9d312cddb/uniform-odd-k-pays-tiny-sharpness.json",
+        "sha256": "17de6d7f10fc2fe26d069a8488f58c68d2fd888ea1573fbf6c688dc9dad3c8cd"
+      }
+    ]
   }
 }
