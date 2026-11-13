@@ -10,21 +10,22 @@
   ],
   "premises_mode": "all",
   "relation_mode": "conditional",
-  "conditions": "固定alpha>=2、V>0；restricted resource-matroid的公共有限非负有理价值、归一化单调整数次模秩value-oracle及原基合同。已给每项合法有理分数基，使每人收益>=V，且最大正资源价值w<V/alpha。此边只处理两值job算法到Santa算法归约中的小最大值分支；不把见证存在/构造及其他分支纳入源舍入定理。",
+  "conditions": "非空有限玩家集上的两值 restricted resource-matroid Santa Claus，公共有限非负有理价值、归一化单调整数次模秩 value oracle、逐项原整数 polymatroid 基。固定 α≥2，给定正有理阈值 V。令 w 为正秩资源的最大公共价值，若无此项则令 w=0。承重输入是每人价值至少 V 的有理分数基见证。在 Lemma 16 的小最大值分支有 w<V/α；同一舍入结论实际上在 w≤V(1−1/α) 时也成立。",
   "roles": {
-    "M-737cbc9ea3b54c03b847026018cf5b19": "提供任意给定合法分数基的减最大有限资源值舍入；严格证据支付压缩槽、整数交和原基完成。",
-    "M-e7c107d268344ca592782a71e1925647": "接受Lemma16通过Lemma22调用的小最大值分支贡献；不由此单步证明完整双向alpha↔2−1/alpha算法类等价。"
+    "M-737cbc9ea3b54c03b847026018cf5b19": "严格压缩槽舍入把给定合法有理分数基化为逐项原整数基，任一玩家损失至多最大活跃值 w。",
+    "M-e7c107d268344ca592782a71e1925647": "Lemma 16 从作业近似到资源近似的归约使用这一阈值分支，支付对小最大值资源实例的原基解码。"
   },
-  "explanation": "调用源舍入得到每项原资源的整数基，每人值至少V−w。由w<V/alpha及alpha>=2，V−w>V(1−1/alpha)>=V/alpha。这正是冻结Appendix E Lemma22第一部分最后分支，被Appendix D Lemma16开头调用。有限公共价值是必要合同；无穷值规范项不进入此次舍入。分数见证可在相关阈值分支由原oracle LP构造，但不是源定理自行提供的输入。",
+  "explanation": "零秩项的唯一基为零，可暂时去掉，输出时接回。若给定的是阈值承诺 OPT_SC≥V，则一个整数最优解证明每人值≥V 的分数基系统可行。该系统的基等式、非负性及逐人价值约束直接检查，逐项秩不等式由最小化 f_j(S)−x_j(S) 分离，故可在有理 LP 与秩 oracle 合同下求得见证。资源舍入输出每项原整数基，逐人值至少 V−w。在原小最大值分支，w<V/α 给 V−w>V(1−1/α)≥V/α，最后一式用 α≥2；较宽的 w≤V(1−1/α) 直接给 V−w≥V/α。这个分支可直接输出原分配，无需调用 job 算法或规范 ∞/1 局部搜索。",
   "contribution": {
-    "result": "给定上述两值原实例、V及分数基见证，若w<V/alpha则多项式输出原项整数基分配、每人值>=V/alpha，支付Lemma16的小最大值分支。",
-    "remaining": "完整核心还需Lemma16其余两值分支及其覆盖判定、规范1和1/b输入的封顶双对偶与解码；Lemma15的另一算法方向；Proposition9同值项聚合和精确分解回原项，以及阈值搜索/oracle算法合同。"
+    "result": "对每个小最大值两值资源实例和正阈值 V，若分数基 LP 可行，则多项式输出每个原资源的完整整数基且每人值≥V/α。原阈值 YES（OPT_SC≥V）保证 LP 可行，故该步骤完整支付 Lemma 16 的小最大值阈值分支。",
+    "remaining": "整条核心还需 Lemma 16 的单位覆盖及大值/小值混合分支、有限 1 与 1/b 的封顶对偶及回译、Lemma 15 的另一算法方向、同值聚合/原项分解及双向阈值搜索。"
   },
-  "scope": "当前核心v2 Theorem3证明的一步；不宣称舍入单独推出整条双向桥，也不把一般值逐见证对偶等价混作两值算法类等价。",
+  "scope": "冻结 BLMRS v1 Appendix D Lemma 16 开头调用 Appendix E Lemma 22 第一部分的最后一个分支。这里的源舍入对任意给定合法分数基成立，目标贡献限于两值算法归约的该分支。",
   "evidence": [
     {
       "path": "archives/unrelated-machines/state/算法/两值作业拟阵的四分之七加误差条件近似--算法.md",
-      "sha256": "0bd9496cdd2bf67b32d74e2f29468de53e0f57e3f53866ed5dbfac4c1fc3593e"
+      "sha256": "0bd9496cdd2bf67b32d74e2f29468de53e0f57e3f53866ed5dbfac4c1fc3593e",
+      "section": "2.3 从 job 算法得到 Santa 算法：Lemma 16"
     },
     {
       "path": "archives/unrelated-machines/tools/evidence/boss2-6405-blmrs-proof/rounding-slots-and-dual.md",
@@ -35,8 +36,8 @@
       "sha256": "fc907ac5159b3b20ae8498052c161f7aaf8d64114db84d7ef1947d6f1c6d4183"
     }
   ],
-  "reviewed_by": "Boss5/matroid_transfers",
-  "review_note": "完整实读当前核心及四指定共享端点合同；实读Definitions7/8、Proposition9/AppendixA、Lemmas15/16/22和严格槽证明。独立核本分支不等式与alpha>=2边界，remaining保全部未由本源提供的归约步骤。辅助worker独立核同一结论。未绑定；父Boss统一审阅绑定。 父Boss核对算法方向、V−w门槛、聚合回译、固定epsilon参数与一侧完备阈值搜索，保原oracle复杂度合同。",
+  "reviewed_by": "Boss5/um_decoder",
+  "review_note": "核当前核心 v2 和资源舍入 v2、两条现行必要证据以及同 SHA 冻结 PDF 的 Definitions 7/8、Proposition 9/Appendix A、Lemmas 15/16/22、Theorem 21。逐项核严格压缩槽、分数基分离、零秩接回、见证量词和 α≥2 界。已核 canonical 另一舍入边通向局部搜索 a3，本边只保留通向 Theorem 3 桥的小最大值实际证明依赖。",
   "endpoint_pins": {
     "M-737cbc9ea3b54c03b847026018cf5b19": "8cf0ef3b2e88c2a2e1253b318c333e212f60184c7482c182cee8e33434f8d758",
     "M-e7c107d268344ca592782a71e1925647": "b07db459d993b150fd8a8d01c8cf01f689bde95a9689321d4c79bd9026d8881f"
@@ -46,5 +47,5 @@
     "archives/unrelated-machines/tools/evidence/boss2-6405-blmrs-proof/rounding-slots-and-dual.md": "9c7a4bfe21f216b57edfbce69b591aabf1a4d3a637510eba54411f7d62774bd1",
     "research/registration/evidence/boss6-0104/bamas-et-al-2023-v1.pdf": "fc907ac5159b3b20ae8498052c161f7aaf8d64114db84d7ef1947d6f1c6d4183"
   },
-  "review_digest": "73f9c7793a72029514114f19cae23c51bb0677a5cd5d339d428764602a09d4ad"
+  "review_digest": "04191c53af84ebbd10d05c0288e16513a4cab1ed97989465a130394126dd0281"
 }

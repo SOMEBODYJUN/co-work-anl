@@ -3,47 +3,17 @@
     "M-e7c107d268344ca592782a71e1925647": {
       "state": "linked",
       "object_pin": "b07db459d993b150fd8a8d01c8cf01f689bde95a9689321d4c79bd9026d8881f",
-      "comparison_scope": "完整读当前v2核心双向归约和四指定共享端点的登记/正文；实读冻结PDF Definitions7/8、§1.3、Proposition9/AppendixA、Section3 Lemma15、AppendixD Lemma16、AppendixE Lemma22及Theorems21/23。算法端另读Section4/AppendixF结构不变量、失败证书和运行时间及71b686的条件证书及新版q≥16入口不交性反例；普通两值端另读Lemma12–14、AppendixC Lemma17–20。完整读当前严格压缩槽/逐项对偶证据。独立重写Lemma15/16方向、零项与原基回译、规范三个分支、精确阈值grid的一侧完备搜索及4+η到7/4+ε迁移。新增迁移终点M-57aea6b6d55243269c09c9ba8f026e87为以完整源算法接口A_eta为前提的条件全输入保证；整体复杂度仅沿原论文oracle/数值访问合同，不额外强化binary巨大重数。 另完整核外层可达新正文及a3 v3/open，外层到达已证明；后续仅指修订完整算法。",
-      "reason": "资源减最大项舍入精确支付Lemma16经Lemma22调用的小最大值分支，accepted contribution明确保留其余步骤；局部搜索的两值4+η算法与核心桥作为ALL联合前提，迁移到独立job-matroid的7/4+ε保证，不指向桥自身且不拆失联合前提。作业舍入二近似不能代入任意有限α的2−1/α；普通unrelated两值Theorem2和公共值整数基模型只共享restricted assignment子域，未造错误整条蕴含。四对全部实读比较并闭合。 同步后新证据确认源递归入口证明有未付义务，7/4+epsilon迁移accepted/conditional，原舍入贡献不依赖该缺口。",
+      "comparison_scope": "重审核心 v2、资源减最大项舍入 v2、作业加最大项舍入 v2、局部搜索 v3/open 和普通两值等价 v2 的完整登记陈述与相关中文章节。核同 SHA 的 BLMRS 2023 v1 PDF 的 Definitions 7/8、Proposition 9 与 Appendix A、Section 3 的 Lemma 15、Appendix D 的 Lemma 16、Appendix E 的 Theorems 21/23 与 Lemma 22；另读 §4 执行、Appendix F 的 Lemma 30 入口及普通两值的 Lemmas 12–14 与 Appendix C Lemmas 17–20。实读压缩槽严格补证、全项补基等价、外层可达反例及当前 conditional 迁移边，并独立核以下四个指定比较。",
+      "reason": "资源舍入给原基与 V−w≥V/α，且在 OPT_SC≥V 下可由秩分离求合法有理分数基，支付 Theorem 3 中 Lemma 16 的小最大值分支。作业加最大项舍入可在 p_max≤(1−1/α)T 的给定见证上达到所需 βT，但全域的二近似不能代入有限 α 的 β=2−1/α。普通两值 Theorem 2 允许同项的两种正值随玩家/机器变化；秩一只保双方共同的 restricted assignment 子域。局部搜索加核心桥的整条 7/4+ε 条件迁移已由 canonical 边 blmrs-two-value-santa-and-duality-transfer-seven-fourths-job 交付（map/edges/unrelated-machines-3a-3a-2cfc52a90592a978/two-value-santa-and-duality-transfer-job-guarantee.json）。当前 a3 v3/open 的入口、交换秩、证书和复杂度见 boss2-wave4-repair-8a7f75234096249d；外层可达已由 09e5f7fd803e7a8d 的精确反驳支付。\n\n冻结 Appendix E Lemma 22 第一部分的中间值分支 u<V/α≤w 使用规范 ∞/1 oracle，合同只给整数 b>0 的“输出值≥b，或正确证明无值≥γb 的解”。若目标系数为 α 而后端系数为 γ≤α，写 h=V/u。原 YES 只保证规范值≥ceil(h)；要直接保证输出可回译到原值≥V/α，需 b≥ceil(h/α)，而由 YES 保证不能合法拒绝需 γb≤ceil(h)。两式未必可同时满足。取 E={1,2}，大项值1且秩一强制给玩家1，小项值1/5且 f(S)=5 对任一非空 S，f(∅)=0。原 OPT_SC=V=1，规范最优为5。对 α=γ=4，或 0<η<1、α=4+η 且 γ=4+η/2，任意整数 b≥2 都可合法拒绝，因为 γb≥8>5；b=1 可合法输出重项给1、轻项基 (4,1)，规范最小值1，回译原最小值1/5<1/α。此例只检验 oracle 输出合同的直接调用，Theorem 4 的算法存在性仍 open。Theorem 3 的 Appendix D Lemma 16 改用 b=ceil(V/u)=5 的有限值 1 与 1/b 封顶对偶，实际 β 调度补回后逐人规范值≥1/α，无需把 b/α 向下取整；因此此缺口不进入该归约。\n\nγ<α 时，若 h≥αγ/(α−γ)，则 γ ceil(h/α)≤γh/α+γ≤h，余量在大 h 时足够，h=5 的上例在任意 0<η<1 仍存在。单独将轻秩乘 K 并保留后端重分配也不保证回译：取四人 G 与三人 D，重项为值1的 U_{3,7}，轻项值1/5，轻秩由 G 的共享容量5与 D 三个各容量5的单点块直和。原最优1（重给三位 G，其余一位 G 取共享5，各 D 取独占5；每份重基至少留一名 G，给上界1）。任意正整数 K 缩放轻秩后规范最优5K。若 γb′≤5K，因 γ≥4，后端可合法重给全部 D，轻给每位 G 至少 b′（4b′≤5K，余数补原缩放基）；保留该重分配的任一原整数回译使某个 G 最多领1份，低于 1/(4+η) 所需。若 γb′>5K，拒绝合法。这不排额外重新选择重分配的 decoder 或更强的规范后端。",
       "edge_ids": [
-        "blmrs-resource-rounding-pays-two-value-bridge-small-maximum",
-        "blmrs-two-value-local-search-and-dual-bridge-transfer-seven-fourths-job"
+        "blmrs-resource-rounding-pays-two-value-bridge-small-maximum"
       ]
     }
   },
-  "closed_overlaps": [
-    {
-      "core_id": "M-e7c107d268344ca592782a71e1925647",
-      "peer_id": "M-737cbc9ea3b54c03b847026018cf5b19",
-      "reason": "已接受真实局部贡献：固定alpha>=2、有每人≥V合法分数基且w<V/alpha时，资源舍入给≥V−w>V(1−1/alpha)≥V/alpha，支付Lemma16/Lemma22小最大值分支。其余规范分支、封顶双对偶、Lemma15、聚合分解和阈值合同在remaining保留；不冒称整条桥由舍入单独推出。"
-    },
-    {
-      "core_id": "M-e7c107d268344ca592782a71e1925647",
-      "peer_id": "M-0a576e4d0f4647d18173160e6cbaad70",
-      "reason": "逐见证T+pmax舍入在任意值数的公共尺寸模型成立，取最小LP阈值只给二近似；有限alpha要求2−1/alpha<2，故不能直接代入取得Santa常数。附加pmax≤(1−1/alpha)T只给该小最大作业见证子域，非完整双向桥；核心也不推出任意LP见证的加最大项合同。两舍入定理的逐项对偶已由严格证据处理，不新增无效或重复逻辑边。"
-    },
-    {
-      "core_id": "M-e7c107d268344ca592782a71e1925647",
-      "peer_id": "M-a3feff9f6a574834925528d0f9d9d658",
-      "reason": "条件迁移的比率、原项回译及方向已解；完整A_eta算法接口的修订完整算法未付，外层可达已由新反例证明，由既有Boss2的71b686任务承接，范围同时包含a3与本核心桥。反例不否定文献Theorem4结论。"
-    },
-    {
-      "core_id": "M-e7c107d268344ca592782a71e1925647",
-      "peer_id": "M-17240dfa6f6b45e3aca80c1cc929744c",
-      "reason": "完整比较Theorem2配置/选择gadget与Theorem3封顶对偶。Theorem2允许同一资源/作业在不同玩家/机器取不同u,w；本核心每项公共值且选整数polymatroid基。可用机器上的秩一特例只覆盖共同restricted assignment子域，不能由任一定理推出另一完整陈述；相同2−1/alpha公式不构成模型迁移。此精确边界已解，无需后续。"
-    }
-  ],
-  "follow_up_tasks": [
-    "unrelated-machines-3a-3a-71b6862653595dda"
-  ],
   "assets": [
     {
       "path": "map/edges/unrelated-machines-3a-3a-fc54f981449e3903/resource-rounding-pays-small-maximum.json",
-      "sha256": "67eef5018cf0a3d8a7dad808a8fe1f38afa6e2a3d434c646646375c174b80494"
-    },
-    {
-      "path": "map/edges/unrelated-machines-3a-3a-fc54f981449e3903/local-search-and-bridge-to-job-seven-fourths.json",
-      "sha256": "0246662f81d8b53f86895755086bed4cc3cd91e680acf7b97838c6ced94eeaf0"
+      "sha256": "77eca3182a3c71e88108bfecdf597ae3d4552530297244c33c29992a9bd0545a"
     }
   ]
 }
