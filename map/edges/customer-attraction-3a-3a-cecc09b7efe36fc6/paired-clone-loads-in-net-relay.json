@@ -1,0 +1,86 @@
+{
+  "edge_id": "ca-cecc09b7-paired-clone-loads-in-net-relay",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/closeout-dd1b1aa664b3c3cb62a0465d",
+    "M-b7973e6d9dce4a3888f955e70d567a51"
+  ],
+  "target_ids": [
+    "customer-attraction/net-relay-debt-envelope-residual-and-true-information-elimination"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定同一有限共同目录、完整有序纯SPE σ、actual位置i<m与同一个比较组合z≥0、τ≥1，μ=z/τ。T,Q始终独立取同一μ。对actual前缀h_i的克隆链h_iT^r保留同一原σ真实续局。",
+  "roles": {
+    "customer-attraction/closeout-dd1b1aa664b3c3cb62a0465d": "给出旧持有者份额a_r、当前规定收益v_r及复制松弛g_r的精确链式差，并给出不能单独支付drift的真实SPE边界。",
+    "M-b7973e6d9dce4a3888f955e70d567a51": "给出任意一次真实复制的旧持有者客户级差−L+R，以原/新真实未来负载显式保留响应项。",
+    "customer-attraction/net-relay-debt-envelope-residual-and-true-information-elimination": "提供同一比较组合的参考查询与净债定义；本边只支付其逐位置δ_i−s_i的等价重写。"
+  },
+  "explanation": "第r步把客户级克隆分解的旧主题A、当前主题B分别取为T和σ(h_iT^r)，两个终局从h_iT^r沿σ、或先复制T后从h_iT^(r+1)沿σ完成。只对x∈T有b_x≥1。于是局部公式给R_{i,r}(T)−L_{i,r}^{freeze}(T)=a_(r+1)−a_r=(v_r−a_r)−g_r；全客户g_r≥0来自该有序节点的真实IC。对r求和保符号得a_n−a_1，n=m−i+1、a_n=Σ_{x∈T}1/(b_h_i(x)+n)。原真实偏离收益D_i(T)=a_1(T)，故定义端点L_i(T,Q)=U_{d_i}(T,R_{iQ})−a_n(T)，有δ_i=E_{T,Q}L_i+Σ_r E_T(R_{i,r}−L_{i,r}^{freeze})。进一步，s_i=u_i−E_Ta_1，故δ_i−s_i=E L_i+E a_n−u_i，正好是PROJ/τ。客户级直接拥挤损失L^{freeze}和参考端点L_i作用不同。代换净债时原s、z^{slack}、E、F按定义计一次，NET右端K也保留。",
+  "scope": "真实同策略的逐位置代数恒等式。g为整行非负，客户分解响应项有符号。五人二客户真实点g₁=0且旧持有者净增1/6。两互斥单位客户的2q人族对每份完整纯SPE满足Drift与CloneSlack分别发散，CloneSlack−Drift=1/(2q)，同一μ及其它实际前缀也无法抵消未配对根drift。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/障碍/真实克隆链的零松弛漂移与双调和抵销--障碍.md",
+      "sha256": "ef698fd194aaf02d1ebb410a7aa342df5e0a4c9bbe9dc307d822bb99280a94cd",
+      "section": "同查询、同原策略的真实链"
+    },
+    {
+      "path": "archives/customer-attraction/state/障碍/真实克隆链的零松弛漂移与双调和抵销--障碍.md",
+      "sha256": "ef698fd194aaf02d1ebb410a7aa342df5e0a4c9bbe9dc307d822bb99280a94cd",
+      "section": "五人二客户：零复制松弛仍有正收益上升"
+    },
+    {
+      "path": "archives/customer-attraction/state/障碍/真实克隆链的零松弛漂移与双调和抵销--障碍.md",
+      "sha256": "ef698fd194aaf02d1ebb410a7aa342df5e0a4c9bbe9dc307d822bb99280a94cd",
+      "section": "任意2q人、所有完整SPE的强制占用"
+    },
+    {
+      "path": "archives/customer-attraction/state/反例/五客户真实后继克隆使旧持有者增益--反例.md",
+      "sha256": "382f4595a41a669dea26a77111dee9bca4e5fabbecbdbdd45c4f84d53acbf014",
+      "section": "任意合法历史的精确克隆分解"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/净中继债务的包络余项与真实信息消元--引理.md",
+      "sha256": "a5a2815369825a109430268811774c5465df43f7e07e541576c6199738312ac8",
+      "section": "同一组合与真实菜单的量词"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/净中继债务的包络余项与真实信息消元--引理.md",
+      "sha256": "a5a2815369825a109430268811774c5465df43f7e07e541576c6199738312ac8",
+      "section": "消元是精确等式，不是多拿到一条IC"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/净中继债务的包络余项与真实信息消元--引理.md",
+      "sha256": "a5a2815369825a109430268811774c5465df43f7e07e541576c6199738312ac8",
+      "section": "强充分付款与half还差什么"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/real-history-clock-relay-single-kernel-and-packet-primary/source-root/research/workspaces/customer-attraction/R-c57321db16eb40e9867cee444f322c62/relay/algebra/clone_drift_witness.json",
+      "sha256": "14de8b593a991854bf6e58b9253b0313313603c6cab4a1f893bca41f85c15ca6"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/real-history-clock-relay-single-kernel-and-packet-primary/source-root/research/workspaces/customer-attraction/R-c57321db16eb40e9867cee444f322c62/relay/clone_drift_unbounded_family.md",
+      "sha256": "9e47a2d661bf0831adeac70b2407a1781b439d675292905f373cd477f3ce129e"
+    }
+  ],
+  "reviewed_by": "Boss3",
+  "review_note": "逐客户插入冻结旧后继的中间分母并核IC两角色，验证drift−g与响应差−拥挤损失的同号方向。完整复验保存五人31历史及62含self比较。全q结论依据方盒归纳、严格过载偏好与调和和式，另外以Fraction枚举q=1到14的全部计数续局复核。",
+  "contribution": {
+    "result": "δ_i的内部深度项可以逐步等价写成真实客户响应差减冻结拥挤损失，或跨角色漂移减复制IC松弛；对r求和精确望远镜至a_n−a_1。连同端点及原s_i相减，给出同一μ下的净中继逐位置PROJ，且各原信用和K可照原NET处理。",
+    "remaining": "包络余项的非负及NET其余项依靠净中继引理自身的逐客户包络。还需付全克隆端点和跨位置组合的净预算。g单独乘任意固定非负常数不能支付一次旧持有者增益；与人数无关的O(W)预算也不能支付未配对drift；这两条障碍不否定保配对和其它信用的付款或half。"
+  },
+  "endpoint_pins": {
+    "M-b7973e6d9dce4a3888f955e70d567a51": "142deeac4a52134c815c8bf0de829dc58adfb26a6686b55add0a2555332b5be3",
+    "customer-attraction/closeout-dd1b1aa664b3c3cb62a0465d": "96e9cfeb2c2402ef92f8255120676cbc8d8c4a2a4c058930bcb430a01f130299",
+    "customer-attraction/net-relay-debt-envelope-residual-and-true-information-elimination": "946fadc9761d55d0d2925479a27e1fbfb8de50f0611013ac1db644bd6a7c671b"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/障碍/真实克隆链的零松弛漂移与双调和抵销--障碍.md": "ef698fd194aaf02d1ebb410a7aa342df5e0a4c9bbe9dc307d822bb99280a94cd",
+    "archives/customer-attraction/state/反例/五客户真实后继克隆使旧持有者增益--反例.md": "382f4595a41a669dea26a77111dee9bca4e5fabbecbdbdd45c4f84d53acbf014",
+    "archives/customer-attraction/state/引理/净中继债务的包络余项与真实信息消元--引理.md": "a5a2815369825a109430268811774c5465df43f7e07e541576c6199738312ac8",
+    "archives/customer-attraction/tools/evidence/real-history-clock-relay-single-kernel-and-packet-primary/source-root/research/workspaces/customer-attraction/R-c57321db16eb40e9867cee444f322c62/relay/algebra/clone_drift_witness.json": "14de8b593a991854bf6e58b9253b0313313603c6cab4a1f893bca41f85c15ca6",
+    "archives/customer-attraction/tools/evidence/real-history-clock-relay-single-kernel-and-packet-primary/source-root/research/workspaces/customer-attraction/R-c57321db16eb40e9867cee444f322c62/relay/clone_drift_unbounded_family.md": "9e47a2d661bf0831adeac70b2407a1781b439d675292905f373cd477f3ce129e"
+  },
+  "review_digest": "ecf255fe27d3d54d24aaa22ed7eb91a407ca78865dded3d1b7f4d80813ccd54a"
+}

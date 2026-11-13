@@ -1,0 +1,61 @@
+{
+  "edge_id": "ca-cecc09b7-root-tax-row-yields-mg",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "cag-root-tax-full-policy-cone-same-node-optimal-menu-row-margin"
+  ],
+  "target_ids": [
+    "M-0dc34f29048a4a4999780c37e54b7787"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "固定四人六标签根税完整图，259个有序决策节点，前三层恒选A，末层按A计数及F选A/E/F，实际AAAF。对每个非负客户向量要求该σ全历史IC，并用已认证的同节点ROW上界处理每个真实最优四槽元组。",
+  "roles": {
+    "cag-root-tax-full-policy-cone-same-node-optimal-menu-row-margin": "在共同固定锥中支付每个真实最优四槽元组的同节点查询和，给出ROW≤−W/4。",
+    "M-0dc34f29048a4a4999780c37e54b7787": "73固定图扫描中的首个root_tax_failure图，与ROW动作图完全相同；本边独立支持这一个锥的MG部分。"
+  },
+  "explanation": "ROW与MG首锥的root_tax_failure.json字节相同，259个有序动作键及动作逐一一致。对锥中任一点和任一实际位置i，任选达到OPT₄的四槽元组J；按槽重数计的每个真实查询V_{iT}均由该实际历史的全行IC给V_{iT}≤u_i，自身选题时等号。于是OPT₄−W−4u_i≤OPT₄−W−Σ_{T∈J}V_{iT}=ROW_{i,J}≤−W/4。任一合法比较支持的覆盖又≤OPT₄，故也支付该首锥每个MG目标。全式齐次，适用于W=0。",
+  "scope": "只在共同固定根税σ上，且保留ROW的真最优J条件和四槽重复计数。ROW的252份对偶与此首锥的30份MG对偶各自独立。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/计算/根税完整策略锥的同节点最优菜单精确余量--计算.md",
+      "sha256": "fd92d25b7878313432fe68c871b68bf516ea4e402b59481a904a2aecd20d9aa0"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/Boss7-row-cone-restored/verification.json",
+      "sha256": "3a81dacc10a8df9ace60c9eadd77408b04fbd96979c46dd46f0b2a8c4cfc5e0e"
+    },
+    {
+      "path": "archives/customer-attraction/state/审查/最小缺口攻击的逐项与联合扫描--审查.md",
+      "sha256": "6653a89f8d20c414c957d49cc17a212b8d16d740254de2c4785742f4b623413d",
+      "section": "73张既有完整策略的918项目标"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/Boss7-resume-minimum-gap/verification.json",
+      "sha256": "79ba35600a123fa867bfa8d850fafd9ccdef618fa7d9a478be1e80e53c6aa3e4"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/Boss7-resume-minimum-gap/dependencies/root_tax_failure.json",
+      "sha256": "59fd58d85a3c3b989837467eb3523286d1f5ee529b0f119cd4d263bef6984111"
+    }
+  ],
+  "reviewed_by": "Boss3",
+  "review_note": "核同一完整图、实际AAAF、ROW最优J约束及真实查询IC的方向。登记把ROW来源记作finite，因此形式标为条件蕴含；使用的ROW前提已在该固定锥由252个有理对偶精确认证。",
+  "contribution": {
+    "result": "从同一完整策略的已核ROW界及真实IC推出首个root-tax锥所有实际位置的MG违反量≤−W/4，亦推出该锥全部合法比较支持的逐项同界。",
+    "remaining": "扫描的其他固定图与提取图需各自的独立证据。MG界不能推出ROW界，因为ΣV≤4u_i；任何全策略的ROW或MG都仍需另证。"
+  },
+  "endpoint_pins": {
+    "M-0dc34f29048a4a4999780c37e54b7787": "deca4148c1a40f2ce8a1375f5e401716e527003c0897ad8a6041b7fa7745f8c1",
+    "cag-root-tax-full-policy-cone-same-node-optimal-menu-row-margin": "2417696fbc5444b8ed08c9bdc2a21baf968d82ec1847790fe6879a184d218cc7"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/计算/根税完整策略锥的同节点最优菜单精确余量--计算.md": "fd92d25b7878313432fe68c871b68bf516ea4e402b59481a904a2aecd20d9aa0",
+    "archives/customer-attraction/tools/evidence/Boss7-row-cone-restored/verification.json": "3a81dacc10a8df9ace60c9eadd77408b04fbd96979c46dd46f0b2a8c4cfc5e0e",
+    "archives/customer-attraction/state/审查/最小缺口攻击的逐项与联合扫描--审查.md": "6653a89f8d20c414c957d49cc17a212b8d16d740254de2c4785742f4b623413d",
+    "archives/customer-attraction/tools/evidence/Boss7-resume-minimum-gap/verification.json": "79ba35600a123fa867bfa8d850fafd9ccdef618fa7d9a478be1e80e53c6aa3e4",
+    "archives/customer-attraction/tools/evidence/Boss7-resume-minimum-gap/dependencies/root_tax_failure.json": "59fd58d85a3c3b989837467eb3523286d1f5ee529b0f119cd4d263bef6984111"
+  },
+  "review_digest": "bb503554fdec7c8faabd11bbe0458b7b50c6202c670043835b5fdfcc265e9c83"
+}

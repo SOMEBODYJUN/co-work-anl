@@ -1,0 +1,56 @@
+{
+  "edge_id": "ca-47e-positive-price-pays-h3-when-cap-smaller",
+  "kind": "implies",
+  "relation_mode": "conditional",
+  "source_ids": [
+    "M-043045ec129b4a5f82a3368b324accf9"
+  ],
+  "target_ids": [
+    "customer-attraction/shared-maximal-potential-three-tail-prefix-bound"
+  ],
+  "conditions": "六人共同有限标签目录和同一完整有序历史纯SPE，固定任意合法三行动源h、规定行动A、背景b与源收益u。固定X为P=b+1_A下的全目录f_P最大标签，δ=u−κ_X，U_X=Σ_{j∉X}1/(b_j+1)。查询D遍历全部合法标签。同源平衡正价取p=b、k=3、r=u、a=M=1；先固定唯一静态查询X权1，自查询和全部外部价格/容量权取零。取θ=0并且U_X≤9δ。",
+  "roles": {
+    "M-043045ec129b4a5f82a3368b324accf9": "给预算B=u及固定查询X的全目录正价格行。",
+    "customer-attraction/shared-maximal-potential-three-tail-prefix-bound": "同一X,D的主式在明确阈值域内由更小的正价上限支付。"
+  },
+  "explanation": "θ=0时对每个客户取真实预算的局部投影，Ψ(0)=−(1−x)/(b+1)，Ψ(1)=x/(b+3)。故目录价逐列等于L_b(X,D)，正价上限C_B=u+U_X，H3上限C_H=10u−9κ_X，C_B−C_H=U_X−9δ。若U_X≤9δ，则L_b(X,D)≤C_B≤C_H，对全部合法D同时成立。",
+  "scope": "仅六人同源、同最大X、固定单查询、零外价及指定阈值的H3主式；保任意合法有序历史及原弱平局。",
+  "contribution": {
+    "result": "在U_X≤9δ域得到H3-X对全目录的常数10主式。",
+    "remaining": "U_X>9δ时，需H3本身的最大性预算或其它强行；七预算锥最优和真实SPE锐性不从本特例推出。"
+  },
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/共同最大潜力主题的三尾前接不等式--引理.md",
+      "sha256": "8c1e1e62b7adc50095ca2251c89c815868c0fe92e74223de32de41e977b00f35"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/任意尾长平衡末回复闭包的统一正客户价格--引理.md",
+      "sha256": "6e2e4e0b2b790ed20ce424a2be8aa9d8284cb8116b889cf910fb12e9fbcb1784"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-47ea9fe19d891bd5/comparison.md",
+      "sha256": "3f290f5e3e94d63cbbd43d37cc2d3dfdd0536cbbb9db260ab8824efb48a4ac6c",
+      "section": "同一客户价格与两个上限"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-47ea9fe19d891bd5/comparison.md",
+      "sha256": "3f290f5e3e94d63cbbd43d37cc2d3dfdd0536cbbb9db260ab8824efb48a4ac6c",
+      "section": "两种严格顺序均在真实实际前三源出现"
+    }
+  ],
+  "review_note": "核固定X与被定价D的量词、p=b的真实源、逐客户零分子与两个帽差；actual完整SPE两例证明该指定帽次序确实可以翻转。",
+  "status": "accepted",
+  "premises_mode": "all",
+  "reviewed_by": "Boss3",
+  "endpoint_pins": {
+    "M-043045ec129b4a5f82a3368b324accf9": "bf0acd43715e327c29da0a8cd17d36e64b6d5d0da25ffecaeaa4875ebf4f7436",
+    "customer-attraction/shared-maximal-potential-three-tail-prefix-bound": "b706c4b9804a37a3fc7f0bc7c834944169363b5a97ed209964d9eb7b948fdfd6"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/共同最大潜力主题的三尾前接不等式--引理.md": "8c1e1e62b7adc50095ca2251c89c815868c0fe92e74223de32de41e977b00f35",
+    "archives/customer-attraction/state/引理/任意尾长平衡末回复闭包的统一正客户价格--引理.md": "6e2e4e0b2b790ed20ce424a2be8aa9d8284cb8116b889cf910fb12e9fbcb1784",
+    "map/edges/customer-attraction-3a-3a-47ea9fe19d891bd5/comparison.md": "3f290f5e3e94d63cbbd43d37cc2d3dfdd0536cbbb9db260ab8824efb48a4ac6c"
+  },
+  "review_digest": "0b2f0029c7557c9455e60953ea80a0c5ccf958ec24aedb1141813056896f772b"
+}

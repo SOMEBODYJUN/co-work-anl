@@ -1,0 +1,61 @@
+{
+  "edge_id": "ca-cecc09b7-fixed-policy-mg-upper-bound",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-0dc34f29048a4a4999780c37e54b7787"
+  ],
+  "target_ids": [
+    "M-9ae63ef5abd846b28c67b72f4df146cb"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "有限共同标签目录、单位客户与单位玩家、全部有序历史的一份完整纯SPE。固定下述各动作图σ后量化其所有x≥0且Gx≥0的客户质量；同一终局同标签收益相同。原始归一是实际覆盖W=1；齐次等式也处理W=0。",
+  "roles": {
+    "M-0dc34f29048a4a4999780c37e54b7787": "给出71张既有固定图及4张联合MILP提取固定图的精确全目标上界，以及另外两图已有的逐目标有理对偶。",
+    "M-9ae63ef5abd846b28c67b72f4df146cb": "逐人净缺口OPT_m−W≤m u_i的普遍候选；本边仅支付所列固定完整图及其客户质量域。"
+  },
+  "explanation": "固定σ的全有序真实偏离行G、实际福利行w和选定的真实终局收益行f_a均逐客户类型线性。对任意大小min(m,p)的互异比较支持J及任一实际占用主题a，令c=o_J−w−m f_a。非负质量下任意至多m标签的覆盖可补到该大小；同主题实际位置共用f_a，故遍历J、a足以对OPT_m及全部实际i取最大。每份有理证书满足μ≥0、r=βw−Gᵀμ−c≥0，因此c·x=βW−μᵀGx−r·x≤βW。原记录中两图各缺一目标。新增独立核验给原索引46、J=(0,1,2,3)、a=3的β=−1和索引54、J=(1,2,3,4)、a=3的β=−3/4；两个归一原始向量分别达到各自β。两图其余目标原最大β均−3/4，合并即均得全目标上界−3W/4。四张MILP提取动作图的精确保证来自另作的40份固定图对偶。",
+  "scope": "仅覆盖列明的73张既有固定完整图和4张提取固定图，图内可取任意非负客户重数。原冻结918个目标仍只有916份保存对偶；新增两份属本次单独证据。四联合问题的浮点全局状态未获精确认证。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/审查/最小缺口攻击的逐项与联合扫描--审查.md",
+      "sha256": "6653a89f8d20c414c957d49cc17a212b8d16d740254de2c4785742f4b623413d"
+    },
+    {
+      "path": "archives/customer-attraction/state/问题/逐人机会损失与分数价格候选--问题.md",
+      "sha256": "ccd9c70889de92ee62917acca50510256e758062573d85d56055159d69d45b6c",
+      "section": "候选"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/Boss7-resume-minimum-gap/verification.json",
+      "sha256": "79ba35600a123fa867bfa8d850fafd9ccdef618fa7d9a478be1e80e53c6aa3e4"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/Boss7-resume-minimum-gap/verify_saved_duals.py",
+      "sha256": "8250b6ac74035b055f91801a2085693b319c3fc23fb83893ad064a8206f5f687"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-cecc09b7efe36fc6/missing-fixed-cone-duals.json",
+      "sha256": "b90d733dd474457bad9fb6b74f906f4d02e82705820962e67a3de8acd76c6a40"
+    }
+  ],
+  "reviewed_by": "Boss3",
+  "review_note": "在scratch用保存检查器精确重建全部956份旧对偶、6949个非零乘子及31748项残差，输出逐字节等于保存JSON。对原缺项另从候选恢复有理μ与x，用Fraction验证所有有序IC和逐列残差。未从历史best字段补原始点或扩大联合量词。",
+  "contribution": {
+    "result": "对73张指定既有σ的每个锥、全部实际i，OPT_m−W−m u_i≤−W/4，其中两个新闭合锥均≤−3W/4。4个指定提取锥中前两个≤−W/3，后两个≤−W/2。",
+    "remaining": "其余完整策略及人数、目录域仍须另证或给出严格正的完整SPE反例；同一根路径的其它策略也不由提取锥涵盖。一般MG及六人half仍未由本边判定。"
+  },
+  "endpoint_pins": {
+    "M-0dc34f29048a4a4999780c37e54b7787": "deca4148c1a40f2ce8a1375f5e401716e527003c0897ad8a6041b7fa7745f8c1",
+    "M-9ae63ef5abd846b28c67b72f4df146cb": "546e4bb5b9b5051bad168af979995b38899efc4263bde54e4a1c7efd2a03ad2c"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/审查/最小缺口攻击的逐项与联合扫描--审查.md": "6653a89f8d20c414c957d49cc17a212b8d16d740254de2c4785742f4b623413d",
+    "archives/customer-attraction/state/问题/逐人机会损失与分数价格候选--问题.md": "ccd9c70889de92ee62917acca50510256e758062573d85d56055159d69d45b6c",
+    "archives/customer-attraction/tools/evidence/Boss7-resume-minimum-gap/verification.json": "79ba35600a123fa867bfa8d850fafd9ccdef618fa7d9a478be1e80e53c6aa3e4",
+    "archives/customer-attraction/tools/evidence/Boss7-resume-minimum-gap/verify_saved_duals.py": "8250b6ac74035b055f91801a2085693b319c3fc23fb83893ad064a8206f5f687",
+    "map/edges/customer-attraction-3a-3a-cecc09b7efe36fc6/missing-fixed-cone-duals.json": "b90d733dd474457bad9fb6b74f906f4d02e82705820962e67a3de8acd76c6a40"
+  },
+  "review_digest": "d1bc8687f2ca610efda6b946afacc0980cb72bda1d6295c21218253f40743d74"
+}

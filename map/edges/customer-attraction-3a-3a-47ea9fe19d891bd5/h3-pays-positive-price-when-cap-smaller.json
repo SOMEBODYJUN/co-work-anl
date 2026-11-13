@@ -1,0 +1,66 @@
+{
+  "edge_id": "ca-47e-h3-pays-positive-price-when-cap-smaller",
+  "kind": "implies",
+  "relation_mode": "conditional",
+  "source_ids": [
+    "customer-attraction/shared-maximal-potential-three-tail-prefix-bound"
+  ],
+  "target_ids": [
+    "M-043045ec129b4a5f82a3368b324accf9"
+  ],
+  "conditions": "六人共同有限标签目录和同一完整有序历史纯SPE，固定任意合法三行动源h、规定行动A、背景b与源收益u。固定X为P=b+1_A下的全目录f_P最大标签，δ=u−κ_X，U_X=Σ_{j∉X}1/(b_j+1)。查询D遍历全部合法标签。同源平衡正价取p=b、k=3、r=u、a=M=1；先固定唯一静态查询X权1，自查询和全部外部价格/容量权取零。取任意0≤θ<1并且U_X≥9δ。",
+  "roles": {
+    "customer-attraction/shared-maximal-potential-three-tail-prefix-bound": "给较小的共同目录帽；取D=X同时支付同锚SAFE。",
+    "M-043045ec129b4a5f82a3368b324accf9": "其中固定静态X、零外价的平衡族在指定域内由H3及折扣余量分解支付。"
+  },
+  "explanation": "θ=0时对每个客户取真实预算的局部投影，Ψ(0)=−(1−x)/(b+1)，Ψ(1)=x/(b+3)。故目录价逐列等于L_b(X,D)，正价上限C_B=u+U_X，H3上限C_H=10u−9κ_X，C_B−C_H=U_X−9δ。若U_X≥9δ，H3推出零折扣行。对一般θ，令ξ_j=(θ/(b_j+1)−1/(b_j+2))_+/(1+θ)。以t_j=1_D(j)记会员，则B−ΣΨθ,j(t_j)=(1−θ)(C_B−L_b(X,D))+θδ+Σ_{j∉X}[θ(1−t_j)+t_j]ξ_j。H3令D=X给δ≥0，故全式非负。",
+  "scope": "仅这一固定单查询、无动态自查、无外价的同源六人三尾族及指定阈值；保全部合法D和连续折扣区间。",
+  "contribution": {
+    "result": "在U_X≥9δ域，由H3完整支付指定平衡正价参数切片的每条目录行，并给同一切片零折扣加SAFE支付一般折扣的精确差。",
+    "remaining": "任意锚、任意尾长、非零外价、混合查询、自查询及其一般价格区间由目标原证明另行支付。"
+  },
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/共同最大潜力主题的三尾前接不等式--引理.md",
+      "sha256": "8c1e1e62b7adc50095ca2251c89c815868c0fe92e74223de32de41e977b00f35"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/任意尾长平衡末回复闭包的统一正客户价格--引理.md",
+      "sha256": "6e2e4e0b2b790ed20ce424a2be8aa9d8284cb8116b889cf910fb12e9fbcb1784"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-47ea9fe19d891bd5/comparison.md",
+      "sha256": "3f290f5e3e94d63cbbd43d37cc2d3dfdd0536cbbb9db260ab8824efb48a4ac6c",
+      "section": "同一客户价格与两个上限"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/同源真实末回复的折扣闭包与二状态精确投影--引理.md",
+      "sha256": "a2aa6f407865993f693ff8338e2c038a7849643d04ed9078fc7c8e0e6f6b5d42"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-47ea9fe19d891bd5/comparison.md",
+      "sha256": "3f290f5e3e94d63cbbd43d37cc2d3dfdd0536cbbb9db260ab8824efb48a4ac6c",
+      "section": "此固定单查询零外价族的任意折扣"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-47ea9fe19d891bd5/comparison.md",
+      "sha256": "3f290f5e3e94d63cbbd43d37cc2d3dfdd0536cbbb9db260ab8824efb48a4ac6c",
+      "section": "两种严格顺序均在真实实际前三源出现"
+    }
+  ],
+  "review_note": "二状态边代价及三候选逐一对照；新有理核验独立枚举任意固定客户位的候选，并核两个严格actual实例。",
+  "status": "accepted",
+  "premises_mode": "all",
+  "reviewed_by": "Boss3",
+  "endpoint_pins": {
+    "M-043045ec129b4a5f82a3368b324accf9": "bf0acd43715e327c29da0a8cd17d36e64b6d5d0da25ffecaeaa4875ebf4f7436",
+    "customer-attraction/shared-maximal-potential-three-tail-prefix-bound": "b706c4b9804a37a3fc7f0bc7c834944169363b5a97ed209964d9eb7b948fdfd6"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/共同最大潜力主题的三尾前接不等式--引理.md": "8c1e1e62b7adc50095ca2251c89c815868c0fe92e74223de32de41e977b00f35",
+    "archives/customer-attraction/state/引理/任意尾长平衡末回复闭包的统一正客户价格--引理.md": "6e2e4e0b2b790ed20ce424a2be8aa9d8284cb8116b889cf910fb12e9fbcb1784",
+    "map/edges/customer-attraction-3a-3a-47ea9fe19d891bd5/comparison.md": "3f290f5e3e94d63cbbd43d37cc2d3dfdd0536cbbb9db260ab8824efb48a4ac6c",
+    "archives/customer-attraction/state/引理/同源真实末回复的折扣闭包与二状态精确投影--引理.md": "a2aa6f407865993f693ff8338e2c038a7849643d04ed9078fc7c8e0e6f6b5d42"
+  },
+  "review_digest": "3f6b32584e5f5ca6b5199478cbced8abec74ea17a5a87c6b875276fda02361be"
+}
