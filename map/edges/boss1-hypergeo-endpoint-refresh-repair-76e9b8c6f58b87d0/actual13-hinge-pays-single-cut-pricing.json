@@ -1,0 +1,67 @@
+{
+  "edge_id": "boss5-76e9b8c6-actual13-hinge-pays-single-cut-pricing",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/actual-third-thirteen-row-two-state-hinge"
+  ],
+  "target_ids": [
+    "M-7de9653b3756482a842a5e462fdd01d1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "同一实际第三位十三行和同一组整数权。固定旧bits、max_bits和三个family共同d，p∈{0,1,2}，d∈{0,…,5}。可行直方图为该条件下的非空有限Cartesian积，且旧分数按AB、AE、Sbranch三族可加。单条cut乘子μ≥0。全零负载的份额按零。",
+  "roles": {
+    "customer-attraction/actual-third-thirteen-row-two-state-hinge": "提供同一十三行的逐类型max8恒等式、36格Θ表及只含一个外层h的显式消元。",
+    "M-7de9653b3756482a842a5e462fdd01d1": "单cut的条件化定价及36格缓存由该消元精确付出，多cut的独立隐藏态合同另有论证。"
+  },
+  "explanation": "两正文十三行及整数权逐项一致。两态引理的(a,e,s,t,v)对应定价正文的(b,a,U,V,W)。令A_h=8251u+307m−925e/(p+3)−C1/(p+h+1)−C2/(p+h+2)，则G=A_h+g(p,h,d,q,r)，其中g=F_qr+14774h/(p+3)−307h，末两项不含q,r。故Θ=max_(q,r)g仅有3×6×2格，且φ=max_h(A_h+Θ)。固定h时，C1和C2中的七项只分别用固定(x,y,z)、AB的(b,d)、Sbranch的(U,x),(U,V),(U,W),(V,d)，而−925e/(p+3)只用AE计数；因此A_h=K_h+Σ_f A_(f,h)，K_h在固定context下与直方图无关。对μ≥0，把μ max_h写成max_h μ并交换有限max，再在固定h的Cartesian积按族取max，得到max_hist(old+μφ)=max_h[μ(K_h+Θ_(p,h,d))+Σ_f max_(hist_f)(old_f+μ A_(f,h))]，旧分数的纯context常数可加在两侧。逐客户代数无需实现该直方图的SPE，因此同页P13的真实SPE必要性只用于确认原行身份，没有充作第二个逻辑前提。",
+  "scope": "精确适用于该十三整数支持、同一实际第三位context及每个满足分族条件的旧分数和μ≥0。等式只涉及条件Cartesian放松域，逐类型两态等式本身不要求SPE实现。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/实际第三位十三行投影的两态铰链分解--引理.md",
+      "sha256": "c32a44ba590ad17178404ec57beaec3b0054ed1c82da8c6cac28383f65303c65",
+      "section": "2. 十三条总行和完整税定义"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/实际第三位十三行投影的两态铰链分解--引理.md",
+      "sha256": "c32a44ba590ad17178404ec57beaec3b0054ed1c82da8c6cac28383f65303c65",
+      "section": "3. 先消Q/R：36格精确核心"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/实际第三位十三行投影的两态铰链分解--引理.md",
+      "sha256": "c32a44ba590ad17178404ec57beaec3b0054ed1c82da8c6cac28383f65303c65",
+      "section": "4. 再消H：一条显式正部"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/实际第三位十三行投影的两态铰链分解--引理.md",
+      "sha256": "c32a44ba590ad17178404ec57beaec3b0054ed1c82da8c6cac28383f65303c65",
+      "section": "6. 定价接续与执行边界"
+    },
+    {
+      "path": "archives/customer-attraction/state/资源/五人根独立审计的输入身份与投影范围--资源.md",
+      "sha256": "855a97d33e2d6942ca50ee0ee4c9e7f32d0c2e0fa26fe5d22f32e2d3078f8746",
+      "section": "3. 实际第三位的十三行：完整定义与必要性"
+    },
+    {
+      "path": "archives/customer-attraction/state/资源/五人根独立审计的输入身份与投影范围--资源.md",
+      "sha256": "855a97d33e2d6942ca50ee0ee4c9e7f32d0c2e0fa26fe5d22f32e2d3078f8746",
+      "section": "5. 十三支持的单cut条件化定价与多cut义务"
+    }
+  ],
+  "reviewed_by": "Boss5",
+  "review_note": "实读两态引理全文与定价正文§§3、5，核对十三行系数、计数映射和每层最大化量词。复用原证明和36格保存结果，未重跑数学程序或全域定价。",
+  "contribution": {
+    "result": "在目标的单cut域，对任意μ≥0与分族可加旧分数，精确直方图定价可先缓存36个Θ_(p,h,d)，再取h=0,1两次条件分族最大值中的较大者。",
+    "remaining": "目标还主张多条已分别投影的cut以非负权相加时应保留每cut独立隐藏态。该部分需分别对每个正权cut取max，并用各max之和2而共态max和1的反例排除强制共同隐藏态。当前贡献也未给全域多cut oracle或SPE逆实现。"
+  },
+  "endpoint_pins": {
+    "M-7de9653b3756482a842a5e462fdd01d1": "afee3e7ba3b20c67b7d0961f3bd0573508daf541ca50bc59dd408371dd879285",
+    "customer-attraction/actual-third-thirteen-row-two-state-hinge": "c2696ec12f02423dcca216e56ce8a026365473481908d0565357240fbedb63a3"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/实际第三位十三行投影的两态铰链分解--引理.md": "c32a44ba590ad17178404ec57beaec3b0054ed1c82da8c6cac28383f65303c65",
+    "archives/customer-attraction/state/资源/五人根独立审计的输入身份与投影范围--资源.md": "855a97d33e2d6942ca50ee0ee4c9e7f32d0c2e0fa26fe5d22f32e2d3078f8746"
+  },
+  "review_digest": "afe0313df1a5510e9c7132743c8e58e6ec52aa0b1413b78328573302d6a6483c"
+}
