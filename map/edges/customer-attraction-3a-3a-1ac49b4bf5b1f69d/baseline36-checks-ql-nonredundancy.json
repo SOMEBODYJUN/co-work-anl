@@ -1,0 +1,63 @@
+{
+  "edge_id": "cag-r3002-baseline36-checks-ql-old235-nonredundancy",
+  "kind": "checks",
+  "status": "accepted",
+  "source_ids": [
+    "M-2eca37e2ca454d24bfadbc87872d29a0"
+  ],
+  "target_ids": [
+    "M-f756641747c649519bf1b4f2e4560522"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "固定baseline_exact_primal.json的36类型非负有理质量、K=1、O=21/5；指定旧三复制图的14 CAP、3 COPY、210 SAFE、4 LAST、4 PAIR行及其源前缀/first_genuine。对端固定QL证书α=62825167/5000000000、β=286165527/2000000000。这里的形式r等于强制P0首位v_T，未给原完整SPE；真实模型中原根收益另由r≥v_T接回。",
+  "roles": {
+    "M-2eca37e2ca454d24bfadbc87872d29a0": "提供全部旧235行可行而QL标量余量严格负的指定有限有理点，检查QL相对该旧行族的非冗余性。",
+    "M-f756641747c649519bf1b4f2e4560522": "提供被代入的QL真实根支撑行所在的五行定理；其全SPE量词及完整会员立方证书不被本有限点验证或否定。"
+  },
+  "explanation": "独立按行公式和36个正有理权重重建235行，全部余量非负，42条为零，T质量=K=1。由TABCDE收益得到v_T=14127262126010084580181/72168651918061738611900；减去QL的α(21/5)+β得−3697209993063870745398581491/36084325959030869305950000000000。其余会员列置零，因此指定旧235行不蕴涵该QL标量。真实完整σ中的QL证书还要求全部真实查询图合法行与完整域残差，先给v_T界再由原根IC给r界；松弛点没有这些完整策略条件，故不反驳对端。对端也不能推出指定点的36个权重和235行可行性。仅作语境checks，不写whole_result或contribution逻辑支持。另一个3889旧点的五行全负、加入五行后的3894点四正一零，都不是本36型点；本36型点旧基础图行实际为正。",
+  "scope": "仅指定235行系统中QL标量的非冗余性及有限松弛/真实SPE的量词边界；不是任何SPE福利反例，不认证完整3894生成器或六人目标。",
+  "evidence": [
+    {
+      "path": "map/edges/customer-attraction-3a-3a-1ac49b4bf5b1f69d/comparison.md",
+      "sha256": "9a16d1e7a3a62e1cc97fe72bb62500cc4a36bcdad32ef75b6473a22147f7a83b",
+      "section": "指定36类型点的独立有限核算"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-1ac49b4bf5b1f69d/finite-audit.json",
+      "sha256": "fb43d207988a3fda4616ae2e2a853638313d8086f9f4e3f54806061dee45f0e9"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-1ac49b4bf5b1f69d/verify-finite.py",
+      "sha256": "29740902beafe29e2fbd80e2c30e66f9d885fccda2585ba0a83e0f6673061d72"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/R-3002-batch-20261031/source/baseline_exact_primal.json",
+      "sha256": "942b6946d6d0ee746f0c386e1634cd525ae8fdf4c4d7396d32c3057b1c238e87"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/R-3002-batch-20261031/research_4/root_requery_third_L_o4.2_exact.json",
+      "sha256": "bfa74bd0e7da4ae42b88e2e87f65443855f997ffc8b0637b1ef6d807d3e2c77d"
+    },
+    {
+      "path": "archives/customer-attraction/state/资源/最大根同源再查询的图语义与审查证据范围--资源.md",
+      "sha256": "2806cc7dc2326a765a6e61020a6a24430fffb03db0b6676f02fe3dfd01656ada",
+      "section": "整数残差怎样才证明一条根行"
+    }
+  ],
+  "reviewed_by": "Boss6",
+  "review_note": "实读本包指定14份证据及当前两对象记录；大JSON所有1905列按连续无损字段视图完成，详见reading-ledger。新作精确235行/五标量小算术，复用成熟全立方及旧3889行审计，未重跑巨大全域或SPE搜索。已核真根r与强制首位v_T、三个不同必要条件点、whole_result/contribution/context的边界；此边只保checks语境。",
+  "endpoint_pins": {
+    "M-2eca37e2ca454d24bfadbc87872d29a0": "0485ef4ee0ead5697b7c21562bf7e14fa3656dbb0801fff2db69b0800548409c",
+    "M-f756641747c649519bf1b4f2e4560522": "ce3e3e48e04f8c4e7d699f6057a63b860de7df8f7fc0af2f6ad3c296293cba38"
+  },
+  "evidence_pins": {
+    "map/edges/customer-attraction-3a-3a-1ac49b4bf5b1f69d/comparison.md": "9a16d1e7a3a62e1cc97fe72bb62500cc4a36bcdad32ef75b6473a22147f7a83b",
+    "map/edges/customer-attraction-3a-3a-1ac49b4bf5b1f69d/finite-audit.json": "fb43d207988a3fda4616ae2e2a853638313d8086f9f4e3f54806061dee45f0e9",
+    "map/edges/customer-attraction-3a-3a-1ac49b4bf5b1f69d/verify-finite.py": "29740902beafe29e2fbd80e2c30e66f9d885fccda2585ba0a83e0f6673061d72",
+    "archives/customer-attraction/tools/evidence/R-3002-batch-20261031/source/baseline_exact_primal.json": "942b6946d6d0ee746f0c386e1634cd525ae8fdf4c4d7396d32c3057b1c238e87",
+    "archives/customer-attraction/tools/evidence/R-3002-batch-20261031/research_4/root_requery_third_L_o4.2_exact.json": "bfa74bd0e7da4ae42b88e2e87f65443855f997ffc8b0637b1ef6d807d3e2c77d",
+    "archives/customer-attraction/state/资源/最大根同源再查询的图语义与审查证据范围--资源.md": "2806cc7dc2326a765a6e61020a6a24430fffb03db0b6676f02fe3dfd01656ada"
+  },
+  "review_digest": "1c6adddabe47d87d64187529da8a72782f5550775c87936aab144c10141bd537"
+}
