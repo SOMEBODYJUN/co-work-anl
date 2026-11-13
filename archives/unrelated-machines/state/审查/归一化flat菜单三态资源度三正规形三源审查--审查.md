@@ -33,7 +33,7 @@ Exact Statements 要求对每个正阈值 v，源 whole-state partial allocation
 
 作者 Proof 的正向路径：源 group 选 leaf state 和资源子集后，root 到 leaf 的内部节点选择 child-own singleton，leaf 选择原 state，off-path nodes 选择 own singleton。own resources 在路径上由 parent 使用、off-path 由自身使用，因而互不冲突。逆向不预设只有一条活路径：target root 选择的 child-own resource 阻塞 child 的 own state，递归下降直到实际选择原 leaf；额外 off-path leaves 可丢弃，只提取一条 root path。
 
-对完整 C<2 actual，selector private load 1 加未导出 incidence 的负载会超过 2，因此 selected singleton 的 incidence 必须导出；逆映射沿实际 selected path 解码原 leaf，删除新增 tree selector/资源并把原 selector 重定位到原合法 leaf，全部旧 jobs 恰一次。正向则保留原 jobs/资源导出并为新增 singleton 安排 unit export。该证明明确处理未选 states 的原 incidence jobs、zero weights、duplicate states、idle machines，而不是只映射资源子集。
+对完整 C<2 actual，selected singleton 的 selector private load 1 加未外送的 unit incidence 恰为 2，因此 selected singleton 的 incidence 必须导出；逆映射沿实际 selected path 解码原 leaf，删除新增 tree selector/资源并把原 selector 重定位到原合法 leaf，全部旧 jobs 恰一次。正向则保留原 jobs/资源导出并为新增 singleton 安排 unit export。该证明明确处理未选 states 的原 incidence jobs、zero weights、duplicate states、idle machines，而不是只映射资源子集。
 
 路径降度必须在树展开之后执行：对每个真实资源的 d 个 incident groups 建 d ports 和 d-1 helpers，每个 helper 只能选相邻 port singleton。完整正向/逆向 mapping 保持原资源子集不交和 C<2；最终每 group 至多 3 states、每 resource 至多 3 groups。树规模：每 K 个原 states 有 2K-1 vertices、2K-2 own resources；总中间 groups 2S-m、states 5S-4m，新增 singleton incidences 4S-4m，仍为显式输入位长多项式。
 

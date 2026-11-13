@@ -65,7 +65,7 @@ evidence_manifest: "../../tools/evidence/hall-joint-20261030/source-manifest.jso
 
 block cuts 的族参数从 (k=4,h=3,T=7/4) 开始，经 (k=5,T=9/5)、(k=6,T=11/6) 延伸到 (k=64,T=127/64)；所有记录的 threshold-cut coefficient 为0。独立 path-orientation 检查的 star-escape patterns 随 (k=2,3,4,5,6) 为 (8,32,128,512,2048)，exact interval checks 在 (k=4,5,8,16,32,64) 上均给 (r) at threshold 为1。这些数值支撑特定 shared-(z) 家族的区间代数和路径方向枚举；JSON 的 limits 同时明确 interval algebra 只属于该识别出的族，不能推广为一般调度约束。
 
-`delta_one_third_counterexample=true` 是本批最重要的负向信息之一：当 (delta=1/3) 时，已有某个 block-cut 候选被明确击穿。它不是所有参数都失败的证明，但足以阻止把 (delta=1/2) 的局部阈值经验静默改写成任意 (delta) 的统一保值。后续若要修复，必须给出新的 block 接口、全局 assignment 和每个低负载输出的解码。
+`delta_one_third_counterexample=true` 记录唯一小端 `{1/3,1}` 的 3DM 选择归约在 δ=1/3 失真：q=1、无三元组时四个选择任务可全留 R，负载4/3。这只排除该归约越过严格 δ<1/3 窗口，不涉及随目标 B 重算的 escape 块切面，也不说明边界处已有算法。
 
 ## 5. Joint slot prefix：局部 envelope 与全局 parity 证书
 
@@ -88,9 +88,9 @@ block cuts 的族参数从 (k=4,h=3,T=7/4) 开始，经 (k=5,T=9/5)、(k=6,T=11/
 * 与[未归档配置证书批次与量词边界](未归档配置证书批次与量词边界--审查.md)的关系是增量证据。旧批已有九个 `hall_group_joint_flow_cases` fixture 的边界摘要；本批的 `6b44...`、`5fc9...`、`2848...` 提供更大有限参数域、独立 DFS 计数和 exact-OPT promise 对照，并保留原件字节。九例旧摘要与本批不合并成一个“统一算法”结论。
 * 与[分组超立方切片菜单的 Hall 保留](../定理/分组超立方切片菜单的Hall保留--定理.md)的关系是证明接口相邻而非同一对象。分组超立方定理的 Hall 并集计数给显式状态选择下的 (C\le3/2) 调度；本批联合流/3DM 输出研究共享资格、联合 threshold 和前缀配额。不能把前者的乘积切片假设默默加入后者，也不能把后者的有限成功率升级成前者的普遍 (c_d) 界。
 * 与[私有需求组合与共享三维匹配复制](../障碍/私有需求组合与共享三维匹配复制--障碍.md)的关系是共同的 3DM/分数到整数障碍。旧对象证明完全元素池会把分数完美匹配整数化、导致 NO→YES；本批 `joint_slot_prefix` 以另一个 parity NO 输入展示 fractional load 1 与实际 OPT (3/2) 的落差。两者共同提醒：必须同时证明全局整数一致性和输出解码，不能只看局部分数支持。
-* 与已有 Kronecker/tensor 反例的关系是负向验证：`delta_one_third_counterexample` 与 parity 3DM certificate 都阻止用一个局部参数样本冒充任意 tensor/block coherence。它们没有新增一份“更高阶 tensor”定理。
+* 与已有 Kronecker/tensor 反例的关系是负向验证：`delta_one_third_counterexample` 限定上述选择归约的 δ 窗口；parity 3DM certificate 限定所示原矩阵的分数到整数接口。两者均不能当作任意 tensor/block coherence 的全称判断。它们没有新增一份“更高阶 tensor”定理。
 
-接续研究若要把这条线推进到一般结果，需要逐项补齐：联合资格图的统一 Hall/flow 证明；当真实 OPT 未知时的 promise 去除或可验证条件；δ 变化下 block cuts 的全量证明；以及从每个低于阈值的整数调度反解 3DM 或其他源见证的统一解码。当前五源只完成有限审计、交叉实现和明确障碍记录。
+接续研究若要把这条线推进到一般结果，需要逐项补齐：联合资格图的统一 Hall/flow 证明；当真实 OPT 未知时的 promise 去除或可验证条件；选择归约的 δ 边界与块切面随目标 B 重算的分别核验；以及从每个低于阈值的整数调度反解 3DM 或其他源见证的统一解码。当前五源只完成有限审计、交叉实现和明确障碍记录。
 
 ## 7. 逐源处置结论
 

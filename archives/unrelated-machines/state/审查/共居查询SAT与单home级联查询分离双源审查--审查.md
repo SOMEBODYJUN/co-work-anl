@@ -74,7 +74,7 @@ C_{\max}(\tau_S)\le1+\delta(S)\le1+\delta.
 
 ## 5. 单 parent 可达域的构造和证明
 
-把每个 (d\in D) 画为 (h(d)\to\sigma_1(d)) 的带任务弧，删掉全部 (Q) 弧得到 (H)。每个查询根 (r_q=\sigma_1(q)) 入度为零；因为 (\sigma_1) 是单位任务匹配，根的可达域 (R_q) 两两不交，且不会进入有向圈。令
+把每个 (d\in D) 画为 (h(d)\to\sigma_1(d)) 的带任务弧，并对每件 (u\in U) 加入 (\sigma_0(u)\to\sigma_1(u)) 的带任务弧；保留原任务标签，删掉全部 (Q) 弧得到 (H)。每个查询根 (r_q=\sigma_1(q)) 入度为零；因为 (\sigma_1) 是单位任务匹配，根的可达域 (R_q) 两两不交，且不会进入有向圈。令
 \[
 A_q=\{d\in D\setminus Q:h(d)\in R_q\}.
 \]

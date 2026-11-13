@@ -106,7 +106,7 @@ source_sha256:
 - `huge_q_empty_jobs`、`large_denominator` 和两个 zero-target fixture，确保实现对大整数、精确有理数、空/零输入的行为可复现；
 - `near_factor_two` 与 `pruned_only_macro_edge`，保留接近二和宏边剪枝的失败/边界机制。
 
-这些输入支持已有有限审计的重放，但不新增普遍 Hall 保留、统一近似比、NP 完全性或 `UM-TARGET-v1` 结论。`q` 是显式 sink 列表长度的接口参数；`q=2^180` 的案例恰好没有 jobs，不能用来声称对二进制压缩的巨大 `q` 也有同等显式复杂度。`unknown_opt_bottleneck` 没有 `T`，不能按其它案例的 `T`-feasible 统计归类。
+这些输入支持已有有限审计的重放，但不新增普遍 Hall 保留、统一近似比、NP 完全性或 `UM-TARGET-v1` 结论。`k` 是显式 sink 数，`q≥2` 是独立的每 sink 组容量参数，按二进制整数存储，网络使用 `min(q,|B|)` 而不复制 q 个槽。`huge_q_empty_jobs` 仅核空任务/大整数边界；按容量运行的总位复杂度由一般整数流实现的证明承担。`unknown_opt_bottleneck` 没有 `T`，不能按其它案例的 `T`-feasible 统计归类。
 
 # 5. 证据、去向与接续
 
