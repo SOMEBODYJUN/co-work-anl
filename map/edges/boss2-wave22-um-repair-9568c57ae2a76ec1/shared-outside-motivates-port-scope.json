@@ -1,0 +1,48 @@
+{
+  "edge_id": "um-a-474257b8-shared-outside-motivates-port-scope",
+  "kind": "motivates",
+  "status": "accepted",
+  "source_ids": [
+    "unrelated-machines/shared-outside-four-job-complete-load-spectrum"
+  ],
+  "target_ids": [
+    "UM-SIGNED-ONE-JOB-PORT-DOWNSET-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "固定同一四任务完整矩阵及二进制有理0<ε<1。比较时保留各原任务及其唯一内、外端；完整容量计H、I、E₁、E₂，内部投影只计H、I且无辅助任务。两侧使用同一闭阈值B。",
+  "roles": {
+    "unrelated-machines/shared-outside-four-job-complete-load-spectrum": "给出所有16个完整目的地分配的负载谱，使加回共享外容量对同一带符号关系的影响可精确比较。",
+    "UM-SIGNED-ONE-JOB-PORT-DOWNSET-v1": "给出固定外端且排除外部容量时的向下闭性、两一致态的状态数下界及混合态结论。"
+  },
+  "explanation": "按(q₁,q₂,b₁,b₂)记入向位(x₁,x₂,y₁,y₂)，取带符号位z=(1−x₁,x₂,y₁,1−y₂)，入向符号为(0,1,1,0)，两个aligned恰编码为0⁴、1⁴。在1≤B<2−ε，内部容量分别排除两q或两b共居，等价于z₂≤z₁、z₃≤z₄，故同一内部投影有3·3=9个可行模式；四个端口均正时长，两符号各2，定理下界是2²+2²−1=7。加回E₁、E₂容量又分别要求z₁≤z₃、z₄≤z₂，四个不等式成环，故完整容量仅允许0⁴、1⁴。把任一aligned的任一入向任务改派其唯一外端仍满足内部阈值，但会在其真实E_i上产生两件unit负载2；原任务仍各执行一次。对2−ε≤B<2，I允许两b，内部有3·4=12个模式，完整关系则为链z₄≤z₂≤z₁≤z₃的五个模式，除两aligned外恰为内部{b₁,b₂}、{q₁,b₁,b₂}、{q₂,b₁,b₂}。两个cross内部峰≤1且完整峰2；B≥2时两侧都接受全部16个模式。",
+  "scope": "四端口的同编码、同阈值范围比较。真实共享外机容量给出了内部投影定理该项假设的具体必要性。仅认证孤立矩阵的目的地模式与峰；任意新增任务、机器同一化、级联及来源解码均需另证。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/构造/共享外端四任务环的完整负载谱--构造.md",
+      "sha256": "64755ab426534bfde30d30d4ea6559b164aa6e6c509e2c6ddd8f0537ea9eda89"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/异权私有子句与共享直方图双源续审查--审查.md",
+      "sha256": "888ebaa8363455e8dcbb677037cfadb0062cb8006f0e6e1948bcf64e7a1eaeb8",
+      "section": "2.3 共享 outside 的真实边界"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/单端口向下闭集与单home级联双源审查--审查.md",
+      "sha256": "404eec6e411300bc21c39f39de854e388ad148ba690728bc47575df0f3ead95c",
+      "section": "1. 单内部端口投影是向下闭集"
+    }
+  ],
+  "reviewed_by": "Boss3/boss2-wave22-um-repair-9568c57ae2a76ec1",
+  "review_note": "核当前两个端点、四环全文、四份历史原件及独立审查、改版引文和带符号投影的指定章节。逐机负载代入独立推出两段关系；本轮有理数枚举作有限复核。两份aligned各有实际峰1，原完整矩阵的OPT=1。",
+  "endpoint_pins": {
+    "UM-SIGNED-ONE-JOB-PORT-DOWNSET-v1": "66b704006e6f8d69422578c25df277299bc0a753525544fb9aac6eab744497ce",
+    "unrelated-machines/shared-outside-four-job-complete-load-spectrum": "4e44e48360dc44873f5d58df733814cb3d4d6cb3f42df533041b74b740d9035a"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/构造/共享外端四任务环的完整负载谱--构造.md": "64755ab426534bfde30d30d4ea6559b164aa6e6c509e2c6ddd8f0537ea9eda89",
+    "archives/unrelated-machines/state/审查/异权私有子句与共享直方图双源续审查--审查.md": "888ebaa8363455e8dcbb677037cfadb0062cb8006f0e6e1948bcf64e7a1eaeb8",
+    "archives/unrelated-machines/state/审查/单端口向下闭集与单home级联双源审查--审查.md": "404eec6e411300bc21c39f39de854e388ad148ba690728bc47575df0f3ead95c"
+  },
+  "review_digest": "c5e12ab6110ced2fa41373331574dc51f53ef459c92554ab4b6ecb296832c6a6"
+}
