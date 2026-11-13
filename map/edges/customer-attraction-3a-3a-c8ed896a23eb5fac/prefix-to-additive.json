@@ -1,0 +1,50 @@
+{
+  "edge_id": "ca-c8ed-prefix-to-additive",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "CA-PREFIX-BALANCE-NO"
+  ],
+  "target_ids": [
+    "customer-attraction/normalized-load-additive-credit-with-uncovered-old-customers-obstruction"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "有限单位客户、有限非空共同标签目录、单位顺序提供者及完整有序历史纯SPE；F始终是同背景最优尾利润，信用函数实例无关。",
+  "roles": {
+    "CA-PREFIX-BALANCE-NO": "提供指定n64交叠组件全历史SPE与真实首孩子数据。",
+    "customer-attraction/normalized-load-additive-credit-with-uncovered-old-customers-obstruction": "仅支付其交叠组件步骤，非整条信用矛盾。"
+  },
+  "explanation": "源全历史解析分类给每个n≥4的真完整SPE，actual=AB^(n−1)。取n=64：63个普通A客户在首孩子为(1,0)，63个特殊共享客户为(1,63)，其余b=0；u=4095/64，OPT64=8062。另按利润消元而非源总覆盖F计算F63(1_A)=15769/2，Δ=355/2，故根L可用2u−Δ=−1585/32。归一化可加版本除以63得f63(1,0)+f63(1,63)≤−1585/2016；完整直方图版本以64独立产品给上界−3170。源B1<0不单独推出任何信用障碍或half反例。",
+  "scope": "仅所得局部贡献；目标的其它独立证明数据仍须原正文。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/反例/任意人数首步补全余额--反例.md",
+      "sha256": "b42e57e311686c2d737d6ade6642efaa05caa28dded02c9cf035ef0ed9c70072"
+    },
+    {
+      "path": "archives/customer-attraction/state/障碍/最优剩余利润的局部系数与共享负载信用--障碍.md",
+      "sha256": "905b75ff5eca8aaf37b6056228bdf31c12cfbb88ce424a6937d052ec0ce35048"
+    },
+    {
+      "path": "archives/customer-attraction/state/障碍/允许未覆盖旧客户的归一化负载可加信用--障碍.md",
+      "sha256": "b8e17113557db4e83db4e1fcfa11c6d7c0c65b61e807ebaabaccf87582ba46e4"
+    }
+  ],
+  "reviewed_by": "Boss4",
+  "review_note": "Boss4 worker实读现行完整模型、两障碍、首步族全历史证明及利润消元；逐项核对b=0归一、旧客户c=0、同一r及非半覆盖反例边界。",
+  "contribution": {
+    "result": "提供障碍证明中n64交叠组件的完整SPE真实性、首孩子旧客户H=63(1,0)+63(1,63)、根真实收益及根最优覆盖。",
+    "remaining": "尾利润F需目标所引消元；可加障碍还需AB与all-big的两个下界，同H障碍还需产品闭包及LOW产品下界。"
+  },
+  "endpoint_pins": {
+    "CA-PREFIX-BALANCE-NO": "4d500022638bb5dcc117edeace66f673af98737256c72c9ebf3217ac49949bb1",
+    "customer-attraction/normalized-load-additive-credit-with-uncovered-old-customers-obstruction": "c9e49bb9e2b374d9e224f9f24029e8242a9ab2d2fe99880a44ee1bee8aa3f725"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/反例/任意人数首步补全余额--反例.md": "b42e57e311686c2d737d6ade6642efaa05caa28dded02c9cf035ef0ed9c70072",
+    "archives/customer-attraction/state/障碍/最优剩余利润的局部系数与共享负载信用--障碍.md": "905b75ff5eca8aaf37b6056228bdf31c12cfbb88ce424a6937d052ec0ce35048",
+    "archives/customer-attraction/state/障碍/允许未覆盖旧客户的归一化负载可加信用--障碍.md": "b8e17113557db4e83db4e1fcfa11c6d7c0c65b61e807ebaabaccf87582ba46e4"
+  },
+  "review_digest": "89a61525fa2442641206e2d6d6b67ac260b938326981953fde28dd0fa8c07ff8"
+}

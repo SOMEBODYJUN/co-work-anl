@@ -1,0 +1,45 @@
+{
+  "edge_id": "ca-c8ed-histogram-to-additive",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/old-customer-full-histogram-universal-credit-obstruction"
+  ],
+  "target_ids": [
+    "customer-attraction/normalized-load-additive-credit-with-uncovered-old-customers-obstruction"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "有限单位客户、有限非空共同标签目录、单位顺序提供者及完整有序历史纯SPE；F始终是同背景最优尾利润，信用函数实例无关。",
+  "roles": {
+    "customer-attraction/old-customer-full-histogram-universal-credit-obstruction": "排除任意旧客户完整直方图函数G。",
+    "customer-attraction/normalized-load-additive-credit-with-uncovered-old-customers-obstruction": "所得为其不可能性结论，不支付独立三族证书。"
+  },
+  "explanation": "反设存在目标的f_r，定义G_r(H)=Σ_{(b,c)∈H}f_r(b,c)，按多重数求和。因f_r(0,c)=0，任何真实节点的Σ_x f_r(b_x,c_x)恰为G_r(H_h)，且G_r(∅)=0。目标两合同遂逐式成为源被排除的两合同，矛盾。源不要求G可加，故包含此子类；本推导不反向，也不重新推出目标独有三族17/252算术证书。",
+  "scope": "仅所得局部贡献；目标的其它独立证明数据仍须原正文。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/障碍/只见旧客户完整直方图的通用信用不可能性--障碍.md",
+      "sha256": "6cecfeda50dc371672fa54f8c8c80e4db2038542fdb0f834bb617f73bdf81559"
+    },
+    {
+      "path": "archives/customer-attraction/state/障碍/允许未覆盖旧客户的归一化负载可加信用--障碍.md",
+      "sha256": "b8e17113557db4e83db4e1fcfa11c6d7c0c65b61e807ebaabaccf87582ba46e4"
+    }
+  ],
+  "reviewed_by": "Boss4",
+  "review_note": "Boss4 worker实读现行完整模型、两障碍、首步族全历史证明及利润消元；逐项核对b=0归一、旧客户c=0、同一r及非半覆盖反例边界。",
+  "contribution": {
+    "result": "归一化负载可加信用函数族不存在：它们嵌入只读全部旧客户(b,c)直方图的函数族。",
+    "remaining": "目标正文独立AB/all-big/交叠三族证明及17/252证书不是由源的272产品证书恢复；它们保留独立证据。"
+  },
+  "endpoint_pins": {
+    "customer-attraction/normalized-load-additive-credit-with-uncovered-old-customers-obstruction": "c9e49bb9e2b374d9e224f9f24029e8242a9ab2d2fe99880a44ee1bee8aa3f725",
+    "customer-attraction/old-customer-full-histogram-universal-credit-obstruction": "4c59fa5889152ebbf2e22e10e05db564e1f6975d374d82e8b52e139d678f22b7"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/障碍/只见旧客户完整直方图的通用信用不可能性--障碍.md": "6cecfeda50dc371672fa54f8c8c80e4db2038542fdb0f834bb617f73bdf81559",
+    "archives/customer-attraction/state/障碍/允许未覆盖旧客户的归一化负载可加信用--障碍.md": "b8e17113557db4e83db4e1fcfa11c6d7c0c65b61e807ebaabaccf87582ba46e4"
+  },
+  "review_digest": "d978fcbbbc52bf410bd9fe77862ebcdd89820951649dfe120e8f5befb7542f7a"
+}
