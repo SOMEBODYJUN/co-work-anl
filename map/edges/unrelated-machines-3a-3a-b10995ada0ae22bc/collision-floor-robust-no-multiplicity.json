@@ -1,0 +1,57 @@
+{
+  "edge_id": "um-b109-collision-floor-robust-no-multiplicity",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "UM-BOUNDED-COLLISION-LABEL-FLOOR-v1"
+  ],
+  "target_ids": [
+    "M-7b7cf6686cfc4a96be292656a0e61188"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "采用目标的统一束宽K、q≥1与0<γ≤δ≤1，并固定一个每变量任取一完整标签束的显式选择；Δ只计该选择的实际碰撞重数。",
+  "roles": {
+    "UM-BOUNDED-COLLISION-LABEL-FLOOR-v1": "给每个局部完整束选择可核验的同步根/标签比例下界1/Δ。",
+    "M-7b7cf6686cfc4a96be292656a0e61188": "其严格robust NO要排除任一b≥δ的真树，本边给该NO的一个必要条件。"
+  },
+  "explanation": "给每变量选一个完整束。若Δ≤1/δ，颜色地板给b(H)≥1/Δ≥δ。根所选变量至少ceil(δq)≥ceil(γq)，保留下来的每个真实标签所获资源至少ceil(δK)，同色资源在所有变量间单父，直接构成违反robust NO的部分束证书。于是满足该NO时，每个局部完整选择必有Δ>1/δ；由于Δ为整数，等价Δ≥floor(1/δ)+1。恰等号1/Δ=δ时已足够违反NO。",
+  "scope": "严格robust NO的必要碰撞条件，可排除固定低重数候选；只量化可给的局部完整选择。该必要条件未提供全层NO。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/审查/三维匹配与高维配额部分障碍双源审查--审查.md",
+      "sha256": "183ab149dc945b46763826132b93f63e02d048b3b5dc6a2beb292a89b9902b0b",
+      "section": "三、可接主目标的 robust bundle matching 合同"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/标签碰撞低重数地板与全层配额近二双源审查--审查.md",
+      "sha256": "a83aff0881acf91272d5b292f8cc9328ba9c7d0d0430d33ee308efd76befbb87",
+      "section": "2. 着色地板和桥梁结论"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/标签碰撞低重数地板与全层配额近二双源审查--审查.md",
+      "sha256": "a83aff0881acf91272d5b292f8cc9328ba9c7d0d0430d33ee308efd76befbb87",
+      "section": "1. 输入合同"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/标签碰撞低重数地板与全层配额近二双源审查--审查.md",
+      "sha256": "a83aff0881acf91272d5b292f8cc9328ba9c7d0d0430d33ee308efd76befbb87",
+      "section": "3. 锐例、组度版本与近二必要条件"
+    }
+  ],
+  "reviewed_by": "Boss3",
+  "review_note": "核清目标采用b*<δ且配额采用至少，不将弱式b*≤δ的ceil(1/δ)界用到整数倒数端点。该比较只增加源输入约束。",
+  "contribution": {
+    "result": "每个局部完整束选择若Δ≤1/δ则能确定性构造一个满足两层配额的互斥子束反证；所以目标的严格NO迫每个此选择Δ≥floor(1/δ)+1。",
+    "remaining": "仍需构造或证明候选hard source在所有标签和部分配额层满足robust NO。高碰撞本身不能替代该证明，也不推出来源困难性。"
+  },
+  "endpoint_pins": {
+    "M-7b7cf6686cfc4a96be292656a0e61188": "06a7652db50f387c379751498b9a7043add9fced12496b13f0b358b23794f2d9",
+    "UM-BOUNDED-COLLISION-LABEL-FLOOR-v1": "1580d218ca08cac817f44914de8b6cd0ae98cc409131d8a19a802805e26bcf00"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/审查/三维匹配与高维配额部分障碍双源审查--审查.md": "183ab149dc945b46763826132b93f63e02d048b3b5dc6a2beb292a89b9902b0b",
+    "archives/unrelated-machines/state/审查/标签碰撞低重数地板与全层配额近二双源审查--审查.md": "a83aff0881acf91272d5b292f8cc9328ba9c7d0d0430d33ee308efd76befbb87"
+  },
+  "review_digest": "dcb551a7922ef9514636283d89a0ad5fc0cb773acad98cbb36099f003e498233"
+}

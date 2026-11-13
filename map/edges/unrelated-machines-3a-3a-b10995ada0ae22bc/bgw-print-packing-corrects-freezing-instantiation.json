@@ -1,0 +1,52 @@
+{
+  "edge_id": "um-b109-bgw-print-packing-corrects-freezing-instantiation",
+  "kind": "corrects",
+  "status": "accepted",
+  "source_ids": [
+    "M-d411e7659e154cde8709dda69abf907a"
+  ],
+  "target_ids": [
+    "M-adee88db90b2410982b3fa0efd99273a"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "仅冻结 arXiv:2607.10075v1 的印刷 Algorithm 7，无未写的 packing 保护，0<ε≤0.1，相位有充分固定多项式内轮预算。",
+  "roles": {
+    "M-d411e7659e154cde8709dda69abf907a": "给冻结版 Algorithm 7 在不可行输入上失守 packing 的显式两行反例和量化。",
+    "M-adee88db90b2410982b3fa0efd99273a": "冻结插值需要失败调用也保行容量；反例撤销以印刷 Algorithm 7 直接支付该前提的用法。"
+  },
+  "explanation": "标准化 L=4ln(2)/ε。令 packing 两行为 (1,1)，covering 两行为 (1/100,1/100)，故 t=x_1+x_2 不可同时≤L及≥100L。对称更新的 local 为 100 exp(1.01t)，末相位执行充分后 t>(10L−ln100)/1.01，且未达 100L，covering 仍拒绝。归一 packing 的极限下界 10/1.01>9，无法满足失败执行也要≤1+O(ε) 的行预算。冻结在机器边界处使用该行预算控制新旧负载插值，因此印刷实现不能由这份证据作为强黑盒代入。",
+  "scope": "纠正黑盒实例化；条件性冻结与保护带结论、其它算法及最终 CONGEST 目标仍按各自证明义务处理。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/资源/分布式不相关机负载均衡与混合覆盖--资源.md",
+      "sha256": "14a35d7de8780b8695541b75019bfe089475c1a41aea18186d30590f5b72933c",
+      "section": "4.1 不能从可行分支直接得不可行packing界"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/分布式不相关机负载均衡与混合覆盖--资源.md",
+      "sha256": "14a35d7de8780b8695541b75019bfe089475c1a41aea18186d30590f5b72933c",
+      "section": "2. 未知目标下的冻结插值：可复用的条件机制"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/bgw_distributed_young_infeasible_probe.py",
+      "sha256": "d0b90185bb2562b716732f521428936f32d19bbf1256c07b0775c76a1436699e"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/bgw_distributed_young_infeasible_probe.json",
+      "sha256": "bc815f095492dac94e7775afabef213afa279b1e3576642616624d03977ad1b0"
+    }
+  ],
+  "reviewed_by": "Boss3",
+  "review_note": "复核不可行性、两项渐近不等式和仍拒绝分支。Decimal 回放只作有限证据，解析递推承担反例。",
+  "endpoint_pins": {
+    "M-adee88db90b2410982b3fa0efd99273a": "ddd09490eb0eb93eab73985845e4bd4a15ea04329990a74d426fd37db40daddb",
+    "M-d411e7659e154cde8709dda69abf907a": "cda510423852022eeb6928f04b8211b5af387646c5f159cc43aab465ad372249"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/资源/分布式不相关机负载均衡与混合覆盖--资源.md": "14a35d7de8780b8695541b75019bfe089475c1a41aea18186d30590f5b72933c",
+    "archives/unrelated-machines/tools/evidence/bgw_distributed_young_infeasible_probe.py": "d0b90185bb2562b716732f521428936f32d19bbf1256c07b0775c76a1436699e",
+    "archives/unrelated-machines/tools/evidence/bgw_distributed_young_infeasible_probe.json": "bc815f095492dac94e7775afabef213afa279b1e3576642616624d03977ad1b0"
+  },
+  "review_digest": "feeecccb8beec5fba8448930d32d11a06e4a98073beefcca0b111e9a11f652c2"
+}

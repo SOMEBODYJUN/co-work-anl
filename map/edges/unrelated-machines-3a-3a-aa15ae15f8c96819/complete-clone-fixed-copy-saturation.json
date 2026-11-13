@@ -1,0 +1,55 @@
+{
+  "edge_id": "um-aa15-complete-clone-fixed-copy-saturation",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "UM-BOUNDED-MULTIPLICITY-CLONE-ENVELOPE-v1"
+  ],
+  "target_ids": [
+    "UM-COMPLETE-CLONE-MULTISET-PERIODICITY-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "任意完整显式非负有理P及q≥1，允许置换重复且保原有限/不可用端。删除有任一零端的整任务类型，令J+是余下正类型，U是各正类型最短端时长之和，pmin为余下有限端最小值。若J+非空取c≥floor(U/pmin)；否则c≥1即可。q和c允许大于显式输入位长的多项式。",
+  "roles": {
+    "UM-BOUNDED-MULTIPLICITY-CLONE-ENVELOPE-v1": "用星边分色与补置换在同一q实现给定有理多重配置；可重复置换。",
+    "UM-COMPLETE-CLONE-MULTISET-PERIODICITY-v1": "给出完整q克隆的O_q，并对其所有q的最小阈值和最小最终周期作更强全局分析。"
+  },
+  "explanation": "在0≤T≤U，每台副本任何可行配置的正任务总件数至多⌊U/p_min⌋，所以对各原类型加计数上界c≥max(1,⌊U/p_min⌋)不删除任何配置。每机型的正规化配置权、每种任务的单位覆盖以及所有原加工端保持逐项相同，故正任务的无界MC(T)与有界MC_c(T)可行域相同。被删原任务类型各自选一个有资格的原零端，在该端机型的每个正权配置添一件同型任务，既不改变负载又给该类型单位覆盖，且每配置计数1≤c。反向删除即可。全部类型都有零端时阈值为0；否则直接最短端分配保证两侧最小阈值≤U。因而仅靠分数系统即可在同阈值双向保持其最优值，不需要先选某个整数复制数或实现周期。",
+  "scope": "在统一有限c下的分数配置可行域投影与最小阈值，适用于所有显式有理合法实例。逐q实际接线另用整数经验配置、分色和置换补全。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/定理/有界重数克隆接线与共同循环坍缩--定理.md",
+      "sha256": "e0ab6cdb190a926bb7d5dfa871b2545e3e14e8f3c814a0327ec79b27e213e979"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/完整机器任务克隆的多重集与最终周期--定理.md",
+      "sha256": "e10f7b09c655e65477c3e9ed4b84e6f92f89bcf76d3e7d1ebd968726e333edda"
+    },
+    {
+      "path": "archives/unrelated-machines/state/计算/有界接线的证书实现与有限穷举--计算.md",
+      "sha256": "5cbb4997800d87307d1305224fbd499a09d2018dd6cde1ab3435281307d0eebf"
+    },
+    {
+      "path": "archives/unrelated-machines/state/计算/完整克隆的双Oracle与周期族核验--计算.md",
+      "sha256": "34d37bd6f0da8822ab7a2b74b29286ea6f241b59b9bb66c4eaa07a7007ca817d"
+    }
+  ],
+  "reviewed_by": "Boss3",
+  "review_note": "逐项核对固定q、q<c、零端整类型回填、达到性和按输出规模收费；可行复制数保持由对每个q的两向不等式直接支付。 复核后将本边限于连续阈值的分数配置系统直接同域，逐q的整数接线交由独立批次验证。",
+  "contribution": {
+    "result": "对每个0≤T≤U，删零类型后的MC(T)和MC_c(T)配置集合逐机型相同；以每配置一件的零端回填后仍保持可行，故t_c=t_+。",
+    "remaining": "逐q整数接线实现、可行复制数半群、gcd周期、limsup公式和位复杂度另用原证明。"
+  },
+  "endpoint_pins": {
+    "UM-BOUNDED-MULTIPLICITY-CLONE-ENVELOPE-v1": "087fe249fe2a874c870b92b82dcdea74db8fc2bb3a9923575fb677cc2c3dd607",
+    "UM-COMPLETE-CLONE-MULTISET-PERIODICITY-v1": "cba39d9c7796fc461943735682448caa4cc250be6e055a26ffc5e2cbd3763de8"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/定理/有界重数克隆接线与共同循环坍缩--定理.md": "e0ab6cdb190a926bb7d5dfa871b2545e3e14e8f3c814a0327ec79b27e213e979",
+    "archives/unrelated-machines/state/定理/完整机器任务克隆的多重集与最终周期--定理.md": "e10f7b09c655e65477c3e9ed4b84e6f92f89bcf76d3e7d1ebd968726e333edda",
+    "archives/unrelated-machines/state/计算/有界接线的证书实现与有限穷举--计算.md": "5cbb4997800d87307d1305224fbd499a09d2018dd6cde1ab3435281307d0eebf",
+    "archives/unrelated-machines/state/计算/完整克隆的双Oracle与周期族核验--计算.md": "34d37bd6f0da8822ab7a2b74b29286ea6f241b59b9bb66c4eaa07a7007ca817d"
+  },
+  "review_digest": "3d7abc8558cd044eab68ef29a2ee8c5f5e9452b12f9897c52257c9075ffad2ed"
+}

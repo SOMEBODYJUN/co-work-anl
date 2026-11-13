@@ -1,0 +1,54 @@
+{
+  "edge_id": "um-b109-collision-floor-pairwise-sharp",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "UM-BOUNDED-COLLISION-LABEL-FLOOR-v1"
+  ],
+  "target_ids": [
+    "UM-PAIRWISE-LABEL-FLOOR-SHARP-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "任意K≥1、正整数对数，每变量唯一标签且原需求K；同对共用K个资源、不同对资源不交。一般Δ锐性另取K=1、每组Δ个变量同用一枚资源。",
+  "roles": {
+    "UM-BOUNDED-COLLISION-LABEL-FLOOR-v1": "给每变量所供完整束的着色地板b≥1/Δ，并以完整任务桥保实际峰≤2−1/Δ。",
+    "UM-PAIRWISE-LABEL-FLOOR-SHARP-v1": "同对共享同一专属K元束的Δ=2实例、每K的匹配上界及K=1的一般重数锐例。"
+  },
+  "explanation": "把标签完整支持作为供给束，成对实例的实际最大重数恰为2，着色给b*≥1/2，直接每对留一变量取全束亦可达到。若存在b>1/2，则每个选中标签需取严格多于K/2个原资源，同对两标签的所需数量之和>K，不能同取。因此选中变量最多一半，根比又≤1/2，矛盾。原任务桥于是给OPT=2−b*=3/2。K=1的每Δ变量同资源族中，每组至多一个变量可在正评分树中出现，选择每组一个使根比为1/Δ，其它选中正需求点比为1，故b*=1/Δ。",
+  "scope": "二重锐性覆盖每个显式束宽K；一般Δ的本构造只用K=1。使用所给实际束的重数与原需求评分。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/审查/标签碰撞低重数地板与全层配额近二双源审查--审查.md",
+      "sha256": "a83aff0881acf91272d5b292f8cc9328ba9c7d0d0430d33ee308efd76befbb87",
+      "section": "2. 着色地板和桥梁结论"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/低重数着色地板的原需求评分与独立枚举范围--审查.md",
+      "sha256": "e7dd70e8e47db88a19a2750b568fb7af0abc2b90a4cf412d02b48cd9ab1a4403",
+      "section": "真实树、所给完整束和颜色地板"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/标签碰撞低重数地板与全层配额近二双源审查--审查.md",
+      "sha256": "a83aff0881acf91272d5b292f8cc9328ba9c7d0d0430d33ee308efd76befbb87",
+      "section": "3. 锐例、组度版本与近二必要条件"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/有向需求与调度的压缩双向任务桥--定理.md",
+      "sha256": "47052b1eb3dfa67b095bbdb1ef86b80f108c6bb71b1e8d0210649b13092b130e"
+    }
+  ],
+  "reviewed_by": "Boss3",
+  "review_note": "复核同对严格过半的容量矛盾、根比例、K=1边界及全原调度恒等式。对K=1至15以精确分数枚举一对资源分配，确认最大值1/2。有限核对独立于全参数证明。",
+  "whole_result": "对每K≥1的成对同束族，b*=1/2且完整原任务OPT=3/2，达到Δ=2地板；对任意整数Δ≥1另有K=1组共享实例满足b*=1/Δ。",
+  "endpoint_pins": {
+    "UM-BOUNDED-COLLISION-LABEL-FLOOR-v1": "1580d218ca08cac817f44914de8b6cd0ae98cc409131d8a19a802805e26bcf00",
+    "UM-PAIRWISE-LABEL-FLOOR-SHARP-v1": "b692ec3e2912023025a3fbe8957db5912ed97f1882b02fb682befcffcfa6e4a5"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/审查/标签碰撞低重数地板与全层配额近二双源审查--审查.md": "a83aff0881acf91272d5b292f8cc9328ba9c7d0d0430d33ee308efd76befbb87",
+    "archives/unrelated-machines/state/审查/低重数着色地板的原需求评分与独立枚举范围--审查.md": "e7dd70e8e47db88a19a2750b568fb7af0abc2b90a4cf412d02b48cd9ab1a4403",
+    "archives/unrelated-machines/state/定理/有向需求与调度的压缩双向任务桥--定理.md": "47052b1eb3dfa67b095bbdb1ef86b80f108c6bb71b1e8d0210649b13092b130e"
+  },
+  "review_digest": "4114bb0bae09908a39ee126a396a7ac82e8855c74afb6492cf71d524b0b9e0b2"
+}

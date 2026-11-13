@@ -1,0 +1,48 @@
+{
+  "edge_id": "um-aa15-full-occupancy-pays-monotone-promise",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "UM-HETEROGENEOUS-MACRO-ARBITRARY-TINY-v1"
+  ],
+  "target_ids": [
+    "UM-HETEROGENEOUS-MACRO-PROMISE-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "显式有限有理输入，H/Z不交，宏仅home、|B|=|H|；真实正OPT下全部有限宏端严格>OPT/2、全部有限tiny端≤δOPT，固定0≤δ<1/2。零OPT和空任务先找零端直接处理。只以OPT调度中使用的宏端作完备性见证，其它宏端可超过OPT。",
+  "roles": {
+    "UM-HETEROGENEOUS-MACRO-ARBITRARY-TINY-v1": "给定尺度算法中承重的满占用、统一容量与ST逐机加性误差论证。",
+    "UM-HETEROGENEOUS-MACRO-PROMISE-v1": "把该论证延长为不知道真实OPT的单调构造。"
+  },
+  "explanation": "在t=OPT，真实调度在每台home恰放一宏，且这些被用宏端≤t，故p≤t的宏子图有完美匹配。删去更慢的宏边不会改变该见证；每home余下tiny载荷<T/2，每sink≤T，于是F(t)在OPT通过。F(t)只保留宏p≤t、给tiny LP容量home t/2、sink t。其资格、容量单调，不把原宏下门槛和tiny相对上门槛重新测试。OPT在有限时间公共分母的网格上，取一个合法分配总工时为上界，在该网格按位二分得最小接受t*≤OPT。在t*取其宏完美匹配，tiny仅用有限原边ST，加性误差≤δOPT，即使某tiny端>δt*也可用。home≤3t*/2+δOPT，sink≤t*+δOPT，回填全部原任务。",
+  "scope": "真正OPT承诺下的固定δ总位多项式算法。F(t*)通过可早于真实整数可行，算法不从F的成功读取最优调度；不推广至宏不足home、宏可去sink或任意结构输入。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/审查/异质宏残余审查来源去重登记--审查.md",
+      "sha256": "02cd7d43414e33ef26fd1fccee8572be2c7c0729b5bbd8b737196256e41433ac",
+      "section": "2.1 异质宏/tiny 结构定理"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/异质宏残余审查来源去重登记--审查.md",
+      "sha256": "02cd7d43414e33ef26fd1fccee8572be2c7c0729b5bbd8b737196256e41433ac",
+      "section": "2.2 未知 OPT 版本及量词边界"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/异质宏残余与单位读出森林双源审查--审查.md",
+      "sha256": "0e04eab5465d195ab206696c58cc3f53f27a933be715421462a982b8cce021e7"
+    }
+  ],
+  "reviewed_by": "Boss3",
+  "review_note": "重构了在OPT删除慢宏、t*阈值搜索和按实际OPT支付的不同量词，核对严格宏下界及零分支。",
+  "whole_result": "在目标所述所有真实OPT承诺输入上，不输入OPT，确定性总位多项式求得全部原任务的实际(3/2+δ)近似调度。",
+  "endpoint_pins": {
+    "UM-HETEROGENEOUS-MACRO-ARBITRARY-TINY-v1": "3a20190d71adbdad97ffee98c61815ed669d6e72e1a2778bb473d35c5f4fcb5c",
+    "UM-HETEROGENEOUS-MACRO-PROMISE-v1": "0e46515eafdbdeceefbb43d4d7a121a8c1ac0656cfc9678ce029415d3a113105"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/审查/异质宏残余审查来源去重登记--审查.md": "02cd7d43414e33ef26fd1fccee8572be2c7c0729b5bbd8b737196256e41433ac",
+    "archives/unrelated-machines/state/审查/异质宏残余与单位读出森林双源审查--审查.md": "0e04eab5465d195ab206696c58cc3f53f27a933be715421462a982b8cce021e7"
+  },
+  "review_digest": "b452730d526932c9f2418f1f671cd2ae444a8783231e01193fb65f7a267ec977"
+}

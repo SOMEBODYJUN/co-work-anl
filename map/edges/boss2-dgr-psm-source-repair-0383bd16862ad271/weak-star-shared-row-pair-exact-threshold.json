@@ -1,0 +1,55 @@
+{
+  "edge_id": "um-boss3-dgr-repair-weak-star-shared-row-pair-exact-threshold",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "UM-WEAK-H2-CONFIG-MOMENT-GAP-v1"
+  ],
+  "target_ids": [
+    "UM-STRONG-H2-ROW-PAIR-STAR-EXACT-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "每整数 k≥3，b=k²，r=b+1。保全原弱 H2 Boolean/one-hot、共同 M₂、负载 localizer 和完整行 CONFIG，再令同机二阶与同一行分布相等。",
+  "roles": {
+    "UM-WEAK-H2-CONFIG-MOMENT-GAP-v1": "固定同一显式稀释星任务矩阵、整数最优值 θ_k 和弱 H2 点 t。",
+    "UM-STRONG-H2-ROW-PAIR-STAR-EXACT-v1": "加入同一行 CONFIG 与同一个 M₂ 的二阶相等后，得整族精确强阈值。"
+  },
+  "explanation": "T<1 时单位 X 无端。对 1≤T<θ_k，R/G 的单位行配置只有空集或 singleton，故同机不同端 L(x_e x_h)=0。Boolean 幂合并与 M₂ PSD 使这些二次向量为零范数并与 x_f 正交。代入 L([x_f(1−Σ_e x_e)]²)≥0 得单位行条件容量 Σ_e L(x_f x_e)≤L(x_f)。固定中心 X 端 f，α=L(x_f)，中心配置含 X 时至多 q=floor(k(T−1))≤k−2 枚 home Z，共享二阶给其条件量≤qα。Y/Z one-hot 乘 x_f 迫该块 R 接受至少 (b+k−q)α。b+1 台 R 最多 (b+1)α，故 α=0。所有中心 X 质量为0，k 件 X 的覆盖撞 k−1 台 G。原整数最优调度的 Dirac 共同矩和同一行配置在 θ_k 达到，且向上保持。原弱点 t 上 R 行两件不同 Y 的正 pair 也直接与 singleton 行的零 pair 冲突。",
+  "scope": "严格同一稀释星族。给出所有 T 的精确强阈值，弱系统的 t 仅是其可行阈值证书。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/审查/弱H2强行矩与加权扇出边界双源审查--审查.md",
+      "sha256": "4f08c432e9e21e52f8dc623f17dd6bf50756d357687952bd297996242fe61902",
+      "section": "2. 弱 H2：同一一阶 CONFIG 加全局四阶矩仍可趋二"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/弱H2强行矩与加权扇出边界双源审查--审查.md",
+      "sha256": "4f08c432e9e21e52f8dc623f17dd6bf50756d357687952bd297996242fe61902",
+      "section": "2.3 强化合同的精确校准"
+    },
+    {
+      "path": "tools/evidence/root-seed-multislice-and-global-escape-corrections/original/research/current/unrelated_machines/weak_h2_configuration_moment_gap.md",
+      "sha256": "2e6aa07ed9e6cd3401eaa2560429e71af4932cdbb7633ff7a54a9ad973cb5dec",
+      "section": "8. 同机二阶配置相容性在稀释星族上的精确阈值"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/共享一阶配置与共同二阶容量的边界--资源.md",
+      "sha256": "1bff411d0aa883ac8a808f9d68f2653fed15e342340802b2ee1166b6be2b046a",
+      "section": "强合同：把零同机pair传到真实条件容量"
+    }
+  ],
+  "reviewed_by": "Boss3",
+  "review_note": "核同一族 §8.1–8.4 和 v3 末步校正。全局 X 的总数是 k，b+k 是激活块 Y/Z 的个数。中心混有 tiny Z，须另付 q 而不能套用 singleton 行。 同族新正文明确R/G的unit pair为零而V行须支付额外条件计数。固定中心的系数k−q−1>0，端点由真实Dirac支付。",
+  "whole_result": "对每个 k≥3 的该稀释星，强 H2(P_k,T) 当且仅当 T≥2−1/k 可行，故精确阈值等于真实 OPT。",
+  "endpoint_pins": {
+    "UM-STRONG-H2-ROW-PAIR-STAR-EXACT-v1": "4ba01b1acbf1732d3d1e414817f62883c44aede3abb4714431f5186edf2bf3e8",
+    "UM-WEAK-H2-CONFIG-MOMENT-GAP-v1": "45266fb7e31cf1beeefb08cd847f6f990441ea40bed04efe57a4bf1813dc5ee6"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/审查/弱H2强行矩与加权扇出边界双源审查--审查.md": "4f08c432e9e21e52f8dc623f17dd6bf50756d357687952bd297996242fe61902",
+    "tools/evidence/root-seed-multislice-and-global-escape-corrections/original/research/current/unrelated_machines/weak_h2_configuration_moment_gap.md": "2e6aa07ed9e6cd3401eaa2560429e71af4932cdbb7633ff7a54a9ad973cb5dec",
+    "archives/unrelated-machines/state/资源/共享一阶配置与共同二阶容量的边界--资源.md": "1bff411d0aa883ac8a808f9d68f2653fed15e342340802b2ee1166b6be2b046a"
+  },
+  "review_digest": "0f8d823775c2a5ffcea9b1eb38d0b924b10a3e9867f27a043949a0a6d7c8d391"
+}

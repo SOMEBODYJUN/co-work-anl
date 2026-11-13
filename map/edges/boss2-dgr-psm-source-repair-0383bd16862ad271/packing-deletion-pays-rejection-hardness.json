@@ -1,0 +1,43 @@
+{
+  "edge_id": "um-boss3-dgr-repair-packing-deletion-pays-rejection-hardness",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-2b0d875268bb40fb8f42b6b7e9108825"
+  ],
+  "target_ids": [
+    "M-68daead978f44d7ea4097706a04d01cf"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定α>β>0、0<ε<1，全部原集合非空，T>0（可固定T=1）；源YES有αn个整集合分割，NO无βn个各留(1−ε)比例的互不相交子集。取整数承诺阈值，或在固定常数参数下用独立副本清分母。",
+  "roles": {
+    "M-2b0d875268bb40fb8f42b6b7e9108825": "提供YES有αn个整集合分割、NO无法选βn个各保至少1−ε的不交子集的常数承诺困难性。",
+    "M-68daead978f44d7ea4097706a04d01cf": "允许拒绝固定比例代理、保留被满足代理的相加估值阈值。"
+  },
+  "explanation": "每个S_i对应一个代理；每个全集元素成为一个原物品，在S_i内值T/|S_i|，其余值0；加(1−α)n个任意代理均值T的独立dummy。YES用分割中的αn个完整集合和其余代理各一dummy，使全体到T。若输出至少(1−α+β)n名到(1−ε)T，至多(1−α)n名用到dummy，余下至少βn名各从本S_i取得至少(1−ε)|S_i|个物品，互不相交，违反NO。构造和从输出验收均总位多项式，δ=α−β。",
+  "scope": "DGR受限拒绝Santa Claus的常数承诺搜索困难性；保持原代理/集合计数与指定正阈值。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/资源/Davies-Guruswami-Ren受限拒绝双标准--资料.md",
+      "sha256": "bd843689083ac0beffb81f28c182da465e919cecd83d003aa75e2122b2db8921",
+      "section": "6. Bicriteria Set Packing 的硬度"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/Davies-Guruswami-Ren受限拒绝双标准--资料.md",
+      "sha256": "bd843689083ac0beffb81f28c182da465e919cecd83d003aa75e2122b2db8921",
+      "section": "4. 受限拒绝 Santa Claus 的硬度"
+    }
+  ],
+  "reviewed_by": "Boss3",
+  "review_note": "独立核对dummy的计数及非dummy代理达到阈值时的比例解码；算法只需在YES输入保证输出，NO时无输出可通过可行性验收。 逐读 arXiv:2511.00184v1 §§3、5及当前准确YES/NO版本。对常数δ=α−β，非dummy受满足者的计数与不交解码严格保全。",
+  "whole_result": "Theorem 4的固定α、β、ε经共享dummy构造推出Theorem 2，存在δ=α−β>0、ε>0，使全体可达T的Santa Claus承诺搜索中，找到至少(1−δ)n名各达(1−ε)T为NP-hard。",
+  "endpoint_pins": {
+    "M-2b0d875268bb40fb8f42b6b7e9108825": "b5a81abfc4cedbb0b098c36a8be2c01cd4a5299cf4cbdf5de36fd4c16e2f6556",
+    "M-68daead978f44d7ea4097706a04d01cf": "6df65fdfb1c3b84432e5a5925705c07c855e3eca902a93eed539e4b70cdf0c2c"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/资源/Davies-Guruswami-Ren受限拒绝双标准--资料.md": "bd843689083ac0beffb81f28c182da465e919cecd83d003aa75e2122b2db8921"
+  },
+  "review_digest": "1a480615074fb90efb6b67857884b38348c724257d545135d99f751aa88092e0"
+}

@@ -1,0 +1,51 @@
+{
+  "edge_id": "um-aa15-local-density-coloring-and-token-bridge",
+  "kind": "transfers",
+  "status": "accepted",
+  "source_ids": [
+    "UM-BOUNDED-COLLISION-LABEL-FLOOR-v1",
+    "UM-DAG-DEGREE-TOKEN-IDENTITY-v1"
+  ],
+  "target_ids": [
+    "UM-GROUP-DEGREE-LABEL-APPROX-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "四层显式简单DAG r→x→e→u，标签E_x按组区分，K_e正二进制整数，根需求q、变量需求1、原终端资源需求0；允许空菜单、死标签、K_e>|S_e|。Δ_G按不同变量组计数；q≥1且Δ_G≥1时使用分式，U=0、Δ_G=0与q=0另分支。",
+  "roles": {
+    "UM-BOUNDED-COLLISION-LABEL-FLOOR-v1": "对所给完整显式束及实际碰撞重数给确定性着色根树，作为截短实例的组合步骤。",
+    "UM-DAG-DEGREE-TOKEN-IDENTITY-v1": "以原需求而非截短需求编译，保持真实根树与所有不可拆任务。",
+    "UM-GROUP-DEGREE-LABEL-APPROX-v1": "无给定完整束承诺的原需求b*/Δ_G比例与实际调度保证。"
+  },
+  "explanation": "令a_x=max_e min(1,|S_e|/K_e)，空组为0，排序后U=max_s min(s/q,a_(s))。任一正评分β树有至少βq组，且每选中组至少一个选中标签的密度≥β，故b*≤U（不要求真实树每组只取一个标签）。若U>0，取达U的前s组、每组取达a_x标签及B_x⊆S_e、|B_x|=min(K_e,|S_e|)。在仅用于着色的根需求s、标签需求|B_x|下使用完整束地板，实际重数Δ′≤Δ_G。选中颜色至少留s/Δ′组，逐保留标签给至少|B_x|/Δ′个不交资源；在原需求恢复后根比例≥s/(qΔ′)，标签比例≥a_x/Δ′，变量比例1，故b≥U/Δ_G。桥在原DAG上由该真树给完整峰≤2−b*/Δ_G≤(2−1/Δ_G)(2−b*)，末不等式差为2(1−1/Δ_G)(1−b*)。U=0或Δ_G=0时b*=0且根单点/桥峰2，q=0是需求0的根终端、评分1及桥峰1。",
+  "scope": "显式标签支持与原需求的总位多项式受限算法。无需搜索最低碰撞束，不按巨大需求值展开；无一般矩阵逆表示。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/审查/低重数着色地板的原需求评分与独立枚举范围--审查.md",
+      "sha256": "e7dd70e8e47db88a19a2750b568fb7af0abc2b90a4cf412d02b48cd9ab1a4403",
+      "section": "真实树、所给完整束和颜色地板"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/低重数着色地板的原需求评分与独立枚举范围--审查.md",
+      "sha256": "e7dd70e8e47db88a19a2750b568fb7af0abc2b90a4cf412d02b48cd9ab1a4403",
+      "section": "无给定见证时的原需求比例近似"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/有向需求与调度的压缩双向任务桥--定理.md",
+      "sha256": "47052b1eb3dfa67b095bbdb1ef86b80f108c6bb71b1e8d0210649b13092b130e"
+    }
+  ],
+  "reviewed_by": "Boss3",
+  "review_note": "核对了实际重数与全局组度、截短前后原评分、空输入和绝对峰值到比率的代数。",
+  "whole_result": "在目标的四层输入上确定性总位多项式构造原评分b(H)≥U/Δ_G≥b*/Δ_G的真根树，并按原需求编译与恢复全部原任务，给峰≤(2−1/Δ_G)OPT；无须给完整束见证，退化分支如上。",
+  "endpoint_pins": {
+    "UM-BOUNDED-COLLISION-LABEL-FLOOR-v1": "1580d218ca08cac817f44914de8b6cd0ae98cc409131d8a19a802805e26bcf00",
+    "UM-DAG-DEGREE-TOKEN-IDENTITY-v1": "86d52277f0b5f722b353c5cb383b2c5a059c33fce3e58b45c92b353f77c95a39",
+    "UM-GROUP-DEGREE-LABEL-APPROX-v1": "1248e5fb4b6d1824272df108a5a350170d6f65811ba32e121fd652df5031423c"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/审查/低重数着色地板的原需求评分与独立枚举范围--审查.md": "e7dd70e8e47db88a19a2750b568fb7af0abc2b90a4cf412d02b48cd9ab1a4403",
+    "archives/unrelated-machines/state/定理/有向需求与调度的压缩双向任务桥--定理.md": "47052b1eb3dfa67b095bbdb1ef86b80f108c6bb71b1e8d0210649b13092b130e"
+  },
+  "review_digest": "a5b5b52702968c73f7aa6f50b50d8171edb081be80b40e5d9d0c0bb5c2937b61"
+}

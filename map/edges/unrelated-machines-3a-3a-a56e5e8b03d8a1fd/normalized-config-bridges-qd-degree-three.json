@@ -1,0 +1,69 @@
+{
+  "edge_id": "um-a56e-normalized-config-bridges-qd-degree-three",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-f0619ab2e98f41eb9fa9c02a48c19aaa",
+    "M-080d9b22ae87408f9a673a898c7a6dc3"
+  ],
+  "target_ids": [
+    "M-9452d445c1744d5eaac946ee974d2162"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "对每个显式D≥2，用目标Q_D的norm1正支撑菜单：main第a态含D个g_(a,j)各权1/D，D²个helper各选singleton g_(a,j)或A_a。先N=menu-port-path∘binary-selector-tree，再state-dummy SC，最后按不同positive owner运行SC单位helper路径。只转换显式有限有理证书；中间SC最高有限CONFIG阈值已由norm1/state-dummy证明恰1。",
+  "roles": {
+    "M-f0619ab2e98f41eb9fa9c02a48c19aaa": "将Q_D显式共同λ证书沿N及state-dummy传为完整CONFIG(1)，保正支撑、零项/重复索引和所有原UM jobs。",
+    "M-080d9b22ae87408f9a673a898c7a6dc3": "在旧SC最高有限CONFIG阈值≤1时精确保该阈值；保持旧agent行总值且使新item正owner度≤3。",
+    "M-9452d445c1744d5eaac946ee974d2162": "所得gap族的CONFIG(1)/有界行与最终item度部分；整数actual值部分不由分数桥替代。"
+  },
+  "explanation": "Q_D取main各态λ=1/D；每helper以1−1/D取g、以1/D取A_a。每g列占用1/D+(1−1/D)=1；每A_a列为D·1/D=1，故是同一份有理FSLP证书。第一源的tree流与menu-port hole双向桥把这份证书传到N(Q_D)，各normalized group至多3态、每资源至多跨3组。state-dummy后每state-agent real row=1且有K−1个unit dummies，完整row=K≤3；旧实资源度≤3·3=9、dummy度≤3。第一源给SC CONFIG(1)有限证书。对任意t>1，每个state-agent的全部real价值只有1，故每个其合法t配置必须含一枚本组dummy；K个agent各需总dummy边际≥1却只有K−1容量，矛盾。于是中间SC最高有限CONFIG阈值恰1。现才满足第二源正向0<t≤1和旧最高阈值≤1的前件，SC路径保持该最高阈值恰1；反向t>1仅用helper非空、不错误剪singleton。路径保old rowtotal，新helper rowtotal2，新copy仅old owner和至多两个邻helper，共正owner度≤3，所以最终row≤3/item度≤3。全部转换、分数子树和hole混合按显式D及证书支持编码为多项式；正支撑不按private weight计容量。两源共同承担N/SC CONFIG保持与最后path，保ALL，任何一源单独都不是该完整合成。",
+  "contribution": {
+    "result": "对所有D≥2，Q_D及经N/state-dummy/SC路径所得完整实例都有显式有限CONFIG(1)证书；最终SC最高有限CONFIG阈值恰1、每agent行总价值≤3、每item正owner度≤3（path前实item≤9），证书及构造大小poly(D)。",
+    "remaining": "整条目标的actual菜单值和SC actualOPT恰1/D、完整flat UM actualOPT恰2−1/D，还要另外使用Q_D的整数鸽巢上下界、N与state-dummy的actual值保持以及完整flat UM值桥。主正文已另给这些证明；本边只交上述分数证书/度数贡献，不把CONFIG可行性当实际allocation，也不把其它已证步骤称新open。"
+  },
+  "scope": "目标gap族的CONFIG和有界行/item度局部链。一般SC路径只有旧行本来≤3才保此上界；没有actualOPT≥1 promise、困难性或一般UM结论。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/定理/规范化平菜单的CONFIG与正支撑LP双向保持--定理.md",
+      "sha256": "8bfbaa80b98546b6d1320e9760bb9491165e26a6cef1b6cd35eb86116c822f66"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/规范化平菜单Exact与Proof版本核验--审查.md",
+      "sha256": "acd5fa40598e0e880083405a713752569671abefc20ac63d32576c6bc717cc84"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/规范化平菜单row3degree9独立预Exact记录--审查.md",
+      "sha256": "29f6c62f6fdbc4dfbc6ad99d832c9a25b5527f044c572bd14c322acd3689e6a8"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/规范化平菜单v1v3的独立与作者核验--审查.md",
+      "sha256": "61835242b90509d0f831c95ebb38f1b002779716de335568a4fcf01cfd1321e6"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/归一化菜单福利与配置证书双源审查--审查.md",
+      "sha256": "33bd31b883b26f49508808dd7175cd104f391b86642bff90ea2bce7f1142097b",
+      "section": "二、完整归一化菜单的配置证书桥"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/归一化CONFIG有限证书三向桥的v3审读范围--审查.md",
+      "sha256": "2ee2f04fa427e1889073c25daaab373a8d4042f633aa78ca0fd76df80d9e996b"
+    }
+  ],
+  "reviewed_by": "Boss5",
+  "review_note": "实读Q_D主正文、五份Exact/Proof/预Exact/读后/福利范围证据及新增v3三向桥审读。逐资源核共同λ，分别核norm1阈值上界、K≤3/跨组≤3到9的计数和SC路径旧阈值≤1前件；明确整数actual值尚由独立原证明承担。无新增程序运行。 当前登记版本重核：共同FSLP权重的各列总量为1。旧路径在当前总表暂不可共享；此边保留有限配置与度数的联合贡献。",
+  "endpoint_pins": {
+    "M-080d9b22ae87408f9a673a898c7a6dc3": "d0b2a08064ea4ddb1eb3d096b576113c85d2effdc50f43593b10cf756e4c217a",
+    "M-9452d445c1744d5eaac946ee974d2162": "cddd9bf3289e55ce350e792f70fdfea147cf0b44bfc0da08d9355f0c40a48e64",
+    "M-f0619ab2e98f41eb9fa9c02a48c19aaa": "7fe755e2d8d7e0dd39ba154180fa2f3344420f4bf0a951d533bf9e709337df8f"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/定理/规范化平菜单的CONFIG与正支撑LP双向保持--定理.md": "8bfbaa80b98546b6d1320e9760bb9491165e26a6cef1b6cd35eb86116c822f66",
+    "archives/unrelated-machines/state/审查/规范化平菜单Exact与Proof版本核验--审查.md": "acd5fa40598e0e880083405a713752569671abefc20ac63d32576c6bc717cc84",
+    "archives/unrelated-machines/state/审查/规范化平菜单row3degree9独立预Exact记录--审查.md": "29f6c62f6fdbc4dfbc6ad99d832c9a25b5527f044c572bd14c322acd3689e6a8",
+    "archives/unrelated-machines/state/审查/规范化平菜单v1v3的独立与作者核验--审查.md": "61835242b90509d0f831c95ebb38f1b002779716de335568a4fcf01cfd1321e6",
+    "archives/unrelated-machines/state/审查/归一化菜单福利与配置证书双源审查--审查.md": "33bd31b883b26f49508808dd7175cd104f391b86642bff90ea2bce7f1142097b",
+    "archives/unrelated-machines/state/审查/归一化CONFIG有限证书三向桥的v3审读范围--审查.md": "2ee2f04fa427e1889073c25daaab373a8d4042f633aa78ca0fd76df80d9e996b"
+  },
+  "review_digest": "add3c8c877fa54c48074920c04a52413aef36840768de1248fd263079de821c3"
+}
