@@ -1,0 +1,69 @@
+{
+  "edge_id": "ca-fixed-strategy-ray-and-payment-certificate-sharp-one",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-b93248b51751445f889461294b278608",
+    "CA-STRATEGY-CONE",
+    "customer-attraction/actual-prefix-fresh-coverage-global-counterexample"
+  ],
+  "target_ids": [
+    "customer-attraction/old-cover-payment-factor-one-sharp-actual-spe"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "有限单位客户、六个共同可区分标签、四人全有序完整纯SPE用于反例，且前缀是同一策略的实际AB。充分方向适用于任意合法前缀后恰余两人的完整纯SPE，其显式付款条件为τu_A≥C_old。",
+  "roles": {
+    "M-b93248b51751445f889461294b278608": "当τ≤1且τu_A≥C_old时，由收益非负得到u_A≥C_old，四乘子定理给任意合法背景的两尾GLOBAL。",
+    "CA-STRATEGY-CONE": "在指定的同一259节点策略下，所有全历史IC对客户掩码重数线性，非负整数锥点及其整数叠加保完整SPE。",
+    "customer-attraction/actual-prefix-fresh-coverage-global-counterexample": "提供非零亏损的基向量w_0、真实有序策略、实际ABAB和旧客户及新客户的精确计数。",
+    "customer-attraction/old-cover-payment-factor-one-sharp-actual-spe": "证明真实两尾付款条件对所有实τ的精确阈值1。"
+  },
+  "explanation": "对τ≤1，u_A非负，付款假设立即推出u_A≥C_old，调用四乘子充分结论。对τ>1，在原六标签52客户的策略σ上用六客整数向量e：各1个{T}与{Q}，4个{A,B,R,S}。冻结动作按全部259个有序节点逐动作重放，全部1554有理激励差非负，所以e与w_0同在D_σ。固定策略重数锥给所有整数k≥0的w_k=w_0+ke仍保持同一完整纯SPE与实际ABAB。前缀AB下每个新增旧客户负载2、终局负载4，4k客户给尾首位k且令旧地板增加k；每个尾部玩家的额外利润为k。新增2k客户只能由T或Q获得，原18个新客户也全由同一T,Q覆盖，所以freshOPT₂=18+2k且Δ=0。原u_A=8、C_old=34/3、P=17，故C_old/u_A=1+10/[3(8+k)]，GLOBAL余额恒为−1。给定实τ>1，取整数k≥max(0,ceil(10/[3(τ−1)]−8))即满足付款条件并仍亏损。",
+  "scope": "固定目录与同一有序动作表的单位客户实例族。每个反例的根余量2W−OPT₄=16+2k。原192×24代数模板可行性是另一对象，不承担本边的完整策略证据。",
+  "whole_result": "对每个实τ，普遍的两尾条件命题τu_A≥C_old⇒P+Δ≥freshOPT₂成立当且仅当τ≤1。每个τ>1均有一份四人六标签完整纯SPE，在实际AB前缀同时满足付款和严格负余额−1。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/反例/实际前缀的剩余利润与新增覆盖--反例.md",
+      "sha256": "256da0925a23f2cc0bad23f4c9de1722ec417d91cca4b817abd10bbbc331a1b7"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/固定完整策略的客户重数锥--定理.md",
+      "sha256": "ae4bcfd424eca8d4e3d79965f72182c0b2c8eefb72e74b44c2521b519f7aad39"
+    },
+    {
+      "path": "archives/customer-attraction/state/计算/背景旧覆盖二倍付款模板的不可行报告--计算.md",
+      "sha256": "3df3e179b114bbf0b16858b95aef008380013a4de1ac5456ffa3d59edc1b98d8",
+      "section": "为什么tau=1成功证书不与本失败冲突"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/boss5-fresh-payment-sharp/verify.py",
+      "sha256": "66c004ed23a26fd66db60b13b3c510f4ace2ac847a17947b5448dd58d907f14e"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/boss5-fresh-payment-sharp/verification.json",
+      "sha256": "e09b897d472d42ed57cce6860d24ca67ce690a952c84ff7961bcf68aaf85857f"
+    },
+    {
+      "path": "archives/customer-attraction/state/反例/两尾旧覆盖付款常数一的锐性--反例.md",
+      "sha256": "8159e431f4cdd983c30cb4cc44327a532b7c8c8e693461ab5ba5d44996dc536e"
+    }
+  ],
+  "reviewed_by": "Boss5",
+  "review_note": "独立有理重放w_0与e各自全部1554条真实激励差，重新计算旧地板、真实路径与T,Q覆盖；核两方向的全部实参数量词以及整数重数叠加。",
+  "endpoint_pins": {
+    "CA-STRATEGY-CONE": "291bd4d94e33d40566453a33b5cf07b1c620b77362268417582efecb42b0c4bb",
+    "M-b93248b51751445f889461294b278608": "365a7e225576fd76d35cbd1eef85197d69a2949883352cd2fffee58c00ad8998",
+    "customer-attraction/actual-prefix-fresh-coverage-global-counterexample": "e2905ccdb431606ece1925a18b114090cb464352225866e952b1aa59501d9be7",
+    "customer-attraction/old-cover-payment-factor-one-sharp-actual-spe": "ff7dbb85ae9a4848acad33387425c368a8e51e6a9c2ab54b985cae5e502ca9c0"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/反例/实际前缀的剩余利润与新增覆盖--反例.md": "256da0925a23f2cc0bad23f4c9de1722ec417d91cca4b817abd10bbbc331a1b7",
+    "archives/customer-attraction/state/定理/固定完整策略的客户重数锥--定理.md": "ae4bcfd424eca8d4e3d79965f72182c0b2c8eefb72e74b44c2521b519f7aad39",
+    "archives/customer-attraction/state/计算/背景旧覆盖二倍付款模板的不可行报告--计算.md": "3df3e179b114bbf0b16858b95aef008380013a4de1ac5456ffa3d59edc1b98d8",
+    "archives/customer-attraction/tools/evidence/boss5-fresh-payment-sharp/verify.py": "66c004ed23a26fd66db60b13b3c510f4ace2ac847a17947b5448dd58d907f14e",
+    "archives/customer-attraction/tools/evidence/boss5-fresh-payment-sharp/verification.json": "e09b897d472d42ed57cce6860d24ca67ce690a952c84ff7961bcf68aaf85857f",
+    "archives/customer-attraction/state/反例/两尾旧覆盖付款常数一的锐性--反例.md": "8159e431f4cdd983c30cb4cc44327a532b7c8c8e693461ab5ba5d44996dc536e"
+  },
+  "review_digest": "d700660cfb04f7f560cc9da9a958bc91ff7adbf20427bcc6e6737ebdd5193a98"
+}
