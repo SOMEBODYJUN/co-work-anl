@@ -1,0 +1,72 @@
+{
+  "edge_id": "ca-exact-tau-threshold-four-multipliers-and-eight-support",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-b93248b51751445f889461294b278608",
+    "M-9d8fe992daad4b6996b50973f25ec06e"
+  ],
+  "target_ids": [
+    "customer-attraction/fresh-cover-cost-template-exact-threshold"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "沿用原 ABTSQR 的64种二元会员位型字典序。每型依次放 fresh-p0、old-p1、old-slope 三行，共192行；old-slope 是清分母 p=2 行减 p=1 行。24列依原两条真根IC、六条安全地板、old_cover、十五条真末位IC定义。取实参数τ及同一实向量λ≥0。源一登记为条件定理，本边用其中在所有位型都成立的τ=1逐行代数证书；源二提供八支持向量的逐列恒等式。",
+  "roles": {
+    "M-b93248b51751445f889461294b278608": "提供τ=1时的四个共同乘子及三个非负余项公式，确立端点可行性并给出三条紧行。真实SPE应用中的额外付款条件属于源一的博弈结论。",
+    "M-9d8fe992daad4b6996b50973f25ec06e": "提供同一矩阵的八支持整数向量y。其余23列配对非负，目标配对−6，old_cover配对48τ−68。这里复用逐列仿射恒等式。",
+    "customer-attraction/fresh-cover-cost-template-exact-threshold": "由端点乘子及三行与八支持的联合分离，得到指定192×24模板在全实轴上的可行性当且仅当τ≤1。"
+  },
+  "explanation": "记 a,b,t,s,q,r 为 ABTSQR 位，p 为背景负载，D(p)=(p+1)(p+2)，w_p(X,Y)=x_X(p+2−x_Y) 为清分母份额。根、地板、末位列分别为 w_p(A,B)−w_p(T,Q) 或 w_p(A,B)−w_p(S,R)，w_p(A,B)−x_X(p+1)，以及 (x_chosen−x_other)(p+2−x_prior)；old_cover 为 τa(p+2−b)−1_{p>0}(p+1)。fresh目标为2[2(a+b−ab)−(t+s−ts)]，旧目标为(p+2)(a+b)−2ab；旧斜率按行相减。\n\n可行性。源一在τ=1取 floor_B、old_cover、last_B_A_T、last_B_A_S 的共同乘子为1/2、1、1、1，其余20项为零。三类余项 f−M₁λ 分别为 a[(1−t)(1−s)+ts]+(1−a)[b/2+2ts]、(1−b)(2−3a/2)+(t+s)(3−a)、1−(a+b)/2+t+s，均由二元位直接非负。只有 old_cover 随τ变化，其斜率依次为 a(2−b)、a(3−b)、a，均非负。所以任意实τ≤1时同一有理λ仍满足 Mτλ≤M₁λ≤f。\n\n不可行性。取非负行权 z=e₁₂+e₂₄+e₁₅₄。以零基原行序，12、24、154分别是000100 fresh、001000 fresh、110011 old-p1。三行在τ=1的余项均为0。其目标分别为−2、−2、4，old_cover分别为0、0、2τ−2。代入上述列公式，(root_T_Q,root_S_R)三行分别为(0,−2)、(−2,0)、(2,2)；(last_B_A_T,last_B_A_S)分别为(0,−2)、(−2,0)、(2,2)，两组均抵消。(floor_T,floor_S)分别为(0,−1)、(−1,0)、(2,2)，合计(1,1)。按 (last_Q_T_T,last_Q_T_S,last_R_S_T,last_R_S_S) 的顺序，三行为(0,−2,0,−1)、(−1,0,−2,0)、(3,3,3,3)，合计(2,1,1,2)。所有其余列在三行均为0。因此 zᵀf=0，zᵀMτ除old_cover外逐项非负，old_cover配对为2(τ−1)。τ>1 时，若存在λ≥0且Mτλ≤f，左乘 z 得 0≤2(τ−1)λ_old≤zᵀMτλ≤0，故λ_old=0。\n\n源二在零基行12、21、24、33、49、58、97、106分别给 y 权21、6、21、6、12、6、10、6，其余为0。原24列次序下 yᵀM₂=(0,0,16,12,21,21,12,12,28,22,0,0,0,0,6,0,27,0,0,6,0,0,27,0)，且 yᵀf=−6。除old_cover外各项与τ无关。由于λ_old=0，左乘 y 得0≤yᵀMτλ≤−6，矛盾。亦可直接取 y+10z/(τ−1)；old_cover配对从48τ−68加20成为48(τ−1)>0，其余列配对非负，目标仍是−6。论证涵盖实τ和实λ，有理τ>1时该分离向量有理。\n\n适用边界。原52客户完整SPE的实际两尾满足 u_A=8、C_old=34/3，GLOBAL余额为17+0−18=−1。这个固定实例恰在τ≥17/12时满足τu_A≥C_old。在1<τ<17/12，本边已经排除原乘子模板，真实SPE的条件预算须靠独立的策略论证判断。",
+  "whole_result": "对每个实数τ，原192×24 ABTSQR系数系统存在实向量λ≥0满足Mτλ≤f，当且仅当τ≤1。可行方向使用同一有理四乘子；τ>1且有理时有显式有理Farkas分离向量。",
+  "scope": "原六位全部局部位型、原24类共同非负乘子及逐客户非负余项的代数阈值。52客户实例的真实SPE条件反驳范围为τ≥17/12；区间1<τ<17/12中的真实SPE命题及根half均超出本边的推导。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/计算/24乘子旧覆盖付款模板的精确参数阈值--计算.md",
+      "sha256": "e935430b6f7d53e95d2a7059fbb84e89a8df70147a4d563e99550eaebff21bee"
+    },
+    {
+      "path": "archives/customer-attraction/state/计算/背景旧覆盖二倍付款模板的不可行报告--计算.md",
+      "sha256": "3df3e179b114bbf0b16858b95aef008380013a4de1ac5456ffa3d59edc1b98d8",
+      "section": "为什么tau=1成功证书不与本失败冲突"
+    },
+    {
+      "path": "archives/customer-attraction/state/计算/背景旧覆盖二倍付款模板的不可行报告--计算.md",
+      "sha256": "3df3e179b114bbf0b16858b95aef008380013a4de1ac5456ffa3d59edc1b98d8",
+      "section": "tau=2的八支持整数Farkas障碍"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/背景旧覆盖付款的系数证书搜索程序--程序.md",
+      "sha256": "fcd460f6187d6c101914919a43bb7bfde11ac29e3d0bc8491e7331ff90c34e6e"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/fresh-cover-cost-certificate-data/coefficient-rows.json",
+      "sha256": "8fa54abbf242aa1efc93bd68bbb57748110e6d9a0cb70d50e1a6903e43230b57"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/fresh-cover-cost-certificate-data/exact-audit.json",
+      "sha256": "6a5c914fa46938a5a3037f95d7ee3b74fa4cccd69b7a5981d25928965d372450"
+    },
+    {
+      "path": "archives/customer-attraction/state/反例/实际前缀的剩余利润与新增覆盖--反例.md",
+      "sha256": "256da0925a23f2cc0bad23f4c9de1722ec417d91cca4b817abd10bbbc331a1b7",
+      "section": "实际前缀的亏损"
+    }
+  ],
+  "reviewed_by": "Boss5 / threshold_edges",
+  "review_note": "实读三个端点的现行登记与正文、系数程序说明、合法背景菜单四项证书及52客户原反例。由原始均分份额独立以有理数重构全部4608个系数及192个目标，与系数账逐项相等；核192个τ=1余项公式及存档余项，40零152正。核三行权、八支持配对及唯一参数列的仿射式。未运行原LP或重验52客户全策略；引用该已认证实例仅说明真实SPE证据范围。既有八支持边和合法背景菜单边均未给出本核心的全实阈值。",
+  "endpoint_pins": {
+    "M-9d8fe992daad4b6996b50973f25ec06e": "bbc0b5e10da41b8810c3fe9a00909c6bdd6a90c9b8715574fc5da9e3834f2fc8",
+    "M-b93248b51751445f889461294b278608": "365a7e225576fd76d35cbd1eef85197d69a2949883352cd2fffee58c00ad8998",
+    "customer-attraction/fresh-cover-cost-template-exact-threshold": "318c4f354ed006918633c0fc83df72d18e69ded2f65f4eec97199a83e9d6ca8c"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/计算/24乘子旧覆盖付款模板的精确参数阈值--计算.md": "e935430b6f7d53e95d2a7059fbb84e89a8df70147a4d563e99550eaebff21bee",
+    "archives/customer-attraction/state/计算/背景旧覆盖二倍付款模板的不可行报告--计算.md": "3df3e179b114bbf0b16858b95aef008380013a4de1ac5456ffa3d59edc1b98d8",
+    "archives/customer-attraction/state/程序/背景旧覆盖付款的系数证书搜索程序--程序.md": "fcd460f6187d6c101914919a43bb7bfde11ac29e3d0bc8491e7331ff90c34e6e",
+    "archives/customer-attraction/tools/evidence/fresh-cover-cost-certificate-data/coefficient-rows.json": "8fa54abbf242aa1efc93bd68bbb57748110e6d9a0cb70d50e1a6903e43230b57",
+    "archives/customer-attraction/tools/evidence/fresh-cover-cost-certificate-data/exact-audit.json": "6a5c914fa46938a5a3037f95d7ee3b74fa4cccd69b7a5981d25928965d372450",
+    "archives/customer-attraction/state/反例/实际前缀的剩余利润与新增覆盖--反例.md": "256da0925a23f2cc0bad23f4c9de1722ec417d91cca4b817abd10bbbc331a1b7"
+  },
+  "review_digest": "06598912a1ed69e327b133cac1804221c1d2f62c7ab7d8aca805b5c036ee79f9"
+}
