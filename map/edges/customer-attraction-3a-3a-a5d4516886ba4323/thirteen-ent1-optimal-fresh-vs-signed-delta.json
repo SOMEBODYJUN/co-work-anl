@@ -1,0 +1,73 @@
+{
+  "edge_id": "boss2-thirteen-ent1-optimal-fresh-vs-signed-delta",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-05b51399a0114768921338b101578273",
+    "M-7e204ccd7c6e4b7c8cbd5ddec64f5716"
+  ],
+  "target_ids": [
+    "M-16eddbd6da9a461686207660a3d8720b"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定两个源对象共享的13名单位提供者、36名不同单位客户、六标签(A,B,T,D,E,P)的完整有序历史纯SPE及actual=P^10,A,A,B。fresh费用用未缩放的g_c，允许重复槽及1≤k≤13；粗有符号δ使用同一个经验分布μ=n/13，在真实中继/末回复矩阵两指标独立抽样。",
+  "roles": {
+    "M-05b51399a0114768921338b101578273": "提供同一完整见证的未缩放六标签价格、W、R0及全称单query预算的精确反例。",
+    "M-7e204ccd7c6e4b7c8cbd5ddec64f5716": "提供同一见证的12个真实中继菜单及冻结总矩阵，可在同一个覆盖最优经验分布上精确算粗δ。",
+    "M-16eddbd6da9a461686207660a3d8720b": "支付目标中指定十三人例的短元组最小值及通过结论，并给全部覆盖最优元组和共同查询选择的精确边界。"
+  },
+  "explanation": "A、B、T、P各有独占客户，且四主题并集覆盖36，故覆盖最优的短或13槽元组恰为含四主题各至少一次。所有价格为正，故四槽给P*=557/66；额外槽最低价B为3/2、最高价T为3，所以13槽K0=557/66+9×3/2=724/33，最优元组费用最大557/66+9×3=2339/66。W+R0=2537/66，故任何最优元组长度至多13均支付，最小余额为3；P*余额30，K0余额33/2。单query重复T达39且只覆盖3客户；与39相比非T槽最少损失1/2，只有D/E损失恰1/2，其余损失至少8/11。由于37/66<8/11且<1，13槽超界者恰T^13、T^12D、T^12E，且均非最优；所有长度≤12元组费用≤36。另一方面，唯一fresh最优计数n=(1,10,1,0,0,1)对冻结真实中继总矩阵M给n^T M n=1157/3，故Σδ_i(n/13)=89/39>18/13，超35/39。把一个B换成A，n′=(2,9,1,0,0,1)仍覆盖最优，fresh只多1/6至1459/66，粗δ=6257/5577<18/13；任一不同最优计数至少将一个额外B改为其它主题，价格至少增1/6，故此为要求同时通过这两个固定预算时的最低fresh价。精确枚举2002个最优计数，368个粗δ超额，静态fresh超额为零。",
+  "scope": "同一完整十三人见证、实际未缩放插入价格、真实中继的未扣信用粗δ。目标为固定见证的有限数学结论。最优fresh与共同查询粗δ用同一经验计数比较。",
+  "contribution": {
+    "result": "在ENT1的完整十三人反例上，P*=557/66、K0=724/33，全部最优短或13槽元组的fresh费用≤2339/66<W+R0=2537/66。唯一最小fresh计数的粗δ为89/39>18/13；若同时要求粗δ支付，最小fresh价为1459/66，由n′=(2,9,1,0,0,1)达到。故在这一见证上，共同fresh最小选择会错过粗δ预算，但存在同时通过的覆盖最优共同查询。",
+    "remaining": "一般P*或固定槽K0预算需要从任意完整SPE控制最优元组的实际fresh价格。要求同一共同查询支付真实中继全账时还须一般地保真实S/Z slack、查询依赖重叠及每行余项；H4涉及真实强制查询收益和共同排列，另需其自身证明。"
+  },
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/审查/实际终局插入预算与未缩放税桥的同一性--审查.md",
+      "sha256": "a57391ef0955e4fac8a7b49ebde98deadbc7c7a668f804ca2b0090562d30fd9f"
+    },
+    {
+      "path": "archives/customer-attraction/state/资源/真实child价差的旧反例与最优查询量词--资源.md",
+      "sha256": "049a65d265733346acccf580bd9e49ed115767d2fc7ebc770e33553add2ef3c2"
+    },
+    {
+      "path": "archives/customer-attraction/state/障碍/R-171有符号delta选择与重叠信用边界--障碍.md",
+      "sha256": "323f30161344be541ef0bd6f0613c3ce2d3eb37263871730b7ba1158b705e8b2"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/static-allowance-original-notes-and-independent-review-primary/source-root/research/workspaces/customer-attraction/R-c50fecc37aa44fb4a69a2122bb70e5fe/security/refined_tax_k10_packet.json.gz",
+      "sha256": "bad2b15d1abe89d9fa8671df84de8638a4b1ca46279712baa5482abb2bdf18ce"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/static-allowance-original-notes-and-independent-review-primary/source-root/research/workspaces/customer-attraction/R-a40925880381414dbaba3a8314be5f93/restore_attack/audit_static_allowance.py",
+      "sha256": "aa1ab1d7e642aedd7bc34504364f4fb363d78db298eb95dd8c4dd7504720a935"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/R-171-price13-20261031/original/probe_signed_delta.py",
+      "sha256": "53c14148d65c4e7f35c44b77bdf6b9f6204f49507bf96c842a07f9a50e336252"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/R-171-price13-20261031/replay/signed_delta_report.json",
+      "sha256": "46e73447954de7f97a7f72a61fb24f12388dee54a0cffddb2d7f8b8716b47756"
+    }
+  ],
+  "reviewed_by": "Boss2",
+  "review_note": "fresh worker用同SHA原packet运行原独立stdlib审计的只读main函数，完成27243节点、112050项含自身真IC，最小slack为0；原冻结报告除重定位source外27项逐项相同。另用原delta探针的纯menus函数从14节点实际链及真实子终局重算12×36格与总矩阵，逐项吻合冻结报告；以Fraction独立枚举8568个13槽计数并用解析价格极值/边际证明交叉核验。未执行带写盘的探针main、LP或一般证明。",
+  "endpoint_pins": {
+    "M-05b51399a0114768921338b101578273": "168d3c72291a54640e4bb0d3779b0fb0efba031884ad88923c1d1957f8f7a1ae",
+    "M-16eddbd6da9a461686207660a3d8720b": "9e69616dc382d7791fc91b629f461fba00b23a53b23928dbf587f875e573020f",
+    "M-7e204ccd7c6e4b7c8cbd5ddec64f5716": "008544b2506f11976f6144d22e945849206fed6dc9367c7511f169a03a5c012c"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/审查/实际终局插入预算与未缩放税桥的同一性--审查.md": "a57391ef0955e4fac8a7b49ebde98deadbc7c7a668f804ca2b0090562d30fd9f",
+    "archives/customer-attraction/state/资源/真实child价差的旧反例与最优查询量词--资源.md": "049a65d265733346acccf580bd9e49ed115767d2fc7ebc770e33553add2ef3c2",
+    "archives/customer-attraction/state/障碍/R-171有符号delta选择与重叠信用边界--障碍.md": "323f30161344be541ef0bd6f0613c3ce2d3eb37263871730b7ba1158b705e8b2",
+    "archives/customer-attraction/tools/evidence/static-allowance-original-notes-and-independent-review-primary/source-root/research/workspaces/customer-attraction/R-c50fecc37aa44fb4a69a2122bb70e5fe/security/refined_tax_k10_packet.json.gz": "bad2b15d1abe89d9fa8671df84de8638a4b1ca46279712baa5482abb2bdf18ce",
+    "archives/customer-attraction/tools/evidence/static-allowance-original-notes-and-independent-review-primary/source-root/research/workspaces/customer-attraction/R-a40925880381414dbaba3a8314be5f93/restore_attack/audit_static_allowance.py": "aa1ab1d7e642aedd7bc34504364f4fb363d78db298eb95dd8c4dd7504720a935",
+    "archives/customer-attraction/tools/evidence/R-171-price13-20261031/original/probe_signed_delta.py": "53c14148d65c4e7f35c44b77bdf6b9f6204f49507bf96c842a07f9a50e336252",
+    "archives/customer-attraction/tools/evidence/R-171-price13-20261031/replay/signed_delta_report.json": "46e73447954de7f97a7f72a61fb24f12388dee54a0cffddb2d7f8b8716b47756"
+  },
+  "review_digest": "d74920644106a97f5dbfda18208a39655e5c32ebf11889641bd41c96dd660283"
+}
