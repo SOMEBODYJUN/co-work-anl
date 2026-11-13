@@ -1,0 +1,45 @@
+{
+  "status": "accepted",
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "reviewed_by": "Boss4",
+  "edge_id": "ca-rminus1-retention-is-scaled-binary-passive-potential",
+  "kind": "specializes",
+  "source_ids": [
+    "R6-ERASURE-LOSS-POTENTIAL-v1"
+  ],
+  "target_ids": [
+    "M-9632f7d7b2904d629eae32b094f81588"
+  ],
+  "conditions": "r≥2，保留n=r−1个原身份；固定客户集B上外背景b_x=1，目标被动负载q=1_B。仅比较固定终局负载t∈{0,…,r}及按原r,n核作的静态删槽边际。",
+  "roles": {
+    "R6-ERASURE-LOSS-POTENTIAL-v1": "提供超几何全t闭式、共同范围和静态边际定义。",
+    "M-9632f7d7b2904d629eae32b094f81588": "接收q=1_B饱和势及其税核的归一化切片。"
+  },
+  "explanation": "n=r−1时唯一被删身份均匀，故K_t=t的概率1−t/r，K_t=t−1的概率t/r（t=0时K=0）。ALL-t立即给ψ_b(t)=t/[r(b+t)]，在B上b=1即ψ_1(t)=t/[r(t+1)]，包括t=0。于是Ψ_B=Ξ_B/r，其中Ξ_B=Σ_B t/(t+1)。t≥1时ell_1(t)=ψ_1(t)−ψ_1(t−1)=1/[rt(t+1)]=τ^{q=1}(t)/r；角色边际亦同此缩放。共同最大值L_B=Σ_B1/(r+1)=|B|/(r+1)，对应Ξ_B最大r|B|/(r+1)。这只是两种核在一个固定切片的精确识别；原收益、随机保留IC以及固定q的ROBUST/POOL并未被此识别移植。",
+  "contribution": {
+    "result": "R6在n=r−1、B上b=1的固定势和静态个人边际，精确等于二值被动税势及税的1/r倍，统一范围|B|/(r+1)。",
+    "remaining": "目标M-963的任意非负实q、完整真实IC改负载合同和同叶POOL需其自身倒数差证明；该切片不证明修改σ或物理删人后的SPE，也不支付角色依赖RESET。"
+  },
+  "scope": "全r≥2的固定负载切片，不扩大到任意q或真实策略迁移。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/随机保留损失势的共同范围与删槽余项--引理.md",
+      "sha256": "a201bad86007b4c06a25d920e50c45e64e7fe043f98f798c4923e133cce29e59"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/兄弟真实激励的对称曲率与固定被动税--引理.md",
+      "sha256": "ee4d2e20f3da216c7330532e173936df938b13b0ba85e88ce4df92e25cd06ebf"
+    }
+  ],
+  "review_note": "当前正文实读后直接从唯一删身份分布推导闭式及差分；核t=0/1/r和r≥2边界。有限原核回归未作为全量词或IC/SPE保证。",
+  "endpoint_pins": {
+    "M-9632f7d7b2904d629eae32b094f81588": "e0f2a5e144d7a9ed50955b867c91c00a099de9d2c2205e05e2b2840691be2cba",
+    "R6-ERASURE-LOSS-POTENTIAL-v1": "92c6e4102b3b4e0fc6e9b824e27ac780943e2eb4b67c413d77250f5ba2046e3a"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/随机保留损失势的共同范围与删槽余项--引理.md": "a201bad86007b4c06a25d920e50c45e64e7fe043f98f798c4923e133cce29e59",
+    "archives/customer-attraction/state/引理/兄弟真实激励的对称曲率与固定被动税--引理.md": "ee4d2e20f3da216c7330532e173936df938b13b0ba85e88ce4df92e25cd06ebf"
+  },
+  "review_digest": "b2efb882b57141c21ce4e72d8346fbd796e9e3036517eea0bac83b26d5f1150a"
+}
