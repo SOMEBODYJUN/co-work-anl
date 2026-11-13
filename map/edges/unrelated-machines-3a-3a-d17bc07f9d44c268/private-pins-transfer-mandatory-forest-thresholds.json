@@ -1,0 +1,75 @@
+{
+  "edge_id": "um-d17bc07f-private-pins-transfer-mandatory-forest-thresholds",
+  "kind": "transfers",
+  "status": "accepted",
+  "source_ids": [
+    "UM-UNIT-READOUT-PRUNED-FOREST-IDENTITY-v1"
+  ],
+  "target_ids": [
+    "M-b4a6d0d0b41c4ef2b84217f7ac101ea1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定一变量、两棵私有满四叉深三树。selector 仅在两根耗时 1。内部边的父端为 1/4、子端为 1。叶任务的父端为 1/4，外端为该叶独占的 host 且耗时 1。每台 host 恰有一枚唯一资格端的真实 pin，开放时耗时 0、关闭时耗时 1。每一 profile 是包含全部 297 件原任务的独立矩阵。",
+  "roles": {
+    "UM-UNIT-READOUT-PRUNED-FOREST-IDENTITY-v1": "在消去固定 pins 后的无预载双树上，将实际阈值调度与所有变量必选的 r 配额森林及共同外叶注入建立双向对应。",
+    "M-b4a6d0d0b41c4ef2b84217f7ac101ea1": "对三个冻结原矩阵恢复完整调度并证明各自的精确下界，得到 OPT 依次为 1、1、3/2。"
+  },
+  "explanation": "对任意有理 1≤C<2，每枚 pin 都必须放在其唯一 host。关闭 host 若接收其时间 1 的叶任务则负载为 2，因此可删该外端及关闭 host；消去所有 pins。以每枚叶为独立 clause：开放时 A_c=1，unit 是原 host，关闭时 A_c=0，叶仍有父端。保留其余 169 件树任务与全部内部机，得到无预载定理的输入。原调度限制后保阈值；反向恢复关闭 hosts 并逐枚回填全部 128 枚 pins，开放 host 加 0，关闭 host 只负载 1，故同阈值可行。使用定理得到 r=ceil(4(2−C))：在至少一轨选深三的根生 r 叉树且所有选叶开放；独占 hosts 给共同注入。前两组各开放一整轨，r=4 在 C=1 即可，且 selector 给任意原调度下界 1。第三组仅负轨各位小于 2 的 8 叶开放，正轨全闭，负根仅两个分支可能，故 r≥3 不可行；逐层选 0、1 给 r=2，C=3/2 可行。反向正规形安排全部未选轨和分支，再恢复每枚 pin。",
+  "scope": "作用于登记的三个 170 机、297 任务固定原矩阵。阈值归约用于 1≤C<2，C<1 由 selector 直接排除。固定 pin 消去依赖其唯一端和精确 0/1 负载，保留的是阈值可行性。三个开放集分别改变原 pin 处理时间。",
+  "whole_result": "经固定 pin 消去和完整回填，无预载森林定理推出三个原矩阵各自的精确最优峰值：仅正轨整开为 1，仅负轨整开为 1，仅负轨三位地址均小于 2 的 8 台 host 开放为 3/2。每个上界由覆盖全部 297 件原任务的实际调度达到。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/审查/单位配置行分解与开底双树原矩阵--审查.md",
+      "sha256": "5ed466df2c1aadd7cc55340d2281edee66c003787bb871faae1e3f87e668fddf",
+      "section": "私有host与真实0/1 pin：三个不同原P"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定义/不相关机器与两个调度松弛--定义.md",
+      "sha256": "f83b0a531d9e9b98fcffa70c77962f2e2b61e112b2074646f4f7cc3179ac9a8b"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/unit-configuration-tree-originals/original/unit_readout_two_tree_actual_certificates.json",
+      "sha256": "b44ee0f44485f2e1497b87338106d642beaa85b96196a810c569b4d120febefd"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/异质宏残余与单位读出森林双源审查--审查.md",
+      "sha256": "0e04eab5465d195ab206696c58cc3f53f27a933be715421462a982b8cce021e7",
+      "section": "3.1 定义域与 iff"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/unit-configuration-tree-originals/comparisons/unit_readout_pruned_forest_boundary.md",
+      "sha256": "225441481810c629afb4af0bcb5d5eb19dad505a30c2680461bd4255dba30b90",
+      "section": "1. 精确Claim对象、定义和量词"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/unit-configuration-tree-originals/comparisons/unit_readout_pruned_forest_boundary.md",
+      "sha256": "225441481810c629afb4af0bcb5d5eb19dad505a30c2680461bd4255dba30b90",
+      "section": "2. 实际调度到必选森林及完整正规化"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/unit-configuration-tree-originals/comparisons/unit_readout_pruned_forest_boundary.md",
+      "sha256": "225441481810c629afb4af0bcb5d5eb19dad505a30c2680461bd4255dba30b90",
+      "section": "3. 必选森林到实际完整调度"
+    },
+    {
+      "path": "map/edges/unrelated-machines-3a-3a-d17bc07f9d44c268/private-pin-elimination.md",
+      "sha256": "17e989c3d30e9142ae613978cb00a221bc9501bf628c12d2570761baecd89467"
+    }
+  ],
+  "reviewed_by": "Boss5",
+  "review_note": "逐向核对阈值映射、关闭外端排除、零时和单位 pin 恢复、祖先可达性及全部未选任务的回填。对冻结证书全量语义核验，并按实际 pin 向量独立复算三个原矩阵的两轨 r=1,2,3,4 森林可行性。精确下界由森林结构与 selector 证明。",
+  "endpoint_pins": {
+    "M-b4a6d0d0b41c4ef2b84217f7ac101ea1": "b31a83c1efa928388c769dfdca8065eae90bd1cac93f9ec4854630691b426656",
+    "UM-UNIT-READOUT-PRUNED-FOREST-IDENTITY-v1": "bd66f8cfda3245886e9ba6d3075b5ed8f5e5d760675d05ee33cfd19d883d6741"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/审查/单位配置行分解与开底双树原矩阵--审查.md": "5ed466df2c1aadd7cc55340d2281edee66c003787bb871faae1e3f87e668fddf",
+    "archives/unrelated-machines/state/定义/不相关机器与两个调度松弛--定义.md": "f83b0a531d9e9b98fcffa70c77962f2e2b61e112b2074646f4f7cc3179ac9a8b",
+    "archives/unrelated-machines/tools/evidence/unit-configuration-tree-originals/original/unit_readout_two_tree_actual_certificates.json": "b44ee0f44485f2e1497b87338106d642beaa85b96196a810c569b4d120febefd",
+    "archives/unrelated-machines/state/审查/异质宏残余与单位读出森林双源审查--审查.md": "0e04eab5465d195ab206696c58cc3f53f27a933be715421462a982b8cce021e7",
+    "archives/unrelated-machines/tools/evidence/unit-configuration-tree-originals/comparisons/unit_readout_pruned_forest_boundary.md": "225441481810c629afb4af0bcb5d5eb19dad505a30c2680461bd4255dba30b90",
+    "map/edges/unrelated-machines-3a-3a-d17bc07f9d44c268/private-pin-elimination.md": "17e989c3d30e9142ae613978cb00a221bc9501bf628c12d2570761baecd89467"
+  },
+  "review_digest": "83f39e9af3fb42fdb5304b81d18fe65107bcd6c9ade9497c48f1eab8b3fc0e70"
+}
