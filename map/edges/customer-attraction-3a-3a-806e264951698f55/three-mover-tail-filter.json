@@ -1,0 +1,58 @@
+{
+  "edge_id": "cag-806e-exact-spe-recursion-certifies-three-mover-tail-filter",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "CA-EXACT-PURE-SPE-ALL"
+  ],
+  "target_ids": [
+    "cag-two-pool-star-fixed-prefix-finite-tail-exclusion"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "有限非空共同标签目录、单位提供者各行动一次、单位客户终局均分，固定一个合法有序历史且恰余三人。不同标签即使同覆盖仍为不同动作，重复、空主题及所有弱平局均保留。应用于固定历史(C0,C1,C2)时，旧X0、X1、X2负载1，X3与所有私块、公共池负载0。",
+  "roles": {
+    "CA-EXACT-PURE-SPE-ALL": "提供集合值递推R(k)，以及在有序树上逐孩子实现指定终局和全部离轨极小终局的充分性。",
+    "cag-two-pool-star-fixed-prefix-finite-tail-exclusion": "将递推实例化为18标签的三层整数收益过滤；有限域排除另由必要预滤和真实扫描承担。"
+  },
+  "explanation": "以k(h)为固定过去计数，q,s,t是第四、五、六人的标签。令u_i(q,s,t)=U_{所选标签}(k(h)+e_q+e_s+e_t)。在前缀(h,q,s)只剩一人，末位全集L(q,s)=argmax_t u6(q,s,t)。在(h,q)，把一般递推的行动极小值写成ell_q(s)=min_{t∈L(q,s)}u5(q,s,t)，门槛F5(q)=max_s ell_q(s)，故可实现的有序两尾恰为P(q)={(s,t):t∈L(q,s),u5(q,s,t)≥F5(q)}。任一同一完整策略的真实末位应对收益至少ell_q(s)；反向指定叶采用其末位t，其余每个s孩子采用达到ell_q(s)的末位BR。取达到max_s ell_q(s)的s即证P(q)非空。在(h)再得F4=max_q min_{(s,t)∈P(q)}u4(q,s,t)。指定(q*,s*,t*)要满足(s*,t*)∈P(q*)及u4(q*,s*,t*)≥F4；充分时在q*孩子保指定叶，在每个其余q孩子分别选达到极小值的可信两人子SPE并按同一构造填满其末位离轨节点。不同有序孩子的子树互不相交，因此能把全部选择放进同一份完整子博弈策略；计数只计算利润或缓存全集。末位比较与两层门槛均保等号。双池路径(15,16,17)第四人利润为x。正负载在1至4，乘12精确，原代码last_ok、next_floor/next_ok、root_floor依次执行此判据。",
+  "scope": "证明指定有序三人后缀可实现性的充要条件，并给出有限子树上的证书恢复办法；从固定前缀排除指定完整路径时只用完整SPE对子博弈限制的必要性。",
+  "contribution": {
+    "result": "对固定合法前缀，指定三人有序叶可由某一完整纯子SPE实现，当且仅当它的末两行动属于P(q*)且首人终局收益不低于F4；全部非指定孩子可按上述构造在同一完整策略中同时实现。",
+    "remaining": "130321格点的排除还需用指定末位对两池B主题的必要比较筛除26847点，完整整数BI检查余103474点，并用精确扫描证据支付38130个可信指定两尾点的F4≥7>6。域外和其他完整路径需另给数学证据，后缀通过后仍需前三人真实偏离激励才能给六人完整SPE。"
+  },
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/算法/完整历史纯SPE终局全集--算法.md",
+      "sha256": "667d6f319b1f325bd32538f6b0e5a8e95c1942e2ec97cbc76d7cbaef06b36954",
+      "section": "全集递推及完整证明"
+    },
+    {
+      "path": "archives/customer-attraction/state/计算/双客户池指定尾路径的有限参数排除--计算.md",
+      "sha256": "53f0497d79248e0683683b8fd5d947d0f5411266841fa392274dac10fea55e74",
+      "section": "全部平局下的精确三人尾局条件"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/双客户池的可信尾局搜索程序--程序.md",
+      "sha256": "f4859f6d311ea93158144886f53eede916b4eb8f4c93f9a2b492b1c01dceca35",
+      "section": "三层可信过滤与全部平局的自足证明"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/two-pool-tail-search-program/original/two_pool_tail_search.py",
+      "sha256": "f268d9322c947d4bf805397b2c489f7f310b81966c9f4d8b8378bfb93376746e"
+    }
+  ],
+  "reviewed_by": "Boss3-806e-fresh-math-worker",
+  "review_note": "实读规范算法的必要/充分/非空、有序证书展开、双池块收益与原数组代码；从客户兴趣关联矩阵另算预滤内全部格点并逐项核两份门槛直方图，另核原最小门槛点、域外a=3、全零及九客户等号例。完整树的离轨拼接以有序历史键证明，数值核验只承担给定输入。",
+  "endpoint_pins": {
+    "CA-EXACT-PURE-SPE-ALL": "aaa77e1f9a928bc25a315e66e18f424418e64643ec3fdb8717cbc3adc6310056",
+    "cag-two-pool-star-fixed-prefix-finite-tail-exclusion": "4ecefabf4880b96460d034eaa8d0ac3e3a5ddf9cfaf47637b67dece91d3976ae"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/算法/完整历史纯SPE终局全集--算法.md": "667d6f319b1f325bd32538f6b0e5a8e95c1942e2ec97cbc76d7cbaef06b36954",
+    "archives/customer-attraction/state/计算/双客户池指定尾路径的有限参数排除--计算.md": "53f0497d79248e0683683b8fd5d947d0f5411266841fa392274dac10fea55e74",
+    "archives/customer-attraction/state/程序/双客户池的可信尾局搜索程序--程序.md": "f4859f6d311ea93158144886f53eede916b4eb8f4c93f9a2b492b1c01dceca35",
+    "archives/customer-attraction/tools/evidence/two-pool-tail-search-program/original/two_pool_tail_search.py": "f268d9322c947d4bf805397b2c489f7f310b81966c9f4d8b8378bfb93376746e"
+  },
+  "review_digest": "c1352a1916e1beafae7d96390de8ca162b6bb4614fa498616eed1f1f5c836a6e"
+}
