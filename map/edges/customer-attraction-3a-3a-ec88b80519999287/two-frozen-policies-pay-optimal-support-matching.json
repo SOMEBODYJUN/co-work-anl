@@ -1,0 +1,75 @@
+{
+  "edge_id": "cag-ec88-two-frozen-policies-pay-optimal-support-matching",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "cag-whole-subtree-nine-exact-endpoints-and-reentry",
+    "M-b97a40a962c34f848cc8dcaf8b05a1f1"
+  ],
+  "target_ids": [
+    "customer-attraction/true-optimal-portfolio-net-gap-joint-payment"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定绑定的五人七标签完整σ₂₅₂、σ₄₈，各自允许任意使该策略保持全有序IC的非负客户重数。每个给定五标签支持须用该支持的一次每标签、一次每角色排列，且每个查询从原实际有序前缀出发。",
+  "roles": {
+    "cag-whole-subtree-nine-exact-endpoints-and-reentry": "给固定σ₂₅₂的全动作图，供计算每个实际位置对每个合法标签的真正偏离收益。",
+    "M-b97a40a962c34f848cc8dcaf8b05a1f1": "给固定σ₄₈的不同全动作图，须独立计算其真实查询份额矩阵。",
+    "customer-attraction/true-optimal-portfolio-net-gap-joint-payment": "接收存在一个最优元组及一次每角色真实净差匹配在两冻结锥上的完整构造。"
+  },
+  "explanation": "对两份策略分别重建五实际前缀的七个强制终局。对每个21项五标签支持J，枚举120个排列π，逐31个非空实际遗漏型B检查Σ_{i:π(i)∈B}60/n_B(z_i(π(i)))≥60·1[B∩J≠∅]。每个J都有表中明确排列，证据保其五个真实叶和全部31列整数余项。乘各非负客户重数再求和，得到该匹配的遗漏份额至少|C_J\\U|，因此完整真实偏离收益和至少|C_J\\U|≥|C_J|−W。整条实际IC给每个角色的一次真实偏离收益≤该角色原实际收益，故和≤W。任一最优五槽元组的标签支持可扩成恰五标签，覆盖只能不降而最优性禁止增长，新并集仍相同；取该五标签最优元组及证书排列得到所需存在性。对原有重复槽的那一特定元组不另承诺排列证书。此边用与全目录付款相同的查询矩阵，增加每行标签必须来自J的约束，故须按支持另验排列。",
+  "scope": "两冻结策略各21个不同五标签支持均有指定匹配。结论覆盖其各自所有合法客户向量，不要求比较支持为旧LP的目标，也不从旧−17/40或8/5对偶换算。",
+  "contribution": {
+    "result": "两冻结锥中每个五标签比较支持均有一次每标签、一次每角色的真实偏离匹配，其完整收益和至少|C_J\\U|，因此任意客户向量都有达到最优并集的一个元组和真实净差付款。",
+    "remaining": "任意其他动作图、目录及人数仍缺这样的真实净差匹配，亦未由此证明ROW、HALF?或SHARP?等另一组充分条件。"
+  },
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/whole-subtree-nine-endpoints-primary/original/m5p7_residual.json",
+      "sha256": "2a154303b023acfdc7b09c8576f63b3acb50abb02bd8e3cca6a793152ad07233"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/whole-subtree-nine-endpoints-primary/original/m5p7_reentry_incumbent_half.json",
+      "sha256": "e6269ea7551820d0d2c6192dd96d60b7bd2ce1f92b6ffd463fd8a13f89da0565"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-ec88b80519999287/evidence/verify_fixed_omission.py",
+      "sha256": "325b60a9554b9632b9ade563c2eac2f8d73050a725ecd0bb97529481fe9dad0c"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-ec88b80519999287/evidence/fixed_omission_exact.json",
+      "sha256": "5279d3b7decd5700e7f59b1985442fb9d1deee99d2354784cfaef133dae99f54"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-ec88b80519999287/evidence/fixed-omission-proof.md",
+      "sha256": "8257f31141f611b79bb59af918264a191d888e5a7da2feba0ca348fb692b96c2",
+      "section": "任意指定五标签支持的一次每角色匹配"
+    },
+    {
+      "path": "archives/customer-attraction/state/候选/真实最优组合的净差匹配与共同付款--候选.md",
+      "sha256": "fe06ff84ca5e70c8e7d59d25be85103c191d3a510980dd9f08c453ba04b6ea80",
+      "section": "净差匹配比旧接口弱在哪里"
+    }
+  ],
+  "review_note": "逐策略重建真实分母，完整核对两套21×120排列及每排列31个整数列，并检查最优重复支持扩充与一次每角色的真实IC界。",
+  "reviewed_by": "Boss3",
+  "endpoint_pins": {
+    "M-b97a40a962c34f848cc8dcaf8b05a1f1": "9b6c5365282d5110872445456b2bf4c996b09ed77c3a7140230866375303f54b",
+    "cag-whole-subtree-nine-exact-endpoints-and-reentry": "b0447cbacf30e53975163239049cdf4d1931665fca00dc7b7f653d46cd306193",
+    "customer-attraction/true-optimal-portfolio-net-gap-joint-payment": "fd9a93a4ba2f5a8702bdcc764cb2fe6ebb1ef8beecce2b0be5d6073a7cd62b84"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+    "archives/customer-attraction/tools/evidence/whole-subtree-nine-endpoints-primary/original/m5p7_residual.json": "2a154303b023acfdc7b09c8576f63b3acb50abb02bd8e3cca6a793152ad07233",
+    "archives/customer-attraction/tools/evidence/whole-subtree-nine-endpoints-primary/original/m5p7_reentry_incumbent_half.json": "e6269ea7551820d0d2c6192dd96d60b7bd2ce1f92b6ffd463fd8a13f89da0565",
+    "map/edges/customer-attraction-3a-3a-ec88b80519999287/evidence/verify_fixed_omission.py": "325b60a9554b9632b9ade563c2eac2f8d73050a725ecd0bb97529481fe9dad0c",
+    "map/edges/customer-attraction-3a-3a-ec88b80519999287/evidence/fixed_omission_exact.json": "5279d3b7decd5700e7f59b1985442fb9d1deee99d2354784cfaef133dae99f54",
+    "map/edges/customer-attraction-3a-3a-ec88b80519999287/evidence/fixed-omission-proof.md": "8257f31141f611b79bb59af918264a191d888e5a7da2feba0ca348fb692b96c2",
+    "archives/customer-attraction/state/候选/真实最优组合的净差匹配与共同付款--候选.md": "fe06ff84ca5e70c8e7d59d25be85103c191d3a510980dd9f08c453ba04b6ea80"
+  },
+  "review_digest": "7647e960bb8586247363223b6957e0c424c4de11d41469f96ccce3ec4c3aef54"
+}

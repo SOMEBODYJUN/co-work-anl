@@ -1,0 +1,62 @@
+{
+  "edge_id": "boss3-a74-boolean-positivity-separates-r275-positive-moments",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-37b7d7de813c4ff69c63fcb679950f36"
+  ],
+  "target_ids": [
+    "M-1aaa01ac999f425d919258cb7baa70ed"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "冻结输入的 0 基标签和至多五个不同标签的 C 坐标；拟用同标签非负客户质量表示该截断 C，或保全部五人终局收益，容许统一正倍数。",
+  "roles": {
+    "M-37b7d7de813c4ff69c63fcb679950f36": "给定全布尔非负多项式产生的必要矩正性，并由全部终局收益恢复所有可见覆盖值。",
+    "M-1aaa01ac999f425d919258cb7baa70ed": "提供要测试的原冻结正根矩；结论支付其精确非负客户模型边界，不支付固定锥的原 IC 和对偶。"
+  },
+  "explanation": "P(z)=z_1 z_2 z_3 在全布尔立方非负，因此任意非负单位客户或实非负重数都要求交集 t_{123}≥0。对冻结 C，七个相关并集值 C(1),C(2),C(3),C(12),C(13),C(23),C(123) 依次是 (39,24,24,63,63,40,63)/57，容斥为 −10/57。对每个非空 |S|≤5 取支持恰为 S 的五人终局，其总收益由随机次序边际望远镜等于 C(S)；保持全部终局收益即保持全部这些值。统一正缩放亦保负号，不能实现。",
+  "scope": "原冻结正根点的同标签截断覆盖及全部终局收益不可非负实现。仅保持特定路径、个别偏离收益或 IC 符号的替换问题独立；不排除其他不同的单位客户输入达到相同比例。",
+  "contribution": {
+    "result": "给出原正根 C 的显式三阶布尔分离，判定同标签非负客户锥不可实现，进而排除全终局收益的同点保真及其统一正缩放。",
+    "remaining": "R275 的完整原动作表纯 SPE、OPT 及固定锥精确值仍须原冻结输入的 Shapley IC 和有理原始/对偶论证，这个三阶分离只处理模型域。"
+  },
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/有限阶交集矩的全收益表示与布尔正性--定理.md",
+      "sha256": "c6f61661e403b1336b0668ff5ef8f77ea3398878d16e64e5ddbb996918fadd30",
+      "section": "精确客户实现锥与固定全树证书"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/有限阶交集矩的全收益表示与布尔正性--定理.md",
+      "sha256": "c6f61661e403b1336b0668ff5ef8f77ea3398878d16e64e5ddbb996918fadd30",
+      "section": "全部终局表的精确数据"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/R275-credible-search-20261031/original/eb29376c023b5cd9726a__submodular_joint_m5p7_q32_genuine.json",
+      "sha256": "48dd63e02d6623f34967db6bf8e22a55f303f6fe72b1f06a7847e36e139110a0"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-a74dae94a5668ae5/review.md",
+      "sha256": "27e0f4760ca48a97f777a0fbd975e09e1df9b102760230e76cda523310de4bc8",
+      "section": "非负单位客户布尔分离及截断边界"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-a74dae94a5668ae5/recheck.json",
+      "sha256": "2dd67e2843ae97cb2f13dc843f181d49a6a1ad480a58855b3f40ecd5f8aabe79"
+    }
+  ],
+  "reviewed_by": "Boss3",
+  "review_note": "实读布尔矩锥证明与冻结 moment_orbits。用 0 基位掩码重算 1、2、3 的三阶容斥；按 Shapley 效率及恰支持终局核全收益保真的准确量词。",
+  "endpoint_pins": {
+    "M-1aaa01ac999f425d919258cb7baa70ed": "0d4313610bc32b36653aa07e75515d5860793fd939d4fc8d6f5014abaf96ba79",
+    "M-37b7d7de813c4ff69c63fcb679950f36": "5329e1cd6176147be295fc12f2f201e020a27181836b63fe2456b0468a8538aa"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/有限阶交集矩的全收益表示与布尔正性--定理.md": "c6f61661e403b1336b0668ff5ef8f77ea3398878d16e64e5ddbb996918fadd30",
+    "archives/customer-attraction/tools/evidence/R275-credible-search-20261031/original/eb29376c023b5cd9726a__submodular_joint_m5p7_q32_genuine.json": "48dd63e02d6623f34967db6bf8e22a55f303f6fe72b1f06a7847e36e139110a0",
+    "map/edges/customer-attraction-3a-3a-a74dae94a5668ae5/review.md": "27e0f4760ca48a97f777a0fbd975e09e1df9b102760230e76cda523310de4bc8",
+    "map/edges/customer-attraction-3a-3a-a74dae94a5668ae5/recheck.json": "2dd67e2843ae97cb2f13dc843f181d49a6a1ad480a58855b3f40ecd5f8aabe79"
+  },
+  "review_digest": "e049069f73b044728a100f399c190efb56c172735fa94d75be9b09d38523eac6"
+}

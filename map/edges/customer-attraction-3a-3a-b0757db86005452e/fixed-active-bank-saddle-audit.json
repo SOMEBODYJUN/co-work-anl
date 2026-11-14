@@ -1,0 +1,78 @@
+{
+  "edge_id": "ca-matching-independent-fixed-active-bank-saddle-check",
+  "kind": "checks",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/closeout-de0b401466fc6ab6328a1010"
+  ],
+  "target_ids": [
+    "customer-attraction/shared-menu-positive-correlation-at-every-optimal-saddle"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "使用同一六人笛卡尔银行控制器、单位客户、6经济坐标及5双客户银行块。以每个实际有序前缀强制30行动后沿原策略完成，再删相同当前槽。固定p*为25非锚主题均匀分布；程序取原saddle packet的L、q与F_optimum。",
+  "roles": {
+    "customer-attraction/closeout-de0b401466fc6ab6328a1010": "保全独审的输入闭包、逐列复算及其先检查固定p*再审后置解析的真实顺序。",
+    "customer-attraction/shared-menu-positive-correlation-at-every-optimal-saddle": "给出同一银行输入的真正共享鞍点、唯一负载及全部最优边际上的正相关；独审复算固定点数据。"
+  },
+  "explanation": "独审导入带main guard的运输helper，仅用同一finish重建6×30真实删槽列；helper的uniform packet只由其另一个main读取。独审逐列核q行和、q平均负载、支持列KKT、25非锚价37/22与5锚价14/11、全部180实际前缀IC及p*支持逐行C常值(795/484,−105/484×5)。由行概率质量1及锚列边际为零，固定p*的所有保边际运输有C=135/242。均匀p*本身的I=4/5、D=2017/1210、W−6γ=21/11。随后审查MD另用最优夹逼、活跃坐标严格凸、经济总负载5与锚价严格较低，核唯一L*及任意最优p无锚支持的解析论证；程序没有枚举全部最优p，完整SPE由原全历史控制器证明。uniform30运输负C对应另一边际。隔离重放的独审报告24字段中仅source字面路径不同，另有冻结键序差异；两者不改变精确算术。",
+  "scope": "证据语境为同一固定p*真正鞍点及后置解析的独审；只否有利最优鞍点或保边际运输C≤0的加强。完整付款C≤D+I在本例成立；不外推SHARED或half。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/计算/银行共享鞍点独审的真实输入与全量词边界--计算.md",
+      "sha256": "107192f5aba36ee9caa18738647444b509d665062c6ca1350066b58095857d9c",
+      "section": "全文实读及准确审查读序"
+    },
+    {
+      "path": "archives/customer-attraction/state/计算/银行共享鞍点独审的真实输入与全量词边界--计算.md",
+      "sha256": "107192f5aba36ee9caa18738647444b509d665062c6ca1350066b58095857d9c",
+      "section": "当前主代码显式断言的范围"
+    },
+    {
+      "path": "archives/customer-attraction/state/计算/银行共享鞍点独审的真实输入与全量词边界--计算.md",
+      "sha256": "107192f5aba36ee9caa18738647444b509d665062c6ca1350066b58095857d9c",
+      "section": "fixed p*与全部最优p的解析闭合"
+    },
+    {
+      "path": "archives/customer-attraction/state/反例/共享菜单全部最优鞍点的正相关项--反例.md",
+      "sha256": "f213df092ae6477f7eac0452da0e56e1bb9e89c8d9a72a07813f0f1faa92126d",
+      "section": "真正鞍点及全部最优选择的量词闭合"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/insurance-saddle-review-and-audit-three-primary/original/research/workspaces/customer-attraction/R-cd789330fc7141299ac491bbb3ffa420/round11/matching/insurance_saddle_independent_review.md",
+      "sha256": "44d6b7fe5b63307ef908a3b977cf7b8772b89a832cfa38791b6a15c08c243225"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/insurance-saddle-review-and-audit-three-primary/original/research/workspaces/customer-attraction/R-cd789330fc7141299ac491bbb3ffa420/round11/matching/audit_insurance_saddle.py",
+      "sha256": "c94d8bfb1682f25cbe4eda6e8639f6e14c8be92b2f67f0194fd19b615e81f368"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/insurance-saddle-review-and-audit-three-primary/original/research/workspaces/customer-attraction/R-cd789330fc7141299ac491bbb3ffa420/round11/matching/insurance_saddle_independent.json",
+      "sha256": "adc2ee38dc7f8fd6797ddfecdf9157f4e9d9b1bc8ac0cd613b9342a6a6d1f3d3"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/insurance-saddle-review-and-audit-three-primary/related-original/research/workspaces/customer-attraction/R-cd789330fc7141299ac491bbb3ffa420/round11/matching/insurance_transport_exact.py",
+      "sha256": "e55bf782091a62a8a3c176d316be5d8629047a4a0cb7b2ec0fdd82736fa3fb7d"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/round11-exact-cov-and-saddle-four-primary/original/research/workspaces/customer-attraction/R-cd789330fc7141299ac491bbb3ffa420/round11/aggregate/insurance_shared_saddle_m6_exact.json",
+      "sha256": "a0c796fa2ec4f4c442db0662f2ebfd8046230a7f4e7fc013827c9ad49433e831"
+    }
+  ],
+  "reviewed_by": "Boss3",
+  "review_note": "Boss3同身份worker实读端点和原MD、程序、helper、两原packet及报告；隔离目录标准库Fraction逐项复跑固定p*和uniform30，解析复核最优夹逼、严格凸和排锚范围。",
+  "endpoint_pins": {
+    "customer-attraction/closeout-de0b401466fc6ab6328a1010": "0b6f3643e6dbf6dd05e87ef651d5f2d2a37b353e2040fb19c949c9d5702b2fb4",
+    "customer-attraction/shared-menu-positive-correlation-at-every-optimal-saddle": "cacdadba2bf06d057bd1134c90eac33979207e2aba1bcecc28e3c48adeabb11f"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/计算/银行共享鞍点独审的真实输入与全量词边界--计算.md": "107192f5aba36ee9caa18738647444b509d665062c6ca1350066b58095857d9c",
+    "archives/customer-attraction/state/反例/共享菜单全部最优鞍点的正相关项--反例.md": "f213df092ae6477f7eac0452da0e56e1bb9e89c8d9a72a07813f0f1faa92126d",
+    "archives/customer-attraction/tools/evidence/insurance-saddle-review-and-audit-three-primary/original/research/workspaces/customer-attraction/R-cd789330fc7141299ac491bbb3ffa420/round11/matching/insurance_saddle_independent_review.md": "44d6b7fe5b63307ef908a3b977cf7b8772b89a832cfa38791b6a15c08c243225",
+    "archives/customer-attraction/tools/evidence/insurance-saddle-review-and-audit-three-primary/original/research/workspaces/customer-attraction/R-cd789330fc7141299ac491bbb3ffa420/round11/matching/audit_insurance_saddle.py": "c94d8bfb1682f25cbe4eda6e8639f6e14c8be92b2f67f0194fd19b615e81f368",
+    "archives/customer-attraction/tools/evidence/insurance-saddle-review-and-audit-three-primary/original/research/workspaces/customer-attraction/R-cd789330fc7141299ac491bbb3ffa420/round11/matching/insurance_saddle_independent.json": "adc2ee38dc7f8fd6797ddfecdf9157f4e9d9b1bc8ac0cd613b9342a6a6d1f3d3",
+    "archives/customer-attraction/tools/evidence/insurance-saddle-review-and-audit-three-primary/related-original/research/workspaces/customer-attraction/R-cd789330fc7141299ac491bbb3ffa420/round11/matching/insurance_transport_exact.py": "e55bf782091a62a8a3c176d316be5d8629047a4a0cb7b2ec0fdd82736fa3fb7d",
+    "archives/customer-attraction/tools/evidence/round11-exact-cov-and-saddle-four-primary/original/research/workspaces/customer-attraction/R-cd789330fc7141299ac491bbb3ffa420/round11/aggregate/insurance_shared_saddle_m6_exact.json": "a0c796fa2ec4f4c442db0662f2ebfd8046230a7f4e7fc013827c9ad49433e831"
+  },
+  "review_digest": "e6f64718ef652a73ce039d4f199120a7acabfae586ceebdc8119b9f888d4cefa"
+}

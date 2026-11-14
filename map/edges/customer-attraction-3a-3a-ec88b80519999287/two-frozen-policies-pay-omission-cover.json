@@ -1,0 +1,75 @@
+{
+  "edge_id": "cag-ec88-two-frozen-policies-pay-omission-cover",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "cag-whole-subtree-nine-exact-endpoints-and-reentry",
+    "M-b97a40a962c34f848cc8dcaf8b05a1f1"
+  ],
+  "target_ids": [
+    "M-498cd5d02a3b4718840496fd9c49fc43"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定绑定的两个五人七标签完整动作表，分别取其全有序历史真实IC锥内任意非负客户重数。原件客户重数和原件所选目标并非额外限制。每个实际前缀仅买一条合法真实查询，覆盖全部可由目录覆盖的实际遗漏客户。",
+  "roles": {
+    "cag-whole-subtree-nine-exact-endpoints-and-reentry": "提供固定σ₂₅₂完整动作图及实际路径00011，确定其五条全目录遗漏查询的真实终局。",
+    "M-b97a40a962c34f848cc8dcaf8b05a1f1": "提供另一固定σ₄₈完整动作图及实际路径01010，须独立重放其五条真实查询。",
+    "M-498cd5d02a3b4718840496fd9c49fc43": "接收两冻结策略各自对任意最优比较并集的逐客COVER证书，使用同一份确定查询且取消量为零。"
+  },
+  "explanation": "两实际支持均为{0,1}。在σ₂₅₂用查询序32456，真实叶31200、02041、00451、00051、00016。在σ₄₈用23465，真实叶20041、03410、01430、01060、01015。对任一遗漏客户，会员型B是{2,3,4,5,6}的非空子集。所用查询覆盖它的恰为B各标签的一次指派，每个对应叶的这些标签各至多一次，故各分母≤|B|、总份额≥1。标签0/1可重复，单客户在叶上亦可被多个不同的合格标签覆盖。令q_i在所列查询取质量1且γ=0，任意比较O的遗漏客户属于上述同一集合，逐客皆获付；逐行整条真实IC把总付款限制在W。两锥都得全目录并集|V|≤2W，且共用10客户输入的两策略全IC均成立，W=5、|V|=10、OPT5=8。",
+  "scope": "两个冻结策略各自的客户锥，允许零重数、重复行动、别名及任意最优比较并集。查找全目录付款不用限于比较元组的标签；这一额外限制由另存逐支持匹配计算支付。",
+  "contribution": {
+    "result": "对两个冻结动作图分别给一份确定查询，对其各自全客户锥中的每个实例与任意最优比较并集逐客户证明COVER，且γ=0。同一证明支付全目录遗漏。",
+    "remaining": "仍需对任意其他完整策略、目录及人数证明COVER或给出合法反例。可能存在多于角色数的非实际标签，真实叶也可能重复同一遗漏标签，从而此处的分母论证不能直接使用。"
+  },
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/whole-subtree-nine-endpoints-primary/original/m5p7_residual.json",
+      "sha256": "2a154303b023acfdc7b09c8576f63b3acb50abb02bd8e3cca6a793152ad07233"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/whole-subtree-nine-endpoints-primary/original/m5p7_reentry_incumbent_half.json",
+      "sha256": "e6269ea7551820d0d2c6192dd96d60b7bd2ce1f92b6ffd463fd8a13f89da0565"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-ec88b80519999287/evidence/verify_fixed_omission.py",
+      "sha256": "325b60a9554b9632b9ade563c2eac2f8d73050a725ecd0bb97529481fe9dad0c"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-ec88b80519999287/evidence/fixed_omission_exact.json",
+      "sha256": "5279d3b7decd5700e7f59b1985442fb9d1deee99d2354784cfaef133dae99f54"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-ec88b80519999287/evidence/fixed-omission-proof.md",
+      "sha256": "8257f31141f611b79bb59af918264a191d888e5a7da2feba0ca348fb692b96c2",
+      "section": "整个目录的一份确定付款"
+    },
+    {
+      "path": "archives/customer-attraction/state/候选/真实遗漏查询的自由取消覆盖与全价格分离--候选.md",
+      "sha256": "529684fde892efa05ae86d7a5d382b7bf66b0d0d2fe6456b30864258434ed71c",
+      "section": "自由取消的逐客充分条件"
+    }
+  ],
+  "review_note": "逐枝重放两份策略的确定查询并核31个非空遗漏类型的系数，核共用10客户点各16806项非自身IC。全目录构造与逐支持匹配共用真实偏离份额矩阵。",
+  "reviewed_by": "Boss3",
+  "endpoint_pins": {
+    "M-498cd5d02a3b4718840496fd9c49fc43": "8406bf0420efccdef0744dd47584d9a0e1f1d88e1b2f866011d89d19d8c4b8fe",
+    "M-b97a40a962c34f848cc8dcaf8b05a1f1": "9b6c5365282d5110872445456b2bf4c996b09ed77c3a7140230866375303f54b",
+    "cag-whole-subtree-nine-exact-endpoints-and-reentry": "b0447cbacf30e53975163239049cdf4d1931665fca00dc7b7f653d46cd306193"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+    "archives/customer-attraction/tools/evidence/whole-subtree-nine-endpoints-primary/original/m5p7_residual.json": "2a154303b023acfdc7b09c8576f63b3acb50abb02bd8e3cca6a793152ad07233",
+    "archives/customer-attraction/tools/evidence/whole-subtree-nine-endpoints-primary/original/m5p7_reentry_incumbent_half.json": "e6269ea7551820d0d2c6192dd96d60b7bd2ce1f92b6ffd463fd8a13f89da0565",
+    "map/edges/customer-attraction-3a-3a-ec88b80519999287/evidence/verify_fixed_omission.py": "325b60a9554b9632b9ade563c2eac2f8d73050a725ecd0bb97529481fe9dad0c",
+    "map/edges/customer-attraction-3a-3a-ec88b80519999287/evidence/fixed_omission_exact.json": "5279d3b7decd5700e7f59b1985442fb9d1deee99d2354784cfaef133dae99f54",
+    "map/edges/customer-attraction-3a-3a-ec88b80519999287/evidence/fixed-omission-proof.md": "8257f31141f611b79bb59af918264a191d888e5a7da2feba0ca348fb692b96c2",
+    "archives/customer-attraction/state/候选/真实遗漏查询的自由取消覆盖与全价格分离--候选.md": "529684fde892efa05ae86d7a5d382b7bf66b0d0d2fe6456b30864258434ed71c"
+  },
+  "review_digest": "074b06e917a6a5578b28cb58fc674336bf966dc31c93f445891390098bbf95d7"
+}
