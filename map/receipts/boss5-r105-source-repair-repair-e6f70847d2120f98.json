@@ -1,0 +1,104 @@
+{
+  "task_id": "boss5-r105-source-repair-repair-e6f70847d2120f98",
+  "stage": "3B",
+  "status": "complete",
+  "supersedes": [
+    "boss5-r105-threshold-3b-3b-4ca52e241f3fd837"
+  ],
+  "object_ids": [
+    "customer-attraction/closeout-67a92b6751929baa34cc1de3",
+    "customer-attraction/closeout-bf614929b6e50c3900f6fc7e"
+  ],
+  "input_pins": {
+    "customer-attraction/closeout-67a92b6751929baa34cc1de3": "cd901b7f15921d8205f33be6c8d93451d2f9946236366818088406048f2a4595",
+    "customer-attraction/closeout-bf614929b6e50c3900f6fc7e": "81bf2dd8f2c1edf1541252c8e8f9f84581d1992bbc7386320c62889c07166b78"
+  },
+  "coverage": {
+    "customer-attraction/closeout-67a92b6751929baa34cc1de3": {
+      "state": "linked",
+      "object_pin": "cd901b7f15921d8205f33be6c8d93451d2f9946236366818088406048f2a4595",
+      "comparison_scope": "复核完整后继门槛递归在 R105 四块同一目录中的两人根与三人强制 T 子局，含精确 R/L/Theta 量词、选中枝与可信后继边界。",
+      "reason": "资源端点的门槛递归仍逐分支支付：删除后 Θ=q+h/2，强制孩子给 AT、BT、TB；三人强制 T 的后继比较继续使用完整 R_h,L_h。",
+      "edge_ids": [
+        "cag-full-continuation-threshold-checks-r105-switch-repair-e6f70847"
+      ]
+    },
+    "customer-attraction/closeout-bf614929b6e50c3900f6fc7e": {
+      "state": "linked",
+      "object_pin": "81bf2dd8f2c1edf1541252c8e8f9f84581d1992bbc7386320c62889c07166b78",
+      "comparison_scope": "复核当前 R105 四块切换族、删除后两人实际零 regret、两人真实 TB 终局及原控制者改选 T 的任意可信后继严格偏离。",
+      "reason": "当前源只将根 T 后末位 A 的收益从 f/2 勘误为 f；B 仍以 f+p+h/2 严格胜出，旧门槛与 TBT 结论完整保留。",
+      "edge_ids": [
+        "cag-full-continuation-threshold-checks-r105-switch-repair-e6f70847"
+      ]
+    }
+  },
+  "assets": [
+    {
+      "path": "map/edges/boss5-r105-source-repair-repair-e6f70847d2120f98/r105-full-continuation-threshold.json",
+      "sha256": "7aece9c5881d2b91200de8f18ddc8f99ab1ab40fbc0602c69cd1c5c53198cbe8"
+    },
+    {
+      "path": "map/edges/boss5-r105-source-repair-repair-e6f70847d2120f98/review.md",
+      "sha256": "eb7ba2f5d12e3c4773184d51598c774ab7a737e958fba8c3de92d68db7dc2f97"
+    },
+    {
+      "path": "map/edges/boss5-r105-source-repair-repair-e6f70847d2120f98/reading-ledger.json",
+      "sha256": "14f6d414b77081c5b4dbf0c4c0dd4c26162cc678d589fa3e1698652044dc095f"
+    },
+    {
+      "path": "map/edges/boss5-r105-threshold-3b-3b-4ca52e241f3fd837/comparison.md",
+      "sha256": "986157716db16d7b4d70fc4ce624dba76a1068852c4f27b6355f9635a9f4dfc6"
+    },
+    {
+      "path": "map/edges/boss5-r105-threshold-3b-3b-4ca52e241f3fd837/reading-ledger.json",
+      "sha256": "9933cc2ae5390027355befff1edd057b63ef1b713e037c7ce23c189cdc11b9b7"
+    }
+  ],
+  "reading": {
+    "ledger_path": "map/edges/boss5-r105-source-repair-repair-e6f70847d2120f98/reading-ledger.json",
+    "ledger_sha256": "14f6d414b77081c5b4dbf0c4c0dd4c26162cc678d589fa3e1698652044dc095f",
+    "notes": "实读上一任务 edge/receipt/comparison/ledger 及两份当前登记正文；旧递推与有限检查沿用，未重跑旧求解器。"
+  },
+  "edge_ids": [
+    "cag-full-continuation-threshold-checks-r105-switch-repair-e6f70847"
+  ],
+  "edge_digests": {
+    "cag-full-continuation-threshold-checks-r105-switch-repair-e6f70847": "958be0cb44f7c03e61fbb3f0af7d53ed97e33801e2193fea34375ef12e330381"
+  },
+  "source_delta_review": {
+    "current_source": "archives/customer-attraction/state/障碍/R105零regret切换的原模型不可达障碍--障碍.md",
+    "old_sha256": "40dfab06dd1bdbe7d1c9acf6bd862dc5a626429d817d0ab493bce890f32fb7be",
+    "current_sha256": "6edfe368bfa3f3a0cb795fe14b3cc1345b48856bb13faa87b4c2a6631fa2545f",
+    "change": "root T branch terminal A payoff f/2 -> f",
+    "mathematical_effect": "No change to Theta=q+h/2, virtual BT gap p, unique real TB, exact forced-T continuation TBT, or controller improvement p+h/3."
+  },
+  "supersession": {
+    "boss5-r105-threshold-3b-3b-4ca52e241f3fd837": {
+      "reason": "Changed registration input: target object pin and one cited source byte changed. The prior mathematical comparison remains valid, but the old edge cannot bind current endpoint/evidence pins.",
+      "assets": {
+        "map/edges/boss5-r105-threshold-3b-3b-4ca52e241f3fd837/r105-full-continuation-threshold.json": {
+          "disposition": "replaced",
+          "replacement_paths": [
+            "map/edges/boss5-r105-source-repair-repair-e6f70847d2120f98/r105-full-continuation-threshold.json"
+          ],
+          "reason": "Same accepted checks/context mathematics, reissued with current endpoint pin 81bf... and current R105 source SHA 6edfe...; new edge id records the repair successor."
+        },
+        "map/edges/boss5-r105-threshold-3b-3b-4ca52e241f3fd837/comparison.md": {
+          "disposition": "retained",
+          "reason": "Original comparison is mathematically valid under the corrected source; appended source-refresh note and current disposition in place."
+        },
+        "map/edges/boss5-r105-threshold-3b-3b-4ca52e241f3fd837/reading-ledger.json": {
+          "disposition": "retained",
+          "reason": "Original reading record retained; source hash and repair notes refreshed in place."
+        },
+        "map/receipts/boss5-r105-threshold-3b-3b-4ca52e241f3fd837.json": {
+          "disposition": "retained",
+          "reason": "Prior receipt remains historical provenance for the original task; this successor receipt carries the current pin, hashes, and explicit replacement/retention dispositions."
+        }
+      }
+    }
+  },
+  "reviewed_by": "Boss7",
+  "review_note": "Fresh source repair: preserve valid two-person threshold p and forced-T TBT strict improvement p+h/3; explicitly bound exact quantifiers, selected branch, two-person root, and three-person forced subgame. No checkpoint, commit, push, or map done performed."
+}
