@@ -1,0 +1,84 @@
+{
+  "edge_id": "cag-boss3-wave11-three-player-root-saturation-bracket",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "CA-TRUNCATED-SHAPLEY-ROOT-SATURATION-v1"
+  ],
+  "target_ids": [
+    "CA-THREE-TRUNCATED-SHAPLEY-ROOT-SATURATION-LOWER-9-5-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "m=3，三个有标识提供者，重复标签合法，个体副本Shapley支付；目标值函数只在|S|≤3的四标签截断域定义，C(S)=3k/5（不含A）或1+k/5（含A），所有有序历史沿同一全A纯策略。目标满足根收益u=K/3、K=W=1；依赖定理的全域强化O≤(2−1/m)K还要求每个比较支持都能在加入最大根标签后留在定义域内，该条件在目标四标签/三阶截断域不满足。",
+  "roles": {
+    "CA-TRUNCATED-SHAPLEY-ROOT-SATURATION-v1": "提供任意m≥2根饱和完整纯SPE的普遍上界O≤2K≤2W；若所有比较支持可再容纳最大标签，则另给O≤(2−1/m)K；其m≥4取等族和m=2锐值不覆盖m=3目标。",
+    "CA-THREE-TRUNCATED-SHAPLEY-ROOT-SATURATION-LOWER-9-5-v1": "提供m=3、四标签、仅三阶截断域的完整全A纯SPE；63条真实有序偏离均非负，实际u=K/3=1/3、W=K=1，三外标签比较支持达到OPT3=9/5；同时明确不存在四标签全域单调次模延拓。"
+  },
+  "contribution": {
+    "result": "将目标三人反例与根饱和定理的适用范围精确对齐：目标实例落入定理的普遍假设，故其福利比满足9/5≤OPT3/W≤2；目标的9/5由完整策略和63条真实比较证书实现。定理的更强三人候选上界(2−1/3)=5/3不能套用，因为它依赖所有比较支持可加入最大根标签，恰被目标的三阶截断和四标签不可延拓性排除。",
+    "remaining": "该比较未确定三人截断根饱和域的全域精确最坏常数（仍在[9/5,2]之间开放），也未将目标提升为单位客户实例或全域单调次模函数；定理中的m≥4取等族、m=2的3/2锐界和R275五人证书均不能迁移为m=3精确值。"
+  },
+  "scope": "仅作三人截断共同次模Shapley根饱和目标与一般根饱和定理的上下界/适用量词核查；保留目标的完整有序纯SPE、重复标签、有限截断域与不可延拓障碍。不是三人全域锐值证明，不是单位客户模型反例，也不把定理的全域强化条件静默添加到目标。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/反例/三人截断共同次模根饱和的九比五下界--反例.md",
+      "sha256": "98daf2238842a10aac2c7932fbe13f89b1084ed68086f5f041b7cafff27f52f3",
+      "section": "三人截断共同次模根饱和的九比五下界"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/截断共同次模Shapley的根饱和福利界--定理.md",
+      "sha256": "f274968b8c0b378ac8c30bb86668378e883028a5ce57c2fb39b0463305270d36",
+      "section": "末位不等式支付任意比较组"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/truncated-shapley-root-saturation/three-player-root-saturation-check.py",
+      "sha256": "41c0df90f0a14e1b1776ca07e7104816ef546bf953d16a7fed7932f7063b24e4"
+    },
+    {
+      "path": "archives/customer-attraction/state/审查/R275可信搜索对称DAG与共同次模投影增量--审查.md",
+      "sha256": "566c829c1a9dc40f83d7363d6c577fedd2a8624d4310c9049897eb7c14304718",
+      "section": "4. broader common-submodular Shapley 类只作外部压力测试"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/R275-credible-search-20261031/original/633b64cbcf0233d0f667__submodular_joint_m5p7_q32.json",
+      "sha256": "dbf83fe8561340f29505cb33e37c83cf79e521ab2c1bcb4f5dd959d2b0968d6d"
+    },
+    {
+      "path": "archives/customer-attraction/state/推论/最大主题根近饱和的覆盖阈值--推论.md",
+      "sha256": "8c205982d0718e9117220df227d79f24553417a5a71c46111caed7debfc256eb",
+      "section": "精确命题及与已有根刚性的关系"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/truncated-shapley-root-saturation/sharp_family.py",
+      "sha256": "8485c43ca5e4c05c43fc11921a7cff550973e10ab2755feffb62c776c449ffba"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/truncated-shapley-root-saturation/sharp_family.json",
+      "sha256": "f8d017eac799a2dbbc65a9d0a9f71ea3077ebb62c597bf99bcc8404e6c17c157"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/truncated-shapley-root-saturation/check_sharp_bounds.py",
+      "sha256": "ae802a06036eb6c096117659088114582003ebdf2e743761dbd9872bf341423f"
+    }
+  ],
+  "reviewed_by": "Boss4/worker_shapley",
+  "review_note": "完整读取任务JSON列出的9份材料并核对SHA；独立运行三人63行检查、m=4..7精确族枚举和符号/小人数检查。将定理普遍2上界、目标9/5下界及全域强化5/3的适用条件分开，未把broader common-submodular证据写回客户模型。",
+  "endpoint_pins": {
+    "CA-THREE-TRUNCATED-SHAPLEY-ROOT-SATURATION-LOWER-9-5-v1": "563dde193eae93e72afcf47f0e16ea0e68f82f12299e69ca386d2f679c8bb8ac",
+    "CA-TRUNCATED-SHAPLEY-ROOT-SATURATION-v1": "9b7a6d3483c8d478bc6bf4abd92964adbd3cf5c59988430474576046ad01f138"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/反例/三人截断共同次模根饱和的九比五下界--反例.md": "98daf2238842a10aac2c7932fbe13f89b1084ed68086f5f041b7cafff27f52f3",
+    "archives/customer-attraction/state/定理/截断共同次模Shapley的根饱和福利界--定理.md": "f274968b8c0b378ac8c30bb86668378e883028a5ce57c2fb39b0463305270d36",
+    "archives/customer-attraction/tools/evidence/truncated-shapley-root-saturation/three-player-root-saturation-check.py": "41c0df90f0a14e1b1776ca07e7104816ef546bf953d16a7fed7932f7063b24e4",
+    "archives/customer-attraction/state/审查/R275可信搜索对称DAG与共同次模投影增量--审查.md": "566c829c1a9dc40f83d7363d6c577fedd2a8624d4310c9049897eb7c14304718",
+    "archives/customer-attraction/tools/evidence/R275-credible-search-20261031/original/633b64cbcf0233d0f667__submodular_joint_m5p7_q32.json": "dbf83fe8561340f29505cb33e37c83cf79e521ab2c1bcb4f5dd959d2b0968d6d",
+    "archives/customer-attraction/state/推论/最大主题根近饱和的覆盖阈值--推论.md": "8c205982d0718e9117220df227d79f24553417a5a71c46111caed7debfc256eb",
+    "archives/customer-attraction/tools/evidence/truncated-shapley-root-saturation/sharp_family.py": "8485c43ca5e4c05c43fc11921a7cff550973e10ab2755feffb62c776c449ffba",
+    "archives/customer-attraction/tools/evidence/truncated-shapley-root-saturation/sharp_family.json": "f8d017eac799a2dbbc65a9d0a9f71ea3077ebb62c597bf99bcc8404e6c17c157",
+    "archives/customer-attraction/tools/evidence/truncated-shapley-root-saturation/check_sharp_bounds.py": "ae802a06036eb6c096117659088114582003ebdf2e743761dbd9872bf341423f"
+  },
+  "explanation": "目标反例的三人全A完整策略满足依赖定理的根饱和前提，因此定理的普遍截断上界给OPT3/W≤2；反例的63行精确审计与三外标签支持给OPT3/W=9/5。依赖定理的(2−1/m)强化要求每个比较支持与最大标签的并集仍在定义域内，而目标仅定义至三种不同标签且其四标签并集被单调性排除，所以该强化不能反向改写为5/3上界。此处是上下界语境核验，不是单向逻辑蕴含。",
+  "review_digest": "0e4c276e0120664462439e61f96f79a66e190de52c93b52f8a3b21b21e31bc33"
+}

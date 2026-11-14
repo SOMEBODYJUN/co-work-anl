@@ -1,0 +1,60 @@
+{
+  "edge_id": "cag-wave11-individual-cone-to-filtered-average",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/fixed-distinct-prefix-individual-cone-optimal-J-exact-13-over-4"
+  ],
+  "target_ids": [
+    "CA-FIXED-16-FILTERED-AVERAGE-SHARP-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定四人五主题共同目录、均分客户价值、固定第16策略 sigma(h)=0 当且仅当历史全为0否则取2、固定 J={0,1,3,4}。在长度至多3的不重复J前缀上，逐行动行仅比较尚未出现的J行动；筛选平均逐同一历史对这些行取算术平均。偏离沿改变后完整历史的同一 sigma 真实续局。",
+  "roles": {
+    "customer-attraction/fixed-distinct-prefix-individual-cone-optimal-J-exact-13-over-4": "提供第16策略/J的64条不重复前缀逐行动约束、13/4的三行有理对偶以及[11,5,12,12,12]单位客户的13/4取等点。",
+    "CA-FIXED-16-FILTERED-AVERAGE-SHARP-v1": "接收逐行动约束取平均所得的41条筛选平均约束，并记录[11,5,13,11,12]单位客户的新13/4点及其两条逐行动负行；本边只覆盖其第16策略部分。"
+  },
+  "explanation": "逐行动约束逐行非负时，对每个保留历史把尚未使用J行动的有限行相加并除以正的行数，必得筛选平均行非负，因此逐行动锥包含于筛选平均锥。两者在第16策略/J上都达到13/4且J=OPT4：旧逐行动证书的质量为掩码1,5,6,12,20上的11,5,12,12,12；核心的新平均点为11,5,13,11,12，仍有W=16、O_J=OPT4=52。新点在平均锥的所有41行非负，但R_(0,1)=-1/3与R_(1,0)=-1/12，故在相同比值面上严格展示平均锥放宽逐行动锥。三行乘子3合并为同一h=(0)的平均乘子9，给出相同13/4上界的有理残差核对。",
+  "scope": "仅固定 sigma16、J16、W>0 的不重复J前缀比较锥及其同历史平均；说明局部锥包含和同锐值见证。不得升级为完整156历史SPE、任意策略/J的普遍上界，亦不把新点称为完整SPE反例。",
+  "contribution": {
+    "result": "已精确支付第16策略分量：逐行动非负约束蕴含筛选平均非负；两行族在J最优13/4面有分别可行的52客户整数点，且平均点有两条严格负的逐行动行，证明该面上的严格包含。",
+    "remaining": "本边不承担核心对象的第9策略全历史平均7/4分量，也不承担完整SPE或一般四人策略锥结论；这些范围须由核心正文及独立关系分别保留。"
+  },
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/指定四人不重复比较前缀逐行动锥在最优比较组下仍锐为十三除四--定理.md",
+      "sha256": "97e261372b4d503c3f93cb25bfb30b7d8c6b6fcf4f3f4faef8183c4f3ca4916f"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/固定第十六策略的筛选平均锐界和第九策略互异目录达到点--定理.md",
+      "sha256": "8efb0b214ab2fcbd2fc2df6fadc5237cf171abf4a163e0fa0de8b886f6e81c3b"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/fixed-cone-comparison-supplements/verify-supplements.py",
+      "sha256": "335f9e2cec0dbf54de7b917d82a1c00264fce55d56b0a78c2b8749205dac56fb"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/fixed-cone-comparison-supplements/exact-supplements.json",
+      "sha256": "65048dfc2e64d76d10f0ea33385b3f37543bec28c982a43b97b4592b996a2e9e"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/distinct-prefix-individual-optimal-J-13-over-4/exact-certificate.json",
+      "sha256": "53f4c2edd7aae38ddc9025fb3d12a587a2b7970ecd6d38c013abde22108c9cf2"
+    }
+  ],
+  "reviewed_by": "Boss4/worker_filter_avg",
+  "review_note": "完整读取任务声明的14个来源并核SHA；标准库有理复验 verify-supplements.py、verify_optimal_J_13_over_4.py 和 saved-witness exact checker 均通过。逐项核对真实后继、41/64行计数、13/4对偶残差、J=OPT4覆盖及两条负逐行动行。贡献仅定位第16策略局部锥关系，保留完整SPE与核心第9策略义务。",
+  "endpoint_pins": {
+    "CA-FIXED-16-FILTERED-AVERAGE-SHARP-v1": "327d62fcbd433e4f5b50b4955333ce3eee460e2efaa77f685b0b2de1f8ce5f63",
+    "customer-attraction/fixed-distinct-prefix-individual-cone-optimal-J-exact-13-over-4": "be7dbd04355e636cf6468a9aac72544a6da9a759ef2c4b338bf3284b82242bad"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/指定四人不重复比较前缀逐行动锥在最优比较组下仍锐为十三除四--定理.md": "97e261372b4d503c3f93cb25bfb30b7d8c6b6fcf4f3f4faef8183c4f3ca4916f",
+    "archives/customer-attraction/state/定理/固定第十六策略的筛选平均锐界和第九策略互异目录达到点--定理.md": "8efb0b214ab2fcbd2fc2df6fadc5237cf171abf4a163e0fa0de8b886f6e81c3b",
+    "archives/customer-attraction/tools/evidence/fixed-cone-comparison-supplements/verify-supplements.py": "335f9e2cec0dbf54de7b917d82a1c00264fce55d56b0a78c2b8749205dac56fb",
+    "archives/customer-attraction/tools/evidence/fixed-cone-comparison-supplements/exact-supplements.json": "65048dfc2e64d76d10f0ea33385b3f37543bec28c982a43b97b4592b996a2e9e",
+    "archives/customer-attraction/tools/evidence/distinct-prefix-individual-optimal-J-13-over-4/exact-certificate.json": "53f4c2edd7aae38ddc9025fb3d12a587a2b7970ecd6d38c013abde22108c9cf2"
+  },
+  "review_digest": "24412d8bb917d619aa066f81f956f75efd13745a2d28f15dff3bf9f8fc9e3782"
+}

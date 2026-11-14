@@ -1,0 +1,64 @@
+{
+  "task_id": "boss3-wave11-new-3a-6786957d6b61f784",
+  "stage": "3A",
+  "object_ids": [
+    "CA-THREE-TRUNCATED-SHAPLEY-ROOT-SATURATION-LOWER-9-5-v1"
+  ],
+  "read_object_ids": [
+    "CA-TRUNCATED-SHAPLEY-ROOT-SATURATION-v1"
+  ],
+  "input_pins": {
+    "CA-THREE-TRUNCATED-SHAPLEY-ROOT-SATURATION-LOWER-9-5-v1": "563dde193eae93e72afcf47f0e16ea0e68f82f12299e69ca386d2f679c8bb8ac",
+    "CA-TRUNCATED-SHAPLEY-ROOT-SATURATION-v1": "9b7a6d3483c8d478bc6bf4abd92964adbd3cf5c59988430474576046ad01f138"
+  },
+  "status": "complete",
+  "coverage": {
+    "CA-THREE-TRUNCATED-SHAPLEY-ROOT-SATURATION-LOWER-9-5-v1": {
+      "state": "linked",
+      "object_pin": "563dde193eae93e72afcf47f0e16ea0e68f82f12299e69ca386d2f679c8bb8ac",
+      "comparison_scope": "完整比较三人四标签三阶截断根饱和反例与一般截断共同次模Shapley根饱和定理：核心全A完整纯SPE、u=K/3、W=K=1、63条真实偏离和OPT3=9/5；依赖定理的普遍O≤2K上界、(2−1/m)强化的全域容纳条件、m≥4取等族、m=2锐值及其三人开放边界。",
+      "reason": "目标实例确实落入依赖定理的普遍根饱和条件，故给出三人上界OPT3/W≤2；目标自身精确策略审计给出完整三人下界9/5。依赖定理的5/3候选强化要求比较支持与最大标签并集仍在定义域，目标明确仅定义至三个不同标签且四标签单调次模延拓不可能，因此强化不适用。关系保留三人全域精确最坏常数、单位客户实现和全域延拓的未付义务。",
+      "edge_ids": [
+        "cag-boss3-wave11-three-player-root-saturation-bracket"
+      ]
+    }
+  },
+  "assets": [
+    {
+      "path": "map/edges/boss3-wave11-new-3a-6786957d6b61f784/root-saturation-three-player-bounds.json",
+      "sha256": "6c325839e56f85b55d19d7589a96156302967cb496b159e7403eae2732855980"
+    },
+    {
+      "path": "map/edges/boss3-wave11-new-3a-6786957d6b61f784/comparison.md",
+      "sha256": "c9ca3b5ec19ce360ac07475adfe11ec92f5fcafdefd7b60d87d473e53504b954"
+    },
+    {
+      "path": "map/edges/boss3-wave11-new-3a-6786957d6b61f784/reading-ledger.json",
+      "sha256": "e58ab244d3ecc40d2bebb3d3de313e3d7df8f3fdd0c4ab0c8adbe0e821d7ec16"
+    }
+  ],
+  "follow_up_tasks": [],
+  "closed_overlaps": [],
+  "in_packet_comparisons": [
+    {
+      "core_id": "CA-THREE-TRUNCATED-SHAPLEY-ROOT-SATURATION-LOWER-9-5-v1",
+      "peer_id": "CA-TRUNCATED-SHAPLEY-ROOT-SATURATION-v1",
+      "reason": "已完整核对核心9/5构造和依赖定理的普遍2上界；5/3强化的全域定义域条件在核心四标签三阶截断中失败，故只登记条件上下界关系，不把三人精确常数写成已解。"
+    }
+  ],
+  "validation": {
+    "edge_check": {
+      "status": "edge-structure-valid-not-a-mathematical-verdict",
+      "proof_scope": "step",
+      "edge_id": "cag-boss3-wave11-three-player-root-saturation-bracket"
+    },
+    "local_checks": [
+      "three-player-root-saturation-check.py: 63 true comparisons, 15 ties, OPT/K=9/5",
+      "sharp_family.py: exact m=4,5,6,7 complete-history checks passed",
+      "check_sharp_bounds.py: symbolic identities and m=2,3 boundary checks passed"
+    ],
+    "checks_note": "完成 edge-bind --write 与 edge-check；未执行新的LP、搜索或客户模型迁移。"
+  },
+  "reviewed_by": "Boss4/worker_shapley",
+  "review_note": "按任务声明顺序完整实读9份材料并核SHA；保留核心模型、量词、重复标签、截断定义域、完整有序偏离及不可延拓边界。边为conditional proof-step：仅把依赖定理的普遍上界与核心9/5下界对齐，不声称三人精确最坏常数或单位客户全域结论。"
+}

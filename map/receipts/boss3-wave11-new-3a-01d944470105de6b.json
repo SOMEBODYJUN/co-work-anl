@@ -1,0 +1,54 @@
+{
+  "task_id": "boss3-wave11-new-3a-01d944470105de6b",
+  "stage": "3A",
+  "object_ids": [
+    "CA-FIXED-16-FILTERED-AVERAGE-SHARP-v1"
+  ],
+  "read_object_ids": [
+    "customer-attraction/fixed-distinct-prefix-individual-cone-optimal-J-exact-13-over-4",
+    "customer-attraction/fixed-ninth-policy-full-average-and-prefix-individual-exact-bounds"
+  ],
+  "input_pins": {
+    "CA-FIXED-16-FILTERED-AVERAGE-SHARP-v1": "327d62fcbd433e4f5b50b4955333ce3eee460e2efaa77f685b0b2de1f8ce5f63",
+    "customer-attraction/fixed-distinct-prefix-individual-cone-optimal-J-exact-13-over-4": "be7dbd04355e636cf6468a9aac72544a6da9a759ef2c4b338bf3284b82242bad",
+    "customer-attraction/fixed-ninth-policy-full-average-and-prefix-individual-exact-bounds": "01303f2d2841fa9febfba65a254ffed901a7ba31ea0d1c7db77df084537b5844"
+  },
+  "status": "complete",
+  "coverage": {
+    "CA-FIXED-16-FILTERED-AVERAGE-SHARP-v1": {
+      "state": "linked",
+      "object_pin": "327d62fcbd433e4f5b50b4955333ce3eee460e2efaa77f685b0b2de1f8ce5f63",
+      "comparison_scope": "完整实读第16筛选平均核心、对应不重复前缀逐行动精确锥、以及第9策略全历史平均/逐行动对象；复核真实后继量词、41/64/156行族、J=OPT约束、31型对偶余项、52/56客户取等点与局部负行。第16边只支付逐行动⇒筛选平均及同13/4面严格包含；第9边只支付7/4全历史平均组件升级到五主题非空互异且J最优的56客户点。",
+      "reason": "两个in-packet overlap均已完成数学比较并由两条accepted specializes贡献边承载。固定第16策略下，64条逐行动非负逐历史平均蕴含41条筛选平均非负，但核心新52客户点有两逐行动负(-1/3,-1/12)，所以同锐比值面严格扩大；固定第9策略下，h=(2,2,2)乘子4的全历史平均7/4上界与核心56客户J=OPT、五主题非空互异点一致，且A_(1)=-1/2保持行族分离。未把任何局部结论升级为完整SPE、任意策略或第9的11/6逐行动结论。",
+      "edge_ids": [
+        "cag-wave11-individual-cone-to-filtered-average",
+        "cag-wave11-ninth-full-average-nonempty-distinct-strengthening"
+      ]
+    }
+  },
+  "assets": [
+    {
+      "path": "map/edges/boss3-wave11-new-3a-01d944470105de6b/individual-cone-to-filtered-average.json",
+      "sha256": "6b2f40ec40b9bc861985d320f1b9a945c7358345fadb8d08475f775e96bd2fac"
+    },
+    {
+      "path": "map/edges/boss3-wave11-new-3a-01d944470105de6b/ninth-average-strengthening.json",
+      "sha256": "0a25f62ef99753a4ee4bc41c0f866583e2597d62b66e4e3b85c3c921b070f1e1"
+    }
+  ],
+  "closed_overlaps": [
+    {
+      "core_id": "CA-FIXED-16-FILTERED-AVERAGE-SHARP-v1",
+      "peer_id": "customer-attraction/fixed-distinct-prefix-individual-cone-optimal-J-exact-13-over-4",
+      "reason": "已实读并精确复验第16策略两个固定行族及同13/4最优J面。逐行动锥到平均锥的逐历史算术蕴含已支付；旧[11,5,12,12,12]点与核心新[11,5,13,11,12]点分别核W=16,O=OPT4=52，后者R_(0,1)=-1/3、R_(1,0)=-1/12，故重叠已闭合为严格局部包含，不需follow-up。"
+    },
+    {
+      "core_id": "CA-FIXED-16-FILTERED-AVERAGE-SHARP-v1",
+      "peer_id": "customer-attraction/fixed-ninth-policy-full-average-and-prefix-individual-exact-bounds",
+      "reason": "已实读并精确复验第9策略156历史的7/4全J平均单行、11/6逐行动独立行族及核心56客户补充点。全历史平均组件的7/4对偶已支付并升级到五主题非空互异且J=OPT4的56点，A_(1)=-1/2明确两行族不互推；peer的11/6逐行动部分保留独立范围，当前overlap无剩余必要任务。"
+    }
+  ],
+  "follow_up_tasks": [],
+  "reviewed_by": "Boss4/worker_filter_avg",
+  "review_note": "任务声明14个来源全部读取且SHA匹配；registry三对象pin核对通过。标准库有理复验：verify-supplements.py、verify_optimal_J_13_over_4.py、verify_strengthened_fixed_cones.py、continuation-dual verify_saved_witness_exact checker，以及按README命令运行的 check_average_sources.py 均成功。未运行原LP/随机搜索；未修改registry或正文。两个边已分别edge-bind --write并edge-check exit0，结构检查仅证明绑定格式，不替代数学判断。"
+}
