@@ -413,12 +413,112 @@
       "budget_status": "reading-scope-expanded-reestimate"
     }
   },
-  "state": "claimed",
+  "state": "done",
   "owner": "Boss7",
-  "request_id": "476cd774712c4360854a34642e32e600",
+  "request_id": "9684c05e55f647f0b836cf66f29d6037",
   "requests": {
     "c77ec76b08b948c4ac8c43dc65353af7": "plan",
     "5565cbf7ed714657864a8c05eddd01c8": "claim",
-    "476cd774712c4360854a34642e32e600": "read-add"
+    "476cd774712c4360854a34642e32e600": "read-add",
+    "9684c05e55f647f0b836cf66f29d6037": "done"
+  },
+  "edge_paths": {
+    "ca-be5b-positive-depth-cone-specialization": "map/edges/customer-attraction-3a-3a-be5b8b19d5f51a21/strategy-cone-specializes-positive-depth-root-regret-certificates.json"
+  },
+  "receipt": {
+    "task_id": "customer-attraction-3a-3a-be5b8b19d5f51a21",
+    "stage": "3A",
+    "status": "complete",
+    "object_ids": [
+      "customer-attraction/positive-depth-root-regret-cones-230-rational-certificates"
+    ],
+    "read_object_ids": [
+      "CA-STRATEGY-CONE"
+    ],
+    "input_pins": {
+      "customer-attraction/positive-depth-root-regret-cones-230-rational-certificates": "1019a86335878664598e586625fdd0e8bee63d3863bf4fe946105da93701056d",
+      "CA-STRATEGY-CONE": "291bd4d94e33d40566453a33b5cf07b1c620b77362268417582efecb42b0c4bb"
+    },
+    "coverage": {
+      "customer-attraction/positive-depth-root-regret-cones-230-rational-certificates": {
+        "state": "linked",
+        "object_pin": "1019a86335878664598e586625fdd0e8bee63d3863bf4fe946105da93701056d",
+        "edge_ids": [
+          "ca-be5b-positive-depth-cone-specialization"
+        ],
+        "comparison_scope": "Complete staged reading of the computation, shared labeled full-history model, root probe, all 230-record JSON, standard-library checker, verification report, manifest, four exact input/certificate pairs, and the reusable strategy-cone audit source. Parsed every saved primal/dual record and all seven auxiliary insurer records; no optimizer or original probe was run.",
+        "reason": "The finite computation is an exact paid-root-regret specialization of fixed complete-policy cones: all positive-depth rows are rebuilt from true ordered continuations, root rows carry Delta, and every support J of size min(m,p) is certified by a rational primal/dual pair. The four maxima are 7/4, 3/2, 33/23 and 9/8, all <=2. This gives a useful finite exclusion of OPT-2W>3delta on the four named cones while preserving the explicit non-universal boundary.",
+        "result_scope": {
+          "root_tax_failure": {
+            "m": 4,
+            "p": 6,
+            "ordered_nodes": 259,
+            "targets": 90,
+            "maximum": "7/4",
+            "positive_regret_records": 0
+          },
+          "eight_cce_welfare_gap": {
+            "m": 3,
+            "p": 4,
+            "ordered_nodes": 21,
+            "targets": 16,
+            "maximum": "3/2",
+            "positive_regret_records": 0
+          },
+          "aggregate_theta_failure": {
+            "m": 3,
+            "p": 6,
+            "ordered_nodes": 43,
+            "targets": 120,
+            "maximum": "33/23",
+            "positive_regret_records": 0
+          },
+          "fractional_actual_load_failure": {
+            "m": 4,
+            "p": 4,
+            "ordered_nodes": 85,
+            "targets": 4,
+            "maximum": "9/8",
+            "positive_regret_records": 2,
+            "positive_regret": "actual roots 2 and 3 have delta=Delta=1/24; actual_gap=-3/4"
+          }
+        },
+        "exact_checks": {
+          "records": 230,
+          "all_primal_dual_checks": true,
+          "all_Delta_equal_actual_regret": true,
+          "positive_depth_rows_rebuilt_from_histories": true,
+          "W0_boundary_checked": true
+        },
+        "remaining": "No universal root-regret bound, threefold compiler proof, half-coverage counterexample, or all-strategy/all-player theorem follows. The two positive-regret records are positive-depth-only cones with a relaxed root, not complete-root SPEs."
+      }
+    },
+    "assets": [
+      {
+        "path": "map/edges/customer-attraction-3a-3a-be5b8b19d5f51a21/strategy-cone-specializes-positive-depth-root-regret-certificates.json",
+        "sha256": "e39fc653611828cd9411cdcee52bd8cc37bc86dcbbd739a7ef3777a396c99d50"
+      },
+      {
+        "path": "map/edges/customer-attraction-3a-3a-be5b8b19d5f51a21/mathematical-review.md",
+        "sha256": "237789de4d84aba2d39c977bdd04c0a754305023d0bc975816147ab23481c565"
+      },
+      {
+        "path": "map/edges/customer-attraction-3a-3a-be5b8b19d5f51a21/reading-ledger.json",
+        "sha256": "d234ff6e46eb8897e662b4481a05a0f8672f22ec98b514276c45825f718f8308"
+      }
+    ],
+    "reading": {
+      "method": "Complete staged reading in declared order; exact SHA and byte/character/line counts recorded in reading-ledger.json. JSON evidence was fully parsed and all saved records were field/count checked; source code was read without execution.",
+      "ledger": "map/edges/customer-attraction-3a-3a-be5b8b19d5f51a21/reading-ledger.json",
+      "declared_spans": 16,
+      "deferred_candidates_not_read_as_endpoints": [
+        "CAG-MODEL",
+        "M-66daec0c150c4606835e6e3fe61074b4",
+        "customer-attraction/multi-theme-independent-insurer-three-regret-repair-and-half-equivalence"
+      ]
+    },
+    "closed_overlaps": [],
+    "follow_up_tasks": [],
+    "definition_pin": "76fe11b203b383866556769107e2ae27183e46ada0368365fb4437f0f1966a75"
   }
 }

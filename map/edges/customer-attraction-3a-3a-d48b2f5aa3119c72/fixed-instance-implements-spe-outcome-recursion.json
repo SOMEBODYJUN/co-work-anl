@@ -1,0 +1,59 @@
+{
+  "edge_id": "ca-d48-fixed-instance-implements-spe-outcome-recursion",
+  "kind": "implements",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/five-player-fifty-five-customer-sequential-static-minimum-welfare-separation"
+  ],
+  "target_ids": [
+    "CA-EXACT-PURE-SPE-ALL"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "固定五人五主题、55个单位客户的共同标签目录；保留全部有序历史、重复行动、同覆盖标签和任意弱平局。终局计数有126个，前缀人数计数状态有252个；集合值递推使用U_a(q)=Σ_{B∋a}r_B/(Σ_{b∈B}q_b)，并以同一策略在改变后的真实后继核验IC。",
+  "roles": {
+    "customer-attraction/five-player-fifty-five-customer-sequential-static-minimum-welfare-separation": "给出该固定55客户输入的126终局计数、252状态集合值结果、根三终局及独立781历史/3905动作比较的完整策略证书。",
+    "CA-EXACT-PURE-SPE-ALL": "给出R(k)集合值逆向递推的必要性、充分性、非空性和按不同有序孩子独立拼接完整策略的通用合同。"
+  },
+  "explanation": "通用递推在p=m=5时的终局计数数T=binom(9,4)=126、前缀计数状态数N=binom(10,5)=252。固定输入的new-global-exchange-exact-check.json逐项保存252个prefix_counts及其all_count_state_outcome_sets；根集合恰为{(0,0,2,2,1),(0,0,3,1,1),(1,0,2,2,0)}，与R(0)递推结果一致。三根福利分别为55、55、50。另有static_dominance_certificate.json的781个有序历史记录，Fraction重放共3905个规定/偏离比较，负比较为0，故指定根路径策略按定义级核验是完整纯SPE。该边只说明一个固定输入实现通用递推及证书语义；spe_count=3是根终局结果集大小，不是完整策略数，也不把计数缓存误称匿名策略。",
+  "scope": "固定55客户、五人五主题实例的算法实例化和全树证书；不推出任意客户目录的一般福利界，不覆盖混合SPE或六人问题。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/反例/五人五十五客户的顺序静态最低福利分离--反例.md",
+      "sha256": "95aa7fc85900df438377a925ed84d1c6dfc1edaf88a4f13963acf1a8f8ad0ca1",
+      "section": "全部静态均衡与全部SPE终局"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+      "section": "策略、真实续局与全部历史量词"
+    },
+    {
+      "path": "archives/customer-attraction/state/算法/完整历史纯SPE终局全集--算法.md",
+      "sha256": "667d6f319b1f325bd32538f6b0e5a8e95c1942e2ec97cbc76d7cbaef06b36954",
+      "section": "全集递推及完整证明"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/global-exchange-resumed-boss2/original/static_dominance_certificate.json",
+      "sha256": "7ac0d9f955aabfd6029d44e2fd812b31e7c160a5d0d3bda817deaf25cecd82fe"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/global-exchange-resumed-boss2/new-global-exchange-exact-check.json",
+      "sha256": "08f5337748b55498f75865747c27b4133607de1c72486f22845289bb2a6277c4"
+    }
+  ],
+  "reviewed_by": "map_worker_q",
+  "review_note": "Fresh worker完整实读任务声明的五份来源并补读通用集合值递推与Q-CAG-HALF语境页；逐核固定模型、计数状态、真实后继IC、根集合和非全局范围。Boss7仍需串行完成native edge-bind/edge-check和最终receipt刷新。",
+  "endpoint_pins": {
+    "CA-EXACT-PURE-SPE-ALL": "aaa77e1f9a928bc25a315e66e18f424418e64643ec3fdb8717cbc3adc6310056",
+    "customer-attraction/five-player-fifty-five-customer-sequential-static-minimum-welfare-separation": "e3b37973ba86413cd95a2fad5787fe59b7c8fb9d942b9d1d038486f2447d2b06"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/反例/五人五十五客户的顺序静态最低福利分离--反例.md": "95aa7fc85900df438377a925ed84d1c6dfc1edaf88a4f13963acf1a8f8ad0ca1",
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+    "archives/customer-attraction/state/算法/完整历史纯SPE终局全集--算法.md": "667d6f319b1f325bd32538f6b0e5a8e95c1942e2ec97cbc76d7cbaef06b36954",
+    "archives/customer-attraction/tools/evidence/global-exchange-resumed-boss2/original/static_dominance_certificate.json": "7ac0d9f955aabfd6029d44e2fd812b31e7c160a5d0d3bda817deaf25cecd82fe",
+    "archives/customer-attraction/tools/evidence/global-exchange-resumed-boss2/new-global-exchange-exact-check.json": "08f5337748b55498f75865747c27b4133607de1c72486f22845289bb2a6277c4"
+  },
+  "review_digest": "6e531f9b6efd9964e12255bde4b893e1aa8485f539f08f41db0cd803a71cdec6"
+}

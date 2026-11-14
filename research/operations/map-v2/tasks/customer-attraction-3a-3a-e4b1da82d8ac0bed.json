@@ -183,12 +183,198 @@
       "budget_status": "reading-scope-expanded-reestimate"
     }
   },
-  "state": "claimed",
+  "state": "done",
   "owner": "Boss7",
-  "request_id": "f7666be4a41c49f19c97e5fdabd5c35b",
+  "request_id": "ef4bbda9cfbe41b79dd148228eb939e2",
   "requests": {
     "c77ec76b08b948c4ac8c43dc65353af7": "plan",
     "ea94e87ed09548b5a38e2baa430ff871": "claim",
-    "f7666be4a41c49f19c97e5fdabd5c35b": "read-add"
+    "f7666be4a41c49f19c97e5fdabd5c35b": "read-add",
+    "ef4bbda9cfbe41b79dd148228eb939e2": "done"
+  },
+  "edge_paths": {
+    "cag-e4b1-rational-necessary-point-checks-spe-relaxation-boundary": "map/edges/customer-attraction-3a-3a-e4b1da82d8ac0bed/rational-point-checks-spe-boundary.json"
+  },
+  "receipt": {
+    "task_id": "customer-attraction-3a-3a-e4b1da82d8ac0bed",
+    "stage": "3A",
+    "object_ids": [
+      "customer-attraction/explicit-actual-third-7497-row-rational-necessary-point"
+    ],
+    "read_object_ids": [
+      "CAG-MODEL"
+    ],
+    "input_pins": {
+      "customer-attraction/explicit-actual-third-7497-row-rational-necessary-point": "8250237a06c99911bbbc96cbdd7319189e40706580c64458ee8439f944f1b22d",
+      "CAG-MODEL": "3216d1db43ff83e0e0c9cf2479e79611277c9d9291a68e7f9b85ec4bb299dc5c"
+    },
+    "status": "complete",
+    "coverage": {
+      "customer-attraction/explicit-actual-third-7497-row-rational-necessary-point": {
+        "state": "isolated-after-review",
+        "object_pin": "8250237a06c99911bbbc96cbdd7319189e40706580c64458ee8439f944f1b22d",
+        "comparison_scope": "完整读取指定7497行计算、共同目录完整历史模型和精确JSON；逐字段解析64 projected atoms、85 explicit actual-HQR lifts、7497 row slacks，并完成有理聚合、行键/形状/符号检查。",
+        "reason": "精确点给有限必要行系统W=1、O>2，说明该系统不能单独推出半覆盖。共同目录模型的完整有序历史纯SPE要求实际标签目录、真实离轨续局及OPT最大化；该点未提供逆实现，O也不自动是OPT_5。因此只登记context checks边，不迁移为游戏反例或whole theorem。",
+        "source_scope": {
+          "computation": {
+            "path": "archives/customer-attraction/state/计算/实际第三位七千四百九十七行的有理必要点--计算.md",
+            "sha256": "a4677bc02eeaad16fb23157e38bc53531b4891153ed74ae715a4e4c915311b13",
+            "bytes": 11132,
+            "lines": 93,
+            "chars": 6483
+          },
+          "model": {
+            "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+            "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+            "bytes": 7598,
+            "lines": 130,
+            "chars": 4094
+          },
+          "certificate": {
+            "path": "archives/customer-attraction/tools/evidence/five-full-actual-extension-primary/original/certificate/exact_full_actual_extension_known_v1.json",
+            "sha256": "8b28de8d89c76684bc95c3eb3f890e6f4ee4492cb152102281d125912e2a30e2",
+            "bytes": 1688965,
+            "lines": 16095,
+            "chars": 1688965
+          }
+        },
+        "exact_coverage": {
+          "certificate_sha256": "8b28de8d89c76684bc95c3eb3f890e6f4ee4492cb152102281d125912e2a30e2",
+          "source_rows_field": 7497,
+          "row_slack_count": 7497,
+          "row_slack_key_unique": true,
+          "row_slacks_all_parse_as_rationals": true,
+          "row_slack_sign_counts": {
+            "positive": 7398,
+            "zero": 99,
+            "negative": 0
+          },
+          "row_family_counts": {
+            "AB": 1187,
+            "AE": 1184,
+            "APfixed": 707,
+            "F": 2,
+            "MaxTuple": 875,
+            "PFixed": 45,
+            "Sbranch": 1846,
+            "actual": 110,
+            "actual-extension": 747,
+            "crosspair": 160,
+            "max": 504,
+            "second": 74,
+            "third": 56
+          },
+          "row_zero_counts_by_family": {
+            "AB": 7,
+            "AE": 3,
+            "APfixed": 1,
+            "F": 2,
+            "PFixed": 3,
+            "Sbranch": 9,
+            "actual": 12,
+            "actual-extension": 39,
+            "max": 12,
+            "second": 4,
+            "third": 7
+          },
+          "atom_counts": {
+            "projected": 64,
+            "explicit_hqr": 85,
+            "projected_base_keys_in_atom_set": 85
+          },
+          "projection_multiplicity_histogram": {
+            "1": 48,
+            "2": 12,
+            "3": 3,
+            "4": 1
+          },
+          "projection_mass_grouping": {
+            "all_explicit_bases_in_projected_set": true,
+            "explicit_sum_equals_projected_sum": true,
+            "projected_sum": "73745874512537136912045667037136103721897252249253849928575784832725352114820061819/36872251370914845129122446268330093231606609939275954263930505839551418835954045112",
+            "explicit_sum": "73745874512537136912045667037136103721897252249253849928575784832725352114820061819/36872251370914845129122446268330093231606609939275954263930505839551418835954045112"
+          },
+          "histogram_shape_checks": {
+            "AB_hist_len_all_8": true,
+            "AE_hist_len_all_8": true,
+            "second_hist_len_all_16": true,
+            "all_histogram_totals_5": true,
+            "max_bits_len_all_5": true,
+            "actual_HQR_bits_len_all_3": true
+          },
+          "certificate_declared_values": {
+            "welfare": "1",
+            "comparison_cover": "73745874512537136912045667037136103721897252249253849928575784832725352114820061819/36872251370914845129122446268330093231606609939275954263930505839551418835954045112",
+            "gap_above_two": "1371770707446653800774500475917258684032370701941400714773153622514442911971595/36872251370914845129122446268330093231606609939275954263930505839551418835954045112",
+            "minimum_exact_slack": "0",
+            "positive_extended_atoms": 85,
+            "positive_projected_atoms": 64
+          },
+          "recomputed_rational_values": {
+            "welfare_fraction": "1",
+            "comparison_cover_fraction": "73745874512537136912045667037136103721897252249253849928575784832725352114820061819/36872251370914845129122446268330093231606609939275954263930505839551418835954045112",
+            "gap_fraction": "1371770707446653800774500475917258684032370701941400714773153622514442911971595/36872251370914845129122446268330093231606609939275954263930505839551418835954045112",
+            "comparison_cover_minus_two_positive": true,
+            "gap_matches_cover_minus_two": true,
+            "all_atom_masses_strictly_positive": true,
+            "all_explicit_masses_strictly_positive": true,
+            "welfare_is_one": true
+          },
+          "not_rechecked": [
+            "7497x85 coefficient regeneration from the generator",
+            "exact LP optimality or dual certificate",
+            "full catalog/SPE inverse realization",
+            "actual OPT_5 identity beyond the model definition",
+            "six-player half theorem"
+          ]
+        },
+        "context_edge_ids": [
+          "cag-e4b1-rational-necessary-point-checks-spe-relaxation-boundary"
+        ]
+      }
+    },
+    "assets": [
+      {
+        "path": "map/edges/customer-attraction-3a-3a-e4b1da82d8ac0bed/mathematical-review.md",
+        "sha256": "22ee93fd330b7fa1adb609df500741f58b902292ff044390f77ab9c724fd323c"
+      },
+      {
+        "path": "map/edges/customer-attraction-3a-3a-e4b1da82d8ac0bed/rational-point-checks-spe-boundary.json",
+        "sha256": "b6cfd644914c98431c1b2f8db8aa2749322f7462931dcea2324518148fec06d0"
+      },
+      {
+        "path": "map/edges/customer-attraction-3a-3a-e4b1da82d8ac0bed/reading-ledger.json",
+        "sha256": "7c84cfd7f87682a154c439e47967ab56948c0a8e9f07451efd23b97104af5aae"
+      },
+      {
+        "path": "map/edges/customer-attraction-3a-3a-e4b1da82d8ac0bed/verification.json",
+        "sha256": "46f999457f8df28a17cd09f0246e8e0e4f60181ea2445c7678b0c6ac71812554"
+      }
+    ],
+    "closed_overlaps": [],
+    "follow_up_tasks": [],
+    "reading_ledger": "map/edges/customer-attraction-3a-3a-e4b1da82d8ac0bed/reading-ledger.json",
+    "deferred_candidates_not_read": [
+      "CA-FIVE-HALF-EXACT-v1",
+      "CAG-MODEL",
+      "M-02cc77281575481f8f9cd76310021729",
+      "M-2cfd9f597a454015b18aa7c024952c30",
+      "M-4e7276c6fbc64750b9aa12f8c0872139",
+      "M-7de9653b3756482a842a5e462fdd01d1",
+      "M-807b03bb63d54b02a6ccb1e4e1140c5f",
+      "M-dbc9afcf27dd4e14ac0288d459b9e5e9",
+      "customer-attraction/actual-max-third-shared-catalog-lifts-and-attribution",
+      "customer-attraction/actual-third-thirteen-row-two-state-hinge",
+      "customer-attraction/explicit-actual-third-extension-restricted-columns-and-known-pool-pricing",
+      "customer-attraction/five-7497-row-point-separated-by-imported-active-rows"
+    ],
+    "review_note": "Fresh worker completed staged full reading. Independent parser checks saved-data identity only; no generator, LP, pricing, or SPE replay. Parent may perform final native binding/check.",
+    "scientific_replays": 0,
+    "math_replays": 0,
+    "unresolved_boundary": "Finite necessary-row certificate remains compatible with the source-invoked five-person half theorem because it lacks catalog/SPE inverse realization; six-person transfer is open.",
+    "deferred_candidate_notes": {
+      "CAG-MODEL": "The task lists this legacy ID as deferred, but its complete source file was an explicit staged reading_ref and was read only for the SPE/OPT boundary; it was not treated as a separately assigned comparison object or paid edge endpoint."
+    },
+    "definition_pin": "193f253c81e2d5279f1b51fe1c3d951473267fa1ccd741a298693522ca8d3bba"
   }
 }

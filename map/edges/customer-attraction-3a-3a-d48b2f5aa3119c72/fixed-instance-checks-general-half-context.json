@@ -1,0 +1,48 @@
+{
+  "edge_id": "ca-d48-fixed-instance-checks-general-half-context",
+  "kind": "checks",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/five-player-fifty-five-customer-sequential-static-minimum-welfare-separation"
+  ],
+  "target_ids": [
+    "Q-CAG-HALF"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "同一五人五主题55单位客户固定输入；完整781历史策略逐节点真实后继IC成立，全部根SPE计数为(0,0,2,2,1)、(0,0,3,1,1)、(1,0,2,2,0)，OPT_5=55且根SPE福利为55、55、50。",
+  "roles": {
+    "customer-attraction/five-player-fifty-five-customer-sequential-static-minimum-welfare-separation": "提供固定实例的最差完整SPE福利50、两个静态PNE福利55、OPT_5=55及全部根终局量词。",
+    "Q-CAG-HALF": "提出对所有m、所有共同目录实例及所有完整纯SPE的2W≥OPT_m一般问题；其全人数命题仍开放。"
+  },
+  "explanation": "这个固定例满足Q-CAG-HALF目标不等式的数值检查：对最差完整SPE，2W=2·50=100≥55=OPT_5；两个静态PNE更有2W=110。它严格反驳的是另一条更强但不同的桥——顺序最差福利不得低于静态最差福利，因为50<55。固定五人一个输入既不能反驳half，也不能把Q-CAG-HALF的任意m量词闭合；因此本边只作context/checks并在收据中保持isolated-after-review。",
+  "scope": "有限五人实例的半覆盖语境核对和静态桥反驳范围；不推出全部五人目录定理，不涉及六人或任意人数的half证明。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/反例/五人五十五客户的顺序静态最低福利分离--反例.md",
+      "sha256": "95aa7fc85900df438377a925ed84d1c6dfc1edaf88a4f13963acf1a8f8ad0ca1",
+      "section": "准确结论与实例"
+    },
+    {
+      "path": "archives/customer-attraction/state/问题/任意人数完整均衡半覆盖--问题.md",
+      "sha256": "bc5add8e880e83c3ed799f457607103532aa9120018c862ae3ac869f2ed34d15",
+      "section": "完整量词和目标"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/global-exchange-resumed-boss2/new-global-exchange-exact-check.json",
+      "sha256": "08f5337748b55498f75865747c27b4133607de1c72486f22845289bb2a6277c4"
+    }
+  ],
+  "reviewed_by": "map_worker_q",
+  "review_note": "语境边按Q-CAG-HALF的完整量词和净遗漏边界复核；不将单个五人输入或static-minSPE分离误标为half反例。该边可保持isolated-after-review。",
+  "endpoint_pins": {
+    "Q-CAG-HALF": "dccd5277f7b0c1bb4dcac17287010f1d012bb40c6244c51f24808c1519a4b5ea",
+    "customer-attraction/five-player-fifty-five-customer-sequential-static-minimum-welfare-separation": "e3b37973ba86413cd95a2fad5787fe59b7c8fb9d942b9d1d038486f2447d2b06"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/反例/五人五十五客户的顺序静态最低福利分离--反例.md": "95aa7fc85900df438377a925ed84d1c6dfc1edaf88a4f13963acf1a8f8ad0ca1",
+    "archives/customer-attraction/state/问题/任意人数完整均衡半覆盖--问题.md": "bc5add8e880e83c3ed799f457607103532aa9120018c862ae3ac869f2ed34d15",
+    "archives/customer-attraction/tools/evidence/global-exchange-resumed-boss2/new-global-exchange-exact-check.json": "08f5337748b55498f75865747c27b4133607de1c72486f22845289bb2a6277c4"
+  },
+  "review_digest": "6b002233063120e60140a2c8e5f1c208f690b444b6e0a267dcfe1c7995241641"
+}
