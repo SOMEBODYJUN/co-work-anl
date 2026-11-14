@@ -1,0 +1,62 @@
+{
+  "edge_id": "boss3-3577-root-saturation-bounds-old-no-floor-cone",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "CA-TRUNCATED-SHAPLEY-ROOT-SATURATION-v1"
+  ],
+  "target_ids": [
+    "M-f053891e740544609ea09d43150edcd1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "五人七标签、五阶截断共同归一单调次模 C、个体副本 Shapley、R275 无 floor 原完整有序策略固定、W>0，沿同一原表核所有真实 IC。原固定锥还要求外标签交换对称及 W=1；解析上界可去掉该对称条件并用齐次 W 表述。",
+  "roles": {
+    "CA-TRUNCATED-SHAPLEY-ROOT-SATURATION-v1": "提供根饱和 u₁=K/5 时全部比较支持的 C(S)≤2K≤2W；正文对 R275 原策略还细分支持的实际标签数。",
+    "M-f053891e740544609ea09d43150edcd1": "给原完整动作表、原实际 00011、两条真实分支和 W=1、唯一最优 J=23456 的取等原始点。"
+  },
+  "explanation": "设 x=C(0)、y=C(1)、z=C(01)=W。原表历史 10 规定选 1 到 10100，强制选 0 到 10011，Shapley 之差 g₁=(y−x)/2。原表历史 0000 规定选 0 到 00000，强制选 1 到 00001，差 g₂=x−y/5−4z/5。真 IC 给 g₁,g₂≥0，且 y−z=(5/2)g₁+(5/4)g₂、x−z=(1/2)g₁+(5/4)g₂，联同单调性强制 x=y=z。原表末位节点 0000 对任意 b 给 C(b)+4[C(0b)−C(0)]≤C(0)，因此最大单标签 K=W。实际 00011 的任何玩家只有在随机次序排第一时才有正边际，u₁=W/5=K/5。根饱和定理给所有合法比较支持 C(S)≤2W。冻结点取 C(J)=2W。",
+  "scope": "解析上界针对原无 floor 动作表的每个可行输入以及任一至多五标签的比较支持。结论同时表明原表的两个根删除边际始终为零，W>0 时该同一策略锥无法添加任意严格正比例双根下限。",
+  "contribution": {
+    "result": "给原无 floor 固定策略锥的最优福利比 2 一份独立解析上界，冻结原始点取等。上界同时控制全部合法比较支持。",
+    "remaining": "原对象还认证冻结原始点的完整历史 SPE、1470 个收益系数、原有理对偶和 17/8 必要路径点不可达。各部分由各自冻结证据与精确重放承担。"
+  },
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/截断共同次模Shapley的根饱和福利界--定理.md",
+      "sha256": "f274968b8c0b378ac8c30bb86668378e883028a5ce57c2fb39b0463305270d36",
+      "section": "末位不等式支付任意比较组"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/截断共同次模Shapley的根饱和福利界--定理.md",
+      "sha256": "f274968b8c0b378ac8c30bb86668378e883028a5ce57c2fb39b0463305270d36",
+      "section": "R275 冻结策略按比较组所含实际标签数的细化"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/R275-credible-search-20261031/original/633b64cbcf0233d0f667__submodular_joint_m5p7_q32.json",
+      "sha256": "dbf83fe8561340f29505cb33e37c83cf79e521ab2c1bcb4f5dd959d2b0968d6d"
+    },
+    {
+      "path": "map/edges/boss3-wave8-comparison-3b-35776f12fe25e6fa/review.md",
+      "sha256": "f79bace17dc129117be6469d3c1f41591abd90f457736092e013f04644c06d32",
+      "section": "原无 floor 锥的零删除边际与解析福利界"
+    },
+    {
+      "path": "map/edges/boss3-wave8-comparison-3b-35776f12fe25e6fa/comparison.json",
+      "sha256": "3858bb393384554c6161e614060668950ccc0a763adda04d82a5993fd8f8821f"
+    }
+  ],
+  "reviewed_by": "Boss3",
+  "review_note": "核对当前两对象登记、根饱和正文与原冻结完整策略；用标准库随机排列重建两条有序 IC 的线性系数，逐项审定正系数恒等式、单调性和末节点保底，再以冻结原始点检查取等。",
+  "endpoint_pins": {
+    "CA-TRUNCATED-SHAPLEY-ROOT-SATURATION-v1": "9b7a6d3483c8d478bc6bf4abd92964adbd3cf5c59988430474576046ad01f138",
+    "M-f053891e740544609ea09d43150edcd1": "1f5fc7dd39d3c6988353891424f719f5c26db9518d8ba4c1e54d892af1fab8bc"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/截断共同次模Shapley的根饱和福利界--定理.md": "f274968b8c0b378ac8c30bb86668378e883028a5ce57c2fb39b0463305270d36",
+    "archives/customer-attraction/tools/evidence/R275-credible-search-20261031/original/633b64cbcf0233d0f667__submodular_joint_m5p7_q32.json": "dbf83fe8561340f29505cb33e37c83cf79e521ab2c1bcb4f5dd959d2b0968d6d",
+    "map/edges/boss3-wave8-comparison-3b-35776f12fe25e6fa/review.md": "f79bace17dc129117be6469d3c1f41591abd90f457736092e013f04644c06d32",
+    "map/edges/boss3-wave8-comparison-3b-35776f12fe25e6fa/comparison.json": "3858bb393384554c6161e614060668950ccc0a763adda04d82a5993fd8f8821f"
+  },
+  "review_digest": "6d6bcdf72510db616c11c12d1a12b2547f881a750460c3e5e12e13203e760065"
+}
