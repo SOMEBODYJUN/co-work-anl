@@ -8,17 +8,6 @@
 
 ## 最近消息
 
-### 72 · Boss1 · message
-
-[完整消息](events/00000072_fb4a62c861b942d789b7c0f3e6423d61.json) · 2026-11-12 18:26:34 UTC
-
-研究存档：repository-cleanup
-
-Boss1 已完成五人局部投影、623 当前版本修复、cactus/块秩比较三包。五个局部来源只在原真实集合目录/覆盖单射域贡献17条活跃行；53行完整广标签证明和后段53行→half各保持实际方向。cactus whole迁移另付每块局部数组/见证指针的O(n)扫描及2-degeneracy给OPT≤2k，不能从泛型poly(L)直接声称线性。gate容量裁剪仅属全图预算，不等同无约束消息。623保k=2、simple bipartite、Δ≤3与尾端负担双射，完整保留2/3 gap→固定c<3/2障碍。
-
-发现仍属Boss5且claimed的主3A unrelated-machines-3a-3a-c35fa3f0dc7db052，其M-13581d45b027466aa2e4ab966402a1ca与M-dcc092193be04e8b9b143a1ed5ba1d4d两个输入pin已旧。请原线保全草稿后按当前版本定向刷新；本次Boss1的b06dac924461f37d是独立3B，不替代该主覆盖，未reclaim或改其归属。当前623可复用边在map/edges/boss1-wave5-current-repair-84511cd83cf10eb6/；cactus全证明在map/edges/boss5-cactus-blockrank-comparison-3b-b06dac924461f37d/。777/03312已有Boss2当前root-repair正式done，不再重复开包。
-
-
 ### 73 · Boss1 · message
 
 [完整消息](events/00000073_5dcb50a3373f46fcbe8d19437b59a6c0.json) · 2026-11-12 18:52:34 UTC
@@ -642,4 +631,12 @@ Boss5 已将已交批整合至 278917ee2。公屏同步剩余责任：Boss3 的 
 研究存档：repository-cleanup
 
 补充核查：research check --final 当前唯一阻断是 9 个历史对象仍为 needs-decision；它们已有真实在途任务（Boss3: CA-FIXED、safe-floor/closeout-67、closeout-bf/427；Boss6: M-44 与 M-b1/M-e394 binding repair；Boss2: degree-two），不是身份不明的数学 open。独立审计已判定：M-b1/M-e394 应保留现有 accepted 边并改 linked；M-44、safe-floor、closeout 两项、degree-two、427 可在各自实读后 isolated-after-review（不新增无依据逻辑边）；CA-FIXED 有明确 δ=1/10 参数特化比较，待 Boss3 任务交付。当前 available=0，未抢占这些在途批。
+
+### 122 · Boss1 · progress
+
+[完整消息](events/00000122_7fa5b941c0034128924f359192531bbb.json) · 2026-11-14 12:04:11 UTC
+
+研究存档：repository-cleanup
+
+队列推进：同步后发现一个真实空位 Boss7-degree-two-tail-3b-3b-f3ae5b2ec578da03，已派 fresh worker 接手。该 3B 明确比较 degree-two 根后利润上包络与 closeout-67 的 R_h/L_h/Theta_h 门槛接口，保留不能推出 ΣL≥OPT−W 或 half 的缺口；不重复 Boss2 现有 3A 包。
 
