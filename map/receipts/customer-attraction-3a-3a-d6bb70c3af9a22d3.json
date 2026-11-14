@@ -7,12 +7,14 @@
   "definition_pin": "ead6a0730e3255a7018dd4b7a9fa8709b95efb41aad22b30e135a31ee120d82d",
   "coverage": {
     "customer-attraction/r2fc-cyclic-dag-finite-certificate-pool": {
-      "state": "linked",
+      "state": "isolated-after-review",
       "object_pin": "6f7c6a15f07a88594ef1c9c939fe7640315557d10a4b5af481241730609aa67a",
       "comparison_scope": "完整读取 R-2fc 候选正文、有限完整 SPE 证书池证明、共同目录完整历史模型、12 份证书 JSON、full-exact-audit 与 fresh-recovery-exact-audit；逐项核对 3 个 individual、7 个 extra、2 个 cyclic 固定输入的完整有序历史、真实单步偏离、W、OPT 与搜索量词边界。与 deferred finite-full-spe-certificate-pool-and-six-half-boundary 对照，仅支付其有限池中的同十二个条目。",
-      "reason": "R2fc 正文和审计固定认证十二个指定客户目录/完整策略：所有 declared fixed points 的 full-history IC 均通过，合计 4228 个决策历史、22843 个 proper deviations，最小 2W-OPT 为 1；循环三人 (11,13)、循环五人 (7,7)，其余数值按原表保留。该集合正是综合有限证书池中的十二条 R-2fc 条目，因此构成有限实例的 unconditional specializes 边；不外推到任意人数、目录、纯 SPE 或六人 half。",
-      "edge_ids": [
-        "cag-r2fc-pool-specializes-finite-spe-pool"
+      "reason": "完整实读本核心的12个有限R2FC证书、共同模型背景及其审计；这些证书是有限实例/证书池条目，但目标“finite-full-spe-certificate-pool-and-six-half-boundary”属于deferred candidate，未列入本任务的read_object_ids，故不能在本3A包创建跨对象特化边。有限证书不推出普遍六人half结论；该比较若需继续，应另发明确读取端点的3B任务。",
+      "edge_ids": [],
+      "unlinked_relations": [
+        "12个证书可作为后续有限证书池比较的输入，但本包未付该deferred target的完整正文，故不写逻辑边。",
+        "closeout对象的两人桥反例独立否定错误的L_h(selected)≥Theta桥，不与R2FC池合成。"
       ]
     },
     "customer-attraction/closeout-5727ddfb2c9ab1468b74bf56": {
@@ -71,16 +73,11 @@
     },
     "worker_note": "research/workspaces/map-v2/Boss4/r2fc-pool-closeout-review.md"
   },
-  "assets": [
-    {
-      "path": "map/edges/customer-attraction-3a-3a-d6bb70c3af9a22d3/r2fc-pool-specializes-finite-spe-pool.json",
-      "sha256": "06cff9a7716ec9052aeb6f9c4d82666758b5ee34a2fd12457a8f8a2e37d67c0f"
-    }
-  ],
+  "assets": [],
   "follow_up_tasks": [],
   "closed_overlaps": [],
   "reviewed_by": "Boss4-r2fc-worker",
-  "review_note": "Complete read of the task JSON, prompts/03-map-worker.md, research/IMPLEMENTATION.md, all 21 declared refs and both assigned objects. One useful specializes edge was accepted for the twelve finite entries; the closeout remains isolated. No commit, push, map done, assemble, or state mutation was performed.",
+  "review_note": "完整实读R2FC与closeout声明范围；因跨对象目标未列为已付读取端点，撤掉原特化草稿，保留有限证书事实、桥反例和未付六人义务。",
   "source_refs": [
     "customer-attraction/r2fc-cyclic-dag-finite-certificate-pool",
     "customer-attraction/closeout-5727ddfb2c9ab1468b74bf56",
