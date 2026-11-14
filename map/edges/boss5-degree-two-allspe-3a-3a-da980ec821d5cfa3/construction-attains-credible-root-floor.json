@@ -1,0 +1,68 @@
+{
+  "edge_id": "cag-degree-two-construction-attains-credible-root-floor",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "degree-two-shared-customers-complete-spe-negative-stationary-flux-family"
+  ],
+  "target_ids": [
+    "customer-attraction/degree-two-exact-credible-root-floor-and-all-spe-optimality"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "在同一带标签共同目录和完整有序纯SPE模型中，q≥2、b≥1及0≤a≤b均为整数。两组各q个标签，跨组对有b名单位客户，组内对有a名单位客户，每名客户仅喜欢该对，提供者共q+1名。R∅(v)保留强制根v的全部完整孩子子SPE终局。",
+  "roles": {
+    "degree-two-shared-customers-complete-spe-negative-stationary-flux-family": "给出同一完整策略σ在全部强制根v后的真实孩子限制，其尾路径为异组各标签一次，并给出一个实现目录最优覆盖的不同标签支持。",
+    "customer-attraction/degree-two-exact-credible-root-floor-and-all-spe-optimality": "用指定孩子提供根下确界的取等见证；另用自身解析证明排除任一可信孩子把根收益降到L以下，建立全部完整策略的覆盖保证及最优比较沿实际路径的付款。"
+  },
+  "explanation": "任取根标签v。源构造的完整σ限制在有序前缀(v)为完整子SPE，包括其全部离轨与首次重复子树，故该孩子的真实终局属于R∅(v)。构造保证余下q个动作各取一次异组的q个标签。于是根v与每个异组标签共享的b名客户各有两位提供者，组内(q−1)a名客户均只由根覆盖。该终局根收益为L=qb/2+(q−1)a，故L∅(v)≤L，逐根取最大也给Θ∅≤L。证明适用每个v，含σ的离轨根。源的支持还明确取v与整个异组，余下q−1个未选标签全在同组，遗漏恰a·binom(q−1,2)。任一q+1人终局至少留q−1标签未选，每对至少遗失a名客户，故该支持取得真实OPT。目标的倒序论证可使用这一最优支持。",
+  "scope": "任意允许的整数参数。可信根最小值是当前根角色利润的跨后继最小值。已登记的根背景比较max_T R_v(T)=V_v=qH固定指定σ的真实尾并对合法比较槽取最大，量化不同。此边用于新定理的根门槛取等见证及目录最优支持。",
+  "contribution": {
+    "result": "对每个强制根v均给一个可信孩子使根收益恰L，推出L∅(v)≤L及Θ∅≤L。另给一个由q+1个不同标签组成的比较支持，覆盖真实OPT=q²b+(q−1)(q+2)a/2；源策略的实际路径取得该值。",
+    "remaining": "根取等的另一向须对全部可信孩子证明根收益≥L。目标正文以整数单现收益界和真实偏离后的子SPE逐角色归纳完成该向，同时证明任意合法前缀下未出现标签的强制收益下界。目标另以实际路径逆序配位支付最优比较和，并按0<a<b、a=b及a=0处理所有根SPE的福利。a=0部分须排除已有一次复制时的第二次复制，含变更后的任意可信后继。"
+  },
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/构造/二元共享客户的完整均衡负驻留族--构造.md",
+      "sha256": "5c9cf2906b68aaa4bdb21172f11d29ad52d58c0f16baaab8b59d0a0e112ef0d4",
+      "section": "全有序历史IC证明"
+    },
+    {
+      "path": "archives/customer-attraction/state/构造/二元共享客户的完整均衡负驻留族--构造.md",
+      "sha256": "5c9cf2906b68aaa4bdb21172f11d29ad52d58c0f16baaab8b59d0a0e112ef0d4",
+      "section": "actual最优福利及共享遗漏"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/二元共享客户族的真实根门槛与全策略最优福利--定理.md",
+      "sha256": "b5f7f6ccf1e6a8787210cf650b866f4d97095fd2e0dfcfca20d675235f52adc6",
+      "section": "二元共享客户族的真实根最低收益"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/二元共享客户族的真实根门槛与全策略最优福利--定理.md",
+      "sha256": "b5f7f6ccf1e6a8787210cf650b866f4d97095fd2e0dfcfca20d675235f52adc6",
+      "section": "最优比较的同路径付款"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/二元共享客户族的真实根门槛与全策略最优福利--定理.md",
+      "sha256": "b5f7f6ccf1e6a8787210cf650b866f4d97095fd2e0dfcfca20d675235f52adc6",
+      "section": "全策略最优性"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+      "section": "策略、真实续局与全部历史量词"
+    }
+  ],
+  "reviewed_by": "SOLVER-BINARY-ALL-SPE",
+  "review_note": "完整实读v1两端登记与正式包的8项材料。逐式独立复核单现整数下界、同标签复制者的终局同收益、实际偏离子树的可信性、两组多数与1–1平局、a=b时全部q+1个不同标签支持的相同覆盖数。a=0时若此前有一次复制，转入异组后的真实可信子SPE无人可新增复制，偏离标签单现且对组一个既有次数≥2给严格整数下界。标准库脚本原样复跑12组通过；缓存的是可实现终局计数集合，依据有序孩子可分别拼合，并未要求完整策略按计数破平局。有限运行只核每个输入的可实现终局与强制门槛；全参数证明由正文承担。",
+  "endpoint_pins": {
+    "customer-attraction/degree-two-exact-credible-root-floor-and-all-spe-optimality": "a044cdd41c8e0674ba27fd1a55e2bed753ce80d330139f389d3a45536b6d5a91",
+    "degree-two-shared-customers-complete-spe-negative-stationary-flux-family": "ead26a4f21f7e18c8edf9e4ae56d638dec34f9825819526618cf059eab1a651d"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/构造/二元共享客户的完整均衡负驻留族--构造.md": "5c9cf2906b68aaa4bdb21172f11d29ad52d58c0f16baaab8b59d0a0e112ef0d4",
+    "archives/customer-attraction/state/定理/二元共享客户族的真实根门槛与全策略最优福利--定理.md": "b5f7f6ccf1e6a8787210cf650b866f4d97095fd2e0dfcfca20d675235f52adc6",
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+  },
+  "review_digest": "d8d500f777f91f821fa8425553dbb627b0210dd95ce7408fb651ed56f6489341"
+}
