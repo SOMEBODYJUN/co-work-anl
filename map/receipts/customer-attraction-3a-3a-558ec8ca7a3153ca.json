@@ -1,0 +1,56 @@
+{
+  "task_id": "customer-attraction-3a-3a-558ec8ca7a3153ca",
+  "stage": "3A",
+  "object_ids": [
+    "customer-attraction/sixty-four-atom-three-background-row-versions-fixed-rational-points-and-separation"
+  ],
+  "read_object_ids": [
+    "CA-FIVE-INDEXED-UPPER",
+    "CA-FIVE-INDEXED-ROWS-NO"
+  ],
+  "input_pins": {
+    "customer-attraction/sixty-four-atom-three-background-row-versions-fixed-rational-points-and-separation": "c258965a7cfe1e64015244fa9d959ec119f5de81ff2422c383cfe4a7e382d903",
+    "CA-FIVE-INDEXED-UPPER": "fa416ee3104c5b4e0d0018b8058574afda164642a6c687fd2efca3a66cb1923d",
+    "CA-FIVE-INDEXED-ROWS-NO": "9ae008f5a3b1ccfa63d4615da2ca592c79007686ad34ed5bbd1138fc373c8787"
+  },
+  "status": "complete",
+  "coverage": {
+    "customer-attraction/sixty-four-atom-three-background-row-versions-fixed-rational-points-and-separation": {
+      "state": "isolated-after-review",
+      "object_pin": "c258965a7cfe1e64015244fa9d959ec119f5de81ff2422c383cfe4a7e382d903",
+      "comparison_scope": "完整读取 15 个 distinct source files、fixed-point stdout 两个 staged spans；固定 64 原子、437 旧行与 actual-only/full-v1/v2 AP 背景行；三点 exact O>2、逐行可行、版本 cross-slack、旧点失效。",
+      "reason": "有限必要行的三版固定支持矩阵均给出 exact rational feasible point with O>2，因此这些已写行不能单独蕴含 O<=2W；但 JSON 和审查明确 game_SPE_witness=false、universal_bound=false、full_domain_dual_certificate=false。v2 只在四组 C3/M_C 行收紧；actual-only→full 有 38 个负行，full-v1→v2 有 3 个负行，v2 点三域通过。共同目录与 AP 引理提供模型、量词和行生成条件；跨历史支付、支持完备性、完整 SPE/OPT 和六人目标仍开放。",
+      "edge_ids": [
+        "ca-558ec8-fixed-support-checks-437-obstruction",
+        "ca-558ec8-fixed-support-checks-five-upper"
+      ]
+    }
+  },
+  "assets": [
+    {
+      "path": "map/edges/customer-attraction-3a-3a-558ec8ca7a3153ca/comparison.md",
+      "sha256": "9afe91f91cb212c36a81c0735a6e805c9d6f3ff228a7f4322749313f55b653ea"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-558ec8ca7a3153ca/reading-ledger.json",
+      "sha256": "a6968ab4ab73aac6bb61db3e909b319a632025a147b5357b16380acd0e5796d7"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-558ec8ca7a3153ca/checks-old-437-input-and-finite-version-separation.json",
+      "sha256": "2c343c7f20910ca5e0c70de9c667a87f6ee73a1e7a276b455d331dbfb2bac6aa"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-558ec8ca7a3153ca/checks-five-upper-benchmark.json",
+      "sha256": "bb185b5192bbe93b981d0c99d66e49d7208ae929c228037838d7c271ed22047f"
+    }
+  ],
+  "follow_up_tasks": [],
+  "closed_overlaps": [],
+  "reading_contract": {
+    "distinct_files": 15,
+    "staged_spans": 16,
+    "complete_spans_consumed": true,
+    "finite_obstruction_only": true,
+    "no_SPE_or_global_upgrade": true
+  }
+}
