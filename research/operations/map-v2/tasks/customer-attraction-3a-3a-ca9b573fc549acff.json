@@ -149,11 +149,65 @@
       ]
     }
   },
-  "state": "claimed",
+  "state": "done",
   "owner": "Boss7",
-  "request_id": "026b4865909a4dd483decfea13caafc0",
+  "request_id": "d05c7b1ac55c4e5184f5bccd64d362b2",
   "requests": {
     "c77ec76b08b948c4ac8c43dc65353af7": "plan",
-    "026b4865909a4dd483decfea13caafc0": "claim"
+    "026b4865909a4dd483decfea13caafc0": "claim",
+    "d05c7b1ac55c4e5184f5bccd64d362b2": "done"
+  },
+  "edge_paths": {
+    "ca-ca9b-total-union-checks-fixed-slot-obstruction": "map/edges/customer-attraction-3a-3a-ca9b573fc549acff/catalog-union-fixed-slot-scope-check.json"
+  },
+  "receipt": {
+    "task_id": "customer-attraction-3a-3a-ca9b573fc549acff",
+    "stage": "3A",
+    "status": "ready-for-parent-review",
+    "object_ids": [
+      "customer-attraction/full-catalog-union-is-not-fixed-slot-optimum-obstruction"
+    ],
+    "read_object_ids": [],
+    "input_pins": {
+      "customer-attraction/full-catalog-union-is-not-fixed-slot-optimum-obstruction": "417ff4d2e343360075200b9923e4714d483e8de254e285402cbbcdd921f98086"
+    },
+    "coverage": {
+      "customer-attraction/full-catalog-union-is-not-fixed-slot-optimum-obstruction": {
+        "state": "isolated-after-review",
+        "object_pin": "417ff4d2e343360075200b9923e4714d483e8de254e285402cbbcdd921f98086",
+        "comparison_scope": "完整读取声明的两份 staged ref：障碍正文 52 行与 SHA 绑定的 1,127,365 字节 JSON。逐字段解析 JSON 的 10 个顶层字段、1023 个克隆坐标和 11111 个动作记录；核历史深度 1/10/100/1000/10000、键完备性、每条 action 的 fresh 性、同一动作表下任意单方偏离的真实后继 IC、根路径 (4,5,6,7,8)、U/W/OPT_5/u_i 算术及正文给出的 p>=m fresh 单例泛化。只比较核心对象自身的辅助全目录并集界与固定槽目标边界；没有跨对象逻辑端点。",
+        "reason": "该对象的精确内容是一个有完整纯 SPE 动作表的障碍：具体 p=10,n=m=5 时全目录并集 U=10、实际 W=OPT_5=5、各 u_i=1，故辅助替代目标 U<=(2m-1)u_i 即 U<=9u_i 失败；然而真正固定槽目标 OPT_5<=9u_i 成立，half 余量 2W-OPT_5=5。正文的 p>=m fresh 单例族只在 p>2m-1 时排除 U 辅助界，同样不否定 OPT_m 或 half。因本包无第二对象可承载迁移，唯一自检边为 checks/context，coverage 保持 isolated-after-review。",
+        "context_edge_ids": [
+          "ca-ca9b-total-union-checks-fixed-slot-obstruction"
+        ]
+      }
+    },
+    "assets": [
+      {
+        "path": "map/edges/customer-attraction-3a-3a-ca9b573fc549acff/catalog-union-fixed-slot-scope-check.json",
+        "sha256": "dfba5a9b16f4c67d98399ab0fa2c4be08699104b54f118796f7e8dc47811c5da"
+      },
+      {
+        "path": "map/edges/customer-attraction-3a-3a-ca9b573fc549acff/reading-ledger.json",
+        "sha256": "12e1db2e33dc70bbd234a0e40e14989f3463a1e1826d68326e8ed12df89dcb30"
+      }
+    ],
+    "closed_overlaps": [],
+    "follow_up_tasks": [],
+    "deferred_candidates_not_promoted": [
+      "CAG-MODEL",
+      "customer-attraction/cartesian-bank-individual-fractional-floor-counterfamily",
+      "customer-attraction/five-provider-individual-static-security-counterexample"
+    ],
+    "source_freshness": {
+      "core_input_pin_checked": true,
+      "all_declared_reading_ref_sha256_checked": true,
+      "all_declared_sources_fully_read": true,
+      "edge_binding_pending_until_native_bind": false,
+      "edge_binding_current": true
+    },
+    "verification_scope": "完整语义审读、JSON 全字段/全动作遍历、有限精确算术与 edge-bind/edge-check；没有重跑旧 LP/求解器、没有导入未声明 deferred candidate，也没有把保存点外推为强逐人、fixed-slot 或 half 结论。",
+    "worker": "MAP-WORKER-W",
+    "definition_pin": "417ff4d2e343360075200b9923e4714d483e8de254e285402cbbcdd921f98086"
   }
 }
