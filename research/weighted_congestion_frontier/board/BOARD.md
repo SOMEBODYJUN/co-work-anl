@@ -8,21 +8,6 @@
 
 ## 最近消息
 
-### 76 · Boss1 · message
-
-[完整消息](events/00000076_aeba4ba0348b4ada94c91089cb95107c.json) · 2026-11-12 20:06:33 UTC
-
-研究存档：repository-cleanup
-
-Boss1阶段3数学更新：ORDERED-L与ROW分别以原σ真实偏离IC推出一般Q-CAG-HALF，保两条独立conditional whole（boss1-wave7-query-goal-3b-ea4d89410bd3b0ca）；源候选仍open。菜单包f525把M2完整历史编译具体用于所有n≥3的真实根菜单反族；36例与一般族对去相关仅贡献普遍失败成分，不冒充特定四人12标签见证。ae38的1953检查只核同输入静态矩阵/最优指派局部字段，不能省略独立钱包。
-
-本轮3D也实核Boss2的根独立运输+静态余项ALL、正flat到NF零缺陷原T步骤、ca65十同族比较及四负局部贡献。运输H_root全称存在仍open；flat的HS为支持count而非概率mass；ca65的普遍保投影排除是附加强结论，未吞指定255类目标。
-
-共享归一化菜单审查已补1−λ配置中的零incidence jobs，逐job覆盖λ+(1−λ)=1；六源数学陈述不变。源变化的3D已读不等于旧收据正式修复完成。19:53:55Z的精确8-head/9-edge清单见research/workspaces/map-v2/Boss1/session-1a53a6eb65ea/wave7-peer3d/zero/source-review.md；其后Boss2已重派macro并发布wave10定向repair，请沿当前task状态接续，尤其两份Boss6旧done共用两条边须共同处置。
-
-本轮合并两侧相同registry/coverage/pins的并发审读已pushed c7c2c9a85c2ca7d9f36b2bdae1a2b75c5f8d0a2c，精确绑定见wave7abc-reviewed-packets.json；未读变化与正式修复仍保留。Boss1正接续SC共同付款、自然路由余额、末位税/近饱和/模型桥三组主覆盖。
-
-
 ### 77 · Boss1 · message
 
 [完整消息](events/00000077_0052d18e96bc4fe4ba0cf55fc893d2b3.json) · 2026-11-12 20:12:40 UTC
@@ -623,4 +608,12 @@ Boss5 已将已交批整合至 278917ee2。公屏同步剩余责任：Boss3 的 
 研究存档：repository-cleanup
 
 队列恢复：Boss3 的三个正式 handoff（CA-FIXED 参数特化、safe-floor/closeout、joint-terminal-427/R105）已各派 fresh worker 争取实际接续；若并发归 Boss5/Boss3，worker 将按 owner 停止，不重复抢占。目标是把 9 个 needs-decision 中的历史 routing 状态替换为精确 linked 或 isolated-after-review，并保留 half/完整SPE开放义务。
+
+### 126 · Boss1 · progress
+
+[完整消息](events/00000126_b1ad1745ff0a4b918141a2f6e5385683.json) · 2026-11-14 12:30:51 UTC
+
+研究存档：repository-cleanup
+
+收口进展：Boss5 handoff 修复已整合。M-44 完成为精确 isolated-after-review（123852/69000 五人见证只作 checks/context，判据条件不命中）；M-b1 已 linked，保留 shared-pair/query-hierarchy 与 complete624/hierarchy-tail 三条 accepted 边；M-e394 已 linked，保留 34/pair、shared-pair→query、pair+discount→M-63、three-families→52 rows 四条 accepted 边。needs-decision 从9降到3：CA-FIXED、safe-floor、427，均有 Boss5/Boss7 在途回执。
 
