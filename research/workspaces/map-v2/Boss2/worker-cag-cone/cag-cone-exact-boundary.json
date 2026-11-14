@@ -1,0 +1,54 @@
+{
+  "edge_id": "cag-actual-prefix-four-exact-cone-boundary",
+  "kind": "checks",
+  "status": "accepted",
+  "source_ids": [
+    "cag-actual-prefix-floor-terminal-pair-four-exact-cone-boundaries"
+  ],
+  "target_ids": [
+    "cag-actual-prefix-floor-terminal-pair-four-exact-cone-boundaries"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "仅在共同目录完整历史模型的有限单位客户、有限非空带标签目录、单位权顺序提供者与完整纯SPE全历史IC语义下；核心对象再限制为 m∈{5,6,7,8} 的有限必要行锥：e∈{0,1}^m、d=0,…,m、ell∈{0,m}（端点生成全 ell 域），行恰为 copy、copy-opt、固定 menu-G、三种 PAIR 聚合、opt-actual 与 actual-pair；W=1。一般完整策略实现、共同目录一致性和更早离轨前缀不属于本边已证范围。",
+  "roles": {
+    "cag-actual-prefix-floor-terminal-pair-four-exact-cone-boundaries": "同时承载全部必要行定义、ell 端点仿射闭包、m=5,6,7,8 的精确有理 primal-dual 证书、PAIR 行非改进审计及有限锥到真实 SPE 的条件弱保证。"
+  },
+  "context": {
+    "model_and_quantifiers": "共同定义要求有限非空标签目录、单位客户/提供者、按固定次序观察全部有序行动；纯策略是全历史函数，SPE IC 沿真实偏离后继在每个历史/玩家/标签上成立，允许同负载历史使用不同续局。核心对象只抽取这些真实 IC 的必要行，不能把质量列当作已实现策略。",
+    "row_system": "单客户系数含 m^2 copy、m copy-opt、1 menu-G、pair-opt-all/diag/offdiag、m pair-opt-actual 和 m(m+1)/2 pair-actual 行；总行数 (3m^2+5m+8)/2。对客户求和后行非负，LP 为 max o^T mu s.t. R mu>=0, w^T mu=1, mu>=0。",
+    "endpoint_affine_closure": "固定 (e,d) 时 C(e,d,ell)=(1-ell/m)C(e,d,0)+(ell/m)C(e,d,m)，因为仅 G 依赖 ell 且仿射；故端点列与完整 ell=0,…,m 列生成同一非负列锥。该拆分只证明有限锥仿射等价，不证明拆分质量来自同一合法目录或 SPE。",
+    "exact_certificates": "Fraction 证书在全部列上检查 eta=beta*w-o-sum(lambda R)>=0，并以 W=1、O=beta 达到等号：m5 beta=245128999/112807105（54行/384列，8点/7正对偶，秩8/8）；m6 beta=6138981/2543692（73/896，13/12，秩13/13）；m7 beta=2819026521859751/1066002346290848（95/2048，15/14，秩15/15）；m8 beta=761909597306298999/265719514705067684（120/4608，16/16，原始秩16，对偶加入精确活动列方程后秩17）。四份报告保留全部 342 行 slack 与 7936 列余项。",
+    "pair_inactivity": "四个精确对偶的正权只落在 copy、copy-opt、menu-G，所有 PAIR 乘子为 0；四个原始点的每一条 PAIR 行 slack 均严格为正。因此，在该明确的四个有限行锥中追加 PAIR 聚合不改变最优值。此结论不推广到其它前缀、共同菜单约束、缺失的中间历史行或完整策略域。",
+    "finite_to_spe_use": "由于这些行是任何真实完整纯SPE 的必要不等式，对真实 SPE 求和得到 O<=beta W，故 m=5,6,7,8 各有 W>=OPT_m/beta（W=0时直接得到 OPT=0）。这是条件的有限锥保证，不是完整 SPE 构造、最强界、五人 half 反例或普遍 half 定理。",
+    "local_result": "完整精确证书支持 m=5,6,7,8 指定必要行锥的 beta 最优值、ell 端点与全 ell 域的列锥等价，以及在该锥中追加全部 PAIR 聚合行不改善最优；这些行对真实完整 SPE 给出 O<=beta W（等价 W>=OPT_m/beta）。",
+    "remaining_obligations": "尚缺共同合法目录/重复查询一致性/所有早期离轨历史的策略实现，故不能从这些质量点证明或反驳全模型 half，也不能宣称 beta 是已知最强界。与 CA-FIVE-HALF-EXACT-v1、CAG-MODEL 或含缺失历史行的其它对象的比较未在本任务完成。"
+  },
+  "explanation": "本 self-context checks 边把核心对象的精确模型/量词边界、必要行系统、ell 端点闭包和四个完整有理双证书固定在同一审读范围内。逐列非负对偶余项证明每个 beta 是所指定有限锥的精确最优；PAIR 行零对偶权且原始点严格满足它们，证明在该锥内追加 PAIR 不降精确最优。由于质量列只是形式客户类型，结果只能通过必要行给真实 SPE 一个有限 m 的弱保证，不能冒称完整策略实现或跨对象定理比较。",
+  "scope": "context-only；记录对象内部的有限锥审计与语义边界，不增加跨对象逻辑蕴含，不把四个 beta 视作全模型最强值，也不把有限点升级为完整 SPE 反例。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/计算/在轨保底与末两人聚合行的四份精确边界--计算.md",
+      "sha256": "a5146ef18c63c3b17055405e379214bada826b6dd89a3a6a4b06e9cc20faa0ff"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/terminal-direct-resumed-boss2/new-terminal-transport-exact-certificates.json",
+      "sha256": "61879b4e8483b0898f3e70f952a67d2719b9177f605b87844d39eba7d3fbf8f2"
+    }
+  ],
+  "reviewed_by": "solver-cag-cone",
+  "review_note": "完整读取任务声明的三份 refs 及全部 5 个 reading passes；逐项核对共同模型量词、行数公式、端点仿射式、LP/对偶方向、四个 beta、支持/对偶秩、全行 slack/全列余项与 PAIR 零对偶权。明确区分有限必要行锥、形式质量证书和真实完整 SPE，未作跨对象比较或重复定义造 hub 边。",
+  "endpoint_pins": {
+    "cag-actual-prefix-floor-terminal-pair-four-exact-cone-boundaries": "eec62dcffad4af1b26c8e2495e4d055e7c1aa5a3072b8efba95f3418ba570ac2"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/计算/在轨保底与末两人聚合行的四份精确边界--计算.md": "a5146ef18c63c3b17055405e379214bada826b6dd89a3a6a4b06e9cc20faa0ff",
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+    "archives/customer-attraction/tools/evidence/terminal-direct-resumed-boss2/new-terminal-transport-exact-certificates.json": "61879b4e8483b0898f3e70f952a67d2719b9177f605b87844d39eba7d3fbf8f2"
+  },
+  "review_digest": "48f806095950d40ca054e0c82c5ca828dc7050a470e2eb5f2407ece2ce7284cd"
+}
