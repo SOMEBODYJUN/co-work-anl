@@ -1,0 +1,55 @@
+{
+  "edge_id": "um-3a-cardinality-probe-separates-path-escape",
+  "kind": "checks",
+  "status": "accepted",
+  "source_ids": [
+    "UM-ESCAPE-MATCH-GAP-v1"
+  ],
+  "target_ids": [
+    "UM-BIG-CARDINALITY-PROBE-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "在 ESCAPE 的两树矩阵上，整数 k≥4，h≥3，每末簇有 k 台终端及 k−1 件相邻路径占位，所有占位有共享 z 的 1/2 小端。在固定 T0=1+1/k 的同一个条件 assignment LP 内强制被测边质量为 1，且每机的单位时间大端总质量至多 1；同步删除不可行边并重算。",
+  "roles": {
+    "UM-ESCAPE-MATCH-GAP-v1": "提供同一三端路径占位矩阵和 T0 上的 CONFIG 可行、GHMR 零删除，用于比较拒绝结果。",
+    "UM-BIG-CARDINALITY-PROBE-v1": "提供逐边强制的共同 assignment 容量与严格大端基数合同，保留其无 z 稀释底座上的精确阈值结论。"
+  },
+  "explanation": "记 y_v 为进核心父 v 的单位时间质量，X_v 为其 k 个子边或星任务送往各自大端的总质量。父机容量给 y_v+(k−X_v)/k≤T0，故 X_v≥k y_v−1。对末簇 g，记 Z_g 为其 k−1 件占位送 z 的总质量。相加本簇 k 个终端的大端基数约束得 X_g+(k−1−Z_g)≤k，即 Z_g≥X_g−1。同一个 LP 的共享 z 容量给 Σ_g Z_g≤2T0。若 k≥5，强制任一末父 y_g=1，则 Z_g≥k−2≥3>2T0，此层全部入边首轮删除。若 k=4，强制任一末父上一层节点 v 的 y_v=1，则其四个末父的 Σ_g y_g=X_v≥3，于是这四簇的 Σ_g Z_g≥4Σ_g y_g−8≥4>2T0，此上一层全部入边首轮删除。任一这样的整层删去后，其父层所有子边任务都只能在小端留于父机，强制单位大入边时该机负载为 1+k/k=2>T0。沿轮次逐层上推，最终根间 bridge 两端都被删，因空域拒绝。",
+  "scope": "上下文比较只证明三端路径占位族在 T0 的同条件探针拒绝。列出的首轮删边层已足够启动传播，无须穷尽首轮结果。无 z 稀释底座的准确阈值仍是 BIG 自己的结论；共享 z 路径族的其他 C、密阻塞矩阵及依 B 重算的配置块切面各需自己的论证。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/审查/稀释共享终端rawK2与终端探针共同间隙双源审查--审查.md",
+      "sha256": "62c4dc6b48e964d234496505cc5144c20c93d37f01320e4edd71e0295ac094c0",
+      "section": "7. 加入大边基数不等式后的准确修复边界"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/重边匹配过滤与重轻对偶循环双源审查--审查.md",
+      "sha256": "a64e057608e03086a2e929dfad5b345e2698c618e5a1878bb76c449a94dc5fd6",
+      "section": "3. 共享小端逃逸与过滤固定点"
+    },
+    {
+      "path": "archives/unrelated-machines/state/计算/大边匹配残余原程序的安全过滤与共享逃逸核验--计算.md",
+      "sha256": "bc7e1a8bef5167cfcfad8044c4c253121e8667da6677e25398e0d3ef70a2cdb2",
+      "section": "原族、路径占位与共享逃逸是三个不同输入"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/um-ghmr-flat-moment-and-hall-primary/comparison/research/current/unrelated_machines/heavy_matching_residual_and_escape.md",
+      "sha256": "3a4541eca4b8edbe02a37c3558f934e092d27a175c4ed6786c66dbeebb2422df",
+      "section": "5. 共享小端逃逸：加强后的匹配过滤仍有间隙2"
+    }
+  ],
+  "reviewed_by": "Boss2",
+  "review_note": "区分冻结原稿提供的三端矩阵与 BIG 正文提供的同条件探针，直接相加父容量、末簇单位大端基数和唯一 z 容量，核对 k=4 与 k≥5 各自足够的起删层及向根传播。",
+  "endpoint_pins": {
+    "UM-BIG-CARDINALITY-PROBE-v1": "605b6579801e34bbd52b8be461716530aba9da89b0341d80da715adb8de9bbd3",
+    "UM-ESCAPE-MATCH-GAP-v1": "d95c6fbb657f9f83d87391d15cdea63388d22a610e6f7b0b3b5be77a6074fd0d"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/审查/稀释共享终端rawK2与终端探针共同间隙双源审查--审查.md": "62c4dc6b48e964d234496505cc5144c20c93d37f01320e4edd71e0295ac094c0",
+    "archives/unrelated-machines/state/审查/重边匹配过滤与重轻对偶循环双源审查--审查.md": "a64e057608e03086a2e929dfad5b345e2698c618e5a1878bb76c449a94dc5fd6",
+    "archives/unrelated-machines/state/计算/大边匹配残余原程序的安全过滤与共享逃逸核验--计算.md": "bc7e1a8bef5167cfcfad8044c4c253121e8667da6677e25398e0d3ef70a2cdb2",
+    "archives/unrelated-machines/tools/evidence/um-ghmr-flat-moment-and-hall-primary/comparison/research/current/unrelated_machines/heavy_matching_residual_and_escape.md": "3a4541eca4b8edbe02a37c3558f934e092d27a175c4ed6786c66dbeebb2422df"
+  },
+  "review_digest": "184470f8697bcd391390685e59619950691d57fa7817495ea9849f15d6aa7cc1"
+}

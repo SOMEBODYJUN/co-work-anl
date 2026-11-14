@@ -1,0 +1,64 @@
+{
+  "edge_id": "um-3a-mandatory-filter-certifies-escape-fixed-point",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "UM-HEAVY-MATCH-FILTER-v1"
+  ],
+  "target_ids": [
+    "UM-ESCAPE-MATCH-GAP-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "同一三端 path-occupancy 两树矩阵，整数 k≥4，h 为源定义的首个 α_h≥1/2 的树层，故 h≥3；T0=1+1/k。大边恰为单位时间边，1/k 与共享 z 上的 1/2 均为小端。按 GHMR 每次只对当前一条大边强制其端点，并覆盖全部 mandatory 任务。",
+  "roles": {
+    "UM-HEAVY-MATCH-FILTER-v1": "提供覆盖 N 的初始检查、强制大边时 W_ij 的最大任务权规则，以及首轮零删除即达闭包的判据。",
+    "UM-ESCAPE-MATCH-GAP-v1": "其两树及路径占位资格给出每种强制大边在同一矩阵上的独立匹配见证，证明目标的过滤固定点部分。"
+  },
+  "explanation": "每个占位任务在 z 有小端，故 N 仅根间 bridge，初始显然可覆盖。对任一强制大端 j→核心父 i，U_i 恰为 i 的 k 个子边或星任务，它们的大端分别在 k 个不同孩子或终端，均异于 i 和两根。一起匹配这 k 件；若 j 是 bridge，则它在 i 只记一次，否则兼配 bridge 到一个空闲根。故 W_ij=F_i=1。对任一强制大端 j→终端 i，可另配 bridge 到根且 U_i=∅，故 W_ij=F_i=0。z 无大端查询。各查询的 p_ij+F_i−W_ij=1≤T0，同一首轮无删除，达到固定点。",
+  "scope": "见证逐强制查询成立，只对冻结的 GHMR 必要过滤给出零删除。每次匹配只计其 mandatory 与该查询的可选撤离，未计其他小端任务在 z 的负载；共同 z 容量或强制后再跑完整过滤须用另一个合同。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/审查/重边匹配过滤与重轻对偶循环双源审查--审查.md",
+      "sha256": "a64e057608e03086a2e929dfad5b345e2698c618e5a1878bb76c449a94dc5fd6",
+      "section": "1. 过滤器定义与安全性"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/重边匹配过滤与重轻对偶循环双源审查--审查.md",
+      "sha256": "a64e057608e03086a2e929dfad5b345e2698c618e5a1878bb76c449a94dc5fd6",
+      "section": "3. 共享小端逃逸与过滤固定点"
+    },
+    {
+      "path": "archives/unrelated-machines/state/计算/大边匹配残余原程序的安全过滤与共享逃逸核验--计算.md",
+      "sha256": "bc7e1a8bef5167cfcfad8044c4c253121e8667da6677e25398e0d3ef70a2cdb2",
+      "section": "原族、路径占位与共享逃逸是三个不同输入"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/um-ghmr-flat-moment-and-hall-primary/comparison/research/current/unrelated_machines/heavy_matching_residual_and_escape.md",
+      "sha256": "3a4541eca4b8edbe02a37c3558f934e092d27a175c4ed6786c66dbeebb2422df",
+      "section": "5. 共享小端逃逸：加强后的匹配过滤仍有间隙2"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/重边必要过滤与共同补全选择的复杂度边界--资源.md",
+      "sha256": "4d04cfe33635c350c6f74c9998df01ee6f1f8bc0b6d362bb3b1ebc89b0ab1317",
+      "section": "必要条件过滤：拒绝可靠，接受不保证可行"
+    }
+  ],
+  "reviewed_by": "Boss2",
+  "review_note": "按冻结原稿 §5 逐类重构全部 mandatory 匹配，复核两端点 v4 和改正后的资源。经典两树、无 z 路径占位、三端共享 z 路径占位及密阻塞扩展是各自明确的矩阵；有限重放只核实例。",
+  "contribution": {
+    "result": "在 T0 完整覆盖 mandatory 的 GHMR 首轮不删任何边，得到固定点。",
+    "remaining": "CONFIG(T0) 由路径占位配置及 z 的空配置另证。OPT=2−1/k 由任意 B<2−1/k 下至少四个互异末簇各送一个占位至同一 z 的下界，以及不使用 z 的单路径上界调度另证。"
+  },
+  "endpoint_pins": {
+    "UM-ESCAPE-MATCH-GAP-v1": "d95c6fbb657f9f83d87391d15cdea63388d22a610e6f7b0b3b5be77a6074fd0d",
+    "UM-HEAVY-MATCH-FILTER-v1": "d7215efc94a27cd2b70fb4e8154b90bf05b09e07d19ad21464cd415cb05802dc"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/审查/重边匹配过滤与重轻对偶循环双源审查--审查.md": "a64e057608e03086a2e929dfad5b345e2698c618e5a1878bb76c449a94dc5fd6",
+    "archives/unrelated-machines/state/计算/大边匹配残余原程序的安全过滤与共享逃逸核验--计算.md": "bc7e1a8bef5167cfcfad8044c4c253121e8667da6677e25398e0d3ef70a2cdb2",
+    "archives/unrelated-machines/tools/evidence/um-ghmr-flat-moment-and-hall-primary/comparison/research/current/unrelated_machines/heavy_matching_residual_and_escape.md": "3a4541eca4b8edbe02a37c3558f934e092d27a175c4ed6786c66dbeebb2422df",
+    "archives/unrelated-machines/state/资源/重边必要过滤与共同补全选择的复杂度边界--资源.md": "4d04cfe33635c350c6f74c9998df01ee6f1f8bc0b6d362bb3b1ebc89b0ab1317"
+  },
+  "review_digest": "3171c2d7ce073a3e30188d6b3dc3a1de581bf5a3828e29dbfd5c66c14d0c6fd9"
+}

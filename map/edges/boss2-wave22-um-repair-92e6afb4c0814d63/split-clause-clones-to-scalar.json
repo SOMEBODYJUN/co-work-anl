@@ -1,0 +1,64 @@
+{
+  "edge_id": "um-f6bc5acc-split-clause-clones-to-scalar",
+  "kind": "transfers",
+  "status": "accepted",
+  "source_ids": [
+    "UM-SPLIT-CAPACITY-DUAL-RAIL-THREE-HALVES-v1"
+  ],
+  "target_ids": [
+    "UM-NORMALIZED-DUAL-RAIL-UNIVERSAL-THREE-HALVES-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "同一个显式符号 occurrence 模板，保留每个原任务的身份及全部内端时间。标量合同要求整数 A_c≥1、m_c≤2A_c−1，拆分合同允许 m_c≤2A_c 并用 L_c=min(A_c,m_c) 个 unit clone。A_c 二进制编码。",
+  "roles": {
+    "UM-SPLIT-CAPACITY-DUAL-RAIL-THREE-HALVES-v1": "对同一 occurrence 模板构建拆分原矩阵并给全部原任务的整数调度；轨≤3/2，每个 unit clone≤1。",
+    "UM-NORMALIZED-DUAL-RAIL-UNIVERSAL-THREE-HALVES-v1": "把各 clause 的 clone 外端逐件折回唯一标量外端，得到通用负载保证；同一四 clause 输入给绝对锐性。"
+  },
+  "explanation": "任何合法标量模板也满足拆分 arity。在拆分调度中轨端保持原样；每个 clone 最多接一件 port。把该 clause 的外送任务逐件改去其唯一标量机，时间改为 1/A_c，所以 clause 负载≤L_c/A_c≤1，轨仍≤3/2。反过来，若标量矩阵有 C≤1 调度，则每 clause 至多外送 A_c 件、也至多 m_c 件，可逐件注入 L_c 个 clone，得到拆分矩阵的 C≤1 调度。共同锐例的 A_c 全为 2，四 clause 依次是 (x+,x+,y+)、(x−,x−,y+)、(y−,z+,z+)、(y−,z−,z−)，每轨 K=2；重复项各为独立 port。C≤1 时 selector 所在真轨不能内留正时长 port；每 clause 至多容纳两件真 port。y 取正时前两 clause 分别阻止 x 取正与取负；y 取负时后两 clause 分别阻止 z 取正与取负。因此 14 机的拆分原矩阵无 C≤1 调度，逆注入也排除 10 机的标量原矩阵在 C≤1 可行。标量时间全为 1 或 1/2，半整数网格给下界 3/2，通用合并保证达到。拆分规模按 m_c 截断；原算法的空轨、空 clause 和空任务分支原样适用。",
+  "scope": "在合法标量全域逐件迁移上界，并证共同符号模板的标量绝对 3/2 锐性。反向逐件注入仅用于 C≤1。两份原矩阵、各自的调度及绝对锐性与近似比的范围分别保留。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/审查/双轨标量与拆分unit的共同调度及锐例审查--审查.md",
+      "sha256": "928992675fdebbc7d130efee3b8132e0c5665a12b9143c4981cae8d748f1affe",
+      "section": "完整原任务与两种外端合同"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/双轨标量与拆分unit的共同调度及锐例审查--审查.md",
+      "sha256": "928992675fdebbc7d130efee3b8132e0c5665a12b9143c4981cae8d748f1affe",
+      "section": "split的共同整数流与完整回填"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/双轨标量与拆分unit的共同调度及锐例审查--审查.md",
+      "sha256": "928992675fdebbc7d130efee3b8132e0c5665a12b9143c4981cae8d748f1affe",
+      "section": "两个绝对锐例与源解码边界"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/双轨与HS及Hall输入三源增量审查--审查.md",
+      "sha256": "56a8b69ab0c0725a67e2bc5d4b6acdeaeeaa0c958b77fcca434494c722a92306",
+      "section": "2.1 精确输入"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/双轨与HS及Hall输入三源增量审查--审查.md",
+      "sha256": "56a8b69ab0c0725a67e2bc5d4b6acdeaeeaa0c958b77fcca434494c722a92306",
+      "section": "2.2 与既有双轨对象的比较"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/um-normalized-rails-and-gates-primary/comparison/examples/unrelated_machines/dual_rail_scalar_and_unit_sharp_input.json",
+      "sha256": "4cea6fd3f6d653db85b89e4993019983ecac7dee5c2b99eff48e116656f543af"
+    }
+  ],
+  "reviewed_by": "Boss2",
+  "review_note": "复核标量 v2 与拆分 v1 的内端、外端、arity 和位复杂度。逐字段核对四 clause 冻结 JSON 及登记比较附件，重建严格阈值反证与半整数下界。",
+  "whole_result": "对每个合法标量原矩阵，确定性总位多项式输出完整调度，所有轨负载≤3/2、各 clause 负载≤1。该四 clause 标量原矩阵的实际 OPT 恰为 3/2。",
+  "endpoint_pins": {
+    "UM-NORMALIZED-DUAL-RAIL-UNIVERSAL-THREE-HALVES-v1": "e4801ab268c780dba55255b1c4f5e256a0baf8584b6e2331e4eeabbfd72062ad",
+    "UM-SPLIT-CAPACITY-DUAL-RAIL-THREE-HALVES-v1": "fbbe6b5940f49aecff58f18105dcd538adfd35b63ea9f4808a5af18259a29a06"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/审查/双轨标量与拆分unit的共同调度及锐例审查--审查.md": "928992675fdebbc7d130efee3b8132e0c5665a12b9143c4981cae8d748f1affe",
+    "archives/unrelated-machines/state/审查/双轨与HS及Hall输入三源增量审查--审查.md": "56a8b69ab0c0725a67e2bc5d4b6acdeaeeaa0c958b77fcca434494c722a92306",
+    "archives/unrelated-machines/tools/evidence/um-normalized-rails-and-gates-primary/comparison/examples/unrelated_machines/dual_rail_scalar_and_unit_sharp_input.json": "4cea6fd3f6d653db85b89e4993019983ecac7dee5c2b99eff48e116656f543af"
+  },
+  "review_digest": "a9d58360c34b688d5e190850ca46d5974ed41b9d3b7b1ae7a12f9a62f9d8d4e2"
+}
