@@ -1,0 +1,57 @@
+{
+  "edge_id": "cag-4363-strategy-cone-specializes-finite-nonpne-search",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "CA-STRATEGY-CONE"
+  ],
+  "target_ids": [
+    "customer-attraction/nonpne-complete-policy-cone-search-contract"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "同一 CAG-MODEL 标签/单位客户合同；固定一份定义于全部有序历史的完整 σ；本程序取 m=5、p=7、L=lcm(1,…,5)=60、非负客户重数，并要求 g>0、W>0 才把 G_gap 解读为严格静态盈利偏离。",
+  "roles": {
+    "CA-STRATEGY-CONE": "给固定 σ 的全部有序真实后继 IC 差 Γσ 行、非负重数锥 Dσ、W=1 紧截面及整数缩放达到性；全称福利需再量化全部 σ 和比较支持 J。",
+    "customer-attraction/nonpne-complete-policy-cone-search-contract": "在 m5/p7 的有限游走中由浮点 Engine 提案一份 σ，构造 Γ 与附加 G_gap 行，LP 只在一个选定 J 上取点，再做有理/整数/完整树核验。"
+  },
+  "explanation": "固定 σ 后，程序的 Γ 行正是策略锥定理的逐有序历史真实 IC 行；附加 G_gap 只是把静态冻结盈利切面与该锥相交，不改变 Γ 的语义。target 的 Engine 不是精确全集求解：浮点 R(k)、有限 1500 steps、单一 J 和随机策略选择只给候选。即便固定点通过 exact integer audit，也只认证该 σ 与该实例，不覆盖定理中的全部 σ、J 或全部 PNE/SPE。",
+  "scope": "仅固定完整策略的真实 Γ 锥与静态正 gap 切面的 m5/p7 有限搜索合同。",
+  "evidence": [
+    {
+      "path": "map/edges/customer-attraction-3a-3a-4363e9449a23173b/review.md",
+      "sha256": "fbe277186dd773ba3e0082f94c284e85fd49d89aa291afe678606111d7ae0ea0",
+      "section": "核心一：有限非 PNE 策略锥搜索"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-4363e9449a23173b/support.md",
+      "sha256": "d99bfae71cefdacb482ac8758c10a281c06041e750dcdc6575f9bf82c40a1111",
+      "section": "程序合同与有限探针边界"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/固定完整策略的客户重数锥--定理.md",
+      "sha256": "ae4bcfd424eca8d4e3d79965f72182c0b2c8eefb72e74b44c2521b519f7aad39"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/保留静态盈利偏离的完整策略锥搜索--程序.md",
+      "sha256": "20066b9c2ef8ec6f3e78412fd2a2d1835a858b2d98e7470a46cc6c60f8e1ca3d"
+    }
+  ],
+  "reviewed_by": "fresh-worker",
+  "review_note": "完整读取 CA-STRATEGY-CONE deferred 正文、程序合同、实际 Engine、固定点整数审计与共同定义；严格分离固定 Γ 锥语义、有限静态 gap 探针和未付的全 σ/J 量词。",
+  "contribution": {
+    "result": "证明 target 的 Γ 行和附加 gap 行是固定策略锥上的有限条件切面，并列明其 g>0 严格偏离含义。",
+    "remaining": "不证明所有完整策略、所有 SPE/PNE 的福利界，不给多项式搜索复杂度，不认证大 m dtype 安全。"
+  },
+  "endpoint_pins": {
+    "CA-STRATEGY-CONE": "291bd4d94e33d40566453a33b5cf07b1c620b77362268417582efecb42b0c4bb",
+    "customer-attraction/nonpne-complete-policy-cone-search-contract": "24d0314863d8b55ac17dc6cbd089722e84591dcb7c05054c9e67f47d47c24bb5"
+  },
+  "evidence_pins": {
+    "map/edges/customer-attraction-3a-3a-4363e9449a23173b/review.md": "fbe277186dd773ba3e0082f94c284e85fd49d89aa291afe678606111d7ae0ea0",
+    "map/edges/customer-attraction-3a-3a-4363e9449a23173b/support.md": "d99bfae71cefdacb482ac8758c10a281c06041e750dcdc6575f9bf82c40a1111",
+    "archives/customer-attraction/state/定理/固定完整策略的客户重数锥--定理.md": "ae4bcfd424eca8d4e3d79965f72182c0b2c8eefb72e74b44c2521b519f7aad39",
+    "archives/customer-attraction/state/程序/保留静态盈利偏离的完整策略锥搜索--程序.md": "20066b9c2ef8ec6f3e78412fd2a2d1835a858b2d98e7470a46cc6c60f8e1ca3d"
+  },
+  "review_digest": "c3befce0e4085f71f3ea0a36205947493dee1909e3178b2fab7380b00c44cd83"
+}

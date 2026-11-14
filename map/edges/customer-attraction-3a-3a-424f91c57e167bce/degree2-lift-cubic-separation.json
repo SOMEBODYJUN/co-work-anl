@@ -1,0 +1,61 @@
+{
+  "edge_id": "cag-424f-degree2-lift-cubic-separation",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/degree-two-global-customer-lift-three-full-policy-points-and-cubic-separation"
+  ],
+  "target_ids": [
+    "customer-attraction/global-low-degree-customer-lift-local-full-policy-moment-probe"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定 m4p6 与 m5p6 完整有序形式策略；全部局部圆柱、全部非自身历史 IC、根 W=1、同一全目录非负 degree-2 lift 等式均按保存有理矩核对。degree-2 只绑定 singleton/pair，三阶矩不在 lift 等式中。",
+  "roles": {
+    "customer-attraction/degree-two-global-customer-lift-three-full-policy-points-and-cubic-separation": "给出两个保存有理点的完整矩、全树 IC、二阶共同非负 lift 以及有效三次 Boolean 行 P=Q-z_i z_j z_k 的精确负值。",
+    "customer-attraction/global-low-degree-customer-lift-local-full-policy-moment-probe": "给出局部圆柱、完整有序 IC 与同一全目录低阶 x_B 提升的放松定义，并明确只有绑定全部可见阶才同时实现全部终局收益/覆盖。"
+  },
+  "explanation": "对 m4p6，中心 A 的中心叶矩为 2/5、任意两叶矩为 1/10，Q(t)=1-4(2/5)+6(1/10)=0；取叶 1,3,4 得 P(t)=-1/10。对 m5p6，中心叶矩为 7/25、任意两叶矩为 1/25，Q(t)=1-5(7/25)+10(1/25)=0；取叶 0,1,3 得 P(t)=-1/25。逐 Boolean 类型，Q 在 z_A=0 时为 binom(k,2)，在 z_A=1 时为 (k-1)(k-2)/2；三叶全出现时 Q 至少为 3 或 1，故 P=Q-z_i z_j z_k 对全目录客户类型非负。独立 Fraction 审计枚举全部 64 个赋值并逐行核 1845 历史、9194 非自 IC、1123 局部行和 57 个 lift 等式。因此任一共同非负 x_B 都要求 <P,t>≥0，却与保存点的负值矛盾；degree-2 程序仍是正确的低阶放松，不能被读成全阶客户实现或 LP 最优性。",
+  "scope": "二阶共同客户提升的两个固定完整策略点及其三阶分离；不是所有策略、所有 m,p、一般 half 或六人结论。",
+  "contribution": {
+    "result": "把低阶方法的抽象边界具体化：同一全目录非负客户可同时恢复全部 singleton/pair 仍不保证可恢复全部可见矩；m4p6、m5p6 分别被 P 的 -1/10、-1/25 排除。",
+    "remaining": "未证明 degree-2 放松的 LP 全局最优、未分类其它提升阶数或其它策略；仅当 degree 达到 d0=min(m,p) 时方法页的全阶实现说明可用。"
+  },
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/计算/二阶共同客户提升的三份完整策略矩与三阶分离--计算.md",
+      "sha256": "8bad08c48994ea8b7479e9e2e709aa0f9fdca8eca49c0f87351bacbe5cd696fb",
+      "section": "给定非负lift只实现低阶；三次有效行排除所有实现"
+    },
+    {
+      "path": "archives/customer-attraction/state/计算/二阶共同客户提升的三份完整策略矩与三阶分离--计算.md",
+      "sha256": "8bad08c48994ea8b7479e9e2e709aa0f9fdca8eca49c0f87351bacbe5cd696fb",
+      "section": "一次独立精确检查的全范围"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/全目录低阶客户提升与局部完整策略矩探针--程序.md",
+      "sha256": "86d023fe94edc24bb0ca73bdfb4021a93d9d446ade5113c21201d95aee916711"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/global-pair-lift-three-points-boss3/saved-points-exact-audit.json",
+      "sha256": "1d53851ae07156920f846091c8623ae2ac5f92debdf2d8600865aa321d738c01"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/global-pair-lift-three-points-boss3/saved-points-full-checks.json",
+      "sha256": "fcaa317118c3f96aee303ea5273fcc83140d0d9cf3045538a2a8d24af73c7264"
+    }
+  ],
+  "reviewed_by": "fresh-worker",
+  "review_note": "完整实读核心计算、低阶程序合同、独立 Fraction 摘要和全部逐行检查；区分二阶共同非负 lift、三阶全目录正性与真实客户 SPE。未重跑浮点探索或 LP，不把固定点最大覆盖升级为全锥最优。",
+  "endpoint_pins": {
+    "customer-attraction/degree-two-global-customer-lift-three-full-policy-points-and-cubic-separation": "56bcd82c7238a69fa8f075c0ae75b691aa963c65bcb92f825e922aebbd51cd55",
+    "customer-attraction/global-low-degree-customer-lift-local-full-policy-moment-probe": "b9f570eeb17eceffc56c0d9165d50cc1b180228983fa5ed35cc86b0bb9bbf4d5"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/计算/二阶共同客户提升的三份完整策略矩与三阶分离--计算.md": "8bad08c48994ea8b7479e9e2e709aa0f9fdca8eca49c0f87351bacbe5cd696fb",
+    "archives/customer-attraction/state/程序/全目录低阶客户提升与局部完整策略矩探针--程序.md": "86d023fe94edc24bb0ca73bdfb4021a93d9d446ade5113c21201d95aee916711",
+    "archives/customer-attraction/tools/evidence/global-pair-lift-three-points-boss3/saved-points-exact-audit.json": "1d53851ae07156920f846091c8623ae2ac5f92debdf2d8600865aa321d738c01",
+    "archives/customer-attraction/tools/evidence/global-pair-lift-three-points-boss3/saved-points-full-checks.json": "fcaa317118c3f96aee303ea5273fcc83140d0d9cf3045538a2a8d24af73c7264"
+  },
+  "review_digest": "bcd802beb48b9bba680fa424d184446c0c51cc14d62032e81fb58b45810cd1aa"
+}

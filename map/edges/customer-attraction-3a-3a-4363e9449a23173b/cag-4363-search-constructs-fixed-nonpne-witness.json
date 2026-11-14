@@ -1,0 +1,69 @@
+{
+  "edge_id": "cag-4363-search-constructs-fixed-nonpne-witness",
+  "kind": "implements",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/nonpne-complete-policy-cone-search-contract"
+  ],
+  "target_ids": [
+    "customer-attraction/five-provider-seven-topic-nonpne-exact-fixed-witness"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "原保存运行参数 steps=1500、seed=2026102107、m=5、p=7、g=1000；只把 step442 的保存 best 与独立固定点整数 audit 作为端点，不把其余15个未保存候选或浮点记录当作证书。",
+  "roles": {
+    "customer-attraction/nonpne-complete-policy-cone-search-contract": "规定浮点候选→gap 行→有理恢复→整数全行→完整树核验的来源流程与有限记录边界。",
+    "customer-attraction/five-provider-seven-topic-nonpne-exact-fixed-witness": "保存 18 类型、2801 动作、实际 00466、W/OPT 及静态 4→0 严格偏离与真实 00065 续局的固定端点。"
+  },
+  "explanation": "程序合同的 step442 输出与固定见证正文/JSON 一致；fixed-witness-audit 以 L=60 任意精度整数逐节点复核 16806 个非自身 IC，并独立得到 W=1250000、OPT=1992009、静态 gain=1250、真实偏离收益不增。故该边只说明来源/实现闭合一个有限端点：完整 2801 节点证书是已保存策略的全树证据，而 1500-step 探针不是全策略枚举，也不是全局最坏比搜索。",
+  "scope": "单一五人七标签整数输入；不是一般/六人 half 反例，不是所有 SPE 或 PNE 的福利比较。",
+  "evidence": [
+    {
+      "path": "map/edges/customer-attraction-3a-3a-4363e9449a23173b/review.md",
+      "sha256": "fbe277186dd773ba3e0082f94c284e85fd49d89aa291afe678606111d7ae0ea0",
+      "section": "核心一：有限非 PNE 策略锥搜索"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-4363e9449a23173b/support.md",
+      "sha256": "d99bfae71cefdacb482ac8758c10a281c06041e750dcdc6575f9bf82c40a1111",
+      "section": "固定非 PNE 见证"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/保留静态盈利偏离的完整策略锥搜索--程序.md",
+      "sha256": "20066b9c2ef8ec6f3e78412fd2a2d1835a858b2d98e7470a46cc6c60f8e1ca3d"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/nonpne-fixed-policy-primary/original/nonpne_best.json",
+      "sha256": "a4a5d9f5b8045915bef2339e2205975e3a4a8d8592d31c5e00dd7d491cfbe0b1"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/nonpne-fixed-policy-primary/fixed-witness-audit.json",
+      "sha256": "ffe6d60b59a9d28a87511573bc250adb87f4f5beeb9e60160a550454d27cc70a"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/nonpne-fixed-policy-primary/exact-ic-data.json",
+      "sha256": "0df2e8bb296f9ae0df554ba2d7df1cfdbd0abfb5a4f6963048dfd7274e3af21b"
+    },
+    {
+      "path": "archives/customer-attraction/state/计算/五人七主题非静态均衡完整策略的整数见证--计算.md",
+      "sha256": "addbe8021888b92a6822628afaeef7e2e6b751c8b35e31721e16bf178263389c",
+      "section": "四、原非PNE偏离真实成立，真实续局恰消去静态增益"
+    }
+  ],
+  "reviewed_by": "fresh-worker",
+  "review_note": "完整读取 source 程序合同、best JSON、run JSON、固定点 audit、精确 IC 数据及 deferred 固定见证正文；保存端点与独立整数审计数值逐项对应。",
+  "endpoint_pins": {
+    "customer-attraction/five-provider-seven-topic-nonpne-exact-fixed-witness": "a7e35d7930fe7431badf56175c9d2fce317e62254427e00b138d864240bc599f",
+    "customer-attraction/nonpne-complete-policy-cone-search-contract": "24d0314863d8b55ac17dc6cbd089722e84591dcb7c05054c9e67f47d47c24bb5"
+  },
+  "evidence_pins": {
+    "map/edges/customer-attraction-3a-3a-4363e9449a23173b/review.md": "fbe277186dd773ba3e0082f94c284e85fd49d89aa291afe678606111d7ae0ea0",
+    "map/edges/customer-attraction-3a-3a-4363e9449a23173b/support.md": "d99bfae71cefdacb482ac8758c10a281c06041e750dcdc6575f9bf82c40a1111",
+    "archives/customer-attraction/state/程序/保留静态盈利偏离的完整策略锥搜索--程序.md": "20066b9c2ef8ec6f3e78412fd2a2d1835a858b2d98e7470a46cc6c60f8e1ca3d",
+    "archives/customer-attraction/tools/evidence/nonpne-fixed-policy-primary/original/nonpne_best.json": "a4a5d9f5b8045915bef2339e2205975e3a4a8d8592d31c5e00dd7d491cfbe0b1",
+    "archives/customer-attraction/tools/evidence/nonpne-fixed-policy-primary/fixed-witness-audit.json": "ffe6d60b59a9d28a87511573bc250adb87f4f5beeb9e60160a550454d27cc70a",
+    "archives/customer-attraction/tools/evidence/nonpne-fixed-policy-primary/exact-ic-data.json": "0df2e8bb296f9ae0df554ba2d7df1cfdbd0abfb5a4f6963048dfd7274e3af21b",
+    "archives/customer-attraction/state/计算/五人七主题非静态均衡完整策略的整数见证--计算.md": "addbe8021888b92a6822628afaeef7e2e6b751c8b35e31721e16bf178263389c"
+  },
+  "review_digest": "a78ef60ee6d289b014f2efd06ffecd22956a09c569ff573d4c333781af822f2c"
+}

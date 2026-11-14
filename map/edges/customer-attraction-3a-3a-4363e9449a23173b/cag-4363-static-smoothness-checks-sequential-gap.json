@@ -1,0 +1,53 @@
+{
+  "edge_id": "cag-4363-static-smoothness-checks-sequential-gap",
+  "kind": "checks",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/closeout-1024aa5b3d6f4073fe0beaba"
+  ],
+  "target_ids": [
+    "customer-attraction/nonpne-complete-policy-cone-search-contract"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "同一 CAG-MODEL 收益公式；closeout 的 SM(1,1) 只对冻结静态删位成立，target 的 Γ 必须沿真实同策略后继，target 的 G_gap 只有在 g>0、W>0 时才保静态严格增益。",
+  "roles": {
+    "customer-attraction/closeout-1024aa5b3d6f4073fe0beaba": "给静态冻结 SM(1,1) 引理、三人完整 SPE 非 PNE 证书和额外预算只能推出 3W 的范围。",
+    "customer-attraction/nonpne-complete-policy-cone-search-contract": "将静态冻结盈利切面作为额外 gap 行，与真实后继 Γ IC 分开保存一个非 PNE 候选。"
+  },
+  "explanation": "closeout 的三人表中，中间人冻结两个 C 改 B 得 4/3，但按原策略真实 CB 后继为 B 只得 5/6；这正说明静态 SM 的冻结收益不能替代顺序 SPE 的真实偏离。target 的 G_gap 并未做这种替换：它只保留静态正 gain，另用全部真实 Γ 行检查 SPE。closeout 的 V≤W+D、D≤W 账本至多给 OPT≤3W，因此不能把 target 的一个非 PNE 见证或 gap 行提升为 half 反例/证明。",
+  "scope": "仅静态/顺序均分模型的比较边界；不迁移设施模型、CCE、混合 SPE 或一般人数福利结论。",
+  "evidence": [
+    {
+      "path": "map/edges/customer-attraction-3a-3a-4363e9449a23173b/review.md",
+      "sha256": "fbe277186dd773ba3e0082f94c284e85fd49d89aa291afe678606111d7ae0ea0",
+      "section": "核心二：静态平滑与真实续局的桥边界"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-4363e9449a23173b/support.md",
+      "sha256": "d99bfae71cefdacb482ac8758c10a281c06041e750dcdc6575f9bf82c40a1111",
+      "section": "静态平滑桥"
+    },
+    {
+      "path": "archives/customer-attraction/state/资源/静态平滑性的真实后继桥与额外预算--资源.md",
+      "sha256": "6c820d65b20837733a798635da97272e2e6c65ec4d8c65b166fec9b2d0f06f4a"
+    },
+    {
+      "path": "archives/customer-attraction/state/反例/顺序SPE终局不必为同时PNE--反例.md",
+      "sha256": "0879e6843689c4978c3c44a51fe779714ca3b6290cb4778a9243126295203a99"
+    }
+  ],
+  "reviewed_by": "fresh-worker",
+  "review_note": "完整读取 closeout 资源、共同定义、target 程序合同和 deferred 三人非 PNE 正文；明确冻结静态删位、真实 SPE 后继和粗 3W 预算的量词差异。",
+  "endpoint_pins": {
+    "customer-attraction/closeout-1024aa5b3d6f4073fe0beaba": "55ef8c9eab68c6f0b88219e0b822fe5619c3252c6ab79a88d6b325ee38c01920",
+    "customer-attraction/nonpne-complete-policy-cone-search-contract": "24d0314863d8b55ac17dc6cbd089722e84591dcb7c05054c9e67f47d47c24bb5"
+  },
+  "evidence_pins": {
+    "map/edges/customer-attraction-3a-3a-4363e9449a23173b/review.md": "fbe277186dd773ba3e0082f94c284e85fd49d89aa291afe678606111d7ae0ea0",
+    "map/edges/customer-attraction-3a-3a-4363e9449a23173b/support.md": "d99bfae71cefdacb482ac8758c10a281c06041e750dcdc6575f9bf82c40a1111",
+    "archives/customer-attraction/state/资源/静态平滑性的真实后继桥与额外预算--资源.md": "6c820d65b20837733a798635da97272e2e6c65ec4d8c65b166fec9b2d0f06f4a",
+    "archives/customer-attraction/state/反例/顺序SPE终局不必为同时PNE--反例.md": "0879e6843689c4978c3c44a51fe779714ca3b6290cb4778a9243126295203a99"
+  },
+  "review_digest": "5a75378638f66b464bea0ba5e1bb49fed994ab20af30e0eab31287db75a2d3fd"
+}

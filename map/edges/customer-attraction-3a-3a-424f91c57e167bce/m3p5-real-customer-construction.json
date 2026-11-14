@@ -1,0 +1,53 @@
+{
+  "edge_id": "cag-424f-m3p5-lift-gives-real-five-customer-spe",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/degree-two-global-customer-lift-three-full-policy-points-and-cubic-separation"
+  ],
+  "target_ids": [
+    "M-ea8b88f526d44d619a0c86ad10acb6b0"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定 m3p5 保存点；保留五个原标签、空标签、重复行动、同覆盖别名和全部 31 个有序历史。把三名非全兴趣质量乘 3 后解释为单位客户。",
+  "roles": {
+    "customer-attraction/degree-two-global-customer-lift-three-full-policy-points-and-cubic-separation": "给出 m3p5 的全部 25 个可见矩、完整 31 节点动作表、Fraction IC 审计和整数化客户类型。",
+    "M-ea8b88f526d44d619a0c86ad10acb6b0": "记录该三人五客户精确点：物理中心恒被选择，完整 SPE 福利 W=3、OPT_3=5，并保留原标签域边界。"
+  },
+  "explanation": "m3p5 的非零 lift 为 x_{1}=1/3、x_{0,2}=1、x_{3}=1/3。乘以 3 后，三名客户只喜欢中心覆盖 A（标签 0、2 是同覆盖别名），一名只喜欢标签 1，一名只喜欢标签 3，标签 4 为空。任意有序前缀若已有 ℓ 次单客户行动，沿保存策略的中心后继给当前行动收益 3/(3-ℓ)≥1；改到任何单客户主题至多 1，改空主题得 0，改到中心别名同值。故保存策略在全部历史和全部偏离下是真实纯 SPE，根三位各得 1，W=3。三主题 A、B、C 覆盖五名客户，故 OPT_3=5，精确比值 5/3；这不是 2W<OPT 的反例，也不宣称新的锐界。",
+  "scope": "一个固定 m=3,p=5 实例及其全部 31 个有序节点；不推广到 m4p6/m5p6 的伪矩，也不支付低阶探针的 LP 全锥最优性。",
+  "whole_result": "由保存 m3p5 有理矩直接构造一个保留原标签和离轨历史的五单位客户完整纯 SPE，满足 W=3、OPT_3=5、根收益各为 1，精确效率比 5/3。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/计算/二阶共同客户提升的三份完整策略矩与三阶分离--计算.md",
+      "sha256": "8bad08c48994ea8b7479e9e2e709aa0f9fdca8eca49c0f87351bacbe5cd696fb",
+      "section": "三人点：真实五客户游戏，别名与空主题仍保留"
+    },
+    {
+      "path": "archives/customer-attraction/state/计算/二阶共同客户提升的三份完整策略矩与三阶分离--计算.md",
+      "sha256": "8bad08c48994ea8b7479e9e2e709aa0f9fdca8eca49c0f87351bacbe5cd696fb",
+      "section": "一次独立精确检查的全范围"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/global-pair-lift-three-points-boss3/saved-points-exact-audit.json",
+      "sha256": "1d53851ae07156920f846091c8623ae2ac5f92debdf2d8600865aa321d738c01"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/global-pair-lift-three-points-boss3/saved-points-full-checks.json",
+      "sha256": "fcaa317118c3f96aee303ea5273fcc83140d0d9cf3045538a2a8d24af73c7264"
+    }
+  ],
+  "reviewed_by": "fresh-worker",
+  "review_note": "用保存 m3p5 动作表和 Fraction 全树检查构造单位客户实例；逐节点解释偏离上界，单独区分五客户真实实现与 m4p6/m5p6 的 signed/伪矩分离。",
+  "endpoint_pins": {
+    "M-ea8b88f526d44d619a0c86ad10acb6b0": "e5151a837ae8f02d87e4f0c783062f1de890707d18235e858a105f4d7394eb66",
+    "customer-attraction/degree-two-global-customer-lift-three-full-policy-points-and-cubic-separation": "56bcd82c7238a69fa8f075c0ae75b691aa963c65bcb92f825e922aebbd51cd55"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/计算/二阶共同客户提升的三份完整策略矩与三阶分离--计算.md": "8bad08c48994ea8b7479e9e2e709aa0f9fdca8eca49c0f87351bacbe5cd696fb",
+    "archives/customer-attraction/tools/evidence/global-pair-lift-three-points-boss3/saved-points-exact-audit.json": "1d53851ae07156920f846091c8623ae2ac5f92debdf2d8600865aa321d738c01",
+    "archives/customer-attraction/tools/evidence/global-pair-lift-three-points-boss3/saved-points-full-checks.json": "fcaa317118c3f96aee303ea5273fcc83140d0d9cf3045538a2a8d24af73c7264"
+  },
+  "review_digest": "10a0784b6974a13d0a0e9b1a59c8f09f06ef13541c29472dd0e29d7a29666511"
+}

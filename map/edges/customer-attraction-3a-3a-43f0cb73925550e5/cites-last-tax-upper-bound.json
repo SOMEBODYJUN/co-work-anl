@@ -1,0 +1,43 @@
+{
+  "edge_id": "ca-43f0-four-player-cites-last-tax-upper-bound",
+  "kind": "cites",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/four-player-complete-policy-last-payoff-scalar-bridge-counterexamples"
+  ],
+  "target_ids": [
+    "M-b0ff41c82d5d49e291b7e57bce723426"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "共同目录完整历史模型；目标对象的两份四人策略均为完整纯SPE并保留全部离轨弱平局。仅保存正文对精确末位税上界的引用与边界，不把引用改写为逻辑蕴含。",
+  "roles": {
+    "customer-attraction/four-player-complete-policy-last-payoff-scalar-bridge-counterexamples": "给出两份四人完整SPE，并在每份上精确计算 D、u_4、W 与额外闭合条件的 1/4 违反。",
+    "M-b0ff41c82d5d49e291b7e57bce723426": "给出任意 m 人根完整SPE 的有效末位税上界 OPT_m≤W+(m−1)u_m−R，并明确 W+R≥(m−1)u_m 只是条件性 half 充分条件。"
+  },
+  "explanation": "四人对象正文先独立推导 OPT_m≤W+(m−1)u_m−D，再说明两份完整策略只否定把该上界闭合成 W+D≥(m−1)u_m。此边记录两者的精确语境对应：本对象的 D 正是 M-b0ff 的 R 在其实际终局记号下的同一余项。两份四人实例没有 refute 该上界，也没有给出 M-b0ff 的一般证明；因此 kind 用 cites、relation_mode 用 context。",
+  "scope": "语境引用；不贡献 canonical 逻辑蕴含，不升级为 half 或一般支付结论。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/反例/四人完整策略的末位标量桥接反例--反例.md",
+      "sha256": "7eae7283879241aff280abdb22638ecedfbd19487a3ee60564bcaff050e73cad",
+      "section": "模型、被否定的量词与仍然成立的上界"
+    },
+    {
+      "path": "archives/customer-attraction/state/审查/五人增强必要行的索引恒等式与2396行审查边界--审查.md",
+      "sha256": "dca6b4aa0506fae22bac22703fdfa09cf8aeae655aff0a5adec4dd728e4de7e2",
+      "section": "最后节点预算曾尝试什么"
+    }
+  ],
+  "endpoint_pins": {
+    "M-b0ff41c82d5d49e291b7e57bce723426": "0a932e0be7d70d5917abcd89747856c19dcd2d7eb1fab93e1baa63502af510d5",
+    "customer-attraction/four-player-complete-policy-last-payoff-scalar-bridge-counterexamples": "3829a3289f88d360015cf432341ceeee6c7b2b5242776a3af5522a95eaeab0ad"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/反例/四人完整策略的末位标量桥接反例--反例.md": "7eae7283879241aff280abdb22638ecedfbd19487a3ee60564bcaff050e73cad",
+    "archives/customer-attraction/state/审查/五人增强必要行的索引恒等式与2396行审查边界--审查.md": "dca6b4aa0506fae22bac22703fdfa09cf8aeae655aff0a5adec4dd728e4de7e2"
+  },
+  "review_digest": "d597dc008017e82bbdfa879eb54e2725be8e85da1106af899aff001362d03263",
+  "reviewed_by": "solver_43f0cb73925550e5",
+  "review_note": "完整读取核心正文、共同模型、原四主题动作表与 global-exchange Fraction exact-check；确认该边仅保存明确语境引用，保留 whole/contribution/remaining 边界，不升级为一般 half/SPE 结论。"
+}

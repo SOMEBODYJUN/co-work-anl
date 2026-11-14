@@ -1,0 +1,67 @@
+{
+  "task_id": "customer-attraction-3a-3a-4363e9449a23173b",
+  "stage": "3A",
+  "object_ids": [
+    "customer-attraction/nonpne-complete-policy-cone-search-contract",
+    "customer-attraction/closeout-1024aa5b3d6f4073fe0beaba"
+  ],
+  "read_object_ids": [
+    "CAG-MODEL"
+  ],
+  "input_pins": {
+    "customer-attraction/nonpne-complete-policy-cone-search-contract": "24d0314863d8b55ac17dc6cbd089722e84591dcb7c05054c9e67f47d47c24bb5",
+    "customer-attraction/closeout-1024aa5b3d6f4073fe0beaba": "55ef8c9eab68c6f0b88219e0b822fe5619c3252c6ab79a88d6b325ee38c01920",
+    "CAG-MODEL": "3216d1db43ff83e0e0c9cf2479e79611277c9d9291a68e7f9b85ec4bb299dc5c"
+  },
+  "status": "complete",
+  "coverage": {
+    "customer-attraction/nonpne-complete-policy-cone-search-contract": {
+      "state": "linked",
+      "object_pin": "24d0314863d8b55ac17dc6cbd089722e84591dcb7c05054c9e67f47d47c24bb5",
+      "comparison_scope": "完整实读程序合同、入口、实际 Engine、原 1500 条 run、best JSON、fixed-witness-audit、exact-ic-data、model/exact/certificate 四模块；另读 deferred CA-STRATEGY-CONE、CA-EXACT-PURE-SPE-ALL、CA-CREDIBLE-CONTINUATIONS 与五人固定见证正文。核全部 2801 有序历史、16806 非自身 IC、静态 4→0 gain=1250 与真实 00065 续局的固定点。",
+      "reason": "固定点是完整非 PNE/SPE 证据，有限探针与固定策略锥的全称量词严格分离；CA-STRATEGY-CONE 只作为 conditional specializes 端点，静态 SM closeout 作为 context checks，未造 CAG-MODEL hub。 Only the accepted specializes edge is used for linked coverage; the implements/checks edges remain context assets.",
+      "edge_ids": [
+        "cag-4363-strategy-cone-specializes-finite-nonpne-search"
+      ]
+    },
+    "customer-attraction/closeout-1024aa5b3d6f4073fe0beaba": {
+      "state": "isolated-after-review",
+      "object_pin": "55ef8c9eab68c6f0b88219e0b822fe5619c3252c6ab79a88d6b325ee38c01920",
+      "comparison_scope": "完整实读静态 SM(1,1) 逐客户证明、三人完整 SPE 非 PNE 表和额外预算段，并对读 CA-SPE-NON-PNE、CA-WORST-PNE-WELFARE-NO、B2-STRICT-UNIQUE-SPE-STATIC-GAP-v1 的边界。",
+      "reason": "静态冻结删位在同时 PNE 下给 OPT≤2W；三人真实续局把静态 4/3 降为 5/6，阻断 SPE→PNE/静态 SM 迁移；D≤W 只给 3W 粗账，不支付 half。 The only edge touching this core is a context/checks edge, so this core remains isolated-after-review rather than linked.",
+      "edge_ids": []
+    }
+  },
+  "assets": [
+    {
+      "path": "map/edges/customer-attraction-3a-3a-4363e9449a23173b/review.md",
+      "sha256": "fbe277186dd773ba3e0082f94c284e85fd49d89aa291afe678606111d7ae0ea0"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-4363e9449a23173b/support.md",
+      "sha256": "d99bfae71cefdacb482ac8758c10a281c06041e750dcdc6575f9bf82c40a1111"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-4363e9449a23173b/readledger.json",
+      "sha256": "2b1a05b0f27f43d5252e0b09f167e0a092952f38aedc0c9a1c41005f22b38004"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-4363e9449a23173b/cag-4363-strategy-cone-specializes-finite-nonpne-search.json",
+      "sha256": "c50de452bd39a95622b4684be4d5de68a520bcc1bf2b5b59b6c9385a8360ced9"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-4363e9449a23173b/cag-4363-search-constructs-fixed-nonpne-witness.json",
+      "sha256": "8c5e7303c94b0f46cc732c30ebdf9f0873199f031bb91751328a60604402784b"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-4363e9449a23173b/cag-4363-static-smoothness-checks-sequential-gap.json",
+      "sha256": "561e213416e195f45331404c604397f82625ee117129ae9706075af66bad181b"
+    }
+  ],
+  "reviewed_by": "fresh-worker",
+  "review_note": "13 份 reading_refs 的 SHA 全部匹配；deferred bodies 均读并单独标作边界比较，未把有限探针、静态资源或 deferred 端点冒作一般全称证据。已完成固定整数审计数值解释、模型迁移边界、反例用途和未证复杂度记录。",
+  "remaining": [
+    "不证明所有完整 SPE 的统一福利界、六人或一般人数 half、所有策略锥的全局最优、真实跨枝付款统一界、或大 m 软件正确性。"
+  ],
+  "follow_up_tasks": []
+}
