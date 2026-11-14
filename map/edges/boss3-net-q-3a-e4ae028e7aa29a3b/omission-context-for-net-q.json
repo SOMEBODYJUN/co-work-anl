@@ -1,0 +1,61 @@
+{
+  "edge_id": "cag-net-q-fixed-cone-reuses-omission-context",
+  "kind": "cites",
+  "status": "accepted",
+  "source_ids": [
+    "CA-TWO-FIXED-FIVE-PLAYER-OMISSION-PAYMENTS-v1"
+  ],
+  "target_ids": [
+    "CA-TWO-FIXED-FIVE-PLAYER-NET-Q-MATCH-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "共同目录均分模型：五名顺序单位提供者从标签0至6选择行动，完整有序策略沿原实际前缀强制单行动后按同一策略完成；实际支持分别为00011和01010。OMISSION对象的客户量词是各自固定动作图完整SPE客户锥中的全目录遗漏付款和未加权五标签支持，NET-Q对象的客户量词同一固定锥但对恰五个不同标签J使用Q(c,J)=Σ_x d_x(J)/(1+c_x)及E_J=|C\\setminus O_J|。",
+  "roles": {
+    "CA-TWO-FIXED-FIVE-PLAYER-OMISSION-PAYMENTS-v1": "提供同一两冻结动作图、实际路径、逐角色真实后继、全目录遗漏支付与最优五异标签支持匹配的模型背景和量词对照；其单位遗漏预算不承担NET-Q的加权重叠费用。",
+    "CA-TWO-FIXED-FIVE-PLAYER-NET-Q-MATCH-v1": "在同一固定动作图上以独立的127会员型精确证书支付Q(c,J)-E_J，并在完整SPE下用真实IC给Σ_i M_i≤W，得到Q(c,J)≤W+E_J及存在型最优净Q/调和预算匹配。"
+  },
+  "explanation": "实读比较确认两定理共享原件、实际前缀和完整SPE客户锥，但不是蕴含边。OMISSION的查询只逐客户支付|C\\setminus U|（或全目录遗漏）并可推出|V|≤2W与OPT_5-W；它没有支付Q中对已覆盖客户的重叠负载d_x(J)/(1+c_x)，也没有补上E_J。NET-Q的结论由 fixed-policy-net-q-exact.json 中每个σ的21个恰五异标签支持、每支持120个排列逐127型非负余项独立给出；随后逐角色真实IC把该排列的总收益压到W。故OMISSION仅作为同模型/动作图和未加权匹配的上下文来源，不能被冒称为NET-Q的证明或加权费用推导。",
+  "scope": "仅定位两份冻结五人策略锥内的模型与费用层级关系；保留OMISSION的全目录系数2和未加权最优支持结论、NET-Q的Q-E及Q预算结论各自原适用域。一般目录策略、任意重复比较槽的强匹配和从遗漏付款到线性Q的普遍升级仍开放。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/两份冻结完整策略的全目录遗漏支付与逐最优支持匹配--定理.md",
+      "sha256": "5b6db6c3590423177173d3486bf911e23a6d1a238d3222a203b6d0fba1628e96"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/两份冻结五人策略的净线性费用逐类型匹配--定理.md",
+      "sha256": "115bf10a9ca8c08e374f69dfb954773eed26fe46a990e80eaadccccd52af1bf0"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/whole-subtree-nine-endpoints-primary/original/m5p7_residual.json",
+      "sha256": "2a154303b023acfdc7b09c8576f63b3acb50abb02bd8e3cca6a793152ad07233"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/whole-subtree-nine-endpoints-primary/original/m5p7_reentry_incumbent_half.json",
+      "sha256": "e6269ea7551820d0d2c6192dd96d60b7bd2ce1f92b6ffd463fd8a13f89da0565"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/fixed-five-player-omission-payments/check-net-q-on-fixed-policies.py",
+      "sha256": "60270ac3373647c0527b500cd18bc02e695040db1ba33fed97d901ebeeb93701"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/fixed-five-player-omission-payments/fixed-policy-net-q-exact.json",
+      "sha256": "0ade06e0a301b0a83c4d23859711fde5617acd0cdc3b0afaa7a5b65c77bfd3a4"
+    }
+  ],
+  "reviewed_by": "Boss4 / net-q 3A worker",
+  "review_note": "完整顺序读取任务声明的7份reading_refs；两原件JSON均按完整字节解析并检查2801动作、全历史键层、certified exact字段和独立检查统计；逐127型净Q证书的21支持/每支持排列及slacks全部非负。独立运行check-net-q-on-fixed-policies.py与verify_fixed_omission.py均exit 0。比较结果是语境引用而非OMISSION到NET-Q的逻辑推出。",
+  "endpoint_pins": {
+    "CA-TWO-FIXED-FIVE-PLAYER-NET-Q-MATCH-v1": "6a565b467a4b41379b85fe03ce627c7da7af7aa848962be0c2ef9cbd85ab6079",
+    "CA-TWO-FIXED-FIVE-PLAYER-OMISSION-PAYMENTS-v1": "326751e40fdeb783b3b60a5d3a2266be692d8a1c456fa4085f5314c01ae05335"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/两份冻结完整策略的全目录遗漏支付与逐最优支持匹配--定理.md": "5b6db6c3590423177173d3486bf911e23a6d1a238d3222a203b6d0fba1628e96",
+    "archives/customer-attraction/state/定理/两份冻结五人策略的净线性费用逐类型匹配--定理.md": "115bf10a9ca8c08e374f69dfb954773eed26fe46a990e80eaadccccd52af1bf0",
+    "archives/customer-attraction/tools/evidence/whole-subtree-nine-endpoints-primary/original/m5p7_residual.json": "2a154303b023acfdc7b09c8576f63b3acb50abb02bd8e3cca6a793152ad07233",
+    "archives/customer-attraction/tools/evidence/whole-subtree-nine-endpoints-primary/original/m5p7_reentry_incumbent_half.json": "e6269ea7551820d0d2c6192dd96d60b7bd2ce1f92b6ffd463fd8a13f89da0565",
+    "archives/customer-attraction/tools/evidence/fixed-five-player-omission-payments/check-net-q-on-fixed-policies.py": "60270ac3373647c0527b500cd18bc02e695040db1ba33fed97d901ebeeb93701",
+    "archives/customer-attraction/tools/evidence/fixed-five-player-omission-payments/fixed-policy-net-q-exact.json": "0ade06e0a301b0a83c4d23859711fde5617acd0cdc3b0afaa7a5b65c77bfd3a4"
+  },
+  "review_digest": "8295cc9b7a4ebfb1fd732ef352f339a152685652dfa15a459537ab9b73a852e9"
+}
