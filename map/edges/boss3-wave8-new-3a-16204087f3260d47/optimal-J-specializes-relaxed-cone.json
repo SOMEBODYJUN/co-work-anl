@@ -1,0 +1,67 @@
+{
+  "edge_id": "boss3-wave8-new-3a-16204087f3260d47-relaxed-cone-to-optimal-J",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "M-7dc7b597f43c46dc9ef0620ec1cc79b4"
+  ],
+  "target_ids": [
+    "customer-attraction/fixed-distinct-prefix-individual-cone-optimal-J-exact-13-over-4"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "共同目录完整历史模型：四名单位提供者、五个非空两两不同标签、客户均分价值，所有完整有序历史上的真实续局按同一固定形式策略。固定 sigma(h)=0 当 h 全由 0 组成，否则 sigma(h)=2；固定 J={0,1,3,4}。两端都只使用长度 0–3 的不重复 J 前缀、偏离为尚未使用的 J 标签的 permutation_prefix 逐行动比较，客户类型质量非负且 W>0。源对象允许任意 O_J；目标对象在同一行锥上额外要求 O_J=OPT_4，并保留实际完整策略语义。",
+  "roles": {
+    "M-7dc7b597f43c46dc9ef0620ec1cc79b4": "提供较宽的固定 sigma、J permutation_prefix 行锥：63 条非零筛选行均可行，三条 h=(0)→j (j=1,3,4) 的权 3 对偶给所有非负质量 O_J/W≤13/4；其 67 客户达到点的 O_J=52 而 OPT_4=67，因此不满足最优 J 条件。",
+    "customer-attraction/fixed-distinct-prefix-individual-cone-optimal-J-exact-13-over-4": "把同一固定行锥限制到 O_J=OPT_4，使用 52 个单位客户（掩码 1:11、5:5、6:12、12:12、20:12）得到 W=16、O_J=OPT_4=52，并以同一三行权 3 对偶与 31 个非负余项证明锐值 13/4。"
+  },
+  "whole_result": "在同一固定 sigma、J 及 permutation_prefix 逐行动锥中，源对象的精确上界 O_J/W≤13/4 在加入 O_J=OPT_4 的子域后仍锐：核心目标的 52 单位客户点满足 W=16、O_J=OPT_4=52，故 O_J/W=13/4；其三条根后 h=(0)→1,3,4 的权 3 对偶与源对象完全相同。该关系是源宽锥障碍到最优比较组定理的严格 specialization。",
+  "explanation": "两对象拥有同一五标签客户均分模型、同一 156 节点策略 sigma、同一 J={0,1,3,4} 和同一 permutation_prefix 保留量词。源的三行对偶恒等式逐客户为 (13/4)w_M−o_M−3Σ_j r_(0),j(M)=a_0+3q/(a_0+1+2c)−1[a_0+q>0]≥0，因此对任意非负质量先给宽锥上界；核心定理明确指出该上界甚至不需要 J 最优约束。差别在达到点和量词：源点的掩码 1:16、4:15、6:12、12:12、20:12 共 67 客户，O_J=52 但实际 OPT_4=67，故它只证明删行限制锥而非最优 J。核心点改为掩码 1:11、5:5、6:12、12:12、20:12 共 52 客户，使所有客户均被 J 覆盖且 OPT_4=52；其 63 条筛选行仍非负，三行对偶余项在五个正质量型上全为零，故子域上界仍达到 13/4。由于源达到点违反 O_J=OPT_4，不能反向把核心定理等价回源对象；两者都不恢复被删的 717 条真 IC、完整 SPE 或效率反例。",
+  "scope": "仅限该固定 sigma/J、四人五标签实例及不重复 J 前缀逐行动筛选锥；可复用结论是‘最优比较组约束不降低该受限锥的精确 13/4 值’。不扩展到所有策略、所有 J、重复前缀、J 外偏离、完整 780 条真 IC、纯 SPE 存在性或 OPT_4/W 的完整策略效率界。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/指定四人不重复比较前缀逐行动锥在最优比较组下仍锐为十三除四--定理.md",
+      "sha256": "97e261372b4d503c3f93cb25bfb30b7d8c6b6fcf4f3f4faef8183c4f3ca4916f"
+    },
+    {
+      "path": "archives/customer-attraction/state/障碍/不重复比较前缀筛选的四人行锥障碍--障碍.md",
+      "sha256": "adbd905448889d8013b8f2ffd96ba856f6a73b9de028149fff318241cc2cd27d"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/continuation-dual-resumed-boss2/saved-witness-exact-check.json",
+      "sha256": "5914b78d9c064afdb097504ec32921fcfd514848eaab8be7d5659d016205acc2"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/distinct-prefix-individual-optimal-J-13-over-4/verify_optimal_J_13_over_4.py",
+      "sha256": "bb750fe1db5b4f1ebc57af1da0c561cd0ff562094d3d94737bc488023a91f54d"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/distinct-prefix-individual-optimal-J-13-over-4/exact-certificate.json",
+      "sha256": "53f4c2edd7aae38ddc9025fb3d12a587a2b7970ecd6d38c013abde22108c9cf2"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/continuation-dual-resumed-boss2/verify_saved_restriction_witness.py",
+      "sha256": "26edfa1a8dc9df8246af5375da62b67d451b948be7bd0facce3053b280f728bd"
+    }
+  ],
+  "reviewed_by": "map_worker_f (Boss7 fresh worker)",
+  "review_note": "完整读取本任务声明的7个 reading_refs，并核对 shared_read dependency M-7dc7b597f43c46dc9ef0620ec1cc79b4 的登记陈述与正文。逐项保留模型、策略、J、筛选历史/行动量词、W/O_J/OPT、证书质量、对偶权和真实负行；确认核心是同一宽锥结果在 O_J=OPT_4 子域的严格 specialization。未将有限筛选行或程序证书升级为完整 SPE/效率结论。",
+  "endpoint_pins": {
+    "M-7dc7b597f43c46dc9ef0620ec1cc79b4": "68ec51aa4b1818f9febf0ce78cacc43c1a5e341e98270c46bb0e03124e352427",
+    "customer-attraction/fixed-distinct-prefix-individual-cone-optimal-J-exact-13-over-4": "be7dbd04355e636cf6468a9aac72544a6da9a759ef2c4b338bf3284b82242bad"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/指定四人不重复比较前缀逐行动锥在最优比较组下仍锐为十三除四--定理.md": "97e261372b4d503c3f93cb25bfb30b7d8c6b6fcf4f3f4faef8183c4f3ca4916f",
+    "archives/customer-attraction/state/障碍/不重复比较前缀筛选的四人行锥障碍--障碍.md": "adbd905448889d8013b8f2ffd96ba856f6a73b9de028149fff318241cc2cd27d",
+    "archives/customer-attraction/tools/evidence/continuation-dual-resumed-boss2/saved-witness-exact-check.json": "5914b78d9c064afdb097504ec32921fcfd514848eaab8be7d5659d016205acc2",
+    "archives/customer-attraction/tools/evidence/distinct-prefix-individual-optimal-J-13-over-4/verify_optimal_J_13_over_4.py": "bb750fe1db5b4f1ebc57af1da0c561cd0ff562094d3d94737bc488023a91f54d",
+    "archives/customer-attraction/tools/evidence/distinct-prefix-individual-optimal-J-13-over-4/exact-certificate.json": "53f4c2edd7aae38ddc9025fb3d12a587a2b7970ecd6d38c013abde22108c9cf2",
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+    "archives/customer-attraction/tools/evidence/continuation-dual-resumed-boss2/verify_saved_restriction_witness.py": "26edfa1a8dc9df8246af5375da62b67d451b948be7bd0facce3053b280f728bd"
+  },
+  "review_digest": "a80e992d5a5570abfe7a9c6983e8843c00e8db8fab4f9467b3601fad6f779ccb"
+}
