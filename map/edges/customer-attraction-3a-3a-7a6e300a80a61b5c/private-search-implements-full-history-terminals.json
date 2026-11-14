@@ -1,0 +1,66 @@
+{
+  "edge_id": "cag-7a6e-private-search-implements-full-history-terminals",
+  "kind": "implements",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/closeout-84cf2c734a42c5a8ee726cb8"
+  ],
+  "target_ids": [
+    "CA-EXACT-PURE-SPE-ALL"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "同一有限非空共同目录，m名依次选择的单位提供者，每标签a对应互不相交的单位客户块，大小v_a为非负整数。标签与其有序历史均保留，空块允许。冻结格点主循环m=6、k=3至7、v_a∈{1,…,8}且非降；七标签随机调用m=6，只有单例兴趣型可正，允许零大小。",
+  "roles": {
+    "customer-attraction/closeout-84cf2c734a42c5a8ee726cb8": "冻结两程序提供有序终局全集递推与同一私有域的整数计数终局调用；各自的样本和执行边界独立。",
+    "CA-EXACT-PURE-SPE-ALL": "给出相同max-min门槛、计数集合与有序历史的关系、完整策略证书解码和真正IC的独立验证。"
+  },
+  "explanation": "置类型重数r_{{a}}=v_a且全部多标签型为0。对终局计数q及q_a>0，U_a(q)=v_a/q_a。有序possible在h把每个合法孩子h·a的可实现有序终局集合先求全，取各孩子最小收益的最大值作门槛；按标签计数投影后逐层恰是R(c)=∪_a{q∈R(c+e_a):U_a(q)≥M(c)}。七标签调用exact_outcomes把掩码1<<a写到重数数组下标(1<<a)-1，以lcm(1,…,m)正比例缩放每个终局收益，min、max、≥及平局保持。固定输入与目标q∈R(c)后，解码时在每个真实有序历史h选使q∈R(c+e_a)且U_a(q)≥M(c)的规定行动a。规定孩子继承q；其余每个合法孩子b分别选使U_b达到子SPE最小值的目标并递归。因此真偏离收益≤M(c)≤实际收益，并在原树的每个有序子局成立。若另指定有序路径，沿途每一步须满足同一目标成员关系与门槛，仅终局计数相符不足以强制该顺序。四标签(4,1,1,1)、四人小核对中，4个计数投影来自13条可实现有序终局；对13条各自独立展开并检查全85个决策历史及所有孩子。两原程序返回终局集合，解码依通用算法且不在两原程序的返回合同内。",
+  "scope": "接受的实现语境。格点枚举及随机轨迹只是各自有限域；计数缓存不约束同计数异序历史选相同后继。冻结两个增量没有完整运行回执或逐尝试的全策略输出。100秒只在一次restart的内层循环之后检查；checked仅计当前点，未计提案；best可能遗漏最后接收的提案，未改善1时仍有终端空best风险。私有m=6域的6/11由独立解析定理给出。",
+  "reviewed_by": "Boss3",
+  "review_note": "实读冻结合同全文（已登记section及后续全部数学节）、两原程序、整数模块的geometry/exact_outcomes/instance_record、通用递推和证书正文。提取纯函数核六个样例，包含全零和同大小平局；其中三个二人小例另枚举全部有序策略核终局，四标签四人案例独立解码全有序终局并逐历史查真正偏离。未运行格点扫描或随机搜索。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/程序/不交目录有限搜索的有序终局与计数终局合同--程序.md",
+      "sha256": "d0680b9b0a1cfd21f9b873fad10ef3fd7493be6e4ede7a8f5968d6b55d276f82"
+    },
+    {
+      "path": "archives/customer-attraction/state/算法/完整历史纯SPE终局全集--算法.md",
+      "sha256": "667d6f319b1f325bd32538f6b0e5a8e95c1942e2ec97cbc76d7cbaef06b36954"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/reviewed-local-private-search-and-singleton-residue-three-primary/source-root/intake/reviewed-local-20261029/raw/search_disjoint_tmp.py",
+      "sha256": "ceddf1fefce5cf1c82b887e63518ed168dfd365784a8d3f607811b567c6e2d84"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/reviewed-local-private-search-and-singleton-residue-three-primary/source-root/intake/reviewed-local-20261029/raw/private_search.py",
+      "sha256": "70a1ce0bccbd0766132bb18d4d52e473e072a4d8a140debbf7b9bb488e739037"
+    },
+    {
+      "path": "tools/evidence/search-and-facility-site-primary/original/4a0a68157e801a180ce5/tests/audits/customer_attraction_search.py",
+      "sha256": "46cf6d23d6b7e5d8490b4726fd9c1111641196ec77420ecb8e16dbaa4653e2d6"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-7a6e300a80a61b5c/verify-averaged-root-and-terminals.py",
+      "sha256": "28799e96e5422df057f45e537e9a9313bf5d42800181fa9021ecadec3d04efcd"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-7a6e300a80a61b5c/exact-replay.txt",
+      "sha256": "34fa9a7b4595b3d99f6fb62758940f490b29a192c3206a5ce9425b41bef71a8e"
+    }
+  ],
+  "endpoint_pins": {
+    "CA-EXACT-PURE-SPE-ALL": "aaa77e1f9a928bc25a315e66e18f424418e64643ec3fdb8717cbc3adc6310056",
+    "customer-attraction/closeout-84cf2c734a42c5a8ee726cb8": "46f5ae38a77a5f7459a31abf91c7b61930c916a3e79b3029fa486f75dacf9562"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/程序/不交目录有限搜索的有序终局与计数终局合同--程序.md": "d0680b9b0a1cfd21f9b873fad10ef3fd7493be6e4ede7a8f5968d6b55d276f82",
+    "archives/customer-attraction/state/算法/完整历史纯SPE终局全集--算法.md": "667d6f319b1f325bd32538f6b0e5a8e95c1942e2ec97cbc76d7cbaef06b36954",
+    "archives/customer-attraction/tools/evidence/reviewed-local-private-search-and-singleton-residue-three-primary/source-root/intake/reviewed-local-20261029/raw/search_disjoint_tmp.py": "ceddf1fefce5cf1c82b887e63518ed168dfd365784a8d3f607811b567c6e2d84",
+    "archives/customer-attraction/tools/evidence/reviewed-local-private-search-and-singleton-residue-three-primary/source-root/intake/reviewed-local-20261029/raw/private_search.py": "70a1ce0bccbd0766132bb18d4d52e473e072a4d8a140debbf7b9bb488e739037",
+    "tools/evidence/search-and-facility-site-primary/original/4a0a68157e801a180ce5/tests/audits/customer_attraction_search.py": "46cf6d23d6b7e5d8490b4726fd9c1111641196ec77420ecb8e16dbaa4653e2d6",
+    "map/edges/customer-attraction-3a-3a-7a6e300a80a61b5c/verify-averaged-root-and-terminals.py": "28799e96e5422df057f45e537e9a9313bf5d42800181fa9021ecadec3d04efcd",
+    "map/edges/customer-attraction-3a-3a-7a6e300a80a61b5c/exact-replay.txt": "34fa9a7b4595b3d99f6fb62758940f490b29a192c3206a5ce9425b41bef71a8e"
+  },
+  "review_digest": "ee7c695feb5e5a4add10c405ed8e2051511c9a89d3a8f4a29dfe3e0339850b10"
+}
