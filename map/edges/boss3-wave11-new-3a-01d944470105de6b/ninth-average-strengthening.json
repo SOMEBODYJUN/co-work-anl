@@ -1,0 +1,60 @@
+{
+  "edge_id": "cag-wave11-ninth-full-average-nonempty-distinct-strengthening",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/fixed-ninth-policy-full-average-and-prefix-individual-exact-bounds"
+  ],
+  "target_ids": [
+    "CA-FIXED-16-FILTERED-AVERAGE-SHARP-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定四人五主题共同目录、均分客户价值、固定第9策略动作表、J={1,2,3,4}，偏离均沿改变后完整历史的同一动作表真实续局。全历史平均在全部156个有序历史逐点平均四个J行动；不重复前缀逐行动是另一独立行族。比较比值只在W>0，且达到点另要求J=OPT4。",
+  "roles": {
+    "customer-attraction/fixed-ninth-policy-full-average-and-prefix-individual-exact-bounds": "提供第9策略全历史平均的h=(2,2,2)单行、乘子4、7/4上界，以及独立的不重复前缀逐行动11/6结果；其原7/4达到点为49客户。",
+    "CA-FIXED-16-FILTERED-AVERAGE-SHARP-v1": "接收并在相同第9全历史平均接口上给出更强的五主题非空互异/J最优56客户达到点，并记录该点在第9筛选平均行A_(1)=-1/2；本边只覆盖核心第9策略分量。"
+  },
+  "explanation": "第9策略的全历史平均上界由固定历史(2,2,2)的四个J偏离终局和乘子4支付：逐型余项为 a+(x+y+z)/(1+3a)-1[a+x+y+z>0]，对全部31非空会员型非负。核心补充证书复用同一上界并将取等点加强为掩码2,4,5,8,9,17上客户数1,20,12,1,21,1，总56；此点W=32、O_J=OPT4=56、比值7/4，且五个主题客户集{5,9,17},{2},{4,5},{8,9},{17}均非空且两两不同。该点还使第9策略不重复筛选平均A_(1)=-1/2，说明全历史平均与筛选平均的行族不能互换。原对象的11/6逐行动结论与核心第16策略结论不由本边推出。",
+  "scope": "仅固定第9策略/J9的全历史平均7/4组件及其五主题非空互异、J最优子域达到点；不扩展到任意策略、完整SPE或第9逐行动11/6以外的通用关系。",
+  "contribution": {
+    "result": "已精确复用第9策略全历史平均的7/4单行对偶，并把取等见证升级到56名单位客户、五主题非空互异且J=OPT4；同时以A_(1)=-1/2保留平均与不重复筛选行族的分离。",
+    "remaining": "本边不承担核心第16策略的13/4筛选平均部分，也不替第9对象证明其11/6逐行动系统可推出任何全历史结论；一般四人平均/SPE桥仍开放。"
+  },
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/指定四人第九策略的全历史平均与不重复前缀逐行动锐界--定理.md",
+      "sha256": "8febe5636611bf45fceeb374ca0ac330a24ead3e6ea76db2211f0a69140de062"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/固定第十六策略的筛选平均锐界和第九策略互异目录达到点--定理.md",
+      "sha256": "8efb0b214ab2fcbd2fc2df6fadc5237cf171abf4a163e0fa0de8b886f6e81c3b"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/fixed-cone-comparison-supplements/verify-supplements.py",
+      "sha256": "335f9e2cec0dbf54de7b917d82a1c00264fce55d56b0a78c2b8749205dac56fb"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/fixed-cone-comparison-supplements/exact-supplements.json",
+      "sha256": "65048dfc2e64d76d10f0ea33385b3f37543bec28c982a43b97b4592b996a2e9e"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/distinct-prefix-average-sharp-33-over-16/exact-strengthened-check.json",
+      "sha256": "c021750905ecd24c0d46b9929d69ef55da321963967d393bd1253464a0cc1c83"
+    }
+  ],
+  "reviewed_by": "Boss4/worker_filter_avg",
+  "review_note": "完整读取任务声明的14个来源并核SHA；标准库有理复验 verify-supplements.py、verify_strengthened_fixed_cones.py 及 check_average_sources.py（按README命令）均通过。核对156历史、7/4单行余项、56客户覆盖/OPT、五主题集合和A_(1)=-1/2分离；严格保留第9逐行动11/6及完整SPE的独立范围。",
+  "endpoint_pins": {
+    "CA-FIXED-16-FILTERED-AVERAGE-SHARP-v1": "327d62fcbd433e4f5b50b4955333ce3eee460e2efaa77f685b0b2de1f8ce5f63",
+    "customer-attraction/fixed-ninth-policy-full-average-and-prefix-individual-exact-bounds": "01303f2d2841fa9febfba65a254ffed901a7ba31ea0d1c7db77df084537b5844"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/指定四人第九策略的全历史平均与不重复前缀逐行动锐界--定理.md": "8febe5636611bf45fceeb374ca0ac330a24ead3e6ea76db2211f0a69140de062",
+    "archives/customer-attraction/state/定理/固定第十六策略的筛选平均锐界和第九策略互异目录达到点--定理.md": "8efb0b214ab2fcbd2fc2df6fadc5237cf171abf4a163e0fa0de8b886f6e81c3b",
+    "archives/customer-attraction/tools/evidence/fixed-cone-comparison-supplements/verify-supplements.py": "335f9e2cec0dbf54de7b917d82a1c00264fce55d56b0a78c2b8749205dac56fb",
+    "archives/customer-attraction/tools/evidence/fixed-cone-comparison-supplements/exact-supplements.json": "65048dfc2e64d76d10f0ea33385b3f37543bec28c982a43b97b4592b996a2e9e",
+    "archives/customer-attraction/tools/evidence/distinct-prefix-average-sharp-33-over-16/exact-strengthened-check.json": "c021750905ecd24c0d46b9929d69ef55da321963967d393bd1253464a0cc1c83"
+  },
+  "review_digest": "fbff2c9f46a05f809022e87658dc1bc70f00ce1590cb59dab0d7f1d6b1287471"
+}
