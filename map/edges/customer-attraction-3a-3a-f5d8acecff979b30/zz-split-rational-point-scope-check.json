@@ -1,0 +1,85 @@
+{
+  "edge_id": "cag-f5d8-zz-split-rational-point-scope-check",
+  "kind": "checks",
+  "status": "accepted",
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "source_ids": [
+    "customer-attraction/zz-diagonal-split-rational-necessary-point"
+  ],
+  "target_ids": [
+    "customer-attraction/zz-diagonal-split-rational-necessary-point"
+  ],
+  "conditions": "仅限 split_basic_exact.json SHA b12c4aa6b3cd106f3fb8e8a56be7469988456c0cb6e02b1741db8c09d587b34a 所绑定的 K、16 hist、194 组 R/Z、固定 R 边缘；22 个共同 R 阈值层、275 个 Z slab 质量、旧 3945 行和 60 个 ZZ 聚合槽。",
+  "roles": {
+    "customer-attraction/zz-diagonal-split-rational-necessary-point": "给出固定输入上 4005=3945+60 条有限必要行的有理可行点（O=1、W<1/2、minimum_slack=0），并以 43 个正有理代表原子实现重构后的 joint/RR 会员积分；同时保留 source 1905 坐标变化、SPE/OPT 缺口和后继点迁移边界。"
+  },
+  "explanation": "`zz_split_exact.json` 精确记录 275 个 Z 质量、125 个正值、150 个零值和 21 个严格内点；`execution.json` 记录原 `--split --verify` 一次 exit 0 的 4005 行回代。`interface-audit.json` 独立读取 split 接口并复用 60-ZZ 分数表，给出 31 个零槽和 29 个正槽；point-audit 另以 22 slabs 的嵌套切分得到 43 个正质量原子，确认全部 582 joint 与 1306 RR 坐标等于重构积分。相对旧 1905 源点改变 62 个 joint、193 个 overlap 和 45 个 Z 组，故旧点不能与当前 275 点混合；源点 189 个 overlap 低于真实 Frechet 下界也不能被冒作字面联合。该 checks 边只固定并解释有限必要系统与会员 lift 的作用范围，不推出完整共同目录策略、全部有序历史 pure-SPE、精确最优性、OPT_6、一般六人 half 或 7931 后继的 PAIR 可行性。",
+  "scope": "self-context only；固定 split 输入、22-layer ZZ threshold lift 和 4005-row finite necessary system。释放 Z/RZ、任意 R 联合、改变 hist/R、引入完整策略或迁移到 7931/其它阶段点均需重新核验。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/计算/ZZ分裂必要系统的有理候选点--计算.md",
+      "sha256": "3869fffcd5534e0fecb825f075e58665ae1a8fed01118e78397447d4b1a6c98c",
+      "section": "原件、实际版本及本次结论"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+      "section": "策略、真实续局与全部历史量词"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/对角回复预算拆分的基础图程序--程序.md",
+      "sha256": "82ec96261a97cd3bdf9ddd249a75c7947260ef229eed293ff6cb2c80529dc2d7",
+      "section": "从局部系数到56条矩阵行"
+    },
+    {
+      "path": "archives/customer-attraction/state/计算/对角基础行拆分后的有理必要点--计算.md",
+      "sha256": "ba299b0131e99dbf66151b68b8b2d345d8bbfe388025d86e989e5acb0d241d97",
+      "section": "189个字面交叠障碍与一条短见证"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/zz-threshold-closure-program/related/zz_split_exact.json",
+      "sha256": "312732da47c24fe39259c339cf669231162f1402c85a4036a8a351abaef7f51c"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/split-basic-graph-program/related/split_basic_exact.json",
+      "sha256": "b12c4aa6b3cd106f3fb8e8a56be7469988456c0cb6e02b1741db8c09d587b34a"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/zz-split-exact-point/point-audit.json",
+      "sha256": "b498a95526e79f6080068d9b33b68967d9bd44791b430f91b4a94c8e2ec0e726"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/zz-split-exact-point/rerun/execution.json",
+      "sha256": "56f1f3e98bd230c1052e3d53f94505262f2318a33ecb3c73c1d374a8627ce2a0"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/zz-threshold-closure-program/interface-audit.json",
+      "sha256": "e464fae786d22bbb8bfe02cf2b334da3083dcb41a2897eee72ed58c141308708"
+    },
+    {
+      "path": "archives/customer-attraction/state/资源/显式回复主图的阶段点与未闭报价账本--资源.md",
+      "sha256": "e0ccd4f54daa50c8b5a8324f0cf2832e334cd14352b4ccdf92bbf6c325e9effb",
+      "section": "README前五阶段：每个完成域都具体"
+    }
+  ],
+  "reviewed_by": "Boss7 / fresh-worker-Z",
+  "review_note": "完整读取任务声明的 10 份 distinct refs（split_basic JSON 分两段连续读取）；本边只作 self-context checks，严格区分有限必要系统、共同会员 lift、source/current 坐标变化和完整 SPE/OPT/迁移缺口。",
+  "follow_up": "与 diagonal-basic-row-split-exact-necessary-point 及 diagonal-reply-budget-split-basic-graph-program 的 3B 比较保留为开放问题；当前没有 successor task ID，不把任何对端输出升级为本 core 的承重前提。",
+  "endpoint_pins": {
+    "customer-attraction/zz-diagonal-split-rational-necessary-point": "65ef9e3bb281af401f33d7c1082adb0f74745530a97d3bf729717d2034a9819e"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/计算/ZZ分裂必要系统的有理候选点--计算.md": "3869fffcd5534e0fecb825f075e58665ae1a8fed01118e78397447d4b1a6c98c",
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+    "archives/customer-attraction/state/程序/对角回复预算拆分的基础图程序--程序.md": "82ec96261a97cd3bdf9ddd249a75c7947260ef229eed293ff6cb2c80529dc2d7",
+    "archives/customer-attraction/state/计算/对角基础行拆分后的有理必要点--计算.md": "ba299b0131e99dbf66151b68b8b2d345d8bbfe388025d86e989e5acb0d241d97",
+    "archives/customer-attraction/tools/evidence/zz-threshold-closure-program/related/zz_split_exact.json": "312732da47c24fe39259c339cf669231162f1402c85a4036a8a351abaef7f51c",
+    "archives/customer-attraction/tools/evidence/split-basic-graph-program/related/split_basic_exact.json": "b12c4aa6b3cd106f3fb8e8a56be7469988456c0cb6e02b1741db8c09d587b34a",
+    "archives/customer-attraction/tools/evidence/zz-split-exact-point/point-audit.json": "b498a95526e79f6080068d9b33b68967d9bd44791b430f91b4a94c8e2ec0e726",
+    "archives/customer-attraction/tools/evidence/zz-split-exact-point/rerun/execution.json": "56f1f3e98bd230c1052e3d53f94505262f2318a33ecb3c73c1d374a8627ce2a0",
+    "archives/customer-attraction/tools/evidence/zz-threshold-closure-program/interface-audit.json": "e464fae786d22bbb8bfe02cf2b334da3083dcb41a2897eee72ed58c141308708",
+    "archives/customer-attraction/state/资源/显式回复主图的阶段点与未闭报价账本--资源.md": "e0ccd4f54daa50c8b5a8324f0cf2832e334cd14352b4ccdf92bbf6c325e9effb"
+  },
+  "review_digest": "cacaa169932f468f2e6d5768311b222bd21330918de517e04522ae1c3eb67dc6"
+}
