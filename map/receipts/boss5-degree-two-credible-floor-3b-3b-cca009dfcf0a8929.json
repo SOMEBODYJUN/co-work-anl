@@ -25,21 +25,27 @@
       "object_pin": "cd901b7f15921d8205f33be6c8d93451d2f9946236366818088406048f2a4595",
       "comparison_scope": "完整 route5 接口与二元族空前缀强制根比较；用任意尾多重集的根收益下界及指定反组完整 SPE 取等，精确得到 L_empty(v)=Theta_empty=L。一般非空前缀与付款接口仍开放。",
       "reason": "新边把旧固定根 R_Z(T) 聚合上界接到 route5 的真实 branch floor：所有强制根后的终局都满足根收益≥L，指定反组后继实现等号；不把该局部结果升级为一般目录或 half。",
-      "edge_ids": ["cag-degree-two-credible-root-threshold-local"]
+      "edge_ids": [
+        "cag-degree-two-credible-root-threshold-local"
+      ]
     },
     "customer-attraction/degree-two-exact-root-tail-profit": {
       "state": "linked",
       "object_pin": "4638e5ff85b2fdb805a2578bfdfc42e7ed0d2351a87ea9dd252324e7250fcc37",
       "comparison_scope": "固定根 q 槽聚合尾利润、端点支持与反组取等；作为新边的取等后继核验，不把 R_Z(T) 误称 R(h)。",
       "reason": "与构造共享相反组各一次的真实尾；max R_Z=qH 提供取等支持，但 branch floor 使用新边的逐终局根收益下界。",
-      "edge_ids": ["cag-degree-two-credible-root-threshold-local"]
+      "edge_ids": [
+        "cag-degree-two-credible-root-threshold-local"
+      ]
     },
     "degree-two-shared-customers-complete-spe-negative-stationary-flux-family": {
       "state": "linked",
       "object_pin": "ead26a4f21f7e18c8edf9e4ae56d638dec34f9825819526618cf059eab1a651d",
       "comparison_scope": "完整二元目录、全历史指定纯 SPE、F(s) IC、根/尾收益与 a>0 无重复条件；程序审计只作可信后继与有限域证据。",
       "reason": "构造保证指定反组后继是完整 SPE、根收益 L，并给出 a>0 的严格 no-duplicate IC；actual W=OPT、root=theta、负通量均保留为边界，不作为 half 证据。",
-      "edge_ids": ["cag-degree-two-credible-root-threshold-local"]
+      "edge_ids": [
+        "cag-degree-two-credible-root-threshold-local"
+      ]
     }
   },
   "assets": [
@@ -71,13 +77,6 @@
     "copy_and_no_duplicate": "The forced-root floor is preserved when tail labels are copied by the count-state backward induction; in the designated strategy, a>0 gives L>S/2 and repeated-topic deviations≤S/2, hence strict no-duplicate IC; a=0 remains weak.",
     "boundary": "No general nonempty-prefix L_h/Theta_h, no cross-branch shared payment, no Σ_i L_h_i(T_i)≥OPT−W, and no arbitrary-catalog or six-provider half theorem."
   },
-  "closed_overlaps": [
-    {
-      "core_id": "customer-attraction/degree-two-exact-root-tail-profit",
-      "peer_id": "cag-degree-two-tail-route5-threshold-gap",
-      "reason": "旧边只保留固定根 q 槽聚合上包络 R_Z≤qH 与 route5 gap；本边新增逐终局强制根 branch floor L_empty(v)=Theta_empty=L 及反组 SPE 取等，保留一般前缀/全局付款缺口。"
-    }
-  ],
   "follow_up_tasks": [],
   "review_note": "完整实读七份 refs；推导空前缀 branch threshold 的局部 contribution，严格区分旧 q 槽 checks 边的聚合上界与本边的逐终局根下界。未运行 solver/LP/策略搜索，未修改源正文或程序。",
   "native_validation": {
