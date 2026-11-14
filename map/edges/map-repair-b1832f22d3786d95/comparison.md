@@ -1,3 +1,9 @@
+# Repair review: 427 / 65 terminal comparison (non-edge evidence)
+
+> **Retirement notice.** This file is retained only as a non-edge review record for `map-repair-b1832f22d3786d95`. It does not define, bind, or imply the retired accepted edge `ca-427-joint-primal-materializes-33-last-nodes`. The prior materialization provenance is not a logical `implies` relation.
+
+The repair re-read the 427 exact-relaxation object, the closeout-bf R105 obstruction, `CAG-MODEL`, and the 65-topic/33-last-node construction. The 427 point and the 65-topic construction remain useful finite evidence, but the construction is provenance for a separate finite instance and does not transfer the 427 relaxation into the 65 object as a theorem. The 427 object therefore receives `isolated-after-review` coverage with no edge IDs. The closeout-bf object is retained only in its existing R105 context; no new logical edge is introduced.
+
 # 427 列终局点、共同目录物化与局部可信性的边界
 
 ## 精确原始点重验
