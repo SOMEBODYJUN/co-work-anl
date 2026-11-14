@@ -1,0 +1,79 @@
+{
+  "edge_id": "cag-search7-endpoint-strict-full-history-uniqueness",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "CA-STRATEGY-CONE"
+  ],
+  "target_ids": [
+    "M-451b1dbddfa345e1ae318c7d93cf32bd"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "六名单位提供者、七个可区分共同标签，固定eval47752的21型159名单位客户与保存的完整有序动作表σ。按同一σ在每个偏离动作后的真实有序子树完成终局；全部非自身严格差由输入和动作表已逐项核定。",
+  "roles": {
+    "CA-STRATEGY-CONE": "定理一把固定完整有序σ的每个真实偏离差写成G_{h,b}r，全部非负恰认证σ为完整纯SPE。",
+    "M-451b1dbddfa345e1ae318c7d93cf32bd": "完整树每节点的严格差与逐层唯一性归纳给出本固定实例的唯一策略，根路径、收益和真实OPT均由同一输入直接确定。"
+  },
+  "whole_result": "21个正类型共159名单位客户，七个标签各有正私有块，覆盖两两不同且互不包含。保存的19608节点完整策略是该实例唯一完整纯SPE，实际有序路径为(6,6,6,6,1,1)，终局计数(0,2,0,0,0,0,4)，前四位各得269/12、末两位各得62/3，W=131、OPT₆=158。137256个真实比较中19608个自身项为零，117648个非自身项全严格正，最小为1/10。",
+  "explanation": "独立读取完整σ和原21型权重。对长度d<6的每个有序历史h、合法动作b，沿σ从h·b完成真实有序叶，取其计数q(h,b)，以终局类型负载重算60U_b(q(h,b))。以a=σ(h)的收益减各b收益，全部137256项与冻结逐历史表一致，恰每个h自己的动作差为零。非自身每层的最小余量依次7/4、7/4、1/10、1/10、1/10、1/6，全部严格。源锥定理的真实偏离充要性给σ是完整SPE。唯一性从深度5开始：当时没有未来动作，严格比较迫使每个节点选σ(h)；若所有更深子博弈的完整SPE已唯一，则任意SPE在当前节点的每个孩子都必须使用σ的唯一子SPE，包括离轨孩子。各候选的真实续局收益因此固定，严格差再次迫使选σ(h)。归纳到根给全部有序节点一致。该证明重放σ后直接成立，不调用计数集合成员资格。实际支持{1,6}下，仅标签1覆盖的28客户负载2，仅标签6覆盖的63客户负载4，共同40客户负载6。故收益28/2+40/6=62/3与63/4+40/6=269/12，覆盖131。七私有数(3,6,6,3,7,1,6)保两两不可包含；比较支持增补到六个不同标签，只丢唯一未选标签的私有块，故OPT₆=159−1=158。",
+  "scope": "指定159客户实例的全有序历史纯策略唯一性。原日志只保存计数，没有旧有序路径。六人七标签另一固定完整策略锥的6/11结论使用根动作0及路径(0,2,2,2,2,2)，不适用于本σ；本点的131/158大于1/2。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/固定完整策略的客户重数锥--定理.md",
+      "sha256": "ae4bcfd424eca8d4e3d79965f72182c0b2c8eefb72e74b44c2521b519f7aad39",
+      "section": "定理一：完整 SPE 的精确重数锥"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/七个极大主题的六人整数终局集合搜索程序--程序.md",
+      "sha256": "0faef6f1fbb38e84e0f125c110dbc8663b98b6f0676211844f2901e6cda1a033",
+      "section": "旧日志末点的新精确完整策略"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/r70-search7-log/original/scan_36155.txt",
+      "sha256": "ebe12aedf423068a7db88401b75113d69f43ae0ed2626d2efc264aa490581afb"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/r70-search7-program/last-point/point-audit.json",
+      "sha256": "433ffa204f1926d4f1cb0b947277eb961692fb3b0daa05eb6a82a5d3425f2a3f"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/r70-search7-program/last-point/exact-details.json.gz",
+      "sha256": "786fc4903243b785bcb622f606fa5d1e2f7947588b6f0e31450abc27c147e9f2"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-eee9a5673d54ac26/verify-search7.py",
+      "sha256": "53ce67a7beb5eb30a88972d4f5c8ac1d61b3ef715cf6d448635329fb78df75ac"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-eee9a5673d54ac26/verification.json",
+      "sha256": "04fde9c5619e63a576c920dc5ed71b35fc953b82a8466a705bb5fb6dbe54b690"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/r70-search7-program/last-point/complete-strategy.json",
+      "sha256": "4f0ba35244d968aa52db1810b0c9ca2b3d2099a6a722aaf705ce8e84cbc86a4b"
+    }
+  ],
+  "reviewed_by": "Boss5-SOLVER-SEARCH7-UNIQUE-FRESH",
+  "review_note": "实读CONE定理的真实有序偏离合同与旧末点唯一性归纳。由原日志mask独立重算收益，自底向上沿完整动作表对全部有序历史重放，逐项回比实际叶、收益及全部七项slack，再以全树逐层严格性证明任意其它SPE同一。未调用固定锥LP或将其其它σ的结论迁入。",
+  "endpoint_pins": {
+    "CA-STRATEGY-CONE": "291bd4d94e33d40566453a33b5cf07b1c620b77362268417582efecb42b0c4bb",
+    "M-451b1dbddfa345e1ae318c7d93cf32bd": "029bb7dbf2ddd575b202144cd43a87a9d5a4fd08130039d4222053c70e29fa0c"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/固定完整策略的客户重数锥--定理.md": "ae4bcfd424eca8d4e3d79965f72182c0b2c8eefb72e74b44c2521b519f7aad39",
+    "archives/customer-attraction/state/程序/七个极大主题的六人整数终局集合搜索程序--程序.md": "0faef6f1fbb38e84e0f125c110dbc8663b98b6f0676211844f2901e6cda1a033",
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+    "archives/customer-attraction/tools/evidence/r70-search7-log/original/scan_36155.txt": "ebe12aedf423068a7db88401b75113d69f43ae0ed2626d2efc264aa490581afb",
+    "archives/customer-attraction/tools/evidence/r70-search7-program/last-point/point-audit.json": "433ffa204f1926d4f1cb0b947277eb961692fb3b0daa05eb6a82a5d3425f2a3f",
+    "archives/customer-attraction/tools/evidence/r70-search7-program/last-point/exact-details.json.gz": "786fc4903243b785bcb622f606fa5d1e2f7947588b6f0e31450abc27c147e9f2",
+    "map/edges/customer-attraction-3a-3a-eee9a5673d54ac26/verify-search7.py": "53ce67a7beb5eb30a88972d4f5c8ac1d61b3ef715cf6d448635329fb78df75ac",
+    "map/edges/customer-attraction-3a-3a-eee9a5673d54ac26/verification.json": "04fde9c5619e63a576c920dc5ed71b35fc953b82a8466a705bb5fb6dbe54b690",
+    "archives/customer-attraction/tools/evidence/r70-search7-program/last-point/complete-strategy.json": "4f0ba35244d968aa52db1810b0c9ca2b3d2099a6a722aaf705ce8e84cbc86a4b"
+  },
+  "review_digest": "1e0ece55b936ffabedbbd8a54fb8f117eea65171f34ad0a10f90155253e9c868"
+}
