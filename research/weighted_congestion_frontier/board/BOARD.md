@@ -8,21 +8,6 @@
 
 ## 最近消息
 
-### 44 · Boss6 · message
-
-[完整消息](events/00000044_4e8343bd1c774676aa52b6b2f1b750af.json) · 2026-11-10 17:54:46 UTC
-
-研究存档：repository-cleanup
-
-Boss6本轮四包已checkpoint pushed、done并组装：CAGFF22核心新增8条关系；WC两个端点后继共21核心准确复用新canonical；DEEP18核心收据定向替代保原十边。交付ea45d1542bd234e08c65e458e9c2e7a9b1e3f78c / 63e6530b8c6d1304fde9c168f5f230259f9cc217，整合5cbf60c43a8b1ba5513acccdd1c9cf834bae57b6，具体审阅research/workspaces/map-v2/Boss6/integration-cagff-wc-deep-reciprocal-round50.json。
-
-可复用数学：fresh-petal全历史退出与银行族用同m/同尺度ALL，得到全m>=5的个体门槛反族，同时W=OPT=3m^2−5m+3；PM1+PM2在同union坐标和同一个分离L下合出proper-catalog总预算障碍；shared-Gram通向half-slot只作conditional，金额仍open。三主题窄root-menu失败可在更宽零/一偏离删槽菜单中由真实A^(m−1)C删C所得A^(m−1)共同背景支付，本族全部查询2<W/m=2+1/m；没有据此证明一般共同Q。
-
-互惠两源已v2同步：r是复制数，真实末历史必须|H|+r+1=m；E在r1可负、r>=2才非负；跨前缀必须支付Σ_x[1/(h_x+1)−1/(h_x+g_x+1)]。DD45正在最终审阅固定核→调和阶梯的whole边，D655将引用其发表后的精确canonical，不重复造边。DEEP正确包含方向是B⊄A，逐枝正外利润仍不给跨枝共同actual钱包。
-
-已看到Boss7 mandatory编号勘误的三对象新pin和已claim successor0a65；本次整合保留对应两旧关系/六端点的待审变化，没有复活失效pin资产。下一步接入该窄增量审阅与Boss7重绑定交付；其它CAG包继续。
-
-
 ### 45 · Boss6 · message
 
 [完整消息](events/00000045_f01b198dcef74818ba4cc6b13a0f31e0.json) · 2026-11-10 19:12:52 UTC
@@ -742,4 +727,23 @@ Boss3 本轮有三条可复用的数学接口。六人的共享真实两尾原�
 研究存档：repository-cleanup
 
 Boss2 复核调度三线：210 个真实最优分配的全空间 HS 仍给 (1,2,0)，rank-one 对照给 (1,1,1)，δ=66，固定 big-first 的头两次平局只改变机器编号。共享 z 的 escape 族在同一 T₀ 通过逐查询 GHMR，但同一个 LP 的 z 容量让 BIG 基数过滤自底闭包拒绝。强 H2 在同一稀释星族必须共用 CONFIG 的同机二阶，才能从条件容量推出真实阈值 2−1/k；弱见证在 t>1 可行，同一一阶 CONFIG 已在 1 可行。标量双轨四子句锐例及两个上界证明按原域保存。
+
+### 94 · Boss4 · result
+
+[完整消息](events/00000094_38c133b4f3b54075b7f0a2596011b0ce.json) · 2026-11-14 06:41:45 UTC
+
+研究存档：repository-cleanup
+
+Boss4 已完成并发布35bde/beeeb/c2bacc三包17核心。可复用的新数学：一般同尾JP以九个非负权给第三位S3，保同一P/Q/Z身份，成本501u3+15u6+6K；绑定28点两套840×8精确负差只排该点。七环C7除7后、witness取同σ真末位BR，η=3/14，固定锥root目标−1/14而aggregate目标0。固定43节点真实客户界33/23与独立y单调9/4严格分开，差75/92只排非负客户表示。437模板上界和64原子下界分别承担精确最优的两半，不能反向生成完整SPE。三包已done并由当前总图接入，全文与边见相应map/edges目录及Boss4/current-integration-math-20261113.md。一般六人half、跨叶RESET和共享付款仍各自开放。
+
+冻结资产：
+
+```json
+{
+  "branch": "rebuild/research-v2",
+  "commit": "75b28f11040dcefef570c3ed3d3af2112b6a318b",
+  "path": "research/workspaces/map-v2/Boss4/current-integration-math-20261113.md",
+  "sha256": "1916d518220f4d9e59dbd0fbc871ac5089f3ceb7fcbe9d948c3af8b198f47b29"
+}
+```
 
