@@ -1,0 +1,53 @@
+{
+  "edge_id": "cag-degree-two-tail-route5-threshold-gap",
+  "kind": "implies",
+  "status": "accepted",
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "source_ids": [
+    "customer-attraction/degree-two-exact-root-tail-profit"
+  ],
+  "target_ids": [
+    "customer-attraction/closeout-67a92b6751929baa34cc1de3"
+  ],
+  "conditions": "精确取登记二元共享客户族：整数 q≥2、b≥1、0≤a≤b；两个 q 元主题组 X,Y，每条跨组边有 b 名单位客户、每条组内边有 a 名单位客户；采用构造正文中同一份完整有序纯 SPE，固定任意合法根 Z 后 q 个尾位恰取相反组每个标签一次。route5 端按完整有序历史、全部合法动作及全部完整孩子子SPE使用 L_h(A)=min_{z∈R_h(A)}u_i(z)、Theta_h=max_A L_h(A)、R(h)=∪_A{z∈R_h(A):u_i(z)≥Theta_h}；比较槽 T 允许重复并可含 Z，零分子利润取零。",
+  "roles": {
+    "customer-attraction/degree-two-exact-root-tail-profit": "在上述 q,b,a 量词下，对每个固定根 Z 和全部可重复 q 槽比较 T 给出 R_Z(T)=Σ_{ij} μ_{ij}d_{ij}/(d_{ij}+e_{ij}) 的精确最大值 max_T R_Z(T)=V_Z=q[(q−1/2)b+(q−1)a/2]，并列出取等支持。",
+    "customer-attraction/closeout-67a92b6751929baa34cc1de3": "提供 route5 的完整孩子终局集合、门槛递归、选中枝正确链 u_i(z_h)≥Theta_h≥L_h(a) 及 half/粗分母接口；本边只把二元族的固定根尾比较接入该接口，接收未支付的分支门槛与付款义务。"
+  },
+  "explanation": "在固定根 Z 的边背景中，令 μ_{ij}=b（跨组）或 a（同组），d_{ij} 为 q 个比较槽的两端标签重数和，e_{ij}=1_{ij 接 Z}。定理逐端点证明：(a,b)=(0,1) 时命中两组的跨边数 qs−xy≤(q−1)s+1≤q²−q/2，完整组取一次达到 q²−q/2；(a,b)=(1,1) 时对 n=2q−1 个非根顶点用 f(k)=C(n,2)−C(n−k,2)，根未入支持给根边≤q/2，含根支持严格落后，故最大仍由 q 个不同非根标签取得。按 (a,b)=(b−a)(0,1)+a(1,1) 的非负线性合成，得到所有整数 q≥2,b≥1,0≤a≤b 及每个 Z 的 max_T R_Z(T)=V_Z，取相反组各一次等号。构造正文同时给同一完整 SPE 的根真收益 L=qb/2+(q−1)a、尾真收益 H=(q−1/2)b+(q−1)a/2、L−H=−(q−1)(b−a)/2、根静态纯阈值 θ=L 和 actual W=OPT；这些事实说明固定根聚合上包络可与负驻留差并存。对 q=5，V_Z=45b/2+10a，且 a=1,b=2 给 L=9,H=11,V_Z=55。这里完成的是一个条件的族内固定根尾比较：R_Z(T) 是给定根背景下 q 槽的聚合利润标量，不能视为 route5 的完整终局集合 R(h)，也不能把相反组等号槽自动视为每个强制动作 A 的最小值 L_h(A)。因此不从 R_Z≤V_Z 推出选中枝门槛、Theta_h，或粗分母和。",
+  "scope": "仅限上述二元共享客户完整 SPE 族、每个固定根 Z 及可重复 q 比较槽的根背景尾利润；明确其与 route5 门槛递归的局部接口和未支付边界。不得外推为任意共同目录、任意完整 SPE 的 branch threshold，或六人/任意人数 half、OPT−W 粗分母付款。",
+  "contribution": {
+    "result": "在精确 q≥2、b≥1、0≤a≤b 整数族及指定完整 SPE 下，已证每个根背景的可重复 q 槽联合利润精确满足 max_T R_Z(T)=V_Z=qH；相反组各一次取等，q=5 为 45b/2+10a。该固定根上包络与构造的 L=θ、尾 H、负驻留 L−H=−(q−1)(b−a)/2、actual W=OPT 可同时成立，给出 route5 接口所需的一个真实族内比较证据。",
+    "remaining": "仍需独立证明 route5 所要求的选中枝逐动作门槛（对每个合法 h,A 的 L_h(A) 或 Theta_h）、把比较槽映射到真实完整孩子子SPE 的实现性、以及对某个最优带位置元组的粗分母不等式 Σ_i L_{h_i}(T_i)≥OPT_m−W。特别地，R_Z≤V_Z 是固定根背景的上界，未给这些 L_h(A) 的下界；错误的 L_h(a)≥Theta_h 不能使用，且不同离轨动作位于互斥子树，没有共同不重复付款预算。因此不能由本局部上界推出 half。"
+  },
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/资源/完整后继门槛的阶段接口与选中枝边界--资源.md",
+      "sha256": "9d8ab71d9a269651754ed48114eb9803e65a90bc8eb7946f8c8fcf1a0b4250a7",
+      "section": "原记录与精确对象"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/二元共享客户完整策略的精确根后尾利润--定理.md",
+      "sha256": "f045cde1647b2879ec5ba31b079b7a50acdcc7fef5d4eab43b5eaac44dc5b4ae",
+      "section": "二元共享客户族的精确尾利润比较"
+    },
+    {
+      "path": "archives/customer-attraction/state/构造/二元共享客户的完整均衡负驻留族--构造.md",
+      "sha256": "5c9cf2906b68aaa4bdb21172f11d29ad52d58c0f16baaab8b59d0a0e112ef0d4",
+      "section": "θ是纯背景最坏最佳回复，不是混合安全值"
+    }
+  ],
+  "reviewed_by": "Boss7-degree-two-tail-fresh-worker",
+  "review_note": "完整实读任务声明的三份 reading_refs；逐式核对 route5 的 R_h(A)、L_h(A)、Theta_h、R(h) 递归及选中枝方向，重建二元族两端点 (a,b)=(0,1),(1,1) 与非负线性合成，核构造的完整 SPE、L/H/θ、负驻留和 W=OPT。将固定根 R_Z 上包络明确限定为 q 槽聚合标量，保留 branch-threshold、粗分母及 half 的未付义务；与旧 Boss5 q=5 背景比较边只重叠固定根映射，未把旧收费/half 结论重复或升级。",
+  "endpoint_pins": {
+    "customer-attraction/closeout-67a92b6751929baa34cc1de3": "cd901b7f15921d8205f33be6c8d93451d2f9946236366818088406048f2a4595",
+    "customer-attraction/degree-two-exact-root-tail-profit": "4638e5ff85b2fdb805a2578bfdfc42e7ed0d2351a87ea9dd252324e7250fcc37"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/资源/完整后继门槛的阶段接口与选中枝边界--资源.md": "9d8ab71d9a269651754ed48114eb9803e65a90bc8eb7946f8c8fcf1a0b4250a7",
+    "archives/customer-attraction/state/定理/二元共享客户完整策略的精确根后尾利润--定理.md": "f045cde1647b2879ec5ba31b079b7a50acdcc7fef5d4eab43b5eaac44dc5b4ae",
+    "archives/customer-attraction/state/构造/二元共享客户的完整均衡负驻留族--构造.md": "5c9cf2906b68aaa4bdb21172f11d29ad52d58c0f16baaab8b59d0a0e112ef0d4"
+  },
+  "review_digest": "cd4ff41869be783fa880bbac45b5f64ffdcfe8e5fe27d9677a76f3156b579b72"
+}

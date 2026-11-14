@@ -1,0 +1,74 @@
+{
+  "task_id": "Boss7-degree-two-tail-3b-3b-f3ae5b2ec578da03",
+  "stage": "3B",
+  "status": "draft",
+  "review_state": "isolated-after-review",
+  "object_ids": [
+    "customer-attraction/closeout-67a92b6751929baa34cc1de3",
+    "customer-attraction/degree-two-exact-root-tail-profit"
+  ],
+  "read_object_ids": [],
+  "input_pins": {
+    "customer-attraction/closeout-67a92b6751929baa34cc1de3": "cd901b7f15921d8205f33be6c8d93451d2f9946236366818088406048f2a4595",
+    "customer-attraction/degree-two-exact-root-tail-profit": "4638e5ff85b2fdb805a2578bfdfc42e7ed0d2351a87ea9dd252324e7250fcc37"
+  },
+  "coverage": {
+    "customer-attraction/closeout-67a92b6751929baa34cc1de3": {
+      "state": "isolated-after-review",
+      "object_pin": "cd901b7f15921d8205f33be6c8d93451d2f9946236366818088406048f2a4595",
+      "comparison_scope": "route5 的完整后继终局集合 R_h(A)、L_h(A)、Theta_h、R(h) 递归、选中枝正确方向及 half/粗分母接口；本边只接二元族固定根尾的局部比较，不支付一般 branch threshold。",
+      "reason": "局部贡献保留 selected-branch 和 coarse denominator 的未付义务，不能由 R_Z≤V_Z 自动闭合 half。",
+      "edge_ids": [
+        "cag-degree-two-tail-route5-threshold-gap"
+      ]
+    },
+    "customer-attraction/degree-two-exact-root-tail-profit": {
+      "state": "isolated-after-review",
+      "object_pin": "4638e5ff85b2fdb805a2578bfdfc42e7ed0d2351a87ea9dd252324e7250fcc37",
+      "comparison_scope": "q≥2,b≥1,0≤a≤b 整数二元族；每根 Z 的全部可重复 q 槽背景利润精确 max R_Z=V_Z=qH，q=5 为 45b/2+10a；与同一完整 SPE 的 L/H/负驻留和 W=OPT 对齐。",
+      "reason": "固定根聚合上包络与 route5 门槛接口只形成局部 proof-step；不外推 branch threshold、half 或一般目录。",
+      "edge_ids": [
+        "cag-degree-two-tail-route5-threshold-gap"
+      ]
+    }
+  },
+  "assets": [
+    {
+      "path": "map/edges/Boss7-degree-two-tail-3b-3b-f3ae5b2ec578da03/degree-two-tail-route5-threshold-gap.json",
+      "sha256": "89aaa0a782692656e2a23aa6b07d0a02baaf6733abcfac34e4e49f83fc4d230b"
+    },
+    {
+      "path": "map/edges/Boss7-degree-two-tail-3b-3b-f3ae5b2ec578da03/review.md",
+      "sha256": "da95a07fcf684af3eb5e16a842368d318a5a6b25ef9d8c0468ffd376c4c38c3c"
+    },
+    {
+      "path": "map/edges/Boss7-degree-two-tail-3b-3b-f3ae5b2ec578da03/reading-ledger.json",
+      "sha256": "947ec34933fc22f041cfa6c3d2e4da344d45f4c2deb43402a742f2c71e1e03f9"
+    }
+  ],
+  "closed_overlaps": [
+    {
+      "core_id": "customer-attraction/degree-two-exact-root-tail-profit",
+      "peer_id": "cag-degree-two-family-checks-background-five-exact-profit",
+      "reason": "旧边已覆盖 q=5 固定根背景到 one-prefix-five 独占收费变量的 checks；本边新增 route5 L_h/Theta_h/R(h) 对照与 half 缺口，保留旧边开放范围，不重复或升级其结论。"
+    }
+  ],
+  "follow_up_tasks": [],
+  "review_note": "三份声明 reading_refs 全文实读；解析核验 q,b,a 两端点与非负线性合成，完整构造核 L/H/θ、负驻留及 actual W=OPT。accepted conditional edge 只保 contribution.result，whole_result 不填；未执行 claim/done/checkpoint/commit/push。",
+  "delivery_note": "只写入本任务声明 write_paths；三份 reading_refs 全文实读，receipt/edge/review/ledger 已落盘。未执行 claim、done、assemble、checkpoint、commit 或 push。",
+  "checks": {
+    "edge_bind": {
+      "command": "python work.py research edge-bind map/edges/Boss7-degree-two-tail-3b-3b-f3ae5b2ec578da03/degree-two-tail-route5-threshold-gap.json --write",
+      "status": "PASS",
+      "result": "endpoint/evidence pins and review_digest written"
+    },
+    "edge_check": {
+      "command": "python work.py research edge-check map/edges/Boss7-degree-two-tail-3b-3b-f3ae5b2ec578da03/degree-two-tail-route5-threshold-gap.json",
+      "status": "PASS",
+      "result": "edge-structure-valid-not-a-mathematical-verdict",
+      "proof_scope": "step",
+      "edge_status": "accepted"
+    }
+  },
+  "edge_binding_status": "Native edge-bind --write and edge-check passed; no checkpoint, commit, push, map done."
+}
