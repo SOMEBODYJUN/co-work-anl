@@ -112,11 +112,124 @@
       "scope_hint": "archives/customer-attraction"
     }
   },
-  "state": "claimed",
+  "state": "done",
   "owner": "Boss7",
-  "request_id": "c387a11152cf4e219255e9b51ce137e5",
+  "request_id": "5ccd532d9f7049e8800c33d9847d8af4",
   "requests": {
     "b36ccc862d8b4faaa09b5acf2a858bbc": "plan",
-    "c387a11152cf4e219255e9b51ce137e5": "claim"
+    "c387a11152cf4e219255e9b51ce137e5": "claim",
+    "5ccd532d9f7049e8800c33d9847d8af4": "done"
+  },
+  "edge_paths": {
+    "cag-full-continuation-threshold-checks-r105-switch-repair-e6f70847": "map/edges/boss5-r105-source-repair-repair-e6f70847d2120f98/r105-full-continuation-threshold.json"
+  },
+  "receipt": {
+    "task_id": "Boss7-r105-receipt-repair-repair-138d09e168222f9f",
+    "stage": "3B",
+    "owner": "Boss7",
+    "request_id": "c387a11152cf4e219255e9b51ce137e5",
+    "task_definition_pin": "5bf27b76096edd05e91dcba79998d10dca9579996ed0fc1121a2a747d5ac340d",
+    "status": "complete-repair-delivery",
+    "supersedes": [
+      "boss5-r105-source-repair-repair-e6f70847d2120f98"
+    ],
+    "object_ids": [
+      "customer-attraction/closeout-67a92b6751929baa34cc1de3",
+      "customer-attraction/closeout-bf614929b6e50c3900f6fc7e"
+    ],
+    "input_pins": {
+      "customer-attraction/closeout-67a92b6751929baa34cc1de3": "cd901b7f15921d8205f33be6c8d93451d2f9946236366818088406048f2a4595",
+      "customer-attraction/closeout-bf614929b6e50c3900f6fc7e": "81bf2dd8f2c1edf1541252c8e8f9f84581d1992bbc7386320c62889c07166b78"
+    },
+    "coverage": {
+      "customer-attraction/closeout-67a92b6751929baa34cc1de3": {
+        "state": "isolated-after-review",
+        "object_pin": "cd901b7f15921d8205f33be6c8d93451d2f9946236366818088406048f2a4595",
+        "comparison_scope": "复核完整后继门槛递归在 R105 四块同一目录中的两人根与三人强制 T 子局，含精确 R/L/Theta 量词、选中枝与可信后继边界。",
+        "reason": "资源端点的门槛递归仍逐分支支付：删除后 Θ=q+h/2，强制孩子给 AT、BT、TB；三人强制 T 的后继比较继续使用完整 R_h,L_h。",
+        "context_edge_ids": [
+          "cag-full-continuation-threshold-checks-r105-switch-repair-e6f70847"
+        ]
+      },
+      "customer-attraction/closeout-bf614929b6e50c3900f6fc7e": {
+        "state": "isolated-after-review",
+        "object_pin": "81bf2dd8f2c1edf1541252c8e8f9f84581d1992bbc7386320c62889c07166b78",
+        "comparison_scope": "复核当前 R105 四块切换族、删除后两人实际零 regret、两人真实 TB 终局及原控制者改选 T 的任意可信后继严格偏离。",
+        "reason": "当前源只将根 T 后末位 A 的收益从 f/2 勘误为 f；B 仍以 f+p+h/2 严格胜出，旧门槛与 TBT 结论完整保留。",
+        "context_edge_ids": [
+          "cag-full-continuation-threshold-checks-r105-switch-repair-e6f70847"
+        ]
+      }
+    },
+    "assets": [
+      {
+        "path": "map/edges/boss5-r105-source-repair-repair-e6f70847d2120f98/r105-full-continuation-threshold.json",
+        "sha256": "c6d531de73d089e454d30a9d64fa725086bdab4646250967cca1deb935095d66"
+      },
+      {
+        "path": "map/edges/boss5-r105-source-repair-repair-e6f70847d2120f98/review.md",
+        "sha256": "eb7ba2f5d12e3c4773184d51598c774ab7a737e958fba8c3de92d68db7dc2f97"
+      },
+      {
+        "path": "map/edges/boss5-r105-source-repair-repair-e6f70847d2120f98/reading-ledger.json",
+        "sha256": "14f6d414b77081c5b4dbf0c4c0dd4c26162cc678d589fa3e1698652044dc095f"
+      },
+      {
+        "path": "map/edges/boss5-r105-threshold-3b-3b-4ca52e241f3fd837/comparison.md",
+        "sha256": "986157716db16d7b4d70fc4ce624dba76a1068852c4f27b6355f9635a9f4dfc6"
+      },
+      {
+        "path": "map/edges/boss5-r105-threshold-3b-3b-4ca52e241f3fd837/reading-ledger.json",
+        "sha256": "9933cc2ae5390027355befff1edd057b63ef1b713e037c7ce23c189cdc11b9b7"
+      }
+    ],
+    "reading": {
+      "ledger_path": "map/edges/boss5-r105-source-repair-repair-e6f70847d2120f98/reading-ledger.json",
+      "ledger_sha256": "14f6d414b77081c5b4dbf0c4c0dd4c26162cc678d589fa3e1698652044dc095f",
+      "notes": "实读上一任务 edge/receipt/comparison/ledger 及两份当前登记正文；旧递推与有限检查沿用，未重跑旧求解器。"
+    },
+    "edge_ids": [
+      "cag-full-continuation-threshold-checks-r105-switch-repair-e6f70847"
+    ],
+    "edge_digests": {
+      "cag-full-continuation-threshold-checks-r105-switch-repair-e6f70847": "c6d531de73d089e454d30a9d64fa725086bdab4646250967cca1deb935095d66"
+    },
+    "source_delta_review": {
+      "current_source": "archives/customer-attraction/state/障碍/R105零regret切换的原模型不可达障碍--障碍.md",
+      "old_sha256": "40dfab06dd1bdbe7d1c9acf6bd862dc5a626429d817d0ab493bce890f32fb7be",
+      "current_sha256": "6edfe368bfa3f3a0cb795fe14b3cc1345b48856bb13faa87b4c2a6631fa2545f",
+      "change": "root T branch terminal A payoff f/2 -> f",
+      "mathematical_effect": "No change to Theta=q+h/2, virtual BT gap p, unique real TB, exact forced-T continuation TBT, or controller improvement p+h/3."
+    },
+    "supersession": {
+      "boss5-r105-source-repair-repair-e6f70847d2120f98": {
+        "reason": "receipt-review repair: checks/context edge 不能用 linked coverage；旧 successor 的所有数学资产按当前字节逐项保留。",
+        "assets": {
+          "map/edges/boss5-r105-source-repair-repair-e6f70847d2120f98/r105-full-continuation-threshold.json": {
+            "disposition": "retained",
+            "reason": "修复仅更新 coverage 状态为 isolated-after-review 并显式绑定 context edge；资产字节和哈希与前一 successor receipt 完全一致。"
+          },
+          "map/edges/boss5-r105-source-repair-repair-e6f70847d2120f98/review.md": {
+            "disposition": "retained",
+            "reason": "修复仅更新 coverage 状态为 isolated-after-review 并显式绑定 context edge；资产字节和哈希与前一 successor receipt 完全一致。"
+          },
+          "map/edges/boss5-r105-source-repair-repair-e6f70847d2120f98/reading-ledger.json": {
+            "disposition": "retained",
+            "reason": "修复仅更新 coverage 状态为 isolated-after-review 并显式绑定 context edge；资产字节和哈希与前一 successor receipt 完全一致。"
+          },
+          "map/edges/boss5-r105-threshold-3b-3b-4ca52e241f3fd837/comparison.md": {
+            "disposition": "retained",
+            "reason": "修复仅更新 coverage 状态为 isolated-after-review 并显式绑定 context edge；资产字节和哈希与前一 successor receipt 完全一致。"
+          },
+          "map/edges/boss5-r105-threshold-3b-3b-4ca52e241f3fd837/reading-ledger.json": {
+            "disposition": "retained",
+            "reason": "修复仅更新 coverage 状态为 isolated-after-review 并显式绑定 context edge；资产字节和哈希与前一 successor receipt 完全一致。"
+          }
+        }
+      }
+    },
+    "reviewed_by": "Boss7 / receipt-repair",
+    "review_note": "只修正 receipt semantics：R105 checks/context successor edge 的两个端点改为 isolated-after-review+context_edge_ids；5 项旧 successor 资产逐项 retained，数学内容和 source-refresh 不变。",
+    "definition_pin": "4bce234a6f3ab5d6c9eb9c8a1f5b8a9e03c44a2b268c8b2da67d2ae50f84a451"
   }
 }
