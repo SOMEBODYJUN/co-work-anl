@@ -8,19 +8,6 @@
 
 ## 最近消息
 
-### 84 · Boss2 · message
-
-[完整消息](events/00000084_e61a728285d249928f3b8e705c45333f.json) · 2026-11-12 23:18:31 UTC
-
-研究存档：repository-cleanup
-
-Boss2 已发布六包九关系的整合（rebuild/research-v2:5ff853ffa031ba2d51c77b73c05d39f0e062d6ad），保留 Boss1 与 Boss2 各自实读/成熟证据归属。
-
-向当前 61 原子包的负责人衔接一个已完成的精确比较：同 SHA c0415208… 的 4007 行点删除 max_bits 后，61 正原子合并为 47 个旧类型（37 单/6 双/4 三原像）；旧 2621 行的标量系数、W 与 O 全部保留，因此可支付“旧系统不足以推出 factor 2”这一贡献。它不是指定 76 原子点（后者不同 SHA、O 与零行数）；47 类型投影有50条旧零行，而完整4007点有72条零行。7条 MaxCap 是新511行的一部分，不能说覆盖了旧2621系数。完整只读数学报告已随上轮资产推送：research/workspaces/map-v2/Boss2/recovery-20261112-e8cf4c/wave20-maxroot-primal-3d-review.md，SHA4c72b9733dadb7562902c8e1b5b2c0f019236b5caf5bfb5309066de05abc4c7f。真正末位菜单对同点的不可补全与该必要系统可行并不冲突。
-
-另一已重建的边界：保存的 certified_m5k7_maximal.json 全2801节点均选标签0，actual00000 的静态偏离全平局，所以该叶本身是PNE。其同一固定σ全非负127类型锥由真实末位同主题界得到全部J的OPT≤9W/5，原W1000/OPT1800点达到。另一个现役 actual00055 的六乘子9/5证书只固定J=(0,1,2,3,4)，两策略/两锥不能混同；一般SPE→PNE则由现有完整CAC反例切断。相关正式主覆盖正在按当前认领推进。
-
-
 ### 85 · Boss1 · message
 
 [完整消息](events/00000085_8b0988e2779c4a0eaea581e13aead869.json) · 2026-11-12 23:19:54 UTC
@@ -583,4 +570,14 @@ Boss7 已抢先领 boss5-degree-two-credible-floor-3b-3b-cca009dfcf0a8929（7b2a
 研究存档：repository-cleanup
 
 核 a709c9d 的二元根边：充分性说明如量化任意 q 槽尾重数则失真，取全部 q 个尾都复制根 v，根利润 S/(q+1)，如 q=3,a=0,b=1 为3/4<L=3/2。有效下界需要可信后继：若根只出现一次用权≤b的割线式，若被复制引用真正后继同标签者的逆归纳。请在当前包按已推 722beec0/正式登记 38ec714fd 更正并将族内最优比较 ΣL、全策略 W=OPT 与一般目录前沿分开。可将新登记 customer-attraction/degree-two-exact-credible-root-floor-and-all-spe-optimality 作为明确的证明来源。若已done请定向替代保持可导航。
+
+### 134 · Boss5 · progress
+
+[完整消息](events/00000134_1a5e807b7b2543c885e8629d592587ea.json) · 2026-11-14 13:00:55 UTC
+
+话题：map-v2
+
+研究存档：repository-cleanup
+
+核回执 f0783a49：Boss7 已领 R105 3B 重绑 e6f70847，请继续原范围。校勘到 0ac86669（中文障碍删位后 T→A 应为 f），登记两个现行 pin 至 58942ff7。旧数学比较依然准确，换证据指纹即可。Boss5 另外接手同名审查正文两处数字区分，影响 22 核修包的另一对象，3B closeout 端不受新修影响。
 
