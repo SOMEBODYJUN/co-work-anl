@@ -1,0 +1,64 @@
+{
+  "edge_id": "ca-6e138-cq-min-fixed-spe-scope-boundary",
+  "kind": "checks",
+  "status": "accepted",
+  "premises_mode": "all",
+  "source_ids": [
+    "customer-attraction/six-player-thirty-client-common-query-minimum-payoff-counterexample"
+  ],
+  "target_ids": [
+    "customer-attraction/six-player-thirty-client-common-query-minimum-payoff-counterexample"
+  ],
+  "relation_mode": "context",
+  "conditions": "仅在本固定六人、九标签、30单位客户目录及其完整有序纯SPE证书内；F(T)按冻结实际终局行动逐人替换同一T定义。所有数值是该实例的固定检查，不量化任意目录、任意SPE或任意PNE。",
+  "roles": {
+    "customer-attraction/six-player-thirty-client-common-query-minimum-payoff-counterexample": "承载完整客户输入、完整纯SPE目标路径与新重构 DAG，并给出固定 common-query/min-payoff bridge 的严格失败；同一对象明确排除 Q-CAG-HALF/六人 half 反例升级。"
+  },
+  "explanation": "独立递推 R(k) 给完整纯SPE可实现终局集合，目标 (k,c) DAG 逐节点保留九个观察动作；本轮按30个文字客户重算全部21933条含自身真实IC比较，零违反。冻结桥不是沿同一策略真实偏离，也不是PNE条件；它只支付固定终局行的辅助反例。",
+  "scope": "context-only；固定输入/固定完整SPE 的 CQ-min 反例，明确不推出一般 common-query 定理失败、不推出 PNE 结论、不推出六人 2W≥OPT6 的反例。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/反例/六人共同静态查询最小收益桥的三十客户反例--反例.md",
+      "sha256": "a43640e0844cd582df962ffb09f7f0c3e19aa1bbd955f4994465e68f3fbc8520"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/common-query-minimum-payoff-primary/independent-reconstruction/reconstruct_common_query_spe.py",
+      "sha256": "c71c3db58c2e65f197f8314527d402132fc89b5f4668986ed229b676b3e93db0"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/common-query-minimum-payoff-primary/independent-reconstruction/reconstructed-dag.json",
+      "sha256": "9c7c751eacedbf771944360281cff607cb3068e2d246819850672e52bd0e12ed"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/common-query-minimum-payoff-primary/independent-reconstruction/result.json",
+      "sha256": "7cf4e7160c2b8460f3dfcafb8e8214efe2c5397bfcffaf996a452fd8c7ef5c29"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+    },
+    {
+      "path": "archives/customer-attraction/state/审查/R275填充残差DAG脚本--审查.md",
+      "sha256": "4389fd916109c97cbd53972df30a0f8c16b6984e0f9a486141663a159f956e34"
+    },
+    {
+      "path": "archives/customer-attraction/state/审查/R275填充残差DAG-m6记录--审查.md",
+      "sha256": "3de5d5ef02ba6567b5cb60a904ffadec48cd71290d8844a6031c6a4a89055a27"
+    }
+  ],
+  "reviewed_by": "SOLVER-COMMON-QUERY-COUNTEREXAMPLE-FRESH",
+  "review_note": "7份声明refs全文实读并SHA匹配；完整解析5440节点新DAG，逐节点重算21933条IC边且零违反；准确区分冻结common-query、完整SPE、PNE和half量词。",
+  "endpoint_pins": {
+    "customer-attraction/six-player-thirty-client-common-query-minimum-payoff-counterexample": "d6d36512c02bb127ac6a717ab6ef4baedcdae65958b5c2b8ccfbc2f92f7e9248"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/反例/六人共同静态查询最小收益桥的三十客户反例--反例.md": "a43640e0844cd582df962ffb09f7f0c3e19aa1bbd955f4994465e68f3fbc8520",
+    "archives/customer-attraction/tools/evidence/common-query-minimum-payoff-primary/independent-reconstruction/reconstruct_common_query_spe.py": "c71c3db58c2e65f197f8314527d402132fc89b5f4668986ed229b676b3e93db0",
+    "archives/customer-attraction/tools/evidence/common-query-minimum-payoff-primary/independent-reconstruction/reconstructed-dag.json": "9c7c751eacedbf771944360281cff607cb3068e2d246819850672e52bd0e12ed",
+    "archives/customer-attraction/tools/evidence/common-query-minimum-payoff-primary/independent-reconstruction/result.json": "7cf4e7160c2b8460f3dfcafb8e8214efe2c5397bfcffaf996a452fd8c7ef5c29",
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+    "archives/customer-attraction/state/审查/R275填充残差DAG脚本--审查.md": "4389fd916109c97cbd53972df30a0f8c16b6984e0f9a486141663a159f956e34",
+    "archives/customer-attraction/state/审查/R275填充残差DAG-m6记录--审查.md": "3de5d5ef02ba6567b5cb60a904ffadec48cd71290d8844a6031c6a4a89055a27"
+  },
+  "review_digest": "04fe0cd199b7364ed9429bac152be9411ed5f3f5186d79c088d4bf6e60b0431e"
+}
