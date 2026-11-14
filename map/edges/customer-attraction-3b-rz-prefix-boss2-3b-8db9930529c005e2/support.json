@@ -1,0 +1,93 @@
+{
+  "edge_id": "customer-attraction-3b-rz-prefix-to-rz-income-credit",
+  "kind": "implies",
+  "status": "accepted",
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "reviewed_by": "SOLVER-3B-PREFIX",
+  "source_ids": [
+    "M-63c882b0c8414805a43d4d8d4e43f4e3",
+    "M-b233ef00a9c34e189817cdfb7a495107"
+  ],
+  "target_ids": [
+    "M-736ccd964c384f16a6816eebcb468f2f"
+  ],
+  "conditions": "同一有限非空共同标签目录、同一完整有序历史纯SPE sigma、同一合法源 h 与实际末位收益 r；M-63c 的余 k>=3。初段 alpha 与尾部 beta 为客户无关非负权，静态合法查询菜单先固定；尾部 delta 满足 0<=delta<1，且 H_beta/四候选 Psi_beta 对全部合法 F 和 s=0,...,k-2 成立。初段与尾部在同一真实 V 上接合，全部 source/actual末价/capacity 预算相加。为接入 M-736，R 与 Z 必须是同一真实末回复边（同一前缀 P、同一真实 r、同一共同 C 标签身份），并逐客户满足 alpha*DeltaA >= lambda*q/((P+1)(P+2))、beta*DeltaB >= lambda/(P+1)，其中 alpha,beta,lambda>=0；静态查询保持固定且同一 v 不得在两项间独立重选。六人具名实例另固定 actual 第四源、R^C/Z^C 30条有序非对角边、49:10 权（alpha=49,beta=10,lambda=17965）和 999/10000 合同缩放。",
+  "roles": {
+    "M-63c882b0c8414805a43d4d8d4e43f4e3": "提供同一真实 V 上的独立初段 E_alpha 与折扣尾 Psi_beta 联合投影；证明 shared-v、全预算相加及联合min>=分别min。",
+    "M-b233ef00a9c34e189817cdfb7a495107": "提供 0<=delta<1 的同源 Bellman/有限目录最大值闭包，保证尾合同可用于每个合法 F（尤其初段实际 V）。",
+    "M-736ccd964c384f16a6816eebcb468f2f": "接收上述 R/Z 边上的 shared-v 端点，加入 Z 末位零预算行，给四态共同min、49:10 合同、21669/D 收入移账及其付款障碍。"
+  },
+  "explanation": "先对同一源 h 的每个合法 F 应用 M-b233 的有限目录最大值证明，得到 M-63c 尾部的 B_beta>=sum Psi_beta(1_F)，再在同一真实 V 上与初段式(1)相加并共同最小化隐藏 b,c,j,v,s,s'；v 是同一真实末主题会员，不能分别取两个最小值。对 M-736 的固定 R^C/Z^C 边，尾端 V=Z^C 的会员就是四态行中的共同 z/末端身份；加入 0>=sum(q-z)/(P+r+1) 后，差界逐客户锁定四态 (r,z)=(0,0)，所以 J=alpha*A0+beta*B0+lambda*q/(P+1)。在六人 49:10 实例，M-63c 第2/13参数行分别乘999/10000，2560型有理核验给 R margin>=5/6、Z margin>=0，预算为 148951u4+20391u6；保持同一 v 的 2880状态映射再给 21669*a6/D，故强移账为 148951u4-1278u6 >= (10857/2)OPT6-(88871/9)W。共同 R 增益为 17965*n/[6(P+1)(P+2)]，但它是固定同权/同边增益，不是对全部独立合同锥的严格包含。",
+  "contribution": {
+    "result": "在上述逐项参数、同源/同边/同 v、全合法 F 量词和全预算支付条件下，M-63c prefix-tail bridge 可条件地实例化为 M-736 的 shared R/Z four-state income-credit contract；精确保留 49:10、148951/20391、21669/-1278 及共同 R 增益公式。",
+    "remaining": "M-736 的最终 half-coverage 仍未闭合：尚欠实际第四源 148951u4（式7.1右端的全局非正证明）。U/C 两型只否定当前逐客户付款压缩，不能推出完整 SPE 反例；也没有证明联合族严格超出全部其他 alpha/beta 参数锥。"
+  },
+  "scope": "同一 shared-terminal R^C/Z^C 边、同一完整策略/源/菜单/种子和固定六人 49:10 参数的必要不等式组合；不是无条件 half 定理，不跨源免费合并收益，不把有限LP证书当作一般SPE充分性。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/共享真实末端的独立初段与折扣尾闭包--引理.md",
+      "sha256": "885e0c46d9b44ecdefa438d6df7dd04e796da94da20030daf302c34fae15a124"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/同源真实末回复的折扣闭包与二状态精确投影--引理.md",
+      "sha256": "a2aa6f407865993f693ff8338e2c038a7849643d04ed9078fc7c8e0e6f6b5d42"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/共享真实末回复边的零容量覆盖信用与收入转移--引理.md",
+      "sha256": "0372dd628c46a65e981a6f257f1c2102cfd46b277fc933ba2a9c57ec3e342619"
+    },
+    {
+      "path": "research/workspaces/six-boss2-20261111-cross/coverage_bridge/formal_prefix_tail.md",
+      "sha256": "30d85aeb7d325436bce1de1975ef131d0bbeb0c07f2f8f130e828cd747b1bcda"
+    },
+    {
+      "path": "research/workspaces/six-boss2-20261111-cross/coverage_bridge/formal_shared_rz_income_bridge_v1.md",
+      "sha256": "77be2e63597c3840d10cc7d471a0befdbd574cf8995451ca927ec1810ee0477f"
+    },
+    {
+      "path": "research/workspaces/six-boss2-20261111-cross/coverage_bridge/shared_rz_zero_capacity_v1.json",
+      "sha256": "2bd7138c2d35c19100c7d12bde244d2d37695b4609fbbf51260b1574c4b64f34"
+    },
+    {
+      "path": "research/workspaces/six-boss2-20261111-cross/coverage_bridge/strong_a6_transfer_v1.json",
+      "sha256": "9f43ab75c38c2ba4d7cb0d2ba731f362bde4a7b892ba3d48a21cdd052ba8be6c"
+    },
+    {
+      "path": "research/workspaces/six-boss2-20261111-cross/main_verify_prefix_tail_5752.json",
+      "sha256": "207d0eaeb8b260931d680b05f3db36a1e60754b910cc5fdf3ee331486238d201"
+    },
+    {
+      "path": "research/workspaces/six-boss2-20261111-cross/main_verify_zero_capacity_v1.json",
+      "sha256": "a93ce8b356857d996c66661525f35e3a4988dde4aee816cd63eea423634c7593"
+    },
+    {
+      "path": "research/workspaces/six-boss2-20261111-cross/main_verify_strong_a6_transfer_v1.json",
+      "sha256": "cf4a8b484620269777b447a2a902cf0fe41865af5ad43b2f52ee33fe80f1ebda"
+    }
+  ],
+  "endpoint_pins": {
+    "M-63c882b0c8414805a43d4d8d4e43f4e3": "403896c58e3ef32a0658cf8f47cd52451777da770e2e6a2dbb15cd3345668f6e",
+    "M-736ccd964c384f16a6816eebcb468f2f": "793a5c81ccca4d9a1eddbe61a6321795752ed83063a9e0cf4a6285944d9c3b1a",
+    "M-b233ef00a9c34e189817cdfb7a495107": "308401b736d5e278edb8a86a3dbfd2d3466aa1455f9c627b8b72069a9197c411"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+    "archives/customer-attraction/state/引理/共享真实末端的独立初段与折扣尾闭包--引理.md": "885e0c46d9b44ecdefa438d6df7dd04e796da94da20030daf302c34fae15a124",
+    "archives/customer-attraction/state/引理/同源真实末回复的折扣闭包与二状态精确投影--引理.md": "a2aa6f407865993f693ff8338e2c038a7849643d04ed9078fc7c8e0e6f6b5d42",
+    "archives/customer-attraction/state/引理/共享真实末回复边的零容量覆盖信用与收入转移--引理.md": "0372dd628c46a65e981a6f257f1c2102cfd46b277fc933ba2a9c57ec3e342619",
+    "research/workspaces/six-boss2-20261111-cross/coverage_bridge/formal_prefix_tail.md": "30d85aeb7d325436bce1de1975ef131d0bbeb0c07f2f8f130e828cd747b1bcda",
+    "research/workspaces/six-boss2-20261111-cross/coverage_bridge/formal_shared_rz_income_bridge_v1.md": "77be2e63597c3840d10cc7d471a0befdbd574cf8995451ca927ec1810ee0477f",
+    "research/workspaces/six-boss2-20261111-cross/coverage_bridge/shared_rz_zero_capacity_v1.json": "2bd7138c2d35c19100c7d12bde244d2d37695b4609fbbf51260b1574c4b64f34",
+    "research/workspaces/six-boss2-20261111-cross/coverage_bridge/strong_a6_transfer_v1.json": "9f43ab75c38c2ba4d7cb0d2ba731f362bde4a7b892ba3d48a21cdd052ba8be6c",
+    "research/workspaces/six-boss2-20261111-cross/main_verify_prefix_tail_5752.json": "207d0eaeb8b260931d680b05f3db36a1e60754b910cc5fdf3ee331486238d201",
+    "research/workspaces/six-boss2-20261111-cross/main_verify_zero_capacity_v1.json": "a93ce8b356857d996c66661525f35e3a4988dde4aee816cd63eea423634c7593",
+    "research/workspaces/six-boss2-20261111-cross/main_verify_strong_a6_transfer_v1.json": "cf4a8b484620269777b447a2a902cf0fe41865af5ad43b2f52ee33fe80f1ebda"
+  },
+  "review_digest": "0f86f1f37f3a14a035f35f90b3b8a7e44970fda002f6688967d732ee1b8a972e",
+  "review_note": "SOLVER-3B-PREFIX full-read review: both core objects and added M-b233 endpoint read in full; all 33 declared files SHA-verified. The conditional composition is mathematically complete under the stated same-source, same-R/Z-edge, same-v, universal-tail and nonnegative-weight conditions. Finite 49:10 and 21669 transfer are retained with exact scope; 148951u4 payment and global SPE closure remain open."
+}
