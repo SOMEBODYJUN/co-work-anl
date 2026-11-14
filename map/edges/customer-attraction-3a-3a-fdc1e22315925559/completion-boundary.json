@@ -1,0 +1,56 @@
+{
+  "edge_id": "cag-fdc1-two-player-completion-boundary",
+  "kind": "checks",
+  "status": "accepted",
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "source_ids": [
+    "M-bb7d149596394020804ac192335b8678"
+  ],
+  "target_ids": [
+    "M-bb7d149596394020804ac192335b8678"
+  ],
+  "conditions": "固定合法有序两人前缀后的末两人子局、13单位客户 A/B/T 实例，以及 new-product-completion-and-2016.json 声明的 K=1..5,r=0..5 product 检查和 selected-60 的 2016 条必要行；所有结论保留其有限量词。",
+  "roles": {
+    "M-bb7d149596394020804ac192335b8678": "给出保交叠必要行与固定两人子局的精确 completion criterion；在 13 客户实例中排除广告 (A,B) 并确定唯一有序路径 (T,B)，同时报告有限 product 与 2016 行核验的可用范围。"
+  },
+  "context": {
+    "completion_criterion": "B∈BR(A) 且 U(A,B)≥G 当且仅当固定两人前缀后的广告路径可补成该两人子局的完整纯 SPE。",
+    "thirteen_client_boundary": "九条保交叠必要查询 slack 全非负仍不能保广告 (A,B)；真实进入者从 A 改 T 的收益 gap 为 +2。G=6，只有 (T,B) 完成，存在两个离轨末位回复形式，W=OPT=11。",
+    "finite_product_boundary": "30 个 (K,r) 情形、461 balanced vectors、24 products、44 ordered outcomes；若干 product_attainment_by_proved_condition=false，且 product_optimum_not_claimed=true。",
+    "new2016_boundary": "selected 60 atoms 的 2016 条必要行全部非负、10 条零；old557/GO220 未重算，不能当作全局策略或福利证明。"
+  },
+  "explanation": "这是 core 自身的 checks 语境边：它把局部 completion iff、13 客户的保交叠路径失败与有限 2016-row 核验接在同一对象上，精确标出“必要投影非负不等于真实路径可补全”的障碍；不升级为全模型 pure SPE、OPT 或 half。",
+  "scope": "self-context only；固定两人子局、13 客户实例、声明的有限 product 参数和 selected-60 row system。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/反例/末两人保交叠必要行不能保证路径补全--反例.md",
+      "sha256": "0a2ceca2a4893af142c74d8509b79b93e47a6ec7725210617293a27045a7bb79",
+      "section": "任意真两人前缀的精确存在准则"
+    },
+    {
+      "path": "archives/customer-attraction/state/反例/末两人保交叠必要行不能保证路径补全--反例.md",
+      "sha256": "0a2ceca2a4893af142c74d8509b79b93e47a6ec7725210617293a27045a7bb79",
+      "section": "十三单位客户目录及广告路径"
+    },
+    {
+      "path": "archives/customer-attraction/state/反例/末两人保交叠必要行不能保证路径补全--反例.md",
+      "sha256": "0a2ceca2a4893af142c74d8509b79b93e47a6ec7725210617293a27045a7bb79",
+      "section": "完整补全门槛和真实结果"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/product-background-and-completion-primary/new-product-completion-and-2016.json",
+      "sha256": "13254694ba282fcb76402fead3c4735d4718359a1e8e00caa41b022695bee71d"
+    }
+  ],
+  "reviewed_by": "fresh-worker-fdc",
+  "review_note": "完整支付声明的 7 个 staged passes；复核固定两人 completion iff、13 客户路径障碍、有限 product 参数与 selected-60 的 2016 条必要行，并严格保留未核验对象与全局目标缺口。",
+  "endpoint_pins": {
+    "M-bb7d149596394020804ac192335b8678": "d79c118f0827499aeb038fdcf54f1fa7f5ac2e594636201f897b3012ceaa3bf9"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/反例/末两人保交叠必要行不能保证路径补全--反例.md": "0a2ceca2a4893af142c74d8509b79b93e47a6ec7725210617293a27045a7bb79",
+    "archives/customer-attraction/tools/evidence/product-background-and-completion-primary/new-product-completion-and-2016.json": "13254694ba282fcb76402fead3c4735d4718359a1e8e00caa41b022695bee71d"
+  },
+  "review_digest": "9f5948e74f9711eb039c72d08d90495aaf39f02de51fe64b88aacb5c7513f29d"
+}

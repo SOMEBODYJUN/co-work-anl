@@ -221,10 +221,92 @@
       ]
     }
   },
-  "state": "available",
-  "owner": null,
-  "request_id": "c77ec76b08b948c4ac8c43dc65353af7",
+  "state": "done",
+  "owner": "Boss7",
+  "request_id": "934fddd83ab34a12bb380442f9fc8b41",
   "requests": {
-    "c77ec76b08b948c4ac8c43dc65353af7": "plan"
+    "c77ec76b08b948c4ac8c43dc65353af7": "plan",
+    "f021834a29c44524906ae63b39a72c44": "claim",
+    "934fddd83ab34a12bb380442f9fc8b41": "done"
+  },
+  "edge_paths": {
+    "cag-eede-frozen-aligned-dual-negative-columns-boundary": "map/edges/customer-attraction-3a-3a-eede0eecb9d6c48c/frozen-aligned-dual-negative-columns-boundary.json"
+  },
+  "receipt": {
+    "task_id": "customer-attraction-3a-3a-eede0eecb9d6c48c",
+    "stage": "3A",
+    "object_ids": [
+      "M-e88edf7ae02b41ba96c4a3a23400af3b"
+    ],
+    "read_object_ids": [],
+    "input_pins": {
+      "M-e88edf7ae02b41ba96c4a3a23400af3b": "738ee34c42ad5845cd667c97737e8df7121b0c9a69b5fb53c42a0f26e58bdbb4"
+    },
+    "status": "complete-assigned-reading-and-scope-review",
+    "coverage": {
+      "M-e88edf7ae02b41ba96c4a3a23400af3b": {
+        "state": "isolated-after-review",
+        "object_pin": "738ee34c42ad5845cd667c97737e8df7121b0c9a69b5fb53c42a0f26e58bdbb4",
+        "comparison_scope": "完整读取7个declared staged passes、6个distinct refs；固定2196行aligned64存储对偶、36个正活动行和price_aligned保存的1024个合法原子列，逐列核对replay精确binary-float残差。",
+        "reason": "全部1024保存列的rho严格为负，故固定stored aligned dual不能作为2196行全型非负定价证书；这只是有限候选对偶分离，不构造原始可行质量、完整共同目录、全部有序历史纯SPE、OPT_6或六人half。",
+        "context_edge_ids": [
+          "cag-eede-frozen-aligned-dual-negative-columns-boundary"
+        ]
+      }
+    },
+    "edge_ids": [],
+    "assets": [
+      {
+        "path": "map/edges/customer-attraction-3a-3a-eede0eecb9d6c48c/frozen-aligned-dual-negative-columns-boundary.json",
+        "sha256": "db98477f0617f874d02d00920ee4370437d9133595d0345a3b22193d9b7741dd"
+      },
+      {
+        "path": "map/edges/customer-attraction-3a-3a-eede0eecb9d6c48c/mathematical-review.md",
+        "sha256": "08656bebcc92ca4b7a5afb5f4d6edf820f6df0af409bfbe4cde1ff060f819f72"
+      },
+      {
+        "path": "map/edges/customer-attraction-3a-3a-eede0eecb9d6c48c/reading-ledger.json",
+        "sha256": "6ea2fd1cb3fc3812ba036e1aa63b355817cd2a51da4793f06f61a17ec79d45a6"
+      }
+    ],
+    "read_scope": {
+      "declared_files": 6,
+      "declared_reading_passes": 7,
+      "declared_chars": 1503621,
+      "declared_bytes": 1516258,
+      "full_read": true,
+      "read_add": [],
+      "deferred_candidates_not_promoted": [
+        "CAG-MODEL",
+        "M-faf3cd23b2be4764946140f9bb22df99"
+      ],
+      "notes": "逐字节核对7段范围；price_aligned全文两段、reopt_aligned全文和all-reported-column-checks全文均已解析。"
+    },
+    "verification": {
+      "row_count": 2196,
+      "aligned64": {
+        "source_columns": 64,
+        "active_rows": 36,
+        "negative_columns": 1024,
+        "all_unique_atom_keys": true,
+        "minimum_exact_residual": "-224400578905030835/72057594037927936",
+        "maximum_float_replay_error": "8.881784197001252e-16",
+        "W_O_d_counts": {
+          "(0,1,1)": 32,
+          "(1,1,1)": 987,
+          "(1,1,2)": 5
+        }
+      },
+      "new_search_or_lp": false,
+      "full_domain_replay": true
+    },
+    "closed_overlaps": [],
+    "follow_up_tasks": [],
+    "reviewed_by": "Boss7 / fresh-worker-eede",
+    "review_note": "完整实读7个staged passes并完成有限aligned64分离核验；严格保留其它对偶、block联合搜索、原始可行性、完整SPE/OPT/half缺口。",
+    "edge_binding_status": "edge-bind --write and edge-check passed",
+    "edge_digests": {
+      "cag-eede-frozen-aligned-dual-negative-columns-boundary": "db98477f0617f874d02d00920ee4370437d9133595d0345a3b22193d9b7741dd"
+    }
   }
 }

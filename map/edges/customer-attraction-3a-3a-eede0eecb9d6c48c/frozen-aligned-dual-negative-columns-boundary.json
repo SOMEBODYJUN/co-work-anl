@@ -1,0 +1,78 @@
+{
+  "edge_id": "cag-eede-frozen-aligned-dual-negative-columns-boundary",
+  "kind": "checks",
+  "status": "accepted",
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "source_ids": [
+    "M-e88edf7ae02b41ba96c4a3a23400af3b"
+  ],
+  "target_ids": [
+    "M-e88edf7ae02b41ba96c4a3a23400af3b"
+  ],
+  "conditions": "仅限共同目录必要条件投影的2196行、64列支持、36个正活动行、固定存储aligned对偶及price_aligned报告保存的1024个合法原子列；将存储Python binary-float beta/lambda按精确有理值重算，不扩展到未保存列、其它对偶、完整策略或六人目标。",
+  "roles": {
+    "M-e88edf7ae02b41ba96c4a3a23400af3b": "给出固定aligned64存储对偶的有限全型分离：1024个唯一合法列全部严格负，最小精确残差为-224400578905030835/72057594037927936；这只否定该候选向量作为全型非负定价证书。"
+  },
+  "context": {
+    "row_count": 2196,
+    "dual_source_columns": 64,
+    "active_rows": 36,
+    "beta": "1.9844871781654265",
+    "negative_columns": 1024,
+    "all_unique_atom_keys": true,
+    "minimum_exact_residual": "-224400578905030835/72057594037927936",
+    "maximum_float_replay_error": "8.881784197001252e-16",
+    "W_O_d_counts": {
+      "(0,1,1)": 32,
+      "(1,1,1)": 987,
+      "(1,1,2)": 5
+    },
+    "interpretation": "rho=beta*W-O-sum(lambda_n*G_n)<0 对全部已保存列成立，因此相应stored dual不能作为2196行全型非负定价证书；不构造原始可行质量、完整共同目录、纯SPE或OPT/half反例。"
+  },
+  "explanation": "完整读取任务声明的7个staged passes和6个distinct refs；解析price_aligned与reopt_aligned，并核对replay中全部1024列的2196系数和精确binary-float残差。aligned支持是特殊固定36行活动集，不能把有限分离迁移到其它对偶或full-game量词。",
+  "scope": "self-context only；固定2196行、64列、aligned存储beta/lambda和保存的1024列。不得把本边升级为任意对偶失败、原始不可行性、完整SPE/OPT_6或六人half结论。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/计算/两份索引定价报告的全部负列与冻结对偶核对--计算.md",
+      "sha256": "00a7411f3deed6b07fb0dd4ff529a934eb5632630e5e8f2bddc4ecf3a8068003",
+      "section": "当前全部1047列的精确核价"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+      "section": "策略、真实续局与全部历史量词"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/增强五人索引对偶的全型与分块定价合同--程序.md",
+      "sha256": "868f26abdce58cd062fcd99b7b20daff1017b6dcc2b58adc5d3c77f6fafb5b46",
+      "section": "price_aligned：一个36活动行对偶的特殊全型分离"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/global-prices-five-boss3/original/price_aligned.json",
+      "sha256": "c15f92c02312b022cad609be246094520013750d3cc30c974bd67b54150f1143"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/global-prices-five-boss3/related/research/workspaces/customer-attraction/R-64201cd12083425899e2d643ec9bc087/next_credible/reopt_aligned.json",
+      "sha256": "0bce38e76961db95c79fbd1c86ce79c1364a48cbcc7bc9bce42727d1b2fe2e69"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/global-prices-five-boss3/replay/all-reported-column-checks.json",
+      "sha256": "4cc1d764c5b5fe1c62c7e5c39ec2782bd2fef59cd8f81a7dae86360d15049b46"
+    }
+  ],
+  "endpoint_pins": {
+    "M-e88edf7ae02b41ba96c4a3a23400af3b": "738ee34c42ad5845cd667c97737e8df7121b0c9a69b5fb53c42a0f26e58bdbb4"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/计算/两份索引定价报告的全部负列与冻结对偶核对--计算.md": "00a7411f3deed6b07fb0dd4ff529a934eb5632630e5e8f2bddc4ecf3a8068003",
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+    "archives/customer-attraction/state/程序/增强五人索引对偶的全型与分块定价合同--程序.md": "868f26abdce58cd062fcd99b7b20daff1017b6dcc2b58adc5d3c77f6fafb5b46",
+    "archives/customer-attraction/tools/evidence/global-prices-five-boss3/original/price_aligned.json": "c15f92c02312b022cad609be246094520013750d3cc30c974bd67b54150f1143",
+    "archives/customer-attraction/tools/evidence/global-prices-five-boss3/related/research/workspaces/customer-attraction/R-64201cd12083425899e2d643ec9bc087/next_credible/reopt_aligned.json": "0bce38e76961db95c79fbd1c86ce79c1364a48cbcc7bc9bce42727d1b2fe2e69",
+    "archives/customer-attraction/tools/evidence/global-prices-five-boss3/replay/all-reported-column-checks.json": "4cc1d764c5b5fe1c62c7e5c39ec2782bd2fef59cd8f81a7dae86360d15049b46"
+  },
+  "review_digest": "94fbb12e3450e673b1f75fbac415e0cc6ea06af90b79eb59fe0e6ccf6a587734",
+  "reviewed_by": "Boss7 / fresh-worker-eede",
+  "review_note": "逐字节核对7个staged passes、6个distinct refs、2196行replay与1024保存列；仅保留固定aligned64存储对偶的有限分离边界，未把负列升级为原始不可行性或完整SPE/half反例。"
+}

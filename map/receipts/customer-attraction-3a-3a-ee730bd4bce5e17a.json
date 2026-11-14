@@ -1,0 +1,81 @@
+{
+  "task_id": "customer-attraction-3a-3a-ee730bd4bce5e17a",
+  "stage": "3A",
+  "task_definition_pin": "89f9f7908e3f2adb5b781f3d3506370de924808e26c95a1aeb99d92ddf9a9c0b",
+  "object_ids": [
+    "M-c213464ff5db45bcb0625547ae7f20a1"
+  ],
+  "read_object_ids": [],
+  "input_pins": {
+    "M-c213464ff5db45bcb0625547ae7f20a1": "4eebb8e415bd7665f9637e14a570343265d0470734a8ed1a53f8d884bb19398a"
+  },
+  "status": "complete-assigned-reading-and-scope-review",
+  "coverage": {
+    "M-c213464ff5db45bcb0625547ae7f20a1": {
+      "state": "isolated-after-review",
+      "object_pin": "4eebb8e415bd7665f9637e14a570343265d0470734a8ed1a53f8d884bb19398a",
+      "comparison_scope": "完整读取 10 passes/8 refs；固定 1905 列、16 hist、324 priced rows、36 floor rows、5287 exact point 及 5251/4963 同 W 坐标边界。",
+      "reason": "5287 点在 5287 条 necessary rows 上精确可行且 W<1/2；5251 相关点的五条新增 floor 为负，但跨点隐藏质量改变阻止迁移。范围只支持有限必要投影 self-context，不支持共同目录实现、完整 SPE、OPT_6 或全局 half。",
+      "context_edge_ids": [
+        "cag-ee730-explicit-reply-floor-scope-check"
+      ]
+    }
+  },
+  "edge_ids": [],
+  "assets": [
+    {
+      "path": "map/edges/customer-attraction-3a-3a-ee730bd4bce5e17a/fixed-explicit-reply-floor-scope-check.json",
+      "sha256": "857eed4afdef36eb02c658a8c070e8e160a6489ef9cf127a2730148c1dd9cd9a"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-ee730bd4bce5e17a/mathematical-review.md",
+      "sha256": "4fc6d19bcf0588770ae14df2bd96133d31f4dd0d1e451a8b3ccb291e0cbe7d99"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-ee730bd4bce5e17a/reading-ledger.json",
+      "sha256": "ed93e471a32721daf91600369b60c9002aa234bbc9c9906850c8ad57165b0764"
+    }
+  ],
+  "read_scope": {
+    "declared_files": 8,
+    "declared_reading_passes": 10,
+    "declared_chars": 2144013,
+    "declared_bytes": 2154077,
+    "full_read": true,
+    "read_add": [],
+    "deferred_candidates_not_promoted": [
+      "CA-PRICED-HIDDEN-REPLY-v1",
+      "CAG-MODEL",
+      "M-5d2fee3a1f8a4dc6a76eea98204ba228",
+      "M-96807ccbb51d4a04a699093e9211323e",
+      "M-f9361826fd0f4923b924933366813431"
+    ]
+  },
+  "verification": {
+    "point_rows": 5287,
+    "columns": 1905,
+    "positive_columns": 169,
+    "minimum_slack": "0",
+    "O": "1",
+    "W": "348849746216199535907980629211183/729080852958937593380920238282304",
+    "strict_half_gap": "15690680263269260782479489929969/364540426479468796690460119141152",
+    "priced_rows": 324,
+    "priced_negative_rows": 0,
+    "floor_rows": 36,
+    "floor_negative_rows": 0,
+    "floor_zero_rows": 7,
+    "old_5251_floor_negative_rows": 5,
+    "old_5251_minimum_floor_slack": "-37918341723853123058170585072309/1073653133110728585366188517866480",
+    "literal_coefficients_compared": 685800,
+    "builder_replay_exit_code": 0,
+    "independent_audit_all_fields": true
+  },
+  "closed_overlaps": [],
+  "follow_up_tasks": [],
+  "reviewed_by": "Boss7 / fresh-worker-ee730",
+  "review_note": "完整支付 10 staged passes/8 refs，保留 324 价格投影、36 floor 分离、同 W 隐藏质量变化和完整 SPE/OPT/half 缺口。",
+  "edge_binding_status": "edge-bind --write and edge-check passed",
+  "edge_digests": {
+    "cag-ee730-explicit-reply-floor-scope-check": "857eed4afdef36eb02c658a8c070e8e160a6489ef9cf127a2730148c1dd9cd9a"
+  }
+}
