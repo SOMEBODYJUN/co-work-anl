@@ -4606,8 +4606,8 @@
     "map/edges/weighted-model-errata-repair-ce098c336867ec28/frontier-ledger-locates-multicolumn-contract.json"
   ],
   "baseline": {
-    "path": "research/registration/baseline-boss3-wave9-mathematics.json",
-    "sha256": "22dedca21d77d6845c68606600d1988dbcf51bdb6085509858f8fe763cdf0df7"
+    "path": "research/registration/baseline-boss3-wave11-mathematics.json",
+    "sha256": "60f91bf2bf2f80a2e6ee157c90c26ad20a5758bec436cd7609da6b716b1aa41e"
   },
   "materials": [
     {
@@ -58787,7 +58787,8 @@
       "sha256": "8febe5636611bf45fceeb374ca0ac330a24ead3e6ea76db2211f0a69140de062",
       "disposition": "objects",
       "object_ids": [
-        "customer-attraction/fixed-ninth-policy-full-average-and-prefix-individual-exact-bounds"
+        "customer-attraction/fixed-ninth-policy-full-average-and-prefix-individual-exact-bounds",
+        "CA-FIXED-16-FILTERED-AVERAGE-SHARP-v1"
       ],
       "reason": "若对156历史每行平均全部四个J行动，O_J/W锐值7/4；若只在不重复J前缀保未使用J行动的64条逐行比较，锐值11/6。两组上界分别由一个和三个指定行及非负逐型余项支付，加J最优仍由49与22名单位客户达到。"
     },
@@ -58796,7 +58797,8 @@
       "sha256": "97e261372b4d503c3f93cb25bfb30b7d8c6b6fcf4f3f4faef8183c4f3ca4916f",
       "disposition": "objects",
       "object_ids": [
-        "customer-attraction/fixed-distinct-prefix-individual-cone-optimal-J-exact-13-over-4"
+        "customer-attraction/fixed-distinct-prefix-individual-cone-optimal-J-exact-13-over-4",
+        "CA-FIXED-16-FILTERED-AVERAGE-SHARP-v1"
       ],
       "reason": "在J={0,1,3,4}的64个不重复前缀逐行动比较及O_J=OPT4下，O_J/W锐值13/4。旧三行对偶上界保留，新52单位客户点W16、O_J=OPT4=52并满足全部64行及41筛选平均。"
     },
@@ -58815,7 +58817,8 @@
       "sha256": "9ce772e78a3c811491b907e5ceb0a9706ca2811f5f670e1e95a6ca4749cc13cf",
       "disposition": "objects",
       "object_ids": [
-        "CA-TRUNCATED-SHAPLEY-POSITIVE-ROOT-UP-NO-v1"
+        "CA-TRUNCATED-SHAPLEY-POSITIVE-ROOT-UP-NO-v1",
+        "CA-FIXED-00001-SHAPLEY-UP-FLOOR-FRONTIER-v1"
       ],
       "reason": "存在同一完整纯SPE，实际00001、W=1，两个根删除边际1/5、1/10；唯一最优比较支持J=23456，C(J)=OPT5=9/8，五位置乘五比较标签的真实查询和53/40，4W+Q−5C(J)=−3/10。反驳至少W/10正根条件下截断Shapley均匀付款，也反给定该σ存在任一最优比较元组付款。"
     },
@@ -58842,9 +58845,37 @@
       "sha256": "f274968b8c0b378ac8c30bb86668378e883028a5ce57c2fb39b0463305270d36",
       "disposition": "objects",
       "object_ids": [
-        "CA-TRUNCATED-SHAPLEY-ROOT-SATURATION-v1"
+        "CA-TRUNCATED-SHAPLEY-ROOT-SATURATION-v1",
+        "CA-THREE-TRUNCATED-SHAPLEY-ROOT-SATURATION-LOWER-9-5-v1"
       ],
       "reason": "完整新定理正文和原有理证据。"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/五阶截断Shapley冻结00001策略的根边际门槛与均匀付款锐界--定理.md",
+      "sha256": "4f10137a898aabd6521076583229d66a3be0ba354dfa8c4031c2cfc91df3b26b",
+      "disposition": "objects",
+      "object_ids": [
+        "CA-FIXED-00001-SHAPLEY-UP-FLOOR-FRONTIER-v1"
+      ],
+      "reason": "完整新数学及可复验精确证据。"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/固定第十六策略的筛选平均锐界和第九策略互异目录达到点--定理.md",
+      "sha256": "8efb0b214ab2fcbd2fc2df6fadc5237cf171abf4a163e0fa0de8b886f6e81c3b",
+      "disposition": "objects",
+      "object_ids": [
+        "CA-FIXED-16-FILTERED-AVERAGE-SHARP-v1"
+      ],
+      "reason": "完整新数学及可复验精确证据。"
+    },
+    {
+      "path": "archives/customer-attraction/state/反例/三人截断共同次模根饱和的九比五下界--反例.md",
+      "sha256": "98daf2238842a10aac2c7932fbe13f89b1084ed68086f5f041b7cafff27f52f3",
+      "disposition": "objects",
+      "object_ids": [
+        "CA-THREE-TRUNCATED-SHAPLEY-ROOT-SATURATION-LOWER-9-5-v1"
+      ],
+      "reason": "完整新数学及可复验精确证据。"
     }
   ],
   "objects": [
@@ -228183,6 +228214,142 @@
         "archives/customer-attraction/tools/evidence/truncated-shapley-root-saturation/sharp_family.py",
         "archives/customer-attraction/tools/evidence/truncated-shapley-root-saturation/sharp_family.json",
         "archives/customer-attraction/tools/evidence/truncated-shapley-root-saturation/check_sharp_bounds.py"
+      ]
+    },
+    {
+      "object_id": "CA-FIXED-00001-SHAPLEY-UP-FLOOR-FRONTIER-v1",
+      "version": 1,
+      "title": "五阶截断Shapley冻结00001策略的根边际门槛与均匀付款锐界",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "五人七标签共同五阶截断单调次模Shapley，冻结正根反例的完整有序动作图。",
+      "statement": "W=C(01)=1，两个根删除边际≥δ。固定该策略且外五标签交换对称的完整IC可行域恰δ∈[0,1/3]。对固定J=23456，无附加最优限制时最大违反量min(1−7δ,8/3−22δ)。δ<4/33显式取等点唯一最优J且严格违反；δ≥4/33每个可行输入和全部合法五槽比较元组均满足均匀付款，41类有理对偶支付。",
+      "quantifiers": "对同一冻结全历史σ、外标签交换对称的所有域内非负单调次模C，δ≥0；全部五槽比较允许重复。",
+      "assumptions": [
+        "各比较收益只沿同一真实有序强制分支",
+        "归一W=1且根两个删除边际分别满足",
+        "最大固定J公式不强制J最优"
+      ],
+      "scope": "固定策略和输入对称类的精确地板区间与强/弱UP锐阈值。",
+      "objections": "取等族在δ>1/6时J不最优；任意其它策略或单位客户/全域次模不能套用此阈值。",
+      "body": {
+        "path": "archives/customer-attraction/state/定理/五阶截断Shapley冻结00001策略的根边际门槛与均匀付款锐界--定理.md",
+        "sha256": "4f10137a898aabd6521076583229d66a3be0ba354dfa8c4031c2cfc91df3b26b"
+      },
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/反例/五阶截断共同次模的正根均匀付款反例--反例.md",
+          "sha256": "9ce772e78a3c811491b907e5ceb0a9706ca2811f5f670e1e95a6ca4749cc13cf"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/truncated-shapley-positive-root-uniform-payment/positive-tenth-witness.json",
+          "sha256": "ea7e0c350f3d617b6522e07652b0b5c22b2acda9940d5176d9bb023d3b7ff7f6"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/fixed-00001-shapley-up-floor/verify.py",
+          "sha256": "2f92374ee256ff3260c5742e5a754f7278f2b139538df86fbb3fcc9c4fc7f6bf"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/fixed-00001-shapley-up-floor/verification.json",
+          "sha256": "9f2034fe37a6c04580a8b27aa53637b995c668672c2ee36e57699f9fff333cb7"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/fixed-00001-shapley-up-floor/all-comparison-duals.json",
+          "sha256": "f89fbb892447b16703fa3109485db249d852579a4d7413b00def0b012d4727da"
+        }
+      ],
+      "sources": [
+        "archives/customer-attraction/state/定理/五阶截断Shapley冻结00001策略的根边际门槛与均匀付款锐界--定理.md",
+        "archives/customer-attraction/state/反例/五阶截断共同次模的正根均匀付款反例--反例.md",
+        "archives/customer-attraction/tools/evidence/truncated-shapley-positive-root-uniform-payment/positive-tenth-witness.json",
+        "archives/customer-attraction/tools/evidence/fixed-00001-shapley-up-floor/verify.py",
+        "archives/customer-attraction/tools/evidence/fixed-00001-shapley-up-floor/verification.json",
+        "archives/customer-attraction/tools/evidence/fixed-00001-shapley-up-floor/all-comparison-duals.json"
+      ]
+    },
+    {
+      "object_id": "CA-FIXED-16-FILTERED-AVERAGE-SHARP-v1",
+      "version": 1,
+      "title": "固定第十六策略的筛选平均锐界和第九策略互异目录达到点",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "四人共同目录客户均分，固定原第16/第9棵形式有序策略，分别比较所属J与行族。",
+      "statement": "第16策略J={0,1,3,4}的41筛选平均锐比13/4，可取J最优且五主题非空互异。三个旧乘子3合为同h=(0)的平均乘子9；52客户的新点取等且两条逐行负，故同最优比率面亦严格扩大。第9策略全历史全J平均锐比7/4在五标签非空互异、J最优子域由56客户点达到，A_(1)=−1/2。",
+      "quantifiers": "两个固定策略与各自指定比较组；非负类型质量、正W比值，达到点为单位整数。",
+      "assumptions": [
+        "平均使用各自规定的历史及动作",
+        "偏离按同一完整形式动作表续走"
+      ],
+      "scope": "行族比较的精确极值和更严格目录子域取等。",
+      "objections": "第16筛选平均上界只限其自身策略/J，形式可行点不认证完整SPE；第9全历史平均不是同动作的筛选平均。",
+      "body": {
+        "path": "archives/customer-attraction/state/定理/固定第十六策略的筛选平均锐界和第九策略互异目录达到点--定理.md",
+        "sha256": "8efb0b214ab2fcbd2fc2df6fadc5237cf171abf4a163e0fa0de8b886f6e81c3b"
+      },
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/定理/指定四人不重复比较前缀逐行动锥在最优比较组下仍锐为十三除四--定理.md",
+          "sha256": "97e261372b4d503c3f93cb25bfb30b7d8c6b6fcf4f3f4faef8183c4f3ca4916f"
+        },
+        {
+          "path": "archives/customer-attraction/state/定理/指定四人第九策略的全历史平均与不重复前缀逐行动锐界--定理.md",
+          "sha256": "8febe5636611bf45fceeb374ca0ac330a24ead3e6ea76db2211f0a69140de062"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/fixed-cone-comparison-supplements/verify.py",
+          "sha256": "39f8eb3054e61de82136bbaf086aaf198ab4efd0f9acd26829c9582b0e82614a"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/fixed-cone-comparison-supplements/verify-supplements.py",
+          "sha256": "335f9e2cec0dbf54de7b917d82a1c00264fce55d56b0a78c2b8749205dac56fb"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/fixed-cone-comparison-supplements/exact-supplements.json",
+          "sha256": "65048dfc2e64d76d10f0ea33385b3f37543bec28c982a43b97b4592b996a2e9e"
+        }
+      ],
+      "sources": [
+        "archives/customer-attraction/state/定理/固定第十六策略的筛选平均锐界和第九策略互异目录达到点--定理.md",
+        "archives/customer-attraction/state/定理/指定四人不重复比较前缀逐行动锥在最优比较组下仍锐为十三除四--定理.md",
+        "archives/customer-attraction/state/定理/指定四人第九策略的全历史平均与不重复前缀逐行动锐界--定理.md",
+        "archives/customer-attraction/tools/evidence/fixed-cone-comparison-supplements/verify.py",
+        "archives/customer-attraction/tools/evidence/fixed-cone-comparison-supplements/verify-supplements.py",
+        "archives/customer-attraction/tools/evidence/fixed-cone-comparison-supplements/exact-supplements.json"
+      ]
+    },
+    {
+      "object_id": "CA-THREE-TRUNCATED-SHAPLEY-ROOT-SATURATION-LOWER-9-5-v1",
+      "version": 1,
+      "title": "三人截断共同次模根饱和的九比五下界",
+      "kind": "counterexample",
+      "truth_status": "proved",
+      "model": "三人四标签、集合值只定义到三个不同标签、完整有序纯SPE与个体Shapley份额。",
+      "statement": "存在四标签完整纯SPE，全历史选A，K=W=1且实际根u=1/3=K/3，三个外标签唯一最优且OPT3=9/5。C(S)=3k/5在A不出现时，出现时1+k/5。全部63真实偏离通过，四标签单调次模延拓不存在。",
+      "quantifiers": "一个明确归一截断输入及一份完整有序纯SPE，全部历史和合法偏离。",
+      "assumptions": [
+        "外标签数k按不同标签计数",
+        "重复标签合法，终局值对支持计数"
+      ],
+      "scope": "给三人根饱和最坏福利比的9/5下界。",
+      "objections": "三人最坏值上界仍只由一般截断2K给出；这个点不影响全域次模或单位客户模型。",
+      "body": {
+        "path": "archives/customer-attraction/state/反例/三人截断共同次模根饱和的九比五下界--反例.md",
+        "sha256": "98daf2238842a10aac2c7932fbe13f89b1084ed68086f5f041b7cafff27f52f3"
+      },
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/定理/截断共同次模Shapley的根饱和福利界--定理.md",
+          "sha256": "f274968b8c0b378ac8c30bb86668378e883028a5ce57c2fb39b0463305270d36"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/truncated-shapley-root-saturation/three-player-root-saturation-check.py",
+          "sha256": "41c0df90f0a14e1b1776ca07e7104816ef546bf953d16a7fed7932f7063b24e4"
+        }
+      ],
+      "sources": [
+        "archives/customer-attraction/state/反例/三人截断共同次模根饱和的九比五下界--反例.md",
+        "archives/customer-attraction/state/定理/截断共同次模Shapley的根饱和福利界--定理.md",
+        "archives/customer-attraction/tools/evidence/truncated-shapley-root-saturation/three-player-root-saturation-check.py"
       ]
     }
   ],
