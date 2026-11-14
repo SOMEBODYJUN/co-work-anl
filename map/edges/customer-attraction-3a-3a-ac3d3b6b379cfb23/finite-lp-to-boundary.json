@@ -1,0 +1,73 @@
+{
+  "edge_id": "ca-ac3d-finite-lp-to-all-best-reply-boundary",
+  "kind": "checks",
+  "status": "proposed",
+  "source_ids": [
+    "M-2ca8a524bdb746d286d02ddb687f380d"
+  ],
+  "target_ids": [
+    "customer-attraction/finite-reply-chain-protected-omission-relaxations"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "仅在 d=1,2,3 的固定两人回复链、p=2d+4、背景原子 b=0..4、P=1、r(0)=1 与 r(a)=a+2 (2<=a<=p-3) 的有限松弛域内。未规定首动作 B,p-2,p-1 的真实续局不在保留 IC 行中。",
+  "roles": {
+    "M-2ca8a524bdb746d286d02ddb687f380d": "给出三个保存点对全部真实末位最佳回复的首动作严格增益，证明指定 (A,B) 路径不可补全。",
+    "customer-attraction/finite-reply-chain-protected-omission-relaxations": "给出同一三种固定链的有限 primal/dual 精确值 D/P=10/9,90/83,670/621 及其 retained-row 证书。"
+  },
+  "explanation": "有限对象的 retained-row LP 对偶证书允许 D/P>1，但遗漏首动作没有对应根 IC 行。M 的完整 p×p 最佳回复矩阵显示 B 的每个最佳末位选择都使首位收益严格高于实际 u，且两个末端首动作也各有严格根增益。因此 LP 超额点不能沿记录的实际 AB 补成完整纯 SPE；这是一条精确路线边界，不是全模型 half 的反例。",
+  "scope": "context-only comparison of a finite relaxation with its all-best-reply completion test; no global half theorem, arbitrary depth, b>=5, or legal-prefix claim.",
+  "refutes": "仅 refutes“retained-row LP 点达到 D>P 后可任意填充未规定首动作并保持 AB，从而直接得到完整 SPE/half 反例”这一局部升级路线；不 refute 其他完整 SPE 或全模型 half。",
+  "evidence": [
+    {
+      "path": "map/edges/customer-attraction-3a-3a-ac3d3b6b379cfb23/review.md",
+      "sha256": "2367b51f8a4207f9cd15f0b7181c308e934afc4aaf94cfed84d3891c43946a90"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-ac3d3b6b379cfb23/support.md",
+      "sha256": "8078329c6c1b2f9837b6e48566609c774a7f9676e5ff67453f62da7c8ef2b56a"
+    },
+    {
+      "path": "archives/customer-attraction/state/障碍/有限回复链的保护遗漏松弛--障碍.md",
+      "sha256": "17c3b8b568b485ce220a3be950ea4f93cd73473cfff75a4b1bd52c10145e438c",
+      "section": "4. 为何三个点都不能补全原实际路径"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/protected-search-chains/audit.py",
+      "sha256": "06971c5aa0eec80ec9f0d9fb3c295523aa70423817a68f014f7e4dd7cd7a9251"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/protected-search-chains/replay/protected_chain_d1.json",
+      "sha256": "fc8b8e4c94d3313f0da1c0f8ef2252ec48d09fe5f0e63adc6fba7927fe3e93a9"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/protected-search-chains/replay/protected_chain_d2.json",
+      "sha256": "a174690c2d9345804593dbc6bbb83622b8b9b3018316e4f1cb9e7a8e4baecd57"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/protected-search-chains/replay/protected_chain_d3.json",
+      "sha256": "34dcaac9c6b3c2246cae6866029ea1c1f1469fad0707cf89cf4f64198ba78ba2"
+    }
+  ],
+  "reviewed_by": "SOLVER-AC3D-FRESH",
+  "review_note": "Fresh worker read all declared references, locally read-added both comparison endpoints, and replayed all exact rational certificates. Proposed context edge deliberately records a route boundary rather than a logical implication.",
+  "endpoint_pins": {
+    "M-2ca8a524bdb746d286d02ddb687f380d": "8fd29778f8226eb9a67546881d083a404d11c6bf26f6acfb4325210207e36cca",
+    "customer-attraction/finite-reply-chain-protected-omission-relaxations": "a9e042947b6349dc154108184c0e8d3655939979257ec26363573dd58d57cfd7"
+  },
+  "evidence_pins": {
+    "map/edges/customer-attraction-3a-3a-ac3d3b6b379cfb23/review.md": "2367b51f8a4207f9cd15f0b7181c308e934afc4aaf94cfed84d3891c43946a90",
+    "map/edges/customer-attraction-3a-3a-ac3d3b6b379cfb23/support.md": "8078329c6c1b2f9837b6e48566609c774a7f9676e5ff67453f62da7c8ef2b56a",
+    "archives/customer-attraction/state/障碍/有限回复链的保护遗漏松弛--障碍.md": "17c3b8b568b485ce220a3be950ea4f93cd73473cfff75a4b1bd52c10145e438c",
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+    "archives/customer-attraction/tools/evidence/protected-search-chains/audit.py": "06971c5aa0eec80ec9f0d9fb3c295523aa70423817a68f014f7e4dd7cd7a9251",
+    "archives/customer-attraction/tools/evidence/protected-search-chains/replay/protected_chain_d1.json": "fc8b8e4c94d3313f0da1c0f8ef2252ec48d09fe5f0e63adc6fba7927fe3e93a9",
+    "archives/customer-attraction/tools/evidence/protected-search-chains/replay/protected_chain_d2.json": "a174690c2d9345804593dbc6bbb83622b8b9b3018316e4f1cb9e7a8e4baecd57",
+    "archives/customer-attraction/tools/evidence/protected-search-chains/replay/protected_chain_d3.json": "34dcaac9c6b3c2246cae6866029ea1c1f1469fad0707cf89cf4f64198ba78ba2"
+  },
+  "review_digest": "b661fcee9e614046da46c7461ea2c76e364055a417d2dd4e00fc71db54d8f489"
+}

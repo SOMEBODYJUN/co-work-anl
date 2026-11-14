@@ -1,0 +1,712 @@
+{
+  "schema": "stage-3A-solver-reading-ledger-v1",
+  "task_id": "customer-attraction-3a-3a-ac3d3b6b379cfb23",
+  "worker": "SOLVER-AC3D-FRESH",
+  "internal_word": "SOLVER-AC3D-FRESH",
+  "stage": "3A",
+  "status": "complete-frozen-staging; native edge-bind/check passed; Root receipt validation pending",
+  "task_snapshot": {
+    "path": "research/operations/map-v2/tasks/customer-attraction-3a-3a-ac3d3b6b379cfb23.json",
+    "initial_definition_sha256": "e3027748175b0edf84e46ffd19cec72a03447f5dc8ebc9a87d4fafdb2696ac38",
+    "definition_sha256_after_local_read_add": "0268a4ad81053137145c6aac99debe873d82811a4a35661238d4427cb902c67c",
+    "state": "claimed",
+    "owner": "Boss1",
+    "request_id": "2c53990be4e343f192779e580ba6374c"
+  },
+  "input_pins": {
+    "M-2ca8a524bdb746d286d02ddb687f380d": "8fd29778f8226eb9a67546881d083a404d11c6bf26f6acfb4325210207e36cca",
+    "customer-attraction/finite-reply-chain-protected-omission-relaxations": "a9e042947b6349dc154108184c0e8d3655939979257ec26363573dd58d57cfd7",
+    "customer-attraction/protected-omission-complete-two-player-search": "d1c84a299c86d62fb1164252a90afd0864f5390a026f2311c399315ce7892264"
+  },
+  "read_add": [
+    {
+      "object_id": "customer-attraction/finite-reply-chain-protected-omission-relaxations",
+      "object_pin": "a9e042947b6349dc154108184c0e8d3655939979257ec26363573dd58d57cfd7",
+      "reason": "Broader finite LP object pays the retained-row primal/dual result used to interpret M as a completion boundary.",
+      "operation": "tools/map_tasks.py --repo . --phase map --local-only read-add"
+    },
+    {
+      "object_id": "customer-attraction/protected-omission-complete-two-player-search",
+      "object_pin": "d1c84a299c86d62fb1164252a90afd0864f5390a026f2311c399315ce7892264",
+      "reason": "Complete two-player p=4/5/6 search is needed to separate the partial p=6 chain from a full p^2-1 tail certificate.",
+      "operation": "tools/map_tasks.py --repo . --phase map --local-only read-add"
+    }
+  ],
+  "objects_read": [
+    {
+      "object_id": "M-2ca8a524bdb746d286d02ddb687f380d",
+      "version": 1,
+      "object_pin": "8fd29778f8226eb9a67546881d083a404d11c6bf26f6acfb4325210207e36cca",
+      "read_scope": "complete current registry record; model, statement, quantifiers, assumptions, objections, body/evidence/source bindings",
+      "body": {
+        "path": "archives/customer-attraction/state/障碍/有限回复链的保护遗漏松弛--障碍.md",
+        "sha256": "17c3b8b568b485ce220a3be950ea4f93cd73473cfff75a4b1bd52c10145e438c",
+        "section": "4. 为何三个点都不能补全原实际路径"
+      },
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+          "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/protected-search-chains/audit.py",
+          "sha256": "06971c5aa0eec80ec9f0d9fb3c295523aa70423817a68f014f7e4dd7cd7a9251"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/protected-search-chains/original/protected_chain_d1.json",
+          "sha256": "1a6b4555bb296161af1bdc5e291800608485318485e21d66a4fbd3dc9f777748"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/protected-search-chains/original/protected_chain_d2.json",
+          "sha256": "5b3b78a605d233f1b10a2be18c06c8a3abd2864e2cdc20528f1ec9664f0d4bbf"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/protected-search-chains/original/protected_chain_d3.json",
+          "sha256": "e427b25cdd55dee708b36cb6cb3861e5bf61a37f107fe02600188b569b4b1adf"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/protected-search-chains/replay/protected_chain_d1.json",
+          "sha256": "fc8b8e4c94d3313f0da1c0f8ef2252ec48d09fe5f0e63adc6fba7927fe3e93a9"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/protected-search-chains/replay/protected_chain_d2.json",
+          "sha256": "a174690c2d9345804593dbc6bbb83622b8b9b3018316e4f1cb9e7a8e4baecd57"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/protected-search-chains/replay/protected_chain_d3.json",
+          "sha256": "34dcaac9c6b3c2246cae6866029ea1c1f1469fad0707cf89cf4f64198ba78ba2"
+        }
+      ],
+      "body_read": {
+        "path": "archives/customer-attraction/state/障碍/有限回复链的保护遗漏松弛--障碍.md",
+        "declared_sha256": "17c3b8b568b485ce220a3be950ea4f93cd73473cfff75a4b1bd52c10145e438c",
+        "current_sha256": "17c3b8b568b485ce220a3be950ea4f93cd73473cfff75a4b1bd52c10145e438c",
+        "bytes": 11722,
+        "lines": 165,
+        "status": "current",
+        "semantic_read": "full body text and binding scope consumed"
+      },
+      "evidence_read": [
+        {
+          "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+          "declared_sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+          "current_sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+          "bytes": 7598,
+          "status": "current",
+          "semantic_read": "full declared file/section consumed"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/protected-search-chains/audit.py",
+          "declared_sha256": "06971c5aa0eec80ec9f0d9fb3c295523aa70423817a68f014f7e4dd7cd7a9251",
+          "current_sha256": "06971c5aa0eec80ec9f0d9fb3c295523aa70423817a68f014f7e4dd7cd7a9251",
+          "bytes": 8975,
+          "status": "current",
+          "semantic_read": "full declared file/section consumed"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/protected-search-chains/original/protected_chain_d1.json",
+          "declared_sha256": "1a6b4555bb296161af1bdc5e291800608485318485e21d66a4fbd3dc9f777748",
+          "current_sha256": "1a6b4555bb296161af1bdc5e291800608485318485e21d66a4fbd3dc9f777748",
+          "bytes": 1652,
+          "status": "current",
+          "semantic_read": "full declared file/section consumed"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/protected-search-chains/original/protected_chain_d2.json",
+          "declared_sha256": "5b3b78a605d233f1b10a2be18c06c8a3abd2864e2cdc20528f1ec9664f0d4bbf",
+          "current_sha256": "5b3b78a605d233f1b10a2be18c06c8a3abd2864e2cdc20528f1ec9664f0d4bbf",
+          "bytes": 3536,
+          "status": "current",
+          "semantic_read": "full declared file/section consumed"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/protected-search-chains/original/protected_chain_d3.json",
+          "declared_sha256": "e427b25cdd55dee708b36cb6cb3861e5bf61a37f107fe02600188b569b4b1adf",
+          "current_sha256": "e427b25cdd55dee708b36cb6cb3861e5bf61a37f107fe02600188b569b4b1adf",
+          "bytes": 6093,
+          "status": "current",
+          "semantic_read": "full declared file/section consumed"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/protected-search-chains/replay/protected_chain_d1.json",
+          "declared_sha256": "fc8b8e4c94d3313f0da1c0f8ef2252ec48d09fe5f0e63adc6fba7927fe3e93a9",
+          "current_sha256": "fc8b8e4c94d3313f0da1c0f8ef2252ec48d09fe5f0e63adc6fba7927fe3e93a9",
+          "bytes": 31187,
+          "status": "current",
+          "semantic_read": "full declared file/section consumed"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/protected-search-chains/replay/protected_chain_d2.json",
+          "declared_sha256": "a174690c2d9345804593dbc6bbb83622b8b9b3018316e4f1cb9e7a8e4baecd57",
+          "current_sha256": "a174690c2d9345804593dbc6bbb83622b8b9b3018316e4f1cb9e7a8e4baecd57",
+          "bytes": 116313,
+          "status": "current",
+          "semantic_read": "full declared file/section consumed"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/protected-search-chains/replay/protected_chain_d3.json",
+          "declared_sha256": "34dcaac9c6b3c2246cae6866029ea1c1f1469fad0707cf89cf4f64198ba78ba2",
+          "current_sha256": "34dcaac9c6b3c2246cae6866029ea1c1f1469fad0707cf89cf4f64198ba78ba2",
+          "bytes": 452766,
+          "status": "current",
+          "semantic_read": "full declared file/section consumed"
+        }
+      ]
+    },
+    {
+      "object_id": "customer-attraction/finite-reply-chain-protected-omission-relaxations",
+      "version": 1,
+      "object_pin": "a9e042947b6349dc154108184c0e8d3655939979257ec26363573dd58d57cfd7",
+      "read_scope": "complete current registry record; model, statement, quantifiers, assumptions, objections, body/evidence/source bindings",
+      "body": {
+        "path": "archives/customer-attraction/state/障碍/有限回复链的保护遗漏松弛--障碍.md",
+        "sha256": "17c3b8b568b485ce220a3be950ea4f93cd73473cfff75a4b1bd52c10145e438c",
+        "section": "3. 精确原对偶证书为何给出上界"
+      },
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+          "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+        },
+        {
+          "path": "archives/customer-attraction/state/障碍/有限回复链的保护遗漏松弛--障碍.md",
+          "sha256": "17c3b8b568b485ce220a3be950ea4f93cd73473cfff75a4b1bd52c10145e438c",
+          "section": "1. 固定模式、原子和全部保留行"
+        },
+        {
+          "path": "archives/customer-attraction/state/障碍/有限回复链的保护遗漏松弛--障碍.md",
+          "sha256": "17c3b8b568b485ce220a3be950ea4f93cd73473cfff75a4b1bd52c10145e438c",
+          "section": "2. 三份保存点及精确有限最优值"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/protected-search-chains/audit.py",
+          "sha256": "06971c5aa0eec80ec9f0d9fb3c295523aa70423817a68f014f7e4dd7cd7a9251"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/protected-search-chains/original/protected_chain_d1.json",
+          "sha256": "1a6b4555bb296161af1bdc5e291800608485318485e21d66a4fbd3dc9f777748"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/protected-search-chains/original/protected_chain_d2.json",
+          "sha256": "5b3b78a605d233f1b10a2be18c06c8a3abd2864e2cdc20528f1ec9664f0d4bbf"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/protected-search-chains/original/protected_chain_d3.json",
+          "sha256": "e427b25cdd55dee708b36cb6cb3861e5bf61a37f107fe02600188b569b4b1adf"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/protected-search-chains/replay/protected_chain_d1.json",
+          "sha256": "fc8b8e4c94d3313f0da1c0f8ef2252ec48d09fe5f0e63adc6fba7927fe3e93a9"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/protected-search-chains/replay/protected_chain_d2.json",
+          "sha256": "a174690c2d9345804593dbc6bbb83622b8b9b3018316e4f1cb9e7a8e4baecd57"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/protected-search-chains/replay/protected_chain_d3.json",
+          "sha256": "34dcaac9c6b3c2246cae6866029ea1c1f1469fad0707cf89cf4f64198ba78ba2"
+        }
+      ],
+      "body_read": {
+        "path": "archives/customer-attraction/state/障碍/有限回复链的保护遗漏松弛--障碍.md",
+        "declared_sha256": "17c3b8b568b485ce220a3be950ea4f93cd73473cfff75a4b1bd52c10145e438c",
+        "current_sha256": "17c3b8b568b485ce220a3be950ea4f93cd73473cfff75a4b1bd52c10145e438c",
+        "bytes": 11722,
+        "lines": 165,
+        "status": "current",
+        "semantic_read": "full body text and binding scope consumed"
+      },
+      "evidence_read": [
+        {
+          "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+          "declared_sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+          "current_sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+          "bytes": 7598,
+          "status": "current",
+          "semantic_read": "full declared file/section consumed"
+        },
+        {
+          "path": "archives/customer-attraction/state/障碍/有限回复链的保护遗漏松弛--障碍.md",
+          "declared_sha256": "17c3b8b568b485ce220a3be950ea4f93cd73473cfff75a4b1bd52c10145e438c",
+          "current_sha256": "17c3b8b568b485ce220a3be950ea4f93cd73473cfff75a4b1bd52c10145e438c",
+          "bytes": 11722,
+          "status": "current",
+          "semantic_read": "full declared file/section consumed"
+        },
+        {
+          "path": "archives/customer-attraction/state/障碍/有限回复链的保护遗漏松弛--障碍.md",
+          "declared_sha256": "17c3b8b568b485ce220a3be950ea4f93cd73473cfff75a4b1bd52c10145e438c",
+          "current_sha256": "17c3b8b568b485ce220a3be950ea4f93cd73473cfff75a4b1bd52c10145e438c",
+          "bytes": 11722,
+          "status": "current",
+          "semantic_read": "full declared file/section consumed"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/protected-search-chains/audit.py",
+          "declared_sha256": "06971c5aa0eec80ec9f0d9fb3c295523aa70423817a68f014f7e4dd7cd7a9251",
+          "current_sha256": "06971c5aa0eec80ec9f0d9fb3c295523aa70423817a68f014f7e4dd7cd7a9251",
+          "bytes": 8975,
+          "status": "current",
+          "semantic_read": "full declared file/section consumed"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/protected-search-chains/original/protected_chain_d1.json",
+          "declared_sha256": "1a6b4555bb296161af1bdc5e291800608485318485e21d66a4fbd3dc9f777748",
+          "current_sha256": "1a6b4555bb296161af1bdc5e291800608485318485e21d66a4fbd3dc9f777748",
+          "bytes": 1652,
+          "status": "current",
+          "semantic_read": "full declared file/section consumed"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/protected-search-chains/original/protected_chain_d2.json",
+          "declared_sha256": "5b3b78a605d233f1b10a2be18c06c8a3abd2864e2cdc20528f1ec9664f0d4bbf",
+          "current_sha256": "5b3b78a605d233f1b10a2be18c06c8a3abd2864e2cdc20528f1ec9664f0d4bbf",
+          "bytes": 3536,
+          "status": "current",
+          "semantic_read": "full declared file/section consumed"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/protected-search-chains/original/protected_chain_d3.json",
+          "declared_sha256": "e427b25cdd55dee708b36cb6cb3861e5bf61a37f107fe02600188b569b4b1adf",
+          "current_sha256": "e427b25cdd55dee708b36cb6cb3861e5bf61a37f107fe02600188b569b4b1adf",
+          "bytes": 6093,
+          "status": "current",
+          "semantic_read": "full declared file/section consumed"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/protected-search-chains/replay/protected_chain_d1.json",
+          "declared_sha256": "fc8b8e4c94d3313f0da1c0f8ef2252ec48d09fe5f0e63adc6fba7927fe3e93a9",
+          "current_sha256": "fc8b8e4c94d3313f0da1c0f8ef2252ec48d09fe5f0e63adc6fba7927fe3e93a9",
+          "bytes": 31187,
+          "status": "current",
+          "semantic_read": "full declared file/section consumed"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/protected-search-chains/replay/protected_chain_d2.json",
+          "declared_sha256": "a174690c2d9345804593dbc6bbb83622b8b9b3018316e4f1cb9e7a8e4baecd57",
+          "current_sha256": "a174690c2d9345804593dbc6bbb83622b8b9b3018316e4f1cb9e7a8e4baecd57",
+          "bytes": 116313,
+          "status": "current",
+          "semantic_read": "full declared file/section consumed"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/protected-search-chains/replay/protected_chain_d3.json",
+          "declared_sha256": "34dcaac9c6b3c2246cae6866029ea1c1f1469fad0707cf89cf4f64198ba78ba2",
+          "current_sha256": "34dcaac9c6b3c2246cae6866029ea1c1f1469fad0707cf89cf4f64198ba78ba2",
+          "bytes": 452766,
+          "status": "current",
+          "semantic_read": "full declared file/section consumed"
+        }
+      ]
+    },
+    {
+      "object_id": "customer-attraction/protected-omission-complete-two-player-search",
+      "version": 1,
+      "object_pin": "d1c84a299c86d62fb1164252a90afd0864f5390a026f2311c399315ce7892264",
+      "read_scope": "complete current registry record; model, statement, quantifiers, assumptions, objections, body/evidence/source bindings",
+      "body": {
+        "path": "archives/customer-attraction/state/计算/保护遗漏的完整两人搜索与候选重核--计算.md",
+        "sha256": "2a1d65886a389e2154f56ca3f35f9a3f74ba7d20e6ce6eabbd10a5602e66f4e0"
+      },
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+          "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+        },
+        {
+          "path": "archives/customer-attraction/state/计算/保护遗漏的完整两人搜索与候选重核--计算.md",
+          "sha256": "2a1d65886a389e2154f56ca3f35f9a3f74ba7d20e6ce6eabbd10a5602e66f4e0",
+          "section": "2. 程序实际枚举了什么"
+        },
+        {
+          "path": "archives/customer-attraction/state/计算/保护遗漏的完整两人搜索与候选重核--计算.md",
+          "sha256": "2a1d65886a389e2154f56ca3f35f9a3f74ba7d20e6ce6eabbd10a5602e66f4e0",
+          "section": "3. 四标签和五标签保存点：同覆盖标签不能合并掉"
+        },
+        {
+          "path": "archives/customer-attraction/state/计算/保护遗漏的完整两人搜索与候选重核--计算.md",
+          "sha256": "2a1d65886a389e2154f56ca3f35f9a3f74ba7d20e6ce6eabbd10a5602e66f4e0",
+          "section": "4. 六标签点：完整尾策略与背景合法性分开"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/protected-search-chains/original/protected_two_probe.py",
+          "sha256": "b5968dbda74b410fcfa038af539cee402aeccfbdbb75dbb0de2629d5eb3dd9f6"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/protected-search-chains/audit.py",
+          "sha256": "06971c5aa0eec80ec9f0d9fb3c295523aa70423817a68f014f7e4dd7cd7a9251"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/protected-search-chains/replay/protected_two_p4b5.json",
+          "sha256": "7c1aea858a8dd9e239c88270efccd3f75e26d39df94be7bf99a75a2de3d82fd2"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/protected-search-chains/replay/protected_two_p5b3.json",
+          "sha256": "c08e6765c79e017de3e1f3db2b8d6864ecc61c8cf1e432ed89662e34a718aa6d"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/protected-search-chains/replay/protected_two_p6b1.json",
+          "sha256": "490af5524092d8dd44b68f8fc97862470f56bd8ffda02367002e8852194d2edf"
+        }
+      ],
+      "body_read": {
+        "path": "archives/customer-attraction/state/计算/保护遗漏的完整两人搜索与候选重核--计算.md",
+        "declared_sha256": "2a1d65886a389e2154f56ca3f35f9a3f74ba7d20e6ce6eabbd10a5602e66f4e0",
+        "current_sha256": "2a1d65886a389e2154f56ca3f35f9a3f74ba7d20e6ce6eabbd10a5602e66f4e0",
+        "bytes": 11182,
+        "lines": 165,
+        "status": "current",
+        "semantic_read": "full body text and binding scope consumed"
+      },
+      "evidence_read": [
+        {
+          "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+          "declared_sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+          "current_sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+          "bytes": 7598,
+          "status": "current",
+          "semantic_read": "full declared file/section consumed"
+        },
+        {
+          "path": "archives/customer-attraction/state/计算/保护遗漏的完整两人搜索与候选重核--计算.md",
+          "declared_sha256": "2a1d65886a389e2154f56ca3f35f9a3f74ba7d20e6ce6eabbd10a5602e66f4e0",
+          "current_sha256": "2a1d65886a389e2154f56ca3f35f9a3f74ba7d20e6ce6eabbd10a5602e66f4e0",
+          "bytes": 11182,
+          "status": "current",
+          "semantic_read": "full declared file/section consumed"
+        },
+        {
+          "path": "archives/customer-attraction/state/计算/保护遗漏的完整两人搜索与候选重核--计算.md",
+          "declared_sha256": "2a1d65886a389e2154f56ca3f35f9a3f74ba7d20e6ce6eabbd10a5602e66f4e0",
+          "current_sha256": "2a1d65886a389e2154f56ca3f35f9a3f74ba7d20e6ce6eabbd10a5602e66f4e0",
+          "bytes": 11182,
+          "status": "current",
+          "semantic_read": "full declared file/section consumed"
+        },
+        {
+          "path": "archives/customer-attraction/state/计算/保护遗漏的完整两人搜索与候选重核--计算.md",
+          "declared_sha256": "2a1d65886a389e2154f56ca3f35f9a3f74ba7d20e6ce6eabbd10a5602e66f4e0",
+          "current_sha256": "2a1d65886a389e2154f56ca3f35f9a3f74ba7d20e6ce6eabbd10a5602e66f4e0",
+          "bytes": 11182,
+          "status": "current",
+          "semantic_read": "full declared file/section consumed"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/protected-search-chains/original/protected_two_probe.py",
+          "declared_sha256": "b5968dbda74b410fcfa038af539cee402aeccfbdbb75dbb0de2629d5eb3dd9f6",
+          "current_sha256": "b5968dbda74b410fcfa038af539cee402aeccfbdbb75dbb0de2629d5eb3dd9f6",
+          "bytes": 2327,
+          "status": "current",
+          "semantic_read": "full declared file/section consumed"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/protected-search-chains/audit.py",
+          "declared_sha256": "06971c5aa0eec80ec9f0d9fb3c295523aa70423817a68f014f7e4dd7cd7a9251",
+          "current_sha256": "06971c5aa0eec80ec9f0d9fb3c295523aa70423817a68f014f7e4dd7cd7a9251",
+          "bytes": 8975,
+          "status": "current",
+          "semantic_read": "full declared file/section consumed"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/protected-search-chains/replay/protected_two_p4b5.json",
+          "declared_sha256": "7c1aea858a8dd9e239c88270efccd3f75e26d39df94be7bf99a75a2de3d82fd2",
+          "current_sha256": "7c1aea858a8dd9e239c88270efccd3f75e26d39df94be7bf99a75a2de3d82fd2",
+          "bytes": 3786,
+          "status": "current",
+          "semantic_read": "full declared file/section consumed"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/protected-search-chains/replay/protected_two_p5b3.json",
+          "declared_sha256": "c08e6765c79e017de3e1f3db2b8d6864ecc61c8cf1e432ed89662e34a718aa6d",
+          "current_sha256": "c08e6765c79e017de3e1f3db2b8d6864ecc61c8cf1e432ed89662e34a718aa6d",
+          "bytes": 5185,
+          "status": "current",
+          "semantic_read": "full declared file/section consumed"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/protected-search-chains/replay/protected_two_p6b1.json",
+          "declared_sha256": "490af5524092d8dd44b68f8fc97862470f56bd8ffda02367002e8852194d2edf",
+          "current_sha256": "490af5524092d8dd44b68f8fc97862470f56bd8ffda02367002e8852194d2edf",
+          "bytes": 7060,
+          "status": "current",
+          "semantic_read": "full declared file/section consumed"
+        }
+      ]
+    }
+  ],
+  "declared_refs_count": 9,
+  "declared_bytes": 639842,
+  "full_read": true,
+  "sha256_verified": true,
+  "files": [
+    {
+      "pass": 1,
+      "path": "archives/customer-attraction/state/障碍/有限回复链的保护遗漏松弛--障碍.md",
+      "sha256": "17c3b8b568b485ce220a3be950ea4f93cd73473cfff75a4b1bd52c10145e438c",
+      "declared_sha256": "17c3b8b568b485ce220a3be950ea4f93cd73473cfff75a4b1bd52c10145e438c",
+      "bytes": 11722,
+      "read": "full",
+      "sha256_verified": true,
+      "read_scope": "entire declared span; semantic JSON traversal where applicable"
+    },
+    {
+      "pass": 2,
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+      "declared_sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+      "bytes": 7598,
+      "read": "full",
+      "sha256_verified": true,
+      "read_scope": "entire declared span; semantic JSON traversal where applicable"
+    },
+    {
+      "pass": 3,
+      "path": "archives/customer-attraction/tools/evidence/protected-search-chains/audit.py",
+      "sha256": "06971c5aa0eec80ec9f0d9fb3c295523aa70423817a68f014f7e4dd7cd7a9251",
+      "declared_sha256": "06971c5aa0eec80ec9f0d9fb3c295523aa70423817a68f014f7e4dd7cd7a9251",
+      "bytes": 8975,
+      "read": "full",
+      "sha256_verified": true,
+      "read_scope": "entire declared span; semantic JSON traversal where applicable"
+    },
+    {
+      "pass": 4,
+      "path": "archives/customer-attraction/tools/evidence/protected-search-chains/original/protected_chain_d1.json",
+      "sha256": "1a6b4555bb296161af1bdc5e291800608485318485e21d66a4fbd3dc9f777748",
+      "declared_sha256": "1a6b4555bb296161af1bdc5e291800608485318485e21d66a4fbd3dc9f777748",
+      "bytes": 1652,
+      "read": "full",
+      "sha256_verified": true,
+      "read_scope": "entire declared span; semantic JSON traversal where applicable"
+    },
+    {
+      "pass": 5,
+      "path": "archives/customer-attraction/tools/evidence/protected-search-chains/original/protected_chain_d2.json",
+      "sha256": "5b3b78a605d233f1b10a2be18c06c8a3abd2864e2cdc20528f1ec9664f0d4bbf",
+      "declared_sha256": "5b3b78a605d233f1b10a2be18c06c8a3abd2864e2cdc20528f1ec9664f0d4bbf",
+      "bytes": 3536,
+      "read": "full",
+      "sha256_verified": true,
+      "read_scope": "entire declared span; semantic JSON traversal where applicable"
+    },
+    {
+      "pass": 6,
+      "path": "archives/customer-attraction/tools/evidence/protected-search-chains/original/protected_chain_d3.json",
+      "sha256": "e427b25cdd55dee708b36cb6cb3861e5bf61a37f107fe02600188b569b4b1adf",
+      "declared_sha256": "e427b25cdd55dee708b36cb6cb3861e5bf61a37f107fe02600188b569b4b1adf",
+      "bytes": 6093,
+      "read": "full",
+      "sha256_verified": true,
+      "read_scope": "entire declared span; semantic JSON traversal where applicable"
+    },
+    {
+      "pass": 7,
+      "path": "archives/customer-attraction/tools/evidence/protected-search-chains/replay/protected_chain_d1.json",
+      "sha256": "fc8b8e4c94d3313f0da1c0f8ef2252ec48d09fe5f0e63adc6fba7927fe3e93a9",
+      "declared_sha256": "fc8b8e4c94d3313f0da1c0f8ef2252ec48d09fe5f0e63adc6fba7927fe3e93a9",
+      "bytes": 31187,
+      "read": "full",
+      "sha256_verified": true,
+      "read_scope": "entire declared span; semantic JSON traversal where applicable"
+    },
+    {
+      "pass": 8,
+      "path": "archives/customer-attraction/tools/evidence/protected-search-chains/replay/protected_chain_d2.json",
+      "sha256": "a174690c2d9345804593dbc6bbb83622b8b9b3018316e4f1cb9e7a8e4baecd57",
+      "declared_sha256": "a174690c2d9345804593dbc6bbb83622b8b9b3018316e4f1cb9e7a8e4baecd57",
+      "bytes": 116313,
+      "read": "full",
+      "sha256_verified": true,
+      "read_scope": "entire declared span; semantic JSON traversal where applicable"
+    },
+    {
+      "pass": 9,
+      "path": "archives/customer-attraction/tools/evidence/protected-search-chains/replay/protected_chain_d3.json",
+      "sha256": "34dcaac9c6b3c2246cae6866029ea1c1f1469fad0707cf89cf4f64198ba78ba2",
+      "declared_sha256": "34dcaac9c6b3c2246cae6866029ea1c1f1469fad0707cf89cf4f64198ba78ba2",
+      "bytes": 452766,
+      "read": "full",
+      "sha256_verified": true,
+      "read_scope": "entire declared span; semantic JSON traversal where applicable"
+    }
+  ],
+  "verification": {
+    "command": "python archives/customer-attraction/tools/evidence/protected-search-chains/audit.py",
+    "status": "exact-saved-certificate-verification-passed",
+    "historical_lp_search_rerun": false,
+    "exact_results": [
+      {
+        "name": "protected_chain_d1.json",
+        "p": 6,
+        "bmax": 4,
+        "support_types": 8,
+        "atoms": 315,
+        "rows": 17,
+        "u": "4/9",
+        "v": "5/9",
+        "ratio": "10/9",
+        "nonzero_dual_rows": 9,
+        "minimum_exact_slack": "0",
+        "root_obstructions": [
+          {
+            "first": 1,
+            "minimum_first_payoff": "5/9",
+            "strict_root_gain": "1/9",
+            "best_replies": [
+              4,
+              5
+            ]
+          },
+          {
+            "first": 4,
+            "minimum_first_payoff": "2/3",
+            "strict_root_gain": "2/9",
+            "best_replies": [
+              1
+            ]
+          },
+          {
+            "first": 5,
+            "minimum_first_payoff": "2/3",
+            "strict_root_gain": "2/9",
+            "best_replies": [
+              1
+            ]
+          }
+        ]
+      },
+      {
+        "name": "protected_chain_d2.json",
+        "p": 8,
+        "bmax": 4,
+        "support_types": 19,
+        "atoms": 1275,
+        "rows": 39,
+        "u": "38/83",
+        "v": "45/83",
+        "ratio": "90/83",
+        "nonzero_dual_rows": 19,
+        "minimum_exact_slack": "0",
+        "root_obstructions": [
+          {
+            "first": 1,
+            "minimum_first_payoff": "45/83",
+            "strict_root_gain": "7/83",
+            "best_replies": [
+              6,
+              7
+            ]
+          },
+          {
+            "first": 6,
+            "minimum_first_payoff": "54/83",
+            "strict_root_gain": "16/83",
+            "best_replies": [
+              1
+            ]
+          },
+          {
+            "first": 7,
+            "minimum_first_payoff": "54/83",
+            "strict_root_gain": "16/83",
+            "best_replies": [
+              1
+            ]
+          }
+        ]
+      },
+      {
+        "name": "protected_chain_d3.json",
+        "p": 10,
+        "bmax": 4,
+        "support_types": 38,
+        "atoms": 5115,
+        "rows": 69,
+        "u": "286/621",
+        "v": "335/621",
+        "ratio": "670/621",
+        "nonzero_dual_rows": 29,
+        "minimum_exact_slack": "0",
+        "root_obstructions": [
+          {
+            "first": 1,
+            "minimum_first_payoff": "335/621",
+            "strict_root_gain": "49/621",
+            "best_replies": [
+              8,
+              9
+            ]
+          },
+          {
+            "first": 8,
+            "minimum_first_payoff": "134/207",
+            "strict_root_gain": "116/621",
+            "best_replies": [
+              1
+            ]
+          },
+          {
+            "first": 9,
+            "minimum_first_payoff": "134/207",
+            "strict_root_gain": "116/621",
+            "best_replies": [
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "comparison_findings": [
+    {
+      "peer_id": "customer-attraction/finite-reply-chain-protected-omission-relaxations",
+      "disposition": "context-route-boundary",
+      "reason": "The peer certifies exact retained-row finite LP values; M certifies all-best-reply failure for the same saved points. This is a scope boundary, not a logical implication to global half."
+    },
+    {
+      "peer_id": "customer-attraction/protected-omission-complete-two-player-search",
+      "disposition": "context-scope-separation",
+      "reason": "The peer keeps all p^2-1 rows and has different p=6 support/background; matching p does not identify M. p=4/5 legal ratio-1 points and p=6 external-background caveat remain separate."
+    }
+  ],
+  "deferred_candidates_not_read": [
+    "CAG-MODEL"
+  ],
+  "assets": [
+    {
+      "path": "map/edges/customer-attraction-3a-3a-ac3d3b6b379cfb23/review.md",
+      "sha256": "2367b51f8a4207f9cd15f0b7181c308e934afc4aaf94cfed84d3891c43946a90",
+      "bytes": 2563
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-ac3d3b6b379cfb23/support.md",
+      "sha256": "8078329c6c1b2f9837b6e48566609c774a7f9676e5ff67453f62da7c8ef2b56a",
+      "bytes": 6713
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-ac3d3b6b379cfb23/finite-lp-to-boundary.json",
+      "sha256": "06384321054592a4c9894f9185657f7aed596c5ec7653314f31770d860270a0d",
+      "bytes": 5373
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-ac3d3b6b379cfb23/partial-vs-complete-tail.json",
+      "sha256": "30b43702bd6af7c26c60a8f21d411fbaff2bdab15e751df238f2aa614ef7aca7",
+      "bytes": 6856
+    }
+  ],
+  "execution_boundary": {
+    "registry_modified": false,
+    "coverage_modified": false,
+    "integration_modified": false,
+    "task_state_modified": false,
+    "git_commit_or_push": false,
+    "local_read_add_only": true
+  },
+  "open_obligations": [
+    "add omitted first-action rows and rerun exact full-tail audit",
+    "legalise external background columns in a common catalogue and rerun new deviations",
+    "extend beyond b<=4, arbitrary depth, and six-provider OPT_6 only with separate proofs"
+  ],
+  "endpoint_binding_status": "current",
+  "endpoint_files_verified": 30
+}

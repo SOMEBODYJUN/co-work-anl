@@ -1,0 +1,93 @@
+{
+  "edge_id": "ca-ac3d-partial-obstruction-vs-complete-tail-scope",
+  "kind": "checks",
+  "status": "proposed",
+  "source_ids": [
+    "M-2ca8a524bdb746d286d02ddb687f380d"
+  ],
+  "target_ids": [
+    "customer-attraction/protected-omission-complete-two-player-search"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "比较共同标签/均分模型下的两人尾；M 只保留 d=1,2,3 回复链的 retained rows 与 b<=4 外生背景，而完整搜索对象对固定 p=4,5,6 回复表保留全部 p^2-1 行，并分别核对其保存支持。",
+  "roles": {
+    "M-2ca8a524bdb746d286d02ddb687f380d": "d=1 (p=6) partial-chain saved point with exact D/P=10/9 and unavoidable AB completion gains; d=2,3 give the analogous boundary.",
+    "customer-attraction/protected-omission-complete-two-player-search": "完整 p^2-1-row tail search records p=4/5 ratio 1 points and a distinct p=6 ratio 14/13 point whose original six-label background is not legal."
+  },
+  "explanation": "相同 p=6 标签数不使两个对象同一：M 的 d=1 点只有 17 条 retained rows、不同支持并有 D/P=10/9；完整搜索的 p=6 点核过全部 35 条非自身行、D/P=14/13，并另有外生背景合法化缺口。p=4/5 的完整点又是 ratio 1 且可由 AAA 前缀实现。该比较只防止把 partial-chain obstruction、complete-tail witness 与合法根策略相互替代。",
+  "scope": "context-only scope separation between retained-row obstruction and full-tail saved witnesses; no implication about any table-wide optimum or six-player theorem.",
+  "refutes": "仅 refutes把“p=6”或同名保护遗漏直接当作相同支持、相同 IC 域或共同目录合法性的做法；不 refute 完整搜索保存点本身。",
+  "evidence": [
+    {
+      "path": "map/edges/customer-attraction-3a-3a-ac3d3b6b379cfb23/review.md",
+      "sha256": "2367b51f8a4207f9cd15f0b7181c308e934afc4aaf94cfed84d3891c43946a90"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-ac3d3b6b379cfb23/support.md",
+      "sha256": "8078329c6c1b2f9837b6e48566609c774a7f9676e5ff67453f62da7c8ef2b56a"
+    },
+    {
+      "path": "archives/customer-attraction/state/障碍/有限回复链的保护遗漏松弛--障碍.md",
+      "sha256": "17c3b8b568b485ce220a3be950ea4f93cd73473cfff75a4b1bd52c10145e438c",
+      "section": "4. 为何三个点都不能补全原实际路径"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/protected-search-chains/audit.py",
+      "sha256": "06971c5aa0eec80ec9f0d9fb3c295523aa70423817a68f014f7e4dd7cd7a9251"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/protected-search-chains/replay/protected_chain_d1.json",
+      "sha256": "fc8b8e4c94d3313f0da1c0f8ef2252ec48d09fe5f0e63adc6fba7927fe3e93a9"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/protected-search-chains/replay/protected_chain_d2.json",
+      "sha256": "a174690c2d9345804593dbc6bbb83622b8b9b3018316e4f1cb9e7a8e4baecd57"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/protected-search-chains/replay/protected_chain_d3.json",
+      "sha256": "34dcaac9c6b3c2246cae6866029ea1c1f1469fad0707cf89cf4f64198ba78ba2"
+    },
+    {
+      "path": "archives/customer-attraction/state/计算/保护遗漏的完整两人搜索与候选重核--计算.md",
+      "sha256": "2a1d65886a389e2154f56ca3f35f9a3f74ba7d20e6ce6eabbd10a5602e66f4e0"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/protected-search-chains/replay/protected_two_p4b5.json",
+      "sha256": "7c1aea858a8dd9e239c88270efccd3f75e26d39df94be7bf99a75a2de3d82fd2"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/protected-search-chains/replay/protected_two_p5b3.json",
+      "sha256": "c08e6765c79e017de3e1f3db2b8d6864ecc61c8cf1e432ed89662e34a718aa6d"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/protected-search-chains/replay/protected_two_p6b1.json",
+      "sha256": "490af5524092d8dd44b68f8fc97862470f56bd8ffda02367002e8852194d2edf"
+    }
+  ],
+  "reviewed_by": "SOLVER-AC3D-FRESH",
+  "review_note": "Fresh worker read both endpoint records and their exact replay evidence; proposed context edge keeps the p=6 coincidence and external-background caveat explicit.",
+  "endpoint_pins": {
+    "M-2ca8a524bdb746d286d02ddb687f380d": "8fd29778f8226eb9a67546881d083a404d11c6bf26f6acfb4325210207e36cca",
+    "customer-attraction/protected-omission-complete-two-player-search": "d1c84a299c86d62fb1164252a90afd0864f5390a026f2311c399315ce7892264"
+  },
+  "evidence_pins": {
+    "map/edges/customer-attraction-3a-3a-ac3d3b6b379cfb23/review.md": "2367b51f8a4207f9cd15f0b7181c308e934afc4aaf94cfed84d3891c43946a90",
+    "map/edges/customer-attraction-3a-3a-ac3d3b6b379cfb23/support.md": "8078329c6c1b2f9837b6e48566609c774a7f9676e5ff67453f62da7c8ef2b56a",
+    "archives/customer-attraction/state/障碍/有限回复链的保护遗漏松弛--障碍.md": "17c3b8b568b485ce220a3be950ea4f93cd73473cfff75a4b1bd52c10145e438c",
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+    "archives/customer-attraction/tools/evidence/protected-search-chains/audit.py": "06971c5aa0eec80ec9f0d9fb3c295523aa70423817a68f014f7e4dd7cd7a9251",
+    "archives/customer-attraction/tools/evidence/protected-search-chains/replay/protected_chain_d1.json": "fc8b8e4c94d3313f0da1c0f8ef2252ec48d09fe5f0e63adc6fba7927fe3e93a9",
+    "archives/customer-attraction/tools/evidence/protected-search-chains/replay/protected_chain_d2.json": "a174690c2d9345804593dbc6bbb83622b8b9b3018316e4f1cb9e7a8e4baecd57",
+    "archives/customer-attraction/tools/evidence/protected-search-chains/replay/protected_chain_d3.json": "34dcaac9c6b3c2246cae6866029ea1c1f1469fad0707cf89cf4f64198ba78ba2",
+    "archives/customer-attraction/state/计算/保护遗漏的完整两人搜索与候选重核--计算.md": "2a1d65886a389e2154f56ca3f35f9a3f74ba7d20e6ce6eabbd10a5602e66f4e0",
+    "archives/customer-attraction/tools/evidence/protected-search-chains/replay/protected_two_p4b5.json": "7c1aea858a8dd9e239c88270efccd3f75e26d39df94be7bf99a75a2de3d82fd2",
+    "archives/customer-attraction/tools/evidence/protected-search-chains/replay/protected_two_p5b3.json": "c08e6765c79e017de3e1f3db2b8d6864ecc61c8cf1e432ed89662e34a718aa6d",
+    "archives/customer-attraction/tools/evidence/protected-search-chains/replay/protected_two_p6b1.json": "490af5524092d8dd44b68f8fc97862470f56bd8ffda02367002e8852194d2edf"
+  },
+  "review_digest": "e79902644e0880129cb2e67d670c76fb45bdd7116eba4109c755aeff974fbfb0"
+}
