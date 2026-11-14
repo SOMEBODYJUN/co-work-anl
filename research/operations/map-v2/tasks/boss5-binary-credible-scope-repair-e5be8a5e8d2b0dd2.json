@@ -140,11 +140,109 @@
       "scope_hint": "archives/customer-attraction"
     }
   },
-  "state": "claimed",
+  "state": "done",
   "owner": "Boss5",
-  "request_id": "96cc5b15397d45f59394ceedb2164772",
+  "request_id": "888d6165ffb34c2787edf4ae884757f5",
   "requests": {
     "e4c69c2dfe574df1bf1e7c60d7f2c785": "plan",
-    "96cc5b15397d45f59394ceedb2164772": "claim"
+    "96cc5b15397d45f59394ceedb2164772": "claim",
+    "888d6165ffb34c2787edf4ae884757f5": "done"
+  },
+  "edge_paths": {
+    "cag-degree-two-credible-root-threshold-local": "map/edges/boss5-binary-credible-scope-repair-e5be8a5e8d2b0dd2/degree-two-credible-root-threshold.json"
+  },
+  "receipt": {
+    "task_id": "boss5-binary-credible-scope-repair-e5be8a5e8d2b0dd2",
+    "stage": "3B",
+    "owner": "Boss5",
+    "worker": "Boss5 / SOLVER-BINARY-CREDIBLE-SCOPE",
+    "task_definition_pin": "f8297840e87020ae4872f20c5dbc97d902d394ca95359c4b642b632826c1e33e",
+    "object_ids": [
+      "customer-attraction/closeout-67a92b6751929baa34cc1de3",
+      "customer-attraction/degree-two-exact-root-tail-profit",
+      "degree-two-shared-customers-complete-spe-negative-stationary-flux-family"
+    ],
+    "read_object_ids": [
+      "customer-attraction/degree-two-exact-credible-root-floor-and-all-spe-optimality"
+    ],
+    "input_pins": {
+      "customer-attraction/closeout-67a92b6751929baa34cc1de3": "cd901b7f15921d8205f33be6c8d93451d2f9946236366818088406048f2a4595",
+      "customer-attraction/degree-two-exact-root-tail-profit": "4638e5ff85b2fdb805a2578bfdfc42e7ed0d2351a87ea9dd252324e7250fcc37",
+      "degree-two-shared-customers-complete-spe-negative-stationary-flux-family": "ead26a4f21f7e18c8edf9e4ae56d638dec34f9825819526618cf059eab1a651d",
+      "customer-attraction/degree-two-exact-credible-root-floor-and-all-spe-optimality": "a044cdd41c8e0674ba27fd1a55e2bed753ce80d330139f389d3a45536b6d5a91"
+    },
+    "coverage": {
+      "customer-attraction/closeout-67a92b6751929baa34cc1de3": {
+        "state": "linked",
+        "edge_ids": [
+          "cag-degree-two-credible-root-threshold-local"
+        ],
+        "object_pin": "cd901b7f15921d8205f33be6c8d93451d2f9946236366818088406048f2a4595",
+        "comparison_scope": "完整 route5 可信门槛及 half 付款接口，与当前二元族新定理的全部合法前缀、逐角色下界、根取等、最优比较排序和全策略最优。",
+        "reason": "新定理实付同目录 Σ_i L_{h_i}(T_i)≥OPT_m−W，且每个强制根恰 L。一般目录条件与任意已出现标签的强制后继仍开放。"
+      },
+      "customer-attraction/degree-two-exact-root-tail-profit": {
+        "state": "isolated-after-review",
+        "object_pin": "4638e5ff85b2fdb805a2578bfdfc42e7ed0d2351a87ea9dd252324e7250fcc37",
+        "comparison_scope": "固定根 v 及可重复 q 比较槽的联合尾利润，端点合成、相反组见证与全部支持取等，对照 route5 父角色跨可信后继的最小值。",
+        "reason": "在本次修复中作为独立定理和对照阅读。max_T R_v(T)=qH 不承担新可信下界或倒序付款。既有不同问题边 cag-degree-two-tail-route5-threshold-gap 保留其固定根尾比较。"
+      },
+      "degree-two-shared-customers-complete-spe-negative-stationary-flux-family": {
+        "state": "isolated-after-review",
+        "object_pin": "ead26a4f21f7e18c8edf9e4ae56d638dec34f9825819526618cf059eab1a651d",
+        "comparison_scope": "指定策略的所有有序历史、任意强制根后的反组真实续局、F(s)、复制偏离 S/2 上界、根/尾 L/H、θ、驻留和一个最优覆盖。",
+        "reason": "作为本边证据接续可信根的取等见证；该推导已经由独立 3A 边 cag-degree-two-construction-attains-credible-root-floor 交付。本修复的承重端点是证明全部真实子 SPE 下界和倒序付款的新定理。"
+      }
+    },
+    "assets": [
+      {
+        "path": "map/edges/boss5-binary-credible-scope-repair-e5be8a5e8d2b0dd2/degree-two-credible-root-threshold.json",
+        "sha256": "6be38f547b163b96e652df8e3cc037953edca0ba89c4cf22e9e9071570e403f5"
+      },
+      {
+        "path": "map/edges/boss5-binary-credible-scope-repair-e5be8a5e8d2b0dd2/review.md",
+        "sha256": "b2cfeff7f1397d50f0810951649f58074a26a48879165faa9f9d322a9c5c56ad"
+      },
+      {
+        "path": "map/edges/boss5-binary-credible-scope-repair-e5be8a5e8d2b0dd2/reading-ledger.json",
+        "sha256": "2427a96fa15e6d01b56077224e971443acc210319a5862ec036c41369bda2b26"
+      }
+    ],
+    "edge_ids": [
+      "cag-degree-two-credible-root-threshold-local"
+    ],
+    "supersession": {
+      "boss5-degree-two-credible-floor-3b-3b-cca009dfcf0a8929": {
+        "reason": "纠正任意尾复制遗漏的根负载，用新正式定理落实二元目录真实门槛、最优排序付款与所有完整根SPE最优。",
+        "assets": {
+          "map/edges/boss5-degree-two-credible-floor-3b-3b-cca009dfcf0a8929/degree-two-credible-root-threshold.json": {
+            "disposition": "replaced",
+            "replacement_paths": [
+              "map/edges/boss5-binary-credible-scope-repair-e5be8a5e8d2b0dd2/degree-two-credible-root-threshold.json"
+            ],
+            "reason": "稳定 edge_id 改由新定理承重，修正复制分母和可信后继的量词，并支付本族 route5 付款；旧证据字节可追溯。"
+          },
+          "map/edges/boss5-degree-two-credible-floor-3b-3b-cca009dfcf0a8929/review.md": {
+            "disposition": "replaced",
+            "replacement_paths": [
+              "map/edges/boss5-binary-credible-scope-repair-e5be8a5e8d2b0dd2/review.md"
+            ],
+            "reason": "以正确分母和全尾复制反例替代失效的任意尾证明；复核真实子 SPE 归纳、倒序付款和 a=0 福利边界。"
+          },
+          "map/edges/boss5-degree-two-credible-floor-3b-3b-cca009dfcf0a8929/reading-ledger.json": {
+            "disposition": "replaced",
+            "replacement_paths": [
+              "map/edges/boss5-binary-credible-scope-repair-e5be8a5e8d2b0dd2/reading-ledger.json"
+            ],
+            "reason": "新实读覆盖旧七份材料并增加正式定理与其有限核验，删除旧任意尾下界和伪归纳作为可复用依据。"
+          }
+        }
+      }
+    },
+    "follow_up_tasks": [],
+    "review_note": "复核四端登记和九份正文/附件；旧三资产在新路径分别替换。已原样运行定理的十二固定输入辅助核验，未修改正式正文或登记。",
+    "edge_digests": {
+      "cag-degree-two-credible-root-threshold-local": "c691173b175a3183432307650ed343ca1ed3f0d692e536224f6c6358a81e8f2d"
+    }
   }
 }
