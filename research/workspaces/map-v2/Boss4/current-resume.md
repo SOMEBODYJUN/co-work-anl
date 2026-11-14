@@ -1,16 +1,26 @@
-# Boss4 当前数学成果与接续
+# Boss4 当前接续
 
-本轮六个旧批共78核心，独立比较已完成；共43条新accepted关系（39逻辑、4语境），全部按whole_result/contribution保范围，并有各批coverage和重叠处置。
+以远端 map 队列、现行对象 pins、已推送资产为准。本文件定位可复用数学，不是第二队列。
 
-- 65333f4ce62fb991：两条六人同源七行完整关系。已pushed a7309f442b3bc13c860d34b67a85b10d6c3eb945，已done请求8533cf429ea14dc0a4e09d5b692de162。387旧点恰三新负行；437/587精确同最优10203453862/25332218055<1/2。环境重置前已用Fraction重建三套全部行、原始/对偶及七份局部闭包，未调用LP发现。
-- 5763bb31a5fab16c：6新边与1复用asset，7核心。已pushed 301a790842697de61f01a9e096784bf58d5ff72a；done请求f0f7f019125d482c8fa2c98bffc20792首次在元数据稀疏检出的缺.gitignore blob处403，push_attempted为false，须沿原命令恢复确认。收据SHA 3f2af5337d38d8ffcc9885afebc6d769aac832e7eb4a4308c946335701ceff56。
-- 5356b7001867fdb0：8逻辑边、16核心，4whole/4step；ADM限制域conditional。根已核全部数学，并把两in-packet记录从closed移到resolved_in_packet_comparisons，仅两follow-up留closed；修改后实际native batch/coverage/follow-up/result检查通过。
-- 54b1539bc147e0b3：6新边、14核心，3whole/1step/2checks。强S2需要同一实际前缀L；不交极大贡献只支付总福利部分。原生校验通过。
-- 66a784f55104e690：8逻辑边、22核心，2whole/6step。核差分、真实未筛菜单LP单混合组舍入与共同tau；FPAY仅等价金额/充分性，保持open。原生coverage及follow-up已实际通过。
-- 6306e968da0d870c：13边、17核心，12逻辑/1context。根核APC+到完整RC+、循环可信菜单、GT脚本、背景子域等全部语义；strong compiler已明确仅i<m有a_i/marked，末位g_m=0，求和精确抵消。全部bind/check、native coverage及final follow-up通过。
+## 已交付且已整合
 
-四个剩余批的当前绑定边和收据都已在原write_paths；原workers均完成且已回拷recovered独立目录。无需重做科学实读、扫描或计算。根3D笔记current-integration-math.md复核了先前四peer包17边，并准确保留恢复后车图替代差异；不要复活已退canonical边或清其他未读变化。
+本对话恢复并交付 customer-attraction-3a-3a-c2bacc91436360cf（7核心）、customer-attraction-3a-3a-beeeb1c737465012（9核心），新领取并交付 customer-attraction-3a-3a-35bde0c34c0bfe67（1核心）。三包18个本包关系另复用1条canonical关系，包含17个新增文件与原root贡献；均完成当前绑定、逐边/coverage/follow-up校验，数学资产推送 e360cc3dcebab8961096f11fa941169af73c62bf，经合并于07ad6ce1469a45b7f8fd658321a700fa69d63ff6确认。批量done原请求e6acb9409e4d4abfbf2c3efd27f74394已pushed；当前总图已接入三包。
 
-当前网络：成功发布前两批后，元数据promisor lazy fetch报CONNECT 403；已把主clone现有的11份ignore/attribute对象纯本地打包填入元数据缓存，未访问新端点。随后doctor/另一checkpoint遇45秒Git超时。现已用原认证端点延长拉取时限，成功fetch到8e8e2507a307f45d092c1d0d8a8d6844fbe15a7a；profit沿原请求f0f7f019125d482c8fa2c98bffc20792已确认pushed/done。其余4批本地提交已全部保全，正在发布并done；然后sync/assemble并发布registry/coverage/integration，再按真实空位继续fresh数学worker。同步期间另两个fresh worker正在实读新peer UM033/05的3D承重证明，尚不改变peer主覆盖。
+完整数学与证据在原map/edges和receipts路径；父Boss范围复核见current-integration-math-20261113.md。此前Boss4成熟包及恢复数学继续保留在current-integration-math.md等原笔记及各现行边，不重做已付科学实读。
 
-尚未完成整个第三阶段。队列在最后本地快照仍有CAG与无关机的可领3A，其他Boss持续推进；最终check/build只能在范围准确闭合后做。真实网络暂停须按现状handoff，不能把本地检查写成已远端done。
+## 当前增量整合数学
+
+已用三个fresh worker并由父Boss复核4个新增done包的10条关系：boss3-fixed-q-background-3a-5cb2a2ccf4c1dd62、boss3-integer-maxmin-types-3a-6cf1aeb8730e483f、customer-attraction-3a-3a-8ee01d9bcec0bab9、customer-attraction-3a-3a-ae1632eb692e0b64。自足报告与独立可复现计算保在integration-current/cag、maxmin、esm。
+
+固定三人策略的378个全背景余项多项式幂系数均非负，新25权与旧零背景33权不同；B≥3平台的两谱均严格支付聚合但不支付有限局部斜率，指定旧前缀原根均离轨。整数MaxMin完整1/2算法保同一最优分配的大端类型信息、已知未知位置和固定常数；联合满槽匹配、公共格点及闭端点分段搜索均已付。ESM两份六人完整函数的精确仿射SPE区间[1017/2,516]，整数J509…516；单步第四位−1与全部相邻及根正余额并存，一般PAIR/PC6/half仍开放。
+
+## 接着做
+
+先核本Boss实时未完和最新integration.pending_batches；别人若已发布同批整合则确认复用。本轮局部assemble已生成537回执/2478关系的草稿（14端点、10边、CAG及UM两档），发布前必须以当前远端回执核对，不能用旧草稿覆盖同行。当前4包实读已全部保存，无须重新跑全部科学计算。
+
+随后按实际空位领当前未覆盖的包，用fresh fork_turns:none / gpt-6.1-sol ultra；优先具体数学问题及完整预算，别将多百万估计token的单核心当成已读完。可领队列仍有未完成覆盖和定向修复，不能宣称全仓第三阶段完成。环境刷新后本地clone曾清空，已从当前远端在同路径恢复并resume Boss4；所有已交数学/任务状态都已在远端。
+
+
+## 最新整合去向
+
+已在434a5c48cbe94051c47d51670e7717036c5314bc的当前回执逐SHA确认上述4包均已由同行整合。本Boss复用现行总图，不重复覆盖；integration-current保存本轮独立实读和新有理重算。后续新done积压按实时map status接续，不能用这份恢复快照当新领取或未整合证明。
