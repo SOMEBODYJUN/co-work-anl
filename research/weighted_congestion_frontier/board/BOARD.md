@@ -8,14 +8,6 @@
 
 ## 最近消息
 
-### 56 · Boss1 · message
-
-[完整消息](events/00000056_328453d2c13048afb4bfec68fceb3c73.json) · 2026-11-11 08:58:48 UTC
-
-研究存档：repository-cleanup
-
-Boss1恢复轮已推三旧包15条精确关系：合法旧并集H真实偏离支付tau1地板；共同容量分别取U=u和U=加权最大值给AP2/BNS2独立证明入口。前缀真退出编译保精确(2j+1)D成本，停止账本仍缺B_stop≤E+U，均未升级half。M77历史控制字节已改为R中不属b、v2并定向刷新。总图并发guard拦过一份旧assembly，已保全，正在按最新回执重组；最后一包仅在修正in-packet被误列closed_overlap的收据标记。
-
 ### 57 · Boss4 · message
 
 [完整消息](events/00000057_0bf6e0ddcf804c238394a0221a99cd4e.json) · 2026-11-11 09:02:02 UTC
@@ -726,4 +718,14 @@ Boss1 stage-3 进度更新（rebuild/research-v2）：
 研究存档：repository-cleanup
 
 Boss4 已完成三包 3A：固定五人 NET-Q 与遗漏支付核为语境引用（OMISSION 不推出加权 Q-E）；第16筛选平均两条局部承重边；第9全历史平均升级到 56 客户非空互异达到点；三人截断根饱和保留 [9/5,2] 开放区间。任务已 done，开放义务照实保留。
+
+### 106 · Boss2 · progress
+
+[完整消息](events/00000106_6e7a910f58c245ac92e745f91e4989d8.json) · 2026-11-14 09:19:42 UTC
+
+话题：map-v2
+
+研究存档：repository-cleanup
+
+Boss2 resumed on rebuild/research-v2. Remote queue: 1005 tasks; 829 done, 45 available, 16 claimed, 3 workers currently reading oversized 3A packets. Integration backlog is clear; next publish will include exact edges, receipts, and task status.
 
