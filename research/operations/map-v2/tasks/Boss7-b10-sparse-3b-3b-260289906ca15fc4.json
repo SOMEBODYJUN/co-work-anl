@@ -394,11 +394,99 @@
       ]
     }
   },
-  "state": "claimed",
+  "state": "done",
   "owner": "Boss7",
-  "request_id": "7b7ba350a65347bc81693fcfb66d916f",
+  "request_id": "6852f46730c34e6fa6b6b9864ec61f63",
   "requests": {
     "cb24e8c496d9408a9f4826d804371cc5": "plan",
-    "7b7ba350a65347bc81693fcfb66d916f": "claim"
+    "7b7ba350a65347bc81693fcfb66d916f": "claim",
+    "6852f46730c34e6fa6b6b9864ec61f63": "done"
+  },
+  "edge_paths": {
+    "boss7-b10-sparse-support-caps-do-not-transfer": "map/edges/Boss7-b10-sparse-3b-3b-260289906ca15fc4/comparison-support-caps-do-not-transfer.json"
+  },
+  "receipt": {
+    "task_id": "Boss7-b10-sparse-3b-3b-260289906ca15fc4",
+    "stage": "3B",
+    "status": "draft",
+    "review_state": "isolated-after-review",
+    "coverage": {
+      "B10-PURE-FULL-ROOT-MENU-NO-v1": {
+        "state": "isolated-after-review",
+        "object_pin": "47c00c11d3f2735980342bc5fbf01c199795f0c072d1a7f75bf838358cf2074b",
+        "comparison_scope": "同一八人双块真实根菜单的完整纯 SPE DAG、纯列额外查询 cap 37/10、u=13/4、W=OPT_8=32；明确这些事实只属于该指定策略。",
+        "reason": "与稀疏定理并列核对纯支持1失败和混合支持2/3/4安全；context/checks 边不承担一般 mixed-menu 或 half 逻辑证明。",
+        "edge_ids": [
+          "boss7-b10-sparse-support-caps-do-not-transfer"
+        ]
+      },
+      "CA-TWO-BLOCK-ROOT-MENU-SPARSE-VALUES-v1": {
+        "state": "isolated-after-review",
+        "object_pin": "8dd9760295f1eb83865314e63077f072f4dfd261c4523872b4142698070ed98d",
+        "comparison_scope": "同一固定 K 的支持≤1/2/3/4 精确值 37/10、123/40、1717/560、851/280 及全部达到者；不迁移到任意菜单、R4 实现或六人福利。",
+        "reason": "该边只作有限矩阵与纯菜单的范围比较；context/checks 结果按任务要求 isolated-after-review。",
+        "edge_ids": [
+          "boss7-b10-sparse-support-caps-do-not-transfer"
+        ]
+      }
+    },
+    "object_ids": [
+      "B10-PURE-FULL-ROOT-MENU-NO-v1",
+      "CA-TWO-BLOCK-ROOT-MENU-SPARSE-VALUES-v1"
+    ],
+    "read_object_ids": [],
+    "input_pins": {
+      "B10-PURE-FULL-ROOT-MENU-NO-v1": "47c00c11d3f2735980342bc5fbf01c199795f0c072d1a7f75bf838358cf2074b",
+      "CA-TWO-BLOCK-ROOT-MENU-SPARSE-VALUES-v1": "8dd9760295f1eb83865314e63077f072f4dfd261c4523872b4142698070ed98d"
+    },
+    "reading": {
+      "staged_passes": 12,
+      "declared_source_spans": 16,
+      "distinct_files": 12,
+      "ledger_path": "map/edges/Boss7-b10-sparse-3b-3b-260289906ca15fc4/comparison.md",
+      "ledger_sha256": "47345042ec5ca0b7fd08d275191390b5a8f5d8efee9ffd8e9b8e51163ea5ddcc",
+      "notes": "DAG 的 5 个 declared spans 保留为 pass 6–10；最后四个短 declared refs 合并进 pass 12，并逐项列出原 SHA。所有对象正文、证据与 declared refs 已按连续顺序完整读取。"
+    },
+    "checks": {
+      "edge_check": {
+        "command": "python tools/research_runtime.py --repo . edge-check map/edges/Boss7-b10-sparse-3b-3b-260289906ca15fc4/comparison-support-caps-do-not-transfer.json",
+        "status": "PASS",
+        "result": "edge-structure-valid-not-a-mathematical-verdict",
+        "proof_scope": "context",
+        "edge_status": "proposed",
+        "objects": [
+          "B10-PURE-FULL-ROOT-MENU-NO-v1",
+          "CA-TWO-BLOCK-ROOT-MENU-SPARSE-VALUES-v1"
+        ]
+      },
+      "sparse_checker": {
+        "command": "python archives/customer-attraction/tools/evidence/two-block-root-menu-sparse-values/check-two-block-sparse-menu.py /workspace/scratch/f364a10408a0/co-work-anl",
+        "status": "PASS",
+        "result": "all 162 supports, all 13872 DAG nodes and all 59496 local comparisons checked",
+        "values": {
+          "support_at_most_1": "37/10",
+          "support_at_most_2": "123/40",
+          "support_at_most_3": "1717/560",
+          "support_at_most_4": "851/280"
+        }
+      }
+    },
+    "assets": [
+      {
+        "path": "map/edges/Boss7-b10-sparse-3b-3b-260289906ca15fc4/comparison.md",
+        "sha256": "47345042ec5ca0b7fd08d275191390b5a8f5d8efee9ffd8e9b8e51163ea5ddcc"
+      },
+      {
+        "path": "map/edges/Boss7-b10-sparse-3b-3b-260289906ca15fc4/comparison-support-caps-do-not-transfer.json",
+        "sha256": "c41b056ab478a64990fde31fadeb4b2229998e074ab21ea38a8b83d929aa4afd"
+      }
+    ],
+    "unpaid_obligations": [
+      "同一完整策略实现 R_n（尤其 R4）及所有离轨 BR；条件 M_n 不能替代该实现。",
+      "任意 mixed-menu 的可行列集合、额外查询分母和支持最优性需单独证明；固定 K 的 V_s 不可外推。",
+      "六人全目录全纯 SPE 的 2W≥OPT_6 仍需独立证明；本八人 W=OPT_8 不形成 half 反例或证明。",
+      "不把 Q 当原顺序博弈的混合/行为 SPE，也不把静态 q_B 背景当受限根菜单。"
+    ],
+    "delivery_note": "只写入本任务声明 write_paths 下的 comparison/edge/receipt；未执行 claim、done、assemble、checkpoint 或 commit。"
   }
 }
