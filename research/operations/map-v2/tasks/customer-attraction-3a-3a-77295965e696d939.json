@@ -116,12 +116,65 @@
       "budget_status": "reading-scope-expanded-reestimate"
     }
   },
-  "state": "claimed",
+  "state": "done",
   "owner": "Boss4",
-  "request_id": "99fa5e2e964f4f1da1b602f89cca9fc5",
+  "request_id": "279be82a4e03461ba6247030de423adf",
   "requests": {
     "c77ec76b08b948c4ac8c43dc65353af7": "plan",
     "f1fd223b149b489da97dfe98541694bc": "claim",
-    "99fa5e2e964f4f1da1b602f89cca9fc5": "read-add"
+    "99fa5e2e964f4f1da1b602f89cca9fc5": "read-add",
+    "279be82a4e03461ba6247030de423adf": "done"
+  },
+  "edge_paths": {
+    "cag-77295965-aligned-cuts-check-terminal-remainder-boundary": "map/edges/customer-attraction-3a-3a-77295965e696d939/aligned-cuts-check-terminal-remainder-boundary.json"
+  },
+  "receipt": {
+    "task_id": "customer-attraction-3a-3a-77295965e696d939",
+    "stage": "3A",
+    "status": "complete",
+    "object_ids": [
+      "cag-unaligned-all-pair-tax-exact-point-four-aligned-cuts",
+      "customer-attraction/closeout-b4886bab8556761b061a5638"
+    ],
+    "read_object_ids": [
+      "CAG-MODEL",
+      "CA-TWO-REMAINING-TAX",
+      "CA-FIVE-INDEXED-ROWS-NO",
+      "customer-attraction/terminal-profit-remainder-general-background"
+    ],
+    "input_pins": {
+      "cag-unaligned-all-pair-tax-exact-point-four-aligned-cuts": "3026d6059951f45242bf201814a96de37058f1cbafbaddbcd3c4389e20bfe121",
+      "customer-attraction/closeout-b4886bab8556761b061a5638": "fd2a93870106a2eca37d24bf1e16c50f373f8f23d0a91ef6d7873c4202c5a8ea",
+      "CAG-MODEL": "3216d1db43ff83e0e0c9cf2479e79611277c9d9291a68e7f9b85ec4bb299dc5c",
+      "CA-TWO-REMAINING-TAX": "eb63a8d1cd934879f5f7f25f633b4bf753973f405a7b8db91bed63f633de7d15",
+      "CA-FIVE-INDEXED-ROWS-NO": "9ae008f5a3b1ccfa63d4615da2ca592c79007686ad34ed5bbd1138fc373c8787",
+      "customer-attraction/terminal-profit-remainder-general-background": "17a2fd3d61113599ebbaac4027492db06d91d309dce54697893ef66e400fcbf7"
+    },
+    "coverage": {
+      "cag-unaligned-all-pair-tax-exact-point-four-aligned-cuts": {
+        "state": "isolated-after-review",
+        "object_pin": "3026d6059951f45242bf201814a96de37058f1cbafbaddbcd3c4389e20bfe121",
+        "comparison_scope": "完整读取核心计算正文（含1920行合同、全积税与同索引税分离、四个负项）、共同历史模型、64原子证书、精确障碍JSON及278364字节verified audit；核对1920=437+27+70+1386、44正质量、W=1、O>2、1872正/48零行与四条direct_four_cuts严格负。与closeout来源的‘末位余项不能替代早期真实离轨菜单’边界作定向检查；CA-FIVE-INDEXED-ROWS-NO、CA-TWO-REMAINING-TAX仅按任务标注的deferred registry定位，不作为已付逻辑端点。",
+        "reason": "核心只证明一个固定必要条件投影点及四条同索引税排除保投影完整SPE补全；它不是完整SPE反例、不是1920系统最优性，也不推出closeout中的末位余项或Q-CAG-HALF。保留一条accepted contextual checks边作为边界核对资产，但没有可接受的逻辑蕴含/反驳边。"
+      },
+      "customer-attraction/closeout-b4886bab8556761b061a5638": {
+        "state": "isolated-after-review",
+        "object_pin": "fd2a93870106a2eca37d24bf1e16c50f373f8f23d0a91ef6d7873c4202c5a8ea",
+        "comparison_scope": "完整读取closeout资料指定‘来源身份和核心处置’‘已证、候选与停止边界’‘当前接续’段，并与核心四条同索引税审计对照。确认末位v余项及恰两人推论已证，r·min_i u_i、(r−1)·min_i u_i及Q-CAG-HALF/早期信用支付仍开放；不把核心固定点的投影障碍当作其证明或反例。",
+        "reason": "closeout是来源身份与开放边界记录，不是完整SPE定理；核心四条负同索引税仅具体核对‘终端证书不能替代早期激励’的停止边界，属于context checks而非逻辑支持。没有在本包中付清一般r信用转移、早期真实离轨菜单或Q-CAG-HALF所需的额外对象，因此保持isolated-after-review。"
+      }
+    },
+    "assets": [
+      {
+        "path": "map/edges/customer-attraction-3a-3a-77295965e696d939/aligned-cuts-check-terminal-remainder-boundary.json",
+        "sha256": "c5e8a9a4e522b175c7f3f941c5c02058407e5b6369ae2d8e79578502c8a357f8"
+      }
+    ],
+    "follow_up_tasks": [],
+    "reviewed_by": "Boss4/map_worker_b",
+    "review_note": "边已由edge-bind --write绑定当前registry pins与证据SHA，并通过edge-check（proof_scope=context）。四条同索引税值分别为AB −2341138473675999104176877735117902071008905565/5681330663344778557249885771317726212748059847、AE(R,S) −328673919603186853535646000016614310246913419/79538629286826899801498400798448166978472837858、AE(I,J) −4026225991066773598625253416586910774286981521/79538629286826899801498400798448166978472837858、Sbranch(I,J) −46188232111488131723624844037668831189089391607/79538629286826899801498400798448166978472837858；分母正，均严格负。",
+    "reading_report": {
+      "follow_up_note": " Deferred comparison candidates remain explicitly unpaid; no task-defined overlap pair was closed in this receipt."
+    }
   }
 }

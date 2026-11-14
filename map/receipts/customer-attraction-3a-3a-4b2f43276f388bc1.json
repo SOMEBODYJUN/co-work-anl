@@ -1,0 +1,67 @@
+{
+  "task_id": "customer-attraction-3a-3a-4b2f43276f388bc1",
+  "owner": "Boss1",
+  "request_id": "9df8469fad304a82a47b94c30117b73e",
+  "definition_pin": "db7969b73378d74e4b460677baa6585307bcedcbc9f922927a8bcd6deaa3da71",
+  "coverage": {
+    "cag-r70-six-player-seven-topic-fixed-complete-strategy-lp": {
+      "state": "linked",
+      "object_pin": "b85fbfeafe5b02e918438e2de0d948d6296a19524e6f06adb310a997d34eb2bb",
+      "comparison_scope": "任务定义七个 refs 全读；完整 19,608 节点 σ、127 类型、3,048 真实去重 IC 键、七个遗漏标签归一 LP、exact dual audit、以及 read-add 后同一 σ 的 11 客户点全历史 IC audit。另读 CA-STRATEGY-CONE、可信续局算法、七极大账本和六人 half 目标边界作语义比较。",
+      "reason": "在固定 σ 的全部非负客户重数 SPE 锥中，真实全树 IC 行 Gσx≥0 配合七个六槽覆盖归一 LP。7 组有理对偶给 omit 0/2 的 6/11 与其余分支的 3/5 下界；M-c5e read-add 的独立 point-audit 在同一 σ 上核验 11 客户点 W=6、OPT6=11，故固定锥最小比恰为 6/11。whole 结论只量化这一份 σ，不能升级为所有 σ 的六人 half。",
+      "edge_ids": [
+        "cag-r70-fixed-sigma-cone-six-eleven"
+      ]
+    }
+  },
+  "assets": [
+    {
+      "path": "map/edges/customer-attraction-3a-3a-4b2f43276f388bc1/review.md",
+      "sha256": "69f51a4ed0e69a5bbbe976f994ecdd92a2a7591de4e510363161e496eb779ac9"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-4b2f43276f388bc1/support.md",
+      "sha256": "d0da354c0996a6ccb75778b12fc00769873453727c5c6918a85cc98379f44a10"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-4b2f43276f388bc1/readledger.json",
+      "sha256": "74c1827267402000f7dc9ad7f6e8dfbda33ee47c4b74aaf434824a57241383b8"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-4b2f43276f388bc1/fixed-sigma-cone-six-eleven.json",
+      "sha256": "f82b669b02fe38edae33ae4c403fbaf141a8ec3f9c80d4a5e2775ce2baaf8eef"
+    }
+  ],
+  "follow_up_tasks": [],
+  "closed_overlaps": [],
+  "review_note": "Fresh-worker completed fixed-sigma mathematical audit; Root performed native edge-bind --write and edge-check successfully. Whole result remains scoped to the assigned fixed sigma.",
+  "reviewed_by": "fresh-worker",
+  "worker_internal": "R70-FIXED-LP-FRESH-WORKER",
+  "root_validation": {
+    "reviewer": "Boss1",
+    "scope": "Worker has supplied exact fixed-cone derivation, complete-policy structural checks, dual/audit interpretation, point-attainment binding, and model migration boundaries. Native binding/check and final queue completion remain Root operations.",
+    "native_binding": "edge-bind --write and edge-check passed",
+    "asset_scope": "Current task output only; no claim over unrelated concurrent deltas",
+    "scientific_reruns": 0,
+    "root_review_path": "map/edges/customer-attraction-3a-3a-4b2f43276f388bc1"
+  },
+  "comparison_note": "Fixed-σ linked coverage is scoped to the assigned core. M-c5e point-audit, CAG-MODEL, and CA-STRATEGY-CONE are declared read dependencies used to establish the fixed-cone lower bound and the accepted specializes edge; no all-σ half theorem is claimed.",
+  "input_pins": {
+    "cag-r70-six-player-seven-topic-fixed-complete-strategy-lp": "b85fbfeafe5b02e918438e2de0d948d6296a19524e6f06adb310a997d34eb2bb",
+    "M-c5e460641b3e47729159aa9e7cb6a175": "cfb8aca64886120754f2457a388c80e70d73430d4804ba0d027f9db08f6d63d9",
+    "CAG-MODEL": "3216d1db43ff83e0e0c9cf2479e79611277c9d9291a68e7f9b85ec4bb299dc5c",
+    "CA-STRATEGY-CONE": "291bd4d94e33d40566453a33b5cf07b1c620b77362268417582efecb42b0c4bb"
+  },
+  "source_freshness": {
+    "all_declared_reading_refs_match": true,
+    "read_add_used": true,
+    "canonical_edge_ids": [
+      "cag-r70-fixed-sigma-cone-six-eleven"
+    ]
+  },
+  "execution_boundary": {
+    "new_scientific_programs": 0,
+    "new_lp_runs": 0,
+    "note": "Historical exact cone and point audits were read under their declared roles; only the fixed sigma result is claimed."
+  }
+}

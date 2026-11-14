@@ -110,11 +110,57 @@
       ]
     }
   },
-  "state": "claimed",
+  "state": "done",
   "owner": "Boss4",
-  "request_id": "dcb2e224e0bd42bea6fac0bcd676cb61",
+  "request_id": "279be82a4e03461ba6247030de423adf",
   "requests": {
     "c77ec76b08b948c4ac8c43dc65353af7": "plan",
-    "dcb2e224e0bd42bea6fac0bcd676cb61": "claim"
+    "dcb2e224e0bd42bea6fac0bcd676cb61": "claim",
+    "279be82a4e03461ba6247030de423adf": "done"
+  },
+  "edge_paths": {},
+  "receipt": {
+    "task_id": "customer-attraction-3a-3a-5545dfd39d8af0cb",
+    "stage": "3A",
+    "status": "complete",
+    "object_ids": [
+      "customer-attraction/three-player-protected-omission-equality-example",
+      "customer-attraction/closeout-588bfa4bf5556840648696ef"
+    ],
+    "read_object_ids": [
+      "CAG-MODEL",
+      "customer-attraction/residual-payoff-tax-calculus"
+    ],
+    "input_pins": {
+      "customer-attraction/three-player-protected-omission-equality-example": "1d0985cdcba341146078dca931d1d42d23bbc08b41090b1fb53f3aeb48d59aea",
+      "customer-attraction/closeout-588bfa4bf5556840648696ef": "7c5868ad79d6e8230a52a555a330a02b4892f74d36329afbc00e8aa9806ee714",
+      "CAG-MODEL": "3216d1db43ff83e0e0c9cf2479e79611277c9d9291a68e7f9b85ec4bb299dc5c",
+      "customer-attraction/residual-payoff-tax-calculus": "779995a2df37d219c501e728531e3ca4b83eaa87e7deff2653d5d66dcd5e89ba"
+    },
+    "coverage": {
+      "customer-attraction/three-player-protected-omission-equality-example": {
+        "state": "isolated-after-review",
+        "object_pin": "1d0985cdcba341146078dca931d1d42d23bbc08b41090b1fb53f3aeb48d59aea",
+        "comparison_scope": "完整实读三人保护遗漏等号构造、共同目录完整历史模型、固定背景剩余收益与税、背景保护集计数策略筛查及 exact-reconstructed-certificate.json（关键字段、全部43节点/258含自身比较结构和浮点对照均解析）；比较对端为 customer-attraction/closeout-588bfa4bf5556840648696ef 的 R-2fc 早期 floor 有限锥搜索与精确候选复核。",
+        "reason": "核心是一个恰三人、114单位客户、六标签、零背景的具体完整纯SPE：实际DCC，三人各19，W=P=57；保护标签ABF的遗漏恰57，OPT_3=83，且完整有序树43节点、215项非自身IC均精确通过（最小正slack 1/2）。对端只认证m=4,p=6及m=5,p=7的早期position=0有限搜索候选：分别W=5,OPT=7,u=1和W=6,OPT=9,u=1，恰达到(2m−1)u−OPT=0且2W−OPT=3；其有限候选/工具边界不含三人保护集合、根等号或任意m推广。两对象的人数、目标函数、量词和证明域均不匹配，不能形成implies、specializes、transfers、equivalent_to或refutes。共同模型及税定义只作共享背景，不造hub边；三人等号构造也明确不证明普遍保护预算或锐性。",
+        "edge_ids": []
+      },
+      "customer-attraction/closeout-588bfa4bf5556840648696ef": {
+        "state": "isolated-after-review",
+        "object_pin": "7c5868ad79d6e8230a52a555a330a02b4892f74d36329afbc00e8aa9806ee714",
+        "comparison_scope": "完整实读R-2fc早期floor有限锥搜索与精确候选复核正文；解析其m=4,p=6与m=5,p=7的搜索量词、完整有序历史候选核验、有限策略锥与非泛化声明；并与三人保护遗漏等号构造及共享定义/证书对照。",
+        "reason": "该对象只给两个有限、精确复核的早期floor候选：m=4候选路径(2,0,0,0)，7个单位客户，W=5,OPT=7，259个完整历史、1295项非自身偏离；m=5候选路径(2,0,0,0,0)，9个单位客户，W=6,OPT=9，2801个完整历史、16806项非自身偏离。两者均仅说明(2m−1)u=OPT的具体候选，不证明floor普遍成立，也不证明或反驳六人half、背景税或三人保护预算。与三人构造的m=3、W=P=57、保护ABF等号、OPT_3=83没有变量/量词保持映射，故无逻辑边。共享CAG模型和residual-payoff-tax-calculus的定义、条件税恒等式不推出任一核心结论。值得继续的问题是跨m统一floor/half或保护预算，但当前材料没有已付前提，留待后续定向任务。",
+        "edge_ids": []
+      }
+    },
+    "assets": [],
+    "follow_up_tasks": [],
+    "closed_overlaps": [],
+    "reading_report": {
+      "task_declared_spans": 6,
+      "mathematical_spans_read": "完整读取任务定义、03-map-worker、map README/IMPLEMENTATION相关schema、两核心登记正文、两共享定义及任务列出的六份reading_refs；large exact certificate JSON全量解析结构并核对单位重构、43节点/258比较、OPT3与浮点负slack对照字段。未运行搜索或审计程序，未修改任何源对象。",
+      "new_math_program_runs": 0,
+      "follow_up_note": "本包零逻辑边；若要推进，需另发跨m floor/half或保护预算的具名比较任务并提供统一量词与完整策略映射。"
+    }
   }
 }
