@@ -1,73 +1,57 @@
-# 不交极大花瓣、完整历史与局部付款接口的比较
+# Boss3 fresh Solver：单玩家边界修订与14核心复核
 
-## 本次定向替代的实读与复用
+任务 `boss3-single-player-boundary-repair-671659461d75219b`（stage 3A，owner observed `Boss2`）替代 `boss4-source-clarification-repair-repair-eb9c65b4dae79501`。本轮按 ordered passes 完成：
 
-本次任务是 `boss4-source-clarification-repair-repair-eb9c65b4dae79501`，替代原54b153包。只重判改版对象 `CA-DISJOINT-MAXIMA-2M1` v5及受其影响的总福利贡献，复用其它未改数学和14核心既有比较。原read-ledger所列35份历史来源逐文件核SHA：仅不交极大定理由a9976205…改为73ee40eb…；其余34份原字节相同。该历史全读记录是原worker已付工作，不冒称本次fresh worker重新逐字段读过所有大型JSON。
+1. **身份与版本 pass**：读当前任务、前一任务/receipt、旧六条边、旧 read-ledger/review、registry 与 AGENTS；核对 18 个输入 pin。唯一变化是 `CA-DISJOINT-MAXIMA-2M1` 从旧 pin `d0ea4ff6…` 更新到当前 registry v6 pin `94b1a0b0…`，正文由旧 SHA `73ee40eb…` 变为当前 `0c003387…`。其余 17 个对象 pin 和 34 个未变历史来源均一致。
+2. **正文 pass**：完整读当前不交极大正文（269 行）、共同目录模型、奇偶迁移、最优遗漏证书、唯一最优反例、同枝审计/引理、自由源审计/引理；按顺序读静态安全正文第1、4—6、8节。
+3. **关系 pass**：复核旧六条边的 source/target、ALL 前提、量词、真实后继与证据；证明链保留为 3 条 whole logical relations、1 条 logical contribution、2 条有限/context checks。
+4. **边界 pass**：重新检查 m=1、共同核 C、极大残余覆盖、实际前缀 L、signed→uniform、有限审计与来源未评估状态；只做最小边界修正，不扩张开放结论。
+5. **交付 pass**：写入本任务六条替代边、coverage 草稿、read-ledger、review 与 receipt；未改队列状态、未执行 Git commit/push。
 
-本次新实读九份完整数学正文：不交极大定理、共同目录模型、奇偶共同策略构造、最优遗漏计算、唯一最优遗漏反例、同枝信用程序、同枝信用引理、自由源两原审计、自由源引理。另按连续有序范围实读静态安全主定理第1节、第4—6节及第8节。全部六条旧边、原任务/收据/ledger/review和18个端点当前登记的陈述、量词、条件、状态均已核对。未重读的巨大原件及其它isolated比较明确复用原包，不重开成熟LP、BI、有限审计或科学搜索。精确文件SHA和区间在read-ledger.json。
+## 当前 v6 的最小数学修订
 
-接续复核又沿六条修复边实读上述九份正文及静态有序节段，核当前端点、ALL方向、三条整目标关系、一条局部贡献和两条语境checks。来源澄清中的另一项 `replay-flow.json` 权重键修正不命中本包：该JSON及其承载页“个体安全去相关与尾部流增量”均不在18个端点的body/evidence、本包44个来源文件或六条边的证据中。它把兴趣mask权重类型与决策节点数分开，不改变本包同枝信用的分支/删除概率，也不改变自由源审计的5184/1225固定分布格；本包不借用其6/15正类型、43节点或57/59负IC行作推导。
+当前正文仍证明：在共同核 `K`、`C=|K|` 且不同包含极大残余覆盖两两不交时，每个完整纯 SPE 的每个有序历史均选极大花瓣；极大花瓣计数为 singleton PNE；
+\[
+\operatorname{OPT}_m\le C+(2-1/m)(W-C)\le(2-1/m)W.
+\]
+阈值席位引理、单资源严格降低、严格子花瓣动态删除以及 DM 福利/锐性推导均未改变。`m=1` 的正确边界是：任意有限目录由唯一提供者选真实最大覆盖主题，故 `W=OPT_1`；“只有一个覆盖集合”只属于 `m=1` 的特定锐性构造，不是一般一人目录假设。该最小修正已反映在当前 edge 条件与 endpoint pin。
 
-动态陈述均保有限单位客户、有限非空标签目录、全部有序历史和同一策略真实后继，空主题、重复、同覆盖异标签、零客户和任意弱平局均保留。合法背景利润、空根覆盖、形式菜单、计数统一策略与任意完整历史策略分开。
+由 DM 与同一目录静态锐等式 `OPT_n=(2n-1)v_n` 只能得到总福利贡献
+\[W\ge [nOPT_n+(n-1)C]/(2n-1)=nv_n+(n-1)C/(2n-1)\ge nv_n,\]
+不能推出任意实际 SPE 前缀嵌入 S2 唯一负载 `L`。只有在同一完整 SPE 的实际前 `n-1` 个动作确实产生 `L` 时，静态唯一负载边才给末位 `v_n`、各前缀 `g=v_n`、每位收入至少 `v_n` 及 `W\ge nv_n`。
 
-## 不交极大花瓣的独立总福利路线
+## 14 个核心对象的处置
 
-CA-DISJOINT-MAXIMA-2M1扣全目录共同核K、C=|K|，不同极大残余覆盖两两不交。每个完整历史的严格子花瓣可动态删除：两条真实后继均为singleton SPE，阈值席位引理给终局PNE；一个资源收益严格降低不能增加该资源的任意PNE占用，所以当前扩张到极大花瓣严格获利。不曾合并不同有序历史的同计数策略。
+| object | state | 已核实结果与边界 |
+|---|---|---|
+| `CA-DISJOINT-MAXIMA-2M1` | linked | v6 当前正文成立；新边 `b3r1-disjoint-maxima-static-sharp-welfare-contribution` 只贡献 DM→总福利。m=1 边界按上段修订。 |
+| `M-7fa6f1e2b320459eac88c1c614c870b3` | isolated-after-review | tau6 13 原子只否定命名 44 行的非负组合；无已证包含桥，不反合法六人 SPE、half 或一般信用。 |
+| `customer-attraction/eighteen-topic-materialized-three-player-credibility-diagnostic` | isolated-after-review | CDE/查询尾真实偏离排除保持；计数统一只穷 `Ω_M`，不排 `Ω_H`；五槽并集非 `OPT_3`。 |
+| `customer-attraction/closeout-22932a6dc419ad09ee8817f1` | isolated-after-review | 21 个 SPE 与 v2 重入行只给有限/context checks，不推出全参数遗漏耦合。新边 `b3r1-common-credit-audit-checks-sharp-interface` 仅核接口。 |
+| `B8-PURE-MENU-CONVEX-CUT-NO-v1` | isolated-after-review | 30 客户纯/混合最小利润差 `1/10`，反“先凸纯菜单再截门槛无损”；不反统一末层、纯 BI 或根 half。 |
+| `customer-attraction/three-player-count-uniform-outcome-last-layer-enumeration-and-skip-boundary` | isolated-after-review | 固定全局末层 `f(q)` 后的 `C_a,L_a,M_f` 枚举及 `None=skip` 成立；不给六人一般净化。 |
+| `M-acf631e39b224ab3a96014370744b2fa` | linked | signed all-new 表迁移合法 uniform 单位客户，`m≥3` 完整 SPE，`W=OPT_m=2^(2m)-2^m`（可删空类型）。 |
+| `customer-attraction/signed-credible-repair-direction-review-and-continuation-chronology` | isolated-after-review | `g_i=M_i-u_i(z)` 是退出缺陷，非 signed 负客户或驻留 Δ；不支付普遍目标族。 |
+| `customer-attraction/parity-signed-uniform-all-new-policy` | linked | 同一完整动作表在 uniform 中逐历史保持 BR；不迁移 signed 矩或负类型。新边 `b3r1-signed-policy-transfers-to-uniform`。 |
+| `customer-attraction/optimal-omission-unit-and-linear-certificates` | linked (conditional) | `f(k)=f(3)+α(k-3)`、`α≥0,f(3)≥0` 支持全参数遗漏族；来源 truth_status 仍 unassessed，故不升级为 unconditional。 |
+| `customer-attraction/full-tail-stationary-additive-defect-sharp-envelope-and-four-label-realization` | isolated-after-review | `L_r(b)` 驻留形式包络与四标签取等不提供实际 `W` 钱包或跨枝支付。 |
+| `customer-attraction/common-theme-price-cap-copy-punishment-elimination-redundancy` | isolated-after-review | 非负价消元由原主题帽推出；与 tau6 无证行族包含桥，不反真实后继 BR。 |
+| `M-3b33bff2ccf041a9a82eb35664d00a69` | linked (conditional) | S2 唯一 `L` 加实际前缀嵌入条件给完整付款；DM 仅给总福利贡献。新边 `b3r1-static-unique-load-pays-actual-prefix` 与 DM 边并列。 |
+| `customer-attraction/r868-parent-path-two-original-exact-audits` | isolated-after-review | 5184/1225 有限审计及自由源恒等式只做 checks；总体 `C-D=-31/24` 补偿正逐客债，不反 Mpath/half。 |
 
-最终OPT_n≤C+(2−1/n)(W−C)。这比S2的“某个最优比较元组不交”要求更强，S2允许其它合法主题交叠，不能据此免费使用资源独立性。
+## 六条替代边与数学结果
 
-若另有静态锐等式OPT_n=(2n−1)v_n，整理DM得到
-W≥[nOPT_n+(n−1)C]/(2n−1)=nv_n+(n−1)C/(2n−1)≥nv_n。
-这是条件付款目标中总福利部分的一条独立结构性贡献，不需要先知道实际前缀是否为L。没有由本式推出末位恰为v、前缀每题g=v或逐人收益≥v；这些仍由实际前缀嵌入桥支付。n=1同式有效。
+- `b3r1-disjoint-maxima-static-sharp-welfare-contribution`：`CA-DISJOINT-MAXIMA-2M1` ⇒ `M-3b33…` 的条件总福利贡献；保 `C` 项、n=1 和共同目录边界。
+- `b3r1-static-unique-load-pays-actual-prefix`：`M-921…` ⇒ `M-3b33…`，条件是静态锐等式、同一实际前缀负载恰为 `L`、末位为真实 BR。
+- `b3r1-signed-policy-transfers-to-uniform`：形式 signed all-new 动作表转为合法 uniform 完整 SPE，保 `m≥3` 与 `2^(2m)-2^m` 覆盖。
+- `b3r1-linear-certificates-support-unique-optimal-omission`：在源证书前提与 `truth_status=unassessed` 下条件推出 `N=27k-10,W=13k-4,OPT_2=14k-4,I=2,L=14k-6,E=13k-6`，`L-W=k-2`、`L-E=k`。
+- `b3r1-common-credit-audit-checks-sharp-interface`：有限同枝审计核 `E=(Q-R)_+`、`E+G≤1-1/d≤1-1/m` 和容量边界；不升级全局遗漏耦合。
+- `b3r1-free-source-audits-check-mismatch-identity`：有限 5184/1225 源/查询域核协方差恒等式与错配项；不升级 Mpath/half。
 
-v5锐性段的“m=1时目录只有一个覆盖集合”承接该段所给锐性构造：其m客户大花瓣加m−1小花瓣在m=1只有一个覆盖，因而全成为共同核。它不表示任意一人游戏的目录只有一个覆盖；一般一人游戏由真实BR直接给W=OPT₁。两种m=1结论均不需要把一般目录误写成K=∅构造。本次贡献边不使用这项目录基数说法。
+## Open gaps, follow-up, overlap disposition
 
-两个六人保存点同为大小6大块和五个单客户锐性族，标签置换相同而策略不同。级联恰一个同计数组在大块别名间动作不同，这不证明Ω_H与Ω_M终局集合分离。七标签不是七个不同极大覆盖，有限搜索不扩成结构外全称上界。
+未关闭的数学边界保持开放：一般交叠极大目录的 half、实际 SPE 前缀是否总能嵌入静态唯一 `L`、最优遗漏源证书登记状态、同枝/自由源有限 checks 是否能推出全局遗漏耦合，以及 Mpath/half。它们是明确 open，不是身份或来源 needs-decision。
 
-## S2到同一实际前缀付款的完整证明
+本任务没有可安全派生的具体 follow-up object pair；`follow_up_tasks=[]`。`M-3b33…` 与 `M-921…` 的 S2/实际前缀比较已在本包闭合，记入 `closed_overlaps`，不重复派工。旧六条边被本任务对应六条替代边取代，原 boss4 资产保留为历史，不再作为当前证据。
 
-在Δ=(2n−1)v−OPT_n=0时，S2给跨全部最优对偶共享的完整整数客户负载L，g(A)=Σ_(x∈A)1/(1+L_x)≤v。若同一完整SPE的实际前n−1个动作B恰产生L，末位真实BR收益恰为cap(L)=v。
-
-n≥2时S2给槽边际q正支持g=v，故Σ_xL_x/(1+L_x)=(n−1)v；n1两边零。实际B产生L，则按槽Σ_(a∈B)g(a)=(n−1)v。每槽g≤v，遂每槽g=v。末位最多给每客户再加一层，任一前缀玩家终局收入≥g(自身主题)=v。根收入守恒给W≥nv。无需B属于预先选定Q支持；但纯对偶存在、负载唯一或近锐舍入均不保证实际B有L。唯一in-packet S2对由此完整解决。
-
-## signed all-new到合法uniform的完整迁移
-
-m≥3、2m标签，四个m支持的signed质量为3或−1；形式游戏不是合法客户游戏。源构造在每个完整有序历史选一个未用标签，在fresh中按signed真实完成收益逆归纳。此前全不同历史的fresh相对old保证差[1−m2^(1−m)]/[m(m−1)]>0；已重复历史的任何完成支持少于m，signed收益等于uniform。
-
-uniform每种兴趣类型各一单位客户，会员位独立同分布。任一旧标签重数q≥1、其它命中负载Z，fresh相对old条件差为(1/4)[1/(Z+1)−1/(Z+q+1)]>0；所有fresh动作的真实all-new完成又因标签对称而同收益。因此原signed动作表逐历史不变，全部在轨/重复离轨节点仍是BR，得到合法完整SPE。终局恰m个不同标签，未覆盖2^m个类型，故W=2^(2m)−2^m；至多m标签的最优覆盖同值。空兴趣客户可删，总客户数变为2^(2m)−1，收益和覆盖不变。
-
-迁移策略不迁移signed m阶矩。可见奇偶三角对signed资料仍给−M分离，另一份uniform同图不是其非负客户实现。两游戏根各自有效率，不反half。
-
-## 全参数最优遗漏证书
-
-源对象保全的12类重数、36个末位差、6个根差、21个无序覆盖对均为β+αk。α≥0、f(3)≥0使f(k)=f(3)+α(k−3)对全实半直线k≥3非负，严格差f(3)>0；整数k保证单位客户合法。这不是由71客户有限例外推。
-
-回复A→B、B→S、T→R、Q→S、R→S、S→R，根全部真实偏离收益6k−2。七节点为完整两人SPE，唯一最优TQ。逐客户得N=27k−10、W=13k−4、OPT₂=14k−4、I=2、L=14k−6、E=13k−6，因此L−W=k−2>0、L−E=k、2W−OPT₂=12k−4>0。唯一O排除了更换有利最优组合的存在量词。14类发现输入只与12类证明输入二人收益/覆盖等价，三重交不同；不能合为一表或外推六人。
-
-登记源计算证书truth_status仍unassessed，所以支持边保持conditional，完整核上述证书作为前提时目标无限族的全部结论，不由历史PASS提升来源真值。
-
-## 统一末层、真实子树和混合边界
-
-三人算法必须先在所有二步计数q上选一张全局末层f(q)∈BR(q)。固定f后各首标签的第二人BR终局集C_a可独立选，根支持恰是U_a(t)≥max_b min_(s∈C_b)U_b(s)的叶。不同历史(a,b)/(b,a)不能各换f。cap返回None是跳过；四标签零客户4^10=1048576必越百万cap，旧10000仅尝试数。
-
-十八主题185型输入的拟CDE和拟查询尾由真实交叉偏离严格排除，这是Ω_H具体实现障碍，非Ω_M阴性。按计数缓存终局全集不迫给定动作表计数统一；五个T_i并集有五槽，不是OPT₃。添加两个先行空动作会被正收益非空主题偏离，不能冒五人根SPE。
-
-30客户合法034背景剩两人，纯最小利润157/15，行为混合最小311/30，差1/10；纯/混合最小完整覆盖均28。其max-min取全部真实末位BR，和三人统一f是不同约束。它否“先凸纯孩子菜单再截父门槛无损保最坏纯剩余利润”，不否精确纯BI、统一f公式、根half或HI空根W目标。
-
-## 局部信用、驻留债与signed修复互不替付
-
-同枝信用在实际C上为E+G=(Q−R)_++G≤1−1/d≤1−1/m，须先扣退款R。跨枝相加需(N)累计访问质量或(CK)带K容量；一次归一不会免费保持遗漏需求。原审计v2仅比v1新增64单标签全深度重入行；21个样本各只构造一份完整SPE。概率混合为各位置/主题1/(mk)，再均匀该枝删除子集，非全部出现同权。有限checks不证明遗漏耦合存在。
-
-驻留Δ是互斥根分支的单客户根减平均尾。K≤Kbar、E Kbar=(r−1)E I给两原子锐界−L_r(b)。四标签全参数取等只保证形式菜单；anchor新增收益不能从全局债中抹去。平均损失O(1/r)，乘回全尾信用(r−1)L_r(0)趋1。该钱不等于同枝实际C钱包；r为剩余人数，非零背景剩余利润不等全覆盖W。
-
-共同主题帽消元保全复制(T,…,T)可行；min中取k=r_i−1并套原帽就推出任意非负价行。tau6的13原子只分离命名44行系统，二系统没有已证包含桥。两者都不否half或使用真实后继BR的更强方法。
-
-signed repair的g_i=M_i−u_i(z)是全实例可信退出缺陷，非负客户奇偶signed，也非局部驻留Δ。Cartesian不交组件首次异常时全部坐标退出，使sum g≤0可编译完整SPE；C(g)=2P−N+p+n_-与K±支持函数是固定字典/线性供应的精确关系，没给B+C<0种子。历史独审未读银行全文范围、319旧轮结束与324新轮进行分别保留，均不生成对本包其它signed对象的逻辑依赖。
-
-## 自由源有限审计与总体补偿
-
-FQ恒等式C(p,Q)−D(Q)=Σ[(q−r)ER−Cov(I,R)−qE(IJ)]无需SPE；SPE仅给D≤u。Q=p才可删边际错配项。5184是固定三状态九分布格，1225是固定八客户35×35分布对，不能加成6409份SPE。八客户正逐客债1/12被总体C−D=−31/24补偿，W=OPT=8，不能推出Mpath或half失败。scalar/coordinate最优费用为解析赋值，非新LP。Mfull当前另被银行反例否，不能沿用旧OPEN或归给八客户。
-
-本次保留原包三条完整支持/迁移、一条总福利贡献及两条有限域checks的数学；六边因公共review改版而各出定向替代文件。DM贡献仅重绑v5和本次实读证据，另五边数学不变。14核心原处置继续有效，其中CA-DISJOINT改版重判；其它isolated仅针对原已付实际比较范围。原S2→同一实际前缀条件付款对象对在包内已解决，本次实读第4—6、8节重新确认。当前与原任务均无未处置follow-up对象对，不另造后续任务。
-
-未付义务仍是模型外推的明确边界：不交极大条件之外不授DM；静态唯一L存在不保证任意SPE实际前缀嵌入；最优遗漏源证书仍保登记unassessed故关系conditional；同枝与自由源有限checks不证明全局遗漏耦合或Mpath/half。它们不是本次关系论证缺步。
+当前审计脚本路径在 clone 中不存在，故本 fresh worker 未重跑程序；有限数值与既有审计仅按已保存正文/证据复用，不把复用当成本轮新计算。

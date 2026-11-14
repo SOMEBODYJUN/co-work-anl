@@ -237,10 +237,124 @@
       ]
     }
   },
-  "state": "available",
-  "owner": null,
-  "request_id": "c77ec76b08b948c4ac8c43dc65353af7",
+  "state": "done",
+  "owner": "Boss1",
+  "request_id": "d15c15dcc6dd478bbef880a2c709e34d",
   "requests": {
-    "c77ec76b08b948c4ac8c43dc65353af7": "plan"
+    "c77ec76b08b948c4ac8c43dc65353af7": "plan",
+    "5401fb16d8554255badd6d7ae9dcecb7": "claim",
+    "d15c15dcc6dd478bbef880a2c709e34d": "done"
+  },
+  "receipt": {
+    "task_id": "customer-attraction-3a-3a-6e138288c2c8c78d",
+    "stage": "3A",
+    "status": "complete-assigned-reading-and-mathematical-delivery",
+    "owner": "Boss1",
+    "worker": "SOLVER-COMMON-QUERY-COUNTEREXAMPLE-FRESH",
+    "object_ids": [
+      "customer-attraction/six-player-thirty-client-common-query-minimum-payoff-counterexample"
+    ],
+    "input_pins": {
+      "customer-attraction/six-player-thirty-client-common-query-minimum-payoff-counterexample": "d6d36512c02bb127ac6a717ab6ef4baedcdae65958b5c2b8ccfbc2f92f7e9248"
+    },
+    "edge_ids": [
+      "ca-6e138-cq-min-fixed-spe-scope-boundary"
+    ],
+    "coverage": {
+      "customer-attraction/six-player-thirty-client-common-query-minimum-payoff-counterexample": {
+        "state": "isolated-after-review",
+        "object_pin": "d6d36512c02bb127ac6a717ab6ef4baedcdae65958b5c2b8ccfbc2f92f7e9248",
+        "comparison_scope": "7份声明引用全文实读；固定六人/30客户完整SPE与冻结 common-query/min-payoff 桥严格反例，明确 PNE 与六人 half 量词断点。",
+        "reason": "F(T)=30 > W+min u=29 只反驳固定终局冻结桥；同一完整SPE有 W=25、OPT6=26，half slack 24，不升级为全模型 half 反例。",
+        "edge_ids": [
+          "ca-6e138-cq-min-fixed-spe-scope-boundary"
+        ]
+      }
+    },
+    "mathematical_result": {
+      "edge": "map/edges/customer-attraction-3a-3a-6e138288c2c8c78d/ca-6e138-cq-min-fixed-spe-scope-boundary.json",
+      "status": "accepted",
+      "relation": "checks",
+      "relation_mode": "context",
+      "proof_scope": "whole",
+      "whole_result": "固定完整SPE 实例反驳 CQ-min bridge 1，但 2W-OPT6=24>0；不反驳六人 half。",
+      "remaining": "任意目录/任意完整SPE的 common-query 全称边界、PNE 关系及六人 half 仍未支付。",
+      "edge_check": "not run; JSON structure prepared for root edge-bind/check"
+    },
+    "reading": {
+      "ledger": "map/edges/customer-attraction-3a-3a-6e138288c2c8c78d/readledger.json",
+      "declared_refs": 7,
+      "completed_passes": 8,
+      "all_declared_ranges_read": true,
+      "ordered_continuation_notes_saved": true,
+      "partial_pass_claimed_done": false,
+      "verification_summary": {
+        "sha256_all_declared_refs": true,
+        "dag_nodes": 5440,
+        "ic_edges_checked": 21933,
+        "ic_violations": 0,
+        "W": 25,
+        "OPT6": 26,
+        "F_T": 30,
+        "CQ_min_rhs": 29
+      }
+    },
+    "assets": [
+      {
+        "path": "map/edges/customer-attraction-3a-3a-6e138288c2c8c78d/review.md",
+        "sha256": "01769f8a317249d431a9ecf747a1b17a405a83ed97ec8005e974bb5e11368985"
+      },
+      {
+        "path": "map/edges/customer-attraction-3a-3a-6e138288c2c8c78d/support.md",
+        "sha256": "fa3dfb614a49048c9b312c328cade1e253af72e50a2b38a8f47f84c36e7bb329"
+      },
+      {
+        "path": "map/edges/customer-attraction-3a-3a-6e138288c2c8c78d/readledger.json",
+        "sha256": "d52a8ad9f2859644b23abcab2dbbeb06f065ede733fce87a442888dfe83416c2"
+      },
+      {
+        "path": "map/edges/customer-attraction-3a-3a-6e138288c2c8c78d/ca-6e138-cq-min-fixed-spe-scope-boundary.json",
+        "sha256": "f652178ff6a63a4d1d8771f13f440538750684214e691b410755d7629c4fea7f"
+      }
+    ],
+    "read_scope": {
+      "declared_files": 7,
+      "declared_bytes": 518986,
+      "full_read": true,
+      "read_add": [],
+      "deferred_candidates_not_read": [
+        "CA-FRACTIONAL-ACTUAL-LOAD-WEAK-NO-v1",
+        "CAG-MODEL",
+        "customer-attraction/private-four-client-padding-all-history-payoff-floor"
+      ]
+    },
+    "verification": {
+      "sha256_all_declared_refs": true,
+      "reconstructed_dag": "all 5440 nodes, 21933 edges structurally parsed; literal 30-client IC recomputation found 0 violations",
+      "finite_values": "W=25, OPT6=26, F(T)=30, W+min u=29, half slack=24",
+      "scope": "fixed complete SPE common-query bridge only; no PNE or universal half claim"
+    },
+    "closed_overlaps": [],
+    "follow_up_tasks": [],
+    "comparison_note": "The edge records only a fixed-instance common-query/min-payoff scope boundary; it is not a PNE or universal half refutation.",
+    "execution_boundary": {
+      "registry_modified": false,
+      "coverage_modified": false,
+      "integration_modified": false,
+      "task_state_modified": false,
+      "git_commit_or_push": false
+    },
+    "reviewed_by": "SOLVER-COMMON-QUERY-COUNTEREXAMPLE-FRESH",
+    "review_note": "Fresh-worker reconstructed the fixed six-player/30-client SPE and strict CQ-min bridge failure. Root validated it as context-only; W=25, OPT6=26 and 2W-OPT6=24 keep it away from a half counterexample.",
+    "request_id": "5401fb16d8554255badd6d7ae9dcecb7",
+    "root_validation": {
+      "reviewer": "Boss1",
+      "native_binding": "edge-bind --write and edge-check passed for self-context checks edge",
+      "root_review_path": "map/edges/customer-attraction-3a-3a-6e138288c2c8c78d",
+      "asset_scope": "Current task output only; no claim over unrelated deltas"
+    }
+  },
+  "edge_paths": {
+    "ca-6e138-cq-min-fixed-spe-scope-boundary": "map/edges/customer-attraction-3a-3a-6e138288c2c8c78d/ca-6e138-cq-min-fixed-spe-scope-boundary.json"
   }
 }
