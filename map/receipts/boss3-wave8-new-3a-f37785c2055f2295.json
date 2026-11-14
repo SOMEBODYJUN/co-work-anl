@@ -1,0 +1,124 @@
+{
+  "task_id": "boss3-wave8-new-3a-f37785c2055f2295",
+  "stage": "3A",
+  "object_ids": [
+    "CA-TWO-BLOCK-ROOT-MENU-SPARSE-VALUES-v1"
+  ],
+  "read_object_ids": [
+    "B10-PURE-FULL-ROOT-MENU-NO-v1"
+  ],
+  "input_pins": {
+    "CA-TWO-BLOCK-ROOT-MENU-SPARSE-VALUES-v1": "8dd9760295f1eb83865314e63077f072f4dfd261c4523872b4142698070ed98d",
+    "B10-PURE-FULL-ROOT-MENU-NO-v1": "47c00c11d3f2735980342bc5fbf01c199795f0c072d1a7f75bf838358cf2074b"
+  },
+  "status": "complete",
+  "coverage": {
+    "CA-TWO-BLOCK-ROOT-MENU-SPARSE-VALUES-v1": {
+      "state": "linked",
+      "object_pin": "8dd9760295f1eb83865314e63077f072f4dfd261c4523872b4142698070ed98d",
+      "comparison_scope": "固定 B10 八人双块真实根菜单的完整稀疏混合 minimax：支持上限1/2/3/4及无约束的精确值、全部达到者、C/D降幅下界和有理 primal/dual 证书；完整 DAG 五段逐字节读及核验脚本重放。",
+      "reason": "本边把同一固定纯菜单从 B10 的根列阻断结论精确细化到支持复杂度分层，不把固定菜单结果推广到任意共同目录、复制块、half 或一般 mixed-SPE。",
+      "edge_ids": [
+        "ca-b10-pure-menu-specializes-to-two-block-sparse-mixed-values"
+      ]
+    }
+  },
+  "assets": [
+    {
+      "path": "map/edges/boss3-wave8-new-3a-f37785c2055f2295/b10-pure-menu-to-sparse-mixed-values.json",
+      "sha256": "0f2d7395aa75b3ec1c8ec4e85e9acbed692b42283507998cc737b03ace04d99d"
+    }
+  ],
+  "reading_ledger": {
+    "model": "同一有限共同目录均分单位客户模型；八人、八标签 A0/B0/C0/D0/A1/B1/C1/D1；两不交16客户块，类型 A:2、BD:4、AC:6、CD:3、ABCD:1；固定完整有序纯 SPE DAG，根动作保留原8槽；额外行玩家独立查询一次，收益矩阵 K 以 1/(1+原八槽负载) 计算。",
+    "quantifiers": "核心量化固定该真实完整菜单，对所有列分布 Q∈Δ(8列) 按 |supp Q|≤s 分层，求 max_a(KQ)_a 的最小值并列出全部达到者；行对偶 p 仅用于固定矩阵的 minmax 证书。B10 前提量化为存在同一完整纯 SPE 及全部真实根列；本边不量化任意目录、三块以上、half 或一般共同菜单。",
+    "hypotheses": [
+      "根列本块终局 q_T、另一块 q0=(2,1,1,0)，根真实收益 u=13/4；额外查询不移除原根槽。",
+      "DAG 每个非终点有8条合法动作边，counts 沿对应 e_a 增一，规定动作子节点 target 同父，叶 counts=target；真实 IC 按全部合法动作逐节点比较。",
+      "两块交换对称；所有分数为精确有理数；混合列和独立行抽样不锁定同一查询。"
+    ],
+    "established_steps": [
+      "定理与资源合同给出 q0/qA/qB/qC/qD、root 收益、实际路径、W=OPT=32，以及固定 K 的本块 L 与异块 h。",
+      "DAG 全文 json.loads 后有13872节点、6435叶；深度分布为 {0:1,1:8,2:58,3:201,4:514,5:1078,6:1999,7:3578,8:6435}；根八列与两块 q 结构一致。",
+      "独立核验脚本精确通过全部13872节点、59496含自身比较（8764平局、50732严格正）、所有有序历史深度计数、全部162个支持子集，并输出 support≤1=37/10、≤2=123/40、≤3=1717/560、≤4=851/280。",
+      "解析下界把每块 A 质量移至 C、B 质量移至 D；支持2逼出两块各为 D 且质量1/2，支持3逼出单D块15/28和另一块 C=1/28,D=3/7；支持4/无约束由行对偶 p(C_j)=2/7,p(D_j)=3/14 与列 Q(C_j)=1/14,Q(D_j)=3/7 双向取等。",
+      "已执行 map read-add，将 B10 作为必要读取依赖加入任务并固定其 endpoint pin；边 edge-bind 与 edge-check 均通过。"
+    ],
+    "unpaid_obligations": [
+      "3B 仍需按 overlap_comparisons 对 B10 做更广泛的 mixed-menu/half 或其它模型边界比较；当前边仅是固定真实菜单 specialization。",
+      "不由本边推出三块或任意 n 块真实 SPE 可实现性、一般共同目录最优支持复杂度、六人福利或 half 结论。"
+    ],
+    "passes": [
+      {
+        "pass": 1,
+        "path": "archives/customer-attraction/state/定理/八人双块真实根菜单的稀疏混合精确值--定理.md",
+        "range": "chars 0:2682",
+        "sha256": "db11b1830ee42e6a524418ca6494f0f66e10836e08b4bfd9f574fbbe7096fc05",
+        "ledger": "完整读取定理：四个支持阈值、全部达到者、C/D 降幅下界、primal/dual 851/280 取等、scope 限定。"
+      },
+      {
+        "pass": 2,
+        "path": "archives/customer-attraction/state/资源/真实分支十项合同与菜单可实现性账本--资源.md",
+        "section": "八人纯菜单：输入、完整DAG合同与混合匹配",
+        "range": "chars 5629:7145",
+        "sha256": "84b4481dfe42a4f8719c1bb2deda224635db59ce5efa0e1c595e30f0e99d6baf",
+        "segment_sha256": "6da9a7d6e0cd7ea1fa492cf9a1b9287c54cdc0f102fa689a03a88d760a945cc8",
+        "ledger": "完整读取指定 section：B10 输入、DAG 合同、根收益/实际路径、L/h 矩阵、纯列37/10与混合851/280的固定菜单比较；旧待验报告与当前解析合同区分。"
+      },
+      {
+        "pass": 3,
+        "path": "archives/customer-attraction/tools/evidence/Boss7-resume-d22-menu/original/pure_menu_two_block_dag.json",
+        "range": "bytes 0:312907; node objects approximately 0:3163",
+        "segment_sha256": "d5a670b0b3351a70d0516d16afad217391c3a6c309a1480344174f6f16185e97",
+        "ledger": "顺序读取首段并解析前3163节点；深度0–8覆盖，1758终端，counts≤target 且叶 target=counts，结构键完整。"
+      },
+      {
+        "pass": 4,
+        "path": "archives/customer-attraction/tools/evidence/Boss7-resume-d22-menu/original/pure_menu_two_block_dag.json",
+        "range": "bytes 312907:660365; node objects approximately 3163:6525",
+        "segment_sha256": "0f1d08c5b4d2f5fe5653e33b83ffbc837f23fcab4ece4b9b6ddc084bbcdab99e",
+        "ledger": "顺序读取第二段并解析3362节点；1554终端，14464 child references，所有结构与深度/目标约束保持。"
+      },
+      {
+        "pass": 5,
+        "path": "archives/customer-attraction/tools/evidence/Boss7-resume-d22-menu/original/pure_menu_two_block_dag.json",
+        "range": "bytes 660365:973528; node objects approximately 6525:9582",
+        "segment_sha256": "39d38448f0f67b498e64cd5778abed30b42fe3417a9cfef3e5b9667913ab9eea",
+        "ledger": "顺序读取第三段并解析3057节点；1488终端，12552 child references；target/children/动作格式继续满足。"
+      },
+      {
+        "pass": 6,
+        "path": "archives/customer-attraction/tools/evidence/Boss7-resume-d22-menu/original/pure_menu_two_block_dag.json",
+        "range": "bytes 973528:1321361; node objects approximately 9582:12806",
+        "segment_sha256": "c4259bed0fd7d60e6419ab90e89316d8d7d0ce508ef0e61dbd9b2e82bc5bc70c",
+        "ledger": "顺序读取第四段并解析3224节点；1335终端，15112 child references；完整结构约束继续通过。"
+      },
+      {
+        "pass": 7,
+        "path": "archives/customer-attraction/tools/evidence/Boss7-resume-d22-menu/original/pure_menu_two_block_dag.json",
+        "range": "bytes 1321361:1443260; node objects approximately 12806:13872",
+        "segment_sha256": "b182a3945cfdc76a497dc8d0402a4bccd641af67ff5aad8b86312398451b2521",
+        "ledger": "顺序读取尾段并解析1066节点；300终端，6128 child references；尾部 discovery canonical_root_threshold=13/4、canonical_count_states=12870。"
+      },
+      {
+        "pass": 8,
+        "path": "archives/customer-attraction/tools/evidence/Boss7-resume-d22-parent/original/research/workspaces/customer-attraction/R-d22a706a03c5499d941a6a97f94128a8/parent/two_block_dag_independent_audit.json",
+        "range": "bytes 0:2419",
+        "sha256": "334653b30ebdfbaa15e3e10331537b38d2cb1ed37c18a046a57771e2973bcdd6",
+        "ledger": "完整读取独立审计：PASS，13872节点/6435叶/59496比较/2396745有序历史，实际路径 (3,0,2,3,4,4,5,6)，W=OPT=32，root_u=13/4，pure cap=37/10，K、Q、p 与851/280。"
+      },
+      {
+        "pass": 9,
+        "path": "archives/customer-attraction/tools/evidence/two-block-root-menu-sparse-values/check-two-block-sparse-menu.py",
+        "range": "bytes 0:5702",
+        "sha256": "45dcca8fdcab902d6b521748ce55635cca95c6e7954730b1884e4b76c9f5507f",
+        "ledger": "完整读取并运行有理核验器；输出 support at most 1/2/3/4 的四个精确值、最优者数量 8/1/2/1，以及全部162支持、13872节点和59496比较已检查。"
+      }
+    ],
+    "full_source_sha256": "6190bc98dedda4fb22a1af6339702c03a6cb3b04cd8dfe6b18a577782e5d2f95"
+  },
+  "closed_overlaps": [],
+  "follow_up_tasks": [
+    "3B follow-up required for overlap CA-TWO-BLOCK-ROOT-MENU-SPARSE-VALUES-v1 ↔ B10-PURE-FULL-ROOT-MENU-NO-v1: current accepted edge is only the fixed-menu specialization; broader mixed-menu/half comparison remains open."
+  ]
+}

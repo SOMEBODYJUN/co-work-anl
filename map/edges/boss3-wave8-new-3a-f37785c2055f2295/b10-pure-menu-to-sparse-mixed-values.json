@@ -1,0 +1,58 @@
+{
+  "edge_id": "ca-b10-pure-menu-specializes-to-two-block-sparse-mixed-values",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "B10-PURE-FULL-ROOT-MENU-NO-v1"
+  ],
+  "target_ids": [
+    "CA-TWO-BLOCK-ROOT-MENU-SPARSE-VALUES-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定同一八人、八标签、两不交16客户块输入与同一完整有序纯SPE DAG；根列保留原根8槽，额外插入的行玩家独立查询一次，列分布Q仅在八个真实根列上取且按支持上限分类。所有收益均按32个单位客户在真实终局的均分规则计算，块交换对称保留。",
+  "roles": {
+    "B10-PURE-FULL-ROOT-MENU-NO-v1": "提供该有限实例的完整纯SPE、八个真实根终局列、根收益u=13/4及实际W=OPT=32。",
+    "CA-TWO-BLOCK-ROOT-MENU-SPARSE-VALUES-v1": "在同一固定真实菜单矩阵K上给出支持至多1、2、3、4（及无约束）的精确minimax封顶值、全部达到者以及解析上下界。"
+  },
+  "explanation": "由源对象的两块客户类型 A:2、BD:4、AC:6、CD:3、ABCD:1，根在一块时终局计数 q_T、另一块 q0=(2,1,1,0)，逐客户按 1/(1+完整原八槽负载) 重算行收益，得到固定八列 K。纯列的异块D行统一为37/10，因此支持1的封顶值为37/10>u=13/4。把各块A质量移至C、B质量移至D不会增支持且只会降低选定C/D两行；令 r_C=16/5-T、r_D=37/10-T 后，块内降幅界排除了低于目标的A/B列并给出精确质量下界。支持2时两块必须各为D且各重1/2，得到唯一Q=(D0,D1)=(1/2,1/2)和T=123/40。支持3时单D块质量15/28，另一块的C,D质量分别1/28、3/7，且仅有块交换两种达到者，T=1717/560。无约束及支持4时，行对偶 p 每块给 C=2/7、D=3/14，列分布每块给 C=1/14、D=3/7；两侧均达到851/280，故支持4及无约束唯一最优Q为每块 C=1/14,D=3/7。独立核验脚本重新读取冻结 DAG SHA，检查全部13872节点、6435叶、59496含自身比较、162个支持子集，并输出四个精确值与达到者。",
+  "scope": "该边只把 B10 的同一固定真实完整菜单细化为稀疏混合支持复杂度的精确结果；不外推任意目录、三块以上复制、n块可实现性、half 或一般共同菜单。",
+  "whole_result": "在 B10 的同一八人双块真实根菜单上，行玩家的额外查询矩阵 K 满足：支持上限1、2、3、4（以及无约束）的最优封顶值依次为 37/10、123/40、1717/560、851/280；支持2唯一最优为 D0,D1 各1/2，支持3全部最优为 D0:15/28,C1:1/28,D1:3/7 及块交换，支持4及无约束唯一最优为每块 C_j:1/14,D_j:3/7。因 u=13/4，安全封顶至少需要两列，而无约束最优恰需四列。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/八人双块真实根菜单的稀疏混合精确值--定理.md",
+      "sha256": "db11b1830ee42e6a524418ca6494f0f66e10836e08b4bfd9f574fbbe7096fc05"
+    },
+    {
+      "path": "archives/customer-attraction/state/资源/真实分支十项合同与菜单可实现性账本--资源.md",
+      "sha256": "84b4481dfe42a4f8719c1bb2deda224635db59ce5efa0e1c595e30f0e99d6baf",
+      "section": "八人纯菜单：输入、完整DAG合同与混合匹配"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/Boss7-resume-d22-menu/original/pure_menu_two_block_dag.json",
+      "sha256": "6190bc98dedda4fb22a1af6339702c03a6cb3b04cd8dfe6b18a577782e5d2f95"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/Boss7-resume-d22-parent/original/research/workspaces/customer-attraction/R-d22a706a03c5499d941a6a97f94128a8/parent/two_block_dag_independent_audit.json",
+      "sha256": "334653b30ebdfbaa15e3e10331537b38d2cb1ed37c18a046a57771e2973bcdd6"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/two-block-root-menu-sparse-values/check-two-block-sparse-menu.py",
+      "sha256": "45dcca8fdcab902d6b521748ce55635cca95c6e7954730b1884e4b76c9f5507f"
+    }
+  ],
+  "reviewed_by": "Boss7",
+  "review_note": "按任务声明顺序完整读取定理与资源指定 section；冻结 DAG 逐字节读取五个 declared ranges（0:312907、312907:660365、660365:973528、973528:1321361、1321361:1443260），并 json.loads 全部13872节点；逐段核 counts/target/action/children 结构与深度、终端和动作分布。完整运行有理核验脚本，确认全部13872节点、59496比较和162个支持子集，得到四个精确值及全部达到者。模型、支持量词、根保留和额外查询条件均未跨到 deferred candidates。",
+  "endpoint_pins": {
+    "B10-PURE-FULL-ROOT-MENU-NO-v1": "47c00c11d3f2735980342bc5fbf01c199795f0c072d1a7f75bf838358cf2074b",
+    "CA-TWO-BLOCK-ROOT-MENU-SPARSE-VALUES-v1": "8dd9760295f1eb83865314e63077f072f4dfd261c4523872b4142698070ed98d"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/八人双块真实根菜单的稀疏混合精确值--定理.md": "db11b1830ee42e6a524418ca6494f0f66e10836e08b4bfd9f574fbbe7096fc05",
+    "archives/customer-attraction/state/资源/真实分支十项合同与菜单可实现性账本--资源.md": "84b4481dfe42a4f8719c1bb2deda224635db59ce5efa0e1c595e30f0e99d6baf",
+    "archives/customer-attraction/tools/evidence/Boss7-resume-d22-menu/original/pure_menu_two_block_dag.json": "6190bc98dedda4fb22a1af6339702c03a6cb3b04cd8dfe6b18a577782e5d2f95",
+    "archives/customer-attraction/tools/evidence/Boss7-resume-d22-parent/original/research/workspaces/customer-attraction/R-d22a706a03c5499d941a6a97f94128a8/parent/two_block_dag_independent_audit.json": "334653b30ebdfbaa15e3e10331537b38d2cb1ed37c18a046a57771e2973bcdd6",
+    "archives/customer-attraction/tools/evidence/two-block-root-menu-sparse-values/check-two-block-sparse-menu.py": "45dcca8fdcab902d6b521748ce55635cca95c6e7954730b1884e4b76c9f5507f"
+  },
+  "review_digest": "f99962b5795d321ff88a932cde322dd35b6a87523ba88a0a5ed91538417172af"
+}
