@@ -1,0 +1,112 @@
+{
+  "task_id": "customer-attraction-3a-3a-d48b2f5aa3119c72",
+  "object_id": "customer-attraction/five-player-fifty-five-customer-sequential-static-minimum-welfare-separation",
+  "readings": [
+    {
+      "path": "archives/customer-attraction/state/反例/五人五十五客户的顺序静态最低福利分离--反例.md",
+      "sha256": "95aa7fc85900df438377a925ed84d1c6dfc1edaf88a4f13963acf1a8f8ad0ca1",
+      "bytes": 12132,
+      "read_scope": "全文；frontmatter、55客户模型、781节点策略、静态PNE穷举、252状态集合值倒推、56客户前身、贪心/日志边界和2/3/4/6人固定参数比较。",
+      "used_for": "固定输入、量词、根终局集合、静态/顺序最差福利、反例范围和开放义务。"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+      "bytes": 7598,
+      "read_scope": "全文；标签目录与覆盖映射、单位客户均分收益、完整有序历史纯SPE、真实偏离后继、计数压缩边界、合法背景利润与其他模型区分。",
+      "used_for": "边的共同模型与完整历史IC量词。"
+    },
+    {
+      "path": "archives/customer-attraction/state/算法/完整历史纯SPE终局全集--算法.md",
+      "sha256": "667d6f319b1f325bd32538f6b0e5a8e95c1942e2ec97cbc76d7cbaef06b36954",
+      "bytes": 7939,
+      "read_scope": "全文；R(k)集合值递推、必要/充分归纳、不同有序孩子独立拼接、完整策略证书展开和独立全树核验。",
+      "used_for": "固定55输入实现通用终局集合递推的实例化边。"
+    },
+    {
+      "path": "archives/customer-attraction/state/问题/任意人数完整均衡半覆盖--问题.md",
+      "sha256": "bc5add8e880e83c3ed799f457607103532aa9120018c862ae3ac869f2ed34d15",
+      "bytes": 6017,
+      "read_scope": "全文；Q-CAG-HALF的一般m量词、净遗漏等价式、五人既有定理与恰六人问题的边界、半覆盖与更强遗漏付款区别。",
+      "used_for": "context/checks边的准确目标范围和不反驳说明。"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/global-exchange-resumed-boss2/original/static_dominance_certificate.json",
+      "sha256": "7ac0d9f955aabfd6029d44e2fd812b31e7c160a5d0d3bda817deaf25cecd82fe",
+      "bytes": 77605,
+      "read_scope": "完整JSON；terminal_counts及全部781 history/action记录。",
+      "used_for": "原完整策略树的节点覆盖和真实路径身份。"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/global-exchange-resumed-boss2/original/static_dominance_sparse_result.json",
+      "sha256": "5bf271c809859f508b6c133557e553a71167099d1d7aafccbf86376b1cffbc7a",
+      "bytes": 1242,
+      "read_scope": "完整JSON；56客户前身的输入、iteration=6411、worst_spe=50、worst_pne=55及计数。",
+      "used_for": "56前身的历史比较和本包不把它冒作55输入的范围边界。"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/global-exchange-resumed-boss2/new-global-exchange-exact-check.json",
+      "sha256": "08f5337748b55498f75865747c27b4133607de1c72486f22845289bb2a6277c4",
+      "bytes": 1617156,
+      "read_scope": "完整JSON按键和数组读取；minimized_policy全部781历史/3905比较，minimized_equilibria与sparse_equilibria全部252状态结果，same_55_customer_instance_other_player_counts的2/3/4/6人检查，execution_scope。",
+      "used_for": "Fraction精确IC、静态126计数、根集合与福利、固定玩家数边界；确认未运行随机搜索/贪心/优化器。"
+    }
+  ],
+  "exact_findings": {
+    "55_input": {
+      "customer_types": {
+        "2": 8,
+        "0,2": 16,
+        "3": 16,
+        "0,3": 2,
+        "4": 1,
+        "0,4": 4,
+        "1,4": 4,
+        "2,4": 4
+      },
+      "players": 5,
+      "topics": 5,
+      "opt": 55,
+      "policy_history_count": 781,
+      "policy_comparison_count": 3905,
+      "policy_negative_comparisons": 0,
+      "policy_zero_comparisons_including_prescribed": 814,
+      "actual_history": [0, 2, 2, 3, 3],
+      "actual_counts": [1, 0, 2, 2, 0],
+      "actual_welfare": 50,
+      "actual_player_payoffs": ["10", "34/3", "34/3", "26/3", "26/3"],
+      "pne_counts": [[0, 0, 2, 2, 1], [0, 0, 3, 1, 1]],
+      "pne_welfares": [55, 55],
+      "worst_pne": 55,
+      "root_spe_outcomes": [[0, 0, 2, 2, 1], [0, 0, 3, 1, 1], [1, 0, 2, 2, 0]],
+      "root_spe_welfares": [55, 55, 50],
+      "worst_spe": 50,
+      "count_states": 252,
+      "terminal_count_vectors": 126
+    },
+    "56_predecessor": {
+      "worst_spe": 50,
+      "worst_pne": 55,
+      "opt": 56,
+      "status": "historical/deferred candidate; not used as endpoint"
+    },
+    "other_player_counts_same_55_input": {
+      "2": {"worst_spe": 46, "worst_pne": 46, "opt": 46},
+      "3": {"worst_spe": 46, "worst_pne": 46, "opt": 55},
+      "4": {"worst_spe": 50, "worst_pne": 50, "opt": 55},
+      "6": {"worst_spe": 55, "worst_pne": 55, "opt": 55}
+    }
+  },
+  "open_obligations": [
+    "不证明55客户是所有目录/支持下的全局最小分离实例；贪心减重只给固定支持和顺序的局部输出。",
+    "不由55或56固定实例推出任意m或恰六人Q-CAG-HALF。",
+    "不把static_dominance_result.json的一行1000未发现文本绑定到当前搜索版本。"
+  ],
+  "new_runs": {
+    "random_search": 0,
+    "greedy_minimization": 0,
+    "optimizer": 0,
+    "canonical_solver_import": 0,
+    "definition_level_exact_check": 1
+  }
+}
