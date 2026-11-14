@@ -1,0 +1,55 @@
+{
+  "edge_id": "ca-count-policy-cone-implies-same-path-relaxation-3b",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/early-opportunity-count-and-alternating-price-saved-samples"
+  ],
+  "target_ids": [
+    "customer-attraction/early-individual-opportunity-path-relaxation-prefix-policy-cone-contract"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "取目标对象的根背景 b=0、m 个剩余位置，并固定一个完整计数动作表 alpha(q)，其中每个 |q|<m 的键都存在，terminal(q) 递归沿 alpha 的真实孩子完成。对每个非空兴趣类型 B subseteq [k] 给精确非负客户质量 x_B；对每个 q 和每个替代标签 a 都要求真实计数 IC 行 sum_B x_B[p_B(terminal(q+e_a),a)-p_B(terminal(q),alpha(q))] <= 0。由 sigma(h)=alpha(counts(h)) 在所有有序历史使用同一表，因此这是完整真实后继的纯 SPE，而非冻结尾或只在根的检查。选一条该策略的有序实际终局 A=(A_0,...,A_{m-1})，再选任意比较 m 元组 T=(T_0,...,T_{m-1})（至多 m 个不同标签可用重复补槽）。目标位置 i 必须有 u_i(x)>0；IC 与路径行都是对客户质量齐次的，所以即使源保存表另有 sum_B x_B=1 的记录归一，也可在这条桥上把整组 x_B 同比例除以 u_i(x)，以满足路径 LP 的 u_i=1；若 u_i=0，不能作该归一化。质量可以先是非负有理数；浮点保存表只有在精确 IC 通过后才进入此数学蕴含。",
+  "roles": {
+    "customer-attraction/early-opportunity-count-and-alternating-price-saved-samples": "提供固定计数表 alpha、完整键域、terminal(q) 的真实改变后终局及全部替代标签 IC；这些行同时代表表所诱导的 sigma 在每个有序历史上的子博弈最优性。",
+    "customer-attraction/early-individual-opportunity-path-relaxation-prefix-policy-cone-contract": "接收由同一客户质量在一条有序实际路径 A 与比较元组 T 上的聚合变量 w_(a,d) 及其路径必要行；该 LP 仍只是必要条件松弛。"
+  },
+  "whole_result": "在上述条件下，固定客户类型 B 的变量映射为 a_B=(1[A_0 in B],...,1[A_{m-1} in B])、c_B=sum_l a_{B,l}、d_B=sum_l 1[T_l in B]，并聚合 w_(a,d)=sum_{B:a_B=a,d_B=d} x_B（c_B=0 且 d_B=0 的类型对路径目标和约束均可删除）。实际路径收益为 u_j=sum_B x_B 1[A_j in B]/c_B=sum_(a,d) w_(a,d)p_j(a)，其中 c_B>0 时取 1/c_B、c_B=0 时取 0。令 b_j(B)=sum_{l<j}1[A_l in B]、r_j=m-j（j=0,...,m-1）。在历史 A 的长度-j 前缀，偏离到任意路径标签 A_t 后，真实续局至多再有 m-j-1 个未来覆盖者，故该偏离对 B 的份额至少为 1/(b_j(B)+r_j)（若 A_t 不属于 B 则为 0）；真实 SPE IC 给出 sum_B x_B 1[A_t in B]/(b_j(B)+r_j)<=u_j。对任意比较槽 T_l 逐一应用同一 IC 后取 l 的平均，得到 sum_B x_B(d_B/m)/(b_j(B)+r_j)<=u_j。按 (a,d) 聚合后恰为路径 LP 的全部 m 个实际主题行和一条平均比较行。并且比较覆盖 C_T=sum_B x_B 1[d_B>0]=sum_(a,d)w_(a,d)1[d>0]，实际覆盖 W=sum_B x_B1[c_B>0]=sum_(a,d)w_(a,d)1[c>0]，所以路径目标正是 C_T-W。故完整计数 SPE（在正收益位置切片并同尺度归一）必然落入同一路径松弛；它没有推出路径 LP 最优值、原游戏的全策略结论或 G?。",
+  "explanation": "关键是不把偏离后的尾部冻结成 A 的尾部。计数 IC 使用 terminal(q+e_a)，即改变当前标签后按同一 alpha 继续；但无论该真实尾部怎样，B 在该偏离终局的总覆盖数不超过 b_j(B)+r_j，因为当前偏离者至多贡献一份且之后只有 r_j-1 个位置。于是实际偏离收益至少被路径分母 b_j+r_j 这个较小收益下界所支配。对 T 的每个槽也有真实 IC，平均即给 d/m 行。该推导需要所有有序历史/所有替代标签的 IC，而不只是根行；同一计数表只是把这些有序历史压成相同计数的合法子类。IC 与路径行对 x 齐次，因此源对象常用的总质量 1 归一不会阻碍为目标位置再作 u_i=1 的比例归一。比较元组的 d 只记录每个客户类型被比较标签覆盖的次数，不要求 T 是 alpha 的可实现终局。若有固定合法背景 b != 0，需把背景负载显式并入每个 b_j(B)；声明的 path_budget_lp 变量只记录根路径前缀，因此本边只发布 b=0 的根特化。",
+  "scope": "这是一条从精确完整计数策略 SPE 到同一实际有序路径必要松弛的单向条件桥。它不把计数策略子类提升成所有历史依赖 SPE 的无损净化，也不把路径松弛的可行点解释为真实策略或真实 SPE。有限保存表的 146/323 精确恢复通过数、prefix 固定点及价格交替的有限数值均只作端点证据；它们不改变桥的量词。反向 implication 被独立精确反例否定。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/程序/逐位置保底松弛与前缀族固定锥的原始合同--程序.md",
+      "sha256": "bac912edde9d3057416e98ed103e7f8aacaaf5544f0ca145cbe9884de538e7d4",
+      "section": "同一路径最大负载保底的松弛"
+    },
+    {
+      "path": "archives/customer-attraction/state/计算/早期机会计数与价格交替样本--计算.md",
+      "sha256": "e78a3564a86bc8a7ab1a4480ba8ada114707af560beeaa81df85f85c49a5d636",
+      "section": "完整计数策略锥及三个覆盖缺口报告"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+      "section": "策略、真实续局与全部历史量词"
+    },
+    {
+      "path": "map/edges/count-prefix-3b-3b-c579ec6c6ef2bd8f/converse-counterexample.json",
+      "sha256": "2a713677d983b2c49926af34e93a51541ffbbac851fc0cf2ce26f601b46a3d00"
+    }
+  ],
+  "reviewed_by": "Boss7/map_worker_s",
+  "review_note": "完整实读任务声明的 15 个 staged spans（含两核心正文、共同模型、两份计数/价格程序及全部保存审计/来源合同）；逐式核对变量聚合、真实续局分母上界、平均比较行和归一化条件。另以 exact Fraction 构造并核验 m=2、k=4 的反向失败实例；未运行原 LP、随机搜索、SPE 求解器或 audit main。",
+  "endpoint_pins": {
+    "customer-attraction/early-individual-opportunity-path-relaxation-prefix-policy-cone-contract": "05940aec6c5d8cc5e875fb5eab24be0d7d4ea943c37fb826a5031e3b09c92422",
+    "customer-attraction/early-opportunity-count-and-alternating-price-saved-samples": "8c7aa36f6be8d6d2c2b84b1c056f71fc85d6978c23230b3771d960f01a6bb3cd"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/程序/逐位置保底松弛与前缀族固定锥的原始合同--程序.md": "bac912edde9d3057416e98ed103e7f8aacaaf5544f0ca145cbe9884de538e7d4",
+    "archives/customer-attraction/state/计算/早期机会计数与价格交替样本--计算.md": "e78a3564a86bc8a7ab1a4480ba8ada114707af560beeaa81df85f85c49a5d636",
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+    "map/edges/count-prefix-3b-3b-c579ec6c6ef2bd8f/converse-counterexample.json": "2a713677d983b2c49926af34e93a51541ffbbac851fc0cf2ce26f601b46a3d00"
+  },
+  "review_digest": "8e4f88ba802705f16a20f8152dabfa6ac88e4ea3f219fa611f34770dd7c7b9f6"
+}
