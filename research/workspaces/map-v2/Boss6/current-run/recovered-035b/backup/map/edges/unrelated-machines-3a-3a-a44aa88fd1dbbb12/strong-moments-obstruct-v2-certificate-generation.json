@@ -1,0 +1,64 @@
+{
+  "edge_id": "um-a44-r32-strong-moments-obstruct-v2-certificate-generation",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "UM-FIXED-DEGREE-STRONG-CONFIG-MATCHING-LAW-OBSTRUCTION-v1",
+    "M-d702c3e78d5648ac90a84fd6a8f02f7e"
+  ],
+  "target_ids": [
+    "unrelated-machines/task-level-shared-capacity-algorithm-obligations"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定整数 r≥2、奇数 N≥4r−1、N 个 K₂,₂ 单位块、T=1。目标生成器须在这些局部合法伪矩上保原度≤4 矩并达到给定 V₂ 投影恢复合同。",
+  "roles": {
+    "UM-FIXED-DEGREE-STRONG-CONFIG-MATCHING-LAW-OBSTRUCTION-v1": "提供局部正性齐全而不能实现指定一二阶矩的 K₂,₂ 奇数块伪矩族。",
+    "M-d702c3e78d5648ac90a84fd6a8f02f7e": "证明给定合格共同投影和 V₂ 负载 PSD 会输出保四阶矩的真实合法 T 原子。",
+    "unrelated-machines/task-level-shared-capacity-algorithm-obligations": "检验拟从固定阶局部矩普遍生成同矩共同证书的具体构造路线。"
+  },
+  "explanation": "若此 M₂ 有与乘法相容的共同有理投影、one-hot 和每机 T I−Σp_eP_e PSD，共同谱提取把它写为真实峰≤1 的调度分布，故每个两机两任务块给一位 B_s。原矩要求 EB_s=1/2、跨块 E(B_sB_t)=(N−2)/(4(N−1))，给 EΣB_s=N/2 和 Var(ΣB_s)=0。整数块计数不能恒等于奇 N 的半整数。这个矛盾甚至只需保一二阶；每对块的四个联合状态概率各非负，故逐对匹配证书仍可单独写出。允许改二阶时 Var≥1/4 迫平均改动≥1/[4N(N−1)]，等权两相邻整数切片达到最大 pair 误差的同一界。",
+  "scope": "排除对该固定阶全域保持同一矩的 V₂ 证书生成。真实 OPT=1，原矩表也不满足真实正权支持先验；不构成 makespan 间隙或原矩阵构造义务的整体否定。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/定理/真实正权支持的一维秩跳跃闭合--定理.md",
+      "sha256": "c48cb5a992f97eaa296d5398684a630fe830091f2058e906e8e8468302737bfc",
+      "section": "可验证延伸证书与伪矩边界"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/真实正权支持的一维秩跳跃闭合--定理.md",
+      "sha256": "c48cb5a992f97eaa296d5398684a630fe830091f2058e906e8e8468302737bfc"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/强配置矩与对称重置阈值有限审查--审查.md",
+      "sha256": "8cbfecb88b6d9500edc45cb119cb77e8745b05be2d7d371159be1045eb5c3298",
+      "section": "一、固定阶强配置矩的真实不可实现障碍"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/逐行均匀相关与强配置矩两源读后补录--审查.md",
+      "sha256": "aa09b3be98ccbcbc3d45f5ea54b92310ff0d75124a262c93e40bd46a88b587ce"
+    },
+    {
+      "path": "archives/unrelated-machines/state/问题/任务级共同容量的算法义务--问题.md",
+      "sha256": "bf259a58e04bea2f62928d1f7f642e0ba72cd7c01db891d36c2d916ef06958a0"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "复核了 L((Σb−t)b_A)=0（|A|≤2r−1）。用该关系把各齐次层分解到 down 算子核；不同 harmonic 层按交集计数正交，同层的最高交集差分系数为 (t)_k(N−t)_k/(N)_{2k}>0。复核短柱面、整数方差下界与对称修复，分开了给定充分证书与普遍生成。",
+  "contribution": {
+    "result": "固定阶 PSD、row CONFIG、短混合柱面非负不足以让每份旧矩拥有保持原一二阶的真共同律，因此不能对这一全域承诺合格 V₂ 延伸。",
+    "remaining": "可改矩的耦合、只对精挑输入生成证书、完全不同的共同容量机制或一般算法仍需独立构造。"
+  },
+  "endpoint_pins": {
+    "M-d702c3e78d5648ac90a84fd6a8f02f7e": "651d852b4f27df022b290ffdbd13617fd743e7d6aaaee52caac9afa6d49e5f03",
+    "UM-FIXED-DEGREE-STRONG-CONFIG-MATCHING-LAW-OBSTRUCTION-v1": "b30be0af65577cadda9dfb50b322aaf27ee1f82049d567a87666d66fc8cbb280",
+    "unrelated-machines/task-level-shared-capacity-algorithm-obligations": "1b1f2c141d66fc58469194cf28b4f8dab0148c6c01cd721ba4c429ed5eea4719"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/定理/真实正权支持的一维秩跳跃闭合--定理.md": "c48cb5a992f97eaa296d5398684a630fe830091f2058e906e8e8468302737bfc",
+    "archives/unrelated-machines/state/审查/强配置矩与对称重置阈值有限审查--审查.md": "8cbfecb88b6d9500edc45cb119cb77e8745b05be2d7d371159be1045eb5c3298",
+    "archives/unrelated-machines/state/审查/逐行均匀相关与强配置矩两源读后补录--审查.md": "aa09b3be98ccbcbc3d45f5ea54b92310ff0d75124a262c93e40bd46a88b587ce",
+    "archives/unrelated-machines/state/问题/任务级共同容量的算法义务--问题.md": "bf259a58e04bea2f62928d1f7f642e0ba72cd7c01db891d36c2d916ef06958a0"
+  },
+  "review_digest": "3a5c22c1e66a5ba584c06345334efd041f33a29ba21607a92d085832d47d800e"
+}

@@ -1,0 +1,45 @@
+{
+  "edge_id": "ca-prefix-absence-pays-linear-terminal-residual",
+  "kind": "implies",
+  "status": "accepted",
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "source_ids": [
+    "B2-REPEATED-LAST-ABSENCE-v1"
+  ],
+  "target_ids": [
+    "M-a79d4b6e8bde40d1aac55c0b07e697d7"
+  ],
+  "conditions": "同一空根完整有序历史纯SPE，按覆盖集合而非标签身份计算末覆盖重数。",
+  "roles": {
+    "B2-REPEATED-LAST-ABSENCE-v1": "真前缀缺席与谐和系数给全局V及W+R的更细下界。",
+    "M-a79d4b6e8bde40d1aac55c0b07e697d7": "将同一客户负载区分粗化，恢复线性付款和其半覆盖充分域。"
+  },
+  "explanation": "对t=k+r，原A_t≥k(m−t)/(mt)=k(1/t−1/m)。对实际末覆盖客户数X_t求和得到V≥k(u−S/m)。B外真实负载≤d给R≥V/(d+1)，所以W+R≥S+a k(u−S/m)。其两S端点给m(2d+1)≥d²(d+2)足以W+R≥(m−1)u；合实际末位最优预算得半覆盖。原六人d=3时谐和值85/16>5，但线性条件为42<45。",
+  "scope": "原真SPE重数等式g=k；保留旧g>k形式放松为独立代数说明。",
+  "contribution": {
+    "result": "真SPE的较细谐和下界恢复全部线性残余支付及其半覆盖充分条件，且六人d=3严格扩充其标量命中。",
+    "remaining": "旧独立(g,k)代数松弛需使用原端点论证；gamma未过的真实终局另需新证明。"
+  },
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/末覆盖重数与前缀缺席的半覆盖判据--定理.md",
+      "sha256": "5764ef4b1aed3c63236d3422388780c49f2827556cadcafdd2c333c39a814e8b"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/repeated-last-prefix-and-partition-primary/new-definition-check.json",
+      "sha256": "57b38718dc09a4f71b8d883340ce9501e6aae32f5227c22eb0c827f2b7499306"
+    }
+  ],
+  "reviewed_by": "Boss3",
+  "review_note": "实读原正文、旧残余与平方假设，复算m≤105标量格及旧5050组全部最小和最小者，原冻结博弈证据只按自身域复用。",
+  "endpoint_pins": {
+    "B2-REPEATED-LAST-ABSENCE-v1": "6f570817497a95dbb0619deb7691bed98de757962ab4530a18a9878531fa5629",
+    "M-a79d4b6e8bde40d1aac55c0b07e697d7": "773fe968a6cbf606a009db3feb55ba613fd98f82a3cb15e42ae106cc70060f57"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/末覆盖重数与前缀缺席的半覆盖判据--定理.md": "5764ef4b1aed3c63236d3422388780c49f2827556cadcafdd2c333c39a814e8b",
+    "archives/customer-attraction/tools/evidence/repeated-last-prefix-and-partition-primary/new-definition-check.json": "57b38718dc09a4f71b8d883340ce9501e6aae32f5227c22eb0c827f2b7499306"
+  },
+  "review_digest": "16a0b9011994b129901512f2277a2b1e6bd5bd4e8edf790b1c6ffe2453619da0"
+}

@@ -1,0 +1,71 @@
+{
+  "edge_id": "um-035b-fixed-half-one-sided-finder-obstruction",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "UM-JOINT-HALF-CHOICE-NP-v1",
+    "UM-JOINT-HALF-PROMISE-NO-v1"
+  ],
+  "target_ids": [
+    "unrelated-machines/task-level-shared-capacity-algorithm-obligations"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "P≠NP。对每个固定有理δ∈[0,1/2)，small恒按原T/2、big为T/2<p≤T。拟议finder须总确定性位多项式，且对每个OPT≤T输入输出可验共同big匹配H与H外small列和1的x，逐机h_i+Σp_ijx_ij≤(1+δ)T；承诺外允许任意字符串或拒绝。",
+  "roles": {
+    "UM-JOINT-HALF-CHOICE-NP-v1": "唯一half-small、T1、finite仅1/2与1的整个子类中，Aδ存在当且仅当实际OPT≤1，并由显式逐x三激活任务的3DM归约给NP完全性。",
+    "UM-JOINT-HALF-PROMISE-NO-v1": "把精确选择困难性转成一侧YES完备总finder的run-and-verify障碍，明确承诺外任意输出及统一多项式时界。",
+    "unrelated-machines/task-level-shared-capacity-algorithm-obligations": "限制一般构造义务中固定原半阈值、先找Aδ再支付T/2的具体充分路线；一般目标仍开放。"
+  },
+  "explanation": "唯一small端迫H外每任务x为0/1，h_i+ℓ_i是half-integer；≤1+δ<3/2即≤1。显式3DM每x三激活任务在R_x各half、big可到含x的S_a；每triple两关联任务small在S_a、unit分别到Y/Z元素机。峰1时每x至少激活一S，故r≥q；每激活S已满unit，两关联件必须撤到总共2q个元素槽，故2r≤2q，提perfect3DM。反向匹配构造完整峰1并给A0。若所列总finder B存在，对任意源实例运行B并精确验证输出：YES满足OPT≤1必有效，NO根本没有Aδ，任何承诺外输出不能误接受。构造、B和验算均位多项式，判定Perfect3DM与P≠NP矛盾。δ1/2时全small已给所有源Aδ，故不纳入严格窗口。若仅保证承诺域内最终停机则此时间推论不成立；已知统一poly承诺时界可截断。",
+  "scope": "这是对所列共同见证finder的条件障碍contribution，连到开放问题的具体接口。不是refutes整个一般UM目标，不否定给定H,x的有序槽恢复、改变分界、直接实际调度或利用真实槽损失的其他路线。",
+  "contribution": {
+    "result": "假设P≠NP，每固定δ<1/2，固定原T/2的Aδ接口不存在在所有OPT≤T上保证输出见证的总确定性位多项式finder，即使T1、唯一small、finite仅1/2和1。",
+    "remaining": "一般任务级共同容量与统一次二实际调度仍需其他接口、联合舍入或更精确损失控制；本障碍没有排除一般(2−ε)调度算法，也没有将δ1/2端点判为可解。"
+  },
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/审查/联合选择槽舍入三源精读--审查.md",
+      "sha256": "46153e968f420228c6720dd4edd2025c1521fcbb527830de60792c01d161f258",
+      "section": "2. Half-unit joint-choice 与 3DM/promise 障碍"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/um-ghmr-flat-moment-and-hall-primary/comparison/research/current/unrelated_machines/joint_matching_completion_and_block_cuts.md",
+      "sha256": "8cf637c20618062a98d4038e7873987acf06bf426a583a6a678d974d7b103ba3",
+      "section": "1. 共同匹配与剩余分数容量的精确接口"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/um-ghmr-flat-moment-and-hall-primary/comparison/research/current/unrelated_machines/joint_matching_completion_and_block_cuts.md",
+      "sha256": "8cf637c20618062a98d4038e7873987acf06bf426a583a6a678d974d7b103ba3",
+      "section": "3a. 半单位任务封闭共同见证的整个低于2窗口"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/um-ghmr-flat-moment-and-hall-primary/comparison/research/reviews/unrelated_machines/half_unit_joint_choice_review.md",
+      "sha256": "0fde78af36825a048869c700b83db12e5b96bcdd6c95867bfebad418d629aaab"
+    },
+    {
+      "path": "archives/unrelated-machines/state/文献/Karp归约框架与完全问题--文献.md",
+      "sha256": "40c532477ca603c4366c545d4c41c39b056725b73e9a165ca1e8b21782792e1d",
+      "section": "5.2 原3DM归约的全部坐标与循环一致性"
+    },
+    {
+      "path": "research/workspaces/map-v2/Boss6/current-run/recovered-035b/review.md",
+      "sha256": "6457a35c42429e2b4d1321d391f8e6f00cd166e1ba14d33705aa9785addbbaaa"
+    }
+  ],
+  "reviewed_by": "Boss6",
+  "review_note": "完整实读两个当前登记对象及原§3a/独立审查，独立复核half积分性、r双边计数、run-and-verify量词和δ端点。新有限脚本比较全部q≤2源和额外重复/孤立输入，只作边界复核。来源为conditional(P≠NP)，目标用局部contribution，不冒作开放对象全称反驳。",
+  "endpoint_pins": {
+    "UM-JOINT-HALF-CHOICE-NP-v1": "e87cc44f226c8cd77cbeafe7184b610a415ec7fdf48dc8ace9d149e91f6e22bf",
+    "UM-JOINT-HALF-PROMISE-NO-v1": "55bfc2e0d2ac16d0db4150233305ab2b93246e2c5a9fe3c3a1f2efc2071fffe1",
+    "unrelated-machines/task-level-shared-capacity-algorithm-obligations": "1b1f2c141d66fc58469194cf28b4f8dab0148c6c01cd721ba4c429ed5eea4719"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/审查/联合选择槽舍入三源精读--审查.md": "46153e968f420228c6720dd4edd2025c1521fcbb527830de60792c01d161f258",
+    "archives/unrelated-machines/tools/evidence/um-ghmr-flat-moment-and-hall-primary/comparison/research/current/unrelated_machines/joint_matching_completion_and_block_cuts.md": "8cf637c20618062a98d4038e7873987acf06bf426a583a6a678d974d7b103ba3",
+    "archives/unrelated-machines/tools/evidence/um-ghmr-flat-moment-and-hall-primary/comparison/research/reviews/unrelated_machines/half_unit_joint_choice_review.md": "0fde78af36825a048869c700b83db12e5b96bcdd6c95867bfebad418d629aaab",
+    "archives/unrelated-machines/state/文献/Karp归约框架与完全问题--文献.md": "40c532477ca603c4366c545d4c41c39b056725b73e9a165ca1e8b21782792e1d",
+    "research/workspaces/map-v2/Boss6/current-run/recovered-035b/review.md": "6457a35c42429e2b4d1321d391f8e6f00cd166e1ba14d33705aa9785addbbaaa"
+  },
+  "review_digest": "2e384009cb9b1b1a049be443e0e1159a3ab9c0bb53285c102fad2917bdc459ac"
+}

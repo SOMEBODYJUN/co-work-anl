@@ -1,0 +1,52 @@
+{
+  "edge_id": "um-a44-r32-pricewise-throughput-convexification",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "UM-HEAVY-LIGHT-JOINT-RESIDUAL-MINMAX-v1"
+  ],
+  "target_ids": [
+    "unrelated-machines/um-0102-7664db98655305cb"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "T=1，3/20<δ<1/2，重边使用严格 p>(1−δ)T。两个原重任务分别为 19/20、17/20，另两项 1/10 小任务各自固定在一台机器。",
+  "roles": {
+    "UM-HEAVY-LIGHT-JOINT-RESIDUAL-MINMAX-v1": "提供两种同一任务全集的可容许重匹配，给严格价格量词间隙。",
+    "unrelated-machines/um-0102-7664db98655305cb": "承接固定残余任务的通过量比较，并分开真实可实现占位与凸组合容量。"
+  },
+  "explanation": "两种合法 H 均取 A 与 B，故剩余任务集合相同。扣重负载后，容量 c=(1/20,3/20) 或反序。直接代入固定残余通过量得 F(c)=min(1,10c₁)+min(1,10c₂)=3/2，二者各缺 1/2。容量均值 (1/10,1/10) 却给 F=2。两条价格负载线的最小值为 1−|λ₁−λ₂|/20（Σλ_i=1），价格判据只认出均值可行。固定任务的格次模性在该例仍成立：join 给 2，meet 给 1，和恰为 3。",
+  "scope": "这是固定残余、仅重占位容量变化的精确桥。两条路径都使用实际有限边，原 OPT=21/20，是目标 T 的 NO。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/审查/凸包边际与残余通过量占位双源审查--审查.md",
+      "sha256": "7664db98655305cb773a96cebc72e4e5eef0a89a119acf8a21216460f5099e60",
+      "section": "凸包边际与残余通过量占位双源审查"
+    },
+    {
+      "path": "archives/unrelated-machines/state/障碍/逐价格重匹配与共同残余的量词缺口--障碍.md",
+      "sha256": "0cd4f0b99a065fa03ee507b617dbbd2a2619c832a94ab8320699b98929f5ec32"
+    },
+    {
+      "path": "archives/unrelated-machines/state/计算/重轻量词与稀疏解码的精确有限核验--计算.md",
+      "sha256": "c997548e1e90acfb1403bcc8ac7cd69799213a955a44408e60d2a3efa2d67ab7",
+      "section": "两机四任务：真实负载与价格线"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "用原矩阵重算了四个赋值、全部价格公式、两单点容量和其均值通过量。格次模不等式与凸化间隙可以同时成立。",
+  "contribution": {
+    "result": "即使剩余任务固定且其通过量满足格次模，逐价格重配也只认证凸化容量，可通过全部价格而没有任一原 H 完成。",
+    "remaining": "这一两机例不推出审查对象的任意异端格次模证明、任意图独立集表示或固定凸包行包络障碍。"
+  },
+  "endpoint_pins": {
+    "UM-HEAVY-LIGHT-JOINT-RESIDUAL-MINMAX-v1": "42c8ed86018f9fe5821937ce0943f02e4510968b96d3667411df287a13b6225c",
+    "unrelated-machines/um-0102-7664db98655305cb": "1e51ddc39934718c3b016c5638285e46eb29b86ff6efa0d3ea28f53be7563096"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/审查/凸包边际与残余通过量占位双源审查--审查.md": "7664db98655305cb773a96cebc72e4e5eef0a89a119acf8a21216460f5099e60",
+    "archives/unrelated-machines/state/障碍/逐价格重匹配与共同残余的量词缺口--障碍.md": "0cd4f0b99a065fa03ee507b617dbbd2a2619c832a94ab8320699b98929f5ec32",
+    "archives/unrelated-machines/state/计算/重轻量词与稀疏解码的精确有限核验--计算.md": "c997548e1e90acfb1403bcc8ac7cd69799213a955a44408e60d2a3efa2d67ab7"
+  },
+  "review_digest": "e4f517f407cf7aedd3e58d24453b34add6a407490f3ca05f1fad849fdbfe366e"
+}

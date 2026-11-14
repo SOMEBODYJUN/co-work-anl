@@ -1,0 +1,53 @@
+{
+  "edge_id": "um-a44-r32-perfect-3dm-to-binary-equality-ip",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "UM-SOURCE-KARP-3DM"
+  ],
+  "target_ids": [
+    "M-9d9b2e51e678440192ac65556050f764"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "显式完美 3DM，三份坐标集合各 q 个元素。等式整数规划允许显式二进制整数 C,d，未知量严格在 {0,1}。",
+  "roles": {
+    "UM-SOURCE-KARP-3DM": "提供三个带位置标签等大坐标集上的精确完美三维匹配 NP 完全性。",
+    "M-9d9b2e51e678440192ac65556050f764": "承接为精确二进制 0–1 等式可行语言的替代完整困难性证明。"
+  },
+  "explanation": "按带坐标标签的每个元素开一行，按每个三元组 a 开一列。C_{u,a}=1 当且仅当 a 在 u 的坐标命中 u，右端 d 全 1。若有 perfect3DM，其 q 列指示满足 Cx=d。反向任一 0/1 解使三侧每点被恰一次选中；把第一侧等式求和得到恰 q 列，因此直接解码完美匹配。矩阵为 3q×|A|、只含 0/1，写出长度与构造时间总位多项式。空源映到固定 YES，无合法编码或孤立点映到固定 NO，亦可让孤立点对应零行。任何一般 C,d 的二进制向量证书可精确乘加检验，故语言属于 NP。",
+  "scope": "这是由已登记 perfect3DM 完全性经 incidence 等式推导的独立替代证法。原 Figure 1 中的 SAT→等式 IP 仍需其本身的补位证明。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/文献/Karp归约框架与完全问题--文献.md",
+      "sha256": "40c532477ca603c4366c545d4c41c39b056725b73e9a165ca1e8b21782792e1d",
+      "section": "5.2 原3DM归约的全部坐标与循环一致性"
+    },
+    {
+      "path": "archives/unrelated-machines/state/文献/Karp归约框架与完全问题--文献.md",
+      "sha256": "40c532477ca603c4366c545d4c41c39b056725b73e9a165ca1e8b21782792e1d",
+      "section": "2. 主定理的21个判定问题及历史术语"
+    },
+    {
+      "path": "archives/unrelated-machines/state/文献/Karp归约框架与完全问题--文献.md",
+      "sha256": "40c532477ca603c4366c545d4c41c39b056725b73e9a165ca1e8b21782792e1d",
+      "section": "1. 先固定语言、量词和编码"
+    },
+    {
+      "path": "archives/unrelated-machines/state/文献/Karp归约框架与完全问题--文献.md",
+      "sha256": "40c532477ca603c4366c545d4c41c39b056725b73e9a165ca1e8b21782792e1d",
+      "section": "3.1 SAT到0–1等式IP：把省略的松弛补齐"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "复核了位置标签、逐行恰覆盖、q 的整数恒等式、空和非法编码的常量分支及一般等式可验性。选择器本身的证明仍使用另外的 3DM→原调度映射。",
+  "whole_result": "带标签完美 3DM 的精确判定归约到 0–1 等式可行性，并用一般等式证书的 NP 可验性得到整个二进制 Cx=d 判定语言 NP 完全。",
+  "endpoint_pins": {
+    "M-9d9b2e51e678440192ac65556050f764": "eefb2995b8f19c41a094bbf3f9dfc461fb725fab54a7e7f4ff845e1e9c1330e4",
+    "UM-SOURCE-KARP-3DM": "2b455afb721fc3404464bed6944c36df19220c296dae72d7d0e9af032179e171"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/文献/Karp归约框架与完全问题--文献.md": "40c532477ca603c4366c545d4c41c39b056725b73e9a165ca1e8b21782792e1d"
+  },
+  "review_digest": "d5f6cebfa95cf964ea0dd20e31b7bb11c6e9b1843161b679b98b6aca0c170c0f"
+}

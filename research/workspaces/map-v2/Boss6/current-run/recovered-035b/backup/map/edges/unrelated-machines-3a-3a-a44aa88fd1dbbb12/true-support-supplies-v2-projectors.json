@@ -1,0 +1,45 @@
+{
+  "edge_id": "um-a44-r32-true-support-supplies-v2-projectors",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "UM-RANKJUMP-ONE-TRUE-SUPPORT-v1"
+  ],
+  "target_ids": [
+    "M-d702c3e78d5648ac90a84fd6a8f02f7e"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "真实有限不同合法 one-hot 原子、严格正权、显式四阶有理矩，秩差恰一。负载结论另给每个真实支持原子的每机负载≤T。",
+  "roles": {
+    "UM-RANKJUMP-ONE-TRUE-SUPPORT-v1": "在真实严格正权 one-hot 支持且 rank(M₂)=rank(M₁)+1 时，构造整个 V₂ 的有理逐坐标乘法。",
+    "M-d702c3e78d5648ac90a84fd6a8f02f7e": "接收 Gram 一致的共同投影及 V₂ 每机负载 PSD，进行四阶原子恢复。"
+  },
+  "explanation": "选 q=x_ax_b 为 V₂/V₁ 的基，写 x_bx_i=ℓ_bi+c_iq；严格正权令零范数关系在真实 S 上逐点成立，乘 x_a 得 qx_i=x_aℓ_bi+c_iq∈V₂。由闭包含全部原子指示，V₂=R^S。M₂ 上有理消元给自伴交换幂等乘法 P_e，同任务和 I，并在 V₁ 上与原矩乘法一致。T I−Σp_eP_e 在支持指示基为对角乘法，系数逐点为 T−load_i，故 V₂ Gram PSD 当且仅当各正权原子逐机≤T。由精确共同核分裂和 Q_α1 的范数平方恢复四阶矩与权重。",
+  "scope": "是给定真实秩差一且全支持守 T 的可构造延伸证书。无全支持负载承诺时只得到投影，不自动得到负载 PSD。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/定理/真实正权支持的一维秩跳跃闭合--定理.md",
+      "sha256": "c48cb5a992f97eaa296d5398684a630fe830091f2058e906e8e8468302737bfc",
+      "section": "可验证延伸证书与伪矩边界"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/真实正权支持的一维秩跳跃闭合--定理.md",
+      "sha256": "c48cb5a992f97eaa296d5398684a630fe830091f2058e906e8e8468302737bfc"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "复核了真实点乘为何合法、第四阶矩如何拆成两个二次内积以及共同 eigenspace 的正权如何读出。",
+  "contribution": {
+    "result": "真实秩差一且支持守 T 时，源引理实际构造目标所需全部 V₂ 投影和每机负载 PSD；在该真实支持上 PSD 与逐点负载界等价。",
+    "remaining": "目标还覆盖外部给定延伸证书的任意相容 M₂。这里没有从一般截断伪矩或普通调度输入生成共同投影、找真实支持或强制逐点负载。"
+  },
+  "endpoint_pins": {
+    "M-d702c3e78d5648ac90a84fd6a8f02f7e": "651d852b4f27df022b290ffdbd13617fd743e7d6aaaee52caac9afa6d49e5f03",
+    "UM-RANKJUMP-ONE-TRUE-SUPPORT-v1": "563b6490ba9436f2710a86c2648c112448b968b9235dcc10116aa48e34cb3bfa"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/定理/真实正权支持的一维秩跳跃闭合--定理.md": "c48cb5a992f97eaa296d5398684a630fe830091f2058e906e8e8468302737bfc"
+  },
+  "review_digest": "8d8a5b96d4672204244b83aa6920684848454970420bfaa5194322cf1d32154a"
+}
