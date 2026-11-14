@@ -151,11 +151,96 @@
       "scope_hint": "archives/customer-attraction"
     }
   },
-  "state": "claimed",
+  "state": "done",
   "owner": "Boss5",
-  "request_id": "6846fca8a1d14cdd844ac8f81958a122",
+  "request_id": "5b1d48236262490eaeb375ed02127913",
   "requests": {
     "d0f99de45a5b47a983fdd874aae15a0c": "plan",
-    "6846fca8a1d14cdd844ac8f81958a122": "claim"
+    "6846fca8a1d14cdd844ac8f81958a122": "claim",
+    "5b1d48236262490eaeb375ed02127913": "done"
+  },
+  "edge_paths": {
+    "cag-r70-same-sigma-two-input-check": "map/edges/boss5-r70-endpoint-repair-205c2404196d066a/same-sigma-two-input-check.json"
+  },
+  "receipt": {
+    "task_id": "boss5-r70-endpoint-repair-205c2404196d066a",
+    "stage": "3A",
+    "owner": "Boss5",
+    "object_ids": [
+      "M-c5e460641b3e47729159aa9e7cb6a175"
+    ],
+    "read_object_ids": [
+      "cag-r70-six-player-seven-topic-fixed-complete-strategy-lp"
+    ],
+    "input_pins": {
+      "M-c5e460641b3e47729159aa9e7cb6a175": "cfb8aca64886120754f2457a388c80e70d73430d4804ba0d027f9db08f6d63d9",
+      "cag-r70-six-player-seven-topic-fixed-complete-strategy-lp": "b85fbfeafe5b02e918438e2de0d948d6296a19524e6f06adb310a997d34eb2bb"
+    },
+    "coverage": {
+      "M-c5e460641b3e47729159aa9e7cb6a175": {
+        "state": "isolated-after-review",
+        "object_pin": "cfb8aca64886120754f2457a388c80e70d73430d4804ba0d027f9db08f6d63d9",
+        "comparison_scope": "定向复核精确 58 客户输入的全部完整纯 SPE、同覆盖类提升、同一完整 19,608 节点 σ 的两点精确终局与全部真实 IC，以及只读对端固定 σ 的 11 客户取等及七组精确对偶。共用审计分别读 points.random 与 points.lp_integer。",
+        "reason": "58 客户点全部完整纯 SPE 的 W=43、OPT₆=58，六个根计数可实现。该点让保存的 σ 成为完整纯 SPE，在固定锥内比值 43/58 严格大于 6/11。固定锥的取等证据是另一个 11 客户输入。当前任务两登记对象之间成立指定 σ 的双输入精确核对，旧逻辑贡献的端点归属不成立。"
+      }
+    },
+    "assets": [
+      {
+        "path": "map/edges/boss5-r70-endpoint-repair-205c2404196d066a/same-sigma-two-input-check.json",
+        "sha256": "2a4ea30e8d499321bc7ff68f32343726d695c8500e4d9ab003a319e65bc48154"
+      },
+      {
+        "path": "map/edges/boss5-r70-endpoint-repair-205c2404196d066a/comparison.md",
+        "sha256": "7047b5af0431f8a6d3ad39bd41a7ca72df2b03d39f713611585f016d04fb756b"
+      },
+      {
+        "path": "map/edges/customer-attraction-3a-3a-a8bf604bd9813bf3/readledger.json",
+        "sha256": "977efe5e1fed55125c1703b0505c9fa23ae5c1a49ffb61e4aeb07c3dc1645c67"
+      },
+      {
+        "path": "map/edges/customer-attraction-3a-3a-a8bf604bd9813bf3/review.md",
+        "sha256": "10f85e8797e96801e02328ab92c6c492aa0b627632d0d34b5359566c7023396e"
+      },
+      {
+        "path": "map/edges/customer-attraction-3a-3a-a8bf604bd9813bf3/support.md",
+        "sha256": "ba56bef3da218d05dcd32978e6b1d2a262924dfc91ffac13aa75e4eda35eff13"
+      }
+    ],
+    "supersession": {
+      "customer-attraction-3a-3a-a8bf604bd9813bf3": {
+        "reason": "精确修正登记端点。58 客户主覆盖续接；保留共用 σ、两组逐历史精确审计及各自的量词。11 客户取等归固定锥定理及独立证据。",
+        "assets": {
+          "map/edges/customer-attraction-3a-3a-a8bf604bd9813bf3/r70-point-attains-fixed-cone-six-eleven.json": {
+            "disposition": "retired",
+            "reason": "旧 implies 将 11 客户点的向量和可行性错误归给 58 客户的 M-c5e，不能从其登记陈述推出固定锥取等。历史字节保留；准确数学比较由新 checks 边接续。"
+          },
+          "map/edges/customer-attraction-3a-3a-a8bf604bd9813bf3/readledger.json": {
+            "disposition": "replaced",
+            "replacement_paths": [
+              "map/edges/customer-attraction-3a-3a-a8bf604bd9813bf3/readledger.json"
+            ],
+            "reason": "保留原 read-add、文件指纹、精确统计与结构核对，补端点勘误及本次独立回算。"
+          },
+          "map/edges/customer-attraction-3a-3a-a8bf604bd9813bf3/review.md": {
+            "disposition": "replaced",
+            "replacement_paths": [
+              "map/edges/customer-attraction-3a-3a-a8bf604bd9813bf3/review.md"
+            ],
+            "reason": "保留原实读与两组输入的完整数学核对，纠正 11 客户点归属并记录旧边退休。"
+          },
+          "map/edges/customer-attraction-3a-3a-a8bf604bd9813bf3/support.md": {
+            "disposition": "replaced",
+            "replacement_paths": [
+              "map/edges/customer-attraction-3a-3a-a8bf604bd9813bf3/support.md"
+            ],
+            "reason": "保留 58 客户全 SPE 构造及 11 客户取等证明，明确两组量词、证据及固定锥下界来源。"
+          }
+        }
+      }
+    },
+    "closed_overlaps": [],
+    "follow_up_tasks": [],
+    "review_note": "独立按模型回算两组冻结输入的 274,512 项真实 IC、1,848 个终局计数、3,048 个真实偏离键及七组 889 项有理对偶余量。无原 DP、原 verify、LP 求解或随机样本新增。现行登记没有该 11 客户七标签 σ 的独立同一端点；固定锥证明的现有端点和独立证据足够。",
+    "edge_review_digest": "1f3b60d6009abba15434c919f901718aab0f98dca821849b90fb28cb269e5823"
   }
 }
