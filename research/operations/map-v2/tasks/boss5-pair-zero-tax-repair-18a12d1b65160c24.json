@@ -120,11 +120,106 @@
       "scope_hint": "archives/customer-attraction"
     }
   },
-  "state": "claimed",
+  "state": "done",
   "owner": "Boss5",
-  "request_id": "a1725238e0904b46bed9349b2ae329cd",
+  "request_id": "5b67d21769424bec961853ac5da533e3",
   "requests": {
     "ed023dc046394cfd93e5b5c4b3f33b88": "plan",
-    "a1725238e0904b46bed9349b2ae329cd": "claim"
+    "a1725238e0904b46bed9349b2ae329cd": "claim",
+    "5b67d21769424bec961853ac5da533e3": "done"
+  },
+  "edge_paths": {
+    "cag-pairrepair-strong-pair-vs-path-boundary": "map/edges/boss5-pair-zero-tax-repair-18a12d1b65160c24/strong-pair-vs-path-completion.json"
+  },
+  "receipt": {
+    "task_id": "boss5-pair-zero-tax-repair-18a12d1b65160c24",
+    "stage": "3B",
+    "task_definition_pin": "705dd6b856409601046a143bd0180b5dcf3274eea4b0e30e5731a9dcf775c9b8",
+    "object_ids": [
+      "M-bb7d149596394020804ac192335b8678",
+      "M-e960d7f4ebca40a38760eb3ae044cc19"
+    ],
+    "read_object_ids": [],
+    "input_pins": {
+      "M-bb7d149596394020804ac192335b8678": "d79c118f0827499aeb038fdcf54f1fa7f5ac2e594636201f897b3012ceaa3bf9",
+      "M-e960d7f4ebca40a38760eb3ae044cc19": "ab054800337d5944cb152e30ad29e8398e6cb46284ce218ad99be5485c5c3406"
+    },
+    "coverage": {
+      "M-bb7d149596394020804ac192335b8678": {
+        "state": "isolated-after-review",
+        "object_pin": "d79c118f0827499aeb038fdcf54f1fa7f5ac2e594636201f897b3012ceaa3bf9",
+        "comparison_scope": "从十三客户登记的三节正文与两人证据重算九个强 PAIR 余量、所有末位回复、真实 SPE 和精确 G。用同一模型与判据独立复算八客户目录的九行及所有 BR/L/G。",
+        "reason": "十三客户例在 TB 查询以交叠税 +2 吸收首位负余量 −2，G=6>4。八客户例在 TA 查询的 T 偏离交叠税为零，第三项 IC 的 +5/2 吸收 −1，九行都通过但 G=9/2>7/2。两个反例均有直接首位 T 偏离。",
+        "context_edge_ids": [
+          "cag-pairrepair-strong-pair-vs-path-boundary"
+        ]
+      },
+      "M-e960d7f4ebca40a38760eb3ae044cc19": {
+        "state": "isolated-after-review",
+        "object_pin": "ab054800337d5944cb152e30ad29e8398e6cb46284ce218ad99be5485c5c3406",
+        "comparison_scope": "对照强 PAIR 的三项真实 IC、非负交叠税与任意重复索引聚合，在十三客户与八客户空背景实例逐项计算。",
+        "reason": "强 PAIR 投影和索引聚合给出必要行。八客户例显示即使导致路径失败的 T 偏离税为零，正的第三项 IC 仍足以让所有行通过。固定两人子局的 G 判据另行支付首位 IC，前缀之前的祖先 IC 仍需各自验证。",
+        "context_edge_ids": [
+          "cag-pairrepair-strong-pair-vs-path-boundary"
+        ]
+      }
+    },
+    "assets": [
+      {
+        "path": "map/edges/boss5-pair-zero-tax-repair-18a12d1b65160c24/strong-pair-vs-path-completion.json",
+        "sha256": "dffec4232f11689e25e340ff4406104604af72c8ea4f3982583a503462e7e373"
+      },
+      {
+        "path": "map/edges/boss5-pair-zero-tax-repair-18a12d1b65160c24/review.md",
+        "sha256": "9349354378b8d8e8e6b2de4e3b3439a1826aedd1c2d57b8b4a854d5f9fa5b943"
+      },
+      {
+        "path": "map/edges/boss5-pair-zero-tax-repair-18a12d1b65160c24/reading-ledger.json",
+        "sha256": "3cd5b1c9d7426a79a7ca993c9cbe915a042639e82c2772802605cfff0e24113b"
+      }
+    ],
+    "reading": {
+      "ledger_path": "map/edges/boss5-pair-zero-tax-repair-18a12d1b65160c24/reading-ledger.json",
+      "ledger_sha256": "3cd5b1c9d7426a79a7ca993c9cbe915a042639e82c2772802605cfff0e24113b",
+      "notes": "本轮独立精确复算两例。沿用原有限产品及 60 原子/2016 行范围，详见读证清单。"
+    },
+    "supersession": {
+      "Boss7-pair-repair-repair-98abf6d88bd78408": {
+        "reason": "两端语境加入精确八客户例，回答真实失败偏离税为零时的充分性，并将 H 校正为加税利润。原十三客户数值及固定两人子局判据保留。",
+        "assets": {
+          "map/edges/Boss7-pair-repair-repair-98abf6d88bd78408/strong-pair-vs-path-completion.json": {
+            "disposition": "replaced",
+            "replacement_paths": [
+              "map/edges/boss5-pair-zero-tax-repair-18a12d1b65160c24/strong-pair-vs-path-completion.json"
+            ],
+            "reason": "替换边保留语境/核验作用并增加真正零税失败的八客户证据。"
+          },
+          "map/edges/Boss7-pair-repair-repair-98abf6d88bd78408/review.md": {
+            "disposition": "replaced",
+            "replacement_paths": [
+              "map/edges/boss5-pair-zero-tax-repair-18a12d1b65160c24/review.md"
+            ],
+            "reason": "替换正文独立重算两例，明示 H 为加税利润并区分直接偏离、交叠余项与祖先可达性。"
+          },
+          "map/edges/Boss7-pair-repair-repair-98abf6d88bd78408/reading-ledger.json": {
+            "disposition": "replaced",
+            "replacement_paths": [
+              "map/edges/boss5-pair-zero-tax-repair-18a12d1b65160c24/reading-ledger.json"
+            ],
+            "reason": "替换清单标明本轮实际阅读、继承证据与精确分数复算范围。"
+          }
+        }
+      }
+    },
+    "closed_overlaps": [],
+    "follow_up_tasks": [],
+    "reviewed_by": "Boss5/SOLVER-PAIR-ZERO-TAX-FRESH",
+    "edge_ids": [],
+    "context_edge_ids": [
+      "cag-pairrepair-strong-pair-vs-path-boundary"
+    ],
+    "edge_digests": {
+      "cag-pairrepair-strong-pair-vs-path-boundary": "3656a4e9819a31daae455cf8afd13a3c2a262276b36918e523b556b3224df694"
+    }
   }
 }

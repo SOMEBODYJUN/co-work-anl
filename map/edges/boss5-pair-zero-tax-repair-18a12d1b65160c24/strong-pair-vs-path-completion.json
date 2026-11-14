@@ -1,0 +1,73 @@
+{
+  "edge_id": "cag-pairrepair-strong-pair-vs-path-boundary",
+  "kind": "checks",
+  "status": "accepted",
+  "source_ids": [
+    "M-e960d7f4ebca40a38760eb3ae044cc19"
+  ],
+  "target_ids": [
+    "M-bb7d149596394020804ac192335b8678"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "有限单位客户、有限共同目录、按序一次行动且终局均分的共同模型。固定合法有序历史后恰余两人，背景负载 b_x≥0。强 PAIR 的必要性使用同一完整纯 SPE 的真实末回复和三项各自合法的 IC。精确局部补全使用独立的有序孩子和全部合法末回复。两个反例均取空背景。",
+  "roles": {
+    "M-e960d7f4ebca40a38760eb3ae044cc19": "给出 f、g、U、加税利润 H 与三项真实 IC 的恒等式：强 PAIR 余量等于 I₁+I₂+I₃+g(C,C)−g(C,R_X)。P-M 与 COVER 由各行聚合、放缩。",
+    "M-bb7d149596394020804ac192335b8678": "提供十三客户广告路径通过九个必要行、却违反局部精确补全判据的已登记实例。新增八客户证据在同一模型及同一判据下检验失败偏离的交叠税恰为零时的逆推。"
+  },
+  "explanation": "在原十三客户广告路径 (A,B) 上，加税利润 H=11、覆盖福利 W=9。九个强 PAIR 余量按 (A,B,T) 为 [[5,2,2],[2,7/2,0],[2,0,2]]。强制 T 后唯一末位最佳回复为 B，查询 (T,B) 的 IC 余量为 (−2,0,0)，正交叠税 g(A,A)−g(A,B)=2 将总余量抬到 0。B∈BR(A)，但根利润 4<G=6；直接改 T 得 6。只有 (T,B) 可补成 SPE，两份完整策略均有 W=OPT₂=11。新增八客户例的四块是 A-only 2、AB-only 1、AT-only 1、BT-only 4，目录恰 A、B、T。广告 (A,B) 的利润为 (7/2,9/2)，H=10，W=8，九个强 PAIR 余量为 [[4,3/2,3/2],[3/2,5/2,2],[3/2,2,5/2]]。A 后末位 B、T 并列最优。T 后末位选 A、B、T 的利润为 (7/2,3,5/2)，故 R_T=A，根改 T 得 9/2>7/2。查询 (T,A) 的 IC 余量为 (−1,0,5/2)，交叠税 g(A,A)−g(A,R_T)=0，总余量 3/2。第三项末位比较的正余量吸收了负首位 IC，故真正零税的这次失败偏离仍未被九个强 PAIR 行识别。八客户例的最坏可信根利润 L(A),L(B),L(T) 为 (7/2,9/2,9/2)，G=9/2；精确补全门槛只接受 (B,A)、(T,A)，四份完整策略均有 W=OPT₂=8。",
+  "scope": "结论针对所展示的 T 偏离的真实余项。全体强制选择的余项可不同，例如八客户广告路径在强制 A 后仍回 B 时余项为 3/2。十三客户例仅从算式删去正税会使 TB 的三项 IC 之和成为 −2，八客户例则在原均分模型中实现真零税。若将整个模型改为 g≡0，应重算利润及 BR/L/G。两个例子证明强 PAIR 加广告末位最佳性对指定路径补全仍不充分。固定两人子局的判据不支付此前祖先的 IC 或祖先可达性。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/反例/末两人保交叠必要行不能保证路径补全--反例.md",
+      "sha256": "0a2ceca2a4893af142c74d8509b79b93e47a6ec7725210617293a27045a7bb79",
+      "section": "十三单位客户目录及广告路径"
+    },
+    {
+      "path": "archives/customer-attraction/state/反例/末两人保交叠必要行不能保证路径补全--反例.md",
+      "sha256": "0a2ceca2a4893af142c74d8509b79b93e47a6ec7725210617293a27045a7bb79",
+      "section": "任意真两人前缀的精确存在准则"
+    },
+    {
+      "path": "archives/customer-attraction/state/反例/末两人保交叠必要行不能保证路径补全--反例.md",
+      "sha256": "0a2ceca2a4893af142c74d8509b79b93e47a6ec7725210617293a27045a7bb79",
+      "section": "完整补全门槛和真实结果"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/product-background-and-completion-primary/new-product-completion-and-2016.json",
+      "sha256": "13254694ba282fcb76402fead3c4735d4718359a1e8e00caa41b022695bee71d"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/末两人重叠比较与任意索引聚合--引理.md",
+      "sha256": "4dacbe163ea4ea9459395dd4445c0dea25ed28070d0723a750ea6351832f4d2c"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/单隐藏末回复的配对投影恒等式核验程序--程序.md",
+      "sha256": "6a4d33105724a47bccc58bde69aa0256b68da6cbe95e1fb164b29bc184f58a48"
+    },
+    {
+      "path": "research/workspaces/map-v2/Boss5/current-recovery/pair-zero-tax-completion.md",
+      "sha256": "a79df6be16d271502edc6e622408aace2b4394d45f6e0be53e96f46139481578"
+    },
+    {
+      "path": "map/edges/boss5-pair-zero-tax-repair-18a12d1b65160c24/review.md",
+      "sha256": "9349354378b8d8e8e6b2de4e3b3439a1826aedd1c2d57b8b4a854d5f9fa5b943",
+      "section": "八客户例：零交叠税仍不足以补全"
+    }
+  ],
+  "reviewed_by": "Boss5/SOLVER-PAIR-ZERO-TAX-FRESH",
+  "review_note": "逐项从两例的客户会员块以精确分数重算九个余量、三行末位收益、每个 BR/L、门槛 G、对应三项 IC 及完整策略。八客户例以 R_T=A 实现偏离的交叠税为零，第三项正余量仍吸收负首位 IC。已核原 PAIR 引理、十三客户正文、产品证据的两人段及 Boss5 八客户例。",
+  "endpoint_pins": {
+    "M-bb7d149596394020804ac192335b8678": "d79c118f0827499aeb038fdcf54f1fa7f5ac2e594636201f897b3012ceaa3bf9",
+    "M-e960d7f4ebca40a38760eb3ae044cc19": "ab054800337d5944cb152e30ad29e8398e6cb46284ce218ad99be5485c5c3406"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/反例/末两人保交叠必要行不能保证路径补全--反例.md": "0a2ceca2a4893af142c74d8509b79b93e47a6ec7725210617293a27045a7bb79",
+    "archives/customer-attraction/tools/evidence/product-background-and-completion-primary/new-product-completion-and-2016.json": "13254694ba282fcb76402fead3c4735d4718359a1e8e00caa41b022695bee71d",
+    "archives/customer-attraction/state/引理/末两人重叠比较与任意索引聚合--引理.md": "4dacbe163ea4ea9459395dd4445c0dea25ed28070d0723a750ea6351832f4d2c",
+    "archives/customer-attraction/state/程序/单隐藏末回复的配对投影恒等式核验程序--程序.md": "6a4d33105724a47bccc58bde69aa0256b68da6cbe95e1fb164b29bc184f58a48",
+    "research/workspaces/map-v2/Boss5/current-recovery/pair-zero-tax-completion.md": "a79df6be16d271502edc6e622408aace2b4394d45f6e0be53e96f46139481578",
+    "map/edges/boss5-pair-zero-tax-repair-18a12d1b65160c24/review.md": "9349354378b8d8e8e6b2de4e3b3439a1826aedd1c2d57b8b4a854d5f9fa5b943"
+  },
+  "review_digest": "3656a4e9819a31daae455cf8afd13a3c2a262276b36918e523b556b3224df694"
+}
