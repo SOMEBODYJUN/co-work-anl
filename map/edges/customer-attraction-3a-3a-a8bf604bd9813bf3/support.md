@@ -1,4 +1,4 @@
-# Support — the exact point and its finite boundaries
+# Support — two exact inputs for the same strategy
 
 ## Core 58-customer construction
 
@@ -28,10 +28,10 @@ x_{\{3\}}=x_{\{4\}}=x_{\{5\}}=x_{\{6\}}=1.
 
 The root and continuation path is `(0,2,2,2,2,2)`. The six customers of type `{0,2}` are covered once each, giving `W=6`; the five singleton customers are uncovered on this path. The six distinct labels `(0,1,3,4,5,6)` cover all 11 customers, so `OPT_6=11`. Thus the point has exact ratio `6/11` and gap `2W−OPT_6=1`.
 
-The audit is dynamic: for each of the 19,608 ordered histories it compares the prescribed action with each of the seven forced actions and continues with the stored strategy after the forced history. There are 137,256 rows including self comparisons, all evaluated at payment scale 60, with minimum exact slack 0. The gzip evidence contains all 924 terminal count rows and all 19,608 ordered rows for this point and the separate 58-point input. Therefore the point is a feasible member of the same fixed-σ full SPE customer cone, and the 11-unit point independently supplies the attainment endpoint for the existing fixed-σ `min W/OPT_6=6/11` theorem.
+The audit is dynamic: for each of the 19,608 ordered histories it compares the prescribed action with each of the seven forced actions and continues with the stored strategy after the forced history. Each input has 137,256 comparisons including self comparisons, all evaluated at payment scale 60, with minimum exact slack 0. The gzip evidence contains 924 terminal count rows and 19,608 ordered rows per input. The point named `lp_integer` independently supplies the attainment witness for the existing fixed-σ theorem. The point named `random` independently places the 58-customer vector in the same cone at `43/58>6/11`.
 
-## What the comparison does not pay
+## Registered statements and proof scope
 
-The point alone gives no lower bound for every nonnegative vector in the cone. The fixed-σ theorem's seven omitted-label normalizations and rational dual residuals supply that all-cone lower bound; this edge preserves that responsibility in the target and records only the independent attainable endpoint. The five branches whose certificates give `3/5` are lower bounds only, with no claim of separate attainment.
+The 58-customer construction is the full scope of `M-c5e460641b3e47729159aa9e7cb6a175`. The 11-customer witness belongs to the scope of `cag-r70-six-player-seven-topic-fixed-complete-strategy-lp`, whose evidence references the “LP十一点：大块锐例与相同固定策略” section and the fixed-cone certificate. The new contextual check compares these two registered statements against the shared frozen evidence. The all-cone lower bound follows from the fixed-σ theorem's seven rational dual certificates and its six-slot optimum identity. The five certificates with value `3/5` are branch lower bounds.
 
-The 58-unit input and the 11-unit equality input are not scalar copies: they have different membership masks, different coverage quotient structure, and different welfare/optimum values. The 58-unit result quantifies all complete SPEs of one exact instance, while the 11-unit result concerns one fixed σ and a full cone of customer weights. Neither result quantifies over all six-player complete strategies or proves the universal `2W≥OPT_6` statement. Background remaining-profit quantities, static PNE, CCE and simultaneous facility models are outside the edge.
+The two inputs have different positive membership masks, with duplicate labels 2 and 4 for 58 customers and 0 and 2 for 11 customers. Thus even a common scalar rescaling cannot identify these vectors. The 58-customer result quantifies all complete SPEs of a single instance. The fixed-cone theorem quantifies over all admissible nonzero customer-type vectors for the specified σ. The universal six-player `2W≥OPT_6` question is outside both results.
