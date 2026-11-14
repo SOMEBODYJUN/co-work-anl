@@ -1,0 +1,80 @@
+{
+  "task_id": "Boss7-summin-six-half-3b-3b-17d90d43aa54c665",
+  "worker": "Boss7 / map_worker_summin_six_half",
+  "clone_read_only": false,
+  "native_bind_check_performed": true,
+  "input_pins_verified_current": {
+    "customer-attraction/e7-summin-full-common-budget-exact-discount-and-finite-tests": "e37e6d0b6d0236152b44c5bd1d840157a5f2673bfcf99f9170af932a33e87332",
+    "customer-attraction/six-providers/exact-six-full-history-half-cover": "2d5b191271cb052c435121a41935eb3958540d5a53cb05013f13dd45a70f6e31"
+  },
+  "read_files": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "20293db840f907c32f774b0d7f72450c56e6c0ad937720699d14f7c02e693cc9",
+      "actual_read_scope": "全文；阶段三构图、条件边、write_paths、绑定/检查及不提交规则"
+    },
+    {
+      "path": "research/IMPLEMENTATION.md",
+      "sha256": "fb6613cd0c429f28b8bcfb1064076a629540cfbee8f7e3d670b0b39e78ff0d4b",
+      "actual_read_scope": "边字段、accepted conditional、edge-bind --write、edge-check、receipt合同相关章节"
+    },
+    {
+      "path": "prompts/03-map.md",
+      "sha256": "5e4d0e44f5831506e989b78f81b967a9ed91385e067604c79eb0b8a98bdc24dd",
+      "actual_read_scope": "全文；3B比较、边/收据交付和未决量词边界"
+    },
+    {
+      "path": "research/operations/map-v2/tasks/Boss7-summin-six-half-3b-3b-17d90d43aa54c665.json",
+      "sha256": "d5cc7c9fe034ddbb8f6d7a3584f6a6cabb252975b8bca34f7d51e015fc112895",
+      "actual_read_scope": "全文；对象、输入pins、reading_refs、goal及write_paths"
+    },
+    {
+      "path": "archives/customer-attraction/state/候选/全槽逐行最小价格的共同预算与有限报告--候选.md",
+      "sha256": "e952c73849b2ac561ac4ebb761b3ae0c1af06d61f27e743c593ea0103c52698a",
+      "actual_read_scope": "全文；SUMmin定义、纯p逐行证明、混合缺口、静态2m链、有限探针边界"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+      "actual_read_scope": "全文；标签目录、重复/别名/空覆盖、W/OPT、完整历史纯SPE与真实离轨续行"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/完整槽末位最小价格的精确折扣与静态充分桥--引理.md",
+      "sha256": "a2c504c39c6b1ab1d4a2a8d9f48b5a977ad2aa648aab0ac066771d22ff5ccf2a",
+      "actual_read_scope": "全文；纯查询逐行式、末位折扣、静态2m分解、路径菜单minimax与早期位置缺口"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/五人全槽行最小价格与三尾混合整数探针--程序.md",
+      "sha256": "2a628a5dca7cbf847fc23df2036d9c08fb83f7616bb82a720e3146c547db923e",
+      "actual_read_scope": "全文；五人行最小程序/固定p有限证据/三尾精确点及不得外推到全称SUMmin或六人half"
+    },
+    {
+      "path": "archives/customer-attraction/subarchives/six-providers/state/问题/六人完整历史半覆盖目标--问题.md",
+      "sha256": "0626668e7a825108fc0b3699e42394b75b1c2e2a526df220a90d91a02afc8a0c",
+      "actual_read_scope": "全文；恰六人half原题完整量词、已知边界、开放缺口"
+    },
+    {
+      "path": "archives/customer-attraction/subarchives/six-providers/问题--问题.md",
+      "sha256": "21391fbaaa2893fef7b228a345fcf1d7f5c5d1dc8a42cc642d6bfbbeccc7c065",
+      "actual_read_scope": "全文；六人子档原题与标签/历史模型边界"
+    }
+  ],
+  "mathematical_comparison": {
+    "source": "M-73d3a9bedfd449d292f04323e540d4ca",
+    "target": "customer-attraction/six-providers/exact-six-full-history-half-cover",
+    "outcome": "accepted conditional implication",
+    "condition": "SUMmin-full Σ_i min_A E_p K_i(T,A)≤W for every finite catalog, complete pure SPE σ, and mixed legal query p",
+    "result": "The finite minimax path-menu value is ≤W/m; static m-slot decomposition gives OPT_m≤2m·v_(m+1)(0)≤2m·M_path≤2W. For m=6, OPT_6≤2W.",
+    "pure_query": "For p=δ_T choose A=T in every row; forced T makes denominators positive and K_i(T,T)≤u_i(Z_i(T))≤u_i(actual), so Σ_iR_i(δ_T)≤W.",
+    "mixed_gap": "The inequality min_A E_p K_i(T,A)≥E_p min_A K_i(T,A) is generally not an equality; pure row choices A=T depend on the sampled T. No uniform mixed SUMmin proof was found.",
+    "sharpness_boundary": "The static decomposition has m comparison slots and m competitive slots, hence 2m. No 2m−1 replacement or direct SUMmin proof follows."
+  },
+  "rejected_inferences": [
+    "Pure query bounds imply the all-p mixed SUMmin budget.",
+    "Finite saved p or floating-point cone probes certify the universal SUMmin candidate.",
+    "The末位 exact discount can be recursively reused for every early position.",
+    "The static 2m chain can be sharpened to 2m−1 by deleting the forced slot without a new payment interface.",
+    "A conditional implication proves the open six-provider target or changes SUMmin truth_status."
+  ],
+  "computations": "No solver, LP, SPE search, enumeration, checkpoint, commit, push, or map done. Only source reading, SHA-256 hashing, derivation, edge-bind --write and edge-check were performed."
+}

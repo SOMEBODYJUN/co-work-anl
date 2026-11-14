@@ -1,0 +1,93 @@
+{
+  "edge_id": "boss7-ca-aggregate-attacks-unconditional-not-pivot-relay",
+  "kind": "checks",
+  "status": "accepted",
+  "source_ids": [
+    "CA-AGGREGATE-LAST-FLOOR-NO"
+  ],
+  "target_ids": [
+    "M-652ec9da89ed487d8a55aaf520859e8e"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "同一有限共同目录、单位客户、单位顺序提供者、完整纯SPE的全部有序历史量词。源端是每个整数 n≥3 各自存在的合法 2n 主题整数输入与一份全历史纯SPE；目标端保留同一原策略真实后继，要求每个非末位 actual 节点都有合法 G 及满足 (P) 的真实分支，或有玩家深度严格递增并在同原策略下闭合到真实末位。",
+  "roles": {
+    "CA-AGGREGATE-LAST-FLOOR-NO": "提供对无条件聚合桥的精确攻击：对每个 n≥3、完整目录/完整历史纯SPE量词，构造 W=n·theta_n−1 且 2W>OPT_n；另给独立 36-client、三人、43 节点证书 W=34、theta_3=12、OPT_3=36。",
+    "M-652ec9da89ed487d8a55aaf520859e8e": "提供仍然成立的条件性 2−1/m 证书：真实末位 BR≥theta_m，(P) 使当前利润不低于真实枢轴，严格增深度中继把枢轴利润传到真实末位，再求和得到 W≥m·theta_m、OPT_m≤(2−1/m)W。"
+  },
+  "explanation": "这是一条 attack-vs-conditional 边界的 context/checks 关系，而非把源端反族误作对条件引理的 refutation。源端一般构造先用两组子集势 F、Möbius 反演和正偏置完整编译，控制全部重复离轨历史；对每个 n≥3 的合法输入均有 theta_n=Kb+1、W=KC+n−1=n·theta_n−1，并由 2W−OPT_n≥KC−3M>0 得严格 half 余量。因此它确实否定无附加条件的全称命题“对所有有限实例和每份完整纯 SPE，W≥n·theta_n”。36-client 实例是独立的局部数值核：同一份 43 节点全历史策略在路径 (0,3,4) 给 (10,12,12)，W=34<3·12=36，同时 2W=68>OPT_3=36；它不是六人 half 反例。目标端的证明有不同量词：在每个需支付的 actual 节点必须先给出合法 G 和同叶保护条件 (P)，或者沿同一 sigma 选择玩家深度严格增加的枢轴中继直到真实末位；真实 IC、(P) 和末位/计数下界才推出 W≥m·theta_m 和 2−1/m。源端没有建立也没有否定这些 (P) 闭合条件，所以不削弱该 conditional certificate；它只证明不能把该条件删除。theta_m 也不能换成静态混合安全值 v_m。",
+  "scope": "精确记录：一般 n≥3 反族攻击无条件 W≥n·theta_n；36-client 只承担 n=3 的有限核验。关系不宣称源端反驳带合法 (P) 中继条件的 M-652 证书，不把 signed/fresh 辅助回归当合法一般输入，不把有限局部 (P) 检查升级为全局分支存在性。remaining 是证明任意完整 SPE 是否必然具有闭合 (P)/严格增深度中继链，或找到跨枝负项的共同预算；现有 37,376 项局部审计只固定一个末位 T，不付该普遍存在性。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/反例/三人及以上聚合末位保底--反例.md",
+      "sha256": "d316702ecc98a5976769d1d2e0094341474e0c4655deaac825bc208ae81d36e7"
+    },
+    {
+      "path": "archives/customer-attraction/state/反例/三人聚合末位保底--反例.md",
+      "sha256": "f2ff6b486d46f5e05d9acb2497ec1114ac8ab4698460fb46656d320e640fe4c0"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/子集调和势的Möbius反演--定理.md",
+      "sha256": "9c7e58e4642077607ce2b49c67e7598c97b47b4cdb1b43a34cf335dd2aec5629"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/无重复辅助博弈的完整历史编译--定理.md",
+      "sha256": "e6e06a43973f7c37673b498074475fdf8aa37338d448aff53b2bf9b2e7fa0dd4"
+    },
+    {
+      "path": "archives/customer-attraction/state/计算/静态安全值与聚合保底的精确核验--计算.md",
+      "sha256": "9ca3c8ce9e23da06f04168123bbbef57e70998a16a11b22f90c79c4c07da35f9",
+      "section": "两条互不导入的36客户重放"
+    },
+    {
+      "path": "archives/customer-attraction/state/计算/静态安全值与聚合保底的精确核验--计算.md",
+      "sha256": "9ca3c8ce9e23da06f04168123bbbef57e70998a16a11b22f90c79c4c07da35f9",
+      "section": "任意人数构造的有限辅助回归"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/aggregate-security/original/examples/customer_attraction/aggregate_theta_failure.json",
+      "sha256": "be0e1a54d3a7ddfeba327c03ce1975932e8fd1018926147b9c555fe6af180aaf"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/aggregate-security/original/evidence/certificates/customer_attraction/aggregate_theta_failure.json",
+      "sha256": "cf08edab0813de8eccee8d5466d15b40bd42c980da9b0b68c925f4ae80991010"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/合法真实分支的枢轴保护与递增中继--引理.md",
+      "sha256": "bdbb9b7b9c9a92f7901ea92340c073925ba7b0203deed4a8c6b55d57bd131f84",
+      "section": "真末位与深度严格增加的证书"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/合法真实分支的枢轴保护与递增中继--引理.md",
+      "sha256": "bdbb9b7b9c9a92f7901ea92340c073925ba7b0203deed4a8c6b55d57bd131f84",
+      "section": "任意背景的同终局保护引理"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/末位最坏背景值与目录计数界--引理.md",
+      "sha256": "6263b3d935b1c2d3d7ae6aee4016ae78cb369de1f28ddb284e8202fd21b69c3d"
+    }
+  ],
+  "reviewed_by": "Boss7",
+  "review_note": "完整实读任务声明的10个distinct files及12个reading refs：逐段核对共同模型的全部有序历史SPE量词、一般 n≥3 正编译反族、36-client 43节点证书、2W>OPT_n 余量、M-652 的(P)同叶保护与严格增深度中继条件、末位theta计数界，并将无条件攻击与条件证书严格分层。此边刻意采用 checks/context：它记录 source 对无条件加强的精确攻击和 target 条件的保留，不伪造 refutes 关系；未运行新科学搜索或改写正文。",
+  "endpoint_pins": {
+    "CA-AGGREGATE-LAST-FLOOR-NO": "699ba4cd7ebf119cdeb83f960aa4519f05068694f6f8507893ff071f155045ed",
+    "M-652ec9da89ed487d8a55aaf520859e8e": "b0de0b4ae24b930c595e0ca9018ca16eb7eae2c8a990f2cf203efcbae9a4e484"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/反例/三人及以上聚合末位保底--反例.md": "d316702ecc98a5976769d1d2e0094341474e0c4655deaac825bc208ae81d36e7",
+    "archives/customer-attraction/state/反例/三人聚合末位保底--反例.md": "f2ff6b486d46f5e05d9acb2497ec1114ac8ab4698460fb46656d320e640fe4c0",
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+    "archives/customer-attraction/state/定理/子集调和势的Möbius反演--定理.md": "9c7e58e4642077607ce2b49c67e7598c97b47b4cdb1b43a34cf335dd2aec5629",
+    "archives/customer-attraction/state/定理/无重复辅助博弈的完整历史编译--定理.md": "e6e06a43973f7c37673b498074475fdf8aa37338d448aff53b2bf9b2e7fa0dd4",
+    "archives/customer-attraction/state/计算/静态安全值与聚合保底的精确核验--计算.md": "9ca3c8ce9e23da06f04168123bbbef57e70998a16a11b22f90c79c4c07da35f9",
+    "archives/customer-attraction/tools/evidence/aggregate-security/original/examples/customer_attraction/aggregate_theta_failure.json": "be0e1a54d3a7ddfeba327c03ce1975932e8fd1018926147b9c555fe6af180aaf",
+    "archives/customer-attraction/tools/evidence/aggregate-security/original/evidence/certificates/customer_attraction/aggregate_theta_failure.json": "cf08edab0813de8eccee8d5466d15b40bd42c980da9b0b68c925f4ae80991010",
+    "archives/customer-attraction/state/引理/合法真实分支的枢轴保护与递增中继--引理.md": "bdbb9b7b9c9a92f7901ea92340c073925ba7b0203deed4a8c6b55d57bd131f84",
+    "archives/customer-attraction/state/引理/末位最坏背景值与目录计数界--引理.md": "6263b3d935b1c2d3d7ae6aee4016ae78cb369de1f28ddb284e8202fd21b69c3d"
+  },
+  "review_digest": "82e61c083a0aa8c89765a43c2f583ba1bca609e1c0890d28104d82fca151235b"
+}

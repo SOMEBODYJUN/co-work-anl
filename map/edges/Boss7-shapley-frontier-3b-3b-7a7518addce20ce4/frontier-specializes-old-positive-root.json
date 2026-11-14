@@ -1,0 +1,85 @@
+{
+  "edge_id": "ca-boss7-shapley-frontier-specializes-positive-root-1-10",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "CA-FIXED-00001-SHAPLEY-UP-FLOOR-FRONTIER-v1"
+  ],
+  "target_ids": [
+    "CA-TRUNCATED-SHAPLEY-POSITIVE-ROOT-UP-NO-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "同一五人七标签共同五阶截断 Shapley 模型、同一冻结完整有序策略 σ（2801 个历史，实际路径 00001）、外部标签 {2,3,4,5,6} 的集合值交换对称、W=C(01)=1；比较收益始终沿强制动作后的同一 σ 真实续局计算。源定理的地板参数 δ 取 1/10 时，所用仿射取等族正好是目标反例的冻结输入；不把条件扩大到其它策略、非截断集合域或客户实现。",
+  "roles": {
+    "CA-FIXED-00001-SHAPLEY-UP-FLOOR-FRONTIER-v1": "在固定 σ 与外部对称输入锥上给出完整 δ-frontier：可行域 [0,1/3]，固定 J=(2,3,4,5,6) 的精确上包络、两段切换、所有五槽（含重复槽）的阈值与 41 类比较对偶。",
+    "CA-TRUNCATED-SHAPLEY-POSITIVE-ROOT-UP-NO-v1": "提供 δ=1/10 的显式正根完整纯 SPE：W=1、根删除边际 (1/5,1/10)、唯一最优 J、C(J)=9/8 与 Q_J=53/40，并以 D_J=4W+Q_J-5C(J)=-3/10 反驳该点的均匀付款全称。"
+  },
+  "explanation": "这是同一冻结策略锥上的参数化特化，并非把目标反例升级为新的全域模型。源的两段仿射取等族在 δ=1/10（属于第一段）给 C(kJ)=k(1-δ)/4（k=1,…,5）、C(0+kJ)=9/10、C(1)=4/5、C(1+kJ)=C(01+kJ)=1；因此 C(J)=5·(9/10)/4=9/8，根删除边际为 1/5 与 1/10，且 verifier 重放得到实际路径 00001、Q_J=53/40。按 L_J=5C(J)-4W-Q_J，L_J=1-7/10=3/10；目标证书的 UP_slack=D_J=-3/10 恰为 -L_J。前沿切换由 1-7δ=8/3-22δ 得 δ=1/9；在 δ=4/33 时第二段 L_J=0，且 all-comparison-duals 给所有 41 个五槽类别（J 类 b_T=0，其余最大 b_T=-35/33）付款，故 δ<4/33 是该固定 σ/对称截断输入锥的精确失败区间。δ=1/6 只是取等族中 J 与其它支持的最优性并列边界，不是均匀付款失败阈值；δ=1/3 是根 IC 与次模性共同给出的可行地板端点。可迁移到目标对象的内容仅是同一 σ、同一 J、同一查询定义下的 δ=1/10 数值、失败符号和完整历史核验；不能把 frontier 的 δ≥4/33 全称保证移到任意策略或目标对象未声明的模型。R275 broader common-submodular 证据（floor 0.1、exact candidate 88/57、2801 历史/16806 偏离）只作外部压力测试且明确 customer_attraction_half_status=OPEN，不能替代客户目录或逆实现证明。更不能迁移到全域次模或五人 net-Q：目标 C 不能延拓至七标签全子集，因为 A={0}∪(J\\{2}) 与 A'={0}∪(J\\{3}) 满足 C(A)=C(A')=C(A∩A')=9/10 而 C(J)=9/8>9/10；也不存在非负单位客户实现，因为 C({0,a})=C({0})=9/10 对每个 a∈J 会把所有 J 客户质量压在 0 的总质量 9/10 以下，却要求 C(J)=9/8。五人 net-Q 对象还使用另外两份冻结策略（00011、01010）和单位客户类型的 Q(c,J)=Σ_x d_x/(1+c_x)，而本边的 Q_J 是截断 Shapley 真查询和；没有从本 frontier 到 net-Q 的模型/实现桥，重复槽也不由 net-Q 的恰五个不同标签匹配判据自动覆盖。",
+  "scope": "仅适用于该一张 00001 冻结完整策略、外部交换对称的五阶截断 Shapley 输入锥及其 δ 参数化；在 δ=1/10 精确实例化目标正根反例。它攻击的是该固定策略锥内的均匀付款命题，不是否定全域次模、非负单位客户或其它五人 net-Q 命题。",
+  "whole_result": "CA-FIXED frontier 以 δ=1/10 精确包含 CA-TRUNCATED 的旧正根点：L_J=3/10、D_J=-3/10，所有 2801 历史和 16806 条偏离保持同一证书。frontier 进一步证明固定 σ/对称截断输入的全称锐阈值：0≤δ<4/33 时取等族 J 严格失败，δ≥4/33 时每个可行输入和每个合法五槽元组均付款；这两个量词与目标仅有的 δ=1/10 存在性反例必须分开。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/五阶截断Shapley冻结00001策略的根边际门槛与均匀付款锐界--定理.md",
+      "sha256": "4f10137a898aabd6521076583229d66a3be0ba354dfa8c4031c2cfc91df3b26b",
+      "section": "命题与量词"
+    },
+    {
+      "path": "archives/customer-attraction/state/反例/五阶截断共同次模的正根均匀付款反例--反例.md",
+      "sha256": "9ce772e78a3c811491b907e5ceb0a9706ca2811f5f670e1e95a6ca4749cc13cf",
+      "section": "命题与精确模型"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/truncated-shapley-positive-root-uniform-payment/positive-tenth-witness.json",
+      "sha256": "ea7e0c350f3d617b6522e07652b0b5c22b2acda9940d5176d9bb023d3b7ff7f6"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/fixed-00001-shapley-up-floor/verify.py",
+      "sha256": "2f92374ee256ff3260c5742e5a754f7278f2b139538df86fbb3fcc9c4fc7f6bf"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/fixed-00001-shapley-up-floor/verification.json",
+      "sha256": "9f2034fe37a6c04580a8b27aa53637b995c668672c2ee36e57699f9fff333cb7"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/fixed-00001-shapley-up-floor/all-comparison-duals.json",
+      "sha256": "f89fbb892447b16703fa3109485db249d852579a4d7413b00def0b012d4727da"
+    },
+    {
+      "path": "archives/customer-attraction/state/审查/R275可信搜索对称DAG与共同次模投影增量--审查.md",
+      "sha256": "566c829c1a9dc40f83d7363d6c577fedd2a8624d4310c9049897eb7c14304718",
+      "section": "4. broader common-submodular Shapley 类只作外部压力测试"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/R275-credible-search-20261031/original/eb29376c023b5cd9726a__submodular_joint_m5p7_q32_genuine.json",
+      "sha256": "48dd63e02d6623f34967db6bf8e22a55f303f6fe72b1f06a7847e36e139110a0"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/truncated-shapley-positive-root-uniform-payment/verify_witness.py",
+      "sha256": "e144bd35fed2c3ddfe5295b01cb6a679c6696646c0742d472160571ab91c56bc"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/truncated-shapley-positive-root-uniform-payment/verification.json",
+      "sha256": "b73b5889d03a8727c180c845720481c867c3a6c80a2731d702fb47a0f376c463"
+    }
+  ],
+  "reviewed_by": "Boss7 / fresh worker",
+  "review_note": "已按任务十个 reading_pass 全文/全字节读取并逐项理解；positive-tenth-witness.json 与 R275 genuine JSON 均完整解析，未把输出截断当作实读。独立运行 verify_witness.py 与 fixed-00001 verify.py，输出与登记 verification.json 一致；未运行 checkpoint、commit、push 或 map done。",
+  "endpoint_pins": {
+    "CA-FIXED-00001-SHAPLEY-UP-FLOOR-FRONTIER-v1": "665f7fb160a3a513bc1527f654a64f807db8dd6f6a0a73c78cb6645ca6c77a6d",
+    "CA-TRUNCATED-SHAPLEY-POSITIVE-ROOT-UP-NO-v1": "7cf8857e34481659e269890e3c1221e68306eae72bf124a1ce8b430c0a70d861"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/五阶截断Shapley冻结00001策略的根边际门槛与均匀付款锐界--定理.md": "4f10137a898aabd6521076583229d66a3be0ba354dfa8c4031c2cfc91df3b26b",
+    "archives/customer-attraction/state/反例/五阶截断共同次模的正根均匀付款反例--反例.md": "9ce772e78a3c811491b907e5ceb0a9706ca2811f5f670e1e95a6ca4749cc13cf",
+    "archives/customer-attraction/tools/evidence/truncated-shapley-positive-root-uniform-payment/positive-tenth-witness.json": "ea7e0c350f3d617b6522e07652b0b5c22b2acda9940d5176d9bb023d3b7ff7f6",
+    "archives/customer-attraction/tools/evidence/fixed-00001-shapley-up-floor/verify.py": "2f92374ee256ff3260c5742e5a754f7278f2b139538df86fbb3fcc9c4fc7f6bf",
+    "archives/customer-attraction/tools/evidence/fixed-00001-shapley-up-floor/verification.json": "9f2034fe37a6c04580a8b27aa53637b995c668672c2ee36e57699f9fff333cb7",
+    "archives/customer-attraction/tools/evidence/fixed-00001-shapley-up-floor/all-comparison-duals.json": "f89fbb892447b16703fa3109485db249d852579a4d7413b00def0b012d4727da",
+    "archives/customer-attraction/state/审查/R275可信搜索对称DAG与共同次模投影增量--审查.md": "566c829c1a9dc40f83d7363d6c577fedd2a8624d4310c9049897eb7c14304718",
+    "archives/customer-attraction/tools/evidence/R275-credible-search-20261031/original/eb29376c023b5cd9726a__submodular_joint_m5p7_q32_genuine.json": "48dd63e02d6623f34967db6bf8e22a55f303f6fe72b1f06a7847e36e139110a0",
+    "archives/customer-attraction/tools/evidence/truncated-shapley-positive-root-uniform-payment/verify_witness.py": "e144bd35fed2c3ddfe5295b01cb6a679c6696646c0742d472160571ab91c56bc",
+    "archives/customer-attraction/tools/evidence/truncated-shapley-positive-root-uniform-payment/verification.json": "b73b5889d03a8727c180c845720481c867c3a6c80a2731d702fb47a0f376c463"
+  },
+  "review_digest": "d6fa26d207a811671c0ecd37bc76eaab0301c943a2b3b9517b89a0ddcc2a3e75"
+}

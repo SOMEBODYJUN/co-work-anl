@@ -1,0 +1,66 @@
+{
+  "task_id": "Boss7-aggregate-floor-pivot-3b-3b-677e813b56475fca",
+  "stage": "3B",
+  "task_definition_pin": "c4a2503145ec8d1e1ed6599c266fce5ce9b92af51683b86a3d8e72588919c14e",
+  "object_ids": [
+    "CA-AGGREGATE-LAST-FLOOR-NO",
+    "M-652ec9da89ed487d8a55aaf520859e8e"
+  ],
+  "read_object_ids": [],
+  "input_pins": {
+    "CA-AGGREGATE-LAST-FLOOR-NO": "699ba4cd7ebf119cdeb83f960aa4519f05068694f6f8507893ff071f155045ed",
+    "M-652ec9da89ed487d8a55aaf520859e8e": "b0de0b4ae24b930c595e0ca9018ca16eb7eae2c8a990f2cf203efcbae9a4e484"
+  },
+  "coverage": {
+    "CA-AGGREGATE-LAST-FLOOR-NO": {
+      "state": "linked",
+      "object_pin": "699ba4cd7ebf119cdeb83f960aa4519f05068694f6f8507893ff071f155045ed",
+      "comparison_scope": "完整阅读一般 n≥3 聚合末位反族、36-client 43节点实例、共同模型、Möbius/完整历史编译、两段精确核验及 JSON 证书；与 M-652 的 (P)/严格增深度中继条件逐项对照。",
+      "reason": "反族确实攻击无条件 W≥n·theta_n：每个 n≥3 有 W=n·theta_n−1 且 2W>OPT_n；36-client 只承担 W=34、theta_3=12、OPT_3=36 的有限局部核验。checks/context 边明确不把该攻击升级为对条件中继证书的 refutes。",
+      "context_edge_ids": [
+        "boss7-ca-aggregate-attacks-unconditional-not-pivot-relay"
+      ]
+    },
+    "M-652ec9da89ed487d8a55aaf520859e8e": {
+      "state": "linked",
+      "object_pin": "b0de0b4ae24b930c595e0ca9018ca16eb7eae2c8a990f2cf203efcbae9a4e484",
+      "comparison_scope": "完整阅读枢轴 lemma 的 (P) 同叶保护、真实末位 theta 计数界和严格增深度中继段；核其条件量词与反族的无条件攻击边界。",
+      "reason": "目标 2−1/m 证书仍保留：要求每个 actual 节点有合法 G、(P) 真实后继或同 sigma 的严格增深度闭合链。反族未提供也未否定这些前提；remaining 是普遍闭合存在性或跨枝负项预算。",
+      "context_edge_ids": [
+        "boss7-ca-aggregate-attacks-unconditional-not-pivot-relay"
+      ]
+    }
+  },
+  "assets": [
+    {
+      "path": "map/edges/Boss7-aggregate-floor-pivot-3b-3b-677e813b56475fca/aggregate-attacks-unconditional-not-pivot-relay.json",
+      "sha256": "7ef5fbfcd18263885753a16220bdbc0500146b8f8f0e704723e2fc16cce0631a"
+    },
+    {
+      "path": "map/edges/Boss7-aggregate-floor-pivot-3b-3b-677e813b56475fca/review.md",
+      "sha256": "941a1ef240905c7703c9c4f1149edabf6b02fa9227b0b6ea3454068c09b5577b"
+    },
+    {
+      "path": "map/edges/Boss7-aggregate-floor-pivot-3b-3b-677e813b56475fca/reading-ledger.json",
+      "sha256": "9e9fed3f2227dee77dd2431a26a67c25c08b99ad2e7fa0feb46a1b4d75857e34"
+    }
+  ],
+  "edge_ids": [],
+  "context_edge_ids": [
+    "boss7-ca-aggregate-attacks-unconditional-not-pivot-relay"
+  ],
+  "reviewed_by": "Boss7",
+  "edge_binding_status": "edge-bind --write and edge-check passed",
+  "edge_digests": {
+    "boss7-ca-aggregate-attacks-unconditional-not-pivot-relay": "82e61c083a0aa8c89765a43c2f583ba1bca609e1c0890d28104d82fca151235b"
+  },
+  "follow_up_tasks": [],
+  "closed_overlaps": [],
+  "execution_boundary": {
+    "scientific_reruns": 0,
+    "checkpoint": false,
+    "commit": false,
+    "push": false,
+    "map_done": false
+  }
+}

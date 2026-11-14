@@ -1,0 +1,77 @@
+{
+  "task_id": "Boss7-summin-six-half-3b-3b-17d90d43aa54c665",
+  "definition_pin": "d5cc7c9fe034ddbb8f6d7a3584f6a6cabb252975b8bca34f7d51e015fc112895",
+  "reviewed_by": "Boss7 / map_worker_summin_six_half",
+  "coverage": {
+    "customer-attraction/e7-summin-full-common-budget-exact-discount-and-finite-tests": {
+      "state": "linked",
+      "object_pin": "e37e6d0b6d0236152b44c5bd1d840157a5f2673bfcf99f9170af932a33e87332",
+      "comparison_scope": "完整实读候选正文及其纯查询、混合查询、静态 2m、末位折扣和有限探针边界；本边把 SUMmin-full 作为全称条件前提，不把开放候选改为已证。",
+      "reason": "在条件 (U) Σ_i min_A E_p K_i(T,A)≤W 对全部实例、完整纯 SPE σ、混合 p 成立时，有限路径菜单 minimax 值 M_path≤W/m；路径菜单是所有合法 m 槽静态背景的子集，静态计数/Jensen 给 OPT_m≤2m v_(m+1)(0)≤2m M_path≤2W。纯 p=δ_T 的 A=T 逐行支付已证；混合 min/expectation 交换和全称 SUMmin 仍开放。",
+      "edge_ids": [
+        "boss7-summin-conditionally-pays-six-half-3b-3b-17d90d43aa54c665"
+      ]
+    },
+    "customer-attraction/six-providers/exact-six-full-history-half-cover": {
+      "state": "linked",
+      "object_pin": "2d5b191271cb052c435121a41935eb3958540d5a53cb05013f13dd45a70f6e31",
+      "comparison_scope": "完整实读六人原题、共同模型与子档问题；承接的只是 SUMmin-full 条件成立时的静态充分推导，最终恰六人 half 原题 truth_status 继续 open。",
+      "reason": "对一般 m 的条件链在 m=6 时给 OPT_6≤12(W/6)=2W。完整保留共同目录、空/别名/重复标签、全部离轨弱平局和真实后继量词；不能由此宣称任意六人 SPE 已满足 half。",
+      "edge_ids": [
+        "boss7-summin-conditionally-pays-six-half-3b-3b-17d90d43aa54c665"
+      ]
+    }
+  },
+  "comparison_dispositions": [
+    {
+      "core_id": "customer-attraction/e7-summin-full-common-budget-exact-discount-and-finite-tests",
+      "peer_id": "customer-attraction/six-providers/exact-six-full-history-half-cover",
+      "disposition": "conditional-logical-support",
+      "edge_ids": [
+        "boss7-summin-conditionally-pays-six-half-3b-3b-17d90d43aa54c665"
+      ],
+      "reason": "ALL 前提为全称 SUMmin-full；在该前提下静态 2m 链完整推出六人 half。该边不证明 SUMmin，也不改变目标 open 状态。"
+    }
+  ],
+  "closed_overlaps": [],
+  "follow_up_tasks": [],
+  "assets": [
+    {
+      "path": "map/edges/Boss7-summin-six-half-3b-3b-17d90d43aa54c665/summin-conditionally-pays-six-half.json",
+      "sha256": "699209dd36c7bc2c5f7b5e040bb2adffe481cea5a35bd52188447b03b7974a5f"
+    },
+    {
+      "path": "map/edges/Boss7-summin-six-half-3b-3b-17d90d43aa54c665/review.md",
+      "sha256": "c5ca559fa6824bb6d9008b494a7de53f6bf098d8cfc3de72ca638e1374a021aa"
+    },
+    {
+      "path": "map/edges/Boss7-summin-six-half-3b-3b-17d90d43aa54c665/reading-ledger.json",
+      "sha256": "e0c2439b9bb28c2aab5576cbb978ebb6766e198d1914f888020cf5f4c0e1f48f"
+    }
+  ],
+  "checks": {
+    "edge_bind": {
+      "command": "python work.py research edge-bind map/edges/Boss7-summin-six-half-3b-3b-17d90d43aa54c665/summin-conditionally-pays-six-half.json --write",
+      "status": "passed",
+      "endpoint_pins": {
+        "customer-attraction/e7-summin-full-common-budget-exact-discount-and-finite-tests": "e37e6d0b6d0236152b44c5bd1d840157a5f2673bfcf99f9170af932a33e87332",
+        "customer-attraction/six-providers/exact-six-full-history-half-cover": "2d5b191271cb052c435121a41935eb3958540d5a53cb05013f13dd45a70f6e31"
+      },
+      "review_digest": "8aad3a6fd823092a2bfbbddabaafcc9d2385737aa276dfbdb66dc78067938d61"
+    },
+    "edge_check": {
+      "command": "python work.py research edge-check map/edges/Boss7-summin-six-half-3b-3b-17d90d43aa54c665/summin-conditionally-pays-six-half.json",
+      "status": "passed",
+      "result": "edge-structure-valid-not-a-mathematical-verdict",
+      "edge_status": "accepted",
+      "proof_scope": "whole"
+    }
+  },
+  "reading_notes": {
+    "support_file": "map/edges/Boss7-summin-six-half-3b-3b-17d90d43aa54c665/review.md",
+    "ledger_file": "map/edges/Boss7-summin-six-half-3b-3b-17d90d43aa54c665/reading-ledger.json",
+    "fresh": "完整实读任务声明的六份正文：SUMmin 候选、共同模型、完整槽末位静态桥、五人全槽程序合同、六人完整历史 half 原题、六人子档问题；另读 AGENTS、IMPLEMENTATION、03-map 与本任务定义。",
+    "not_run": "无 LP、SPE 搜索、枚举、科学程序、checkpoint、commit、push 或 map done；只做源文阅读、SHA-256、解析推导、edge-bind --write 与 edge-check。",
+    "scope_remaining": "混合 SUMmin 全称付款、min/expectation 交换、早期跨枝动态共同付款、2m−1 sharp 以及无条件六人 half 仍开放。"
+  }
+}

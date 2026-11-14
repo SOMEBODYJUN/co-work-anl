@@ -1,0 +1,80 @@
+{
+  "edge_id": "boss7-summin-conditionally-pays-six-half-3b-3b-17d90d43aa54c665",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/e7-summin-full-common-budget-exact-discount-and-finite-tests"
+  ],
+  "target_ids": [
+    "customer-attraction/six-providers/exact-six-full-history-half-cover"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "reviewed_by": "Boss7 / map_worker_summin_six_half",
+  "conditions": "有限单位客户、有限非空共同标签目录及任意覆盖映射；单位权提供者依固定次序观察全部有序历史；允许空覆盖、同覆盖异标签、重复行动、零客户和任意弱平局。固定一份定义在全部合法有序历史上的完整纯SPE σ，actual 叶 z，m 个位置的真实完整强制后继 Z_i(A)，以及同一个合法查询分布 p。对所有这些实例、σ、p 假设 SUMmin-full：(U) Σ_i min_{A∈S} E_{T∼p} K_i(T,A)≤W(σ)，其中 K_i(T,A)=Σ_{x∈T}1/(1+c_x(Z_i(A)))；最终目标取 m=6。静态比较使用任意 m 槽合法背景分布 Q，竞争槽数仍是 m。",
+  "roles": {
+    "customer-attraction/six-providers/exact-six-full-history-half-cover": "接收在 (U) 全称成立时由静态 2m 链推出的六人目标；原题在一般目录/一般完整SPE上的 truth_status 仍 open。",
+    "customer-attraction/e7-summin-full-common-budget-exact-discount-and-finite-tests": "提供 SUMmin-full 的候选共同预算、纯查询逐行已证和混合 min/expectation 缺口；在本边中 (U) 作为未证的条件前提。"
+  },
+  "explanation": "记 R_i(p)=min_A E_p K_i(T,A)。(U) 逐 p 给 min_i R_i(p)≤W/m。有限路径菜单 M_path=max_p min_{i,A}E_pK_i(T,A)，由有限矩阵 minimax 等于对菜单终局 Z_i(A) 的列混合 Q 取 min_Q max_T E_Q K(T,y)，故 M_path≤W/m。对任意合法 m 槽静态背景分布 Q，令 L_x=E_Q c_x(y)、a_A=m^{-1}E_Q#{j:y_j=A}、f_L(T)=Σ_{x∈T}(1+L_x)^{-1}、M_L=max_T f_L(T)。任意 m 个比较主题的并集 O 满足 |O|≤Σ_j f_L(T_j)+Σ_x L_x/(1+L_x)=Σ_j f_L(T_j)+mΣ_A a_A f_L(A)≤2mM_L；倒数凸性给 f_L(T)≤E_Q K(T,y)，从而 OPT_m≤2m v_{m+1}(0)，其中 v_{m+1}(0)是所有 m 槽静态背景的安全值。路径菜单是全部 m 槽背景的子集，所以 v_{m+1}(0)≤M_path。合并得 OPT_m≤2mM_path≤2W；置 m=6 得 OPT_6≤12(W/6)=2W。纯 p=δ_T 的逐行付款确实成立：取 A=T，强制者保证 T 中分母正，K_i(T,T)≤u_i(Z_i(T))≤u_i(actual)，最后一步是同一 σ 真实离轨 IC。混合 p 不能由此推出，因为 min_A E_pK_i(T,A)一般严格大于或不同于 E_p min_AK_i(T,A)，纯证明的 A=T 随抽样 T 变化；候选自身未证 (U)。当前 m 个比较槽/m 个竞争槽的静态分解没有 2m−1 sharp 余项，也没有早期跨枝共同付款；有限保存 p、浮点锥和末位折扣不能升级为全称 SUMmin。",
+  "whole_result": "条件性完整推导：若 SUMmin-full (U) 对所有有限共同目录、完整纯SPE σ 和混合 p 成立，则对 m=6 的每份完整 σ 有 OPT_6≤2W(σ)。该结果不证明 (U)，不改变六人目标的 open 状态，也不声称 2m−1。",
+  "scope": "仅承接 SUMmin-full 作为全称共同预算前提到恰六人 half 的静态充分关系；静态 2m 链本身对一般 m 有效，但本边目标专门取 m=6。保留原模型全部标签/历史量词、真实后继和弱平局。",
+  "remaining": "混合查询的统一 SUMmin 预算、min/expectation 交换或其它动态共同付款仍未证明；不能由纯查询证明、五份保存 p、浮点有限锥或末位公式推出。不能把竞争槽从 m 改为 m−1，因而不能得到 2m−1 sharp；不能直接证明六人原题或任意 SUMmin。",
+  "evidence": [
+    {
+      "path": "map/edges/Boss7-summin-six-half-3b-3b-17d90d43aa54c665/review.md",
+      "section": "2. 已证明的条件边",
+      "sha256": "c5ca559fa6824bb6d9008b494a7de53f6bf098d8cfc3de72ca638e1374a021aa"
+    },
+    {
+      "path": "archives/customer-attraction/state/候选/全槽逐行最小价格的共同预算与有限报告--候选.md",
+      "section": "真完整列、逐行最小与开放付款",
+      "sha256": "e952c73849b2ac561ac4ebb761b3ae0c1af06d61f27e743c593ea0103c52698a"
+    },
+    {
+      "path": "archives/customer-attraction/state/候选/全槽逐行最小价格的共同预算与有限报告--候选.md",
+      "section": "静态充分关系与完整槽数",
+      "sha256": "e952c73849b2ac561ac4ebb761b3ae0c1af06d61f27e743c593ea0103c52698a"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/完整槽末位最小价格的精确折扣与静态充分桥--引理.md",
+      "section": "完整槽的静态比较常数恰按2m计",
+      "sha256": "a2c504c39c6b1ab1d4a2a8d9f48b5a977ad2aa648aab0ac066771d22ff5ccf2a"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "section": "策略、真实续局与全部历史量词",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+    },
+    {
+      "path": "archives/customer-attraction/subarchives/six-providers/state/问题/六人完整历史半覆盖目标--问题.md",
+      "section": "当前可确立的边界",
+      "sha256": "0626668e7a825108fc0b3699e42394b75b1c2e2a526df220a90d91a02afc8a0c"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/五人全槽行最小价格与三尾混合整数探针--程序.md",
+      "section": "2. 行最小搜索的完整合同",
+      "sha256": "2a628a5dca7cbf847fc23df2036d9c08fb83f7616bb82a720e3146c547db923e"
+    },
+    {
+      "path": "archives/customer-attraction/subarchives/six-providers/问题--问题.md",
+      "section": "恰六人半覆盖",
+      "sha256": "21391fbaaa2893fef7b228a345fcf1d7f5c5d1dc8a42cc642d6bfbbeccc7c065"
+    }
+  ],
+  "endpoint_pins": {
+    "customer-attraction/e7-summin-full-common-budget-exact-discount-and-finite-tests": "e37e6d0b6d0236152b44c5bd1d840157a5f2673bfcf99f9170af932a33e87332",
+    "customer-attraction/six-providers/exact-six-full-history-half-cover": "2d5b191271cb052c435121a41935eb3958540d5a53cb05013f13dd45a70f6e31"
+  },
+  "evidence_pins": {
+    "map/edges/Boss7-summin-six-half-3b-3b-17d90d43aa54c665/review.md": "c5ca559fa6824bb6d9008b494a7de53f6bf098d8cfc3de72ca638e1374a021aa",
+    "archives/customer-attraction/state/候选/全槽逐行最小价格的共同预算与有限报告--候选.md": "e952c73849b2ac561ac4ebb761b3ae0c1af06d61f27e743c593ea0103c52698a",
+    "archives/customer-attraction/state/引理/完整槽末位最小价格的精确折扣与静态充分桥--引理.md": "a2c504c39c6b1ab1d4a2a8d9f48b5a977ad2aa648aab0ac066771d22ff5ccf2a",
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+    "archives/customer-attraction/subarchives/six-providers/state/问题/六人完整历史半覆盖目标--问题.md": "0626668e7a825108fc0b3699e42394b75b1c2e2a526df220a90d91a02afc8a0c",
+    "archives/customer-attraction/state/程序/五人全槽行最小价格与三尾混合整数探针--程序.md": "2a628a5dca7cbf847fc23df2036d9c08fb83f7616bb82a720e3146c547db923e",
+    "archives/customer-attraction/subarchives/six-providers/问题--问题.md": "21391fbaaa2893fef7b228a345fcf1d7f5c5d1dc8a42cc642d6bfbbeccc7c065"
+  },
+  "review_digest": "8aad3a6fd823092a2bfbbddabaafcc9d2385737aa276dfbdb66dc78067938d61",
+  "review_note": "已完整实读 SUMmin 候选、共同目录完整历史模型、完整槽末位静态桥、五人程序合同、恰六人原题及子档问题。逐行核纯 p=δ_T 的 A=T 证明；重新写出有限路径菜单 minimax、任意 m 槽静态分解 OPT_m≤2m v_(m+1)(0)、路径子集 v≤M_path，以及 (U) 给 M_path≤W/m，故 m=6 时 OPT_6≤2W。混合 min/expectation 交换仍未证；2m−1 需要删去竞争槽并另付动态债务，当前材料不支持；有限 p/浮点探针和末位折扣不升级为全称 SUMmin。条件边不改变两个端点的 open truth_status。"
+}
