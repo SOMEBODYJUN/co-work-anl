@@ -109,11 +109,69 @@
       ]
     }
   },
-  "state": "claimed",
+  "state": "done",
   "owner": "Boss7",
-  "request_id": "d95da322b9d74356849b8c0aec411dee",
+  "request_id": "7abdbb2eaba04a1ab9e9099c0e0d0505",
   "requests": {
     "dfb36dce1f0844fd821dc514913e080f": "plan",
-    "d95da322b9d74356849b8c0aec411dee": "claim"
+    "d95da322b9d74356849b8c0aec411dee": "claim",
+    "7abdbb2eaba04a1ab9e9099c0e0d0505": "done"
+  },
+  "edge_paths": {
+    "boss3-wave8-new-3a-16204087f3260d47-relaxed-cone-to-optimal-J": "map/edges/boss3-wave8-new-3a-16204087f3260d47/optimal-J-specializes-relaxed-cone.json"
+  },
+  "receipt": {
+    "task_id": "boss3-wave8-new-3a-16204087f3260d47",
+    "stage": "3A",
+    "object_ids": [
+      "customer-attraction/fixed-distinct-prefix-individual-cone-optimal-J-exact-13-over-4"
+    ],
+    "read_object_ids": [
+      "M-7dc7b597f43c46dc9ef0620ec1cc79b4"
+    ],
+    "input_pins": {
+      "customer-attraction/fixed-distinct-prefix-individual-cone-optimal-J-exact-13-over-4": "be7dbd04355e636cf6468a9aac72544a6da9a759ef2c4b338bf3284b82242bad",
+      "M-7dc7b597f43c46dc9ef0620ec1cc79b4": "68ec51aa4b1818f9febf0ce78cacc43c1a5e341e98270c46bb0e03124e352427"
+    },
+    "status": "complete",
+    "coverage": {
+      "customer-attraction/fixed-distinct-prefix-individual-cone-optimal-J-exact-13-over-4": {
+        "state": "linked",
+        "object_pin": "be7dbd04355e636cf6468a9aac72544a6da9a759ef2c4b338bf3284b82242bad",
+        "comparison_scope": "完整读取核心定理、共享 M-7dc… 旧障碍、共同目录完整历史模型、两份精确证书与两份验证器。比较固定四人五标签 sigma(h)=0/2、J={0,1,3,4} 的 permutation_prefix 逐行动限制锥；核旧 O_J=52,OPT4=67 的67客户见证与新 O_J=OPT4=52 的52客户见证、63条非零筛选行、三条权3对偶和13/4锐值。",
+        "reason": "核心定理是旧固定锥障碍在新增 O_J=OPT4 条件下的严格 specialization：同一逐客户对偶恒等式保留宽锥上界，新的52客户点达到13/4且J确为最优；旧67客户点违反该条件，故无反向等价。明确保留13条完整真IC负行、非SPE和一般效率界开放缺口。",
+        "edge_ids": [
+          "boss3-wave8-new-3a-16204087f3260d47-relaxed-cone-to-optimal-J"
+        ]
+      }
+    },
+    "assets": [
+      {
+        "path": "map/edges/boss3-wave8-new-3a-16204087f3260d47/optimal-J-specializes-relaxed-cone.json",
+        "sha256": "5a9ad9b15c08646035cf09b564d4f89ad4edec1d88a0774c5454e29a84adfb50"
+      },
+      {
+        "path": "map/edges/boss3-wave8-new-3a-16204087f3260d47/reading-ledger.json",
+        "sha256": "4d19248f42cae710b3ee630a9be6c101f8059bb96481695db5f503e30204fa53"
+      }
+    ],
+    "closed_overlaps": [],
+    "follow_up_tasks": [],
+    "reviewed_by": "map_worker_f (Boss7 fresh worker)",
+    "review_note": "七个 declared reading_refs 已按完整正文/完整 JSON/完整源码语义读取；shared_read dependency 已核对。关系方向为 M-7dc…（宽锥） specializes to core theorem（加 O_J=OPT4 的子域），不是 equivalent_to。edge-bind 与 edge-check 已通过；edge-check 结果为 edge-structure-valid-not-a-mathematical-verdict。",
+    "reading_ledger": {
+      "path": "map/edges/boss3-wave8-new-3a-16204087f3260d47/reading-ledger.json",
+      "sha256": "4d19248f42cae710b3ee630a9be6c101f8059bb96481695db5f503e30204fa53"
+    },
+    "mathematical_boundary": {
+      "whole_result": "在固定 sigma/J permutation_prefix 锥上，加入 O_J=OPT4 后精确值仍为13/4，52客户点达到；旧67客户点不满足最优J。",
+      "remaining": "完整780条真IC中的13条负行、完整纯SPE、所有其他J/重复前缀及一般 OPT4/W 效率结论均未由本边支付。"
+    },
+    "validation": {
+      "edge_check": "edge-structure-valid-not-a-mathematical-verdict",
+      "new_scientific_runs": 0,
+      "optimizer_calls": 0,
+      "hashes_rechecked": 7
+    }
   }
 }

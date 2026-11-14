@@ -1,0 +1,62 @@
+{
+  "task_id": "customer-attraction-3a-3a-4716f6fb7b7da921",
+  "worker": "map_worker_e",
+  "owner": "Boss7",
+  "request_id": "36ff2341a06a44d4aec7a52bd378871a",
+  "coverage": {
+    "customer-attraction/R275-direct-global-multigadget-m5": {
+      "state": "linked",
+      "object_pin": "4d681b7a991d60774a0eb517991933d09b7b094a9f8cf2d80096da9a94533f6f",
+      "comparison_scope": "R275 的固定 m=5 direct-global 完整纯 SPE 与有限完整 SPE 证书池正文中同一 m=5 条目的逐字段比较；共同模型、客户类型参数、全部有序历史、真实偏离、W 和 OPT 均保留精确量词。",
+      "reason": "R275 的 14 标签/26 单位客户实例恰为 k=4、B=12、T=13 的家族专化；动作表覆盖 14^0+...+14^4=41,371 个有序历史，冻结定义级报告检查 537,823 个真实偏离且 valid=true、violations=0；实际路径 (0,1,2,3,12) 的收益为 (4,4,4,4,5)，W=21，OPT=22。该结果只链接有限证书池的 m=5 条目，不外推任意 m、最小 SPE 福利或六人 half。",
+      "edge_ids": [
+        "r275-m5-specializes-finite-spe-pool"
+      ]
+    }
+  },
+  "mathematical_result": {
+    "edge": "map/edges/customer-attraction-3a-3a-4716f6fb7b7da921/r275-m5-specializes-finite-spe-pool.json",
+    "status": "accepted",
+    "relation": "specializes",
+    "relation_mode": "unconditional",
+    "proof_scope": "whole",
+    "whole_result": "R275 是有限证书池正文列出的 m=5 direct-global 条目的精确专化；该边只支付固定实例、完整历史纯 SPE IC 和该实例的 W=21、OPT=22。",
+    "remaining": "任意人数递推、m=3/m=4 的迁移、该目录最小 SPE 福利以及六人 2W>=OPT_6 仍未付；不存在从该有限证书推出全局 half 定理的步骤。",
+    "edge_check": "PASS: research_runtime.py edge-check 返回 edge-structure-valid-not-a-mathematical-verdict，proof_scope=whole。"
+  },
+  "reading": {
+    "ledger": "map/edges/customer-attraction-3a-3a-4716f6fb7b7da921/reading-ledger.json",
+    "declared_refs": 6,
+    "completed_passes": 11,
+    "all_declared_ranges_read": true,
+    "ordered_continuation_notes_saved": true,
+    "partial_pass_claimed_done": false,
+    "verification_summary": {
+      "valid": true,
+      "checked_histories": 41371,
+      "checked_deviations": 537823,
+      "violations": 0,
+      "welfare": 21,
+      "optimal_welfare": 22
+    }
+  },
+  "assets": [
+    {
+      "path": "map/edges/customer-attraction-3a-3a-4716f6fb7b7da921/r275-m5-specializes-finite-spe-pool.json",
+      "sha256": "f7ebe8b75978cddb8f9aa1a60c3e5ecdec6337dc3e062a7bb856ef04ae699324"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-4716f6fb7b7da921/comparison.md",
+      "sha256": "8019af9fc441c17bfb06fe9d3347e16af9225bd6981d0ce5530c32cd23da140b"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-4716f6fb7b7da921/reading-ledger.json",
+      "sha256": "45b8d6127e2df1d5f429284d3383ce49efd75da3a667c9a38c29f68281fb6556"
+    }
+  ],
+  "open_obligations": [
+    "No m-independent construction or SPE welfare lower bound is claimed.",
+    "No six-player half theorem or six-player OPT>2W certificate is claimed.",
+    "Context/checks relations were not promoted; any future contextual comparison must remain isolated-after-review."
+  ]
+}
