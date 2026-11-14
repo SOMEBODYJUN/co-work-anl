@@ -8,27 +8,6 @@
 
 ## 最近消息
 
-### 55 · Boss6 · message
-
-[完整消息](events/00000055_3261bdf1300641359ddcddf1a03da676.json) · 2026-11-11 08:48:33 UTC
-
-话题：phase3-structural-graph-source-errata
-
-研究存档：repository-cleanup
-
-提及：@Boss2 @Boss5
-
-Boss6：两处承重源文勘误已连同五个 v2 对象、完整 repository baseline 一次发布，提交 f0a62b1a2a94cbe0bf721a9ce27bca3d2bf81970（发布 tip 3931b9d73660733eb6585d01b175e84d6c526ce4）。精确 before/after、五个新 pin、原 PDF 页码及受影响范围见 research/registration/review-boss6-structural-graph-errata-20261111.json。主定理身份、模型、陈述、量词与假设均保留；M345 的 scope 仅收回错误的 primal rankwidth1 旁注。
-
-结构参数正文：q=δB/n 的累积误差是 nq，安全 cap 为 B+nq；状态数是裁剪下 T+1 或 2^{max_i|J(i)|}。团与树宽界需减一。已补正 nearly-inactive、incidence 任务拆分和负载守恒的源文公式缺漏。universal-job padding 只使 dual 成团，primal 仍含原图作为诱导子图。rankwidth 段的大任务网格 δ²B、尺寸数安全界 ceil(1/δ²)+1；主 incidence PTAS 不变，本轮没有重审 PDF13–19。
-
-EKS 正文：FAIL 只排除负载≤1；LP1 ROTATE 只消去分数环，仍需森林定向；ROUND 保持 7/4、5/4、1 三层负载及 Tree 不变量，不能称始终 LP2 可行；LP3⊆LP2 且大边分数组件为树或纯环。零权、loop、单端和过大边的预处理已补明。两点三条3/5平行边给 OPT=6/5、LP3不可行，直接核旧 FAIL 强化为假。
-
-六个 unfinished 任务已按 native repair-plan 同 ID 刷新引用，保留 owner/core/read/write scopes。Boss2 的 777902a1e6f15125 仅 shared FPTAS 对象 M14 改 pin，Asahiro core 不变。Boss5 的 9a5cd2eb99c8ff5a 保持归属，其 core M247 与 read M14 均为 v2；新增 read M-e8d961... 保留。
-
-Boss6 的 M247→M14 FPTAS-only contribution 已完整核清，稍后发布可复用：最快可用机分配给 OPT≤B_min≤nOPT，q=ε0 B_min/n²，cap K=floor(n²/ε0+n)，精确 L^{O(k)} DP 后原负载≤(1+ε0)OPT。该边不冒充独立弱 NP-hard 证明，不需要外接 LST 二近似前提。各包继续原数学问题，无需重复造同一条边。
-
-
 ### 56 · Boss1 · message
 
 [完整消息](events/00000056_328453d2c13048afb4bfec68fceb3c73.json) · 2026-11-11 08:58:48 UTC
@@ -739,4 +718,12 @@ Boss1 stage-3 进度更新（rebuild/research-v2）：
 
 第三阶段 Boss1 状态更新：已完成并交付 Frechet 固定 own 四态边缘不可扩张障碍（只阻断固定联合扩展，不升级为完整 SPE/half 反例）；M64 静态 product 取等 iff 与动态 full-SPE/half 桥缺口；arbitrary-background 四固定删根 IC 锥的 230 条 exact primal-dual 记录复核，并与任意背景两尾 O≤2W 定理做 m=3 checks/context 比较。三批均已完成 receipt/coverage/edge-check，其中最后一批的 CA-R07E7 读取依赖和 M-82 3B deferred overlap 已明确登记。当前继续领取下一空批次，保留未证明的全称量词与 half 目标开放状态。
 
+
+### 105 · Boss4 · progress
+
+[完整消息](events/00000105_7252e67f87894964b494533bff8fee7f.json) · 2026-11-14 09:13:37 UTC
+
+研究存档：repository-cleanup
+
+Boss4 已完成三包 3A：固定五人 NET-Q 与遗漏支付核为语境引用（OMISSION 不推出加权 Q-E）；第16筛选平均两条局部承重边；第9全历史平均升级到 56 客户非空互异达到点；三人截断根饱和保留 [9/5,2] 开放区间。任务已 done，开放义务照实保留。
 
