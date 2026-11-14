@@ -1,0 +1,60 @@
+{
+  "edge_id": "cag-secondD-seven-row-envelope-to-finite-subsystem-4f9e",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/second-position-actual-D-seven-row-projected-envelope"
+  ],
+  "target_ids": [
+    "customer-attraction/second-D-column-generation-and-full-histogram-pricing"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "同一有限五人单位提供者共同目录模型、全部有序历史纯SPE量词、真实第二位→D分支及其八种 D2_bits=(r,s,t) 状态；核心 LP 只取七行必要不等式作为行约束，不把原子质量反向解释为完整策略。",
+  "roles": {
+    "customer-attraction/second-position-actual-D-seven-row-projected-envelope": "对每个完整五人 SPE 给出七个客户总和非负的不等式，并证明任意固定非负权的逐客户八态最大包络仍为必要条件。",
+    "customer-attraction/second-D-column-generation-and-full-histogram-pricing": "把这七个系数逐名写成 564 行系统的 D2 行，并在 908 行扩张中保留该接口；其余行、列生成与数值轨迹另行承担。"
+  },
+  "explanation": "七行引理的七条客户系数分别对应真第二位偏离、两条新末位 BR、AE 第四位对 R/S 的安全比较和 second 索引第三/四位对 T 的安全比较。price_second_D.py 的 atom_rows 用同一 D2_bits 计算这七个行值并把它们追加到逐名相同的 557 行；price_second_D_full.py 通过 second_D_rows.py 复用/扩展该接口，908 行系统仍包含相同七行所代表的必要条件。因真实 SPE 的每个客户总和非负，任何可投影的 SPE 类型质量都满足这七行，得到核心有限必要子系统中的一条精确局部蕴含。",
+  "contribution": {
+    "result": "七行真 D 投影包络蕴含核心对象记录的 564/908 有限行系统包含一个对真实五人 SPE 必要的七行子系统。",
+    "remaining": "未推出 564 或 908 的精确 LP 最优值、全域有理对偶/全域 reduced-cost 非负，也未从原子质量恢复共同目录、全部有序历史和纯 SPE；其余 557/351 行的联合充分性仍需独立证明。"
+  },
+  "scope": "仅限七行必要接口到核心有限松弛的局部关系；不把 564/908 浮点 β、微负定价余量或固定点数值诊断提升为定理。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/第二位复制实际D的七行投影包络--引理.md",
+      "sha256": "a0e07bcba834ea09cc364fc69836254d24e36b6cd8a608115b21bb2ec05c1b37"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/第二位D分支的列生成与完整主题定价--程序.md",
+      "sha256": "61e84c0ed4ae623168fe2d3bfd80537d93fece79436145818a50ea8ff281d152"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/branch-geometry-source-resumed-boss3/original/research/workspaces/customer-attraction/R-c8ca54e5f2854c2c93bf83abc2f24f5c/n5/branch_geometry/price_second_D.py",
+      "sha256": "72a7823a3cab8ea5028ea22bcba02020f174a9ff433dca3bd18e4b731518857e"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/branch-geometry-source-resumed-boss3/original/research/workspaces/customer-attraction/R-c8ca54e5f2854c2c93bf83abc2f24f5c/n5/branch_geometry/price_second_D_full.py",
+      "sha256": "f853eda2c7c647a67be3df77f3442b60c33ed76a3bb2dc56de10f863122104f9"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/branch-geometry-source-resumed-boss3/original/research/workspaces/customer-attraction/R-c8ca54e5f2854c2c93bf83abc2f24f5c/n5/branch_geometry/second_D_rows.py",
+      "sha256": "f2791a443c42fca5559b0ff68c2674cbfd486fbc60baf602b9d754826aac7360"
+    }
+  ],
+  "reviewed_by": "Boss7",
+  "review_note": "按任务声明顺序完整读取 13 个 pass；逐条核对七行公式、D2 行生成代码、908 行扩张、全直方图四角定价及两份冻结 JSON。关系只发布七行必要子系统这一局部贡献，明确保留有限 LP 的 SPE 反向缺口和全域精确证书义务。",
+  "endpoint_pins": {
+    "customer-attraction/second-D-column-generation-and-full-histogram-pricing": "29cca91623989e564adc413ecb4d2b91a3d39887b7ce8c60293ed6742f260df0",
+    "customer-attraction/second-position-actual-D-seven-row-projected-envelope": "9e60fcb75edce45a7cbb90f2942ffa79ea34989c644f84ab0d06b255bf76c8cb"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/第二位复制实际D的七行投影包络--引理.md": "a0e07bcba834ea09cc364fc69836254d24e36b6cd8a608115b21bb2ec05c1b37",
+    "archives/customer-attraction/state/程序/第二位D分支的列生成与完整主题定价--程序.md": "61e84c0ed4ae623168fe2d3bfd80537d93fece79436145818a50ea8ff281d152",
+    "archives/customer-attraction/tools/evidence/branch-geometry-source-resumed-boss3/original/research/workspaces/customer-attraction/R-c8ca54e5f2854c2c93bf83abc2f24f5c/n5/branch_geometry/price_second_D.py": "72a7823a3cab8ea5028ea22bcba02020f174a9ff433dca3bd18e4b731518857e",
+    "archives/customer-attraction/tools/evidence/branch-geometry-source-resumed-boss3/original/research/workspaces/customer-attraction/R-c8ca54e5f2854c2c93bf83abc2f24f5c/n5/branch_geometry/price_second_D_full.py": "f853eda2c7c647a67be3df77f3442b60c33ed76a3bb2dc56de10f863122104f9",
+    "archives/customer-attraction/tools/evidence/branch-geometry-source-resumed-boss3/original/research/workspaces/customer-attraction/R-c8ca54e5f2854c2c93bf83abc2f24f5c/n5/branch_geometry/second_D_rows.py": "f2791a443c42fca5559b0ff68c2674cbfd486fbc60baf602b9d754826aac7360"
+  },
+  "review_digest": "5d859160aa3feb741eeb6d2d9549a98130b05222e6371ac6d0da4bba096ce3c0"
+}
