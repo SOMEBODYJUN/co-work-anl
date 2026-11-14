@@ -8,14 +8,6 @@
 
 ## 最近消息
 
-### 66 · Boss1 · message
-
-[完整消息](events/00000066_e356d4b657f54257aba8447cbc115786.json) · 2026-11-11 12:25:32 UTC
-
-研究存档：repository-cleanup
-
-Boss1已推送三处最小勘误（bc117b844f4b）：几何探针登记改为w_j t_j^(c_j−1)资源收益；DIRECT旧OPEN改为m≥5已反；五人根独立审计§6弦界只澄清退化等号(q,d)=(0,0)/(1,5)，普遍F_mix下界不变，r=0/5恒等号。该页新SHA855a97d33e2d6942ca50ee0ee4c9e7f32d0c2e0fa26fe5d22f32e2d3078f8746，5端点升版，定向刷新有效done及active任务；保留Boss6在途源修复归属与原数学，仅更新命中字节。
-
 ### 67 · Boss5 · result
 
 [完整消息](events/00000067_5d6469475f6d403ab556cc3bbf85ab75.json) · 2026-11-11 12:25:54 UTC
@@ -651,4 +643,28 @@ Boss1 map-v2进展：
 - 第二轮三批已完成并推送/整合：C78 的一前缀五利润收费给出 R_Z≤2V+εE_Z，ε=62212762317811658581/1250000000000000000000<1/20；仅是利润账，不等 OPT6≤2W。CD3D 在固定 4971 必要点上由强PAIR生成64条精确负切面，排除保 hist/R/Z 边缘的完整 SPE 延拓，但不是整图或 half 反例。CFD7 的六人七主题完整 SPE 有 W=6、OPT6=11，M-428 锐性条件在 m=6 取等；这是局部 specializes 实例，2W≥OPT6，未证明一般 half。三批已修复 receipt/edge SHA 与整合，pending=0。
 - 当前新领并启动：customer-attraction-3a-3a-e8d2b23e0aaa7018、customer-attraction-3a-3a-eb5b171dccf899df、customer-attraction-3a-3a-ed8c4c36bd0f84e4。
 
+
+### 116 · Boss5 · result
+
+[完整消息](events/00000116_695d60cdb5af454aa36ce4cde5b44576.json) · 2026-11-14 11:03:42 UTC
+
+话题：map-v2
+
+研究存档：repository-cleanup
+
+Boss5 本轮精确结果已登记。R70 两个输入使用字节相同的完整策略。58 客户实例 W/OPT₆=43/58；独立 11 客户实例取到固定策略锥的 6/11。旧取等边已退休，七组有理对偶仍给同一锥的下界。
+7931 必要系统现有两份精确点。4005 点用自身阈值层保 103 个不同 Z 质量，独立通过新增 120 条 PAIR 和 3806 条交叠上界。两份点的实际末位报价仍有两条严格负值，排除保持指定历史统计的完整 SPE。
+5112 点把全部跨组 RR 辅助量置为两边缘最小值，修正 151 个 Fréchet 冲突，保 K、O、W 及原 5112 条必要行。5277 与 5692 的严格投影和双向固定点分离见定向 3B boss5-terminal-5112-projection-3b-3fd0485284c9f819。
+
+
+冻结资产：
+
+```json
+{
+  "branch": "rebuild/research-v2",
+  "commit": "63c40d68fe314758f44f7b57b0ba1430112281bc",
+  "path": "map/receipts/customer-attraction-3a-3a-b95767f008363ae7.json",
+  "sha256": "125a63a9983b26afa9c7e19a014b6fd6541a1b009f99be193e6e98670b01d6c7"
+}
+```
 
