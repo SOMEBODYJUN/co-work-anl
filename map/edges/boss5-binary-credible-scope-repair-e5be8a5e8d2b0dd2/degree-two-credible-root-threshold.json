@@ -1,0 +1,79 @@
+{
+  "edge_id": "cag-degree-two-credible-root-threshold-local",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/degree-two-exact-credible-root-floor-and-all-spe-optimality"
+  ],
+  "target_ids": [
+    "customer-attraction/closeout-67a92b6751929baa34cc1de3"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "整数 q≥2、b≥1、0≤a≤b，两个各 q 个标签的组，m=q+1 名顺序单位提供者，每名单位客户恰喜欢一对标签，每跨组对有 b 名客户、每同组对有 a 名。前缀 h 为任一合法有序历史，R_h(A) 取强制 A 后所有完整孩子子SPE的完整终局，保留先前负载、所有合法重复及弱平局。",
+  "roles": {
+    "customer-attraction/degree-two-exact-credible-root-floor-and-all-spe-optimality": "给出单现收益下界、真实复制者的逐人逆向保底、所有未出现标签的强制最低值下界、每个强制根的等号见证、最优标签沿实际路径倒序配位的总付款，以及任一完整根SPE的最优福利。",
+    "customer-attraction/closeout-67a92b6751929baa34cc1de3": "提供 R_h(A)、L_h(A)=min_{z∈R_h(A)}u_i(z)、Θ_h=max_A L_h(A) 及实际路径上的条件付款链。本边落实其在给定二元目录中的付款步骤。"
+  },
+  "explanation": "设 S=qb+(q−1)a，L=qb/2+(q−1)a。终局计数 z 中，选 v 的人得 ∑_{w≠v} μ_vw/(z_v+z_w)。z_v=1 时，整数割线 1/(1+t)≥1−t/2 及 ∑_{w≠v}z_w=q 给收益≥S−bq/2=L。对每个合法历史按剩余人数归纳，当前可强制未出现 v；若在可信后继中被复制，根行动者或当前偏离者与一个同选 v 的实际后继人同收益，该后继在严格更深的真正子SPE中已归纳得≥L。当前真实选择再由偏离比较保底。直接对强制未出现 v 的每个可信孩子应用单现或复制两案，故 L_h(v)≥L 而无需强制动作自身的IC。指定策略对每个强制根都有相反组所有标签各一次的可信终局使根得 L，故 L∅(v)=Θ∅=L。沿任意实际SPE路径，取覆盖最优的 m 个不同标签，自末位向首位分配；到位置 i 尚余 i 个候选，而实际前缀至多含 i−1 个不同标签，故可配 T_i 未在 h_i 出现。于是 ∑_i L_{h_i}(T_i)≥mL，且 W≥mL；OPT_m=q²b+(q−1)(q+2)a/2，2mL−OPT_m=qb+(q−1)(3q+2)a/2>0。由此直接支付 ∑_i L_{h_i}(T_i)≥OPT_m−W；代入 route5 的 ∑L≤∑Θ≤W 得 2W≥OPT_m。定理另证每份完整根SPE均 W=OPT_m：a>0 排除新增重复，a=b 时全部不同标签支持同值，0<a<b 的多数归纳给 (q,1) 或 (1,q)；a=0 时双方都出现的无重复路径沿同一多数界，而单组含重复的路径由异组选题的严格偏离排除第二次复制，仍覆盖全部跨组客户。",
+  "scope": "适用给定二元共享客户目录的全部整数参数、全部合法前缀及完整纯SPE。对非空前缀所证为未出现标签的下界，对根为精确等号；付款比较是沿同一实际路径重新排列的一份最优支持。固定根 q 槽聚合尾利润是同一构造的独立比较，只供证据定位。",
+  "contribution": {
+    "result": "在该目录中，每个合法历史的每份完整子SPE均使尚未出场的实际角色收益≥L；L_h(A)≥L 适用于此前未出现的 A，每个强制根有 L∅(v)=Θ∅=L。给出最优比较的倒序配位使 ∑_i L_{h_i}(T_i)≥(q+1)L≥OPT_m−W，故 route5 的付款条件确实成立；进一步由定理的全策略分类得每份完整根纯SPE均 W=OPT_m。",
+    "remaining": "一般共同目录仍欠沿实际路径的最优带位置比较 ∑_i L_{h_i}(T_i)≥OPT_m−W 及可能需要的跨互斥离轨枝的统一付款论证。同一二元族的非空前缀中，已出现标签的强制最低值与各节点 Θ_h 的精确计算未由本步给出。"
+  },
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/二元共享客户族的真实根门槛与全策略最优福利--定理.md",
+      "sha256": "b5f7f6ccf1e6a8787210cf650b866f4d97095fd2e0dfcfca20d675235f52adc6",
+      "section": "二元共享客户族的真实根最低收益"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/二元共享客户族的真实根门槛与全策略最优福利--定理.md",
+      "sha256": "b5f7f6ccf1e6a8787210cf650b866f4d97095fd2e0dfcfca20d675235f52adc6",
+      "section": "最优比较的同路径付款"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/二元共享客户族的真实根门槛与全策略最优福利--定理.md",
+      "sha256": "b5f7f6ccf1e6a8787210cf650b866f4d97095fd2e0dfcfca20d675235f52adc6",
+      "section": "全策略最优性"
+    },
+    {
+      "path": "archives/customer-attraction/state/资源/完整后继门槛的阶段接口与选中枝边界--资源.md",
+      "sha256": "9d8ab71d9a269651754ed48114eb9803e65a90bc8eb7946f8c8fcf1a0b4250a7",
+      "section": "原记录与精确对象"
+    },
+    {
+      "path": "archives/customer-attraction/state/资源/完整后继门槛的阶段接口与选中枝边界--资源.md",
+      "sha256": "9d8ab71d9a269651754ed48114eb9803e65a90bc8eb7946f8c8fcf1a0b4250a7",
+      "section": "精确门槛递归及两向证明"
+    },
+    {
+      "path": "archives/customer-attraction/state/资源/完整后继门槛的阶段接口与选中枝边界--资源.md",
+      "sha256": "9d8ab71d9a269651754ed48114eb9803e65a90bc8eb7946f8c8fcf1a0b4250a7",
+      "section": "正确half条件和粗份额的不同集合"
+    },
+    {
+      "path": "archives/customer-attraction/state/构造/二元共享客户的完整均衡负驻留族--构造.md",
+      "sha256": "5c9cf2906b68aaa4bdb21172f11d29ad52d58c0f16baaab8b59d0a0e112ef0d4",
+      "section": "全有序历史IC证明"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+      "section": "策略、真实续局与全部历史量词"
+    }
+  ],
+  "reviewed_by": "Boss5 / SOLVER-BINARY-CREDIBLE-SCOPE",
+  "review_note": "比较四端登记与任务声明材料。复核旧式正确分母 1+c_v+c_w，q=3,a=0,b=1 全尾复制根的合法终局根收益 3/4<L=3/2。新证明以单现割线加真正子SPE复制者同收益归纳，及倒序配位支付 route5 同目录步骤。3A 已单独提供根取等见证；固定根尾聚合定理与旧尾聚合边均只供对照，未列入本边前提。",
+  "endpoint_pins": {
+    "customer-attraction/closeout-67a92b6751929baa34cc1de3": "cd901b7f15921d8205f33be6c8d93451d2f9946236366818088406048f2a4595",
+    "customer-attraction/degree-two-exact-credible-root-floor-and-all-spe-optimality": "a044cdd41c8e0674ba27fd1a55e2bed753ce80d330139f389d3a45536b6d5a91"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/二元共享客户族的真实根门槛与全策略最优福利--定理.md": "b5f7f6ccf1e6a8787210cf650b866f4d97095fd2e0dfcfca20d675235f52adc6",
+    "archives/customer-attraction/state/资源/完整后继门槛的阶段接口与选中枝边界--资源.md": "9d8ab71d9a269651754ed48114eb9803e65a90bc8eb7946f8c8fcf1a0b4250a7",
+    "archives/customer-attraction/state/构造/二元共享客户的完整均衡负驻留族--构造.md": "5c9cf2906b68aaa4bdb21172f11d29ad52d58c0f16baaab8b59d0a0e112ef0d4",
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+  },
+  "review_digest": "c691173b175a3183432307650ed343ca1ed3f0d692e536224f6c6358a81e8f2d"
+}
