@@ -1,0 +1,62 @@
+{
+  "edge_id": "boss3-4711-boolean-positivity-separates-r275-no-floor-moments",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-37b7d7de813c4ff69c63fcb679950f36"
+  ],
+  "target_ids": [
+    "M-f053891e740544609ea09d43150edcd1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "冻结 R275 无根边际下限点，同一七标签；非负单位客户整数重数或任意实非负客户质量，拟精确实现至多五不同标签的截断覆盖值，或拟保全部五人终局收益，容许统一正倍数。",
+  "roles": {
+    "M-37b7d7de813c4ff69c63fcb679950f36": "给任何非负布尔多项式在客户矩锥上产生的非负线性泛函，并以终局总收益恢复覆盖矩。",
+    "M-f053891e740544609ea09d43150edcd1": "给冻结点的七标签单、双集合值；在该原点检验非负客户实现，保固定锥证书的原论证独立。"
+  },
+  "explanation": "令 r=Σ_{j=2}^6 z_j。P(z)=z₀−z₀r+binom(r,2) 在全布尔立方非负：z₀=0 时是 binom(r,2)，z₀=1 时是 (r−1)(r−2)/2。冻结点 C(0)=1，所有外标签 C(j)=2/5、C(0,j)=23/20，故 t_{0j}=1/4；任意两不同外标签 C(j,k)=4/5，故 t_{jk}=0。线性泛函为 t₀−Σ_j t_{0j}+Σ_{j<k}t_{jk}=−1/4，和任何非负客户重数矛盾。每个非空至多五标签支持可用重复填足五人，Shapley 边际总和等于该支持 C，因而全部终局收益保真也要求相同的低阶矩，统一正缩放不改符号。",
+  "scope": "无 floor 冻结点的同标签精确非负客户实现；与 a74 对另一正根冻结点的三阶分离有不同端点和分离式。只保某条有序路径、部分 IC 符号或福利比的替代保持为独立问题。",
+  "contribution": {
+    "result": "显式二阶非负布尔分离排除冻结点的同标签精确非负客户表示及全终局收益保真，包括统一正缩放。",
+    "remaining": "原登记的完整历史 IC、1470 条系数等价、固定锥的上下界和必要路径点不可达仍由原冻结输入与分立精确核验承担。"
+  },
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/有限阶交集矩的全收益表示与布尔正性--定理.md",
+      "sha256": "c6f61661e403b1336b0668ff5ef8f77ea3398878d16e64e5ddbb996918fadd30",
+      "section": "全部终局表的精确数据"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/有限阶交集矩的全收益表示与布尔正性--定理.md",
+      "sha256": "c6f61661e403b1336b0668ff5ef8f77ea3398878d16e64e5ddbb996918fadd30",
+      "section": "精确客户实现锥与固定全树证书"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/R275-credible-search-20261031/original/633b64cbcf0233d0f667__submodular_joint_m5p7_q32.json",
+      "sha256": "dbf83fe8561340f29505cb33e37c83cf79e521ab2c1bcb4f5dd959d2b0968d6d"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-4711a75d24f57e73/review.md",
+      "sha256": "2232b6fd121b1c7b2140d4231e84224a470fa9a398b18a713e81d93511271906",
+      "section": "非负客户实现与全域次模延拓"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-4711a75d24f57e73/root-cuts-exact.json",
+      "sha256": "e90b4df56e6c5be2c0349c390a544f75fd85b02013505d11d1136394290e435d"
+    }
+  ],
+  "reviewed_by": "Boss3",
+  "review_note": "根据冻结十九轨道的单、双支持值独立核二阶容斥和整个布尔域的非负性；保明确标签、全收益和正倍数量词。",
+  "endpoint_pins": {
+    "M-37b7d7de813c4ff69c63fcb679950f36": "5329e1cd6176147be295fc12f2f201e020a27181836b63fe2456b0468a8538aa",
+    "M-f053891e740544609ea09d43150edcd1": "1f5fc7dd39d3c6988353891424f719f5c26db9518d8ba4c1e54d892af1fab8bc"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/有限阶交集矩的全收益表示与布尔正性--定理.md": "c6f61661e403b1336b0668ff5ef8f77ea3398878d16e64e5ddbb996918fadd30",
+    "archives/customer-attraction/tools/evidence/R275-credible-search-20261031/original/633b64cbcf0233d0f667__submodular_joint_m5p7_q32.json": "dbf83fe8561340f29505cb33e37c83cf79e521ab2c1bcb4f5dd959d2b0968d6d",
+    "map/edges/customer-attraction-3a-3a-4711a75d24f57e73/review.md": "2232b6fd121b1c7b2140d4231e84224a470fa9a398b18a713e81d93511271906",
+    "map/edges/customer-attraction-3a-3a-4711a75d24f57e73/root-cuts-exact.json": "e90b4df56e6c5be2c0349c390a544f75fd85b02013505d11d1136394290e435d"
+  },
+  "review_digest": "08c7106b7c792d22e9d81c5c579b28173efe0d07792d265b7de8f9a0a111b915"
+}
