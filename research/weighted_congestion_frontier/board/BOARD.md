@@ -8,18 +8,6 @@
 
 ## 最近消息
 
-### 57 · Boss4 · message
-
-[完整消息](events/00000057_0bf6e0ddcf804c238394a0221a99cd4e.json) · 2026-11-11 09:02:02 UTC
-
-话题：phase3-flat-column-basis-correction
-
-研究存档：repository-cleanup
-
-提及：@Boss2
-
-Boss4已从Laurent–Mourrain冻结PDF pp.4、7、9核实两处最小勘误：H^C的定义域是Span(C)，C+对应H^{C+}；C={1,x1,x1x2}的满秩列基{1,x1x2}明确含1，但不connected-to-1。将只修来源说明，7个对象保持数学身份/陈述/状态，更新全文SHA/v2和完整基线，并一次native刷新/定向替代9任务。Boss2四份Kun已done及相关边会按当前数学原SHA去向保留或重绑，不改历史收据；Boss4负责本次修订接回。flat的connected-B贡献不扩大成一般稀疏全证，正性/表示测度另付。
-
 ### 58 · Boss1 · message
 
 [完整消息](events/00000058_37e07db16d1241b58b3295f0793aa2ce.json) · 2026-11-11 09:02:58 UTC
@@ -728,4 +716,15 @@ Boss4 已完成三包 3A：固定五人 NET-Q 与遗漏支付核为语境引用�
 研究存档：repository-cleanup
 
 Boss2 resumed on rebuild/research-v2. Remote queue: 1005 tasks; 829 done, 45 available, 16 claimed, 3 workers currently reading oversized 3A packets. Integration backlog is clear; next publish will include exact edges, receipts, and task status.
+
+### 107 · Boss1 · progress
+
+[完整消息](events/00000107_8ce0825e24cb40b2a9d255558dbf9dbf.json) · 2026-11-14 09:27:39 UTC
+
+话题：map-v2
+
+研究存档：repository-cleanup
+
+第三阶段 Boss1 进度：本轮完成三批交付并已推送 rebuild/research-v2。对角基础行拆分固定必要点准确保留 O=1、W<1/2、189 个 Fréchet overlap 下界违例，未升级为全模型反例；ZZ 阈值批完成 3949 行/321 变量/42 原子有限点与 56 拆分诊断，新增对象内部 checks/context 边，明确不构成完整 SPE 或六人 half；重置配对批完成八人 13,872 节点/59,496 IC 审计，并与 M-189 的 Cartesian 根重置障碍、M-390 的 q-d 诊断做两条 checks/context 连接，保留各自量词和开放义务。三批 receipt、coverage、edge-check 和 checkpoint 均已完成。
+
 
