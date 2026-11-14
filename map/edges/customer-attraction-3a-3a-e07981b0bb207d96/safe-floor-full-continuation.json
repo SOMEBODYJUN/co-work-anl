@@ -1,0 +1,63 @@
+{
+  "edge_id": "cag-safe-floor-full-continuation-check-nine-customers",
+  "kind": "checks",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/closeout-67a92b6751929baa34cc1de3"
+  ],
+  "target_ids": [
+    "cag-noncredible-safe-floor-milp-and-nine-customer-boundary-point"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "共同非空标签目录、有限单位客户、三名单位提供者按固定顺序各选一次、完整有序历史纯 SPE。固定修复目录的三个互不相交三客户块，各由两个同覆盖标签表示。对每个根标签，在非可信比较中分别用全部后继标签和原 MILP 禁用根标签两种菜单域；两域均准许后继重复。",
+  "roles": {
+    "customer-attraction/closeout-67a92b6751929baa34cc1de3": "给出强制孩子全体完整纯子 SPE 终局的 R_h、各动作的 L_h 与父节点门槛 Θ_h，用来计算可信的根收益下包络。",
+    "cag-noncredible-safe-floor-milp-and-nine-customer-boundary-point": "给出原归一非可信菜单的精确九客户修复目录及每根收益为 1 的菜单，供在同一真实目录中比较。"
+  },
+  "explanation": "对每个根 a，在两种菜单域中，分别对所有后继有序对筛两后继收益均≥t。t=1 接受全部组合，三人同物理块使根的最低值为 1；t=OPT₃/(2·3)=3/2 恰排除三人同块，一后继与根同块而另一后继异块使根的最低值为 3/2。在任一双标签前缀，真实末位最佳回复恰为所有尚未覆盖块的标签。固定根后，第二人重复物理块恒得 3/2，选不同块恒得 3，故所有可信终局均为三块各一次。每根 L_∅(a)=3，Θ_∅=3；48 个有序根 SPE 终局的福利全为 9。真实每根最低值与两种非可信下包络的差分别是 2 和 3/2。",
+  "scope": "只比较本修复目录的每个根标签和两种后继域。原 247×153 MILP 的归一目标仍恰为 9；原显示小数补零点有四个精确微违约。按两种 t，本目录均无根收益严格低于 t 且后继都达 t 的终局；其他目录的 floor 反例不受此比较约束。route5 的一般选中枝方向为实际 u_i≥Θ_h≥L_h(a)，一般最优带位置元组的需求不等式及互斥子树共用付款仍开放。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/资源/完整后继门槛的阶段接口与选中枝边界--资源.md",
+      "sha256": "9d8ab71d9a269651754ed48114eb9803e65a90bc8eb7946f8c8fcf1a0b4250a7",
+      "section": "精确门槛递归及两向证明"
+    },
+    {
+      "path": "archives/customer-attraction/state/资源/完整后继门槛的阶段接口与选中枝边界--资源.md",
+      "sha256": "9d8ab71d9a269651754ed48114eb9803e65a90bc8eb7946f8c8fcf1a0b4250a7",
+      "section": "正确half条件和粗份额的不同集合"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/非可信保底菜单的混合整数松弛与九客户边界点--程序.md",
+      "sha256": "1bce4627a7c9c83134a59a6ae2d5bd79ae4a62f704ff8ea8bcd3df09f09c07cc",
+      "section": "九单位客户精确修复及完整菜单表"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/safe-floor-milp-program/exact-audit.json",
+      "sha256": "01907004b8018497c818bc575c8157e518a49dfafeb2fcf8e659ad07e89a4ad0"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-e07981b0bb207d96/comparison.md",
+      "sha256": "ba6dc76ba6707486d95c90e8b8d9f477abd18e9bf90ad745f2fbd0a5266a97f4"
+    }
+  ],
+  "reviewed_by": "Boss5",
+  "review_note": "由客户占用数解析核两种非可信下包络和全部真实后继，并逐行重建有理系数账、逐终局复核完整门槛。该关系比较同一修复目录的可信性缺口，未推导两个登记端点的整条一般结论。",
+  "endpoint_pins": {
+    "cag-noncredible-safe-floor-milp-and-nine-customer-boundary-point": "1a401c70da5f43bbb223d85b403a1110cddba3d66986119b26b8a0211b6260b5",
+    "customer-attraction/closeout-67a92b6751929baa34cc1de3": "cd901b7f15921d8205f33be6c8d93451d2f9946236366818088406048f2a4595"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/资源/完整后继门槛的阶段接口与选中枝边界--资源.md": "9d8ab71d9a269651754ed48114eb9803e65a90bc8eb7946f8c8fcf1a0b4250a7",
+    "archives/customer-attraction/state/程序/非可信保底菜单的混合整数松弛与九客户边界点--程序.md": "1bce4627a7c9c83134a59a6ae2d5bd79ae4a62f704ff8ea8bcd3df09f09c07cc",
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+    "archives/customer-attraction/tools/evidence/safe-floor-milp-program/exact-audit.json": "01907004b8018497c818bc575c8157e518a49dfafeb2fcf8e659ad07e89a4ad0",
+    "map/edges/customer-attraction-3a-3a-e07981b0bb207d96/comparison.md": "ba6dc76ba6707486d95c90e8b8d9f477abd18e9bf90ad745f2fbd0a5266a97f4"
+  },
+  "review_digest": "39f8757d58d2b455a17373faa4f7cd4cf59e9a1a8cf141499269340775314dfe"
+}
