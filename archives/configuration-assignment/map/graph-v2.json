@@ -1,0 +1,1581 @@
+{
+  "schema": 2,
+  "status": "registered-coverage",
+  "trust": "Author-declared mathematical reviews; no automated truth certification",
+  "registry": "research/registry.json",
+  "registry_pin": "745d75d48cc2339dc4c59fa33d8dcb72591ed086b38c2927168787e092e1eb0c",
+  "nodes": {
+    "M-116e32ea4721479daac94b00a0bd9758": {
+      "object_id": "M-116e32ea4721479daac94b00a0bd9758",
+      "version": 2,
+      "title": "item marginal至多一时最高利润覆盖的layer-cake下界",
+      "kind": "lemma",
+      "truth_status": "proved",
+      "model": "有限配置支持E；每配置e覆盖S_e并对其中item i给非负利润v_ei；各配置独立以概率x_e∈[0,1]采样。g取每item被覆盖利润的最大值后求和，G(x)=E[g(R_x)]，L(x)=Σ_e x_eΣ_{i∈S_e}v_ei。",
+      "statement": "若每item Σ_{e:i∈S_e}x_e≤1，则G(x)≥(1−1/e)L(x)。对任意item及正阈值t，q_it=Σ_{e:i∈S_e,v_ei≥t}x_e≤1，覆盖概率1−Π(1−x_e)≥1−e^(−q_it)≥(1−1/e)q_it；逐阈值积分并求和给结论。",
+      "quantifiers": "对任意有限非负利润配置系统及任意满足item-marginal条件的概率向量x成立；每item的每个阈值都满足上述概率下界。",
+      "assumptions": [
+        "独立Bernoulli配置采样，x∈[0,1]^E。",
+        "所有利润非负且支持有限。",
+        "每item的总marginal至多一。"
+      ],
+      "scope": "这是可独立引用的初始解析下界；独立采样只定义G，可能违反bin或预算约束。引理本身不要求预算、等成本或后续舍入一直保持item marginals。",
+      "objections": "算法正文明确指出item约束仅在此承重，root审查节复述同一证明；作为独立概率引理登记，不为阈值算术另建对象。 本次定向整合补入资源启用批的对应独立推导/复核证据；主数学陈述不变，旧批资产由本批明确替代。",
+      "body": {
+        "path": "archives/configuration-assignment/state/算法/给定稀疏配置的确定性预算舍入--算法.md",
+        "sha256": "fd09910b2e3028a2babd10a93e0307624c1e32d3769e86dea793f1f04bf84168",
+        "section": "初始值：item边际约束只在这里使用"
+      },
+      "evidence": [
+        {
+          "path": "archives/configuration-assignment/state/算法/给定稀疏配置的确定性预算舍入--算法.md",
+          "sha256": "fd09910b2e3028a2babd10a93e0307624c1e32d3769e86dea793f1f04bf84168",
+          "section": "输入、输出与比较值"
+        },
+        {
+          "path": "archives/configuration-assignment/state/等价/下闭配置指派与最大值覆盖的整数等价--等价.md",
+          "sha256": "a733def460247480a5d073dbe817e48634f7dcb1ed827ffb052434a747ef76db",
+          "section": "下闭配置指派与最大值覆盖的整数等价"
+        },
+        {
+          "path": "archives/customer-attraction/state/审查/退役选题跨模型复核的独立性与承重前提--审查.md",
+          "sha256": "377bd07b3a1dcc2d890c5526abee271ad7c785a80c0030146a020539bed6f9f1",
+          "section": "配置指派：完整恢复本次核查所需基线"
+        },
+        {
+          "path": "archives/resource-activation/state/资料/第二轮GAP候选与CRS边界--资料.md",
+          "sha256": "3ff76bddbd2b86c4373efbd30f7c9be5758ddfa81198014a5e6dd5edb65c827a",
+          "section": "2. C06：opening-cost GBAP 的基线回收"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/retired_topic_selection/multi_lane/research/topic_selection/notes/configuration_reduction_boundary.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:history/retired_topic_selection/multi_lane/research/topic_selection/notes/configuration_reduction_boundary.md",
+        "configuration-assignment/given-sparse-support-deterministic-budget-rounding",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/retired_topic_selection/multi_lane/research/topic_selection/notes/round2_independent_root_review.md"
+      ]
+    },
+    "M-42d1210a93e94042833e75a1a80545ea": {
+      "object_id": "M-42d1210a93e94042833e75a1a80545ea",
+      "version": 1,
+      "title": "紧输入隐式配置算法的五接口实现义务",
+      "kind": "open-obligation",
+      "truth_status": "open",
+      "model": "有限物品集P、bins L；每bin有下闭局部族I_l⊆2^P，利润v_li≥0。一个整数指派取两两不交的S_l∈I_l，最大化Σ_lΣ_{i∈S_l}v_li。配置e=(l,S)表示在bin l启用局部集合S。局部族由原紧输入或明确的访问oracle描述，完整配置地集可能指数大；隐式求解须按原输入位长计复杂度。",
+      "statement": "欲在一个明确指定的紧输入SAP/GBAP模型上完成隐式算法，尚须同时交付：局部族的访问模型；非负模权pricing及其α损失；分数点与多项式配置支持的构造；multilinear值/候选正确梯度及误差合同；预算和局部约束下实际舍入，并写清近似比、枚举规模和位复杂度。现有给定支持(1−1/e)/2基线及连续列局部oracle未闭合这个全链条；来源未交付一般非均匀opening-budget、matroid激活及随机需求联合模型的新算法。",
+      "quantifiers": "对每一个欲声称在原紧输入上多项式的具体算法，需逐项给出上述接口和保证；本对象保存待完成的算法合同，不断言对所有下闭membership-oracle模型存在这种算法。",
+      "assumptions": [
+        "开始前必须固定实际局部族表示、可用oracle、目标近似合同及约束模型。",
+        "显式地集的poly(|E|)不自动为原紧输入的多项式。",
+        "涉及局部α近似pricing时必须明确在哪一步产生α(1−1/e)或1−e^(−α)型损失，不能互换。"
+      ],
+      "scope": "具体未闭合的隐式实现与模型访问合同；不把已由一般成本半损失算法解决的给定支持常数基线继续当开放问题，也不声称外部文献不存在完整plain SAP算法。",
+      "objections": "历史CGST2011、2026 SAP与matroid+knapsack论文结论仅为版本化原稿报告，本批未外部查新。Algorithm1的1/8紧例、速度/访问模型差额、近似pricing损失仍要求各自完整算法定义和证明；本源未交Algorithm1，故不凭名称生成精确反例节点。显式整数OPT保证不能无gap论证替换成相对L(x)的保证；等成本自然LP另有已证floor反例。",
+      "body": {
+        "path": "archives/configuration-assignment/state/审查/隐式配置定价与梯度背景的算法合同--审查.md",
+        "sha256": "ab8a327eb181eee60840055646f76c0f8a602ffc8dbf95011e3ebc616231bb6c",
+        "section": "指数地集必须交付的五个接口"
+      },
+      "evidence": [
+        {
+          "path": "archives/configuration-assignment/state/审查/隐式配置定价与梯度背景的算法合同--审查.md",
+          "sha256": "ab8a327eb181eee60840055646f76c0f8a602ffc8dbf95011e3ebc616231bb6c",
+          "section": "梯度是模权和，不代表所有候选共享同一背景"
+        },
+        {
+          "path": "archives/configuration-assignment/state/审查/隐式配置定价与梯度背景的算法合同--审查.md",
+          "sha256": "ab8a327eb181eee60840055646f76c0f8a602ffc8dbf95011e3ebc616231bb6c",
+          "section": "consecutive-ones局部oracle的准确条件"
+        },
+        {
+          "path": "archives/configuration-assignment/state/审查/隐式配置定价与梯度背景的算法合同--审查.md",
+          "sha256": "ab8a327eb181eee60840055646f76c0f8a602ffc8dbf95011e3ebc616231bb6c",
+          "section": "历史去重、LP值与整数值不可混用"
+        },
+        {
+          "path": "archives/configuration-assignment/state/等价/下闭配置指派与最大值覆盖的整数等价--等价.md",
+          "sha256": "a733def460247480a5d073dbe817e48634f7dcb1ed827ffb052434a747ef76db",
+          "section": "下闭配置指派与最大值覆盖的整数等价"
+        },
+        {
+          "path": "archives/configuration-assignment/state/算法/给定稀疏配置的确定性预算舍入--算法.md",
+          "sha256": "fd09910b2e3028a2babd10a93e0307624c1e32d3769e86dea793f1f04bf84168",
+          "section": "给定稀疏配置的确定性预算舍入"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/retired_topic_selection/multi_lane/research/topic_selection/notes/configuration_reduction_boundary.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:history/retired_topic_selection/multi_lane/research/topic_selection/notes/configuration_reduction_boundary.md",
+        "configuration-assignment/implicit-pricing-gradient-background-and-historical-coverage",
+        "historical-candidate:C06-v2"
+      ]
+    },
+    "M-6436d85fd0ed43b38ed3f095a89b326e": {
+      "object_id": "M-6436d85fd0ed43b38ed3f095a89b326e",
+      "version": 1,
+      "title": "启用bin约束的配置matroid表示与等成本整数截断",
+      "kind": "representation",
+      "truth_status": "proved",
+      "model": "有限物品集P、bins L；每bin有下闭局部族I_l⊆2^P，利润v_li≥0。一个整数指派取两两不交的S_l∈I_l，最大化Σ_lΣ_{i∈S_l}v_li。配置e=(l,S)表示在bin l启用局部集合S。",
+      "statement": "每bin配置为一个partition块。若共同启用成本c>0、预算B，则整数配置可行集恰为该partition matroid截断到k=floor(B/c)；c=0时预算不限制。若改由给定bin matroid M约束启用集合，则把每个bin替为其配置的平行副本，配置独立集恰为每bin至多一配置且对应bin集在M中，仍为matroid。",
+      "quantifiers": "对任意有限配置地集及任意共同c≥0、B≥0成立；另对任意定义在bins上的matroid M成立。等成本预算模型和任意matroid激活模型是分别给出的两种表示。",
+      "assumptions": [
+        "每bin至多一配置。",
+        "等成本情形c>0时截断秩为非负整数floor(B/c)。",
+        "matroid激活情形，约束为对应bin集合在M中；没有把另加非均匀knapsack自动并入matroid。"
+      ],
+      "scope": "整数独立集的精确表示，不把Σ_e cx_e≤B自动识别为截断matroid的分数可行域。",
+      "objections": "与整数覆盖价值等价分开登记，保留启用模型的量词。一般自然分数预算只给Σx≤B/c；若B/c非整数，不能据本表示推出Σx≤floor(B/c)。",
+      "body": {
+        "path": "archives/configuration-assignment/state/等价/下闭配置指派与最大值覆盖的整数等价--等价.md",
+        "sha256": "a733def460247480a5d073dbe817e48634f7dcb1ed827ffb052434a747ef76db",
+        "section": "下闭配置指派与最大值覆盖的整数等价"
+      },
+      "evidence": [],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/retired_topic_selection/multi_lane/research/topic_selection/notes/configuration_reduction_boundary.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:history/retired_topic_selection/multi_lane/research/topic_selection/notes/configuration_reduction_boundary.md",
+        "configuration-assignment/downclosed-bin-configuration-max-coverage-equivalence"
+      ]
+    },
+    "M-668ee3a8071f4d0c8b8acf2e40a93d60": {
+      "object_id": "M-668ee3a8071f4d0c8b8acf2e40a93d60",
+      "version": 1,
+      "title": "非均匀opening预算与item冲突的联合舍入义务",
+      "kind": "problem",
+      "truth_status": "open",
+      "model": "给定稀疏fractional配置支持、下闭local families、任意opening costs与硬预算；先两种cost、每item至多两bin支持。",
+      "statement": "求支持大小多项式可实现的joint budget/item-contention coupling，严格改善两保留概率相乘的界，或给精确worst-case及matching obstruction。",
+      "quantifiers": "对所声明支持类全部输入；明确保证比较输入LP还是整数OPT。",
+      "assumptions": [
+        "保持源候选原模型，不把文献摘要或选题优先级当证明"
+      ],
+      "scope": "明确研究义务/待精确化接口；不认证现行外部开放性。",
+      "objections": "本义务不被已有显式支持半损失定理自动解决；复杂度与改进数值须另外给定，候选并非定理。",
+      "body": {
+        "path": "archives/bottleneck-knapsack/state/审查/退役GAP选题底稿与数学边界--审查.md",
+        "sha256": "3a6d7787cf22efa03d645baf2719fa84927e55e5777d886bd38c19627913c10e",
+        "section": "15 项候选的准确状态"
+      },
+      "evidence": [
+        {
+          "path": "research/registration/evidence/register-ab98f323ad-0001-1/gap.md",
+          "sha256": "8e14e6d6525cc353091aa0484c6c72dc447f581d6227d6232fb3f960db06b68e",
+          "section": "C06. 非均匀 opening costs 的 GBAP：联合耦合与简单算法的真实界【A；作者明确问题 + 新切口】"
+        }
+      ],
+      "sources": [
+        "p25-register-v2:register-ab98f323ad-0001-1-evidence",
+        "archives/bottleneck-knapsack/state/审查/退役GAP选题底稿与数学边界--审查.md"
+      ]
+    },
+    "M-81da430ecf2846f59fb645a08763dab4": {
+      "object_id": "M-81da430ecf2846f59fb645a08763dab4",
+      "version": 1,
+      "title": "带整数截断合同的等成本确定性1−1/e舍入",
+      "kind": "algorithm",
+      "truth_status": "proved",
+      "model": "有限物品集P、bins L；每bin有下闭局部族I_l⊆2^P，利润v_li≥0。一个整数指派取两两不交的S_l∈I_l，最大化Σ_lΣ_{i∈S_l}v_li。配置e=(l,S)表示在bin l启用局部集合S。本对象的E只是给定的有限显式配置支持，不假定枚举全部I_l；成本、利润、预算和分数点均为有理数，复杂度按支持的总二进制描述长计算。全部启用成本为共同c≥0。",
+      "statement": "在给定支持自然约束以外，若c>0还满足Σ_e x_e≤k=floor(B/c)，则可确定性位多项式输出原硬预算可行指派，利润≥(1−1/e)L(x)。同bin交换后，对剩余bin变量作保和交换；仅剩整数r与一分数q时，由r+q≤整数k推出r+1≤k，把q升一不降G。c=0时每bin剩一后全升一，同样无半损失。B/c为整数时额外截断由自然预算自动满足。",
+      "quantifiers": "对每个满足给定有理支持合同的等成本实例和x成立；c>0时必须量化于额外截断可行的x，c=0时无该额外约束。",
+      "assumptions": [
+        "输入E为有限显式配置支持，且每个S∈I_l；局部族下闭。",
+        "x_e≥0；每bin的Σx_e≤1；每item的Σ_{e:i∈S_e}x_e≤1。",
+        "成本、利润、B和x为非负有理数，Σ_e c_l x_e≤B。",
+        "预先移除所有c_l>B的bin，故支持中的成本满足0≤c_l≤B。",
+        "共同c>0时Σ_e x_e≤floor(B/c)；共同c=0时预算无约束。"
+      ],
+      "scope": "给定显式支持、修复后的输入合同；不是对一般非整数B/c下任意自然LP点的保证。",
+      "objections": "本对象与一般成本半损失算法分开保存。两bin反例排除把截断条件略去；重解加强LP后比较值为新点L(x′)，不能保留已排除原点的L。",
+      "body": {
+        "path": "archives/configuration-assignment/state/算法/给定稀疏配置的确定性预算舍入--算法.md",
+        "sha256": "fd09910b2e3028a2babd10a93e0307624c1e32d3769e86dea793f1f04bf84168",
+        "section": "等成本强界的修复合同"
+      },
+      "evidence": [
+        {
+          "path": "archives/configuration-assignment/state/算法/给定稀疏配置的确定性预算舍入--算法.md",
+          "sha256": "fd09910b2e3028a2babd10a93e0307624c1e32d3769e86dea793f1f04bf84168",
+          "section": "输入、输出与比较值"
+        },
+        {
+          "path": "archives/configuration-assignment/state/等价/下闭配置指派与最大值覆盖的整数等价--等价.md",
+          "sha256": "a733def460247480a5d073dbe817e48634f7dcb1ed827ffb052434a747ef76db",
+          "section": "下闭配置指派与最大值覆盖的整数等价"
+        },
+        {
+          "path": "archives/configuration-assignment/state/算法/给定稀疏配置的确定性预算舍入--算法.md",
+          "sha256": "fd09910b2e3028a2babd10a93e0307624c1e32d3769e86dea793f1f04bf84168",
+          "section": "初始值：item边际约束只在这里使用"
+        },
+        {
+          "path": "archives/configuration-assignment/state/算法/给定稀疏配置的确定性预算舍入--算法.md",
+          "sha256": "fd09910b2e3028a2babd10a93e0307624c1e32d3769e86dea793f1f04bf84168",
+          "section": "第一阶段：同bin只留一件配置"
+        },
+        {
+          "path": "archives/configuration-assignment/state/算法/给定稀疏配置的确定性预算舍入--算法.md",
+          "sha256": "fd09910b2e3028a2babd10a93e0307624c1e32d3769e86dea793f1f04bf84168",
+          "section": "第二阶段：保持成本到至多一分数件"
+        },
+        {
+          "path": "archives/configuration-assignment/state/算法/给定稀疏配置的确定性预算舍入--算法.md",
+          "sha256": "fd09910b2e3028a2babd10a93e0307624c1e32d3769e86dea793f1f04bf84168",
+          "section": "精确实现与位复杂度"
+        },
+        {
+          "path": "archives/configuration-assignment/state/反例/等启用成本的自然预算LP与整数截断缺口--反例.md",
+          "sha256": "c53cd382c99d98a32a857f97cf1788dc009965135d592614fb05f89264f1d30f",
+          "section": "正确修复及不能保留的目标"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/retired_topic_selection/multi_lane/research/topic_selection/notes/configuration_reduction_boundary.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:history/retired_topic_selection/multi_lane/research/topic_selection/notes/configuration_reduction_boundary.md",
+        "configuration-assignment/given-sparse-support-deterministic-budget-rounding",
+        "configuration-assignment/equal-opening-cost-natural-lp-truncation-gap"
+      ]
+    },
+    "M-9ad0ca02d7d64d6ab7fe93bb91812073": {
+      "object_id": "M-9ad0ca02d7d64d6ab7fe93bb91812073",
+      "version": 1,
+      "title": "自然等成本配置LP缺少floor约束的精确反例",
+      "kind": "counterexample",
+      "truth_status": "proved",
+      "model": "有限物品集P、bins L；每bin有下闭局部族I_l⊆2^P，利润v_li≥0。一个整数指派取两两不交的S_l∈I_l，最大化Σ_lΣ_{i∈S_l}v_li。配置e=(l,S)表示在bin l启用局部集合S。此处只有两bin和两个互不冲突的单位利润物品；每个bin只能取其对应单物品或空集。",
+      "statement": "c=1、B=199/100、x_1=x_2=199/200满足每bin≤1、每item marginal≤1和自然预算。自然LP最优以及L(x)=G(x)均为199/100，而预算可行整数最优为1。因此不可能对每个这样的给定自然LP点输出始终可行且期望或确定利润≥(1−1/e)L(x)。同一两bin族令1<B/c<2趋近2，LP/整数最优比趋近2。补Σx≤floor(B/c)会排除原点并改变比较值，不能继续保留原L(x)目标。",
+      "quantifiers": "存在上述精确有理实例和点，使任何始终满足预算的随机或确定舍入都违反所述强保证；对该两不冲突bin族，任取预算比r∈(1,2)，比值为r，并可令r↑2。",
+      "assumptions": [
+        "两bin均下闭且各有一个独占物品，单配置利润1。",
+        "自然LP没有额外Σx≤floor(B/c)约束。",
+        "比较目标是输入给定点的原始L(x)，且输出每次都满足预算。"
+      ],
+      "scope": "反驳任意给定自然LP点的等成本1−1/e硬预算舍入合同；不是对CGST外部定理的反驳，也不反驳一般成本(1−1/e)/2基线。趋2只指这里明示的两bin族，不声称所有自然LP实例的全局gap上界。",
+      "objections": "反例为精确算术证明，不是扫描或某一个实现失败。B/c为整数或显式添加截断约束可以恢复修复后的强接口，但添加约束后只能相对新可用点L(x′)比较。",
+      "body": {
+        "path": "archives/configuration-assignment/state/反例/等启用成本的自然预算LP与整数截断缺口--反例.md",
+        "sha256": "c53cd382c99d98a32a857f97cf1788dc009965135d592614fb05f89264f1d30f",
+        "section": "两bin、两物品的精确反例"
+      },
+      "evidence": [
+        {
+          "path": "archives/configuration-assignment/state/反例/等启用成本的自然预算LP与整数截断缺口--反例.md",
+          "sha256": "c53cd382c99d98a32a857f97cf1788dc009965135d592614fb05f89264f1d30f",
+          "section": "正确修复及不能保留的目标"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/retired_topic_selection/multi_lane/research/topic_selection/notes/configuration_reduction_boundary.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:history/retired_topic_selection/multi_lane/research/topic_selection/notes/configuration_reduction_boundary.md",
+        "configuration-assignment/equal-opening-cost-natural-lp-truncation-gap"
+      ]
+    },
+    "M-a8a3062b0ff9434fa078140f5b654163": {
+      "object_id": "M-a8a3062b0ff9434fa078140f5b654163",
+      "version": 1,
+      "title": "独立配置extension的候选依赖梯度与统一背景权障碍",
+      "kind": "obstruction",
+      "truth_status": "proved",
+      "model": "有限物品集P、bins L；每bin有下闭局部族I_l⊆2^P，利润v_li≥0。一个整数指派取两两不交的S_l∈I_l，最大化Σ_lΣ_{i∈S_l}v_li。配置e=(l,S)表示在bin l启用局部集合S。有限配置系统上的标准独立multilinear extensionG(z)，z∈[0,1]^E。M_i(Q)为Q中覆盖i的最大利润，没有覆盖时为0。",
+      "statement": "对e=(l,S)，∂_eG(z)=Σ_{i∈S}E[(v_li−M_i(R_{z,−e}))_+]。排除e的背景在z_e>0时依赖候选，不能无条件把同bin全部正坐标导数交给一次固定背景的item剩余利润权重。单bin e={p}, f={p,q}，v_p=1、v_q=0、z_e=1/5、z_f=4/5时，∂_eG=1/5而∂_fG=4/5；任何统一剩余利润权重且零利润q权重为0的定价均不能同时表示两者。若候选新配置z_e=0，排除它不改变当前背景，可对这类零坐标方向使用一致的背景权。",
+      "quantifiers": "导数公式对每个有限配置系统、每个z和每个候选e成立；存在上述同bin两正坐标精确例否定缺省的统一背景推理；零坐标方向的背景不变陈述对所有z_e=0的候选成立。",
+      "assumptions": [
+        "G是标准的配置独立采样extension，而非bin-exclusive或其他structured extension。",
+        "所称统一权是来自同一剩余利润背景的item权重，尤其v_li=0的item权重为0；不声称任意人为赋给零利润物品正权的模函数都无法拟合两个数值。"
+      ],
+      "scope": "只排除未处理候选背景依赖的一次pricing算全部正坐标梯度的步骤；不否定CGST的structured sparse process，也不否定另给合法bin-exclusive或零坐标方向oracle。",
+      "objections": "公式与两配置值由正文自足计算。来源提到外部已有合法structured过程，但本批未重构外部全文，因此不把该历史报告登记成新的完整隐式算法。",
+      "body": {
+        "path": "archives/configuration-assignment/state/审查/隐式配置定价与梯度背景的算法合同--审查.md",
+        "sha256": "ab8a327eb181eee60840055646f76c0f8a602ffc8dbf95011e3ebc616231bb6c",
+        "section": "梯度是模权和，不代表所有候选共享同一背景"
+      },
+      "evidence": [
+        {
+          "path": "archives/configuration-assignment/state/等价/下闭配置指派与最大值覆盖的整数等价--等价.md",
+          "sha256": "a733def460247480a5d073dbe817e48634f7dcb1ed827ffb052434a747ef76db",
+          "section": "下闭配置指派与最大值覆盖的整数等价"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/retired_topic_selection/multi_lane/research/topic_selection/notes/configuration_reduction_boundary.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:history/retired_topic_selection/multi_lane/research/topic_selection/notes/configuration_reduction_boundary.md",
+        "configuration-assignment/implicit-pricing-gradient-background-and-historical-coverage"
+      ]
+    },
+    "M-ada741cd5e634934805d83850dd7cd1f": {
+      "object_id": "M-ada741cd5e634934805d83850dd7cd1f",
+      "version": 1,
+      "title": "显式0/1连续列资源模型的精确位多项式模权pricing",
+      "kind": "algorithm",
+      "truth_status": "proved",
+      "model": "单bin显式资源—物品矩阵A为0/1矩阵，每列的一按资源行顺序构成一个连续段；选择z_i∈{0,1}，容量u_t≥0和利润w_i≥0均为显式有理数，目标max wᵀz，约束Az≤u。",
+      "statement": "该局部最大模权选择可精确位多项式求解。整数选取的行消耗为整数，先以floor(u)替换容量；对任意行子集按序交替赋±1，每连续列的有符号和在{−1,0,1}，故由Ghouila-Houri判据A为TU。添加0≤z≤1保持TU，所得有界非空LP的最优顶点整数；精确有理LP给整数最优。",
+      "quantifiers": "对任意显式有限0/1矩阵A满足每列连续一、任意非负有理u,w成立；复杂度为A,u,w总二进制描述长的多项式。",
+      "assumptions": [
+        "A显式给出，列仅含0/1且连续一。",
+        "每item选择变量为0/1，需求为单位占用。",
+        "容量和利润非负有理，保留全部容量约束及正确端点约定。"
+      ],
+      "scope": "仅此准确输入类的局部pricing，不认证原P03全模型/网络满足条件，不扩展到nonunit demands、重复占用或非interval support。",
+      "objections": "正文给自足TU论证和floor位编码说明；这些是模型假设而非额外未证假设，因此真值为proved。全零列在非负利润下可全选；不经端点核对的行压缩不能直接沿用。",
+      "body": {
+        "path": "archives/configuration-assignment/state/审查/隐式配置定价与梯度背景的算法合同--审查.md",
+        "sha256": "ab8a327eb181eee60840055646f76c0f8a602ffc8dbf95011e3ebc616231bb6c",
+        "section": "consecutive-ones局部oracle的准确条件"
+      },
+      "evidence": [],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/retired_topic_selection/multi_lane/research/topic_selection/notes/configuration_reduction_boundary.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:history/retired_topic_selection/multi_lane/research/topic_selection/notes/configuration_reduction_boundary.md",
+        "configuration-assignment/implicit-pricing-gradient-background-and-historical-coverage"
+      ]
+    },
+    "M-d05829d1479f4b8aad94f3953ab9ffc4": {
+      "object_id": "M-d05829d1479f4b8aad94f3953ab9ffc4",
+      "version": 2,
+      "title": "给定显式配置支持的确定性硬预算半损失舍入",
+      "kind": "algorithm",
+      "truth_status": "proved",
+      "model": "有限物品集P、bins L；每bin有下闭局部族I_l⊆2^P，利润v_li≥0。一个整数指派取两两不交的S_l∈I_l，最大化Σ_lΣ_{i∈S_l}v_li。配置e=(l,S)表示在bin l启用局部集合S。本对象的E只是给定的有限显式配置支持，不假定枚举全部I_l；成本、利润、预算和分数点均为有理数，复杂度按支持的总二进制描述长计算。",
+      "statement": "设L(x)=Σ_{e=(l,S)}x_eΣ_{i∈S}v_li。存在确定性位多项式算法，仅使用给定支持E，选择支持配置并删除冲突物品，输出满足硬预算、每bin局部可行且每item至多分配一次的指派，利润≥(1−1/e)L(x)/2。算法依次做同bin保和交换、保成本交换至至多一分数配置，再在整数集与该可负担singleton中选较优者；G的精确有理计算及交换坐标位长均为多项式。",
+      "quantifiers": "对每个满足输入合同的有限有理实例与给定x，算法确定性输出一个上述指派，耗时为输入支持总二进制描述长的多项式；包括空支持、零利润和B=0。",
+      "assumptions": [
+        "输入E为有限显式配置支持，且每个S∈I_l；局部族下闭。",
+        "x_e≥0；每bin的Σx_e≤1；每item的Σ_{e:i∈S_e}x_e≤1。",
+        "成本、利润、B和x为非负有理数，Σ_e c_l x_e≤B。",
+        "预先移除所有c_l>B的bin，故支持中的成本满足0≤c_l≤B。"
+      ],
+      "scope": "相对给定点的L(x)，并非无条件相对整个隐式配置LP最优或整数OPT；无需求x或指数地集pricing。",
+      "objections": "成熟证明完整复用，root复核为同一对象的重复推导。item marginal仅用于初始layer-cake下界，后续交换不必继续保持；若漏掉c_l≤B，最后singleton可能不可行。保成本质量w_l=c_lq_l的表示给明确位长控制；不以有限有理运算次数代替位复杂度证明。 本次定向整合补入资源启用批的对应独立推导/复核证据；主数学陈述不变，旧批资产由本批明确替代。",
+      "body": {
+        "path": "archives/configuration-assignment/state/算法/给定稀疏配置的确定性预算舍入--算法.md",
+        "sha256": "fd09910b2e3028a2babd10a93e0307624c1e32d3769e86dea793f1f04bf84168",
+        "section": "输入、输出与比较值"
+      },
+      "evidence": [
+        {
+          "path": "archives/configuration-assignment/state/等价/下闭配置指派与最大值覆盖的整数等价--等价.md",
+          "sha256": "a733def460247480a5d073dbe817e48634f7dcb1ed827ffb052434a747ef76db",
+          "section": "下闭配置指派与最大值覆盖的整数等价"
+        },
+        {
+          "path": "archives/configuration-assignment/state/算法/给定稀疏配置的确定性预算舍入--算法.md",
+          "sha256": "fd09910b2e3028a2babd10a93e0307624c1e32d3769e86dea793f1f04bf84168",
+          "section": "初始值：item边际约束只在这里使用"
+        },
+        {
+          "path": "archives/configuration-assignment/state/算法/给定稀疏配置的确定性预算舍入--算法.md",
+          "sha256": "fd09910b2e3028a2babd10a93e0307624c1e32d3769e86dea793f1f04bf84168",
+          "section": "第一阶段：同bin只留一件配置"
+        },
+        {
+          "path": "archives/configuration-assignment/state/算法/给定稀疏配置的确定性预算舍入--算法.md",
+          "sha256": "fd09910b2e3028a2babd10a93e0307624c1e32d3769e86dea793f1f04bf84168",
+          "section": "第二阶段：保持成本到至多一分数件"
+        },
+        {
+          "path": "archives/configuration-assignment/state/算法/给定稀疏配置的确定性预算舍入--算法.md",
+          "sha256": "fd09910b2e3028a2babd10a93e0307624c1e32d3769e86dea793f1f04bf84168",
+          "section": "精确实现与位复杂度"
+        },
+        {
+          "path": "archives/customer-attraction/state/审查/退役选题跨模型复核的独立性与承重前提--审查.md",
+          "sha256": "377bd07b3a1dcc2d890c5526abee271ad7c785a80c0030146a020539bed6f9f1",
+          "section": "配置指派：完整恢复本次核查所需基线"
+        },
+        {
+          "path": "archives/resource-activation/state/资料/第二轮GAP候选与CRS边界--资料.md",
+          "sha256": "3ff76bddbd2b86c4373efbd30f7c9be5758ddfa81198014a5e6dd5edb65c827a",
+          "section": "2. C06：opening-cost GBAP 的基线回收"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/retired_topic_selection/multi_lane/research/topic_selection/notes/configuration_reduction_boundary.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:history/retired_topic_selection/multi_lane/research/topic_selection/notes/configuration_reduction_boundary.md",
+        "configuration-assignment/given-sparse-support-deterministic-budget-rounding",
+        "historical-candidate:C06-v2",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/retired_topic_selection/multi_lane/research/topic_selection/notes/round2_independent_root_review.md"
+      ]
+    },
+    "M-f63f6d1bd7fc41b2a4eb5f90492a24b1": {
+      "object_id": "M-f63f6d1bd7fc41b2a4eb5f90492a24b1",
+      "version": 1,
+      "title": "下闭局部指派与最高利润配置覆盖的整数精确等价",
+      "kind": "equivalence",
+      "truth_status": "proved",
+      "model": "有限物品集P、bins L；每bin有下闭局部族I_l⊆2^P，利润v_li≥0。一个整数指派取两两不交的S_l∈I_l，最大化Σ_lΣ_{i∈S_l}v_li。配置e=(l,S)表示在bin l启用局部集合S。",
+      "statement": "在完整配置地集E={(l,S):S∈I_l}上，令g(A)=Σ_i max({v_li:(l,S)∈A,i∈S}∪{0})。每bin至多一配置并满足给定启用预算、或给定启用bin独立集约束的配置最大化，与原整数指派最优值相等；g归一、非负、单调、子模。配置解逐物品只保留利润最大的一个bin，由下闭性得到同值可行指派；反向由指派取自身配置保持价值。",
+      "quantifiers": "对任意有限P,L、任意非负v及下闭I_l，对每个整数指派存在同值配置解；对每个可行配置集A存在同值指派；对所有A⊆B⊆E及e∉B，g的边际满足递减性。",
+      "assumptions": [
+        "局部族下闭；删除物品后仍在原bin的可行族内。",
+        "利润非负。",
+        "每bin至多选一个配置；启用约束为非负成本的预算，或一个给定的bin matroid独立性约束。",
+        "空bin可以不启用；删除冲突不能增加启用成本或破坏matroid独立性。"
+      ],
+      "scope": "整数可行性与价值等价；不声称自然分数预算属于某matroid多面体，不提供原紧输入的隐式配置LP求解器。",
+      "objections": "正文给出双向构造和逐物品边际证明，跨模型root审查节独立重构同一结论。原CGST归属仅为历史来源说明；不把CAG历史载体当作本对象的数学模型，也不主张新颖性。",
+      "body": {
+        "path": "archives/configuration-assignment/state/等价/下闭配置指派与最大值覆盖的整数等价--等价.md",
+        "sha256": "a733def460247480a5d073dbe817e48634f7dcb1ed827ffb052434a747ef76db",
+        "section": "下闭配置指派与最大值覆盖的整数等价"
+      },
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/审查/退役选题跨模型复核的独立性与承重前提--审查.md",
+          "sha256": "377bd07b3a1dcc2d890c5526abee271ad7c785a80c0030146a020539bed6f9f1",
+          "section": "配置指派：完整恢复本次核查所需基线"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/retired_topic_selection/multi_lane/research/topic_selection/notes/configuration_reduction_boundary.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:history/retired_topic_selection/multi_lane/research/topic_selection/notes/configuration_reduction_boundary.md",
+        "configuration-assignment/downclosed-bin-configuration-max-coverage-equivalence",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/retired_topic_selection/multi_lane/research/topic_selection/notes/round2_independent_root_review.md"
+      ]
+    },
+    "configuration-assignment/exact-pricing-sparse-configuration-lp": {
+      "object_id": "configuration-assignment/exact-pricing-sparse-configuration-lp",
+      "version": 1,
+      "title": "精确定价恢复线性配置 LP 的最优稀疏支持",
+      "kind": "algorithm",
+      "truth_status": "proved",
+      "model": "有限物品和 bin，各局部配置族非空、下闭，给定精确模权最大配置 oracle；利润、启用成本和硬预算是有理数。",
+      "statement": "对硬预算、每 bin 至多一个和每 item 边际至多一个的线性配置 LP，精确非负模权定价给确定性位多项式原始算法，输出精确最优值及至多 |L|+|P|+1 个实际列的最优有理解。同一结论适用把共同正成本预算替换为整数截断行。",
+      "quantifiers": "对每个符合合同的有限紧输入，含零成本、非均匀成本及零最优值。",
+      "assumptions": [
+        "所有输入成本、利润、预算为非负有理数。",
+        "每个局部族非空且下闭，任意非负有理权重的精确定价返回实际最优配置，耗时对输入与查询位长为确定性多项式。",
+        "先删除超过硬预算的 bin；LP 保留每 bin 和每 item 的单位边际约束。"
+      ],
+      "scope": "线性利润和显式全局约束行。可用于其他以这份线性配置 LP 作输入的算法。",
+      "objections": "精确对偶值本身不给原始支持。阈值不可行的强分离重放与统一分母间距恢复多项式列集；再取受限原始 LP 的基本最优解。",
+      "body": {
+        "path": "archives/configuration-assignment/state/定理/精确模权定价下的紧输入配置LP与硬预算指派--定理.md",
+        "sha256": "04208371125c5234e330f895e71f3d6d7387cc8494d74204547809fdec4daa9a",
+        "section": "从对偶证书恢复最优支持"
+      },
+      "evidence": [
+        {
+          "path": "archives/configuration-assignment/state/定理/精确模权定价下的紧输入配置LP与硬预算指派--定理.md",
+          "sha256": "04208371125c5234e330f895e71f3d6d7387cc8494d74204547809fdec4daa9a",
+          "section": "模型与结论"
+        },
+        {
+          "path": "archives/configuration-assignment/state/定理/精确模权定价下的紧输入配置LP与硬预算指派--定理.md",
+          "sha256": "04208371125c5234e330f895e71f3d6d7387cc8494d74204547809fdec4daa9a",
+          "section": "配置 LP 和精确对偶分离"
+        }
+      ],
+      "sources": [
+        "Grötschel–Lovász–Schrijver, Geometric Algorithms and Combinatorial Optimization, theorem 6.4.9, https://www.zib.de/userpage/groetschel/pubnew/paper/groetschellovaszschrijver1988.pdf"
+      ]
+    },
+    "configuration-assignment/implicit-linear-configuration-lp-from-exact-pricing": {
+      "object_id": "configuration-assignment/implicit-linear-configuration-lp-from-exact-pricing",
+      "version": 1,
+      "title": "精确模权定价下的紧输入配置 LP 与硬预算指派",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "有限物品和 bin，各局部配置族非空、下闭，给定精确模权最大配置 oracle；利润、启用成本和硬预算是有理数。",
+      "statement": "有确定性位多项式算法以精确稀疏最优配置 LP 为中间解，输出硬预算可行原指派，利润至少 (1−1/e)OPT/2。共同正成本时使用整数截断，共同成本为零时直接舍入，均可达 (1−1/e)OPT。显式 0/1 连续列、单位需求资源局部族满足精确定价合同。",
+      "quantifiers": "对每个满足精确定价合同的下闭配置输入，OPT 是同一原硬预算模型的整数最优；等成本提升仅对共同成本分支。",
+      "assumptions": [
+        "所有输入成本、利润、预算为非负有理数。",
+        "每个局部族非空且下闭，任意非负有理权重的精确定价返回实际最优配置，耗时对输入与查询位长为确定性多项式。",
+        "先删除超过硬预算的 bin；LP 保留每 bin 和每 item 的单位边际约束。"
+      ],
+      "scope": "单硬启用预算，可非均匀成本。连续一应用另需显式 0/1 单位需求和非负有理容量。",
+      "objections": "共同正成本强界相对截断后的 LP 或原整数 OPT。近似定价、任意 bin matroid、随机需求仍为独立模型。",
+      "body": {
+        "path": "archives/configuration-assignment/state/定理/精确模权定价下的紧输入配置LP与硬预算指派--定理.md",
+        "sha256": "04208371125c5234e330f895e71f3d6d7387cc8494d74204547809fdec4daa9a",
+        "section": "模型与结论"
+      },
+      "evidence": [
+        {
+          "path": "archives/configuration-assignment/state/定理/精确模权定价下的紧输入配置LP与硬预算指派--定理.md",
+          "sha256": "04208371125c5234e330f895e71f3d6d7387cc8494d74204547809fdec4daa9a",
+          "section": "配置 LP 和精确对偶分离"
+        },
+        {
+          "path": "archives/configuration-assignment/state/定理/精确模权定价下的紧输入配置LP与硬预算指派--定理.md",
+          "sha256": "04208371125c5234e330f895e71f3d6d7387cc8494d74204547809fdec4daa9a",
+          "section": "从对偶证书恢复最优支持"
+        },
+        {
+          "path": "archives/configuration-assignment/state/定理/精确模权定价下的紧输入配置LP与硬预算指派--定理.md",
+          "sha256": "04208371125c5234e330f895e71f3d6d7387cc8494d74204547809fdec4daa9a",
+          "section": "转回整数指派及局部资源应用"
+        },
+        {
+          "path": "archives/configuration-assignment/state/算法/给定稀疏配置的确定性预算舍入--算法.md",
+          "sha256": "fd09910b2e3028a2babd10a93e0307624c1e32d3769e86dea793f1f04bf84168",
+          "section": "输入、输出与比较值"
+        },
+        {
+          "path": "archives/configuration-assignment/state/算法/给定稀疏配置的确定性预算舍入--算法.md",
+          "sha256": "fd09910b2e3028a2babd10a93e0307624c1e32d3769e86dea793f1f04bf84168",
+          "section": "精确实现与位复杂度"
+        },
+        {
+          "path": "archives/configuration-assignment/state/算法/给定稀疏配置的确定性预算舍入--算法.md",
+          "sha256": "fd09910b2e3028a2babd10a93e0307624c1e32d3769e86dea793f1f04bf84168",
+          "section": "等成本强界的修复合同"
+        },
+        {
+          "path": "archives/configuration-assignment/state/审查/隐式配置定价与梯度背景的算法合同--审查.md",
+          "sha256": "ab8a327eb181eee60840055646f76c0f8a602ffc8dbf95011e3ebc616231bb6c",
+          "section": "consecutive-ones局部oracle的准确条件"
+        }
+      ],
+      "sources": [
+        "Grötschel–Lovász–Schrijver, Geometric Algorithms and Combinatorial Optimization, theorem 6.4.9, https://www.zib.de/userpage/groetschel/pubnew/paper/groetschellovaszschrijver1988.pdf"
+      ]
+    },
+    "configuration-assignment/sparse-approximate-gradient-lp-direction-from-modular-pricing": {
+      "object_id": "configuration-assignment/sparse-approximate-gradient-lp-direction-from-modular-pricing",
+      "version": 1,
+      "title": "近似模权定价恢复短支持真梯度方向",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "有限隐式下闭配置最高利润覆盖。给定稀疏有理点，真梯度方向域有每 bin、每物品及硬预算行。",
+      "statement": "逐 bin 对任意非负有理模权返回实际 α 近似配置时，可在确定性位多项式时间恢复真实可行的 α 近似真梯度方向，支持至多 |L|+|P|+1，坐标位长仅依固定可行域。先扣物品价格，真列或统一对偶缩放给双证书，再重放失败列与有理间隔恢复原始解。线性配置利润也同样可恢复 α 近似值。",
+      "quantifiers": "每个满足合同的有理实例、稀疏有理点及已知有理 0<α≤1。覆盖零预算、零梯度与空地集。",
+      "assumptions": [
+        "每个局部族非空下闭，oracle 返回实际配置并接受任意非负有理权重。",
+        "预删成本超硬预算 bin，预算行非负；共同正成本可用整数截断。"
+      ],
+      "scope": "固定点完整可行方向及原始有限列恢复，或线性配置列利润。方向的基本解不要求在整个指数 LP 全局最优。",
+      "objections": "逐查询扣除固定 bin/预算价后仍无乘法误差传递。缩放通过证书与实际真列切面分别使用。未认证只给数值的 oracle 或额外耦合。",
+      "body": {
+        "path": "archives/configuration-assignment/state/定理/近似模权定价恢复短支持真梯度方向--定理.md",
+        "sha256": "705b0b05ea3454a2b9c1ad36a2c9c28d92dc8ba923f5c1d7fa0830f354f7cddc"
+      },
+      "evidence": [
+        {
+          "path": "archives/configuration-assignment/state/定理/稀疏点处的精确隐式配置梯度定价--定理.md",
+          "sha256": "0265f06dd6695cd2d42793391766d39aa0bc624238a59acb4d6a79f576172e62"
+        },
+        {
+          "path": "archives/configuration-assignment/state/定理/精确模权定价下的紧输入配置LP与硬预算指派--定理.md",
+          "sha256": "04208371125c5234e330f895e71f3d6d7387cc8494d74204547809fdec4daa9a",
+          "section": "从对偶证书恢复最优支持"
+        }
+      ],
+      "sources": []
+    },
+    "configuration-assignment/sparse-continuous-greedy-hard-budget-from-modular-pricing": {
+      "object_id": "configuration-assignment/sparse-continuous-greedy-hard-budget-from-modular-pricing",
+      "version": 1,
+      "title": "近似模权定价下的确定性离散连续贪心",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "有限显式物品和 bin，非空下闭隐式局部族，独立配置最高利润覆盖，自然硬预算配置 LP 或共同正成本整数截断。",
+      "statement": "给定逐 bin 确定性 α 近似模权定价与有理 0<ε<1，构造配置 LP 有理点 x，G(x)≥(1−e^(−α)−ε)OPT，支持至多 ⌈2/ε⌉(|L|+|P|+1)。每步用短支持 α 近似真梯度方向，item 行给相对方向曲率至多 L(y)≤4OPT。时间关于输入位长和 1/ε 多项式。舍入保原硬预算，非均匀成本至少 G(x)/2，共同正成本截断或共同零成本至少 G(x)。",
+      "quantifiers": "任意满足合同的有理实例、已知有理 0<α≤1 和有理 0<ε<1。OPT 为原硬预算整数最优。",
+      "assumptions": [
+        "局部定价返回实际配置，利润、成本、预算非负有理。",
+        "先删成本大于预算的 bin，保每 bin 及每物品边际至多一。",
+        "共同正成本保值舍入使用整数截断。"
+      ],
+      "scope": "完整近似定价多线性轨迹及舍入。α=1 给精确子类，原精确线性 LP 同时保有相应整数比值且无 ε 损失。",
+      "objections": "必须给可返回配置的非负模权 oracle。非均匀更强舍入、额外 matroid 和随机模型各独立。",
+      "body": {
+        "path": "archives/configuration-assignment/state/定理/近似模权定价下的确定性离散连续贪心--定理.md",
+        "sha256": "e1f327bd8ea37e2d370bd6461e902c639e9fafc05890c80f75d337d2fcdc5575"
+      },
+      "evidence": [
+        {
+          "path": "archives/configuration-assignment/state/定理/近似模权定价恢复短支持真梯度方向--定理.md",
+          "sha256": "705b0b05ea3454a2b9c1ad36a2c9c28d92dc8ba923f5c1d7fa0830f354f7cddc"
+        },
+        {
+          "path": "archives/configuration-assignment/state/算法/给定稀疏配置的确定性预算舍入--算法.md",
+          "sha256": "fd09910b2e3028a2babd10a93e0307624c1e32d3769e86dea793f1f04bf84168",
+          "section": "输入、输出与比较值"
+        },
+        {
+          "path": "archives/configuration-assignment/state/算法/给定稀疏配置的确定性预算舍入--算法.md",
+          "sha256": "fd09910b2e3028a2babd10a93e0307624c1e32d3769e86dea793f1f04bf84168",
+          "section": "等成本强界的修复合同"
+        }
+      ],
+      "sources": []
+    },
+    "configuration-assignment/sparse-exact-implicit-multilinear-gradient-pricing": {
+      "object_id": "configuration-assignment/sparse-exact-implicit-multilinear-gradient-pricing",
+      "version": 1,
+      "title": "稀疏点处的精确隐式配置梯度定价",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "显式物品和 bin，非空下闭局部族，独立配置 multilinear 最高利润覆盖。给定有理稀疏点和任意有理可加扣价。",
+      "statement": "用逐 bin 精确非负模权定价与显式正支持扫描，在确定性位多项式时间精确最大化全隐式地集上的真减价导数并回传达到配置。共用背景得分为 (1−z_e)∂_eG；z_e=1 时直接去除 e 计算。配合精确对偶分离和稀疏原始恢复，能对该真梯度线性优化自然硬预算配置 LP 或共同成本截断版并返回短支持。无价格时逐 bin α 近似定价给全地集真导数最大值的 α 倍。",
+      "quantifiers": "对每个满足合同的有限局部族、显式有理正支持、利润和扣价。若地集为空，返回无配置和零 LP 方向。",
+      "assumptions": [
+        "利润非负有理，配置独立采样。",
+        "给定短正支持。逐 bin oracle 返回可行配置而非只有数值。",
+        "自然配置 LP 保持物品、bin、预算行，先删成本超过预算的 bin。"
+      ],
+      "scope": "固定稀疏点的精确方向和位长。全程连续算法的轨迹、误差和支撑增长仍是另一个合同。",
+      "objections": "旧正坐标真梯度共用权重的反例仍成立。任意扣价下不继承乘法近似。未将配置 LP 等同于整数凸包。",
+      "body": {
+        "path": "archives/configuration-assignment/state/定理/稀疏点处的精确隐式配置梯度定价--定理.md",
+        "sha256": "0265f06dd6695cd2d42793391766d39aa0bc624238a59acb4d6a79f576172e62"
+      },
+      "evidence": [
+        {
+          "path": "archives/configuration-assignment/state/审查/隐式配置定价与梯度背景的算法合同--审查.md",
+          "sha256": "ab8a327eb181eee60840055646f76c0f8a602ffc8dbf95011e3ebc616231bb6c",
+          "section": "梯度是模权和，不代表所有候选共享同一背景"
+        },
+        {
+          "path": "archives/configuration-assignment/state/定理/精确模权定价下的紧输入配置LP与硬预算指派--定理.md",
+          "sha256": "04208371125c5234e330f895e71f3d6d7387cc8494d74204547809fdec4daa9a",
+          "section": "从对偶证书恢复最优支持"
+        }
+      ],
+      "sources": []
+    }
+  },
+  "edges": {
+    "bmkp-c06-explicit-support-degree-two-hard-budget-value": {
+      "edge_id": "bmkp-c06-explicit-support-degree-two-hard-budget-value",
+      "kind": "transfers",
+      "status": "accepted",
+      "source_ids": [
+        "M-d05829d1479f4b8aad94f3953ab9ffc4"
+      ],
+      "target_ids": [
+        "M-668ee3a8071f4d0c8b8acf2e40a93d60"
+      ],
+      "premises_mode": "all",
+      "relation_mode": "unconditional",
+      "conditions": "C06同一给定有理分数点x，有限显式支持E仅列非零配置，各配置在对应下闭局部族内。非负有理利润v_li、启用成本c_l和预算B，每箱配置和≤1、每物品总边际≤1，且Σ_e c_l x_e≤B。先排除c_l>B的箱，L(x)=Σ_(l,S) x_(l,S)Σ_(i∈S)v_li以排除后的点计。原切片至多两种启用成本、每物品在支持中至多两个不同箱。C可取原比较域内所有启用成本的正上界，和P03数值比较时取同一个最大箱成本C并令k=B/C。严格利润比较要求L(x)>0。",
+      "roles": {
+        "M-d05829d1479f4b8aad94f3953ab9ffc4": "提供硬预算配置最大覆盖接口、异号保成本交换、末端可负担单箱以及精确有理位复杂度。",
+        "M-668ee3a8071f4d0c8b8acf2e40a93d60": "C06要求比较同一给定配置LP点上的联合budget/item-contention。所得结论支付硬预算总值及明确历史乘积的标量比较，保留条件留存与sharp量词。"
+      },
+      "explanation": "沿原证明的支持配置e=(l,S)、成本c_l和逐物品最高利润覆盖g，不改变L(x)或可开箱的含义。原独立配置势直接给(1−1/e)L(x)/2。C06的度二按不同箱计，一个箱可有多项含同一物品的配置。在初始势H中，独立跨箱，箱内按坐标z_e互斥选择一个配置，余概率为空。物品i的正利润阈值t至多有两个箱质量a,b，分别为该箱的合格配置坐标之和，可补零。在原点x有a+b≤1，因此ab≤(a+b)^2/4≤(a+b)/4，阈值命中a+b−ab≥3(a+b)/4。逐物品对利润阈值积分得H(x)≥3L(x)/4。H固定其他箱时对一个箱的坐标仿射，故同箱保和、保成本的端点交换可逐次清零一项而不减H。每箱至多一项后H等于原覆盖多线性势G。零成本项升一，正成本分数对沿(1/c_l,−1/c_j)交换，子模性使沿线凸，取不减端点直至余整数配置集A及至多一件分数配置e，权q∈(0,1)。A预算可行，e可负担，G≤g(A)+q g({e})，故二者较好至少保G/(1+q)≥G/2。无分数件则直接取A，若A∪{e}已经可负担则直接取并集。由此原点运行给普适3L(x)/8。对B≥C>0还从s x另跑同一算法，取s=1−C/B。相对原x的阈值命中为s(a+b)−s²ab≥(s−s²/4)(a+b)，故H(s x)≥(s−s²/4)L(x)，依旧用原L(x)作分母。交换保持成本≤B−C，最后一件可升一，新增成本至多C，覆盖单调。两次输出取总值较优者得max{3/8,s−s²/4}L(x)。也可据原分数成本W把s取min{1,(B−C)/W}，W=0时直接取s=1。若所有支持成本为零，则同箱清零后全升一，得3L(x)/4。任何候选整数集均每箱至多一项，解码时冲突物品只留最高利润箱，其他箱删去该物品，由下闭性得原局部可行指派且价值恰为g。删后配置不必也在显式支持中。每次运行O(|E|)次端点交换。H由各阈值的箱内有理和、跨箱乘积精确评估，G为其一配置特例。同箱坐标是初始坐标子集和。跨箱以质量w_l=c_l q_l记账，交换将一质量定在0或c_l，另一取旧两质量之和减该固定成本。未固定质量携带互不重叠的初始质量子集及相应已固定成本，公共分母可用输入分母之积控制。除以原正成本、利润阈值乘积及第二次运行的有理s均保多项式位长。比较P03 Theorems 5.2/5.4在同一可负担输入、同一k与同一L(x)的已报告总利润系数p(k)。k<3时p(k)=1/8<3/8。k≥3时p(k)=(1−1/k)(1−1/√k)/2<1/2，而s≥2/3给s−s²/4≥5/9。所以加入留一箱成本的运行后，每个有限k都有严格的总值保证改进。只用原常数γ=(1−1/e)/2或只用3/8时，对k≥3的严格比较恰为3≤k<k_γ，其中k_γ是p(k)=γ的唯一根，两值分别约10.844326及21.835281。若保留乘积另指固定的αβ，且同样乘原L(x)，则常数3/8只在αβ<3/8时单独认证严格改进，参数保证同理。作为自然LP最坏界的独立上限，B=1、两箱成本1/2+δ及1/2+2δ（0<δ<1/4为有理数），各含一个不同的单位利润物品。取x=(1,(1/2−δ)/(1/2+2δ))，只能开一个箱，整数最优为1，OPT/L(x)=(1/2+2δ)/(1+δ)趋于1/2。",
+      "scope": "仅给定有限有理显式配置支持的总利润指派，以排除不可负担箱后的原L(x)为基准。度二加强对任意成本种类有效，因而包含两成本切片。P03是同分母的已报告保证值比较。结论未评价P03每一实例的实际输出，未构造保持给定抽样分布的逐副本联合留存机制。同一x若需与隐式配置LP最优或整数OPT比较，须另证分数点质量和取得成本。",
+      "evidence": [
+        {
+          "path": "archives/bottleneck-knapsack/state/审查/退役GAP选题底稿与数学边界--审查.md",
+          "sha256": "3a6d7787cf22efa03d645baf2719fa84927e55e5777d886bd38c19627913c10e",
+          "section": "15 项候选的准确状态"
+        },
+        {
+          "path": "research/registration/evidence/register-ab98f323ad-0001-1/gap.md",
+          "sha256": "8e14e6d6525cc353091aa0484c6c72dc447f581d6227d6232fb3f960db06b68e",
+          "section": "C06. 非均匀 opening costs 的 GBAP：联合耦合与简单算法的真实界【A；作者明确问题 + 新切口】"
+        },
+        {
+          "path": "archives/configuration-assignment/state/算法/给定稀疏配置的确定性预算舍入--算法.md",
+          "sha256": "fd09910b2e3028a2babd10a93e0307624c1e32d3769e86dea793f1f04bf84168",
+          "section": "输入、输出与比较值"
+        },
+        {
+          "path": "archives/configuration-assignment/state/等价/下闭配置指派与最大值覆盖的整数等价--等价.md",
+          "sha256": "a733def460247480a5d073dbe817e48634f7dcb1ed827ffb052434a747ef76db",
+          "section": "下闭配置指派与最大值覆盖的整数等价"
+        },
+        {
+          "path": "archives/configuration-assignment/state/算法/给定稀疏配置的确定性预算舍入--算法.md",
+          "sha256": "fd09910b2e3028a2babd10a93e0307624c1e32d3769e86dea793f1f04bf84168",
+          "section": "初始值：item边际约束只在这里使用"
+        },
+        {
+          "path": "archives/configuration-assignment/state/算法/给定稀疏配置的确定性预算舍入--算法.md",
+          "sha256": "fd09910b2e3028a2babd10a93e0307624c1e32d3769e86dea793f1f04bf84168",
+          "section": "第一阶段：同bin只留一件配置"
+        },
+        {
+          "path": "archives/configuration-assignment/state/算法/给定稀疏配置的确定性预算舍入--算法.md",
+          "sha256": "fd09910b2e3028a2babd10a93e0307624c1e32d3769e86dea793f1f04bf84168",
+          "section": "第二阶段：保持成本到至多一分数件"
+        },
+        {
+          "path": "archives/configuration-assignment/state/算法/给定稀疏配置的确定性预算舍入--算法.md",
+          "sha256": "fd09910b2e3028a2babd10a93e0307624c1e32d3769e86dea793f1f04bf84168",
+          "section": "精确实现与位复杂度"
+        },
+        {
+          "path": "archives/customer-attraction/state/审查/退役选题跨模型复核的独立性与承重前提--审查.md",
+          "sha256": "377bd07b3a1dcc2d890c5526abee271ad7c785a80c0030146a020539bed6f9f1",
+          "section": "配置指派：完整恢复本次核查所需基线"
+        },
+        {
+          "path": "archives/resource-activation/state/资料/第二轮GAP候选与CRS边界--资料.md",
+          "sha256": "3ff76bddbd2b86c4373efbd30f7c9be5758ddfa81198014a5e6dd5edb65c827a",
+          "section": "2. C06：opening-cost GBAP 的基线回收"
+        }
+      ],
+      "reviewed_by": "Boss1/bmkp-sparse-retention-3c",
+      "review_note": "核对两对象登记pin和全部指定正文节。按不同箱合并阈值质量，逐一检查箱内仿射端点、保成本凸交换、自然预算及预留C预算的两次最终解码和有理位长。另直接核对P03 Eq. (1.4)、§5 Lemma 5.1及Theorems 5.2/5.4的分母与乘积。原文 https://arxiv.org/html/2208.11832v4",
+      "contribution": {
+        "result": "C06两成本、每物品至多两箱支持的共同合同上，确定性位多项式地输出硬预算指派，普适价值≥3L(x)/8。预留一个最大箱成本可加强至max{3/8,s−s²/4}L(x)，s=1−1/k，B≥C>0。以同一L(x)和k比较，全部有限k均严格优于历史P03报告的系数（L(x)>0）。",
+        "remaining": "若C06要求从预先指定的配置抽样过程内选择，仍需明确两阶段条件事件、边际保持对象与概率量词，另证逐配置或物品—箱副本的条件联合留存或matching obstruction。两种成本、度二全类相对自然LP的精确最坏常数仍未确定，本比较只给普适下界3/8和趋于1/2的上限。若比较的是另行定义的两率乘积，仍须指明该乘积与相同分母。"
+      },
+      "endpoint_pins": {
+        "M-668ee3a8071f4d0c8b8acf2e40a93d60": "5e5e183bf86cb9a71fa988c32e7a16abc362c1d470813e4b23b67cbc4a0786fe",
+        "M-d05829d1479f4b8aad94f3953ab9ffc4": "23bb2ddcdcb76320fa48b9c4a1ff525b126121d0cdc06b55232dd73098e7ca09"
+      },
+      "evidence_pins": {
+        "archives/bottleneck-knapsack/state/审查/退役GAP选题底稿与数学边界--审查.md": "3a6d7787cf22efa03d645baf2719fa84927e55e5777d886bd38c19627913c10e",
+        "research/registration/evidence/register-ab98f323ad-0001-1/gap.md": "8e14e6d6525cc353091aa0484c6c72dc447f581d6227d6232fb3f960db06b68e",
+        "archives/configuration-assignment/state/算法/给定稀疏配置的确定性预算舍入--算法.md": "fd09910b2e3028a2babd10a93e0307624c1e32d3769e86dea793f1f04bf84168",
+        "archives/configuration-assignment/state/等价/下闭配置指派与最大值覆盖的整数等价--等价.md": "a733def460247480a5d073dbe817e48634f7dcb1ed827ffb052434a747ef76db",
+        "archives/customer-attraction/state/审查/退役选题跨模型复核的独立性与承重前提--审查.md": "377bd07b3a1dcc2d890c5526abee271ad7c785a80c0030146a020539bed6f9f1",
+        "archives/resource-activation/state/资料/第二轮GAP候选与CRS边界--资料.md": "3ff76bddbd2b86c4373efbd30f7c9be5758ddfa81198014a5e6dd5edb65c827a"
+      },
+      "review_digest": "4f9e8870374a632c0fff91a71a7626630cf5ba2562f414eb998f9d38dd400a05"
+    },
+    "config-exact-sparse-lp-and-budget-rounding-pay-implicit-assignment": {
+      "edge_id": "config-exact-sparse-lp-and-budget-rounding-pay-implicit-assignment",
+      "kind": "implies",
+      "status": "accepted",
+      "premises_mode": "all",
+      "relation_mode": "unconditional",
+      "source_ids": [
+        "configuration-assignment/exact-pricing-sparse-configuration-lp",
+        "M-d05829d1479f4b8aad94f3953ab9ffc4",
+        "M-81da430ecf2846f59fb645a08763dab4",
+        "M-ada741cd5e634934805d83850dd7cd1f"
+      ],
+      "target_ids": [
+        "configuration-assignment/implicit-linear-configuration-lp-from-exact-pricing"
+      ],
+      "conditions": "有限显式物品和 bin、下闭非空局部配置族、非负有理启用成本/利润/单硬预算，逐 bin 的精确非负有理模权定价返回实际配置。剔除超预算 bin，保每 bin 与每 item 单位边际约束。连续一子类另要求显式 0/1 矩阵、每列的一成一段、单位需求和非负有理容量。共同正成本分支使用整数截断，共同零成本分支无预算损失。",
+      "roles": {
+        "configuration-assignment/exact-pricing-sparse-configuration-lp": "由精确对偶分离和不可行证书重放给最优值 V 与至多 |L|+|P|+1 个实际配置的精确有理原始支持。",
+        "M-d05829d1479f4b8aad94f3953ab9ffc4": "对单硬预算、非均匀成本的最优显式支持，给确定性位多项式的可行原指派及 (1−1/e)V/2。",
+        "M-81da430ecf2846f59fb645a08763dab4": "同一显式支持在共同正成本加整数截断、共同零成本时，给 (1−1/e)V。",
+        "M-ada741cd5e634934805d83850dd7cd1f": "对明确的连续一 0/1 单位需求局部族，实现一般结论所调用的精确模权 oracle。",
+        "configuration-assignment/implicit-linear-configuration-lp-from-exact-pricing": "精确定价紧输入下的原硬预算指派算法和两类保证，连同连续一资源局部应用。"
+      },
+      "explanation": "每个原整数可行指派是对应线性 LP 的同值整数点，因此原最优 OPT≤V。精确定价原始算法给稀疏 x 及 L(x)=V。x 逐项满足给定支持算法的边际与预算合同；它精确比较覆盖值做保和和保成本交换，最坏以整数集和可负担单配置比较付 1/2。共同正成本换成整数秩截断，原整数可行集相同，最后分数可升一；零成本可直接升。两分支输出保持原预算和每项唯一，利润分别 ≥(1−1/e)OPT/2 和 ≥(1−1/e)OPT。对连续一局部模型，取 floor 容量后的全幺模 LP 提供实际最优配置，因此满足通用定价假设。算法所求为线性配置 LP，只在已给支持上用覆盖值，不需要一次定价求所有活跃 multilinear 导数。",
+      "whole_result": "每个符合精确逐 bin 模权定价合同的紧输入，在确定性位多项式时间取得最优稀疏配置 LP 原始解并输出原硬预算整数指派。一般非均匀成本时利润至少 (1−1/e)OPT/2，共同正成本用整数截断以及共同零成本时至少 (1−1/e)OPT。显式连续一 0/1 单位需求局部约束满足精确定价合同。",
+      "scope": "单硬启用预算与下闭局部族的线性配置 LP。任意 bin matroid、随机需求、近似定价或额外耦合约束另需算法。等成本强界比较截断值与原整数 OPT。",
+      "evidence": [
+        {
+          "path": "archives/configuration-assignment/state/审查/隐式配置定价与梯度背景的算法合同--审查.md",
+          "sha256": "ab8a327eb181eee60840055646f76c0f8a602ffc8dbf95011e3ebc616231bb6c",
+          "section": "consecutive-ones局部oracle的准确条件"
+        },
+        {
+          "path": "archives/configuration-assignment/state/定理/精确模权定价下的紧输入配置LP与硬预算指派--定理.md",
+          "sha256": "04208371125c5234e330f895e71f3d6d7387cc8494d74204547809fdec4daa9a",
+          "section": "从对偶证书恢复最优支持"
+        },
+        {
+          "path": "archives/configuration-assignment/state/定理/精确模权定价下的紧输入配置LP与硬预算指派--定理.md",
+          "sha256": "04208371125c5234e330f895e71f3d6d7387cc8494d74204547809fdec4daa9a",
+          "section": "模型与结论"
+        },
+        {
+          "path": "archives/configuration-assignment/state/定理/精确模权定价下的紧输入配置LP与硬预算指派--定理.md",
+          "sha256": "04208371125c5234e330f895e71f3d6d7387cc8494d74204547809fdec4daa9a",
+          "section": "配置 LP 和精确对偶分离"
+        },
+        {
+          "path": "archives/configuration-assignment/state/定理/精确模权定价下的紧输入配置LP与硬预算指派--定理.md",
+          "sha256": "04208371125c5234e330f895e71f3d6d7387cc8494d74204547809fdec4daa9a",
+          "section": "转回整数指派及局部资源应用"
+        },
+        {
+          "path": "archives/configuration-assignment/state/算法/给定稀疏配置的确定性预算舍入--算法.md",
+          "sha256": "fd09910b2e3028a2babd10a93e0307624c1e32d3769e86dea793f1f04bf84168",
+          "section": "输入、输出与比较值"
+        },
+        {
+          "path": "archives/configuration-assignment/state/算法/给定稀疏配置的确定性预算舍入--算法.md",
+          "sha256": "fd09910b2e3028a2babd10a93e0307624c1e32d3769e86dea793f1f04bf84168",
+          "section": "精确实现与位复杂度"
+        },
+        {
+          "path": "archives/configuration-assignment/state/算法/给定稀疏配置的确定性预算舍入--算法.md",
+          "sha256": "fd09910b2e3028a2babd10a93e0307624c1e32d3769e86dea793f1f04bf84168",
+          "section": "等成本强界的修复合同"
+        },
+        {
+          "path": "archives/configuration-assignment/state/等价/下闭配置指派与最大值覆盖的整数等价--等价.md",
+          "sha256": "a733def460247480a5d073dbe817e48634f7dcb1ed827ffb052434a747ef76db",
+          "section": "下闭配置指派与最大值覆盖的整数等价"
+        },
+        {
+          "path": "archives/configuration-assignment/state/算法/给定稀疏配置的确定性预算舍入--算法.md",
+          "sha256": "fd09910b2e3028a2babd10a93e0307624c1e32d3769e86dea793f1f04bf84168",
+          "section": "初始值：item边际约束只在这里使用"
+        },
+        {
+          "path": "archives/configuration-assignment/state/算法/给定稀疏配置的确定性预算舍入--算法.md",
+          "sha256": "fd09910b2e3028a2babd10a93e0307624c1e32d3769e86dea793f1f04bf84168",
+          "section": "第一阶段：同bin只留一件配置"
+        },
+        {
+          "path": "archives/configuration-assignment/state/算法/给定稀疏配置的确定性预算舍入--算法.md",
+          "sha256": "fd09910b2e3028a2babd10a93e0307624c1e32d3769e86dea793f1f04bf84168",
+          "section": "第二阶段：保持成本到至多一分数件"
+        },
+        {
+          "path": "archives/customer-attraction/state/审查/退役选题跨模型复核的独立性与承重前提--审查.md",
+          "sha256": "377bd07b3a1dcc2d890c5526abee271ad7c785a80c0030146a020539bed6f9f1",
+          "section": "配置指派：完整恢复本次核查所需基线"
+        },
+        {
+          "path": "archives/resource-activation/state/资料/第二轮GAP候选与CRS边界--资料.md",
+          "sha256": "3ff76bddbd2b86c4373efbd30f7c9be5758ddfa81198014a5e6dd5edb65c827a",
+          "section": "2. C06：opening-cost GBAP 的基线回收"
+        },
+        {
+          "path": "archives/configuration-assignment/state/反例/等启用成本的自然预算LP与整数截断缺口--反例.md",
+          "sha256": "c53cd382c99d98a32a857f97cf1788dc009965135d592614fb05f89264f1d30f",
+          "section": "正确修复及不能保留的目标"
+        }
+      ],
+      "reviewed_by": "Boss1",
+      "review_note": "核对任意受限对偶的统一分母界、固定查询重放、原始基本可行支持、两种舍入分支、TU oracle 与原整数可行映射。",
+      "endpoint_pins": {
+        "M-81da430ecf2846f59fb645a08763dab4": "d20161ada731b6e82e89c27bc3c7a7374674b950d21e0cad9a1be961e2d22ce3",
+        "M-ada741cd5e634934805d83850dd7cd1f": "a5b3e151e5f809e6ad470c957e0aeef24c8e7975c1a48a3a3487f4c0e72be19b",
+        "M-d05829d1479f4b8aad94f3953ab9ffc4": "23bb2ddcdcb76320fa48b9c4a1ff525b126121d0cdc06b55232dd73098e7ca09",
+        "configuration-assignment/exact-pricing-sparse-configuration-lp": "847bf3f41064526e222270532908a4a4dfb56a063ffae9b48ac817957fbf0bcb",
+        "configuration-assignment/implicit-linear-configuration-lp-from-exact-pricing": "bc9984dc949b57b5dba024289ef14b2fed3734e4000f4d577ec0b67b2ea908da"
+      },
+      "evidence_pins": {
+        "archives/configuration-assignment/state/审查/隐式配置定价与梯度背景的算法合同--审查.md": "ab8a327eb181eee60840055646f76c0f8a602ffc8dbf95011e3ebc616231bb6c",
+        "archives/configuration-assignment/state/定理/精确模权定价下的紧输入配置LP与硬预算指派--定理.md": "04208371125c5234e330f895e71f3d6d7387cc8494d74204547809fdec4daa9a",
+        "archives/configuration-assignment/state/算法/给定稀疏配置的确定性预算舍入--算法.md": "fd09910b2e3028a2babd10a93e0307624c1e32d3769e86dea793f1f04bf84168",
+        "archives/configuration-assignment/state/等价/下闭配置指派与最大值覆盖的整数等价--等价.md": "a733def460247480a5d073dbe817e48634f7dcb1ed827ffb052434a747ef76db",
+        "archives/customer-attraction/state/审查/退役选题跨模型复核的独立性与承重前提--审查.md": "377bd07b3a1dcc2d890c5526abee271ad7c785a80c0030146a020539bed6f9f1",
+        "archives/resource-activation/state/资料/第二轮GAP候选与CRS边界--资料.md": "3ff76bddbd2b86c4373efbd30f7c9be5758ddfa81198014a5e6dd5edb65c827a",
+        "archives/configuration-assignment/state/反例/等启用成本的自然预算LP与整数截断缺口--反例.md": "c53cd382c99d98a32a857f97cf1788dc009965135d592614fb05f89264f1d30f"
+      },
+      "review_digest": "417bbc9833d7de8aad5d0cb72addec45d3b17d7fa7c86a0de590b3db32b19e72"
+    },
+    "config-sparse-point-exact-gradient-pricing-and-direction": {
+      "edge_id": "config-sparse-point-exact-gradient-pricing-and-direction",
+      "kind": "implies",
+      "status": "accepted",
+      "premises_mode": "all",
+      "relation_mode": "unconditional",
+      "source_ids": [
+        "M-a8a3062b0ff9434fa078140f5b654163",
+        "configuration-assignment/exact-pricing-sparse-configuration-lp"
+      ],
+      "target_ids": [
+        "M-42d1210a93e94042833e75a1a80545ea"
+      ],
+      "conditions": "显式有限物品及 bin，每个局部配置族非空且下闭，利润为非负有理数，逐 bin 可在输入及查询位长的确定性多项式时间内按任意非负有理模权返回一个实际最优配置。给定标准独立配置 multilinear extension 的点 z∈[0,1]^E，显式输入包含完整正支持 K 及其有理坐标。定价查询给定任意有理的 bin 常数 a_ℓ 和逐物品价格 π_ℓi。方向问题采用非负有理成本和预算，预删 c_ℓ>B 的 bin，按保留地集取 E，并保留每 bin、每物品的单位边际行及预算行。共同正成本时也允许用 Σx≤⌊B/c⌋ 替换预算行。",
+      "roles": {
+        "M-a8a3062b0ff9434fa078140f5b654163": "给出候选删除背景的正确导数公式、零坐标共用背景的精确适用域，以及固定背景不能同时表示所有正坐标真导数的反例。",
+        "configuration-assignment/exact-pricing-sparse-configuration-lp": "提供可复用的有理对偶不可行阈值、实际配置切面重放及受限原始基本最优解恢复。梯度目标另行建立精确强分离和统一位界。",
+        "M-42d1210a93e94042833e75a1a80545ea": "取紧输入五接口合同中的固定稀疏点梯度查询，以及给定该点后构造一个精确短支持 LP 方向的部分。"
+      },
+      "explanation": "对同一个完整独立背景 R_z，令 b_ℓi=E[(v_ℓi−M_i(R_z))_+]。对 e=(ℓ,S)，条件化 e 是否出现。出现时每个 i∈S 的残余为零，未出现时是排除 e 的背景，故 Σ_{i∈S}b_ℓi=(1−z_e)∂_eG(z)。零坐标的真导数恰为共用背景和。正坐标逐个直接在 K∖{e} 上用原导数公式计算，含 z_e=1 时也如此。每个残余期望是在 [0,v_ℓi] 上积分 Pr[M_i<t]，按覆盖利润分段，每段概率是背景中覆盖 i 且利润≥t 的配置的 ∏(1−z_f)。令 Q_v、Q_z 分别为输入利润和支持坐标的分母乘积，所有导数分母均整除 Q_vQ_z，且 0≤∂_eG≤Σ_{i∈S}v_ℓi。设 U 为 K 内最大的真减价导数 ∂_eG−a_ℓ−Σπ_ℓi，K 空时为 −∞。设 V 为所有配置的共用背景减价分数的最大值。各 bin 以 (b_ℓi−π_ℓi)_+ 定价，从返回集合删去负真实权项，再减 a_ℓ。下闭性保证返回的实际配置达到带符号模权最优。正坐标真分数由 U 控制，零坐标真分数由 V 控制。反向，U 由真分数达到，而 V 的达到配置因 ∂_eG≥Σb_ℓi 有至少 V 的真分数。故真全局最优恰为 max(U,V)。若 U≥V 返回 K 内达到者。若 U<V，V 的达到配置必为零坐标，否则其真分数超过 U。该比较保留原反例的两个正坐标真导数 1/5 与 4/5，其共用背景和同为 4/25。对 max ⟨∇G(z),x⟩，令 a_ℓ 等于 bin 行对偶加预算行对偶乘 c_ℓ，令 π_ℓi 等于 item 行对偶。截断版用预算系数 1。检查显式行后，正的最大减价返回一条实际违反的配置对偶不等式，从而得到精确强分离。梯度与约束系数的统一多项式位界适用于任意保留列子系统。应用已有有理最优值间距和阈值不可行重放，记录返回列，求受限原始 LP 的基本最优解，得到至多 |L|+|P|+1 个实际列。若没有配置，定价报告无配置，方向取零。",
+      "contribution": {
+        "result": "对任意给定显式有理正支持的固定独立配置点，可用逐 bin 精确非负模权定价和支持内显式导数，在确定性位多项式时间返回真实最大加性减价梯度及其配置。在上述自然硬预算配置 LP 或共同正成本截断版，可精确线性优化该真梯度并返回最多 |L|+|P|+1 个配置的最优有理方向。",
+        "remaining": "如需一条使用梯度的完整隐式算法，还须给出如何构造迭代点、离散步长或误差保证、全程支持及位复杂度、终点舍入和整体近似分析。近似定价损失、其他激活约束或随机需求仍需按各自模型验证。"
+      },
+      "scope": "固定且已显式给定完整短支持的标准独立 extension 点。方向是所述自然或截断线性松弛的最优点，保每物品边际约束。只支付五接口中的固定点真梯度定价及一次 LP 方向恢复。",
+      "evidence": [
+        {
+          "path": "archives/configuration-assignment/state/审查/隐式配置定价与梯度背景的算法合同--审查.md",
+          "sha256": "ab8a327eb181eee60840055646f76c0f8a602ffc8dbf95011e3ebc616231bb6c",
+          "section": "梯度是模权和，不代表所有候选共享同一背景"
+        },
+        {
+          "path": "archives/configuration-assignment/state/等价/下闭配置指派与最大值覆盖的整数等价--等价.md",
+          "sha256": "a733def460247480a5d073dbe817e48634f7dcb1ed827ffb052434a747ef76db",
+          "section": "下闭配置指派与最大值覆盖的整数等价"
+        },
+        {
+          "path": "archives/configuration-assignment/state/审查/隐式配置定价与梯度背景的算法合同--审查.md",
+          "sha256": "ab8a327eb181eee60840055646f76c0f8a602ffc8dbf95011e3ebc616231bb6c",
+          "section": "指数地集必须交付的五个接口"
+        },
+        {
+          "path": "archives/configuration-assignment/state/定理/精确模权定价下的紧输入配置LP与硬预算指派--定理.md",
+          "sha256": "04208371125c5234e330f895e71f3d6d7387cc8494d74204547809fdec4daa9a",
+          "section": "配置 LP 和精确对偶分离"
+        },
+        {
+          "path": "archives/configuration-assignment/state/定理/精确模权定价下的紧输入配置LP与硬预算指派--定理.md",
+          "sha256": "04208371125c5234e330f895e71f3d6d7387cc8494d74204547809fdec4daa9a",
+          "section": "从对偶证书恢复最优支持"
+        },
+        {
+          "path": "tools/evidence/retired-config-certificates/original/history/retired_topic_selection/multi_lane/research/topic_selection/notes/configuration_reduction_boundary.md",
+          "sha256": "c145b86c33e935cb3aa721992454d56a531dd17153566d0c55e6c7d6e86df052",
+          "section": "3. 梯度的可分解形式"
+        }
+      ],
+      "reviewed_by": "Boss1-config-3A-fresh-worker",
+      "review_note": "独立核对了完整共同背景与去候选背景的耦合，逐项验证 z_e=1、带符号价格、全地集最大值及达到配置、有理统一分母、强分离和受限原始支持恢复。原反例仍否定以同一剩余权直接表示全部活跃真导数。",
+      "endpoint_pins": {
+        "M-42d1210a93e94042833e75a1a80545ea": "b05256c0fbf0a3aaadabf7be137ab1258e8b67ab039a0f7b6588be0fcdecda27",
+        "M-a8a3062b0ff9434fa078140f5b654163": "0753bd142ddb39e53be2c685ecbcc9d29bc35af348823ab7a3b11a8f425d002c",
+        "configuration-assignment/exact-pricing-sparse-configuration-lp": "847bf3f41064526e222270532908a4a4dfb56a063ffae9b48ac817957fbf0bcb"
+      },
+      "evidence_pins": {
+        "archives/configuration-assignment/state/审查/隐式配置定价与梯度背景的算法合同--审查.md": "ab8a327eb181eee60840055646f76c0f8a602ffc8dbf95011e3ebc616231bb6c",
+        "archives/configuration-assignment/state/等价/下闭配置指派与最大值覆盖的整数等价--等价.md": "a733def460247480a5d073dbe817e48634f7dcb1ed827ffb052434a747ef76db",
+        "archives/configuration-assignment/state/定理/精确模权定价下的紧输入配置LP与硬预算指派--定理.md": "04208371125c5234e330f895e71f3d6d7387cc8494d74204547809fdec4daa9a",
+        "tools/evidence/retired-config-certificates/original/history/retired_topic_selection/multi_lane/research/topic_selection/notes/configuration_reduction_boundary.md": "c145b86c33e935cb3aa721992454d56a531dd17153566d0c55e6c7d6e86df052"
+      },
+      "review_digest": "7421e300d3bf335c1e2e25e563122b893301dceca1aca6ebc5a65b090733b40a"
+    },
+    "config-five-interfaces-approximate-pricing-pays-short-direction-and-linear-route": {
+      "edge_id": "config-five-interfaces-approximate-pricing-pays-short-direction-and-linear-route",
+      "kind": "implies",
+      "status": "accepted",
+      "premises_mode": "all",
+      "relation_mode": "unconditional",
+      "source_ids": [
+        "configuration-assignment/sparse-approximate-gradient-lp-direction-from-modular-pricing",
+        "M-d05829d1479f4b8aad94f3953ab9ffc4",
+        "M-81da430ecf2846f59fb645a08763dab4"
+      ],
+      "target_ids": [
+        "M-42d1210a93e94042833e75a1a80545ea"
+      ],
+      "conditions": "显式有限物品与 bin，各局部族非空下闭，利润、启用成本与单一硬预算均为非负有理数。删除超过预算的 bin。保留每 bin 和每物品的单位边际行。共同正成本的强界使用整数截断行，所有硬预算可行整数指派仍能嵌入。 对每个 bin 及任意显式非负有理模权，局部确定性 oracle 返回实际可行配置，该配置的模权至少为最优值的已知有理 α∈(0,1] 倍。梯度方向的 z 给定完整显式有理正支持。",
+      "roles": {
+        "configuration-assignment/sparse-approximate-gradient-lp-direction-from-modular-pricing": "在扣固定价格前取得真列，利用真实割或缩放通过证书恢复相对 α 的短支持可行方向，亦适用于线性列利润。",
+        "M-d05829d1479f4b8aad94f3953ab9ffc4": "在线性近似点上以 item 边际给 G≥(1−1/e)L，并保原硬预算舍入至至少 G/2。",
+        "M-81da430ecf2846f59fb645a08763dab4": "共同正成本截断或共同零成本分支保整个 G。",
+        "M-42d1210a93e94042833e75a1a80545ea": "支付已知 α 的固定点真梯度方向、位复杂度与线性预算路线的近似损失。"
+      },
+      "explanation": "对每个 bin，先按非负物品对偶价 b 求真实候选分数 g_e−Σb_i 的 α 近似。正支持逐列扫描，共同背景权用 (w_ℓi−b_i)_+ 定价后按下闭性删负项，比较达到配置的真分数。先保留非负最大值 H_ℓ(b) 的乘法合同，再与固定价格 a_ℓ+c_ℓγ 比较。返回的违反列是真实切面；若没有违反列，由 H_ℓ(b/α)≤H_ℓ(b)≤(a_ℓ+c_ℓγ)/α 得真实可行的整体缩放证书。阈值 θ 的精确可行性驱动器遇通过即停，得到 θ≥αV；若无通过且报不可行，重放真实切面得到受限最优 V′>θ。同一盒含每个删列子系统的某最优顶点。二分只维持带证书的两个端点，无需通过判定单调。若 α=p/q，完整和受限最优分母≤D，二分至宽度小于 1/(qD²) 推出 V′≥αV。显式受限原始基本最优解有至多 |L|+|P|+1 个实际配置，坐标位长由原方向域确定。对于 L 列利润，物品扣价本身已可模权化；同一恢复步骤给 L(x)≥α max L≥α OPT。最后接两种给定支持舍入。",
+      "contribution": {
+        "result": "在规定的固定稀疏点上，输出原方向域内实际有理方向，真梯度线性目标至少最优的 α 倍，且支持至多 |L|+|P|+1。在线性利润路线得到原硬预算可行指派，一般成本值至少 α(1−1/e)OPT/2，共同正成本截断或共同零成本至少 α(1−1/e)OPT。",
+        "remaining": "真梯度的多步误差、轨迹增长及终点比较另由轨迹关系交付。当前保证要求任意非负有理查询权重和实际配置。仅报近似值的 oracle、任意带固定扣价的单列乘法近似、其他激活或随机模型各有独立合同。"
+      },
+      "scope": "有理 α 为所给确定性近似 oracle 的保底。精确割和缩放证书得到的全方向保证与单次完整减价分数的逐查询乘法障碍相容。比较目标为同一原硬预算整数 OPT。",
+      "evidence": [
+        {
+          "path": "archives/configuration-assignment/state/审查/隐式配置定价与梯度背景的算法合同--审查.md",
+          "sha256": "ab8a327eb181eee60840055646f76c0f8a602ffc8dbf95011e3ebc616231bb6c",
+          "section": "指数地集必须交付的五个接口"
+        },
+        {
+          "path": "archives/configuration-assignment/state/定理/稀疏点处的精确隐式配置梯度定价--定理.md",
+          "sha256": "0265f06dd6695cd2d42793391766d39aa0bc624238a59acb4d6a79f576172e62"
+        },
+        {
+          "path": "archives/configuration-assignment/state/定理/近似模权定价恢复短支持真梯度方向--定理.md",
+          "sha256": "705b0b05ea3454a2b9c1ad36a2c9c28d92dc8ba923f5c1d7fa0830f354f7cddc"
+        },
+        {
+          "path": "archives/configuration-assignment/state/算法/给定稀疏配置的确定性预算舍入--算法.md",
+          "sha256": "fd09910b2e3028a2babd10a93e0307624c1e32d3769e86dea793f1f04bf84168",
+          "section": "输入、输出与比较值"
+        },
+        {
+          "path": "archives/configuration-assignment/state/算法/给定稀疏配置的确定性预算舍入--算法.md",
+          "sha256": "fd09910b2e3028a2babd10a93e0307624c1e32d3769e86dea793f1f04bf84168",
+          "section": "等成本强界的修复合同"
+        }
+      ],
+      "reviewed_by": "Boss1-config-five-3A-fresh-worker",
+      "review_note": "独立复核了按物品扣价和按固定价分开的逻辑、上下端见证、真实割重放、完整及受限有理间距、短支持解和两种舍入。",
+      "endpoint_pins": {
+        "M-42d1210a93e94042833e75a1a80545ea": "b05256c0fbf0a3aaadabf7be137ab1258e8b67ab039a0f7b6588be0fcdecda27",
+        "M-81da430ecf2846f59fb645a08763dab4": "d20161ada731b6e82e89c27bc3c7a7374674b950d21e0cad9a1be961e2d22ce3",
+        "M-d05829d1479f4b8aad94f3953ab9ffc4": "23bb2ddcdcb76320fa48b9c4a1ff525b126121d0cdc06b55232dd73098e7ca09",
+        "configuration-assignment/sparse-approximate-gradient-lp-direction-from-modular-pricing": "ac7d3a5d3bfb07d1ea36407d51142652241c93cff63505fe18c8aa180de86312"
+      },
+      "evidence_pins": {
+        "archives/configuration-assignment/state/审查/隐式配置定价与梯度背景的算法合同--审查.md": "ab8a327eb181eee60840055646f76c0f8a602ffc8dbf95011e3ebc616231bb6c",
+        "archives/configuration-assignment/state/定理/稀疏点处的精确隐式配置梯度定价--定理.md": "0265f06dd6695cd2d42793391766d39aa0bc624238a59acb4d6a79f576172e62",
+        "archives/configuration-assignment/state/定理/近似模权定价恢复短支持真梯度方向--定理.md": "705b0b05ea3454a2b9c1ad36a2c9c28d92dc8ba923f5c1d7fa0830f354f7cddc",
+        "archives/configuration-assignment/state/算法/给定稀疏配置的确定性预算舍入--算法.md": "fd09910b2e3028a2babd10a93e0307624c1e32d3769e86dea793f1f04bf84168"
+      },
+      "review_digest": "82ea439303f0becfaf72b4abfb31e904f73fe53f1f243d3b0994dd95521e7733"
+    },
+    "config-five-interfaces-linear-pricing-pays-support-and-hard-budget": {
+      "edge_id": "config-five-interfaces-linear-pricing-pays-support-and-hard-budget",
+      "kind": "implies",
+      "status": "accepted",
+      "premises_mode": "all",
+      "relation_mode": "unconditional",
+      "source_ids": [
+        "configuration-assignment/implicit-linear-configuration-lp-from-exact-pricing"
+      ],
+      "target_ids": [
+        "M-42d1210a93e94042833e75a1a80545ea"
+      ],
+      "conditions": "显式有限物品与 bin，各局部族非空下闭，利润、启用成本与单一硬预算均为非负有理数。删除超过预算的 bin。保留每 bin 和每物品的单位边际行。共同正成本的强界使用整数截断行，所有硬预算可行整数指派仍能嵌入。 逐 bin 精确非负有理模权定价必须返回一个实际最优配置，且耗时按紧输入及查询位长计。",
+      "roles": {
+        "configuration-assignment/implicit-linear-configuration-lp-from-exact-pricing": "给精确对偶分离、可验证实际列的原始稀疏支持恢复，以及通往硬预算整数指派的线性目标路线。",
+        "M-42d1210a93e94042833e75a1a80545ea": "支付规定精确定价访问的线性分数点构造、短支持上的覆盖值评估，以及硬预算整数解码。"
+      },
+      "explanation": "线性目标采用配置列利润 Σ_{i∈S}v_{ℓi}。给定非负对偶变量 a_ℓ,b_i,γ，按 (v_{ℓi}−b_i)_+ 逐 bin 定价并删去真实权重为负的 item，比较 a_ℓ+c_ℓγ，得到真实违反列或精确通过。先求完整对偶最优值，再用统一有理最优值间距与不可行阈值重放恢复真实列；从受限原始 LP 的最优面取基本可行解，故最优点 x 有至多 |L|+|P|+1 个实际配置。每物品边际至多一，通过逐利润阈值乘积得 G(x)≥(1−1/e)L(x)，并在显式短支持上精确比较交换端点。一般成本的保成本交换最多留一正成本分数配置，以可负担单配置与整数配置集比较保至少 G(x)/2。共同正成本整数截断容许把最后分数升一，共同零成本可全部升一，因而保 G(x)。最后逐物品保留最高利润 bin，下闭性保局部可行且成本不增。L(x)≥同模型原整数 OPT。",
+      "contribution": {
+        "result": "对带逐 bin 精确定价的确定性单硬预算输入，精确恢复最优线性 LP 的多项式显式支持，按实际需要精确评估 G 后交付硬预算可行整数解。一般成本值至少 (1−1/e)OPT/2。共同正成本以整数截断重解该 LP，或共同成本为零，所得至少 (1−1/e)OPT。整条线性路线无需全地集梯度或离散步长。",
+        "remaining": "本线性路线未交付给定点的真梯度或多步梯度误差合同。精确 oracle 的提供仍依赖局部表示；仅有 membership 无法代替。对其他访问模型、额外激活 matroid 或随机需求，要分别给出分离/构造与实际舍入。"
+      },
+      "scope": "采用所述精确实际配置访问的确定性硬预算线性分支。非整数 B/c 的等正成本自然 LP 可能包含截断不准许的 x，不能把加强 LP 的保证转给原自然点的 L(x)。",
+      "evidence": [
+        {
+          "path": "archives/configuration-assignment/state/审查/隐式配置定价与梯度背景的算法合同--审查.md",
+          "sha256": "ab8a327eb181eee60840055646f76c0f8a602ffc8dbf95011e3ebc616231bb6c",
+          "section": "指数地集必须交付的五个接口"
+        },
+        {
+          "path": "archives/configuration-assignment/state/定理/精确模权定价下的紧输入配置LP与硬预算指派--定理.md",
+          "sha256": "04208371125c5234e330f895e71f3d6d7387cc8494d74204547809fdec4daa9a",
+          "section": "配置 LP 和精确对偶分离"
+        },
+        {
+          "path": "archives/configuration-assignment/state/定理/精确模权定价下的紧输入配置LP与硬预算指派--定理.md",
+          "sha256": "04208371125c5234e330f895e71f3d6d7387cc8494d74204547809fdec4daa9a",
+          "section": "从对偶证书恢复最优支持"
+        },
+        {
+          "path": "archives/configuration-assignment/state/定理/精确模权定价下的紧输入配置LP与硬预算指派--定理.md",
+          "sha256": "04208371125c5234e330f895e71f3d6d7387cc8494d74204547809fdec4daa9a",
+          "section": "转回整数指派及局部资源应用"
+        },
+        {
+          "path": "archives/configuration-assignment/state/算法/给定稀疏配置的确定性预算舍入--算法.md",
+          "sha256": "fd09910b2e3028a2babd10a93e0307624c1e32d3769e86dea793f1f04bf84168",
+          "section": "输入、输出与比较值"
+        },
+        {
+          "path": "archives/configuration-assignment/state/算法/给定稀疏配置的确定性预算舍入--算法.md",
+          "sha256": "fd09910b2e3028a2babd10a93e0307624c1e32d3769e86dea793f1f04bf84168",
+          "section": "精确实现与位复杂度"
+        },
+        {
+          "path": "archives/configuration-assignment/state/算法/给定稀疏配置的确定性预算舍入--算法.md",
+          "sha256": "fd09910b2e3028a2babd10a93e0307624c1e32d3769e86dea793f1f04bf84168",
+          "section": "等成本强界的修复合同"
+        }
+      ],
+      "reviewed_by": "Boss1-config-five-3A-fresh-worker",
+      "review_note": "实读对偶证书重放与两种舍入，区分线性列利润和候选正确的真梯度。阈值乘积在短支持上精确计算；截断条件始终绑定其可行点和比较值。",
+      "endpoint_pins": {
+        "M-42d1210a93e94042833e75a1a80545ea": "b05256c0fbf0a3aaadabf7be137ab1258e8b67ab039a0f7b6588be0fcdecda27",
+        "configuration-assignment/implicit-linear-configuration-lp-from-exact-pricing": "bc9984dc949b57b5dba024289ef14b2fed3734e4000f4d577ec0b67b2ea908da"
+      },
+      "evidence_pins": {
+        "archives/configuration-assignment/state/审查/隐式配置定价与梯度背景的算法合同--审查.md": "ab8a327eb181eee60840055646f76c0f8a602ffc8dbf95011e3ebc616231bb6c",
+        "archives/configuration-assignment/state/定理/精确模权定价下的紧输入配置LP与硬预算指派--定理.md": "04208371125c5234e330f895e71f3d6d7387cc8494d74204547809fdec4daa9a",
+        "archives/configuration-assignment/state/算法/给定稀疏配置的确定性预算舍入--算法.md": "fd09910b2e3028a2babd10a93e0307624c1e32d3769e86dea793f1f04bf84168"
+      },
+      "review_digest": "cb6ede7162da69e808c5a989a786d16aafd4b120dc1fe455abf5cee2d312d77c"
+    },
+    "config-five-interfaces-modular-pricing-pays-complete-multilinear-branch": {
+      "edge_id": "config-five-interfaces-modular-pricing-pays-complete-multilinear-branch",
+      "kind": "implies",
+      "status": "accepted",
+      "premises_mode": "all",
+      "relation_mode": "unconditional",
+      "source_ids": [
+        "M-ada741cd5e634934805d83850dd7cd1f",
+        "configuration-assignment/sparse-continuous-greedy-hard-budget-from-modular-pricing"
+      ],
+      "target_ids": [
+        "M-42d1210a93e94042833e75a1a80545ea"
+      ],
+      "conditions": "显式有限物品与 bin，各局部族非空下闭，利润、启用成本与单一硬预算均为非负有理数。删除超过预算的 bin。保留每 bin 和每物品的单位边际行。共同正成本的强界使用整数截断行，所有硬预算可行整数指派仍能嵌入。 局部确定性实际配置 oracle 对任意显式非负有理模权保证已知有理 α∈(0,1]，误差参数 0<ε<1 为有理。若每 bin 由显式 0/1 连续列资源矩阵、单位需求和非负有理容量定义并保留全部资源行及正确端点，可用 TU 给 α=1 的 oracle。",
+      "roles": {
+        "M-ada741cd5e634934805d83850dd7cd1f": "为连续一单位需求的具体输入子类实现局部访问和精确模权定价，给出 α=1 的实际配置 oracle。",
+        "configuration-assignment/sparse-continuous-greedy-hard-budget-from-modular-pricing": "在规定的局部 α 定价合同下构造所有有理迭代点，以短支持真梯度方向和统一相对误差界获得短支持 G 点，再保硬预算解码。",
+        "M-42d1210a93e94042833e75a1a80545ea": "在有明确局部访问合同的确定性硬预算分支接通五项接口，并具体核实连续一单位需求子类。"
+      },
+      "explanation": "固定稀疏点 z 时，共同背景给 (1−z_e)∂_eG，逐个删去正支持内候选以精确计算其真导数，覆盖 z_e=1。固定点方向定理使用真实列和缩放证书，恢复固定可行域的短支持基本解 y，其方向值至少该域内最优的 α 倍。令 δ=1/T、T=⌈2/ε⌉，从零累计方向。每方向位长由固定可行域矩阵统一控制，累积支持和分母位长随 T 多项式增长。单物品对异坐标的二阶差是两个残余利润的负最小值。用 y 的物品行得 −D²_yG≤L(y)≤4OPT，单步余项不超过 2δ²OPT。由方向的一阶收益至少 α(OPT−G(x_t))，T 步达 G(x_T)≥(1−e^(−α)−ε)OPT。覆盖值和受查配置导数均用有限阈值乘积精确计算。对末点从保 G 的交换开始，按预算分支处理至多一个正成本分数配置，再逐物品下闭去重。对具体连续一输入，令 I_ℓ={S:A_ℓ1_S≤u_ℓ}。整数消耗允许容量取 floor，连续列及单位上下界的 TU LP 返回实际整数最优集合，支付 α=1 的局部访问和定价。",
+      "contribution": {
+        "result": "确定性单硬预算模型在规定的实际配置 α 定价下构造支持至多 ⌈2/ε⌉(|L|+|P|+1) 的点，G≥(1−e^(−α)−ε)OPT，时间按紧输入位长和 1/ε 为确定性多项式。一般成本舍入保至少 G/2，共同正成本整数截断或共同零成本保 G。显式 0/1 连续列单位需求资源子类以 TU 实际提供 α=1，五项接口全部接通。",
+        "remaining": "目标对象还要求不同紧输入或约束模型逐项交付。非单位需求、重复占用、非连续列及未核实完整输入约定的 P03 不继承 TU pricing。额外激活 matroid 需要其联合可行域方向和实际舍入；随机需求需要另定随机输入、可行性与比较目标。"
+      },
+      "scope": "已知 α 的确定性局部定价合同内，比较基准是原硬预算整数 OPT。等正成本强界使用整数截断，收紧自然分数预算的 B/c 上界。α=1 时线性路线独立给相应整数常数且无需 ε。",
+      "evidence": [
+        {
+          "path": "archives/configuration-assignment/state/审查/隐式配置定价与梯度背景的算法合同--审查.md",
+          "sha256": "ab8a327eb181eee60840055646f76c0f8a602ffc8dbf95011e3ebc616231bb6c",
+          "section": "指数地集必须交付的五个接口"
+        },
+        {
+          "path": "archives/configuration-assignment/state/审查/隐式配置定价与梯度背景的算法合同--审查.md",
+          "sha256": "ab8a327eb181eee60840055646f76c0f8a602ffc8dbf95011e3ebc616231bb6c",
+          "section": "consecutive-ones局部oracle的准确条件"
+        },
+        {
+          "path": "archives/configuration-assignment/state/定理/稀疏点处的精确隐式配置梯度定价--定理.md",
+          "sha256": "0265f06dd6695cd2d42793391766d39aa0bc624238a59acb4d6a79f576172e62"
+        },
+        {
+          "path": "archives/configuration-assignment/state/定理/近似模权定价恢复短支持真梯度方向--定理.md",
+          "sha256": "705b0b05ea3454a2b9c1ad36a2c9c28d92dc8ba923f5c1d7fa0830f354f7cddc"
+        },
+        {
+          "path": "archives/configuration-assignment/state/定理/近似模权定价下的确定性离散连续贪心--定理.md",
+          "sha256": "e1f327bd8ea37e2d370bd6461e902c639e9fafc05890c80f75d337d2fcdc5575"
+        },
+        {
+          "path": "archives/configuration-assignment/state/算法/给定稀疏配置的确定性预算舍入--算法.md",
+          "sha256": "fd09910b2e3028a2babd10a93e0307624c1e32d3769e86dea793f1f04bf84168",
+          "section": "第二阶段：保持成本到至多一分数件"
+        },
+        {
+          "path": "archives/configuration-assignment/state/算法/给定稀疏配置的确定性预算舍入--算法.md",
+          "sha256": "fd09910b2e3028a2babd10a93e0307624c1e32d3769e86dea793f1f04bf84168",
+          "section": "等成本强界的修复合同"
+        }
+      ],
+      "reviewed_by": "Boss1-config-five-3A-fresh-worker",
+      "review_note": "独立核对了去候选背景及坐标为一、固定 LP 基本解的统一分母、曲率的逐物品计算、离散误差常数和末点保 G 的舍入分支。",
+      "endpoint_pins": {
+        "M-42d1210a93e94042833e75a1a80545ea": "b05256c0fbf0a3aaadabf7be137ab1258e8b67ab039a0f7b6588be0fcdecda27",
+        "M-ada741cd5e634934805d83850dd7cd1f": "a5b3e151e5f809e6ad470c957e0aeef24c8e7975c1a48a3a3487f4c0e72be19b",
+        "configuration-assignment/sparse-continuous-greedy-hard-budget-from-modular-pricing": "1356e96ba6444ef152923d773ab0654b6229977e824bf126d5053d15141fd789"
+      },
+      "evidence_pins": {
+        "archives/configuration-assignment/state/审查/隐式配置定价与梯度背景的算法合同--审查.md": "ab8a327eb181eee60840055646f76c0f8a602ffc8dbf95011e3ebc616231bb6c",
+        "archives/configuration-assignment/state/定理/稀疏点处的精确隐式配置梯度定价--定理.md": "0265f06dd6695cd2d42793391766d39aa0bc624238a59acb4d6a79f576172e62",
+        "archives/configuration-assignment/state/定理/近似模权定价恢复短支持真梯度方向--定理.md": "705b0b05ea3454a2b9c1ad36a2c9c28d92dc8ba923f5c1d7fa0830f354f7cddc",
+        "archives/configuration-assignment/state/定理/近似模权定价下的确定性离散连续贪心--定理.md": "e1f327bd8ea37e2d370bd6461e902c639e9fafc05890c80f75d337d2fcdc5575",
+        "archives/configuration-assignment/state/算法/给定稀疏配置的确定性预算舍入--算法.md": "fd09910b2e3028a2babd10a93e0307624c1e32d3769e86dea793f1f04bf84168"
+      },
+      "review_digest": "1af0bf67ddbd7001f55e10f9706f16167d0de1b0dd0d06b142dfc1e97874142a"
+    },
+    "config-floor-gap-motivates-corrected-equal-cost-contract": {
+      "edge_id": "config-floor-gap-motivates-corrected-equal-cost-contract",
+      "kind": "motivates",
+      "status": "accepted",
+      "source_ids": [
+        "M-9ad0ca02d7d64d6ab7fe93bb91812073"
+      ],
+      "target_ids": [
+        "M-81da430ecf2846f59fb645a08763dab4"
+      ],
+      "premises_mode": "all",
+      "relation_mode": "context",
+      "conditions": "共同正成本c，比较对象为给定自然LP点的原始L(x)，且每个整数输出都须满足硬预算。",
+      "roles": {
+        "M-9ad0ca02d7d64d6ab7fe93bb91812073": "用两独占单位利润bin、c=1、B=199/100和x_1=x_2=199/200，精确排除遗漏floor的强舍入合同。",
+        "M-81da430ecf2846f59fb645a08763dab4": "在Σx≤floor(B/c)的修复合同上给1−1/e；它本身没有被反驳。"
+      },
+      "explanation": "反例的自然LP与G值均199/100，硬预算整数最优仅一，(1−1/e)199/100>1，故任何始终可行的确定或随机舍入都不能对原点给该强界。加入Σx≤floor(B/c)会排除原点，将本例最优降至一。修复算法在该较小域内通过保和交换与最终分数坐标向上取整保G；B/c为整数时floor自动满足。此边保留为何必须加条件的研究语境，不把反例单独写成修复算法的证明，不反驳一般成本半损失或外部次模定理。",
+      "scope": "遗漏整数截断的精确障碍与正确输入合同之间的语境关系；重求加强LP后只能比较新L(x′)。",
+      "evidence": [
+        {
+          "path": "archives/configuration-assignment/state/反例/等启用成本的自然预算LP与整数截断缺口--反例.md",
+          "sha256": "c53cd382c99d98a32a857f97cf1788dc009965135d592614fb05f89264f1d30f"
+        },
+        {
+          "path": "archives/configuration-assignment/state/算法/给定稀疏配置的确定性预算舍入--算法.md",
+          "sha256": "fd09910b2e3028a2babd10a93e0307624c1e32d3769e86dea793f1f04bf84168",
+          "section": "等成本强界的修复合同"
+        }
+      ],
+      "reviewed_by": "Boss2",
+      "review_note": "逐项核对两bin精确算术、随机期望的同一硬预算上界和修复域；被否的旧合同无独立现役对象，不误指向已修复的目标。",
+      "endpoint_pins": {
+        "M-81da430ecf2846f59fb645a08763dab4": "d20161ada731b6e82e89c27bc3c7a7374674b950d21e0cad9a1be961e2d22ce3",
+        "M-9ad0ca02d7d64d6ab7fe93bb91812073": "42d5bd1a493a0fae47d0095b466a77346856e6be192872adff683b62f34bb16c"
+      },
+      "evidence_pins": {
+        "archives/configuration-assignment/state/反例/等启用成本的自然预算LP与整数截断缺口--反例.md": "c53cd382c99d98a32a857f97cf1788dc009965135d592614fb05f89264f1d30f",
+        "archives/configuration-assignment/state/算法/给定稀疏配置的确定性预算舍入--算法.md": "fd09910b2e3028a2babd10a93e0307624c1e32d3769e86dea793f1f04bf84168"
+      },
+      "review_digest": "33e265f2739ee272e11fd69fc9a7947f73aff176cb4b7d57afd9fcd924bfe1f6"
+    },
+    "config-layer-cake-and-downclosed-decoding-pay-hard-budget-rounding": {
+      "edge_id": "config-layer-cake-and-downclosed-decoding-pay-hard-budget-rounding",
+      "kind": "implies",
+      "status": "accepted",
+      "source_ids": [
+        "M-116e32ea4721479daac94b00a0bd9758",
+        "M-f63f6d1bd7fc41b2a4eb5f90492a24b1"
+      ],
+      "target_ids": [
+        "M-d05829d1479f4b8aad94f3953ab9ffc4"
+      ],
+      "premises_mode": "all",
+      "relation_mode": "unconditional",
+      "conditions": "输入为有限显式配置支持E、非负有理利润/启用成本/预算B及有理点x；每bin和及每item边际至多一、总成本至多B。每个配置属于原下闭局部族，支持预删所有c_l>B的bin。仅按显式支持总二进制描述长衡量时间，不要求求出x或枚举隐式地集。",
+      "roles": {
+        "M-116e32ea4721479daac94b00a0bd9758": "给初始G(x)≥(1−1/e)L(x)，item边际约束只在此使用。",
+        "M-f63f6d1bd7fc41b2a4eb5f90492a24b1": "给最高利润覆盖的单调子模性及下闭去冲突同值解码；这些性质可限制到任意显式支持。",
+        "M-d05829d1479f4b8aad94f3953ab9ffc4": "经两阶段保值交换和一个可负担singleton的比较，得到确定性位多项式硬预算指派。"
+      },
+      "explanation": "先由layer-cake取得初始G下界。任意同bin两正坐标沿1_e−1_f的最大非负线段移动，保bin和及成本；子模性给二阶导−2∂²_efG≥0，至少一个端点不降G并清零一个坐标。每bin余至多一个变量后，零成本坐标升一；正成本两分数变量沿1_l/c_l−1_k/c_k保成本移动，同样取不降端点，最后只余整数配置集A及至多一个分数配置e、q∈(0,1)。A可行，且c_e≤B保证singleton可行。归一子模性给G(z)=(1−q)g(A)+qg(A∪{e})≤g(A)+qg({e})≤g(A)+g({e})，返回两者较大者即可保G(x)/2。逐item保最高利润bin，由下闭性得到同值原指派。交换不必保持中间item边际。G以每item有限利润阈值的乘积公式精确有理计算；第一阶段坐标为原x的子集和，第二阶段质量c_lq_l为初始质量和减已固定成本，统一输入分母给多项式位长。共O(|E|)次交换，每次评估及全部中间有理数位长为多项式。因此两前提必须共同用于这条完整证明，独立采样不是输出分布。",
+      "whole_result": "对每个满足上述显式有理支持合同的输入，包括空支持、零利润和B=0，确定性位多项式算法仅使用该支持，输出每bin局部可行、每item至多一处、每次满足原硬预算的指派，利润至少(1−1/e)L(x)/2。",
+      "scope": "完整得到目标的一般成本给定支持保证；不把L(x)自动当隐式LP最优或整数OPT，不推出无整数截断的等成本强界。",
+      "evidence": [
+        {
+          "path": "archives/configuration-assignment/state/算法/给定稀疏配置的确定性预算舍入--算法.md",
+          "sha256": "fd09910b2e3028a2babd10a93e0307624c1e32d3769e86dea793f1f04bf84168"
+        },
+        {
+          "path": "archives/configuration-assignment/state/等价/下闭配置指派与最大值覆盖的整数等价--等价.md",
+          "sha256": "a733def460247480a5d073dbe817e48634f7dcb1ed827ffb052434a747ef76db"
+        }
+      ],
+      "reviewed_by": "Boss2",
+      "review_note": "实读三核心、三共享端点及全部必要证据。独立核对交换凸性、预算、最后singleton、下闭解码与质量变量的位长；整条结论与目标合同一致。",
+      "endpoint_pins": {
+        "M-116e32ea4721479daac94b00a0bd9758": "1f21b8d0902f57c4b162bde9f31502c5438b481fda29f44ad6cce083b4551232",
+        "M-d05829d1479f4b8aad94f3953ab9ffc4": "23bb2ddcdcb76320fa48b9c4a1ff525b126121d0cdc06b55232dd73098e7ca09",
+        "M-f63f6d1bd7fc41b2a4eb5f90492a24b1": "7e5c05f0fcd538aa08977e0029cf019d71d0258ce25308b5958911fac9e9167b"
+      },
+      "evidence_pins": {
+        "archives/configuration-assignment/state/算法/给定稀疏配置的确定性预算舍入--算法.md": "fd09910b2e3028a2babd10a93e0307624c1e32d3769e86dea793f1f04bf84168",
+        "archives/configuration-assignment/state/等价/下闭配置指派与最大值覆盖的整数等价--等价.md": "a733def460247480a5d073dbe817e48634f7dcb1ed827ffb052434a747ef76db"
+      },
+      "review_digest": "ae18782c975fa3b0cf62bc37e8ac10890de51f5f060b5025ee6ff5081d8fe8d4"
+    },
+    "config-gradient-rescaling-and-sparse-pricing-give-exact-direction": {
+      "edge_id": "config-gradient-rescaling-and-sparse-pricing-give-exact-direction",
+      "kind": "implies",
+      "status": "accepted",
+      "premises_mode": "all",
+      "relation_mode": "unconditional",
+      "source_ids": [
+        "M-a8a3062b0ff9434fa078140f5b654163",
+        "configuration-assignment/exact-pricing-sparse-configuration-lp"
+      ],
+      "target_ids": [
+        "configuration-assignment/sparse-exact-implicit-multilinear-gradient-pricing"
+      ],
+      "conditions": "有限非空下闭局部配置族与非负有理利润，独立 multilinear 覆盖，显式给定有理正支持和任意有理加性扣价。逐 bin 精确定价返回实际配置。LP 保自然每 bin、每 item、预算行并剔除超预算 bin，也可取共同正成本整数截断。近似分支仅限无价格且 α∈(0,1]。",
+      "roles": {
+        "M-a8a3062b0ff9434fa078140f5b654163": "给真实导数的逐配置排除背景公式及正坐标共用真导数的精确障碍。",
+        "configuration-assignment/exact-pricing-sparse-configuration-lp": "给精确对偶分离后的共同分母间距、不可行证书重放和稀疏原始最优恢复。",
+        "configuration-assignment/sparse-exact-implicit-multilinear-gradient-pricing": "固定稀疏点上全隐式地集的精确减价导数最大值与达到配置，以及精确短支持 LP 方向和无价近似。"
+      },
+      "explanation": "先生成去掉 e 的背景，再独立决定是否加入 e。加入时每个 i∈S 的残余为零，故共同背景模权和恰是 (1−z_e)∂_eG。零坐标相等，正坐标真导数支配共同值，z_e=1 时仍直接在去掉 e 的短支持精确积分，不作除法。各期望按利润阈值排序分段，用未出现概率的有限乘积计算。令 U 为正支持最佳真减价分数，V 为所有配置最佳共同背景减价分数。下闭性容许用非负权 oracle 后删负项实现 V。任意零坐标真分数≤V，正坐标≤U。V 的达到者真分数≥V，故真实最大值是 max(U,V)。若 V>U，V 达到者必是零坐标；否则返回 U 达到者。地集空时返回无配置，LP 方向为零。把对偶 bin、预算和 item 价格代入同一 oracle 即给真梯度目标的精确强分离。每个导数分母整除所有支持概率分母和全部输入利润分母的公共乘积，因此全部列的位长统一多项式。原线性 LP 的分母间距与不可行重放适用，取得短支持基本最优方向。无价格时若共同 oracle 只有 α-近似，精确比较正支持和候选真导数至少给 max(U,αV)≥αmax(U,V)。",
+      "whole_result": "给定短有理支持后，逐 bin 精确模权定价可在确定性位多项式时间求任意加性扣价下的全隐式真梯度最大方向及实际达到配置。配合精确对偶分离与稀疏恢复，获得自然硬预算配置 LP 或共同成本截断的短支持最优方向。无价格时逐 bin α-近似给全地集真梯度最大值的 α 倍。",
+      "scope": "固定点方向及原始短支持，开放的连续多步误差和支持增长仍分别证明。原来正坐标真梯度共用一组权重的反例保持；任意扣价不传递乘法误差。",
+      "evidence": [
+        {
+          "path": "archives/configuration-assignment/state/审查/隐式配置定价与梯度背景的算法合同--审查.md",
+          "sha256": "ab8a327eb181eee60840055646f76c0f8a602ffc8dbf95011e3ebc616231bb6c",
+          "section": "梯度是模权和，不代表所有候选共享同一背景"
+        },
+        {
+          "path": "archives/configuration-assignment/state/定理/精确模权定价下的紧输入配置LP与硬预算指派--定理.md",
+          "sha256": "04208371125c5234e330f895e71f3d6d7387cc8494d74204547809fdec4daa9a",
+          "section": "从对偶证书恢复最优支持"
+        },
+        {
+          "path": "archives/configuration-assignment/state/定理/稀疏点处的精确隐式配置梯度定价--定理.md",
+          "sha256": "0265f06dd6695cd2d42793391766d39aa0bc624238a59acb4d6a79f576172e62"
+        }
+      ],
+      "reviewed_by": "Boss1",
+      "review_note": "逐式复核 z_e=0 与 1、真减价达到者、空地集、分母统一界及近似方向。独立有理小例仅复核代数，不作为证明前提。",
+      "endpoint_pins": {
+        "M-a8a3062b0ff9434fa078140f5b654163": "0753bd142ddb39e53be2c685ecbcc9d29bc35af348823ab7a3b11a8f425d002c",
+        "configuration-assignment/exact-pricing-sparse-configuration-lp": "847bf3f41064526e222270532908a4a4dfb56a063ffae9b48ac817957fbf0bcb",
+        "configuration-assignment/sparse-exact-implicit-multilinear-gradient-pricing": "8edd0b73d5d1c7b89d92c0d34547a5adb488d8abca4299fc41f2cbda30d70c23"
+      },
+      "evidence_pins": {
+        "archives/configuration-assignment/state/审查/隐式配置定价与梯度背景的算法合同--审查.md": "ab8a327eb181eee60840055646f76c0f8a602ffc8dbf95011e3ebc616231bb6c",
+        "archives/configuration-assignment/state/定理/精确模权定价下的紧输入配置LP与硬预算指派--定理.md": "04208371125c5234e330f895e71f3d6d7387cc8494d74204547809fdec4daa9a",
+        "archives/configuration-assignment/state/定理/稀疏点处的精确隐式配置梯度定价--定理.md": "0265f06dd6695cd2d42793391766d39aa0bc624238a59acb4d6a79f576172e62"
+      },
+      "review_digest": "7586ec29fff3c41c7d010bee051b70af18ba6c0cd686bb7cd6c669b7b20a0d2c"
+    },
+    "config-pricing-local-tu-implements-pricing-component": {
+      "edge_id": "config-pricing-local-tu-implements-pricing-component",
+      "kind": "implements",
+      "status": "accepted",
+      "source_ids": [
+        "M-ada741cd5e634934805d83850dd7cd1f"
+      ],
+      "target_ids": [
+        "M-f63f6d1bd7fc41b2a4eb5f90492a24b1"
+      ],
+      "premises_mode": "all",
+      "relation_mode": "context",
+      "conditions": "仅在每个 bin 的局部族确实可写成显式有限 0/1 资源矩阵 A_l 的可行 0/1 支持、每列的一在资源行顺序中连续、每 item 为单位需求、所有容量 u_t 与给定模权 w_i 为非负有理数且保留全部行约束和端点约定时，M-ada 的 oracle 才能作为该 bin 的 modular pricing_l(w)=max_{S∈I_l}Σ_{i∈S}w_i。它逐 bin、逐次给定显式 w；不假定也不证明跨 bin 共享约束、全局配置地集的显式列举或稀疏支持。",
+      "roles": {
+        "M-ada741cd5e634934805d83850dd7cd1f": "在上述 interval/unit-demand 显式局部模型中，以 floor(u) 和连续一矩阵 TU 证明精确位多项式地求一个 bin 的非负模权最大可行集合；这只是所需 pricing 接口的一项局部实现。",
+        "M-f63f6d1bd7fc41b2a4eb5f90492a24b1": "提供完整配置地集 E={(l,S):S∈I_l} 上的整数配置—指派价值等价及下闭去冲突映射；其定理本身不提供 E 的隐式生成、全局 pricing、分数点/梯度或预算舍入算法。"
+      },
+      "explanation": "固定 bin l、把局部下闭族准确编码为连续一 0/1 资源约束且给定 item 权重时，M-ada 的 TU LP 确实返回该 bin 的精确 modular pricing 值，因此可实现隐式配置接口中“单 bin 非负模权 pricing”这一局部部件。这个关系仅为实现/接口语境，不能推出 M-f63 的整数等价定理已有算法化实现。M-f63 的配置等价以完整 E 为前提，而 E 可能有 |L|2^{|P|} 个配置；仍未交付（i）每个 I_l 的访问模型及其与优化 oracle 的可用映射，（ii）所有 bin 的全局配置枚举或多项式稀疏支持，（iii）共同预算、非均匀 opening cost、每 bin 至多一配置及一般 bin-matroid/截断激活的联合可行性，（iv）满足 item marginal/预算约束的分数点构造，（v）multilinear G 及候选依赖梯度的精确/近似计算，（vi）从分数支持到整数配置/指派的实际舍入，以及（vii）相对紧输入的隐式配置 LP 求解。M-ada 也不覆盖 nonunit demands、重复占用或非interval supports；这些情形不能由 TU 结论自动继承。故不能把这条局部 oracle 边升级成全局 pricing、完整配置支持或隐式 LP solver，也不能把 M-f63 的整数值等价提升为紧输入多项式算法。",
+      "scope": "第三阶段 3B；configuration-assignment 的接口范围审计。仅确认显式连续一、单位需求局部族的单 bin modular-pricing 实现；不提供全局配置地集、预算/激活、分数支持、梯度、舍入或隐式 LP 的逻辑支持。",
+      "evidence": [
+        {
+          "path": "archives/configuration-assignment/state/审查/隐式配置定价与梯度背景的算法合同--审查.md",
+          "sha256": "ab8a327eb181eee60840055646f76c0f8a602ffc8dbf95011e3ebc616231bb6c",
+          "section": "指数地集必须交付的五个接口"
+        },
+        {
+          "path": "archives/configuration-assignment/state/审查/隐式配置定价与梯度背景的算法合同--审查.md",
+          "sha256": "ab8a327eb181eee60840055646f76c0f8a602ffc8dbf95011e3ebc616231bb6c",
+          "section": "consecutive-ones局部oracle的准确条件"
+        },
+        {
+          "path": "archives/configuration-assignment/state/等价/下闭配置指派与最大值覆盖的整数等价--等价.md",
+          "sha256": "a733def460247480a5d073dbe817e48634f7dcb1ed827ffb052434a747ef76db",
+          "section": "下闭配置指派与最大值覆盖的整数等价"
+        },
+        {
+          "path": "archives/customer-attraction/state/审查/退役选题跨模型复核的独立性与承重前提--审查.md",
+          "sha256": "377bd07b3a1dcc2d890c5526abee271ad7c785a80c0030146a020539bed6f9f1",
+          "section": "配置指派：完整恢复本次核查所需基线"
+        }
+      ],
+      "reviewed_by": "Boss2 config-pricing worker",
+      "review_note": "已完整实读任务列出的三份正文/证据和两个登记对象。数学比较只确认 M-ada 在显式连续一、单位需求单 bin 中实现 modular pricing 的局部接口；全局 E 枚举、共同预算/激活、稀疏分数支持、梯度、舍入和隐式 LP 均未由该 oracle 或 M-f63 交付。因而采用 accepted + relation_mode=context 的 implements，不写 implies/equivalent_to。",
+      "endpoint_pins": {
+        "M-ada741cd5e634934805d83850dd7cd1f": "a5b3e151e5f809e6ad470c957e0aeef24c8e7975c1a48a3a3487f4c0e72be19b",
+        "M-f63f6d1bd7fc41b2a4eb5f90492a24b1": "7e5c05f0fcd538aa08977e0029cf019d71d0258ce25308b5958911fac9e9167b"
+      },
+      "evidence_pins": {
+        "archives/configuration-assignment/state/审查/隐式配置定价与梯度背景的算法合同--审查.md": "ab8a327eb181eee60840055646f76c0f8a602ffc8dbf95011e3ebc616231bb6c",
+        "archives/configuration-assignment/state/等价/下闭配置指派与最大值覆盖的整数等价--等价.md": "a733def460247480a5d073dbe817e48634f7dcb1ed827ffb052434a747ef76db",
+        "archives/customer-attraction/state/审查/退役选题跨模型复核的独立性与承重前提--审查.md": "377bd07b3a1dcc2d890c5526abee271ad7c785a80c0030146a020539bed6f9f1"
+      },
+      "review_digest": "43545bcc3b162c141bca1b97db18868370cc4f451520d9aed5d2603b491659fd"
+    },
+    "config-approximate-column-score-and-dual-replay-give-feasible-direction": {
+      "edge_id": "config-approximate-column-score-and-dual-replay-give-feasible-direction",
+      "kind": "implies",
+      "status": "accepted",
+      "premises_mode": "all",
+      "relation_mode": "unconditional",
+      "source_ids": [
+        "configuration-assignment/sparse-exact-implicit-multilinear-gradient-pricing",
+        "configuration-assignment/exact-pricing-sparse-configuration-lp"
+      ],
+      "target_ids": [
+        "configuration-assignment/sparse-approximate-gradient-lp-direction-from-modular-pricing"
+      ],
+      "conditions": "有限非空下闭局部族，最高利润覆盖的独立多线性延拓，非负有理利润及自然硬预算或共同正成本整数截断。给稀疏有理点、非负有理模权上返回实际配置的确定性α近似oracle，已知有理0<α≤1。先删超预算bin。",
+      "roles": {
+        "configuration-assignment/sparse-exact-implicit-multilinear-gradient-pricing": "付共同背景分数恒等式、显式正坐标真导数与统一有理位界。这里只用其恒等式和精确有限计算。",
+        "configuration-assignment/exact-pricing-sparse-configuration-lp": "付同一维数的原始与对偶、强分离驱动器、删列回放和固定多面体基本支持。无需精确定价oracle作为当前实例的假设。",
+        "configuration-assignment/sparse-approximate-gradient-lp-direction-from-modular-pricing": "所有约束均真实可行、值至少α倍且显式短支持的原始方向。"
+      },
+      "explanation": "对每个对偶查询先扣非负item价b。共同背景非负截权定价后删负项得到该模权最大值的α倍，再比较所有正支持的真减价得分，可找到真实列得分至少αH_l(b)，其中H_l是扣item价后的真实最大值且空列使它非负。若该列违反a_l+c_lγ即给合法真割。全部未切时H_l(b/α)≤H_l(b)≤(a_l+c_lγ)/α，故全体对偶缩放1/α合法。给目标阈值θ，在统一最优顶点盒内运行精确可行性驱动器，第一次通过即中断并得θ≥αV；若全真割到不可行，重放仅保返回列，得到受限最优V′>θ。二分只维持下端受限证书与上端缩放证书，分类无需单调。令间隔小于1/(den(α)D²)，克拉默的最优分母界D迫使V′≥αV。显式受限原始基本解补零给至多d项并保所有原约束。线性配置利润以v为共同模权，省去正支持扫描。",
+      "whole_result": "用逐bin实际α近似模权定价，在确定性位多项式时间获得真梯度方向LP的可行α近似方向，或线性配置LP的可行α近似解。支持至多|L|+|P|+1，坐标位长由固定可行域统一控制。",
+      "scope": "允许空地集和零目标。逐查询扣固定bin/预算价的乘法误差仍未传递，只给数值的oracle不足以回放原始列。",
+      "evidence": [
+        {
+          "path": "archives/configuration-assignment/state/定理/稀疏点处的精确隐式配置梯度定价--定理.md",
+          "sha256": "0265f06dd6695cd2d42793391766d39aa0bc624238a59acb4d6a79f576172e62"
+        },
+        {
+          "path": "archives/configuration-assignment/state/定理/精确模权定价下的紧输入配置LP与硬预算指派--定理.md",
+          "sha256": "04208371125c5234e330f895e71f3d6d7387cc8494d74204547809fdec4daa9a",
+          "section": "从对偶证书恢复最优支持"
+        },
+        {
+          "path": "archives/configuration-assignment/state/定理/近似模权定价恢复短支持真梯度方向--定理.md",
+          "sha256": "705b0b05ea3454a2b9c1ad36a2c9c28d92dc8ba923f5c1d7fa0830f354f7cddc"
+        }
+      ],
+      "reviewed_by": "Boss1",
+      "review_note": "复核每个返回割在真实系统有效、通过后缩放、盒外缩放的弱对偶、非单调二分的不变量与严格有理间隔。",
+      "endpoint_pins": {
+        "configuration-assignment/exact-pricing-sparse-configuration-lp": "847bf3f41064526e222270532908a4a4dfb56a063ffae9b48ac817957fbf0bcb",
+        "configuration-assignment/sparse-approximate-gradient-lp-direction-from-modular-pricing": "ac7d3a5d3bfb07d1ea36407d51142652241c93cff63505fe18c8aa180de86312",
+        "configuration-assignment/sparse-exact-implicit-multilinear-gradient-pricing": "8edd0b73d5d1c7b89d92c0d34547a5adb488d8abca4299fc41f2cbda30d70c23"
+      },
+      "evidence_pins": {
+        "archives/configuration-assignment/state/定理/稀疏点处的精确隐式配置梯度定价--定理.md": "0265f06dd6695cd2d42793391766d39aa0bc624238a59acb4d6a79f576172e62",
+        "archives/configuration-assignment/state/定理/精确模权定价下的紧输入配置LP与硬预算指派--定理.md": "04208371125c5234e330f895e71f3d6d7387cc8494d74204547809fdec4daa9a",
+        "archives/configuration-assignment/state/定理/近似模权定价恢复短支持真梯度方向--定理.md": "705b0b05ea3454a2b9c1ad36a2c9c28d92dc8ba923f5c1d7fa0830f354f7cddc"
+      },
+      "review_digest": "1ef6b539cd962d3fe31f30ab5bf91f60fd297856841987833c6073528ea6e4fc"
+    },
+    "config-approximate-direction-and-rounding-close-sparse-continuous-trajectory": {
+      "edge_id": "config-approximate-direction-and-rounding-close-sparse-continuous-trajectory",
+      "kind": "implies",
+      "status": "accepted",
+      "premises_mode": "all",
+      "relation_mode": "unconditional",
+      "source_ids": [
+        "configuration-assignment/sparse-approximate-gradient-lp-direction-from-modular-pricing",
+        "M-d05829d1479f4b8aad94f3953ab9ffc4",
+        "M-81da430ecf2846f59fb645a08763dab4"
+      ],
+      "target_ids": [
+        "configuration-assignment/sparse-continuous-greedy-hard-budget-from-modular-pricing"
+      ],
+      "conditions": "同一硬预算下闭配置模型、逐bin非负模权oracle返回实际α近似配置，给定有理0<α≤1及0<ε<1。共同正成本强界使用整数截断，所有可行方向含item行。",
+      "roles": {
+        "configuration-assignment/sparse-approximate-gradient-lp-direction-from-modular-pricing": "每步真实可行的α近似真梯度基本方向，支持至多原行数，坐标统一有理位界。",
+        "M-d05829d1479f4b8aad94f3953ab9ffc4": "给L(y)≤4OPT归一化曲率，并从终点G本身取原硬预算内的半值指派。",
+        "M-81da430ecf2846f59fb645a08763dab4": "共同正成本整数截断或共同零成本时，保终点全部G。",
+        "configuration-assignment/sparse-continuous-greedy-hard-budget-from-modular-pricing": "O(1/ε)步的实际短支持非线性轨迹，终点近似值及两类解码。"
+      },
+      "explanation": "设T=⌈2/ε⌉、δ=1/T，从零按x_{t+1}=x_t+δy_t累加。每步方向可行，整数最优配置指示也可行。由单调及边际递减，∇G(x_t)·y_t≥α(OPT−G(x_t))。两配置对同一item的条件二阶差为−min((v_e−M)_+,(v_f−M)_+)；以每item边际至多一计和，得0≤−D_y²G≤L(y)≤4OPT。故每步余项最多2δ²OPT，累计至多2/T OPT，乘法项为1−(1−α/T)^T≥1−e^(−α)。各y是固定可行域顶点，累计T个短支持的分母位长至多短分母总和加log T。最后从同bin交换开始保终点G，按成本交换、可负担singleton比较或整数截断向上，再由下闭去重。",
+      "whole_result": "确定性输入和1/ε多项式时间构造配置LP可行点x，其支持至多⌈2/ε⌉(|L|+|P|+1)，G(x)≥(1−e^(−α)−ε)OPT。可直接解码原硬预算指派，非均匀成本至少G(x)/2，共同正成本截断或共同零成本至少G(x)。",
+      "scope": "α=1为精确定价特例。线性配置LP是另一独立路线，任意额外matroid或随机约束仍需新证明。",
+      "evidence": [
+        {
+          "path": "archives/configuration-assignment/state/定理/近似模权定价恢复短支持真梯度方向--定理.md",
+          "sha256": "705b0b05ea3454a2b9c1ad36a2c9c28d92dc8ba923f5c1d7fa0830f354f7cddc"
+        },
+        {
+          "path": "archives/configuration-assignment/state/算法/给定稀疏配置的确定性预算舍入--算法.md",
+          "sha256": "fd09910b2e3028a2babd10a93e0307624c1e32d3769e86dea793f1f04bf84168",
+          "section": "输入、输出与比较值"
+        },
+        {
+          "path": "archives/configuration-assignment/state/算法/给定稀疏配置的确定性预算舍入--算法.md",
+          "sha256": "fd09910b2e3028a2babd10a93e0307624c1e32d3769e86dea793f1f04bf84168",
+          "section": "等成本强界的修复合同"
+        },
+        {
+          "path": "archives/configuration-assignment/state/定理/近似模权定价下的确定性离散连续贪心--定理.md",
+          "sha256": "e1f327bd8ea37e2d370bd6461e902c639e9fafc05890c80f75d337d2fcdc5575"
+        }
+      ],
+      "reviewed_by": "Boss1",
+      "review_note": "复核逐物品曲率、有理位长、α递推累计误差及给定支持舍入直接从G开始。独立有理小例核余项。",
+      "endpoint_pins": {
+        "M-81da430ecf2846f59fb645a08763dab4": "d20161ada731b6e82e89c27bc3c7a7374674b950d21e0cad9a1be961e2d22ce3",
+        "M-d05829d1479f4b8aad94f3953ab9ffc4": "23bb2ddcdcb76320fa48b9c4a1ff525b126121d0cdc06b55232dd73098e7ca09",
+        "configuration-assignment/sparse-approximate-gradient-lp-direction-from-modular-pricing": "ac7d3a5d3bfb07d1ea36407d51142652241c93cff63505fe18c8aa180de86312",
+        "configuration-assignment/sparse-continuous-greedy-hard-budget-from-modular-pricing": "1356e96ba6444ef152923d773ab0654b6229977e824bf126d5053d15141fd789"
+      },
+      "evidence_pins": {
+        "archives/configuration-assignment/state/定理/近似模权定价恢复短支持真梯度方向--定理.md": "705b0b05ea3454a2b9c1ad36a2c9c28d92dc8ba923f5c1d7fa0830f354f7cddc",
+        "archives/configuration-assignment/state/算法/给定稀疏配置的确定性预算舍入--算法.md": "fd09910b2e3028a2babd10a93e0307624c1e32d3769e86dea793f1f04bf84168",
+        "archives/configuration-assignment/state/定理/近似模权定价下的确定性离散连续贪心--定理.md": "e1f327bd8ea37e2d370bd6461e902c639e9fafc05890c80f75d337d2fcdc5575"
+      },
+      "review_digest": "43c9a6c95230c569bc48ff09b3fc64daf1729563b85415490e44b6c64decfb9a"
+    },
+    "config-activation-representation-to-coverage-equivalence": {
+      "edge_id": "config-activation-representation-to-coverage-equivalence",
+      "kind": "implements",
+      "status": "accepted",
+      "source_ids": [
+        "M-6436d85fd0ed43b38ed3f095a89b326e"
+      ],
+      "target_ids": [
+        "M-f63f6d1bd7fc41b2a4eb5f90492a24b1"
+      ],
+      "premises_mode": "all",
+      "relation_mode": "context",
+      "conditions": "有限 P,L；各 I_l 下闭、v_li≥0；配置 e=(l,S) 且每 bin 至多一配置。M-6436 的激活侧须采用共同 c≥0 的整数预算（c>0 时秩 k=floor(B/c)，c=0 时预算无效），或采用给定的 bin matroid M；只讨论整数配置集。",
+      "roles": {
+        "M-6436d85fd0ed43b38ed3f095a89b326e": "把每 bin 的配置副本识别为 partition 块；共同成本预算给出整数截断，给定 bin matroid 给出平行副本 matroid。",
+        "M-f63f6d1bd7fc41b2a4eb5f90492a24b1": "在同一配置地集上定义 g 的最高利润覆盖，并用下闭性逐物品删冲突，将任一可行整数配置集解码为同值原整数指派。"
+      },
+      "explanation": "两结论共用配置地集。M-6436 给出等成本整数截断或 bin 拟阵的平行副本表示，可直接用作配置覆盖框架的可行域。最高利润覆盖的子模性与下闭逐物品去冲突的双向同值映射由 M-f63 的独立证明给出。该应用只提供整数约束接口。",
+      "scope": "共同成本整数截断或给定 bin 拟阵下的配置可行域接口。自然分数预算、隐式配置定价和一般拟阵舍入各有独立义务。",
+      "evidence": [
+        {
+          "path": "archives/configuration-assignment/state/等价/下闭配置指派与最大值覆盖的整数等价--等价.md",
+          "sha256": "a733def460247480a5d073dbe817e48634f7dcb1ed827ffb052434a747ef76db",
+          "section": "下闭配置指派与最大值覆盖的整数等价"
+        },
+        {
+          "path": "archives/customer-attraction/state/审查/退役选题跨模型复核的独立性与承重前提--审查.md",
+          "sha256": "377bd07b3a1dcc2d890c5526abee271ad7c785a80c0030146a020539bed6f9f1",
+          "section": "配置指派：完整恢复本次核查所需基线"
+        }
+      ],
+      "reviewed_by": "Codex maintenance",
+      "review_note": "对照共同正文两段证明：覆盖子模性及双向同值映射先独立成立，整数激活表示随后给出。",
+      "endpoint_pins": {
+        "M-6436d85fd0ed43b38ed3f095a89b326e": "308383cc1a8b89b886baf0547670edcb92b40b857b691ba988eaa4f35e1501b3",
+        "M-f63f6d1bd7fc41b2a4eb5f90492a24b1": "7e5c05f0fcd538aa08977e0029cf019d71d0258ce25308b5958911fac9e9167b"
+      },
+      "evidence_pins": {
+        "archives/configuration-assignment/state/等价/下闭配置指派与最大值覆盖的整数等价--等价.md": "a733def460247480a5d073dbe817e48634f7dcb1ed827ffb052434a747ef76db",
+        "archives/customer-attraction/state/审查/退役选题跨模型复核的独立性与承重前提--审查.md": "377bd07b3a1dcc2d890c5526abee271ad7c785a80c0030146a020539bed6f9f1"
+      },
+      "review_digest": "3c54df00bd4d45ef8c7160f89a46daf891cb6a64192a43fb456065dcd10d667d"
+    },
+    "config-3b-equal-cost-rounding-to-assignment": {
+      "edge_id": "config-3b-equal-cost-rounding-to-assignment",
+      "kind": "transfers",
+      "status": "accepted",
+      "source_ids": [
+        "M-116e32ea4721479daac94b00a0bd9758",
+        "M-6436d85fd0ed43b38ed3f095a89b326e",
+        "M-f63f6d1bd7fc41b2a4eb5f90492a24b1"
+      ],
+      "target_ids": [
+        "M-81da430ecf2846f59fb645a08763dab4"
+      ],
+      "premises_mode": "all",
+      "relation_mode": "conditional",
+      "conditions": "显式有限配置支持 E，局部族下闭、非负有理利润、给定有理 x≥0、每 bin 配置和≤1 且每 item 边际≤1，共同启用成本 c≥0，预算 B≥0。预删 c>B 的 bin；c>0 时须有 Σ_e x_e≤floor(B/c)（B/c 为整数时由自然预算推出），c=0 时无需截断。保证以给定 L(x) 为基准。",
+      "roles": {
+        "M-116e32ea4721479daac94b00a0bd9758": "付清 item 边际条件到 G(x) 初始下界。",
+        "M-6436d85fd0ed43b38ed3f095a89b326e": "给共同成本的 partition 截断和整数预算对应。",
+        "M-f63f6d1bd7fc41b2a4eb5f90492a24b1": "给 g 的子模性及下闭逐物品去重的同值解码。",
+        "M-81da430ecf2846f59fb645a08763dab4": "目标是等成本截断合同下输出原整数指派的确定性 (1−1/e)L(x) 保证。"
+      },
+      "explanation": "M-116 的阈值积分给 G(x)≥(1−1/e)L(x)。M-f63 的最大利润覆盖 g 归一、非负、单调、子模。先对同 bin 两坐标沿 e_i−e_j 保和交换，再对各 bin 唯一剩余分数坐标保和交换，两阶段均沿异号方向使 multilinear G 二阶导为 −2∂²_ijG≥0，选不降端点；共同正成本下同时保预算。余 r 个整数配置和至多一个分数 q，r+q≤k=floor(B/c) 保证若 q>0 则 r+1≤k；单调性许可将最后一个分数升1。c=0 时每 bin 一件后全升1。M-643 的整数截断对应原激活预算；M-f63 逐物品仅留最高利润 bin，由下闭性得到同值可行指派。交换 O(|E|) 步，等成本两阶段坐标是初值子集和减去整数，公共分母可取输入分母之积；按利润阈值用有限有理乘积精确计算 G，故总位复杂度多项式。只有给定显式支持的 L(x)；不主张求该点、一般 matroid 交换或隐式配置定价。",
+      "scope": "有限显式配置支持上的等成本舍入到原整数指派，比较给定分数点的 L(x)。正成本要求整数截断；零成本分支不要求。保留非均匀成本、隐式支持和一般 matroid 排除边界。",
+      "evidence": [
+        {
+          "path": "archives/configuration-assignment/state/算法/给定稀疏配置的确定性预算舍入--算法.md",
+          "sha256": "fd09910b2e3028a2babd10a93e0307624c1e32d3769e86dea793f1f04bf84168",
+          "section": "输入、输出与比较值"
+        },
+        {
+          "path": "archives/configuration-assignment/state/算法/给定稀疏配置的确定性预算舍入--算法.md",
+          "sha256": "fd09910b2e3028a2babd10a93e0307624c1e32d3769e86dea793f1f04bf84168",
+          "section": "第一阶段：同bin只留一件配置"
+        },
+        {
+          "path": "archives/configuration-assignment/state/算法/给定稀疏配置的确定性预算舍入--算法.md",
+          "sha256": "fd09910b2e3028a2babd10a93e0307624c1e32d3769e86dea793f1f04bf84168",
+          "section": "第二阶段：保持成本到至多一分数件"
+        },
+        {
+          "path": "archives/configuration-assignment/state/算法/给定稀疏配置的确定性预算舍入--算法.md",
+          "sha256": "fd09910b2e3028a2babd10a93e0307624c1e32d3769e86dea793f1f04bf84168",
+          "section": "等成本强界的修复合同"
+        },
+        {
+          "path": "archives/configuration-assignment/state/等价/下闭配置指派与最大值覆盖的整数等价--等价.md",
+          "sha256": "a733def460247480a5d073dbe817e48634f7dcb1ed827ffb052434a747ef76db",
+          "section": "下闭配置指派与最大值覆盖的整数等价"
+        },
+        {
+          "path": "archives/configuration-assignment/state/反例/等启用成本的自然预算LP与整数截断缺口--反例.md",
+          "sha256": "c53cd382c99d98a32a857f97cf1788dc009965135d592614fb05f89264f1d30f",
+          "section": "正确修复及不能保留的目标"
+        },
+        {
+          "path": "archives/customer-attraction/state/审查/退役选题跨模型复核的独立性与承重前提--审查.md",
+          "sha256": "377bd07b3a1dcc2d890c5526abee271ad7c785a80c0030146a020539bed6f9f1",
+          "section": "配置指派：完整恢复本次核查所需基线"
+        },
+        {
+          "path": "archives/configuration-assignment/state/算法/给定稀疏配置的确定性预算舍入--算法.md",
+          "sha256": "fd09910b2e3028a2babd10a93e0307624c1e32d3769e86dea793f1f04bf84168",
+          "section": "初始值：item边际约束只在这里使用"
+        },
+        {
+          "path": "archives/configuration-assignment/state/算法/给定稀疏配置的确定性预算舍入--算法.md",
+          "sha256": "fd09910b2e3028a2babd10a93e0307624c1e32d3769e86dea793f1f04bf84168",
+          "section": "精确实现与位复杂度"
+        }
+      ],
+      "reviewed_by": "Codex maintenance",
+      "review_note": "逐项重核已登记阈值积分下界、共同成本截断、同 bin 与跨 bin 保和交换、端点单调、硬预算和位复杂度。下闭去重由整数配置等价作为联合输入。",
+      "review_digest": "1653df31c242670da8fbc99b79b71ec0b609bbc957b77aeda0cdbed2fd7a6efc",
+      "endpoint_pins": {
+        "M-116e32ea4721479daac94b00a0bd9758": "1f21b8d0902f57c4b162bde9f31502c5438b481fda29f44ad6cce083b4551232",
+        "M-6436d85fd0ed43b38ed3f095a89b326e": "308383cc1a8b89b886baf0547670edcb92b40b857b691ba988eaa4f35e1501b3",
+        "M-81da430ecf2846f59fb645a08763dab4": "d20161ada731b6e82e89c27bc3c7a7374674b950d21e0cad9a1be961e2d22ce3",
+        "M-f63f6d1bd7fc41b2a4eb5f90492a24b1": "7e5c05f0fcd538aa08977e0029cf019d71d0258ce25308b5958911fac9e9167b"
+      },
+      "evidence_pins": {
+        "archives/configuration-assignment/state/算法/给定稀疏配置的确定性预算舍入--算法.md": "fd09910b2e3028a2babd10a93e0307624c1e32d3769e86dea793f1f04bf84168",
+        "archives/configuration-assignment/state/等价/下闭配置指派与最大值覆盖的整数等价--等价.md": "a733def460247480a5d073dbe817e48634f7dcb1ed827ffb052434a747ef76db",
+        "archives/configuration-assignment/state/反例/等启用成本的自然预算LP与整数截断缺口--反例.md": "c53cd382c99d98a32a857f97cf1788dc009965135d592614fb05f89264f1d30f",
+        "archives/customer-attraction/state/审查/退役选题跨模型复核的独立性与承重前提--审查.md": "377bd07b3a1dcc2d890c5526abee271ad7c785a80c0030146a020539bed6f9f1"
+      }
+    }
+  },
+  "scope": "archives/configuration-assignment",
+  "boundary_nodes": [
+    "M-668ee3a8071f4d0c8b8acf2e40a93d60"
+  ]
+}

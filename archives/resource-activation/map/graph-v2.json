@@ -1,0 +1,600 @@
+{
+  "schema": 2,
+  "status": "registered-coverage",
+  "trust": "Author-declared mathematical reviews; no automated truth certification",
+  "registry": "research/registry.json",
+  "registry_pin": "745d75d48cc2339dc4c59fa33d8dcb72591ed086b38c2927168787e092e1eb0c",
+  "nodes": {
+    "C01-v3.L1": {
+      "object_id": "C01-v3.L1",
+      "version": 1,
+      "title": "非负二维价格min/max的互补系数分裂",
+      "kind": "lemma",
+      "truth_status": "proved",
+      "model": "z,z′∈R_+²，逐坐标格运算；可提升至任意高维向量的两个非负线性价格。",
+      "statement": "存在λ,μ∈[0,1]使z∧z′=λz+μz′，z∨z′=(1−λ)z+(1−μ)z′。交叉情形z=(p,q),z′=(r,s),p<r,q>s时D=rq−ps>0，λ=s(r−p)/D，μ=p(q−s)/D；可比情形直接选原向量，含零边界。",
+      "quantifiers": "∀z,z′∈R_+² ∃λ,μ∈[0,1]同时满足两式；对实现向量y,y′使用同系数，保持两个原向量之和。",
+      "assumptions": [
+        "二维非负价格；不要求严格正坐标"
+      ],
+      "scope": "可独立复用的分裂方法；不推广为任意多价格同时min/max表示。",
+      "objections": "沿用精确Lemma C01-v3.L1，不以容器ID吞并。已定向核p=0/s=0/同零及可比边界，并用Fraction枚举非负整网格核对公式，有限核验不替正文证明。",
+      "body": {
+        "path": "archives/resource-activation/state/证明/启用值的两价格分裂与二维三射线禁形--证明.md",
+        "sha256": "5f9d97e5e6fb490c22d1668b40120cd2ae180c13d766abe9f32ef7dd8f77c7e1",
+        "section": "三、保持原对偶之和的全维分裂"
+      },
+      "evidence": [
+        {
+          "path": "archives/resource-activation/state/资料/两列射线启用值的二维分类与全维充分性--资料.md",
+          "sha256": "d14b7729ff08dbd40303cd6fd7dcf83e2ff59b53a53fc964eaf2dae202bfeca4",
+          "section": "全维充分性的关键证明"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/retired_topic_selection/multi_lane/research/topic_selection/notes/two_profile_lp_in_arbitrary_dimension.md"
+      ]
+    },
+    "M-2811342f46434965bf98081115bedcde": {
+      "object_id": "M-2811342f46434965bf98081115bedcde",
+      "version": 1,
+      "title": "第一象限凸锥上有限凸一次齐次成本的子模性",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "K⊆R_+²为凸锥，c:K→R有限、凸、一次正齐次（含c(0)=0）。LP特例K=P(R_+^d)、c_b(z)=min{b^T y:y≥0,P(y)=z}。",
+      "statement": "K对逐坐标min/max封闭且c(z∧z′)+c(z∨z′)≤c(z)+c(z′)。LP价格成本特例最优解达到，凸性、齐次性和子模性均成立，覆盖零价格、非唯一实现及分段线性折点。",
+      "quantifiers": "∀此K,c ∀z,z′∈K均满足格不等式；∀非负有限P,b，其有限生成价格锥上的c_b满足前述性质。",
+      "assumptions": [
+        "第一象限二维凸锥",
+        "c有限且凸、一次正齐次包括零缩放"
+      ],
+      "scope": "一般二维成本接口及有效价格LP特例；不把它归为未闭合crosspartial猜想。",
+      "objections": "成熟正文给无需光滑性的完整互补分裂证明；普通LP表示事实留本对象，不另造多节点。数学成立与经典工具覆盖/新颖性分开。",
+      "body": {
+        "path": "archives/resource-activation/state/证明/启用值的两价格分裂与二维三射线禁形--证明.md",
+        "sha256": "5f9d97e5e6fb490c22d1668b40120cd2ae180c13d766abe9f32ef7dd8f77c7e1",
+        "section": "四、最小实现成本及更一般的二维凸齐次接口"
+      },
+      "evidence": [
+        {
+          "path": "archives/resource-activation/state/资料/两列射线启用值的二维分类与全维充分性--资料.md",
+          "sha256": "d14b7729ff08dbd40303cd6fd7dcf83e2ff59b53a53fc964eaf2dae202bfeca4",
+          "section": "全维充分性的关键证明"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/retired_topic_selection/multi_lane/research/topic_selection/notes/two_profile_lp_in_arbitrary_dimension.md"
+      ]
+    },
+    "M-8e21b2ce4dec4976a576924f343e8742": {
+      "object_id": "M-8e21b2ce4dec4976a576924f343e8742",
+      "version": 1,
+      "title": "AW拟阵舍入对coverage效用的维度无关下尾义务",
+      "kind": "open-problem",
+      "truth_status": "open",
+      "model": "AW在k个拟阵交上的既定舍入输入/过程；归一单调coverage f，单物品边际≤1；F(x)=E[f(R(x))]。",
+      "statement": "寻找明确正的通用c,c′,C及准确输入条件，使AW输出S满足Pr[f(S)≤c F(x)/(k+1)]≤C exp(−c′ F(x)/(k+1)^3)。先核AW对非线性f的期望接口，再证明随机边际的漂移/二次变差控制；bounded-overlap受限族为独立入口。",
+      "quantifiers": "问是否∃与维数/实例无关c,c′,C>0，∀满足待核完整AW输入合同的k,x,f成立；当前不宣称该全称式已证。",
+      "assumptions": [
+        "归一单调coverage与单物品边际≤1",
+        "AW的确切过程/输入合同必须逐条核定，不能以任意相关舍入代替"
+      ],
+      "scope": "来源明确研究义务；非全世界仍开放或新颖性认证，未将线性a定理直接替换为f。",
+      "objections": "数学open可正常登记。AW期望适用性本身是未付前提；固定modular下界可能远小于F(x)，不得以conditional标签掩盖缺证。",
+      "body": {
+        "path": "archives/resource-activation/state/资料/第二轮GAP候选与CRS边界--资料.md",
+        "sha256": "3ff76bddbd2b86c4373efbd30f7c9be5758ddfa81198014a5e6dd5edb65c827a",
+        "section": "4. C17：AW 舍入到非线性 coverage 的下尾候选"
+      },
+      "evidence": [],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/retired_topic_selection/multi_lane/research/topic_selection/lanes/gap_tools.md"
+      ]
+    },
+    "M-caef92af522b43f18a8c58e97acc3d58": {
+      "object_id": "M-caef92af522b43f18a8c58e97acc3d58",
+      "version": 1,
+      "title": "循环路线有限切点双向order支持下的rank-one最优可选率",
+      "kind": "open-problem",
+      "truth_status": "open",
+      "model": "rank-one独立激活、已知x≥0且Σx≤1；固定循环路线，从r个切点的cyclic rotations及reverse共≤2r种order中选分布；分布可依x不可依activation。",
+      "statement": "求最佳通用selectability α_r及order分布/在线policy；先求r=2的准确算法与small-LP对偶障碍，或证明有限r仍有同一瓶颈。",
+      "quantifiers": "对每固定r，求对全部n、循环路线、合法x均保证的最优α_r；∃依x但独立activation的order分布与online policy，∀物品满足相应条件被选概率下界。",
+      "assumptions": [
+        "独立激活、Σx≤1",
+        "order支持限于选定切点双向路线",
+        "在线策略不可使用未来activation"
+      ],
+      "scope": "原资料简称knapsack，但源精确新切口是rank-one；与offline weighted knapsack gap和C08分立。",
+      "objections": "公开研究价值/文献覆盖未认证；不填猜测sharp常数。当前scope是否由旧policy LP已覆盖仍待核，open保精确问题与障碍义务。",
+      "body": {
+        "path": "archives/resource-activation/state/资料/第二轮GAP候选与CRS边界--资料.md",
+        "sha256": "3ff76bddbd2b86c4373efbd30f7c9be5758ddfa81198014a5e6dd5edb65c827a",
+        "section": "6. C19：路径/环路低支持 arrival permutations"
+      },
+      "evidence": [],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/retired_topic_selection/multi_lane/research/topic_selection/lanes/gap_tools.md"
+      ]
+    },
+    "M-db748b49766141e79b7ab59a27ad25bb": {
+      "object_id": "M-db748b49766141e79b7ab59a27ad25bb",
+      "version": 1,
+      "title": "近共线三列启用LP的参数子模缺口族",
+      "kind": "counterexample",
+      "truth_status": "proved",
+      "model": "Aε列a=(1,1), b=(1,ε), c=(ε,1)，两单位资源容量、三物品利润均1，φ(S)=max{Σx: Aεx≤(1,1),0≤x≤1_S}。",
+      "statement": "φ(ab)=φ(ac)=φ(a)=1，φ(abc)=2/(1+ε)，因此φ(abc)+φ(a)−φ(ab)−φ(ac)=(1−ε)/(1+ε)>0；任意接近同射线也不保证精确子模。",
+      "quantifiers": "每个实ε∈[0,1)，有理ε时亦为精确有理证书。",
+      "assumptions": [
+        "启用变量上界与两资源容量同时保留"
+      ],
+      "scope": "ε族定量命题与既有ε=0单反例分立。",
+      "objections": "已读恢复原稿§4上下界完整证明；不是scalar assignment GAP反例，不推出一般复杂性或approximate子模定理。",
+      "body": {
+        "path": "archives/bottleneck-knapsack/state/审查/退役GAP选题底稿与数学边界--审查.md",
+        "sha256": "3a6d7787cf22efa03d645baf2719fa84927e55e5777d886bd38c19627913c10e",
+        "section": "已有独立对象与本稿的去向"
+      },
+      "evidence": [
+        {
+          "path": "research/registration/evidence/register-ab98f323ad-0001-1/gap.md",
+          "sha256": "8e14e6d6525cc353091aa0484c6c72dc447f581d6227d6232fb3f960db06b68e",
+          "section": "4. 已完成：consecutive-ones向量LP的精确反例"
+        }
+      ],
+      "sources": [
+        "p25-register-v2:register-ab98f323ad-0001-1-evidence",
+        "archives/bottleneck-knapsack/state/审查/退役GAP选题底稿与数学边界--审查.md"
+      ]
+    },
+    "M-ed52023e7ef545d79147e2b65482dd89": {
+      "object_id": "M-ed52023e7ef545d79147e2b65482dd89",
+      "version": 1,
+      "title": "每batch至多两候选的L资源random-element OCRS障碍或严格改善",
+      "kind": "open-problem",
+      "truth_status": "open",
+      "model": "固定L≥3；独立batch各至多q=2互斥alternatives；产品占至多L个单位容量资源，使用原自然exante LP。",
+      "statement": "判定是否存在ε_L>0及(1/(L+1)+ε_L)-selectable OCRS，或构造q=2已达到该barrier的准确反例/紧界；首步为L=3的pair-blocker引理或最小hard LP。",
+      "quantifiers": "∀固定L≥3，问∃ε_L>0与统一可选算法适用于全部该类实例，或给精确tight构造；不包含L=2的普遍改善断言。",
+      "assumptions": [
+        "q=2互斥 alternatives、batch独立",
+        "资源单位容量且每产品使用≤L个资源",
+        "自然exante LP与online可接受合同须保原定义"
+      ],
+      "scope": "q=2不蕴含L-partite；去除特定affine-plane硬例不证明全部障碍消失。",
+      "objections": "来源只提出候选与承重义务，暂无算法保证/全称证明/新颖性认证；不从一般matchoid常数自动迁移。",
+      "body": {
+        "path": "archives/resource-activation/state/资料/第二轮GAP候选与CRS边界--资料.md",
+        "sha256": "3ff76bddbd2b86c4373efbd30f7c9be5758ddfa81198014a5e6dd5edb65c827a",
+        "section": "5. C18：batch size \\(q=2\\) 的 random-element OCRS"
+      },
+      "evidence": [],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/retired_topic_selection/multi_lane/research/topic_selection/lanes/gap_tools.md"
+      ]
+    },
+    "SEL-RESOURCE-LP-SUBMODULAR-v2": {
+      "object_id": "SEL-RESOURCE-LP-SUBMODULAR-v2",
+      "version": 1,
+      "title": "二维packing启用值对全容量全利润子模的两射线充要分类",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "有限连续packing启用LP：固定A∈R_+^(d×n)，phi_(b,w)(S)=max{w^T x:Ax≤b,0≤x_i≤1_(i∈S)}；非零列以严格正比例判射线，零列另贡献模函数。",
+      "statement": "d=2时，固定A的phi_(b,w)对每个b,w≥0子模，当且仅当A的非零列至多两条正比例射线；有理A可用多项式位长三列证书见证必要性失败。",
+      "quantifiers": "∀n≥1 ∀A∈R_+^(2×n)：[∀b≥0 ∀w≥0 ∀S,T⊆[n] phi(S)+phi(T)≥phi(S∪T)+phi(S∩T)] iff 非零列射线数≤2。",
+      "assumptions": [
+        "全容量b、全利润w量词",
+        "连续x，0≤x≤1_S",
+        "有限n"
+      ],
+      "scope": "只对二维给必要充分；固定b分类及高维必要性不在结论内。",
+      "objections": "已读精确量词、对偶达到性、二维格及三射线禁形承重段；复用成熟完整证明，未重新清洗或跑旧随机试验。经典工具的新颖性未认证。",
+      "body": {
+        "path": "archives/resource-activation/state/证明/启用值的两价格分裂与二维三射线禁形--证明.md",
+        "sha256": "5f9d97e5e6fb490c22d1668b40120cd2ae180c13d766abe9f32ef7dd8f77c7e1"
+      },
+      "evidence": [
+        {
+          "path": "archives/resource-activation/state/资料/两列射线启用值的二维分类与全维充分性--资料.md",
+          "sha256": "d14b7729ff08dbd40303cd6fd7dcf83e2ff59b53a53fc964eaf2dae202bfeca4"
+        },
+        {
+          "path": "archives/resource-activation/state/资料/第二轮GAP候选与CRS边界--资料.md",
+          "sha256": "3ff76bddbd2b86c4373efbd30f7c9be5758ddfa81198014a5e6dd5edb65c827a",
+          "section": "1. C01：已由现有对象承接的两射线分类"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/retired_topic_selection/multi_lane/research/topic_selection/notes/two_resource_lp_submodularity.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/retired_topic_selection/multi_lane/research/topic_selection/notes/two_profile_lp_in_arbitrary_dimension.md"
+      ]
+    },
+    "SEL-RESOURCE-LP-SUBMODULAR-v3": {
+      "object_id": "SEL-RESOURCE-LP-SUBMODULAR-v3",
+      "version": 1,
+      "title": "任意资源维数两列射线的启用值子模充分性",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "有限连续packing启用LP：固定A∈R_+^(d×n)，phi_(b,w)(S)=max{w^T x:Ax≤b,0≤x_i≤1_(i∈S)}；非零列以严格正比例判射线，零列另贡献模函数。",
+      "statement": "任意d，非零列至多两条正比例射线，则所有b,w≥0的phi归一、单调、子模；零行、零列、零容量、方向零坐标均允许。I3三射线仍给模函数，故不主张高维必要性。",
+      "quantifiers": "∀d,n≥1 ∀A≥0，若非零列≤2射线，则∀b,w≥0 ∀S,T启用子模；phi(∅)=0且单调。",
+      "assumptions": [
+        "至多两条非零列射线",
+        "有限LP、非负容量利润"
+      ],
+      "scope": "全维充分性，独立保留二维必要性及固定容量问题的边界。",
+      "objections": "已核原d维对偶互补分裂保持y_S+y_T，不能把高维b^T y误写成两价格的线性函数；证明与新颖性、应用算法分开。",
+      "body": {
+        "path": "archives/resource-activation/state/证明/启用值的两价格分裂与二维三射线禁形--证明.md",
+        "sha256": "5f9d97e5e6fb490c22d1668b40120cd2ae180c13d766abe9f32ef7dd8f77c7e1"
+      },
+      "evidence": [
+        {
+          "path": "archives/resource-activation/state/资料/两列射线启用值的二维分类与全维充分性--资料.md",
+          "sha256": "d14b7729ff08dbd40303cd6fd7dcf83e2ff59b53a53fc964eaf2dae202bfeca4"
+        },
+        {
+          "path": "archives/resource-activation/state/资料/第二轮GAP候选与CRS边界--资料.md",
+          "sha256": "3ff76bddbd2b86c4373efbd30f7c9be5758ddfa81198014a5e6dd5edb65c827a",
+          "section": "1. C01：已由现有对象承接的两射线分类"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/retired_topic_selection/multi_lane/research/topic_selection/notes/two_resource_lp_submodularity.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/retired_topic_selection/multi_lane/research/topic_selection/notes/two_profile_lp_in_arbitrary_dimension.md"
+      ]
+    },
+    "SEL-VECTOR-LP-SUBMODULAR-OBSTRUCTION-v1": {
+      "object_id": "SEL-VECTOR-LP-SUBMODULAR-OBSTRUCTION-v1",
+      "version": 1,
+      "title": "两单位资源三列启用LP的严格子模性反例",
+      "kind": "counterexample",
+      "truth_status": "proved",
+      "model": "有限连续packing启用LP：固定A∈R_+^(d×n)，phi_(b,w)(S)=max{w^T x:Ax≤b,0≤x_i≤1_(i∈S)}；非零列以严格正比例判射线，零列另贡献模函数。固定d=2,n=3，a=(1,1),b=(1,0),c=(0,1)，容量(1,1)、利润全1。",
+      "statement": "phi({a,b})=phi({a,c})=phi({a})=1，phi({a,b,c})=2，故两pair值之和2<3=singleton+union；一般向量容量启用值并非子模。",
+      "quantifiers": "存在此精确有限实例及S={a,b},T={a,c}否定一般A的全称子模命题。",
+      "assumptions": [
+        "两资源容量均1",
+        "三列如陈述、连续0≤x≤1_S、利润均1"
+      ],
+      "scope": "只否定一般向量化；不否定scalar GAP或两射线结论。正扰动ε族另属独立对象。",
+      "objections": "沿用SEL前缀。完整顶点精确程序/结果只核本三列；复现页的search_lp_submodularity.py是scalar assignment GAP搜索，空search_lp_run不能当向量负面统计。",
+      "body": {
+        "path": "archives/resource-activation/state/资料/两列射线启用值的二维分类与全维充分性--资料.md",
+        "sha256": "d14b7729ff08dbd40303cd6fd7dcf83e2ff59b53a53fc964eaf2dae202bfeca4",
+        "section": "三个不能合并的陈述"
+      },
+      "evidence": [
+        {
+          "path": "archives/bottleneck-knapsack/state/审查/向量容量启用值子模性失败三源复现--审查.md",
+          "sha256": "13b607c971691b207e37569e60887c5055a1b5fe50dd8456311a2ed6256cdb15"
+        },
+        {
+          "path": "archives/bottleneck-knapsack/state/审查/退役GAP选题底稿与数学边界--审查.md",
+          "sha256": "3a6d7787cf22efa03d645baf2719fa84927e55e5777d886bd38c19627913c10e",
+          "section": "C01：两资源启用值的分类"
+        },
+        {
+          "path": "archives/resource-activation/state/证明/启用值的两价格分裂与二维三射线禁形--证明.md",
+          "sha256": "5f9d97e5e6fb490c22d1668b40120cd2ae180c13d766abe9f32ef7dd8f77c7e1",
+          "section": "五、二维必要性与有理禁形证书"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/retired_topic_selection/multi_lane/research/topic_selection/CLAIMS.md"
+      ]
+    }
+  },
+  "edges": {
+    "exact-vector-defect-specializes-to-unit-axes": {
+      "edge_id": "exact-vector-defect-specializes-to-unit-axes",
+      "kind": "specializes",
+      "status": "accepted",
+      "source_ids": [
+        "M-db748b49766141e79b7ab59a27ad25bb"
+      ],
+      "target_ids": [
+        "SEL-VECTOR-LP-SUBMODULAR-OBSTRUCTION-v1"
+      ],
+      "premises_mode": "all",
+      "relation_mode": "unconditional",
+      "conditions": "在源族直接取 ε=0。两资源容量同为 1，三件物品 a=(1,1)、b=(1,0)、c=(0,1)，利润全 1，连续变量的启用上界 0≤x_i≤1_{i∈U}。保持物品、资源和启用集标签不变。",
+      "roles": {
+        "M-db748b49766141e79b7ab59a27ad25bb": "覆盖 ε=0，提供单位容量、单位利润下两对、交集和并集的精确值。",
+        "SEL-VECTOR-LP-SUBMODULAR-OBSTRUCTION-v1": "轴向矩阵上的一个存在性反例，精确否定任意向量容量的启用值均子模。"
+      },
+      "explanation": "ε=0 时源 LP 两行恰为 x_a+x_b≤1、x_a+x_c≤1，源构造的 λ=μ=1。取 S={a,b}、T={a,c}；S、T、交集 {a} 的值各为 1，并集在 (0,1,1) 达到 2，上界由 x_a+x_b+x_c≤2−x_a≤2 给出。因此左侧为 2，右侧为 3。物品 b、c 的支撑各由两坐标降为一坐标，但三列利润仍严格正。原精确 Fraction 枚举中对应掩码为 3、5、1、7，值与直接代入一致。该点的 0–1 矩阵有连续 1 列。严格正消耗由源族 0<ε<1 的单独见证给出，轴向实例本身只需非负消耗。",
+      "scope": "由瓶颈背包档的整个参数族推出资源启用档的一个固定轴向反例，直接包含端点 ε=0。轴向实例只支持一个存在性结论；正参数的定量缺口、保持完整资源支撑的近共线障碍及全容量全利润的二维分类均需各自的证明。",
+      "whole_result": "在瓶颈背包档参数族中取 ε=0，得到资源启用档的完整轴向见证，φ({a,b})+φ({a,c})=2<3=φ({a})+φ({a,b,c})，缺口恰为 1。",
+      "evidence": [
+        {
+          "path": "research/registration/evidence/register-ab98f323ad-0001-1/gap.md",
+          "sha256": "8e14e6d6525cc353091aa0484c6c72dc447f581d6227d6232fb3f960db06b68e",
+          "section": "4. 已完成：consecutive-ones向量LP的精确反例"
+        },
+        {
+          "path": "archives/resource-activation/state/资料/两列射线启用值的二维分类与全维充分性--资料.md",
+          "sha256": "d14b7729ff08dbd40303cd6fd7dcf83e2ff59b53a53fc964eaf2dae202bfeca4",
+          "section": "三个不能合并的陈述"
+        },
+        {
+          "path": "archives/bottleneck-knapsack/state/审查/向量容量启用值子模性失败三源复现--审查.md",
+          "sha256": "13b607c971691b207e37569e60887c5055a1b5fe50dd8456311a2ed6256cdb15",
+          "section": "1. Exact Fraction 顶点枚举"
+        },
+        {
+          "path": "archives/bottleneck-knapsack/tools/evidence/retired-topic-selection-vector-capacity-20261031/exact_vector_lp_results.json",
+          "sha256": "c47f7034083e450b9e2215ad4656ce9362000c482ecbf4b60d60be476418eca9"
+        }
+      ],
+      "reviewed_by": "Boss1-bmkp-vector-ray-3c-3c-102e1b4aa5138a4c",
+      "review_note": "核对 ε=0 的矩阵、容量、上界、四个掩码及缺口方向，分别核实正利润与正消耗；轴向精确结果独立于中断的 scalar assignment GAP 搜索。",
+      "endpoint_pins": {
+        "M-db748b49766141e79b7ab59a27ad25bb": "5a60e13901b27d4e87aef6be9901899f614886beaef1347faba801fd9489453a",
+        "SEL-VECTOR-LP-SUBMODULAR-OBSTRUCTION-v1": "16d144d3e59bf43a8087069c301df2d65f68205b0c9f1cce3ba994cf489a5540"
+      },
+      "evidence_pins": {
+        "research/registration/evidence/register-ab98f323ad-0001-1/gap.md": "8e14e6d6525cc353091aa0484c6c72dc447f581d6227d6232fb3f960db06b68e",
+        "archives/resource-activation/state/资料/两列射线启用值的二维分类与全维充分性--资料.md": "d14b7729ff08dbd40303cd6fd7dcf83e2ff59b53a53fc964eaf2dae202bfeca4",
+        "archives/bottleneck-knapsack/state/审查/向量容量启用值子模性失败三源复现--审查.md": "13b607c971691b207e37569e60887c5055a1b5fe50dd8456311a2ed6256cdb15",
+        "archives/bottleneck-knapsack/tools/evidence/retired-topic-selection-vector-capacity-20261031/exact_vector_lp_results.json": "c47f7034083e450b9e2215ad4656ce9362000c482ecbf4b60d60be476418eca9"
+      },
+      "review_digest": "3529b1834f5c0a27bddfa89d0956ae75e2bef6f12d6a5c6d3e74b84dc6cf0758"
+    },
+    "resource-three-ray-transfers-to-exact-vector-defect": {
+      "edge_id": "resource-three-ray-transfers-to-exact-vector-defect",
+      "kind": "transfers",
+      "status": "accepted",
+      "source_ids": [
+        "SEL-RESOURCE-LP-SUBMODULAR-v2"
+      ],
+      "target_ids": [
+        "M-db748b49766141e79b7ab59a27ad25bb"
+      ],
+      "premises_mode": "all",
+      "relation_mode": "unconditional",
+      "conditions": "对每个实数 ε∈[0,1) 固定二维非负三列 Aε，物品按 a=(1,1)、b=(1,ε)、c=(ε,1) 排列。容量向量 B=(1,1)，三物品利润 w=(1,1,1)，变量连续且 0≤x_i≤1_{i∈U}。源和目标的资源坐标、物品、利润、变量、启用集 U 都用恒等映射。",
+      "roles": {
+        "SEL-RESOURCE-LP-SUBMODULAR-v2": "二维全容量全利润分类的必要性证明提供中列 d=λe+μf 的三射线证书，给出容量、利润、两对及交集的最优值和并集可行解。",
+        "M-db748b49766141e79b7ab59a27ad25bb": "要求在指定单位容量、单位利润的对称参数族上得到精确启用最优值和子模缺口。并集的反向上界由本边对固定两条资源约束求和给出。"
+      },
+      "explanation": "在源证明中取中列 d=a、端列 e=b、f=c。端列行列式为 1−ε²>0，d=λe+μf 的系数 λ=μ=1/(1+ε)>0；两端各自的主资源比 1 大于另一资源比 ε，故是三条不同射线。取 α=1，满足 α≤min(1,1/λ,1/μ)，于是源容量 αd=(1,1)，利润 (1,e₁/d₁,f₂/d₂)=(1,1,1)。取 S={a,b}、T={a,c}，交集 {a}、并集 {a,b,c}。在 S 中第一资源给 x_a+x_b≤1，在 T 中第二资源给 x_a+x_c≤1，交集也有 x_a≤1；三者均由 x_a=1 达到。并集令 x_a=0，x_b=λ，x_c=μ，两条容量恰饱和且每个变量不超过 1。任一并集可行点满足 2x_a+(1+ε)(x_b+x_c)≤2，由 x_a≥0 和 2≥1+ε 得 x_a+x_b+x_c≤2/(1+ε)，所以上下界相等。同一最优见证也适用于启用集 {b,c}。空集值 0，另外两个单物品集均可取满且受单件上界限制为 1。按右侧减左侧的约定，缺口为 2/(1+ε)+1−1−1=(1−ε)/(1+ε)。",
+      "scope": "源分类固定 A 并量化全部非负容量和利润；其否定支只保证存在反例，精确值使用了本边的特定选择和并集上界。每个 ε 用同一物品全集、同一容量和利润。0<ε<1 时所有列坐标和利润严格正，三列均有完整资源支撑；ε↑1 时列趋同且缺口趋零，任意小的偏离仍能破坏精确子模。ε=1 的同射线矩阵给每个非空启用集值 1。把同一 Aε 的两容量提高到 2+ε 就可取满所有启用物品，值变为模函数，故此边不提供固定容量的普遍分类。适用域限于连续的单个向量容量 packing LP。",
+      "whole_result": "将资源启用 v2 必要性证书按恒等映射用于瓶颈背包档的 Aε 启用 LP，再加上两容量约束之和，完整得到任意 ε∈[0,1) 的 φ(S)=φ(T)=φ(S∩T)=1、φ(S∪T)=2/(1+ε)，从而缺口严格为 (1−ε)/(1+ε)。有理 ε 给有理最优见证；正 ε 可任意接近共同射线。",
+      "evidence": [
+        {
+          "path": "archives/resource-activation/state/证明/启用值的两价格分裂与二维三射线禁形--证明.md",
+          "sha256": "5f9d97e5e6fb490c22d1668b40120cd2ae180c13d766abe9f32ef7dd8f77c7e1",
+          "section": "五、二维必要性与有理禁形证书"
+        },
+        {
+          "path": "archives/bottleneck-knapsack/state/审查/退役GAP选题底稿与数学边界--审查.md",
+          "sha256": "3a6d7787cf22efa03d645baf2719fa84927e55e5777d886bd38c19627913c10e",
+          "section": "C01：两资源启用值的分类"
+        },
+        {
+          "path": "research/registration/evidence/register-ab98f323ad-0001-1/gap.md",
+          "sha256": "8e14e6d6525cc353091aa0484c6c72dc447f581d6227d6232fb3f960db06b68e",
+          "section": "4. 已完成：consecutive-ones向量LP的精确反例"
+        }
+      ],
+      "reviewed_by": "Boss1-bmkp-vector-ray-3c-3c-102e1b4aa5138a4c",
+      "review_note": "核对二维必要性中 λ、μ、α 的选择和各利润比，逐一检查启用上界、容量和精确值的两向证明，另核同射线边界、固定支撑与固定容量量词。",
+      "endpoint_pins": {
+        "M-db748b49766141e79b7ab59a27ad25bb": "5a60e13901b27d4e87aef6be9901899f614886beaef1347faba801fd9489453a",
+        "SEL-RESOURCE-LP-SUBMODULAR-v2": "76c9e60f78b3cf56f25ac4ef67e7c75f41f668d648dafd44cea144160b7b8e5e"
+      },
+      "evidence_pins": {
+        "archives/resource-activation/state/证明/启用值的两价格分裂与二维三射线禁形--证明.md": "5f9d97e5e6fb490c22d1668b40120cd2ae180c13d766abe9f32ef7dd8f77c7e1",
+        "archives/bottleneck-knapsack/state/审查/退役GAP选题底稿与数学边界--审查.md": "3a6d7787cf22efa03d645baf2719fa84927e55e5777d886bd38c19627913c10e",
+        "research/registration/evidence/register-ab98f323ad-0001-1/gap.md": "8e14e6d6525cc353091aa0484c6c72dc447f581d6227d6232fb3f960db06b68e"
+      },
+      "review_digest": "d56ecb125fb11652ebd616730885a0868e20dc8bda55869f196b0c7156d5b8e9"
+    },
+    "resource-c01-price-split-implies-convex-homogeneous-cost": {
+      "edge_id": "resource-c01-price-split-implies-convex-homogeneous-cost",
+      "kind": "implies",
+      "status": "accepted",
+      "source_ids": [
+        "C01-v3.L1"
+      ],
+      "target_ids": [
+        "M-2811342f46434965bf98081115bedcde"
+      ],
+      "premises_mode": "all",
+      "relation_mode": "unconditional",
+      "conditions": "K⊆R_+²是凸锥，c:K→R有限、凸、一次正齐次且c(0)=0。LP特例取任意有限非负价格映射P与b≥0，K=P(R_+^d)，c_b(z)=min{bᵀy:y≥0,P(y)=z}。",
+      "roles": {
+        "C01-v3.L1": "提供任意两非负二维点的min/max互补非负系数；相同系数相加保持两个原点之和。",
+        "M-2811342f46434965bf98081115bedcde": "将分裂用于凸一次齐次成本得格子不等式，并以有限LP给有效价格成本特例的达到性、凸性和齐次性。"
+      },
+      "explanation": "对z,z′∈K，C01给z∧z′=λz+μz′、z∨z′=(1−λ)z+(1−μ)z′，λ,μ∈[0,1]。K是凸锥，故两组合仍在K；有限凸一次齐次性给c(αz+βz′)≤αc(z)+βc(z′)，适用于每个非负α,β，零和用c(0)=0处理。把两互补组合的不等式相加即得c(z∧z′)+c(z∨z′)≤c(z)+c(z′)。LP特例对每个z∈K可行、目标≥0且有限，由有限维LP取到最优；实现的凸组合与正缩放/反缩放分别给凸性和齐次性，c_b(0)=0由y=0达成。源分裂因而完整推出目标的一般成本不等式和该LP实现特例。",
+      "scope": "第一象限二维凸锥上的有限成本；不要求可微性、不要求唯一实现或严格正价格，覆盖折点、零坐标和零缩放。",
+      "whole_result": "由C01-v3.L1的互补分裂，完整得到M-281：K对逐坐标min/max封闭，c在K上满足子模格不等式；有效价格LP成本c_b的最优值达到且满足同一凸齐次子模接口。",
+      "evidence": [
+        {
+          "path": "archives/resource-activation/state/证明/启用值的两价格分裂与二维三射线禁形--证明.md",
+          "sha256": "5f9d97e5e6fb490c22d1668b40120cd2ae180c13d766abe9f32ef7dd8f77c7e1",
+          "section": "三、保持原对偶之和的全维分裂"
+        },
+        {
+          "path": "archives/resource-activation/state/证明/启用值的两价格分裂与二维三射线禁形--证明.md",
+          "sha256": "5f9d97e5e6fb490c22d1668b40120cd2ae180c13d766abe9f32ef7dd8f77c7e1",
+          "section": "四、最小实现成本及更一般的二维凸齐次接口"
+        },
+        {
+          "path": "archives/resource-activation/state/资料/两列射线启用值的二维分类与全维充分性--资料.md",
+          "sha256": "d14b7729ff08dbd40303cd6fd7dcf83e2ff59b53a53fc964eaf2dae202bfeca4",
+          "section": "全维充分性的关键证明"
+        }
+      ],
+      "reviewed_by": "Boss2-local-draft-resource-3a-3a-6690dabdf05908fb",
+      "review_note": "实读并核互补分裂的零坐标/可比边界、凸锥闭合、次可加性及LP实现特例；零缩放以c(0)=0单独支付。",
+      "endpoint_pins": {
+        "C01-v3.L1": "7e10c37c032063fdf89402e59eac599c48df45d56dd9b7cbb4d9664e0f5675d7",
+        "M-2811342f46434965bf98081115bedcde": "af60ec8280f2b7a60d2ab12ee00d70801c1f43af00ba182f7a0f6f835e81f2fb"
+      },
+      "evidence_pins": {
+        "archives/resource-activation/state/证明/启用值的两价格分裂与二维三射线禁形--证明.md": "5f9d97e5e6fb490c22d1668b40120cd2ae180c13d766abe9f32ef7dd8f77c7e1",
+        "archives/resource-activation/state/资料/两列射线启用值的二维分类与全维充分性--资料.md": "d14b7729ff08dbd40303cd6fd7dcf83e2ff59b53a53fc964eaf2dae202bfeca4"
+      },
+      "review_digest": "91068cd435cbf0ea04b3bae3f6b76bb7c726ae9a6368222c8716e4e99ce024c9"
+    },
+    "resource-c01-price-split-implies-full-two-ray-sufficiency": {
+      "edge_id": "resource-c01-price-split-implies-full-two-ray-sufficiency",
+      "kind": "implies",
+      "status": "accepted",
+      "source_ids": [
+        "C01-v3.L1"
+      ],
+      "target_ids": [
+        "SEL-RESOURCE-LP-SUBMODULAR-v3"
+      ],
+      "premises_mode": "all",
+      "relation_mode": "unconditional",
+      "conditions": "任意有限d,n≥1，A≥0的非零列至多两条正比例射线，容量b≥0、利润w≥0；连续启用LPφ(S)=max{wᵀx:Ax≤b,0≤x≤1_S}。零列另给模函数；零行、零容量和列方向的零坐标均允许。",
+      "roles": {
+        "C01-v3.L1": "给两个非负二维价格的互补min/max分裂，并用同一系数分裂两个原d维对偶向量以保持其和。",
+        "SEL-RESOURCE-LP-SUBMODULAR-v3": "由该分裂和启用LP对偶hinge逐件比较，得到任意资源维数的两射线归一、单调、子模充分性。"
+      },
+      "explanation": "剥离零列的模贡献。两列方向写为u,v∈R_+^d，每个非零A_i=s_i u或s_i v，s_i>0；一射线可令v=u。原LP非空紧，有限维LP强对偶及达到性给φ(S)=min_(y≥0)D_S(y)，D_S(y)=bᵀy+Σ_(i∈S)(w_i−A_iᵀy)_+，且存在最优y_S,y_T。令z=(uᵀy_S,vᵀy_S)、z′=(uᵀy_T,vᵀy_T)。C01给λ,μ∈[0,1]；取y_∧=λy_S+μy_T、y_∨=(1−λ)y_S+(1−μ)y_T。两者非负，其价格为z∧z′及z∨z′，且y_∧+y_∨=y_S+y_T，故原d维bᵀ成本和保持。每件物品hinge只读一个价格坐标且递减：交集物品的两hinge之和在min/max前后相等；S或T独有物品在union所用较大价格处不增。故φ(S)+φ(T)=D_S(y_S)+D_T(y_T)≥D_(S∪T)(y_∨)+D_(S∩T)(y_∧)≥φ(S∪T)+φ(S∩T)。空启用只有零x故φ(∅)=0；启用扩大使可行域扩大故单调。没有非零列时纯模。所有分裂和对偶步骤允许退化零边界，从而完整得到v3。",
+      "scope": "仅充分性：非零列至多两射线推出全b,w归一单调子模。高维A=I3仍可有三射线模函数，故不主张高维必要性；该结果不提供AW/OCRS、指派算法或新颖性结论。",
+      "whole_result": "C01互补分裂在原d维对偶上保持y_S+y_T，连同强对偶、递减hinge比较和零列剥离，完整推出SEL-RESOURCE-LP-SUBMODULAR-v3的任意d、全b,w两射线充分性及归一单调性。",
+      "evidence": [
+        {
+          "path": "archives/resource-activation/state/证明/启用值的两价格分裂与二维三射线禁形--证明.md",
+          "sha256": "5f9d97e5e6fb490c22d1668b40120cd2ae180c13d766abe9f32ef7dd8f77c7e1",
+          "section": "一、对偶、达到与零列"
+        },
+        {
+          "path": "archives/resource-activation/state/证明/启用值的两价格分裂与二维三射线禁形--证明.md",
+          "sha256": "5f9d97e5e6fb490c22d1668b40120cd2ae180c13d766abe9f32ef7dd8f77c7e1",
+          "section": "三、保持原对偶之和的全维分裂"
+        },
+        {
+          "path": "archives/resource-activation/state/资料/两列射线启用值的二维分类与全维充分性--资料.md",
+          "sha256": "d14b7729ff08dbd40303cd6fd7dcf83e2ff59b53a53fc964eaf2dae202bfeca4",
+          "section": "全维充分性的关键证明"
+        }
+      ],
+      "reviewed_by": "Boss2-local-draft-resource-3a-3a-6690dabdf05908fb",
+      "review_note": "完整核强对偶达到性、原d维对偶之和保持、两类列hinge及union/intersection分配、归一/单调和零边界；未把高维bᵀy误作两个价格的线性函数。",
+      "endpoint_pins": {
+        "C01-v3.L1": "7e10c37c032063fdf89402e59eac599c48df45d56dd9b7cbb4d9664e0f5675d7",
+        "SEL-RESOURCE-LP-SUBMODULAR-v3": "2288bb14fc30a91426cc00107c084fac7a405022953e5142d262014ca328b442"
+      },
+      "evidence_pins": {
+        "archives/resource-activation/state/证明/启用值的两价格分裂与二维三射线禁形--证明.md": "5f9d97e5e6fb490c22d1668b40120cd2ae180c13d766abe9f32ef7dd8f77c7e1",
+        "archives/resource-activation/state/资料/两列射线启用值的二维分类与全维充分性--资料.md": "d14b7729ff08dbd40303cd6fd7dcf83e2ff59b53a53fc964eaf2dae202bfeca4"
+      },
+      "review_digest": "e81ac97314e9c87ffbe9457abdedddef457282f4f727695f673f69d8e3947e0e"
+    },
+    "resource-v2-three-ray-certificate-specializes-to-axial-obstruction": {
+      "edge_id": "resource-v2-three-ray-certificate-specializes-to-axial-obstruction",
+      "kind": "specializes",
+      "status": "accepted",
+      "source_ids": [
+        "SEL-RESOURCE-LP-SUBMODULAR-v2"
+      ],
+      "target_ids": [
+        "SEL-VECTOR-LP-SUBMODULAR-OBSTRUCTION-v1"
+      ],
+      "premises_mode": "all",
+      "relation_mode": "unconditional",
+      "conditions": "源二维三射线必要性构造取中列d=a=(1,1)，端列e=b=(1,0)、f=c=(0,1)，λ=μ=1，α=1；所以容量αd=(1,1)、三利润均1，连续启用上界0≤x_i≤1_(i∈U)。",
+      "roles": {
+        "SEL-RESOURCE-LP-SUBMODULAR-v2": "其三射线禁形证明给出容量、利润、两个pair及交集的精确值和并集的可行见证。",
+        "SEL-VECTOR-LP-SUBMODULAR-OBSTRUCTION-v1": "要求指定两单位资源、轴向三列、单位利润下的四个精确启用值与严格缺口1。"
+      },
+      "explanation": "将固定轴向矩阵代入v2构造，中间列d=e+f，所有参数满足α≤min(1,1/λ,1/μ)。S={a,b}由第一容量x_a+x_b≤1给值≤1，T={a,c}由第二容量x_a+x_c≤1同理；两者及交集{a}均以x_a=1达到1。并集取x_a=0,x_b=x_c=1达到2；任意可行点两容量相加给2x_a+x_b+x_c≤2，从x_a≥0得到总利润≤2。于是φ(S)+φ(T)=2<3=φ(S∪T)+φ(S∩T)，与原有理掩码1,3,5,7的值1,1,1,2吻合。此为直接模型内特化，不需要额外的瓶颈背包ε族对象。",
+      "scope": "精确固定轴向反例；否定一般向量packing启用值全称子模，不否定scalar GAP、两射线充分性或高维所有矩阵。已完成3C中的ε族→轴向边另有独立源对象，本边只保留v2证明到本包轴向证书的直接特化。",
+      "whole_result": "v2三射线构造在d=(1,1)、e=(1,0)、f=(0,1)、α=1时得到SEL-VECTOR固定实例的全部四值及缺口1。",
+      "evidence": [
+        {
+          "path": "archives/resource-activation/state/证明/启用值的两价格分裂与二维三射线禁形--证明.md",
+          "sha256": "5f9d97e5e6fb490c22d1668b40120cd2ae180c13d766abe9f32ef7dd8f77c7e1",
+          "section": "五、二维必要性与有理禁形证书"
+        },
+        {
+          "path": "archives/resource-activation/state/资料/两列射线启用值的二维分类与全维充分性--资料.md",
+          "sha256": "d14b7729ff08dbd40303cd6fd7dcf83e2ff59b53a53fc964eaf2dae202bfeca4",
+          "section": "三个不能合并的陈述"
+        },
+        {
+          "path": "archives/bottleneck-knapsack/state/审查/向量容量启用值子模性失败三源复现--审查.md",
+          "sha256": "13b607c971691b207e37569e60887c5055a1b5fe50dd8456311a2ed6256cdb15",
+          "section": "1. Exact Fraction 顶点枚举"
+        }
+      ],
+      "reviewed_by": "Boss2-local-draft-resource-3a-3a-6690dabdf05908fb",
+      "review_note": "代入λ=μ=α=1，核对两pair、交集、并集的上界与达到见证，缺口方向与精确掩码一致；不借随机探针。",
+      "endpoint_pins": {
+        "SEL-RESOURCE-LP-SUBMODULAR-v2": "76c9e60f78b3cf56f25ac4ef67e7c75f41f668d648dafd44cea144160b7b8e5e",
+        "SEL-VECTOR-LP-SUBMODULAR-OBSTRUCTION-v1": "16d144d3e59bf43a8087069c301df2d65f68205b0c9f1cce3ba994cf489a5540"
+      },
+      "evidence_pins": {
+        "archives/resource-activation/state/证明/启用值的两价格分裂与二维三射线禁形--证明.md": "5f9d97e5e6fb490c22d1668b40120cd2ae180c13d766abe9f32ef7dd8f77c7e1",
+        "archives/resource-activation/state/资料/两列射线启用值的二维分类与全维充分性--资料.md": "d14b7729ff08dbd40303cd6fd7dcf83e2ff59b53a53fc964eaf2dae202bfeca4",
+        "archives/bottleneck-knapsack/state/审查/向量容量启用值子模性失败三源复现--审查.md": "13b607c971691b207e37569e60887c5055a1b5fe50dd8456311a2ed6256cdb15"
+      },
+      "review_digest": "b68600dfd805288bfa04626d284c961b2797ce7d98885c9758eef68c8ea94850"
+    },
+    "resource-v3-sufficiency-specializes-to-v2-sufficient-clause": {
+      "edge_id": "resource-v3-sufficiency-specializes-to-v2-sufficient-clause",
+      "kind": "specializes",
+      "status": "accepted",
+      "source_ids": [
+        "SEL-RESOURCE-LP-SUBMODULAR-v3"
+      ],
+      "target_ids": [
+        "SEL-RESOURCE-LP-SUBMODULAR-v2"
+      ],
+      "premises_mode": "all",
+      "relation_mode": "unconditional",
+      "conditions": "固定同一连续packing启用LP与同一非负有限矩阵A；把v3的全维结论限制到d=2，并只比较“非零列至多两条正比例射线⇒对所有b,w≥0的启用值子模”这一充分方向。v2的二维全容量全利润必要性（反向三射线禁形）不由该限制推出。",
+      "roles": {
+        "SEL-RESOURCE-LP-SUBMODULAR-v3": "任意资源维数下两射线条件的归一、单调、子模充分性；在d=2时给出v2的充分子句。",
+        "SEL-RESOURCE-LP-SUBMODULAR-v2": "二维完整iff对象；接收v3在d=2的充分方向，但其必要性仍由自身三射线证书承担。"
+      },
+      "explanation": "两对象使用同一φ_(b,w)(S)=max{wᵀx:Ax≤b,0≤x≤1_S}模型。v3证明以两条列射线的两个价格坐标作互补分裂，保持原对偶成本之和，并由递减hinge得到子模；该论证对d=2直接成立，恰为v2 iff中的“至多两射线⇒子模”半边。v2另有三条不同射线的中间列、有理容量/利润禁形，证明“对所有b,w子模⇒至多两射线”；v3明示不主张该高维必要性，所以这条边只记录充分方向的维数特化。",
+      "scope": "连续有限packing LP；全容量、全利润量词和零列/零容量边界保留。边不把v3提升为二维必要性，也不把二维结论外推到高维。",
+      "contribution": {
+        "result": "v3的全维两射线充分性在d=2时复现v2的充分半边，量词和退化边界一致。",
+        "remaining": "v2的二维必要半边（三射线有理禁形）仍需v2自身证明；因此v3不能单独推出v2完整iff。"
+      },
+      "evidence": [
+        {
+          "path": "archives/resource-activation/state/证明/启用值的两价格分裂与二维三射线禁形--证明.md",
+          "sha256": "5f9d97e5e6fb490c22d1668b40120cd2ae180c13d766abe9f32ef7dd8f77c7e1",
+          "section": "三、保持原对偶之和的全维分裂"
+        },
+        {
+          "path": "archives/resource-activation/state/证明/启用值的两价格分裂与二维三射线禁形--证明.md",
+          "sha256": "5f9d97e5e6fb490c22d1668b40120cd2ae180c13d766abe9f32ef7dd8f77c7e1",
+          "section": "五、二维必要性与有理禁形证书"
+        },
+        {
+          "path": "archives/resource-activation/state/资料/两列射线启用值的二维分类与全维充分性--资料.md",
+          "sha256": "d14b7729ff08dbd40303cd6fd7dcf83e2ff59b53a53fc964eaf2dae202bfeca4",
+          "section": "三个不能合并的陈述"
+        }
+      ],
+      "reviewed_by": "Boss2-local-draft-resource-3a-3a-7b3c562d1a327a4d",
+      "review_note": "逐项核同一模型、d=2限制、全b,w量词与两射线条件；明确仅为v2充分半边贡献，不替代其三射线必要性。",
+      "endpoint_pins": {
+        "SEL-RESOURCE-LP-SUBMODULAR-v2": "76c9e60f78b3cf56f25ac4ef67e7c75f41f668d648dafd44cea144160b7b8e5e",
+        "SEL-RESOURCE-LP-SUBMODULAR-v3": "2288bb14fc30a91426cc00107c084fac7a405022953e5142d262014ca328b442"
+      },
+      "evidence_pins": {
+        "archives/resource-activation/state/证明/启用值的两价格分裂与二维三射线禁形--证明.md": "5f9d97e5e6fb490c22d1668b40120cd2ae180c13d766abe9f32ef7dd8f77c7e1",
+        "archives/resource-activation/state/资料/两列射线启用值的二维分类与全维充分性--资料.md": "d14b7729ff08dbd40303cd6fd7dcf83e2ff59b53a53fc964eaf2dae202bfeca4"
+      },
+      "review_digest": "ca7e01294b0628d866754b3b74f1603c47e987cc81f4c7aa4d639ffb8f8102d0"
+    }
+  },
+  "scope": "archives/resource-activation",
+  "boundary_nodes": [
+    "M-db748b49766141e79b7ab59a27ad25bb"
+  ]
+}

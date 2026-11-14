@@ -1,0 +1,2144 @@
+{
+  "schema": 2,
+  "status": "registered-coverage",
+  "trust": "Author-declared mathematical reviews; no automated truth certification",
+  "registry": "research/registry.json",
+  "registry_pin": "745d75d48cc2339dc4c59fa33d8dcb72591ed086b38c2927168787e092e1eb0c",
+  "nodes": {
+    "GA-01": {
+      "object_id": "GA-01",
+      "version": 1,
+      "title": "显式transversal basis保成本Chernoff尺度舍入义务",
+      "kind": "problem",
+      "truth_status": "open",
+      "model": "显式二部图transversal matroid，有理fractional basis x、线性有理cost c、k个[0,1]系数行。",
+      "statement": "求随机总位多项式basis B，c(B)≤c·x，并以常数概率同时使每行相对a_rx误差为O(log(2k)+sqrt((a_rx)log(2k)))；不要求精确边际。",
+      "quantifiers": "每个显式输入；误差常数独立于维度。",
+      "assumptions": [
+        "显式输入和原候选模型，不给oracle免费复杂度"
+      ],
+      "scope": "八题池中精确研究合同；不认证其外部开放性或新颖性。",
+      "objections": "标准推论可能性待核；face保持、原均值半径、分布和位复杂度均未核完。toy17 bases/136对非证明。",
+      "body": {
+        "path": "archives/bottleneck-knapsack/state/审查/广义指派候选池的状态与证据边界--审查.md",
+        "sha256": "15ebb51bee034ac2fda32fecaa16fce4803675f0dae83442b7bd587f99694ad7",
+        "section": "GA-01：transversal matroid 成本保留 Chernoff 舍入"
+      },
+      "evidence": [
+        {
+          "path": "archives/bottleneck-knapsack/state/审查/广义指派候选报告的深入状态与BMKP舍入边界--审查.md",
+          "sha256": "a9a733a7ca331d092090b7f09ac9423ee2e4a31a195b0810eb27f04feaa2947d",
+          "section": "八条候选的精确状态"
+        },
+        {
+          "path": "archives/bottleneck-knapsack/state/审查/广义指派候选报告的深入状态与BMKP舍入边界--审查.md",
+          "sha256": "a9a733a7ca331d092090b7f09ac9423ee2e4a31a195b0810eb27f04feaa2947d",
+          "section": "GA-01：费用保持舍入切片的降级边界"
+        }
+      ],
+      "sources": [
+        "p25-register-v2:register-ab98f323ad-0001-1-evidence",
+        "archives/bottleneck-knapsack/state/审查/广义指派候选池的状态与证据边界--审查.md"
+      ]
+    },
+    "GA-02": {
+      "object_id": "GA-02",
+      "version": 1,
+      "title": "两资源值严格预算Santa Claus的OPT四分之一目标",
+      "kind": "problem",
+      "truth_status": "open",
+      "model": "m玩家n资源，公共v_j∈{1,R}、任意非负有理c_ij、总预算B，资源允许unused。",
+      "statement": "严格总cost≤B下求每玩家值≥OPT/4的多项式整数分配。",
+      "quantifiers": "所有上述两值真预算输入，OPT比较相同硬预算可行域。",
+      "assumptions": [
+        "显式输入和原候选模型，不给oracle免费复杂度"
+      ],
+      "scope": "八题池中精确研究合同；不认证其外部开放性或新颖性。",
+      "objections": "BACKUP；big-player选择与共享small资源耦合未闭；rank1 toy不证明两值算法。",
+      "body": {
+        "path": "archives/bottleneck-knapsack/state/审查/广义指派候选池的状态与证据边界--审查.md",
+        "sha256": "15ebb51bee034ac2fda32fecaa16fce4803675f0dae83442b7bd587f99694ad7",
+        "section": "GA-02：两种资源值的真预算 Santa Claus"
+      },
+      "evidence": [
+        {
+          "path": "archives/bottleneck-knapsack/state/审查/广义指派候选报告的深入状态与BMKP舍入边界--审查.md",
+          "sha256": "a9a733a7ca331d092090b7f09ac9423ee2e4a31a195b0810eb27f04feaa2947d",
+          "section": "八条候选的精确状态"
+        }
+      ],
+      "sources": [
+        "p25-register-v2:register-ab98f323ad-0001-1-evidence",
+        "archives/bottleneck-knapsack/state/审查/广义指派候选池的状态与证据边界--审查.md"
+      ]
+    },
+    "GA-03-L1": {
+      "object_id": "GA-03-L1",
+      "version": 1,
+      "title": "固定联合类型的全局critical最重交换",
+      "kind": "lemma",
+      "truth_status": "proved",
+      "model": "有限物品公共正二进制有理重w_e、非负有理利p_e；有限非空背包容量属{B1,B2}，0<B1≤B2；每件至多一次且可unused，所有背包硬容量保留，目标max min_j p(S_j)。 给定有限全局标签、long/short互不交见证；同标签共同u_t及利润桶。",
+      "statement": "每类型取所有long总critical需求Nτ的全局最重Nτ件，可同型配对交换；long的原cheap集与上舍入重量/下舍入利润式不变，short实际重量不增且每包利润损失<2δ。",
+      "quantifiers": "所有满足输入合同的有限有理实例、δ>0、γ>0、整数K≥1、每种联合标签。",
+      "assumptions": [
+        "long全部昂贵物品均critical且每long≤K件；short≤2件",
+        "同标签全容量适用状态、u_t及高利润/昂贵标志相同，w≤u_t，g≤p<g+δ",
+        "给定long原cheap与标签槽的容量利润可行见证"
+      ],
+      "scope": "条件化输入下的完整交换定理，不负责标签或初始结构生成。",
+      "objections": "按主正文L1完整配对证明复用；两容量分别取重的toy仅反驳错误实现，不另造对象。",
+      "body": {
+        "path": "archives/bottleneck-knapsack/state/引理/联合类型交换与允许弃置的背包恢复--引理.md",
+        "sha256": "122fcdf542aa5a1f5593139d2f2d395c0b2b32c4f765eab69a1ae80498c6dc44",
+        "section": "L1：固定联合标签的全局critical恢复"
+      },
+      "evidence": [
+        {
+          "path": "archives/bottleneck-knapsack/state/资料/双容量BMKP候选的三模块与完整目标--资料.md",
+          "sha256": "4a02bf9416dae98b1408dd9889346fdf51c94970291d60ddc9631dc3bb8e9d43",
+          "section": "三个分开验收的条件模块"
+        },
+        {
+          "path": "archives/bottleneck-knapsack/state/审查/两容量BMKP候选的独立反方审查与量词边界--审查.md",
+          "sha256": "88646cb1fa86826c38a982c47db0b411f8578a3ee78dba4cb9105711096d3e6f",
+          "section": "2.1 L1：联合类型与 global-critical 恢复"
+        },
+        {
+          "path": "archives/bottleneck-knapsack/state/审查/广义指派候选报告的深入状态与BMKP舍入边界--审查.md",
+          "sha256": "a9a733a7ca331d092090b7f09ac9423ee2e4a31a195b0810eb27f04feaa2947d",
+          "section": "GA-03：两容量 BMKP 的具体候选接口"
+        }
+      ],
+      "sources": [
+        "p25-register-v2:register-ab98f323ad-0001-1-evidence",
+        "archives/bottleneck-knapsack/state/引理/联合类型交换与允许弃置的背包恢复--引理.md"
+      ]
+    },
+    "GA-03-L2": {
+      "object_id": "GA-03-L2",
+      "version": 1,
+      "title": "两容量至多二件short分配的嵌套配额matching等价",
+      "kind": "lemma",
+      "truth_status": "proved",
+      "model": "有限剩余物品池公共非负重/利；容量B1≤B2，short数m1,m2≥0，共同目标Q>0。",
+      "statement": "加m1+m2个不同零dummy；重量和≤B2且利润和≥Q的不同顶点对成边，≤B1者权1其余权0。全部short可分配 iff 存在基数m1+m2、至少m1条权1边的matching；由固定基数最大权一般图matching多项式求解。",
+      "quantifiers": "所有上述有限有理输入，包括m1+m2=0与B1=B2。",
+      "assumptions": [
+        "每short至多2物品、物品互不交",
+        "Q>0排除dummy-dummy；singleton补不同dummy"
+      ],
+      "scope": "一个嵌套资格配额，非一般彩色Exact Matching。",
+      "objections": "主body双向构造完整；报告单处二部匹配用语不能给图强加二部性。总候选中池须noncritical expensive，与cheap LP不交。",
+      "body": {
+        "path": "archives/bottleneck-knapsack/state/引理/联合类型交换与允许弃置的背包恢复--引理.md",
+        "sha256": "122fcdf542aa5a1f5593139d2f2d395c0b2b32c4f765eab69a1ae80498c6dc44",
+        "section": "L2：两个容量的short恢复恰是嵌套配额匹配"
+      },
+      "evidence": [
+        {
+          "path": "archives/bottleneck-knapsack/state/资料/双容量BMKP候选的三模块与完整目标--资料.md",
+          "sha256": "4a02bf9416dae98b1408dd9889346fdf51c94970291d60ddc9631dc3bb8e9d43",
+          "section": "三个分开验收的条件模块"
+        },
+        {
+          "path": "archives/bottleneck-knapsack/state/审查/两容量BMKP候选的独立反方审查与量词边界--审查.md",
+          "sha256": "88646cb1fa86826c38a982c47db0b411f8578a3ee78dba4cb9105711096d3e6f",
+          "section": "2.2 L2：嵌套 short matching"
+        },
+        {
+          "path": "archives/bottleneck-knapsack/state/审查/广义指派候选报告的深入状态与BMKP舍入边界--审查.md",
+          "sha256": "a9a733a7ca331d092090b7f09ac9423ee2e4a31a195b0810eb27f04feaa2947d",
+          "section": "GA-03：两容量 BMKP 的具体候选接口"
+        }
+      ],
+      "sources": [
+        "p25-register-v2:register-ab98f323ad-0001-1-evidence",
+        "archives/bottleneck-knapsack/state/引理/联合类型交换与允许弃置的背包恢复--引理.md"
+      ]
+    },
+    "GA-03-L3": {
+      "object_id": "GA-03-L3",
+      "version": 1,
+      "title": "允许unused的列和至多一LP逐包4pmax硬容量舍入",
+      "kind": "lemma",
+      "truth_status": "proved",
+      "model": "有限公共有理非负w_e,p_e，逐包R_j,t_j≥0，LP x≥0，Σ_jx_ej≤1、Σ_ew_ex_ej≤R_j、Σ_ep_ex_ej≥t_j。",
+      "statement": "可总位多项式输出互不交部分整数T_j，w(T_j)≤R_j、p(T_j)≥t_j−4pmax，pmax=max({0}∪{p_e})。残极点固定整边后E≤N+2M且N≤E/2，因此有包至多4分数边；结束该包仅删边而不全局删物品，每包只损一次。",
+      "quantifiers": "每个上述可行LP输入，包容量种类任意；允许零重量、零物品及零目标。",
+      "assumptions": [
+        "允许物品unused，不要求全覆盖",
+        "有理LP可行极点使用原系数，残右端仅减整件和"
+      ],
+      "scope": "独立硬容量部分舍入引理，非仅两容量；与全覆盖反例既有fair owner分清。",
+      "objections": "已复用主body极点秩/恢复/位复杂度全证明；未交付规范通用实现。重2/两容量1的例只否定全覆盖，不否定此引理或BMKP原目标。",
+      "body": {
+        "path": "archives/bottleneck-knapsack/state/引理/联合类型交换与允许弃置的背包恢复--引理.md",
+        "sha256": "122fcdf542aa5a1f5593139d2f2d395c0b2b32c4f765eab69a1ae80498c6dc44",
+        "section": "L3：列和≤1、允许unused的$4p_{max}$硬容量舍入"
+      },
+      "evidence": [
+        {
+          "path": "archives/bottleneck-knapsack/state/资料/双容量BMKP候选的三模块与完整目标--资料.md",
+          "sha256": "4a02bf9416dae98b1408dd9889346fdf51c94970291d60ddc9631dc3bb8e9d43",
+          "section": "三个分开验收的条件模块"
+        },
+        {
+          "path": "archives/bottleneck-knapsack/state/审查/两容量BMKP候选的独立反方审查与量词边界--审查.md",
+          "sha256": "88646cb1fa86826c38a982c47db0b411f8578a3ee78dba4cb9105711096d3e6f",
+          "section": "2.3 L3：允许 discard 的 \\(4p_{\\max}\\) LP 舍入"
+        },
+        {
+          "path": "archives/bottleneck-knapsack/state/审查/广义指派候选报告的深入状态与BMKP舍入边界--审查.md",
+          "sha256": "a9a733a7ca331d092090b7f09ac9423ee2e4a31a195b0810eb27f04feaa2947d",
+          "section": "GA-03：两容量 BMKP 的具体候选接口"
+        }
+      ],
+      "sources": [
+        "p25-register-v2:register-ab98f323ad-0001-1-evidence",
+        "archives/bottleneck-knapsack/state/引理/联合类型交换与允许弃置的背包恢复--引理.md"
+      ]
+    },
+    "GA-04": {
+      "object_id": "GA-04",
+      "version": 1,
+      "title": "二层laminar basis保成本的常数weighted prefix误差目标",
+      "kind": "problem",
+      "truth_status": "open",
+      "model": "显式height2 laminar matroid、任意元素序、非负有理权、fractional basis和一个线性cost。",
+      "statement": "求多项式basis B，cost不增且每个prefix的weighted discrepancy≤C wmax，其中C绝对常数。",
+      "quantifiers": "存在绝对C，对所有此类输入和全部prefix同时成立。",
+      "assumptions": [
+        "显式输入和原候选模型，不给oracle免费复杂度"
+      ],
+      "scope": "八题池中精确研究合同；不认证其外部开放性或新颖性。",
+      "objections": "HOLD；跨子树exchange charge不可随活动块数累积；无全域证明。",
+      "body": {
+        "path": "archives/bottleneck-knapsack/state/审查/广义指派候选池的状态与证据边界--审查.md",
+        "sha256": "15ebb51bee034ac2fda32fecaa16fce4803675f0dae83442b7bd587f99694ad7",
+        "section": "GA-04：height-2 weighted laminar matroid 常数 prefix 误差"
+      },
+      "evidence": [
+        {
+          "path": "archives/bottleneck-knapsack/state/审查/广义指派候选报告的深入状态与BMKP舍入边界--审查.md",
+          "sha256": "a9a733a7ca331d092090b7f09ac9423ee2e4a31a195b0810eb27f04feaa2947d",
+          "section": "八条候选的精确状态"
+        }
+      ],
+      "sources": [
+        "p25-register-v2:register-ab98f323ad-0001-1-evidence",
+        "archives/bottleneck-knapsack/state/审查/广义指派候选池的状态与证据边界--审查.md"
+      ]
+    },
+    "GA-05": {
+      "object_id": "GA-05",
+      "version": 1,
+      "title": "restricted Santa Claus破四旧研究目标",
+      "kind": "problem",
+      "truth_status": "open",
+      "model": "restricted值v_ij∈{0,v_j}的Santa Claus max-min整数分配。",
+      "statement": "旧目标为某固定δ>0的(4−δ)近似多项式算法。",
+      "quantifiers": "存在固定0<δ<4，对所有模型输入输出合法分配并满足对应OPT/(4−δ)保证。",
+      "assumptions": [
+        "显式输入和原候选模型，不给oracle免费复杂度"
+      ],
+      "scope": "八题池中精确研究合同；不认证其外部开放性或新颖性。",
+      "objections": "REJECT_OLD_TARGET是选题淘汰，非数学refuted或已证；近期作者公告及配置LP差距没有在本批被认证，保留为旧目标来源。",
+      "body": {
+        "path": "archives/bottleneck-knapsack/state/审查/广义指派候选池的状态与证据边界--审查.md",
+        "sha256": "15ebb51bee034ac2fda32fecaa16fce4803675f0dae83442b7bd587f99694ad7",
+        "section": "GA-05：restricted Santa Claus 破4的旧目标"
+      },
+      "evidence": [
+        {
+          "path": "archives/bottleneck-knapsack/state/审查/广义指派候选报告的深入状态与BMKP舍入边界--审查.md",
+          "sha256": "a9a733a7ca331d092090b7f09ac9423ee2e4a31a195b0810eb27f04feaa2947d",
+          "section": "八条候选的精确状态"
+        }
+      ],
+      "sources": [
+        "p25-register-v2:register-ab98f323ad-0001-1-evidence",
+        "archives/bottleneck-knapsack/state/审查/广义指派候选池的状态与证据边界--审查.md"
+      ]
+    },
+    "GA-06": {
+      "object_id": "GA-06",
+      "version": 1,
+      "title": "eligible degree至多二的maxGAP期望0.76目标",
+      "kind": "problem",
+      "truth_status": "open",
+      "model": "offline maxGAP，多bins、每物品至多两个eligible bins、bin-dependent重/利，硬容量。",
+      "statement": "求随机多项式算法，合法整数指派期望利润≥0.76OPT。",
+      "quantifiers": "对所有该域实例，期望取算法随机性。",
+      "assumptions": [
+        "显式输入和原候选模型，不给oracle免费复杂度"
+      ],
+      "scope": "八题池中精确研究合同；不认证其外部开放性或新颖性。",
+      "objections": "HOLD；两单位箱toy独立采样3/4与相关matching为2只反驳弱采样，不证明0.76全域界。",
+      "body": {
+        "path": "archives/bottleneck-knapsack/state/审查/广义指派候选池的状态与证据边界--审查.md",
+        "sha256": "15ebb51bee034ac2fda32fecaa16fce4803675f0dae83442b7bd587f99694ad7",
+        "section": "GA-06：eligible-degree-2 max-GAP 超 \\(3/4\\)"
+      },
+      "evidence": [
+        {
+          "path": "archives/bottleneck-knapsack/state/审查/广义指派候选报告的深入状态与BMKP舍入边界--审查.md",
+          "sha256": "a9a733a7ca331d092090b7f09ac9423ee2e4a31a195b0810eb27f04feaa2947d",
+          "section": "八条候选的精确状态"
+        }
+      ],
+      "sources": [
+        "p25-register-v2:register-ab98f323ad-0001-1-evidence",
+        "archives/bottleneck-knapsack/state/审查/广义指派候选池的状态与证据边界--审查.md"
+      ]
+    },
+    "GA-07": {
+      "object_id": "GA-07",
+      "version": 1,
+      "title": "组总尺寸至多半总容量的Group GAP五分之一目标",
+      "kind": "problem",
+      "truth_status": "open",
+      "model": "m个单位容量bins、公共item sizes、bin-dependent profits、all-or-nothing groups，每组尺寸≤m/2。",
+      "statement": "求硬容量多项式1/5近似，选中组全部物品合法安置且保留真实assignment利润。",
+      "quantifiers": "全部上述输入；与越过m/2阈值的C02问题分立。",
+      "assumptions": [
+        "显式输入和原候选模型，不给oracle免费复杂度"
+      ],
+      "scope": "八题池中精确研究合同；不认证其外部开放性或新颖性。",
+      "objections": "BACKUP；reserved-half改善与组完成/最终舍入尚未同时证明，比例乘法不是保证。",
+      "body": {
+        "path": "archives/bottleneck-knapsack/state/审查/广义指派候选池的状态与证据边界--审查.md",
+        "sha256": "15ebb51bee034ac2fda32fecaa16fce4803675f0dae83442b7bd587f99694ad7",
+        "section": "GA-07：reserved-capacity Group GAP 从 \\(1/6\\) 到 \\(1/5\\)"
+      },
+      "evidence": [
+        {
+          "path": "archives/bottleneck-knapsack/state/审查/广义指派候选报告的深入状态与BMKP舍入边界--审查.md",
+          "sha256": "a9a733a7ca331d092090b7f09ac9423ee2e4a31a195b0810eb27f04feaa2947d",
+          "section": "八条候选的精确状态"
+        }
+      ],
+      "sources": [
+        "p25-register-v2:register-ab98f323ad-0001-1-evidence",
+        "archives/bottleneck-knapsack/state/审查/广义指派候选池的状态与证据边界--审查.md"
+      ]
+    },
+    "GA-08": {
+      "object_id": "GA-08",
+      "version": 1,
+      "title": "random-order online GAP期望0.16竞争目标",
+      "kind": "problem",
+      "truth_status": "open",
+      "model": "online maxGAP，全部物品均匀随机顺序到达，到达后不可撤销指派/拒绝，硬容量。",
+      "statement": "求每步多项式online算法，每实例期望利润≥0.16OPT。",
+      "quantifiers": "每个固定实例，期望取随机顺序与算法随机性。",
+      "assumptions": [
+        "显式输入和原候选模型，不给oracle免费复杂度"
+      ],
+      "scope": "八题池中精确研究合同；不认证其外部开放性或新颖性。",
+      "objections": "HOLD；adaptive stopping-time与残容量概率未闭；历史(1−ln2)/2仅来源记录，未作现行文献认证。",
+      "body": {
+        "path": "archives/bottleneck-knapsack/state/审查/广义指派候选池的状态与证据边界--审查.md",
+        "sha256": "15ebb51bee034ac2fda32fecaa16fce4803675f0dae83442b7bd587f99694ad7",
+        "section": "GA-08：random-order online GAP 竞争比 \\(0.16\\)"
+      },
+      "evidence": [
+        {
+          "path": "archives/bottleneck-knapsack/state/审查/广义指派候选报告的深入状态与BMKP舍入边界--审查.md",
+          "sha256": "a9a733a7ca331d092090b7f09ac9423ee2e4a31a195b0810eb27f04feaa2947d",
+          "section": "八条候选的精确状态"
+        }
+      ],
+      "sources": [
+        "p25-register-v2:register-ab98f323ad-0001-1-evidence",
+        "archives/bottleneck-knapsack/state/审查/广义指派候选池的状态与证据边界--审查.md"
+      ]
+    },
+    "M-032553bc20c040618a69609cb0f5b63a": {
+      "object_id": "M-032553bc20c040618a69609cb0f5b63a",
+      "version": 1,
+      "title": "截断Binomial与Poisson比值的精确单调性恢复义务",
+      "kind": "problem",
+      "truth_status": "open",
+      "model": "G(k,n,λ)=E[min(Bin(n,λ/n),k)]/λ；F(k,λ)=E[min(Pois(λ),k)]/λ；n≥1、k≥0为整数且λ>0、λ/n≤1。",
+      "statement": "恢复P04 Conj4.1(3)–(6)的准确量词和方向，证明能加强class-k knapsack下界的子式并与F(k,k+1)接口连接。",
+      "quantifiers": "每条单调性须从完整原文恢复后单独固定；当前正文未载其方向，不猜。",
+      "assumptions": [
+        "保持源候选原模型，不把文献摘要或选题优先级当证明"
+      ],
+      "scope": "明确研究义务/待精确化接口；不认证现行外部开放性。",
+      "objections": "登记的是明确恢复/证明义务而非未读单调性定理；convex order旧工具覆盖尚待核。",
+      "body": {
+        "path": "archives/bottleneck-knapsack/state/审查/退役GAP选题底稿与数学边界--审查.md",
+        "sha256": "3a6d7787cf22efa03d645baf2719fa84927e55e5777d886bd38c19627913c10e",
+        "section": "15 项候选的准确状态"
+      },
+      "evidence": [
+        {
+          "path": "research/registration/evidence/register-ab98f323ad-0001-1/gap.md",
+          "sha256": "8e14e6d6525cc353091aa0484c6c72dc447f581d6227d6232fb3f960db06b68e",
+          "section": "C09. Sergeev Conjecture4.1 的 Binomial–Poisson 极值不等式【C/辅助；作者明确 conjecture】"
+        }
+      ],
+      "sources": [
+        "p25-register-v2:register-ab98f323ad-0001-1-evidence",
+        "archives/bottleneck-knapsack/state/审查/退役GAP选题底稿与数学边界--审查.md"
+      ]
+    },
+    "M-11522a7c2584487eba17793bccd540e8": {
+      "object_id": "M-11522a7c2584487eba17793bccd540e8",
+      "version": 1,
+      "title": "逐agent拟阵FEFx精确强多项式边界义务",
+      "kind": "problem",
+      "truth_status": "open",
+      "model": "每agent独立matroid、additive rational weights，允许charity；FEFx对任何严格feasible subset不envy，先partition/laminar切片。",
+      "statement": "求精确FEFx算法的组合势与数值大小无关迭代界，或原minimal-envied-set算法指数轨迹并识别正确子类。",
+      "quantifiers": "全声明子类的任意有理权输入；强多项式不能从binary值有界偷换。",
+      "assumptions": [
+        "保持源候选原模型，不把文献摘要或选题优先级当证明"
+      ],
+      "scope": "明确研究义务/待精确化接口；不认证现行外部开放性。",
+      "objections": "母框架pseudo-poly/FPTAS为来源记录，精确母定义与子类接口仍须恢复；未给强多项式算法。",
+      "body": {
+        "path": "archives/bottleneck-knapsack/state/审查/退役GAP选题底稿与数学边界--审查.md",
+        "sha256": "3a6d7787cf22efa03d645baf2719fa84927e55e5777d886bd38c19627913c10e",
+        "section": "15 项候选的准确状态"
+      },
+      "evidence": [
+        {
+          "path": "research/registration/evidence/register-ab98f323ad-0001-1/gap.md",
+          "sha256": "8e14e6d6525cc353091aa0484c6c72dc447f581d6227d6232fb3f960db06b68e",
+          "section": "C15. Matroid约束下精确FEFx的strongly-poly算法边界【B/C；作者明确open】"
+        }
+      ],
+      "sources": [
+        "p25-register-v2:register-ab98f323ad-0001-1-evidence",
+        "archives/bottleneck-knapsack/state/审查/退役GAP选题底稿与数学边界--审查.md"
+      ]
+    },
+    "M-1e98f0c71a6846b08ae6a93cd1b8dd0c": {
+      "object_id": "M-1e98f0c71a6846b08ae6a93cd1b8dd0c",
+      "version": 1,
+      "title": "两尺寸自然knapsack LP的全边缘sharp correlation gap目标",
+      "kind": "problem",
+      "truth_status": "open",
+      "model": "容量1，a∈(1/2,1], b∈(1/3,1/2]，任意非负w、x∈[0,1]^n且aΣ_Ax+bΣ_Bx≤1，w·x>0，R独立激活。",
+      "statement": "求E[max{w(S):S⊆R,s(S)≤1}]/(w·x)在全部合法参数的sharp下界/CRS；a+b≤1与>1结构分别保留。",
+      "quantifiers": "任意物品数与a,b,w,x；全局极值允许同时改变x。",
+      "assumptions": [
+        "保持源候选原模型，不把文献摘要或选题优先级当证明"
+      ],
+      "scope": "明确研究义务/待精确化接口；不认证现行外部开放性。",
+      "objections": "既有固定x统一权反例与Bernoulli拆分障碍不否定本全局目标。历史0.279非现行认证基线；不换成整数凸包。",
+      "body": {
+        "path": "archives/bottleneck-knapsack/state/审查/退役GAP选题底稿与数学边界--审查.md",
+        "sha256": "3a6d7787cf22efa03d645baf2719fa84927e55e5777d886bd38c19627913c10e",
+        "section": "15 项候选的准确状态"
+      },
+      "evidence": [
+        {
+          "path": "research/registration/evidence/register-ab98f323ad-0001-1/gap.md",
+          "sha256": "8e14e6d6525cc353091aa0484c6c72dc447f581d6227d6232fb3f960db06b68e",
+          "section": "C08. 两种尺寸混合 knapsack 的 correlation gap 与 CRS【A；作者大 conjecture 的可控截面】"
+        }
+      ],
+      "sources": [
+        "p25-register-v2:register-ab98f323ad-0001-1-evidence",
+        "archives/bottleneck-knapsack/state/审查/退役GAP选题底稿与数学边界--审查.md"
+      ]
+    },
+    "M-214bf81eea8f433e9fca948a00cf87e0": {
+      "object_id": "M-214bf81eea8f433e9fca948a00cf87e0",
+      "version": 1,
+      "title": "series-parallel graphic rank的2sum correlation gap义务",
+      "kind": "problem",
+      "truth_status": "open",
+      "model": "cactus/series-parallel图cycle matroid，任意matroid polytope边缘x与非负weighted rank；独立激活。",
+      "statement": "求全域统一β>1−1/e的correlation gap及可组合2sum递推，或对拟议常数给同类精确反例。",
+      "quantifiers": "某常数β>1−1/e，对series-parallel全部x/权；cactus direct sum仅baseline。",
+      "assumptions": [
+        "保持源候选原模型，不把文献摘要或选题优先级当证明"
+      ],
+      "scope": "明确研究义务/待精确化接口；不认证现行外部开放性。",
+      "objections": "2sum边缘耦合未解；treewidth不是黑箱充分条件，也无外部开放性认证。",
+      "body": {
+        "path": "archives/bottleneck-knapsack/state/审查/退役GAP选题底稿与数学边界--审查.md",
+        "sha256": "3a6d7787cf22efa03d645baf2719fa84927e55e5777d886bd38c19627913c10e",
+        "section": "15 项候选的准确状态"
+      },
+      "evidence": [
+        {
+          "path": "research/registration/evidence/register-ab98f323ad-0001-1/gap.md",
+          "sha256": "8e14e6d6525cc353091aa0484c6c72dc447f581d6227d6232fb3f960db06b68e",
+          "section": "C10. Graphic matroid 的2-sum结构能否给强 correlation gap【B；作者明确类问题 + 新 idea】"
+        }
+      ],
+      "sources": [
+        "p25-register-v2:register-ab98f323ad-0001-1-evidence",
+        "archives/bottleneck-knapsack/state/审查/退役GAP选题底稿与数学边界--审查.md"
+      ]
+    },
+    "M-3957aaaa66f24a77bf0a6a6ecde37f66": {
+      "object_id": "M-3957aaaa66f24a77bf0a6a6ecde37f66",
+      "version": 1,
+      "title": "独立出现物品的ex ante opening与ex post recourse义务",
+      "kind": "problem",
+      "truth_status": "open",
+      "model": "独立Bernoulli items概率p_j已知；先成本≤B开bins，观察激活后再合法assignment；两opening costs、forest/cactus eligibility及interval容量切片。",
+      "statement": "研究期望recourse profit对opening集的子模/近似子模或精确失败，给small-support nonadaptive opening近似。",
+      "quantifiers": "全部指定两阶段输入；opening先于activation，assignment后于activation。",
+      "assumptions": [
+        "保持源候选原模型，不把文献摘要或选题优先级当证明"
+      ],
+      "scope": "明确研究义务/待精确化接口；不认证现行外部开放性。",
+      "objections": "仅乘p_j替代利润不能消掉容量冲突非线性；外部stochastic sparsifier是否覆盖未核。",
+      "body": {
+        "path": "archives/bottleneck-knapsack/state/审查/退役GAP选题底稿与数学边界--审查.md",
+        "sha256": "3a6d7787cf22efa03d645baf2719fa84927e55e5777d886bd38c19627913c10e",
+        "section": "15 项候选的准确状态"
+      },
+      "evidence": [
+        {
+          "path": "research/registration/evidence/register-ab98f323ad-0001-1/gap.md",
+          "sha256": "8e14e6d6525cc353091aa0484c6c72dc447f581d6227d6232fb3f960db06b68e",
+          "section": "C07. Stochastic-appearance GBAP 的两阶段 opening/recourse【B；作者明确方向】"
+        }
+      ],
+      "sources": [
+        "p25-register-v2:register-ab98f323ad-0001-1-evidence",
+        "archives/bottleneck-knapsack/state/审查/退役GAP选题底稿与数学边界--审查.md"
+      ]
+    },
+    "M-45fdfcf5a51a491a9bdb56cc5c53f8ee": {
+      "object_id": "M-45fdfcf5a51a491a9bdb56cc5c53f8ee",
+      "version": 1,
+      "title": "受限AGAP保留容量修复超过1/19的义务",
+      "kind": "problem",
+      "truth_status": "open",
+      "model": "AGAP统一容量m bins，每组至多m/2件、选组all-or-nothing且同bin同组至多一件；考察size≤1/3或组内同尺寸切片。",
+      "statement": "求严格大于1/19的显式多项式近似修复，必须同时保同组互斥、组完整与容量。",
+      "quantifiers": "某明确常数ρ>1/19，对选定且完整说明的自然子类全部实例。",
+      "assumptions": [
+        "保持源候选原模型，不把文献摘要或选题优先级当证明"
+      ],
+      "scope": "明确研究义务/待精确化接口；不认证现行外部开放性。",
+      "objections": "两个切片是备选研究范围；未给统一修复引理，移走再填可违反同组互斥。",
+      "body": {
+        "path": "archives/bottleneck-knapsack/state/审查/退役GAP选题底稿与数学边界--审查.md",
+        "sha256": "3a6d7787cf22efa03d645baf2719fa84927e55e5777d886bd38c19627913c10e",
+        "section": "15 项候选的准确状态"
+      },
+      "evidence": [
+        {
+          "path": "research/registration/evidence/register-ab98f323ad-0001-1/gap.md",
+          "sha256": "8e14e6d6525cc353091aa0484c6c72dc447f581d6227d6232fb3f960db06b68e",
+          "section": "C04. 保留容量修复能否改进 AGAP 的 1/19【B；作者明确方向】"
+        }
+      ],
+      "sources": [
+        "p25-register-v2:register-ab98f323ad-0001-1-evidence",
+        "archives/bottleneck-knapsack/state/审查/退役GAP选题底稿与数学边界--审查.md"
+      ]
+    },
+    "M-668ee3a8071f4d0c8b8acf2e40a93d60": {
+      "object_id": "M-668ee3a8071f4d0c8b8acf2e40a93d60",
+      "version": 1,
+      "title": "非均匀opening预算与item冲突的联合舍入义务",
+      "kind": "problem",
+      "truth_status": "open",
+      "model": "给定稀疏fractional配置支持、下闭local families、任意opening costs与硬预算；先两种cost、每item至多两bin支持。",
+      "statement": "求支持大小多项式可实现的joint budget/item-contention coupling，严格改善两保留概率相乘的界，或给精确worst-case及matching obstruction。",
+      "quantifiers": "对所声明支持类全部输入；明确保证比较输入LP还是整数OPT。",
+      "assumptions": [
+        "保持源候选原模型，不把文献摘要或选题优先级当证明"
+      ],
+      "scope": "明确研究义务/待精确化接口；不认证现行外部开放性。",
+      "objections": "本义务不被已有显式支持半损失定理自动解决；复杂度与改进数值须另外给定，候选并非定理。",
+      "body": {
+        "path": "archives/bottleneck-knapsack/state/审查/退役GAP选题底稿与数学边界--审查.md",
+        "sha256": "3a6d7787cf22efa03d645baf2719fa84927e55e5777d886bd38c19627913c10e",
+        "section": "15 项候选的准确状态"
+      },
+      "evidence": [
+        {
+          "path": "research/registration/evidence/register-ab98f323ad-0001-1/gap.md",
+          "sha256": "8e14e6d6525cc353091aa0484c6c72dc447f581d6227d6232fb3f960db06b68e",
+          "section": "C06. 非均匀 opening costs 的 GBAP：联合耦合与简单算法的真实界【A；作者明确问题 + 新切口】"
+        }
+      ],
+      "sources": [
+        "p25-register-v2:register-ab98f323ad-0001-1-evidence",
+        "archives/bottleneck-knapsack/state/审查/退役GAP选题底稿与数学边界--审查.md"
+      ]
+    },
+    "M-6b2b6c8e6aa544d2b5153eca1033a12f": {
+      "object_id": "M-6b2b6c8e6aa544d2b5153eca1033a12f",
+      "version": 1,
+      "title": "小物品reserved budget密度贪心下界",
+      "kind": "lemma",
+      "truth_status": "proved",
+      "model": "有限地集非负单调子模f，有理非负cost、B>0，0≤δ<ρ≤1，max cost≤δB，OPT=max_{c(O)≤B}f(O)。",
+      "statement": "零成本先取；每步选全剩余地集最大边际密度物品，首次不能加入ρB时停止，返回S成本≤ρB且f(S)≥(1−exp(−(ρ−δ)))OPT。非零f(∅)可平移后加回。",
+      "quantifiers": "所有该域f/cost输入；任意最大密度破平局。",
+      "assumptions": [
+        "不能加入就停，不改成任意skip启发式",
+        "比较full预算B而输出reserved预算ρB"
+      ],
+      "scope": "标准可复用辅助引理，不宣称新颖。",
+      "objections": "已读原稿§5完整gap乘积推导；ρ≤1写明预算语义，排除未陈述的大于full预算扩张。tight有限δ包络及matching lower bound仍open。",
+      "body": {
+        "path": "archives/bottleneck-knapsack/state/审查/退役GAP选题底稿与数学边界--审查.md",
+        "sha256": "3a6d7787cf22efa03d645baf2719fa84927e55e5777d886bd38c19627913c10e",
+        "section": "C03：reserved-capacity 小物品引理"
+      },
+      "evidence": [
+        {
+          "path": "research/registration/evidence/register-ab98f323ad-0001-1/gap.md",
+          "sha256": "8e14e6d6525cc353091aa0484c6c72dc447f581d6227d6232fb3f960db06b68e",
+          "section": "5. 已完成：小物品reserved-capacity的greedy引理"
+        }
+      ],
+      "sources": [
+        "p25-register-v2:register-ab98f323ad-0001-1-evidence",
+        "archives/bottleneck-knapsack/state/审查/退役GAP选题底稿与数学边界--审查.md"
+      ]
+    },
+    "M-82d4ebf16f4b4dc9b7d41b564b9031df": {
+      "object_id": "M-82d4ebf16f4b4dc9b7d41b564b9031df",
+      "version": 2,
+      "title": "保持期望尺寸和价值分母的独立Bernoulli拆分可严格提高背包ratio",
+      "kind": "counterexample",
+      "truth_status": "proved",
+      "model": "容量1、独立Bernoulli激活、非负权重的自然LP背包激活模型；ρ_x为期望最优可行权重除以Σx_iw_i。大尺寸7/10、小尺寸2/5；可取一大或至多两小，两类不能混取。",
+      "statement": "原实例含一件必激活大物品和两件分别以1/10独立激活的小物品，全部权重1。期望尺寸39/50、分母6/5，期望最优101/100，ρ=101/120。将其中一小替换为两件同尺寸同权重、各以1/20独立激活的物品；所有激活仍独立，期望尺寸和分母不变，但三小至少两激活的概率为3/250，期望最优253/250，ρ=253/300，比原来严格增加1/600。因此任意保期望Bernoulli拆分总使ρ不增的逐步归约为假。",
+      "quantifiers": "存在上述三物品实例及将其中一个激活概率1/10的小物品拆成两件激活概率各1/20的小物品的保期望变换，使ρ_new>ρ_old。它是对“每个此类实例和每次此类拆分均有ρ_new≤ρ_old”这一全称方法合同的反例。",
+      "assumptions": [
+        "容量1；大尺寸7/10，小尺寸2/5，全部价值为1。",
+        "大物品确定激活，原两小独立以1/10激活；拆分后的小概率为(1/10,1/20,1/20)，全部相互独立。",
+        "比较保持期望总尺寸和Σx_iw_i，独立副本均可同时激活。"
+      ],
+      "scope": "仅否定任意保期望成本独立Bernoulli拆分都降低或不升ρ的逐步证明方向；不排除其他附加条件下的拆分、改变x的严谨全局变换或某个不同的全局Poisson极值比较。",
+      "objections": "主body有完整显式概率计算；两尺寸和自然LP模型由同页模型节与全文资源证据补齐。该存在性反例可精确证明，故标proved而非有限扫描；不把其被否方法桥等同于全局CRS问题。现有SEL-KNAPSACK-FIXED-X-OBSTRUCTION-v1的精确Claim行只指五物品统一权反例，未覆盖本命题；本身份由根work.py research new-id --count 1一次分配。未把笼统后续方向或历史1/3文献报告增造对象。 本次定向整合补入资源启用批的对应独立推导/复核证据；主数学陈述不变，旧批资产由本批明确替代。",
+      "body": {
+        "path": "archives/contention-resolution/state/反例/固定激活背包的类内统一权与拆分障碍--反例.md",
+        "sha256": "78a89049aa00573ea0b830f3f6ccd09a381e23b0ce3e7abbb68e43a7dcc337c5",
+        "section": "保持期望的拆分可严格升ratio"
+      },
+      "evidence": [
+        {
+          "path": "archives/contention-resolution/state/反例/固定激活背包的类内统一权与拆分障碍--反例.md",
+          "sha256": "78a89049aa00573ea0b830f3f6ccd09a381e23b0ce3e7abbb68e43a7dcc337c5",
+          "section": "模型与被否定的量词"
+        },
+        {
+          "path": "archives/contention-resolution/state/资料/两尺寸固定激活的类内统一权重障碍--资料.md",
+          "sha256": "52461c9df21e71f242312efa28048d0c5cc60eec6eca1ca544b17a40b07451c0"
+        },
+        {
+          "path": "tools/evidence/retired-config-certificates/original/history/retired_topic_selection/multi_lane/research/topic_selection/notes/two_size_knapsack_obstructions.md",
+          "sha256": "65236f0e34af962565e6ab64d946eaa9d7ab1145e1524e75a582e06a801a1f07",
+          "section": "3. 保持期望成本的Bernoulli拆分不总降低ratio"
+        },
+        {
+          "path": "archives/resource-activation/state/资料/第二轮GAP候选与CRS边界--资料.md",
+          "sha256": "3ff76bddbd2b86c4373efbd30f7c9be5758ddfa81198014a5e6dd5edb65c827a",
+          "section": "3. C08：两尺寸 knapsack 的精确障碍"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/retired_topic_selection/multi_lane/research/topic_selection/notes/two_size_knapsack_obstructions.md：§3。",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:history/retired_topic_selection/multi_lane/research/topic_selection/notes/two_size_knapsack_obstructions.md：§3。"
+      ]
+    },
+    "M-89915d7304fe4da1be6d5644843318a8": {
+      "object_id": "M-89915d7304fe4da1be6d5644843318a8",
+      "version": 1,
+      "title": "可分FEF与全可行域Pareto效率的兼容义务",
+      "kind": "problem",
+      "truth_status": "open",
+      "model": "generalized assignment capacities、additive utilities、fractional allocations含charity，FEF比较各agent可行子集。",
+      "statement": "问是否同时存在FEF与相对全feasible allocations Pareto efficient的fractional allocation；先二agent或资源比例类给存在算法/反例。",
+      "quantifiers": "每个明确模型输入的存在性；Pareto比较域、charity角色与零size/value须先固定。",
+      "assumptions": [
+        "保持源候选原模型，不把文献摘要或选题优先级当证明"
+      ],
+      "scope": "明确研究义务/待精确化接口；不认证现行外部开放性。",
+      "objections": "本批保候选接口及缺项，不用envy-cycle替代证明或声称竞争均衡已覆盖。",
+      "body": {
+        "path": "archives/bottleneck-knapsack/state/审查/退役GAP选题底稿与数学边界--审查.md",
+        "sha256": "3a6d7787cf22efa03d645baf2719fa84927e55e5777d886bd38c19627913c10e",
+        "section": "15 项候选的准确状态"
+      },
+      "evidence": [
+        {
+          "path": "research/registration/evidence/register-ab98f323ad-0001-1/gap.md",
+          "sha256": "8e14e6d6525cc353091aa0484c6c72dc447f581d6227d6232fb3f960db06b68e",
+          "section": "C14. Divisible FEF与Pareto的兼容性：从二资源可交换类入手【B；作者明确open】"
+        }
+      ],
+      "sources": [
+        "p25-register-v2:register-ab98f323ad-0001-1-evidence",
+        "archives/bottleneck-knapsack/state/审查/退役GAP选题底稿与数学边界--审查.md"
+      ]
+    },
+    "M-9e6ad96a087d4a8ca61586ba095f23b9": {
+      "object_id": "M-9e6ad96a087d4a8ca61586ba095f23b9",
+      "version": 1,
+      "title": "MBA大物品稀疏3uniform超图舍入义务",
+      "kind": "problem",
+      "truth_status": "open",
+      "model": "归一预算MBA，每player配置至多一个价值>半预算big item，非统一价格；eligibility为linear Berge无环/单圈3uniform超图切片。",
+      "statement": "求配置LP严格超过3/4的明确rounding及coupling，或精确3way冲突证书说明graph证明失效。",
+      "quantifiers": "选定子类全部合法配置输入；保证相对同一配置LP。",
+      "assumptions": [
+        "保持源候选原模型，不把文献摘要或选题优先级当证明"
+      ],
+      "scope": "明确研究义务/待精确化接口；不认证现行外部开放性。",
+      "objections": "无环类可能已有DP/FPTAS；未证明一般MBA改进，未认证新颖性。",
+      "body": {
+        "path": "archives/bottleneck-knapsack/state/审查/退役GAP选题底稿与数学边界--审查.md",
+        "sha256": "3a6d7787cf22efa03d645baf2719fa84927e55e5777d886bd38c19627913c10e",
+        "section": "15 项候选的准确状态"
+      },
+      "evidence": [
+        {
+          "path": "research/registration/evidence/register-ab98f323ad-0001-1/gap.md",
+          "sha256": "8e14e6d6525cc353091aa0484c6c72dc447f581d6227d6232fb3f960db06b68e",
+          "section": "C11. MBA 的 graph-rounding 扩展到稀疏大物品超图【B；作者明确迁移方向 + 新类】"
+        }
+      ],
+      "sources": [
+        "p25-register-v2:register-ab98f323ad-0001-1-evidence",
+        "archives/bottleneck-knapsack/state/审查/退役GAP选题底稿与数学边界--审查.md"
+      ]
+    },
+    "M-b8540026a0fc4c52b209c4ce7311c25b": {
+      "title": "Cheng–Mao受限配置LP的99/26间隙上界",
+      "model": "同一restricted max-min allocation与配置LP目标T*。",
+      "statement": "存在实际分配使每名玩家效用≥(26/99)T*，故配置LP积分间隙≤99/26。证明中的局部搜索有限终止，未给相同常数的多项式时间保证。",
+      "quantifiers": "对全部有限restricted实例的存在性；不把δ算法时间传给本常数。",
+      "assumptions": [
+        "资源固有值/0估值",
+        "论文定理2的分段对偶价格和局部搜索"
+      ],
+      "scope": "间隙上界，与4+δ有效算法分立。",
+      "body": {
+        "path": "archives/unrelated-machines/state/文献/Cheng-Mao受限最大最小分配与配置LP--文献.md",
+        "sha256": "fa7375b5a1a8a5719b539df0192242461e713e6673735813a9f612dae7d1b574"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/tools/evidence/registration-Boss5-0111-literature/cheng-mao.pdf",
+          "sha256": "ea99b29b0b05694d16fcf18b63fddcd9dc798aa6ef476ac0b78033c8eaf90e7a"
+        }
+      ],
+      "truth_status": "proved",
+      "kind": "theorem",
+      "objections": "本轮实读成熟陈述、模型、量词、边界及完整论证入口；复用既有证明，未重新逐句复证或运行原数学程序。外部作者Theorem2/AppendixC；保留完整证明，不声称独立复证。",
+      "object_id": "M-b8540026a0fc4c52b209c4ce7311c25b",
+      "version": 1,
+      "sources": [
+        "archives/unrelated-machines/state/文献/Cheng-Mao受限最大最小分配与配置LP--文献.md",
+        "冻结文献/程序来源及完整证明入口见body和evidence；本批不建超边"
+      ]
+    },
+    "M-d05829d1479f4b8aad94f3953ab9ffc4": {
+      "object_id": "M-d05829d1479f4b8aad94f3953ab9ffc4",
+      "version": 2,
+      "title": "给定显式配置支持的确定性硬预算半损失舍入",
+      "kind": "algorithm",
+      "truth_status": "proved",
+      "model": "有限物品集P、bins L；每bin有下闭局部族I_l⊆2^P，利润v_li≥0。一个整数指派取两两不交的S_l∈I_l，最大化Σ_lΣ_{i∈S_l}v_li。配置e=(l,S)表示在bin l启用局部集合S。本对象的E只是给定的有限显式配置支持，不假定枚举全部I_l；成本、利润、预算和分数点均为有理数，复杂度按支持的总二进制描述长计算。",
+      "statement": "设L(x)=Σ_{e=(l,S)}x_eΣ_{i∈S}v_li。存在确定性位多项式算法，仅使用给定支持E，选择支持配置并删除冲突物品，输出满足硬预算、每bin局部可行且每item至多分配一次的指派，利润≥(1−1/e)L(x)/2。算法依次做同bin保和交换、保成本交换至至多一分数配置，再在整数集与该可负担singleton中选较优者；G的精确有理计算及交换坐标位长均为多项式。",
+      "quantifiers": "对每个满足输入合同的有限有理实例与给定x，算法确定性输出一个上述指派，耗时为输入支持总二进制描述长的多项式；包括空支持、零利润和B=0。",
+      "assumptions": [
+        "输入E为有限显式配置支持，且每个S∈I_l；局部族下闭。",
+        "x_e≥0；每bin的Σx_e≤1；每item的Σ_{e:i∈S_e}x_e≤1。",
+        "成本、利润、B和x为非负有理数，Σ_e c_l x_e≤B。",
+        "预先移除所有c_l>B的bin，故支持中的成本满足0≤c_l≤B。"
+      ],
+      "scope": "相对给定点的L(x)，并非无条件相对整个隐式配置LP最优或整数OPT；无需求x或指数地集pricing。",
+      "objections": "成熟证明完整复用，root复核为同一对象的重复推导。item marginal仅用于初始layer-cake下界，后续交换不必继续保持；若漏掉c_l≤B，最后singleton可能不可行。保成本质量w_l=c_lq_l的表示给明确位长控制；不以有限有理运算次数代替位复杂度证明。 本次定向整合补入资源启用批的对应独立推导/复核证据；主数学陈述不变，旧批资产由本批明确替代。",
+      "body": {
+        "path": "archives/configuration-assignment/state/算法/给定稀疏配置的确定性预算舍入--算法.md",
+        "sha256": "fd09910b2e3028a2babd10a93e0307624c1e32d3769e86dea793f1f04bf84168",
+        "section": "输入、输出与比较值"
+      },
+      "evidence": [
+        {
+          "path": "archives/configuration-assignment/state/等价/下闭配置指派与最大值覆盖的整数等价--等价.md",
+          "sha256": "a733def460247480a5d073dbe817e48634f7dcb1ed827ffb052434a747ef76db",
+          "section": "下闭配置指派与最大值覆盖的整数等价"
+        },
+        {
+          "path": "archives/configuration-assignment/state/算法/给定稀疏配置的确定性预算舍入--算法.md",
+          "sha256": "fd09910b2e3028a2babd10a93e0307624c1e32d3769e86dea793f1f04bf84168",
+          "section": "初始值：item边际约束只在这里使用"
+        },
+        {
+          "path": "archives/configuration-assignment/state/算法/给定稀疏配置的确定性预算舍入--算法.md",
+          "sha256": "fd09910b2e3028a2babd10a93e0307624c1e32d3769e86dea793f1f04bf84168",
+          "section": "第一阶段：同bin只留一件配置"
+        },
+        {
+          "path": "archives/configuration-assignment/state/算法/给定稀疏配置的确定性预算舍入--算法.md",
+          "sha256": "fd09910b2e3028a2babd10a93e0307624c1e32d3769e86dea793f1f04bf84168",
+          "section": "第二阶段：保持成本到至多一分数件"
+        },
+        {
+          "path": "archives/configuration-assignment/state/算法/给定稀疏配置的确定性预算舍入--算法.md",
+          "sha256": "fd09910b2e3028a2babd10a93e0307624c1e32d3769e86dea793f1f04bf84168",
+          "section": "精确实现与位复杂度"
+        },
+        {
+          "path": "archives/customer-attraction/state/审查/退役选题跨模型复核的独立性与承重前提--审查.md",
+          "sha256": "377bd07b3a1dcc2d890c5526abee271ad7c785a80c0030146a020539bed6f9f1",
+          "section": "配置指派：完整恢复本次核查所需基线"
+        },
+        {
+          "path": "archives/resource-activation/state/资料/第二轮GAP候选与CRS边界--资料.md",
+          "sha256": "3ff76bddbd2b86c4373efbd30f7c9be5758ddfa81198014a5e6dd5edb65c827a",
+          "section": "2. C06：opening-cost GBAP 的基线回收"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/retired_topic_selection/multi_lane/research/topic_selection/notes/configuration_reduction_boundary.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:history/retired_topic_selection/multi_lane/research/topic_selection/notes/configuration_reduction_boundary.md",
+        "configuration-assignment/given-sparse-support-deterministic-budget-rounding",
+        "historical-candidate:C06-v2",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/retired_topic_selection/multi_lane/research/topic_selection/notes/round2_independent_root_review.md"
+      ]
+    },
+    "M-db748b49766141e79b7ab59a27ad25bb": {
+      "object_id": "M-db748b49766141e79b7ab59a27ad25bb",
+      "version": 1,
+      "title": "近共线三列启用LP的参数子模缺口族",
+      "kind": "counterexample",
+      "truth_status": "proved",
+      "model": "Aε列a=(1,1), b=(1,ε), c=(ε,1)，两单位资源容量、三物品利润均1，φ(S)=max{Σx: Aεx≤(1,1),0≤x≤1_S}。",
+      "statement": "φ(ab)=φ(ac)=φ(a)=1，φ(abc)=2/(1+ε)，因此φ(abc)+φ(a)−φ(ab)−φ(ac)=(1−ε)/(1+ε)>0；任意接近同射线也不保证精确子模。",
+      "quantifiers": "每个实ε∈[0,1)，有理ε时亦为精确有理证书。",
+      "assumptions": [
+        "启用变量上界与两资源容量同时保留"
+      ],
+      "scope": "ε族定量命题与既有ε=0单反例分立。",
+      "objections": "已读恢复原稿§4上下界完整证明；不是scalar assignment GAP反例，不推出一般复杂性或approximate子模定理。",
+      "body": {
+        "path": "archives/bottleneck-knapsack/state/审查/退役GAP选题底稿与数学边界--审查.md",
+        "sha256": "3a6d7787cf22efa03d645baf2719fa84927e55e5777d886bd38c19627913c10e",
+        "section": "已有独立对象与本稿的去向"
+      },
+      "evidence": [
+        {
+          "path": "research/registration/evidence/register-ab98f323ad-0001-1/gap.md",
+          "sha256": "8e14e6d6525cc353091aa0484c6c72dc447f581d6227d6232fb3f960db06b68e",
+          "section": "4. 已完成：consecutive-ones向量LP的精确反例"
+        }
+      ],
+      "sources": [
+        "p25-register-v2:register-ab98f323ad-0001-1-evidence",
+        "archives/bottleneck-knapsack/state/审查/退役GAP选题底稿与数学边界--审查.md"
+      ]
+    },
+    "M-dbc352592ddc425295003f9ac94732e8": {
+      "object_id": "M-dbc352592ddc425295003f9ac94732e8",
+      "version": 1,
+      "title": "random-order GAP one-overflow修复因子提升义务",
+      "kind": "problem",
+      "truth_status": "open",
+      "model": "P11 online算法先得one-overflow preliminary assignment，再online选择last或rest；考察利润尺寸兼容/有限overlap。",
+      "statement": "在明确结构类上证明state-dependent coupling修复因子>1/2，并使整体竞争比超过该类既有算法，或给算法family的tight下例。",
+      "quantifiers": "存在明确结构条件及正提升常数，对该类全部随机顺序输入。",
+      "assumptions": [
+        "保持源候选原模型，不把文献摘要或选题优先级当证明"
+      ],
+      "scope": "明确研究义务/待精确化接口；不认证现行外部开放性。",
+      "objections": "尚未给类条件或tight常数；fractional单背包1/e不能误当一般GAP提升。",
+      "body": {
+        "path": "archives/bottleneck-knapsack/state/审查/退役GAP选题底稿与数学边界--审查.md",
+        "sha256": "3a6d7787cf22efa03d645baf2719fa84927e55e5777d886bd38c19627913c10e",
+        "section": "15 项候选的准确状态"
+      },
+      "evidence": [
+        {
+          "path": "research/registration/evidence/register-ab98f323ad-0001-1/gap.md",
+          "sha256": "8e14e6d6525cc353091aa0484c6c72dc447f581d6227d6232fb3f960db06b68e",
+          "section": "C13. Random-order GAP 的 one-overflow修复可否按结构减少1/2损失【C；最新文章的工具截面】"
+        }
+      ],
+      "sources": [
+        "p25-register-v2:register-ab98f323ad-0001-1-evidence",
+        "archives/bottleneck-knapsack/state/审查/退役GAP选题底稿与数学边界--审查.md"
+      ]
+    },
+    "M-ff84ca200ba74d9ab389df063e27ceac": {
+      "object_id": "M-ff84ca200ba74d9ab389df063e27ceac",
+      "version": 1,
+      "title": "两尺寸原型SGAP真实跨bin次模近似义务",
+      "kind": "problem",
+      "truth_status": "open",
+      "model": "次模f定义于(item,bin)对，允许真实跨bin交互，sizes为两个原型/两资源射线或指定bin-type效应。",
+      "statement": "固定精度目标1−1/e−ε，恢复block/fractional grouping在交互模型的有效条件或给替代coupling。",
+      "quantifiers": "每固定ε>0，对完整指定的受限SGAP模型所有输入。",
+      "assumptions": [
+        "保持源候选原模型，不把文献摘要或选题优先级当证明"
+      ],
+      "scope": "明确研究义务/待精确化接口；不认证现行外部开放性。",
+      "objections": "子类接口未固定完，两个备选切口不是等价模型；本对象为精确化与证明义务，不宣称SMKP结论已迁移。",
+      "body": {
+        "path": "archives/bottleneck-knapsack/state/审查/退役GAP选题底稿与数学边界--审查.md",
+        "sha256": "3a6d7787cf22efa03d645baf2719fa84927e55e5777d886bd38c19627913c10e",
+        "section": "15 项候选的准确状态"
+      },
+      "evidence": [
+        {
+          "path": "research/registration/evidence/register-ab98f323ad-0001-1/gap.md",
+          "sha256": "8e14e6d6525cc353091aa0484c6c72dc447f581d6227d6232fb3f960db06b68e",
+          "section": "C12. SGAP 的“少数尺寸原型”与跨 bin 次模交互【C；作者 conjecture 的新截面】"
+        }
+      ],
+      "sources": [
+        "p25-register-v2:register-ab98f323ad-0001-1-evidence",
+        "archives/bottleneck-knapsack/state/审查/退役GAP选题底稿与数学边界--审查.md"
+      ]
+    },
+    "SEL-BMKP-CONST-K-v1": {
+      "object_id": "SEL-BMKP-CONST-K-v1",
+      "version": 1,
+      "title": "固定容量种类BMKP硬容量2/3减ε近似目标",
+      "kind": "problem",
+      "truth_status": "open",
+      "model": "有限物品公共正二进制有理重w_e、非负有理利p_e；有限非空背包正容量至多K种；每件至多一次且可unused，所有背包硬容量保留，目标max min_j p(S_j)。",
+      "statement": "求确定性总输入位长多项式算法，输出合法实际整数分配并保证min_jp(S_j)≥(2/3−ε)OPT。",
+      "quantifiers": "对每个固定整数K≥1和固定0<ε<2/3，对全部该域输入；次数可依K,ε。",
+      "assumptions": [
+        "容量比和每类包数无界",
+        "不增容量、不删背包、允许unused；OPT=0仍输出合法分配"
+      ],
+      "scope": "固定K完整目标，不能由两容量候选当作已解。",
+      "objections": "清楚open而非身份疑点。否定须同模型且有明确复杂性前提的近似困难性，某模板失败不足。",
+      "body": {
+        "path": "archives/bottleneck-knapsack/state/问题/固定容量种类瓶颈背包的硬容量近似--问题.md",
+        "sha256": "54f3849883c99d54d1d72343d42745afb0a834c292386ad3cee824259feeb5bd",
+        "section": "模型与完整输出"
+      },
+      "evidence": [
+        {
+          "path": "archives/bottleneck-knapsack/state/资料/双容量BMKP候选的三模块与完整目标--资料.md",
+          "sha256": "4a02bf9416dae98b1408dd9889346fdf51c94970291d60ddc9631dc3bb8e9d43",
+          "section": "更大而未解的完整目标"
+        },
+        {
+          "path": "archives/bottleneck-knapsack/state/候选/双容量瓶颈背包的profile标签与完整枚举--候选.md",
+          "sha256": "33f014ef81660868e4169c2b950ad2fae73a1a256c93b23fe28f4a3d19031b6c",
+          "section": "七、版本比较、未决义务和证据"
+        }
+      ],
+      "sources": [
+        "p25-register-v2:register-ab98f323ad-0001-1-evidence",
+        "archives/bottleneck-knapsack/state/问题/固定容量种类瓶颈背包的硬容量近似--问题.md"
+      ]
+    },
+    "SEL-KNAPSACK-FIXED-X-OBSTRUCTION-v1": {
+      "object_id": "SEL-KNAPSACK-FIXED-X-OBSTRUCTION-v1",
+      "version": 2,
+      "title": "五物品固定激活概率下类内统一权重归约的精确反例",
+      "kind": "counterexample",
+      "truth_status": "proved",
+      "model": "容量为1的单背包；物品独立激活R_x，尺寸s_i>0、权重w_i≥0；自然LP域Σs_i x_i≤1。对Σx_iw_i>0，ρ_x(w)=E[max{Σ_{i∈I}w_i:I⊆R_x,Σ_{i∈I}s_i≤1}]/Σx_iw_i。",
+      "statement": "取s=(7/10,7/10,2/5,2/5,2/5)、固定x=(3/5,13/50,17/100,17/50,23/50)，则Σs_ix_i=99/100。对w⁰=(2,2,1,1,2)，ρ_x(w⁰)=117253/187500。令U为所有允许任意零权sub-support、且每尺寸类内正权统一的非负向量，排除零分母，则min_{w∈U}ρ_x(w)=52726561/84062500，由(2,2,1,1,1)达到；该最小值比ρ_x(w⁰)大237199/126093750>0。因此固定x的最坏权重类内统一归约不成立。",
+      "quantifiers": "存在上述固定五物品(s,x)与w⁰；对每个M⊆[5]及每对u,v≥0，设大物品权重为u·1_{i∈M}、小物品权重为v·1_{i∈M}，只要分母正，其ρ_x均严格大于ρ_x(w⁰)，且上述U内最小值有达到向量。",
+      "assumptions": [
+        "激活在各物品间独立，容量为1，仅要求自然LP期望尺寸约束。",
+        "比较时固定五个激活概率x及尺寸s，不得同时改变x。",
+        "允许每一类有任意零权物品；ρ仅对正分母定义。"
+      ],
+      "scope": "否定固定x的类内统一最坏权重方法引理。不是给定边缘位于整数背包凸包的模型，不是中央max-min BMKP；不反驳允许改变x的全局归约、一般背包CRS猜想或其他全局Poisson比较。",
+      "objections": "成熟正文给出全连续族覆盖：固定sub-support并归一小类正权后，分子在r∈[0,1]、[1,2]、[2,∞)逐段仿射，分母为正仿射，比值各段单调或常数，仅需r=0,1,2,∞；全部sub-support的Fraction枚举和冻结输出给出精确最小值。已实读两份分配正文、原说明、支持脚本及冻结JSON；本次不重跑证书或60个历史浮点LP，不把一次运行另立对象。精确Claim行仅属于本命题，页面另含的拆分反例另立身份；未认证新颖性或当前文献版本。另已实读跨模型复核页并将其唯一“固定$x$背包”节并入证据；该节是同一固定x命题的连续权比复核，不另立审查总对象。该文件不在本批materials中，其材料归属由Boss/lead协调。 本次定向整合补入资源启用批的对应独立推导/复核证据；主数学陈述不变，旧批资产由本批明确替代。",
+      "body": {
+        "path": "archives/contention-resolution/state/反例/固定激活背包的类内统一权与拆分障碍--反例.md",
+        "sha256": "78a89049aa00573ea0b830f3f6ccd09a381e23b0ce3e7abbb68e43a7dcc337c5",
+        "section": "五物品精确证书"
+      },
+      "evidence": [
+        {
+          "path": "archives/contention-resolution/state/反例/固定激活背包的类内统一权与拆分障碍--反例.md",
+          "sha256": "78a89049aa00573ea0b830f3f6ccd09a381e23b0ce3e7abbb68e43a7dcc337c5",
+          "section": "模型与被否定的量词"
+        },
+        {
+          "path": "archives/contention-resolution/state/反例/固定激活背包的类内统一权与拆分障碍--反例.md",
+          "sha256": "78a89049aa00573ea0b830f3f6ccd09a381e23b0ce3e7abbb68e43a7dcc337c5",
+          "section": "精确程序的实际覆盖和本次一次运行"
+        },
+        {
+          "path": "archives/contention-resolution/state/资料/两尺寸固定激活的类内统一权重障碍--资料.md",
+          "sha256": "52461c9df21e71f242312efa28048d0c5cc60eec6eca1ca544b17a40b07451c0"
+        },
+        {
+          "path": "tools/evidence/retired-config-certificates/related/history/retired_topic_selection/multi_lane/research/topic_selection/probes/gap_tools/exact_uniformization_counterexample.py",
+          "sha256": "0fa3a6304276c3b74488f21f88c793a1700966a44ab38f8639ba69c20ac8633b"
+        },
+        {
+          "path": "tools/evidence/retired-config-certificates/related/history/retired_topic_selection/multi_lane/research/topic_selection/probes/gap_tools/exact_uniformization_counterexample.json",
+          "sha256": "04f7adfa83d84f4f7474014ba99c6acc4b4ed03c02a42b9cdb7896e2e2c1ddcd"
+        },
+        {
+          "path": "archives/customer-attraction/state/审查/退役选题跨模型复核的独立性与承重前提--审查.md",
+          "sha256": "377bd07b3a1dcc2d890c5526abee271ad7c785a80c0030146a020539bed6f9f1",
+          "section": "固定$x$背包"
+        },
+        {
+          "path": "archives/resource-activation/state/计算/固定激活统一化反例程序重放--计算.md",
+          "sha256": "36ab0e9525e912aac218020b8a8065d2745dcb20c69aa8451a59c4727a43429a"
+        },
+        {
+          "path": "archives/resource-activation/state/计算/固定激活统一化反例精确复核--计算.md",
+          "sha256": "f37db97a4f4d6126b1bddc78fce87c5a838dc4d7448bd4df4ef020fa78348fa6"
+        },
+        {
+          "path": "archives/resource-activation/state/资料/第二轮GAP候选与CRS边界--资料.md",
+          "sha256": "3ff76bddbd2b86c4373efbd30f7c9be5758ddfa81198014a5e6dd5edb65c827a",
+          "section": "3. C08：两尺寸 knapsack 的精确障碍"
+        }
+      ],
+      "sources": [
+        "SEL-KNAPSACK-FIXED-X-OBSTRUCTION-v1；tools/evidence/retired-topic-claims/original/history/retired_topic_selection/multi_lane/research/topic_selection/CLAIMS.md：第二轮新增的精确数学身份中的对应行。",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/retired_topic_selection/multi_lane/research/topic_selection/notes/two_size_knapsack_obstructions.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:history/retired_topic_selection/multi_lane/research/topic_selection/notes/two_size_knapsack_obstructions.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/retired_topic_selection/multi_lane/research/topic_selection/notes/round2_independent_root_review.md：固定x背包连续域独立复核；仅限该节同命题。"
+      ]
+    },
+    "SEL-RESOURCE-LP-SUBMODULAR-v2": {
+      "object_id": "SEL-RESOURCE-LP-SUBMODULAR-v2",
+      "version": 1,
+      "title": "二维packing启用值对全容量全利润子模的两射线充要分类",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "有限连续packing启用LP：固定A∈R_+^(d×n)，phi_(b,w)(S)=max{w^T x:Ax≤b,0≤x_i≤1_(i∈S)}；非零列以严格正比例判射线，零列另贡献模函数。",
+      "statement": "d=2时，固定A的phi_(b,w)对每个b,w≥0子模，当且仅当A的非零列至多两条正比例射线；有理A可用多项式位长三列证书见证必要性失败。",
+      "quantifiers": "∀n≥1 ∀A∈R_+^(2×n)：[∀b≥0 ∀w≥0 ∀S,T⊆[n] phi(S)+phi(T)≥phi(S∪T)+phi(S∩T)] iff 非零列射线数≤2。",
+      "assumptions": [
+        "全容量b、全利润w量词",
+        "连续x，0≤x≤1_S",
+        "有限n"
+      ],
+      "scope": "只对二维给必要充分；固定b分类及高维必要性不在结论内。",
+      "objections": "已读精确量词、对偶达到性、二维格及三射线禁形承重段；复用成熟完整证明，未重新清洗或跑旧随机试验。经典工具的新颖性未认证。",
+      "body": {
+        "path": "archives/resource-activation/state/证明/启用值的两价格分裂与二维三射线禁形--证明.md",
+        "sha256": "5f9d97e5e6fb490c22d1668b40120cd2ae180c13d766abe9f32ef7dd8f77c7e1"
+      },
+      "evidence": [
+        {
+          "path": "archives/resource-activation/state/资料/两列射线启用值的二维分类与全维充分性--资料.md",
+          "sha256": "d14b7729ff08dbd40303cd6fd7dcf83e2ff59b53a53fc964eaf2dae202bfeca4"
+        },
+        {
+          "path": "archives/resource-activation/state/资料/第二轮GAP候选与CRS边界--资料.md",
+          "sha256": "3ff76bddbd2b86c4373efbd30f7c9be5758ddfa81198014a5e6dd5edb65c827a",
+          "section": "1. C01：已由现有对象承接的两射线分类"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/retired_topic_selection/multi_lane/research/topic_selection/notes/two_resource_lp_submodularity.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/retired_topic_selection/multi_lane/research/topic_selection/notes/two_profile_lp_in_arbitrary_dimension.md"
+      ]
+    },
+    "SEL-VECTOR-LP-SUBMODULAR-OBSTRUCTION-v1": {
+      "object_id": "SEL-VECTOR-LP-SUBMODULAR-OBSTRUCTION-v1",
+      "version": 1,
+      "title": "两单位资源三列启用LP的严格子模性反例",
+      "kind": "counterexample",
+      "truth_status": "proved",
+      "model": "有限连续packing启用LP：固定A∈R_+^(d×n)，phi_(b,w)(S)=max{w^T x:Ax≤b,0≤x_i≤1_(i∈S)}；非零列以严格正比例判射线，零列另贡献模函数。固定d=2,n=3，a=(1,1),b=(1,0),c=(0,1)，容量(1,1)、利润全1。",
+      "statement": "phi({a,b})=phi({a,c})=phi({a})=1，phi({a,b,c})=2，故两pair值之和2<3=singleton+union；一般向量容量启用值并非子模。",
+      "quantifiers": "存在此精确有限实例及S={a,b},T={a,c}否定一般A的全称子模命题。",
+      "assumptions": [
+        "两资源容量均1",
+        "三列如陈述、连续0≤x≤1_S、利润均1"
+      ],
+      "scope": "只否定一般向量化；不否定scalar GAP或两射线结论。正扰动ε族另属独立对象。",
+      "objections": "沿用SEL前缀。完整顶点精确程序/结果只核本三列；复现页的search_lp_submodularity.py是scalar assignment GAP搜索，空search_lp_run不能当向量负面统计。",
+      "body": {
+        "path": "archives/resource-activation/state/资料/两列射线启用值的二维分类与全维充分性--资料.md",
+        "sha256": "d14b7729ff08dbd40303cd6fd7dcf83e2ff59b53a53fc964eaf2dae202bfeca4",
+        "section": "三个不能合并的陈述"
+      },
+      "evidence": [
+        {
+          "path": "archives/bottleneck-knapsack/state/审查/向量容量启用值子模性失败三源复现--审查.md",
+          "sha256": "13b607c971691b207e37569e60887c5055a1b5fe50dd8456311a2ed6256cdb15"
+        },
+        {
+          "path": "archives/bottleneck-knapsack/state/审查/退役GAP选题底稿与数学边界--审查.md",
+          "sha256": "3a6d7787cf22efa03d645baf2719fa84927e55e5777d886bd38c19627913c10e",
+          "section": "C01：两资源启用值的分类"
+        },
+        {
+          "path": "archives/resource-activation/state/证明/启用值的两价格分裂与二维三射线禁形--证明.md",
+          "sha256": "5f9d97e5e6fb490c22d1668b40120cd2ae180c13d766abe9f32ef7dd8f77c7e1",
+          "section": "五、二维必要性与有理禁形证书"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/retired_topic_selection/multi_lane/research/topic_selection/CLAIMS.md"
+      ]
+    },
+    "TS-BMKP-2CAP-APPROX-v1": {
+      "object_id": "TS-BMKP-2CAP-APPROX-v1",
+      "version": 1,
+      "title": "两容量BMKP的profile联合枚举近似候选",
+      "kind": "candidate",
+      "truth_status": "conjecture",
+      "model": "有限物品公共正二进制有理重w_e、非负有理利p_e；有限非空背包容量属{B1,B2}，0<B1≤B2；每件至多一次且可unused，所有背包硬容量保留，目标max min_j p(S_j)。",
+      "statement": "候选流程利润cap、各容量profile提取、全局联合标签critical交换、嵌套short matching及cheap LP舍入，目标确定性总位多项式(2/3−ε)近似。ζ=1/ceil(max(100,20/ε)), U=1−ζ, γ=Uζ, δ=Uζ², K=1/ζ, q_pre=2/3−8ζ, Q=2/3−11ζ；若同轮确有全部合法结构/数量/供给见证，则long≥2/3−15ζ，几何网格后≥2/3−16ζ≥2/3−ε。",
+      "quantifiers": "每个固定0<ε<2/3，对所有上述显式输入；多项式次数可依ε，容量比和背包数无界。",
+      "assumptions": [
+        "合法profile/slack及自代表、有效标签可提取且类型数只依ζ的全域证明尚欠",
+        "critical/cheap/short供给互斥、全局枚举命中及总位长界须联合闭合"
+      ],
+      "scope": "两容量值而非两个背包；单向阈值oracle成功不推出T≤OPT。",
+      "objections": "已完整读本批11份正文；复用其成熟证明，不重跑toy。母Lemma8逐式导入、零尺度/无效标签、全局覆盖和通用实现仍缺，不以局部三引理或旧反方无fatal升总定理。候选报告把一般图matching误称二部匹配；以L2完整证明的一般固定基数最大权matching为准。",
+      "body": {
+        "path": "archives/bottleneck-knapsack/state/候选/双容量瓶颈背包的profile标签与完整枚举--候选.md",
+        "sha256": "33f014ef81660868e4169c2b950ad2fae73a1a256c93b23fe28f4a3d19031b6c"
+      },
+      "evidence": [
+        {
+          "path": "archives/bottleneck-knapsack/state/资料/双容量BMKP候选的三模块与完整目标--资料.md",
+          "sha256": "4a02bf9416dae98b1408dd9889346fdf51c94970291d60ddc9631dc3bb8e9d43"
+        },
+        {
+          "path": "archives/bottleneck-knapsack/state/审查/两容量BMKP候选的独立反方审查与量词边界--审查.md",
+          "sha256": "88646cb1fa86826c38a982c47db0b411f8578a3ee78dba4cb9105711096d3e6f"
+        },
+        {
+          "path": "archives/bottleneck-knapsack/state/审查/广义指派候选池的状态与证据边界--审查.md",
+          "sha256": "15ebb51bee034ac2fda32fecaa16fce4803675f0dae83442b7bd587f99694ad7",
+          "section": "GA-03：两容量 BMKP 的 \\(2/3-\\varepsilon\\) 候选"
+        },
+        {
+          "path": "archives/bottleneck-knapsack/state/审查/六线选题比较与BMKP承重接口--审查.md",
+          "sha256": "3d41402fe5bd2a7abdf81afede654a57fe34170390e7864736fd218f984fd974",
+          "section": "两容量 BMKP（GA-03）"
+        },
+        {
+          "path": "archives/bottleneck-knapsack/state/审查/广义指派候选报告的深入状态与BMKP舍入边界--审查.md",
+          "sha256": "a9a733a7ca331d092090b7f09ac9423ee2e4a31a195b0810eb27f04feaa2947d"
+        }
+      ],
+      "sources": [
+        "p25-register-v2:register-ab98f323ad-0001-1-evidence",
+        "archives/bottleneck-knapsack/state/候选/双容量瓶颈背包的profile标签与完整枚举--候选.md"
+      ]
+    },
+    "bottleneck-knapsack/group-gap-beyond-half-capacity": {
+      "object_id": "bottleneck-knapsack/group-gap-beyond-half-capacity",
+      "version": 1,
+      "title": "Group GAP越过半总容量阈值的完整组近似目标",
+      "kind": "problem",
+      "truth_status": "open",
+      "model": "m个单位容量bins、item公共sizes、bin-dependent profits、组all-or-nothing；组内所有物品须完整安置。",
+      "statement": "求固定η>0和ρ>0，全部组总size≤(1/2+η)m时，有多项式ρ近似；先恢复完整母模型与OPT比较域。",
+      "quantifiers": "存在固定η,ρ>0，对该域全部合法输入；非单有限组族。",
+      "assumptions": [
+        "不允许破组选取或仅证明无利润packing",
+        "Group GAP与额外同组同bin互斥AGAP分立"
+      ],
+      "scope": "完整问题/模型恢复义务；尺寸≤1/3等附加packing切片是候选路线而非已加进总目标。",
+      "objections": "现正文尚要求核资格限制、完整利润聚合与母模型接口；本批不猜缺失约定，不以此造算法结论。",
+      "body": {
+        "path": "archives/bottleneck-knapsack/state/问题/组广义指派越过半容量阈值--问题.md",
+        "sha256": "69fe94a187bbc141a9b4f019216ed8f9d8449ab7f10efdff0c54a329666ed77f",
+        "section": "开放合同及尚需恢复的模型接口"
+      },
+      "evidence": [
+        {
+          "path": "archives/bottleneck-knapsack/state/审查/退役GAP选题底稿与数学边界--审查.md",
+          "sha256": "3a6d7787cf22efa03d645baf2719fa84927e55e5777d886bd38c19627913c10e",
+          "section": "15 项候选的准确状态"
+        },
+        {
+          "path": "research/registration/evidence/register-ab98f323ad-0001-1/gap.md",
+          "sha256": "8e14e6d6525cc353091aa0484c6c72dc447f581d6227d6232fb3f960db06b68e",
+          "section": "C02. Group GAP 的组总尺寸阈值越过 m/2【B；作者明确 open + 限域新切口】"
+        }
+      ],
+      "sources": [
+        "p25-register-v2:register-ab98f323ad-0001-1-evidence",
+        "archives/bottleneck-knapsack/state/问题/组广义指派越过半容量阈值--问题.md"
+      ]
+    }
+  },
+  "edges": {
+    "two-size-bernoulli-split-blocks-stepwise-poisson-reduction": {
+      "edge_id": "two-size-bernoulli-split-blocks-stepwise-poisson-reduction",
+      "kind": "implies",
+      "status": "accepted",
+      "source_ids": [
+        "M-82d4ebf16f4b4dc9b7d41b564b9031df"
+      ],
+      "target_ids": [
+        "M-1e98f0c71a6846b08ae6a93cd1b8dd0c"
+      ],
+      "premises_mode": "all",
+      "relation_mode": "unconditional",
+      "conditions": "容量1；a∈(1/2,1]、b∈(1/3,1/2]；独立Bernoulli激活R_x，非负权w，自然LP约束aΣ_Ax_i+bΣ_Bx_i≤1，且D=w·x>0。令N=E[max{w(S):S⊆R_x,s(S)≤1}]、ρ=N/D。两件大不可同取，三件小不可同取，两件小可同取。证书均取a=7/10、b=2/5，a+b=11/10>1，故一大不能和一小同取。一次拆分把一个物品换成两个彼此独立且与其他物品独立的副本，每个副本保留原尺寸和权重，其激活概率和等于原概率。",
+      "roles": {
+        "M-82d4ebf16f4b4dc9b7d41b564b9031df": "提供拆分前后的合法实例，全部单位权，在相同类期望激活数、期望尺寸和价值分母下给出严格上升。",
+        "M-1e98f0c71a6846b08ae6a93cd1b8dd0c": "其不相容切片允许这两个地集和对应边缘，故无法调用每次拆分都使ρ不增的全称证明步骤。"
+      },
+      "explanation": "原三件为(A₁,B₁,B₂)，s=(7/10,2/5,2/5)，w=(1,1,1)，x=(1,1/10,1/10)。以(B₂′,B₂″)替换B₂后，s′=(7/10,2/5,2/5,2/5)，w′=(1,1,1,1)，x′=(1,1/10,1/20,1/20)。所有激活均独立（第一坐标为常量）。两实例的类边缘和相同，为(1,1/5)，故期望尺寸39/50、D=6/5。因一大必活跃且不能与小物同取，最优值为1+1_{至少两小激活}。原概率为1/100；新概率为(1/10)(1/20)+(1/10)(1/20)+(1/20)^2−2(1/10)(1/20)^2=3/250，三件同活跃的重复计数扣两次。故N由101/100增至253/250，ρ由101/120增至253/300，差1/600>0。新副本可以同时激活，两件小可同取使至少两件的小类胜过大件，这正是把固定均值当作逐步比值单调时丢失的事件。全部正权在两个尺寸类内都已统一，故这项失败不依赖固定x权重统一化反例。",
+      "scope": "否定“每个保持期望尺寸和价值分母的独立同尺寸、同权拆分都使ρ不增”，包括将该全称命题迭代至Poisson极限的路线。旧实例另外给合法但较弱的全域上界101/120，增量1/600是两个比值之差。两实例均在自然LP但不在整数可行集凸包内，因为Σ_Ax_i+(Σ_Bx_i)/2=11/10>1。兼容a+b≤1时一大一小可同取，本例的最优值事件公式随之改变。",
+      "contribution": {
+        "result": "C08严格不相容分支中，即使全部物品等权，保持类均值及分母的单次等分仍可把ρ提高1/600。不能用“逐步拆分始终不升”把该分支统一归约到Poisson计数；拆分前的单个合法实例独立给该分支和全域下确界≤101/120。",
+        "remaining": "仍须比较其他具有额外条件的拆分或改变边缘的整体极值变换，或另证不相容分支的匹配sharp下界与CRS。此差值没有比较任何一般Poisson极限与全域下确界。"
+      },
+      "evidence": [
+        {
+          "path": "archives/bottleneck-knapsack/state/审查/退役GAP选题底稿与数学边界--审查.md",
+          "sha256": "3a6d7787cf22efa03d645baf2719fa84927e55e5777d886bd38c19627913c10e",
+          "section": "15 项候选的准确状态"
+        },
+        {
+          "path": "research/registration/evidence/register-ab98f323ad-0001-1/gap.md",
+          "sha256": "8e14e6d6525cc353091aa0484c6c72dc447f581d6227d6232fb3f960db06b68e",
+          "section": "C08. 两种尺寸混合 knapsack 的 correlation gap 与 CRS【A；作者大 conjecture 的可控截面】"
+        },
+        {
+          "path": "archives/contention-resolution/state/反例/固定激活背包的类内统一权与拆分障碍--反例.md",
+          "sha256": "78a89049aa00573ea0b830f3f6ccd09a381e23b0ce3e7abbb68e43a7dcc337c5",
+          "section": "保持期望的拆分可严格升ratio"
+        },
+        {
+          "path": "archives/contention-resolution/state/反例/固定激活背包的类内统一权与拆分障碍--反例.md",
+          "sha256": "78a89049aa00573ea0b830f3f6ccd09a381e23b0ce3e7abbb68e43a7dcc337c5",
+          "section": "模型与被否定的量词"
+        },
+        {
+          "path": "archives/contention-resolution/state/资料/两尺寸固定激活的类内统一权重障碍--资料.md",
+          "sha256": "52461c9df21e71f242312efa28048d0c5cc60eec6eca1ca544b17a40b07451c0"
+        },
+        {
+          "path": "tools/evidence/retired-config-certificates/original/history/retired_topic_selection/multi_lane/research/topic_selection/notes/two_size_knapsack_obstructions.md",
+          "sha256": "65236f0e34af962565e6ab64d946eaa9d7ab1145e1524e75a582e06a801a1f07",
+          "section": "3. 保持期望成本的Bernoulli拆分不总降低ratio"
+        },
+        {
+          "path": "archives/resource-activation/state/资料/第二轮GAP候选与CRS边界--资料.md",
+          "sha256": "3ff76bddbd2b86c4373efbd30f7c9be5758ddfa81198014a5e6dd5edb65c827a",
+          "section": "3. C08：两尺寸 knapsack 的精确障碍"
+        }
+      ],
+      "reviewed_by": "Boss1",
+      "review_note": "逐件核对原/新实例的自然LP成本、分母和独立激活期望，按至少两小活跃事件推导两个有理比，并用完全激活枚举复核。",
+      "endpoint_pins": {
+        "M-1e98f0c71a6846b08ae6a93cd1b8dd0c": "69832df9d40d35ff49439dcdaab8c79439816ac55f73333dcc336622d8235f81",
+        "M-82d4ebf16f4b4dc9b7d41b564b9031df": "3bdfff588586f5b75d4c5e47a9bb9ffed501b891419b0b1d57b4b5bd2b5eb0be"
+      },
+      "evidence_pins": {
+        "archives/bottleneck-knapsack/state/审查/退役GAP选题底稿与数学边界--审查.md": "3a6d7787cf22efa03d645baf2719fa84927e55e5777d886bd38c19627913c10e",
+        "research/registration/evidence/register-ab98f323ad-0001-1/gap.md": "8e14e6d6525cc353091aa0484c6c72dc447f581d6227d6232fb3f960db06b68e",
+        "archives/contention-resolution/state/反例/固定激活背包的类内统一权与拆分障碍--反例.md": "78a89049aa00573ea0b830f3f6ccd09a381e23b0ce3e7abbb68e43a7dcc337c5",
+        "archives/contention-resolution/state/资料/两尺寸固定激活的类内统一权重障碍--资料.md": "52461c9df21e71f242312efa28048d0c5cc60eec6eca1ca544b17a40b07451c0",
+        "tools/evidence/retired-config-certificates/original/history/retired_topic_selection/multi_lane/research/topic_selection/notes/two_size_knapsack_obstructions.md": "65236f0e34af962565e6ab64d946eaa9d7ab1145e1524e75a582e06a801a1f07",
+        "archives/resource-activation/state/资料/第二轮GAP候选与CRS边界--资料.md": "3ff76bddbd2b86c4373efbd30f7c9be5758ddfa81198014a5e6dd5edb65c827a"
+      },
+      "review_digest": "d50755c8561f37602fbdcefe3514602632ad6504e046a9cdda2822af2f4593d6"
+    },
+    "two-size-fixed-x-witness-gives-gap-upper-bound": {
+      "edge_id": "two-size-fixed-x-witness-gives-gap-upper-bound",
+      "kind": "implies",
+      "status": "accepted",
+      "source_ids": [
+        "SEL-KNAPSACK-FIXED-X-OBSTRUCTION-v1"
+      ],
+      "target_ids": [
+        "M-1e98f0c71a6846b08ae6a93cd1b8dd0c"
+      ],
+      "premises_mode": "all",
+      "relation_mode": "unconditional",
+      "conditions": "容量1；a∈(1/2,1]、b∈(1/3,1/2]；独立Bernoulli激活R_x，非负权w，自然LP约束aΣ_Ax_i+bΣ_Bx_i≤1，且D=w·x>0。令N=E[max{w(S):S⊆R_x,s(S)≤1}]、ρ=N/D。两件大不可同取，三件小不可同取，两件小可同取。证书均取a=7/10、b=2/5，a+b=11/10>1，故一大不能和一小同取。类内统一权比较保持相同五件物品的尺寸和每个边缘x_i，允许各类任意零权子支撑。",
+      "roles": {
+        "SEL-KNAPSACK-FIXED-X-OBSTRUCTION-v1": "提供自然LP中的合法五物品证书及其同一x下对全部类内统一正权的严格分离。",
+        "M-1e98f0c71a6846b08ae6a93cd1b8dd0c": "其全域及不相容切片的下确界包含这组尺寸、边缘和权重，故继承可核的上界与固定x归约的适用边界。"
+      },
+      "explanation": "按(A₁,A₂,B₁,B₂,B₃)排列，尺寸(7/10,7/10,2/5,2/5,2/5)，x=(3/5,13/50,17/100,17/50,23/50)，w=(2,2,1,1,2)。类边缘和为43/50、97/100，故自然LP成本(7/10)(43/50)+(2/5)(97/100)=99/100，D=63/20。每个激活集的最优值V取大类最大激活权与小类最大两件激活权之和的较大者。设p=Pr(至少一大激活)=1−(1−x₁)(1−x₂)=88/125，q=Pr(B₁或B₂激活)=1−(1−x₃)(1−x₄)=2261/5000。由独立性，Pr(V≥1)=1−(1−p)(1−x₅)(1−q)=28513739/31250000；Pr(V≥2)=1−(1−p)(1−x₅)(1−x₃x₄)=26543711/31250000；Pr(V≥3)=x₅q=52003/250000。相加得N=2462313/1250000，除以D得117253/187500。若尝试把w替换成类内统一正权，对任一支撑M将小类正权归一为1，令大类权比为r。各激活集的最优值是max(r·1_{M中有大物激活},min(2,M中活跃小件数))，故分子在[0,1]、[1,2]、[2,∞)逐段仿射，分母为仿射且在正分母域为正，比值各段单调或常数。纯一类支撑及零分母端点由同一齐次比或无穷远极限处理。于是只查r=0,1,2,∞。可用闭式复核全部32个支撑：设s_A,s_B为支撑内两类边缘和，p_A为支撑内至少一大激活概率，q_B为支撑内无小物激活概率，m_B=s_B−1_{支撑含三小}x₃x₄x₅。按四端点，分子分别为m_B、m_B+p_Aq_B、2p_A+(1−p_A)m_B、p_A；分母分别为s_B、s_A+s_B、2s_A+s_B、s_A。剔除零分母后各端点最小比依次为235853/242500、35989489/57187500、52726561/84062500、176/215，整体最小由(2,2,1,1,1)达到，高出证书237199/126093750。任何逐物保证Pr(i被保留)≥c x_i的可行选择规则均满足cD≤E[w(输出)]≤N，故同一证书排除c严格大于117253/187500的统一保证。",
+      "scope": "上界适用于自然LP的(a,b)=(7/10,2/5)切片、不相容分支的全参数下确界及C08全域下确界。固定x方法反例允许零权子支撑，且该x不在整数可行集凸包内，因为Σ_Ax_i+(Σ_Bx_i)/2=269/200>1违反所有整数可行集满足的有效不等式。证书无同尺寸拆分步骤，兼容分支由独立的层流拟阵论证处理。",
+      "contribution": {
+        "result": "C08全域下确界≤该固定尺寸切片下确界≤117253/187500，因此排除严格更高的统一ratio下界或CRS留存常数；并严格否定固定x时可用类内统一正权向量取得不更高ratio的全称归约，即使允许任意零权子支撑。",
+        "remaining": "该证书的数值没有匹配下界，连该固定x的非负权最优值也未由此证书确定。允许同时改变x的全局均匀化与不相容分支的sharp下界及对应CRS仍须独立证明。"
+      },
+      "evidence": [
+        {
+          "path": "archives/bottleneck-knapsack/state/审查/退役GAP选题底稿与数学边界--审查.md",
+          "sha256": "3a6d7787cf22efa03d645baf2719fa84927e55e5777d886bd38c19627913c10e",
+          "section": "15 项候选的准确状态"
+        },
+        {
+          "path": "research/registration/evidence/register-ab98f323ad-0001-1/gap.md",
+          "sha256": "8e14e6d6525cc353091aa0484c6c72dc447f581d6227d6232fb3f960db06b68e",
+          "section": "C08. 两种尺寸混合 knapsack 的 correlation gap 与 CRS【A；作者大 conjecture 的可控截面】"
+        },
+        {
+          "path": "archives/contention-resolution/state/反例/固定激活背包的类内统一权与拆分障碍--反例.md",
+          "sha256": "78a89049aa00573ea0b830f3f6ccd09a381e23b0ce3e7abbb68e43a7dcc337c5",
+          "section": "模型与被否定的量词"
+        },
+        {
+          "path": "archives/contention-resolution/state/资料/两尺寸固定激活的类内统一权重障碍--资料.md",
+          "sha256": "52461c9df21e71f242312efa28048d0c5cc60eec6eca1ca544b17a40b07451c0"
+        },
+        {
+          "path": "archives/resource-activation/state/资料/第二轮GAP候选与CRS边界--资料.md",
+          "sha256": "3ff76bddbd2b86c4373efbd30f7c9be5758ddfa81198014a5e6dd5edb65c827a",
+          "section": "3. C08：两尺寸 knapsack 的精确障碍"
+        },
+        {
+          "path": "archives/contention-resolution/state/反例/固定激活背包的类内统一权与拆分障碍--反例.md",
+          "sha256": "78a89049aa00573ea0b830f3f6ccd09a381e23b0ce3e7abbb68e43a7dcc337c5",
+          "section": "五物品精确证书"
+        },
+        {
+          "path": "archives/contention-resolution/state/反例/固定激活背包的类内统一权与拆分障碍--反例.md",
+          "sha256": "78a89049aa00573ea0b830f3f6ccd09a381e23b0ce3e7abbb68e43a7dcc337c5",
+          "section": "精确程序的实际覆盖和本次一次运行"
+        },
+        {
+          "path": "tools/evidence/retired-config-certificates/related/history/retired_topic_selection/multi_lane/research/topic_selection/probes/gap_tools/exact_uniformization_counterexample.py",
+          "sha256": "0fa3a6304276c3b74488f21f88c793a1700966a44ab38f8639ba69c20ac8633b"
+        },
+        {
+          "path": "tools/evidence/retired-config-certificates/related/history/retired_topic_selection/multi_lane/research/topic_selection/probes/gap_tools/exact_uniformization_counterexample.json",
+          "sha256": "04f7adfa83d84f4f7474014ba99c6acc4b4ed03c02a42b9cdb7896e2e2c1ddcd"
+        },
+        {
+          "path": "archives/customer-attraction/state/审查/退役选题跨模型复核的独立性与承重前提--审查.md",
+          "sha256": "377bd07b3a1dcc2d890c5526abee271ad7c785a80c0030146a020539bed6f9f1",
+          "section": "固定$x$背包"
+        },
+        {
+          "path": "archives/resource-activation/state/计算/固定激活统一化反例程序重放--计算.md",
+          "sha256": "36ab0e9525e912aac218020b8a8065d2745dcb20c69aa8451a59c4727a43429a"
+        },
+        {
+          "path": "archives/resource-activation/state/计算/固定激活统一化反例精确复核--计算.md",
+          "sha256": "f37db97a4f4d6126b1bddc78fce87c5a838dc4d7448bd4df4ef020fa78348fa6"
+        }
+      ],
+      "reviewed_by": "Boss1",
+      "review_note": "按钉住的C08定义逐件代入自然LP，用整数尾概率独立计算一般权见证，再用支撑概率公式和Fraction遍历四个连续权比端点，核对128次尝试中114个正分母与冻结证书一致。",
+      "endpoint_pins": {
+        "M-1e98f0c71a6846b08ae6a93cd1b8dd0c": "69832df9d40d35ff49439dcdaab8c79439816ac55f73333dcc336622d8235f81",
+        "SEL-KNAPSACK-FIXED-X-OBSTRUCTION-v1": "6d8ec3539b0dd8ca77de2366535cdc1883c345babaf3e5671e003f869596e7eb"
+      },
+      "evidence_pins": {
+        "archives/bottleneck-knapsack/state/审查/退役GAP选题底稿与数学边界--审查.md": "3a6d7787cf22efa03d645baf2719fa84927e55e5777d886bd38c19627913c10e",
+        "research/registration/evidence/register-ab98f323ad-0001-1/gap.md": "8e14e6d6525cc353091aa0484c6c72dc447f581d6227d6232fb3f960db06b68e",
+        "archives/contention-resolution/state/反例/固定激活背包的类内统一权与拆分障碍--反例.md": "78a89049aa00573ea0b830f3f6ccd09a381e23b0ce3e7abbb68e43a7dcc337c5",
+        "archives/contention-resolution/state/资料/两尺寸固定激活的类内统一权重障碍--资料.md": "52461c9df21e71f242312efa28048d0c5cc60eec6eca1ca544b17a40b07451c0",
+        "archives/resource-activation/state/资料/第二轮GAP候选与CRS边界--资料.md": "3ff76bddbd2b86c4373efbd30f7c9be5758ddfa81198014a5e6dd5edb65c827a",
+        "tools/evidence/retired-config-certificates/related/history/retired_topic_selection/multi_lane/research/topic_selection/probes/gap_tools/exact_uniformization_counterexample.py": "0fa3a6304276c3b74488f21f88c793a1700966a44ab38f8639ba69c20ac8633b",
+        "tools/evidence/retired-config-certificates/related/history/retired_topic_selection/multi_lane/research/topic_selection/probes/gap_tools/exact_uniformization_counterexample.json": "04f7adfa83d84f4f7474014ba99c6acc4b4ed03c02a42b9cdb7896e2e2c1ddcd",
+        "archives/customer-attraction/state/审查/退役选题跨模型复核的独立性与承重前提--审查.md": "377bd07b3a1dcc2d890c5526abee271ad7c785a80c0030146a020539bed6f9f1",
+        "archives/resource-activation/state/计算/固定激活统一化反例程序重放--计算.md": "36ab0e9525e912aac218020b8a8065d2745dcb20c69aa8451a59c4727a43429a",
+        "archives/resource-activation/state/计算/固定激活统一化反例精确复核--计算.md": "f37db97a4f4d6126b1bddc78fce87c5a838dc4d7448bd4df4ef020fa78348fa6"
+      },
+      "review_digest": "15cfa6b23da0c8fe4450e5726668b522e7b633e9c34350524bf977628512491a"
+    },
+    "bmkp-c06-explicit-support-degree-two-hard-budget-value": {
+      "edge_id": "bmkp-c06-explicit-support-degree-two-hard-budget-value",
+      "kind": "transfers",
+      "status": "accepted",
+      "source_ids": [
+        "M-d05829d1479f4b8aad94f3953ab9ffc4"
+      ],
+      "target_ids": [
+        "M-668ee3a8071f4d0c8b8acf2e40a93d60"
+      ],
+      "premises_mode": "all",
+      "relation_mode": "unconditional",
+      "conditions": "C06同一给定有理分数点x，有限显式支持E仅列非零配置，各配置在对应下闭局部族内。非负有理利润v_li、启用成本c_l和预算B，每箱配置和≤1、每物品总边际≤1，且Σ_e c_l x_e≤B。先排除c_l>B的箱，L(x)=Σ_(l,S) x_(l,S)Σ_(i∈S)v_li以排除后的点计。原切片至多两种启用成本、每物品在支持中至多两个不同箱。C可取原比较域内所有启用成本的正上界，和P03数值比较时取同一个最大箱成本C并令k=B/C。严格利润比较要求L(x)>0。",
+      "roles": {
+        "M-d05829d1479f4b8aad94f3953ab9ffc4": "提供硬预算配置最大覆盖接口、异号保成本交换、末端可负担单箱以及精确有理位复杂度。",
+        "M-668ee3a8071f4d0c8b8acf2e40a93d60": "C06要求比较同一给定配置LP点上的联合budget/item-contention。所得结论支付硬预算总值及明确历史乘积的标量比较，保留条件留存与sharp量词。"
+      },
+      "explanation": "沿原证明的支持配置e=(l,S)、成本c_l和逐物品最高利润覆盖g，不改变L(x)或可开箱的含义。原独立配置势直接给(1−1/e)L(x)/2。C06的度二按不同箱计，一个箱可有多项含同一物品的配置。在初始势H中，独立跨箱，箱内按坐标z_e互斥选择一个配置，余概率为空。物品i的正利润阈值t至多有两个箱质量a,b，分别为该箱的合格配置坐标之和，可补零。在原点x有a+b≤1，因此ab≤(a+b)^2/4≤(a+b)/4，阈值命中a+b−ab≥3(a+b)/4。逐物品对利润阈值积分得H(x)≥3L(x)/4。H固定其他箱时对一个箱的坐标仿射，故同箱保和、保成本的端点交换可逐次清零一项而不减H。每箱至多一项后H等于原覆盖多线性势G。零成本项升一，正成本分数对沿(1/c_l,−1/c_j)交换，子模性使沿线凸，取不减端点直至余整数配置集A及至多一件分数配置e，权q∈(0,1)。A预算可行，e可负担，G≤g(A)+q g({e})，故二者较好至少保G/(1+q)≥G/2。无分数件则直接取A，若A∪{e}已经可负担则直接取并集。由此原点运行给普适3L(x)/8。对B≥C>0还从s x另跑同一算法，取s=1−C/B。相对原x的阈值命中为s(a+b)−s²ab≥(s−s²/4)(a+b)，故H(s x)≥(s−s²/4)L(x)，依旧用原L(x)作分母。交换保持成本≤B−C，最后一件可升一，新增成本至多C，覆盖单调。两次输出取总值较优者得max{3/8,s−s²/4}L(x)。也可据原分数成本W把s取min{1,(B−C)/W}，W=0时直接取s=1。若所有支持成本为零，则同箱清零后全升一，得3L(x)/4。任何候选整数集均每箱至多一项，解码时冲突物品只留最高利润箱，其他箱删去该物品，由下闭性得原局部可行指派且价值恰为g。删后配置不必也在显式支持中。每次运行O(|E|)次端点交换。H由各阈值的箱内有理和、跨箱乘积精确评估，G为其一配置特例。同箱坐标是初始坐标子集和。跨箱以质量w_l=c_l q_l记账，交换将一质量定在0或c_l，另一取旧两质量之和减该固定成本。未固定质量携带互不重叠的初始质量子集及相应已固定成本，公共分母可用输入分母之积控制。除以原正成本、利润阈值乘积及第二次运行的有理s均保多项式位长。比较P03 Theorems 5.2/5.4在同一可负担输入、同一k与同一L(x)的已报告总利润系数p(k)。k<3时p(k)=1/8<3/8。k≥3时p(k)=(1−1/k)(1−1/√k)/2<1/2，而s≥2/3给s−s²/4≥5/9。所以加入留一箱成本的运行后，每个有限k都有严格的总值保证改进。只用原常数γ=(1−1/e)/2或只用3/8时，对k≥3的严格比较恰为3≤k<k_γ，其中k_γ是p(k)=γ的唯一根，两值分别约10.844326及21.835281。若保留乘积另指固定的αβ，且同样乘原L(x)，则常数3/8只在αβ<3/8时单独认证严格改进，参数保证同理。作为自然LP最坏界的独立上限，B=1、两箱成本1/2+δ及1/2+2δ（0<δ<1/4为有理数），各含一个不同的单位利润物品。取x=(1,(1/2−δ)/(1/2+2δ))，只能开一个箱，整数最优为1，OPT/L(x)=(1/2+2δ)/(1+δ)趋于1/2。",
+      "scope": "仅给定有限有理显式配置支持的总利润指派，以排除不可负担箱后的原L(x)为基准。度二加强对任意成本种类有效，因而包含两成本切片。P03是同分母的已报告保证值比较。结论未评价P03每一实例的实际输出，未构造保持给定抽样分布的逐副本联合留存机制。同一x若需与隐式配置LP最优或整数OPT比较，须另证分数点质量和取得成本。",
+      "evidence": [
+        {
+          "path": "archives/bottleneck-knapsack/state/审查/退役GAP选题底稿与数学边界--审查.md",
+          "sha256": "3a6d7787cf22efa03d645baf2719fa84927e55e5777d886bd38c19627913c10e",
+          "section": "15 项候选的准确状态"
+        },
+        {
+          "path": "research/registration/evidence/register-ab98f323ad-0001-1/gap.md",
+          "sha256": "8e14e6d6525cc353091aa0484c6c72dc447f581d6227d6232fb3f960db06b68e",
+          "section": "C06. 非均匀 opening costs 的 GBAP：联合耦合与简单算法的真实界【A；作者明确问题 + 新切口】"
+        },
+        {
+          "path": "archives/configuration-assignment/state/算法/给定稀疏配置的确定性预算舍入--算法.md",
+          "sha256": "fd09910b2e3028a2babd10a93e0307624c1e32d3769e86dea793f1f04bf84168",
+          "section": "输入、输出与比较值"
+        },
+        {
+          "path": "archives/configuration-assignment/state/等价/下闭配置指派与最大值覆盖的整数等价--等价.md",
+          "sha256": "a733def460247480a5d073dbe817e48634f7dcb1ed827ffb052434a747ef76db",
+          "section": "下闭配置指派与最大值覆盖的整数等价"
+        },
+        {
+          "path": "archives/configuration-assignment/state/算法/给定稀疏配置的确定性预算舍入--算法.md",
+          "sha256": "fd09910b2e3028a2babd10a93e0307624c1e32d3769e86dea793f1f04bf84168",
+          "section": "初始值：item边际约束只在这里使用"
+        },
+        {
+          "path": "archives/configuration-assignment/state/算法/给定稀疏配置的确定性预算舍入--算法.md",
+          "sha256": "fd09910b2e3028a2babd10a93e0307624c1e32d3769e86dea793f1f04bf84168",
+          "section": "第一阶段：同bin只留一件配置"
+        },
+        {
+          "path": "archives/configuration-assignment/state/算法/给定稀疏配置的确定性预算舍入--算法.md",
+          "sha256": "fd09910b2e3028a2babd10a93e0307624c1e32d3769e86dea793f1f04bf84168",
+          "section": "第二阶段：保持成本到至多一分数件"
+        },
+        {
+          "path": "archives/configuration-assignment/state/算法/给定稀疏配置的确定性预算舍入--算法.md",
+          "sha256": "fd09910b2e3028a2babd10a93e0307624c1e32d3769e86dea793f1f04bf84168",
+          "section": "精确实现与位复杂度"
+        },
+        {
+          "path": "archives/customer-attraction/state/审查/退役选题跨模型复核的独立性与承重前提--审查.md",
+          "sha256": "377bd07b3a1dcc2d890c5526abee271ad7c785a80c0030146a020539bed6f9f1",
+          "section": "配置指派：完整恢复本次核查所需基线"
+        },
+        {
+          "path": "archives/resource-activation/state/资料/第二轮GAP候选与CRS边界--资料.md",
+          "sha256": "3ff76bddbd2b86c4373efbd30f7c9be5758ddfa81198014a5e6dd5edb65c827a",
+          "section": "2. C06：opening-cost GBAP 的基线回收"
+        }
+      ],
+      "reviewed_by": "Boss1/bmkp-sparse-retention-3c",
+      "review_note": "核对两对象登记pin和全部指定正文节。按不同箱合并阈值质量，逐一检查箱内仿射端点、保成本凸交换、自然预算及预留C预算的两次最终解码和有理位长。另直接核对P03 Eq. (1.4)、§5 Lemma 5.1及Theorems 5.2/5.4的分母与乘积。原文 https://arxiv.org/html/2208.11832v4",
+      "contribution": {
+        "result": "C06两成本、每物品至多两箱支持的共同合同上，确定性位多项式地输出硬预算指派，普适价值≥3L(x)/8。预留一个最大箱成本可加强至max{3/8,s−s²/4}L(x)，s=1−1/k，B≥C>0。以同一L(x)和k比较，全部有限k均严格优于历史P03报告的系数（L(x)>0）。",
+        "remaining": "若C06要求从预先指定的配置抽样过程内选择，仍需明确两阶段条件事件、边际保持对象与概率量词，另证逐配置或物品—箱副本的条件联合留存或matching obstruction。两种成本、度二全类相对自然LP的精确最坏常数仍未确定，本比较只给普适下界3/8和趋于1/2的上限。若比较的是另行定义的两率乘积，仍须指明该乘积与相同分母。"
+      },
+      "endpoint_pins": {
+        "M-668ee3a8071f4d0c8b8acf2e40a93d60": "5e5e183bf86cb9a71fa988c32e7a16abc362c1d470813e4b23b67cbc4a0786fe",
+        "M-d05829d1479f4b8aad94f3953ab9ffc4": "23bb2ddcdcb76320fa48b9c4a1ff525b126121d0cdc06b55232dd73098e7ca09"
+      },
+      "evidence_pins": {
+        "archives/bottleneck-knapsack/state/审查/退役GAP选题底稿与数学边界--审查.md": "3a6d7787cf22efa03d645baf2719fa84927e55e5777d886bd38c19627913c10e",
+        "research/registration/evidence/register-ab98f323ad-0001-1/gap.md": "8e14e6d6525cc353091aa0484c6c72dc447f581d6227d6232fb3f960db06b68e",
+        "archives/configuration-assignment/state/算法/给定稀疏配置的确定性预算舍入--算法.md": "fd09910b2e3028a2babd10a93e0307624c1e32d3769e86dea793f1f04bf84168",
+        "archives/configuration-assignment/state/等价/下闭配置指派与最大值覆盖的整数等价--等价.md": "a733def460247480a5d073dbe817e48634f7dcb1ed827ffb052434a747ef76db",
+        "archives/customer-attraction/state/审查/退役选题跨模型复核的独立性与承重前提--审查.md": "377bd07b3a1dcc2d890c5526abee271ad7c785a80c0030146a020539bed6f9f1",
+        "archives/resource-activation/state/资料/第二轮GAP候选与CRS边界--资料.md": "3ff76bddbd2b86c4373efbd30f7c9be5758ddfa81198014a5e6dd5edb65c827a"
+      },
+      "review_digest": "4f9e8870374a632c0fff91a71a7626630cf5ba2562f414eb998f9d38dd400a05"
+    },
+    "exact-vector-defect-specializes-to-unit-axes": {
+      "edge_id": "exact-vector-defect-specializes-to-unit-axes",
+      "kind": "specializes",
+      "status": "accepted",
+      "source_ids": [
+        "M-db748b49766141e79b7ab59a27ad25bb"
+      ],
+      "target_ids": [
+        "SEL-VECTOR-LP-SUBMODULAR-OBSTRUCTION-v1"
+      ],
+      "premises_mode": "all",
+      "relation_mode": "unconditional",
+      "conditions": "在源族直接取 ε=0。两资源容量同为 1，三件物品 a=(1,1)、b=(1,0)、c=(0,1)，利润全 1，连续变量的启用上界 0≤x_i≤1_{i∈U}。保持物品、资源和启用集标签不变。",
+      "roles": {
+        "M-db748b49766141e79b7ab59a27ad25bb": "覆盖 ε=0，提供单位容量、单位利润下两对、交集和并集的精确值。",
+        "SEL-VECTOR-LP-SUBMODULAR-OBSTRUCTION-v1": "轴向矩阵上的一个存在性反例，精确否定任意向量容量的启用值均子模。"
+      },
+      "explanation": "ε=0 时源 LP 两行恰为 x_a+x_b≤1、x_a+x_c≤1，源构造的 λ=μ=1。取 S={a,b}、T={a,c}；S、T、交集 {a} 的值各为 1，并集在 (0,1,1) 达到 2，上界由 x_a+x_b+x_c≤2−x_a≤2 给出。因此左侧为 2，右侧为 3。物品 b、c 的支撑各由两坐标降为一坐标，但三列利润仍严格正。原精确 Fraction 枚举中对应掩码为 3、5、1、7，值与直接代入一致。该点的 0–1 矩阵有连续 1 列。严格正消耗由源族 0<ε<1 的单独见证给出，轴向实例本身只需非负消耗。",
+      "scope": "由瓶颈背包档的整个参数族推出资源启用档的一个固定轴向反例，直接包含端点 ε=0。轴向实例只支持一个存在性结论；正参数的定量缺口、保持完整资源支撑的近共线障碍及全容量全利润的二维分类均需各自的证明。",
+      "whole_result": "在瓶颈背包档参数族中取 ε=0，得到资源启用档的完整轴向见证，φ({a,b})+φ({a,c})=2<3=φ({a})+φ({a,b,c})，缺口恰为 1。",
+      "evidence": [
+        {
+          "path": "research/registration/evidence/register-ab98f323ad-0001-1/gap.md",
+          "sha256": "8e14e6d6525cc353091aa0484c6c72dc447f581d6227d6232fb3f960db06b68e",
+          "section": "4. 已完成：consecutive-ones向量LP的精确反例"
+        },
+        {
+          "path": "archives/resource-activation/state/资料/两列射线启用值的二维分类与全维充分性--资料.md",
+          "sha256": "d14b7729ff08dbd40303cd6fd7dcf83e2ff59b53a53fc964eaf2dae202bfeca4",
+          "section": "三个不能合并的陈述"
+        },
+        {
+          "path": "archives/bottleneck-knapsack/state/审查/向量容量启用值子模性失败三源复现--审查.md",
+          "sha256": "13b607c971691b207e37569e60887c5055a1b5fe50dd8456311a2ed6256cdb15",
+          "section": "1. Exact Fraction 顶点枚举"
+        },
+        {
+          "path": "archives/bottleneck-knapsack/tools/evidence/retired-topic-selection-vector-capacity-20261031/exact_vector_lp_results.json",
+          "sha256": "c47f7034083e450b9e2215ad4656ce9362000c482ecbf4b60d60be476418eca9"
+        }
+      ],
+      "reviewed_by": "Boss1-bmkp-vector-ray-3c-3c-102e1b4aa5138a4c",
+      "review_note": "核对 ε=0 的矩阵、容量、上界、四个掩码及缺口方向，分别核实正利润与正消耗；轴向精确结果独立于中断的 scalar assignment GAP 搜索。",
+      "endpoint_pins": {
+        "M-db748b49766141e79b7ab59a27ad25bb": "5a60e13901b27d4e87aef6be9901899f614886beaef1347faba801fd9489453a",
+        "SEL-VECTOR-LP-SUBMODULAR-OBSTRUCTION-v1": "16d144d3e59bf43a8087069c301df2d65f68205b0c9f1cce3ba994cf489a5540"
+      },
+      "evidence_pins": {
+        "research/registration/evidence/register-ab98f323ad-0001-1/gap.md": "8e14e6d6525cc353091aa0484c6c72dc447f581d6227d6232fb3f960db06b68e",
+        "archives/resource-activation/state/资料/两列射线启用值的二维分类与全维充分性--资料.md": "d14b7729ff08dbd40303cd6fd7dcf83e2ff59b53a53fc964eaf2dae202bfeca4",
+        "archives/bottleneck-knapsack/state/审查/向量容量启用值子模性失败三源复现--审查.md": "13b607c971691b207e37569e60887c5055a1b5fe50dd8456311a2ed6256cdb15",
+        "archives/bottleneck-knapsack/tools/evidence/retired-topic-selection-vector-capacity-20261031/exact_vector_lp_results.json": "c47f7034083e450b9e2215ad4656ce9362000c482ecbf4b60d60be476418eca9"
+      },
+      "review_digest": "3529b1834f5c0a27bddfa89d0956ae75e2bef6f12d6a5c6d3e74b84dc6cf0758"
+    },
+    "resource-three-ray-transfers-to-exact-vector-defect": {
+      "edge_id": "resource-three-ray-transfers-to-exact-vector-defect",
+      "kind": "transfers",
+      "status": "accepted",
+      "source_ids": [
+        "SEL-RESOURCE-LP-SUBMODULAR-v2"
+      ],
+      "target_ids": [
+        "M-db748b49766141e79b7ab59a27ad25bb"
+      ],
+      "premises_mode": "all",
+      "relation_mode": "unconditional",
+      "conditions": "对每个实数 ε∈[0,1) 固定二维非负三列 Aε，物品按 a=(1,1)、b=(1,ε)、c=(ε,1) 排列。容量向量 B=(1,1)，三物品利润 w=(1,1,1)，变量连续且 0≤x_i≤1_{i∈U}。源和目标的资源坐标、物品、利润、变量、启用集 U 都用恒等映射。",
+      "roles": {
+        "SEL-RESOURCE-LP-SUBMODULAR-v2": "二维全容量全利润分类的必要性证明提供中列 d=λe+μf 的三射线证书，给出容量、利润、两对及交集的最优值和并集可行解。",
+        "M-db748b49766141e79b7ab59a27ad25bb": "要求在指定单位容量、单位利润的对称参数族上得到精确启用最优值和子模缺口。并集的反向上界由本边对固定两条资源约束求和给出。"
+      },
+      "explanation": "在源证明中取中列 d=a、端列 e=b、f=c。端列行列式为 1−ε²>0，d=λe+μf 的系数 λ=μ=1/(1+ε)>0；两端各自的主资源比 1 大于另一资源比 ε，故是三条不同射线。取 α=1，满足 α≤min(1,1/λ,1/μ)，于是源容量 αd=(1,1)，利润 (1,e₁/d₁,f₂/d₂)=(1,1,1)。取 S={a,b}、T={a,c}，交集 {a}、并集 {a,b,c}。在 S 中第一资源给 x_a+x_b≤1，在 T 中第二资源给 x_a+x_c≤1，交集也有 x_a≤1；三者均由 x_a=1 达到。并集令 x_a=0，x_b=λ，x_c=μ，两条容量恰饱和且每个变量不超过 1。任一并集可行点满足 2x_a+(1+ε)(x_b+x_c)≤2，由 x_a≥0 和 2≥1+ε 得 x_a+x_b+x_c≤2/(1+ε)，所以上下界相等。同一最优见证也适用于启用集 {b,c}。空集值 0，另外两个单物品集均可取满且受单件上界限制为 1。按右侧减左侧的约定，缺口为 2/(1+ε)+1−1−1=(1−ε)/(1+ε)。",
+      "scope": "源分类固定 A 并量化全部非负容量和利润；其否定支只保证存在反例，精确值使用了本边的特定选择和并集上界。每个 ε 用同一物品全集、同一容量和利润。0<ε<1 时所有列坐标和利润严格正，三列均有完整资源支撑；ε↑1 时列趋同且缺口趋零，任意小的偏离仍能破坏精确子模。ε=1 的同射线矩阵给每个非空启用集值 1。把同一 Aε 的两容量提高到 2+ε 就可取满所有启用物品，值变为模函数，故此边不提供固定容量的普遍分类。适用域限于连续的单个向量容量 packing LP。",
+      "whole_result": "将资源启用 v2 必要性证书按恒等映射用于瓶颈背包档的 Aε 启用 LP，再加上两容量约束之和，完整得到任意 ε∈[0,1) 的 φ(S)=φ(T)=φ(S∩T)=1、φ(S∪T)=2/(1+ε)，从而缺口严格为 (1−ε)/(1+ε)。有理 ε 给有理最优见证；正 ε 可任意接近共同射线。",
+      "evidence": [
+        {
+          "path": "archives/resource-activation/state/证明/启用值的两价格分裂与二维三射线禁形--证明.md",
+          "sha256": "5f9d97e5e6fb490c22d1668b40120cd2ae180c13d766abe9f32ef7dd8f77c7e1",
+          "section": "五、二维必要性与有理禁形证书"
+        },
+        {
+          "path": "archives/bottleneck-knapsack/state/审查/退役GAP选题底稿与数学边界--审查.md",
+          "sha256": "3a6d7787cf22efa03d645baf2719fa84927e55e5777d886bd38c19627913c10e",
+          "section": "C01：两资源启用值的分类"
+        },
+        {
+          "path": "research/registration/evidence/register-ab98f323ad-0001-1/gap.md",
+          "sha256": "8e14e6d6525cc353091aa0484c6c72dc447f581d6227d6232fb3f960db06b68e",
+          "section": "4. 已完成：consecutive-ones向量LP的精确反例"
+        }
+      ],
+      "reviewed_by": "Boss1-bmkp-vector-ray-3c-3c-102e1b4aa5138a4c",
+      "review_note": "核对二维必要性中 λ、μ、α 的选择和各利润比，逐一检查启用上界、容量和精确值的两向证明，另核同射线边界、固定支撑与固定容量量词。",
+      "endpoint_pins": {
+        "M-db748b49766141e79b7ab59a27ad25bb": "5a60e13901b27d4e87aef6be9901899f614886beaef1347faba801fd9489453a",
+        "SEL-RESOURCE-LP-SUBMODULAR-v2": "76c9e60f78b3cf56f25ac4ef67e7c75f41f668d648dafd44cea144160b7b8e5e"
+      },
+      "evidence_pins": {
+        "archives/resource-activation/state/证明/启用值的两价格分裂与二维三射线禁形--证明.md": "5f9d97e5e6fb490c22d1668b40120cd2ae180c13d766abe9f32ef7dd8f77c7e1",
+        "archives/bottleneck-knapsack/state/审查/退役GAP选题底稿与数学边界--审查.md": "3a6d7787cf22efa03d645baf2719fa84927e55e5777d886bd38c19627913c10e",
+        "research/registration/evidence/register-ab98f323ad-0001-1/gap.md": "8e14e6d6525cc353091aa0484c6c72dc447f581d6227d6232fb3f960db06b68e"
+      },
+      "review_digest": "d56ecb125fb11652ebd616730885a0868e20dc8bda55869f196b0c7156d5b8e9"
+    },
+    "santa-appendix-c-uniform-bit-clock-implies-ga05": {
+      "edge_id": "santa-appendix-c-uniform-bit-clock-implies-ga05",
+      "kind": "implies",
+      "status": "accepted",
+      "source_ids": [
+        "M-b8540026a0fc4c52b209c4ce7311c25b"
+      ],
+      "target_ids": [
+        "GA-05"
+      ],
+      "premises_mode": "all",
+      "relation_mode": "conditional",
+      "conditions": "同一显式有限restricted max-min域：非空玩家、有限不可分资源、显式资格表、非负二进制有理资源固有值v_j，玩家估值仅0或v_j，资源至多分给一人且可不分配。固定λ=26/99和一个逐位可执行的Appendix C全分配实现A，所有匹配/扫描/删除/根与路径选择均用已固定的确定性规则；程序不读取配置LP解或可行性/背包/精确T* oracle。唯一额外开放条件P：已指定固定正整数c,d，使对全部正T且CLP_I(T)可行的编码输入(I,T)，A在p(L)=c(1+L)^d总位步骤内完成，L=|(I,T)|；时钟包括读取、归一化、全部子程序、精确算术与完整输出。同一时钟覆盖全部可行输入，不要求不可行T自行终止或输出失败证书。P只承担该具体过程的时间，正确性由源支付，未假设整个未知OPT近似结论。",
+      "roles": {
+        "M-b8540026a0fc4c52b209c4ce7311c25b": "提供Appendix C对任意给定CLP(T)可行正T的有限真实26T/99全分配、无LP oracle的可执行选边/路径接口，以及源配置基准T*≥OPT；P额外支付该固定实现的统一总位多项式clock。",
+        "GA-05": "接收完整历史算法合同：固定δ=5/26，对全部同模型显式输入，总位多项式时间输出合法分配并保证每名玩家效用≥OPT/(4−δ)；保REJECT_OLD_TARGET的历史选题身份。"
+      },
+      "explanation": "先用所有有理分母之积D清分母，a_j=Dv_j为非负整数，U=Σa_j；D、各a_j、U及全部显式编码的位长均为原输入位长B的多项式，不复制或拆分物品。U=0直接输出空分配。令整数实际最优为O、配置LP最高可行目标为T*，则0≤O≤T*≤U。所有配置和为整数，CLP(T)=CLP(ceil(T))，所以T*可取到且为整数；所有正t≤T*均可行。\n\n对正整数t，Try(t)从头限时模拟A(I_a,t)至p(L_t)总位步，然后只接受完整合法的实际资源分配。逐物品核标签/资格和唯一使用，按实际资格求每玩家整数值s_i，精确检查99s_i≥26t。超时、异常、无完整输出或检查失败均记failure。验证给success⇒真实合法且min s_i≥26t/99；源正确性加P给CLP(t)可行⇒success，故failure⇒CLP(t)不可行⇒t>T*。不生成LP不可行证书，不把success当作可行性判定。\n\n初始化lo=0、hi=U+1，保存空分配。只维护hi>T*和保存分配的min s_i≥26lo/99，不维护lo≤T*。每次mid=floor((lo+hi)/2)>0：success则lo=mid并保存已验证分配，failure则hi=mid。高于T*的成功可以提升lo，成功谓词即使非单调也不破坏这两个不变量。O(log(U+1))次后hi=lo+1>T*，由T*整数得lo≥T*，所以保存分配min s_i≥26T*/99≥26O/99。将同一分配按原值解释，得min u_i≥26OPT/99=OPT/(4−5/26)。查询数、编码长度、截断模拟、精确验证与清分母合成总位多项式时间，完全不需要精确OPT或T*输入。零值、空资源、零最优及无资格玩家按0下界分支/截断正确处理。\n\nM-af5cd39d12c444399b616e0d318c27be的4+δ算法只是实读对照：其λ=1/(4+δ)<1/4，Build/Collapse的正γ、β=γ²、μ=γ³、limited blocking、canonical/lazy状态及层增长计数不支付Appendix C的λ=26/99>1/4时钟；代入相同λ会要求δ=−5/26，γ归零又失去正增长参数。故它不作为本条ALL的额外源，不造不存在的时间迁移或运行下界refutation。已有3A数值存在性contribution不重复拆边。",
+      "scope": "完整条件蕴含，作用于GA-05的整个历史实际分配/统一多项式算法合同；保持玩家、资源、资格、不可分性与显式有理输入位复杂度。仅在条件P下得目标，不把P、GA-05或外部近期算法无条件证明，不评价现时开放性、新颖性或恢复旧选题。",
+      "whole_result": "若所固定的Appendix C实现A满足条件P的统一总位多项式时钟，则存在一个无LP/精确目标oracle的确定性总位多项式算法，对每个显式有限非空玩家restricted非负有理实例输出合法实际分配，使所有玩家同时至少得到(26/99)OPT=OPT/(4−5/26)；因此以固定δ=5/26完整满足GA-05的历史4−δ算法合同。条件推导完整，时钟P本身仍开放。",
+      "reviewed_by": "Boss2 fresh formal 3C worker wave17_santa_ga05; Root Boss2",
+      "review_note": "三个核心v1合同与现行registry逐字相等、task definition和全部input pins独立重算核准。完整实读共同中文正文、两处GA-05指定段、fresh3A support与Root预分析/独立3D；本次按PDF skill定向实读冻结PDF pp19–23、27–28，完整其余源证明准确复用fresh3A，不声称再次全文PDF复证。独立核了任意可行正T的源接口、固定确定性A、P仅时钟、清分母总位长、CLP整数最高阈值、单向failure与允许lo>T*、真实资格/分配验证、零分支、合成多项式和M-af5对照。无缺步故accepted/conditional/whole；未运行科研程序、Git、work.py/native、队列或正式绑定，Root负责最终pins/check/publish。\nRoot Boss2 separately read the three current contracts and relevant original bodies, the complete final edge/support/receipt and the earlier exact Appendix C review. Root reconstructed the uniform clock condition, denominator clearing, integer CLP threshold, one-sided failure certificate, saved allocation invariant allowing lo above T*, all zero branches, exact output verification and total bit complexity. Only the concrete total clock remains open; the conditional whole implication is complete. Original PDF full-reading credit stays with its actual workers.",
+      "evidence": [
+        {
+          "path": "map/edges/boss2-wave17-santa-ga05-3c-2c145fadd5b8270e/support.md",
+          "sha256": "964c9d65148d2ce5a896d11d46892d1dfa42ec9d375a0084c326ca7d1e626da3"
+        },
+        {
+          "path": "map/edges/unrelated-machines-3a-3a-eb09f2fb3f9a708f/support.md",
+          "sha256": "3b676dce201acc54e4373c88fd30a8f22f13f1c40fa46501638f1008faf04c48"
+        },
+        {
+          "path": "archives/unrelated-machines/state/文献/Cheng-Mao受限最大最小分配与配置LP--文献.md",
+          "sha256": "fa7375b5a1a8a5719b539df0192242461e713e6673735813a9f612dae7d1b574"
+        },
+        {
+          "path": "archives/unrelated-machines/tools/evidence/registration-Boss5-0111-literature/cheng-mao.pdf",
+          "sha256": "ea99b29b0b05694d16fcf18b63fddcd9dc798aa6ef476ac0b78033c8eaf90e7a"
+        },
+        {
+          "path": "archives/bottleneck-knapsack/state/审查/广义指派候选池的状态与证据边界--审查.md",
+          "sha256": "15ebb51bee034ac2fda32fecaa16fce4803675f0dae83442b7bd587f99694ad7"
+        },
+        {
+          "path": "archives/bottleneck-knapsack/state/审查/广义指派候选报告的深入状态与BMKP舍入边界--审查.md",
+          "sha256": "a9a733a7ca331d092090b7f09ac9423ee2e4a31a195b0810eb27f04feaa2947d"
+        }
+      ],
+      "endpoint_pins": {
+        "GA-05": "cd879b3e71058a9a355b48795bac4a378d7ce788e4876870077d6ba0c81312dd",
+        "M-b8540026a0fc4c52b209c4ce7311c25b": "94f3d06211128043b9b86c0d8c73049abf17e2551c7a14a47f99729d2f89e31e"
+      },
+      "evidence_pins": {
+        "map/edges/boss2-wave17-santa-ga05-3c-2c145fadd5b8270e/support.md": "964c9d65148d2ce5a896d11d46892d1dfa42ec9d375a0084c326ca7d1e626da3",
+        "map/edges/unrelated-machines-3a-3a-eb09f2fb3f9a708f/support.md": "3b676dce201acc54e4373c88fd30a8f22f13f1c40fa46501638f1008faf04c48",
+        "archives/unrelated-machines/state/文献/Cheng-Mao受限最大最小分配与配置LP--文献.md": "fa7375b5a1a8a5719b539df0192242461e713e6673735813a9f612dae7d1b574",
+        "archives/unrelated-machines/tools/evidence/registration-Boss5-0111-literature/cheng-mao.pdf": "ea99b29b0b05694d16fcf18b63fddcd9dc798aa6ef476ac0b78033c8eaf90e7a",
+        "archives/bottleneck-knapsack/state/审查/广义指派候选池的状态与证据边界--审查.md": "15ebb51bee034ac2fda32fecaa16fce4803675f0dae83442b7bd587f99694ad7",
+        "archives/bottleneck-knapsack/state/审查/广义指派候选报告的深入状态与BMKP舍入边界--审查.md": "a9a733a7ca331d092090b7f09ac9423ee2e4a31a195b0810eb27f04feaa2947d"
+      },
+      "review_digest": "8694550950bde4ecabdf3b74e286050b8e74ad6d3fab12ca21ead9ada1162c1f"
+    },
+    "agap-equal-size-within-group-reserved-repair": {
+      "edge_id": "agap-equal-size-within-group-reserved-repair",
+      "kind": "transfers",
+      "status": "accepted",
+      "source_ids": [
+        "M-6b2b6c8e6aa544d2b5153eca1033a12f"
+      ],
+      "target_ids": [
+        "M-45fdfcf5a51a491a9bdb56cc5c53f8ee"
+      ],
+      "premises_mode": "all",
+      "relation_mode": "unconditional",
+      "conditions": "单位容量AGAP、所有物品可去所有箱、非负有理箱依赖利润。每组至多floor(m/2)件，同组每件共同正有理尺寸s_G≤1/3，组间尺寸可不同。所选组必须完整放入，且每箱同组至多一件。",
+      "roles": {
+        "M-6b2b6c8e6aa544d2b5153eca1033a12f": "以组总尺寸为成本、冲突感知分数LP为价值，B=m、ρ=1/3、δ=1/6选完整组并保(1−e^(−1/6))价值。",
+        "M-45fdfcf5a51a491a9bdb56cc5c53f8ee": "为所登记的两个自然限制的交集给出严格超过1/19的确定性硬容量修复。"
+      },
+      "explanation": "分数LP在普通指派LP中加每个(G,j)的Σ_{i∈G}x_ij≤1。令流y_ij=s_G x_ij，构造item→(G,j)→bin→sink网络，物品激活供给上限s_G，(G,j)出弧上限s_G，bin出弧上限1，首弧单位利润v_ij/s_G。流最优值φ的对偶是min_u [Σ_{i活跃}s_G u_i + D(u)]，物品势u_i≥0、汇点势0，D(u)=Σ弧 cap·(密度−u_尾+u_头)_+，只含非供给弧；负物品势可抬至0而不增对偶。凸函数的势差项对逐坐标min/max子模（交叉时两极端差值换为同总和的两个中间差值）。两激活集的最优势u,v，用u∧v于并集、u∨v于交集，供给项逐点不增，故φ子模。再取不交完整组并集，C03选总尺寸≤m/3的组。整数OPT分配的组总尺寸≤m且是冲突LP见证，因此LP值≥(1−e^(−1/6))OPT。 每组的x矩阵是双边度≤1的分数匹配，补dummy为双随机矩阵再分解为有理多项式支持的部分匹配，保每条边边缘。独立为每组取匹配和均匀优先级t∈{1/300,…,1}，按优先级与固定破平局处理组，每条抽中边能放则保留。对于本组已抽中目标(i,j)，前序其他组H在j抽中尺寸记Z_H∈[0,1/3]；独立且给定本组t有Σ E Z_H≤t（每组前序概率≤t，原LP负载≤1）。阻挡要求Σ Z_H>2/3，从而Σ_{H<K}Z_H Z_K=((ΣZ_H)^2−ΣZ_H²)/2>1/9。对每条目标边定义保留指标下界：t≤1/3取1−9Σ_{H<K}Z_H Z_K，1/3<t≤2/3取1−(3/2)Σ_H Z_H，否则0。受阻时该下界≤0，未受阻时≤1。给定t，期望下界分别≥1−(9/2)t²、1−(3/2)t和0；这个单调函数积分13/36，右端网格均值≥13/36−1/300=161/450。 按原利润对抽中目标边加权求和，得到实际保留利润的下界估计量。每项展开只含最多三个组的选择（目标组和最多两个前序组）。逐组枚举优先级×有理匹配支持，用各项支持上的精确条件期望固定不低于当前均值的选择，确定性多项式得到≥161/450倍LP价值。最后补齐每件未放物品：至多floor(m/2)−1个箱已有同组成员，若其余箱均放不下尺寸≤1/3的件，则至少ceil(m/2)+1个箱各载>2/3，与所选总尺寸≤m/3矛盾。每件合法补齐且利润不减。用1−e^(−1/6)≥11/72，得1771/32400>1/19。",
+      "scope": "C04两个候选切片的交集：单件≤1/3且组内等尺寸。涵盖不同组的尺寸和箱利润异质性，不使用随机结果代替确定性实现。",
+      "evidence": [
+        {
+          "path": "archives/bottleneck-knapsack/state/审查/退役GAP选题底稿与数学边界--审查.md",
+          "sha256": "3a6d7787cf22efa03d645baf2719fa84927e55e5777d886bd38c19627913c10e",
+          "section": "C03：reserved-capacity 小物品引理"
+        },
+        {
+          "path": "research/registration/evidence/register-ab98f323ad-0001-1/gap.md",
+          "sha256": "8e14e6d6525cc353091aa0484c6c72dc447f581d6227d6232fb3f960db06b68e",
+          "section": "5. 已完成：小物品reserved-capacity的greedy引理"
+        },
+        {
+          "path": "archives/bottleneck-knapsack/state/审查/退役GAP选题底稿与数学边界--审查.md",
+          "sha256": "3a6d7787cf22efa03d645baf2719fa84927e55e5777d886bd38c19627913c10e",
+          "section": "15 项候选的准确状态"
+        },
+        {
+          "path": "research/registration/evidence/register-ab98f323ad-0001-1/gap.md",
+          "sha256": "8e14e6d6525cc353091aa0484c6c72dc447f581d6227d6232fb3f960db06b68e",
+          "section": "C04. 保留容量修复能否改进 AGAP 的 1/19【B；作者明确方向】"
+        },
+        {
+          "path": "research/registration/evidence/register-ab98f323ad-0001-1/gap.md",
+          "sha256": "8e14e6d6525cc353091aa0484c6c72dc447f581d6227d6232fb3f960db06b68e",
+          "section": "1. Primary 文献与文章定性（已打开正文）"
+        }
+      ],
+      "reviewed_by": "bottleneck-3a-3a-96d5dc99ee073936",
+      "review_note": "复核流LP对偶子模性、三组条件期望的可计算性、对偶和分解有理位复杂度、同组互斥与重插账目，并用有理常数比较1/19。",
+      "contribution": {
+        "result": "所述AGAP切片获得确定性1771/32400近似，完整组选取、逐箱硬容量和同组至多一件全部保留。",
+        "remaining": "组内异尺寸会破坏把冲突配额化为同一个流容量的换元，组内同尺寸但单件超过1/3也超出此修复；C04各备选完整域仍待处理。"
+      },
+      "endpoint_pins": {
+        "M-45fdfcf5a51a491a9bdb56cc5c53f8ee": "be7ad9523fd8508979f2de33d93a1d06fbc0b63bdc60919c46c045f64ee371f8",
+        "M-6b2b6c8e6aa544d2b5153eca1033a12f": "2d93ca132aedee910338aee7ebd0b54a82a133770e2fe60190070c0346c517a4"
+      },
+      "evidence_pins": {
+        "archives/bottleneck-knapsack/state/审查/退役GAP选题底稿与数学边界--审查.md": "3a6d7787cf22efa03d645baf2719fa84927e55e5777d886bd38c19627913c10e",
+        "research/registration/evidence/register-ab98f323ad-0001-1/gap.md": "8e14e6d6525cc353091aa0484c6c72dc447f581d6227d6232fb3f960db06b68e"
+      },
+      "review_digest": "2bb127c709091b4fc448c8bef68fc9ae83c9a8e21159c049dc41c0efeac144f8"
+    },
+    "bmkp-joint-modules-reconstruct-hit-round": {
+      "edge_id": "bmkp-joint-modules-reconstruct-hit-round",
+      "kind": "implies",
+      "status": "accepted",
+      "source_ids": [
+        "GA-03-L1",
+        "GA-03-L2",
+        "GA-03-L3"
+      ],
+      "target_ids": [
+        "TS-BMKP-2CAP-APPROX-v1"
+      ],
+      "premises_mode": "all",
+      "relation_mode": "conditional",
+      "conditions": "两容量公共正有理重/非负有理利，有限非空背包，允许物品未用。对T>0按min(p_e/T,1)归一化，ζ=1/ceil(max(100,20/ε)), U=1−ζ, γ=Uζ, δ=Uζ², K=1/ζ, q_pre=2/3−8ζ, Q=2/3−11ζ。假设枚举轮命中一份互不交的合法结构见证，联合标签有正确有限上舍入重及共同利润桶，全部long昂贵项为critical且每long至多K，long的上舍入重量及下舍入利润满足硬容量与Q，原short至多两项且利润至少q_pre。",
+      "roles": {
+        "GA-03-L1": "固定命中标签和全局槽重数后，按两容量总需求选每型最重原物，保持各long便宜集与舍入重量/利润式。",
+        "GA-03-L2": "在非critical昂贵池以不同dummy表示singleton，经固定基数最大权一般图matching一次恢复所有short。",
+        "GA-03-L3": "对严格p<γ的池在long残容量上做逐包利润LP舍入，只损各包最多4pmax，不用掉其他池原物。",
+        "TS-BMKP-2CAP-APPROX-v1": "此处交付其命中轮的可执行恢复及利润预算。"
+      },
+      "explanation": "L1按全局供给交换，short重量不增且利润损失<2δ，long原便宜集给剩余LP见证，负利润下界可截为0。short中有p≥Q则留该singleton且Q>γ。否则它必有两件，各件利润大于q_pre−2δ−Q=3ζ−2Uζ²>γ，故L2的整个short见证属于同一非critical昂贵池。L2在B2可行边上最大化B1资格边数，恢复利润至少Q的short。L3只使用不相交的便宜池，pmax<γ<ζ，故long实际利润至少Q−4ζ；昂贵项实际重量不超过上舍入重且实际利润不低于桶下界。L1、L2、L3分别支付规范化、短包和长包恢复，三者合取并保供给互斥。若对所有T≤OPT确有命中轮，公比1+ζ网格挑最高实绩得(2/3−15ζ)OPT/(1+ζ)≥(2/3−16ζ)OPT≥(2/3−ε)OPT；成功轮只担保输出，不用于反推T≤OPT。",
+      "scope": "只担保两容量BMKP已命中结构的硬容量、整数、互斥恢复。B1=B2、无short或无long时对相应空模块用空解。后段全域及总位时间另外取决于见证覆盖与枚举域。",
+      "evidence": [
+        {
+          "path": "archives/bottleneck-knapsack/state/引理/联合类型交换与允许弃置的背包恢复--引理.md",
+          "sha256": "122fcdf542aa5a1f5593139d2f2d395c0b2b32c4f765eab69a1ae80498c6dc44",
+          "section": "L1：固定联合标签的全局critical恢复"
+        },
+        {
+          "path": "archives/bottleneck-knapsack/state/引理/联合类型交换与允许弃置的背包恢复--引理.md",
+          "sha256": "122fcdf542aa5a1f5593139d2f2d395c0b2b32c4f765eab69a1ae80498c6dc44",
+          "section": "L2：两个容量的short恢复恰是嵌套配额匹配"
+        },
+        {
+          "path": "archives/bottleneck-knapsack/state/引理/联合类型交换与允许弃置的背包恢复--引理.md",
+          "sha256": "122fcdf542aa5a1f5593139d2f2d395c0b2b32c4f765eab69a1ae80498c6dc44",
+          "section": "L3：列和≤1、允许unused的$4p_{max}$硬容量舍入"
+        },
+        {
+          "path": "archives/bottleneck-knapsack/state/候选/双容量瓶颈背包的profile标签与完整枚举--候选.md",
+          "sha256": "33f014ef81660868e4169c2b950ad2fae73a1a256c93b23fe28f4a3d19031b6c",
+          "section": "五、枚举、物品池与完整成功轮"
+        },
+        {
+          "path": "archives/bottleneck-knapsack/state/候选/双容量瓶颈背包的profile标签与完整枚举--候选.md",
+          "sha256": "33f014ef81660868e4169c2b950ad2fae73a1a256c93b23fe28f4a3d19031b6c",
+          "section": "六、正OPT几何网格与最终误差"
+        }
+      ],
+      "reviewed_by": "bottleneck-3a-3a-96d5dc99ee073936",
+      "review_note": "核对三引理的实际入口、short分池代数、一般图matching资格、逐包残余利润及几何网格方向。轮前profile和枚举覆盖保持未付。",
+      "contribution": {
+        "result": "每个符合上述输入合同的命中轮可恢复全部包，原利润阈值保证为(2/3−15ζ)T；若每个T≤OPT均可命中，已核实后续网格比值。",
+        "remaining": "需要从所有阈值见证逐式导入母Lemma8，证明profile自代表/零尺度/无效标签规则、昂贵件规范后slack、有限标签与配置数界、至少一个联合枚举轮命中，并完成总位复杂度和通用实现。"
+      },
+      "endpoint_pins": {
+        "GA-03-L1": "45ca66bf555a55d33ec61b65d41200fd73c8cc34aaf257fea6ac2059a5f5c2dc",
+        "GA-03-L2": "21e597580f4a015bf60b14845d2ca507c708717c85eea72815f22e0b8c4c7160",
+        "GA-03-L3": "ab017830b408a684ebdd2e2b86f5b831c631ea5449b423a36d8a1975a8c86fd0",
+        "TS-BMKP-2CAP-APPROX-v1": "6bacc3103a39e7c9244e9b96c408061b886c75b134499f1daa540b825b5ff87f"
+      },
+      "evidence_pins": {
+        "archives/bottleneck-knapsack/state/引理/联合类型交换与允许弃置的背包恢复--引理.md": "122fcdf542aa5a1f5593139d2f2d395c0b2b32c4f765eab69a1ae80498c6dc44",
+        "archives/bottleneck-knapsack/state/候选/双容量瓶颈背包的profile标签与完整枚举--候选.md": "33f014ef81660868e4169c2b950ad2fae73a1a256c93b23fe28f4a3d19031b6c"
+      },
+      "review_digest": "413f1d41dcea025910f199dc2b29d34f9738e82d92af829f16dafaf71b04e90e"
+    },
+    "bmkp-small-profits-give-hard-capacity-approximation": {
+      "edge_id": "bmkp-small-profits-give-hard-capacity-approximation",
+      "kind": "transfers",
+      "status": "accepted",
+      "source_ids": [
+        "GA-03-L3"
+      ],
+      "target_ids": [
+        "SEL-BMKP-CONST-K-v1"
+      ],
+      "premises_mode": "all",
+      "relation_mode": "unconditional",
+      "conditions": "同固定容量种类BMKP的有理输入、硬容量、物品至多使用一次、全背包max-min。附加pmax≤(1/12+ε/4)OPT，或单独保留全域加性界。",
+      "roles": {
+        "GA-03-L3": "对输入原物品和各包原容量，保持硬容量，逐包最多损4pmax。",
+        "SEL-BMKP-CONST-K-v1": "取得不依容量种类或容量比的受限乘法保证和全域加性保证。"
+      },
+      "explanation": "把各包利润下界都设为可变公共t并最大化t；此紧LP可行（t=0）且最优t*有限，任何整数最优解是LP见证，故t*≥OPT。以t*喂给L3，无须事先知道OPT。它给min_j p(T_j)≥t*−4pmax≥OPT−4pmax；在附加条件下至少为(2/3−ε)OPT。求有理LP和L3均在输入总位长多项式时间内。零OPT仍输出可行解。",
+      "scope": "结论对任意容量种类数成立；乘法保证只用于单件利润相对于全实例OPT足够小的域。",
+      "evidence": [
+        {
+          "path": "archives/bottleneck-knapsack/state/引理/联合类型交换与允许弃置的背包恢复--引理.md",
+          "sha256": "122fcdf542aa5a1f5593139d2f2d395c0b2b32c4f765eab69a1ae80498c6dc44",
+          "section": "L3：列和≤1、允许unused的$4p_{max}$硬容量舍入"
+        },
+        {
+          "path": "archives/bottleneck-knapsack/state/问题/固定容量种类瓶颈背包的硬容量近似--问题.md",
+          "sha256": "54f3849883c99d54d1d72343d42745afb0a834c292386ad3cee824259feeb5bd",
+          "section": "模型与完整输出"
+        }
+      ],
+      "reviewed_by": "bottleneck-3a-3a-96d5dc99ee073936",
+      "review_note": "核对公共阈值松弛、L3有理接口、容量类型无关性和常数1/12+ε/4。",
+      "contribution": {
+        "result": "确定性多项式硬容量分配保证OPT−4pmax；若pmax≤(1/12+ε/4)OPT则满足固定K目标的近似比。",
+        "remaining": "一般实例中须先结构化处理大单件利润与全局供给，再为小件建立适用的剩余LP；该边不付通用固定K结果。"
+      },
+      "endpoint_pins": {
+        "GA-03-L3": "ab017830b408a684ebdd2e2b86f5b831c631ea5449b423a36d8a1975a8c86fd0",
+        "SEL-BMKP-CONST-K-v1": "edc670dd95a85a851923292b28f507cf19994b02cc092f808098bdc2f5b07d06"
+      },
+      "evidence_pins": {
+        "archives/bottleneck-knapsack/state/引理/联合类型交换与允许弃置的背包恢复--引理.md": "122fcdf542aa5a1f5593139d2f2d395c0b2b32c4f765eab69a1ae80498c6dc44",
+        "archives/bottleneck-knapsack/state/问题/固定容量种类瓶颈背包的硬容量近似--问题.md": "54f3849883c99d54d1d72343d42745afb0a834c292386ad3cee824259feeb5bd"
+      },
+      "review_digest": "1674df4ace73dac680dbf8c91efef10c056299b067ccb16de72ea15b3686ecc5"
+    },
+    "bmkp-two-capacity-restricts-fixed-type-contract": {
+      "edge_id": "bmkp-two-capacity-restricts-fixed-type-contract",
+      "kind": "specializes",
+      "status": "accepted",
+      "source_ids": [
+        "SEL-BMKP-CONST-K-v1"
+      ],
+      "target_ids": [
+        "TS-BMKP-2CAP-APPROX-v1"
+      ],
+      "premises_mode": "all",
+      "relation_mode": "conditional",
+      "conditions": "将固定容量种类问题的K取2，同一有限非空包集、公共正二进制有理重量、非负有理利润、可unused且全包硬容量；取同一固定0<ε<2/3。",
+      "roles": {
+        "SEL-BMKP-CONST-K-v1": "若完整固定K目标成立，取K=2直接取得同模型、同近似比的算法合同。",
+        "TS-BMKP-2CAP-APPROX-v1": "登记了同一两容量合同以及一个具体的profile/标签/全局枚举候选。所继承仅为存在此近似算法，不指定该实现。"
+      },
+      "explanation": "固定K的算法量化每个固定整数K≥1，故可直接传入K=2，无需修改容量、重/利或OPT。原输入即两容量输入，解码取原各包的物品集，所以同一硬容量和相对OPT保证直接继承。反向只有两容量不能推出K≥3；两种容量不限制背包数或容量比。",
+      "scope": "条件性的算法合同限制。它与具体profile候选是否正确是两个问题。",
+      "evidence": [
+        {
+          "path": "archives/bottleneck-knapsack/state/问题/固定容量种类瓶颈背包的硬容量近似--问题.md",
+          "sha256": "54f3849883c99d54d1d72343d42745afb0a834c292386ad3cee824259feeb5bd",
+          "section": "模型与完整输出"
+        },
+        {
+          "path": "archives/bottleneck-knapsack/state/候选/双容量瓶颈背包的profile标签与完整枚举--候选.md",
+          "sha256": "33f014ef81660868e4169c2b950ad2fae73a1a256c93b23fe28f4a3d19031b6c",
+          "section": "模型、目标和真正状态"
+        },
+        {
+          "path": "archives/bottleneck-knapsack/state/候选/双容量瓶颈背包的profile标签与完整枚举--候选.md",
+          "sha256": "33f014ef81660868e4169c2b950ad2fae73a1a256c93b23fe28f4a3d19031b6c",
+          "section": "七、版本比较、未决义务和证据"
+        }
+      ],
+      "reviewed_by": "bottleneck-3a-3a-96d5dc99ee073936",
+      "review_note": "核对固定K量词、限制域后OPT相同、零OPT与硬容量输出。解释明确固定K开放且不能推出指定候选实现。",
+      "contribution": {
+        "result": "若固定K合同成立，则两容量域中存在确定性总位多项式(2/3−ε)硬容量近似算法。",
+        "remaining": "不能由此确定现有候选的profile、标签、全局枚举及实现正确性；本边也不提供K≥3的构造。"
+      },
+      "endpoint_pins": {
+        "SEL-BMKP-CONST-K-v1": "edc670dd95a85a851923292b28f507cf19994b02cc092f808098bdc2f5b07d06",
+        "TS-BMKP-2CAP-APPROX-v1": "6bacc3103a39e7c9244e9b96c408061b886c75b134499f1daa540b825b5ff87f"
+      },
+      "evidence_pins": {
+        "archives/bottleneck-knapsack/state/问题/固定容量种类瓶颈背包的硬容量近似--问题.md": "54f3849883c99d54d1d72343d42745afb0a834c292386ad3cee824259feeb5bd",
+        "archives/bottleneck-knapsack/state/候选/双容量瓶颈背包的profile标签与完整枚举--候选.md": "33f014ef81660868e4169c2b950ad2fae73a1a256c93b23fe28f4a3d19031b6c"
+      },
+      "review_digest": "a60e2855141c27bea2d2820a154898cdf29cff79f4951ac76964b923aaa71661"
+    },
+    "group-gap-reserved-greedy-crosses-half-for-small-items": {
+      "edge_id": "group-gap-reserved-greedy-crosses-half-for-small-items",
+      "kind": "transfers",
+      "status": "accepted",
+      "source_ids": [
+        "M-6b2b6c8e6aa544d2b5153eca1033a12f"
+      ],
+      "target_ids": [
+        "bottleneck-knapsack/group-gap-beyond-half-capacity"
+      ],
+      "premises_mode": "all",
+      "relation_mode": "unconditional",
+      "conditions": "标准Group GAP：m个单位包，正有理公共尺寸s_i≤1/3、非负有理包依赖利润、全物品–包均允许，无额外同组同包互斥。组为不交的all-or-nothing集合，每组总尺寸≤7m/12。取δ=7/12, ρ=2/3。",
+      "roles": {
+        "M-6b2b6c8e6aa544d2b5153eca1033a12f": "在完整组为地集、组总尺寸为成本、分数指派LP值为ψ时支付选择阶段。",
+        "bottleneck-knapsack/group-gap-beyond-half-capacity": "得到严格越过m/2阈值且保实际利润的确定性硬容量子类。"
+      },
+      "explanation": "在全物品–包可指派的标准Group GAP中，用ψ(A)表示并集物品的分数指派最优值（每物品列和≤1，每箱载重≤1）。它单调且子模：仅为证明取公分母D，把物品i分为Ds_i个质量1/D的副本，给每个包D个槽，副本在j获利v_ij/(Ds_i)。运输多面体整数性使最大加权匹配值等于原分数LP。并集与交集的两个最优匹配叠加后沿交替路径/圈重染成各集合的匹配；任何只能出现在并集一侧匹配的独占左端点，所在路径不可能另有这样的左端点，因为连接两个左端点的路径长度为偶数且首尾匹配颜色相异。逐分量选方向即可保两侧可用性和总价值。把地集换成不交的完整组保子模，计算值用原紧LP，无需扩张D。以组总尺寸为成本，比较预算B=m下的ψ最优值，至少为整数OPT。用C03按ρ=2/3选择完整组。所选总尺寸≤2m/3，全资格且利润非负使任一最优分数解可填满所选每件的单位份额而不降值。逐包按尺寸递减排列分数份额，按单位份额分槽；物品到槽的最大权匹配可完整分配并保LP价值，且除首槽外每槽的匹配物品尺寸≤前一满槽承载质量，故去掉首槽件后余量≤1。每超载包先保首槽件与其余集合中价值较大者，至少保留一半价值。再把所有暂移物品逐件放进任一可容纳包。若尺寸≤1/3的物品无法放，所有包现载均>2/3，与现载总和≤所选总尺寸≤2m/3矛盾。重新放入的利润非负，最终每个所选组全放入，逐包硬容量。对有限有理输入，使用多项式次紧LP、槽匹配及包扫描，给确定性总位多项式实现。 因ρ−δ=1/12，近似比至少(1−e^(−1/12))/2。",
+      "scope": "C02的P01全资格且所有物品尺寸≤1/3切片。组总尺寸阈值为7m/12=(1/2+1/12)m。",
+      "evidence": [
+        {
+          "path": "archives/bottleneck-knapsack/state/审查/退役GAP选题底稿与数学边界--审查.md",
+          "sha256": "3a6d7787cf22efa03d645baf2719fa84927e55e5777d886bd38c19627913c10e",
+          "section": "C03：reserved-capacity 小物品引理"
+        },
+        {
+          "path": "research/registration/evidence/register-ab98f323ad-0001-1/gap.md",
+          "sha256": "8e14e6d6525cc353091aa0484c6c72dc447f581d6227d6232fb3f960db06b68e",
+          "section": "5. 已完成：小物品reserved-capacity的greedy引理"
+        },
+        {
+          "path": "archives/bottleneck-knapsack/state/问题/组广义指派越过半容量阈值--问题.md",
+          "sha256": "69fe94a187bbc141a9b4f019216ed8f9d8449ab7f10efdff0c54a329666ed77f",
+          "section": "开放合同及尚需恢复的模型接口"
+        },
+        {
+          "path": "research/registration/evidence/register-ab98f323ad-0001-1/gap.md",
+          "sha256": "8e14e6d6525cc353091aa0484c6c72dc447f581d6227d6232fb3f960db06b68e",
+          "section": "C02. Group GAP 的组总尺寸阈值越过 m/2【B；作者明确 open + 限域新切口】"
+        },
+        {
+          "path": "research/registration/evidence/register-ab98f323ad-0001-1/gap.md",
+          "sha256": "8e14e6d6525cc353091aa0484c6c72dc447f581d6227d6232fb3f960db06b68e",
+          "section": "1. Primary 文献与文章定性（已打开正文）"
+        }
+      ],
+      "reviewed_by": "bottleneck-3a-3a-96d5dc99ee073936",
+      "review_note": "核对与P01 Theorems 1和3一致的分数激活、保利润槽舍入，以及新2m/3留量的完整组重插。分母扩张只用在证明。",
+      "contribution": {
+        "result": "每件尺寸≤1/3且每组总尺寸≤7m/12时得到(1−e^(−1/12))/2近似，输出完整组和硬容量实际指派。",
+        "remaining": "一般越过m/2模型仍要恢复全部母接口，并处理无单件1/3上界、不同资格或同组互斥时的盈利修复。"
+      },
+      "endpoint_pins": {
+        "M-6b2b6c8e6aa544d2b5153eca1033a12f": "2d93ca132aedee910338aee7ebd0b54a82a133770e2fe60190070c0346c517a4",
+        "bottleneck-knapsack/group-gap-beyond-half-capacity": "058578c3c4f29f2de150b2163c2f9d294767576c8a4ff41f56786803341132f2"
+      },
+      "evidence_pins": {
+        "archives/bottleneck-knapsack/state/审查/退役GAP选题底稿与数学边界--审查.md": "3a6d7787cf22efa03d645baf2719fa84927e55e5777d886bd38c19627913c10e",
+        "research/registration/evidence/register-ab98f323ad-0001-1/gap.md": "8e14e6d6525cc353091aa0484c6c72dc447f581d6227d6232fb3f960db06b68e",
+        "archives/bottleneck-knapsack/state/问题/组广义指派越过半容量阈值--问题.md": "69fe94a187bbc141a9b4f019216ed8f9d8449ab7f10efdff0c54a329666ed77f"
+      },
+      "review_digest": "3e12672335417d6bc77a2b71b6ce1965d2c5277560082e0b2a384d92b52aba48"
+    },
+    "group-gap-reserved-greedy-reaches-fifth-on-tiny-groups": {
+      "edge_id": "group-gap-reserved-greedy-reaches-fifth-on-tiny-groups",
+      "kind": "transfers",
+      "status": "accepted",
+      "source_ids": [
+        "M-6b2b6c8e6aa544d2b5153eca1033a12f"
+      ],
+      "target_ids": [
+        "GA-07"
+      ],
+      "premises_mode": "all",
+      "relation_mode": "unconditional",
+      "conditions": "标准Group GAP：m个单位包，正有理公共尺寸s_i≤1/3、非负有理包依赖利润、全物品–包可指派，无额外同组同包互斥；完整组选取且每组尺寸≤m/8。取δ=1/8, ρ=2/3。",
+      "roles": {
+        "M-6b2b6c8e6aa544d2b5153eca1033a12f": "按每组总尺寸约束选择，保(1−e^(−13/24))的完整组选取LP目标。",
+        "GA-07": "得到目标域中具有两项额外尺寸上界的可执行1/5保证。"
+      },
+      "explanation": "在全物品–包可指派的标准Group GAP中，用ψ(A)表示并集物品的分数指派最优值（每物品列和≤1，每箱载重≤1）。它单调且子模：仅为证明取公分母D，把物品i分为Ds_i个质量1/D的副本，给每个包D个槽，副本在j获利v_ij/(Ds_i)。运输多面体整数性使最大加权匹配值等于原分数LP。并集与交集的两个最优匹配叠加后沿交替路径/圈重染成各集合的匹配；任何只能出现在并集一侧匹配的独占左端点，所在路径不可能另有这样的左端点，因为连接两个左端点的路径长度为偶数且首尾匹配颜色相异。逐分量选方向即可保两侧可用性和总价值。把地集换成不交的完整组保子模，计算值用原紧LP，无需扩张D。以组总尺寸为成本，比较预算B=m下的ψ最优值，至少为整数OPT。用C03按ρ=2/3选择完整组。所选总尺寸≤2m/3，全资格且利润非负使任一最优分数解可填满所选每件的单位份额而不降值。逐包按尺寸递减排列分数份额，按单位份额分槽；物品到槽的最大权匹配可完整分配并保LP价值，且除首槽外每槽的匹配物品尺寸≤前一满槽承载质量，故去掉首槽件后余量≤1。每超载包先保首槽件与其余集合中价值较大者，至少保留一半价值。再把所有暂移物品逐件放进任一可容纳包。若尺寸≤1/3的物品无法放，所有包现载均>2/3，与现载总和≤所选总尺寸≤2m/3矛盾。重新放入的利润非负，最终每个所选组全放入，逐包硬容量。对有限有理输入，使用多项式次紧LP、槽匹配及包扫描，给确定性总位多项式实现。 此处ρ−δ=13/24，e^(13/24)>1+13/24+(13/24)^2/2>5/3，故(1−e^(−13/24))/2>1/5。若只用ρ=1/2且舍入保一半，则即使δ趋零也只有(1−e^(−1/2))/2<1/5。",
+      "scope": "只涵盖每项≤1/3且每组≤m/8的GA-07切片，目标和OPT均为同域的整数真实指派。",
+      "evidence": [
+        {
+          "path": "archives/bottleneck-knapsack/state/审查/退役GAP选题底稿与数学边界--审查.md",
+          "sha256": "3a6d7787cf22efa03d645baf2719fa84927e55e5777d886bd38c19627913c10e",
+          "section": "C03：reserved-capacity 小物品引理"
+        },
+        {
+          "path": "research/registration/evidence/register-ab98f323ad-0001-1/gap.md",
+          "sha256": "8e14e6d6525cc353091aa0484c6c72dc447f581d6227d6232fb3f960db06b68e",
+          "section": "5. 已完成：小物品reserved-capacity的greedy引理"
+        },
+        {
+          "path": "archives/bottleneck-knapsack/state/审查/广义指派候选池的状态与证据边界--审查.md",
+          "sha256": "15ebb51bee034ac2fda32fecaa16fce4803675f0dae83442b7bd587f99694ad7",
+          "section": "GA-07：reserved-capacity Group GAP 从 \\(1/6\\) 到 \\(1/5\\)"
+        },
+        {
+          "path": "research/registration/evidence/register-ab98f323ad-0001-1/gap.md",
+          "sha256": "8e14e6d6525cc353091aa0484c6c72dc447f581d6227d6232fb3f960db06b68e",
+          "section": "1. Primary 文献与文章定性（已打开正文）"
+        }
+      ],
+      "reviewed_by": "bottleneck-3a-3a-96d5dc99ee073936",
+      "review_note": "核对了跨半留量修复、常数严格性与最终全组完成，对原半阈值域只记录可用切片。",
+      "contribution": {
+        "result": "在所述GA-07子类确定性地得到(1−e^(−13/24))/2>1/5的多项式硬容量近似。",
+        "remaining": "GA-07要求全部组尺寸≤m/2的原输入域，仍需在更大组或单件上界缺失时同时支付选择与全组盈利修复。"
+      },
+      "endpoint_pins": {
+        "GA-07": "269d43a1c9da0565916e98ea70889a866cc38da954e9a281b804a8ae34ead191",
+        "M-6b2b6c8e6aa544d2b5153eca1033a12f": "2d93ca132aedee910338aee7ebd0b54a82a133770e2fe60190070c0346c517a4"
+      },
+      "evidence_pins": {
+        "archives/bottleneck-knapsack/state/审查/退役GAP选题底稿与数学边界--审查.md": "3a6d7787cf22efa03d645baf2719fa84927e55e5777d886bd38c19627913c10e",
+        "research/registration/evidence/register-ab98f323ad-0001-1/gap.md": "8e14e6d6525cc353091aa0484c6c72dc447f581d6227d6232fb3f960db06b68e",
+        "archives/bottleneck-knapsack/state/审查/广义指派候选池的状态与证据边界--审查.md": "15ebb51bee034ac2fda32fecaa16fce4803675f0dae83442b7bd587f99694ad7"
+      },
+      "review_digest": "2db764b1e6b4ef0d22bbe878f46263f8174804d985d8acc4be23b3703b002165"
+    },
+    "poisson-binomial-smoothing-gives-simple-cactus-gap": {
+      "edge_id": "poisson-binomial-smoothing-gives-simple-cactus-gap",
+      "kind": "implies",
+      "status": "accepted",
+      "source_ids": [
+        "M-032553bc20c040618a69609cb0f5b63a"
+      ],
+      "target_ids": [
+        "M-214bf81eea8f433e9fca948a00cf87e0"
+      ],
+      "premises_mode": "all",
+      "relation_mode": "conditional",
+      "conditions": "取无平行边的简单cactus，任意非负边权与任意cycle-matroid独立集多面体边缘x，独立激活。应用C09恢复的固定均值离散凹平滑和G随λ单调性，两项及其他两式均在本边独立证明。",
+      "roles": {
+        "M-032553bc20c040618a69609cb0f5b63a": "提供并支付截断Binomial有限样本平滑与均值单调性，后者的有限形式保留每个圈的实际边数。",
+        "M-214bf81eea8f433e9fca948a00cf87e0": "取得简单cactus子类的锐性相关缺口常数，作为series-parallel 2-sum问题的可检验基线。"
+      },
+      "explanation": "先恢复Sergeev论文§4.1 Conjecture 4.1（arXiv:2404.00041，印刷页24）：k≥1、n≥k+1、0≤λ≤k+1，(3)为G(k,n,λ)随整数n不增且下界F(k,λ)，(4)为G随λ不增，(5)为F(k,k+1)随整数k≥1不减，(6)为其论文定义的连续实形状扩展在k≥1不减。在λ=0按连续极限取1。以下独立支付四式，无需把当前登记的开放义务当定理。令φ(z)=min(z,k)。给定其余计数Z，固定p+q，Eφ(Z+Ber(p)+Ber(q))中可变项是pq·EΔ²φ(Z)≤0。两概率取平均不增期望；反复取最小和最大概率平均可收敛到全相等（离均差平方和每步降当次极差平方的一半）。补一零概率并平滑给(3)相邻n比较；n→∞的Poisson极限给F。对h(p)=Eφ(Bin(n,p))，二阶导数为n(n−1)EΔ²φ(Bin(n−2,p))≤0，n=1为线性。h(0)=0故h(p)/p不增，代p=λ/n即(4)。对于实k≥1，论文的上不完全Gamma扩展等于λ⁻¹∫_0^λ Γ(k,t)/Γ(k)dt=E[min(Y_k,λ)]/λ，Y_k为形状k、速率1的Gamma变量。分部积分并用Γ(k+1,λ)=kΓ(k,λ)+λ^k e^(−λ)即得论文公式。对1≤a<b令Y_b=Y_a+Y_{b−a}，两个增量独立。变换到总和及比值后，Gamma密度分解成总和的Gamma(b)与独立Beta(a,b−a)，其比值均值a/b，故E[Y_a/a|Y_b]=Y_b/b。对递增凹ψ(z)=min(z,1)用条件Jensen，Eψ(Y_a/(a+1))≤Eψ((a/(a+1))Y_b/b)≤Eψ(Y_b/(b+1))，给(6)，整数限制给(5)。此外所有尺寸在(1/(k+1),1/k]时可行族为均匀拟阵，权阈值边缘质量≤k+1；同一截断计数平滑和均值单调给F(k,k+1)，以等尺寸趋近左端点和等权等边缘Poisson极限达锐。 对简单cactus，cycle matroid是桥coloops与各长度k+1≥3的圈U_{k,k+1}直和。对某圈和任意权阈值，层积分使用min(k,激活计数)；阈值边缘总质量λ≤k。 保留圈的k+1个概率坐标（阈值之外补零），平滑并用(4)得E rank≥λG(k,k+1,k)。 因Bin(k+1,k/(k+1))只有全成功时超过k，G(k,k+1,k)=1−k^k/(k+1)^(k+1)。 log损失项的实导数为log(k/(k+1))<0，故k≥2最小保证为k=2的23/27。 对权阈值积分，再对直和部件相加；桥保持1。等权三角形x_e=2/3达到23/27。",
+      "scope": "简单cactus的全部权重与合法边缘。任意简单series-parallel不一定是圈直和，2-sum耦合不在此保证内。",
+      "evidence": [
+        {
+          "path": "archives/bottleneck-knapsack/state/审查/退役GAP选题底稿与数学边界--审查.md",
+          "sha256": "3a6d7787cf22efa03d645baf2719fa84927e55e5777d886bd38c19627913c10e",
+          "section": "15 项候选的准确状态"
+        },
+        {
+          "path": "research/registration/evidence/register-ab98f323ad-0001-1/gap.md",
+          "sha256": "8e14e6d6525cc353091aa0484c6c72dc447f581d6227d6232fb3f960db06b68e",
+          "section": "C09. Sergeev Conjecture4.1 的 Binomial–Poisson 极值不等式【C/辅助；作者明确 conjecture】"
+        },
+        {
+          "path": "archives/bottleneck-knapsack/state/审查/退役GAP选题底稿与数学边界--审查.md",
+          "sha256": "3a6d7787cf22efa03d645baf2719fa84927e55e5777d886bd38c19627913c10e",
+          "section": "15 项候选的准确状态"
+        },
+        {
+          "path": "research/registration/evidence/register-ab98f323ad-0001-1/gap.md",
+          "sha256": "8e14e6d6525cc353091aa0484c6c72dc447f581d6227d6232fb3f960db06b68e",
+          "section": "C10. Graphic matroid 的2-sum结构能否给强 correlation gap【B；作者明确类问题 + 新 idea】"
+        },
+        {
+          "path": "research/registration/evidence/register-ab98f323ad-0001-1/gap.md",
+          "sha256": "8e14e6d6525cc353091aa0484c6c72dc447f581d6227d6232fb3f960db06b68e",
+          "section": "1. Primary 文献与文章定性（已打开正文）"
+        }
+      ],
+      "reviewed_by": "bottleneck-3a-3a-96d5dc99ee073936",
+      "review_note": "实读主论文Conjecture 4.1的四条准确不等式及Gamma扩展。核对独立证明、有限k+1平滑、三角形等号与直和量词。保现行端点pin。",
+      "contribution": {
+        "result": "简单cactus graphic matroid的sharp weighted-rank correlation gap是23/27。另完整恢复并证明C09登记所指Conjecture 4.1 (3)–(6)。",
+        "remaining": "仍须解决一般简单series-parallel 2-sum如何组合边缘、能否统一严格超过1−1/e及其sharp常数。若允许任意多平行边，需另区分多图域。"
+      },
+      "endpoint_pins": {
+        "M-032553bc20c040618a69609cb0f5b63a": "d4b7c48122c70642a66bd280aefb1cd33b5d15b7b780405f58205ae4cb49313c",
+        "M-214bf81eea8f433e9fca948a00cf87e0": "f8a400e2116a06ac2de1055b63cf749c5527f0a87386dae56271b2b95fa21e64"
+      },
+      "evidence_pins": {
+        "archives/bottleneck-knapsack/state/审查/退役GAP选题底稿与数学边界--审查.md": "3a6d7787cf22efa03d645baf2719fa84927e55e5777d886bd38c19627913c10e",
+        "research/registration/evidence/register-ab98f323ad-0001-1/gap.md": "8e14e6d6525cc353091aa0484c6c72dc447f581d6227d6232fb3f960db06b68e"
+      },
+      "review_digest": "c29c0608675cebdaff83d7aa8516091f4af62affeb5f28f1018c8290c3691410"
+    },
+    "poisson-smoothing-solves-compatible-two-size-gap": {
+      "edge_id": "poisson-smoothing-solves-compatible-two-size-gap",
+      "kind": "implies",
+      "status": "accepted",
+      "source_ids": [
+        "M-032553bc20c040618a69609cb0f5b63a"
+      ],
+      "target_ids": [
+        "M-1e98f0c71a6846b08ae6a93cd1b8dd0c"
+      ],
+      "premises_mode": "all",
+      "relation_mode": "conditional",
+      "conditions": "自然容量一背包LP，a∈(1/2,1], b∈(1/3,1/2]，a+b≤1。边缘任意且满足aΣ_A x+bΣ_B x≤1，非负权，w·x>0，独立激活。使用C09中固定均值的Binomial–Poisson平滑子式；该子式的证明在本边给出。",
+      "roles": {
+        "M-032553bc20c040618a69609cb0f5b63a": "其(3)的离散凹平滑证明可用于任意Poisson-binomial类计数，也给纯类F(k,1/s)极限。",
+        "M-1e98f0c71a6846b08ae6a93cd1b8dd0c": "对a+b≤1的任意混合激活及任意非负权，得到固定(a,b)的sharp correlation gap。"
+      },
+      "explanation": "给定其余Bernoulli计数Z、固定p+q，测试函数φ的期望含唯一可变量pq·E[Δ²φ(Z)]；离散凹使取平均不增期望。补零并在同类平滑到均匀概率，再取n→∞，给定均值的Poisson测试期望因此下界原期望。a+b≤1时可行集为至多两件且至多一件大物的laminar matroid。对权阈值t按激活的w_i≥t物品计数N_A,N_B，最优权重按层积分该matroid rank=min(2,1_{N_A>0}+N_B)。该rank分别对两类计数离散凹；阈值下两类独立，故可分别作上述平滑，得到期望rank≥H(u,v)=2−e^(−v)−(1+v)e^(−u−v)，其中u,v为阈值类边缘质量。H的负Hessian是e^(−u−v)乘[[1+v,v],[v,e^u−1+v]]，其主对角非负且行列式为(1+v)(e^u−1)+v≥0，故H联合凹。三角形au+bv≤1的三个顶点(0,0),(1/a,0),(0,1/b)代入，得H(u,v)≥u F(1,1/a)+v F(2,1/b)，其中F(k,λ)=E[min(Pois(λ),k)]/λ。对t积分得到min{F(1,1/a),F(2,1/b)}·(w·x)。对给较小常数的尺寸类，n个单位权同尺寸物品、x_i=1/(ns)，用Poisson极限达到下界；另一类可放零边缘零权物品。层积分使用matroid greedy保留任意非负权，未对一般非matroid可行族假设相同公式。 同常数也有单调CRS。给定x，对每个固定优先序π，按π对独立活跃集做matroid greedy；某活跃物保留当且仅当它不在较早活跃物的闭包中，因而逐物对活跃集包含关系单调。记无条件保留概率向量p^π。任意w≥0按w递减的π实现最大期望权重，故max_π w·p^π≥β w·x。若βx不在conv{p^π}的坐标向下闭包，分离超平面可取w≥0并矛盾。因此某个独立于活跃集的有限优先序混合给p≥βx，保持单调。有理x时求最大共同系数的LP有指数列、m个保留约束和一个混合归一约束（m为物品数）。其非负权对偶分离只需按权排序给最优列；给定π时，每列坐标从较早大件是否出现、较早小件出现数0、1或≥2的独立计数多项式有理计算。用有理LP分离与原始恢复得到稀疏混合，无须数值计算含指数的β，故对显式有理x可多项式构造同常数CRS。",
+      "scope": "完全解决C08兼容分支a+b≤1的固定尺寸参数weighted correlation gap及同常数单调CRS。仍用自然LP，精确算法合同用显式有理x。",
+      "evidence": [
+        {
+          "path": "archives/bottleneck-knapsack/state/审查/退役GAP选题底稿与数学边界--审查.md",
+          "sha256": "3a6d7787cf22efa03d645baf2719fa84927e55e5777d886bd38c19627913c10e",
+          "section": "15 项候选的准确状态"
+        },
+        {
+          "path": "research/registration/evidence/register-ab98f323ad-0001-1/gap.md",
+          "sha256": "8e14e6d6525cc353091aa0484c6c72dc447f581d6227d6232fb3f960db06b68e",
+          "section": "C09. Sergeev Conjecture4.1 的 Binomial–Poisson 极值不等式【C/辅助；作者明确 conjecture】"
+        },
+        {
+          "path": "archives/bottleneck-knapsack/state/审查/退役GAP选题底稿与数学边界--审查.md",
+          "sha256": "3a6d7787cf22efa03d645baf2719fa84927e55e5777d886bd38c19627913c10e",
+          "section": "15 项候选的准确状态"
+        },
+        {
+          "path": "research/registration/evidence/register-ab98f323ad-0001-1/gap.md",
+          "sha256": "8e14e6d6525cc353091aa0484c6c72dc447f581d6227d6232fb3f960db06b68e",
+          "section": "C08. 两种尺寸混合 knapsack 的 correlation gap 与 CRS【A；作者大 conjecture 的可控截面】"
+        }
+      ],
+      "reviewed_by": "bottleneck-3a-3a-96d5dc99ee073936",
+      "review_note": "逐式核对Sergeev Conjecture 4.1固定均值单调性所用的离散凹机制、两类rank、Hessian和锐性极限。C09端点保当前登记版本，应用所需子式在此给出。 同时核对了单调性、非负权分离与有理优先序列的对偶实现。",
+      "contribution": {
+        "result": "对每个兼容(a,b)精确下界是min{F(1,1/a),F(2,1/b)}，覆盖混合物品及任意非负权，并有等权纯类渐近证书。同常数单调CRS可用优先序混合获得，有理x时可多项式构造。",
+        "remaining": "a+b>1时可行族不满足交换公理，层积分和matroid greedy优先序构造均不能直接迁移；不兼容分支的sharp bound及monotone CRS仍待处理。"
+      },
+      "endpoint_pins": {
+        "M-032553bc20c040618a69609cb0f5b63a": "d4b7c48122c70642a66bd280aefb1cd33b5d15b7b780405f58205ae4cb49313c",
+        "M-1e98f0c71a6846b08ae6a93cd1b8dd0c": "69832df9d40d35ff49439dcdaab8c79439816ac55f73333dcc336622d8235f81"
+      },
+      "evidence_pins": {
+        "archives/bottleneck-knapsack/state/审查/退役GAP选题底稿与数学边界--审查.md": "3a6d7787cf22efa03d645baf2719fa84927e55e5777d886bd38c19627913c10e",
+        "research/registration/evidence/register-ab98f323ad-0001-1/gap.md": "8e14e6d6525cc353091aa0484c6c72dc447f581d6227d6232fb3f960db06b68e"
+      },
+      "review_digest": "01dc52fdd6f4777fc7bc87f84e9f06e882f968ea880763dc4ebfb3f35cf60bd3"
+    },
+    "vector-activation-defect-transfers-to-opening-recourse": {
+      "edge_id": "vector-activation-defect-transfers-to-opening-recourse",
+      "kind": "transfers",
+      "status": "accepted",
+      "source_ids": [
+        "M-db748b49766141e79b7ab59a27ad25bb"
+      ],
+      "target_ids": [
+        "M-3957aaaa66f24a77bf0a6a6ecde37f66"
+      ],
+      "premises_mode": "all",
+      "relation_mode": "unconditional",
+      "conditions": "取源族ε=0。目标是三单位容量bin H,L,R，开启费(2,1,1)，B=4，各bin仅一个资源位置。三个独立Bernoulli活跃物品a,b,c，各指派利润为1。H可放a,b,c，尺寸分别为1,1/2,1/2；L仅b，R仅c，尺寸1/2。各活跃概率p_a,p_b,p_c∈(0,1)。",
+      "roles": {
+        "M-db748b49766141e79b7ab59a27ad25bb": "其ε=0的φ在每个活跃子集上等于H的整数最优，因为a独占，b,c可同放且均为单位利润。给出全活跃时四值差的精确证书。",
+        "M-3957aaaa66f24a77bf0a6a6ecde37f66": "在两费、树eligibility、一位置interval容量切片，得到事前开启集合的期望整数补救值严格非子模。"
+      },
+      "explanation": "将开启L/R表示为相应私有物品集合S⊆{b,c}。给定活跃A，开启H与私有箱后可不损价值将S∩A每项移到其专用箱，再对H独立优化。于是V_A(H加S)=|S∩A|+φ(A\\S)。当A={a,b,c}，四个开启集合H,HL,HR,HLR的值为2,2,2,3，违反次模不等式的缺口为1。若b或c不活跃，其专用箱无作用而缺口为0；若仅a不活跃，H可容纳两件小物，无论是否开专用箱均可安置所有活跃物，缺口亦为0。故期望缺口等于p_a p_b p_c>0。资格图有H–a、H–b–L、H–c–R三分支，为树。所有四个开启集均在硬预算内。",
+      "scope": "只传递ε=0的整数可解子集值，给出C07精确非子模见证；无须把一般向量LP当作标量GAP，也不推出所有补救值缺口大小。",
+      "evidence": [
+        {
+          "path": "archives/bottleneck-knapsack/state/审查/退役GAP选题底稿与数学边界--审查.md",
+          "sha256": "3a6d7787cf22efa03d645baf2719fa84927e55e5777d886bd38c19627913c10e",
+          "section": "已有独立对象与本稿的去向"
+        },
+        {
+          "path": "research/registration/evidence/register-ab98f323ad-0001-1/gap.md",
+          "sha256": "8e14e6d6525cc353091aa0484c6c72dc447f581d6227d6232fb3f960db06b68e",
+          "section": "4. 已完成：consecutive-ones向量LP的精确反例"
+        },
+        {
+          "path": "archives/bottleneck-knapsack/state/审查/退役GAP选题底稿与数学边界--审查.md",
+          "sha256": "3a6d7787cf22efa03d645baf2719fa84927e55e5777d886bd38c19627913c10e",
+          "section": "15 项候选的准确状态"
+        },
+        {
+          "path": "research/registration/evidence/register-ab98f323ad-0001-1/gap.md",
+          "sha256": "8e14e6d6525cc353091aa0484c6c72dc447f581d6227d6232fb3f960db06b68e",
+          "section": "C07. Stochastic-appearance GBAP 的两阶段 opening/recourse【B；作者明确方向】"
+        }
+      ],
+      "reviewed_by": "bottleneck-3a-3a-96d5dc99ee073936",
+      "review_note": "逐一核对两模型的子集值和四个开启集合、各活跃情景、预算、树资格和单位置区间，证明可直接复现。",
+      "contribution": {
+        "result": "在C07目标切片内取p_a=p_b=p_c=1/2即得到期望次模缺口1/8的精确反例。",
+        "remaining": "仍需近似子模或替代结构、非自适应事前开启算法和实际期望近似保证。"
+      },
+      "endpoint_pins": {
+        "M-3957aaaa66f24a77bf0a6a6ecde37f66": "d1d3ea200cbdd6a4043be43f0602f70d7982719bac19e7eb5b0f66c25fe70a1f",
+        "M-db748b49766141e79b7ab59a27ad25bb": "5a60e13901b27d4e87aef6be9901899f614886beaef1347faba801fd9489453a"
+      },
+      "evidence_pins": {
+        "archives/bottleneck-knapsack/state/审查/退役GAP选题底稿与数学边界--审查.md": "3a6d7787cf22efa03d645baf2719fa84927e55e5777d886bd38c19627913c10e",
+        "research/registration/evidence/register-ab98f323ad-0001-1/gap.md": "8e14e6d6525cc353091aa0484c6c72dc447f581d6227d6232fb3f960db06b68e"
+      },
+      "review_digest": "1eeda7e587a5349a6cc6909e73b7e1d510435a51796eec81d33eb095418d2ded"
+    }
+  },
+  "scope": "archives/bottleneck-knapsack",
+  "boundary_nodes": [
+    "M-82d4ebf16f4b4dc9b7d41b564b9031df",
+    "M-b8540026a0fc4c52b209c4ce7311c25b",
+    "M-d05829d1479f4b8aad94f3953ab9ffc4",
+    "SEL-KNAPSACK-FIXED-X-OBSTRUCTION-v1",
+    "SEL-RESOURCE-LP-SUBMODULAR-v2",
+    "SEL-VECTOR-LP-SUBMODULAR-OBSTRUCTION-v1"
+  ]
+}

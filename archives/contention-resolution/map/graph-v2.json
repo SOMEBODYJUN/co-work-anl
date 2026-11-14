@@ -1,0 +1,338 @@
+{
+  "schema": 2,
+  "status": "registered-coverage",
+  "trust": "Author-declared mathematical reviews; no automated truth certification",
+  "registry": "research/registry.json",
+  "registry_pin": "745d75d48cc2339dc4c59fa33d8dcb72591ed086b38c2927168787e092e1eb0c",
+  "nodes": {
+    "M-1e98f0c71a6846b08ae6a93cd1b8dd0c": {
+      "object_id": "M-1e98f0c71a6846b08ae6a93cd1b8dd0c",
+      "version": 1,
+      "title": "两尺寸自然knapsack LP的全边缘sharp correlation gap目标",
+      "kind": "problem",
+      "truth_status": "open",
+      "model": "容量1，a∈(1/2,1], b∈(1/3,1/2]，任意非负w、x∈[0,1]^n且aΣ_Ax+bΣ_Bx≤1，w·x>0，R独立激活。",
+      "statement": "求E[max{w(S):S⊆R,s(S)≤1}]/(w·x)在全部合法参数的sharp下界/CRS；a+b≤1与>1结构分别保留。",
+      "quantifiers": "任意物品数与a,b,w,x；全局极值允许同时改变x。",
+      "assumptions": [
+        "保持源候选原模型，不把文献摘要或选题优先级当证明"
+      ],
+      "scope": "明确研究义务/待精确化接口；不认证现行外部开放性。",
+      "objections": "既有固定x统一权反例与Bernoulli拆分障碍不否定本全局目标。历史0.279非现行认证基线；不换成整数凸包。",
+      "body": {
+        "path": "archives/bottleneck-knapsack/state/审查/退役GAP选题底稿与数学边界--审查.md",
+        "sha256": "3a6d7787cf22efa03d645baf2719fa84927e55e5777d886bd38c19627913c10e",
+        "section": "15 项候选的准确状态"
+      },
+      "evidence": [
+        {
+          "path": "research/registration/evidence/register-ab98f323ad-0001-1/gap.md",
+          "sha256": "8e14e6d6525cc353091aa0484c6c72dc447f581d6227d6232fb3f960db06b68e",
+          "section": "C08. 两种尺寸混合 knapsack 的 correlation gap 与 CRS【A；作者大 conjecture 的可控截面】"
+        }
+      ],
+      "sources": [
+        "p25-register-v2:register-ab98f323ad-0001-1-evidence",
+        "archives/bottleneck-knapsack/state/审查/退役GAP选题底稿与数学边界--审查.md"
+      ]
+    },
+    "M-82d4ebf16f4b4dc9b7d41b564b9031df": {
+      "object_id": "M-82d4ebf16f4b4dc9b7d41b564b9031df",
+      "version": 2,
+      "title": "保持期望尺寸和价值分母的独立Bernoulli拆分可严格提高背包ratio",
+      "kind": "counterexample",
+      "truth_status": "proved",
+      "model": "容量1、独立Bernoulli激活、非负权重的自然LP背包激活模型；ρ_x为期望最优可行权重除以Σx_iw_i。大尺寸7/10、小尺寸2/5；可取一大或至多两小，两类不能混取。",
+      "statement": "原实例含一件必激活大物品和两件分别以1/10独立激活的小物品，全部权重1。期望尺寸39/50、分母6/5，期望最优101/100，ρ=101/120。将其中一小替换为两件同尺寸同权重、各以1/20独立激活的物品；所有激活仍独立，期望尺寸和分母不变，但三小至少两激活的概率为3/250，期望最优253/250，ρ=253/300，比原来严格增加1/600。因此任意保期望Bernoulli拆分总使ρ不增的逐步归约为假。",
+      "quantifiers": "存在上述三物品实例及将其中一个激活概率1/10的小物品拆成两件激活概率各1/20的小物品的保期望变换，使ρ_new>ρ_old。它是对“每个此类实例和每次此类拆分均有ρ_new≤ρ_old”这一全称方法合同的反例。",
+      "assumptions": [
+        "容量1；大尺寸7/10，小尺寸2/5，全部价值为1。",
+        "大物品确定激活，原两小独立以1/10激活；拆分后的小概率为(1/10,1/20,1/20)，全部相互独立。",
+        "比较保持期望总尺寸和Σx_iw_i，独立副本均可同时激活。"
+      ],
+      "scope": "仅否定任意保期望成本独立Bernoulli拆分都降低或不升ρ的逐步证明方向；不排除其他附加条件下的拆分、改变x的严谨全局变换或某个不同的全局Poisson极值比较。",
+      "objections": "主body有完整显式概率计算；两尺寸和自然LP模型由同页模型节与全文资源证据补齐。该存在性反例可精确证明，故标proved而非有限扫描；不把其被否方法桥等同于全局CRS问题。现有SEL-KNAPSACK-FIXED-X-OBSTRUCTION-v1的精确Claim行只指五物品统一权反例，未覆盖本命题；本身份由根work.py research new-id --count 1一次分配。未把笼统后续方向或历史1/3文献报告增造对象。 本次定向整合补入资源启用批的对应独立推导/复核证据；主数学陈述不变，旧批资产由本批明确替代。",
+      "body": {
+        "path": "archives/contention-resolution/state/反例/固定激活背包的类内统一权与拆分障碍--反例.md",
+        "sha256": "78a89049aa00573ea0b830f3f6ccd09a381e23b0ce3e7abbb68e43a7dcc337c5",
+        "section": "保持期望的拆分可严格升ratio"
+      },
+      "evidence": [
+        {
+          "path": "archives/contention-resolution/state/反例/固定激活背包的类内统一权与拆分障碍--反例.md",
+          "sha256": "78a89049aa00573ea0b830f3f6ccd09a381e23b0ce3e7abbb68e43a7dcc337c5",
+          "section": "模型与被否定的量词"
+        },
+        {
+          "path": "archives/contention-resolution/state/资料/两尺寸固定激活的类内统一权重障碍--资料.md",
+          "sha256": "52461c9df21e71f242312efa28048d0c5cc60eec6eca1ca544b17a40b07451c0"
+        },
+        {
+          "path": "tools/evidence/retired-config-certificates/original/history/retired_topic_selection/multi_lane/research/topic_selection/notes/two_size_knapsack_obstructions.md",
+          "sha256": "65236f0e34af962565e6ab64d946eaa9d7ab1145e1524e75a582e06a801a1f07",
+          "section": "3. 保持期望成本的Bernoulli拆分不总降低ratio"
+        },
+        {
+          "path": "archives/resource-activation/state/资料/第二轮GAP候选与CRS边界--资料.md",
+          "sha256": "3ff76bddbd2b86c4373efbd30f7c9be5758ddfa81198014a5e6dd5edb65c827a",
+          "section": "3. C08：两尺寸 knapsack 的精确障碍"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/retired_topic_selection/multi_lane/research/topic_selection/notes/two_size_knapsack_obstructions.md：§3。",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:history/retired_topic_selection/multi_lane/research/topic_selection/notes/two_size_knapsack_obstructions.md：§3。"
+      ]
+    },
+    "SEL-KNAPSACK-FIXED-X-OBSTRUCTION-v1": {
+      "object_id": "SEL-KNAPSACK-FIXED-X-OBSTRUCTION-v1",
+      "version": 2,
+      "title": "五物品固定激活概率下类内统一权重归约的精确反例",
+      "kind": "counterexample",
+      "truth_status": "proved",
+      "model": "容量为1的单背包；物品独立激活R_x，尺寸s_i>0、权重w_i≥0；自然LP域Σs_i x_i≤1。对Σx_iw_i>0，ρ_x(w)=E[max{Σ_{i∈I}w_i:I⊆R_x,Σ_{i∈I}s_i≤1}]/Σx_iw_i。",
+      "statement": "取s=(7/10,7/10,2/5,2/5,2/5)、固定x=(3/5,13/50,17/100,17/50,23/50)，则Σs_ix_i=99/100。对w⁰=(2,2,1,1,2)，ρ_x(w⁰)=117253/187500。令U为所有允许任意零权sub-support、且每尺寸类内正权统一的非负向量，排除零分母，则min_{w∈U}ρ_x(w)=52726561/84062500，由(2,2,1,1,1)达到；该最小值比ρ_x(w⁰)大237199/126093750>0。因此固定x的最坏权重类内统一归约不成立。",
+      "quantifiers": "存在上述固定五物品(s,x)与w⁰；对每个M⊆[5]及每对u,v≥0，设大物品权重为u·1_{i∈M}、小物品权重为v·1_{i∈M}，只要分母正，其ρ_x均严格大于ρ_x(w⁰)，且上述U内最小值有达到向量。",
+      "assumptions": [
+        "激活在各物品间独立，容量为1，仅要求自然LP期望尺寸约束。",
+        "比较时固定五个激活概率x及尺寸s，不得同时改变x。",
+        "允许每一类有任意零权物品；ρ仅对正分母定义。"
+      ],
+      "scope": "否定固定x的类内统一最坏权重方法引理。不是给定边缘位于整数背包凸包的模型，不是中央max-min BMKP；不反驳允许改变x的全局归约、一般背包CRS猜想或其他全局Poisson比较。",
+      "objections": "成熟正文给出全连续族覆盖：固定sub-support并归一小类正权后，分子在r∈[0,1]、[1,2]、[2,∞)逐段仿射，分母为正仿射，比值各段单调或常数，仅需r=0,1,2,∞；全部sub-support的Fraction枚举和冻结输出给出精确最小值。已实读两份分配正文、原说明、支持脚本及冻结JSON；本次不重跑证书或60个历史浮点LP，不把一次运行另立对象。精确Claim行仅属于本命题，页面另含的拆分反例另立身份；未认证新颖性或当前文献版本。另已实读跨模型复核页并将其唯一“固定$x$背包”节并入证据；该节是同一固定x命题的连续权比复核，不另立审查总对象。该文件不在本批materials中，其材料归属由Boss/lead协调。 本次定向整合补入资源启用批的对应独立推导/复核证据；主数学陈述不变，旧批资产由本批明确替代。",
+      "body": {
+        "path": "archives/contention-resolution/state/反例/固定激活背包的类内统一权与拆分障碍--反例.md",
+        "sha256": "78a89049aa00573ea0b830f3f6ccd09a381e23b0ce3e7abbb68e43a7dcc337c5",
+        "section": "五物品精确证书"
+      },
+      "evidence": [
+        {
+          "path": "archives/contention-resolution/state/反例/固定激活背包的类内统一权与拆分障碍--反例.md",
+          "sha256": "78a89049aa00573ea0b830f3f6ccd09a381e23b0ce3e7abbb68e43a7dcc337c5",
+          "section": "模型与被否定的量词"
+        },
+        {
+          "path": "archives/contention-resolution/state/反例/固定激活背包的类内统一权与拆分障碍--反例.md",
+          "sha256": "78a89049aa00573ea0b830f3f6ccd09a381e23b0ce3e7abbb68e43a7dcc337c5",
+          "section": "精确程序的实际覆盖和本次一次运行"
+        },
+        {
+          "path": "archives/contention-resolution/state/资料/两尺寸固定激活的类内统一权重障碍--资料.md",
+          "sha256": "52461c9df21e71f242312efa28048d0c5cc60eec6eca1ca544b17a40b07451c0"
+        },
+        {
+          "path": "tools/evidence/retired-config-certificates/related/history/retired_topic_selection/multi_lane/research/topic_selection/probes/gap_tools/exact_uniformization_counterexample.py",
+          "sha256": "0fa3a6304276c3b74488f21f88c793a1700966a44ab38f8639ba69c20ac8633b"
+        },
+        {
+          "path": "tools/evidence/retired-config-certificates/related/history/retired_topic_selection/multi_lane/research/topic_selection/probes/gap_tools/exact_uniformization_counterexample.json",
+          "sha256": "04f7adfa83d84f4f7474014ba99c6acc4b4ed03c02a42b9cdb7896e2e2c1ddcd"
+        },
+        {
+          "path": "archives/customer-attraction/state/审查/退役选题跨模型复核的独立性与承重前提--审查.md",
+          "sha256": "377bd07b3a1dcc2d890c5526abee271ad7c785a80c0030146a020539bed6f9f1",
+          "section": "固定$x$背包"
+        },
+        {
+          "path": "archives/resource-activation/state/计算/固定激活统一化反例程序重放--计算.md",
+          "sha256": "36ab0e9525e912aac218020b8a8065d2745dcb20c69aa8451a59c4727a43429a"
+        },
+        {
+          "path": "archives/resource-activation/state/计算/固定激活统一化反例精确复核--计算.md",
+          "sha256": "f37db97a4f4d6126b1bddc78fce87c5a838dc4d7448bd4df4ef020fa78348fa6"
+        },
+        {
+          "path": "archives/resource-activation/state/资料/第二轮GAP候选与CRS边界--资料.md",
+          "sha256": "3ff76bddbd2b86c4373efbd30f7c9be5758ddfa81198014a5e6dd5edb65c827a",
+          "section": "3. C08：两尺寸 knapsack 的精确障碍"
+        }
+      ],
+      "sources": [
+        "SEL-KNAPSACK-FIXED-X-OBSTRUCTION-v1；tools/evidence/retired-topic-claims/original/history/retired_topic_selection/multi_lane/research/topic_selection/CLAIMS.md：第二轮新增的精确数学身份中的对应行。",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/retired_topic_selection/multi_lane/research/topic_selection/notes/two_size_knapsack_obstructions.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:history/retired_topic_selection/multi_lane/research/topic_selection/notes/two_size_knapsack_obstructions.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/retired_topic_selection/multi_lane/research/topic_selection/notes/round2_independent_root_review.md：固定x背包连续域独立复核；仅限该节同命题。"
+      ]
+    }
+  },
+  "edges": {
+    "two-size-bernoulli-split-blocks-stepwise-poisson-reduction": {
+      "edge_id": "two-size-bernoulli-split-blocks-stepwise-poisson-reduction",
+      "kind": "implies",
+      "status": "accepted",
+      "source_ids": [
+        "M-82d4ebf16f4b4dc9b7d41b564b9031df"
+      ],
+      "target_ids": [
+        "M-1e98f0c71a6846b08ae6a93cd1b8dd0c"
+      ],
+      "premises_mode": "all",
+      "relation_mode": "unconditional",
+      "conditions": "容量1；a∈(1/2,1]、b∈(1/3,1/2]；独立Bernoulli激活R_x，非负权w，自然LP约束aΣ_Ax_i+bΣ_Bx_i≤1，且D=w·x>0。令N=E[max{w(S):S⊆R_x,s(S)≤1}]、ρ=N/D。两件大不可同取，三件小不可同取，两件小可同取。证书均取a=7/10、b=2/5，a+b=11/10>1，故一大不能和一小同取。一次拆分把一个物品换成两个彼此独立且与其他物品独立的副本，每个副本保留原尺寸和权重，其激活概率和等于原概率。",
+      "roles": {
+        "M-82d4ebf16f4b4dc9b7d41b564b9031df": "提供拆分前后的合法实例，全部单位权，在相同类期望激活数、期望尺寸和价值分母下给出严格上升。",
+        "M-1e98f0c71a6846b08ae6a93cd1b8dd0c": "其不相容切片允许这两个地集和对应边缘，故无法调用每次拆分都使ρ不增的全称证明步骤。"
+      },
+      "explanation": "原三件为(A₁,B₁,B₂)，s=(7/10,2/5,2/5)，w=(1,1,1)，x=(1,1/10,1/10)。以(B₂′,B₂″)替换B₂后，s′=(7/10,2/5,2/5,2/5)，w′=(1,1,1,1)，x′=(1,1/10,1/20,1/20)。所有激活均独立（第一坐标为常量）。两实例的类边缘和相同，为(1,1/5)，故期望尺寸39/50、D=6/5。因一大必活跃且不能与小物同取，最优值为1+1_{至少两小激活}。原概率为1/100；新概率为(1/10)(1/20)+(1/10)(1/20)+(1/20)^2−2(1/10)(1/20)^2=3/250，三件同活跃的重复计数扣两次。故N由101/100增至253/250，ρ由101/120增至253/300，差1/600>0。新副本可以同时激活，两件小可同取使至少两件的小类胜过大件，这正是把固定均值当作逐步比值单调时丢失的事件。全部正权在两个尺寸类内都已统一，故这项失败不依赖固定x权重统一化反例。",
+      "scope": "否定“每个保持期望尺寸和价值分母的独立同尺寸、同权拆分都使ρ不增”，包括将该全称命题迭代至Poisson极限的路线。旧实例另外给合法但较弱的全域上界101/120，增量1/600是两个比值之差。两实例均在自然LP但不在整数可行集凸包内，因为Σ_Ax_i+(Σ_Bx_i)/2=11/10>1。兼容a+b≤1时一大一小可同取，本例的最优值事件公式随之改变。",
+      "contribution": {
+        "result": "C08严格不相容分支中，即使全部物品等权，保持类均值及分母的单次等分仍可把ρ提高1/600。不能用“逐步拆分始终不升”把该分支统一归约到Poisson计数；拆分前的单个合法实例独立给该分支和全域下确界≤101/120。",
+        "remaining": "仍须比较其他具有额外条件的拆分或改变边缘的整体极值变换，或另证不相容分支的匹配sharp下界与CRS。此差值没有比较任何一般Poisson极限与全域下确界。"
+      },
+      "evidence": [
+        {
+          "path": "archives/bottleneck-knapsack/state/审查/退役GAP选题底稿与数学边界--审查.md",
+          "sha256": "3a6d7787cf22efa03d645baf2719fa84927e55e5777d886bd38c19627913c10e",
+          "section": "15 项候选的准确状态"
+        },
+        {
+          "path": "research/registration/evidence/register-ab98f323ad-0001-1/gap.md",
+          "sha256": "8e14e6d6525cc353091aa0484c6c72dc447f581d6227d6232fb3f960db06b68e",
+          "section": "C08. 两种尺寸混合 knapsack 的 correlation gap 与 CRS【A；作者大 conjecture 的可控截面】"
+        },
+        {
+          "path": "archives/contention-resolution/state/反例/固定激活背包的类内统一权与拆分障碍--反例.md",
+          "sha256": "78a89049aa00573ea0b830f3f6ccd09a381e23b0ce3e7abbb68e43a7dcc337c5",
+          "section": "保持期望的拆分可严格升ratio"
+        },
+        {
+          "path": "archives/contention-resolution/state/反例/固定激活背包的类内统一权与拆分障碍--反例.md",
+          "sha256": "78a89049aa00573ea0b830f3f6ccd09a381e23b0ce3e7abbb68e43a7dcc337c5",
+          "section": "模型与被否定的量词"
+        },
+        {
+          "path": "archives/contention-resolution/state/资料/两尺寸固定激活的类内统一权重障碍--资料.md",
+          "sha256": "52461c9df21e71f242312efa28048d0c5cc60eec6eca1ca544b17a40b07451c0"
+        },
+        {
+          "path": "tools/evidence/retired-config-certificates/original/history/retired_topic_selection/multi_lane/research/topic_selection/notes/two_size_knapsack_obstructions.md",
+          "sha256": "65236f0e34af962565e6ab64d946eaa9d7ab1145e1524e75a582e06a801a1f07",
+          "section": "3. 保持期望成本的Bernoulli拆分不总降低ratio"
+        },
+        {
+          "path": "archives/resource-activation/state/资料/第二轮GAP候选与CRS边界--资料.md",
+          "sha256": "3ff76bddbd2b86c4373efbd30f7c9be5758ddfa81198014a5e6dd5edb65c827a",
+          "section": "3. C08：两尺寸 knapsack 的精确障碍"
+        }
+      ],
+      "reviewed_by": "Boss1",
+      "review_note": "逐件核对原/新实例的自然LP成本、分母和独立激活期望，按至少两小活跃事件推导两个有理比，并用完全激活枚举复核。",
+      "endpoint_pins": {
+        "M-1e98f0c71a6846b08ae6a93cd1b8dd0c": "69832df9d40d35ff49439dcdaab8c79439816ac55f73333dcc336622d8235f81",
+        "M-82d4ebf16f4b4dc9b7d41b564b9031df": "3bdfff588586f5b75d4c5e47a9bb9ffed501b891419b0b1d57b4b5bd2b5eb0be"
+      },
+      "evidence_pins": {
+        "archives/bottleneck-knapsack/state/审查/退役GAP选题底稿与数学边界--审查.md": "3a6d7787cf22efa03d645baf2719fa84927e55e5777d886bd38c19627913c10e",
+        "research/registration/evidence/register-ab98f323ad-0001-1/gap.md": "8e14e6d6525cc353091aa0484c6c72dc447f581d6227d6232fb3f960db06b68e",
+        "archives/contention-resolution/state/反例/固定激活背包的类内统一权与拆分障碍--反例.md": "78a89049aa00573ea0b830f3f6ccd09a381e23b0ce3e7abbb68e43a7dcc337c5",
+        "archives/contention-resolution/state/资料/两尺寸固定激活的类内统一权重障碍--资料.md": "52461c9df21e71f242312efa28048d0c5cc60eec6eca1ca544b17a40b07451c0",
+        "tools/evidence/retired-config-certificates/original/history/retired_topic_selection/multi_lane/research/topic_selection/notes/two_size_knapsack_obstructions.md": "65236f0e34af962565e6ab64d946eaa9d7ab1145e1524e75a582e06a801a1f07",
+        "archives/resource-activation/state/资料/第二轮GAP候选与CRS边界--资料.md": "3ff76bddbd2b86c4373efbd30f7c9be5758ddfa81198014a5e6dd5edb65c827a"
+      },
+      "review_digest": "d50755c8561f37602fbdcefe3514602632ad6504e046a9cdda2822af2f4593d6"
+    },
+    "two-size-fixed-x-witness-gives-gap-upper-bound": {
+      "edge_id": "two-size-fixed-x-witness-gives-gap-upper-bound",
+      "kind": "implies",
+      "status": "accepted",
+      "source_ids": [
+        "SEL-KNAPSACK-FIXED-X-OBSTRUCTION-v1"
+      ],
+      "target_ids": [
+        "M-1e98f0c71a6846b08ae6a93cd1b8dd0c"
+      ],
+      "premises_mode": "all",
+      "relation_mode": "unconditional",
+      "conditions": "容量1；a∈(1/2,1]、b∈(1/3,1/2]；独立Bernoulli激活R_x，非负权w，自然LP约束aΣ_Ax_i+bΣ_Bx_i≤1，且D=w·x>0。令N=E[max{w(S):S⊆R_x,s(S)≤1}]、ρ=N/D。两件大不可同取，三件小不可同取，两件小可同取。证书均取a=7/10、b=2/5，a+b=11/10>1，故一大不能和一小同取。类内统一权比较保持相同五件物品的尺寸和每个边缘x_i，允许各类任意零权子支撑。",
+      "roles": {
+        "SEL-KNAPSACK-FIXED-X-OBSTRUCTION-v1": "提供自然LP中的合法五物品证书及其同一x下对全部类内统一正权的严格分离。",
+        "M-1e98f0c71a6846b08ae6a93cd1b8dd0c": "其全域及不相容切片的下确界包含这组尺寸、边缘和权重，故继承可核的上界与固定x归约的适用边界。"
+      },
+      "explanation": "按(A₁,A₂,B₁,B₂,B₃)排列，尺寸(7/10,7/10,2/5,2/5,2/5)，x=(3/5,13/50,17/100,17/50,23/50)，w=(2,2,1,1,2)。类边缘和为43/50、97/100，故自然LP成本(7/10)(43/50)+(2/5)(97/100)=99/100，D=63/20。每个激活集的最优值V取大类最大激活权与小类最大两件激活权之和的较大者。设p=Pr(至少一大激活)=1−(1−x₁)(1−x₂)=88/125，q=Pr(B₁或B₂激活)=1−(1−x₃)(1−x₄)=2261/5000。由独立性，Pr(V≥1)=1−(1−p)(1−x₅)(1−q)=28513739/31250000；Pr(V≥2)=1−(1−p)(1−x₅)(1−x₃x₄)=26543711/31250000；Pr(V≥3)=x₅q=52003/250000。相加得N=2462313/1250000，除以D得117253/187500。若尝试把w替换成类内统一正权，对任一支撑M将小类正权归一为1，令大类权比为r。各激活集的最优值是max(r·1_{M中有大物激活},min(2,M中活跃小件数))，故分子在[0,1]、[1,2]、[2,∞)逐段仿射，分母为仿射且在正分母域为正，比值各段单调或常数。纯一类支撑及零分母端点由同一齐次比或无穷远极限处理。于是只查r=0,1,2,∞。可用闭式复核全部32个支撑：设s_A,s_B为支撑内两类边缘和，p_A为支撑内至少一大激活概率，q_B为支撑内无小物激活概率，m_B=s_B−1_{支撑含三小}x₃x₄x₅。按四端点，分子分别为m_B、m_B+p_Aq_B、2p_A+(1−p_A)m_B、p_A；分母分别为s_B、s_A+s_B、2s_A+s_B、s_A。剔除零分母后各端点最小比依次为235853/242500、35989489/57187500、52726561/84062500、176/215，整体最小由(2,2,1,1,1)达到，高出证书237199/126093750。任何逐物保证Pr(i被保留)≥c x_i的可行选择规则均满足cD≤E[w(输出)]≤N，故同一证书排除c严格大于117253/187500的统一保证。",
+      "scope": "上界适用于自然LP的(a,b)=(7/10,2/5)切片、不相容分支的全参数下确界及C08全域下确界。固定x方法反例允许零权子支撑，且该x不在整数可行集凸包内，因为Σ_Ax_i+(Σ_Bx_i)/2=269/200>1违反所有整数可行集满足的有效不等式。证书无同尺寸拆分步骤，兼容分支由独立的层流拟阵论证处理。",
+      "contribution": {
+        "result": "C08全域下确界≤该固定尺寸切片下确界≤117253/187500，因此排除严格更高的统一ratio下界或CRS留存常数；并严格否定固定x时可用类内统一正权向量取得不更高ratio的全称归约，即使允许任意零权子支撑。",
+        "remaining": "该证书的数值没有匹配下界，连该固定x的非负权最优值也未由此证书确定。允许同时改变x的全局均匀化与不相容分支的sharp下界及对应CRS仍须独立证明。"
+      },
+      "evidence": [
+        {
+          "path": "archives/bottleneck-knapsack/state/审查/退役GAP选题底稿与数学边界--审查.md",
+          "sha256": "3a6d7787cf22efa03d645baf2719fa84927e55e5777d886bd38c19627913c10e",
+          "section": "15 项候选的准确状态"
+        },
+        {
+          "path": "research/registration/evidence/register-ab98f323ad-0001-1/gap.md",
+          "sha256": "8e14e6d6525cc353091aa0484c6c72dc447f581d6227d6232fb3f960db06b68e",
+          "section": "C08. 两种尺寸混合 knapsack 的 correlation gap 与 CRS【A；作者大 conjecture 的可控截面】"
+        },
+        {
+          "path": "archives/contention-resolution/state/反例/固定激活背包的类内统一权与拆分障碍--反例.md",
+          "sha256": "78a89049aa00573ea0b830f3f6ccd09a381e23b0ce3e7abbb68e43a7dcc337c5",
+          "section": "模型与被否定的量词"
+        },
+        {
+          "path": "archives/contention-resolution/state/资料/两尺寸固定激活的类内统一权重障碍--资料.md",
+          "sha256": "52461c9df21e71f242312efa28048d0c5cc60eec6eca1ca544b17a40b07451c0"
+        },
+        {
+          "path": "archives/resource-activation/state/资料/第二轮GAP候选与CRS边界--资料.md",
+          "sha256": "3ff76bddbd2b86c4373efbd30f7c9be5758ddfa81198014a5e6dd5edb65c827a",
+          "section": "3. C08：两尺寸 knapsack 的精确障碍"
+        },
+        {
+          "path": "archives/contention-resolution/state/反例/固定激活背包的类内统一权与拆分障碍--反例.md",
+          "sha256": "78a89049aa00573ea0b830f3f6ccd09a381e23b0ce3e7abbb68e43a7dcc337c5",
+          "section": "五物品精确证书"
+        },
+        {
+          "path": "archives/contention-resolution/state/反例/固定激活背包的类内统一权与拆分障碍--反例.md",
+          "sha256": "78a89049aa00573ea0b830f3f6ccd09a381e23b0ce3e7abbb68e43a7dcc337c5",
+          "section": "精确程序的实际覆盖和本次一次运行"
+        },
+        {
+          "path": "tools/evidence/retired-config-certificates/related/history/retired_topic_selection/multi_lane/research/topic_selection/probes/gap_tools/exact_uniformization_counterexample.py",
+          "sha256": "0fa3a6304276c3b74488f21f88c793a1700966a44ab38f8639ba69c20ac8633b"
+        },
+        {
+          "path": "tools/evidence/retired-config-certificates/related/history/retired_topic_selection/multi_lane/research/topic_selection/probes/gap_tools/exact_uniformization_counterexample.json",
+          "sha256": "04f7adfa83d84f4f7474014ba99c6acc4b4ed03c02a42b9cdb7896e2e2c1ddcd"
+        },
+        {
+          "path": "archives/customer-attraction/state/审查/退役选题跨模型复核的独立性与承重前提--审查.md",
+          "sha256": "377bd07b3a1dcc2d890c5526abee271ad7c785a80c0030146a020539bed6f9f1",
+          "section": "固定$x$背包"
+        },
+        {
+          "path": "archives/resource-activation/state/计算/固定激活统一化反例程序重放--计算.md",
+          "sha256": "36ab0e9525e912aac218020b8a8065d2745dcb20c69aa8451a59c4727a43429a"
+        },
+        {
+          "path": "archives/resource-activation/state/计算/固定激活统一化反例精确复核--计算.md",
+          "sha256": "f37db97a4f4d6126b1bddc78fce87c5a838dc4d7448bd4df4ef020fa78348fa6"
+        }
+      ],
+      "reviewed_by": "Boss1",
+      "review_note": "按钉住的C08定义逐件代入自然LP，用整数尾概率独立计算一般权见证，再用支撑概率公式和Fraction遍历四个连续权比端点，核对128次尝试中114个正分母与冻结证书一致。",
+      "endpoint_pins": {
+        "M-1e98f0c71a6846b08ae6a93cd1b8dd0c": "69832df9d40d35ff49439dcdaab8c79439816ac55f73333dcc336622d8235f81",
+        "SEL-KNAPSACK-FIXED-X-OBSTRUCTION-v1": "6d8ec3539b0dd8ca77de2366535cdc1883c345babaf3e5671e003f869596e7eb"
+      },
+      "evidence_pins": {
+        "archives/bottleneck-knapsack/state/审查/退役GAP选题底稿与数学边界--审查.md": "3a6d7787cf22efa03d645baf2719fa84927e55e5777d886bd38c19627913c10e",
+        "research/registration/evidence/register-ab98f323ad-0001-1/gap.md": "8e14e6d6525cc353091aa0484c6c72dc447f581d6227d6232fb3f960db06b68e",
+        "archives/contention-resolution/state/反例/固定激活背包的类内统一权与拆分障碍--反例.md": "78a89049aa00573ea0b830f3f6ccd09a381e23b0ce3e7abbb68e43a7dcc337c5",
+        "archives/contention-resolution/state/资料/两尺寸固定激活的类内统一权重障碍--资料.md": "52461c9df21e71f242312efa28048d0c5cc60eec6eca1ca544b17a40b07451c0",
+        "archives/resource-activation/state/资料/第二轮GAP候选与CRS边界--资料.md": "3ff76bddbd2b86c4373efbd30f7c9be5758ddfa81198014a5e6dd5edb65c827a",
+        "tools/evidence/retired-config-certificates/related/history/retired_topic_selection/multi_lane/research/topic_selection/probes/gap_tools/exact_uniformization_counterexample.py": "0fa3a6304276c3b74488f21f88c793a1700966a44ab38f8639ba69c20ac8633b",
+        "tools/evidence/retired-config-certificates/related/history/retired_topic_selection/multi_lane/research/topic_selection/probes/gap_tools/exact_uniformization_counterexample.json": "04f7adfa83d84f4f7474014ba99c6acc4b4ed03c02a42b9cdb7896e2e2c1ddcd",
+        "archives/customer-attraction/state/审查/退役选题跨模型复核的独立性与承重前提--审查.md": "377bd07b3a1dcc2d890c5526abee271ad7c785a80c0030146a020539bed6f9f1",
+        "archives/resource-activation/state/计算/固定激活统一化反例程序重放--计算.md": "36ab0e9525e912aac218020b8a8065d2745dcb20c69aa8451a59c4727a43429a",
+        "archives/resource-activation/state/计算/固定激活统一化反例精确复核--计算.md": "f37db97a4f4d6126b1bddc78fce87c5a838dc4d7448bd4df4ef020fa78348fa6"
+      },
+      "review_digest": "15cfa6b23da0c8fe4450e5726668b522e7b633e9c34350524bf977628512491a"
+    }
+  },
+  "scope": "archives/contention-resolution",
+  "boundary_nodes": [
+    "M-1e98f0c71a6846b08ae6a93cd1b8dd0c"
+  ]
+}

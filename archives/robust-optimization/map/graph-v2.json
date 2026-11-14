@@ -1,0 +1,111 @@
+{
+  "schema": 2,
+  "status": "registered-coverage",
+  "trust": "Author-declared mathematical reviews; no automated truth certification",
+  "registry": "research/registry.json",
+  "registry_pin": "745d75d48cc2339dc4c59fa33d8dcb72591ed086b38c2927168787e092e1eb0c",
+  "nodes": {
+    "robust-optimization/bounded-fixed-mean-w1-convex-order-maximum": {
+      "object_id": "robust-optimization/bounded-fixed-mean-w1-convex-order-maximum",
+      "version": 1,
+      "title": "有界定均值 W1 球的凸序最大分布",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "实直线闭区间上的概率分布，绝对距离运输，均值等于参考分布均值。",
+      "statement": "若参考积分分位为 G₀、均值为 m、W₁ 半径为 r，则 G*(p)=max{G₀(p)−r/2, ap, m−b(1−p)} 是球内凸序最大分布的积分分位函数。该分布同时最大化全部凸损失，且唯一。显式有限有理输入可逐段精确构造。",
+      "quantifiers": "对每个实 a≤b、每个支撑于 [a,b] 的参考分布、每个 r≥0、每个球内同均值分布，以及每个实值凸损失。",
+      "assumptions": [
+        "所有候选与参考分布使用同一支撑区间和均值。",
+        "使用 W₁ 的绝对运输费用。",
+        "位算法要求显式有理原子、质量、区间端点与半径。"
+      ],
+      "scope": "允许连续或原子参考分布与退化区间。位算法仅对明示有限有理输入；其它 p、矩约束或鞅稳定性另行研究。",
+      "objections": "点态量距下界需要总变差可行性；证明通过差函数先减后增给出该条件。有限支撑输出只用参考原子及两端点。",
+      "body": {
+        "path": "archives/robust-optimization/state/定理/有界定均值W1球的凸序最大分布--定理.md",
+        "sha256": "65a51ba0823a7de0e6f33969ded684815ff1a3921836f6da259574741a39615b"
+      },
+      "evidence": [],
+      "sources": []
+    },
+    "robust-optimization/random-convex-order-candidate-lane": {
+      "object_id": "robust-optimization/random-convex-order-candidate-lane",
+      "version": 1,
+      "title": "随机分布鲁棒与凸序候选线",
+      "kind": "resource",
+      "truth_status": "conjecture",
+      "model": "Exact model and domain are stated in the frozen body; this record preserves that scope verbatim.",
+      "statement": "实读 robust lane 选题卡，保留固定均值凸序/Wasserstein/DRO/鞅输运/风险变换四类候选及已解决的 W∞ 排雷；不把未固定 p 的旧种子、文献摘要或相邻模型的 robust 结果升级为新定理。",
+      "quantifiers": "The quantifiers, domain, and status are exactly those stated in the frozen body; no universal extension is inferred.",
+      "assumptions": [
+        "All assumptions and boundary conditions are retained in the cited body; this registration does not enlarge the claim."
+      ],
+      "scope": "Exact source scope in this frozen document; no broader claim is inferred.",
+      "objections": "Status: retained-candidate-map-literature-scope-checked. Source truth-status note: candidate-map-not-theorem. Any open or finite-only boundary remains explicit in the body.",
+      "body": {
+        "path": "archives/robust-optimization/state/资料/随机分布鲁棒与凸序候选线--资料.md",
+        "sha256": "0c8019bfbf7aa77db849e1e19c8372a8fba4e2cd0172c35762e355455c0d9c3d",
+        "section": "来源身份与模型边界"
+      },
+      "evidence": [],
+      "sources": [
+        "source:register-ab98f323ad-0094:archives/robust-optimization/state/资料/随机分布鲁棒与凸序候选线--资料.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/retired_topic_selection/multi_lane/research/topic_selection/lanes/robust.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:history/retired_topic_selection/multi_lane/research/topic_selection/lanes/robust.md"
+      ],
+      "keywords": []
+    }
+  },
+  "edges": {
+    "robust-candidate-lane-motivates-bounded-fixed-mean-w1-maximum": {
+      "edge_id": "robust-candidate-lane-motivates-bounded-fixed-mean-w1-maximum",
+      "kind": "motivates",
+      "status": "accepted",
+      "source_ids": [
+        "robust-optimization/random-convex-order-candidate-lane"
+      ],
+      "target_ids": [
+        "robust-optimization/bounded-fixed-mean-w1-convex-order-maximum"
+      ],
+      "premises_mode": "all",
+      "relation_mode": "context",
+      "conditions": "实直线、同一闭区间与同均值、绝对运输费用的 W₁ 球。",
+      "roles": {
+        "robust-optimization/random-convex-order-candidate-lane": "旧资料中的第一个候选族提出 W₁ 有界支撑下共同最坏分布问题。",
+        "robust-optimization/bounded-fixed-mean-w1-convex-order-maximum": "独立证明以积分分位函数给出该明确域内的唯一凸序最大分布。"
+      },
+      "explanation": "将旧候选明确限定为参考分布和所有竞争分布共享有界区间及均值，运输成本取绝对差。积分分位 G 的两个端点给 |G−G₀|≤r/2，下界再与由支撑得到的两条直线合并。三分支的最大值可行，因为它和 G₀ 的差先降后升，总变差至多 r；其点态最小性经 call 表示给统一凸序支配。旧资源给出问题方向，数学推导由新定理正文承担。其余 p、其它矩约束和鞅稳定性仍分别处理。",
+      "scope": "同档问题来源关系和已证 W₁ 子问题。结论并未将不同度量或额外约束的候选合成。",
+      "evidence": [
+        {
+          "path": "archives/robust-optimization/state/资料/随机分布鲁棒与凸序候选线--资料.md",
+          "sha256": "0c8019bfbf7aa77db849e1e19c8372a8fba4e2cd0172c35762e355455c0d9c3d",
+          "section": "凸序球极值和 peacock 结构"
+        },
+        {
+          "path": "archives/robust-optimization/state/定理/有界定均值W1球的凸序最大分布--定理.md",
+          "sha256": "65a51ba0823a7de0e6f33969ded684815ff1a3921836f6da259574741a39615b",
+          "section": "陈述"
+        },
+        {
+          "path": "archives/robust-optimization/state/定理/有界定均值W1球的凸序最大分布--定理.md",
+          "sha256": "65a51ba0823a7de0e6f33969ded684815ff1a3921836f6da259574741a39615b",
+          "section": "可行性与同一分布最优"
+        }
+      ],
+      "reviewed_by": "Boss1",
+      "review_note": "核读原候选及完整证明，复核支撑、定均值、半径与 convex-order 最大者的量词。",
+      "endpoint_pins": {
+        "robust-optimization/bounded-fixed-mean-w1-convex-order-maximum": "b4cb736886b298e2071f1df65cb1e8e61d2c283f8bf57699535f60c82743bead",
+        "robust-optimization/random-convex-order-candidate-lane": "06ece76ecabef5555da5df7f55737c2b3f5cb80b65149491b136ba38292cf668"
+      },
+      "evidence_pins": {
+        "archives/robust-optimization/state/资料/随机分布鲁棒与凸序候选线--资料.md": "0c8019bfbf7aa77db849e1e19c8372a8fba4e2cd0172c35762e355455c0d9c3d",
+        "archives/robust-optimization/state/定理/有界定均值W1球的凸序最大分布--定理.md": "65a51ba0823a7de0e6f33969ded684815ff1a3921836f6da259574741a39615b"
+      },
+      "review_digest": "8cf0508f09ed9e96e90bfc14b6b1c7c8f0425a9bbdee795d77293849f3a8d6d2"
+    }
+  },
+  "scope": "archives/robust-optimization",
+  "boundary_nodes": []
+}
