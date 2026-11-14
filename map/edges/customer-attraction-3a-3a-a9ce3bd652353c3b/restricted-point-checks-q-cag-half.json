@@ -1,0 +1,63 @@
+{
+  "edge_id": "cag-a9ce-1269-restricted-point-checks-q-cag-half",
+  "kind": "checks",
+  "status": "accepted",
+  "source_ids": [
+    "M-6a7c80923ec34610bc83cc446c36da8b"
+  ],
+  "target_ids": [
+    "Q-CAG-HALF"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "仅在固定 16-hist、29 R/Z atom、21 DE promotion-state 的 restricted necessary system 中；旧 1,143 行来自冻结 generator，新 88 行按 literal 展开，另有 38 条正质量余量界。该有限系统的 O=1、W<1/2 不量化整数客户、共同目录、完整历史动作或 SPE。",
+  "roles": {
+    "M-6a7c80923ec34610bc83cc446c36da8b": "提供精确可行的 1,269 行 restricted necessary-system 点：W=62639914980892951648306747072697141151134151554374880507144/126208720217724762225533804965567209821942870207757303886307<1/2，minimum_slack=0。",
+    "Q-CAG-HALF": "要求对任意人数、有限共同目录实例和完整历史纯 SPE 证明 2W(σ)≥OPT_m 的开放目标。"
+  },
+  "explanation": "该点态审计证明：只依靠这 1,269 条有限必要行，不能推出 Q-CAG-HALF 的半覆盖不等式，因为 restricted relaxation 仍允许 W<1/2。它只标出当前证明路线的停界；不反驳 Q-CAG-HALF，也不提供整数客户/共同目录/完整 SPE 反例。首位推广对另一份 3,889 行冻结点的负 slack 仅分离指定旧点，不能与本 1,269 点合并。",
+  "scope": "R-3e17a9 联合旧/新原子松弛及其与 Q-CAG-HALF 的有限停界诊断；不构成全域逻辑蕴含或反例。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/审查/R-3e17a9推广首位回复与联合原子松弛--审查.md",
+      "sha256": "70ef4c6e358ea3b9da2e77c36a6a1d8a984b20a4c37228f13eba4bbd57a4fc95",
+      "section": "3. 联合旧/新原子松弛"
+    },
+    {
+      "path": "archives/customer-attraction/state/审查/R-3e17a9父方首次回复独立审计与1269停界--审查.md",
+      "sha256": "b0e4e63965eaa4afd5e36e346f6be1f931ed8dd7dc80f8d9050ca78ec495e6f1",
+      "section": "3. 1269 行联合必要系统的父审计"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/r3e17a9-parent-verify/promotion_joint_atoms_exact.json",
+      "sha256": "9c84403826eb3d4e44d0fed55dcda180e9be80b0f07c4f464aecbe284f2015b3"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/r3e17a9-parent-verify/verify_promotion_joint_atoms.py",
+      "sha256": "de5502b581051d1b6d8aeb5c720b37596c6e50d9a30c1e893ec4c47a6c8f739c"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/r3e17a9-parent-verify/related_joint_atoms.py",
+      "sha256": "8a097c6bcf09999282a8112b00b9277c9d9d715517248d8d4adb7fbb19f2d5e9"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/r3e17a9-parent-verify/related_attractive_nested_exact.json",
+      "sha256": "cc48d8fdf557be7370ce964ee1d891ea99c8c830011c41cff76293b3819356b1"
+    }
+  ],
+  "reviewed_by": "Boss4-fresh-worker-review",
+  "review_note": "完整读取 8 个 staged passes 与 6 个声明 refs；保留 restricted relaxation、首位局部分离及缺失依赖的边界，未把 W<1/2 提升为 Q-CAG-HALF 反例。",
+  "endpoint_pins": {
+    "M-6a7c80923ec34610bc83cc446c36da8b": "c1bf01a3cb48cdc815d82886c85011ed4c8120be619cadea01a7b6e41c2012ad",
+    "Q-CAG-HALF": "dccd5277f7b0c1bb4dcac17287010f1d012bb40c6244c51f24808c1519a4b5ea"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/审查/R-3e17a9推广首位回复与联合原子松弛--审查.md": "70ef4c6e358ea3b9da2e77c36a6a1d8a984b20a4c37228f13eba4bbd57a4fc95",
+    "archives/customer-attraction/state/审查/R-3e17a9父方首次回复独立审计与1269停界--审查.md": "b0e4e63965eaa4afd5e36e346f6be1f931ed8dd7dc80f8d9050ca78ec495e6f1",
+    "archives/customer-attraction/tools/evidence/r3e17a9-parent-verify/promotion_joint_atoms_exact.json": "9c84403826eb3d4e44d0fed55dcda180e9be80b0f07c4f464aecbe284f2015b3",
+    "archives/customer-attraction/tools/evidence/r3e17a9-parent-verify/verify_promotion_joint_atoms.py": "de5502b581051d1b6d8aeb5c720b37596c6e50d9a30c1e893ec4c47a6c8f739c",
+    "archives/customer-attraction/tools/evidence/r3e17a9-parent-verify/related_joint_atoms.py": "8a097c6bcf09999282a8112b00b9277c9d9d715517248d8d4adb7fbb19f2d5e9",
+    "archives/customer-attraction/tools/evidence/r3e17a9-parent-verify/related_attractive_nested_exact.json": "cc48d8fdf557be7370ce964ee1d891ea99c8c830011c41cff76293b3819356b1"
+  },
+  "review_digest": "fe75433b11d8ecf8dde23d46b8c06fec50921d1d9ac3ac8965d516dd26bf1a34"
+}

@@ -1,0 +1,74 @@
+{
+  "task_id": "customer-attraction-3a-3a-aa23d428c3205649",
+  "stage": "3A",
+  "status": "complete-frozen-staging; edge-bind and edge-check passed; Root checkpoint/done pending",
+  "object_ids": [
+    "M-76622f3817514ca5800fcbc0bd9f91c0"
+  ],
+  "read_object_ids": [
+    "M-94fb0280f8af4175b3ec6801a8843744"
+  ],
+  "input_pins": {
+    "M-76622f3817514ca5800fcbc0bd9f91c0": "81a8f0fd6f4f80783433acc487ff4cc2b85e38e809ddc65ebb9a72064e11ab6c",
+    "M-94fb0280f8af4175b3ec6801a8843744": "8de84cff3acd09a1320f867b301a2d4a9add9a5586bf3badb0062c7c6ef90a36"
+  },
+  "coverage": {
+    "M-76622f3817514ca5800fcbc0bd9f91c0": {
+      "state": "linked",
+      "object_pin": "81a8f0fd6f4f80783433acc487ff4cc2b85e38e809ddc65ebb9a72064e11ab6c",
+      "comparison_scope": "完整读取任务声明的10个 staged passes；与 M-94fb0280f8af4175b3ec6801a8843744 的5251点逐系数/逐 floor 比较，保留5287不同质量向量与五条负floor边界。",
+      "reason": "实际四/五位 R/Z 价格族给出324条精确必要行，均在5251点严格为正；同一固定点另有36条floor中恰5条负，因此只形成有限 necessary-row pointwise implementation/context，不推出共同目录、完整SPE、LP最优性或六人half。",
+      "edge_ids": [
+        "cag-aa23-324-price-rows-implement-5251-point"
+      ]
+    }
+  },
+  "assets": [
+    {
+      "path": "map/edges/customer-attraction-3a-3a-aa23d428c3205649/early-reply-price-324-to-5251-point.json",
+      "sha256": "82af771a7a038b9559611090a804009f67817801fb99c55b7f70b336e643e3f6"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-aa23d428c3205649/mathematical-review.md",
+      "sha256": "bca31d5c5ab98ed485d270a6a7fc912b123d1ffde2d365fc51a091fa1805fe75"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-aa23d428c3205649/readledger.json",
+      "sha256": "b14244c193142fb1c773ae32ed2e3cabe21cc8cc64943dc99aa02727990edbf4"
+    }
+  ],
+  "edge_paths": {
+    "cag-aa23-324-price-rows-implement-5251-point": "map/edges/customer-attraction-3a-3a-aa23d428c3205649/early-reply-price-324-to-5251-point.json"
+  },
+  "read_scope": {
+    "declared_files": 10,
+    "full_read": true,
+    "read_add": [
+      "M-94fb0280f8af4175b3ec6801a8843744"
+    ],
+    "deferred_candidates_not_read": [
+      "CA-PRICED-HIDDEN-REPLY-v1",
+      "CAG-MODEL",
+      "M-5d2fee3a1f8a4dc6a76eea98204ba228",
+      "M-96807ccbb51d4a04a699093e9211323e",
+      "M-f9361826fd0f4923b924933366813431"
+    ]
+  },
+  "verification": {
+    "sha256_all_declared_refs": true,
+    "price_coefficient_audit": "617220 exact-equal",
+    "floor_coefficient_audit": "68580 exact-equal",
+    "verify_entrypoints": "both exit 0",
+    "new_lp_or_spe_search": false
+  },
+  "closed_overlaps": [
+    {
+      "core_id": "M-76622f3817514ca5800fcbc0bd9f91c0",
+      "peer_id": "M-94fb0280f8af4175b3ec6801a8843744",
+      "reason": "5251 and 5287 are different point identities; the 5287 quality-vector changes are not attributed solely to added rows and no same-W merge is made."
+    }
+  ],
+  "follow_up_tasks": [],
+  "reviewed_by": "Boss4-fresh-worker-review",
+  "review_note": "完整读取并保留324行族、5251/5287点态差异和有限floor分离；context/implements edge已绑定并通过结构检查。"
+}

@@ -612,12 +612,65 @@
       "budget_status": "reading-scope-expanded-reestimate"
     }
   },
-  "state": "claimed",
+  "state": "done",
   "owner": "Boss2",
-  "request_id": "a5d86c43a1d44c3e8be4e7b36148cfd8",
+  "request_id": "8c456d4a88654b568ae9eae1554391da",
   "requests": {
     "b174141a08c742e1b939e49fbe0f170f": "plan",
     "15e871d2ac024e67baf8f7a606a557f9": "claim",
-    "a5d86c43a1d44c3e8be4e7b36148cfd8": "read-add"
+    "a5d86c43a1d44c3e8be4e7b36148cfd8": "read-add",
+    "8c456d4a88654b568ae9eae1554391da": "done"
+  },
+  "edge_paths": {
+    "boss2-six-cross-shared-tail-to-rz-income-credit": "map/edges/customer-attraction-boss2-six-cross-20261111/boss2-six-cross-shared-tail-to-rz-income-credit.json"
+  },
+  "receipt": {
+    "schema": 1,
+    "task_id": "customer-attraction-3a-3a-980e6dd3bc51e7ed",
+    "stage": "3A",
+    "status": "draft",
+    "coverage": {
+      "M-736ccd964c384f16a6816eebcb468f2f": {
+        "state": "linked",
+        "object_pin": "793a5c81ccca4d9a1eddbe61a6321795752ed83063a9e0cf4a6285944d9c3b1a",
+        "comparison_scope": "完整实读核心769行及22个声明reading refs；一般R/Z四态min、六人30条有序非对角边、A/B两合同、2560型差界、2880保持v映射、224型覆盖税、独立Main核验；复用 canonical M-63c→M-736 边。",
+        "reason": "核心整体为 proved 的局部必要收入/覆盖关系。canonical edge 已准确支付两合同在同一R^C/Z^C真实边上的前提；核心自身补足四态方向、强移账和税不变。条件仍包含共同目录合法性、完整纯SPE真实后继、同一真实边、全客户共享非负权及同一v身份。实际u4付款未闭合，故不声称half或完整SPE反例。",
+        "edge_ids": [
+          "boss2-six-cross-shared-tail-to-rz-income-credit"
+        ]
+      }
+    },
+    "assets": [
+      {
+        "path": "map/edges/customer-attraction-boss2-six-cross-20261111/boss2-six-cross-shared-tail-to-rz-income-credit.json",
+        "sha256": "6cc9c612ecda3faea1ca262368120f85be124cd16b2ffc718ce91d52e2c6e82a"
+      },
+      {
+        "path": "map/edges/customer-attraction-3a-3a-980e6dd3bc51e7ed/edge-reuse-note.json",
+        "sha256": "d154562da94df5a9482d96f35ff1f308f898e1d4b0488cdedbdb32f8b42ef3fd"
+      },
+      {
+        "path": "map/edges/customer-attraction-3a-3a-980e6dd3bc51e7ed/reading-ledger.json",
+        "sha256": "631089c770ad6e7d20195085422c69ce94b1660734a7310428b17aa660d8b0c4"
+      }
+    ],
+    "follow_up_tasks": [
+      "customer-attraction-3b-rz-prefix-boss2-3b-8db9930529c005e2",
+      "customer-attraction-3b-rz-discount-boss2-3b-a3fe64610629a1a9"
+    ],
+    "follow_up_reasons": {
+      "customer-attraction-3b-rz-prefix-boss2-3b-8db9930529c005e2": "比较M-736在同一R^C/Z^C边上的四态共享身份、强v映射与M-63c一般共享末端组合/联合投影的精确增量；已有M-63c→M-736边只支付前提和特化，未关闭该交叉问题。",
+      "customer-attraction-3b-rz-discount-boss2-3b-a3fe64610629a1a9": "比较M-736的49:10固定合同与M-b233三候选Bellman折扣闭包的方向、量词和共同v保持；共同定义及传递链不等于该具体R/Z四态扩展已闭。"
+    },
+    "closed_overlaps": [],
+    "remaining": [
+      "148951u4项仍需真实第四源付款或新共同约束；当前仅得(10857/2)(OPT6−2W)≤148951u4−1278u6−8842W/9。",
+      "U/C签名只否定当前逐客户局部付款法；不能升格为全局SPE反例。",
+      "独立R固定权的精确增益未证明全部参数锥严格包含；需要3B全面锥比较。"
+    ],
+    "notes": [
+      "reuse_only edge-reuse.json is a task-scoped alias; canonical edge is the sole graph relation.",
+      "follow_up_tasks are proposed IDs for Boss publication; no overlap is marked closed."
+    ]
   }
 }
