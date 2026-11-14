@@ -1,0 +1,56 @@
+{
+  "edge_id": "boss3-716-ordered-bi-specializes-to-integer-block-sets",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "CA-EXACT-PURE-SPE-ALL"
+  ],
+  "target_ids": [
+    "customer-attraction/disjoint-sixteen-client-block-integer-outcome-sets-and-last-low-cuts"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "n为块数且取2或3。4n名单位玩家的共同目录是各块标签的不交并，每次选一个原标签。每块五型A:2、BD:4、AC:6、CD:3、ABCD:1。保重复行动、全部有序偏离和任意弱平局。",
+  "roles": {
+    "CA-EXACT-PURE-SPE-ALL": "证明有限完整有序树终局全集的必要充分递推，允许在不同孩子独立拼接最坏子SPE。",
+    "customer-attraction/disjoint-sixteen-client-block-integer-outcome-sets-and-last-low-cuts": "在两个固定不交16客户块目录输入上，用整数缓存实现同一全集和可信门槛。"
+  },
+  "explanation": "同计数s的有序历史由保留后缀行动给子树同构，所有客户分母和当前收益相同。把CA-EXACT-PURE-SPE-ALL中的k、c、ell_a、M分别对应s、z、min_{z∈R(s+e_a)}U_a(z)、F(s)。固定已选标签，U_a只读该块负载；对已选标签的每一非零分子，分母介于1和4n，整数scale=lcm(1,…,4n)严格保留极小值、外层极大值和所有弱≥筛选。每标签4位在4n≤12时无进位，终局基础、孩子递归、排序去重逐状态保持集合。因不交有序孩子各自可选完整子SPE，计数键共享集合不改变策略的全历史量词。额外插入查询单独用lcm(scale,4n+1)。",
+  "scope": "解释固定整数BI的数学正确性。保留终局累计数、根终局、计数状态、策略DAG或完整动作图计数各自含义。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/算法/完整历史纯SPE终局全集--算法.md",
+      "sha256": "667d6f319b1f325bd32538f6b0e5a8e95c1942e2ec97cbc76d7cbaef06b36954"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/不交十六客户块的整数续局全集与末低收益截面--程序.md",
+      "sha256": "a9d179d6afd90af6883c8081972805a07e7052e9ed186c6aad85131a642ddba8",
+      "section": "明确目录及为何终局集合可按计数缓存"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/不交十六客户块的整数续局全集与末低收益截面--程序.md",
+      "sha256": "a9d179d6afd90af6883c8081972805a07e7052e9ed186c6aad85131a642ddba8",
+      "section": "C++实现的整数域、编码和真正统计量"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/Boss7-resume-d22-stationary/original/round5_credible/block_menu_probe.cpp",
+      "sha256": "26039479eb7e5745cd41fd96ce8fb84ea55f7ae65172ef851a22ac14230fd75c"
+    }
+  ],
+  "reviewed_by": "Boss3",
+  "review_note": "实读算法归纳、共同模型、固定块正文和7087B原C++，逐动作核同一全历史极值与整数缩放。两次同源码重放只验证指定有限输入。",
+  "contribution": {
+    "result": "在两个固定输入中，整数solve的memo.outcomes恰为全部有序纯SPE可实现终局计数，正比例的node.floor恰为F(s)。",
+    "remaining": "35/200根轮廓分类、四个指定目标、last-low分布和固定uniform-D极值须由各自有限计算验证，归纳公式本身不给这些结果或任意n的分类。"
+  },
+  "endpoint_pins": {
+    "CA-EXACT-PURE-SPE-ALL": "aaa77e1f9a928bc25a315e66e18f424418e64643ec3fdb8717cbc3adc6310056",
+    "customer-attraction/disjoint-sixteen-client-block-integer-outcome-sets-and-last-low-cuts": "4808ad141b69a4d9ab1ee5eff5a7caac2d054792755e46d8b621650881bbf05a"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/算法/完整历史纯SPE终局全集--算法.md": "667d6f319b1f325bd32538f6b0e5a8e95c1942e2ec97cbc76d7cbaef06b36954",
+    "archives/customer-attraction/state/程序/不交十六客户块的整数续局全集与末低收益截面--程序.md": "a9d179d6afd90af6883c8081972805a07e7052e9ed186c6aad85131a642ddba8",
+    "archives/customer-attraction/tools/evidence/Boss7-resume-d22-stationary/original/round5_credible/block_menu_probe.cpp": "26039479eb7e5745cd41fd96ce8fb84ea55f7ae65172ef851a22ac14230fd75c"
+  },
+  "review_digest": "a2bf5392eaed89f10aa64865aaf7940b9269342657f12bea9522f7fe631fd25a"
+}
