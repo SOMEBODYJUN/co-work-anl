@@ -1,0 +1,69 @@
+{
+  "edge_id": "cag-cd3d-strong-pair-pays-4971-continuous-cuts",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-e960d7f4ebca40a38760eb3ae044cc19"
+  ],
+  "target_ids": [
+    "M-3bf6799b2aae46e8a67951efa775aec4"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "有限单位客户、有限非空共同标签目录、六名单位提供者按序行动且策略定义于全部有序历史；固定同一完整纯SPE的实际前四位背景与实际末两人尾；六个比较主题及其R/Z强制回复均为共同目录合法主题并沿同一策略取真实后继。采用任务输入SHA 0c06316a0ad5b4079c54d36cf59255c36943af957644b0ffab1b34a249ee6f7c的1905列归一化点，O=1，保留16个hist、582个R/Z三态列及1306个辅助交叠列；共同末位报价参数非负。",
+  "roles": {
+    "M-e960d7f4ebca40a38760eb3ae044cc19": "提供三条真实IC加非负交叠余项的强PAIR恒等式，并允许对任意合法比较索引（含重复索引）聚合。",
+    "M-3bf6799b2aae46e8a67951efa775aec4": "提供固定4971必要图点的36条R/Z地板与8条网格端点的精确回代、以及由强制回复投影得到的64条有理连续旧查询切面及其负slack。"
+  },
+  "explanation": "对任意合法T,Q，强PAIR给H-f(T)-f(Q)+g(T,Q)=I1+I2+I3+g(C,C)-g(C,R_T)≥0；真实强制后的末位R_T不能冻结为轨道末位。把该恒等式按任务点的五个源位置、R/Z成员和三类索引轨道代入共同末位报价投影，得到每条切面的必要行；对中间隐藏会员只按覆盖数取最小，因中间系数相同而等价于全部隐藏位枚举。64条保存有理参数在同一1905列点上逐条Fraction回代均严格负（64条中63个不同完整向量），故任何保该点hist与相关R/Z边缘的完整有序纯SPE延拓都会违反至少一条强PAIR导出的必要行。该边只支付这些局部分离行的合法性和不可延拓结论。",
+  "scope": "固定4971必要图点及其64条连续旧查询投影切面；是对指定边缘的完整SPE延拓排除，不是4971整图或完整客户游戏的可行性/最优性结论。",
+  "contribution": {
+    "result": "强PAIR的三IC恒等式在任务声明的共同目录和完整历史量词下，确实生成64条合法非负必要行；任务点的精确审计与独立三阶段检查确认64条slack全负，因此保16-hist及对应R/Z边缘的完整SPE补全被排除。",
+    "remaining": "仍未由本边证明作者报告的4971行整体非负、点的全目录共同客户实现、任何完整SPE反例或精确最优性；辅助overlap列不自动是字面集合交。也不推出六人half或连续参数族的全局最优分离，后32条refinement与其它权向量须独立核验。"
+  },
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/末两人重叠比较与任意索引聚合--引理.md",
+      "sha256": "4dacbe163ea4ea9459395dd4445c0dea25ed28070d0723a750ea6351832f4d2c",
+      "section": "真节点、量词与强式"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/旧查询回复的连续分层分离程序--程序.md",
+      "sha256": "2840064934ed58e0613f2486d8052be6e883a4469c0ec2d6386053f95297c246",
+      "section": "精确下包络和分层行"
+    },
+    {
+      "path": "archives/customer-attraction/state/计算/旧查询回复的六十四个有理分离切面--计算.md",
+      "sha256": "bec08c5ea5ed6f042b00781b0263f9940953a6932b00beb87e4b80407d36b979",
+      "section": "当前三阶段独立有理检查"
+    },
+    {
+      "path": "archives/customer-attraction/state/计算/旧查询网格切面加入后的有理必要点--计算.md",
+      "sha256": "0899a97d66595bd3485ddc3dcf78113fbaf7e4efe4ea842d199ee37498b6da33",
+      "section": "覆盖、收益与44条新行的当前精确回代"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/continuous-old-query-cuts-program/replay/local-row-audit.json",
+      "sha256": "7fb435cb8948d6691a994b604daead601704e86b136b5b8db010fa63aefc542b"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/continuous-old-query-cut-data/three-stage-cut-audit.json",
+      "sha256": "7bd3e97f0f6a4ed22c7dc8f92600f6abc27e1dce9aceb45956b0ea42cf1a2cdc"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "SOLVER-CD3D-FRESH：完整实读任务12个声明ref，并通过read-add实读已证明强PAIR端点；逐SHA核对输入点、64-cut正文和两个独立精确审计。边界明确为局部必要行/固定边缘不可延拓，不把有限必要松弛点冒作完整SPE反例或half结论。本地未运行原发现LP或4971整图入口；edge-bind与edge-check仅做结构和当前字节绑定。",
+  "endpoint_pins": {
+    "M-3bf6799b2aae46e8a67951efa775aec4": "f541d1cf9f9120834a755dff76ce7819bd208964e29048114701c29f7b3bf1d8",
+    "M-e960d7f4ebca40a38760eb3ae044cc19": "ab054800337d5944cb152e30ad29e8398e6cb46284ce218ad99be5485c5c3406"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/末两人重叠比较与任意索引聚合--引理.md": "4dacbe163ea4ea9459395dd4445c0dea25ed28070d0723a750ea6351832f4d2c",
+    "archives/customer-attraction/state/程序/旧查询回复的连续分层分离程序--程序.md": "2840064934ed58e0613f2486d8052be6e883a4469c0ec2d6386053f95297c246",
+    "archives/customer-attraction/state/计算/旧查询回复的六十四个有理分离切面--计算.md": "bec08c5ea5ed6f042b00781b0263f9940953a6932b00beb87e4b80407d36b979",
+    "archives/customer-attraction/state/计算/旧查询网格切面加入后的有理必要点--计算.md": "0899a97d66595bd3485ddc3dcf78113fbaf7e4efe4ea842d199ee37498b6da33",
+    "archives/customer-attraction/tools/evidence/continuous-old-query-cuts-program/replay/local-row-audit.json": "7fb435cb8948d6691a994b604daead601704e86b136b5b8db010fa63aefc542b",
+    "archives/customer-attraction/tools/evidence/continuous-old-query-cut-data/three-stage-cut-audit.json": "7bd3e97f0f6a4ed22c7dc8f92600f6abc27e1dce9aceb45956b0ea42cf1a2cdc"
+  },
+  "review_digest": "f486a327627193bfcf8874153998ea927bf40a72658ac99312ecd38725dca79a"
+}
