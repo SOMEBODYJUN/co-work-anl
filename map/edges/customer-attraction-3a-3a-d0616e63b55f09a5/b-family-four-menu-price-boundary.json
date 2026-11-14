@@ -1,0 +1,86 @@
+{
+  "edge_id": "cag-d061-b-family-four-menu-price-boundary",
+  "kind": "checks",
+  "status": "accepted",
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "source_ids": [
+    "M-5d2fee3a1f8a4dc6a76eea98204ba228"
+  ],
+  "target_ids": [
+    "M-5d2fee3a1f8a4dc6a76eea98204ba228"
+  ],
+  "conditions": "固定 b-family 5692-point / 5664-point 的 4849 列、16 个旧 hist 支撑、四个指定 B/M 菜单及 28 条 actual-price/CAP 行；仅按共同目录完整历史纯 SPE 的必要价格行解释，保留四菜单有限范围。",
+  "roles": {
+    "M-5d2fee3a1f8a4dc6a76eea98204ba228": "给出固定 5664 点的 252 个正质量、O/W/K 和 28 条指定菜单行；新增 5692 点通过实际末价补行修复旧点唯一负行并改变 214 个隐藏质量。"
+  },
+  "context": {
+    "finite_new_point": "5692 行/4849 列有理点全部通过保存必要行；O=1，W=1905769909616898376137238949200623274593168205/3898693540058852735821709960049703833207552519≈0.4888227<1/2，O−2W=87153720825055983547232061648457284021216109/3898693540058852735821709960049703833207552519>0，261 列正质量，minimum slack=0。独立 audit 逐字段核对 4849 列、194 joint groups、2612 overlap 边缘、64 family marginals、6 capacity 与 28 新菜单行。",
+    "old_point_obstruction": "5664 点与 5692 点的全部 4849 描述符、K、16 hist 质量和 W 相同，但 214 个隐藏质量不同（joint-reply 70、overlap 52、actual-B-family 52、maximum-root 40）。在旧点上 source2 actual-menu-price:6 的精确 slack 为 -10026222041073744940623089144705030946499310342386311577/652887283919685192981664984788241385973843146740115858240<0；其余 27 行非负。5692 点的 28 行全部非负（24 正、4 零），故这条普通末价切断旧点坐标的完整共同目录纯 SPE 补全，并说明补价后点与旧点同 W 不等价。",
+    "interpretation_boundary": "四菜单价格和 16-hist 必要系统只给有限 self-context；不提供共同目录单位客户实现、全部有序历史策略、实际 OPT、完整 SPE 或普遍六人 half。不能把 5664 的负价迁移到同 W 的 5692 点，也不能把 5692 的有限可行性升级为全局结论。"
+  },
+  "explanation": "该边记录同一 b-family 对象内部的精确版本/坐标比较：新 5692 点满足指定 28 条必要菜单行，而旧 5664 点被唯一 source2 实际末价行排除。它是 checks/context 边，不是 whole_result；真正的否定只针对“保留旧隐藏质量与四菜单坐标即可补成完整纯 SPE”的固定完成命题。",
+  "scope": "self-context only；固定 16-hist、固定 4 菜单、固定 4849 列支持。任何全目录、全树或跨点迁移需另有 read-add 和独立证明。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/计算/实际末主题分支分离器与四菜单补价原点核验--计算.md",
+      "sha256": "f8710e7c826831cc22f9d7d22f84f24e6fbdf403c6ff4c41ed4f215f419cae26",
+      "section": "对象范围与本批实际确认"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+      "section": "策略、真实续局与全部历史量词"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/b-family-menu-prices-boss3/original/research_2/all_menu_prices_exact.json",
+      "sha256": "46e52c1cec4a5cac3e6d7fe3bbe8d227cd663e428ca7f4e955182343eedb418e"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/b-family-menu-prices-boss3/original/research_2/maxroot_identity_exact.json",
+      "sha256": "d3c456a03806aef08378e96f89387b83d77161081a260b3764b8aa8f8097d43a"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/b-family-menu-prices-boss3/original/research_2/B_menu_prices_master.py",
+      "sha256": "d5854478cd1e2fd2797a104645ea5f3256d3189c9c23aeaac33e5d4182f0175e"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/b-family-menu-prices-boss3/original/research_2/maxroot_identity_master.py",
+      "sha256": "3f78946a4f03583807d01b98cf31b431b2d6981d1f82a1039d7834759c1a52c9"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/b-family-menu-prices-boss3/audit_point_structure_and_prices.py",
+      "sha256": "08d1ad91a0a1e148a7a71fc7dbcb71f0d06008a3369c3ab6dd21aa13f8e8f24c"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/b-family-menu-prices-boss3/replay/structure-and-prices-audit.json",
+      "sha256": "8518d900b8f09ceca7186c33e3f619871a4d680c77c58429328a9041da94135e"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/b-family-menu-prices-boss3/replay/maxroot-structure-and-prices-audit.json",
+      "sha256": "ade8c34a33f539ae8b98999326676865d3c2200bcaf31642018021105ffe3372"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/b-family-menu-prices-boss3/replay/point-comparison.json",
+      "sha256": "6144d497a0b0c2ce870511c001555dbe1c585c4e315115adc09556f54d1f0ac9"
+    }
+  ],
+  "reviewed_by": "Boss7 / fresh-worker-d061",
+  "review_note": "完整读取任务声明的 14 个 staged passes 和 10 个 distinct refs，逐字段解析两份 4849 列 JSON、独立 28 行 audit、point-comparison 与两套 builder；仅保留有限 checks 边和旧点负末价边界。",
+  "endpoint_pins": {
+    "M-5d2fee3a1f8a4dc6a76eea98204ba228": "e6742ccfa527054cb81a2fd63be1fce81ca5214c763cf4b3e10887c4f7f1fee3"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/计算/实际末主题分支分离器与四菜单补价原点核验--计算.md": "f8710e7c826831cc22f9d7d22f84f24e6fbdf403c6ff4c41ed4f215f419cae26",
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+    "archives/customer-attraction/tools/evidence/b-family-menu-prices-boss3/original/research_2/all_menu_prices_exact.json": "46e52c1cec4a5cac3e6d7fe3bbe8d227cd663e428ca7f4e955182343eedb418e",
+    "archives/customer-attraction/tools/evidence/b-family-menu-prices-boss3/original/research_2/maxroot_identity_exact.json": "d3c456a03806aef08378e96f89387b83d77161081a260b3764b8aa8f8097d43a",
+    "archives/customer-attraction/tools/evidence/b-family-menu-prices-boss3/original/research_2/B_menu_prices_master.py": "d5854478cd1e2fd2797a104645ea5f3256d3189c9c23aeaac33e5d4182f0175e",
+    "archives/customer-attraction/tools/evidence/b-family-menu-prices-boss3/original/research_2/maxroot_identity_master.py": "3f78946a4f03583807d01b98cf31b431b2d6981d1f82a1039d7834759c1a52c9",
+    "archives/customer-attraction/tools/evidence/b-family-menu-prices-boss3/audit_point_structure_and_prices.py": "08d1ad91a0a1e148a7a71fc7dbcb71f0d06008a3369c3ab6dd21aa13f8e8f24c",
+    "archives/customer-attraction/tools/evidence/b-family-menu-prices-boss3/replay/structure-and-prices-audit.json": "8518d900b8f09ceca7186c33e3f619871a4d680c77c58429328a9041da94135e",
+    "archives/customer-attraction/tools/evidence/b-family-menu-prices-boss3/replay/maxroot-structure-and-prices-audit.json": "ade8c34a33f539ae8b98999326676865d3c2200bcaf31642018021105ffe3372",
+    "archives/customer-attraction/tools/evidence/b-family-menu-prices-boss3/replay/point-comparison.json": "6144d497a0b0c2ce870511c001555dbe1c585c4e315115adc09556f54d1f0ac9"
+  },
+  "review_digest": "7d6a555ed38dc5d97142e9df1dc1cc81cce8f62f6821fa09fb4ab060b2ee4998"
+}
