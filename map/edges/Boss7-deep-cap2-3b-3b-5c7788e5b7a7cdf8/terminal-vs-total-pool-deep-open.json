@@ -1,0 +1,75 @@
+{
+  "edge_id": "boss7-deep-cap2-terminal-vs-total-pool-context",
+  "kind": "checks",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/positive-source-common-amount-pool-and-position-loss"
+  ],
+  "target_ids": [
+    "customer-attraction/terminal-multichild-amount-normalized-sharp-column-cap-two"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "共同有限单位客户/非空带标签目录、任意合法父叶B及有限真实或合法孩子；孩子在cut前保留父叶动作，逐sender使用一份跨全部孩子共享的非负AMOUNT Σαλ_{αj}p_j(W^α)≤p_j(B)。terminal端另要求所有孩子只改变末位（i_α=m），而DEEP候选允许多cut、目标ℓ≥i_α并沿同一完整策略取真实后继。零利润、空主题、重复标签和弱平局按共同模型保留。",
+  "roles": {
+    "customer-attraction/positive-source-common-amount-pool-and-position-loss": "给任意cut的逐sender POOL/保留项等式、NET新增覆盖补偿、POSITION-SOURCE位置系数及跨全部recipient的TOTAL；明确正价、retained、direct/suffix必须共同占用同一AMOUNT钱包，且该页不生成AMOUNT初始化或单列cap2。",
+    "customer-attraction/terminal-multichild-amount-normalized-sharp-column-cap-two": "给仅末位多孩子的逐列两倍上界、零端点处理及完整SPE sharp family；同时明确深层候选DEEP-CAP2未由末层证明，非末位固定正尾长的2−3/(n+1)下界只说明统一系数二不能降低。"
+  },
+  "explanation": "两端共享同一AMOUNT语义，但输出量词不同。positive-source对每个branch和sender有 Σ_{l≥i_α}q_{αjl}+e_{αj}=p_j(W^α)，e_{αj}≥0；一次AMOUNT只给出所有recipient合计 Σ_l out_l≤Σ_{j<m}p_j(B)≤W(B)−p_m(B)，并给出位置粗化 Σ_{α,j,l}λq≤Σ_{j<m}(m−j)/(m−j+1)p_j(B)。它不把同一sender的钱复制到每个目标列。terminal-cap2的2p_m(B)来自更强的末层几何：每个孩子仅换末位使c_α(x)≤c_B(x)+1≤2c_B(x)，故p_j(W^α)≥p_j(B)/2、Σαλ_{αj}≤2；对末位客户被移走时还恰有c_α(x)=c_B(x)−1，逐客户合并至2/c_B(x)。多cut/非末位时最多有r=m−i_α+1个后继动作变化，只能用c_α≤c_B+r（或≤(r+1)c_B），且recipient移走客户的孩子负载不再等于c_B−1；因此没有把同一AMOUNT转成逐列2p_ℓ的逐列charge。定义DEEP-CAP2的Q_ℓ=Σ_{α:i_α≤ℓ}Σ_{j<i_α}λ_{αj}q_{αjℓ}≤2p_ℓ(B)仍是开放接口，即使孩子沿同一完整SPE真实续局，固定实例的闭式最坏列也只给Σ_{j<ℓ}p_j(B)·max_α q_{αjℓ}/p_j(W^α)，不提供一般上界。",
+  "scope": "这是对正价全recipient总池与末层逐列cap2的边界核对（checks/context），不是把terminal-cap2递归成DEEP-CAP2的逻辑蕴含。末层统一常数二的完整SPE锐族取m=n+1、λ=(2n−1)/(n+1)，列比2−3/(n+1)并随n→∞趋二；已有固定任意正尾长r≥1的非末位真实SPE构造在m=n+1+r、目标ℓ=n+1复制同一比值，故任何统一系数<2均不可能。该下界族W=OPT，不构成half反例。",
+  "explanation_detail": "POOL中的e与q已经使用同一sender孩子利润；NET恒等式 Σ_lq=p_j(W^α)−p_j(B)+Σ_{x∈B_j}A_α(x)/(c_Bc_α) 含一般非零新增覆盖补偿，不能把q误写成旧利润净增。若direct或suffix债务先支取e，或把新增覆盖补偿另列为新预算，就会重复占款；任何从覆盖债务/OPT到AMOUNT的初始化仍需独立真实IC证明。",
+  "scope_detail": "多cut合法叶的调和上界、非末位固定正尾长sharp lower及真实SPE锐性均与本边的source/target比较分开；本边不把任意合法叶上界冒成真实SPE反例，也不宣称六人half。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/程序/正价源池原随机核验的有限域与读后审查--程序.md",
+      "sha256": "c978b38ed35c64697734bcca7a5c572e8dc353eac24604c2390bfbed736d3911",
+      "section": "每个孩子实际核的三条关系"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+      "section": "策略、真实续局与全部历史量词"
+    },
+    {
+      "path": "archives/customer-attraction/subarchives/six-providers/state/引理/任意深度正价的源金额分解与位置损失--引理.md",
+      "sha256": "1999ca0cf74abbc38a5efc14b3c5a41cfb95836275324786ea0177c88cff7399",
+      "section": "精确分池及保留项"
+    },
+    {
+      "path": "archives/customer-attraction/state/资源/R5a主总账的门槛校正与深层金额合同--资源.md",
+      "sha256": "cc61a6939d66cf6f7a36e89f01ccf0f29cceaf26dcfbf6e868cf8a9e43c96eee",
+      "section": "末层多孩子金额两倍界究竟证明什么"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/跨枝金额列容量原筛查的完整策略与输入过滤合同--程序.md",
+      "sha256": "a4d05a23bbacd55dee4609936c202ba0cacac73ddb8ee94c5e7de3bf0b300b04",
+      "section": "金额预算下的闭式最坏列与平局"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/末层多孩子金额预算的锐两倍列容量--定理.md",
+      "sha256": "dae097bf1c0576d6ab8b417505f0b99280192fd80b11571d5f190ed8e78766c3",
+      "section": "任意多个孩子共享一份金额预算"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/terminal-amount-cap-and-audit-primary/original/research/workspaces/customer-attraction/R-5a15745a45ba44adb7d26c0557faacb7/parent/terminal_amount_cap.md",
+      "sha256": "cbd126cde77a5d8cb9fb3665c11829b28a2a8a418fe1590c5d5f185af61d3153",
+      "section": "3. 更深真实分支是不同候选"
+    }
+  ],
+  "reviewed_by": "Boss7 / map_worker_deep_cap2",
+  "review_note": "完整实读任务声明的七份distinct refs，并另读registry中的非末位固定正尾长下界作为context（不纳入task coverage端点）。逐式核对POOL/NET/POSITION-SOURCE与terminal末层2p_l证明的前提差异；确认多cut缺少逐列charge，DEEP-CAP2仍open；保留固定r≥1真实SPE的2−3/(n+1)→2 sharp lower及direct/suffix/新增补偿的单钱包不重复占款边界。未运行原程序/LP/SPE搜索、未改正文。",
+  "endpoint_pins": {
+    "customer-attraction/positive-source-common-amount-pool-and-position-loss": "c98f1c3524bebd6504dad781f1ae5843cd8caeeefcaf8da93d0a4881e6a7d115",
+    "customer-attraction/terminal-multichild-amount-normalized-sharp-column-cap-two": "a0b865b2a5f452b5d75309fa669b2c6a935fa064b630da71712df13be8aa49d0"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/程序/正价源池原随机核验的有限域与读后审查--程序.md": "c978b38ed35c64697734bcca7a5c572e8dc353eac24604c2390bfbed736d3911",
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+    "archives/customer-attraction/subarchives/six-providers/state/引理/任意深度正价的源金额分解与位置损失--引理.md": "1999ca0cf74abbc38a5efc14b3c5a41cfb95836275324786ea0177c88cff7399",
+    "archives/customer-attraction/state/资源/R5a主总账的门槛校正与深层金额合同--资源.md": "cc61a6939d66cf6f7a36e89f01ccf0f29cceaf26dcfbf6e868cf8a9e43c96eee",
+    "archives/customer-attraction/state/程序/跨枝金额列容量原筛查的完整策略与输入过滤合同--程序.md": "a4d05a23bbacd55dee4609936c202ba0cacac73ddb8ee94c5e7de3bf0b300b04",
+    "archives/customer-attraction/state/定理/末层多孩子金额预算的锐两倍列容量--定理.md": "dae097bf1c0576d6ab8b417505f0b99280192fd80b11571d5f190ed8e78766c3",
+    "archives/customer-attraction/tools/evidence/terminal-amount-cap-and-audit-primary/original/research/workspaces/customer-attraction/R-5a15745a45ba44adb7d26c0557faacb7/parent/terminal_amount_cap.md": "cbd126cde77a5d8cb9fb3665c11829b28a2a8a418fe1590c5d5f185af61d3153"
+  },
+  "review_digest": "d3a5f772b4575aede33a2d6ddeb64311ca47e1c9d333c865ceaa8999f7655531"
+}

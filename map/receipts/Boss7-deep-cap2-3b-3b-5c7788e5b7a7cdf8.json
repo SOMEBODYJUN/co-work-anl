@@ -1,0 +1,97 @@
+{
+  "task_id": "Boss7-deep-cap2-3b-3b-5c7788e5b7a7cdf8",
+  "stage": "3B",
+  "status": "complete-assigned-reading-and-mathematical-delivery",
+  "owner": "Boss7",
+  "worker": "Boss7 / map_worker_deep_cap2",
+  "task_definition_pin": "6cdd678098471cee12916df2081d339036ff2bb179d407b48044c797e22b8293",
+  "object_ids": [
+    "customer-attraction/positive-source-common-amount-pool-and-position-loss",
+    "customer-attraction/terminal-multichild-amount-normalized-sharp-column-cap-two"
+  ],
+  "input_pins": {
+    "customer-attraction/positive-source-common-amount-pool-and-position-loss": "c98f1c3524bebd6504dad781f1ae5843cd8caeeefcaf8da93d0a4881e6a7d115",
+    "customer-attraction/terminal-multichild-amount-normalized-sharp-column-cap-two": "a0b865b2a5f452b5d75309fa669b2c6a935fa064b630da71712df13be8aa49d0"
+  },
+  "edge_ids": [
+    "boss7-deep-cap2-terminal-vs-total-pool-context"
+  ],
+  "coverage": {
+    "customer-attraction/positive-source-common-amount-pool-and-position-loss": {
+      "state": "linked-as-source",
+      "object_pin": "c98f1c3524bebd6504dad781f1ae5843cd8caeeefcaf8da93d0a4881e6a7d115",
+      "comparison_scope": "POOL/NET/POSITION-SOURCE under one cross-child AMOUNT wallet; all-recipient TOTAL and retained/direct/suffix/new-cover compensation accounting.",
+      "reason": "Supplies the all-recipient source-pool identity and the no-new-money/no-double-spending boundary; it does not itself give a per-recipient cap2.",
+      "edge_ids": [
+        "boss7-deep-cap2-terminal-vs-total-pool-context"
+      ]
+    },
+    "customer-attraction/terminal-multichild-amount-normalized-sharp-column-cap-two": {
+      "state": "linked-as-target",
+      "object_pin": "a0b865b2a5f452b5d75309fa669b2c6a935fa064b630da71712df13be8aa49d0",
+      "comparison_scope": "Terminal-only shared-AMOUNT column cap2, zero endpoints, full-SPE sharp ratio 2−3/(n+1), and explicit DEEP-CAP2 open interface.",
+      "reason": "Receives the context check that its c_alpha≤c_B+1 and c_alpha=c_B−1 charge are terminal-specific and cannot be recursively reused for multi-cut columns.",
+      "edge_ids": [
+        "boss7-deep-cap2-terminal-vs-total-pool-context"
+      ]
+    }
+  },
+  "registry_context": {
+    "customer-attraction/nonterminal-amount-column-cap-two-lower-at-every-fixed-tail-length": {
+      "path": "archives/customer-attraction/state/定理/任意固定正尾长的非末位金额列系数二下界--定理.md",
+      "sha256": "4be4c1db6dd8c5be4ced85995688c5530d888092b6de6057fb4f5bdb8605e6e6",
+      "scope": "Context-only reading, not a task coverage endpoint. For every fixed r≥1, a complete-SPE nonterminal column reaches 2−3/(n+1)→2 with W=OPT."
+    }
+  },
+  "read_scope": {
+    "declared_files": 7,
+    "declared_reading_segments": 12,
+    "declared_bytes": 65177,
+    "declared_lines": 925,
+    "full_read": true,
+    "context_files": 1,
+    "context_bytes": 4407,
+    "context_lines": 38,
+    "read_add": [],
+    "deferred_candidates_not_promoted": []
+  },
+  "mathematical_result": {
+    "terminal_vs_total": "The positive-source POOL gives Σ_l q_{αjl}+e_{αj}=p_j(W^α) and one shared AMOUNT yields all-recipient TOTAL≤Σ_{j<m}p_j(B)≤W(B)−p_m(B); this is a total source-pool identity, not a per-target-column cap.",
+    "terminal_cap2": "For i_α=m only, c_α≤c_B+1≤2c_B gives Σαλ_{αj}≤2 and terminal removal gives c_α(x)=c_B(x)−1, hence Q_m≤2p_m(B), including zero-profit and m=1 endpoints.",
+    "deep_status": "For multi-cut i_α<m, later actions can add or remove several covers, so c_α≤c_B+r and c_α=c_B−1 are unavailable. No general per-column charge converts the one shared AMOUNT into Q_l≤2p_l(B); DEEP-CAP2 remains open even on real same-strategy SPE continuations.",
+    "sharp_lower": "Terminal and context fixed-r nonterminal SPE families attain ratio 2−3/(n+1), tending to 2; this rules out any uniform coefficient below 2 while W=OPT, so it is not a half counterexample.",
+    "no_double_spend": "POOL retained e, direct/suffix obligations and NET's added-cover compensation all consume the same sender child profit/AMOUNT. They cannot be paid twice, and AMOUNT initialization from OPT/coverage debt remains a separate IC obligation."
+  },
+  "assets": [
+    {
+      "path": "map/edges/Boss7-deep-cap2-3b-3b-5c7788e5b7a7cdf8/terminal-vs-total-pool-deep-open.json",
+      "sha256": "9888a36f8e5b89fc5ebf792f95c1812d008db94c715b1855d43f4ab35de6ff62"
+    },
+    {
+      "path": "map/edges/Boss7-deep-cap2-3b-3b-5c7788e5b7a7cdf8/review.md",
+      "sha256": "30210e614e2d162969ed13a60108c58d585f849b4c94f3fd2a4c452893672ec4"
+    },
+    {
+      "path": "map/edges/Boss7-deep-cap2-3b-3b-5c7788e5b7a7cdf8/reading-ledger.json",
+      "sha256": "c789ef6a50b1cd3fa643d89514fac314f9402da11feb06430a950fbc6a3c7ea6"
+    }
+  ],
+  "edge_binding_status": "edge-bind --write and edge-check passed",
+  "edge_digests": {
+    "boss7-deep-cap2-terminal-vs-total-pool-context": "d3a5f772b4575aede33a2d6ddeb64311ca47e1c9d333c865ceaa8999f7655531"
+  },
+  "execution_boundary": {
+    "source_programs_run": false,
+    "lp_or_spe_search_run": false,
+    "random_replay_run": false,
+    "source_text_modified": false,
+    "registry_modified": false,
+    "coverage_modified": false,
+    "integration_modified": false,
+    "task_state_modified": false,
+    "checkpoint": false,
+    "git_commit_or_push": false,
+    "map_done": false
+  },
+  "review_note": "Seven declared refs were read in full and SHA-256/byte/line checked. The nonterminal fixed-tail theorem was read as registry context only, not promoted to a task endpoint. The delivered edge is checks/context, preserving terminal validity while recording that TOTAL cannot supply a multi-cut per-column charge. No checkpoint, commit, push, or map done."
+}
