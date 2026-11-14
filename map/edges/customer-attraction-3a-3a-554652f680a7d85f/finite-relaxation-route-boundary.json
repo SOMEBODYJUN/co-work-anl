@@ -1,0 +1,75 @@
+{
+  "edge_id": "ca-protected-chain-finite-relaxation-route-boundary",
+  "kind": "checks",
+  "status": "proposed",
+  "source_ids": [
+    "customer-attraction/finite-reply-chain-protected-omission-relaxations"
+  ],
+  "target_ids": [
+    "customer-attraction/finite-reply-chain-protected-omission-relaxations"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "仅在同一对象的三个固定有限模式 d=1,2,3、两位剩余提供者、p=2d+4、背景原子 b=0..4、规定回复 r(0)=1 与 r(a)=a+2 (2<=a<=p-3)、P=1 的松弛域内。保留行不包括首动作 B,p-2,p-1 的完整真实续局。",
+  "roles": {
+    "customer-attraction/finite-reply-chain-protected-omission-relaxations": "同时承载有限 LP 的 exact whole 结果、保存点的 all-best-reply completion contribution，以及把该局部证书与全模型 half 路线区分开的边界说明。"
+  },
+  "context": {
+    "finite_whole": "三个有限 LP 的精确值为 10/9、90/83、670/621；每个保存点有逐原子非负有理对偶与互补性。",
+    "completion_contribution": "真实补全测试在遗漏首动作 B 与两个末端动作上均为空：B 的严格根增益为 1/9、7/83、49/621，末端严格增益为 2/9、16/83、116/621。",
+    "route_boundary": "该结果只切断‘固定部分链 LP 点可任意补全成保持 AB 的完整 SPE，并可直接作 half 反例’这条局部路线；不对全模型 half 或其他 SPE 作 refutes。"
+  },
+  "refutes": "仅 refutes 上述局部升级路线，而非 customer-attraction 模型的全称 half 命题；b>=5、任意深度、合法目录实现及六人完整 IC 均未由本边支付。",
+  "explanation": "审计器以 Fraction 重建全部末位矩阵和首步兼容条件。固定尾行的原对偶证书可证明 D/P>1 的有限松弛上界，但遗漏首动作没有对应 IC 行；三份保存点对所有其真实最佳末位回复都出现严格根增益。因此有限松弛是一个精确障碍，而不是可实现的完整均衡反例。",
+  "scope": "context-only internal boundary check for the assigned object; no cross-object theorem implication and no global half refutation.",
+  "evidence": [
+    {
+      "path": "map/edges/customer-attraction-3a-3a-554652f680a7d85f/review.md",
+      "sha256": "948a63ac37bbc8c2e188ba5a4e15d40c0c49774d22f10b60c5bcf12706dc90e9"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-554652f680a7d85f/support.md",
+      "sha256": "89404fe4c6b9ce6eff207e68eecac9ed62e7f3158ed943a12204c59215e78b2d"
+    },
+    {
+      "path": "archives/customer-attraction/state/障碍/有限回复链的保护遗漏松弛--障碍.md",
+      "sha256": "17c3b8b568b485ce220a3be950ea4f93cd73473cfff75a4b1bd52c10145e438c"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/protected-search-chains/audit.py",
+      "sha256": "06971c5aa0eec80ec9f0d9fb3c295523aa70423817a68f014f7e4dd7cd7a9251"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/protected-search-chains/replay/protected_chain_d1.json",
+      "sha256": "fc8b8e4c94d3313f0da1c0f8ef2252ec48d09fe5f0e63adc6fba7927fe3e93a9"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/protected-search-chains/replay/protected_chain_d2.json",
+      "sha256": "a174690c2d9345804593dbc6bbb83622b8b9b3018316e4f1cb9e7a8e4baecd57"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/protected-search-chains/replay/protected_chain_d3.json",
+      "sha256": "34dcaac9c6b3c2246cae6866029ea1c1f1469fad0707cf89cf4f64198ba78ba2"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "Declared refs were fully read and audit.py passed exact rational replay. This is intentionally a context edge: it records the finite relaxation and the exact route boundary without converting the fixed-chain obstruction into a global half counterexample. Root should bind evidence/review pins before publication.",
+  "endpoint_pins": {
+    "customer-attraction/finite-reply-chain-protected-omission-relaxations": "a9e042947b6349dc154108184c0e8d3655939979257ec26363573dd58d57cfd7"
+  },
+  "evidence_pins": {
+    "map/edges/customer-attraction-3a-3a-554652f680a7d85f/review.md": "948a63ac37bbc8c2e188ba5a4e15d40c0c49774d22f10b60c5bcf12706dc90e9",
+    "map/edges/customer-attraction-3a-3a-554652f680a7d85f/support.md": "89404fe4c6b9ce6eff207e68eecac9ed62e7f3158ed943a12204c59215e78b2d",
+    "archives/customer-attraction/state/障碍/有限回复链的保护遗漏松弛--障碍.md": "17c3b8b568b485ce220a3be950ea4f93cd73473cfff75a4b1bd52c10145e438c",
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+    "archives/customer-attraction/tools/evidence/protected-search-chains/audit.py": "06971c5aa0eec80ec9f0d9fb3c295523aa70423817a68f014f7e4dd7cd7a9251",
+    "archives/customer-attraction/tools/evidence/protected-search-chains/replay/protected_chain_d1.json": "fc8b8e4c94d3313f0da1c0f8ef2252ec48d09fe5f0e63adc6fba7927fe3e93a9",
+    "archives/customer-attraction/tools/evidence/protected-search-chains/replay/protected_chain_d2.json": "a174690c2d9345804593dbc6bbb83622b8b9b3018316e4f1cb9e7a8e4baecd57",
+    "archives/customer-attraction/tools/evidence/protected-search-chains/replay/protected_chain_d3.json": "34dcaac9c6b3c2246cae6866029ea1c1f1469fad0707cf89cf4f64198ba78ba2"
+  },
+  "review_digest": "3ac3bb58b147bca10e701aceba754fdf5a260bae39421010ae799d745b2e27d7"
+}

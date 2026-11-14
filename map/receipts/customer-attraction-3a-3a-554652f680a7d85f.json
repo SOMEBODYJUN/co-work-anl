@@ -1,0 +1,117 @@
+{
+  "task_id": "customer-attraction-3a-3a-554652f680a7d85f",
+  "stage": "3A",
+  "status": "complete-assigned-reading-and-mathematical-delivery",
+  "owner": "Boss1",
+  "object_ids": [
+    "customer-attraction/finite-reply-chain-protected-omission-relaxations"
+  ],
+  "input_pins": {
+    "customer-attraction/finite-reply-chain-protected-omission-relaxations": "a9e042947b6349dc154108184c0e8d3655939979257ec26363573dd58d57cfd7"
+  },
+  "edge_ids": [
+    "ca-protected-chain-finite-relaxation-route-boundary"
+  ],
+  "coverage": {
+    "customer-attraction/finite-reply-chain-protected-omission-relaxations": {
+      "state": "isolated-after-review",
+      "object_pin": "a9e042947b6349dc154108184c0e8d3655939979257ec26363573dd58d57cfd7",
+      "comparison_scope": "固定 d=1,2,3 的有限保护回复链 LP 与 exact saved certificates；只审查从局部 LP 点到完整 SPE/half 的升级路线。",
+      "reason": "context-only proposed edge records a route boundary; the finite LP points have strict completion gains and do not establish a global logical implication.",
+      "edge_ids": [
+        "ca-protected-chain-finite-relaxation-route-boundary"
+      ]
+    }
+  },
+  "assets": [
+    {
+      "path": "map/edges/customer-attraction-3a-3a-554652f680a7d85f/review.md",
+      "sha256": "948a63ac37bbc8c2e188ba5a4e15d40c0c49774d22f10b60c5bcf12706dc90e9"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-554652f680a7d85f/support.md",
+      "sha256": "89404fe4c6b9ce6eff207e68eecac9ed62e7f3158ed943a12204c59215e78b2d"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-554652f680a7d85f/readledger.json",
+      "sha256": "056cdcf0246288d32da662fd3396ee449069d5ee66303c8ab3258e5a0668adb1"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-554652f680a7d85f/finite-relaxation-route-boundary.json",
+      "sha256": "5481a8542c1764f8022265dc99b5b149ea110c926718400b1c604a5d434922df"
+    }
+  ],
+  "read_scope": {
+    "declared_files": 9,
+    "declared_bytes": 639842,
+    "full_read": true,
+    "read_add": [],
+    "deferred_candidates_not_read": [
+      "CAG-MODEL",
+      "M-2ca8a524bdb746d286d02ddb687f380d"
+    ],
+    "planned_bytes_from_task": 633688
+  },
+  "verification": {
+    "command": "python archives/customer-attraction/tools/evidence/protected-search-chains/audit.py",
+    "status": "exact-saved-certificate-verification-passed",
+    "historical_lp_search_rerun": false,
+    "exact_results": {
+      "d1": {
+        "p": 6,
+        "atoms": 315,
+        "rows": 17,
+        "support": 8,
+        "u": "4/9",
+        "v": "5/9",
+        "ratio": "10/9",
+        "dual_rows": 9,
+        "B_gain": "1/9",
+        "endpoint_gain": "2/9"
+      },
+      "d2": {
+        "p": 8,
+        "atoms": 1275,
+        "rows": 39,
+        "support": 19,
+        "u": "38/83",
+        "v": "45/83",
+        "ratio": "90/83",
+        "dual_rows": 19,
+        "B_gain": "7/83",
+        "endpoint_gain": "16/83"
+      },
+      "d3": {
+        "p": 10,
+        "atoms": 5115,
+        "rows": 69,
+        "support": 38,
+        "u": "286/621",
+        "v": "335/621",
+        "ratio": "670/621",
+        "dual_rows": 29,
+        "B_gain": "49/621",
+        "endpoint_gain": "116/621"
+      }
+    }
+  },
+  "closed_overlaps": [],
+  "follow_up_tasks": [],
+  "comparison_note": "Finite protected-reply LP points are recorded as a context route boundary. Strict completion gains block upgrading them to full SPE/half examples.",
+  "execution_boundary": {
+    "registry_modified": false,
+    "coverage_modified": false,
+    "integration_modified": false,
+    "task_state_modified": false,
+    "git_commit_or_push": false
+  },
+  "request_id": "3863b1bb690f4c989cce8c2a06e2f95b",
+  "reviewed_by": "SOLVER-PROTECTED-OMISSION-FRESH",
+  "root_validation": {
+    "reviewer": "Boss1",
+    "native_binding": "edge-bind --write and edge-check passed for proposed context edge",
+    "root_review_path": "map/edges/customer-attraction-3a-3a-554652f680a7d85f",
+    "asset_scope": "Current task output only; no claim over unrelated deltas"
+  },
+  "review_note": "Fresh-worker exact finite LP audit completed; Root validated the route-boundary context edge. It does not claim a global half refutation."
+}
