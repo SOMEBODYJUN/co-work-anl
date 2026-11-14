@@ -1,0 +1,45 @@
+{
+  "edge_id": "ca-ca9b-total-union-checks-fixed-slot-obstruction",
+  "kind": "checks",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/full-catalog-union-is-not-fixed-slot-optimum-obstruction"
+  ],
+  "target_ids": [
+    "customer-attraction/full-catalog-union-is-not-fixed-slot-optimum-obstruction"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "有限单位客户、有限非空共同标签目录、n 名单位提供者依次观察全部有序历史；客户价值在最终覆盖提供者之间均分，允许重复行动、覆盖别名、空主题和离轨平局。具体保存点为 p=10 个互不交单位单例标签、n=m=5、完整动作函数定义在全部长度 <5 的有序历史上；每个历史的规定动作均为该历史中尚未出现的标签，偏离后继续同一完整动作表的真实后继。",
+  "roles": {
+    "customer-attraction/full-catalog-union-is-not-fixed-slot-optimum-obstruction": "提供全目录并集辅助目标、固定 m 槽目标及其精确分离边界；正文给出 p>=m 的 fresh 单例族，JSON 保存 p=10,n=5 的 1023 个克隆坐标和 11111 条完整动作记录。"
+  },
+  "context": {
+    "model_and_quantifiers": "完整有序历史纯 SPE 的共同目录模型；具体点 p=10,n=m=5，泛化说明为所有整数 p>=m>=1 的 fresh 单例族。U 是全目录并集大小，OPT_m 是目录上的 m 槽静态最大并集，u_i 是完整策略中的实际收益。",
+    "finite_json_audit": "逐字段遍历 SHA 绑定的 JSON：10 个顶层字段、1023 个 mask 坐标（仅十个幂二坐标为1）、11111 个动作键，历史深度计数为 1/10/100/1000/10000，11111 个键均唯一且规定 action 不在其 history。沿同一动作表继续任意单方偏离，fresh 偏离收益为1，已用标签偏离收益至多1/2；因此该保存表在全部长度<5 历史上是完整纯 SPE。",
+    "target_separation": "具体根路径 (4,5,6,7,8) 给 U=10、W=OPT_5=5、u_i=1；辅助全并集界 U<=9u_i 失败，而固定槽界 OPT_5<=9u_i 成立，half 余量为 2W-OPT_5=5。泛化 fresh 族给 U=p、OPT_m=m、u_i=1，仅在 p>2m-1 时否定全并集辅助界。",
+    "status_boundary": "该检查只确认全目录并集不能替代固定槽最优覆盖的量词边界；不把 U 的失败迁移为 OPT_m 的失败，不声明 half 反例、全局福利上界、其它目录或其它完整 SPE。"
+  },
+  "explanation": "两份 staged ref 的语义和字节均已完整核对。正文定义 U=|union_a S_a| 与 OPT_m 为目录上的 m 槽最大并集，并指出 U<= (2m-1)u_i 若成立才可推出较弱的 OPT_m<= (2m-1)u_i；U 目标失败本身不否定 OPT_m 目标。保存 JSON 顶层十字段为 scope,p,n,J,player_topic,rootpath,clones,O,ui,actions：p=10,n=5,J={0,...,9},player_topic=4,rootpath=(4,5,6,7,8),O=10,ui='1'；clones 长度 1023，恰在 mask 1,2,4,8,16,32,64,128,256,512 为 1，其余为 0，故为十个不交单例客户。actions 恰含 11111 条完整记录，按历史长度 0,1,2,3,4 分别为 1,10,100,1000,10000，键无重复且每条 action 都不在自身 history。逐记录复核同一完整表的偏离后续：当前动作是 fresh 标签，最终给该客户的份额 1；改选已出现标签的真实后继份额至多 1/2，改选未出现标签至多并恰为 1，因此每个合法历史的规定动作均为弱最优，保存表确实给完整纯 SPE。实际路径 (4,5,6,7,8) 覆盖五个单例，W=5、OPT_5=5、各 u_i=1，而全目录并集 U=10；故辅助目标 U<=9u_1 严格失败 (10>9)，但固定槽目标 OPT_5<=9u_1 成立 (5<=9)，且 2W-OPT_5=5。正文进一步给出一般 p>=m 的同一 fresh 族：U=p、OPT_m=m、u_i=1，只有 p>2m-1 时排除全目录辅助界。这个 checks 边因此只核实并保留“全目录并集不能替代固定槽最优覆盖”的精确障碍和量词，不产生跨对象逻辑支持。",
+  "scope": "核心对象自身的有限精确保存点与一般 fresh 单例推导；反驳目标仅为把 U 当作 m 槽比较量并要求 U<=(2m-1)u_i 的辅助替代。关系不否定 OPT_m<=(2m-1)u_i、任何 half 结论、其它目录或其它完整 SPE，也不把 JSON 的全目录点误报成强逐人反例。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/障碍/全目录并集不能替代固定槽最优覆盖--障碍.md",
+      "sha256": "c29f5caf175c2d87a6122045d006655f3eb45ecefb8ca45d7aa462678e776e09"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/graph-cone-individual-and-catalog-union-primary/original/total_catalog_union_bound_failure.json",
+      "sha256": "bd3cc625f290abc7b26e6208854f622d9bc2253425aeafcb34b23c490970c6de"
+    }
+  ],
+  "reviewed_by": "MAP-WORKER-W",
+  "review_note": "完整读取障碍正文及 JSON 全字段/全 11111 动作记录；独立复核 mask 克隆、历史键完备性、fresh 动作、偏离后真实后继和 U/OPT_5/u_i 算术。仅作核心对象自检 context/checks 边，未提升任何 deferred candidate，也未将辅助失败外推成 fixed-slot 或 half 反例。",
+  "endpoint_pins": {
+    "customer-attraction/full-catalog-union-is-not-fixed-slot-optimum-obstruction": "417ff4d2e343360075200b9923e4714d483e8de254e285402cbbcdd921f98086"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/障碍/全目录并集不能替代固定槽最优覆盖--障碍.md": "c29f5caf175c2d87a6122045d006655f3eb45ecefb8ca45d7aa462678e776e09",
+    "archives/customer-attraction/tools/evidence/graph-cone-individual-and-catalog-union-primary/original/total_catalog_union_bound_failure.json": "bd3cc625f290abc7b26e6208854f622d9bc2253425aeafcb34b23c490970c6de"
+  },
+  "review_digest": "06b9e13c7b17ef155f51ec40a81187720eddaed9c8be8e17ed4a2771d2f042db"
+}
