@@ -1,0 +1,61 @@
+{
+  "edge_id": "ca-732c-finite-reset-audit-checks-cartesian-obstruction",
+  "kind": "checks",
+  "status": "accepted",
+  "source_ids": [
+    "M-d2dd649a6dc549b493268251dc9a5e4d"
+  ],
+  "target_ids": [
+    "M-189d60bfb78140709755f3477e6a10c5"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "仅在同一八人、八标签、32个单位客户的固定两块实例与其 CA_COMPLETE_SPE_DAG_v1 完整纯SPE 上比较；M-d2dd 的有限程序对象量化固定核/固定策略与指定查询，M-189 的障碍量化同一基例的每个整数 Cartesian 复制 k≥1。",
+  "roles": {
+    "M-d2dd649a6dc549b493268251dc9a5e4d": "提供固定八人DAG的全字段精确审计：13,872个可达节点、59,496项含自身IC比较、实际路径 W=OPT_8=32、位置1局部pair margin -9/10、根同分布二次型全局最大1717/560（达到 p=(0,0,5/28,9/28,0,0,5/28,9/28)），并保留其余有限量词和开放边界。",
+    "M-189d60bfb78140709755f3477e6a10c5": "提供同一基例的解析根重置障碍及 Cartesian 复制证明：R(3,7)=9/10、e(3)=e(7)=J(3,7)=0，且对每 k≥1 有 R=9k/10 而 W=OPT_8=32k；不把局部失败升级为六人半覆盖反例。"
+  },
+  "explanation": "逐项核对后，程序对象的 exact audit 与障碍对象的 base construction 指向同一完整DAG和同一根3/7正重置：审计直接给 13/4、37/10、9/10、局部 -9/10 及全局同p封顶 1717/560<13/4；障碍页再以客户不交 Cartesian 乘积把该局部缺额解析放大为 9k/10。该检查只确认有限基例与放大障碍的证据接口，不能把固定有限核的二次最大值、局部 pair 失败或 k=1 审计当作任意 m 的完整 SPE/half 定理。",
+  "scope": "accepted checks/context：固定八人完整策略的有限审计核对其根重置障碍和每整数 Cartesian lift 的基例；保留 M-189 的 all-k 解析量词、M-d2dd 的 fixed-kernel/finite-input 量词及二者各自开放义务，不产生 implies/refutes/specializes/transfer。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/程序/真实重置配对审计的七旧策略与八人二次型合同--程序.md",
+      "sha256": "d787c9fd588b7236a2728cada247e7f0d26faf620dbdf261bb1a53815d4e00f8"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+    },
+    {
+      "path": "archives/customer-attraction/state/障碍/根重置局部账本的笛卡尔放大--障碍.md",
+      "sha256": "fb80ab3ead19b3e039bc88d72bd3b52ea6935f87771d625df6dc559649f729ba"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/dynamic-flow-workspace/original/research/workspaces/customer-attraction/R-d22a706a03c5499d941a6a97f94128a8/counterexample/pure_menu_two_block_dag.json",
+      "sha256": "6190bc98dedda4fb22a1af6339702c03a6cb3b04cd8dfe6b18a577782e5d2f95"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/relay-pair-and-marked-interface-audits-primary/original/5432547156a3d5b2aef6--audit_two_block_pair.json",
+      "sha256": "0e7219f7041be49d5b37c4d34e29453300b2cdaacc03ba54d896ecf872382fdf"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/relay-pair-and-marked-interface-audits-primary/original/b466d91f6834c6cb1fea--audit_two_block_pair.py",
+      "sha256": "a7916d50829dc126f6a684a829753d4eaaec6064379275c0992db0fa4b69f29c"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "Fresh Solver 完整读取核心程序正文、共同模型、根重置障碍、1,443,260 字节 DAG 全部字段（解析 13,872 节点/全部节点键与 discovery）、原 audit JSON 全字段和 audit Python 全文；并核对同一 base-DAG 的 M-189 障碍量词。未重跑旧科学程序、未把有限验证或局部边界升级为完整 SPE/half。",
+  "endpoint_pins": {
+    "M-189d60bfb78140709755f3477e6a10c5": "0430076fef32e956cdc2af28e1a62408a281c554df0dc933e62333b5a0cbee5a",
+    "M-d2dd649a6dc549b493268251dc9a5e4d": "119e52b6dc105947b6d969e5d2debd899e9782ea5a274f4bb2dffcb6bd2e53f3"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/程序/真实重置配对审计的七旧策略与八人二次型合同--程序.md": "d787c9fd588b7236a2728cada247e7f0d26faf620dbdf261bb1a53815d4e00f8",
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+    "archives/customer-attraction/state/障碍/根重置局部账本的笛卡尔放大--障碍.md": "fb80ab3ead19b3e039bc88d72bd3b52ea6935f87771d625df6dc559649f729ba",
+    "archives/customer-attraction/tools/evidence/dynamic-flow-workspace/original/research/workspaces/customer-attraction/R-d22a706a03c5499d941a6a97f94128a8/counterexample/pure_menu_two_block_dag.json": "6190bc98dedda4fb22a1af6339702c03a6cb3b04cd8dfe6b18a577782e5d2f95",
+    "archives/customer-attraction/tools/evidence/relay-pair-and-marked-interface-audits-primary/original/5432547156a3d5b2aef6--audit_two_block_pair.json": "0e7219f7041be49d5b37c4d34e29453300b2cdaacc03ba54d896ecf872382fdf",
+    "archives/customer-attraction/tools/evidence/relay-pair-and-marked-interface-audits-primary/original/b466d91f6834c6cb1fea--audit_two_block_pair.py": "a7916d50829dc126f6a684a829753d4eaaec6064379275c0992db0fa4b69f29c"
+  },
+  "review_digest": "25354c42eacb729c608342d51f1babd874e89d8003ec39492b57d26760e071b6"
+}
