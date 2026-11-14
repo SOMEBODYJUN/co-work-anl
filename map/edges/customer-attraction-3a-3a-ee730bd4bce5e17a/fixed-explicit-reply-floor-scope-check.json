@@ -1,0 +1,107 @@
+{
+  "edge_id": "cag-ee730-explicit-reply-floor-scope-check",
+  "kind": "checks",
+  "status": "accepted",
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "source_ids": [
+    "M-c213464ff5db45bcb0625547ae7f20a1"
+  ],
+  "target_ids": [
+    "M-c213464ff5db45bcb0625547ae7f20a1"
+  ],
+  "conditions": "固定 1905 列、16 hist、显式 R/Z 主题与实际第四/第五位查询；324 条 early-price 投影加 36 条全实际前缀 floor 必要行，比较 5287 exact point 与 5251/4963 相关保存点。",
+  "roles": {
+    "M-c213464ff5db45bcb0625547ae7f20a1": "给出 5287 行/1905 列明示有限必要系统的有理点，并保留同 W 隐藏质量改变、324 价格投影与 36 floor 行的精确验证边界。"
+  },
+  "context": {
+    "exact_5287_point": {
+      "rows": 5287,
+      "columns": 1905,
+      "O": "1",
+      "W": "348849746216199535907980629211183/729080852958937593380920238282304",
+      "O_minus_2W": "15690680263269260782479489929969/364540426479468796690460119141152",
+      "positive_columns": 169,
+      "minimum_slack": "0",
+      "priced_rows": 324,
+      "priced_negative_rows": 0,
+      "floor_rows": 36,
+      "floor_negative_rows": 0,
+      "floor_zero_rows": 7
+    },
+    "saved_point_comparison": {
+      "early_reply_5251_W": "57770848877002761745569033003977/120785977474956965853696208259979",
+      "early_reply_5251_priced_negative_rows": 0,
+      "early_reply_5251_floor_negative_rows": 5,
+      "early_reply_5251_negative_keys": [
+        "(1,0,1,0)",
+        "(1,1,1,1)",
+        "(2,0,0,0)",
+        "(2,0,1,0)",
+        "(2,1,1,1)"
+      ],
+      "minimum_5251_floor_slack": "-37918341723853123058170585072309/1073653133110728585366188517866480",
+      "old_4927_floor_negative_rows": 4,
+      "all_reply_floors_4963_floor_negative_rows": 0,
+      "hidden_coordinate_boundary": "4927→5251 changes 118 auxiliary weights (57 joint,61 overlap); 4963→5287 changes 95 auxiliary weights (51 joint,44 overlap); 5251→5287 changes 207 weights including K/hist/joint/overlap."
+    },
+    "formula_scope": {
+      "priced_rows": "324 = actual4 216 + actual5 108; affine one-new-membership projection for legal R/Z themes and Q in {A5,A6,self}.",
+      "floor_rows": "36 full actual-prefix safety rows, separate from the 324 priced projections.",
+      "audit": "536 projection keys; 685800 exact coefficients compared against literal hidden-state enumeration; original-vs-literal row builders agree."
+    },
+    "interpretation_boundary": "这只是固定必要行的 self-context checks：不提供共同目录实现、全部有序历史纯 SPE、实际 OPT_6 或普遍六人 half；同 W 不允许拼接不同隐藏质量，5251 的负 floor 不能迁移为 5287 的负行。"
+  },
+  "explanation": "该边记录同一显式新回复对象内部：5287 点在 324+36 条有限必要行上精确可行，而 5251 相关点保留五条负 floor。它保留有限投影、坐标变化和迁移缺口，未把 W<1/2 误读成完整 SPE/half 反例。",
+  "scope": "self-context only；固定 16 hist、1905 列、324 priced rows、36 floor rows。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/计算/显式新回复的实际四五位补价与精确点--计算.md",
+      "sha256": "0d1817e1c6481c592b24b09ae7d8cd5b0914f75267592a76d43e59e6bc0f9853"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/early-reply-price-points-boss3/original/early_reply_prices.py",
+      "sha256": "2e5d169cff6f4ec26a18e2b06894de79ba7892737523e36d2ad0439e6b862be1"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/early-reply-price-points-boss3/original/early_reply_exact.json",
+      "sha256": "4c5903b72783e55b1afe0f43606cff191c69b844bd64428ce0293dc4d4f3ece5"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/early-reply-price-points-boss3/original/early_reply_floors_exact.json",
+      "sha256": "78e3a89cf01a62ea2a4d2768043e09027e0b3dd920984d3f9591b0c0a1e0fe2e"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/early-reply-price-points-boss3/audit_added_price_rows.py",
+      "sha256": "3035a76b447036402555d02f998d8451e99c19eff3623e48ce5793b299fde967"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/early-reply-price-points-boss3/replay/added-row-and-point-audit.json",
+      "sha256": "fb008c5e7fe4421f4ce601e1d9990d519ee4523b969b16c0984000cfadcade3e"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/early-reply-price-points-boss3/runtime-dependency-manifest.json",
+      "sha256": "e24f7a16ce37bf607fb26a575dbbb78daa18b72cb902f3875d181a26aedbf6a3"
+    }
+  ],
+  "reviewed_by": "Boss7 / fresh-worker-ee730",
+  "review_note": "完整实读任务声明 10 passes/8 refs；逐字节核对范围、四个 1905 列点、原 builder 与独立 literal audit，严格保留有限必要系统和跨点隐藏质量缺口。",
+  "endpoint_pins": {
+    "M-c213464ff5db45bcb0625547ae7f20a1": "4eebb8e415bd7665f9637e14a570343265d0470734a8ed1a53f8d884bb19398a"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/计算/显式新回复的实际四五位补价与精确点--计算.md": "0d1817e1c6481c592b24b09ae7d8cd5b0914f75267592a76d43e59e6bc0f9853",
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+    "archives/customer-attraction/tools/evidence/early-reply-price-points-boss3/original/early_reply_prices.py": "2e5d169cff6f4ec26a18e2b06894de79ba7892737523e36d2ad0439e6b862be1",
+    "archives/customer-attraction/tools/evidence/early-reply-price-points-boss3/original/early_reply_exact.json": "4c5903b72783e55b1afe0f43606cff191c69b844bd64428ce0293dc4d4f3ece5",
+    "archives/customer-attraction/tools/evidence/early-reply-price-points-boss3/original/early_reply_floors_exact.json": "78e3a89cf01a62ea2a4d2768043e09027e0b3dd920984d3f9591b0c0a1e0fe2e",
+    "archives/customer-attraction/tools/evidence/early-reply-price-points-boss3/audit_added_price_rows.py": "3035a76b447036402555d02f998d8451e99c19eff3623e48ce5793b299fde967",
+    "archives/customer-attraction/tools/evidence/early-reply-price-points-boss3/replay/added-row-and-point-audit.json": "fb008c5e7fe4421f4ce601e1d9990d519ee4523b969b16c0984000cfadcade3e",
+    "archives/customer-attraction/tools/evidence/early-reply-price-points-boss3/runtime-dependency-manifest.json": "e24f7a16ce37bf607fb26a575dbbb78daa18b72cb902f3875d181a26aedbf6a3"
+  },
+  "review_digest": "4d08c7b3cca031f7992219fb899dd6e1c75ddfe0ac7ea689959344b26cc14d59"
+}
