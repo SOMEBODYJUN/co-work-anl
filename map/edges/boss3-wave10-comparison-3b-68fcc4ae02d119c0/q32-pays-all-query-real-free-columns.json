@@ -1,0 +1,71 @@
+{
+  "edge_id": "boss3-wave10-comparison-3b-68fcc4ae02d119c0-q32-pays-all-query-real-free-columns",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/q32-fixed-policy-cone-individual-and-static-security"
+  ],
+  "target_ids": [
+    "customer-attraction/actual-position-aggregate-free-column-budget"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定原 sym_m5p7_q32_Jout.json 的完整有序策略σ、五名单位提供者及七个共同合法标签0,…,6。量化Kσ中全部非负实客户类型质量w，包括零点。每个历史和每个动作沿同一σ展开真实后继，保留弱IC、重复标签和同覆盖异标签。单位客户的一般目标只取该锥的整数质量点。",
+  "roles": {
+    "customer-attraction/q32-fixed-policy-cone-individual-and-static-security": "提供真实叶与0/1同覆盖，并用h=0001的七个末位真实比较统一控制静态查询。",
+    "customer-attraction/actual-position-aggregate-free-column-budget": "接收AFC一般全查询量词在固定q32完整策略全客户锥上的实例。位置权重各1/5，各自只能使用自己的真实菜单。"
+  },
+  "contribution": {
+    "result": "对同一Kσ的每个w、每个p及每个实际位置i，H_i(p)≤W/5。q_i=δ_(z_i)是与查询无关的同组真实删槽列，δ0使五项取等，故max_pΣ_iH_i(p)=W。补充逐列核验还给H_i(p)=F_p(0001)。",
+    "remaining": "AFC一般候选仍须对每个目录及每份完整σ在各自真实菜单同时支付全p预算。q32的共同负载结构和所选列仅覆盖这个固定锥。"
+  },
+  "explanation": "在实际叶00011，根强制1沿σ到10000，实际末位在0001强制0到00010。只喜0、只喜1的质量为x、y，真实收益差为g_R=x/3−y、g_L=y/2−x/4。6g_R+12g_L=−x、3g_R+4g_L=−y，故逐类型消去0/1兴趣位不同的质量。两标签同覆盖，五位实际收益均为W/5。固定每个实际位置选实际动作，沿同一σ取得00011并删当前位置，得到本位置合法的四槽列，负载同h=0001。由末位真实IC，七个纯查询值均不超过W/5，所以这组自由列同时服务所有查询。位置仍等权1/5。δ0对每个合法四槽背景由分母界保W/5，五个菜单因此取等。完整35列复核显示其余列也都是四个0或1，因而该锥内任一真实菜单列都与h同负载。",
+  "scope": "仅固定原q32σ及其完整非负客户锥，量化全部查询分布。列指强制后沿原策略走真叶、删除当前一个槽所得四槽，保留过去与真实后继。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+    },
+    {
+      "path": "archives/customer-attraction/state/候选/实际位置自由删槽列的聚合查询预算--候选.md",
+      "sha256": "e71619fb84fadc640e8cc0de46c7c1081233f876d010353acaa22b624bb7d522"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/q32完整策略锥的逐人静态安全值--定理.md",
+      "sha256": "6866604ad9de255fe64b347242233cbdcad4f617f4c6add63d89aa684f42f7e9"
+    },
+    {
+      "path": "research/registration/evidence/register-lead-recovered-evidence-01/sym_m5p7_q32_Jout.json",
+      "sha256": "d69e034266cf14279ce3de3ed9ebfadd9bb0ae79df9d35a89ad5fddbe5b32fe9"
+    },
+    {
+      "path": "map/edges/boss3-wave10-comparison-3b-68fcc4ae02d119c0/q32-comparison.md",
+      "sha256": "0372557b0a92307f19325689c4be0d01954ffec1c38593522e4cea87c99f11a5",
+      "section": "实际删槽列与独立推送的不同量词"
+    },
+    {
+      "path": "map/edges/boss3-wave10-comparison-3b-68fcc4ae02d119c0/verify-menu-columns.py",
+      "sha256": "6169ef6cfb469c6de30c235a93b4cc15e5338020385821d1daaf5fc52ea7fac1"
+    },
+    {
+      "path": "map/edges/boss3-wave10-comparison-3b-68fcc4ae02d119c0/menu-columns-exact.json",
+      "sha256": "513052da1512fdec402fef6aba20901e60744f2b9c7d748f9429a3b48fd5a081"
+    }
+  ],
+  "reviewed_by": "Boss3 / 68fcc4ae02d119c0 mapper",
+  "review_note": "核AFC有限minimax与固定等权边缘。逐位、逐强制标签展开35个真实叶并删正确槽，复验2205个逐类型负载恒等式。",
+  "endpoint_pins": {
+    "customer-attraction/actual-position-aggregate-free-column-budget": "20553bc0513e372a911d962e6bc7450a0502d05c4dc53f6fc6cb0ab5d9aace2a",
+    "customer-attraction/q32-fixed-policy-cone-individual-and-static-security": "0a60697ca4da8d3892a4090a441754c99e525f6c92eccfb4ccf0870bc681785c"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+    "archives/customer-attraction/state/候选/实际位置自由删槽列的聚合查询预算--候选.md": "e71619fb84fadc640e8cc0de46c7c1081233f876d010353acaa22b624bb7d522",
+    "archives/customer-attraction/state/定理/q32完整策略锥的逐人静态安全值--定理.md": "6866604ad9de255fe64b347242233cbdcad4f617f4c6add63d89aa684f42f7e9",
+    "research/registration/evidence/register-lead-recovered-evidence-01/sym_m5p7_q32_Jout.json": "d69e034266cf14279ce3de3ed9ebfadd9bb0ae79df9d35a89ad5fddbe5b32fe9",
+    "map/edges/boss3-wave10-comparison-3b-68fcc4ae02d119c0/q32-comparison.md": "0372557b0a92307f19325689c4be0d01954ffec1c38593522e4cea87c99f11a5",
+    "map/edges/boss3-wave10-comparison-3b-68fcc4ae02d119c0/verify-menu-columns.py": "6169ef6cfb469c6de30c235a93b4cc15e5338020385821d1daaf5fc52ea7fac1",
+    "map/edges/boss3-wave10-comparison-3b-68fcc4ae02d119c0/menu-columns-exact.json": "513052da1512fdec402fef6aba20901e60744f2b9c7d748f9429a3b48fd5a081"
+  },
+  "review_digest": "333c88845ed614d7b90aeb48f23b98adbd1e40f47b211c6d8ea59b5eb8f153fa"
+}

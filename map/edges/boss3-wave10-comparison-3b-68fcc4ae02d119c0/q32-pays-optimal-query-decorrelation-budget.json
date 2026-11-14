@@ -1,0 +1,76 @@
+{
+  "edge_id": "boss3-wave10-comparison-3b-68fcc4ae02d119c0-q32-pays-optimal-query-decorrelation-budget",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/q32-fixed-policy-cone-individual-and-static-security"
+  ],
+  "target_ids": [
+    "M-dc01311cbb7547b688480338258ae3d8"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定原 sym_m5p7_q32_Jout.json 的完整有序策略σ、五名单位提供者及七个共同合法标签0,…,6。量化Kσ中全部非负实客户类型质量w，包括零点。每个历史和每个动作沿同一σ展开真实后继，保留弱IC、重复标签和同覆盖异标签。单位客户的一般目标只取该锥的整数质量点。",
+  "roles": {
+    "customer-attraction/q32-fixed-policy-cone-individual-and-static-security": "源定理给固定δ0的最优性及五个真实强制0背景。冻结动作表的全部35个真实删槽列给本边的局部全p加强。",
+    "M-dc01311cbb7547b688480338258ae3d8": "接收一般存在安全最优p使Gσ(p)≥0的候选在同一固定q32锥中的付款，明确区分任意p和静态最优p。"
+  },
+  "contribution": {
+    "result": "同一Kσ中，δ0是真静态安全最优分布且Gσ(δ0)=0。进一步每个p、每个i均有C_i(p)=F_p(0001)、κ_i(p)=0，故Gσ(p)=W−5F_p(0001)≥0。每个真正静态最优p都使Gσ(p)=0。",
+    "remaining": "其他完整σ与目录上的同分布推送可能产生不同客户负载，一般存在最优p的候选仍待证明或反驳。原36客户反例继续否定普遍的全p命题。"
+  },
+  "explanation": "在实际叶00011，根强制1沿σ到10000，实际末位在0001强制0到00010。只喜0、只喜1的质量为x、y，真实收益差为g_R=x/3−y、g_L=y/2−x/4。6g_R+12g_L=−x、3g_R+4g_L=−y，故逐类型消去0/1兴趣位不同的质量。两标签同覆盖，五位实际收益均为W/5。纯δ0通过对所有合法四槽有序背景的分母界及h=0001的封顶而最优。对同分布推送预算，实际五位置强制0的真实叶依次是00011、00011、00011、00001、00010。第4位真实后继为1，其真叶00001删第4位得0001。第5位在原实际前缀0001强制0，真叶00010删第5位也得0001。五个删槽列均同负载，故C_i(δ0)=W/5。完整35列进一步给每个b的V_i(b)同h负载，包含强制2至6后删除其当前槽的各列。对任意p，独立抽查询和强制索引给C_i(p)=Σ_b p_b F_p(V_i(b))=F_p(h)，公开偏离均值同为F_p(h)，所以κ_i(p)=0。末位真实IC给F_p(h)≤W/5。任一真正静态最优p对所有合法背景B有F_p(B)≥W/5，故h取等。冻结33客户点还可见Gσ(δ2)=0而δ2静态保底8/5小于v_5=4，预算取等可发生于非最优p。",
+  "scope": "同一q32完整策略的全非负客户锥。独立强制索引和查询服从同一个p，区别于各位置独立选择自由q_i。全p非负和最优面取等只量化这份σ。原33/20有理对偶仅控制J=(2,3,4,5,6)，原21支持枚举仅针对33客户冻结点。本局部付款不依赖该比较支持。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定义/跨分支去相关与激励补偿总预算--定义.md",
+      "sha256": "51b64f713fa05f4eba6dc873256e7086342b2d328a6c2881a9308d356b2e7eed"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/q32完整策略锥的逐人静态安全值--定理.md",
+      "sha256": "6866604ad9de255fe64b347242233cbdcad4f617f4c6add63d89aa684f42f7e9"
+    },
+    {
+      "path": "research/registration/evidence/register-lead-recovered-evidence-01/sym_m5p7_q32_Jout.json",
+      "sha256": "d69e034266cf14279ce3de3ed9ebfadd9bb0ae79df9d35a89ad5fddbe5b32fe9"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/q32-policy-cone-security/q32-exact.json",
+      "sha256": "e25803abc6cb1c41bad94c9ff6688f21edaa18e38ccdf8b8af61e4fc845afa22"
+    },
+    {
+      "path": "map/edges/boss3-wave10-comparison-3b-68fcc4ae02d119c0/q32-comparison.md",
+      "sha256": "0372557b0a92307f19325689c4be0d01954ffec1c38593522e4cea87c99f11a5",
+      "section": "实际删槽列与独立推送的不同量词"
+    },
+    {
+      "path": "map/edges/boss3-wave10-comparison-3b-68fcc4ae02d119c0/verify-menu-columns.py",
+      "sha256": "6169ef6cfb469c6de30c235a93b4cc15e5338020385821d1daaf5fc52ea7fac1"
+    },
+    {
+      "path": "map/edges/boss3-wave10-comparison-3b-68fcc4ae02d119c0/menu-columns-exact.json",
+      "sha256": "513052da1512fdec402fef6aba20901e60744f2b9c7d748f9429a3b48fd5a081"
+    }
+  ],
+  "reviewed_by": "Boss3 / 68fcc4ae02d119c0 mapper",
+  "review_note": "按冻结有序策略核五个强制0真叶、全部35个真实删槽列、63个同覆盖类型的逐列负载及δ2静态保底。解析证明覆盖全部锥点与全部p。",
+  "endpoint_pins": {
+    "M-dc01311cbb7547b688480338258ae3d8": "d6c6af0db0a027f721744aeff2d4c46cd7a65e634e8feca6ca383bd4a0539424",
+    "customer-attraction/q32-fixed-policy-cone-individual-and-static-security": "0a60697ca4da8d3892a4090a441754c99e525f6c92eccfb4ccf0870bc681785c"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定义/跨分支去相关与激励补偿总预算--定义.md": "51b64f713fa05f4eba6dc873256e7086342b2d328a6c2881a9308d356b2e7eed",
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+    "archives/customer-attraction/state/定理/q32完整策略锥的逐人静态安全值--定理.md": "6866604ad9de255fe64b347242233cbdcad4f617f4c6add63d89aa684f42f7e9",
+    "research/registration/evidence/register-lead-recovered-evidence-01/sym_m5p7_q32_Jout.json": "d69e034266cf14279ce3de3ed9ebfadd9bb0ae79df9d35a89ad5fddbe5b32fe9",
+    "archives/customer-attraction/tools/evidence/q32-policy-cone-security/q32-exact.json": "e25803abc6cb1c41bad94c9ff6688f21edaa18e38ccdf8b8af61e4fc845afa22",
+    "map/edges/boss3-wave10-comparison-3b-68fcc4ae02d119c0/q32-comparison.md": "0372557b0a92307f19325689c4be0d01954ffec1c38593522e4cea87c99f11a5",
+    "map/edges/boss3-wave10-comparison-3b-68fcc4ae02d119c0/verify-menu-columns.py": "6169ef6cfb469c6de30c235a93b4cc15e5338020385821d1daaf5fc52ea7fac1",
+    "map/edges/boss3-wave10-comparison-3b-68fcc4ae02d119c0/menu-columns-exact.json": "513052da1512fdec402fef6aba20901e60744f2b9c7d748f9429a3b48fd5a081"
+  },
+  "review_digest": "0ccc0e5348d415b4c816d2ae88faa017f912a83bfd861b4f9a70af37ecea5477"
+}
