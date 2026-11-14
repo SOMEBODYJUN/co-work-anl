@@ -1,0 +1,179 @@
+{
+  "task_id": "boss5-r70-proof-label-repair-fe2e4d74fe1801f4",
+  "worker": "SOLVER-R70-LABEL-FRESH",
+  "read_add_history": {
+    "source_task": "customer-attraction-3a-3a-4b2f43276f388bc1",
+    "operation": "map read-add",
+    "object_id": "M-c5e460641b3e47729159aa9e7cb6a175",
+    "object_pin": "cfb8aca64886120754f2457a388c80e70d73430d4804ba0d027f9db08f6d63d9",
+    "reason": "历史读取引入 58 客户构造用于比较。该对象主陈述对应 points.random。取等直接依赖同审计的独立 points.lp_integer。",
+    "current_read_add_operations": 0
+  },
+  "direct_checks": [
+    {
+      "path": "archives/customer-attraction/tools/evidence/r70-six1-best-data/point-audit.json",
+      "sha256": "7074287b7d654e9399df82b8f72cc4753f39cf450623cd2ed5fb93f50ce004b4",
+      "locator": "points.lp_integer",
+      "notes": "独立 11 客户输入。137256 条含自身比较，最小余量 0，39531 项紧，924 个终局，W=6，OPT6=11。"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/r70-six1-best-data/lp-integer-point.json",
+      "sha256": "f3bb94fe8c4d8748263b456a4232359648192bb303a3ff85a97c6be7fa15b895",
+      "notes": "128 项整数重数与 points.lp_integer 的正掩码逐项核对。"
+    },
+    {
+      "path": "archives/customer-attraction/state/计算/六人不交覆盖搜索点的随机记录与锐界实例--计算.md",
+      "sha256": "9b9ecb396c2ed6d5c2cb012a64f86235508ed21343269846c6afd5c6eee795c8",
+      "section": "LP十一点：大块锐例与相同固定策略",
+      "notes": "根路径与六槽最优覆盖、固定策略锥的证据边界。"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/r70-six1-best-data/point-audit.json",
+      "sha256": "7074287b7d654e9399df82b8f72cc4753f39cf450623cd2ed5fb93f50ce004b4",
+      "locator": "points.random",
+      "notes": "登记对象 M-c5e 的精确 58 客户输入，W=43、OPT6=58，与取等输入的正掩码不同。"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/r70-strategy-lp-program/exact-cone-audit.json",
+      "sha256": "225f682dab909fac2a2da6a8b38166bc3f773d4c820714851c5785ca0424307c",
+      "locator": "duals",
+      "notes": "七组证书、21 个不同真实 IC 行、889 个有理列余项。完整策略 SHA 与点审计绑定一致。"
+    }
+  ],
+  "carried_forward": {
+    "source_receipt": {
+      "path": "map/receipts/customer-attraction-3a-3a-4b2f43276f388bc1.json",
+      "sha256": "6e487b096f31f52b23046c22df66f34b7f21f953c81a328036862c1142752122"
+    },
+    "source_readledger": {
+      "path": "map/edges/customer-attraction-3a-3a-4b2f43276f388bc1/readledger.json",
+      "sha256": "74c1827267402000f7dc9ad7f6e8dfbda33ee47c4b74aaf434824a57241383b8"
+    },
+    "strategy_structure": {
+      "complete_strategy_expected_nodes": 19608,
+      "complete_strategy_depth_counts": [
+        1,
+        7,
+        49,
+        343,
+        2401,
+        16807
+      ],
+      "complete_strategy_actions_observed": [
+        0,
+        2
+      ],
+      "complete_strategy_root_count": [
+        1,
+        0,
+        5,
+        0,
+        0,
+        0,
+        0
+      ],
+      "same_count_action_variation_in_this_sigma": 0,
+      "independent_cone_audit_status": "PASS",
+      "point_audit_status": "PASS"
+    },
+    "prior_passes": [
+      {
+        "path": "archives/customer-attraction/state/程序/六人七主题固定完整策略的福利比线性规划程序--程序.md",
+        "sha256": "1b882276b4cdbc2215ac198279f822a00546428edfffb30a2cc79256ec6b5c12",
+        "mode": "full-text; declared section 新证书：21条真实IC与七个逐类型余项",
+        "notes": "Read the exact 21-row certificate, seven omitted-label bounds, true IC interpretation, dual residual semantics, and explicit non-global scope."
+      },
+      {
+        "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+        "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+        "mode": "full-text",
+        "notes": "Read labelled catalogue, duplicate/empty labels, ordered full histories, root welfare W, OPT_6, true deviations, and remaining-profit background distinction."
+      },
+      {
+        "path": "archives/customer-attraction/tools/evidence/r70-strategy-lp-program/exact-cone-audit.json",
+        "sha256": "225f682dab909fac2a2da6a8b38166bc3f773d4c820714851c5785ca0424307c",
+        "mode": "full JSON parse",
+        "notes": "PASS; 19,608 nodes, 117,648 reconstructed nonself comparisons, 3,048 keys, 387,096 coefficients, 198,672 nonzeros, 889 exact dual columns; all seven residual minima zero."
+      },
+      {
+        "path": "archives/customer-attraction/tools/evidence/r70-strategy-lp-program/replay/complete-strategy.json",
+        "sha256": "d2924549f6ea10bd9a732434bef8145694e2bcbbec471abdef60d8d609687141",
+        "mode": "full JSON parse and structural replay",
+        "notes": "All 19,608 entries read; depth counts are 1,7,49,343,2,401,16,807; all prefixes exist; actions are in 0..6; root action 0 and root continuation count (1,0,5,0,0,0,0)."
+      },
+      {
+        "path": "archives/customer-attraction/tools/evidence/r70-strategy-lp-program/README.md",
+        "sha256": "8049ecc61280ab0735c1e1352a7b85ef62adb91950f089d34d23fd42d8922b8c",
+        "mode": "full-text",
+        "notes": "Read replay contract, matrix dimensions, independent exact-cone audit boundary, shared point-audit distinction, and non-rerun scope."
+      },
+      {
+        "path": "archives/customer-attraction/state/计算/六人不交覆盖搜索点的随机记录与锐界实例--计算.md",
+        "sha256": "9b9ecb396c2ed6d5c2cb012a64f86235508ed21343269846c6afd5c6eee795c8",
+        "mode": "full-text; declared LP十一点 section",
+        "notes": "Read the 11-customer equality point, 58-customer separate point, full-strategy distinction, and warning that static enumeration is not dynamic SPE certification."
+      },
+      {
+        "path": "archives/customer-attraction/state/程序/浮点终局全集递推与完整历史有理后核程序--程序.md",
+        "sha256": "b81b76db8d6ea7fc2cc204725293367ca6568e8785b8f7ff110e2140759dca22",
+        "mode": "full-text; declared section 存量两点、同目录调用方和准确复用",
+        "notes": "Read exact reuse boundary: one original sigma/LP event, no verify rerun, and float-vs-rational separation."
+      },
+      {
+        "path": "archives/customer-attraction/tools/evidence/r70-six1-best-data/README.md",
+        "sha256": "18b8a3b8289a6f1ba54b2d7bb96dddf7f78bd87e24f6dae653b14f0ffeed7018",
+        "mode": "full-text; read after read-add",
+        "notes": "Read the independent point-audit contract, exact 11/58 point split, and no-optimizer/no-rerun boundary."
+      },
+      {
+        "path": "archives/customer-attraction/tools/evidence/r70-six1-best-data/point-audit.json",
+        "sha256": "7074287b7d654e9399df82b8f72cc4753f39cf450623cd2ed5fb93f50ce004b4",
+        "mode": "full JSON parse",
+        "notes": "PASS; same strategy SHA, 11-customer point W=6/OPT=11, 137,256 comparisons, 924 terminal multisets, minimum exact slack zero; also separate 58-customer W=43/OPT=58 record."
+      },
+      {
+        "path": "archives/customer-attraction/tools/evidence/r70-six1-best-data/lp-integer-point.json",
+        "sha256": "f3bb94fe8c4d8748263b456a4232359648192bb303a3ff85a97c6be7fa15b895",
+        "mode": "full JSON parse",
+        "notes": "Read exact integer multiplicities and common scaling metadata for the 11-customer point."
+      },
+      {
+        "path": "archives/customer-attraction/state/定理/固定完整策略的客户重数锥--定理.md",
+        "sha256": "ae4bcfd424eca8d4e3d79965f72182c0b2c8eefb72e74b44c2521b519f7aad39",
+        "mode": "full-text; necessary comparison dependency",
+        "notes": "Read the general fixed-strategy cone, tight section, finite attainment, dual sign convention, and explicit non-global boundary."
+      },
+      {
+        "path": "archives/customer-attraction/state/算法/可信续局菜单与完整策略重构--算法.md",
+        "sha256": "db6267ec3888975e5c6310d3a9a0d7c889469ee4d5be02b00ac338f139647961",
+        "mode": "full-text; necessary comparison dependency",
+        "notes": "Read complete ordered policy versus count cache, true continuation menu, and finite sample limits."
+      },
+      {
+        "path": "archives/customer-attraction/state/资源/七极大六人计数口径与联合行探测账本--资源.md",
+        "sha256": "896f0f5d55a13f0d591fad6cdc372565691fb4bcd9916de74e3b9b53109fddd8",
+        "mode": "full-text; necessary scope dependency",
+        "notes": "Read seven-maxima/open-payment boundary and the distinction between finite row counts and a complete SPE/half proof."
+      },
+      {
+        "path": "archives/customer-attraction/tools/evidence/r70-six-provider-entry/original/SIX_BRIEF.md",
+        "sha256": "475c568882025f7c2833fe227da05ea8152e8de26e9d2ff1cd11101bc523d9cd",
+        "mode": "full-text; target boundary dependency",
+        "notes": "Read the global six-player half objective, true continuation contract, and failed static/security-value substitutions."
+      }
+    ],
+    "independent_point_and_dual_replay": [
+      {
+        "path": "map/edges/boss5-r70-endpoint-repair-205c2404196d066a/comparison.md",
+        "sha256": "7047b5af0431f8a6d3ad39bd41a7ca72df2b03d39f713611585f016d04fb756b",
+        "section": "登记与逐历史核对"
+      },
+      {
+        "path": "map/edges/boss5-r70-endpoint-repair-205c2404196d066a/same-sigma-two-input-check.json",
+        "sha256": "2a4ea30e8d499321bc7ff68f32343726d695c8500e4d9ab003a319e65bc48154"
+      }
+    ],
+    "scope": "原 4b2f 逐项读取和相邻任务的独立数学回算按精确字节承接；旧阅读次序不构成 M-c5e 对 11 客户点的证明归属。"
+  },
+  "scientific_reruns": 0
+}
