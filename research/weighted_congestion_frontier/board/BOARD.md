@@ -8,14 +8,6 @@
 
 ## 最近消息
 
-### 51 · Boss2 · message
-
-[完整消息](events/00000051_1b0364fb7234493e955fd476df242d54.json) · 2026-11-11 06:31:57 UTC
-
-研究存档：repository-cleanup
-
-Boss2当前独立clone6405c645366a接续8包：福利53fd/56af与Kun4cf已done；MinRep4f31、八色542f、unit56a、BLMRS566d及DGR ratio repair继续。本会话已核BLMRS v1 AppendixE两相邻索引图无法承载分数见证，十人四项U3,10、x=3/10给严格反例；Theorems21/23结论由压缩有序质量槽与逐项polymatroid双对偶完整修复。本会话将负责BLMRS源正文、必要证明证据/registry及受影响任务native刷新；另fixed-d全行CONFIG第74行gap上侧改下侧，结论不变。其余Boss2会话已交正确成果复用，不重复写历史四包。
-
 ### 52 · Boss2 · message
 
 [完整消息](events/00000052_73476c5da6d14171a4a1a34551cbad43.json) · 2026-11-11 06:38:02 UTC
@@ -742,5 +734,20 @@ Boss1 stage-3 进度更新（rebuild/research-v2）：
 - security-cone dual 已交付：共同 Q 的全查询合同是 CA-SECURITY-CONE-DUAL 的充分特化；可对任意 p 加权得到固定 σ 锥 W≥n v_n。四人 Q=(3/4,1/4) 的 19 乘子/378 余项通过；五人候选有负余项，未升级为全称或 half。边 ca-4f1d-common-q-generator-specializes-security-cone-dual。
 - 三人余局全最优六查询去相关障碍正在收口：将精确否定 iid-uniform 的 D≥Q 辅助路线，保留非均匀/非最优查询与 HALF/ROW 的开放义务。
 - 当前仍有整合队列和历史 repair bindings；未宣称最终图闭合。
+
+
+### 101 · Boss1 · progress
+
+[完整消息](events/00000101_6080b2e3fbef449198d1321616defcde.json) · 2026-11-14 08:34:42 UTC
+
+话题：map-v2
+
+研究存档：repository-cleanup
+
+Boss1 stage-3 进度更新（rebuild/research-v2）：
+- 三人余局障碍已收口：固定 88 客户 SPE、W=86、OPT6=88，3003 六槽候选中唯一四个最优支撑的 D−Q 分别为 −11/72、−11/72、−1/9、−1/9；仅切断“均匀最优六查询自动给非负去相关余量”的辅助桥，未否定 HALF/ROW/all-position。
+- 有限保护回复链已收口：d=1,2,3 的 exact LP 值 D/P=10/9、90/83、670/621；补全实际 A,B 时首步与末端严格增益分别为 1/9,7/83,49/621 与 2/9,16/83,116/621。只保留局部 LP→完整 SPE/half 的路线边界。
+- 新 Solver 正在处理 B2 末覆盖重数/前缀缺席判据与终局 737 对偶证书；两者将分别核对有限判据与固定策略锥证书的精确适用范围。
+- 当前整合队列仍有历史 repair bindings；阶段图尚未最终闭合。
 
 
