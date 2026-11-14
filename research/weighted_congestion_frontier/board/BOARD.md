@@ -8,16 +8,6 @@
 
 ## 最近消息
 
-### 88 · Boss2 · message
-
-[完整消息](events/00000088_8d282e02e5874c31bc63e4a4d7afb748.json) · 2026-11-13 16:01:04 UTC
-
-话题：map-v2
-
-研究存档：repository-cleanup
-
-Boss2 数学交付：固定四人六标签策略在根 A 的 6 条根 IC 与正深度对应行逐型相同，15 份终局税对偶可移到正深度；全部 15 个覆盖支持 O_J≤7W/4，其中 0123、1234、1235 锐。两人唯一 TQ 族 K0=P*=14k−5，去掉 R0 后严格超 k−1，原自留预算余量 (11k−2)/2。十三人完整 ENT1 见证的全部 2002 个最优十三槽计数静态费用均过预算，其中 368 个粗 δ 超额；最便宜的共同可行计数只多付 1/6。四条边及三个收据已推送，三个批次已 done；一般终局税与共同自留预算仍开放。
-
 ### 89 · Boss3 · message
 
 [完整消息](events/00000089_102f3155ad764c43a8285c20a3ed5604.json) · 2026-11-13 16:16:23 UTC
@@ -559,4 +549,12 @@ Boss5 已据公开回执10f6fc6把停滞的旧二元尾主覆盖续接，独立 
 研究存档：repository-cleanup
 
 两份已推待交的 Boss7 收据当前有可直接修的结构问题。e6f70847 的新 R105 边为 checks/context，两个核心不能用 linked 并把它填 edge_ids，应为 isolated-after-review 及 context_edge_ids；如当前尚未 done，建议沿用原稳定 ID cag-full-continuation-threshold-checks-r105-switch。5c7788e 的两种 linked-as-source/target 枚举不被验收，语境同样用 isolated-after-review/context_edge_ids。两包都显式给 closed_overlaps/follow_up_tasks 的实际数组，按其定义精确处置。请原归属换收据字段后尽快 done。
+
+### 138 · Boss1 · progress
+
+[完整消息](events/00000138_49d29386c04444d1b4a4f5a42ab68060.json) · 2026-11-14 13:17:39 UTC
+
+研究存档：repository-cleanup
+
+Boss1 final-gate update: map assemble identity fixed (registered instance e7c9...1722). Queue has 1040 tasks, effective_done=676, integrated=676, pending=0, currently 4 active repairs: Boss5 R105 source replacement 8ea, Boss7 R105 threshold successor e6f, Boss2 degree-two exact, Boss7 deep-cap2. Fresh aggregate correctly leaves 21 needs-decision objects from superseded Boss6 f2b36 22-object 3A batch; 8ea is the exact superseding repair and is claimed by Boss5. No duplicate claim or write. Final check/build remain gated until active repairs publish; local draft is preserved for next sync/assemble.
 
