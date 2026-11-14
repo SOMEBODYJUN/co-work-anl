@@ -1,0 +1,66 @@
+{
+  "edge_id": "boss3-wave8-new-3a-ec8138d243f40374-averaged-prefix-obstruction-motivates-exact-cone-split",
+  "kind": "motivates",
+  "status": "accepted",
+  "source_ids": [
+    "M-68040e6e0ae74ae49a327f789f12ddaf"
+  ],
+  "target_ids": [
+    "customer-attraction/fixed-ninth-policy-full-average-and-prefix-individual-exact-bounds"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "固定共同目录完整历史模型：四名单位提供者依次选择五个标签 0..4，客户价值按覆盖负载均分；固定零起编号第9棵完整形式策略（实际路径 2222）与 J={1,2,3,4}，每次偏离沿改变后的有序历史继续同一策略。共享障碍只保留长度0至3、无重复且仅含J的41个历史，并对每个历史将尚未出现的J行动做平均；核心对象分别研究全部156历史上的四行动J平均，以及同64个不重复J前缀上逐个保留尚未使用J行动的比较。所有质量非负且 W>0；达到点要求 O_J=OPT_4。",
+  "roles": {
+    "M-68040e6e0ae74ae49a327f789f12ddaf": "共享障碍给出同一第9策略/J上的精确有理分离点：掩码 2,5,9,17 的质量为 19/96,1,19/48,15/32（整数化198客户），W=96、O_J=OPT_4=198；41条筛选前缀平均行全非负而 780 条真IC中92条为负，且全历史J平均在 (2,2)、(2,2,2) 分别为 -5/256、-5/64。它只反驳“筛选前缀平均约束即推出 O_J≤2W”，没有给出33/16的匹配上对偶或完整SPE。",
+    "customer-attraction/fixed-ninth-policy-full-average-and-prefix-individual-exact-bounds": "核心定理在同一固定策略/J上给两套独立锐界：全部156历史J平均行由 (2,2,2) 行权4及49客户达到点给 O_J/W=7/4；64个不重复J前缀的逐行动行由三条指定行各权1及22客户达到点给 O_J/W=11/6。两个达到点都满足 O_J=OPT_4，且定理明确两行族互不包含。"
+  },
+  "explanation": "共享障碍的33/16点说明：把未使用J行动先平均、再删除重复前缀，会掩盖具体合法偏离；41条筛选平均行非负并不能恢复逐行动IC，也不能推出二界。核心对象因此把“全历史四行动平均”与“不重复前缀逐行动”分成两个有匹配逐型对偶的锥：前者单行证书给7/4，后者三行证书给11/6。逐行动非负确实逐历史蕴含同一未使用动作集合的平均非负，但反向不成立；共享33/16见证正是该信息损失的固定策略实例。该语境边不把共享见证的33/16宣称为筛选平均锥的精确上界，也不把核心的7/4或11/6外推到其它策略、J或完整SPE。",
+  "scope": "仅限四人五标签、第9固定完整形式策略、J={1,2,3,4}、真实续局和上述两类有限行锥。关系用于说明为何必须分别审计平均行与逐行动行；不支付全780条IC、纯SPE实现、一般四人效率界、其它策略/J或重复历史的通用结论。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/指定四人第九策略的全历史平均与不重复前缀逐行动锐界--定理.md",
+      "sha256": "8febe5636611bf45fceeb374ca0ac330a24ead3e6ea76db2211f0a69140de062"
+    },
+    {
+      "path": "archives/customer-attraction/state/障碍/不重复比较前缀平均的四人原点与精确恢复--障碍.md",
+      "sha256": "000d0e04276f00e9258afce459db1b9cb834fc507e7d3e70ffd2097fd3e46d6f"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/average-and-last-payoff-resumed-boss2/new-average-exact-check.json",
+      "sha256": "01aa191f681e1c058d2734fc5eee50c073318b1e614becd51ee2f1b3410b1d56"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/distinct-prefix-average-sharp-33-over-16/verify_strengthened_fixed_cones.py",
+      "sha256": "7da53d81330626cea7a2d979aefeb8862878a90177266916c749b5536b146837"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/distinct-prefix-average-sharp-33-over-16/exact-strengthened-check.json",
+      "sha256": "c021750905ecd24c0d46b9929d69ef55da321963967d393bd1253464a0cc1c83"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/average-and-last-payoff-resumed-boss2/check_average_sources.py",
+      "sha256": "b48b4c61d873bb7aa36cb707d4fed8d6393b00ec9dbfcec868c36b8cc1231359"
+    }
+  ],
+  "reviewed_by": "map_worker_h (Boss7 fresh worker)",
+  "review_note": "完整读取本任务7个 declared refs（3份Markdown、2份完整JSON、2份完整Python），逐项核对第9策略动作串、156/64/41历史量词、质量与客户缩放、J最优条件、真实续局、负行和两套精确对偶。共享M对象仅作为固定策略的前缀平均反例；核心7/4与11/6分别由各自行族证书支付。未将33/16见证升级为精确上界，未把有限行证书升级为完整SPE或一般效率结论。",
+  "endpoint_pins": {
+    "M-68040e6e0ae74ae49a327f789f12ddaf": "2e6efa9135b79eeae5e819691e4dba5f46b791a553715f5d5b5e36e1a27aecbc",
+    "customer-attraction/fixed-ninth-policy-full-average-and-prefix-individual-exact-bounds": "01303f2d2841fa9febfba65a254ffed901a7ba31ea0d1c7db77df084537b5844"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/指定四人第九策略的全历史平均与不重复前缀逐行动锐界--定理.md": "8febe5636611bf45fceeb374ca0ac330a24ead3e6ea76db2211f0a69140de062",
+    "archives/customer-attraction/state/障碍/不重复比较前缀平均的四人原点与精确恢复--障碍.md": "000d0e04276f00e9258afce459db1b9cb834fc507e7d3e70ffd2097fd3e46d6f",
+    "archives/customer-attraction/tools/evidence/average-and-last-payoff-resumed-boss2/new-average-exact-check.json": "01aa191f681e1c058d2734fc5eee50c073318b1e614becd51ee2f1b3410b1d56",
+    "archives/customer-attraction/tools/evidence/distinct-prefix-average-sharp-33-over-16/verify_strengthened_fixed_cones.py": "7da53d81330626cea7a2d979aefeb8862878a90177266916c749b5536b146837",
+    "archives/customer-attraction/tools/evidence/distinct-prefix-average-sharp-33-over-16/exact-strengthened-check.json": "c021750905ecd24c0d46b9929d69ef55da321963967d393bd1253464a0cc1c83",
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+    "archives/customer-attraction/tools/evidence/average-and-last-payoff-resumed-boss2/check_average_sources.py": "b48b4c61d873bb7aa36cb707d4fed8d6393b00ec9dbfcec868c36b8cc1231359"
+  },
+  "review_digest": "0018eef2e46e8a01a24d07d8513e23988c655fbb34d669e770c3527fed1dc2a3"
+}
