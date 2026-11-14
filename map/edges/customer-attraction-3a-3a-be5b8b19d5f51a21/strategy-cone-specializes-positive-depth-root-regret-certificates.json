@@ -1,0 +1,80 @@
+{
+  "edge_id": "ca-be5b-positive-depth-cone-specialization",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "CA-STRATEGY-CONE"
+  ],
+  "target_ids": [
+    "customer-attraction/positive-depth-root-regret-cones-230-rational-certificates"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "The four named inputs are complete ordered action tables on every history. For each table, positive-depth IC rows are regenerated from the same policy's true changed-history continuation; the selected root action is allowed to violate root IC and is relaxed by Delta >= delta. Customer-type masses x_M are nonnegative, W=1, and every comparison support J has size min(m,p).",
+  "roles": {
+    "CA-STRATEGY-CONE": "Provides the exact interpretation of all ordered-history IC rows as a nonnegative rational customer-multiplicity cone, the W=1 slice, integer-clone meaning, and fixed-(sigma,J) primal/dual certificate semantics.",
+    "customer-attraction/positive-depth-root-regret-cones-230-rational-certificates": "Specializes that cone semantics to four saved full policies, all actual roots and all min(m,p)-supports, adding the explicit root-regret payment coordinate Delta and replaying 230 sparse rational primal/dual certificates."
+  },
+  "explanation": "For each fixed policy sigma, the computation's G rows are exactly the positive-depth ordered-history payoff differences from the cone theorem, while each root row is the same difference with a unit Delta coefficient. The saved checker rebuilds terminal counts and row ordering from every history, then verifies each sparse x, each nonnegative dual multiplier vector mu, all customer-type residuals, the Delta residual, and equality of objective and beta. Thus the four finite cones have exact maxima 7/4, 3/2, 33/23 and 9/8 over 90, 16, 120 and 4 targets respectively. Delta equals the actual root regret in every record (228 zero-regret records; two fractional-root records with Delta=delta=1/24).",
+  "scope": "Only the four declared complete policies, their p possible actual roots, and all supports J of size min(m,p), with W=1 plus the explicitly checked W=0 boundary. The result is not a bound over arbitrary complete strategies, arbitrary m or p, or a universal root-regret/half-coverage theorem.",
+  "contribution": {
+    "result": "The general fixed-policy cone semantics specialize to an exact finite paid-root-regret audit: every saved primal/dual pair is rationally feasible and optimal, and every certified value is <=2, so no one of these 230 cones supplies OPT-2W>3delta.",
+    "remaining": "The threefold compiler, integer replay to a half counterexample, and any quantification over policies or catalog sizes remain outside this edge. The two Delta=1/24 records are not complete-root SPEs; they only certify positive-depth IC with paid root regret."
+  },
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/计算/正深度根遗憾锥的二百三十份有理证书--计算.md",
+      "sha256": "e04c918a0319c4c1d7bf89d0109b978e46ac9fc38979f8ce7ce3b0ab841fb22d"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/d398-parent-diagnostics-primary/original/root_regret_probe.py",
+      "sha256": "5d055514b60fd8e3e92076c23e36142253bb3d62bbf2d82dcb983c7e1a56f7ef"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/d398-parent-diagnostics-primary/original/root_regret_probe.json",
+      "sha256": "8440166fc55f8974f4e5c65e6dc6a960df6af4c0b4c9fb43fab171f2019cc732"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/d398-parent-diagnostics-primary/check_saved.py",
+      "sha256": "604e65c3739be95188b74ce4174f3f9aec228ac27d5a21babaa09b3726b2f8b4"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/d398-parent-diagnostics-primary/verification.json",
+      "sha256": "a64684823dc2ea8c8fcb0e6e6fe329e27dded4bf502d6f82b14ac2df8981ea4d"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/d398-parent-diagnostics-primary/manifest.json",
+      "sha256": "813c804b216605be7eccc4ad441f7d51fee413d435a4fa0eaf083b09584837bd"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/credible-weak-dag-attack-primary/original/tests/audits/customer_attraction_strategy_lp.py",
+      "sha256": "a5b3cac73cf07134609af60f101e384cf6f6b325caa24d8d3c31e019b71574d3"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-be5b8b19d5f51a21/mathematical-review.md",
+      "sha256": "237789de4d84aba2d39c977bdd04c0a754305023d0bc975816147ab23481c565"
+    }
+  ],
+  "review_note": "完整实读并核验230份有理primal-dual；边仅在四个固定策略锥与明确根遗憾坐标范围内成立。",
+  "endpoint_pins": {
+    "CA-STRATEGY-CONE": "291bd4d94e33d40566453a33b5cf07b1c620b77362268417582efecb42b0c4bb",
+    "customer-attraction/positive-depth-root-regret-cones-230-rational-certificates": "1019a86335878664598e586625fdd0e8bee63d3863bf4fe946105da93701056d"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/计算/正深度根遗憾锥的二百三十份有理证书--计算.md": "e04c918a0319c4c1d7bf89d0109b978e46ac9fc38979f8ce7ce3b0ab841fb22d",
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+    "archives/customer-attraction/tools/evidence/d398-parent-diagnostics-primary/original/root_regret_probe.py": "5d055514b60fd8e3e92076c23e36142253bb3d62bbf2d82dcb983c7e1a56f7ef",
+    "archives/customer-attraction/tools/evidence/d398-parent-diagnostics-primary/original/root_regret_probe.json": "8440166fc55f8974f4e5c65e6dc6a960df6af4c0b4c9fb43fab171f2019cc732",
+    "archives/customer-attraction/tools/evidence/d398-parent-diagnostics-primary/check_saved.py": "604e65c3739be95188b74ce4174f3f9aec228ac27d5a21babaa09b3726b2f8b4",
+    "archives/customer-attraction/tools/evidence/d398-parent-diagnostics-primary/verification.json": "a64684823dc2ea8c8fcb0e6e6fe329e27dded4bf502d6f82b14ac2df8981ea4d",
+    "archives/customer-attraction/tools/evidence/d398-parent-diagnostics-primary/manifest.json": "813c804b216605be7eccc4ad441f7d51fee413d435a4fa0eaf083b09584837bd",
+    "archives/customer-attraction/tools/evidence/credible-weak-dag-attack-primary/original/tests/audits/customer_attraction_strategy_lp.py": "a5b3cac73cf07134609af60f101e384cf6f6b325caa24d8d3c31e019b71574d3",
+    "map/edges/customer-attraction-3a-3a-be5b8b19d5f51a21/mathematical-review.md": "237789de4d84aba2d39c977bdd04c0a754305023d0bc975816147ab23481c565"
+  },
+  "review_digest": "fdbeb56d77f57c9218ab47c041d8fc562601e4b1ac3a43e96f9442b55d7dd2c9",
+  "reviewed_by": "Boss7"
+}

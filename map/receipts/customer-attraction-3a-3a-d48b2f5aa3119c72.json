@@ -1,0 +1,65 @@
+{
+  "task_id": "customer-attraction-3a-3a-d48b2f5aa3119c72",
+  "stage": "3A",
+  "definition_pin": "b7d9719ec63b514fb8b8671541d3547e6dbbc49d7b92d7612e54e0951b0b048e",
+  "coverage": {
+    "customer-attraction/five-player-fifty-five-customer-sequential-static-minimum-welfare-separation": {
+      "state": "isolated-after-review",
+      "object_pin": "e3b37973ba86413cd95a2fad5787fe59b7c8fb9d942b9d1d038486f2447d2b06",
+      "comparison_scope": "完整实读55客户反例正文、共同历史模型、CA-EXACT-PURE-SPE-ALL算法正文、Q-CAG-HALF问题正文以及三份固定JSON来源。精确核55输入的781历史/3905比较、126静态终局计数、252前缀集合状态、根三个SPE计数和2/3/4/6人固定参数；写出一条固定实例到完整SPE终局递推的implements边，并保留一条对Q-CAG-HALF的context/checks边。 另写Q-CAG-HALF context/checks边，但该语境边不计coverage为独立端点。",
+      "reason": "固定输入的集合值递推结果与通用R(k)算法合同逐状态对齐，且独立Fraction全树核验给出负比较为0，因此可发布implements边。该实例的2W≥OPT5而minSPE<min-static-PNE，故对一般half仅为安全侧语境检查，不能作half反例或一般证明；该边保持isolated-after-review。 Q-CAG-HALF语境边仅保存在assets，coverage仍只列本任务核心对象。",
+      "context_edge_ids": [
+        "ca-d48-fixed-instance-implements-spe-outcome-recursion",
+        "ca-d48-fixed-instance-checks-general-half-context"
+      ]
+    }
+  },
+  "assets": [
+    {
+      "path": "map/edges/customer-attraction-3a-3a-d48b2f5aa3119c72/fixed-instance-implements-spe-outcome-recursion.json",
+      "sha256": "25a8ca517faa4690cdd4378413e258cae8c81b52d4aa8b9f5f3070027524a5e1"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-d48b2f5aa3119c72/fixed-instance-checks-general-half-context.json",
+      "sha256": "8a36e56fde7d17e94285403c2464c5d051b37f5fb87e2dbe4231790f8bab95b7"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-d48b2f5aa3119c72/mathematical-review.md",
+      "sha256": "63f2075212c2c49e90346430d150906a2828713d839973236dcc92b5175ba27a"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-d48b2f5aa3119c72/reading-ledger.json",
+      "sha256": "49f3eb4be8784926ec116f7b87bba2ca86aed6a31d0028a9fb7741a550df054c"
+    }
+  ],
+  "closed_overlaps": [
+    {
+      "core_id": "customer-attraction/five-player-fifty-five-customer-sequential-static-minimum-welfare-separation",
+      "peer_id": "customer-attraction/five-player-fifty-six-client-minimum-spe-below-all-static-pne",
+      "reason": "任务将56客户对象列为deferred candidate；本包虽完整读取55页内的56前身JSON并核其50/55/56数值，但未把56对象正文作为本任务read endpoint，也未建立删除客户保持任意完整策略或全局最小性的边。"
+    },
+    {
+      "core_id": "customer-attraction/five-player-fifty-five-customer-sequential-static-minimum-welfare-separation",
+      "peer_id": "CAG-MODEL",
+      "reason": "CAG-MODEL是任务声明的deferred candidate；共同模型正文已直接读取并用于量词核对，无需把共享定义机械接成hub边。"
+    }
+  ],
+  "follow_up_tasks": [],
+  "read_scope_note": "按任务声明的7个staged reading passes逐一完整读取；另为准确边界补读CA-EXACT-PURE-SPE-ALL算法正文与Q-CAG-HALF问题正文。未运行随机探针、贪心减重、优化器或canonical solver；未执行native edge-bind/edge-check、checkpoint、done、assemble、sync或commit。",
+  "scientific_program_runs": 0,
+  "new_definition_level_exact_checks": 1,
+  "review_note": "数学内容由fresh worker完整复核并写入review/ledger；Boss7需在接收后串行完成绑定、边检查和最终交付。",
+  "object_ids": [
+    "customer-attraction/five-player-fifty-five-customer-sequential-static-minimum-welfare-separation"
+  ],
+  "read_object_ids": [
+    "CA-EXACT-PURE-SPE-ALL",
+    "Q-CAG-HALF"
+  ],
+  "input_pins": {
+    "customer-attraction/five-player-fifty-five-customer-sequential-static-minimum-welfare-separation": "e3b37973ba86413cd95a2fad5787fe59b7c8fb9d942b9d1d038486f2447d2b06",
+    "CA-EXACT-PURE-SPE-ALL": "aaa77e1f9a928bc25a315e66e18f424418e64643ec3fdb8717cbc3adc6310056",
+    "Q-CAG-HALF": "dccd5277f7b0c1bb4dcac17287010f1d012bb40c6244c51f24808c1519a4b5ea"
+  },
+  "status": "ready-for-review"
+}
