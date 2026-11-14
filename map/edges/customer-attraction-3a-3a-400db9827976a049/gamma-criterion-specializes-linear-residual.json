@@ -1,0 +1,87 @@
+{
+  "edge_id": "ca-b2-gamma-specializes-linear-residual",
+  "kind": "specializes",
+  "status": "accepted",
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "source_ids": [
+    "B2-REPEATED-LAST-ABSENCE-v1"
+  ],
+  "target_ids": [
+    "M-a79d4b6e8bde40d1aac55c0b07e697d7"
+  ],
+  "conditions": "同一空根共同目录均分吸引博弈、任意完整有序历史纯SPE；末覆盖B按相同客户覆盖集合计k，d=m-k，u、W、R、S与正文一致，且u=0或W=0边界按正文直接处理。",
+  "roles": {
+    "B2-REPEATED-LAST-ABSENCE-v1": "逐客户真实前缀缺席给A_r与精确gamma(m,k)下界，并以gamma≥m−1推出半覆盖。",
+    "M-a79d4b6e8bde40d1aac55c0b07e697d7": "以A_r≥k(m−t)/(mt)粗化后保留R的线性端点条件m(2d+1)≥d²(d+2)，推出半覆盖。"
+  },
+  "explanation": "将B2的精确A_r=H_m−H_t−(t−k)(m−t)/(mt)按A_r≥k(m−t)/(mt)逐t下界，得C_t=t(1+aA_r)≥t+a k(m−t)/m，其中a=(d+2)/(d+1)。该仿射下界在t∈[k,m]的两个端点给出M的条件m(2d+1)≥d²(d+2)；故M的线性判据是B2精确gamma判据的参数特化，方向和量词均保留。特化严格丢失精度：m=6,k=3,d=3时M条件为42≥45而失败，但B2精确gamma=85/16>5=m−1通过；同一六人子类仍由B2认证half。",
+  "whole_result": "在M的线性阈值域内，B2的逐客户前缀缺席证明完整推出M的W+R≥(m−1)u及OPT_m≤2W结论；B2还覆盖M未命中的参数（如m=6,k=3），因此该边记录的是严格的条件特化而非新的独立证明。",
+  "scope": "只比较空根完整纯SPE的半覆盖充分条件；不把gamma未通过称为半覆盖反例，不把有限审计升级为全称证明，也不处理非空背景或五人其它开放接口。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/末覆盖重数与前缀缺席的半覆盖判据--定理.md",
+      "sha256": "5764ef4b1aed3c63236d3422388780c49f2827556cadcafdd2c333c39a814e8b"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/前缀缺席判据的原算术审计与有限改进表--程序.md",
+      "sha256": "cb834171956554332e716e5d479b1aeea2e98fb0ba6ec07644f1ad021f40b69b"
+    },
+    {
+      "path": "archives/customer-attraction/state/计算/末覆盖重数与残余判据的原审计恢复--计算.md",
+      "sha256": "afd4415ecaf82c1b39c86b3046c446da5e5b9c83ea782b0ab1d8f77f46beaa33"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/prefix-absence-audit-primary/original/a645d421e80daabb96e8--prefix_absence_audit.py",
+      "sha256": "62d572247ff2a6588dd8b1bf79f70485faef2fb8f896ed27034b7085a7fcb383"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/prefix-absence-audit-primary/original/c0bad8199191aa2cfa27--prefix_absence_audit.json",
+      "sha256": "53c9c817ce19e180eae5bd914188798d1d42501a2c391da079997b61e21c5e4c"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/repeated-last-prefix-and-partition-primary/check_prefix_and_partition_definitions.py",
+      "sha256": "d5d31470e5df1d5f5e18f29c3d9ae8e9b65a414ad67f766bbf6045c0d42f632f"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/repeated-last-prefix-and-partition-primary/new-definition-check.json",
+      "sha256": "57b38718dc09a4f71b8d883340ce9501e6aae32f5227c22eb0c827f2b7499306"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/last-theme-audits-restored-boss3/original/bdbe93a9ea1b9f5fcac3/last_theme_containment_audit.json",
+      "sha256": "6b35b440d0b1f6f5b5d6d95aa3eadd96f474728825775048a6df65c9889aa766"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/last-theme-audits-restored-boss3/original/95dd8a1c2d297b17d919/last_theme_residual_refinement_audit.py",
+      "sha256": "e0d1386588a9ebd954c304d25f1d09ee125442d47949ad82a3be5b436a61d814"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/last-theme-audits-restored-boss3/original/1e259415f5153c9c6534/last_theme_containment_audit.py",
+      "sha256": "19fce590b62014011418b92eb7b878de8f5182bee6cf3b201376c17b0136bbaf"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/last-theme-audits-restored-boss3/original/069cde4ed129907397f7/last_theme_residual_refinement_audit.json",
+      "sha256": "1bd322bfd9216bf6e586b00429afda0afb1d0a0f2bd832d09c9766d4e0ca49c6"
+    }
+  ],
+  "reviewed_by": "Boss2",
+  "review_note": "完整实读任务声明的11个来源字节及其数学正文；核对B2与M的同一模型、k/d定义、R保留、量词和边界。标准库定义检查只作有限一致性证据（8178前缀序列、171700系数、933旧端点蕴含、1156多项式蕴含、37820松弛端点）；未把程序案例当作解析证明，未重跑旧入口。",
+  "endpoint_pins": {
+    "B2-REPEATED-LAST-ABSENCE-v1": "6f570817497a95dbb0619deb7691bed98de757962ab4530a18a9878531fa5629",
+    "M-a79d4b6e8bde40d1aac55c0b07e697d7": "773fe968a6cbf606a009db3feb55ba613fd98f82a3cb15e42ae106cc70060f57"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/末覆盖重数与前缀缺席的半覆盖判据--定理.md": "5764ef4b1aed3c63236d3422388780c49f2827556cadcafdd2c333c39a814e8b",
+    "archives/customer-attraction/state/程序/前缀缺席判据的原算术审计与有限改进表--程序.md": "cb834171956554332e716e5d479b1aeea2e98fb0ba6ec07644f1ad021f40b69b",
+    "archives/customer-attraction/state/计算/末覆盖重数与残余判据的原审计恢复--计算.md": "afd4415ecaf82c1b39c86b3046c446da5e5b9c83ea782b0ab1d8f77f46beaa33",
+    "archives/customer-attraction/tools/evidence/prefix-absence-audit-primary/original/a645d421e80daabb96e8--prefix_absence_audit.py": "62d572247ff2a6588dd8b1bf79f70485faef2fb8f896ed27034b7085a7fcb383",
+    "archives/customer-attraction/tools/evidence/prefix-absence-audit-primary/original/c0bad8199191aa2cfa27--prefix_absence_audit.json": "53c9c817ce19e180eae5bd914188798d1d42501a2c391da079997b61e21c5e4c",
+    "archives/customer-attraction/tools/evidence/repeated-last-prefix-and-partition-primary/check_prefix_and_partition_definitions.py": "d5d31470e5df1d5f5e18f29c3d9ae8e9b65a414ad67f766bbf6045c0d42f632f",
+    "archives/customer-attraction/tools/evidence/repeated-last-prefix-and-partition-primary/new-definition-check.json": "57b38718dc09a4f71b8d883340ce9501e6aae32f5227c22eb0c827f2b7499306",
+    "archives/customer-attraction/tools/evidence/last-theme-audits-restored-boss3/original/bdbe93a9ea1b9f5fcac3/last_theme_containment_audit.json": "6b35b440d0b1f6f5b5d6d95aa3eadd96f474728825775048a6df65c9889aa766",
+    "archives/customer-attraction/tools/evidence/last-theme-audits-restored-boss3/original/95dd8a1c2d297b17d919/last_theme_residual_refinement_audit.py": "e0d1386588a9ebd954c304d25f1d09ee125442d47949ad82a3be5b436a61d814",
+    "archives/customer-attraction/tools/evidence/last-theme-audits-restored-boss3/original/1e259415f5153c9c6534/last_theme_containment_audit.py": "19fce590b62014011418b92eb7b878de8f5182bee6cf3b201376c17b0136bbaf",
+    "archives/customer-attraction/tools/evidence/last-theme-audits-restored-boss3/original/069cde4ed129907397f7/last_theme_residual_refinement_audit.json": "1bd322bfd9216bf6e586b00429afda0afb1d0a0f2bd832d09c9766d4e0ca49c6"
+  },
+  "review_digest": "3abe29dbeb4969062acc97156447b403270d5cea42ae75d70163a1041ac308a4"
+}
