@@ -1,0 +1,64 @@
+{
+  "edge_id": "um-a44-r32-common-small-witness-to-schedule",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "UM-JOINT-SMALL-ROUND-v1"
+  ],
+  "target_ids": [
+    "unrelated-machines/task-level-shared-capacity-algorithm-obligations"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "显式非负有理 P，T≥0，固定有理 0≤δ<1/2；仍按原 T/2 分大小、原 p≤T 剪枝。给定同一大边匹配 H 与完整小边 x，逐机小边负载≤(1+δ)T−h_i。",
+  "roles": {
+    "UM-JOINT-SMALL-ROUND-v1": "在同一固定 H 与全列 x 上一次全局有序槽匹配，保持 H 并恢复全部原任务。",
+    "unrelated-machines/task-level-shared-capacity-algorithm-obligations": "支付一般共同容量义务中的给定见证解码；未知阈值搜索仅作明确finder前提下的形式接续。"
+  },
+  "explanation": "对H外任务按每机p非增切单位槽，交长给每原任务总流1及每槽容量至多1，Hall得到一次覆盖匹配。第一槽支付正支撑最大小端≤原T/2，后槽向前一完整槽收费；固定h_i后同一实际分配逐机≤(3/2+δ)T，H不变。输入包含H,x的全部位长，T0与空任务直接保留。形式上，若另有总确定性位多项式finder对所有OPT≤T均给可验Aδ，则先验输出并舍入，分母积Q网格含OPT，U=Σ_j min_i p_ij给可接受上界；整数二分保持拒绝low<Q·OPT与接受high，即使OPT以下接受性不单调，邻接结束仍得high≤Q·OPT。这里finder前提不是已给算法：当前half-unit证明在P≠NP下，对每固定δ<1/2已排除固定原T/2的此一侧完备总finder；另见本修复新增的精确障碍contribution。",
+  "scope": "给定共同H,x的完整条件解码，以及明确finder antecedent下的形式阈值搜索。small仍按原T/2；不把被P≠NP障碍排除的finder列作当前可求路线，不否定其他共同容量或一般调度。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/定义/不相关机器与两个调度松弛--定义.md",
+      "sha256": "f83b0a531d9e9b98fcffa70c77962f2e2b61e112b2074646f4f7cc3179ac9a8b"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/联合选择槽舍入三源精读--审查.md",
+      "sha256": "46153e968f420228c6720dd4edd2025c1521fcbb527830de60792c01d161f258",
+      "section": "1. 给定 H 的共同匹配与槽舍入"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/um-ghmr-flat-moment-and-hall-primary/comparison/research/current/unrelated_machines/joint_matching_completion_and_block_cuts.md",
+      "sha256": "8cf637c20618062a98d4038e7873987acf06bf426a583a6a678d974d7b103ba3",
+      "section": "1. 共同匹配与剩余分数容量的精确接口"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/um-ghmr-flat-moment-and-hall-primary/comparison/research/current/unrelated_machines/joint_matching_completion_and_block_cuts.md",
+      "sha256": "8cf637c20618062a98d4038e7873987acf06bf426a583a6a678d974d7b103ba3",
+      "section": "2. UM-JOINT-SMALL-ROUND-v1：给定见证的条件舍入"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/共同匹配联合槽舍入与包络配置三源审查--审查.md",
+      "sha256": "d8ad15db9cdf52d26be477052626a1afd6b0d1106982081d19b82d81e500bb47",
+      "section": "2. 共同大边选择与条件块切面"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/um-tree-matching-and-configuration-primary/comparison/research/reviews/unrelated_machines/joint_matching_completion_review.md",
+      "sha256": "fb381102057074efe33b4bca7bb39837891fc9ffdbbf584a78c293510fb5aec7"
+    },
+    {
+      "path": "archives/unrelated-machines/state/问题/任务级共同容量的算法义务--问题.md",
+      "sha256": "bf259a58e04bea2f62928d1f7f642e0ba72cd7c01db891d36c2d916ef06958a0"
+    },
+    {
+      "path": "research/workspaces/map-v2/Boss6/current-run/recovered-035b/review.md",
+      "sha256": "6457a35c42429e2b4d1321d391f8e6f00cd166e1ba14d33705aa9785addbbaaa"
+    }
+  ],
+  "reviewed_by": "Boss6",
+  "review_note": "本轮完整实读当前条件槽主证明、half-unit主证明及独立审查，核有序槽全机收费、显式位长、零边界及一侧非单调二分；当前端点为v4。旧独立审查的δ窗口仅按其历史范围读取。",
+  "contribution": {
+    "result": "给定所列共同见证，验证与保持H的全原任务(3/2+δ)T恢复可确定性总位多项式完成；形式上，一侧完备可验总finder可接未知阈值搜索。",
+    "remaining": "一般任务级共同容量仍需不同可求接口或真实联合槽损失控制。对本边固定原T/2且每固定δ<1/2的finder antecedent，P≠NP下已有half-unit run-and-verify障碍，不能继续当作未受限制的开放构造步骤。"
+  }
+}

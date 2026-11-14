@@ -13,10 +13,10 @@
   "conditions": "显式非负有理 P，T≥0，固定有理 0≤δ<1/2；仍按原 T/2 分大小、原 p≤T 剪枝。给定同一大边匹配 H 与完整小边 x，逐机小边负载≤(1+δ)T−h_i。",
   "roles": {
     "UM-JOINT-SMALL-ROUND-v1": "在同一固定 H 与全列 x 上一次全局有序槽匹配，保持 H 并恢复全部原任务。",
-    "unrelated-machines/task-level-shared-capacity-algorithm-obligations": "一般原矩阵共同容量构造义务中的条件解码及从可靠见证测试到未知阈值的接续。"
+    "unrelated-machines/task-level-shared-capacity-algorithm-obligations": "支付一般共同容量义务中的给定见证解码；未知阈值搜索仅作明确finder前提下的形式接续。"
   },
-  "explanation": "只对 H 外任务按每机 p 非增切单位槽，正交长构成共同分数覆盖，Hall 得一次覆盖匹配。第一个槽支付正支撑最大小端≤T/2，后槽各向前一完整槽收费；固定 h_i 后同一分配逐机≤(3/2+δ)T。若另有统一位多项式 finder 对每个 OPT≤T 的测试都给有效共同见证，可精确验 H,x 并舍入。所有有限时间分母积 Q 的网格含 OPT。U 取各任务最小时间之和，U 可接受。允许低于 OPT 的接受非单调，维护拒绝下界 low< Q·OPT 和可接受 high，整数二分邻接时 high≤Q·OPT；零峰逐任务选零端。",
-  "scope": "支付给定见证解码和由一侧完备可验测试驱动的阈值搜索。容量松弛不改变大小边定义，所有任务/机器同时控制。",
+  "explanation": "对H外任务按每机p非增切单位槽，交长给每原任务总流1及每槽容量至多1，Hall得到一次覆盖匹配。第一槽支付正支撑最大小端≤原T/2，后槽向前一完整槽收费；固定h_i后同一实际分配逐机≤(3/2+δ)T，H不变。输入包含H,x的全部位长，T0与空任务直接保留。形式上，若另有总确定性位多项式finder对所有OPT≤T均给可验Aδ，则先验输出并舍入，分母积Q网格含OPT，U=Σ_j min_i p_ij给可接受上界；整数二分保持拒绝low<Q·OPT与接受high，即使OPT以下接受性不单调，邻接结束仍得high≤Q·OPT。这里finder前提不是已给算法：当前half-unit证明在P≠NP下，对每固定δ<1/2已排除固定原T/2的此一侧完备总finder；另见本修复新增的精确障碍contribution。",
+  "scope": "给定共同H,x的完整条件解码，以及明确finder antecedent下的形式阈值搜索。small仍按原T/2；不把被P≠NP障碍排除的finder列作当前可求路线，不否定其他共同容量或一般调度。",
   "evidence": [
     {
       "path": "archives/unrelated-machines/state/定义/不相关机器与两个调度松弛--定义.md",
@@ -49,16 +49,20 @@
     {
       "path": "archives/unrelated-machines/state/问题/任务级共同容量的算法义务--问题.md",
       "sha256": "bf259a58e04bea2f62928d1f7f642e0ba72cd7c01db891d36c2d916ef06958a0"
+    },
+    {
+      "path": "research/workspaces/map-v2/Boss6/current-run/recovered-035b/review.md",
+      "sha256": "6457a35c42429e2b4d1321d391f8e6f00cd166e1ba14d33705aa9785addbbaaa"
     }
   ],
-  "reviewed_by": "Boss1",
-  "review_note": "复核了前槽收费的全机确定性和二分不需假设低阈值成功单调。给定 H 求 x 的 LP 与选择 H 的职责明确分开。",
+  "reviewed_by": "Boss6",
+  "review_note": "本轮完整实读当前条件槽主证明、half-unit主证明及独立审查，核有序槽全机收费、显式位长、零边界及一侧非单调二分；当前端点为v4。旧独立审查的δ窗口仅按其历史范围读取。",
   "contribution": {
-    "result": "若能统一构造所列共同见证，见证验证、实际全任务 (3/2+δ) 乘法恢复和有理未知阈值搜索均可总位多项式完成。",
-    "remaining": "承重缺口是在所有 YES 目标上从原 P 构造该 H,x 或给其他可求共同容量；低松弛精确选择困难性只在对应来源合同成立。"
+    "result": "给定所列共同见证，验证与保持H的全原任务(3/2+δ)T恢复可确定性总位多项式完成；形式上，一侧完备可验总finder可接未知阈值搜索。",
+    "remaining": "一般任务级共同容量仍需不同可求接口或真实联合槽损失控制。对本边固定原T/2且每固定δ<1/2的finder antecedent，P≠NP下已有half-unit run-and-verify障碍，不能继续当作未受限制的开放构造步骤。"
   },
   "endpoint_pins": {
-    "UM-JOINT-SMALL-ROUND-v1": "c79523817fbe8c8ecb64556a86774e5b9c707dc3a3d93ebc6ee38c894db5d576",
+    "UM-JOINT-SMALL-ROUND-v1": "4181a50c8163ec165b4c452c72fc0221ec2b2596bb0cfe5007ba6bb7a28747dc",
     "unrelated-machines/task-level-shared-capacity-algorithm-obligations": "1b1f2c141d66fc58469194cf28b4f8dab0148c6c01cd721ba4c429ed5eea4719"
   },
   "evidence_pins": {
@@ -67,7 +71,8 @@
     "archives/unrelated-machines/tools/evidence/um-ghmr-flat-moment-and-hall-primary/comparison/research/current/unrelated_machines/joint_matching_completion_and_block_cuts.md": "8cf637c20618062a98d4038e7873987acf06bf426a583a6a678d974d7b103ba3",
     "archives/unrelated-machines/state/审查/共同匹配联合槽舍入与包络配置三源审查--审查.md": "d8ad15db9cdf52d26be477052626a1afd6b0d1106982081d19b82d81e500bb47",
     "archives/unrelated-machines/tools/evidence/um-tree-matching-and-configuration-primary/comparison/research/reviews/unrelated_machines/joint_matching_completion_review.md": "fb381102057074efe33b4bca7bb39837891fc9ffdbbf584a78c293510fb5aec7",
-    "archives/unrelated-machines/state/问题/任务级共同容量的算法义务--问题.md": "bf259a58e04bea2f62928d1f7f642e0ba72cd7c01db891d36c2d916ef06958a0"
+    "archives/unrelated-machines/state/问题/任务级共同容量的算法义务--问题.md": "bf259a58e04bea2f62928d1f7f642e0ba72cd7c01db891d36c2d916ef06958a0",
+    "research/workspaces/map-v2/Boss6/current-run/recovered-035b/review.md": "6457a35c42429e2b4d1321d391f8e6f00cd166e1ba14d33705aa9785addbbaaa"
   },
-  "review_digest": "2ca1c5be18a81386f74cdcb6c35056c853ef9a7f49eabc54a97e116f41ddbb9b"
+  "review_digest": "dd1704a27d2a866f3fee91a97d10d7eb2e75a7bd1cb4d89214a12beadf0109e0"
 }

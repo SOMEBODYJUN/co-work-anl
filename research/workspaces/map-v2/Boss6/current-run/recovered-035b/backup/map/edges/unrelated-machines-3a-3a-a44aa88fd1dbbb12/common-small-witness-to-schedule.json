@@ -1,0 +1,73 @@
+{
+  "edge_id": "um-a44-r32-common-small-witness-to-schedule",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "UM-JOINT-SMALL-ROUND-v1"
+  ],
+  "target_ids": [
+    "unrelated-machines/task-level-shared-capacity-algorithm-obligations"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "显式非负有理 P，T≥0，固定有理 0≤δ<1/2；仍按原 T/2 分大小、原 p≤T 剪枝。给定同一大边匹配 H 与完整小边 x，逐机小边负载≤(1+δ)T−h_i。",
+  "roles": {
+    "UM-JOINT-SMALL-ROUND-v1": "在同一固定 H 与全列 x 上一次全局有序槽匹配，保持 H 并恢复全部原任务。",
+    "unrelated-machines/task-level-shared-capacity-algorithm-obligations": "一般原矩阵共同容量构造义务中的条件解码及从可靠见证测试到未知阈值的接续。"
+  },
+  "explanation": "只对 H 外任务按每机 p 非增切单位槽，正交长构成共同分数覆盖，Hall 得一次覆盖匹配。第一个槽支付正支撑最大小端≤T/2，后槽各向前一完整槽收费；固定 h_i 后同一分配逐机≤(3/2+δ)T。若另有统一位多项式 finder 对每个 OPT≤T 的测试都给有效共同见证，可精确验 H,x 并舍入。所有有限时间分母积 Q 的网格含 OPT。U 取各任务最小时间之和，U 可接受。允许低于 OPT 的接受非单调，维护拒绝下界 low< Q·OPT 和可接受 high，整数二分邻接时 high≤Q·OPT；零峰逐任务选零端。",
+  "scope": "支付给定见证解码和由一侧完备可验测试驱动的阈值搜索。容量松弛不改变大小边定义，所有任务/机器同时控制。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/定义/不相关机器与两个调度松弛--定义.md",
+      "sha256": "f83b0a531d9e9b98fcffa70c77962f2e2b61e112b2074646f4f7cc3179ac9a8b"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/联合选择槽舍入三源精读--审查.md",
+      "sha256": "46153e968f420228c6720dd4edd2025c1521fcbb527830de60792c01d161f258",
+      "section": "1. 给定 H 的共同匹配与槽舍入"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/um-ghmr-flat-moment-and-hall-primary/comparison/research/current/unrelated_machines/joint_matching_completion_and_block_cuts.md",
+      "sha256": "8cf637c20618062a98d4038e7873987acf06bf426a583a6a678d974d7b103ba3",
+      "section": "1. 共同匹配与剩余分数容量的精确接口"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/um-ghmr-flat-moment-and-hall-primary/comparison/research/current/unrelated_machines/joint_matching_completion_and_block_cuts.md",
+      "sha256": "8cf637c20618062a98d4038e7873987acf06bf426a583a6a678d974d7b103ba3",
+      "section": "2. UM-JOINT-SMALL-ROUND-v1：给定见证的条件舍入"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/共同匹配联合槽舍入与包络配置三源审查--审查.md",
+      "sha256": "d8ad15db9cdf52d26be477052626a1afd6b0d1106982081d19b82d81e500bb47",
+      "section": "2. 共同大边选择与条件块切面"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/um-tree-matching-and-configuration-primary/comparison/research/reviews/unrelated_machines/joint_matching_completion_review.md",
+      "sha256": "fb381102057074efe33b4bca7bb39837891fc9ffdbbf584a78c293510fb5aec7"
+    },
+    {
+      "path": "archives/unrelated-machines/state/问题/任务级共同容量的算法义务--问题.md",
+      "sha256": "bf259a58e04bea2f62928d1f7f642e0ba72cd7c01db891d36c2d916ef06958a0"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "复核了前槽收费的全机确定性和二分不需假设低阈值成功单调。给定 H 求 x 的 LP 与选择 H 的职责明确分开。",
+  "contribution": {
+    "result": "若能统一构造所列共同见证，见证验证、实际全任务 (3/2+δ) 乘法恢复和有理未知阈值搜索均可总位多项式完成。",
+    "remaining": "承重缺口是在所有 YES 目标上从原 P 构造该 H,x 或给其他可求共同容量；低松弛精确选择困难性只在对应来源合同成立。"
+  },
+  "endpoint_pins": {
+    "UM-JOINT-SMALL-ROUND-v1": "c79523817fbe8c8ecb64556a86774e5b9c707dc3a3d93ebc6ee38c894db5d576",
+    "unrelated-machines/task-level-shared-capacity-algorithm-obligations": "1b1f2c141d66fc58469194cf28b4f8dab0148c6c01cd721ba4c429ed5eea4719"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/定义/不相关机器与两个调度松弛--定义.md": "f83b0a531d9e9b98fcffa70c77962f2e2b61e112b2074646f4f7cc3179ac9a8b",
+    "archives/unrelated-machines/state/审查/联合选择槽舍入三源精读--审查.md": "46153e968f420228c6720dd4edd2025c1521fcbb527830de60792c01d161f258",
+    "archives/unrelated-machines/tools/evidence/um-ghmr-flat-moment-and-hall-primary/comparison/research/current/unrelated_machines/joint_matching_completion_and_block_cuts.md": "8cf637c20618062a98d4038e7873987acf06bf426a583a6a678d974d7b103ba3",
+    "archives/unrelated-machines/state/审查/共同匹配联合槽舍入与包络配置三源审查--审查.md": "d8ad15db9cdf52d26be477052626a1afd6b0d1106982081d19b82d81e500bb47",
+    "archives/unrelated-machines/tools/evidence/um-tree-matching-and-configuration-primary/comparison/research/reviews/unrelated_machines/joint_matching_completion_review.md": "fb381102057074efe33b4bca7bb39837891fc9ffdbbf584a78c293510fb5aec7",
+    "archives/unrelated-machines/state/问题/任务级共同容量的算法义务--问题.md": "bf259a58e04bea2f62928d1f7f642e0ba72cd7c01db891d36c2d916ef06958a0"
+  },
+  "review_digest": "2ca1c5be18a81386f74cdcb6c35056c853ef9a7f49eabc54a97e116f41ddbb9b"
+}

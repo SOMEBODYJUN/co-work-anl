@@ -1,0 +1,76 @@
+{
+  "edge_id": "um-a44-r32-fixed-slot-synchronized-repair",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "UM-OPTIMAL-CONVEX-SLOT-REPAIR-v1"
+  ],
+  "target_ids": [
+    "unrelated-machines/task-level-shared-capacity-algorithm-obligations"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "m≥2 台完全同机、单件时间 1 的大任务及 m²−1 件时间 1/(m+1) 小任务。初态来自固定 x=1/m 的标准槽匹配；每原来源迁出的原任务最多去一个外机，可同步执行多任务。",
+  "roles": {
+    "UM-OPTIMAL-CONVEX-SLOT-REPAIR-v1": "给出固定槽坏匹配上单目的地跨槽修改的两个精确门槛与一条完整批次路径。",
+    "unrelated-machines/task-level-shared-capacity-algorithm-obligations": "固定槽/逐坐标修复义务中的实际联合跨槽迁移在明确同机族上有解。"
+  },
+  "explanation": "每个槽匹配必须用尽 m² 个槽，故大任务所在 A 仍有 m−1 小件，初峰 2m/(m+1)。留大任务时 A 为供给 m−1，余机各需净入 1；单外度使所有机器从 A 可达，首次访问前缀的唯一出割依次至少 m−1,…,1，得到最少 m(m−1)/2 个改件。按首次访问链构造第 t 批从当期源的原库存送 m−t 件，峰精确为 (2m−t)/(m+1)。搬大任务时其目标不接小件，A 成唯一汇，小件路径依次流 m,…,2，加大任务共 m(m+1)/2。",
+  "scope": "构造允许接收机临时增载且离开原槽图。尾环允许出现在留大任务分支；逐个拆开批次无严格下降保证。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/证明/单目的地跨槽修复的原任务割与实际批次--证明.md",
+      "sha256": "0e4c061ab2893069320dcd38c0e0181a2099865c91155794867f82c8de17844f",
+      "section": "对象与两种精确阈值"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/固定槽跨槽修复与最小工作面支撑障碍有限审查--审查.md",
+      "sha256": "029fcbb46a203747cf61c162abb52ab4ecc88bbfaefb7f2c62c5fced16635232"
+    },
+    {
+      "path": "archives/unrelated-machines/state/证明/单目的地跨槽修复的原任务割与实际批次--证明.md",
+      "sha256": "0e4c061ab2893069320dcd38c0e0181a2099865c91155794867f82c8de17844f",
+      "section": "留大任务：前缀割，而非强称全图是路径"
+    },
+    {
+      "path": "archives/unrelated-machines/state/证明/单目的地跨槽修复的原任务割与实际批次--证明.md",
+      "sha256": "0e4c061ab2893069320dcd38c0e0181a2099865c91155794867f82c8de17844f",
+      "section": "整批顺序有严格进展，拆单件没有此保证"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/固定槽审查的分层先验与冻结字节恢复--审查.md",
+      "sha256": "958b44e34fb46d96f59ac9759856d48d4dcdd378b705d4a2d6e410041b654bde"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/真实凸分量固定槽的规范与独立原入口--资源.md",
+      "sha256": "b86caa2c416627440975782d5d0903553150bd4f0096858af300b08b0dcf799c"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/无目的地限制跨槽修复的全配对原审计--资源.md",
+      "sha256": "943bf97c0fe23e96904d641b929916839b90b41eba95dc867418e4498c53e8c6"
+    },
+    {
+      "path": "archives/unrelated-machines/state/问题/任务级共同容量的算法义务--问题.md",
+      "sha256": "bf259a58e04bea2f62928d1f7f642e0ba72cd7c01db891d36c2d916ef06958a0"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "核了原任务归属割、任意平局的满槽数、m=3 尾环和 m=4 拆批反升，分离了无限目的地的 m−1 与 m+1。",
+  "contribution": {
+    "result": "这一真实凸分量固定槽族能用单目的地同步跨槽批次达到 OPT=1，并有精确原任务修改代价。",
+    "remaining": "没有给一般异端矩阵的联合批次 finder、可求进展势或统一全机负载保证。"
+  },
+  "endpoint_pins": {
+    "UM-OPTIMAL-CONVEX-SLOT-REPAIR-v1": "4fd8fc9e82e1d0ff3ca9cb7d4c8175a18a9dae79cf93e061370ee5f2556ac328",
+    "unrelated-machines/task-level-shared-capacity-algorithm-obligations": "1b1f2c141d66fc58469194cf28b4f8dab0148c6c01cd721ba4c429ed5eea4719"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/证明/单目的地跨槽修复的原任务割与实际批次--证明.md": "0e4c061ab2893069320dcd38c0e0181a2099865c91155794867f82c8de17844f",
+    "archives/unrelated-machines/state/审查/固定槽跨槽修复与最小工作面支撑障碍有限审查--审查.md": "029fcbb46a203747cf61c162abb52ab4ecc88bbfaefb7f2c62c5fced16635232",
+    "archives/unrelated-machines/state/审查/固定槽审查的分层先验与冻结字节恢复--审查.md": "958b44e34fb46d96f59ac9759856d48d4dcdd378b705d4a2d6e410041b654bde",
+    "archives/unrelated-machines/state/资源/真实凸分量固定槽的规范与独立原入口--资源.md": "b86caa2c416627440975782d5d0903553150bd4f0096858af300b08b0dcf799c",
+    "archives/unrelated-machines/state/资源/无目的地限制跨槽修复的全配对原审计--资源.md": "943bf97c0fe23e96904d641b929916839b90b41eba95dc867418e4498c53e8c6",
+    "archives/unrelated-machines/state/问题/任务级共同容量的算法义务--问题.md": "bf259a58e04bea2f62928d1f7f642e0ba72cd7c01db891d36c2d916ef06958a0"
+  },
+  "review_digest": "66053244dd64bc6e3e6f184045f635529da3d58be75b67c8237ff850af243ace"
+}

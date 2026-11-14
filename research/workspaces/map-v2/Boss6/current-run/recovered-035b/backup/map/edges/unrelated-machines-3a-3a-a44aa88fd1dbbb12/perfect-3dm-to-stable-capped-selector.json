@@ -1,0 +1,75 @@
+{
+  "edge_id": "um-a44-r32-perfect-3dm-to-stable-capped-selector",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "UM-SOURCE-KARP-3DM"
+  ],
+  "target_ids": [
+    "UM-TINY-WORK-STABILITY-SELECTION-NP-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "对每个固定整数 ℓ≥2 和固定有理 0≤ω<1/2，T=1、tiny 分界 δ=1/ℓ。对显式 3DM 输入进行确定性全串 many-one 编码，保留完整原任务。",
+  "roles": {
+    "UM-SOURCE-KARP-3DM": "提供带位置标签的三个等大坐标集上的 Perfect3DM 完全性及空、孤立输入的处理。",
+    "UM-TINY-WORK-STABILITY-SELECTION-NP-v1": "固定 ℓ、ω 的显式 selector/root/leaf 族稳定 CONFIG(1) 证书选择语言。"
+  },
+  "explanation": "每个 a=(x,y,z) 有 root R_a。每个 x 有一件 selector，去其 incident roots 各用时间 1。每个 a 有 ℓ 件独立 leaf，各在 R_a 耗 1/ℓ，两个外端目的分别为资源 Y_y、Z_z，余 ℓ−2 件各有同 x、同 leaf 索引共用的 D_{x,t} 外端，外端均用时间 1。令 q=|X|、s=|A|，外部资源共 ℓq，故覆盖恰一时外放 leaf 总质量≤ℓq。根总负载≥q+(ℓs−ℓq)/ℓ=s，等于总容量。每个正权 root 配置因此只可能是 selector singleton 或全 ℓ 个 leaf。令 z_a 为 selector 在 R_a 的边际。若 z_a>0，root 的 r_a=0、s_a=1−z_a，稳定性迫 z_a≥1−ω>1/2。每个 x 的这些 z_a 加起来恰1，所以唯一正项为1。相应 Y、Z 外端的单位容量保证所选 triples 两侧均无冲突，解出 perfect3DM。反向把匹配各 root 的 selector 放入、全部 leaf 外送，不选的 root 保全原 leaf。Y、Z 及 D 不冲突，得到真实峰1和零振幅 Dirac CONFIG。固定 ℓ 时任一机器至多 O(n^ℓ) 合法配置。给定可行稳定点，可固定每行原 r_i，限制各列 τ_i(C)≥r_i 并加 s_i≤r_i+ω，取显式有理 LP 顶点得到位多项式存在证书，实际 min 只可能提高。非法/孤立源映到固定合法 NO，例如两点每侧的四个偶校验三元组，q=0 映到一条三元组的固定 YES。",
+  "scope": "这一构造族的稳定选择判定与固定 K=1 的给定证书槽舍入分开。稳定门槛的严格性来自 z_a>1/2，有限半稳定 parity 证据只覆盖其列明参数。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/文献/Karp归约框架与完全问题--文献.md",
+      "sha256": "40c532477ca603c4366c545d4c41c39b056725b73e9a165ca1e8b21782792e1d",
+      "section": "5.2 原3DM归约的全部坐标与循环一致性"
+    },
+    {
+      "path": "archives/unrelated-machines/state/文献/Karp归约框架与完全问题--文献.md",
+      "sha256": "40c532477ca603c4366c545d4c41c39b056725b73e9a165ca1e8b21782792e1d",
+      "section": "2. 主定理的21个判定问题及历史术语"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/小任务联合槽稳定性与选择边界--定理.md",
+      "sha256": "5a3c005ace1b821da1409b30246879992b40094a8ed61940aeb6753aff71619e",
+      "section": "定义域与主合同"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/小任务联合槽稳定性与选择边界--定理.md",
+      "sha256": "5a3c005ace1b821da1409b30246879992b40094a8ed61940aeb6753aff71619e",
+      "section": "联合 Hall 舍入与负载界"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/小任务联合槽稳定性与选择边界--定理.md",
+      "sha256": "5a3c005ace1b821da1409b30246879992b40094a8ed61940aeb6753aff71619e",
+      "section": "选择复杂度与边界"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/小任务联合槽与加权小端ST双源续审查--审查.md",
+      "sha256": "e51a9f639bc40bdc64af9185604a672378c624bdf6154de6e566c521bd0dc4a7",
+      "section": "2.3 稳定证书选择的精确障碍"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/小任务稳定联合舍入与选择障碍三源审查--审查.md",
+      "sha256": "37af36c6925b605a73ef4396a934054ba5db339507e80f4106cfeaa0a43dab66"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/小任务联合槽稳定性与选择边界--定理.md",
+      "sha256": "5a3c005ace1b821da1409b30246879992b40094a8ed61940aeb6753aff71619e",
+      "section": "固定源族的三值选择器"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "复算了根总工作紧性、正根配置、逐 x 选择、Y/Z/D 单位槽及全配置反向。ℓ 固定时列数和有理证书位长可控。Karp 的承重输入是 perfect3DM，而非用 0–1 IP 的独立完全性免费推导此选择器。",
+  "whole_result": "Perfect3DM 经该显式 selector/root/leaf 映射给出固定 ℓ≥2、固定 0≤ω<1/2 的稳定 CONFIG(1) 选择 NP 困难性。正权配置可由多项式位长证书验证，故目标精确判定语言 NP 完全。",
+  "endpoint_pins": {
+    "UM-SOURCE-KARP-3DM": "2b455afb721fc3404464bed6944c36df19220c296dae72d7d0e9af032179e171",
+    "UM-TINY-WORK-STABILITY-SELECTION-NP-v1": "6c4b0a801f3a0c84e77c06ee1b222b82d9d045dfc6ec0c6edb2f59ab87036ddc"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/文献/Karp归约框架与完全问题--文献.md": "40c532477ca603c4366c545d4c41c39b056725b73e9a165ca1e8b21782792e1d",
+    "archives/unrelated-machines/state/定理/小任务联合槽稳定性与选择边界--定理.md": "5a3c005ace1b821da1409b30246879992b40094a8ed61940aeb6753aff71619e",
+    "archives/unrelated-machines/state/审查/小任务联合槽与加权小端ST双源续审查--审查.md": "e51a9f639bc40bdc64af9185604a672378c624bdf6154de6e566c521bd0dc4a7",
+    "archives/unrelated-machines/state/审查/小任务稳定联合舍入与选择障碍三源审查--审查.md": "37af36c6925b605a73ef4396a934054ba5db339507e80f4106cfeaa0a43dab66"
+  },
+  "review_digest": "67c2f793ec8409e1006d418a48d4e188a59caccea05d652413fdbb063b3a08e3"
+}
