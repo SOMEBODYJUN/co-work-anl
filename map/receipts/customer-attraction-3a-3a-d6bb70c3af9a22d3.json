@@ -1,0 +1,90 @@
+{
+  "task_id": "customer-attraction-3a-3a-d6bb70c3af9a22d3",
+  "stage": "3A",
+  "status": "complete",
+  "owner": "Boss4",
+  "request_id": "11048cbc6a0b429aad25faaa6be0c370",
+  "definition_pin": "ead6a0730e3255a7018dd4b7a9fa8709b95efb41aad22b30e135a31ee120d82d",
+  "coverage": {
+    "customer-attraction/r2fc-cyclic-dag-finite-certificate-pool": {
+      "state": "linked",
+      "object_pin": "6f7c6a15f07a88594ef1c9c939fe7640315557d10a4b5af481241730609aa67a",
+      "comparison_scope": "完整读取 R-2fc 候选正文、有限完整 SPE 证书池证明、共同目录完整历史模型、12 份证书 JSON、full-exact-audit 与 fresh-recovery-exact-audit；逐项核对 3 个 individual、7 个 extra、2 个 cyclic 固定输入的完整有序历史、真实单步偏离、W、OPT 与搜索量词边界。与 deferred finite-full-spe-certificate-pool-and-six-half-boundary 对照，仅支付其有限池中的同十二个条目。",
+      "reason": "R2fc 正文和审计固定认证十二个指定客户目录/完整策略：所有 declared fixed points 的 full-history IC 均通过，合计 4228 个决策历史、22843 个 proper deviations，最小 2W-OPT 为 1；循环三人 (11,13)、循环五人 (7,7)，其余数值按原表保留。该集合正是综合有限证书池中的十二条 R-2fc 条目，因此构成有限实例的 unconditional specializes 边；不外推到任意人数、目录、纯 SPE 或六人 half。",
+      "edge_ids": [
+        "cag-r2fc-pool-specializes-finite-spe-pool"
+      ]
+    },
+    "customer-attraction/closeout-5727ddfb2c9ab1468b74bf56": {
+      "state": "isolated-after-review",
+      "object_pin": "f7b40c7787df20be2cfe149a6bfd5dec0fa50f81afc23f6dd549836ff7229a8f",
+      "comparison_scope": "完整读取 closeout 反例正文（含精确两人目录、四个决策节点的收益表、完整策略与 Fraction 自查范围），并与 CAG-MODEL、R2fc 证书池及其全历史 IC 量词逐项比较。",
+      "reason": "closeout 只否定中间桥 `L_h(selected) >= Theta_h`：其精确例给 L(A)=1 < Theta=3/2 < actual_u_1(A,C)=2，同时保留实际_u>=Theta>=L(selected)、完整两人 SPE 和 W=OPT_2=4。R2fc 证书逐节点沿指定策略真实后继直接核验 IC，不使用该被否桥；closeout 不证明或反驳任一 R2fc 固定证书，也不提供六人 half 结论。",
+      "edge_ids": []
+    }
+  },
+  "mathematical_result": {
+    "edge": "map/edges/customer-attraction-3a-3a-d6bb70c3af9a22d3/r2fc-pool-specializes-finite-spe-pool.json",
+    "status": "accepted",
+    "relation": "specializes",
+    "relation_mode": "unconditional",
+    "proof_scope": "whole",
+    "whole_result": "R2fc 十二个固定完整纯 SPE 证书精确专化为综合有限证书池正文中的 3+7+2 个有限条目；每个条目的全历史 IC、W、OPT 和 2W-OPT 保持原值。",
+    "remaining": "综合对象的六人全称 2W>=OPT_6、任意目录/人数的普遍 half、最差 SPE 福利及长后缀共同预算仍未证；不得把有限点或搜索状态升级为全称结论。",
+    "edge_check": "PASS: research_runtime.py edge-check returned edge-structure-valid-not-a-mathematical-verdict, proof_scope=whole."
+  },
+  "reading": {
+    "declared_refs": 21,
+    "completed_passes": 21,
+    "all_declared_ranges_read": true,
+    "partial_pass_claimed_done": false,
+    "source_refs": [
+      "archives/customer-attraction/state/候选/R-2fc循环DAG有限完整证书--候选.md",
+      "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "archives/customer-attraction/state/证明/有限完整SPE证书池与六人half边界--证明.md",
+      "archives/customer-attraction/state/计算/R-2fc可信搜索B十源逐源审计--计算.md",
+      "archives/customer-attraction/state/计算/R-2fc-round3-search-m5p7-m5p8有限SPE证书与锥扫描--计算.md",
+      "archives/customer-attraction/state/反例/选中SPE分支的最小续局值可低于节点门槛--反例.md",
+      "research/registration/evidence/register-ab98f323ad-0001-5/r2fc-pool/cyclic_m5p7_half.json",
+      "research/registration/evidence/register-ab98f323ad-0001-5/r2fc-pool/m4p5_21100_a1.json",
+      "research/registration/evidence/register-ab98f323ad-0001-5/r2fc-pool/m3p6_111000_a0_out.json",
+      "research/registration/evidence/register-ab98f323ad-0001-5/r2fc-pool/cyclic_m3p7_individual.json",
+      "research/registration/evidence/register-ab98f323ad-0001-5/r2fc-pool/m3p5_mid_J234.json",
+      "research/registration/evidence/register-ab98f323ad-0001-5/r2fc-pool/m4p5_11110_a0.json",
+      "research/registration/evidence/register-ab98f323ad-0001-5/r2fc-pool/m3p6_210000_a1_out.json",
+      "research/registration/evidence/register-ab98f323ad-0001-5/r2fc-pool/m3p6_mid_J345.json",
+      "research/registration/evidence/register-ab98f323ad-0001-5/r2fc-pool/m3p5_mid_J034.json",
+      "research/registration/evidence/register-ab98f323ad-0001-5/r2fc-pool/m3p6_mid_J034.json",
+      "research/registration/evidence/register-ab98f323ad-0001-5/r2fc-pool/m5p5_31100_a1.json",
+      "research/registration/evidence/register-ab98f323ad-0001-5/r2fc-pool/m3p6_111000_a0_mixed.json",
+      "research/registration/evidence/register-ab98f323ad-0001-5/r2fc-pool/audit_dag_candidate.py",
+      "research/registration/evidence/register-ab98f323ad-0001-5/r2fc-pool/full-exact-audit.json",
+      "research/registration/evidence/register-ab98f323ad-0001-5/r2fc-pool/fresh-recovery-exact-audit.json"
+    ],
+    "verification_summary": {
+      "fixed_certificates": 12,
+      "decision_histories": 4228,
+      "proper_deviations": 22843,
+      "all_SPE": true,
+      "minimum_half_gap": 1,
+      "method": "source-preserved independent standard-library Fraction audits; JSON records parsed in full in this worker"
+    },
+    "worker_note": "research/workspaces/map-v2/Boss4/r2fc-pool-closeout-review.md"
+  },
+  "assets": [
+    {
+      "path": "map/edges/customer-attraction-3a-3a-d6bb70c3af9a22d3/r2fc-pool-specializes-finite-spe-pool.json",
+      "sha256": "06cff9a7716ec9052aeb6f9c4d82666758b5ee34a2fd12457a8f8a2e37d67c0f"
+    }
+  ],
+  "follow_up_tasks": [],
+  "closed_overlaps": [],
+  "reviewed_by": "Boss4-r2fc-worker",
+  "review_note": "Complete read of the task JSON, prompts/03-map-worker.md, research/IMPLEMENTATION.md, all 21 declared refs and both assigned objects. One useful specializes edge was accepted for the twelve finite entries; the closeout remains isolated. No commit, push, map done, assemble, or state mutation was performed.",
+  "source_refs": [
+    "customer-attraction/r2fc-cyclic-dag-finite-certificate-pool",
+    "customer-attraction/closeout-5727ddfb2c9ab1468b74bf56",
+    "CAG-MODEL",
+    "customer-attraction/finite-full-spe-certificate-pool-and-six-half-boundary (deferred target)"
+  ]
+}
