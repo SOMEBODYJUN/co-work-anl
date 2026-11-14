@@ -1,0 +1,57 @@
+{
+  "edge_id": "cag-b95767f0-diagonal-split-supplies-affine-rows",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/diagonal-reply-budget-split-basic-graph-program"
+  ],
+  "target_ids": [
+    "M-8ca2d60fda2e4d38934e3e5c480b2344"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "同一六人完整策略的 C 族 R_ij=σ6(h,T_i,C_j)，Z_ij=σ6(A1,…,A4,R_ij)。用 b12c4aa6… 的四态列。 ",
+  "roles": {
+    "customer-attraction/diagonal-reply-budget-split-basic-graph-program": "给 C 族真实 R/Z 的同异索引 56 条必要拆分及四态编码。",
+    "M-8ca2d60fda2e4d38934e3e5c480b2344": "重选 Z 并重映 1905 坐标后仍保这 56 条仿射行。"
+  },
+  "explanation": "真实源 IC、查询、共同价、容量与 PAIR 的每索引边预算分别合 30 异索引和 6 同索引，容量系数 30K、6K。固定层内 R 后从新 Z 恢复四态，再代入逐客户公式，56 条余量 47 正、9 零，与 7931 全行账本逐项匹配。旧 3945 源自身的余量未挪用。",
+  "scope": "旧 3945 仿射子块的 56 条对角拆分。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/程序/对角回复预算拆分的基础图程序--程序.md",
+      "sha256": "82ec96261a97cd3bdf9ddd249a75c7947260ef229eed293ff6cb2c80529dc2d7",
+      "section": "这些行来自同一完整策略的哪些历史"
+    },
+    {
+      "path": "archives/customer-attraction/state/计算/拆分与跨源固定阈值的配对可行点--计算.md",
+      "sha256": "0abfdae1d0e1e19bdeaf90bed346bdeb584e3f6353830cf5d91ec23de3eaaebe",
+      "section": "有限闭包包含的真行及现全行结果"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/pair-split-cross-points-boss3/replay/split/all-row-slacks.json",
+      "sha256": "38144667182385d909ef9ec8d411b833acfbd4ee418a1114c93a873724f8ecba"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-b95767f008363ae7/independent-audit.json",
+      "sha256": "b57671ed5a8ac71e49e788e4e07609d725018f74af9e8db6068d02da7d0cf270"
+    }
+  ],
+  "reviewed_by": "Boss5 / fresh worker",
+  "review_note": "实读当前登记、相应正文及承重证据。独立审计给有理余量，旧仿射矩阵保留原回代版本。",
+  "contribution": {
+    "result": "把 56 条真拆分预算精确接到 7931 系统的旧仿射部分，并核其指定点余量。",
+    "remaining": "其余 3889 旧行、60 Z→Z、120 PAIR、交叠界、共同会员与末位报价各自核验。"
+  },
+  "endpoint_pins": {
+    "M-8ca2d60fda2e4d38934e3e5c480b2344": "475bbcbc81d5ecdbe7383516d4867d179a81629e94365721b35fb0ee9a17e5d3",
+    "customer-attraction/diagonal-reply-budget-split-basic-graph-program": "83fc1f015b74a656d9aeff67c7003dc5704cb8e98b5770fe0d3514d524075814"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/程序/对角回复预算拆分的基础图程序--程序.md": "82ec96261a97cd3bdf9ddd249a75c7947260ef229eed293ff6cb2c80529dc2d7",
+    "archives/customer-attraction/state/计算/拆分与跨源固定阈值的配对可行点--计算.md": "0abfdae1d0e1e19bdeaf90bed346bdeb584e3f6353830cf5d91ec23de3eaaebe",
+    "archives/customer-attraction/tools/evidence/pair-split-cross-points-boss3/replay/split/all-row-slacks.json": "38144667182385d909ef9ec8d411b833acfbd4ee418a1114c93a873724f8ecba",
+    "map/edges/customer-attraction-3a-3a-b95767f008363ae7/independent-audit.json": "b57671ed5a8ac71e49e788e4e07609d725018f74af9e8db6068d02da7d0cf270"
+  },
+  "review_digest": "810f587329b4b8915b8bfdbbd16cea0f763363b2c4a52fb37bd489d380577be8"
+}
