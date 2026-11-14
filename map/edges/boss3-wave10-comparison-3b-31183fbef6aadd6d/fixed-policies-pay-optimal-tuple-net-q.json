@@ -1,0 +1,86 @@
+{
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "CA-TWO-FIXED-FIVE-PLAYER-NET-Q-MATCH-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "共同目录均分模型中五名顺序单位提供者、七个标签0至6；固定归档原件的完整有序σ252或σ48，实际终局分别00011、01010。非负整数会员型重数可任意改变；所得策略须满足完整SPE以应用真实IC。比较使用恰五个不同标签；同一比较确定d、O、E；同一σ实际终局确定c、C、W。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/两份冻结五人策略的净线性费用逐类型匹配--定理.md",
+      "sha256": "115bf10a9ca8c08e374f69dfb954773eed26fe46a990e80eaadccccd52af1bf0"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/两份冻结完整策略的全目录遗漏支付与逐最优支持匹配--定理.md",
+      "sha256": "5b6db6c3590423177173d3486bf911e23a6d1a238d3222a203b6d0fba1628e96"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/whole-subtree-nine-endpoints-primary/original/m5p7_residual.json",
+      "sha256": "2a154303b023acfdc7b09c8576f63b3acb50abb02bd8e3cca6a793152ad07233"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/whole-subtree-nine-endpoints-primary/original/m5p7_reentry_incumbent_half.json",
+      "sha256": "e6269ea7551820d0d2c6192dd96d60b7bd2ce1f92b6ffd463fd8a13f89da0565"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/fixed-five-player-omission-payments/verify_fixed_omission.py",
+      "sha256": "325b60a9554b9632b9ade563c2eac2f8d73050a725ecd0bb97529481fe9dad0c"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/fixed-five-player-omission-payments/check-net-q-on-fixed-policies.py",
+      "sha256": "60270ac3373647c0527b500cd18bc02e695040db1ba33fed97d901ebeeb93701"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/fixed-five-player-omission-payments/fixed-policy-net-q-exact.json",
+      "sha256": "0ade06e0a301b0a83c4d23859711fde5617acd0cdc3b0afaa7a5b65c77bfd3a4"
+    },
+    {
+      "path": "archives/customer-attraction/state/证明/终局净预算的元组支持量词与条件付款--证明.md",
+      "sha256": "48d94f566501f30480fbe1fd6b6f9f5451754ca7a9bb80c95d60c5887002d137"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/实际前缀净匹配探针与均匀分配报告--程序.md",
+      "sha256": "8106d84b72b1182ca79e8278938cfabca5690ca7190dcfc9f852b413b53d80b4",
+      "section": "原候选的真实矩阵与两级付款"
+    }
+  ],
+  "reviewed_by": "Boss3 / 31183fbef6aadd6d mapper",
+  "review_note": "实读三个端点及全部19条证据引用（14文件），校验原件字节；独立从原动作表走真实终局，每份重建2801历史、复验原客户点16806次非自身偏离，逐个核21×120×127个整数尺度60净费用比较。保存证书的所有通过数、选中排列、真实叶和127个有理余项精确复现；无符号费用的通过集合也逐一相同。核原rows_for与本边使用同一实际前缀及同一真实后继。",
+  "edge_id": "cag-3118-fixed-policies-pay-optimal-tuple-net-q",
+  "target_ids": [
+    "M-c5280acf6de14745af28bd5489a3bc21"
+  ],
+  "roles": {
+    "CA-TWO-FIXED-FIVE-PLAYER-NET-Q-MATCH-v1": "提供每个五异标签支持的逐型真实排列，且原固定策略真实IC逐项把支付和压到同一实际W。",
+    "M-c5280acf6de14745af28bd5489a3bc21": "接收原存在型最优恰m槽线性Q预算在两份固定五人SPE客户锥的全部输入上的证明。"
+  },
+  "contribution": {
+    "result": "两份固定完整SPE锥内，每个五异标签J都满足Q(c,J)≤W≤W+E_J。对每个最优覆盖，选取扩成五异标签而保覆盖的同一最优恰五槽元组T，得F(c,d)≤Q(c,d)≤W≤W+E；也得到原M-c528的固定锥最优元组净Q预算。",
+    "remaining": "一般M-c528的任意m、标签目录与完整纯SPE量词仍待支付。既有MATCH⇒Q及Q⇒F只需同一最优元组的条件链；本边直接提供固定锥实例的实际预算。"
+  },
+  "explanation": "对J的每个非空会员型B，若d_B>0则信用E系数为0，已证的真实排列直接支付d_B/(1+c_B)；若d_B=0则全部查询标签不在B，支付和Q系数均为0。所以乘任意非负重数求和得Q≤Bπ。各真实偏离从其原实际前缀出发沿同一完整策略完成，逐源IC给Bπ≤Σuᵢ=W，因而Q≤W+E_J。从任一最优覆盖的标签支持补五个不同标签，最优性使覆盖并集不变；新元组的d必须重算，E由同一个O确定。逐客Σ_{r=1}^{d}1/(c+r)≤d/(1+c)，故新元组同付F。静态Q−E与净覆盖差分别为L+R_Q−E、L−E，其中L=|O∖C|而R_Q含遗漏重复价和实际重叠价。全目录遗漏付款只付遗漏客户的单位需求，不能支付这一额外费用。",
+  "scope": "原M-c528的固定σ252/σ48子域，恰五个槽且证书元组五标签不同；零福利输入不取比率且同样适用。全支持8/5是独立覆盖比对偶，并未提供本预算的真实支付。",
+  "endpoint_pins": {
+    "CA-TWO-FIXED-FIVE-PLAYER-NET-Q-MATCH-v1": "6a565b467a4b41379b85fe03ce627c7da7af7aa848962be0c2ef9cbd85ab6079",
+    "M-c5280acf6de14745af28bd5489a3bc21": "633ea2a9aead32beceaf055654c2c65f20419f6ae0ce387131efdfb8c439fb5a"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/两份冻结五人策略的净线性费用逐类型匹配--定理.md": "115bf10a9ca8c08e374f69dfb954773eed26fe46a990e80eaadccccd52af1bf0",
+    "archives/customer-attraction/state/定理/两份冻结完整策略的全目录遗漏支付与逐最优支持匹配--定理.md": "5b6db6c3590423177173d3486bf911e23a6d1a238d3222a203b6d0fba1628e96",
+    "archives/customer-attraction/tools/evidence/whole-subtree-nine-endpoints-primary/original/m5p7_residual.json": "2a154303b023acfdc7b09c8576f63b3acb50abb02bd8e3cca6a793152ad07233",
+    "archives/customer-attraction/tools/evidence/whole-subtree-nine-endpoints-primary/original/m5p7_reentry_incumbent_half.json": "e6269ea7551820d0d2c6192dd96d60b7bd2ce1f92b6ffd463fd8a13f89da0565",
+    "archives/customer-attraction/tools/evidence/fixed-five-player-omission-payments/verify_fixed_omission.py": "325b60a9554b9632b9ade563c2eac2f8d73050a725ecd0bb97529481fe9dad0c",
+    "archives/customer-attraction/tools/evidence/fixed-five-player-omission-payments/check-net-q-on-fixed-policies.py": "60270ac3373647c0527b500cd18bc02e695040db1ba33fed97d901ebeeb93701",
+    "archives/customer-attraction/tools/evidence/fixed-five-player-omission-payments/fixed-policy-net-q-exact.json": "0ade06e0a301b0a83c4d23859711fde5617acd0cdc3b0afaa7a5b65c77bfd3a4",
+    "archives/customer-attraction/state/证明/终局净预算的元组支持量词与条件付款--证明.md": "48d94f566501f30480fbe1fd6b6f9f5451754ca7a9bb80c95d60c5887002d137",
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+    "archives/customer-attraction/state/程序/实际前缀净匹配探针与均匀分配报告--程序.md": "8106d84b72b1182ca79e8278938cfabca5690ca7190dcfc9f852b413b53d80b4"
+  },
+  "review_digest": "5ee4c4e8e83dfa0566066c0ae86601f11f5f169d2eec4922724f5778b65731c3"
+}
