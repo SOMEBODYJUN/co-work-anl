@@ -1,0 +1,64 @@
+{
+  "edge_id": "um-f6bc5acc-st-half-slots-to-scalar-rails",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "UM-ST-ROUND-v1"
+  ],
+  "target_ids": [
+    "UM-NORMALIZED-DUAL-RAIL-UNIVERSAL-THREE-HALVES-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "合法标量原矩阵每件作业恰在两个互异真实端点各放半份；轨先放 selector（K=1 时按此破同长平局），后放同轨 ports；clause 同质。各 A_c≥1 且 m_c≤2A_c−1。",
+  "roles": {
+    "UM-ST-ROUND-v1": "有序单位质量槽与一次全作业Hall匹配，允许按指定顺序破加工时间平局。",
+    "UM-NORMALIZED-DUAL-RAIL-UNIVERSAL-THREE-HALVES-v1": "将半份槽数按原轨和clause计为同时满足轨3/2、clause 1的实际负载。"
+  },
+  "explanation": "轨有 port 时分数负载为 1，空轨只有 selector 半片；标量 clause 分数负载为 m_c/(2A_c)≤1。全部正支撑时间≤1。一次 ST 全作业槽匹配给完整原调度。每有 port 轨共 ceil((K+1)/2) 个槽，selector 在该轨只邻首槽。收到 selector 时，其他槽至多容纳 floor(K/2) 件 port，故轨负载≤1+floor(K/2)/K≤3/2；未收到 selector 则全部内端 port 时间和至多 1。空轨单独处理，无除零。每个 clause 有 ceil(m_c/2)≤A_c 个槽，故负载≤1。重复 occurrence 始终分别占一个任务节点；槽规模由显式任务数控制，与 A_c 的数值大小无关。",
+  "scope": "同一标量原矩阵、一次共同 ST 半质量槽匹配、逐轨与逐 clause 同时满足输出界。规范 quarter-flow 只保证全局 3/2，独立 half-slot 才给这里的逐 clause 1 界。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/定理/有序单位槽的支撑最大件舍入--定理.md",
+      "sha256": "996b2d634889c84f766cf186d5d71d8f55679e2e993e1648f34597dbf2d354a6",
+      "section": "槽、任务匹配及逐机收费"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/双轨标量与拆分unit的共同调度及锐例审查--审查.md",
+      "sha256": "928992675fdebbc7d130efee3b8132e0c5665a12b9143c4981cae8d748f1affe",
+      "section": "scalar半质量有序槽与经典工具"
+    },
+    {
+      "path": "archives/unrelated-machines/state/计算/归一化标量双轨的共同流与独立半槽原程序--计算.md",
+      "sha256": "45de161324ed6686b6d9082c378518666f43b1bc046c4b6d48da0a0a0d4dc6dc",
+      "section": "独立half-slot：每clause负载≤1"
+    },
+    {
+      "path": "archives/unrelated-machines/state/计算/归一化标量双轨的共同流与独立半槽原程序--计算.md",
+      "sha256": "45de161324ed6686b6d9082c378518666f43b1bc046c4b6d48da0a0a0d4dc6dc",
+      "section": "同一个10机15job锐例的两个真实输出"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/双轨与HS及Hall输入三源增量审查--审查.md",
+      "sha256": "56a8b69ab0c0725a67e2bc5d4b6acdeaeeaa0c958b77fcca434494c722a92306",
+      "section": "2.1 精确输入"
+    }
+  ],
+  "reviewed_by": "Boss2",
+  "review_note": "复核标量 v2、经典 ST 槽和独立半槽的首槽计数、平局、空轨与巨 A；用精确四 clause 附件和历史实际输出区分上界贡献与锐性下界。",
+  "contribution": {
+    "result": "对每个合法标量输入，用一次 ST 半质量槽匹配在确定性总位多项式内回填全部原作业，同时保证各轨≤3/2、各 clause≤1。",
+    "remaining": "绝对锐性还需对冻结 A=2 四 clause 原标量矩阵排除 C≤1 并使用半整数网格；其达到性由本上界给出。"
+  },
+  "endpoint_pins": {
+    "UM-NORMALIZED-DUAL-RAIL-UNIVERSAL-THREE-HALVES-v1": "e4801ab268c780dba55255b1c4f5e256a0baf8584b6e2331e4eeabbfd72062ad",
+    "UM-ST-ROUND-v1": "8c4662c822ebd204e3b095934f8745464426df43fc2328a6bbc35063e4148ea1"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/定理/有序单位槽的支撑最大件舍入--定理.md": "996b2d634889c84f766cf186d5d71d8f55679e2e993e1648f34597dbf2d354a6",
+    "archives/unrelated-machines/state/审查/双轨标量与拆分unit的共同调度及锐例审查--审查.md": "928992675fdebbc7d130efee3b8132e0c5665a12b9143c4981cae8d748f1affe",
+    "archives/unrelated-machines/state/计算/归一化标量双轨的共同流与独立半槽原程序--计算.md": "45de161324ed6686b6d9082c378518666f43b1bc046c4b6d48da0a0a0d4dc6dc",
+    "archives/unrelated-machines/state/审查/双轨与HS及Hall输入三源增量审查--审查.md": "56a8b69ab0c0725a67e2bc5d4b6acdeaeeaa0c958b77fcca434494c722a92306"
+  },
+  "review_digest": "cb6a60cc4fa180acced4644aeb62bc0c37cca26d38a54434b9d4b332e9a4c45f"
+}

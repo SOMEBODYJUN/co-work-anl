@@ -1,0 +1,55 @@
+{
+  "edge_id": "um-f6bc5acc-weak-star-shared-row-pair-exact-threshold",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "UM-WEAK-H2-CONFIG-MOMENT-GAP-v1"
+  ],
+  "target_ids": [
+    "UM-STRONG-H2-ROW-PAIR-STAR-EXACT-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "对同一个显式稀释星 P_k，k≥3、b=k²、r=b+1、N=b+k。保留弱合同的共同四阶 Boolean/one-hot 泛函 L、全局 M₂ PSD、逐机一次负载 localizer 和同一一阶完整 CONFIG(T)。另要求每台机器的同一份 CONFIG(T) 行分布对所有不同同机端的二阶条目均与该 L 相等。",
+  "roles": {
+    "UM-WEAK-H2-CONFIG-MOMENT-GAP-v1": "提供同一显式稀释星 P_k、整数最优值 θ_k=2−1/k，以及在 t=N/r 的弱证书及其同一一阶 CONFIG(1) 行。",
+    "UM-STRONG-H2-ROW-PAIR-STAR-EXACT-v1": "在额外共享同机二阶的合同下，给同一 P_k 的完整可行阈值。"
+  },
+  "explanation": "T<1 时单位 X 的端全部被剪掉。对 1≤T<θ_k，单位 R/G 行每个配置至多含一件任务，共享二阶给同机不同端 L(x_e x_h)=0。Boolean 幂合并使 x_e x_h 在 M₂ 中的平方范数等于这一二阶条目，故它与 x_f 正交。展开 L([x_f(1−Σ_e x_e)]²)≥0 得任意原端 f 下的单位行条件容量 Σ_e L(x_f x_e)≤L(x_f)。对某块中心 X 端 f，设 α=L(x_f)≥0、q=⌊k(T−1)⌋≤k−2。中心 V 允许时间 1/k 的 Z，含 X 的配置至多接 q 件 home Z，共享二阶给其条件总量≤qα。对每件 Y/Z 把 one-hot 乘 x_f 并求和，故本块 R 承担至少 (b+k−q)α，而 b+1 台 R 的条件容量合计至多 (b+1)α。因此 α=0。每个中心均如此，k 件 X 的覆盖质量全落到 k−1 台 G，每台的 singleton 配置容量至多一，矛盾。真实最优调度给 θ_k 的共同 Dirac 矩和同一行配置，并对更大 T 保持可行。另在原弱证书中，同一一阶行均有 CONFIG(1)，但以中心端 x_f 测相应资源行 localizer 在 T=1 的对角元为 (1−t)/k<0，因为 x_f 选出该行负载伪恒等于 t 的激活块。在 T=t，活跃分支 localizer 恰零，而同 R 上任意两件不同 Y 给正二阶 (1/k)t(t−1)/(N)_2，与 singleton 行二阶为零冲突。",
+  "scope": "仅同一个稀释星族及其共享同机二阶的强化合同。t 是该弱证书的可行目标，CONFIG(1) 只描述其同一一阶点。低阈值反证实际使用共同 M₂、one-hot 与行配置的一、二阶相等；不要求额外的行三、四阶相等。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/审查/弱H2强行矩与加权扇出边界双源审查--审查.md",
+      "sha256": "4f08c432e9e21e52f8dc623f17dd6bf50756d357687952bd297996242fe61902",
+      "section": "2. 弱 H2：同一一阶 CONFIG 加全局四阶矩仍可趋二"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/弱H2强行矩与加权扇出边界双源审查--审查.md",
+      "sha256": "4f08c432e9e21e52f8dc623f17dd6bf50756d357687952bd297996242fe61902",
+      "section": "2.3 强化合同的精确校准"
+    },
+    {
+      "path": "tools/evidence/root-seed-multislice-and-global-escape-corrections/original/research/current/unrelated_machines/weak_h2_configuration_moment_gap.md",
+      "sha256": "2e6aa07ed9e6cd3401eaa2560429e71af4932cdbb7633ff7a54a9ad973cb5dec",
+      "section": "8. 同机二阶配置相容性在稀释星族上的精确阈值"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/共享一阶配置与共同二阶容量的边界--资源.md",
+      "sha256": "1bff411d0aa883ac8a808f9d68f2653fed15e342340802b2ee1166b6be2b046a",
+      "section": "强合同：把零同机pair传到真实条件容量"
+    }
+  ],
+  "reviewed_by": "Boss2",
+  "review_note": "实读冻结原证明 §§1–2、4–6、8、双源审查 §§2.1–2.4 及共同二阶容量资源。复核 v5 的 CONFIG(1)/弱 H2(t) 区分、v4 全部中心 X 归零后的 k 对 k−1 计数，以及同份行分布共享二阶这一附加条件。",
+  "whole_result": "若在原弱合同上加入同一 CONFIG(T) 行分布与共同 L 的同机二阶相等，对每个 k≥3 的 P_k，强化系统当且仅当 T≥2−1/k 可行，其达到的阈值恰等于真实 OPT。",
+  "endpoint_pins": {
+    "UM-STRONG-H2-ROW-PAIR-STAR-EXACT-v1": "4ba01b1acbf1732d3d1e414817f62883c44aede3abb4714431f5186edf2bf3e8",
+    "UM-WEAK-H2-CONFIG-MOMENT-GAP-v1": "45266fb7e31cf1beeefb08cd847f6f990441ea40bed04efe57a4bf1813dc5ee6"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/审查/弱H2强行矩与加权扇出边界双源审查--审查.md": "4f08c432e9e21e52f8dc623f17dd6bf50756d357687952bd297996242fe61902",
+    "tools/evidence/root-seed-multislice-and-global-escape-corrections/original/research/current/unrelated_machines/weak_h2_configuration_moment_gap.md": "2e6aa07ed9e6cd3401eaa2560429e71af4932cdbb7633ff7a54a9ad973cb5dec",
+    "archives/unrelated-machines/state/资源/共享一阶配置与共同二阶容量的边界--资源.md": "1bff411d0aa883ac8a808f9d68f2653fed15e342340802b2ee1166b6be2b046a"
+  },
+  "review_digest": "caddc00ab42c5422a2cd54da24ba68bdc6364fd1ec49194d2277c05b2d4d846b"
+}
