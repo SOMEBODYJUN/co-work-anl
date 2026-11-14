@@ -1,0 +1,97 @@
+{
+  "edge_id": "ca-4f1d-common-q-generator-specializes-security-cone-dual",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-7656d999834541f2a815087f764149e3"
+  ],
+  "target_ids": [
+    "CA-SECURITY-CONE-DUAL"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "固定有限共同标签目录、固定完整有序形式策略 sigma、全部真实历史IC行 Gamma=G/L；生成器的同一 Q 对所有纯查询 a 通过 exact 有理归一、非负 lambda_a 与 r_a 及全部客户类型恒等式。Q 只对该固定 sigma，不量化所有策略/目录/人数。",
+  "roles": {
+    "M-7656d999834541f2a815087f764149e3": "给出 all-query common-Q 线性充分合同：c/n-E_Q b_a=Gamma^T lambda_a+r_a；其现存输出默认仅 UNCERTIFIED_NUMERIC_CANDIDATE。",
+    "CA-SECURITY-CONE-DUAL": "接收固定 sigma,p 的 T 证书并推出 A；定理本身允许 Q 依赖 p，且 universal certificate existence/open。"
+  },
+  "explanation": "对任意有理 p，将每个 query a 的 exact identity 按 p_a 加权并乘 n：c-n E_Q beta_B(p)=Gamma^T(n sum_a p_a lambda_a)+n sum_a p_a r_a。故同一 Q 给出 CA-SECURITY-CONE-DUAL 的 T，内积任意 w in K_sigma 得 W>=n min_B beta_B(p)·w；再对 p 最大化得到固定 cone 上 W>=n v_n。该边是算法条件到通用 fixed-p dual 接口的充分特化，不承担 minimax/Farkas 双向证明。",
+  "scope": "只认证 fixed-sigma welfare/security-cone interface。不得升级为 forall sigma,p certificate existence、per-player u_i>=v_n、SPE existence/selection claim、或 OPT_n>2W half result。",
+  "whole_result": "在上述 exact feasibility 条件下，M-7656... 的共同-Q合同对每个有理 p 都实例化 CA-SECURITY-CONE-DUAL 的 (T) 证书，并对该固定策略客户锥给出 W_sigma(w)>=n v_n(w)。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/审查/共同背景安全锥报告与版本边界--审查.md",
+      "sha256": "f26af391adb454cfb27bad1f62e37ab0e7a894f7a133f621eec80a1c5379c5f5"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/Boss7-resume-common-reports/source-root/research/workspaces/customer-attraction/R-acd97406d8c4409d962eab2adcdc520c/round3_security/cone_common_background.py",
+      "sha256": "b4871e04e5eddfba30f5c9e77c1e92d5e5b8114efdc265413c19f2dde52fe205"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/Boss7-resume-common-reports/exact-check-report.json",
+      "sha256": "6cd15055c476d419072ed4d507e3131d107e3d466cc0cdeb7efe2a6a5d3cd57e"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/Boss7-resume-common-reports/reconstructed-policy-dags.json",
+      "sha256": "525efa8bd039d4c9bce8d4a7d37b8b1e649cdc7ebcbd47ddca47e75387471a8f"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/Boss7-resume-common-reports/verify_common_reports.py",
+      "sha256": "931ac4fae7024ab32d862f976781e92777428daa73dd9bc6398d2cfb08b4ba97"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/Boss7-resume-common-reports/source-root/research/workspaces/customer-attraction/R-acd97406d8c4409d962eab2adcdc520c/round3_security/common_n4_k6.json",
+      "sha256": "d19694e40e8c7dfefdff852529ce9404b8327bf409c1b53daa9c43a2cd1b4722"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/Boss7-resume-common-reports/source-root/research/workspaces/customer-attraction/R-acd97406d8c4409d962eab2adcdc520c/round3_security/common_n5_k6.json",
+      "sha256": "9935ad92f764fc17efbb1c22a65cd474a3a767e87decd820243c8953250b4512"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/Boss7-resume-common-reports/source-root/research/workspaces/customer-attraction/R-acd97406d8c4409d962eab2adcdc520c/round3_security/cone_n4_k6.json",
+      "sha256": "c634ec43095bfe9052ab1e4ecd00f5bcc6e826017dd26abcbab51f018e12f142"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/Boss7-resume-common-reports/complete-content-index.json",
+      "sha256": "1da2ac1d013063fa25f7b9e79e2fbc226309f2e387a6dddb7a78359b0226d4a4"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/integer-security-and-transitive-search-contracts-primary/source-root/research/workspaces/customer-attraction/R-acd97406d8c4409d962eab2adcdc520c/round3_security/search_security.py",
+      "sha256": "52dd1d9c9a659489dddfe5b95c46892acdf3450c22a8191130cd57fd6fe7ac70"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/integer-security-and-transitive-search-contracts-primary/source-root/research/workspaces/customer-attraction/R-acd97406d8c4409d962eab2adcdc520c/round3_security/cone_optimize.py",
+      "sha256": "994f4652935cf35cf2e9be924e9f3654862e0d9a1ddd4c23b1077b7faaff742e"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/完整策略锥的静态安全值对偶--定理.md",
+      "sha256": "b279e1f63f08b961365a2cbc0173530de7090fd1c7beefc1a42c585ef6e58cf5"
+    }
+  ],
+  "reviewed_by": "Boss1/solver_security_cone_dual",
+  "review_note": "完整阅读声明 refs；按目标整句核模型、量词、Gamma尺度、真实后继和数值证据边界；没有重跑 LP 或把浮点输出当证明。",
+  "endpoint_pins": {
+    "CA-SECURITY-CONE-DUAL": "e31e80e9d89c7fad56eadbcbfd46a50af3857d6119eea8060c3a41a0cb987899",
+    "M-7656d999834541f2a815087f764149e3": "8c9d70519998c1a6cbda738459fde9ec0071e89e40df6cae4c98ad44b57a89ef"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/审查/共同背景安全锥报告与版本边界--审查.md": "f26af391adb454cfb27bad1f62e37ab0e7a894f7a133f621eec80a1c5379c5f5",
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+    "archives/customer-attraction/tools/evidence/Boss7-resume-common-reports/source-root/research/workspaces/customer-attraction/R-acd97406d8c4409d962eab2adcdc520c/round3_security/cone_common_background.py": "b4871e04e5eddfba30f5c9e77c1e92d5e5b8114efdc265413c19f2dde52fe205",
+    "archives/customer-attraction/tools/evidence/Boss7-resume-common-reports/exact-check-report.json": "6cd15055c476d419072ed4d507e3131d107e3d466cc0cdeb7efe2a6a5d3cd57e",
+    "archives/customer-attraction/tools/evidence/Boss7-resume-common-reports/reconstructed-policy-dags.json": "525efa8bd039d4c9bce8d4a7d37b8b1e649cdc7ebcbd47ddca47e75387471a8f",
+    "archives/customer-attraction/tools/evidence/Boss7-resume-common-reports/verify_common_reports.py": "931ac4fae7024ab32d862f976781e92777428daa73dd9bc6398d2cfb08b4ba97",
+    "archives/customer-attraction/tools/evidence/Boss7-resume-common-reports/source-root/research/workspaces/customer-attraction/R-acd97406d8c4409d962eab2adcdc520c/round3_security/common_n4_k6.json": "d19694e40e8c7dfefdff852529ce9404b8327bf409c1b53daa9c43a2cd1b4722",
+    "archives/customer-attraction/tools/evidence/Boss7-resume-common-reports/source-root/research/workspaces/customer-attraction/R-acd97406d8c4409d962eab2adcdc520c/round3_security/common_n5_k6.json": "9935ad92f764fc17efbb1c22a65cd474a3a767e87decd820243c8953250b4512",
+    "archives/customer-attraction/tools/evidence/Boss7-resume-common-reports/source-root/research/workspaces/customer-attraction/R-acd97406d8c4409d962eab2adcdc520c/round3_security/cone_n4_k6.json": "c634ec43095bfe9052ab1e4ecd00f5bcc6e826017dd26abcbab51f018e12f142",
+    "archives/customer-attraction/tools/evidence/Boss7-resume-common-reports/complete-content-index.json": "1da2ac1d013063fa25f7b9e79e2fbc226309f2e387a6dddb7a78359b0226d4a4",
+    "archives/customer-attraction/tools/evidence/integer-security-and-transitive-search-contracts-primary/source-root/research/workspaces/customer-attraction/R-acd97406d8c4409d962eab2adcdc520c/round3_security/search_security.py": "52dd1d9c9a659489dddfe5b95c46892acdf3450c22a8191130cd57fd6fe7ac70",
+    "archives/customer-attraction/tools/evidence/integer-security-and-transitive-search-contracts-primary/source-root/research/workspaces/customer-attraction/R-acd97406d8c4409d962eab2adcdc520c/round3_security/cone_optimize.py": "994f4652935cf35cf2e9be924e9f3654862e0d9a1ddd4c23b1077b7faaff742e",
+    "archives/customer-attraction/state/定理/完整策略锥的静态安全值对偶--定理.md": "b279e1f63f08b961365a2cbc0173530de7090fd1c7beefc1a42c585ef6e58cf5"
+  },
+  "review_digest": "2ef968b4530f77763d1c2c58b05aec276fefcbeb38adabf287d5e8d01b28bc73"
+}
