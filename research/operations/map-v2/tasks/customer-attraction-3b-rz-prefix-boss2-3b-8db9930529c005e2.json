@@ -7,10 +7,13 @@
       "M-63c882b0c8414805a43d4d8d4e43f4e3",
       "M-736ccd964c384f16a6816eebcb468f2f"
     ],
-    "read_object_ids": [],
+    "read_object_ids": [
+      "M-b233ef00a9c34e189817cdfb7a495107"
+    ],
     "input_pins": {
       "M-63c882b0c8414805a43d4d8d4e43f4e3": "403896c58e3ef32a0658cf8f47cd52451777da770e2e6a2dbb15cd3345668f6e",
-      "M-736ccd964c384f16a6816eebcb468f2f": "793a5c81ccca4d9a1eddbe61a6321795752ed83063a9e0cf4a6285944d9c3b1a"
+      "M-736ccd964c384f16a6816eebcb468f2f": "793a5c81ccca4d9a1eddbe61a6321795752ed83063a9e0cf4a6285944d9c3b1a",
+      "M-b233ef00a9c34e189817cdfb7a495107": "308401b736d5e278edb8a86a3dbfd2d3466aa1455f9c627b8b72069a9197c411"
     },
     "write_paths": [
       "map/edges/customer-attraction-3b-rz-prefix-boss2-3b-8db9930529c005e2",
@@ -847,14 +850,76 @@
           "continuation": "Continue this same complete object in order; retain its model, quantifiers, hypotheses, established steps and unpaid obligations in the saved note. No partial pass means done.",
           "pass": 38
         }
-      ]
+      ],
+      "budget_status": "reading-scope-expanded-reestimate"
     }
   },
-  "state": "claimed",
+  "state": "done",
   "owner": "Boss1",
-  "request_id": "5196dd6540164903b344a852d69e7d97",
+  "request_id": "c32db6db751d499b98d5b5809ac55bb1",
   "requests": {
     "514458b30504427daefaea2b2c8c3ee1": "plan",
-    "5196dd6540164903b344a852d69e7d97": "claim"
+    "5196dd6540164903b344a852d69e7d97": "claim",
+    "18e78f8a9539483c99d55d758d6d1f8e": "read-add",
+    "c32db6db751d499b98d5b5809ac55bb1": "done"
+  },
+  "edge_paths": {
+    "customer-attraction-3b-rz-prefix-to-rz-income-credit": "map/edges/customer-attraction-3b-rz-prefix-boss2-3b-8db9930529c005e2/support.json"
+  },
+  "receipt": {
+    "schema": 1,
+    "task_id": "customer-attraction-3b-rz-prefix-boss2-3b-8db9930529c005e2",
+    "stage": "3B",
+    "status": "ready-local-only",
+    "reviewed_by": "SOLVER-3B-PREFIX",
+    "coverage": {
+      "M-63c882b0c8414805a43d4d8d4e43f4e3": {
+        "state": "linked",
+        "object_pin": "403896c58e3ef32a0658cf8f47cd52451777da770e2e6a2dbb15cd3345668f6e",
+        "comparison_scope": "完整实读 M-63c prefix-tail 正文、M-b233 折扣端点、共同模型及 33 个声明证据文件；核式(1)–(8)、k>=3、同源V、固定菜单、delta∈[0,1) 和全目录尾闭包。进一步把 alpha/beta 的共享v接口接入 M-736 的同一R^C/Z^C边。",
+        "reason": "M-63c 的联合min与M-b233的有限最大值闭包在同一实际V上成立；源/末价/容量预算必须全额相加，delta=0仍是合法一步尾。该贡献是条件组合，不声称全部独立参数锥严格更强。",
+        "edge_ids": [
+          "customer-attraction-3b-rz-prefix-to-rz-income-credit"
+        ]
+      },
+      "M-736ccd964c384f16a6816eebcb468f2f": {
+        "state": "linked",
+        "object_pin": "793a5c81ccca4d9a1eddbe61a6321795752ed83063a9e0cf4a6285944d9c3b1a",
+        "comparison_scope": "完整实读 M-736 769 行正文、工作区 formal/shared/strong 文档、全部有限表与三份 Main PASS 报告；核R/Z同边四态差界、49:10（alpha=49,beta=10,lambda=17965）、21669/D v保持移账、共同R增益及U/C付款障碍。",
+        "reason": "在M-63c同一V和M-b233普遍尾闭包的条件下，M-736四态端点可锁定共同(r,z)=(0,0)，保留同一v；得到148951u4+20391u6，继而强移账为148951u4−1278u6。仍欠148951u4的全局付款/SPE闭合。",
+        "edge_ids": [
+          "customer-attraction-3b-rz-prefix-to-rz-income-credit"
+        ]
+      }
+    },
+    "assets": [
+      {
+        "path": "map/edges/customer-attraction-3b-rz-prefix-boss2-3b-8db9930529c005e2/support.json",
+        "sha256": "c3da544d7a521bf8b6ca5ed7af0695de3352fd78dfbe8849967bc2c97aeaeb71"
+      },
+      {
+        "path": "map/edges/customer-attraction-3b-rz-prefix-boss2-3b-8db9930529c005e2/review.md",
+        "sha256": "e847054f4644894039049f7b06b53b4261c79d3352de1484730a9cb03fdc1c2b"
+      },
+      {
+        "path": "map/edges/customer-attraction-3b-rz-prefix-boss2-3b-8db9930529c005e2/readledger.json",
+        "sha256": "7d5182c4e679fed91d421de604c23fec73a7216b56e12fa9a2c18caf6a42379b"
+      }
+    ],
+    "follow_up_tasks": [],
+    "review_note": "SOLVER-3B-PREFIX 完整实读并复核 33 个声明文件；M-b233 由 local-only read-add 加入。保留 exact parameter/quantifier conditions；148951u4 payment、完整half/SPE closure与全参数锥严格包含仍 open。",
+    "validation": {
+      "read_add": "local-only",
+      "declared_files": 33,
+      "declared_sha256_verified": true,
+      "edge_bind": "written",
+      "edge_check": "edge-structure-valid-not-a-mathematical-verdict",
+      "finite_reports": [
+        "main_verify_prefix_tail_5752.json: PASS",
+        "main_verify_zero_capacity_v1.json: PASS",
+        "main_verify_strong_a6_transfer_v1.json: PASS"
+      ],
+      "new_scientific_program_runs": 0
+    }
   }
 }
