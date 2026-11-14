@@ -1,0 +1,62 @@
+{
+  "edge_id": "cag-b550-fixed-288-tangent",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/free-fractional-minimax-tangent-cover-price-bounds"
+  ],
+  "target_ids": [
+    "M-0472e67916444a238d13f00f55bb0942"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "原 static_floor_r3_bg0 保存报告的 best，零背景、三人、六标签、288 名不同单位客户；仅固定原六个坏叶。",
+  "roles": {
+    "customer-attraction/free-fractional-minimax-tangent-cover-price-bounds": "提供对所有自由竞争分数背景有效的凸切线下界和合法纯查询上界。",
+    "M-0472e67916444a238d13f00f55bb0942": "原说明将 288 保存点限为数值发现；新证书为该固定点补足精确阈值及真实后继资格。"
+  },
+  "explanation": "以 p=(74,51,61,118,47,149)/500、q=(72,13,50,150,34,181)/500 回算六个切线顶点与纯查询。221/3<737/10<LB≤t3(0)≤UB<1844/25<457/6。原每根一叶满足两后继地板而根跌破它。十二个顺序中十一种存在严格末位偏离；唯一末位通过者 (1,5,3) 的第二位改选3，唯一真末位转至4，第二位从527/6升到289/3，增17/2。完整逆推另得该目录唯一纯SPE在轨 (5,3,0)，覆盖全部288客。",
+  "scope": "只认证原288点和十二个固定叶，不把两份其它搜索报告或一般SPE福利目标纳入。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/自由分数门槛的凸对偶与覆盖价格界--定理.md",
+      "sha256": "2a12cd3e5699cda7dea1458f5a7432455dfbc438a8940572d1115a99d2ac5465",
+      "section": "任意有理点给全背景精确下界"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/静态跟随者门槛保护的受限终局探针与三份数值记录--程序.md",
+      "sha256": "6e0707d33e9d540c3dba4ec275ffe8c6b48febc057ce2ff668fd1c15eab1c88a",
+      "section": "288客户的原始数值发现与精确固定收益"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/legal-background-cone-and-static-floor-primary/source-root/research/workspaces/customer-attraction/R-ab183d14fb74403091d09db766b05f73/security2/static_floor_r3_bg0.json",
+      "sha256": "a6c41511e961cd70d38945c93499aadb68298950b721f72c325816ad5a5b8d39"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-b550533bb1371232/288-proof.md",
+      "sha256": "69d9ae4c2ebcea00a14547814e63a58d322bd16b0c780d9b9fcf31051e211e5f"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-b550533bb1371232/floor-288.py",
+      "sha256": "7521ff34c46c62c6e7d088f71c782479398a6cadfbd1758b42742555170aab80"
+    }
+  ],
+  "reviewed_by": "Boss3",
+  "review_note": "从原 SHA 绑定的整数输入重算六个切线顶点、六个纯查询和全部固定顺序真实偏离；遍历重复在内的36个末位历史及所有更早动作以交叉检查。",
+  "contribution": {
+    "result": "认证登记原资源提及的 288 客户保存点，给所有根的真静态门槛失败并排除固定十二种顺序的可信根后子SPE资格。",
+    "remaining": "此有限见证与任意 k 的解析反族分别成立；固定输入的穷尽比较无法给一般逐人或总福利定理。"
+  },
+  "endpoint_pins": {
+    "M-0472e67916444a238d13f00f55bb0942": "6dfdaa61e2cbacaf3be4463f597b9fd4b4fc25ee70643653be600469b4eb8d0a",
+    "customer-attraction/free-fractional-minimax-tangent-cover-price-bounds": "6a6ecc006d2c5f3df247a61146519c2c80d43da681c39a89be5d37df9eb79684"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/自由分数门槛的凸对偶与覆盖价格界--定理.md": "2a12cd3e5699cda7dea1458f5a7432455dfbc438a8940572d1115a99d2ac5465",
+    "archives/customer-attraction/state/程序/静态跟随者门槛保护的受限终局探针与三份数值记录--程序.md": "6e0707d33e9d540c3dba4ec275ffe8c6b48febc057ce2ff668fd1c15eab1c88a",
+    "archives/customer-attraction/tools/evidence/legal-background-cone-and-static-floor-primary/source-root/research/workspaces/customer-attraction/R-ab183d14fb74403091d09db766b05f73/security2/static_floor_r3_bg0.json": "a6c41511e961cd70d38945c93499aadb68298950b721f72c325816ad5a5b8d39",
+    "map/edges/customer-attraction-3a-3a-b550533bb1371232/288-proof.md": "69d9ae4c2ebcea00a14547814e63a58d322bd16b0c780d9b9fcf31051e211e5f",
+    "map/edges/customer-attraction-3a-3a-b550533bb1371232/floor-288.py": "7521ff34c46c62c6e7d088f71c782479398a6cadfbd1758b42742555170aab80"
+  },
+  "review_digest": "871f74ecc49725fb3b08fc9b6857d70d3953047c7b48302e56d7f2341d3aced9"
+}
