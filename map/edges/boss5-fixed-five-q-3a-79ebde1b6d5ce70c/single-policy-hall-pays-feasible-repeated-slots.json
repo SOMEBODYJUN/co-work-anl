@@ -1,0 +1,52 @@
+{
+  "edge_id": "boss5-fixed-five-single-policy-hall-pays-feasible-repeated-slots",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "CA-TWO-FIXED-FIVE-PLAYER-UNSIGNED-Q-AND-SLOT-MATCHING-v1"
+  ],
+  "target_ids": [
+    "CA-TWO-FIXED-FIVE-PLAYER-ALL-OPTIMAL-TUPLE-UNSIGNED-Q-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "分别固定原完整动作表 σ252 或 σ48。T 为带重复的恰五槽标签多重集，五个槽分别作匹配顶点，以对应单表的可用位置建立二分图，并要求该图满足 Hall。真查询在该表的原实际有序前缀强制指定标签后沿同一策略完成。只有福利上界 Bπ≤W 使用完整纯 SPE。",
+  "roles": {
+    "CA-TWO-FIXED-FIVE-PLAYER-UNSIGNED-Q-AND-SLOT-MATCHING-v1": "以单表的可用位置 Hall 判据选出原五个槽到五个位置的完美匹配，并给每个可用查询的逐类型真叶负载界。",
+    "CA-TWO-FIXED-FIVE-PLAYER-ALL-OPTIMAL-TUPLE-UNSIGNED-Q-v1": "由匹配证明单表 Hall 可行的重复槽分支，保留指定元组的重复次数和每一型的 d_b。"
+  },
+  "explanation": "每个重复槽仍是一个独立顶点。取对应单表的一个完美匹配，把该槽标签安放到匹配位置，得到仅依 σ、T 的一个排列 π。对每个命中类型 b，可用查询 (i,a) 的真实叶负载 n_b(z_i(a))≤1+c_b，所以该项贡献至少 1/(1+c_b)。五个槽逐项相加正好给 Pπ(b)≥d_b/(1+c_b)，未命中类型两边为零。乘任意非负 r_b 求和得 Q≤Bπ。完整 SPE 的原实际前缀 IC 对每个位置比较其规定收益与该真实查询收益，各用一次实际收益，给 Bπ≤W。逐槽调和费用不超过线性费用，故 F≤Q。Hall 证书在单表通过的 352/359 个五槽多重集中各含 21 个五异槽，故此边实际付清 331/338 个重复多重集上的该不等式链，且无需先假设 T 最优。",
+  "scope": "两冻结策略分别对应的 331/338 个单表 Hall 可行重复五槽多重集，允许两表使用不同排列。逐型支付适用任意非负会员型重数，完整 SPE 给福利上界。",
+  "contribution": {
+    "result": "对应单表 Hall 可行的每一个重复五槽 T 有一个保留全部槽的固定付款排列，对任意非负重数满足 Q≤Bπ，且在完整 SPE 下满足 F≤Q≤Bπ≤W。",
+    "remaining": "目标的五异槽分支另由原净费证书支付。对应单表 Hall 失败的 110/103 个重复 T 排除了任意非负重数上的逐型证书；其固定完整 SPE 聚合预算与正余量由命中型限制及非负 IC 组合另证。两表共同位置的失败条件也不决定单表聚合付款。"
+  },
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/两份冻结五人策略的无符号线性付款与五槽匹配判据--定理.md",
+      "sha256": "89ecb3106c37733e4fb9ba475781e75023c8ba69af98decee7704533736ed7cb",
+      "section": "两表对任意五槽的精确刻画"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/fixed-five-player-unsigned-q-and-slot-matching/hall-standalone-exact.json",
+      "sha256": "e77e40d95203561cd3d6120b2ea6b88403bc50ca2ccbe7efd9e21e5ccc02b80d"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/两份冻结完整策略的全部最优五槽无符号付款--定理.md",
+      "sha256": "c50ed113ca08feeb53a9914eeae98fe8f8181f0e73c6965e19f8a387a4b6c0ec",
+      "section": "有理组合证明"
+    }
+  ],
+  "reviewed_by": "Boss5",
+  "review_note": "本包 worker 实读两端点与 Hall 必要性、充分性。重放 Hall 检查器对两表各 16807 个有序比较及 127 个非空类型的整数检查，输出与冻结记录逐字节相同。边只使用单表 Hall 充分方向支付重复槽，余下两套有理组合亦分别复验。",
+  "endpoint_pins": {
+    "CA-TWO-FIXED-FIVE-PLAYER-ALL-OPTIMAL-TUPLE-UNSIGNED-Q-v1": "e4a80eb486bf50f6789fa5240644394bc585f8cf62675114bfb3bb197e7bd630",
+    "CA-TWO-FIXED-FIVE-PLAYER-UNSIGNED-Q-AND-SLOT-MATCHING-v1": "3ee134581085afc9857ea527576b708022fe7c856c8ee1974ed3a1cb0683066f"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/两份冻结五人策略的无符号线性付款与五槽匹配判据--定理.md": "89ecb3106c37733e4fb9ba475781e75023c8ba69af98decee7704533736ed7cb",
+    "archives/customer-attraction/tools/evidence/fixed-five-player-unsigned-q-and-slot-matching/hall-standalone-exact.json": "e77e40d95203561cd3d6120b2ea6b88403bc50ca2ccbe7efd9e21e5ccc02b80d",
+    "archives/customer-attraction/state/定理/两份冻结完整策略的全部最优五槽无符号付款--定理.md": "c50ed113ca08feeb53a9914eeae98fe8f8181f0e73c6965e19f8a387a4b6c0ec"
+  },
+  "review_digest": "ec480fb0177853b4a7b2eb432691622358e01115721b7ecb7035941a3604c797"
+}

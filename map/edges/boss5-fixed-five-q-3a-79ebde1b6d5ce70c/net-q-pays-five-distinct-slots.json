@@ -1,0 +1,52 @@
+{
+  "edge_id": "boss5-fixed-five-net-q-pays-five-distinct-slots",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "CA-TWO-FIXED-FIVE-PLAYER-NET-Q-MATCH-v1"
+  ],
+  "target_ids": [
+    "CA-TWO-FIXED-FIVE-PLAYER-ALL-OPTIMAL-TUPLE-UNSIGNED-Q-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "分别固定原完整动作表 σ252 或 σ48，取恰五个不同标签的比较元组 T，其标签集合为 J。每份查询按原实际有序前缀强制该位标签，并沿同一表的真实后继完成。逐类型付款量化全部非负重数。只有 Bπ≤W 使用对应动作表在该客户向量上为完整纯 SPE。",
+  "roles": {
+    "CA-TWO-FIXED-FIVE-PLAYER-NET-Q-MATCH-v1": "每表每个五异标签支持给一个仅依策略和支持的实际前缀排列，逐一支付 127 个非空类型的净线性费用。",
+    "CA-TWO-FIXED-FIVE-PLAYER-ALL-OPTIMAL-TUPLE-UNSIGNED-Q-v1": "在原比较元组的五异槽分支，用同一排列支付无符号费用，并在完整 SPE 下得到 F≤Q≤Bπ≤W。"
+  },
+  "explanation": "令 Pπ(b) 为同一排列在真实偏离叶上对类型 b 的五角色查询系数之和，c_b 为原实际负载，d_b 为原 T 的命中槽数。原净费证书逐型给 Pπ(b)≥d_b/(1+c_b)−1[c_b>0,d_b=0]。当 d_b>0 时信用项为零。当 d_b=0 时排列没有任何命中查询，Pπ(b) 与无符号需求同为零。于是同一排列逐型支付 d_b/(1+c_b)，乘 r_b≥0 求和得 Q(c,T)≤Bπ(T)。五个查询分别用原实际前缀的真实 IC，故 Bπ≤Σ_i u_i=W。同一 T 逐型满足 Σ_{j=1}^{d_b}1/(c_b+j)≤d_b/(1+c_b)，乘重数求和得 F≤Q。证明覆盖每表全部 21 个五异标签支持，无需 T 最优。",
+  "scope": "两份固定完整策略各自的全部五异槽比较元组。每表允许独立选排列，无符号支付不需要完整 SPE，福利上界需要对应的完整 SPE。",
+  "contribution": {
+    "result": "每表每个五异槽 T 有仅依 σ、T 的同槽排列，对任意非负客户重数支付 Q≤Bπ，在对应完整 SPE 锥上满足 F≤Q≤Bπ≤W。",
+    "remaining": "目标还量化每一个指定的重复最优 T。扩充标签可保其最优覆盖并集，但改变槽计数 d。重复分支需独立保槽支付，其中各自逐型失败的 110/103 个 T 要用最优覆盖蕴含的命中型限制及真实 IC 的有理组合；严格余量同样来自这批组合。"
+  },
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/两份冻结五人策略的净线性费用逐类型匹配--定理.md",
+      "sha256": "115bf10a9ca8c08e374f69dfb954773eed26fe46a990e80eaadccccd52af1bf0",
+      "section": "精确逐类型证书"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/fixed-five-player-omission-payments/fixed-policy-net-q-exact.json",
+      "sha256": "0ade06e0a301b0a83c4d23859711fde5617acd0cdc3b0afaa7a5b65c77bfd3a4"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/两份冻结完整策略的全部最优五槽无符号付款--定理.md",
+      "sha256": "c50ed113ca08feeb53a9914eeae98fe8f8181f0e73c6965e19f8a387a4b6c0ec",
+      "section": "类型和重复槽覆盖条件"
+    }
+  ],
+  "reviewed_by": "Boss5",
+  "review_note": "本包 worker 实读两端点正文、原真实策略与逐型证书接口。原净费和独立净费复验程序均重放两表，输出与各自冻结 JSON 逐字节相同。逐型去信用保留原排列；单凭聚合净预算不提供这一步。",
+  "endpoint_pins": {
+    "CA-TWO-FIXED-FIVE-PLAYER-ALL-OPTIMAL-TUPLE-UNSIGNED-Q-v1": "e4a80eb486bf50f6789fa5240644394bc585f8cf62675114bfb3bb197e7bd630",
+    "CA-TWO-FIXED-FIVE-PLAYER-NET-Q-MATCH-v1": "6a565b467a4b41379b85fe03ce627c7da7af7aa848962be0c2ef9cbd85ab6079"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/两份冻结五人策略的净线性费用逐类型匹配--定理.md": "115bf10a9ca8c08e374f69dfb954773eed26fe46a990e80eaadccccd52af1bf0",
+    "archives/customer-attraction/tools/evidence/fixed-five-player-omission-payments/fixed-policy-net-q-exact.json": "0ade06e0a301b0a83c4d23859711fde5617acd0cdc3b0afaa7a5b65c77bfd3a4",
+    "archives/customer-attraction/state/定理/两份冻结完整策略的全部最优五槽无符号付款--定理.md": "c50ed113ca08feeb53a9914eeae98fe8f8181f0e73c6965e19f8a387a4b6c0ec"
+  },
+  "review_digest": "2f7c3ff9666880395aa9fbd35ea83255698295960d8126b8b5997925f7c6c871"
+}
