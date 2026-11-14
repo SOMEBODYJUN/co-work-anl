@@ -1,0 +1,55 @@
+{
+  "edge_id": "cag-6fa6-same-policy-individual-pays-filtered-average",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/fixed-ninth-policy-full-average-and-prefix-individual-exact-bounds"
+  ],
+  "target_ids": [
+    "customer-attraction/fixed-distinct-prefix-average-cone-exact-33-over-16"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定四人依次行动、共同目录五标签、客户价值均分、全部31种非空会员型质量 x_M≥0。两端固定从零编号第9棵完整有序策略、J={1,2,3,4}，实际终局2222；每个偏离按改变后的完整有序历史续行同一策略。每个筛选历史 h 仅含J且无重复、长度0至3，逐行和平均使用同一个未用动作集合 J∖h。W>0时取比值；J最优的子域另与 O_J=OPT₄ 相交。",
+  "roles": {
+    "customer-attraction/fixed-ninth-policy-full-average-and-prefix-individual-exact-bounds": "其64条筛选逐行动比较提供相同动作集合上的非负平均分量；22客户达到点给出筛选平均锥中的J最优可行点，O_J/W=11/6。该对象的156历史全J平均分支不提供这条蕴含。",
+    "customer-attraction/fixed-distinct-prefix-average-cone-exact-33-over-16": "接收41条筛选平均可行性的推导；33/16锐值仍由本端独立的三平均行对偶与198客户点支付。"
+  },
+  "contribution": {
+    "result": "对同一第9策略和J，64条筛选逐行动条件足以推出41条筛选平均条件。每个平均是所保逐行动行的等权和。于是源的22单位客户点在目标锥内满足 W=12、O_J=OPT₄=22，给该锥J最优子域一个比值11/6的可行点。",
+    "remaining": "从逐行动子锥的锐值不能得到筛选平均大锥的上界或锐值；目标的全域33/16上界仍需其三个匹配的平均行（乘子9/4、1、1/2）及31个非负余项，锐性和J最优仍需另用198客户点。"
+  },
+  "explanation": "记 I、A、F 为非负质量上分别满足筛选逐行、筛选平均、全历史全J平均的可行锥。对每个筛选 h，A_h=Σ_{a∈J∖h}R_{h,a}/|J∖h|，分母为1至4，故 I⊆A，交J最优条件后同样成立。目标自身的198客户点属于 A，但 R_{(2),3}=-14（整数尺度）且 F_{(2,2,2)}=-15/2；因此 I⊊A 且 A⊄F。源的49客户点属于 F，但筛选平均 A_(1)=-25/18，因此 F⊄A，也由 I⊆A 得 F⊄I。源的22客户点属于 I，而 F_{(2,2,2)}=-1/4，因此 I⊄F。三点都使J覆盖全体，故这些分离在J最优子域保持。F在共同历史上平均J全部动作，I/A仅考虑J未用动作；在重复历史上F还保留额外行。第9全历史平均点的主题1、4均为空，现行标签目录容许空覆盖和同覆盖的不同标签。",
+  "scope": "仅第9固定策略、J={1,2,3,4}及上述真实续局量词。可复用的是同历史、同未用行动的逐行到平均，以及三种行锥的精确分离。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/指定四人不重复比较前缀平均锥的锐比三十三除十六--定理.md",
+      "sha256": "9a39e409b0f8e84290c6523c47514aa811402e9e2d566c979bdccec0006bc718"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/distinct-prefix-average-sharp-33-over-16/exact-certificate.json",
+      "sha256": "12e309e8b9b1a828b5f4dbf40734e8c630252b3d86f433a123a66dc027352a10"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/指定四人第九策略的全历史平均与不重复前缀逐行动锐界--定理.md",
+      "sha256": "8febe5636611bf45fceeb374ca0ac330a24ead3e6ea76db2211f0a69140de062"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/distinct-prefix-average-sharp-33-over-16/exact-strengthened-check.json",
+      "sha256": "c021750905ecd24c0d46b9929d69ef55da321963967d393bd1253464a0cc1c83"
+    }
+  ],
+  "reviewed_by": "Boss3 / 6fa659bf565f1e86 mapper",
+  "review_note": "独立按归档动作表递推全部156节点，使用Fraction核780条真比较、156/64/41保留行、两边分离见证及三个第9策略匹配对偶的31项余量；对齐第9零起编号、J、W、O_J、OPT₄及证据字节。",
+  "endpoint_pins": {
+    "customer-attraction/fixed-distinct-prefix-average-cone-exact-33-over-16": "1a12ae7ce3d1300ea5fef37ff4b93af877ca455e8154f51627606fd04d5c0a37",
+    "customer-attraction/fixed-ninth-policy-full-average-and-prefix-individual-exact-bounds": "01303f2d2841fa9febfba65a254ffed901a7ba31ea0d1c7db77df084537b5844"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/指定四人不重复比较前缀平均锥的锐比三十三除十六--定理.md": "9a39e409b0f8e84290c6523c47514aa811402e9e2d566c979bdccec0006bc718",
+    "archives/customer-attraction/tools/evidence/distinct-prefix-average-sharp-33-over-16/exact-certificate.json": "12e309e8b9b1a828b5f4dbf40734e8c630252b3d86f433a123a66dc027352a10",
+    "archives/customer-attraction/state/定理/指定四人第九策略的全历史平均与不重复前缀逐行动锐界--定理.md": "8febe5636611bf45fceeb374ca0ac330a24ead3e6ea76db2211f0a69140de062",
+    "archives/customer-attraction/tools/evidence/distinct-prefix-average-sharp-33-over-16/exact-strengthened-check.json": "c021750905ecd24c0d46b9929d69ef55da321963967d393bd1253464a0cc1c83"
+  },
+  "review_digest": "8c4623cdf711ad38685156806b092ffa67086eaadb45176a4bd7ed0089576868"
+}

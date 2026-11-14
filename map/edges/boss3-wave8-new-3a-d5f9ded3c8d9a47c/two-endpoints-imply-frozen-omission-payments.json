@@ -1,0 +1,76 @@
+{
+  "edge_id": "cag-d5f9-two-endpoints-imply-frozen-omission-payments",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "cag-whole-subtree-nine-exact-endpoints-and-reentry",
+    "M-b97a40a962c34f848cc8dcaf8b05a1f1"
+  ],
+  "target_ids": [
+    "CA-TWO-FIXED-FIVE-PLAYER-OMISSION-PAYMENTS-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "五位单位提供者依次从同一个七标签目录选择行动，单位客户在终局覆盖者间均分。固定两个原件各自的完整有序动作表，分别量化所有使该动作表在每个历史满足真实IC的合法客户重数，允许零客户、重复行动、同覆盖异标签和弱平局。每位只使用一次原实际收益作预算，每个查询由原实际有序前缀强制一次行动后沿同一完整策略完成。",
+  "roles": {
+    "cag-whole-subtree-nine-exact-endpoints-and-reentry": "固定σ₂₅₂的完整动作表和实际路径00011，提供该策略五位实际前缀的真实偏离叶和共用取等输入的全树激励检验所需分支。其原件残差对偶只认证指定旧目标。",
+    "M-b97a40a962c34f848cc8dcaf8b05a1f1": "固定σ₄₈的完整动作表和实际路径01010，提供另一个完整策略的真实偏离叶和该策略的全树激励检验所需分支。其原件覆盖对偶只认证指定比较支持。",
+    "CA-TWO-FIXED-FIVE-PLAYER-OMISSION-PAYMENTS-v1": "接收两个冻结客户锥各自的零取消全目录付款及因子2取等，并接收每个五标签支持的确定排列和达到任一最优并集的存在型真实净差匹配。"
+  },
+  "explanation": "两策略实际支持均为{0,1}。按σ₂₅₂依次查询32456得真实叶31200、02041、00451、00051、00016，按σ₄₈查询23465得20041、03410、01430、01060、01015。对任一遗漏客户，其非空会员型B⊆{2,3,4,5,6}。每组查询恰查询B中每个标签一次，各相应叶上的B覆盖人数至多|B|，故这位客户的份额和至少1。取每行q_i为相应查询的点质量、取消γ=0，对V∖U全体遗漏客户同时成立。逐客求和，再用实际前缀整条真实IC逐人一次，把付款P夹在|V∖U|和W之间，推出|V|≤2W和任意合法比较并集的|C|−W≤P。共同十客户取等点只在七个单标签类型分别放3、2、1、1、1、1、1位客户，两策略各2801历史的16806项非自身真实IC均成立，W=P=5、|V|=10、OPT₅=8。比较支持受限时另对每个五标签J枚举120个排列，对31个非空遗漏会员型逐列核Σ_{i:π(i)∈B}60/n_B(z_i(π(i)))≥60·1[B∩J≠∅]。两个策略各21个支持均有保存的确定排列与全部逐型非负余项。按非负重数求和得完整偏离收益和至少|C_J∖U|，实际IC给和至多W。任何最优五槽元组的标签支持可扩为五个不同标签。覆盖包含原并集且最优性禁止增长，所以能用保存的排列支付同一最优并集的OPT₅−W。该存在量词允许扩充支持。",
+  "scope": "两个原件各自的完整动作图及其各自的客户锥。全目录固定查询可用比较支持外标签，逐支持证书则使用指定J中每个标签一次。因子2取等针对全目录并集。旧端点的原客户数和指定对偶目标只标识证书来源，付款构造适用于保持对应策略为完整SPE的全部合法客户重数。",
+  "whole_result": "两原件完整动作图共同支持整个登记定理。各冻结策略的同一组五条确定真实查询在γ=0时逐客户覆盖全目录遗漏，对锥内每个实例给|V∖U|≤P≤W、|V|≤2W；同一十客户表使两锥均取等。各策略各21个五标签支持都有一次每标签、一次每角色的确定真实匹配，支付该支持的全部遗漏，故任一最优比较并集有一个五标签最优元组的真实匹配支付OPT₅−W。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/两份冻结完整策略的全目录遗漏支付与逐最优支持匹配--定理.md",
+      "sha256": "5b6db6c3590423177173d3486bf911e23a6d1a238d3222a203b6d0fba1628e96"
+    },
+    {
+      "path": "archives/customer-attraction/state/计算/完整子树联合菜单的九份精确端点与回流试验--计算.md",
+      "sha256": "32b023f3598ab81bcedac631ae9cf69040164eae6cd0f7e92ccac117dfd88e75",
+      "section": "九份来源的精确内容和独有差别"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/whole-subtree-nine-endpoints-primary/original/m5p7_residual.json",
+      "sha256": "2a154303b023acfdc7b09c8576f63b3acb50abb02bd8e3cca6a793152ad07233"
+    },
+    {
+      "path": "archives/customer-attraction/state/计算/完整子树联合菜单的九份精确端点与回流试验--计算.md",
+      "sha256": "32b023f3598ab81bcedac631ae9cf69040164eae6cd0f7e92ccac117dfd88e75",
+      "section": "回流、时限、支持扫描及认证范围"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/whole-subtree-nine-endpoints-primary/original/m5p7_reentry_incumbent_half.json",
+      "sha256": "e6269ea7551820d0d2c6192dd96d60b7bd2ce1f92b6ffd463fd8a13f89da0565"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/fixed-five-player-omission-payments/verify_fixed_omission.py",
+      "sha256": "325b60a9554b9632b9ade563c2eac2f8d73050a725ecd0bb97529481fe9dad0c"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/fixed-five-player-omission-payments/fixed_omission_exact.json",
+      "sha256": "5279d3b7decd5700e7f59b1985442fb9d1deee99d2354784cfaef133dae99f54"
+    }
+  ],
+  "reviewed_by": "Boss3",
+  "review_note": "实读登记正文、两个端点正文及全部承重证据。按原件动作表独立重建真实叶和完整IC，复核两个指定目标的127型对偶及原始取等，逐策略核21×120×31遗漏整数测试并比对全部保存余项。原点、共同十客户点与零客户边界均通过。旧端点对偶用于核明各自范围，付款由真实查询份额的逐客论证得到。",
+  "endpoint_pins": {
+    "CA-TWO-FIXED-FIVE-PLAYER-OMISSION-PAYMENTS-v1": "326751e40fdeb783b3b60a5d3a2266be692d8a1c456fa4085f5314c01ae05335",
+    "M-b97a40a962c34f848cc8dcaf8b05a1f1": "9b6c5365282d5110872445456b2bf4c996b09ed77c3a7140230866375303f54b",
+    "cag-whole-subtree-nine-exact-endpoints-and-reentry": "b0447cbacf30e53975163239049cdf4d1931665fca00dc7b7f653d46cd306193"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+    "archives/customer-attraction/state/定理/两份冻结完整策略的全目录遗漏支付与逐最优支持匹配--定理.md": "5b6db6c3590423177173d3486bf911e23a6d1a238d3222a203b6d0fba1628e96",
+    "archives/customer-attraction/state/计算/完整子树联合菜单的九份精确端点与回流试验--计算.md": "32b023f3598ab81bcedac631ae9cf69040164eae6cd0f7e92ccac117dfd88e75",
+    "archives/customer-attraction/tools/evidence/whole-subtree-nine-endpoints-primary/original/m5p7_residual.json": "2a154303b023acfdc7b09c8576f63b3acb50abb02bd8e3cca6a793152ad07233",
+    "archives/customer-attraction/tools/evidence/whole-subtree-nine-endpoints-primary/original/m5p7_reentry_incumbent_half.json": "e6269ea7551820d0d2c6192dd96d60b7bd2ce1f92b6ffd463fd8a13f89da0565",
+    "archives/customer-attraction/tools/evidence/fixed-five-player-omission-payments/verify_fixed_omission.py": "325b60a9554b9632b9ade563c2eac2f8d73050a725ecd0bb97529481fe9dad0c",
+    "archives/customer-attraction/tools/evidence/fixed-five-player-omission-payments/fixed_omission_exact.json": "5279d3b7decd5700e7f59b1985442fb9d1deee99d2354784cfaef133dae99f54"
+  },
+  "review_digest": "8fd85b930c9d5124b1656465b79cbfe3d03809c4e1e19d21f8f053d270ecc907"
+}
