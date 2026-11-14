@@ -1,0 +1,1022 @@
+{
+  "definition": {
+    "task_id": "boss6-review-binding-repair-234706b486ba5f23",
+    "stage": "3A",
+    "registry": "research/registry.json",
+    "supersedes": [
+      "customer-attraction-3a-3a-11c0fae95913e6f4"
+    ],
+    "object_ids": [
+      "M-b1b4276f0ec747ed8c347bda65c9e0af"
+    ],
+    "read_object_ids": [
+      "M-e394b173b9b1419588c6c380da4bd326",
+      "M-ddceaa3d53064498b3e833a32e1f3b6f"
+    ],
+    "input_pins": {
+      "M-b1b4276f0ec747ed8c347bda65c9e0af": "8022368eb10c10d6e8989de8ec4702b581017b911828dc64bb96bdb1a251f0f5",
+      "M-e394b173b9b1419588c6c380da4bd326": "c086b2c45d91b3ecb2886ded949f98d9c129852119639f0280e1a903f3dc79d7",
+      "M-ddceaa3d53064498b3e833a32e1f3b6f": "1bcab426b87f44d3af2e19e89fe9876fd20ab0b93f3fe6fd2909c80119376acb"
+    },
+    "write_paths": [
+      "map/edges/boss6-review-binding-repair-234706b486ba5f23",
+      "map/receipts/boss6-review-binding-repair-234706b486ba5f23.json",
+      "map/edges/customer-attraction-3a-3a-11c0fae95913e6f4/review.md"
+    ],
+    "goal": "Resolve the changed inputs or unanswered comparison in customer-attraction-3a-3a-11c0fae95913e6f4; reuse still valid coverage, and explicitly dispose each prior asset.",
+    "context_plan": {
+      "budget": {
+        "context_tokens": 500000,
+        "window_source": "official-default",
+        "model": "gpt-6.1-sol",
+        "used_tokens": null,
+        "history_mode": "fresh-worker",
+        "reserve_tokens": 200000,
+        "reading_tokens": 300000,
+        "output_tokens": 100000,
+        "runtime_remaining_tokens": null,
+        "declared_remaining_before_reserve_tokens": null,
+        "assumptions": [
+          "Window source is declared, not discovered from this conversation.",
+          "Reading budget includes source text and object/task metadata.",
+          "Reserved context includes expected generated records and later reasoning/tool growth.",
+          "Fresh worker assumed; actual system/prefix usage is unknown and covered only by the engineering reserve."
+        ],
+        "budget_is_runtime_measurement": false
+      },
+      "reading": {
+        "chars": 38943790,
+        "utf8_bytes": 39083478,
+        "source_tokens": 18778420,
+        "metadata_tokens": 29321,
+        "estimated_tokens": 18807837,
+        "metadata_chars": 46121,
+        "metadata_utf8_bytes": 51162,
+        "distinct_files": 212,
+        "reading_segments": 200,
+        "token_count_is_estimate": true,
+        "estimators": [
+          "conservative-math-text-estimate-v1; not a tokenizer count"
+        ],
+        "unmeasured_refs": [
+          {
+            "path": "research/workspaces/six-boss2-20261111-cross/joint_requery/complete624_actual4_R00_v1_matrix.json.gz",
+            "sha256": "556c3cac51e87a699d1f3a9c427f556836932b6fc2399fa330f375c6efd8231a",
+            "bytes": 7973103,
+            "reason": "Non-text evidence: export/read with the appropriate tool, then size its actual extracted context"
+          },
+          {
+            "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/master_5716_exact.json.gz",
+            "sha256": "03f4a01dfc64221a2a3c2dc71dbb585fb3a79433c3ff127c229df0112458537b",
+            "bytes": 970380,
+            "reason": "Non-text evidence: export/read with the appropriate tool, then size its actual extracted context"
+          },
+          {
+            "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/dynamic_5727_matrix.json.gz",
+            "sha256": "13ff6d91eea48c7123fe94fc6512dfed6d7c63b460ae51bb374a11343b795e49",
+            "bytes": 980485,
+            "reason": "Non-text evidence: export/read with the appropriate tool, then size its actual extracted context"
+          },
+          {
+            "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/dynamic_5744_matrix.json.gz",
+            "sha256": "ece74fe7ec7924b7e353e14f76359dfc84737057aa40be7644651e24c614a4b6",
+            "bytes": 1006915,
+            "reason": "Non-text evidence: export/read with the appropriate tool, then size its actual extracted context"
+          },
+          {
+            "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/dynamic_5752_matrix.json.gz",
+            "sha256": "44c34467eb8cc65c5581228c31e82083909e8162f400dd1343da5c651c690884",
+            "bytes": 1025472,
+            "reason": "Non-text evidence: export/read with the appropriate tool, then size its actual extracted context"
+          },
+          {
+            "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/dynamic_5775_matrix.json.gz",
+            "sha256": "49470d85127a7f24b4059c3289c9995f469445170fecefed6644bca3d29c82ae",
+            "bytes": 1071338,
+            "reason": "Non-text evidence: export/read with the appropriate tool, then size its actual extracted context"
+          },
+          {
+            "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/dynamic_5783_matrix.json.gz",
+            "sha256": "363b01b298a5939590d2979bf10215a8080dd5c625966398fdaefd91eb92a696",
+            "bytes": 1087137,
+            "reason": "Non-text evidence: export/read with the appropriate tool, then size its actual extracted context"
+          },
+          {
+            "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/full_history_probe_12label_v1_menus.json.gz",
+            "sha256": "71b6e047817489db94d1c88e25e4ccd0915dac05d4e7a5d00166a7d277b6997d",
+            "bytes": 960351,
+            "reason": "Non-text evidence: export/read with the appropriate tool, then size its actual extracted context"
+          },
+          {
+            "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/full_history_probe_12label_v1_witnesses.json.gz",
+            "sha256": "102a724186dbf00c03da7656d9d3b476e8286d761bdc81d609ff62b6b0649c60",
+            "bytes": 254578,
+            "reason": "Non-text evidence: export/read with the appropriate tool, then size its actual extracted context"
+          },
+          {
+            "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/dynamic_5786_matrix.json.gz",
+            "sha256": "2f48f355ee1779d355690b6c3a1fe54af6dea2b6dee96aee78d72ba1c8f794a8",
+            "bytes": 1091380,
+            "reason": "Non-text evidence: export/read with the appropriate tool, then size its actual extracted context"
+          },
+          {
+            "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/dynamic_5799_matrix.json.gz",
+            "sha256": "0b4bd0a81097b022a638fdc44324c731768255579a5bf07618e12c35c9342bec",
+            "bytes": 1103545,
+            "reason": "Non-text evidence: export/read with the appropriate tool, then size its actual extracted context"
+          },
+          {
+            "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/complete_zz_5799_v1_matrix.json.gz",
+            "sha256": "8b076497ef826b60c797edcb8dc719f2f7ad678a01a34ecf66d2e757af525a20",
+            "bytes": 1434066,
+            "reason": "Non-text evidence: export/read with the appropriate tool, then size its actual extracted context"
+          }
+        ],
+        "measurement_scope": "Requested complete text spans plus supplied metadata; binary evidence is not token-counted from raw bytes.",
+        "task_overhead_tokens": 96
+      },
+      "reading_refs": [
+        {
+          "path": "archives/customer-attraction/state/引理/共同真实回复与跨查询配对的严格投影层级--引理.md",
+          "sha256": "6553bdd54417ea5cd1bc2d66480f39086e274ba1779bcab43cefb14fcb71f8e0"
+        },
+        {
+          "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+          "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+        },
+        {
+          "path": "archives/customer-attraction/state/引理/同源双末对跨枝配对与严格联合投影--引理.md",
+          "sha256": "7547538073d8edf42f2430c5ed0d4139c2129fdaa8817ea0dbcba591552328e5"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/joint_requery/formal_query_projection_hierarchy_v1.md",
+          "sha256": "c1e5a8b8b06eb2ac70b64a44ea8e4a7d9625c9811cbdf5eb73e139da8d54a366"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/joint_requery/portfolio_comparison/formal_portfolio_strictness.md",
+          "sha256": "372b2dea7f7fe94ebd3514b044310c1b1aa73b0fd04ae0f43bd08cfc3561a0c5"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/joint_requery/portfolio_comparison/exact_single_lifts_5744_i3_m0_orb00.json",
+          "sha256": "329b5bca4ad9fdfa3e59b8fb0fcaeca396eceac950edc2d8c1c8ca8f67eca793"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/joint_requery/portfolio_comparison/joint_common_denominator_5744.json",
+          "sha256": "fcb9be905ab4282ab3ff90293ef47f196ab08e86f45e106d883d3944a655d3ab"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/joint_requery/portfolio_comparison/compare_5744.py",
+          "sha256": "6a2a86d17bd09a5b7eca2cfa6124e5642e289e7631b39fe8d0fe804740f98b9d"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/joint_requery/portfolio_comparison/recover_single_lifts.py",
+          "sha256": "22d62a9324295b523c911995700acca4561b603e1f76555d6b6333dc5c7ca476"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/joint_requery/portfolio_comparison/simplify_joint_cut.py",
+          "sha256": "a34fb990027dbd854848e7fa09cd65d21a8c35fe83974faeb6e10996260556ec"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/joint_requery/portfolio_master.py",
+          "sha256": "af8b0a9251d3b42f623ac37fe980235d7b66f3d2f481855174d68b843d99bed3"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/joint_requery/cross_query_pairs_v1.py",
+          "sha256": "ed2bdbed2bb6c51e3ab44c78c28f54b7160a4cb59443836b31a41cefa90f2001"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/joint_requery/audit_cross_query_pairs_v1.py",
+          "sha256": "f79b7fc2518e48187055430cdb2063868008fc87233d4b9e313fccad66e626b9"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/joint_requery/cross_query_pairs_v1_audit.json",
+          "sha256": "b0d6ee082ba48cbf4afd6fe24f5eb0937b9167d243bbc8a686d5dbfca11730d7"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/joint_requery/package_cross_pairs_5775_v1.py",
+          "sha256": "602ffa030a57a949aab7a19ecbcaa619b9e94a5f0ccbc269094eca83122a3b55"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/joint_requery/recover_332_lift_5775_v1.py",
+          "sha256": "5f9fc7b779d6aa2ba951d2da730a8aa3310dc188e981bff9ab601a67e172cad6"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/joint_requery/exact_332_lift_cross_strictness_5775_v1.json",
+          "sha256": "39655d2eeb9f807053614ff17d830246199804dbca266b9784e116e8f8d09385"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/joint_requery/cross_pairs_selected_5775_v1.json",
+          "sha256": "bf9714af7e01fff4cddd33ead2ce41c014943ead5679e1b75a5160e9f9257759"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/joint_requery/cross_query_disagreement_identity_5775_v1.json",
+          "sha256": "4527dce663e0f6bc6441497f5fd03253de39051b0602ea4eaac5e7bb0987a490"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/joint_requery/portfolio_selected_5744.json",
+          "sha256": "c7e796a1514c43938b7e9509b49af44918aa5b4e66695caff4c2644b0795751e"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/dynamic_5744_exact.json",
+          "sha256": "17fc8c5f5cbb9464747802fc2a3ca8ed3c37aa6472b981c804b9c3806d2ebfa0"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/dynamic_5775_exact.json",
+          "sha256": "81983304076358d591cbdac2e6bf7a4b697fc2854aad40918e8cf8cf2d99dd02"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/main_pair_features.py",
+          "sha256": "177057776f9aa3322f907ce073511eb7ef491774fc0871b11fd0c367c833b1ac"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/main_cross_query_features_v1.py",
+          "sha256": "1bd5386c82827ab1eb9a8cbbeb4061cb129aa13bf8b18cc3730772099604e8f6"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/main_verify_single_lifts_5744.py",
+          "sha256": "f29d00c25d0176a89f9d5e6b83ec3ba87ec179c3aa0b76920fbb8a8e778d108d"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/main_verify_single_lifts_5744.json",
+          "sha256": "e18185e79ac0906e4bc289b2822ea11f7a0429a41d25a03d82ccbd00dc2bbc3b"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/main_verify_portfolio_500.py",
+          "sha256": "d7ea8eb4876529072e25dd52d10838def8def9f8ae80e4d2bd5f7e9768a33791"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/main_verify_portfolio_500.json",
+          "sha256": "a22ef1268e1b61a3a0b63e2fd893aefafaa02054d0f945bcc4bb6c1e6bc74078"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/main_verify_portfolio_pair_5744.py",
+          "sha256": "2abecda57725836996f43658c2a53a6b95f852824bf1a9922d6ffcebf9f7583e"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/main_verify_portfolio_pair_5744.json",
+          "sha256": "d715f0194ba254ec16fca48d84bcd05b200fc5d09f1e6ac6c9e6422122a0053c"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/main_verify_cross_pairs_5775.py",
+          "sha256": "4ac4b88bc45ea98eba264749d4e59275d5917d418c477740f87513844f405ab4"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/main_verify_cross_pairs_5775.json",
+          "sha256": "495a81b42e3fc0368693413029027e4eb89df72832742d55d9d2d11a9ae4facd"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/main_verify_332_lift_5775.py",
+          "sha256": "9b50a4640aaabe6190afe85ba5c34cf83e162893f195b82ef46c552ddcc57b25"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/main_verify_332_lift_5775.json",
+          "sha256": "df71595961eeac9683dddf69ac00a6c9359053bf989e699a69a32f04a8699105"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/joint_requery/formal_reverse_terminal_strictness_v1.md",
+          "sha256": "52a39a7babe4ae92fc18e808ca56877cac0fb15f5f06f069adc0001aa64381a5"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/joint_requery/reverse_terminal_5799_one_v1.json",
+          "sha256": "3b39262c153be351853f2625809da5679e634648d895c233b554868f1bd0077c"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/joint_requery/actual_padding_616_vs_624_strictness_5799_v1.json",
+          "sha256": "a06786cd8a5176754544d614034eeec78efc6a733f8ad0552f5ce760b48a14ce"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/joint_requery/complete624_actual4_R00_v1_contract.md",
+          "sha256": "84d2ba9d8da85879ab5f4847652f48f510a8566df445c99058ff9552d874ba39"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/joint_requery/complete624_actual4_R00_v1_matrix.json.gz",
+          "sha256": "556c3cac51e87a699d1f3a9c427f556836932b6fc2399fa330f375c6efd8231a"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/joint_requery/complete624_actual4_R00_v1_mapping.json",
+          "sha256": "24a601ebc1e2f7dc5e175bca453a5ab05433e046dfc7c2a782e830849817d109"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/main_reverse_terminal_features_v1.py",
+          "sha256": "6ad0ca08882ef56cbdadac21abfc6f2fc4f2f3cd54958525d364076f59b625ac"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/main_verify_reverse_terminal_strictness_v1.py",
+          "sha256": "866fa1cd942d2b8e548e601a95616220ef46e924ce51bef0af39cfa6df6f78a2"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/main_verify_reverse_terminal_strictness_v1.json",
+          "sha256": "29f5e16e70787df51fa8b30911e012dcecdff7751b20cdaf67ee55ab791747b4"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/main_verify_complete624_v1.py",
+          "sha256": "c4b74d25fa924d2ce6f55e62f598f3256465f61df884d50916b72c2644f766bc"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/main_verify_complete624_v1.json",
+          "sha256": "28fd821c66d5c93e644741a8c5c44c6fb247f3d230fe8298f2064c769f737604"
+        },
+        {
+          "path": "archives/customer-attraction/state/引理/三十四权同源双分支的真实行锥与精确计数消元--引理.md",
+          "sha256": "437d5eacaf22808c2392662d29bbd74a83dd1a499fd9c3aa3115eb00db207c8c"
+        },
+        {
+          "path": "archives/customer-attraction/state/引理/末两人重叠比较与任意索引聚合--引理.md",
+          "sha256": "4dacbe163ea4ea9459395dd4445c0dea25ed28070d0723a750ea6351832f4d2c"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/joint_requery/actual_signature_witness.json",
+          "sha256": "94f90d815c3f3b1d28b51145191dae0fb0197ac325cbfcf0d0a0b0ee30806a10"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/joint_requery/strict_projection_witness.json",
+          "sha256": "c187eaa9ce5492afcd37c592108cda11ffa99011e4b1610ff9f1f3221c2e13f8"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/joint_requery/find_actual_projection.py",
+          "sha256": "ded8e0af5ce07dac63f936ae1659fb75880448995bc3f25852ab1bf2493443c2"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/joint_requery/explore_projection.py",
+          "sha256": "f64d1d08dc52b935432c993d6712a1888dccea216f737a2d5e3cdc4c175b55da"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/joint_requery/separate_master.py",
+          "sha256": "20ccb2656d736e7754a9c79ef9d030358ab2534bd8b14a4b4b6d8726803709af"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/joint_requery/selected_cuts_5716.json",
+          "sha256": "1ade5aeb300b5a33e21e9b6c7d0f95523d3dd4be672be0332cfc03155ed68531"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/merged_5716_exact.json",
+          "sha256": "c86ea061c22ce1ece9df4955a9861a80935cabe1f293ecb8d62e4c0b17e0caf0"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/main_verify_pair.py",
+          "sha256": "865b390bf2d993d311f06b02c14de294824dd55eb0fcba4d4bd1dd19bdd627ac"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/main_verify_pair.json",
+          "sha256": "c6228abe9edda7ba3eedbd64d53326ba3c26595a593d4b0912e0113614dfc04e"
+        },
+        {
+          "path": "archives/customer-attraction/subarchives/six-providers/state/计算/同源跨枝增强必要图的精确最优值与半界缺口--计算.md",
+          "sha256": "dd31a4d0115307efebcf8d5aafbc1449fbfe740e580de6342ac82fbef6b658ff"
+        },
+        {
+          "path": "archives/customer-attraction/state/引理/同源真实末回复的折扣闭包与二状态精确投影--引理.md",
+          "sha256": "a2aa6f407865993f693ff8338e2c038a7849643d04ed9078fc7c8e0e6f6b5d42"
+        },
+        {
+          "path": "archives/customer-attraction/state/计算/同源再查询与容量报价的三份冻结切面包--计算.md",
+          "sha256": "a246e9abe3549f7547a843441f6d7b9ed5133c8c4d6c61d9bb75440e7cb772f6"
+        },
+        {
+          "path": "archives/customer-attraction/state/计算/实际末主题分支分离器与四菜单补价原点核验--计算.md",
+          "sha256": "f8710e7c826831cc22f9d7d22f84f24e6fbdf403c6ff4c41ed4f215f419cae26"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/b-family-menu-prices-boss3/original/research_2/all_menu_prices_exact.json",
+          "sha256": "46e52c1cec4a5cac3e6d7fe3bbe8d227cd663e428ca7f4e955182343eedb418e"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/master_5716_exact.json.gz",
+          "sha256": "03f4a01dfc64221a2a3c2dc71dbb585fb3a79433c3ff127c229df0112458537b"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/dual_exact.json",
+          "sha256": "c2397a0a94800a3c5d894c06ede3927af873b89df5812bde3f9ebaf6ac5207a7"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/cuts_24_exact.json",
+          "sha256": "b2bd15e40e597bfaa3c9df9248dea7a4edeef089d489cb534b4ca5f937fcba66"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/matrix_identity.json",
+          "sha256": "cd8da01f936586462df35b3c2369cf11a2e0d3c241a9c5c7dda1f286efb0c3d1"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/materialization.json",
+          "sha256": "b61fed56f365683aa6d136109e68f362a071e3f2ed86c31071ea827f31691e5d"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/merge_master.py",
+          "sha256": "2afa5e8d9713c39170c547cdfa8b63ad5da8079668b669c0e961e29628999a6c"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/certify_dual.py",
+          "sha256": "e91606df8f342d3eda52022e081da90ca36d7c5ba87cc7a1a845dd7a9c0f8850"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/verify_certificate.py",
+          "sha256": "ce94d45fdc8d0316187c7e1d35d4001a8accc6c92f58b0c3be62ef1306299caa"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/certificate_verification.json",
+          "sha256": "a2086a43a320cd5f76dc7b6bc1ac6f86cd394b8a66a25c7dfc294f98711a2a95"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/dynamic_5727_matrix.json.gz",
+          "sha256": "13ff6d91eea48c7123fe94fc6512dfed6d7c63b460ae51bb374a11343b795e49"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/dynamic_5727_exact.json",
+          "sha256": "6ce39057d1ac4e81c2794ba7214e67349b2c004c1ec479a28fb39c5b3cec0ba1"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/dynamic_5727_dual.json",
+          "sha256": "3e54503ee0faf7a5e4d0012f4d0696b525a284ab68f79cc9dddcb20e5ffa8e55"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/dynamic_5727_identity.json",
+          "sha256": "b84f2737b46a3351a4c8be81bae157e0d4ae8d8aee39c0c2d51b414451a72881"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/dynamic_5727_review_manifest.json",
+          "sha256": "819617569197e24300a912272727f52ed9f852ba3706c8242afae72bfaf79515"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/dynamic_5727_verification.json",
+          "sha256": "feb5e02225e410fd0cb232a57e09b3ba7e8e331c274bc8a610c7ba4a83f2fe36"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/extend_master.py",
+          "sha256": "15045199dbbb6c3bc38daeb859028e63beb799ff5ede11214810deacfc4b9862"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/dynamic_5744_matrix.json.gz",
+          "sha256": "ece74fe7ec7924b7e353e14f76359dfc84737057aa40be7644651e24c614a4b6"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/dynamic_5744_dual.json",
+          "sha256": "8f199c26611f00ca2fb1876ec3a6538744fa2837949bd035cc86d071fb1effa9"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/dynamic_5744_identity.json",
+          "sha256": "d08065ef117fe8896ca0e697995f4789bee164c80e039afb40004e57559be258"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/dynamic_5744_review_manifest.json",
+          "sha256": "348f3393900dcd118a9c2a6ff2f794a778cac2e5dcdb15d09454f63bae725da3"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/dynamic_5744_verification.json",
+          "sha256": "1208e91ffb7ddcd1018a55fb3d42ddc37c958b71167179d0ea5f22ae8ece850c"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/dynamic_5744_config.json",
+          "sha256": "c705c806ad39c6e92892b96d733962533d294fc8aa18f4803392ac2ad8567387"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/advance_master.py",
+          "sha256": "4b4d93d8aed0d1cb527250871cccc3a1292777baba1a2afa14a0447192bc36d5"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/fixed_domain_summary.json",
+          "sha256": "afb5ad0af3e7b9257e1912c1a89fb2bbaaa144824d0b92513979c7e1c1f2d5a9"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/inspect_fixed_domain.py",
+          "sha256": "a61896c95148bd0548d88cadf62c45e9b96b2e8997eb39385dd0d200faf92100"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/main_verify_5716.py",
+          "sha256": "f816f9b24874ef01816a47a1c9970874caa04dc329fed7483cef92e8a89a81d4"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/main_verify_5716.json",
+          "sha256": "9e11dc2cf3e075bb859c3215943c5af72e1a144425d75dc102e9cfc40a0b3fa8"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/main_verify_dual_5716.json",
+          "sha256": "4c0161fc12c2f59186bfdf9beee4394c8b153040341f97c55b7492f6482ff482"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/main_verify_primal_dual.py",
+          "sha256": "99070dd5163da408ea307ca9cf20bdfd0048875f1e2861fc456bbe08a9819df2"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/main_verify_dynamic_5744.json",
+          "sha256": "e9bf5bfdfbc46aeee6cf18f34d1eaa96c4b238151aa78103c1dcc933c8efcabe"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/main_verify_discounted.py",
+          "sha256": "00f943aabf4ff1da50b907a1533e98e404641b27ddf0b39011acdd0f70017e39"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/main_verify_discounted.json",
+          "sha256": "650f41c343c2941ec6aa892357cc6dadf0102ad2a3aff660e4fea2a36d0fa4c9"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/main_verify_pair_5727.py",
+          "sha256": "82454e25b36ef385451f204b468c9dc9562e863ff613a45d686f9fe5d94e7b6d"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/main_verify_pair_5727.json",
+          "sha256": "5cd50c12a4ea3c654aa424adfd5ec02c3b93c9207289f53542bf63b35e9607b8"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/main_verify_portfolio_5727.py",
+          "sha256": "b567f4dba827438949fa55535032da5f953a6aafd44d986464de00e8e904c8de"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/main_verify_portfolio_5727.json",
+          "sha256": "d52122f8a7e45124dd4926b4a08ea47b6982ee1efe0a3b8e928b8a85e47d29e8"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/static_optimality_boundary.md",
+          "sha256": "c8d6d81d508e7956511b8c00ec22dbb45326e3c8bfbc0817b7e43000ec721cc2"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/joint_requery/selected_cuts_5727.json",
+          "sha256": "4844808bd09b48ff080a860024acf1073423887d56e15327c53204e475d3aad1"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/coverage_bridge/new5716_joint_discounted.json",
+          "sha256": "2f8cbc1f34b3746e46d549fd348c547792873a459632626da0c156cd10c98b6a"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/coverage_bridge/new5727_single_portfolio_cut.json",
+          "sha256": "875e9f3192f5c0f7202ba1e40d63b8d3dde42534e30de62f3bb850178650d98a"
+        },
+        {
+          "path": "archives/customer-attraction/state/引理/共享真实末端的独立初段与折扣尾闭包--引理.md",
+          "sha256": "885e0c46d9b44ecdefa438d6df7dd04e796da94da20030daf302c34fae15a124"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/formal_5752_5775_gap.md",
+          "sha256": "686f3508bff93de503cfd91c695d3682226acb82ff02bf3b97e3439c978b71e2"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/formal_5775_tail_ablation.md",
+          "sha256": "0f3ebd8aa855bbf6ab484d102a76dbbc072968297a050fef9220e41dc2a1154b"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/formal_5783_gap.md",
+          "sha256": "ad812a03c6928cd77e0e2b670e29e40112f11774506d68bc59b444bcf64368cc"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/scaled_dual.py",
+          "sha256": "be964a3a5c321e541ffd117c7b3cd7ad06a28e9a3b7fcd253c59609eb6188ec7"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/advance_with_exact_cert.py",
+          "sha256": "d06f04b7268326d0278f23726c811fdc239093886fd53b5d8081902c7d0a2dbf"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/alternate_primal.py",
+          "sha256": "792e7061f5b5ad76597745b3ef7c77e7d875be8e5a2a3b8fda48f7280e512a43"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/ablate_positive_tail.py",
+          "sha256": "aa71001f074e0cdb39d39ae27285a244e6fcf2774d4fd35b0017eeb033e12089"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/ablate_5775_positive_tail_exact.json",
+          "sha256": "99e177c9d3ffb089ce8beed432da30f62faf6b97df31770fa34af81f52a0a01c"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/ablate_5775_positive_tail_verification.json",
+          "sha256": "bd8bc20c2adfc82c4ed2102fd3cf60bec5134c626f732961e0fe003db0a4e082"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/joint_requery/portfolio_selected_5752.json",
+          "sha256": "4dfcd2f118da6a871cffd1e165d87a79c32edc8e983e15e622fcd2ffa1bc921c"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/coverage_bridge/selected_prefix_tail_5752.json",
+          "sha256": "595e7386cfacc591f513fe477453e94d9e2271e4cb63ce3f5c57a8dc34fabd50"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/main_verify_portfolio_pair_5752.py",
+          "sha256": "83ecbea0fa36e89a7dd8e237b42f38108987cbe9baf9e3e16b8162e9f5b4a8a3"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/main_verify_portfolio_pair_5752.json",
+          "sha256": "b8b85707dd1a4e7e60e49aca59f6773d6175990e98a4f89d1f28a1cff328e4f4"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/main_verify_prefix_tail_5752.py",
+          "sha256": "989e87e6e799ff81faaca2ba88f0137ee08297300974891053127266c042a875"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/main_verify_prefix_tail_5752.json",
+          "sha256": "207d0eaeb8b260931d680b05f3db36a1e60754b910cc5fdf3ee331486238d201"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/main_verify_tail_ablation.py",
+          "sha256": "b954fc211fe1763e40db96c06851e9876d7a8b551fe1bad984f626d5634644ee"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/main_verify_tail_ablation.json",
+          "sha256": "8365187c106a3214c9a1ef651662f2d95c9d99dab08eb19cee1a34327e9fc211"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/dynamic_5752_matrix.json.gz",
+          "sha256": "44c34467eb8cc65c5581228c31e82083909e8162f400dd1343da5c651c690884"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/dynamic_5752_exact.json",
+          "sha256": "791cbcba1afd841eabe3bc908b300083822739fd8f7ed8b85a8c7ff06f28c787"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/dynamic_5752_dual.json",
+          "sha256": "7b7e081174fcbc817931ec0aba6384116645ec84b64f847d52fbd88209bac61e"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/dynamic_5752_identity.json",
+          "sha256": "6e7daf2b44d8952c5aef31f4d8aa66c0e0117b1df4dd3b65ffd3028e39d0a767"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/dynamic_5752_review_manifest.json",
+          "sha256": "29c99dbd9890ffac7c7420082bdd80939f3cbb7ca5f5ba045b38d7defe1ef507"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/dynamic_5752_verification.json",
+          "sha256": "adfa4616b32417aace48a3cfce0c591d385c54c99809523f84110967cd34425e"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/dynamic_5752_config.json",
+          "sha256": "f80bcb68a603ef584c7e7f678521fdd27ed8da9b914016507316a8b901e30507"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/main_verify_dynamic_5752.json",
+          "sha256": "269454d0a432126f0fc4784b02040fa757a7bdf860656d600e5b6e560d97fdc4"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/dynamic_5775_matrix.json.gz",
+          "sha256": "49470d85127a7f24b4059c3289c9995f469445170fecefed6644bca3d29c82ae"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/dynamic_5775_dual.json",
+          "sha256": "c3388dd6b575637aaf6e9cd8a54bb5484d622820e3a966f00f0c5efbd54b8346"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/dynamic_5775_identity.json",
+          "sha256": "5ffd09018c3248c38a233e460a48cf2ebf1c555b26107f3b941cd0c2251ec12b"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/dynamic_5775_review_manifest.json",
+          "sha256": "2ebf81e5745c3fc27cdf885dd6562b31fedcd4fa75d05e60a9fe4b80efd5bea1"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/dynamic_5775_verification.json",
+          "sha256": "735612a2bbe4590af3541807d662d362944fb9436aa19f5246c1a548e5bd4c3f"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/dynamic_5775_config.json",
+          "sha256": "b04330ce407986bc1c4b63d3871ab798cb2beee19ec5128e6d35438552542fb6"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/main_verify_dynamic_5775.json",
+          "sha256": "6b528c1150b7de3e839861b0805b7e2b804a6e07664ae43f7375351c1e999c17"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/dynamic_5783_matrix.json.gz",
+          "sha256": "363b01b298a5939590d2979bf10215a8080dd5c625966398fdaefd91eb92a696"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/dynamic_5783_exact.json",
+          "sha256": "525139e949098e14426d483a334b7ad7acb454ff692f76ee19769dd305c227df"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/dynamic_5783_dual.json",
+          "sha256": "94732c241e0feb961aa9925a5d2b3596628ce3c68ec0a99a56ade291b0ae9eac"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/dynamic_5783_identity.json",
+          "sha256": "36e2b86e3d7946bae617feb189ef9b516f8b4e8cbe07b9921dc19dedf0324681"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/dynamic_5783_review_manifest.json",
+          "sha256": "326bdab86413cf7f6058ebccc560904692dc9d09dcb69f42e77a84d2595250a5"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/dynamic_5783_verification.json",
+          "sha256": "b027e343038b36a0c5f329ca27a7507964f3e0b418bd53cf12bd96e071a274cb"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/dynamic_5783_config.json",
+          "sha256": "1568fe222a1e0401e4d2361dfb2daca41bd8c0d69d63fb90e5084af12d12aec0"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/main_verify_dynamic_5783.json",
+          "sha256": "d0c6217852e9854c9a2cd3a352945c3742f26fdba669b1e879812f781697ba09"
+        },
+        {
+          "path": "archives/customer-attraction/state/引理/共享真实末回复的组合查询投影与同源重配权--引理.md",
+          "sha256": "a3e5fdcf1e47c919d5b6f500b07d4fc371ac482c924b39213c6fb2d591f3c08c"
+        },
+        {
+          "path": "archives/customer-attraction/state/障碍/固定末回复四态边缘的Fréchet共同扩张障碍--障碍.md",
+          "sha256": "749f7498df1e28522bb29c265b5b1d35255c803ce94c0886f7f7107ee6071aec"
+        },
+        {
+          "path": "archives/customer-attraction/state/程序/复制税的固定策略锥与全SPE最小税递推--程序.md",
+          "sha256": "5dfb3fe74fe8ba359081e06dfde5efe42448c7696cfb9ee6c63e94116eee9461"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/formal_5786_gap.md",
+          "sha256": "2a41c8899cf93bc278cec3e129ed6f736ea933b6286067e1c923b6d10edaa9a8"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/formal_5799_gap.md",
+          "sha256": "72134069b125553ea3958b1d3c2433fcf1f2240b3ea6da3a37c0e5b5823fcff3"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/formal_complete_zz_11418_gap_v1.md",
+          "sha256": "457425f1890d45bbdb26be1e9aeddcb49b9e5d6c742b96bf423fbd1e1a680d0f"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/complete_zz_extension_contract_v1.md",
+          "sha256": "b82ec5a5f899dadc9ca3c7f0757ca3763c22cdd7c3e2f7b6183bf7baf4de01e8"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/build_complete_zz_v1.py",
+          "sha256": "544292ef369f6adab3703a87efd3b665224bea7ec99e5eb32c2d826a0c02f720"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/solve_complete_zz_v1.py",
+          "sha256": "ef69c9a2e6f71e6507bab54762a53cf3ef263133162dfea44bc7c400825ea6f0"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/solve_complete624_v1.py",
+          "sha256": "b454ba7c9e4fa53b9b5816cd2cd6215db8d5719e21e0f13f99e992970f0d6e45"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/full_history_probe_contract_v1.md",
+          "sha256": "c29c95319586e854c147944375ab7e6186188424c64518a000b17e0d6914264e"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/formal_twelve_label_probe_v1.md",
+          "sha256": "d691a1a81992337dfca30df5d69213e94e3f42e4812d3c578ef80e6d2744b2a4"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/prepare_full_history_probe_v1.py",
+          "sha256": "566b9489fc332831d7b3d016b4334efc3ed3a875db13a6c616f53b5ef42fcead"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/full_history_fixed_catalog_dp_v1.py",
+          "sha256": "1cc29c85b81398d3cb42ca5efa6cad37263e817fb50198c232d01d560deea4dc"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/full_history_probe_12label_v1.json",
+          "sha256": "59e86b2961662aba4c9a9c9128fa03f2ee68b0b7c5bd7577896bc897838508f7"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/full_history_probe_12label_v1_result.json",
+          "sha256": "4f9147703a91a5c2f7e0d5c4cfd59014e508d43784c874bce039b3582646eb7e"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/full_history_probe_12label_v1_menus.json.gz",
+          "sha256": "71b6e047817489db94d1c88e25e4ccd0915dac05d4e7a5d00166a7d277b6997d"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/full_history_probe_12label_v1_witnesses.json.gz",
+          "sha256": "102a724186dbf00c03da7656d9d3b476e8286d761bdc81d609ff62b6b0649c60"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/full_history_probe_12label_v1_execution.json",
+          "sha256": "96ba287abbf5e31953d05ec7234de3c986ee7ae3efb688e0b7946db13e6e1349"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/twelve_label_tail_direct_v1.json",
+          "sha256": "f1ed96fd99e737ad749b01da61d5affc20db8d19fa0c3391a3e739549891919c"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/explain_twelve_label_tail_v1.py",
+          "sha256": "522f2d998128f13469ad03ba7a12a561f67d72c45bfed02761c6e88fa4153e40"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/main_verify_cross_pairs_v2.py",
+          "sha256": "b2507aae9ff8ecbaf64cf1ee8c66722f563eae591ddf61b1be76a873bb44a99b"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/main_verify_cross_pairs_5783_three.json",
+          "sha256": "161ae6c6fe21374d4f80ebfb8779cd056135e5a679b8fbc2e4023bb2e931caf9"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/main_verify_neighbor_5786.py",
+          "sha256": "dc247fc080bd8ec741c8d123e2ac04292ec8f73393e4fda63f4f666fbbe3edcc"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/main_verify_neighbor_5786.json",
+          "sha256": "3a005f2cf9fcf44cdd521eb154a41608cc3d57f54596b20bc299bddd1809e654"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/main_verify_complete_zz_v1.py",
+          "sha256": "7455522186c10b34e72d0c3a8306a1614f8911b8b6c4d78ff641c94a13064819"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/main_verify_complete_zz_v1.json",
+          "sha256": "6efb1c0417e3ab25daf83e08fa23e79c4e26017624c2294afce83123c7bd9feb"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/main_verify_extended_primal_dual_v1.py",
+          "sha256": "6cc15136976746e4cad9b419de7aa7b15550039c74481134a50d4473e449a65b"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/main_verify_complete_zz_5799_v1.json",
+          "sha256": "1e89babee524bdddac57d42782c9b12cbffca7b1d1d6a53da2961e17de2a09aa"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/main_verify_zz_projection_v1.py",
+          "sha256": "0592eda13e0231dc2283b1a0d53f4ef9681dafb7cc9872f9bc2dc241b3a9634b"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/main_verify_zz_projection_v1.json",
+          "sha256": "6d93e894c5f99359ef1248ff4a6bad1d5e39b702789e25824d728a8a8a230c38"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/main_verify_explicit_primal_dual_v2.py",
+          "sha256": "6f366152b3ac9f31fc4699adc029d6f438f6b994b6231fd2027db853964ff84d"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/main_verify_complete624_opt_v2.json",
+          "sha256": "8a8668e4ed5348a25ce8d1ee7c35adc2f475704c4c85c84947a9d459af1c9a93"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/main_verify_624_projection_v1.py",
+          "sha256": "d52166e57c10291496246b084c09c43cd5693992d5deec2c93d41f520fb615fc"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/main_verify_624_projection_v1.json",
+          "sha256": "dbbb6a48ece28cd587f818f153d176096f5f4f5edf9aebd927ba14067b1a7f1d"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/main_verify_twelve_label_input_v1.py",
+          "sha256": "c6278148af9f37334a779cf5a80b31801f8b5d799b8c443e9bb8444cb7cb0bbc"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/main_verify_twelve_label_input_v1.json",
+          "sha256": "4f38b328fc1fa93c9959501fb5b0a63d283d12dc4312eb8f4a61d0e6a7e8c157"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/main_verify_full_history_probe_v1.py",
+          "sha256": "4615180a2bde3834353afcd0e94a652eb9436552c38be3f61711de478ab5ee78"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/main_verify_full_history_probe_v1.json",
+          "sha256": "9c917bacb3f8ec0e36d0639d9596a4e191c2429f690907ab6cdfc1a1d141ece5"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/neighbor_bridge_review_v1.md",
+          "sha256": "e6aa0de9e90714fc04cbd6c5e93b9007a727bb0fd5821d2e79699e085f1de9cc"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/neighbor_bridge_5786_addendum_v1.md",
+          "sha256": "e8270d178dfb9fb8b2fbce5dc41ec60f7caee7cf2861556543647fd5986fda00"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/neighbor_5786_selected_13_v1.json",
+          "sha256": "8321686dd8f4aca2733a2213edef6c3c072d0bee7d2eeac005ded69e83758844"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/dynamic_5786_matrix.json.gz",
+          "sha256": "2f48f355ee1779d355690b6c3a1fe54af6dea2b6dee96aee78d72ba1c8f794a8"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/dynamic_5786_exact.json",
+          "sha256": "6927af3bda45a12a36885d949b7690fbd4f24c5938618e1e6a81cb4a7d71ed27"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/dynamic_5786_dual.json",
+          "sha256": "aeee2c9065b1c2f524a6340f62015d7a6d94d5b84cea49f8a6fd6f5f5122c0c3"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/dynamic_5786_identity.json",
+          "sha256": "eca285474c14e6941df9d3cdc26e1751a84b7cf85a4cfc3130b687853cd7b11a"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/dynamic_5786_review_manifest.json",
+          "sha256": "0cd92890e534577995d60029a1a42c6ed1944eec779d7cc7268d9c75cdc804e1"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/dynamic_5786_verification.json",
+          "sha256": "7ddf91fd42375c37ba1436aac51eb828af1628de7ca3aa539904bfaa5be66a28"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/dynamic_5786_config.json",
+          "sha256": "07547717f7c7870435568604e440ec4d8193f9ca88ba8d65495a3c8d08d780b7"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/main_verify_dynamic_5786.json",
+          "sha256": "b65985688373257acb095a245e36d8f29695fbef36855d2b8dac134d100de964"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/dynamic_5799_matrix.json.gz",
+          "sha256": "0b4bd0a81097b022a638fdc44324c731768255579a5bf07618e12c35c9342bec"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/dynamic_5799_exact.json",
+          "sha256": "63edbafd53493a20ec64ced5f09a694ead3f894bfb6419cde425de0b3a1710c1"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/dynamic_5799_dual.json",
+          "sha256": "2787510b002b927357b49a0a09a64b928ae808fcf8674b1bc41f87e824c75a50"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/dynamic_5799_identity.json",
+          "sha256": "7ac583b368a356a2856f55919b8e9269f6841782d33eefde1422ea1352a00661"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/dynamic_5799_review_manifest.json",
+          "sha256": "9e7d215d51ce6ed57844013abb1413b615b6c206b754c3513d7441c34f068608"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/dynamic_5799_verification.json",
+          "sha256": "b489c87927bfefa48b066cc0ba2c4fa8d2c874eb58ee575422a6d381d0da2668"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/dynamic_5799_config.json",
+          "sha256": "973b9bdb520dcbc4abdf63cfa776ac7e725be5df082bafe015cf279254c07cb5"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/main_verify_dynamic_5799.json",
+          "sha256": "d71f2c161c8489c56a8efa3adee6adaa09231aaff08216c0879554611fe11884"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/complete_zz_5799_v1_matrix.json.gz",
+          "sha256": "8b076497ef826b60c797edcb8dc719f2f7ad678a01a34ecf66d2e757af525a20"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/complete_zz_5799_v1_mapping.json",
+          "sha256": "2305633361e0e543fbcb11497a555445460c80d2d4ff1bd3f844e0964b37ca6a"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/complete_zz_5799_v1_exact.json",
+          "sha256": "e5cd48369fc08f652490b09ecddc80dbacc09dd45d06e5fe97dc64de3f247075"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/complete_zz_5799_v1_dual.json",
+          "sha256": "efb9fefe2bcacef00cee500a44d27e85f8606b4fe1d793187bc9bffeb8a809ca"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/complete_zz_5799_v1_original4849_exact.json",
+          "sha256": "1af6fd35f9cf1a51220072e627df042b450a52a7c6ecac388a98247ecac043d2"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/complete_zz_5799_v1_verification.json",
+          "sha256": "27a078e1a5dcc667db3b78ad80020efac820af5e0aef3ba6e63b01ccfeed7cde"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/complete_zz_5799_v1_basis.json",
+          "sha256": "34cd1fd9c7bd631e8bbd557c35a96a574d3fdbe3042d2616bdf7cee9eff70c4e"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/complete624_actual4_R00_opt_v2_exact.json",
+          "sha256": "02bcb92f33f7e7e4fac00a4c64fd39b0a4f0c68a736559c300bbfba255168817"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/complete624_actual4_R00_opt_v2_dual.json",
+          "sha256": "f97619798dd8abd6800210264abb6a48c13f9d61ef57de54a412b8a205a4798e"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/complete624_actual4_R00_opt_v2_original4849_exact.json",
+          "sha256": "75cf981c8e9a6554b796735b3e96c7e1145f420addec0ba045b25a293139803c"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/complete624_actual4_R00_opt_v2_verification.json",
+          "sha256": "20713b6310c53613b9beaf2ec983cd086e4afd3538179ebda1f026967e2e30bb"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/complete624_actual4_R00_opt_v2_basis.json",
+          "sha256": "4533d15c78048c0cf611a33bd585452ce6944a01553a79077574b4ba84642ba3"
+        }
+      ],
+      "oversized": true,
+      "requires_export": true,
+      "prior_assets": [
+        {
+          "path": "map/edges/customer-attraction-3a-3a-11c0fae95913e6f4/review.md",
+          "sha256": "0665b5c598714e8ecc99edf663d57cb68f2e6ba1165f55456bc93550a3486ff3"
+        },
+        {
+          "path": "map/edges/customer-attraction-boss2-six-cross-20261111/boss2-six-cross-shared-pair-to-query-hierarchy.json",
+          "sha256": "6efa12a3ecba397e6895986698e39b68ef63517f866dc6b0576133df3ec03f1c"
+        },
+        {
+          "path": "map/edges/customer-attraction-boss2-six-cross-20261111/boss2-six-cross-complete624-projection-pays-lift.json",
+          "sha256": "5a11971ecfb0ef64775034e5c4e7369fb45598643c5b53ce20635faefc12ddbd"
+        }
+      ],
+      "retired_core_object_ids": [],
+      "recheck_core_object_ids": [
+        "M-b1b4276f0ec747ed8c347bda65c9e0af"
+      ],
+      "repair_reasons": [
+        "receipt-review"
+      ],
+      "note": "Read the previous task and receipt. Carry forward valid work. If needed, read the same scope in ordered passes. A retirement-only task lists no coverage or new assets.",
+      "comparison_priority": 2,
+      "scope_hint": "archives/customer-attraction"
+    }
+  },
+  "state": "available",
+  "owner": null,
+  "request_id": "92f1a01ac7834ca48241293c08b481bf",
+  "requests": {
+    "92f1a01ac7834ca48241293c08b481bf": "plan"
+  }
+}
