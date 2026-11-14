@@ -1,0 +1,63 @@
+{
+  "edge_id": "ca-cfd7-m428-sharpness-to-six-person-instance",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "M-428a4ae0b0834fe2a4c6a7a287c3895d"
+  ],
+  "target_ids": [
+    "M-3ed59e2cfde4453fa95170e6005941f2"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定 m=6；目录为一个大小 6 的大主题 B0 与六个两两不交单客户主题；全历史策略恒选 B0；固定最优元组取 B0 加任意五个单客户主题。对每个实际位置强制该最优主题后，沿原策略的真实后继仍恒选 B0，因此不触及 O\\U。",
+  "roles": {
+    "M-428a4ae0b0834fe2a4c6a7a287c3895d": "给出真实后继不触及最优遗漏时的 OPT≤(2−1/m)W 界，并声明大主题加至少 m−1 个单客主题的全历史锐性族。",
+    "M-3ed59e2cfde4453fa95170e6005941f2": "把该锐性族具体化到 m=6 的七主题输入，给出完整全历史纯 SPE、根收益 1、W=6、OPT6=11，以及独立 k=1 逐席行的精确 −5 反例。"
+  },
+  "explanation": "M-3ed 的七主题构造是 M-428 锐性族在 m=6 的具体 specialization；六个单客户主题满足“至少 m−1”而多出的一个不影响六槽最优覆盖。核心策略在全部有序历史恒选 B0，任何被强制的最优主题查询后的原策略真实后继也仍选 B0，故遗漏并集 B=∅。实际 W=6、OPT6=11，且 (2−1/6)W=11，所以 M-428 的条件界在本输入取等。核心对象同时说明把第 1 席独立地按六客户收费是错误强化量词；这只贡献锐性实例和席位行边界，不重新证明 M-428 的一般定理或六人任意目录的 half。",
+  "scope": "六人七个不交极大主题的精确 sharpness/等号实例；保留完整历史、真实后继、空遗漏触及条件。独立逐席 k=1 行的失败与半覆盖目标严格区分。",
+  "contribution": {
+    "result": "M-428 的 sharpness family 在 m=6 上具体化为核心 M-3ed：B=0、W=6、OPT6=11=(2−1/6)W；该等号实例同时给出根 u=1<6，精确排除独立 k=1 逐席付款行。",
+    "remaining": "M-428 的一般支撑证明、B 非空修正及六人任意目录的全局 half 仍由各自正文承担；本实例不提供共同动态付款闭合，也不把有限证书推广为普遍反例。"
+  },
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/资源/逐分支候选协调稿的全称域与有限证据--资源.md",
+      "sha256": "d8233f2681d66f1fb0959b3f2cfe8656e5a7ad1a416b0562c47923546dabeb53",
+      "section": "已证子类、有限证据和七极大逐席反例"
+    },
+    {
+      "path": "archives/customer-attraction/state/资源/六人协调前沿与逐人缺口探索的范围证据--资源.md",
+      "sha256": "cf5c5ef0242d967ddb314dc999e399555846e2bc13be054fe296b328c25424b5",
+      "section": "根实际覆盖支撑引理的完整条件证明"
+    },
+    {
+      "path": "archives/customer-attraction/state/反例/独立逐席付款的完整策略反例--反例.md",
+      "sha256": "1221096abc1f47a51638a6235d62bb29445e97b0be9e44c6d97a6a5dde2b3937",
+      "section": "六人七极大完整控制例"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/seat-row-counterexample-primary/original/research/workspaces/customer-attraction/R-c99d11e5cc394080a36a00845811d71a/seat_row_counterexample_certificate.json",
+      "sha256": "9ae02200e1d8aa89621544d0e0e519130560528113972d33911db84ad23ed35b"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/seat-row-counterexample-primary/review-001/review.json",
+      "sha256": "a9fc3cd48c1ab733556e4cbdc59537e402a5eeca72e44d9c9d43f8243701d7f9"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "完整读取核心声明及七个必要证据字节，并 read-add 后全文读取 CAG-MODEL、M-428 与独立逐席对象；独立解析完整 19608 历史证书，核对 m=6 的 B=0 等号条件、方向、量词与未付的一般性缺口。",
+  "endpoint_pins": {
+    "M-3ed59e2cfde4453fa95170e6005941f2": "eff06663f4535278472b629211fc5ba12555990a1052384dfd0f98e549dac5d2",
+    "M-428a4ae0b0834fe2a4c6a7a287c3895d": "86a5565bde0b09f00ef33b2ab9149aa175d4b77d535515aa2db56b871e2cd128"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/资源/逐分支候选协调稿的全称域与有限证据--资源.md": "d8233f2681d66f1fb0959b3f2cfe8656e5a7ad1a416b0562c47923546dabeb53",
+    "archives/customer-attraction/state/资源/六人协调前沿与逐人缺口探索的范围证据--资源.md": "cf5c5ef0242d967ddb314dc999e399555846e2bc13be054fe296b328c25424b5",
+    "archives/customer-attraction/state/反例/独立逐席付款的完整策略反例--反例.md": "1221096abc1f47a51638a6235d62bb29445e97b0be9e44c6d97a6a5dde2b3937",
+    "archives/customer-attraction/tools/evidence/seat-row-counterexample-primary/original/research/workspaces/customer-attraction/R-c99d11e5cc394080a36a00845811d71a/seat_row_counterexample_certificate.json": "9ae02200e1d8aa89621544d0e0e519130560528113972d33911db84ad23ed35b",
+    "archives/customer-attraction/tools/evidence/seat-row-counterexample-primary/review-001/review.json": "a9fc3cd48c1ab733556e4cbdc59537e402a5eeca72e44d9c9d43f8243701d7f9"
+  },
+  "review_digest": "17de0bc5565ecaf834c2fc86f91f02afdf71c7815ff7ac8fe26fe45f06d26d98"
+}

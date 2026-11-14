@@ -1483,12 +1483,134 @@
       "budget_status": "reading-scope-expanded-reestimate"
     }
   },
-  "state": "claimed",
+  "state": "done",
   "owner": "Boss1",
-  "request_id": "d28124e8ec2c4fbba32cbd7aacb62a84",
+  "request_id": "dddf4838511c4db4aa5b8f95cc9cf15f",
   "requests": {
     "b174141a08c742e1b939e49fbe0f170f": "plan",
     "32d9033235c84991bb3e3bf25fa4c867": "claim",
-    "d28124e8ec2c4fbba32cbd7aacb62a84": "read-add"
+    "d28124e8ec2c4fbba32cbd7aacb62a84": "read-add",
+    "dddf4838511c4db4aa5b8f95cc9cf15f": "done"
+  },
+  "edge_paths": {
+    "cag-c78-one-prefix-five-profit-scope-boundary": "map/edges/customer-attraction-3a-3a-c78ccf1b61bc0ed1/one-prefix-five-profit-scope-boundary.json"
+  },
+  "receipt": {
+    "task_id": "customer-attraction-3a-3a-c78ccf1b61bc0ed1",
+    "stage": "3A",
+    "status": "complete-assigned-reading-and-mathematical-delivery",
+    "owner": "Boss1",
+    "worker": "SOLVER-C78C-FRESH",
+    "object_ids": [
+      "customer-attraction/one-prefix-five-profit-exclusive-charge"
+    ],
+    "read_object_ids": [
+      "degree-two-shared-customers-complete-spe-negative-stationary-flux-family"
+    ],
+    "input_pins": {
+      "customer-attraction/one-prefix-five-profit-exclusive-charge": "a12c836333e609725e285c501ac8b7ee8d28601e0e62dd699c10a3e0cab60aeb",
+      "degree-two-shared-customers-complete-spe-negative-stationary-flux-family": "ead26a4f21f7e18c8edf9e4ae56d638dec34f9825819526618cf059eab1a651d"
+    },
+    "edge_ids": [
+      "cag-c78-one-prefix-five-profit-scope-boundary"
+    ],
+    "coverage": {
+      "customer-attraction/one-prefix-five-profit-exclusive-charge": {
+        "state": "isolated-after-review",
+        "object_pin": "a12c836333e609725e285c501ac8b7ee8d28601e0e62dd699c10a3e0cab60aeb",
+        "edge_ids": [
+          "cag-c78-one-prefix-five-profit-scope-boundary"
+        ],
+        "comparison_scope": "完整读取60个唯一声明文件/68个有序pass，复核BG5收费、ROOT-6六删一账、53/66方法锥、71行根投影及read-add的degree-two端点；本包只做core self-context比较。",
+        "reason": "核心给出任意一背景五尾的利润收费及准确六槽接口，但不把R_Z升级为OPT6、不把V升级为新覆盖，也没有共同六根完整SPE实现。degree-two负驻留族的L-H统计量与R_Z/V/E变量尚未建立模型保持映射，故不造跨对象逻辑边。"
+      }
+    },
+    "assets": [
+      {
+        "path": "map/edges/customer-attraction-3a-3a-c78ccf1b61bc0ed1/one-prefix-five-profit-scope-boundary.json",
+        "sha256": "6604bed4714edfa0082d9f88898faad164c487bbfdc85f747ffdca24f0e4cd8d"
+      },
+      {
+        "path": "map/edges/customer-attraction-3a-3a-c78ccf1b61bc0ed1/review.md",
+        "sha256": "28205d3305d159ed9ff4dffb05416ebe0a3e5f0ba4572ae35cf89a1f9d6e9eee"
+      },
+      {
+        "path": "map/edges/customer-attraction-3a-3a-c78ccf1b61bc0ed1/support.md",
+        "sha256": "d6294610395794464d51c3ab4f045c3f89a40571b33dd90bfd1f3443cf0c4035"
+      },
+      {
+        "path": "map/edges/customer-attraction-3a-3a-c78ccf1b61bc0ed1/readledger.json",
+        "sha256": "a52bc386fd06743dee056f76af43eee35063f41fd68b12646c10b21aa499026e"
+      }
+    ],
+    "read_scope": {
+      "declared_files": 60,
+      "declared_reading_passes": 68,
+      "declared_bytes": 7063895,
+      "full_read": true,
+      "sha256_all_declared_refs": true,
+      "read_add": [
+        "degree-two-shared-customers-complete-spe-negative-stationary-flux-family"
+      ],
+      "deferred_candidates_not_read": [
+        "degree-two-shared-customers-complete-spe-negative-stationary-flux-family"
+      ]
+    },
+    "verification": {
+      "core_charge_epsilon": "62212762317811658581/1250000000000000000000",
+      "epsilon_lt_one_twentieth": true,
+      "profit_condition_states": 12288,
+      "profit_b1_negative_before_charge": 32,
+      "independent_literal_check": "ALL DIRECT WITNESS AND CHARGING CHECKS PASSED",
+      "fixed53_lower_bound_approx": 0.01882600675955369,
+      "fixed66_lower_bound_approx": 7.931649684860619e-05,
+      "root71_nonseparation_atoms": 27,
+      "root71_nonseparation_lower_bound_approx": 0.0171248141663628,
+      "eleven_customer_omission_debt": "13/3",
+      "eleven_customer_claimed_payment": "2",
+      "eleven_customer_is_half_counterexample": false,
+      "peer_q5_a1_b2_W_equals_OPT6": 64,
+      "peer_q5_root_ic_gap": "0",
+      "peer_q5_charged_slack_positive": true
+    },
+    "closed_overlaps": [
+      {
+        "core_id": "customer-attraction/one-prefix-five-profit-exclusive-charge",
+        "peer_id": "degree-two-shared-customers-complete-spe-negative-stationary-flux-family",
+        "reason": "完整实读后确认 core 的 R_Z/V/E 变量与 degree-two 负驻留族的 L-H 统计量没有已证模型保持映射；本包已把该对象对记为开放映射缺口，暂不创建逻辑边，当前比较无需另发任务。"
+      }
+    ],
+    "follow_up_tasks": [],
+    "comparison_dispositions": [
+      {
+        "core_id": "customer-attraction/one-prefix-five-profit-exclusive-charge",
+        "peer_id": "degree-two-shared-customers-complete-spe-negative-stationary-flux-family",
+        "status": "follow-up-needed",
+        "stage": "3B",
+        "basis": {
+          "path": "archives/customer-attraction/state/构造/二元共享客户的完整均衡负驻留族--构造.md",
+          "sha256": "5c9cf2906b68aaa4bdb21172f11d29ad52d58c0f16baaab8b59d0a0e112ef0d4"
+        },
+        "reason": "peer给q>=2的完整SPE负驻留通量L-H，core给一背景+五尾利润税R_Z-2V及E_Z收费；统计量/人数/比较标签量词尚未保持。q=5/a=1/b=2审计点不矛盾且收费后有正slack，但需3B逐根逐标签比较，不能升级成全参数迁移或half反例。"
+      }
+    ],
+    "comparison_note": "self-context only；不新增cross-object implies/refutes/transfers边。",
+    "execution_boundary": {
+      "registry_modified": false,
+      "coverage_modified": false,
+      "integration_modified": false,
+      "task_state_modified": false,
+      "git_commit_or_push": false
+    },
+    "reviewed_by": "SOLVER-C78C-FRESH",
+    "review_note": "内部词 SOLVER-C78C-FRESH。完整声明读取、read-add、数学边界判定和保存资产均在任务目录；无commit/push/checkpoint/done。",
+    "edge_binding_status": "edge-bind --write and edge-check passed",
+    "edge_review_digest": "39ed0bd59d63f8d334e97dbe163f400e632f6bea3f4fcf3a924aa32e0f29f8a5",
+    "binding_outputs": {
+      "edge_bind": "passed",
+      "edge_check": "edge-structure-valid-not-a-mathematical-verdict",
+      "edge_file": "map/edges/customer-attraction-3a-3a-c78ccf1b61bc0ed1/one-prefix-five-profit-scope-boundary.json",
+      "edge_sha256": "6604bed4714edfa0082d9f88898faad164c487bbfdc85f747ffdca24f0e4cd8d"
+    }
   }
 }
