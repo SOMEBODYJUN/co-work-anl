@@ -1,0 +1,61 @@
+{
+  "edge_id": "cag-r70-point-attains-fixed-cone-six-eleven",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-c5e460641b3e47729159aa9e7cb6a175"
+  ],
+  "target_ids": [
+    "cag-r70-six-player-seven-topic-fixed-complete-strategy-lp"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "Use the same labelled seven-topic, six-player customer-attraction model and the same complete ordered strategy σ encoded by complete-strategy.json (19,608 ordered nodes; root path (0,2,2,2,2,2)). The 11-unit customer vector is x_{{1}}=1, x_{{0,2}}=6, and x_{{3}}=x_{{4}}=x_{{5}}=x_{{6}}=1, all other nonempty types zero. All seven-label actions and all forced-action continuations use the stored σ.",
+  "roles": {
+    "M-c5e460641b3e47729159aa9e7cb6a175": "Supplies the exact 11-unit equality point, its customer memberships, the captured complete σ, and the independent full-tree rational IC audit; also supplies the separate 58-unit all-SPE construction whose scope remains distinct.",
+    "cag-r70-six-player-seven-topic-fixed-complete-strategy-lp": "Receives the feasible equality point as the attainment/lower-endpoint contribution for its fixed-σ welfare-ratio theorem; its universal lower-bound dual certificate remains a separate premise."
+  },
+  "explanation": "For the specified 11-unit vector, the stored σ follows (0,2,2,2,2,2), so the six customers of type {0,2} are covered and the five singleton customers are uncovered; hence W=6. The six-slot label tuple (0,1,3,4,5,6) covers all six shared customers plus the five singleton customers, so OPT_6=11. The independent point-audit checks every one of the 19,608 ordered decision nodes against all seven forced labels (137,256 comparisons including self rows), with exact payment scale 60 and minimum IC slack 0; its 924 terminal count rows are also read, and the same complete strategy has SHA-256 d2924549f6ea10bd9a732434bef8145694e2bcbbec471abdef60d8d609687141. Therefore this vector is a genuine feasible point of the fixed σ SPE cone and attains W/OPT_6=6/11 (equivalently 2W−OPT_6=1). This is the missing attainment endpoint for the fixed-σ 6/11 extremum. It does not prove the dual lower bound for every nonnegative cone point, does not turn the 58-customer W=43, OPT_6=58 construction into the same input, and does not imply the universal six-player half theorem.",
+  "scope": "Only the exact feasible 11-unit attainment point for the one stored 19,608-node σ and the fixed seven-label, six-slot OPT_6. The 58-unit all-complete-SPE construction has W=43 and all six terminal count vectors (1,0,j,0,5−j,0,0), j=0,…,5, but is a separate input. No claim is made for all σ, all catalogues, arbitrary m or p, background remaining-profit quantities, static PNE, or the global 2W≥OPT_6 target.",
+  "contribution": {
+    "result": "The source object independently certifies a nonnegative customer vector in the fixed σ full-history IC cone with exact W/OPT_6=6/11, supplying the lower/attainment endpoint of the target fixed-σ minimum ratio.",
+    "remaining": "The target theorem still needs its all-cone lower bound: the seven omitted-label normalizations and exact rational dual residuals that show every nonzero feasible x has W/OPT_6≥6/11. That dual proof is carried by the target object and is not inferred from this finite point. The global quantifier over all six-player complete strategies and the half bound remain open here."
+  },
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/计算/六人不交覆盖搜索点的随机记录与锐界实例--计算.md",
+      "sha256": "9b9ecb396c2ed6d5c2cb012a64f86235508ed21343269846c6afd5c6eee795c8",
+      "section": "LP十一点：大块锐例与相同固定策略"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/r70-six1-best-data/point-audit.json",
+      "sha256": "7074287b7d654e9399df82b8f72cc4753f39cf450623cd2ed5fb93f50ce004b4"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/r70-six1-best-data/exact-details.json.gz",
+      "sha256": "1e805f7a972a7860ad354ad48be7714f6fd551772c395e59a7f3462729aaffe6"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/r70-strategy-lp-program/replay/complete-strategy.json",
+      "sha256": "d2924549f6ea10bd9a732434bef8145694e2bcbbec471abdef60d8d609687141"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+    }
+  ],
+  "reviewed_by": "SOLVER-C5E-FRESH",
+  "review_note": "Complete current core object, the read-add fixed-σ target record, and all six declared evidence files were parsed/read. The edge is deliberately contribution-only: exact full-history feasibility and equality attainment are paid; the target's all-cone dual lower bound, all-σ quantifier, and universal half claim are not imported.",
+  "endpoint_pins": {
+    "M-c5e460641b3e47729159aa9e7cb6a175": "cfb8aca64886120754f2457a388c80e70d73430d4804ba0d027f9db08f6d63d9",
+    "cag-r70-six-player-seven-topic-fixed-complete-strategy-lp": "b85fbfeafe5b02e918438e2de0d948d6296a19524e6f06adb310a997d34eb2bb"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/计算/六人不交覆盖搜索点的随机记录与锐界实例--计算.md": "9b9ecb396c2ed6d5c2cb012a64f86235508ed21343269846c6afd5c6eee795c8",
+    "archives/customer-attraction/tools/evidence/r70-six1-best-data/point-audit.json": "7074287b7d654e9399df82b8f72cc4753f39cf450623cd2ed5fb93f50ce004b4",
+    "archives/customer-attraction/tools/evidence/r70-six1-best-data/exact-details.json.gz": "1e805f7a972a7860ad354ad48be7714f6fd551772c395e59a7f3462729aaffe6",
+    "archives/customer-attraction/tools/evidence/r70-strategy-lp-program/replay/complete-strategy.json": "d2924549f6ea10bd9a732434bef8145694e2bcbbec471abdef60d8d609687141",
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+  },
+  "review_digest": "ba7c3c7a7a4e3c84f18390e4f984050971422f1cbd2e7c2fbf217bf98a425e07"
+}

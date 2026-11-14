@@ -6,9 +6,12 @@
     "object_ids": [
       "M-c5e460641b3e47729159aa9e7cb6a175"
     ],
-    "read_object_ids": [],
+    "read_object_ids": [
+      "cag-r70-six-player-seven-topic-fixed-complete-strategy-lp"
+    ],
     "input_pins": {
-      "M-c5e460641b3e47729159aa9e7cb6a175": "cfb8aca64886120754f2457a388c80e70d73430d4804ba0d027f9db08f6d63d9"
+      "M-c5e460641b3e47729159aa9e7cb6a175": "cfb8aca64886120754f2457a388c80e70d73430d4804ba0d027f9db08f6d63d9",
+      "cag-r70-six-player-seven-topic-fixed-complete-strategy-lp": "b85fbfeafe5b02e918438e2de0d948d6296a19524e6f06adb310a997d34eb2bb"
     },
     "write_paths": [
       "map/edges/customer-attraction-3a-3a-a8bf604bd9813bf3",
@@ -247,14 +250,81 @@
           "continuation": "Continue this same complete object in order; retain its model, quantifiers, hypotheses, established steps and unpaid obligations in the saved note. No partial pass means done.",
           "pass": 9
         }
-      ]
+      ],
+      "budget_status": "reading-scope-expanded-reestimate"
     }
   },
-  "state": "claimed",
+  "state": "done",
   "owner": "Boss1",
-  "request_id": "e5e1adc39fa544c0b34775b2d9202e1c",
+  "request_id": "8fe4607552794f368187aba6e3cc85da",
   "requests": {
     "c77ec76b08b948c4ac8c43dc65353af7": "plan",
-    "e5e1adc39fa544c0b34775b2d9202e1c": "claim"
+    "e5e1adc39fa544c0b34775b2d9202e1c": "claim",
+    "419f425ee032492bbe9128a8d0067529": "read-add",
+    "8fe4607552794f368187aba6e3cc85da": "done"
+  },
+  "receipt": {
+    "task_id": "customer-attraction-3a-3a-a8bf604bd9813bf3",
+    "stage": "3A",
+    "owner": "Boss1",
+    "worker": "SOLVER-C5E-FRESH",
+    "request_id": "419f425ee032492bbe9128a8d0067529",
+    "definition_pin": "117227643c9203efb6ab2610c1b7de8d682340482fcf18855849ef3f5fecd1",
+    "object_ids": [
+      "M-c5e460641b3e47729159aa9e7cb6a175"
+    ],
+    "read_object_ids": [
+      "cag-r70-six-player-seven-topic-fixed-complete-strategy-lp"
+    ],
+    "input_pins": {
+      "M-c5e460641b3e47729159aa9e7cb6a175": "cfb8aca64886120754f2457a388c80e70d73430d4804ba0d027f9db08f6d63d9",
+      "cag-r70-six-player-seven-topic-fixed-complete-strategy-lp": "b85fbfeafe5b02e918438e2de0d948d6296a19524e6f06adb310a997d34eb2bb"
+    },
+    "status": "complete-frozen-staging; native edge-bind and edge-check passed; Root checkpoint/done pending",
+    "coverage": {
+      "M-c5e460641b3e47729159aa9e7cb6a175": {
+        "state": "isolated-after-review",
+        "object_pin": "cfb8aca64886120754f2457a388c80e70d73430d4804ba0d027f9db08f6d63d9",
+        "comparison_scope": "Complete six declared source files, exact 58-point all-SPE construction, separate 11-point fixed-σ equality point, full 19,608-node σ, all 924 terminal rows and all 137,256 per-point full-history IC rows; compare only the fixed-σ attainment interface.",
+        "reason": "固定11客户点在同一σ固定锥中达到W=6、OPT6=11的context/attainment接口；有限点不等于全σ锥下界或half，故覆盖保留isolated-after-review。",
+        "edge_ids": [
+          "cag-r70-point-attains-fixed-cone-six-eleven"
+        ]
+      }
+    },
+    "assets": [
+      {
+        "path": "map/edges/customer-attraction-3a-3a-a8bf604bd9813bf3/r70-point-attains-fixed-cone-six-eleven.json",
+        "sha256": "0ad6ed571bfc58aab5ab040a0e189f0b88296c36e9494dfdf0d3be64a73d23fb"
+      },
+      {
+        "path": "map/edges/customer-attraction-3a-3a-a8bf604bd9813bf3/readledger.json",
+        "sha256": "8ba5a81cacd26c8df7e48623b0c4e297355d45fdb1375508c20614047daa8eb2"
+      },
+      {
+        "path": "map/edges/customer-attraction-3a-3a-a8bf604bd9813bf3/review.md",
+        "sha256": "539075418f3a0471df5ceab933d8276ef1ab228ca9468aed6727b0dd07827e06"
+      },
+      {
+        "path": "map/edges/customer-attraction-3a-3a-a8bf604bd9813bf3/support.md",
+        "sha256": "9641acda26811ca4f7eaa931b0ce5188c34b22966dc5217af37bb24dd6d0195b"
+      }
+    ],
+    "closed_overlaps": [],
+    "follow_up_tasks": [],
+    "review_note": "Fresh worker completed full reading, local read-add and native edge-bind --write / edge-check (proof_scope=step). Root must recheck remote ownership, read-add acknowledgement and current pins before checkpoint/done.",
+    "execution_boundary": {
+      "registry_modified": false,
+      "coverage_modified": false,
+      "integration_modified": false,
+      "task_definition_modified": "Only local read-add appended the fixed-σ read endpoint; no core/object/registry edits.",
+      "scientific_reruns": 0
+    },
+    "comparison_note": "固定σ attainment endpoint only; all-σ cone dual lower bound and dynamic half remain open.",
+    "edge_binding_status": "edge-bind --write and edge-check passed",
+    "edge_review_digest": "ba7c3c7a7a4e3c84f18390e4f984050971422f1cbd2e7c2fbf217bf98a425e07"
+  },
+  "edge_paths": {
+    "cag-r70-point-attains-fixed-cone-six-eleven": "map/edges/customer-attraction-3a-3a-a8bf604bd9813bf3/r70-point-attains-fixed-cone-six-eleven.json"
   }
 }

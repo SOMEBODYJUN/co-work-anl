@@ -1,0 +1,102 @@
+{
+  "task_id": "customer-attraction-3a-3a-9d2ca3ae1e1edf24",
+  "stage": "3A",
+  "owner": "Boss1",
+  "reader": "Solver",
+  "internal_word": "SOLVER-94FB-FRESH",
+  "request_id": "c7ba25dd8a0f439b868bb12ca74f5336",
+  "status": "complete-frozen-staging; native edge-bind and edge-check passed",
+  "definition_path": "research/operations/map-v2/tasks/customer-attraction-3a-3a-9d2ca3ae1e1edf24.json",
+  "definition_sha256": "0f4b4bdd88bfdc306882887d1de4c86a519212d382ef3edb49c5b2b5d66df3aa",
+  "definition_pin": "d689f3dc1af1d84ff42e4e9b2857ff408a62ee30ffa343e9d11d5df74e1af1b4",
+  "input_pins": {
+    "M-94fb0280f8af4175b3ec6801a8843744": "8de84cff3acd09a1320f867b301a2d4a9add9a5586bf3badb0062c7c6ef90a36",
+    "M-c213464ff5db45bcb0625547ae7f20a1": "4eebb8e415bd7665f9637e14a570343265d0470734a8ed1a53f8d884bb19398a"
+  },
+  "coverage": {
+    "M-94fb0280f8af4175b3ec6801a8843744": {
+      "state": "isolated-after-review",
+      "object_pin": "8de84cff3acd09a1320f867b301a2d4a9add9a5586bf3badb0062c7c6ef90a36",
+      "comparison_scope": "完整读取 8 份声明材料：共同模型、计算正文、原始源码、early_reply_exact/early_reply_floors_exact 两个 1905 列 JSON、独立新增行审计、432691B replay 及 47 项 runtime dependency manifest；read-add 后完整读取 M-c213 的同族 5287 点记录并逐列对照。",
+      "reason": "核心 5251 点在 324 条新增价格行上全严格正，但在额外 36 条实际安全 floor 中有五条精确负值；这是固定必要行点的有限分离，不能替代真实共同目录、完整纯 SPE、全历史 IC 或六人 half。self-context checks 边记录有限审计边界，pointwise-contrast 边记录与 5287 点的身份分离；两条均为 context，不升级为逻辑蕴含或反例。",
+      "edge_ids": [
+        "ca-94fb-finite-audit-boundary",
+        "ca-94fb-5251-vs-5287-pointwise-contrast"
+      ]
+    }
+  },
+  "assets": [
+    {
+      "path": "map/edges/customer-attraction-3a-3a-9d2ca3ae1e1edf24/finite-audit-boundary.json",
+      "sha256": "dfdc0c1846da8aa1d90a221833dc48389225d3fdb10a11b32f4a47108e71bda8"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-9d2ca3ae1e1edf24/pointwise-contrast-5287.json",
+      "sha256": "8c30b0b778b27a7bfedb0cb49a0fa8dd5069093fa8573ba05270140012c34925"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-9d2ca3ae1e1edf24/readledger.json",
+      "sha256": "d2226ed9f6223c9c8dedab16186f73cc521ea5a6317eb73ff3f0364ab0e71dc7"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-9d2ca3ae1e1edf24/review.md",
+      "sha256": "87bba9c430957a9673d23ef20eb0048411730c64cec6ee74cfd8560059e934c9"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-9d2ca3ae1e1edf24/support.md",
+      "sha256": "e51f0433bc6c61e5620b12cba027eafcb278e42f16324215e565d06806c5533a"
+    }
+  ],
+  "closed_overlaps": [],
+  "follow_up_tasks": [],
+  "comparison_note": "Read-add 后对5287点的 pointwise context 对照已记录于边资产；定义未发布3B successor，因此不登记 closed overlap 或 follow-up ID，保留两点质量/W差异及动态 SPE/half 缺口。",
+  "verification": {
+    "declared_sha256_all_match": true,
+    "native_binding": {
+      "ca-94fb-finite-audit-boundary": {
+        "edge_bind": "passed",
+        "edge_check": "edge-structure-valid-not-a-mathematical-verdict",
+        "edge_sha256": "dfdc0c1846da8aa1d90a221833dc48389225d3fdb10a11b32f4a47108e71bda8"
+      },
+      "ca-94fb-5251-vs-5287-pointwise-contrast": {
+        "edge_bind": "passed",
+        "edge_check": "edge-structure-valid-not-a-mathematical-verdict",
+        "edge_sha256": "8c30b0b778b27a7bfedb0cb49a0fa8dd5069093fa8573ba05270140012c34925"
+      }
+    },
+    "matrix": {
+      "columns": 1905,
+      "k": 1,
+      "hist": 16,
+      "joint_reply": 582,
+      "overlap": 1306,
+      "joint_bounds": 194,
+      "overlap_bounds": 2612
+    },
+    "new_rows": {
+      "prices": 324,
+      "floors": 36,
+      "coefficients_compared": 685800,
+      "hidden_projection_keys": 536,
+      "literal_binary_states": 1772
+    },
+    "finite_values": {
+      "core_5251_floor_negative": 5,
+      "core_5251_floor_zero": 5,
+      "peer_5287_floor_negative": 0,
+      "peer_5287_floor_zero": 7,
+      "changed_columns": 207
+    }
+  },
+  "execution_boundary": {
+    "new_scientific_programs": 0,
+    "new_lp_runs": 0,
+    "new_optimizer_runs": 0,
+    "new_spe_tree_searches": 0,
+    "historical_program_replays": 0,
+    "note": "仅解析并核对已保存源码/JSON/replay；edge-bind 和 edge-check 是结构交付验证，不是数学求解。"
+  },
+  "reviewed_by": "SOLVER-94FB-FRESH",
+  "review_note": "完整实读、read-add 比较、数学量词/证据/overlap 分层完成。有限结果不升级 SPE/half；context/checks 边去掉 whole_result 和 contribution。",
+  "worker": "SOLVER-94FB-FRESH"
+}

@@ -1,0 +1,76 @@
+{
+  "edge_id": "ca-94fb-finite-audit-boundary",
+  "kind": "checks",
+  "status": "accepted",
+  "source_ids": [
+    "M-94fb0280f8af4175b3ec6801a8843744"
+  ],
+  "target_ids": [
+    "M-94fb0280f8af4175b3ec6801a8843744"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "共同有限标签目录、六位单位顺序玩家、全部有序历史纯SPE语义；点值和新增行仅限固定 1905 列有理质量坐标。O=1 归一化只用于该有限行系统；不把必要行可行性当作目录实现。",
+  "roles": {
+    "M-94fb0280f8af4175b3ec6801a8843744": "承载 5251 行固定点、324 条实际第四/第五位 R/Z 价格投影、36 条实际 prefix floor 的 Fraction 结果及五条精确负 floor。"
+  },
+  "context": {
+    "model_quantifiers": "标签目录可含空覆盖、重复行动和同覆盖异标签；完整纯策略在每个合法有序历史满足沿真实后继的单步 IC。",
+    "finite_point": "early_reply_exact.json 的 O=1、W=57770848877002761745569033003977/120785977474956965853696208259979、171 个正质量；5251 行全部非负、最小余量 0。",
+    "added_price_check": "324 条新价格行全部严格正，最小余量 3068136569007345979888391178557/402619924916523219512320694199930；源码 AST 与字面隐藏状态逐系数比较 617220 项完全一致。",
+    "floor_boundary": "36 条 floor 恰 5 条负、5 条零；负键为 (1,0,1,0)、(1,1,1,1)、(2,0,0,0)、(2,0,1,0)、(2,1,1,1)，最负值为 -37918341723853123058170585072309/1073653133110728585366188517866480。",
+    "audit_limits": "审计另核 194 个 joint 上界、2612 个 overlap 上界和全部 1905 列描述符；未运行完整目录、LP、优化器或 SPE 树。"
+  },
+  "explanation": "该 self-context checks 边把核心对象的精确有限必要行、价格投影和 floor 失败键放回共同模型语义，并分开记录 324 行通过与 36 行五负。负 floor 仅排除保留此固定 5251 点坐标的完整行完成；它没有真实目录、全历史 IC 或真实偏离后的终局，因此不构成完整 SPE 反例，也不推出六人 half 失败。324 行在此点严格正也不证明其对所有模型或所有点全局冗余。",
+  "scope": "context-only；不声称有限点证明全参数定理、完整 SPE、最优性或 half/refutation。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/计算/显式新回复的实际四五位补价与精确点--计算.md",
+      "sha256": "0d1817e1c6481c592b24b09ae7d8cd5b0914f75267592a76d43e59e6bc0f9853"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/early-reply-price-points-boss3/original/early_reply_prices.py",
+      "sha256": "2e5d169cff6f4ec26a18e2b06894de79ba7892737523e36d2ad0439e6b862be1"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/early-reply-price-points-boss3/original/early_reply_exact.json",
+      "sha256": "4c5903b72783e55b1afe0f43606cff191c69b844bd64428ce0293dc4d4f3ece5"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/early-reply-price-points-boss3/original/early_reply_floors_exact.json",
+      "sha256": "78e3a89cf01a62ea2a4d2768043e09027e0b3dd920984d3f9591b0c0a1e0fe2e"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/early-reply-price-points-boss3/audit_added_price_rows.py",
+      "sha256": "3035a76b447036402555d02f998d8451e99c19eff3623e48ce5793b299fde967"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/early-reply-price-points-boss3/replay/added-row-and-point-audit.json",
+      "sha256": "fb008c5e7fe4421f4ce601e1d9990d519ee4523b969b16c0984000cfadcade3e"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/early-reply-price-points-boss3/runtime-dependency-manifest.json",
+      "sha256": "e24f7a16ce37bf607fb26a575dbbb78daa18b72cb902f3875d181a26aedbf6a3"
+    }
+  ],
+  "reviewed_by": "SOLVER-94FB-FRESH",
+  "review_note": "Complete-read review of all eight declared refs and complete read-add comparison. Finite checks retained as context; no whole/contribution claim and no SPE/half upgrade.",
+  "endpoint_pins": {
+    "M-94fb0280f8af4175b3ec6801a8843744": "8de84cff3acd09a1320f867b301a2d4a9add9a5586bf3badb0062c7c6ef90a36"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/计算/显式新回复的实际四五位补价与精确点--计算.md": "0d1817e1c6481c592b24b09ae7d8cd5b0914f75267592a76d43e59e6bc0f9853",
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+    "archives/customer-attraction/tools/evidence/early-reply-price-points-boss3/original/early_reply_prices.py": "2e5d169cff6f4ec26a18e2b06894de79ba7892737523e36d2ad0439e6b862be1",
+    "archives/customer-attraction/tools/evidence/early-reply-price-points-boss3/original/early_reply_exact.json": "4c5903b72783e55b1afe0f43606cff191c69b844bd64428ce0293dc4d4f3ece5",
+    "archives/customer-attraction/tools/evidence/early-reply-price-points-boss3/original/early_reply_floors_exact.json": "78e3a89cf01a62ea2a4d2768043e09027e0b3dd920984d3f9591b0c0a1e0fe2e",
+    "archives/customer-attraction/tools/evidence/early-reply-price-points-boss3/audit_added_price_rows.py": "3035a76b447036402555d02f998d8451e99c19eff3623e48ce5793b299fde967",
+    "archives/customer-attraction/tools/evidence/early-reply-price-points-boss3/replay/added-row-and-point-audit.json": "fb008c5e7fe4421f4ce601e1d9990d519ee4523b969b16c0984000cfadcade3e",
+    "archives/customer-attraction/tools/evidence/early-reply-price-points-boss3/runtime-dependency-manifest.json": "e24f7a16ce37bf607fb26a575dbbb78daa18b72cb902f3875d181a26aedbf6a3"
+  },
+  "review_digest": "9afec243f3b76525ed3ed046c150ed6f9df7810849d23c91c9aa720ced86c8ae"
+}

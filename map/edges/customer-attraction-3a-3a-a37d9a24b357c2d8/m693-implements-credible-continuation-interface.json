@@ -1,0 +1,61 @@
+{
+  "edge_id": "cag-m693-finite-witness-implements-credible-continuation-interface",
+  "kind": "implements",
+  "status": "accepted",
+  "source_ids": [
+    "M-69317c7da9a34834b0e93efeaa77f0ef"
+  ],
+  "target_ids": [
+    "CA-CREDIBLE-CONTINUATIONS"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "固定五人八标签、16个正客户类型的整数输入；LCM(1,…,5)=60 的精确收益；目标终局计数 (2,2,0,0,0,1,0,0)；保留全部 4681 个长度 0…4 的有序历史。",
+  "roles": {
+    "M-69317c7da9a34834b0e93efeaa77f0ef": "给定该输入上的完整有序纯策略、实际终局和全部真实离轨 Fraction IC 证书。",
+    "CA-CREDIBLE-CONTINUATIONS": "给定可实现终局的 max-min 门槛、实际孩子保留及离轨兼容菜单递归接口。"
+  },
+  "explanation": "本对象的冻结策略由同一 cascade Engine 的精确计数递推和有序 cone 展开得到：在每个计数状态保留达到 max-min 门槛的可实现终局，随后对每个原历史分别指定实际动作并递归展开每个离轨孩子。保存的 4681 节点动作表再由 Fraction 全树比较检查；本实例的 37448 项比较无负余量，故它是可信终局菜单接口在固定 m=5,p=8 输入上的一个完整实例。此边是实现/语境对应：有限见证不反向证明算法全称量词，也不将程序的浮点搜索或 best_ratio_lower_bound 变成全局最优结论。",
+  "scope": "仅支付该固定输入的完整策略实例与可信续局接口的实现对应；不支付所有兼容策略支持、任意输入的算法实现、min_SPE_W、全局 worst-case 或一般 half。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/计算/级联发现的四份历史与三种完整单位客户见证--计算.md",
+      "sha256": "91a0609e0777740d3d9a2cc52c48738b73eab8f259f587010e414179a78208ed"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/cascade-original-nine-boss3/original/32a1144af6be4485825a/cascade_m5p8_private_best.json",
+      "sha256": "aa29afb287c88842d94343a6be4ed3d092768079c128d0cfed4dd3dd24d95875"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/cascade-original-nine-boss3/audit_saved_certificates.py",
+      "sha256": "fcabfa55861ef055656e4efcd582c40812523e8d97e51359edb8800cea0866c9"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/cascade-original-nine-boss3/exact-review/all-node-comparisons.json",
+      "sha256": "a2024dfaba83de8020c623e767e8a49d7af0c8da8f5ee5b3e4945def785578cd"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/锚点缺口级联的完整策略锥与三个版本输出合同--程序.md",
+      "sha256": "dedfc97f50455fb825dd0d768e3af8b9138eef619af5e791fabb6bbb44dbbfa5"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/cascade-original-nine-boss3/original/f08bcbcb7a5f6f2bd41b/cascade_attack.py",
+      "sha256": "8da523673bf451f63bbdedc79a0efa906492481e4d18e61274a6873df7ddd8c8"
+    }
+  ],
+  "reviewed_by": "SOLVER-693-FRESH",
+  "review_note": "完整实读六份任务材料；重解析八主题保存 JSON 与 all-node 全数组，核对完整有序域、终局、W/OPT、私有极大性和 Fraction IC 统计。复用成熟审计事件，不将本轮结构解析冒作新发现器/LP/MIP/BI运行；明确该边为 context implements，未把有限见证提升为 universal 或 half 结论。",
+  "endpoint_pins": {
+    "CA-CREDIBLE-CONTINUATIONS": "2dbb128ee54e25aca2f4a2cb528c14e32cadaf7c7e70c3a6b25126a68c3d5ffe",
+    "M-69317c7da9a34834b0e93efeaa77f0ef": "ace38ac5a46649f9a3fbfd8510f73f5891edd834d828c02a6ad2f5057362d37b"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/计算/级联发现的四份历史与三种完整单位客户见证--计算.md": "91a0609e0777740d3d9a2cc52c48738b73eab8f259f587010e414179a78208ed",
+    "archives/customer-attraction/tools/evidence/cascade-original-nine-boss3/original/32a1144af6be4485825a/cascade_m5p8_private_best.json": "aa29afb287c88842d94343a6be4ed3d092768079c128d0cfed4dd3dd24d95875",
+    "archives/customer-attraction/tools/evidence/cascade-original-nine-boss3/audit_saved_certificates.py": "fcabfa55861ef055656e4efcd582c40812523e8d97e51359edb8800cea0866c9",
+    "archives/customer-attraction/tools/evidence/cascade-original-nine-boss3/exact-review/all-node-comparisons.json": "a2024dfaba83de8020c623e767e8a49d7af0c8da8f5ee5b3e4945def785578cd",
+    "archives/customer-attraction/state/程序/锚点缺口级联的完整策略锥与三个版本输出合同--程序.md": "dedfc97f50455fb825dd0d768e3af8b9138eef619af5e791fabb6bbb44dbbfa5",
+    "archives/customer-attraction/tools/evidence/cascade-original-nine-boss3/original/f08bcbcb7a5f6f2bd41b/cascade_attack.py": "8da523673bf451f63bbdedc79a0efa906492481e4d18e61274a6873df7ddd8c8"
+  },
+  "review_digest": "4b0d23926e488f7488a28e72aed74484aa39c0deb33cdfb25198b23eb27c2815"
+}
