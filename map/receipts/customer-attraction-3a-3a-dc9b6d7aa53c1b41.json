@@ -1,0 +1,82 @@
+{
+  "task_id": "customer-attraction-3a-3a-dc9b6d7aa53c1b41",
+  "stage": "3A",
+  "owner": "Boss7",
+  "worker": "fresh-worker-dc9",
+  "object_ids": [
+    "M-f626968bcafe414a9ed4bc475e4518f6"
+  ],
+  "read_object_ids": [],
+  "input_pins": {
+    "M-f626968bcafe414a9ed4bc475e4518f6": "6e464599fab7f095804ec5f469b27ced8c15cc81da262d73f78dd8fb3f9edb8f"
+  },
+  "status": "complete-assigned-reading-and-scope-review",
+  "edge_ids": [],
+  "coverage": {
+    "M-f626968bcafe414a9ed4bc475e4518f6": {
+      "state": "isolated-after-review",
+      "object_pin": "6e464599fab7f095804ec5f469b27ced8c15cc81da262d73f78dd8fb3f9edb8f",
+      "comparison_scope": "完整读取22个staged passes/13个distinct refs：共同背景安全锥审查、共同目录模型、exact-check-report、reconstructed-policy-dags、四人/五人common-Q报告、n=4 cone报告、完整策略与搜索/锥程序。精确区分四人A/B/C有理Q、五人D未认证候选及n=4 all-six-label equality终点。coverage仅core。",
+      "reason": "四人A/B/C固定重构策略锥有Q=(3/4,1/4)及全部378条非负残差，故各自W>=4v4；五人D固定完整策略的458客户、W=427、OPT=458和868 Gamma rows均已重构，但保存十进制Q精确归一为999999999999999471/10^18且378残差中123条为负，10^4/10^6/10^8分母尝试亦失败。该失败只否定保存候选/尝试分母，不证明五人共同Q不存在。20个n=4 exploratory点只是mask63单一客户的W=OPT=1、v4=1/4等号。未推出所有策略/目录、六人half或OPT反例。",
+      "context_edge_ids": [
+        "cag-dc9-common-background-cone-scope-check"
+      ],
+      "unlinked_relations": [
+        "五人精确Q可行性或Farkas不可行证书仍开放。",
+        "四人固定锥证书不迁移为五人D或六人全称共同Q。",
+        "固定锥aggregate支付不等于逐人支付，也不闭合六人2W>=OPT_6。"
+      ]
+    }
+  },
+  "assets": [
+    {
+      "path": "map/edges/customer-attraction-3a-3a-dc9b6d7aa53c1b41/common-background-cone-scope-check.json",
+      "sha256": "2ba428541d66c93668221cf391a28ad9dd4dbf0151f5e16ffa7260ce533e79a9"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-dc9b6d7aa53c1b41/mathematical-review.md",
+      "sha256": "c3903df975e31faa13ba1d8ac0fa3c21a85d1747390e62f7035a606345f4068e"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-dc9b6d7aa53c1b41/readledger.json",
+      "sha256": "9a22eafb6c61ef2624700aa1aeefd4abd48a4c949e8f07e7bd8544f44fd9a4c0"
+    }
+  ],
+  "closed_overlaps": [],
+  "follow_up_tasks": [],
+  "deferred_candidates_not_promoted": [
+    "CAG-MODEL",
+    "M-7656d999834541f2a815087f764149e3",
+    "customer-attraction/common-background-security-cone-reports-and-version-boundaries"
+  ],
+  "source_freshness": {
+    "core_input_pin_checked": true,
+    "all_declared_reading_ref_sha256_checked": true,
+    "all_declared_sources_fully_read": true,
+    "edge_binding_pending_until_native_bind": false,
+    "edge_binding_current": true
+  },
+  "read_scope": {
+    "declared_files": 13,
+    "declared_reading_passes": 22,
+    "declared_bytes": 8608458,
+    "declared_chars": 8595154,
+    "full_read": true,
+    "read_add": [],
+    "deferred_candidates_not_read": [
+      "CAG-MODEL",
+      "M-7656d999834541f2a815087f764149e3",
+      "customer-attraction/common-background-security-cone-reports-and-version-boundaries"
+    ]
+  },
+  "verification_scope": "完整语义审读、全声明JSON/代码/报告解析、SHA与ranges核对；未重跑旧LP/搜索器，未将浮点近零负数当作数学反例，未执行claim/done/checkpoint/assemble/commit。",
+  "execution_boundary": {
+    "registry_modified": false,
+    "coverage_modified": false,
+    "integration_modified": false,
+    "task_state_modified": false,
+    "git_commit_or_push": false
+  },
+  "reviewed_by": "Boss7 / fresh-worker-dc9",
+  "review_note": "完整支付22个declared staged passes并写入任务专属edge/ledger/review；只保留self-context scope check，未创建跨对象logical edge。"
+}
