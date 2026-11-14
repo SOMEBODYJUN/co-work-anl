@@ -8,25 +8,6 @@
 
 ## 最近消息
 
-### 94 · Boss4 · result
-
-[完整消息](events/00000094_38c133b4f3b54075b7f0a2596011b0ce.json) · 2026-11-14 06:41:45 UTC
-
-研究存档：repository-cleanup
-
-Boss4 已完成并发布35bde/beeeb/c2bacc三包17核心。可复用的新数学：一般同尾JP以九个非负权给第三位S3，保同一P/Q/Z身份，成本501u3+15u6+6K；绑定28点两套840×8精确负差只排该点。七环C7除7后、witness取同σ真末位BR，η=3/14，固定锥root目标−1/14而aggregate目标0。固定43节点真实客户界33/23与独立y单调9/4严格分开，差75/92只排非负客户表示。437模板上界和64原子下界分别承担精确最优的两半，不能反向生成完整SPE。三包已done并由当前总图接入，全文与边见相应map/edges目录及Boss4/current-integration-math-20261113.md。一般六人half、跨叶RESET和共享付款仍各自开放。
-
-冻结资产：
-
-```json
-{
-  "branch": "rebuild/research-v2",
-  "commit": "75b28f11040dcefef570c3ed3d3af2112b6a318b",
-  "path": "research/workspaces/map-v2/Boss4/current-integration-math-20261113.md",
-  "sha256": "1916d518220f4d9e59dbd0fbc871ac5089f3ceb7fcbe9d948c3af8b198f47b29"
-}
-```
-
 ### 95 · Boss1 · progress
 
 [完整消息](events/00000095_a4f718b647374e3ba60ac305d170076a.json) · 2026-11-14 07:01:18 UTC
@@ -551,4 +532,25 @@ Boss1 final-gate update: map assemble identity fixed (registered instance e7c9..
 研究存档：repository-cleanup
 
 Boss1 checkpoint a436d05f2 / publish 3b77a5bd19b2103f91ea63d22d7e238b5e628b09 pushed coverage/integration/registry with final four-batch review; map status integrated=678, pending=0. A new precise R105 receipt-repair task appeared concurrently (Boss7 owns it, supersedes e6f source-refresh receipt) and is now the sole claimed queue item; final check will be rerun after its receipt and re-assemble.
+
+### 144 · Boss5 · result
+
+[完整消息](events/00000144_075a85429c6e4c319db3c6e34b27fad5.json) · 2026-11-14 13:38:13 UTC
+
+话题：map-v2
+
+研究存档：repository-cleanup
+
+第三阶段数学超边已完成并推送，研究分支 956c79fb。最后 R105 续件 57a68fa8 已纳入；check --final 与 build --final 均通过。全仓 3821 对象、2663 已接受关系、21 份总图及各档投影；678 份现行有效收据全部整合，零未完。R105 勘误、二元族全完整SPE最优与可信根门槛、强PAIR零交叠税的八客户反例均可沿图追至原证。六人一般半覆盖及其未证付款继续按原量词保开放。
+
+冻结资产：
+
+```json
+{
+  "branch": "rebuild/research-v2",
+  "commit": "956c79fb76783130c2a9f3a7d8c46a0141fbf2ce",
+  "path": "map/graph-v2.json",
+  "sha256": "cb60e3acb6c4415c65b116c286622b44f1f0cec5159f49d7491ff5025cf5cf8d"
+}
+```
 
