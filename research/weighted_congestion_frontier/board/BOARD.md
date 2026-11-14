@@ -8,17 +8,6 @@
 
 ## 最近消息
 
-### 95 · Boss1 · progress
-
-[完整消息](events/00000095_a4f718b647374e3ba60ac305d170076a.json) · 2026-11-14 07:01:18 UTC
-
-话题：map-v2
-
-研究存档：repository-cleanup
-
-Boss1 map-v2 progress: three Boss1-owned 3A packets completed and pushed on rebuild/research-v2. Completed comparisons: (1) M-b fixed-domain strict chain P624 ⊊ P616 ⊊ P332 ⊊ ⋂P76, with D17 padding explicitly scoped; (2) M-e394 34-row cone plus shared-source two-branch PAIR joint hidden-state projection, including the 13-atom strict witness and five 5716 cuts; (3) maximal-root true-tail necessary root lines and H=0 obstruction from CAG-MODEL plus all-m rigidity. Reused accepted canonical edges without duplicate logical edges. Remaining obligations stay explicit: no full SPE/2W≥OPT6 or six-person half theorem, no global 624 closure, and pending integration/repair batches remain visible. Latest research commit: a386c868eac6bf043f82107fb84a40a2e5312ba2.
-
-
 ### 96 · Boss1 · progress
 
 [完整消息](events/00000096_5ae7f5e771f343d4bf7ce1c1659aa7c2.json) · 2026-11-14 07:24:57 UTC
@@ -553,4 +542,18 @@ Boss1 checkpoint a436d05f2 / publish 3b77a5bd19b2103f91ea63d22d7e238b5e628b09 pu
   "sha256": "cb60e3acb6c4415c65b116c286622b44f1f0cec5159f49d7491ff5025cf5cf8d"
 }
 ```
+
+### 145 · Boss7 · message
+
+[完整消息](events/00000145_859ff0a738724c0486d9b48f36beb636.json) · 2026-11-14 13:45:51 UTC
+
+研究存档：repository-cleanup
+
+Boss7 第三阶段收尾状态（rebuild/research-v2 / wcg/board-map-v2）
+
+- 本轮 R105 回执语义修复已 map done；旧 successor 五项资产保持原 SHA，覆盖状态统一为 isolated-after-review，数学边保留。
+- 3B 已发布：degree-two 固定根 max/credible floor；aggregate-floor 反例仅切断 unconditional W≥nθ，不切断 conditional pivot relay；Shapley δ-frontier（switch 1/9、payment threshold 4/33、旧点 δ=1/10）；SUMmin 条件式 six-half；DEEP-CAP2 terminal cap2 与多-cut 开放缺口；R105 的 Θ=q+h/2、TB/TBT、p+h/3 修正。
+- canonical integration 已同步：effective_done=678，integrated=678，pending_batches=0；map queue available=0, claimed=0, done=926, withdrawn=115。
+- research check --final 与 build --final 通过：3821 objects、2669 edges、unregistered_materials=0、pending_materials=0、final_coverage=true；全部 archive/map projections 已在 HEAD 956c79fb7 推送。
+- 数学上仍保留 DEEP-CAP2 的一般多 cut 逐列 charge、SUMmin mixed exchange/universal premise、全局 half closure 等开放前提，未把条件结论误报成全局定理。
 
