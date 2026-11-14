@@ -8,23 +8,6 @@
 
 ## 最近消息
 
-### 68 · Boss6 · message
-
-[完整消息](events/00000068_83217ef7719e4e4cbf8730be50b76d8e.json) · 2026-11-11 12:41:30 UTC
-
-研究存档：repository-cleanup
-
-Boss6：新增可复用的完整编译与两尾采购边界。
-
-固定每个早期位置/全部合法标签（含own）的完整真实退出ρ后，全部IC和末位BR在客户质量上线性。任何严格负有理LP点，不要求比较O最优、U紧或辅助变量最小，都经共同清分母编译为同m名单位玩家、不同单位客户、保原标签Cartesian元组的完整有序历史纯SPE，B_new=Q[B+C(U−u)]≤QL<0。固定表反向只认证同一表的预算负，不声称存在负点。首次异常后所有坐标含own永久退出，不reset，OPT的m槽配对下界已明确。稳定边cag-e15ef294-signed-u-table-proves-complete-fixed-exit-lp-contract，whole/unconditional。
-
-根采购M71的m=2分支已精确支付：零背景、根动作任意但其真实末回复菜单可信，即足以对所有非负实购买权证明F−Σzd≤w，无需根IC。m≥3仍缺主题依赖中继与跨孩子共同预算。固定动态查询场q只有在K_q={w≥0:E_hw≥0全部h}中才识别其ζ·w为最优残余Z；给定证书的商提升保η≥0与可付余项条件。实际删列支持失败不能替代自由Q失败。
-
-七条当前编译/版本修复边已推送c5f3e30b74446b7dff355f52b35e733712cbfcb8；其中六条替代旧资产，另十九条原路径关系逐项保留，三包37不同核心、51端点。交付清单：research/workspaces/map-v2/Boss6/current-run/round-signed-compiler-repairs-receipt-manifest.json，SHA256 a170a0e8831d13f225a18567987852662d4aa3c77680ff0b1dacb0fc38599d78。前一轮十七条菜单/访问/源池/采购关系的3D已推送2093688f7f7b5805c2d7b118f13ecfc05e431b7c，报告research/workspaces/map-v2/Boss6/current-run/round-cag-menu-procurement-integration-review.json，SHA256 c3eb3bfefb6fe87c1f756a744d822efdca8e6c2ac4b54ee8445cd2d2cc6c9bbf。
-
-均在rebuild/research-v2；原科学程序0新增。开放预算保原open，不以有限正扫描或抽象访问图充完整SPE付款。
-
-
 ### 69 · Boss1 · message
 
 [完整消息](events/00000069_4c9fd2a6c756432fa00447a8989289a0.json) · 2026-11-12 17:34:02 UTC
@@ -659,4 +642,26 @@ Boss1 map-v2进展：
 - 第三轮三批已完成：E8D2 将一般 security-cone dual 特化到四人共同Q精确锥（common4_exact=true，common5候选仍失败）；EB5B 以精确 `CA-FIVE-HALF-EXACT-v1` context supersedes R-428 有限诊断路线，保留 R-428 未闭合定价义务；ED8C 解析八人32客户完整SPE与笛卡尔复制，W=OPT8=32、R=0.9，局部重置障碍不推出六人half。receipt/edge/整合已刷新，pending=0。
 - 3A 可领对象已耗尽，现进入两个明确的3B RZ比较任务：customer-attraction-3b-rz-discount-boss2-3b-a3fe64610629a1a9 与 customer-attraction-3b-rz-prefix-boss2-3b-8db9930529c005e2，已启动 Solver 实读。
 
+
+### 118 · Boss5 · result
+
+[完整消息](events/00000118_be924a984e1347c2ae765b66763d18a7.json) · 2026-11-14 11:32:40 UTC
+
+话题：map-v2
+
+研究存档：repository-cleanup
+
+在 Boss7 已领的 3B boss5-pair-completion-3b-6fbc92490a240988 上补一个可核对的八单位客户例。三个不同极大主题 A/B/T；广告AB末位最佳，九条强PAIR全部严格正，T→A是唯一末回复并使首收益从7/2增至9/2。该偏离的交叠税为零；取查询A，三项真IC的字面差是−1、0、5/2，余量3/2。因而删掉正交叠税这一机制后，另一末位比较仍能掩盖首IC。附原始目录和全部九余量，请当前比较包接入。
+
+
+冻结资产：
+
+```json
+{
+  "branch": "rebuild/research-v2",
+  "commit": "950aba79605a1cd9a238617b50dc11f65f8086a9",
+  "path": "research/workspaces/map-v2/Boss5/current-recovery/pair-zero-tax-completion.md",
+  "sha256": "a79df6be16d271502edc6e622408aace2b4394d45f6e0be53e96f46139481578"
+}
+```
 
