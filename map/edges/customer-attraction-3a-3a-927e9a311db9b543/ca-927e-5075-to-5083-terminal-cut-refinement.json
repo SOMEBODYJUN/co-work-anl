@@ -1,0 +1,61 @@
+{
+  "edge_id": "ca-927e-5075-to-5083-terminal-cut-refinement",
+  "kind": "checks",
+  "status": "accepted",
+  "source_ids": [
+    "M-557f282fbcf0416489c028a25dd674e9"
+  ],
+  "target_ids": [
+    "M-783ed73d773d44afacaa4a51e7432964"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "仅在同一六人共同目录必要图的1905列顺序、同一16-hist描述符、同一K/hist质量和同一O=1归一化上比较两个冻结有理向量；源向量是5043+32=5075行点，目标向量是再加8条末回复组合行后的5083行点。R/Z隐藏质量和overlap辅助列必须按各自原文件读取，不能按W或列描述符替换。",
+  "roles": {
+    "M-557f282fbcf0416489c028a25dd674e9": "提供5075行连续旧查询精化点：1905列、179正坐标、O=1、W<1/2，并由独立5083审计给出把八条末回复切面代入该旧向量时的八个严格负有理余量。",
+    "M-783ed73d773d44afacaa4a51e7432964": "提供同一固定列域的5083行末回复组合精化点：八条新增Z/actual-A6切面三零五正，旧5075点与新点共享K/hist/W但隐藏权111坐标不同。"
+  },
+  "explanation": "逐项比较确认，5075点满足其保存的5043基行和32条连续切面，但在同一1905列上代入八条末回复组合必要行时八个slack全部严格为负。5083点通过这八条新增行，其中3条余量为0、5条为正；它不是旧向量的坐标修补，而是改变了111个joint-reply/overlap权的另一有理点。故该边准确记录末回复切面确实细化旧有限必要系统并解释两点同W不代表同一隐藏状态。",
+  "scope": "accepted checks/context：有限固定支持点之间的新增必要行和输入身份比较。只支付点态精化、旧点不满足八行及新点通过八行的证据接口；不支付任一向量的完整历史SPE实现、连续价格闭包、LP精确最优性、共同客户阈值物化、六人half反例或一般福利结论。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/计算/连续旧查询精化图的有理可行点--计算.md",
+      "sha256": "ab5c66b711de00d04f2d4697aa3b709443ccff48cdf2b7e83f54cb691e18555d"
+    },
+    {
+      "path": "archives/customer-attraction/state/计算/八条末回复查询切面的有理精化点--计算.md",
+      "sha256": "e9ea96bbd731a602fadf127a7650b92266156d534c0d59a49f0b9a38c0bb3d99"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/共享末回复组合查询的发现与有限精化程序--程序.md",
+      "sha256": "eda318a663fc2d91d2ac48c1e242db50974fce980f4d33559afa5032599e3f48"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/continuous-query-refinement-program/related/continuous_refinement_exact.json",
+      "sha256": "abac45f78980d02f2bd056758a96653aa0bc0d8b87571820a5742397dc490246"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/terminal-portfolio-refinement-boss3/independent-audit.json",
+      "sha256": "28a601660ecc25e2b573d26a1697460641ba6bc0cafdf741c26ac672496668d4"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/continuous-refinement-necessary-point/point-audit.json",
+      "sha256": "71f833ca0453a22cc8a943be6473724eff4c5777df449f7f2270ae2daabede5d"
+    }
+  ],
+  "reviewed_by": "SOLVER-557-FRESH",
+  "review_note": "完整读取任务12份声明/证据；逐字段核对5075点结构、165个Frechet下界诊断和5083独立审计的八条旧点余量、八行系数等式及111坐标差异。关系刻意使用checks/context，未将固定有限点提升为SPE/half。",
+  "endpoint_pins": {
+    "M-557f282fbcf0416489c028a25dd674e9": "60ef80f889883d599c03773be4ba5ade868b3038c5dced51ae88894fc718df10",
+    "M-783ed73d773d44afacaa4a51e7432964": "02bb9a003fc41879ce898f372a1957d407d3c1391589644e7863940d550ec445"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/计算/连续旧查询精化图的有理可行点--计算.md": "ab5c66b711de00d04f2d4697aa3b709443ccff48cdf2b7e83f54cb691e18555d",
+    "archives/customer-attraction/state/计算/八条末回复查询切面的有理精化点--计算.md": "e9ea96bbd731a602fadf127a7650b92266156d534c0d59a49f0b9a38c0bb3d99",
+    "archives/customer-attraction/state/程序/共享末回复组合查询的发现与有限精化程序--程序.md": "eda318a663fc2d91d2ac48c1e242db50974fce980f4d33559afa5032599e3f48",
+    "archives/customer-attraction/tools/evidence/continuous-query-refinement-program/related/continuous_refinement_exact.json": "abac45f78980d02f2bd056758a96653aa0bc0d8b87571820a5742397dc490246",
+    "archives/customer-attraction/tools/evidence/terminal-portfolio-refinement-boss3/independent-audit.json": "28a601660ecc25e2b573d26a1697460641ba6bc0cafdf741c26ac672496668d4",
+    "archives/customer-attraction/tools/evidence/continuous-refinement-necessary-point/point-audit.json": "71f833ca0453a22cc8a943be6473724eff4c5777df449f7f2270ae2daabede5d"
+  },
+  "review_digest": "1628221f5e2a90ff06426fe472c8e20774e533407f1465a7c65c0b87bdcbd297"
+}

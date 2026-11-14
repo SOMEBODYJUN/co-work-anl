@@ -1,0 +1,54 @@
+{
+  "edge_id": "cag-87ea-zz-cross-finite-closure-checks",
+  "kind": "checks",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/zz-cross-rational-necessary-point"
+  ],
+  "target_ids": [
+    "customer-attraction/fixed-old-reply-marginal-z-threshold-closure-program"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "固定 cross priced optimum 输入及 --cross --priced --optimum 版本；16 个 hist、固定 K/R 边缘、24 个正阈值层、302 个 Z 质量变量；只比较程序声明的 4927 条旧仿射行与 60 条 ZZ 末回复聚合行。",
+  "roles": {
+    "customer-attraction/zz-cross-rational-necessary-point": "给出固定输入上的精确 4987 行有理可行点，全部 slack 非负，并以 227 个条件 cube 原子实现所列会员边缘。",
+    "customer-attraction/fixed-old-reply-marginal-z-threshold-closure-program": "规定固定 R 边缘的共同阈值层、Z 仿射回填、66 条有序边对的 60 槽聚合和有限会员原子化语义。"
+  },
+  "explanation": "核心点的 24 层/302 变量与闭包程序的阈值合同一致；完整读取的 all-row-slacks.json 含索引 0--4986 的 4987 条有理余量，2446 条正、2541 条零、0 条负，其中新增 Z-Z 槽为 19 正/41 零。conditional-cube-atoms.json 的 24 个 slab 逐层质量和等于区间长度，227 个原子质量均严格为正且总质量为 1，因此该点确实是程序所描述的有限必要系统和会员边缘实现。该检查不把有限行可行性反向变成完整策略、全目录 SPE、LP 最优性或 half 结论。",
+  "scope": "仅限固定 cross 输入、4987 行/302 变量 ZZ 闭包和两份精确证据；不迁移到 default、split、强 PAIR、pair-master 或改换 hist/R 边缘的点，不认证完整 SPE 或 OPT_6。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/计算/ZZ交叉必要系统的有理候选点--计算.md",
+      "sha256": "a15de536f6005d502b3df2c94076280cba8779e4b39aacd20f4fbaa78dc55235",
+      "section": "ZZ行的含义、枚举和模式依赖"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/固定旧回复边缘的末回复阈值闭包程序--程序.md",
+      "sha256": "253180458106543d06fac924fb3956aae760becf847317b50ecde560291c089f",
+      "section": "输入坐标与阈值仿射代换"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/zz-cross-exact-point/rerun/all-row-slacks.json",
+      "sha256": "55e00708917c20220c7e2590704a63a4723d50f3ee1917eb273381e34fe0ef4e"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/zz-cross-exact-point/conditional-cube-atoms.json",
+      "sha256": "fb84fdce1d5301da2ae0cf4e888af6b47725531f336c2b0ccffa8bbe332d2ca4"
+    }
+  ],
+  "reviewed_by": "SOLVER-ZZ-CROSS-FRESH",
+  "review_note": "六份声明材料完整读取；本边只绑定有限闭包程序与精确保存证据，明确保留必要点/完整 SPE 边界。",
+  "follow_up": "与闭包程序对象的完整版本比较按任务声明留作 3B follow-up；本边不承诺跨版本或全图迁移。",
+  "endpoint_pins": {
+    "customer-attraction/fixed-old-reply-marginal-z-threshold-closure-program": "59044355a10ee6056257dcf1cf2add6051b7fb9ba7b6f695faea1c6afced3acf",
+    "customer-attraction/zz-cross-rational-necessary-point": "f131c6537b2019a3d0ea5b4c42a23506cd23343049367daf56cbfdc4ef7b87c8"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/计算/ZZ交叉必要系统的有理候选点--计算.md": "a15de536f6005d502b3df2c94076280cba8779e4b39aacd20f4fbaa78dc55235",
+    "archives/customer-attraction/state/程序/固定旧回复边缘的末回复阈值闭包程序--程序.md": "253180458106543d06fac924fb3956aae760becf847317b50ecde560291c089f",
+    "archives/customer-attraction/tools/evidence/zz-cross-exact-point/rerun/all-row-slacks.json": "55e00708917c20220c7e2590704a63a4723d50f3ee1917eb273381e34fe0ef4e",
+    "archives/customer-attraction/tools/evidence/zz-cross-exact-point/conditional-cube-atoms.json": "fb84fdce1d5301da2ae0cf4e888af6b47725531f336c2b0ccffa8bbe332d2ca4"
+  },
+  "review_digest": "b08084b8e5c306e1e5f22e536466d5351b82aec26fcf494f920f97dd0f7636fa"
+}

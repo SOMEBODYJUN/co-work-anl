@@ -6,9 +6,12 @@
     "object_ids": [
       "M-557f282fbcf0416489c028a25dd674e9"
     ],
-    "read_object_ids": [],
+    "read_object_ids": [
+      "M-783ed73d773d44afacaa4a51e7432964"
+    ],
     "input_pins": {
-      "M-557f282fbcf0416489c028a25dd674e9": "60ef80f889883d599c03773be4ba5ade868b3038c5dced51ae88894fc718df10"
+      "M-557f282fbcf0416489c028a25dd674e9": "60ef80f889883d599c03773be4ba5ade868b3038c5dced51ae88894fc718df10",
+      "M-783ed73d773d44afacaa4a51e7432964": "02bb9a003fc41879ce898f372a1957d407d3c1391589644e7863940d550ec445"
     },
     "write_paths": [
       "map/edges/customer-attraction-3a-3a-927e9a311db9b543",
@@ -356,11 +359,131 @@
       ]
     }
   },
-  "state": "claimed",
+  "state": "done",
   "owner": "Boss1",
-  "request_id": "3f1516377a674456a9dabd6d0f4ccec9",
+  "request_id": "bd1de802a21f4685b87f8f406dee50c7",
   "requests": {
     "c77ec76b08b948c4ac8c43dc65353af7": "plan",
-    "3f1516377a674456a9dabd6d0f4ccec9": "claim"
+    "3f1516377a674456a9dabd6d0f4ccec9": "claim",
+    "bd1de802a21f4685b87f8f406dee50c7": "done"
+  },
+  "receipt": {
+    "task_id": "customer-attraction-3a-3a-927e9a311db9b543",
+    "stage": "3A",
+    "owner": "Boss1",
+    "reader": "Solver",
+    "internal_word": "SOLVER-557-FRESH",
+    "request_id": "3f1516377a674456a9dabd6d0f4ccec9",
+    "status": "complete-frozen-staging; native edge-bind and edge-check passed; Root checkpoint/done pending",
+    "definition_path": "research/operations/map-v2/tasks/customer-attraction-3a-3a-927e9a311db9b543.json",
+    "definition_sha256": "13fc8b873fd14f53c96eebbf3078bc617d1ff33161308c7d6af6c69b11ce958d",
+    "input_pins": {
+      "M-557f282fbcf0416489c028a25dd674e9": "60ef80f889883d599c03773be4ba5ade868b3038c5dced51ae88894fc718df10",
+      "M-783ed73d773d44afacaa4a51e7432964": "02bb9a003fc41879ce898f372a1957d407d3c1391589644e7863940d550ec445"
+    },
+    "coverage": {
+      "M-557f282fbcf0416489c028a25dd674e9": {
+        "state": "isolated-after-review",
+        "object_pin": "60ef80f889883d599c03773be4ba5ade868b3038c5dced51ae88894fc718df10",
+        "comparison_scope": "完整读取12份声明/证据：5075固定支持点、共同模型、连续切面/末回复程序与报告、5075结构审计、5083独立审计和原verify事件。比较同1905列域上八条末回复切面在旧点的严格负余量与新5083点的三零五正。",
+        "reason": "唯一交付为accepted checks/context边，说明有限必要系统的点态精化和两份隐藏质量向量不混用。5075/5083均未被提升为完整SPE、LP最优或六人half结果。",
+        "edge_ids": [
+          "ca-927e-5075-to-5083-terminal-cut-refinement"
+        ]
+      }
+    },
+    "assets": [
+      {
+        "path": "map/edges/customer-attraction-3a-3a-927e9a311db9b543/ca-927e-5075-to-5083-terminal-cut-refinement.json",
+        "sha256": "b10116bc8edb9c97ea0c836d31418b88152451a040e0c2528246a8de88281afb"
+      },
+      {
+        "path": "map/edges/customer-attraction-3a-3a-927e9a311db9b543/support.md",
+        "sha256": "5f84ec22acb520d2f39bc348f4f4342498d5abe737bd3f1922aacf44e64bfe5c"
+      },
+      {
+        "path": "map/edges/customer-attraction-3a-3a-927e9a311db9b543/review.md",
+        "sha256": "57983be03d1257e60ff181710d262bdb0113ac2241c6b17e4428673ea693760e"
+      },
+      {
+        "path": "map/edges/customer-attraction-3a-3a-927e9a311db9b543/readledger.json",
+        "sha256": "e24b133f33c045e0be7d6b4c3b644889808ec1f06fac0828a1af2b23b6550c98"
+      }
+    ],
+    "edge_paths": {
+      "ca-927e-5075-to-5083-terminal-cut-refinement": "map/edges/customer-attraction-3a-3a-927e9a311db9b543/ca-927e-5075-to-5083-terminal-cut-refinement.json"
+    },
+    "binding_status": {
+      "ca-927e-5075-to-5083-terminal-cut-refinement": {
+        "edge_bind": "passed",
+        "edge_check": "edge-structure-valid-not-a-mathematical-verdict",
+        "proof_scope": "context",
+        "edge_sha256": "b10116bc8edb9c97ea0c836d31418b88152451a040e0c2528246a8de88281afb",
+        "review_digest": "1628221f5e2a90ff06426fe472c8e20774e533407f1465a7c65c0b87bdcbd297"
+      }
+    },
+    "comparison_dispositions": [
+      {
+        "core_id": "M-557f282fbcf0416489c028a25dd674e9",
+        "peer_id": "M-783ed73d773d44afacaa4a51e7432964",
+        "disposition": "resolved-as-finite-context-check; deeper-3B-follow-up-retained",
+        "reason": "当前边严格支付：旧5075向量代入八条末回复组合行全负，新5083向量三零五正且111隐藏权不同。它不回答完整SPE实现、容量/多查询后续或half；因此未关闭原计划的3B比较，也未另造未授权任务。"
+      }
+    ],
+    "closed_overlaps": [
+      {
+        "core_id": "M-557f282fbcf0416489c028a25dd674e9",
+        "peer_id": "M-783ed73d773d44afacaa4a51e7432964",
+        "reason": "3B refinement remains open beyond the finite 5075/5083 context check; no published successor task ID exists."
+      }
+    ],
+    "follow_up_tasks": [],
+    "read_scope": {
+      "declared_files": 12,
+      "full_read": true,
+      "read_add": [],
+      "deferred_candidates_not_read": [
+        "customer-attraction/combined-indexed-and-actual-B-necessary-point",
+        "customer-attraction/full156-pair-master-necessary-point",
+        "customer-attraction/reply-membership-threshold-common-convex-lift-and-diagonal-budget-splitting"
+      ]
+    },
+    "verification": {
+      "sha256_all_declared_refs": true,
+      "point_structure": "5075 fixed point parsed completely; 1905 records; O=1; W<1/2; 179 positive coordinates",
+      "independent_audit": "all 1905 records, 194 implicit 00 masses, 2612 overlap upper bounds, 54 local rows and eight terminal vectors read/checked",
+      "historical_replay": "none; only the existing execution.json event was read, not rerun",
+      "new_lp_or_spe_search": false,
+      "literal_overlap_boundary": "165 Frechet lower-bound violations in old point; auxiliary overlap coordinates not treated as literal intersections"
+    },
+    "reviewed_by": "SOLVER-557-FRESH",
+    "review_note": "Fresh Solver complete-read review preserves model, quantifiers, exact finite slacks, overlap diagnostic, and open obligations. The sole relation is a context check; no static point, finite necessary graph, or old numerical event is upgraded to complete SPE or six-player half.",
+    "execution_boundary": {
+      "registry_modified": false,
+      "coverage_modified": false,
+      "integration_modified": false,
+      "task_state_modified": false,
+      "git_commit_or_push": false,
+      "edge_bind_and_check": true
+    },
+    "read_object_ids": [
+      "M-783ed73d773d44afacaa4a51e7432964"
+    ],
+    "read_additions": [
+      [
+        "M-783ed73d773d44afacaa4a51e7432964",
+        "02bb9a003fc41879ce898f372a1957d407d3c1391589644e7863940d550ec445"
+      ]
+    ],
+    "root_validation": {
+      "reviewer": "Boss1",
+      "native_binding": "edge-bind --write and edge-check passed; all non-core endpoints declared as read dependencies",
+      "root_review_path": "map/edges/customer-attraction-3a-3a-927e9a311db9b543",
+      "asset_scope": "Current task output only"
+    },
+    "comparison_note": "Open 3B comparisons are recorded in closed_overlaps with explicit mathematical reasons; no successor task ID is claimed."
+  },
+  "edge_paths": {
+    "ca-927e-5075-to-5083-terminal-cut-refinement": "map/edges/customer-attraction-3a-3a-927e9a311db9b543/ca-927e-5075-to-5083-terminal-cut-refinement.json"
   }
 }
