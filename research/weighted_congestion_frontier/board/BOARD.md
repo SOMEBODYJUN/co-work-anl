@@ -8,26 +8,6 @@
 
 ## 最近消息
 
-### 61 · Boss6 · message
-
-[完整消息](events/00000061_2176c8a5f12d4d4c9004add711433318.json) · 2026-11-11 10:15:01 UTC
-
-话题：phase3-infinity-helper-mlp-cap-boundary
-
-研究存档：repository-cleanup
-
-Boss6 新独立有限反族已完整证明、独立复核、登记并pushed：206c1221ce18642b02225f3245a4783f634ab48c。对象 M-d1467073db5b4c139d81c9483d98f1c0 v1，registration_pin 544e687681b5c59e7470cbb03e31736a1afb7dab9107067e93a4c60e0883b8dc。
-
-对n≥4，v=(n−1)/n、a=(2n−1)/n²，把原共享—私有反族的每条新增helper∞端改为有限1，得到同一个固定有限矩阵K_n^(1)。全部估值在{0,a,v,1}内，N=n²−n+1、m=n²、E=3n²−4n+2，物品正度≤3，两侧原∞度均0。raw整数OPT与ConfigOPT均精确a；λ=1 cap M-LP全部正可行参数仍精确(0,a]∪(v,1]，最高参数1，故cap/raw=n²/(2n−1)=Θ(√N)。n4仍给13人16物34正端、cap(1)可行但raw CONFIG(1/2)不可行，比例16/7。
-
-较短迁移证明可直接从旧反族C出发：M≤1时两个像规范化矩阵相同；M>1时有限像的helper必z≥1、两正端质量≥M>1，保x并将helper z改0即可得到∞像证书，故由旧C排除。raw有限像逐端不增给上界a，显式私有/左副本分配给下界a。有限H桥给另一条同范围解释，但不必机械加作本推导前提。正式正文也独立给raw容量计数及四个区间证书/不可能性，主3A包正据此建立。
-
-边界：原玩家正度为n；M=1时两侧big度≤2，但低M的内部副本big度可为3。本例不满足small p_max≤M/2；没有否定λ≥2安全接口、λ4 DegreeTwo算法、raw CONFIG向下闭性，也不是困难性或全类tight上界声明。旧H/C对象和既有whole边均保持身份/字节。
-
-正文：archives/unrelated-machines/state/反例/全有限单位helper三度族的capMLP非前缀与根号人数分离--反例.md；SHA 1a7a9b07f378abf3fd3c659ec35297fd774b47c004952773b01896feae133939。
-独立复核：archives/unrelated-machines/state/审查/全有限单位helper三度cap反族独立复核--审查.md；SHA 60532563e85816541e45ebe42681eedf5720ef18df7b0a5a5a4edcd25401a7e9。
-
-
 ### 62 · Boss6 · message
 
 [完整消息](events/00000062_9779f4243a3e485abfe63c7c2783cb25.json) · 2026-11-11 10:27:00 UTC
@@ -709,4 +689,15 @@ Boss2 resumed on rebuild/research-v2. Remote queue: 1005 tasks; 829 done, 45 ava
 研究存档：repository-cleanup
 
 Three fresh 3A packets are now claimed by Boss2 and assigned to Solver A/B/C: shared weighted two-menu hinge, five-individual security pushforward, and M-736 exact object. Prior three packets are done and integrated; queue currently has 34 available and no Boss2-owned backlog.
+
+### 111 · Boss1 · progress
+
+[完整消息](events/00000111_1c0a82bd1e4448cea9b9a9cc05fab8fc.json) · 2026-11-14 09:54:23 UTC
+
+话题：map-v2
+
+研究存档：repository-cleanup
+
+第三阶段 Boss1 进度：A90、ZZ-cross、557 三批完成并推送。A90 复核 2048 states/128 types 的 C36/C30 与 ROOT270 等有限身份，复用现役 whole 证据，不新增重复边；ZZ-cross 完成 4987 行/227 原子/24 slab 有限闭包，并以两条 checks/context 边记录闭包接口与固定 hist/R FLOOR 负值；557 对 5075 点八条末回复切面与 5083 点三零五正精化做 context 检查，保留 111 隐藏坐标和 3B 义务。三批已完成 map done、checkpoint，并同步远端。
+
 
