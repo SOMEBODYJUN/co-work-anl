@@ -1,0 +1,76 @@
+{
+  "edge_id": "ca-eb53-fixed-cones-exact-individual-opt-floor",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "CAG-MODEL",
+    "CA-STRATEGY-CONE"
+  ],
+  "target_ids": [
+    "customer-attraction/individual-opt-floor-two-fixed-cones-exact-certificates"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "共同目录模型取有限六标签目录、63个非空兴趣类型的非负客户质量x_B并归一化Σ_B x_B=1；提供者按完整有序历史各行动一次，空覆盖、重复行动、同覆盖异标签、全部离轨弱平局均保留。目标分别是两个绑定完整动作表σ的真实IC锥：individual_security_failure为m=3、43个有序节点和258条含self IC，实际路径(0,3,4)；root_tax_failure为m=4、259个有序节点和1554条含self IC，实际路径(0,0,0,5)。每个比较穷尽所有允许重复的非降m元组T（m=3共56，m=4共126），固定角色i并最大化c_{i,T}^T x=V(T)−(2m−1)P_i(L(∅))。",
+  "roles": {
+    "CAG-MODEL": "提供均分客户收益、完整有序历史纯SPE量词、OPT_m/覆盖V(T)和同一策略真实偏离后继的模型语义。",
+    "CA-STRATEGY-CONE": "把固定完整策略的每个历史/替代动作写成Γ_{h,a}=P_{|h|}(L(h))−P_{|h|}(L(ha))，使Γx≥0与该σ的全部真实IC等价；给出归一化客户重数锥、非降比较元组与有理Farkas对偶的最优性语义。",
+    "customer-attraction/individual-opt-floor-two-fixed-cones-exact-certificates": "将上述锥合同专门化到两份六标签σ，保存294个比较域的有理对偶及四个全IC达到点，并由独立标准库重核给出四个精确最大gap。"
+  },
+  "explanation": "对每个有序历史h和每个合法动作a，证书用同一完整σ在h与(ha)后的真实续局计算Γ；因此含self的全部258或1554行正好是完整纯SPE客户锥，而非只检查实际根路径或冻结后继。对每个非降T，保存非负有理乘子λ和上界μ_T，满足μ_T·1−Γ^Tλ−c_{i,T}≥0；于是任意归一化x≥0且Γx≥0时c_{i,T}^Tx≤μ_T。每个角色另保存一个满足全部真实IC、非负且质量和为1的x达到其全部比较的最大上界，故上界与达到点相等而无需依赖浮点LP状态。完整原报告含294个T域、3754个乘子和18522个对偶坐标不等式；四个达到点各通过全部含self IC。",
+  "whole_result": "在individual_security_failure的固定m=3完整σ真实IC锥内，角色1、2、3对全部56个非降三元组T的最大gap分别精确为−1/6、−1/6、−1/19；三人角色1、2达到点均为x_2=x_4=x_16=x_32=1/6、x_9=1/3且T=(0,1,2)，角色3达到点为x_2=x_4=x_16=x_32=5/38、x_11=x_25=x_45=3/19且T=(1,2,4)。在root_tax_failure的固定m=4完整σ真实IC锥内，根角色对全部126个非降四元组T的最大gap精确为0；达到点为x_2=x_4=x_8=1/7、x_49=4/7且T=(0,1,2,3)。exact-recheck.json独立重构全部保存对偶和四个达到点并报告PASS；这四个数是相应固定锥内的精确最优值。 给出两个固定六标签完整动作表的逐人OPT门槛精确上界：三人三角色严格负gap−1/6、−1/6、−1/19；四人根角色恰到0；所有量词、重复槽位、真实离轨后继和有理证书均显式保留。",
+  "scope": "仅两个声明并由SHA绑定的六标签固定完整动作表及所列角色；全63类型非负质量归一化锥、完整有序历史含self IC和全部允许重复的非降比较元组。固定锥内结论不外推到一般逐人门槛、六人half、跨策略迁移或输入报告未覆盖的角色。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/计算/逐人最优覆盖门槛的两固定策略锥有理证书--计算.md",
+      "sha256": "26f9d6966e0c86fd3583a0c2ccf1f02e755cec8d34b1749f89fb6b39cb42467e"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/固定完整策略的客户重数锥--定理.md",
+      "sha256": "ae4bcfd424eca8d4e3d79965f72182c0b2c8eefb72e74b44c2521b519f7aad39"
+    },
+    {
+      "path": "archives/customer-attraction/state/资源/净覆盖交换与逐人门槛固定旧策略的历史终点--资源.md",
+      "sha256": "0ac78e91e4a9ccede93350f8c41903e4e00aba6c4667744b586a4ec810ea68cd"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/individual-opt-floor-fixed-cones-primary/inputs/individual_security_failure.json",
+      "sha256": "d5c8fc3abe3acf7b4b61b776a957a13e49dfe276df517ee9ba4a47093a2792ab"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/individual-opt-floor-fixed-cones-primary/inputs/root_tax_failure.json",
+      "sha256": "59fd58d85a3c3b989837467eb3523286d1f5ee529b0f119cd4d263bef6984111"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/individual-opt-floor-fixed-cones-primary/original/individual_opt_floor_fixed_cones.json",
+      "sha256": "f8ac23380e6939f3740f53a8508e61e840f4e13cb69ab2353b937bed9c3b1229"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/individual-opt-floor-fixed-cones-primary/exact-recheck.json",
+      "sha256": "7702c2c761b4268abc9d1d434ce93120539e8da7c2633e25b2573462dbe0da2e"
+    }
+  ],
+  "reviewed_by": "Boss7",
+  "review_note": "完整实读 CAG-MODEL、CA-STRATEGY-CONE 与七份固定锥证据；只接受四个固定锥的精确范围。",
+  "endpoint_pins": {
+    "CA-STRATEGY-CONE": "291bd4d94e33d40566453a33b5cf07b1c620b77362268417582efecb42b0c4bb",
+    "CAG-MODEL": "3216d1db43ff83e0e0c9cf2479e79611277c9d9291a68e7f9b85ec4bb299dc5c",
+    "customer-attraction/individual-opt-floor-two-fixed-cones-exact-certificates": "5f30ad02e207d5ae6dfbd384b9788817f3308d7fc0c963cc36d9edc31d7230b9"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/计算/逐人最优覆盖门槛的两固定策略锥有理证书--计算.md": "26f9d6966e0c86fd3583a0c2ccf1f02e755cec8d34b1749f89fb6b39cb42467e",
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+    "archives/customer-attraction/state/定理/固定完整策略的客户重数锥--定理.md": "ae4bcfd424eca8d4e3d79965f72182c0b2c8eefb72e74b44c2521b519f7aad39",
+    "archives/customer-attraction/state/资源/净覆盖交换与逐人门槛固定旧策略的历史终点--资源.md": "0ac78e91e4a9ccede93350f8c41903e4e00aba6c4667744b586a4ec810ea68cd",
+    "archives/customer-attraction/tools/evidence/individual-opt-floor-fixed-cones-primary/inputs/individual_security_failure.json": "d5c8fc3abe3acf7b4b61b776a957a13e49dfe276df517ee9ba4a47093a2792ab",
+    "archives/customer-attraction/tools/evidence/individual-opt-floor-fixed-cones-primary/inputs/root_tax_failure.json": "59fd58d85a3c3b989837467eb3523286d1f5ee529b0f119cd4d263bef6984111",
+    "archives/customer-attraction/tools/evidence/individual-opt-floor-fixed-cones-primary/original/individual_opt_floor_fixed_cones.json": "f8ac23380e6939f3740f53a8508e61e840f4e13cb69ab2353b937bed9c3b1229",
+    "archives/customer-attraction/tools/evidence/individual-opt-floor-fixed-cones-primary/exact-recheck.json": "7702c2c761b4268abc9d1d434ce93120539e8da7c2633e25b2573462dbe0da2e"
+  },
+  "remaining": "这不是所有完整σ或所有目录的一般逐人门槛定理，也不证明六人half；正文所述笛卡尔银行反族对一般(2m−1)u_i≥OPT_m候选的否定不由这两个固定锥证书重建，故不能把本边迁移到全策略、其它人数、其它策略或银行反例本身。原程序/LP/策略搜索及其它角色、其它动作表均未在本边新运行。",
+  "review_digest": "2eba0f635fb7bbdd72d759543044abff09557994c5fd8a3efdb6e7522b1973a9"
+}

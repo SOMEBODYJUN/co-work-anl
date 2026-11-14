@@ -420,11 +420,64 @@
       ]
     }
   },
-  "state": "claimed",
+  "state": "done",
   "owner": "Boss7",
-  "request_id": "d5ad03a317b045e5ac21ef20d0bf6f99",
+  "request_id": "d2de71c67bb64dec812b2815636805a7",
   "requests": {
     "34cdd2a91cf2452b8e9736aa000165a3": "plan",
-    "d5ad03a317b045e5ac21ef20d0bf6f99": "claim"
+    "d5ad03a317b045e5ac21ef20d0bf6f99": "claim",
+    "d2de71c67bb64dec812b2815636805a7": "done"
+  },
+  "edge_paths": {
+    "ca-count-policy-cone-implies-same-path-relaxation-3b": "map/edges/count-prefix-3b-3b-c579ec6c6ef2bd8f/count-policy-to-path-relaxation.json"
+  },
+  "receipt": {
+    "task_id": "count-prefix-3b-3b-c579ec6c6ef2bd8f",
+    "stage": "3B",
+    "request_id": "34cdd2a91cf2452b8e9736aa000165a3",
+    "read_object_ids": [],
+    "coverage": {
+      "customer-attraction/early-individual-opportunity-path-relaxation-prefix-policy-cone-contract": {
+        "state": "linked",
+        "object_pin": "05940aec6c5d8cc5e875fb5eab24be0d7d4ea943c37fb826a5031e3b09c92422",
+        "comparison_scope": "完整实读逐位置路径松弛/前缀固定锥合同、共同目录模型及其 path_budget_lp.py、prefix_family_cone.py；逐式核实际路径 a、比较计数 d、c、p_j、b_j、r_j 和同一路径必要行。与计数对象比较只覆盖根背景 b=0、固定完整计数表 alpha、真实改变后续和全部有序历史；不把 prefix 固定族的有限 LP 值当成路径松弛最优或全游戏结论。",
+        "reason": "作为目标端点，接收完整计数 SPE 在正收益位置归一后的客户类型聚合 w_(a,d)。每个真实 IC 行下界化为 a_t/(b_j+r_j)，对任意比较槽平均得到 d/m 行，故完整计数 SPE 蕴含该路径必要松弛；路径 LP 仍忘却标签/状态转移，不能反向推出策略。",
+        "edge_ids": [
+          "ca-count-policy-cone-implies-same-path-relaxation-3b"
+        ]
+      },
+      "customer-attraction/early-opportunity-count-and-alternating-price-saved-samples": {
+        "state": "linked",
+        "object_pin": "8c7aa36f6be8d6d2c2b84b1c056f71fc85d6978c23230b3771d960f01a6bb3cd",
+        "comparison_scope": "完整实读完整计数策略锥合同、共同目录模型、count_policy_attack.py、price_alternating.py、395 表审计、背景/强系数保存审计及整数全集/价格来源合同；精确区分固定 alpha 的全键域真实 IC、计数到有序历史的 sigma 映射、总质量与目标收益两种归一及有限保存点边界。",
+        "reason": "作为源端点，提供固定计数动作表 alpha、terminal(q) 沿真实孩子递归、所有 q 与所有替代标签的精确 IC。仅在这些 IC 对精确非负客户质量成立并选定根实际路径、比较元组且 u_i>0 时，才有本包到路径松弛的条件蕴含；浮点/逐坐标有理化失败点、价格交替局部 LP 和合法背景旧玩家不参与该桥。",
+        "edge_ids": [
+          "ca-count-policy-cone-implies-same-path-relaxation-3b"
+        ]
+      }
+    },
+    "assets": [
+      {
+        "path": "map/edges/count-prefix-3b-3b-c579ec6c6ef2bd8f/count-policy-to-path-relaxation.json",
+        "sha256": "5dc59a1d0fbb0152847d00790c51dfc1d199811e43849fdc2773bc873fdb0421"
+      },
+      {
+        "path": "map/edges/count-prefix-3b-3b-c579ec6c6ef2bd8f/converse-counterexample.json",
+        "sha256": "2a713677d983b2c49926af34e93a51541ffbbac851fc0cf2ce26f601b46a3d00"
+      }
+    ],
+    "closed_overlaps": [],
+    "follow_up_tasks": [],
+    "delivery_note": "仅写声明的 edge 目录与本 receipt；未 claim/done/checkpoint/assemble/commit。关系为一条 conditional implies 边，方向为完整计数策略 SPE -> 同一路径必要松弛；反向由同目录 converse-counterexample.json 的精确 m=2、k=4 实例否定。",
+    "object_ids": [
+      "customer-attraction/early-individual-opportunity-path-relaxation-prefix-policy-cone-contract",
+      "customer-attraction/early-opportunity-count-and-alternating-price-saved-samples"
+    ],
+    "input_pins": {
+      "customer-attraction/early-individual-opportunity-path-relaxation-prefix-policy-cone-contract": "05940aec6c5d8cc5e875fb5eab24be0d7d4ea943c37fb826a5031e3b09c92422",
+      "customer-attraction/early-opportunity-count-and-alternating-price-saved-samples": "8c7aa36f6be8d6d2c2b84b1c056f71fc85d6978c23230b3771d960f01a6bb3cd"
+    },
+    "definition_pin": "db848fc819928450632b25c3d244992970fcd342baa25c93bf9d735a2b03dfb3",
+    "status": "ready-for-review"
   }
 }
