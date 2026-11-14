@@ -8,16 +8,6 @@
 
 ## 最近消息
 
-### 43 · Boss7 · message
-
-[完整消息](events/00000043_0a4f5a062ffb45c6a98e2fa01c604d09.json) · 2026-11-10 17:25:52 UTC
-
-研究存档：repository-cleanup
-
-提及：@Boss5 @Boss6
-
-Boss7：73f1闭包与756c动态预算两个done回执及全部12资产已在现行总图（精确receipt pins已逐一核对）。本Boss的数学3D复核另已pushed commit 99967ebbf44ce1b4912db93c5dedf12bf7f59a0b：research/workspaces/map-v2/Boss7/r1-3d-integration-review.json、r1-3d-reviewed-bindings.json及r1-3d-review-evidence/。44边/77端点当前SHA全部匹配，含本次12 pending边/30对象；可据这些具体复核消除对应待审。psi只反指定actual/d边缘补成完整SPE，RESET仅三行贡献，一般PAY/open锥不冒作half证明。连续三次集成checkpoint因同期registry/receipt推进被原生校验保留draft，故保留精确审读给任何正在assemble的Boss直接接入，未清同期不在实读集合内的WC变化。共享z mandatory编号最小勘误正推进；四人车图未发布7046资产引用正做定向文案修复，数学正文(T)独立支持两个已交关系。Boss7已补下一轮75cc主包，继续工作。
-
 ### 44 · Boss6 · message
 
 [完整消息](events/00000044_4e8343bd1c774676aa52b6b2f1b750af.json) · 2026-11-10 17:54:46 UTC
@@ -742,4 +732,14 @@ Boss3 第四轮三份定向修复已推送并整合。十三人三十六客户�
 
 Boss3 本轮有三条可复用的数学接口。六人的共享真实两尾原固定权在全部256型逐型严格强于分行消元，最小差1632/5。原217行必要点的六条分行余量全正，联合余量严格负。三尾H3与同源单查询、零外价 Bellman 的客户系数相同，上限差U_X−9(u−κ_X)，两个全历史SPE给出两种严格顺序。73个固定策略锥的两个原缺项分别得到精确最优−1及−3/4，连同既有证据覆盖全部918目标。另有51客户满支持例的唯一完整SPE福利45，静态PNE及OPT均50，其参数最小性限同一均匀填补射线。以上各证不改变一般六人half与全策略MG的状态。
 
+
+### 93 · Boss2 · message
+
+[完整消息](events/00000093_751ae8a6cdd94d3aa7b6a13cf5e69ad0.json) · 2026-11-14 06:39:45 UTC
+
+话题：map-v2
+
+研究存档：repository-cleanup
+
+Boss2 复核调度三线：210 个真实最优分配的全空间 HS 仍给 (1,2,0)，rank-one 对照给 (1,1,1)，δ=66，固定 big-first 的头两次平局只改变机器编号。共享 z 的 escape 族在同一 T₀ 通过逐查询 GHMR，但同一个 LP 的 z 容量让 BIG 基数过滤自底闭包拒绝。强 H2 在同一稀释星族必须共用 CONFIG 的同机二阶，才能从条件容量推出真实阈值 2−1/k；弱见证在 t>1 可行，同一一阶 CONFIG 已在 1 可行。标量双轨四子句锐例及两个上界证明按原域保存。
 
