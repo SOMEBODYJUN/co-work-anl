@@ -1,0 +1,72 @@
+{
+  "task_id": "customer-attraction-3a-3a-a9ce3bd652353c3b",
+  "stage": "3A",
+  "status": "complete-frozen-staging; edge-bind and edge-check passed; Root checkpoint/done pending",
+  "object_ids": [
+    "M-6a7c80923ec34610bc83cc446c36da8b"
+  ],
+  "read_object_ids": [
+    "Q-CAG-HALF"
+  ],
+  "input_pins": {
+    "M-6a7c80923ec34610bc83cc446c36da8b": "c1bf01a3cb48cdc815d82886c85011ed4c8120be619cadea01a7b6e41c2012ad",
+    "Q-CAG-HALF": "dccd5277f7b0c1bb4dcac17287010f1d012bb40c6244c51f24808c1519a4b5ea"
+  },
+  "coverage": {
+    "M-6a7c80923ec34610bc83cc446c36da8b": {
+      "state": "linked",
+      "object_pin": "c1bf01a3cb48cdc815d82886c85011ed4c8120be619cadea01a7b6e41c2012ad",
+      "comparison_scope": "完整读取8个 staged passes 与6个 refs；将 restricted 1269 行点与 Q-CAG-HALF 开放目标及指定3889行冻结点边界作对照。",
+      "reason": "restricted necessary system 存在 W<1/2 点，故该有限系统不足以单独推出 Q-CAG-HALF；边只诊断证明停界，不反驳全称目标或提供真实SPE反例。",
+      "edge_ids": [
+        "cag-a9ce-1269-restricted-point-checks-q-cag-half"
+      ]
+    }
+  },
+  "assets": [
+    {
+      "path": "map/edges/customer-attraction-3a-3a-a9ce3bd652353c3b/restricted-point-checks-q-cag-half.json",
+      "sha256": "0c55314f2ca35bff23b78189161efea1fdab9dfc26d306da298289aefd6b8f2d",
+      "bytes": 4570
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-a9ce3bd652353c3b/mathematical-review.md",
+      "sha256": "2ef9e296034f1547c834d9d36ed55a3b2143a117317ce70c080733b11d128bd5",
+      "bytes": 10974
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-a9ce3bd652353c3b/readledger.json",
+      "sha256": "495b1289e4bbe0a34b6cbbb6da76a7f5db53fe03f45f377bfe259f66f9118e0f",
+      "bytes": 768
+    }
+  ],
+  "edge_paths": {
+    "cag-a9ce-1269-restricted-point-checks-q-cag-half": "map/edges/customer-attraction-3a-3a-a9ce3bd652353c3b/restricted-point-checks-q-cag-half.json"
+  },
+  "read_scope": {
+    "declared_files": 8,
+    "full_read": true,
+    "read_add": [
+      "Q-CAG-HALF"
+    ],
+    "deferred_candidates_not_read": [
+      "M-ec99da051b134c469ad29ba01810ff1f"
+    ]
+  },
+  "verification": {
+    "sha256_all_declared_refs": true,
+    "exact_point": "1269 rows, O=1, W<1/2, minimum_slack=0",
+    "old_generator_reused": true,
+    "missing_old_runtime_dependency_not_run": true
+  },
+  "closed_overlaps": [
+    {
+      "core_id": "M-6a7c80923ec34610bc83cc446c36da8b",
+      "peer_id": "M-ec99da051b134c469ad29ba01810ff1f",
+      "reason": "deferred third-position 153-row separation was not read and is not promoted to a relation in this task."
+    }
+  ],
+  "follow_up_tasks": [],
+  "reviewed_by": "Boss4-fresh-worker-review",
+  "review_note": "完整保留 restricted necessary-system 的量词、exact fractions、旧/新行分层和首位指定点分离边界；checks/context edge 已绑定并通过结构检查。"
+}
