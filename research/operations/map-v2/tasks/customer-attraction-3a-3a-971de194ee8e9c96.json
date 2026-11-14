@@ -245,12 +245,96 @@
       "budget_status": "reading-scope-expanded-reestimate"
     }
   },
-  "state": "claimed",
+  "state": "done",
   "owner": "Boss2",
-  "request_id": "f73910e6f9e94d78af59aa60f38b7c24",
+  "request_id": "8c456d4a88654b568ae9eae1554391da",
   "requests": {
     "c77ec76b08b948c4ac8c43dc65353af7": "plan",
     "8be8ccaaeba84d53a076070a9c1dfd24": "claim",
-    "f73910e6f9e94d78af59aa60f38b7c24": "read-add"
+    "f73910e6f9e94d78af59aa60f38b7c24": "read-add",
+    "8c456d4a88654b568ae9eae1554391da": "done"
+  },
+  "edge_paths": {
+    "ca-971de-core-checks-five-half": "map/edges/customer-attraction-3a-3a-971de194ee8e9c96/checks-five-half.json",
+    "ca-971de-core-checks-free-fractional-values": "map/edges/customer-attraction-3a-3a-971de194ee8e9c96/checks-free-fractional-values.json",
+    "ca-971de-policy-transfer-86-to-382": "map/edges/customer-attraction-3a-3a-971de194ee8e9c96/policy-transfer.json"
+  },
+  "receipt": {
+    "task_id": "customer-attraction-3a-3a-971de194ee8e9c96",
+    "stage": "3A",
+    "object_ids": [
+      "customer-attraction/five-individual-security-pushforward-fractional-snapshot"
+    ],
+    "read_object_ids": [
+      "customer-attraction/five-provider-individual-static-security-counterexample",
+      "CA-FIVE-HALF-EXACT-v1",
+      "customer-attraction/free-fractional-background-security-floor",
+      "CAG-MODEL"
+    ],
+    "input_pins": {
+      "customer-attraction/five-individual-security-pushforward-fractional-snapshot": "5952635d38edd54b0992b582a21d79a455d6e6fdb01b1f8f6f8e7adad47b1f85"
+    },
+    "status": "complete",
+    "coverage": {
+      "customer-attraction/five-individual-security-pushforward-fractional-snapshot": {
+        "state": "linked",
+        "object_pin": "5952635d38edd54b0992b582a21d79a455d6e6fdb01b1f8f6f8e7adad47b1f85",
+        "comparison_scope": "完整实读核心六源及三份read-add对端：旧86客户同策略、五人half定理、自由分数门槛定义；全量审计11111历史/111110比较、382权重两类静态推送和2002个覆盖组合。",
+        "reason": "三条独立语义关系已写入policy-transfer、checks-five-half、checks-free-fractional-values：同一动作函数的重数迁移、half实例检查、受限分数障碍与自由分数上界的量词分离。未把旧浮点负IC、自由上界或共享定义升级为全局定理。 checks-five-half 与 checks-free-fractional-values 是精确 context checks，保留为语境证据，不作为逻辑承重边。",
+        "edge_ids": [
+          "ca-971de-policy-transfer-86-to-382"
+        ]
+      }
+    },
+    "assets": [
+      {
+        "path": "map/edges/customer-attraction-3a-3a-971de194ee8e9c96/checks-five-half.json",
+        "sha256": "c791bcf3169bb19fb6f47e0c4c573c465f9ef9c3d145d431300306c30ee55a53"
+      },
+      {
+        "path": "map/edges/customer-attraction-3a-3a-971de194ee8e9c96/checks-free-fractional-values.json",
+        "sha256": "58569fcb6e7d8f5b08b8e8ffb4eb0d511d951161f1653b934ab64b27bea0da0e"
+      },
+      {
+        "path": "map/edges/customer-attraction-3a-3a-971de194ee8e9c96/policy-transfer.json",
+        "sha256": "252fd360d0718fb372fee27850ea99b1bb1076fd22de30ddb87c55da121ab83b"
+      },
+      {
+        "path": "map/edges/customer-attraction-3a-3a-971de194ee8e9c96/reading-ledger.json",
+        "sha256": "00c000d69715fff32ae462899708f9262588fb44b8aa703628fab71b28c86434"
+      }
+    ],
+    "follow_up_tasks": [],
+    "closed_overlaps": [],
+    "reviewed_by": "solver_971de194ee8e9c96",
+    "review_note": "8 declared complete passes plus 3 read-add files; full policy JSON parsed and exact audit rerun PASS. Three accepted edges were native-bound and edge-check passed; no git commit/push.",
+    "remaining_follow_up": [
+      {
+        "object_ids": [
+          "customer-attraction/five-individual-security-pushforward-fractional-snapshot",
+          "customer-attraction/cartesian-bank-individual-fractional-floor-counterfamily"
+        ],
+        "question": "3B参数/量词对齐本382实例受限223/219与笛卡尔银行族逐人阈值反例。",
+        "reason": "银行族正文未纳入本任务完整阅读，未冒作证据。"
+      }
+    ],
+    "closed_overlap_notes": [
+      {
+        "peer_id": "CAG-MODEL",
+        "reason": "Only a shared model definition; no hub edge."
+      },
+      {
+        "peer_id": "CA-FIVE-HALF-EXACT-v1",
+        "reason": "Closed by finite checks-five-half edge."
+      },
+      {
+        "peer_id": "customer-attraction/free-fractional-background-security-floor",
+        "reason": "Closed by finite checks-free-fractional-values edge; free optimum remains open."
+      },
+      {
+        "peer_id": "customer-attraction/five-provider-individual-static-security-counterexample",
+        "reason": "Closed by conditional policy-transfer edge; old security value does not transfer."
+      }
+    ]
   }
 }
