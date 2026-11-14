@@ -1,0 +1,57 @@
+{
+  "edge_id": "cag-b95767f0-old-reply-prices-exclude-fixed-path",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/old-replies-common-actual-source-prices-and-optimal-single-exchange"
+  ],
+  "target_ids": [
+    "M-8ca2d60fda2e4d38934e3e5c480b2344"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定 actual 六位及旧 B/C 会员，所有旧 B_j,C_j 都是同一目录合法主题。允许与该数据相容的 Z 或交叠重排。",
+  "roles": {
+    "customer-attraction/old-replies-common-actual-source-prices-and-optimal-single-exchange": "给 actual 第六位查询每个同目录旧 B/C 标签的准确价格行。",
+    "M-8ca2d60fda2e4d38934e3e5c480b2344": "固定 hist 使两条旧 B/C 末位聚合价严格负，排除指定路径。"
+  },
+  "explanation": "计算 6u6−Σ_x n_Q(x)/(1+Σ_{k≤5}a_k)。从全部 hist 独立重算 B/C 两值为 −10278684531697071124608039179627/1344370606668255760206057578355825 和 −11764212870687656756855220643451/1344370606668255760206057578355825。每个负和至少给该族一个合法严格更优查询。计算只使用实际会员位和 n_Q，适用于任何保持此数据的联合完成。",
+  "scope": "反证指定路径在此固定数据上可为完整纯 SPE。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/旧回复跨实际源的共同报价与最优单换--引理.md",
+      "sha256": "60f883df9c000fec84c1b9ebd38db3942ffa1ff744244a1dd8a66e4485b5c786",
+      "section": "12条actual安全报价和2条共同容量"
+    },
+    {
+      "path": "archives/customer-attraction/state/计算/拆分与跨源固定阈值的配对可行点--计算.md",
+      "sha256": "0abfdae1d0e1e19bdeaf90bed346bdeb584e3f6353830cf5d91ec23de3eaaebe",
+      "section": "7931点：普通实际末位报价已经严格失败"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/cross-source-graph-program/added-row-slacks.json",
+      "sha256": "cf90cb7e51d4c3d7cb9d5bb6359aea51ee937a5fdc2c0a6337690961132fed77"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-b95767f008363ae7/independent-audit.json",
+      "sha256": "b57671ed5a8ac71e49e788e4e07609d725018f74af9e8db6068d02da7d0cf270"
+    }
+  ],
+  "reviewed_by": "Boss5 / fresh worker",
+  "review_note": "实读当前登记、相应正文及承重证据。独立审计给有理余量，旧仿射矩阵保留原回代版本。",
+  "contribution": {
+    "result": "两条实际末位聚合价严格负，保持这些 hist 的任何 Z 或交叠重排都不能补出指定 SPE 路径。",
+    "remaining": "指定原表全行通过及共同会员构造另有各自证据。"
+  },
+  "endpoint_pins": {
+    "M-8ca2d60fda2e4d38934e3e5c480b2344": "475bbcbc81d5ecdbe7383516d4867d179a81629e94365721b35fb0ee9a17e5d3",
+    "customer-attraction/old-replies-common-actual-source-prices-and-optimal-single-exchange": "53f110f26cb6569bc61f974d0b1baa68895e218fc5f13527fa3556fb13363618"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/旧回复跨实际源的共同报价与最优单换--引理.md": "60f883df9c000fec84c1b9ebd38db3942ffa1ff744244a1dd8a66e4485b5c786",
+    "archives/customer-attraction/state/计算/拆分与跨源固定阈值的配对可行点--计算.md": "0abfdae1d0e1e19bdeaf90bed346bdeb584e3f6353830cf5d91ec23de3eaaebe",
+    "archives/customer-attraction/tools/evidence/cross-source-graph-program/added-row-slacks.json": "cf90cb7e51d4c3d7cb9d5bb6359aea51ee937a5fdc2c0a6337690961132fed77",
+    "map/edges/customer-attraction-3a-3a-b95767f008363ae7/independent-audit.json": "b57671ed5a8ac71e49e788e4e07609d725018f74af9e8db6068d02da7d0cf270"
+  },
+  "review_digest": "3f56084dfdb073a3517c4a0f4cdcb204a1fa75835f9c3724d0ca275cec8c0a25"
+}

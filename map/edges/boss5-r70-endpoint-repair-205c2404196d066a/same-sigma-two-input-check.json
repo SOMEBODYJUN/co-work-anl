@@ -1,0 +1,79 @@
+{
+  "edge_id": "cag-r70-same-sigma-two-input-check",
+  "kind": "checks",
+  "status": "accepted",
+  "source_ids": [
+    "M-c5e460641b3e47729159aa9e7cb6a175"
+  ],
+  "target_ids": [
+    "cag-r70-six-player-seven-topic-fixed-complete-strategy-lp"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "六位单位提供者、七个共同标签，完整纯策略定义于全部有序历史。比较同一份 19,608 节点 σ 的两组指定整数客户输入；每次强制动作后沿同一 σ 的真实后继。福利在根计算，OPT₆ 遍历全部可重复六槽。",
+  "roles": {
+    "M-c5e460641b3e47729159aa9e7cb6a175": "给指定 58 客户输入的全完整纯 SPE 构造：所有根结果 W=43、OPT₆=58，六个标签计数全可实现；共用动作表和 random 审计给该输入在固定锥中的一个精确可行点。",
+    "cag-r70-six-player-seven-topic-fixed-complete-strategy-lp": "给指定 σ 的全非负客户类型锥下界 6/11，并以独立 lp_integer 向量和逐历史审计取得等号。"
+  },
+  "explanation": "两输入使用字节相同的 σ，根路径均为 (0,2,2,2,2,2)，各有 137,256 项含自身真实 IC，最小精确余量均为 0。58 客户点的标签 2、4 共覆盖 34 客户，标签 0 覆盖另 9 客户，故 W/OPT₆=43/58。11 客户点的标签 0、2 共覆盖 6 客户，根路径只覆盖此块，标签 (0,1,3,4,5,6) 覆盖全部，故 W/OPT₆=6/11。两向量的正掩码支撑不同。58 客户点在该锥中严格高于最小值；固定锥的等号来自 11 客户点，其下界来自七组独立对偶证书。",
+  "scope": "记录指定完整 σ 下两个输入的可行性和精确福利差异。全 SPE 量词仅归指定 58 客户输入；6/11 的最优量词仅归该 σ 的完整 IC 锥。全六人策略的 half 问题仍开放。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/计算/六人不交覆盖搜索点的随机记录与锐界实例--计算.md",
+      "sha256": "9b9ecb396c2ed6d5c2cb012a64f86235508ed21343269846c6afd5c6eee795c8",
+      "section": "随机58点：全部SPE福利都等于43"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/r70-six1-best-data/point-audit.json",
+      "sha256": "7074287b7d654e9399df82b8f72cc4753f39cf450623cd2ed5fb93f50ce004b4"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/r70-six1-best-data/exact-details.json.gz",
+      "sha256": "1e805f7a972a7860ad354ad48be7714f6fd551772c395e59a7f3462729aaffe6"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/r70-strategy-lp-program/replay/complete-strategy.json",
+      "sha256": "d2924549f6ea10bd9a732434bef8145694e2bcbbec471abdef60d8d609687141"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/六人七主题固定完整策略的福利比线性规划程序--程序.md",
+      "sha256": "1b882276b4cdbc2215ac198279f822a00546428edfffb30a2cc79256ec6b5c12",
+      "section": "新证书：21条真实IC与七个逐类型余项"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/r70-strategy-lp-program/exact-cone-audit.json",
+      "sha256": "225f682dab909fac2a2da6a8b38166bc3f773d4c820714851c5785ca0424307c"
+    },
+    {
+      "path": "archives/customer-attraction/state/计算/六人不交覆盖搜索点的随机记录与锐界实例--计算.md",
+      "sha256": "9b9ecb396c2ed6d5c2cb012a64f86235508ed21343269846c6afd5c6eee795c8",
+      "section": "LP十一点：大块锐例与相同固定策略"
+    },
+    {
+      "path": "map/edges/boss5-r70-endpoint-repair-205c2404196d066a/comparison.md",
+      "sha256": "7047b5af0431f8a6d3ad39bd41a7ca72df2b03d39f713611585f016d04fb756b",
+      "section": "登记与逐历史核对"
+    }
+  ],
+  "reviewed_by": "Boss5",
+  "review_note": "核当前两端登记与各自精确正文，完整解析冻结动作表和两点详情，按定义逐行回算全部 274,512 项 IC、1,848 个终局记录、3,048 个真实偏离键和七组 889 项对偶余量。已核旧边把共享审计的 11 客户记录误归 M-c5e；本边只保两点比较。原 DP、LP、随机搜索及原 verify 均未运行。",
+  "endpoint_pins": {
+    "M-c5e460641b3e47729159aa9e7cb6a175": "cfb8aca64886120754f2457a388c80e70d73430d4804ba0d027f9db08f6d63d9",
+    "cag-r70-six-player-seven-topic-fixed-complete-strategy-lp": "b85fbfeafe5b02e918438e2de0d948d6296a19524e6f06adb310a997d34eb2bb"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/计算/六人不交覆盖搜索点的随机记录与锐界实例--计算.md": "9b9ecb396c2ed6d5c2cb012a64f86235508ed21343269846c6afd5c6eee795c8",
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+    "archives/customer-attraction/tools/evidence/r70-six1-best-data/point-audit.json": "7074287b7d654e9399df82b8f72cc4753f39cf450623cd2ed5fb93f50ce004b4",
+    "archives/customer-attraction/tools/evidence/r70-six1-best-data/exact-details.json.gz": "1e805f7a972a7860ad354ad48be7714f6fd551772c395e59a7f3462729aaffe6",
+    "archives/customer-attraction/tools/evidence/r70-strategy-lp-program/replay/complete-strategy.json": "d2924549f6ea10bd9a732434bef8145694e2bcbbec471abdef60d8d609687141",
+    "archives/customer-attraction/state/程序/六人七主题固定完整策略的福利比线性规划程序--程序.md": "1b882276b4cdbc2215ac198279f822a00546428edfffb30a2cc79256ec6b5c12",
+    "archives/customer-attraction/tools/evidence/r70-strategy-lp-program/exact-cone-audit.json": "225f682dab909fac2a2da6a8b38166bc3f773d4c820714851c5785ca0424307c",
+    "map/edges/boss5-r70-endpoint-repair-205c2404196d066a/comparison.md": "7047b5af0431f8a6d3ad39bd41a7ca72df2b03d39f713611585f016d04fb756b"
+  },
+  "review_digest": "1f3b60d6009abba15434c919f901718aab0f98dca821849b90fb28cb269e5823"
+}
