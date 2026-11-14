@@ -1,0 +1,49 @@
+{
+  "edge_id": "cag-4b585-m3p5-quotient-preserves-physical-witness",
+  "kind": "transfers",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/degree-two-global-customer-lift-three-full-policy-points-and-cubic-separation",
+    "M-ea8b88f526d44d619a0c86ad10acb6b0"
+  ],
+  "target_ids": [
+    "B10-DUPLICATE-COVERAGE-QUOTIENT-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "只取 m3p5 的真实五客户分支；覆盖映射把标签 0、2 合并为 A，1→B，3→C，4→空；商化允许按商历史重新构造完整策略。",
+  "roles": {
+    "customer-attraction/degree-two-global-customer-lift-three-full-policy-points-and-cubic-separation": "提供保留别名的五客户完整 SPE 及 W=3、OPT_3=5。",
+    "M-ea8b88f526d44d619a0c86ad10acb6b0": "承接真实 m3p5 点的原标签范围和完整历史身份。",
+    "B10-DUPLICATE-COVERAGE-QUOTIENT-v1": "提供原标签游戏与同覆盖商游戏之间的完整策略双向构造及 W/OPT 保持。"
+  },
+  "explanation": "覆盖商递归在每个商历史选一个原标签提升，规定类必须取原策略当前动作，其余类取任意合法代表；商历史唯一父节点保证全部离轨 IC 可逐步搬运。故 m3p5 的物理覆盖路径在四类商目录上有对应完整 SPE，收益、W 和 OPT 仍为 3、3、5。该桥只保存可实现有序覆盖路径集合，不保留原 31 节点标签动作表、原标签数量或 fixed-policy LP；不能机械删除 0/2 的一列后继续声称同一策略。",
+  "scope": "m3p5 的物理路径/收益/OPT 迁移；不把 m4/m5 的固定伪矩表转成商目录客户实例。",
+  "contribution": {
+    "result": "明确 duplicate coverage 对 m3 真实化的作用与固定矩表的失效边界。",
+    "remaining": "若要比较商化后的固定策略矩或 m4/m5 separator，需另给代表选择和坐标映射；本边不支付 fixed-policy LP 等价。"
+  },
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/等价/覆盖等价标签的完整策略商--等价.md",
+      "sha256": "6f76bce7514f3226284c08e49e5d09561acbb705b3706a663f6a0cf7dbb20fa0"
+    },
+    {
+      "path": "archives/customer-attraction/state/计算/二阶共同客户提升的三份完整策略矩与三阶分离--计算.md",
+      "sha256": "8bad08c48994ea8b7479e9e2e709aa0f9fdca8eca49c0f87351bacbe5cd696fb",
+      "section": "三人点：真实五客户游戏，别名与空主题仍保留"
+    }
+  ],
+  "reviewed_by": "fresh-worker",
+  "review_note": "完整读取 B10 duplicate quotient，并逐条核对商化的规定代表、离轨后继及固定策略限制。",
+  "endpoint_pins": {
+    "B10-DUPLICATE-COVERAGE-QUOTIENT-v1": "2cae69394452c077f47d5520d9100c9d70f75c9a7de0328e7d80a1caa6c21204",
+    "M-ea8b88f526d44d619a0c86ad10acb6b0": "e5151a837ae8f02d87e4f0c783062f1de890707d18235e858a105f4d7394eb66",
+    "customer-attraction/degree-two-global-customer-lift-three-full-policy-points-and-cubic-separation": "56bcd82c7238a69fa8f075c0ae75b691aa963c65bcb92f825e922aebbd51cd55"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/等价/覆盖等价标签的完整策略商--等价.md": "6f76bce7514f3226284c08e49e5d09561acbb705b3706a663f6a0cf7dbb20fa0",
+    "archives/customer-attraction/state/计算/二阶共同客户提升的三份完整策略矩与三阶分离--计算.md": "8bad08c48994ea8b7479e9e2e709aa0f9fdca8eca49c0f87351bacbe5cd696fb"
+  },
+  "review_digest": "57b5a2bab59d9b1c05f1a0c31c864132916d0823c94a1c9be14414ff95cb183f"
+}
