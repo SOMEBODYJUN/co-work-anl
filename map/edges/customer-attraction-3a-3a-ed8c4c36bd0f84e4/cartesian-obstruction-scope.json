@@ -1,0 +1,66 @@
+{
+  "edge_id": "ca-ed8c-core-cartesian-obstruction-scope",
+  "kind": "checks",
+  "status": "accepted",
+  "source_ids": [
+    "M-189d60bfb78140709755f3477e6a10c5"
+  ],
+  "target_ids": [
+    "M-189d60bfb78140709755f3477e6a10c5"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "只在登记对象的有限单位客户、有限非空带标签共同目录、按固定次序选择及完整有序历史纯SPE模型中；基例固定为八人八主题32客户的 CA_COMPLETE_SPE_DAG_v1，笛卡尔结论只对每个整数 k≥1 的不交客户复制、完整 Cartesian 标签目录和坐标投影策略成立。",
+  "reviewed_by": "Boss1 / Solver",
+  "review_note": "SOLVER-ED8C-FRESH 完整读取六份 declared refs，解析全部 DAG 节点并执行独立核验器；固定核与 all-k 障碍的量词边界已审读。该 checks 边不升级为任意策略、六人 half 或全局预算结论。",
+  "roles": {
+    "M-189d60bfb78140709755f3477e6a10c5": "给出八人基例的完整策略反向归纳、根3/7局部重置 R=9/10 且 e/e/J=0，以及每个整数 k≥1 的坐标独立 Cartesian 纯SPE lift 和 R^(k)=9k/10、W=OPT_8=32k。"
+  },
+  "context": {
+    "base_audit": "13,872 reachable nodes, 6,435 terminal nodes, 59,496 including-self IC comparisons, 50,732 strict and 8,764 equal; actual path (3,0,2,3,4,4,5,6), u=13/4, W=OPT_8=32.",
+    "local_failure": "K(3,7)=K(7,3)=37/10, D(3)=D(7)=13/4, e(3)=e(7)=J(3,7)=0, hence R(3,7)=9/10>0.",
+    "mixed_boundary": "The same fixed kernel has max_{p∈Δ8} p^T K p=1717/560<13/4; the 3/7 half mixture max is 123/40. This separates local pair payment from fixed-kernel mixed safety.",
+    "cartesian_lift": "For every k≥1, coordinatewise continuation preserves every full-history IC by additive customer sums; at A=(3,…,3), T=(7,…,7), R^(k)=9k/10 while e^(k)(A)=e^(k)(T)=J^(k)(A,T)=0 and W=OPT_8=32k.",
+    "boundary": "No claim is made for all joint SPEs, arbitrary m, six-player half, general path budgets, or changed customer/label/strategy domains."
+  },
+  "explanation": "This accepted self-context checks edge records the exact base obstruction and its all-k Cartesian lift. The full DAG verifier independently confirms the base strategy and root values; the analytic proof then sums the per-coordinate IC inequalities. The existing ca-732c-finite-reset-audit-checks-cartesian-obstruction edge already binds the finite peer audit to this core, so this edge is not a cross-object implication or refutation.",
+  "scope": "context-only; fixed eight-player base DAG plus the stated coordinate-independent Cartesian family.",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/障碍/根重置局部账本的笛卡尔放大--障碍.md",
+      "sha256": "fb80ab3ead19b3e039bc88d72bd3b52ea6935f87771d625df6dc559649f729ba"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/dynamic-flow-workspace/original/research/workspaces/customer-attraction/R-d22a706a03c5499d941a6a97f94128a8/counterexample/pure_menu_two_block_dag.json",
+      "sha256": "6190bc98dedda4fb22a1af6339702c03a6cb3b04cd8dfe6b18a577782e5d2f95"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/dynamic-flow-workspace/original/research/workspaces/customer-attraction/R-d22a706a03c5499d941a6a97f94128a8/counterexample/verify_pure_menu_dag.py",
+      "sha256": "89fe7dbf92cbcc272cc16d8bda0d1a879848c2679f0b7229f811c09cffc5f2fd"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/dynamic-flow-workspace/replay/base-original-report.json",
+      "sha256": "59dc1b2594eff379a84ff12b6aa401eb38ad07bb0289755bcafcd81f7aee12c5"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/真实重置配对审计的七旧策略与八人二次型合同--程序.md",
+      "sha256": "d787c9fd588b7236a2728cada247e7f0d26faf620dbdf261bb1a53815d4e00f8"
+    }
+  ],
+  "endpoint_pins": {
+    "M-189d60bfb78140709755f3477e6a10c5": "0430076fef32e956cdc2af28e1a62408a281c554df0dc933e62333b5a0cbee5a"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/障碍/根重置局部账本的笛卡尔放大--障碍.md": "fb80ab3ead19b3e039bc88d72bd3b52ea6935f87771d625df6dc559649f729ba",
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+    "archives/customer-attraction/tools/evidence/dynamic-flow-workspace/original/research/workspaces/customer-attraction/R-d22a706a03c5499d941a6a97f94128a8/counterexample/pure_menu_two_block_dag.json": "6190bc98dedda4fb22a1af6339702c03a6cb3b04cd8dfe6b18a577782e5d2f95",
+    "archives/customer-attraction/tools/evidence/dynamic-flow-workspace/original/research/workspaces/customer-attraction/R-d22a706a03c5499d941a6a97f94128a8/counterexample/verify_pure_menu_dag.py": "89fe7dbf92cbcc272cc16d8bda0d1a879848c2679f0b7229f811c09cffc5f2fd",
+    "archives/customer-attraction/tools/evidence/dynamic-flow-workspace/replay/base-original-report.json": "59dc1b2594eff379a84ff12b6aa401eb38ad07bb0289755bcafcd81f7aee12c5",
+    "archives/customer-attraction/state/程序/真实重置配对审计的七旧策略与八人二次型合同--程序.md": "d787c9fd588b7236a2728cada247e7f0d26faf620dbdf261bb1a53815d4e00f8"
+  },
+  "review_digest": "f70d9579d2f7944cd5e6c454c2b89a996f72410c16d1de9805ea673be3314c8b"
+}
