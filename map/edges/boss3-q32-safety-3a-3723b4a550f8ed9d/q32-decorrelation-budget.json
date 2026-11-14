@@ -1,0 +1,65 @@
+{
+  "edge_id": "boss3-q32-safety-3a-3723b4a550f8ed9d-q32-decorrelation-budget",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/q32-fixed-policy-cone-individual-and-static-security"
+  ],
+  "target_ids": [
+    "customer-attraction/continuation-decorrelation-compensation-budget"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定 q32 五人七标签完整有序策略σ及其全真实IC客户锥 Kσ；采用 continuation-decorrelation-compensation-budget 的 D_i(p), C_i(p), e_i(p), κ_i(p), Gσ(p) 定义，保留公开偏离可被后继观察、同分布独立抽样、全部有序离轨历史和弱IC。",
+  "roles": {
+    "customer-attraction/q32-fixed-policy-cone-individual-and-static-security": "给出实际五位收益、h=(0,0,0,1) 的纯查询封顶，以及五个强制0真实分支的删除后背景。",
+    "customer-attraction/continuation-decorrelation-compensation-budget": "定义 Gσ(p)=W−Σ_i C_i(p)=Σ_i(e_i+κ_i)，并区分固定查询预算与安全最优查询的动态桥。"
+  },
+  "contribution": {
+    "result": "在 q32 固定锥中，p=δ0 是静态最优查询（v_5=W/5）。五个实际位置强制0后沿真实σ续局并删除该槽，均给共同背景 h；因此 D_i(δ0)=C_i(δ0)=W/5，e_i(δ0)=κ_i(δ0)=0，Gσ(δ0)=0。于是该固定策略存在一个安全最优 p* 使总去相关/激励补偿预算恰等于零。",
+    "remaining": "该等式只支付 q32 固定策略锥及 p*=δ0；一般完整策略是否总存在安全最优 p* 使 Gσ(p*)≥0，以及由此推出 W≥n v_n，仍是开放桥。不能把 q32 的五个共同负载或 δ0 选择器移植到任意目录、任意人数或六人主问题。"
+  },
+  "explanation": "定义中的 C_i 对索引强制动作 b 与查询 a 独立抽样。q32 实际终局00011的五个强制0真实叶依次为00011、00011、00011、00001、00010；删除当前槽后每列都在可承重类型上与 h=0001 具有相同客户负载。查询δ0在这些列上收益均为W/5，故 C_i(δ0)=W/5。公开偏离D_i(δ0)使用同一强制0列和同一查询，也为W/5；而核心定理已给每个实际角色u_i=W/5，所以 e_i=u_i−D_i=0，κ_i=D_i−C_i=0。将五项代入预算恒等式 Gσ=W−Σ_iC_i=Σ_i(e_i+κ_i)，得到Gσ(δ0)=0。核心定理同时以 h 对全部合法静态背景封顶并由δ0保底，故δ0确为 v_5 的安全最优查询。",
+  "scope": "这是 continuation 预算定义在固定 q32 锥上的精确 specializes 边；它不证明一般安全最优分布的支付存在，也不改变公开偏离与真实续局的量词。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定义/跨分支去相关与激励补偿总预算--定义.md",
+      "sha256": "51b64f713fa05f4eba6dc873256e7086342b2d328a6c2881a9308d356b2e7eed"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/q32完整策略锥的逐人静态安全值--定理.md",
+      "sha256": "6866604ad9de255fe64b347242233cbdcad4f617f4c6add63d89aa684f42f7e9"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+    },
+    {
+      "path": "research/registration/evidence/register-lead-recovered-evidence-01/sym_m5p7_q32_Jout.json",
+      "sha256": "d69e034266cf14279ce3de3ed9ebfadd9bb0ae79df9d35a89ad5fddbe5b32fe9"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/q32-policy-cone-security/q32-exact.json",
+      "sha256": "e25803abc6cb1c41bad94c9ff6688f21edaa18e38ccdf8b8af61e4fc845afa22"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/q32-policy-cone-security/recheck_q32.py",
+      "sha256": "59c1f150be0d3c9eb0ffac23f279410866e65118cd940b3bca588405e8a6ec77"
+    }
+  ],
+  "reviewed_by": "Boss2 / fresh q32 solver",
+  "review_note": "完整重读去相关定义、q32定理、共同模型及冻结策略证据；运行 Fraction recheck 并确认 q32-exact 输出逐字节一致。仅提交固定锥 p=δ0 的安全最优预算实例，未把一般桥写成已证。",
+  "endpoint_pins": {
+    "customer-attraction/continuation-decorrelation-compensation-budget": "0400cb2039d3995e21831b3424a1eb2f80d56d590f450f325327e301a33dfdda",
+    "customer-attraction/q32-fixed-policy-cone-individual-and-static-security": "0a60697ca4da8d3892a4090a441754c99e525f6c92eccfb4ccf0870bc681785c"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定义/跨分支去相关与激励补偿总预算--定义.md": "51b64f713fa05f4eba6dc873256e7086342b2d328a6c2881a9308d356b2e7eed",
+    "archives/customer-attraction/state/定理/q32完整策略锥的逐人静态安全值--定理.md": "6866604ad9de255fe64b347242233cbdcad4f617f4c6add63d89aa684f42f7e9",
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+    "research/registration/evidence/register-lead-recovered-evidence-01/sym_m5p7_q32_Jout.json": "d69e034266cf14279ce3de3ed9ebfadd9bb0ae79df9d35a89ad5fddbe5b32fe9",
+    "archives/customer-attraction/tools/evidence/q32-policy-cone-security/q32-exact.json": "e25803abc6cb1c41bad94c9ff6688f21edaa18e38ccdf8b8af61e4fc845afa22",
+    "archives/customer-attraction/tools/evidence/q32-policy-cone-security/recheck_q32.py": "59c1f150be0d3c9eb0ffac23f279410866e65118cd940b3bca588405e8a6ec77"
+  },
+  "review_digest": "14287d559ecbc195f32a9bbad12a7ebc5b3aee8c06a06bfa08f6dfbc955acc2a"
+}

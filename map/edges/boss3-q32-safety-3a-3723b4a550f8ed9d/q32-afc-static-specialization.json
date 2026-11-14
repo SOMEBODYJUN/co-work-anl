@@ -1,0 +1,73 @@
+{
+  "edge_id": "boss3-q32-safety-3a-3723b4a550f8ed9d-q32-afc-static-specialization",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/q32-fixed-policy-cone-individual-and-static-security",
+    "CA-OBLIVIOUS-MIXED-SECURITY-2N1"
+  ],
+  "target_ids": [
+    "customer-attraction/actual-position-aggregate-free-column-budget"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定 sym_m5p7_q32_Jout.json 的五人、七标签完整有序策略σ；客户类型质量 w_T≥0 量化完整真实IC锥 Kσ（含零点和整数单位客户）；实际删槽列保留真实前缀、强制动作后的真实后继并删除当前槽；查询与竞争背景均可重复，弱平局、同覆盖异标签和全部有序离轨历史保留。",
+  "roles": {
+    "customer-attraction/q32-fixed-policy-cone-individual-and-static-security": "证明该冻结策略锥的实际终局00011、根/末位真实IC、五个实际前缀 v_i=W/5 以及每个位置的真实删槽菜单上界。",
+    "CA-OBLIVIOUS-MIXED-SECURITY-2N1": "提供一般共同目录的静态锐界 OPT_m≤(2m−1)v_m；在m=5时给 OPT_5≤9v_5。",
+    "customer-attraction/actual-position-aggregate-free-column-budget": "接收自由删槽列预算 AFC 的固定策略实例；其一般目录/一般策略全称仍是开放候选。"
+  },
+  "contribution": {
+    "result": "在同一 Kσ 中，对每个查询分布 p 和实际位置 i，q32 定理给 H_i(p)≤W/5；p=δ0 对所有合法菜单列给 H_i(δ0)=W/5。因此 max_p Σ_i H_i(p)=W，AFC 在该固定锥内精确取等。q32 同时给 v_5=W/5；与静态锐界合并得到固定锥上的 OPT_5≤9W/5（W=0 时不作除法）。冻结整数点的精确重放为 2801 个历史、16806 个非自身比较、W=20、OPT_5=33、v_5=4；指定 J=(2,3,4,5,6) 的 33/20 对偶只控制该支持，不升级为全支持 bound。",
+    "remaining": "AFC 对其他完整策略、其他目录和任意人数的共同全称仍未证明；q32 的同负载删槽结构不能迁移到一般真实后继菜单。静态锐界本身不支付动态 AFC，只有在固定 q32 锥的 AFC 已付清时才给上述 9W/5 条件结论。"
+  },
+  "explanation": "实际叶为(0,0,0,1,1)，根强制1的真实叶为(1,0,0,0,0)，末位历史(0,0,0,1)强制0的真实叶为(0,0,0,1,0)。根和末位两条真实IC分别给 g_R=x/3−y、g_L=y/2−x/4；6g_R+12g_L=−x 且3g_R+4g_L=−y，故Kσ中0、1兴趣位不同的类型质量全为零，实际五位收益均为W/5。末位历史 h=(0,0,0,1) 的全部七个纯查询均被真实最佳回应封顶于W/5，故任意混合查询也被 F_p(h)≤W/5 封顶。对每个实际位置，强制其规定动作并沿同一σ续行、删除该槽得到一个真实菜单列，其背景负载等于h，从而 H_i(p)≤W/5。取p=δ0时，任意合法四槽背景中每个被覆盖客户的分母至多5，故 F_{δ0}≥W/5，所有五个H_i均取等。AFC 的有限 minimax因此在该固定锥中恰为W；静态定理在m=5给OPT_5≤9v_5=9W/5。",
+  "scope": "这是 q32 固定五人策略锥的 specializes 边，不是一般 AFC 或六人 half 的证明；不把固定点的指定 J=2,…,6 对偶当作全目录最优值，也不把同覆盖商化或固定策略的菜单结构外推到任意σ。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/q32完整策略锥的逐人静态安全值--定理.md",
+      "sha256": "6866604ad9de255fe64b347242233cbdcad4f617f4c6add63d89aa684f42f7e9"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/静态混合安全值的锐目录计数界--定理.md",
+      "sha256": "034c940129b4ef2e1b5a2902f9256f9dbfed5fbc8bf6750c4403217db3a6b15f"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+    },
+    {
+      "path": "research/registration/evidence/register-lead-recovered-evidence-01/sym_m5p7_q32_Jout.json",
+      "sha256": "d69e034266cf14279ce3de3ed9ebfadd9bb0ae79df9d35a89ad5fddbe5b32fe9"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/q32-policy-cone-security/q32-exact.json",
+      "sha256": "e25803abc6cb1c41bad94c9ff6688f21edaa18e38ccdf8b8af61e4fc845afa22"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/q32-policy-cone-security/recheck_q32.py",
+      "sha256": "59c1f150be0d3c9eb0ffac23f279410866e65118cd940b3bca588405e8a6ec77"
+    },
+    {
+      "path": "archives/customer-attraction/state/候选/实际位置自由删槽列的聚合查询预算--候选.md",
+      "sha256": "e71619fb84fadc640e8cc0de46c7c1081233f876d010353acaa22b624bb7d522"
+    }
+  ],
+  "reviewed_by": "Boss2 / fresh q32 solver",
+  "review_note": "完整重读核心、静态锐界、共同模型、AFC候选及冻结策略/精确证据；Fraction 重放与冻结 q32-exact.json 逐字节一致。边界保留固定 Kσ 与 5 人范围，不改队列状态。",
+  "endpoint_pins": {
+    "CA-OBLIVIOUS-MIXED-SECURITY-2N1": "565f6bdb541c09f8229f27ca4d47409f946a555f141378e72fb91c5a55082ea4",
+    "customer-attraction/actual-position-aggregate-free-column-budget": "20553bc0513e372a911d962e6bc7450a0502d05c4dc53f6fc6cb0ab5d9aace2a",
+    "customer-attraction/q32-fixed-policy-cone-individual-and-static-security": "0a60697ca4da8d3892a4090a441754c99e525f6c92eccfb4ccf0870bc681785c"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/q32完整策略锥的逐人静态安全值--定理.md": "6866604ad9de255fe64b347242233cbdcad4f617f4c6add63d89aa684f42f7e9",
+    "archives/customer-attraction/state/定理/静态混合安全值的锐目录计数界--定理.md": "034c940129b4ef2e1b5a2902f9256f9dbfed5fbc8bf6750c4403217db3a6b15f",
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+    "research/registration/evidence/register-lead-recovered-evidence-01/sym_m5p7_q32_Jout.json": "d69e034266cf14279ce3de3ed9ebfadd9bb0ae79df9d35a89ad5fddbe5b32fe9",
+    "archives/customer-attraction/tools/evidence/q32-policy-cone-security/q32-exact.json": "e25803abc6cb1c41bad94c9ff6688f21edaa18e38ccdf8b8af61e4fc845afa22",
+    "archives/customer-attraction/tools/evidence/q32-policy-cone-security/recheck_q32.py": "59c1f150be0d3c9eb0ffac23f279410866e65118cd940b3bca588405e8a6ec77",
+    "archives/customer-attraction/state/候选/实际位置自由删槽列的聚合查询预算--候选.md": "e71619fb84fadc640e8cc0de46c7c1081233f876d010353acaa22b624bb7d522"
+  },
+  "review_digest": "8c4d762003fde5ad77edb653548b831075fc52eae47277dd19eae3054a01898b"
+}

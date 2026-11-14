@@ -1,0 +1,79 @@
+{
+  "edge_id": "boss3-ca-root-saturation-specializes-b6-unit-coverage",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "CA-TRUNCATED-SHAPLEY-ROOT-SATURATION-v1"
+  ],
+  "target_ids": [
+    "B6-ROOT-NEAR-SATURATION-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "m≥2；有限单位客户共同标签目录，cov:S→2^N，C(A)=|∪_{T∈A}cov(T)|在全标签域定义（因而归一、单调、次模）；给定一份在全部有序历史上的完整纯SPE。令K为最大单标签值，r为实际根收益，且E=mr−K=0（即r=K/m）。",
+  "roles": {
+    "CA-TRUNCATED-SHAPLEY-ROOT-SATURATION-v1": "在共同归一单调次模截断值下给出根饱和的二倍界，并在全域定义时给出(2−1/m)K界；其真实根分支还给出最大标签配对边际为零、每位真实玩家的K/m保底及W≥K。",
+    "B6-ROOT-NEAR-SATURATION-v1": "在单位客户模型中以E=mr−K参数给出近饱和交换式、OPT≤(2−1/m)K+(m−1)^2E、E=0的最大主题同覆盖/真实尾刚性及小E条件half。"
+  },
+  "explanation": "在单位客户映射下取C(A)=|∪_{T∈A}cov(T)|。它在全标签域是归一、单调次模值，且其Shapley边际正是客户在提供者间均分的收益；因此E=0恰好满足CA定理的根饱和假设。CA的全域比较支持上界给OPT_m≤(2−1/m)K，真实玩家逐一改选最大标签给W≥K，所以得到B6的E=0结论OPT_m≤(2−1/m)K≤(2−1/m)W。CA真实根分支中对任意最大根T及任意末位查询b有C({T,b})=C({b})=K；在单位客户解释下，任意两个最大主题覆盖同一客户集，且强制最大根后的真实后继也覆盖该集，这与B6的E=0饱和刚性一致。该边只是这个明确映射和E=0分支的特化：B6的E>0交换项(m−1)^2E、最大主题单向差及小E阈值不是CA根饱和定理的推论。R275 q32证书虽在更大的共同单调次模截断模型中有W=1、OPT=2的完整纯SPE取等点，但其模型明确不是单位客户反例，且没有全域单位客户实现；它只说明截断共同次模二倍界可取等，不能切断B6或单位客户的(2−1/m)界。显式m≥4 sharp_family同样只在截断值模型中成立，m=2、3的全选A策略还被离轨历史切断。",
+  "scope": "仅覆盖单位客户全域覆盖值、E=0的B6分支及其与CA根饱和结论的对应；不把B6的E>0界提升为CA结论，也不把R275较大共同次模证书或sharp_family当作客户吸引模型的反例。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/截断共同次模Shapley的根饱和福利界--定理.md",
+      "sha256": "f274968b8c0b378ac8c30bb86668378e883028a5ce57c2fb39b0463305270d36",
+      "section": "根偏离达到空前驱份额时的真实分支"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/截断共同次模Shapley的根饱和福利界--定理.md",
+      "sha256": "f274968b8c0b378ac8c30bb86668378e883028a5ce57c2fb39b0463305270d36",
+      "section": "比较支持再容纳最大标签时的更强上界"
+    },
+    {
+      "path": "archives/customer-attraction/state/推论/最大主题根近饱和的覆盖阈值--推论.md",
+      "sha256": "8c205982d0718e9117220df227d79f24553417a5a71c46111caed7debfc256eb",
+      "section": "并集覆盖、饱和刚性与条件half"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+      "section": "输入和终局量"
+    },
+    {
+      "path": "archives/customer-attraction/state/审查/R275可信搜索对称DAG与共同次模投影增量--审查.md",
+      "sha256": "566c829c1a9dc40f83d7363d6c577fedd2a8624d4310c9049897eb7c14304718",
+      "section": "4. broader common-submodular Shapley 类只作外部压力测试"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/R275-credible-search-20261031/original/633b64cbcf0233d0f667__submodular_joint_m5p7_q32.json",
+      "sha256": "dbf83fe8561340f29505cb33e37c83cf79e521ab2c1bcb4f5dd959d2b0968d6d"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/truncated-shapley-root-saturation/sharp_family.json",
+      "sha256": "f8d017eac799a2dbbc65a9d0a9f71ea3077ebb62c597bf99bcc8404e6c17c157"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/truncated-shapley-root-saturation/check_sharp_bounds.py",
+      "sha256": "ae802a06036eb6c096117659088114582003ebdf2e743761dbd9872bf341423f"
+    }
+  ],
+  "reviewed_by": "Boss2 / solver_saturation",
+  "review_note": "Fresh worker全文读取CA核心定理、B6依赖、共同历史模型、R275审查/精确JSON及sharp族程序；逐项检查E=0与r=K/m的对应、单位客户覆盖值的全域次模映射、(2−1/m)上界方向、最大主题同覆盖的条件及R275/sharp族的模型边界。check_sharp_bounds.py与sharp_family.py均以精确有理数执行通过；R275材料仅作较大共同次模压力测试，不被写成单位客户反例。",
+  "contribution": {
+    "result": "明确证明CA根饱和定理在单位客户全域覆盖值、E=0时特化为B6的OPT_m≤(2−1/m)K≤(2−1/m)W及最大主题同覆盖/强制最大根真实尾刚性；根饱和截断模型的因子2取等证书不反驳该单位客户特化。",
+    "remaining": "CA定理没有推出B6的E>0交换误差与小E阈值，也没有给一般单位客户SPE必满足E≤K/[m(m−1)^2]的证明；R275和sharp_family均未提供全域非负单位客户实现。后续若要闭合一般half，仍需独立控制E或给出真实单位客户完整策略反例。"
+  },
+  "endpoint_pins": {
+    "B6-ROOT-NEAR-SATURATION-v1": "1d15a68fab01de46f1ceb2bc96f442daf14a4065211d0c08b29bbd472a926554",
+    "CA-TRUNCATED-SHAPLEY-ROOT-SATURATION-v1": "9b7a6d3483c8d478bc6bf4abd92964adbd3cf5c59988430474576046ad01f138"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/截断共同次模Shapley的根饱和福利界--定理.md": "f274968b8c0b378ac8c30bb86668378e883028a5ce57c2fb39b0463305270d36",
+    "archives/customer-attraction/state/推论/最大主题根近饱和的覆盖阈值--推论.md": "8c205982d0718e9117220df227d79f24553417a5a71c46111caed7debfc256eb",
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+    "archives/customer-attraction/state/审查/R275可信搜索对称DAG与共同次模投影增量--审查.md": "566c829c1a9dc40f83d7363d6c577fedd2a8624d4310c9049897eb7c14304718",
+    "archives/customer-attraction/tools/evidence/R275-credible-search-20261031/original/633b64cbcf0233d0f667__submodular_joint_m5p7_q32.json": "dbf83fe8561340f29505cb33e37c83cf79e521ab2c1bcb4f5dd959d2b0968d6d",
+    "archives/customer-attraction/tools/evidence/truncated-shapley-root-saturation/sharp_family.json": "f8d017eac799a2dbbc65a9d0a9f71ea3077ebb62c597bf99bcc8404e6c17c157",
+    "archives/customer-attraction/tools/evidence/truncated-shapley-root-saturation/check_sharp_bounds.py": "ae802a06036eb6c096117659088114582003ebdf2e743761dbd9872bf341423f"
+  },
+  "review_digest": "5422679b0f5fe68184fddbc95e7b73f1e9e293ade61aef99a52812192c9ad4e7"
+}
