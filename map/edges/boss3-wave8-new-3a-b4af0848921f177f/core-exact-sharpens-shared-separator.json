@@ -1,0 +1,67 @@
+{
+  "edge_id": "cag-b4af-core-exact-sharpens-m68040-separator",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/fixed-distinct-prefix-average-cone-exact-33-over-16"
+  ],
+  "target_ids": [
+    "M-68040e6e0ae74ae49a327f789f12ddaf"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定四人依次行动、共同五标签目录{0,1,2,3,4}、单位客户均分、全部31种非空会员型的任意非负质量；固定正文第9棵156动作形式策略σ，实际根终局为2222；J={1,2,3,4}。只对长度0至3、仅含J且无重复的41个历史h保留对J中未出现动作的等权平均真实IC，偏离后沿同一σ在改变后的完整有序历史继续。定义W为实际主题2的覆盖，O_J为J覆盖；在附加O_J=OPT₄的子域上仍作同一比较。",
+  "roles": {
+    "customer-attraction/fixed-distinct-prefix-average-cone-exact-33-over-16": "源对象给出同一41行筛选平均锥的完整有理上对偶：历史(2),(2,1),(2,3)的正乘子分别为9/4、1、1/2，31个客户型余项全部非负，并给出与O_J=OPT₄相容的198客户等号点。",
+    "M-68040e6e0ae74ae49a327f789f12ddaf": "目标共享障碍对象保存同一策略、J、41行、198单位客户及33/16分离点，证明该限制平均模板（即使要求J最优）不能蕴含O_J≤2W，但原登记未给匹配上对偶。"
+  },
+  "explanation": "源定理的上对偶恒等式对每个非负质量x给出(33/16)W−O_J=(9/4)R̄_(2)+R̄_(2,1)+(1/2)R̄_(2,3)+Σ_Mρ_Mx_M≥0，其中三行正乘子且ρ_M≥0；因此目标障碍对象所用的41条平均行确实满足O_J≤(33/16)W，且W>0时比值上界在同一198客户点取等。该点的掩码质量为x_2=19/96、x_5=1、x_9=19/48、x_17=15/32（清分母为19、96、38、45），实际W=96，O_J=OPT₄=198，故O_J/W=33/16>2。源还逐项保留目标的反例边界：完整780条真实IC中92条为负，筛选64条逐行动中有3条为负，全部历史J平均在(2,2)、(2,2,2)分别为−5/256、−5/64；所以这只是信息截断的平均锥分离，不是完整纯SPE或全历史平均反例。方向只从精确源到较弱共享记录，未声称共享障碍可反推出上界。",
+  "whole_result": "在上述固定策略、J、41条筛选平均条件及非负质量模型下，源对象完整蕴含共享障碍对象的整条有限结论，并将其33/16可行分离点提升为精确锥上界和锐值：O_J≤(33/16)W，W>0时最大比值为33/16，加入O_J=OPT₄仍锐；同一点满足W=96、O_J=OPT₄=198且平均行全非负。该整条蕴含不延伸到完整真实IC、完整纯SPE或全部历史平均系统。",
+  "scope": "只比较同一第9棵固定形式策略、J={1,2,3,4}和41个不重复J前缀筛选平均行；保留真实偏离续局、重复选择、空/同覆盖标签及任意非负质量。不是一般四人策略、全历史平均锥、纯SPE福利定理或六人目标的迁移。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/指定四人不重复比较前缀平均锥的锐比三十三除十六--定理.md",
+      "sha256": "9a39e409b0f8e84290c6523c47514aa811402e9e2d566c979bdccec0006bc718"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/distinct-prefix-average-sharp-33-over-16/exact-certificate.json",
+      "sha256": "12e309e8b9b1a828b5f4dbf40734e8c630252b3d86f433a123a66dc027352a10"
+    },
+    {
+      "path": "archives/customer-attraction/state/障碍/不重复比较前缀平均的四人原点与精确恢复--障碍.md",
+      "sha256": "000d0e04276f00e9258afce459db1b9cb834fc507e7d3e70ffd2097fd3e46d6f"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/average-and-last-payoff-resumed-boss2/new-average-exact-check.json",
+      "sha256": "01aa191f681e1c058d2734fc5eee50c073318b1e614becd51ee2f1b3410b1d56"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/distinct-prefix-average-sharp-33-over-16/verify_fixed_average_33_over_16.py",
+      "sha256": "06c011f6ed64e22ab12572024b2c215e8776f5707cecab5a1aee9bf191fbadb9"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/average-and-last-payoff-resumed-boss2/check_average_sources.py",
+      "sha256": "b48b4c61d873bb7aa36cb707d4fed8d6393b00ec9dbfcec868c36b8cc1231359"
+    }
+  ],
+  "reviewed_by": "map_worker_g",
+  "review_note": "Fresh worker按任务声明顺序完整读取7个reading_refs及共享M-68040登记/正文，逐项核对SHA、模型量词、41/64/780行计数、三条有理乘子、31个余项、198客户等号点和负行边界；未运行科学LP或策略搜索，只在写入绑定后运行edge-check结构门。",
+  "endpoint_pins": {
+    "M-68040e6e0ae74ae49a327f789f12ddaf": "2e6efa9135b79eeae5e819691e4dba5f46b791a553715f5d5b5e36e1a27aecbc",
+    "customer-attraction/fixed-distinct-prefix-average-cone-exact-33-over-16": "1a12ae7ce3d1300ea5fef37ff4b93af877ca455e8154f51627606fd04d5c0a37"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/指定四人不重复比较前缀平均锥的锐比三十三除十六--定理.md": "9a39e409b0f8e84290c6523c47514aa811402e9e2d566c979bdccec0006bc718",
+    "archives/customer-attraction/tools/evidence/distinct-prefix-average-sharp-33-over-16/exact-certificate.json": "12e309e8b9b1a828b5f4dbf40734e8c630252b3d86f433a123a66dc027352a10",
+    "archives/customer-attraction/state/障碍/不重复比较前缀平均的四人原点与精确恢复--障碍.md": "000d0e04276f00e9258afce459db1b9cb834fc507e7d3e70ffd2097fd3e46d6f",
+    "archives/customer-attraction/tools/evidence/average-and-last-payoff-resumed-boss2/new-average-exact-check.json": "01aa191f681e1c058d2734fc5eee50c073318b1e614becd51ee2f1b3410b1d56",
+    "archives/customer-attraction/tools/evidence/distinct-prefix-average-sharp-33-over-16/verify_fixed_average_33_over_16.py": "06c011f6ed64e22ab12572024b2c215e8776f5707cecab5a1aee9bf191fbadb9",
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+    "archives/customer-attraction/tools/evidence/average-and-last-payoff-resumed-boss2/check_average_sources.py": "b48b4c61d873bb7aa36cb707d4fed8d6393b00ec9dbfcec868c36b8cc1231359"
+  },
+  "review_digest": "e232a437c128bf9a1291764ff9f562bf6d5a36de7eb121681721c8e358e6f3c5"
+}

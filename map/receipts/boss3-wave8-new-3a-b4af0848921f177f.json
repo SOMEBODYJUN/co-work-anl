@@ -1,0 +1,58 @@
+{
+  "coverage": {
+    "customer-attraction/fixed-distinct-prefix-average-cone-exact-33-over-16": {
+      "state": "linked",
+      "object_pin": "1a12ae7ce3d1300ea5fef37ff4b93af877ca455e8154f51627606fd04d5c0a37",
+      "comparison_scope": "本轮完整比较固定第9棵四人五标签策略的41条不重复J={1,2,3,4}筛选平均锥与共享M-68040障碍记录；读取全部7个声明reading_refs及共享登记对象，保留真实续局、全部780真IC、64条筛选逐行动和重复历史全J平均的量词边界。",
+      "reason": "精确源定理给出(33/16)W−O_J的三行上对偶（乘子9/4、1、1/2）与31个非负余项，且198单位客户点（mask 2/5/9/17计数19/96/38/45）达到W=96、O_J=OPT₄=198，故同一筛选平均锥的最大比值在J最优子域仍恰为33/16。共享障碍的33/16分离点因此被完整锐化；其92条负真IC、3条负筛选逐行动及重复历史(2,2),(2,2,2)的负全J平均仍说明该记录不是完整纯SPE或全历史平均反例。",
+      "edge_ids": [
+        "cag-b4af-core-exact-sharpens-m68040-separator"
+      ]
+    },
+    "M-68040e6e0ae74ae49a327f789f12ddaf": {
+      "state": "isolated-after-review",
+      "object_pin": "2e6efa9135b79eeae5e819691e4dba5f46b791a553715f5d5b5e36e1a27aecbc",
+      "comparison_scope": "共享依赖完整障碍正文及登记模型、量词、反例目标；与核心定理逐项对齐固定策略、J、41行、客户点、OPT₄条件和开放边界。",
+      "reason": "该对象与核心使用同一有限有理点和同一筛选平均系统；核心新增匹配上对偶并证明33/16锐上界，形成从核心到共享障碍的单向whole逻辑蕴含。状态标为isolated-after-review以避免把该依赖或结构检查写成独立context/checks数学结论。"
+    }
+  },
+  "assets": [
+    {
+      "path": "map/edges/boss3-wave8-new-3a-b4af0848921f177f/core-exact-sharpens-shared-separator.json",
+      "sha256": "1a39dbecdb12b2a5a4a6f79702856b3531108d2995bd2fc91a34ae5c5a9ef252"
+    },
+    {
+      "path": "map/edges/boss3-wave8-new-3a-b4af0848921f177f/comparison.md",
+      "sha256": "85adaa53e76440acd2765bd41f90a66e6b5a3119fee4f23803dd3900d2ef323b"
+    },
+    {
+      "path": "map/edges/boss3-wave8-new-3a-b4af0848921f177f/reading-ledger.json",
+      "sha256": "0357b4b14b923f9b45c3c36fcadc15d221ff0bb0366ff354a67e00d7dae9c4da"
+    }
+  ],
+  "closed_overlaps": [
+    {
+      "core_id": "customer-attraction/fixed-distinct-prefix-average-cone-exact-33-over-16",
+      "peer_id": "M-68040e6e0ae74ae49a327f789f12ddaf",
+      "reason": "已完整对读共享障碍与核心定理；同一模型、策略、J、41行及198点已核对。核心三行有理对偶支付共享点并给出全锥33/16锐上界，方向为core⇒shared；负真IC与重复历史负均值保留，未留下需要另起任务的同一比较缺口。"
+    }
+  ],
+  "follow_up_tasks": [],
+  "in_packet_comparisons": [
+    {
+      "core_id": "customer-attraction/fixed-distinct-prefix-average-cone-exact-33-over-16",
+      "peer_id": "M-68040e6e0ae74ae49a327f789f12ddaf",
+      "reason": "唯一声明的shared_read overlap；已通过精确dual/remainder和同点等号核实，完整结论写入whole_result，不把共同定义升级为hub边。"
+    }
+  ],
+  "validation": {
+    "edge_check": {
+      "status": "edge-structure-valid-not-a-mathematical-verdict",
+      "proof_scope": "whole",
+      "edge_id": "cag-b4af-core-exact-sharpens-m68040-separator"
+    },
+    "checks_note": "仅运行edge-bind --write与edge-check；未运行LP、搜索、策略枚举，未执行claim/done/assemble/checkpoint/commit。"
+  },
+  "reviewed_by": "map_worker_g",
+  "review_note": "按声明顺序完整实读7个reading_refs并核SHA；共享M-68040登记pin与障碍正文对齐。数学范围明确为固定筛选平均锥的whole蕴含，贡献为将共享33/16分离点补成精确锐界；开放义务明确排除完整SPE、全历史平均和一般人数结论。"
+}
