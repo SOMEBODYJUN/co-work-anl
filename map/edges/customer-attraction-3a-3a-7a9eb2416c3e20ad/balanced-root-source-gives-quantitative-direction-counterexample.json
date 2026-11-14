@@ -1,0 +1,54 @@
+{
+  "edge_id": "ca-7a9eb-balanced-root-source-gives-quantitative-direction-counterexample",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/stationary-successor-occupation-cap-counterexample-and-amplification-remainder"
+  ],
+  "target_ids": [
+    "M-3904ca6262394f3fa8854653620204dd"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "同一零背景八人、八标签、两不交的16单位客户块，以及同一覆盖全部有序历史的完整纯SPE。每块索引顺序A、B、C、D。K(T,A)把独立查询T插到强制A所得八槽完整原叶，保留原根A。P的第A列只平均A枝七名后继的主题。",
+  "roles": {
+    "customer-attraction/stationary-successor-occupation-cap-counterexample-and-amplification-remainder": "提供完整SPE及其八条真实根列、根收益u、K的块矩阵及P的块列结构。由这些数据可计算另一分布p的二次值和经验后继方向。",
+    "M-3904ca6262394f3fa8854653620204dd": "在p按块均匀分配给C、D的指定有理点，给普遍定量QD下界的完整反例及同点占用量。"
+  },
+  "explanation": "令p=(0,0,1/4,1/4)在两块各一份。同块根列的七名后继在本块的计数均为v=(1,0,1,1)，在另一块均为w=(2,1,1,0)。每块p质量1/2，故q=Pp在每块为(v+w)/14=(3/14,1/14,1/7,1/14)，恰是该例唯一平稳源。p与q是两个不同分布。把p、q代入源对象的同一K，得到Kp每块为(319/120,61/30,59/20,379/120)，Kq每块为(38/15,221/105,831/280,2773/840)。于是G=pᵀKp=733/240，qᵀKp=286/105，pᵀKq=2633/840，d(p)=qᵀKp+pᵀKq−2G=−1/4。以u=13/4、n=7得2(G−u)/7=−47/840，差−163/840<0。\n\n对任一支持根枝A，原八槽客户负载L_x由同一真实列给出，后继占用k_A(x)=L_x−1_{x∈A}。在两个C枝各有折扣尾份额Σ_x k_A(x)/(1+L_x)=547/30，两个D枝各557/30，故V+=92/5。独立乘积项由7q_x=E_p k_A(x)给7qᵀKp，扣V+得I=2/3。四个支持根枝的原当前收益均13/4，故D=13/4、I−G+D=69/80。该正储备支付第一侧的指定差额，第二侧pᵀKq仍按q强制重开原根、再走该枝真实续局来计算。",
+  "scope": "指定八人完整SPE与指定p。关系使用平稳反例承载的真实列及K/P，并以q=Pp=Qstat建立数值桥。单独的stationary超额43/840不推出QD失败。G=733/240<u使此点不能反驳仅在G>u时要求d(p)>0的WD，也不给一般自由菜单、路径聚合或half的结论。",
+  "whole_result": "由源对象的八人完整SPE及真实根列构造p=(0,0,1/4,1/4)两份，完整得到目标的G=733/240<u=13/4、q=Pp、d(p)=−1/4、定量右端−47/840及严格反例差−163/840；同点的qᵀKp=286/105、V+=92/5、I=2/3及I−G+D=69/80亦由同列得到。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/整数后继占用储备的全菜单自税分解--引理.md",
+      "sha256": "bc835b29bad4199d45b74985e61bdfe06339cce5c7ae2dc1d05d275dfa5de5fb",
+      "section": "5. 经验后继方向只得到一侧预算"
+    },
+    {
+      "path": "archives/customer-attraction/state/反例/真实后继占用平稳分布的付款失效与放大余项--反例.md",
+      "sha256": "62da891e1e92c00aefbc3e01f9286689ec15c7125ff735830ae2a2fb6fdb547f",
+      "section": "完整八人单位输入及真实策略"
+    },
+    {
+      "path": "archives/customer-attraction/state/反例/真实后继占用平稳分布的付款失效与放大余项--反例.md",
+      "sha256": "62da891e1e92c00aefbc3e01f9286689ec15c7125ff735830ae2a2fb6fdb547f",
+      "section": "列、平稳解及查询价的自足计算"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/stationary-author-audit-and-route-status-five-primary/related-original/research/workspaces/customer-attraction/R-d22a706a03c5499d941a6a97f94128a8/counterexample/pure_menu_two_block_dag.json",
+      "sha256": "6190bc98dedda4fb22a1af6339702c03a6cb3b04cd8dfe6b18a577782e5d2f95"
+    }
+  ],
+  "reviewed_by": "Boss5",
+  "review_note": "实读两端现行登记、模型、完整公式页及两份审计合同。对同SHA原DAG全部13872条节点记录进行结构核对，按指定边重建全部八条真实根列，并用Fraction复算K/P、QD点和占用量。全节点收益IC复用原成熟独审；本轮未运行原审计、求解器或重做全部节点收益比较。",
+  "endpoint_pins": {
+    "M-3904ca6262394f3fa8854653620204dd": "70fcf44d5e8f0c02c68f2aec01d2b20633b9ee786eef012268d9fbce2f4794db",
+    "customer-attraction/stationary-successor-occupation-cap-counterexample-and-amplification-remainder": "1e815c377e3a3f316b142b91b464d3396a369febfef45785734a743fc33e168e"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/整数后继占用储备的全菜单自税分解--引理.md": "bc835b29bad4199d45b74985e61bdfe06339cce5c7ae2dc1d05d275dfa5de5fb",
+    "archives/customer-attraction/state/反例/真实后继占用平稳分布的付款失效与放大余项--反例.md": "62da891e1e92c00aefbc3e01f9286689ec15c7125ff735830ae2a2fb6fdb547f",
+    "archives/customer-attraction/tools/evidence/stationary-author-audit-and-route-status-five-primary/related-original/research/workspaces/customer-attraction/R-d22a706a03c5499d941a6a97f94128a8/counterexample/pure_menu_two_block_dag.json": "6190bc98dedda4fb22a1af6339702c03a6cb3b04cd8dfe6b18a577782e5d2f95"
+  },
+  "review_digest": "e71c0de4cee442ba87dda7267ed8ea4b8e1c886b565cd4dedfd0203d8097b00a"
+}
