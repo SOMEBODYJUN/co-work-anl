@@ -1,0 +1,67 @@
+{
+  "edge_id": "ca-971de-policy-transfer-86-to-382",
+  "kind": "transfers",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/five-provider-individual-static-security-counterexample"
+  ],
+  "target_ids": [
+    "customer-attraction/five-individual-security-pushforward-fractional-snapshot"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "有限单位客户、有限非空共同标签目录、十标签 X0…X4/Y0…Y4、恰五名单位提供者按序行动；完整有序历史策略，允许重复/同覆盖异标签/弱平局，偏离后沿同一策略真实后继。 源端86单位客户重数为原正文29型；终点改用同一29个mask的显式382单位重数 v=(1,20,15,…,15,0,1,…,0)，并按73归一为w*=v/73。动作函数固定为策略证书SHA372bea…，共11111个历史节点。",
+  "roles": {
+    "customer-attraction/five-provider-individual-static-security-counterexample": "提供同一11111节点完整动作函数及86单位游戏的全历史IC/收益与安全值证书。",
+    "customer-attraction/five-individual-security-pushforward-fractional-snapshot": "在382单位重数上重新审计该动作函数，给出精确IC、受限推送价与覆盖值；不继承86单位安全值。"
+  },
+  "explanation": "两对象共享十标签、29种兴趣mask及同一完整动作函数，实际路径均为(4,5,6,7,8)。源端重数展开为86客户，收益(81/5,86/5^4)、W=85、OPT5=86；终点的显式整数重数为382，除以73后根收益1、其余77/73，W=381、OPT5=382。终点audit_snapshot.py沿全部11111有序历史和111110个含自身比较重新计算，382重数下负IC数为0；因此这是经独立精确复核的参数迁移。迁移不保留源端的v5=2262/139、u1=81/5或源端原86客户权重，也不把旧浮点快照的gap当作新证书。",
+  "whole_result": "同一完整11111节点动作函数可在86单位原游戏和382单位有理重建游戏中分别作为全历史纯SPE；迁移后的新游戏只由新审计负责其IC与收益结论。",
+  "scope": "仅该固定29-mask/十标签动作函数的两组客户重数；不推任意重数、任意策略或全五槽/自由背景界。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/反例/五人首位收益低于真正混合安全值--反例.md",
+      "sha256": "9e4d30f04f7d3f91fc56dce2fd25bb8d05f409c7753962c82f12377d07bd9c24"
+    },
+    {
+      "path": "archives/customer-attraction/state/计算/五人个体安全推送分数候选快照--计算.md",
+      "sha256": "e18b818705242721252e4544f70fd9aa3afb825a2d1143496caf66cdaedb0e8f"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/security-chain-boundary/original/examples/customer_attraction/five_individual_security.json",
+      "sha256": "689cae34e0cbed60583710cd8e40a06b558cde59ddd566b2cb89e06ab5e8700f"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/security-chain-boundary/original/evidence/certificates/customer_attraction/five_individual_security.json",
+      "sha256": "372bea6caf743792be542c411e9bcb961b6af6d31dc89d76e6a903e609be990f"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/pushforward-fractional-five-snapshot/audit_snapshot.py",
+      "sha256": "20a5cd1db347353d0495ec083c7be67cec848ea51bb0bedefcfae3ee0a7614b8"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/pushforward-fractional-five-snapshot/current-exact-reconstruction.json",
+      "sha256": "3fa6a10b1374d7c044d9da3c7d1fa8871c1720ca20c887193f76a366abe130f0"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/pushforward-fractional-five-snapshot/original.json",
+      "sha256": "207bb54c38056a422191ffdc2ef0a134626b6d3a601cc075f035e2104a623f89"
+    }
+  ],
+  "reviewed_by": "solver_971de194ee8e9c96",
+  "review_note": "完整读取源端正文、策略JSON三段连续字节区间、审计代码和重建报告；未运行旧发现器。",
+  "endpoint_pins": {
+    "customer-attraction/five-individual-security-pushforward-fractional-snapshot": "5952635d38edd54b0992b582a21d79a455d6e6fdb01b1f8f6f8e7adad47b1f85",
+    "customer-attraction/five-provider-individual-static-security-counterexample": "426a6639c6a4973e2b65f2facb9a568c7a6669fd6c4ba920ef67228907a241a3"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/反例/五人首位收益低于真正混合安全值--反例.md": "9e4d30f04f7d3f91fc56dce2fd25bb8d05f409c7753962c82f12377d07bd9c24",
+    "archives/customer-attraction/state/计算/五人个体安全推送分数候选快照--计算.md": "e18b818705242721252e4544f70fd9aa3afb825a2d1143496caf66cdaedb0e8f",
+    "archives/customer-attraction/tools/evidence/security-chain-boundary/original/examples/customer_attraction/five_individual_security.json": "689cae34e0cbed60583710cd8e40a06b558cde59ddd566b2cb89e06ab5e8700f",
+    "archives/customer-attraction/tools/evidence/security-chain-boundary/original/evidence/certificates/customer_attraction/five_individual_security.json": "372bea6caf743792be542c411e9bcb961b6af6d31dc89d76e6a903e609be990f",
+    "archives/customer-attraction/tools/evidence/pushforward-fractional-five-snapshot/audit_snapshot.py": "20a5cd1db347353d0495ec083c7be67cec848ea51bb0bedefcfae3ee0a7614b8",
+    "archives/customer-attraction/tools/evidence/pushforward-fractional-five-snapshot/current-exact-reconstruction.json": "3fa6a10b1374d7c044d9da3c7d1fa8871c1720ca20c887193f76a366abe130f0",
+    "archives/customer-attraction/tools/evidence/pushforward-fractional-five-snapshot/original.json": "207bb54c38056a422191ffdc2ef0a134626b6d3a601cc075f035e2104a623f89"
+  },
+  "review_digest": "3e41966bcb349cf9b3fcb5079d74dbd4638c47822a54f05dbe9b95228a1d7f9f"
+}

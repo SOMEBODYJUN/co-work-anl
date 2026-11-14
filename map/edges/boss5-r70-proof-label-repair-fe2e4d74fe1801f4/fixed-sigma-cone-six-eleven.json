@@ -1,0 +1,87 @@
+{
+  "edge_id": "cag-r70-fixed-sigma-cone-six-eleven",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "CAG-MODEL",
+    "CA-STRATEGY-CONE"
+  ],
+  "target_ids": [
+    "cag-r70-six-player-seven-topic-fixed-complete-strategy-lp"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定六人、七个可区分标签、127 个非空兴趣掩码、非负非零实数重数向量 x。整数点解释为有限单位客户。允许重复行动、空覆盖、同覆盖异标签与任意有序离轨弱平局。目标策略 σ 是保存的 19,608 节点完整有序动作表，根终局计数 q=(1,0,5,0,0,0,0)。每个强制动作都沿同一 σ 的改变后历史继续。OPT_6 遍历全部可重复六槽，可用七个遗漏标签支持计算。",
+  "roles": {
+    "CAG-MODEL": "提供均分客户收益、根福利 W、六槽 OPT_6、全部有序历史纯 SPE 量词以及 root 与合法背景 remaining-profit 的区分。",
+    "CA-STRATEGY-CONE": "提供固定完整策略的精确客户重数锥 Gσx≥0、真实离轨续局和有理锥对偶证书语义。",
+    "cag-r70-six-player-seven-topic-fixed-complete-strategy-lp": "把上述锥专门化到一份 19,608 节点 σ：3,048 个去重真实 IC 键、127 个客户类型、七个遗漏标签 LP、7 组有理对偶和一个独立核验的 11 客户达到点。"
+  },
+  "explanation": "在每个有序节点 h，矩阵行 G_{h,b} 是当前 σ 动作的客户份额减去强制标签 b 后沿同一 σ 续行所得份额。全部非自身比较给 3,048 个去重真实键，其约束与非负重数共同定义固定 σ 的完整纯 SPE 锥。每个 omit-j LP 以 v^j x=1 归一并施加所有 v^k x≤1，目标为根覆盖 c x。七组有理对偶合计使用 21 条真实 IC，给逐列余项 c−β_j v^j−Σ_r μ_{j,r}G_r≥0 及 μ_{j,r}≥0。逐列核验 889 项，乘以非负可行 x 得 W≥β_j v^j x，其中遗漏 0、2 的 β_j=6/11，其余 β_j=3/5。取实现真实 OPT_6 的遗漏支持得全锥下界。等号直接由独立 point-audit.json 的 points.lp_integer 核验。该 11 客户点的同一 σ 有 137,256 条真实比较（含自身），最小精确 IC 余量 0。根路径 (0,2,2,2,2,2) 只覆盖掩码 5 的六名客户，六标签 (0,1,3,4,5,6) 覆盖全部 11 名，故可行点 W=6、OPT_6=11，达到下界。",
+  "scope": "结论量化这一份完整有序 σ 的全部非负非零客户类型向量中满足真实 IC 的点，福利在根计算，比较覆盖遍历同目录六槽。",
+  "whole_result": "由共同标签历史模型及固定完整策略的真实客户重数锥，结合此 σ 的七组精确对偶和独立 points.lp_integer 可行点，得到指定 σ 在其完整真实 IC 锥内的 min W/OPT_6=6/11，并由 11 个单位客户实现。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/程序/六人七主题固定完整策略的福利比线性规划程序--程序.md",
+      "sha256": "1b882276b4cdbc2215ac198279f822a00546428edfffb30a2cc79256ec6b5c12",
+      "section": "新证书：21条真实IC与七个逐类型余项"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/固定完整策略的客户重数锥--定理.md",
+      "sha256": "ae4bcfd424eca8d4e3d79965f72182c0b2c8eefb72e74b44c2521b519f7aad39"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/r70-strategy-lp-program/exact-cone-audit.json",
+      "sha256": "225f682dab909fac2a2da6a8b38166bc3f773d4c820714851c5785ca0424307c"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/r70-strategy-lp-program/replay/complete-strategy.json",
+      "sha256": "d2924549f6ea10bd9a732434bef8145694e2bcbbec471abdef60d8d609687141"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/r70-six1-best-data/point-audit.json",
+      "sha256": "7074287b7d654e9399df82b8f72cc4753f39cf450623cd2ed5fb93f50ce004b4"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/r70-six1-best-data/README.md",
+      "sha256": "18b8a3b8289a6f1ba54b2d7bb96dddf7f78bd87e24f6dae653b14f0ffeed7018"
+    },
+    {
+      "path": "archives/customer-attraction/state/计算/六人不交覆盖搜索点的随机记录与锐界实例--计算.md",
+      "sha256": "9b9ecb396c2ed6d5c2cb012a64f86235508ed21343269846c6afd5c6eee795c8",
+      "section": "LP十一点：大块锐例与相同固定策略"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/r70-six1-best-data/lp-integer-point.json",
+      "sha256": "f3bb94fe8c4d8748263b456a4232359648192bb303a3ff85a97c6be7fa15b895"
+    },
+    {
+      "path": "map/edges/boss5-r70-proof-label-repair-fe2e4d74fe1801f4/support.md",
+      "sha256": "2e284ffd95a6c199c64056fb53b875392b8b09afc072b59c42b3122089e026b8"
+    }
+  ],
+  "reviewed_by": "Boss5",
+  "review_note": "核对现行登记、固定锥七组有理对偶及同一策略 SHA 的双输入审计。取等直接使用 point-audit.json 的 points.lp_integer。共享审计中的 points.random 对应历史 read-add 对象 M-c5e，其登记结论是另一个 58 客户输入的全 SPE，福利比 43/58。承接精确指纹下的原结构核对与相邻定向比较的逐历史独立回算。本轮复核证据归属及数学承重关系。",
+  "endpoint_pins": {
+    "CA-STRATEGY-CONE": "291bd4d94e33d40566453a33b5cf07b1c620b77362268417582efecb42b0c4bb",
+    "CAG-MODEL": "3216d1db43ff83e0e0c9cf2479e79611277c9d9291a68e7f9b85ec4bb299dc5c",
+    "cag-r70-six-player-seven-topic-fixed-complete-strategy-lp": "b85fbfeafe5b02e918438e2de0d948d6296a19524e6f06adb310a997d34eb2bb"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/程序/六人七主题固定完整策略的福利比线性规划程序--程序.md": "1b882276b4cdbc2215ac198279f822a00546428edfffb30a2cc79256ec6b5c12",
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+    "archives/customer-attraction/state/定理/固定完整策略的客户重数锥--定理.md": "ae4bcfd424eca8d4e3d79965f72182c0b2c8eefb72e74b44c2521b519f7aad39",
+    "archives/customer-attraction/tools/evidence/r70-strategy-lp-program/exact-cone-audit.json": "225f682dab909fac2a2da6a8b38166bc3f773d4c820714851c5785ca0424307c",
+    "archives/customer-attraction/tools/evidence/r70-strategy-lp-program/replay/complete-strategy.json": "d2924549f6ea10bd9a732434bef8145694e2bcbbec471abdef60d8d609687141",
+    "archives/customer-attraction/tools/evidence/r70-six1-best-data/point-audit.json": "7074287b7d654e9399df82b8f72cc4753f39cf450623cd2ed5fb93f50ce004b4",
+    "archives/customer-attraction/tools/evidence/r70-six1-best-data/README.md": "18b8a3b8289a6f1ba54b2d7bb96dddf7f78bd87e24f6dae653b14f0ffeed7018",
+    "archives/customer-attraction/state/计算/六人不交覆盖搜索点的随机记录与锐界实例--计算.md": "9b9ecb396c2ed6d5c2cb012a64f86235508ed21343269846c6afd5c6eee795c8",
+    "archives/customer-attraction/tools/evidence/r70-six1-best-data/lp-integer-point.json": "f3bb94fe8c4d8748263b456a4232359648192bb303a3ff85a97c6be7fa15b895",
+    "map/edges/boss5-r70-proof-label-repair-fe2e4d74fe1801f4/support.md": "2e284ffd95a6c199c64056fb53b875392b8b09afc072b59c42b3122089e026b8"
+  },
+  "review_digest": "e97ed59d695b1fdf2cd0601cb8da8416a340371c3ba451a3b0bab447c0b5ba89"
+}

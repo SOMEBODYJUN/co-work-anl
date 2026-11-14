@@ -1,0 +1,859 @@
+{
+  "definition": {
+    "task_id": "customer-attraction-3b-rz-prefix-boss2-3b-8db9930529c005e2",
+    "stage": "3B",
+    "registry": "research/registry.json",
+    "object_ids": [
+      "M-63c882b0c8414805a43d4d8d4e43f4e3",
+      "M-736ccd964c384f16a6816eebcb468f2f"
+    ],
+    "read_object_ids": [],
+    "input_pins": {
+      "M-63c882b0c8414805a43d4d8d4e43f4e3": "403896c58e3ef32a0658cf8f47cd52451777da770e2e6a2dbb15cd3345668f6e",
+      "M-736ccd964c384f16a6816eebcb468f2f": "793a5c81ccca4d9a1eddbe61a6321795752ed83063a9e0cf4a6285944d9c3b1a"
+    },
+    "write_paths": [
+      "map/edges/customer-attraction-3b-rz-prefix-boss2-3b-8db9930529c005e2",
+      "map/receipts/customer-attraction-3b-rz-prefix-boss2-3b-8db9930529c005e2.json"
+    ],
+    "goal": "Compare the M-736 four-state shared R/Z income-credit bound and its fixed 49:10 contract with M-63c's independent-prefix/shared-tail closure: determine the exact parameter and quantifier conditions under which the M-63c prefix-tail bridge composes with M-736, and state any remaining payment or SPE gap.",
+    "context_plan": {
+      "budget": {
+        "context_tokens": 500000,
+        "window_source": "official-default",
+        "model": "gpt-6.1-sol",
+        "used_tokens": null,
+        "history_mode": "fresh-worker",
+        "reserve_tokens": 200000,
+        "reading_tokens": 300000,
+        "output_tokens": 100000,
+        "runtime_remaining_tokens": null,
+        "declared_remaining_before_reserve_tokens": null,
+        "assumptions": [
+          "Window source is declared, not discovered from this conversation.",
+          "Reading budget includes source text and object/task metadata.",
+          "Reserved context includes expected generated records and later reasoning/tool growth.",
+          "Fresh worker assumed; actual system/prefix usage is unknown and covered only by the engineering reserve."
+        ],
+        "budget_is_runtime_measurement": false
+      },
+      "reading": {
+        "chars": 4090047,
+        "utf8_bytes": 4158228,
+        "source_tokens": 2371599,
+        "metadata_tokens": 7312,
+        "estimated_tokens": 2378975,
+        "metadata_chars": 8995,
+        "metadata_utf8_bytes": 11510,
+        "distinct_files": 33,
+        "reading_segments": 33,
+        "token_count_is_estimate": true,
+        "estimators": [
+          "conservative-math-text-estimate-v1; not a tokenizer count"
+        ],
+        "unmeasured_refs": [],
+        "measurement_scope": "Requested complete text spans plus supplied metadata; binary evidence is not token-counted from raw bytes.",
+        "task_overhead_tokens": 64
+      },
+      "estimated_output_tokens": 8108,
+      "oversized": true,
+      "requires_export": false,
+      "reading_refs": [
+        {
+          "path": "archives/customer-attraction/state/引理/共享真实末端的独立初段与折扣尾闭包--引理.md",
+          "sha256": "885e0c46d9b44ecdefa438d6df7dd04e796da94da20030daf302c34fae15a124"
+        },
+        {
+          "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+          "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+        },
+        {
+          "path": "archives/customer-attraction/state/引理/同源双末对跨枝配对与严格联合投影--引理.md",
+          "sha256": "7547538073d8edf42f2430c5ed0d4139c2129fdaa8817ea0dbcba591552328e5"
+        },
+        {
+          "path": "archives/customer-attraction/state/引理/同源真实末回复的折扣闭包与二状态精确投影--引理.md",
+          "sha256": "a2aa6f407865993f693ff8338e2c038a7849643d04ed9078fc7c8e0e6f6b5d42"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/coverage_bridge/formal_prefix_tail.md",
+          "sha256": "30d85aeb7d325436bce1de1975ef131d0bbeb0c07f2f8f130e828cd747b1bcda"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/coverage_bridge/selected_prefix_tail_5752.json",
+          "sha256": "595e7386cfacc591f513fe477453e94d9e2271e4cb63ce3f5c57a8dc34fabd50"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/coverage_bridge/prefix_tail_requery.py",
+          "sha256": "bec483fbce411889ee872ccae873fc6395d9d69f487bd60acde5137f2bcf27f7"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/coverage_bridge/compact_prefix_tail_cuts.py",
+          "sha256": "3e145aa01fd46739c1521d8ff66f89eb770b679b2fe286dd4800893f8c2151e5"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/coverage_bridge/prefix_tail_beta_zero_audit.json",
+          "sha256": "23a46e86e7f0ab71b4e443c59eada7e296e774c9b702ef1524e1f9d05732cddc"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/joint_requery/portfolio_master.py",
+          "sha256": "af8b0a9251d3b42f623ac37fe980235d7b66f3d2f481855174d68b843d99bed3"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/joint_requery/explore_projection.py",
+          "sha256": "f64d1d08dc52b935432c993d6712a1888dccea216f737a2d5e3cdc4c175b55da"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/joint_requery/separate_master.py",
+          "sha256": "20ccb2656d736e7754a9c79ef9d030358ab2534bd8b14a4b4b6d8726803709af"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/dynamic_5752_exact.json",
+          "sha256": "791cbcba1afd841eabe3bc908b300083822739fd8f7ed8b85a8c7ff06f28c787"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/main_pair_features.py",
+          "sha256": "177057776f9aa3322f907ce073511eb7ef491774fc0871b11fd0c367c833b1ac"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/main_verify_prefix_tail_5752.py",
+          "sha256": "989e87e6e799ff81faaca2ba88f0137ee08297300974891053127266c042a875"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/main_verify_prefix_tail_5752.json",
+          "sha256": "207d0eaeb8b260931d680b05f3db36a1e60754b910cc5fdf3ee331486238d201"
+        },
+        {
+          "path": "archives/customer-attraction/state/引理/共享真实末回复边的零容量覆盖信用与收入转移--引理.md",
+          "sha256": "0372dd628c46a65e981a6f257f1c2102cfd46b277fc933ba2a9c57ec3e342619"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/coverage_bridge/formal_shared_rz_income_bridge_v1.md",
+          "sha256": "77be2e63597c3840d10cc7d471a0befdbd574cf8995451ca927ec1810ee0477f"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/coverage_bridge/mainline_zero_capacity_v1.md",
+          "sha256": "e2b598616bc3cf9d6a0c36812a59dd7fdf4357253d9f9ddecf1e83796a6c6b90"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/coverage_bridge/mainline_zero_capacity_v1.json",
+          "sha256": "018b3fb4cbb050a4cc7f70d5acb20c736f5be756979abb7c0fbef4c6ba148f48"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/coverage_bridge/zero_capacity_rows_v1.py",
+          "sha256": "9f7ec72a32e16cc1a8870117548b65b136fe59d805ffb40e690b04f654361c99"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/coverage_bridge/shared_rz_zero_capacity_v1.md",
+          "sha256": "8422ba81ffa71cde16f99a23d76c3150a35c021afa405f79e7bc06d22aaa0536"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/coverage_bridge/shared_rz_zero_capacity_v1.py",
+          "sha256": "a38f224d981ca56a64dc60e28cdcf518f947ff6436925c2cbbe32424ac09449c"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/coverage_bridge/shared_rz_zero_capacity_v1.json",
+          "sha256": "2bd7138c2d35c19100c7d12bde244d2d37695b4609fbbf51260b1574c4b64f34"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/coverage_bridge/a6_query_credit_hidden_map_v1.md",
+          "sha256": "3b70891ae71149337d67ffa8a703b6dc88b5622ca699e7a6dc1d76b9e3f9120b"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/coverage_bridge/strong_a6_transfer_v1.md",
+          "sha256": "076bccc81b62326f3f834d357d0b9d87a9957c6e873f7e382553973035f4736b"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/coverage_bridge/strong_a6_transfer_v1.py",
+          "sha256": "2f4503450ced2b179e8082bb0334e166c3dc90747d7e0099249371c6f3d33aed"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/coverage_bridge/strong_a6_transfer_v1.json",
+          "sha256": "9f43ab75c38c2ba4d7cb0d2ba731f362bde4a7b892ba3d48a21cdd052ba8be6c"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/main_zero_capacity_features_v1.py",
+          "sha256": "de8dd4a501effce9d8284389705ceea8f927edf085903c5e9962ef289c822185"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/main_verify_zero_capacity_v1.py",
+          "sha256": "d20b4e42f667c229b9ffa4646d785e16b48a0041b50e0a15bc20afc440279e81"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/main_verify_zero_capacity_v1.json",
+          "sha256": "a93ce8b356857d996c66661525f35e3a4988dde4aee816cd63eea423634c7593"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/main_verify_strong_a6_transfer_v1.py",
+          "sha256": "905105af2fdfaf067fc0f5652c5b156c24e87bbf5ac1d8563a708d64ee63ce41"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/main_verify_strong_a6_transfer_v1.json",
+          "sha256": "cf4a8b484620269777b447a2a902cf0fe41865af5ad43b2f52ee33fe80f1ebda"
+        }
+      ],
+      "deferred_candidate_ids": [],
+      "deferred_candidate_issues": {},
+      "comparison_priority": 1,
+      "family_hint": "M-63c882b0c8414805a43d4d8d4e43f4e3",
+      "scope_hint": "archives/customer-attraction",
+      "status": "complete-object-requires-staged-reading",
+      "note": "Compare the stated mathematical question on all selected endpoints; if large, resume the same question in reading passes. Preserve this complete object/comparison frontier; read its exact declared sections in successive turns, saving the hypotheses, established steps and remaining obligations between turns.",
+      "comparison_question": "Compare the M-736 four-state shared R/Z income-credit bound and its fixed 49:10 contract with M-63c's independent-prefix/shared-tail closure: determine the exact parameter and quantifier conditions under which the M-63c prefix-tail bridge composes with M-736, and state any remaining payment or SPE gap.",
+      "reading_passes": [
+        {
+          "source": {
+            "path": "archives/customer-attraction/state/引理/共享真实末端的独立初段与折扣尾闭包--引理.md",
+            "sha256": "885e0c46d9b44ecdefa438d6df7dd04e796da94da20030daf302c34fae15a124"
+          },
+          "declared_sections": [
+            null
+          ],
+          "start_char": 0,
+          "end_char_exclusive": 6396,
+          "start_line": 1,
+          "end_line": 162,
+          "estimated_tokens": 8757,
+          "token_count_is_estimate": true,
+          "continuation": "Continue this same complete object in order; retain its model, quantifiers, hypotheses, established steps and unpaid obligations in the saved note. No partial pass means done.",
+          "pass": 1
+        },
+        {
+          "source": {
+            "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+            "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+          },
+          "declared_sections": [
+            null
+          ],
+          "start_char": 0,
+          "end_char_exclusive": 4094,
+          "start_line": 1,
+          "end_line": 129,
+          "estimated_tokens": 5817,
+          "token_count_is_estimate": true,
+          "continuation": "Continue this same complete object in order; retain its model, quantifiers, hypotheses, established steps and unpaid obligations in the saved note. No partial pass means done.",
+          "pass": 2
+        },
+        {
+          "source": {
+            "path": "archives/customer-attraction/state/引理/同源双末对跨枝配对与严格联合投影--引理.md",
+            "sha256": "7547538073d8edf42f2430c5ed0d4139c2129fdaa8817ea0dbcba591552328e5"
+          },
+          "declared_sections": [
+            null
+          ],
+          "start_char": 0,
+          "end_char_exclusive": 11108,
+          "start_line": 1,
+          "end_line": 355,
+          "estimated_tokens": 15355,
+          "token_count_is_estimate": true,
+          "continuation": "Continue this same complete object in order; retain its model, quantifiers, hypotheses, established steps and unpaid obligations in the saved note. No partial pass means done.",
+          "pass": 3
+        },
+        {
+          "source": {
+            "path": "archives/customer-attraction/state/引理/同源真实末回复的折扣闭包与二状态精确投影--引理.md",
+            "sha256": "a2aa6f407865993f693ff8338e2c038a7849643d04ed9078fc7c8e0e6f6b5d42"
+          },
+          "declared_sections": [
+            null
+          ],
+          "start_char": 0,
+          "end_char_exclusive": 8679,
+          "start_line": 1,
+          "end_line": 276,
+          "estimated_tokens": 12029,
+          "token_count_is_estimate": true,
+          "continuation": "Continue this same complete object in order; retain its model, quantifiers, hypotheses, established steps and unpaid obligations in the saved note. No partial pass means done.",
+          "pass": 4
+        },
+        {
+          "source": {
+            "path": "research/workspaces/six-boss2-20261111-cross/coverage_bridge/formal_prefix_tail.md",
+            "sha256": "30d85aeb7d325436bce1de1975ef131d0bbeb0c07f2f8f130e828cd747b1bcda"
+          },
+          "declared_sections": [
+            null
+          ],
+          "start_char": 0,
+          "end_char_exclusive": 5936,
+          "start_line": 1,
+          "end_line": 148,
+          "estimated_tokens": 8171,
+          "token_count_is_estimate": true,
+          "continuation": "Continue this same complete object in order; retain its model, quantifiers, hypotheses, established steps and unpaid obligations in the saved note. No partial pass means done.",
+          "pass": 5
+        },
+        {
+          "source": {
+            "path": "research/workspaces/six-boss2-20261111-cross/coverage_bridge/selected_prefix_tail_5752.json",
+            "sha256": "595e7386cfacc591f513fe477453e94d9e2271e4cb63ce3f5c57a8dc34fabd50"
+          },
+          "declared_sections": [
+            null
+          ],
+          "start_char": 0,
+          "end_char_exclusive": 193841,
+          "start_line": 1,
+          "end_line": 10965,
+          "estimated_tokens": 88882,
+          "token_count_is_estimate": true,
+          "continuation": "Continue this same complete object in order; retain its model, quantifiers, hypotheses, established steps and unpaid obligations in the saved note. No partial pass means done.",
+          "pass": 6
+        },
+        {
+          "source": {
+            "path": "research/workspaces/six-boss2-20261111-cross/coverage_bridge/prefix_tail_requery.py",
+            "sha256": "bec483fbce411889ee872ccae873fc6395d9d69f487bd60acde5137f2bcf27f7"
+          },
+          "declared_sections": [
+            null
+          ],
+          "start_char": 0,
+          "end_char_exclusive": 8079,
+          "start_line": 1,
+          "end_line": 149,
+          "estimated_tokens": 5121,
+          "token_count_is_estimate": true,
+          "continuation": "Continue this same complete object in order; retain its model, quantifiers, hypotheses, established steps and unpaid obligations in the saved note. No partial pass means done.",
+          "pass": 7
+        },
+        {
+          "source": {
+            "path": "research/workspaces/six-boss2-20261111-cross/coverage_bridge/compact_prefix_tail_cuts.py",
+            "sha256": "3e145aa01fd46739c1521d8ff66f89eb770b679b2fe286dd4800893f8c2151e5"
+          },
+          "declared_sections": [
+            null
+          ],
+          "start_char": 0,
+          "end_char_exclusive": 3276,
+          "start_line": 1,
+          "end_line": 50,
+          "estimated_tokens": 1973,
+          "token_count_is_estimate": true,
+          "continuation": "Continue this same complete object in order; retain its model, quantifiers, hypotheses, established steps and unpaid obligations in the saved note. No partial pass means done.",
+          "pass": 8
+        },
+        {
+          "source": {
+            "path": "research/workspaces/six-boss2-20261111-cross/coverage_bridge/prefix_tail_beta_zero_audit.json",
+            "sha256": "23a46e86e7f0ab71b4e443c59eada7e296e774c9b702ef1524e1f9d05732cddc"
+          },
+          "declared_sections": [
+            null
+          ],
+          "start_char": 0,
+          "end_char_exclusive": 417,
+          "start_line": 1,
+          "end_line": 18,
+          "estimated_tokens": 305,
+          "token_count_is_estimate": true,
+          "continuation": "Continue this same complete object in order; retain its model, quantifiers, hypotheses, established steps and unpaid obligations in the saved note. No partial pass means done.",
+          "pass": 9
+        },
+        {
+          "source": {
+            "path": "research/workspaces/six-boss2-20261111-cross/joint_requery/portfolio_master.py",
+            "sha256": "af8b0a9251d3b42f623ac37fe980235d7b66f3d2f481855174d68b843d99bed3"
+          },
+          "declared_sections": [
+            null
+          ],
+          "start_char": 0,
+          "end_char_exclusive": 10566,
+          "start_line": 1,
+          "end_line": 184,
+          "estimated_tokens": 6520,
+          "token_count_is_estimate": true,
+          "continuation": "Continue this same complete object in order; retain its model, quantifiers, hypotheses, established steps and unpaid obligations in the saved note. No partial pass means done.",
+          "pass": 10
+        },
+        {
+          "source": {
+            "path": "research/workspaces/six-boss2-20261111-cross/joint_requery/explore_projection.py",
+            "sha256": "f64d1d08dc52b935432c993d6712a1888dccea216f737a2d5e3cdc4c175b55da"
+          },
+          "declared_sections": [
+            null
+          ],
+          "start_char": 0,
+          "end_char_exclusive": 7561,
+          "start_line": 1,
+          "end_line": 170,
+          "estimated_tokens": 5080,
+          "token_count_is_estimate": true,
+          "continuation": "Continue this same complete object in order; retain its model, quantifiers, hypotheses, established steps and unpaid obligations in the saved note. No partial pass means done.",
+          "pass": 11
+        },
+        {
+          "source": {
+            "path": "research/workspaces/six-boss2-20261111-cross/joint_requery/separate_master.py",
+            "sha256": "20ccb2656d736e7754a9c79ef9d030358ab2534bd8b14a4b4b6d8726803709af"
+          },
+          "declared_sections": [
+            null
+          ],
+          "start_char": 0,
+          "end_char_exclusive": 7716,
+          "start_line": 1,
+          "end_line": 141,
+          "estimated_tokens": 4587,
+          "token_count_is_estimate": true,
+          "continuation": "Continue this same complete object in order; retain its model, quantifiers, hypotheses, established steps and unpaid obligations in the saved note. No partial pass means done.",
+          "pass": 12
+        },
+        {
+          "source": {
+            "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/dynamic_5752_exact.json",
+            "sha256": "791cbcba1afd841eabe3bc908b300083822739fd8f7ed8b85a8c7ff06f28c787"
+          },
+          "declared_sections": [
+            null
+          ],
+          "start_char": 0,
+          "end_char_exclusive": 585192,
+          "start_line": 1,
+          "end_line": 39033,
+          "estimated_tokens": 261193,
+          "token_count_is_estimate": true,
+          "continuation": "Continue this same complete object in order; retain its model, quantifiers, hypotheses, established steps and unpaid obligations in the saved note. No partial pass means done.",
+          "pass": 13
+        },
+        {
+          "source": {
+            "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/dynamic_5752_exact.json",
+            "sha256": "791cbcba1afd841eabe3bc908b300083822739fd8f7ed8b85a8c7ff06f28c787"
+          },
+          "declared_sections": [
+            null
+          ],
+          "start_char": 585192,
+          "end_char_exclusive": 1121475,
+          "start_line": 39034,
+          "end_line": 72561,
+          "estimated_tokens": 256135,
+          "token_count_is_estimate": true,
+          "continuation": "Continue this same complete object in order; retain its model, quantifiers, hypotheses, established steps and unpaid obligations in the saved note. No partial pass means done.",
+          "pass": 14
+        },
+        {
+          "source": {
+            "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/dynamic_5752_exact.json",
+            "sha256": "791cbcba1afd841eabe3bc908b300083822739fd8f7ed8b85a8c7ff06f28c787"
+          },
+          "declared_sections": [
+            null
+          ],
+          "start_char": 1121475,
+          "end_char_exclusive": 1535384,
+          "start_line": 72562,
+          "end_line": 99180,
+          "estimated_tokens": 228703,
+          "token_count_is_estimate": true,
+          "continuation": "Continue this same complete object in order; retain its model, quantifiers, hypotheses, established steps and unpaid obligations in the saved note. No partial pass means done.",
+          "pass": 15
+        },
+        {
+          "source": {
+            "path": "research/workspaces/six-boss2-20261111-cross/main_pair_features.py",
+            "sha256": "177057776f9aa3322f907ce073511eb7ef491774fc0871b11fd0c367c833b1ac"
+          },
+          "declared_sections": [
+            null
+          ],
+          "start_char": 0,
+          "end_char_exclusive": 1346,
+          "start_line": 1,
+          "end_line": 23,
+          "estimated_tokens": 1047,
+          "token_count_is_estimate": true,
+          "continuation": "Continue this same complete object in order; retain its model, quantifiers, hypotheses, established steps and unpaid obligations in the saved note. No partial pass means done.",
+          "pass": 16
+        },
+        {
+          "source": {
+            "path": "research/workspaces/six-boss2-20261111-cross/main_verify_prefix_tail_5752.py",
+            "sha256": "989e87e6e799ff81faaca2ba88f0137ee08297300974891053127266c042a875"
+          },
+          "declared_sections": [
+            null
+          ],
+          "start_char": 0,
+          "end_char_exclusive": 5767,
+          "start_line": 1,
+          "end_line": 95,
+          "estimated_tokens": 4097,
+          "token_count_is_estimate": true,
+          "continuation": "Continue this same complete object in order; retain its model, quantifiers, hypotheses, established steps and unpaid obligations in the saved note. No partial pass means done.",
+          "pass": 17
+        },
+        {
+          "source": {
+            "path": "research/workspaces/six-boss2-20261111-cross/main_verify_prefix_tail_5752.json",
+            "sha256": "207d0eaeb8b260931d680b05f3db36a1e60754b910cc5fdf3ee331486238d201"
+          },
+          "declared_sections": [
+            null
+          ],
+          "start_char": 0,
+          "end_char_exclusive": 18661,
+          "start_line": 1,
+          "end_line": 233,
+          "estimated_tokens": 8036,
+          "token_count_is_estimate": true,
+          "continuation": "Continue this same complete object in order; retain its model, quantifiers, hypotheses, established steps and unpaid obligations in the saved note. No partial pass means done.",
+          "pass": 18
+        },
+        {
+          "source": {
+            "path": "archives/customer-attraction/state/引理/共享真实末回复边的零容量覆盖信用与收入转移--引理.md",
+            "sha256": "0372dd628c46a65e981a6f257f1c2102cfd46b277fc933ba2a9c57ec3e342619"
+          },
+          "declared_sections": [
+            null
+          ],
+          "start_char": 0,
+          "end_char_exclusive": 21070,
+          "start_line": 1,
+          "end_line": 770,
+          "estimated_tokens": 25330,
+          "token_count_is_estimate": true,
+          "continuation": "Continue this same complete object in order; retain its model, quantifiers, hypotheses, established steps and unpaid obligations in the saved note. No partial pass means done.",
+          "pass": 19
+        },
+        {
+          "source": {
+            "path": "research/workspaces/six-boss2-20261111-cross/coverage_bridge/formal_shared_rz_income_bridge_v1.md",
+            "sha256": "77be2e63597c3840d10cc7d471a0befdbd574cf8995451ca927ec1810ee0477f"
+          },
+          "declared_sections": [
+            null
+          ],
+          "start_char": 0,
+          "end_char_exclusive": 21051,
+          "start_line": 1,
+          "end_line": 769,
+          "estimated_tokens": 25345,
+          "token_count_is_estimate": true,
+          "continuation": "Continue this same complete object in order; retain its model, quantifiers, hypotheses, established steps and unpaid obligations in the saved note. No partial pass means done.",
+          "pass": 20
+        },
+        {
+          "source": {
+            "path": "research/workspaces/six-boss2-20261111-cross/coverage_bridge/mainline_zero_capacity_v1.md",
+            "sha256": "e2b598616bc3cf9d6a0c36812a59dd7fdf4357253d9f9ddecf1e83796a6c6b90"
+          },
+          "declared_sections": [
+            null
+          ],
+          "start_char": 0,
+          "end_char_exclusive": 8645,
+          "start_line": 1,
+          "end_line": 283,
+          "estimated_tokens": 11528,
+          "token_count_is_estimate": true,
+          "continuation": "Continue this same complete object in order; retain its model, quantifiers, hypotheses, established steps and unpaid obligations in the saved note. No partial pass means done.",
+          "pass": 21
+        },
+        {
+          "source": {
+            "path": "research/workspaces/six-boss2-20261111-cross/coverage_bridge/mainline_zero_capacity_v1.json",
+            "sha256": "018b3fb4cbb050a4cc7f70d5acb20c736f5be756979abb7c0fbef4c6ba148f48"
+          },
+          "declared_sections": [
+            null
+          ],
+          "start_char": 0,
+          "end_char_exclusive": 446960,
+          "start_line": 1,
+          "end_line": 33439,
+          "estimated_tokens": 291941,
+          "token_count_is_estimate": true,
+          "continuation": "Continue this same complete object in order; retain its model, quantifiers, hypotheses, established steps and unpaid obligations in the saved note. No partial pass means done.",
+          "pass": 22
+        },
+        {
+          "source": {
+            "path": "research/workspaces/six-boss2-20261111-cross/coverage_bridge/zero_capacity_rows_v1.py",
+            "sha256": "9f7ec72a32e16cc1a8870117548b65b136fe59d805ffb40e690b04f654361c99"
+          },
+          "declared_sections": [
+            null
+          ],
+          "start_char": 0,
+          "end_char_exclusive": 7761,
+          "start_line": 1,
+          "end_line": 180,
+          "estimated_tokens": 5322,
+          "token_count_is_estimate": true,
+          "continuation": "Continue this same complete object in order; retain its model, quantifiers, hypotheses, established steps and unpaid obligations in the saved note. No partial pass means done.",
+          "pass": 23
+        },
+        {
+          "source": {
+            "path": "research/workspaces/six-boss2-20261111-cross/coverage_bridge/shared_rz_zero_capacity_v1.md",
+            "sha256": "8422ba81ffa71cde16f99a23d76c3150a35c021afa405f79e7bc06d22aaa0536"
+          },
+          "declared_sections": [
+            null
+          ],
+          "start_char": 0,
+          "end_char_exclusive": 6622,
+          "start_line": 1,
+          "end_line": 208,
+          "estimated_tokens": 9473,
+          "token_count_is_estimate": true,
+          "continuation": "Continue this same complete object in order; retain its model, quantifiers, hypotheses, established steps and unpaid obligations in the saved note. No partial pass means done.",
+          "pass": 24
+        },
+        {
+          "source": {
+            "path": "research/workspaces/six-boss2-20261111-cross/coverage_bridge/shared_rz_zero_capacity_v1.py",
+            "sha256": "a38f224d981ca56a64dc60e28cdcf518f947ff6436925c2cbbe32424ac09449c"
+          },
+          "declared_sections": [
+            null
+          ],
+          "start_char": 0,
+          "end_char_exclusive": 7632,
+          "start_line": 1,
+          "end_line": 145,
+          "estimated_tokens": 4568,
+          "token_count_is_estimate": true,
+          "continuation": "Continue this same complete object in order; retain its model, quantifiers, hypotheses, established steps and unpaid obligations in the saved note. No partial pass means done.",
+          "pass": 25
+        },
+        {
+          "source": {
+            "path": "research/workspaces/six-boss2-20261111-cross/coverage_bridge/shared_rz_zero_capacity_v1.json",
+            "sha256": "2bd7138c2d35c19100c7d12bde244d2d37695b4609fbbf51260b1574c4b64f34"
+          },
+          "declared_sections": [
+            null
+          ],
+          "start_char": 0,
+          "end_char_exclusive": 431007,
+          "start_line": 1,
+          "end_line": 23524,
+          "estimated_tokens": 263988,
+          "token_count_is_estimate": true,
+          "continuation": "Continue this same complete object in order; retain its model, quantifiers, hypotheses, established steps and unpaid obligations in the saved note. No partial pass means done.",
+          "pass": 26
+        },
+        {
+          "source": {
+            "path": "research/workspaces/six-boss2-20261111-cross/coverage_bridge/shared_rz_zero_capacity_v1.json",
+            "sha256": "2bd7138c2d35c19100c7d12bde244d2d37695b4609fbbf51260b1574c4b64f34"
+          },
+          "declared_sections": [
+            null
+          ],
+          "start_char": 431007,
+          "end_char_exclusive": 908769,
+          "start_line": 23525,
+          "end_line": 49225,
+          "estimated_tokens": 290056,
+          "token_count_is_estimate": true,
+          "continuation": "Continue this same complete object in order; retain its model, quantifiers, hypotheses, established steps and unpaid obligations in the saved note. No partial pass means done.",
+          "pass": 27
+        },
+        {
+          "source": {
+            "path": "research/workspaces/six-boss2-20261111-cross/coverage_bridge/shared_rz_zero_capacity_v1.json",
+            "sha256": "2bd7138c2d35c19100c7d12bde244d2d37695b4609fbbf51260b1574c4b64f34"
+          },
+          "declared_sections": [
+            null
+          ],
+          "start_char": 908769,
+          "end_char_exclusive": 1337326,
+          "start_line": 49226,
+          "end_line": 71745,
+          "estimated_tokens": 262793,
+          "token_count_is_estimate": true,
+          "continuation": "Continue this same complete object in order; retain its model, quantifiers, hypotheses, established steps and unpaid obligations in the saved note. No partial pass means done.",
+          "pass": 28
+        },
+        {
+          "source": {
+            "path": "research/workspaces/six-boss2-20261111-cross/coverage_bridge/shared_rz_zero_capacity_v1.json",
+            "sha256": "2bd7138c2d35c19100c7d12bde244d2d37695b4609fbbf51260b1574c4b64f34"
+          },
+          "declared_sections": [
+            null
+          ],
+          "start_char": 1337326,
+          "end_char_exclusive": 1635397,
+          "start_line": 71746,
+          "end_line": 87600,
+          "estimated_tokens": 184372,
+          "token_count_is_estimate": true,
+          "continuation": "Continue this same complete object in order; retain its model, quantifiers, hypotheses, established steps and unpaid obligations in the saved note. No partial pass means done.",
+          "pass": 29
+        },
+        {
+          "source": {
+            "path": "research/workspaces/six-boss2-20261111-cross/coverage_bridge/a6_query_credit_hidden_map_v1.md",
+            "sha256": "3b70891ae71149337d67ffa8a703b6dc88b5622ca699e7a6dc1d76b9e3f9120b"
+          },
+          "declared_sections": [
+            null
+          ],
+          "start_char": 0,
+          "end_char_exclusive": 2122,
+          "start_line": 1,
+          "end_line": 98,
+          "estimated_tokens": 3005,
+          "token_count_is_estimate": true,
+          "continuation": "Continue this same complete object in order; retain its model, quantifiers, hypotheses, established steps and unpaid obligations in the saved note. No partial pass means done.",
+          "pass": 30
+        },
+        {
+          "source": {
+            "path": "research/workspaces/six-boss2-20261111-cross/coverage_bridge/strong_a6_transfer_v1.md",
+            "sha256": "076bccc81b62326f3f834d357d0b9d87a9957c6e873f7e382553973035f4736b"
+          },
+          "declared_sections": [
+            null
+          ],
+          "start_char": 0,
+          "end_char_exclusive": 5132,
+          "start_line": 1,
+          "end_line": 174,
+          "estimated_tokens": 7551,
+          "token_count_is_estimate": true,
+          "continuation": "Continue this same complete object in order; retain its model, quantifiers, hypotheses, established steps and unpaid obligations in the saved note. No partial pass means done.",
+          "pass": 31
+        },
+        {
+          "source": {
+            "path": "research/workspaces/six-boss2-20261111-cross/coverage_bridge/strong_a6_transfer_v1.py",
+            "sha256": "2f4503450ced2b179e8082bb0334e166c3dc90747d7e0099249371c6f3d33aed"
+          },
+          "declared_sections": [
+            null
+          ],
+          "start_char": 0,
+          "end_char_exclusive": 4870,
+          "start_line": 1,
+          "end_line": 91,
+          "estimated_tokens": 3048,
+          "token_count_is_estimate": true,
+          "continuation": "Continue this same complete object in order; retain its model, quantifiers, hypotheses, established steps and unpaid obligations in the saved note. No partial pass means done.",
+          "pass": 32
+        },
+        {
+          "source": {
+            "path": "research/workspaces/six-boss2-20261111-cross/coverage_bridge/strong_a6_transfer_v1.json",
+            "sha256": "9f43ab75c38c2ba4d7cb0d2ba731f362bde4a7b892ba3d48a21cdd052ba8be6c"
+          },
+          "declared_sections": [
+            null
+          ],
+          "start_char": 0,
+          "end_char_exclusive": 71218,
+          "start_line": 1,
+          "end_line": 4465,
+          "estimated_tokens": 46506,
+          "token_count_is_estimate": true,
+          "continuation": "Continue this same complete object in order; retain its model, quantifiers, hypotheses, established steps and unpaid obligations in the saved note. No partial pass means done.",
+          "pass": 33
+        },
+        {
+          "source": {
+            "path": "research/workspaces/six-boss2-20261111-cross/main_zero_capacity_features_v1.py",
+            "sha256": "de8dd4a501effce9d8284389705ceea8f927edf085903c5e9962ef289c822185"
+          },
+          "declared_sections": [
+            null
+          ],
+          "start_char": 0,
+          "end_char_exclusive": 3811,
+          "start_line": 1,
+          "end_line": 85,
+          "estimated_tokens": 2614,
+          "token_count_is_estimate": true,
+          "continuation": "Continue this same complete object in order; retain its model, quantifiers, hypotheses, established steps and unpaid obligations in the saved note. No partial pass means done.",
+          "pass": 34
+        },
+        {
+          "source": {
+            "path": "research/workspaces/six-boss2-20261111-cross/main_verify_zero_capacity_v1.py",
+            "sha256": "d20b4e42f667c229b9ffa4646d785e16b48a0041b50e0a15bc20afc440279e81"
+          },
+          "declared_sections": [
+            null
+          ],
+          "start_char": 0,
+          "end_char_exclusive": 10283,
+          "start_line": 1,
+          "end_line": 195,
+          "estimated_tokens": 7134,
+          "token_count_is_estimate": true,
+          "continuation": "Continue this same complete object in order; retain its model, quantifiers, hypotheses, established steps and unpaid obligations in the saved note. No partial pass means done.",
+          "pass": 35
+        },
+        {
+          "source": {
+            "path": "research/workspaces/six-boss2-20261111-cross/main_verify_zero_capacity_v1.json",
+            "sha256": "a93ce8b356857d996c66661525f35e3a4988dde4aee816cd63eea423634c7593"
+          },
+          "declared_sections": [
+            null
+          ],
+          "start_char": 0,
+          "end_char_exclusive": 1339,
+          "start_line": 1,
+          "end_line": 29,
+          "estimated_tokens": 753,
+          "token_count_is_estimate": true,
+          "continuation": "Continue this same complete object in order; retain its model, quantifiers, hypotheses, established steps and unpaid obligations in the saved note. No partial pass means done.",
+          "pass": 36
+        },
+        {
+          "source": {
+            "path": "research/workspaces/six-boss2-20261111-cross/main_verify_strong_a6_transfer_v1.py",
+            "sha256": "905105af2fdfaf067fc0f5652c5b156c24e87bbf5ac1d8563a708d64ee63ce41"
+          },
+          "declared_sections": [
+            null
+          ],
+          "start_char": 0,
+          "end_char_exclusive": 5776,
+          "start_line": 1,
+          "end_line": 115,
+          "estimated_tokens": 3552,
+          "token_count_is_estimate": true,
+          "continuation": "Continue this same complete object in order; retain its model, quantifiers, hypotheses, established steps and unpaid obligations in the saved note. No partial pass means done.",
+          "pass": 37
+        },
+        {
+          "source": {
+            "path": "research/workspaces/six-boss2-20261111-cross/main_verify_strong_a6_transfer_v1.json",
+            "sha256": "cf4a8b484620269777b447a2a902cf0fe41865af5ad43b2f52ee33fe80f1ebda"
+          },
+          "declared_sections": [
+            null
+          ],
+          "start_char": 0,
+          "end_char_exclusive": 1531,
+          "start_line": 1,
+          "end_line": 62,
+          "estimated_tokens": 914,
+          "token_count_is_estimate": true,
+          "continuation": "Continue this same complete object in order; retain its model, quantifiers, hypotheses, established steps and unpaid obligations in the saved note. No partial pass means done.",
+          "pass": 38
+        }
+      ]
+    }
+  },
+  "state": "available",
+  "owner": null,
+  "request_id": "514458b30504427daefaea2b2c8c3ee1",
+  "requests": {
+    "514458b30504427daefaea2b2c8c3ee1": "plan"
+  }
+}

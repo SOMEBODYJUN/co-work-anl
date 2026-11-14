@@ -355,11 +355,120 @@
       ]
     }
   },
-  "state": "claimed",
+  "state": "done",
   "owner": "Boss7",
-  "request_id": "20d1bee222514ff394e38b358324f4b5",
+  "request_id": "6eae855eeb9a40c79368f0ec1c36b1d5",
   "requests": {
     "c77ec76b08b948c4ac8c43dc65353af7": "plan",
-    "20d1bee222514ff394e38b358324f4b5": "claim"
+    "20d1bee222514ff394e38b358324f4b5": "claim",
+    "6eae855eeb9a40c79368f0ec1c36b1d5": "done"
+  },
+  "edge_paths": {
+    "cag-d061-b-family-four-menu-price-boundary": "map/edges/customer-attraction-3a-3a-d0616e63b55f09a5/b-family-four-menu-price-boundary.json"
+  },
+  "receipt": {
+    "task_id": "customer-attraction-3a-3a-d0616e63b55f09a5",
+    "stage": "3A",
+    "task_definition_pin": "7bb28ba5b8e9fd4bd0482a99dff00dd1385def291f85134db8acc2c855b4bcc4",
+    "object_ids": [
+      "M-5d2fee3a1f8a4dc6a76eea98204ba228"
+    ],
+    "read_object_ids": [],
+    "input_pins": {
+      "M-5d2fee3a1f8a4dc6a76eea98204ba228": "e6742ccfa527054cb81a2fd63be1fce81ca5214c763cf4b3e10887c4f7f1fee3"
+    },
+    "status": "complete-assigned-reading-and-scope-review",
+    "coverage": {
+      "M-5d2fee3a1f8a4dc6a76eea98204ba228": {
+        "state": "isolated-after-review",
+        "object_pin": "e6742ccfa527054cb81a2fd63be1fce81ca5214c763cf4b3e10887c4f7f1fee3",
+        "comparison_scope": "完整读取 14 个 staged passes/10 个 distinct refs；核 5692/5664 两点、4849 列 metadata、194 joint groups、2612 overlap、28 条指定菜单行和唯一旧点负末价。",
+        "reason": "5692 新点的 5692 条 necessary rows 与 28 条指定菜单/CAP 行均非负，O=1、W<1/2；旧 5664 点同描述符/K/hist/W 但 214 个隐藏质量变化，source2 actual-menu-price:6 精确为负，故只排除保留旧坐标的有限纯 SPE completion。没有共同目录实现、完整 SPE、OPT_6 或全局 half。",
+        "context_edge_ids": [
+          "cag-d061-b-family-four-menu-price-boundary"
+        ],
+        "unlinked_relations": [
+          "四菜单和固定16-hist necessary system不是全目录闭包；全局 SPE/OPT/half仍未支付。",
+          "不能把旧点唯一负价迁移到新点或其它同W点；跨点可行性必须重算。"
+        ]
+      }
+    },
+    "edge_ids": [],
+    "assets": [
+      {
+        "path": "map/edges/customer-attraction-3a-3a-d0616e63b55f09a5/b-family-four-menu-price-boundary.json",
+        "sha256": "c2044e1eb3e9ccb2e2722815f9d73562705a862dc904b28fcd56647f5223368f"
+      },
+      {
+        "path": "map/edges/customer-attraction-3a-3a-d0616e63b55f09a5/reading-ledger.json",
+        "sha256": "a0aa28013b28b9b9fda6b7da743558125355f6a2d995d5c6062e42ec071f7270"
+      },
+      {
+        "path": "map/edges/customer-attraction-3a-3a-d0616e63b55f09a5/mathematical-review.md",
+        "sha256": "d5c3c010385f8beb3111b16a9ca1459924614f80422dd7fbfce1e5d8211a429b"
+      }
+    ],
+    "read_scope": {
+      "declared_files": 10,
+      "declared_reading_passes": 14,
+      "declared_chars": 3023357,
+      "declared_bytes": 3035025,
+      "full_read": true,
+      "read_add": [],
+      "deferred_candidates_not_promoted": [
+        "CAG-MODEL",
+        "M-072c3e44728d4763acf9f9e2810a5645",
+        "M-8170674befc34fdf866ec8fbd76d43c4",
+        "M-b685609e9c8844768f9f83e56b1b5c88",
+        "customer-attraction/actual-last-theme-branch-old-reply-histogram-conditional-gluing",
+        "customer-attraction/actual-last-theme-three-source-common-capacity-upper-envelopes",
+        "customer-attraction/terminal-menu-overlap-elimination"
+      ]
+    },
+    "verification": {
+      "new_point_rows": 5692,
+      "old_reported_rows": 5664,
+      "columns": 4849,
+      "positive_columns_new": 261,
+      "positive_columns_old": 252,
+      "minimum_slack_new": "0",
+      "O": "1",
+      "W": "1905769909616898376137238949200623274593168205/3898693540058852735821709960049703833207552519",
+      "strict_half_gap": "87153720825055983547232061648457284021216109/3898693540058852735821709960049703833207552519",
+      "new_menu_rows": 28,
+      "new_menu_negative_rows": 0,
+      "old_point_new_menu_negative_rows": 1,
+      "old_negative_row": "actual-B-2:actual-menu-price:6",
+      "old_negative_slack": "-10026222041073744940623089144705030946499310342386311577/652887283919685192981664984788241385973843146740115858240",
+      "metadata_identical_all_4849": true,
+      "W_identical_old_new": true,
+      "changed_weight_count": 214,
+      "changed_weights_by_kind": {
+        "joint-reply": 70,
+        "overlap": 52,
+        "actual-B-family-state": 52,
+        "maximum-root-family-state": 40
+      },
+      "builder_replay_exit_code": 0,
+      "independent_audit_all_fields": true,
+      "lp_or_spe_invocations": 0
+    },
+    "closed_overlaps": [],
+    "follow_up_tasks": [],
+    "deferred_candidates_not_promoted": [
+      "CAG-MODEL",
+      "M-072c3e44728d4763acf9f9e2810a5645",
+      "M-8170674befc34fdf866ec8fbd76d43c4",
+      "M-b685609e9c8844768f9f83e56b1b5c88",
+      "customer-attraction/actual-last-theme-branch-old-reply-histogram-conditional-gluing",
+      "customer-attraction/actual-last-theme-three-source-common-capacity-upper-envelopes",
+      "customer-attraction/terminal-menu-overlap-elimination"
+    ],
+    "reviewed_by": "Boss7 / fresh-worker-d061",
+    "review_note": "按任务定义完整支付14段/10份refs；严格区分5692有限必要点、旧5664点负末价与实际目录/SPE/OPT/half缺口。仅交付一条 core self-context checks 边。",
+    "edge_binding_status": "edge-bind --write and edge-check passed",
+    "edge_digests": {
+      "cag-d061-b-family-four-menu-price-boundary": "7d6a555ed38dc5d97142e9df1dc1cc81cce8f62f6821fa09fb4ab060b2ee4998"
+    }
   }
 }

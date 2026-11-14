@@ -191,11 +191,107 @@
       "scope_hint": "archives/customer-attraction"
     }
   },
-  "state": "claimed",
+  "state": "done",
   "owner": "Boss5",
-  "request_id": "2235aa60807644aa95ecdfbd74f82b87",
+  "request_id": "303889a1159d4bf8998bddab84a13c83",
   "requests": {
     "4cf4ec37303e437b99799656c3881ade": "plan",
-    "2235aa60807644aa95ecdfbd74f82b87": "claim"
+    "2235aa60807644aa95ecdfbd74f82b87": "claim",
+    "303889a1159d4bf8998bddab84a13c83": "done"
+  },
+  "edge_paths": {
+    "ca-ac3d-finite-lp-to-all-best-reply-boundary": "map/edges/customer-attraction-3a-3a-ac3d3b6b379cfb23/finite-lp-to-boundary.json",
+    "ca-ac3d-partial-obstruction-vs-complete-tail-scope": "map/edges/customer-attraction-3a-3a-ac3d3b6b379cfb23/partial-vs-complete-tail.json"
+  },
+  "receipt": {
+    "task_id": "boss5-protected-chain-receipt-repair-896ebd8961cc4ece",
+    "stage": "3A",
+    "owner": "Boss5",
+    "reviewed_by": "SOLVER-PROTECTED-RECEIPT-FRESH",
+    "claim_request_id": "2235aa60807644aa95ecdfbd74f82b87",
+    "task_definition_pin": "57303e54fdcb9153ae71bd6e8f1780a8182fe7a7137a4338623941ba6177c8a5",
+    "object_ids": [
+      "M-2ca8a524bdb746d286d02ddb687f380d"
+    ],
+    "read_object_ids": [
+      "customer-attraction/finite-reply-chain-protected-omission-relaxations",
+      "customer-attraction/protected-omission-complete-two-player-search"
+    ],
+    "input_pins": {
+      "M-2ca8a524bdb746d286d02ddb687f380d": "8fd29778f8226eb9a67546881d083a404d11c6bf26f6acfb4325210207e36cca",
+      "customer-attraction/finite-reply-chain-protected-omission-relaxations": "a9e042947b6349dc154108184c0e8d3655939979257ec26363573dd58d57cfd7",
+      "customer-attraction/protected-omission-complete-two-player-search": "d1c84a299c86d62fb1164252a90afd0864f5390a026f2311c399315ce7892264"
+    },
+    "edge_ids": [
+      "ca-ac3d-finite-lp-to-all-best-reply-boundary",
+      "ca-ac3d-partial-obstruction-vs-complete-tail-scope"
+    ],
+    "coverage": {
+      "M-2ca8a524bdb746d286d02ddb687f380d": {
+        "state": "isolated-after-review",
+        "object_pin": "8fd29778f8226eb9a67546881d083a404d11c6bf26f6acfb4325210207e36cca",
+        "comparison_scope": "核对共同目录全历史定义、三个 d=1,2,3 固定部分回复链的原对偶与全部最佳尾回复、另三个 p=4,5,6 完整两人保存点及其背景合法性；区分部分链 d=1 的六标签输入与完整搜索的六标签输入。",
+        "reason": "三个部分链保存点的每个遗漏首动作 B、p−2、p−1 在任何最佳尾回复下均严格提高尾首收益，故这些点无法补全以 AB 为实际路径的尾策略。两条拟议 checks 保留固定部分 LP 与补全障碍的关系，以及完整 p=6 外生背景证书的边界。已成立结果限于保存点与各自合同，图上仅有语境关系。",
+        "edge_ids": [
+          "ca-ac3d-finite-lp-to-all-best-reply-boundary",
+          "ca-ac3d-partial-obstruction-vs-complete-tail-scope"
+        ]
+      }
+    },
+    "assets": [
+      {
+        "path": "map/edges/customer-attraction-3a-3a-ac3d3b6b379cfb23/review.md",
+        "sha256": "2367b51f8a4207f9cd15f0b7181c308e934afc4aaf94cfed84d3891c43946a90"
+      },
+      {
+        "path": "map/edges/customer-attraction-3a-3a-ac3d3b6b379cfb23/support.md",
+        "sha256": "8078329c6c1b2f9837b6e48566609c774a7f9676e5ff67453f62da7c8ef2b56a"
+      },
+      {
+        "path": "map/edges/customer-attraction-3a-3a-ac3d3b6b379cfb23/finite-lp-to-boundary.json",
+        "sha256": "06384321054592a4c9894f9185657f7aed596c5ec7653314f31770d860270a0d"
+      },
+      {
+        "path": "map/edges/customer-attraction-3a-3a-ac3d3b6b379cfb23/partial-vs-complete-tail.json",
+        "sha256": "30b43702bd6af7c26c60a8f21d411fbaff2bdab15e751df238f2aa614ef7aca7"
+      },
+      {
+        "path": "map/edges/boss5-protected-chain-receipt-repair-896ebd8961cc4ece/readledger.json",
+        "sha256": "7a2f3cf0cdbe0de2529737cb468aa332c22337c2417c10c4cbab08cd5d4abc04"
+      }
+    ],
+    "supersession": {
+      "customer-attraction-3a-3a-ac3d3b6b379cfb23": {
+        "reason": "修复权威旧收据对阅读账本的失配，沿用同三个现行对象版本。四项未受影响资产以原路径及精确 SHA 承接，新任务阅读账本固定独立复跑及旧 pin 的去向。",
+        "assets": {
+          "map/edges/customer-attraction-3a-3a-ac3d3b6b379cfb23/review.md": {
+            "disposition": "retained",
+            "reason": "与队列原收据逐字节一致，作为原边绑定的历史审读证据。"
+          },
+          "map/edges/customer-attraction-3a-3a-ac3d3b6b379cfb23/support.md": {
+            "disposition": "retained",
+            "reason": "与队列原收据逐字节一致，作为原边绑定的历史审读证据。"
+          },
+          "map/edges/customer-attraction-3a-3a-ac3d3b6b379cfb23/readledger.json": {
+            "disposition": "replaced",
+            "replacement_paths": [
+              "map/edges/boss5-protected-chain-receipt-repair-896ebd8961cc4ece/readledger.json"
+            ],
+            "reason": "队列原收据的 095f8046… 无法验证旧路径现行 5c867bbb… 字节。新账本明确这两版记录的来源并记载本轮独立核验。"
+          },
+          "map/edges/customer-attraction-3a-3a-ac3d3b6b379cfb23/finite-lp-to-boundary.json": {
+            "disposition": "retained",
+            "reason": "沿用经当前端点与证据绑定复核的原语境边。"
+          },
+          "map/edges/customer-attraction-3a-3a-ac3d3b6b379cfb23/partial-vs-complete-tail.json": {
+            "disposition": "retained",
+            "reason": "沿用经当前端点与证据绑定复核的原语境边。"
+          }
+        }
+      }
+    },
+    "closed_overlaps": [],
+    "follow_up_tasks": [],
+    "review_note": "独立有理回放六个保存输入并从原始支持重算全部有序尾局收益。四项原资产逐字节复用，两个现行端点绑定检查通过，仍为 proposed context checks。"
   }
 }

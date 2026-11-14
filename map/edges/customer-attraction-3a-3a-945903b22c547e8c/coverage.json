@@ -1,0 +1,51 @@
+{
+  "task_id": "customer-attraction-3a-3a-945903b22c547e8c",
+  "stage": "3A",
+  "object_ids": [
+    "customer-attraction/shared-weighted-maximum-two-menu-hinge-elimination"
+  ],
+  "read_object_ids": [],
+  "input_pins": {
+    "customer-attraction/shared-weighted-maximum-two-menu-hinge-elimination": "b0f1305563f85c7f35ae522ec0f60308fc83e6c5f0cfa0379f14c8a35d886d61"
+  },
+  "coverage": {
+    "customer-attraction/shared-weighted-maximum-two-menu-hinge-elimination": {
+      "state": "linked",
+      "object_pin": "b0f1305563f85c7f35ae522ec0f60308fc83e6c5f0cfa0379f14c8a35d886d61",
+      "comparison_scope": "完整实读16个reading passes（15个distinct files，855090-byte exact_projected_hinge.json按两段连续读取）以及BNS、共同模型、作者系数审计和独立57原子回放；核对第三位真实历史、共同加权最大H、两菜单重数、正部消元、13断点、尾段和证据边界。",
+      "reason": "B10-BNS-v2在k=3、M_C≤5下逐菜单给F(H,T)≤8v−7κ；对五个T求和并与同一H对J的容量行合并，会员位逐客户以正部放宽，得到全参数HM。审计以3024个精确系数状态、独立1512个投影状态及57原子重放确认代数；冻结57点的负余量仅排除该必要点，不是游戏/SPE反例。",
+      "edge_ids": [
+        "ca-9459-bns-specializes-to-shared-two-menu-hinge"
+      ]
+    }
+  },
+  "assets": [
+    {
+      "path": "map/edges/customer-attraction-3a-3a-945903b22c547e8c/shared-hinge-from-bns.json",
+      "sha256": "a1de7719e0f24b82df39e9c8688bf331754d5da8c6772fb44a256b26181d6d49"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-945903b22c547e8c/review.md",
+      "sha256": "2845566ac090ae08aca28ddffc9e9ae0e8d27aac82a902596418474766cb02f3"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-945903b22c547e8c/readledger.json",
+      "sha256": "94855d7d563fad9836f439b2445099d583fa8b780f3e4553cfe147fc050a8853"
+    }
+  ],
+  "follow_up_tasks": [],
+  "closed_overlaps": [
+    {
+      "core_id": "customer-attraction/shared-weighted-maximum-two-menu-hinge-elimination",
+      "peer_id": "CAG-MODEL",
+      "reason": "共同目录/均分/SPE定义只是模型语境，不能单独推出HM；不制造定义hub边。"
+    },
+    {
+      "core_id": "customer-attraction/shared-weighted-maximum-two-menu-hinge-elimination",
+      "peer_id": "customer-attraction/ten-unit-five-player-full-history-terminal-share-counterexample",
+      "reason": "十单位完整SPE只反驳末位聚合份额C2，未触及第三位双菜单HM，故无逻辑边或后续义务。"
+    }
+  ],
+  "reviewed_by": "Solver_9459",
+  "review_note": "未改registry、未执行git commit/push、未重跑原程序；edge-bind/edge-check由Boss串行执行。"
+}
