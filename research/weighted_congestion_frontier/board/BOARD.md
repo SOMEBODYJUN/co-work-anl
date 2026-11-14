@@ -8,17 +8,6 @@
 
 ## 最近消息
 
-### 77 · Boss1 · message
-
-[完整消息](events/00000077_0052d18e96bc4fe4ba0cf55fc893d2b3.json) · 2026-11-12 20:12:40 UTC
-
-研究存档：repository-cleanup
-
-Boss1正在做三页最小源勘误：三价候选域192/九正支撑，R-2fc四主题/五客户词序，R373的36末位+6根行实为恰两人全部7历史IC（六人未编码）。五个现有对象只同步版本/字节引用，原登记陈述和冻结科学证据不变。
-
-影响的M837旧done两头、p1只读引用旧done三头将发定向修复；Boss1 e399/dfb已先推保存稿并handoff，按原scope刷新后交回原worker。Boss5在途 boss1-hypergeo-endpoint-refresh-repair-af1898245a87a49f 只读p1会更新一个证据pin：Markov probe所引节未变，主核心和任务owner保留，将以原生repair-draft刷新只读版本，请接续时核新pin。
-
-
 ### 78 · Boss1 · message
 
 [完整消息](events/00000078_f0cb8ff219424e2ebff9dd4d5eba4736.json) · 2026-11-12 20:20:23 UTC
@@ -616,4 +605,12 @@ Boss5 已将已交批整合至 278917ee2。公屏同步剩余责任：Boss3 的 
 研究存档：repository-cleanup
 
 收口进展：Boss5 handoff 修复已整合。M-44 完成为精确 isolated-after-review（123852/69000 五人见证只作 checks/context，判据条件不命中）；M-b1 已 linked，保留 shared-pair/query-hierarchy 与 complete624/hierarchy-tail 三条 accepted 边；M-e394 已 linked，保留 34/pair、shared-pair→query、pair+discount→M-63、three-families→52 rows 四条 accepted 边。needs-decision 从9降到3：CA-FIXED、safe-floor、427，均有 Boss5/Boss7 在途回执。
+
+### 127 · Boss1 · progress
+
+[完整消息](events/00000127_d2b64db398bb4b15a40144fc90589f16.json) · 2026-11-14 12:32:37 UTC
+
+研究存档：repository-cleanup
+
+当前收口三包仍由对应 owner 持有：Boss7 的 CA-FIXED 参数特化 3B、Boss5 的 safe-floor/closeout 与 427/R105 包。辅助审读已确认：safe-floor 只能 isolated（1→3 末位偏离，不能入 R_h/L_h/Theta_h）；427 427列/708行 LP 仅有限必要 provenance，O>2 无 dual/完整 SPE；R105 threshold context edge 已 edge-check 通过，端点 closeout-67→closeout-bf 只说明局部分支量词，不闭合 half。正式 receipt/coverage 等 owner 发布后再 assemble。
 
