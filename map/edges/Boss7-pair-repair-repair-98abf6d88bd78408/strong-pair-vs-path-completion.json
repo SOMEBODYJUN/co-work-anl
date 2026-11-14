@@ -1,0 +1,62 @@
+{
+  "edge_id": "cag-pairrepair-strong-pair-vs-path-boundary",
+  "kind": "checks",
+  "status": "accepted",
+  "source_ids": [
+    "M-e960d7f4ebca40a38760eb3ae044cc19"
+  ],
+  "target_ids": [
+    "M-bb7d149596394020804ac192335b8678"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "同一有限单位客户、有限共同目录、按序一次行动模型；固定合法历史后恰余两人，背景负载 b_x≥0，实际末尾为(C,D)。强PAIR只在三条各自合法真实IC与非负余项的条件下使用；广告路径的局部补全只在其前缀后恰余两人的子局、所有有序孩子均合法且离轨回复可独立拼接时使用。",
+  "roles": {
+    "M-e960d7f4ebca40a38760eb3ae044cc19": "给出 f(X)、g(X,Y)、U(X,Y)、H 及任意合法 T,Q 的三条真实IC分解：H−f(T)−f(Q)+g(T,Q)=I1+I2+I3+g(C,C)−g(C,R_T)≥0，并给出任意重复比较索引的 P-M/COVER 聚合；这是必要的投影不等式。",
+    "M-bb7d149596394020804ac192335b8678": "给出十三客户 A/B/T 固定实例的九个强PAIR行、局部补全当且仅当条件 B∈BR(A) 且 U(A,B)≥G，以及实际 BR/L/G、两份完整SPE和唯一有序路径；它检验强PAIR对路径可信性的充分性边界。"
+  },
+  "explanation": "强PAIR在十三客户实例的全部九个聚合查询都成立，行余量按(A,B,T)为 [[5,2,2],[2,7/2,0],[2,0,2]]。但这只是三条真实IC投影后的必要行。对比较 (T,B)，广告根(A,B)的首位偏离 slack 为 −2；两个末位比较的 slack 为 0；保留的 self-tax 差 g(A,A)−g(A,B)=2，三者恰合为0，所以正的交叠税抵消了负的首位IC，不能把该行为解释为首位IC已成立。独立的末位最坏可信回复门槛给出 BR(A)={B,T}, BR(B)={T}, BR(T)={B}，L(A)=3,L(B)=5,L(T)=6，G=6。故固定两人前缀的精确补全准则 B∈BR(A) 且 U(A,B)≥G 在广告(A,B)上只满足第一项（U(A,B)=4<6），首人直接改 T 后真实末位回 B，收益6>4，根偏离增益2。只有(T,B)满足两项，完整SPE有两份（仅A离轨孩子回复可在B/T间取平），实际路径均为(T,B)，W=OPT=11；广告路径W=9不是SPE福利见证。若“零税”仅指恒等式余项 g(C,C)−g(C,R_T)=0，本例 TB 行会由0变为−2，广告路径会被必要行直接筛掉，故不能说零余项已补全；若把整个支付模型改成g≡0，则BR/L/G需重算，原表不能迁移。该例并不反驳强PAIR或给出half/全局OPT反例，也未支付前缀祖先的IC。",
+  "scope": "精确固定十三客户/三目录/两剩余人比较；逐行核九个强PAIR查询、首位负IC与交叠抵消、独立 G 门槛、直接 T 偏离及祖先可达性边界。保留产品有限构造的 30 参数情形、461 计数向量、24 个构造产品、44 个有序结果及 2016 行/60 原子核验为范围内证据，但不把这些有限检查升级为一般产品最优、全局SPE、half 或六人结论。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/反例/末两人保交叠必要行不能保证路径补全--反例.md",
+      "sha256": "0a2ceca2a4893af142c74d8509b79b93e47a6ec7725210617293a27045a7bb79",
+      "section": "十三单位客户目录及广告路径"
+    },
+    {
+      "path": "archives/customer-attraction/state/反例/末两人保交叠必要行不能保证路径补全--反例.md",
+      "sha256": "0a2ceca2a4893af142c74d8509b79b93e47a6ec7725210617293a27045a7bb79",
+      "section": "任意真两人前缀的精确存在准则"
+    },
+    {
+      "path": "archives/customer-attraction/state/反例/末两人保交叠必要行不能保证路径补全--反例.md",
+      "sha256": "0a2ceca2a4893af142c74d8509b79b93e47a6ec7725210617293a27045a7bb79",
+      "section": "完整补全门槛和真实结果"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/product-background-and-completion-primary/new-product-completion-and-2016.json",
+      "sha256": "13254694ba282fcb76402fead3c4735d4718359a1e8e00caa41b022695bee71d"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/末两人重叠比较与任意索引聚合--引理.md",
+      "sha256": "4dacbe163ea4ea9459395dd4445c0dea25ed28070d0723a750ea6351832f4d2c"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/单隐藏末回复的配对投影恒等式核验程序--程序.md",
+      "sha256": "6a4d33105724a47bccc58bde69aa0256b68da6cbe95e1fb164b29bc184f58a48"
+    }
+  ],
+  "reviewed_by": "Boss7/map_worker_pairrepair",
+  "review_note": "Receipt-review successor preserves the prior strong-PAIR/path-boundary mathematics and explicitly distinguishes two zero-tax interpretations. If only identity remainder g(C,C)-g(C,R_T) is zero, the TB row changes from 0 to -2 and AB is directly screened; if the whole model is g≡0, BR/L/G must be recomputed and the original table does not migrate. The edge remains context/checks, with no global SPE/half claim.",
+  "endpoint_pins": {
+    "M-bb7d149596394020804ac192335b8678": "d79c118f0827499aeb038fdcf54f1fa7f5ac2e594636201f897b3012ceaa3bf9",
+    "M-e960d7f4ebca40a38760eb3ae044cc19": "ab054800337d5944cb152e30ad29e8398e6cb46284ce218ad99be5485c5c3406"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/反例/末两人保交叠必要行不能保证路径补全--反例.md": "0a2ceca2a4893af142c74d8509b79b93e47a6ec7725210617293a27045a7bb79",
+    "archives/customer-attraction/tools/evidence/product-background-and-completion-primary/new-product-completion-and-2016.json": "13254694ba282fcb76402fead3c4735d4718359a1e8e00caa41b022695bee71d",
+    "archives/customer-attraction/state/引理/末两人重叠比较与任意索引聚合--引理.md": "4dacbe163ea4ea9459395dd4445c0dea25ed28070d0723a750ea6351832f4d2c",
+    "archives/customer-attraction/state/程序/单隐藏末回复的配对投影恒等式核验程序--程序.md": "6a4d33105724a47bccc58bde69aa0256b68da6cbe95e1fb164b29bc184f58a48"
+  },
+  "review_digest": "51c81fdc431e67eda322b4caf7fa9282fafc05f996d0db84d6dfdfa5a5e5c834"
+}
