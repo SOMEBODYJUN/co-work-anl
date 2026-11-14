@@ -1,0 +1,61 @@
+{
+  "edge_id": "ca-971de-core-checks-five-half",
+  "kind": "checks",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/five-individual-security-pushforward-fractional-snapshot"
+  ],
+  "target_ids": [
+    "CA-FIVE-HALF-EXACT-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "有限单位客户、有限非空共同标签目录、十标签 X0…X4/Y0…Y4、恰五名单位提供者按序行动；完整有序历史策略，允许重复/同覆盖异标签/弱平局，偏离后沿同一策略真实后继。 终点采用382个单位客户的明确整数重数和固定策略；CA-FIVE-HALF-EXACT-v1的目标量词是任意有限单位客户目录、任意完整五人纯SPE及任意五主题比较元组。",
+  "roles": {
+    "customer-attraction/five-individual-security-pushforward-fractional-snapshot": "提供一个精确382客户实例、完整策略IC及W/OPT穷举核。",
+    "CA-FIVE-HALF-EXACT-v1": "提供零背景恰五人的普遍OPT5≤2W定理及完整类型域有理证书。"
+  },
+  "explanation": "终点的全历史审计给出382单位游戏的完整纯SPE：111110项比较含self全非负，实际路径(4,5,6,7,8)，收益(73,77,77,77,77)，归一后(1,77/73^4)。2002个五槽无序重复主题组合穷举给W=381、OPT5=382，故该实例2W−OPT5=380>0，正满足CA-FIVE-HALF-EXACT-v1的结论。该边只把一个实例作为定理的有限checks；不以定理替代终点IC审计，也不由一个实例重新证明普遍证书。",
+  "scope": "仅指定382单位输入和固定策略的结论校验；不扩展到其它策略/客户锥。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/计算/五人个体安全推送分数候选快照--计算.md",
+      "sha256": "e18b818705242721252e4544f70fd9aa3afb825a2d1143496caf66cdaedb0e8f"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/security-chain-boundary/original/evidence/certificates/customer_attraction/five_individual_security.json",
+      "sha256": "372bea6caf743792be542c411e9bcb961b6af6d31dc89d76e6a903e609be990f"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/pushforward-fractional-five-snapshot/audit_snapshot.py",
+      "sha256": "20a5cd1db347353d0495ec083c7be67cec848ea51bb0bedefcfae3ee0a7614b8"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/pushforward-fractional-five-snapshot/current-exact-reconstruction.json",
+      "sha256": "3fa6a10b1374d7c044d9da3c7d1fa8871c1720ca20c887193f76a366abe130f0"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/五人半覆盖--定理.md",
+      "sha256": "061ceb82629e9aac619630cf12d0d80ede9663474baf2302a100ceafe5dd634c"
+    }
+  ],
+  "reviewed_by": "solver_971de194ee8e9c96",
+  "review_note": "定理正文及终点完整输入/IC/覆盖计算均实读；本边为有限实例检查，不把定理证书重复登记。",
+  "endpoint_pins": {
+    "CA-FIVE-HALF-EXACT-v1": "a6b1a6bb8f7da43559faf7606dc3ce20da46efbbed584f805b442fd799663c2c",
+    "customer-attraction/five-individual-security-pushforward-fractional-snapshot": "5952635d38edd54b0992b582a21d79a455d6e6fdb01b1f8f6f8e7adad47b1f85"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/计算/五人个体安全推送分数候选快照--计算.md": "e18b818705242721252e4544f70fd9aa3afb825a2d1143496caf66cdaedb0e8f",
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+    "archives/customer-attraction/tools/evidence/security-chain-boundary/original/evidence/certificates/customer_attraction/five_individual_security.json": "372bea6caf743792be542c411e9bcb961b6af6d31dc89d76e6a903e609be990f",
+    "archives/customer-attraction/tools/evidence/pushforward-fractional-five-snapshot/audit_snapshot.py": "20a5cd1db347353d0495ec083c7be67cec848ea51bb0bedefcfae3ee0a7614b8",
+    "archives/customer-attraction/tools/evidence/pushforward-fractional-five-snapshot/current-exact-reconstruction.json": "3fa6a10b1374d7c044d9da3c7d1fa8871c1720ca20c887193f76a366abe130f0",
+    "archives/customer-attraction/state/定理/五人半覆盖--定理.md": "061ceb82629e9aac619630cf12d0d80ede9663474baf2302a100ceafe5dd634c"
+  },
+  "review_digest": "1d598b06838db1e4491b2e6e9db8992360c599e5c7ade0b1112e35b985623fa7"
+}

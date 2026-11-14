@@ -1,0 +1,56 @@
+{
+  "edge_id": "ca-971de-core-checks-free-fractional-values",
+  "kind": "checks",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/five-individual-security-pushforward-fractional-snapshot"
+  ],
+  "target_ids": [
+    "customer-attraction/free-fractional-background-security-floor"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "有限单位客户、有限非空共同标签目录、十标签 X0…X4/Y0…Y4、恰五名单位提供者按序行动；完整有序历史策略，允许重复/同覆盖异标签/弱平局，偏离后沿同一策略真实后继。 自由分数定义t5(0)允许整个十标签目录上的q；受限比较另外固定在真实两尾凸包或八个普通标签坐标支持、总质量4的非负背景上。",
+  "roles": {
+    "customer-attraction/five-individual-security-pushforward-fractional-snapshot": "给出两个明确有理背景/查询的逐标签价格、凸对称受限最优值及全十标签上界。",
+    "customer-attraction/free-fractional-background-security-floor": "定义g_{r,b,q}与t_r(b)=min_q max_A g，并区分自由分数背景和实际顺序菜单。"
+  },
+  "explanation": "在终点382单位重数w*=v/73下，q_uniform=(2/5,…,2/5)的全十标签背景给普通查询1525/1533、特殊查询505/511，故max_A g≤1525/1533<1，从而只得到自由t5(0)≤1525/1533；正文没有声称该上界是精确最优。另一方面，q_simple在X4,Y4各取1/2、其余0，使八个普通标签负载1/2、两个特殊标签负载0，查询价为普通217/219、特殊223/219，平均及最大值223/219>1。对八个普通坐标的置换和两组交换，g及max关于负载凸，平均到每坐标1/2，故真实两尾凸包和整个八普通支持质量4域的最小最大查询值都恰223/219；这不是自由十标签t5，因为q_uniform在更大目录上可用。",
+  "scope": "仅382单位重建点、给定八普通/两特殊支持和指定q；不反驳自由分数定义或其Jensen不等式。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/计算/五人个体安全推送分数候选快照--计算.md",
+      "sha256": "e18b818705242721252e4544f70fd9aa3afb825a2d1143496caf66cdaedb0e8f"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/自由分数背景安全门槛--定义.md",
+      "sha256": "0e2e6393acb153498a3b4d0a8091b3a10976f211945e612c96eb1b2d8982c2cd"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/pushforward-fractional-five-snapshot/current-exact-reconstruction.json",
+      "sha256": "3fa6a10b1374d7c044d9da3c7d1fa8871c1720ca20c887193f76a366abe130f0"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/pushforward-fractional-five-snapshot/audit_snapshot.py",
+      "sha256": "20a5cd1db347353d0495ec083c7be67cec848ea51bb0bedefcfae3ee0a7614b8"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+    }
+  ],
+  "reviewed_by": "solver_971de194ee8e9c96",
+  "review_note": "自由门槛正文、定义模型与终点精确重建报告实读；保持“显式见证≠精确最优”的量词。",
+  "endpoint_pins": {
+    "customer-attraction/five-individual-security-pushforward-fractional-snapshot": "5952635d38edd54b0992b582a21d79a455d6e6fdb01b1f8f6f8e7adad47b1f85",
+    "customer-attraction/free-fractional-background-security-floor": "5e3a8d73eede60c22e76b296b3d0a4dd4021464cebae711470f18dd6c39f5ac0"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/计算/五人个体安全推送分数候选快照--计算.md": "e18b818705242721252e4544f70fd9aa3afb825a2d1143496caf66cdaedb0e8f",
+    "archives/customer-attraction/state/定义/自由分数背景安全门槛--定义.md": "0e2e6393acb153498a3b4d0a8091b3a10976f211945e612c96eb1b2d8982c2cd",
+    "archives/customer-attraction/tools/evidence/pushforward-fractional-five-snapshot/current-exact-reconstruction.json": "3fa6a10b1374d7c044d9da3c7d1fa8871c1720ca20c887193f76a366abe130f0",
+    "archives/customer-attraction/tools/evidence/pushforward-fractional-five-snapshot/audit_snapshot.py": "20a5cd1db347353d0495ec083c7be67cec848ea51bb0bedefcfae3ee0a7614b8",
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+  },
+  "review_digest": "efa63cc9eb4030c8dbc93b25e637fd46c52aa0e3149f4df387a08572d31f8e7b"
+}

@@ -1,0 +1,98 @@
+{
+  "task_id": "customer-attraction-3a-3a-945903b22c547e8c",
+  "stage": "3A",
+  "status": "complete-assigned-reading-and-mathematical-delivery",
+  "owner": "Boss2",
+  "worker": "Solver_9459",
+  "request_id": "2841f597dece4e5b8784e99d1aa67e7e",
+  "definition_path": "research/operations/map-v2/tasks/customer-attraction-3a-3a-945903b22c547e8c.json",
+  "definition_sha256": "65158f6ec1f11e55875d7354e688a2c9804af660ba5a5365e7fa3aa073cf62c6",
+  "object_ids": [
+    "customer-attraction/shared-weighted-maximum-two-menu-hinge-elimination"
+  ],
+  "input_pins": {
+    "customer-attraction/shared-weighted-maximum-two-menu-hinge-elimination": "b0f1305563f85c7f35ae522ec0f60308fc83e6c5f0cfa0379f14c8a35d886d61"
+  },
+  "edge_ids": [
+    "ca-9459-bns-specializes-to-shared-two-menu-hinge"
+  ],
+  "coverage": {
+    "customer-attraction/shared-weighted-maximum-two-menu-hinge-elimination": {
+      "state": "linked",
+      "object_pin": "b0f1305563f85c7f35ae522ec0f60308fc83e6c5f0cfa0379f14c8a35d886d61",
+      "comparison_scope": "完整实读任务声明的16个reading passes（15个distinct files）；解析完整exact_projected_hinge.json并核对作者/独立审计、BNS承重、13断点及精确57原子分离。",
+      "reason": "共同H的五槽BNS求和与J容量行精确推出HM全参数族；独立回放确认投影恒等式、W=1、比较覆盖及负slack。负点仅是必要系统分离，不是SPE/half反例；全局付款闭合仍开放。",
+      "edge_ids": [
+        "ca-9459-bns-specializes-to-shared-two-menu-hinge"
+      ]
+    }
+  },
+  "assets": [
+    {
+      "path": "map/edges/customer-attraction-3a-3a-945903b22c547e8c/shared-hinge-from-bns.json",
+      "sha256": "b5a076f70d3a265c48f124f21af037fd08db89ba71b1765e9b35a341598f8827"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-945903b22c547e8c/coverage.json",
+      "sha256": "5f0d4063befb361f5f930682c397c8d97dde812261baa92a7c1c780cafc0fc64"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-945903b22c547e8c/review.md",
+      "sha256": "2845566ac090ae08aca28ddffc9e9ae0e8d27aac82a902596418474766cb02f3"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-945903b22c547e8c/readledger.json",
+      "sha256": "94855d7d563fad9836f439b2445099d583fa8b780f3e4553cfe147fc050a8853"
+    }
+  ],
+  "follow_up_tasks": [],
+  "closed_overlaps": [
+    {
+      "core_id": "customer-attraction/shared-weighted-maximum-two-menu-hinge-elimination",
+      "peer_id": "CAG-MODEL",
+      "reason": "定义仅是共同模型语境，不单独形成hub边。"
+    },
+    {
+      "core_id": "customer-attraction/shared-weighted-maximum-two-menu-hinge-elimination",
+      "peer_id": "customer-attraction/ten-unit-five-player-full-history-terminal-share-counterexample",
+      "reason": "不同命题：十单位C2反例不触及HM。"
+    }
+  ],
+  "read_scope": {
+    "declared_passes": 16,
+    "distinct_files": 15,
+    "full_read": true,
+    "readledger": "map/edges/customer-attraction-3a-3a-945903b22c547e8c/readledger.json",
+    "deferred_candidates_not_read": [
+      "B10-AP-v1",
+      "B10-AP-v2",
+      "B10-BNS-v1",
+      "CA-FIVE-HALF-EXACT-v1",
+      "M-02cc77281575481f8f9cd76310021729",
+      "M-049f49c6150f4a8b969b1b33c33523ac",
+      "M-2cfd9f597a454015b18aa7c024952c30",
+      "M-7de9653b3756482a842a5e462fdd01d1",
+      "M-aa261410cd124a669c5194a1c4c619ed",
+      "M-b1aa735ed8b441dfa8410d89ec4802c7",
+      "M-dbc9afcf27dd4e14ac0288d459b9e5e9",
+      "customer-attraction/true-third-node-maxroot-envelope"
+    ]
+  },
+  "verification": {
+    "declared_sha256_all_refs": true,
+    "author_scalar_audit": "3024 exact states; 13 knots plus 35/2; PASS; 1620 zero residues",
+    "independent_hinge_replay": "1512 projection states; 57 atoms; stored 5421 row schema/min checked",
+    "negative_slack_t1": "-2545038904436395063799507587696468048179739948767763566673/10979217962673362244324219749486256351482221568852301332700",
+    "programs_rerun": false,
+    "global_half": "not claimed"
+  },
+  "execution_boundary": {
+    "registry_modified": false,
+    "coverage_modified": false,
+    "integration_modified": false,
+    "task_state_modified": false,
+    "git_commit_or_push": false
+  },
+  "reviewed_by": "Solver_9459",
+  "review_note": "所有数学结论、前提、精确分离含义和remaining已写入review.md与edge JSON；Boss可直接串行edge-bind --write和edge-check。"
+}
