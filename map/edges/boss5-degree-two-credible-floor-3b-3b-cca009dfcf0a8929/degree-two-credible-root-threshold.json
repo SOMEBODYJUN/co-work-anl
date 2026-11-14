@@ -1,0 +1,90 @@
+{
+  "edge_id": "cag-degree-two-credible-root-threshold-local",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "degree-two-shared-customers-complete-spe-negative-stationary-flux-family",
+    "customer-attraction/degree-two-exact-root-tail-profit"
+  ],
+  "target_ids": [
+    "customer-attraction/closeout-67a92b6751929baa34cc1de3"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "固定二元共享客户族：整数 q≥2、b≥1、0≤a≤b；两个 q 元标签组 X,Y，每条跨组边有 b 名不同单位客户、每条组内边有 a 名不同单位客户；m=q+1；按构造页给定的完整有序纯 SPE（首位固定根 v，随后指定反组 q 标签各一次，重复前缀进入一份有限 BI 完整子 SPE）。对 route5 的 R_empty(v) 仍按所有完整孩子子 SPE 的完整有序终局取集合，比较槽/尾动作可重复；L_empty(v)=min_{z∈R_empty(v)}u_1(z)，Theta_empty=max_v L_empty(v)。",
+  "roles": {
+    "degree-two-shared-customers-complete-spe-negative-stationary-flux-family": "给出该二元目录、完整策略覆盖全部有序历史、指定反组后继的可信性、根/尾收益 L/H、F(s) 单调性以及 a>0 时无重复策略条件；保证强制根 v 的反组 q 尾确实是 R_empty(v) 中可实现的完整 SPE 终局。",
+    "customer-attraction/degree-two-exact-root-tail-profit": "给出同一族每个根的 q 槽比较取等支持：反组各一次达到 V_Z=qH，并核对支持取等与 a=0、0<a<b、a=b>0 的边界；用于确认指定反组是根后尾的真实取等槽。",
+    "customer-attraction/closeout-67a92b6751929baa34cc1de3": "提供 route5 的 R_h(A)、L_h(A)、Theta_h 和完整终局门槛递归接口；本边只把二元族的空前缀强制根门槛接入该接口，不填一般前缀付款。"
+  },
+  "explanation": "先固定根 v∈X。任一强制根 v 后的完整有序终局，不论其 q 个尾动作是否来自 SPE、是否复制标签，记尾标签重数为 c_w≥0，Σ_w c_w=q，C_Y=Σ_{y∈Y}c_y、C_X=Σ_{x∈X\\{v}}c_x。根的真实利润恰为 U_v(c)=bΣ_{y∈Y}1/(1+c_y)+aΣ_{x∈X\\{v}}1/(1+c_x)。对整数 t≥0 有 1/(1+t)≥1−t/2（t=0,1 取等，t≥2 严格），故 U_v(c)≥qb+(q−1)a−(bC_Y+aC_X)/2。因 C_X+C_Y=q 且 b≥a，有 bC_Y+aC_X≤bq，遂 U_v(c)≥qb/2+(q−1)a=:L。此下界对 R_empty(v) 中每个真实完整孩子终局都成立，所以 L_empty(v)≥L。构造页的指定反组后继是同一份覆盖全部历史的完整纯 SPE，尾恰取相反组 q 标签各一次；此时根每条跨边分母为2、同组边分母为1，U_v=L，故 L_empty(v)≤L，得到 L_empty(v)=L。组交换对称使所有 v 的门槛相同，Theta_empty=max_v L_empty(v)=L。根后尾定理的 R_Z(T) 取等支持与上述反组槽一致，且 max_T R_Z(T)=V_Z=qH；它是 q 槽联合尾利润的取等核验，不替代上述逐终局根收益下界。对指定策略的重复边界，S=qb+(q−1)a，F(s)=S−[b(q+1−s)+a(s−1)]/2 随 s 不减，F(1)=L，且 L−S/2=(q−1)a/2。无重复历史中复制已用标签的收益至多 S/2，而指定新标签在完整后继中至少 L；当 a>0 时 L>S/2，故复制动作严格不优，指定完整 SPE 的无重复条件真实成立；a=0 仅弱取等，不能宣称所有完整 SPE 都无重复。把尾复制看作计数状态 c→c+e_w，前述 1/(1+t) 断言在每个剩余槽的逆向归纳中保持同一根收益下界 L，因此任何复制后继仍落在根的 L-floor 内；该归纳只约束强制根的真实收益，不把一般后缀的 L_h(A) 误写成 L。由此得到的是 route5 空前缀、每个强制根 v 的真实分支阈值局部贡献，且指定反组分支取等；没有证明任意非空前缀 h 的 L_h(A)=L 或 Theta_h=L。",
+  "scope": "仅限上述二元共享客户完整 SPE 族的空前缀强制根分支。结论是每个 v 的 route5 branch floor 恰为 L、根门槛恰为 Theta_empty=L，并保留 a>0 指定策略无重复与 a=0 弱边界。不得外推到一般共同目录、任意完整 SPE 的非空前缀 threshold、跨互斥离轨枝的共同付款、Σ_i L_{h_i}(T_i)≥OPT_m−W、六人/任意人数 half 或任意目录福利比率。",
+  "contribution": {
+    "result": "在固定二元族和指定完整 SPE 的 route5 解释下，逐一证明所有强制根 v 的 R_empty(v) 终局都给根真实收益至少 L；指定反组 q 尾完整 SPE 达到 L。因此 L_empty(v)=Theta_empty=L，对每个 v 精确成立；a>0 时指定策略所有无重复前缀的复制动作严格不优，a=0 仅弱取等。",
+    "remaining": "一般非空前缀 h 的 L_h(A)、Theta_h 未被统一求出；不同离轨动作所在互斥子树之间没有共同不重复预算。仍未证明 route5 所需的最优带位置元组付款 Σ_i L_{h_i}(T_i)≥OPT_m−W，也未闭合全局 half、OPT−W 或任意目录结论。固定根 q 槽上界 R_Z(T)≤V_Z 仍只是旧边的聚合上包络，不能替代这些下界。"
+  },
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/资源/完整后继门槛的阶段接口与选中枝边界--资源.md",
+      "sha256": "9d8ab71d9a269651754ed48114eb9803e65a90bc8eb7946f8c8fcf1a0b4250a7",
+      "section": "原记录与精确对象"
+    },
+    {
+      "path": "archives/customer-attraction/state/资源/完整后继门槛的阶段接口与选中枝边界--资源.md",
+      "sha256": "9d8ab71d9a269651754ed48114eb9803e65a90bc8eb7946f8c8fcf1a0b4250a7",
+      "section": "精确门槛递归及两向证明"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/二元共享客户完整策略的精确根后尾利润--定理.md",
+      "sha256": "f045cde1647b2879ec5ba31b079b7a50acdcc7fef5d4eab43b5eaac44dc5b4ae",
+      "section": "二元共享客户族的精确尾利润比较"
+    },
+    {
+      "path": "archives/customer-attraction/state/构造/二元共享客户的完整均衡负驻留族--构造.md",
+      "sha256": "5c9cf2906b68aaa4bdb21172f11d29ad52d58c0f16baaab8b59d0a0e112ef0d4",
+      "section": "全有序历史IC证明"
+    },
+    {
+      "path": "archives/customer-attraction/state/构造/二元共享客户的完整均衡负驻留族--构造.md",
+      "sha256": "5c9cf2906b68aaa4bdb21172f11d29ad52d58c0f16baaab8b59d0a0e112ef0d4",
+      "section": "θ是纯背景最坏最佳回复，不是混合安全值"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+      "section": "策略、真实续局与全部历史量词"
+    },
+    {
+      "path": "archives/customer-attraction/state/审查/二元驻留与静态拥挤审查的先验和有限域--审查.md",
+      "sha256": "b27ebdf12826ac75572045a59fd6f0e665495de08616c356520afc391166d942",
+      "section": "负flux独审的先验与真实修正"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/二元驻留全有序树与静态拥挤菜单的原审计合同--程序.md",
+      "sha256": "0e846a44955301f6cd00b8b48c0a20ebbe586ac082f87c2730e2f7ec7d6991b2",
+      "section": "作者负驻留程序的完整树构造"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/二元驻留族无重复节点的独立精确审计--程序.md",
+      "sha256": "ca2428709094c4d85509b5b6d53d819a0ffbe8d475f0db3bc5eb8f631d82dbfc",
+      "section": "模型、客户及同一完整策略的解析补全"
+    }
+  ],
+  "endpoint_pins": {
+    "customer-attraction/closeout-67a92b6751929baa34cc1de3": "cd901b7f15921d8205f33be6c8d93451d2f9946236366818088406048f2a4595",
+    "customer-attraction/degree-two-exact-root-tail-profit": "4638e5ff85b2fdb805a2578bfdfc42e7ed0d2351a87ea9dd252324e7250fcc37",
+    "degree-two-shared-customers-complete-spe-negative-stationary-flux-family": "ead26a4f21f7e18c8edf9e4ae56d638dec34f9825819526618cf059eab1a651d"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/资源/完整后继门槛的阶段接口与选中枝边界--资源.md": "9d8ab71d9a269651754ed48114eb9803e65a90bc8eb7946f8c8fcf1a0b4250a7",
+    "archives/customer-attraction/state/定理/二元共享客户完整策略的精确根后尾利润--定理.md": "f045cde1647b2879ec5ba31b079b7a50acdcc7fef5d4eab43b5eaac44dc5b4ae",
+    "archives/customer-attraction/state/构造/二元共享客户的完整均衡负驻留族--构造.md": "5c9cf2906b68aaa4bdb21172f11d29ad52d58c0f16baaab8b59d0a0e112ef0d4",
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+    "archives/customer-attraction/state/审查/二元驻留与静态拥挤审查的先验和有限域--审查.md": "b27ebdf12826ac75572045a59fd6f0e665495de08616c356520afc391166d942",
+    "archives/customer-attraction/state/程序/二元驻留全有序树与静态拥挤菜单的原审计合同--程序.md": "0e846a44955301f6cd00b8b48c0a20ebbe586ac082f87c2730e2f7ec7d6991b2",
+    "archives/customer-attraction/state/程序/二元驻留族无重复节点的独立精确审计--程序.md": "ca2428709094c4d85509b5b6d53d819a0ffbe8d475f0db3bc5eb8f631d82dbfc"
+  },
+  "review_digest": "4c72b023de2df590b682cb2fbcf5dfdfc59d67712493f25c9ab927b0d1b00437",
+  "reviewed_by": "Boss7 / map_worker_degree_two_credible",
+  "review_note": "七份 declared refs 全文实读并逐 SHA/字节核对。用强制根后的任意 q 槽尾重数直接证明 U_v≥L，再以指定反组完整 SPE 取等，故 route5 空前缀 L_empty(v)=Theta_empty=L；保留 a>0 指定策略无重复与 a=0 弱边界，并明确一般非空前缀、互斥离轨付款和全局 half 仍开放。与旧 cag-degree-two-tail-route5-threshold-gap 分开：旧边只给 R_Z(T)≤qH 聚合上界，本边给 branch floor 下界/取等。edge-bind/edge-check 只作结构验证。"
+}
