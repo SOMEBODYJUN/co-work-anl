@@ -1,3 +1,5 @@
+# Non-edge replay evidence retained by map-repair-b1832f22d3786d95.
+# Running or reading this script does not create an implication or an accepted edge.
 """Verify the frozen 427-column point and materialize its 33 specified last nodes."""
 
 from collections import Counter
