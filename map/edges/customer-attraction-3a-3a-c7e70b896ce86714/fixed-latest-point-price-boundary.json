@@ -1,0 +1,87 @@
+{
+  "edge_id": "cag-c7e70-fixed-latest-point-price-boundary",
+  "kind": "checks",
+  "status": "accepted",
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "source_ids": [
+    "M-7b187928aed64027bd7b4dee58308400"
+  ],
+  "target_ids": [
+    "M-7b187928aed64027bd7b4dee58308400"
+  ],
+  "conditions": "固定 coupled_latest_exact.json 的 2033 列、5277 条必要行、16 个 hist、582 个 joint-reply、1306 个 overlap 与 128 个 actual-B 条件态；O=1，保留该点的全部有理质量和 actual-B/ell 坐标；普通合法末价 Y_i 行沿同一完整策略真实后继解释。",
+  "roles": {
+    "M-7b187928aed64027bd7b4dee58308400": "给出固定 5277 行必要系统上的精确有理点，并由完整回代显示全部已保存行非负；同一点的普通合法末价行 6u_6-sum_i P_actual(Y_i) 严格为负，排除保留这些坐标的完整共同目录纯 SPE 补全。"
+  },
+  "context": {
+    "finite_point": "coupled_latest_exact.json 的 2033 列点有 230 个正列，O=1，W=269468671081390973287603081586427543021284243/551682258751855243720540411834195825411675776，且 W<1/2；5277 条保存必要行的精确 slack 全部非负，最小值 0，零 slack 2120。",
+    "verification": "verify_latest_point.py 在隔离运行中仅调用原 build 一次，重建 5277x2033 矩阵，检查列描述、长度、O、W、全行有理 slack、actual-B 条件质量和与 5259 点的坐标差异；exit 0、stderr 为空、未调用 LP 或 SPE 求解器。",
+    "price_obstruction": "对每个实际前三历史后强制 B 再强制 T_i 的合法主题 Y_i，真实末位最佳回复给出 6u_6-sum_x ell_Y(x)/(1+L_actual(x))>=0。原 916B 检查器在同一冻结点逐项计算并精确得到 -37649034345157581458948354799628857270185177/275841129375927621860270205917097912705837888<0；因此任何保留该质量与 ell 坐标的完整 SPE 补全均被排除。",
+    "coordinate_boundary": "5277 点与同描述符、同 W 的 5259 点仍有 168 个质量坐标不同（joint-reply 80、overlap 70、actual-B 条件态 18），所以不能把另一点的普通价 slack 或完成性移植过来。"
+  },
+  "explanation": "这是 core 自身的 checks 语境边：它把一个固定必要系统精确可行点、全行非负回代和一条未列入保存矩阵的真实末价负行接在同一对象上，精确说明该点的反驳目标与边界。负末价只否定保留这些坐标的完整 SPE 补全，不是完整 SPE、精确 LP 最优、OPT_6 反例或六人 half 结论；补入 pending cuts 或迁移到别的点仍需单独重算。",
+  "scope": "self-context only；固定 16-hist coupled_latest wrapper 与 5277 行必要系统。不得释放固定坐标、把有限必要行当成完整策略实现，或把该负价迁移到 5259/5494/5664/5692 等其它阶段点。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/计算/实际末主题联合主图的局部切面与末价停界--计算.md",
+      "sha256": "b1b79d62e19c75578c7500ae7a44946dcf07531604334eccfb0b4e0ade236e3e",
+      "section": "保存点的精确量与5259比较"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+      "section": "策略、真实续局与全部历史量词"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/coupled-latest-menu-check-boss3/original/coupled_latest_exact.json",
+      "sha256": "303291e7ec19437d226bb8d33d3e689beaf54f52103fde53a12e28f1058f806a"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/coupled-latest-menu-check-boss3/original/coupled_latest_master.py",
+      "sha256": "90cb4f5e58751f325831babf522987d8eebac925b685113a3c94ae0717f9c85b"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/coupled-latest-menu-check-boss3/verify_latest_point.py",
+      "sha256": "1e301bbf1368cc6a16db2be71abf549d7cf5f7c2ef9046ed3271ae08ada2758b"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/coupled-latest-menu-check-boss3/replay/latest/all-row-slacks.json",
+      "sha256": "28c83dab7ec3bbe8f511816addc2c737f815a90e25462de8d133e346a0ee2428"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/coupled-latest-menu-check-boss3/original/check_B_menu_actual_last_price.py",
+      "sha256": "c4869eee1b813a827343a3eba9bcd2ac6820b0b420b5840f429e4b3e3e367a7f"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/coupled-latest-menu-check-boss3/original/B_menu_actual_last_price_check.json",
+      "sha256": "a8094defe8d02f6145e977e37122cc3e76fa07e11f62c248314c79fe149a7290"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/coupled-latest-menu-check-boss3/replay/latest/summary.json",
+      "sha256": "06b4c6ed1d2d0789c857b1a807eefebce0a02e1c43aee66bdd9332c1119325ee"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/coupled-latest-menu-check-boss3/related/coupled_pending_cuts.json",
+      "sha256": "0f97192f11c330976aa391b0aea979fff60009b46e4a98b16825113672e793f0"
+    }
+  ],
+  "reviewed_by": "Boss7 / fresh-worker-c7e70",
+  "review_note": "按任务 11 个 staged passes 完整读取 8 个 declared refs，并独立核对 exact point、全行 slack、普通末价检查及与 5259 坐标差异；只保留 core self-context，不把有限必要点升级为完整 SPE/half。",
+  "endpoint_pins": {
+    "M-7b187928aed64027bd7b4dee58308400": "e052a3cc4467cc3ab8a731acc72ed9c9006ccbe023cfd7a76bc4813bbc5525db"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/计算/实际末主题联合主图的局部切面与末价停界--计算.md": "b1b79d62e19c75578c7500ae7a44946dcf07531604334eccfb0b4e0ade236e3e",
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+    "archives/customer-attraction/tools/evidence/coupled-latest-menu-check-boss3/original/coupled_latest_exact.json": "303291e7ec19437d226bb8d33d3e689beaf54f52103fde53a12e28f1058f806a",
+    "archives/customer-attraction/tools/evidence/coupled-latest-menu-check-boss3/original/coupled_latest_master.py": "90cb4f5e58751f325831babf522987d8eebac925b685113a3c94ae0717f9c85b",
+    "archives/customer-attraction/tools/evidence/coupled-latest-menu-check-boss3/verify_latest_point.py": "1e301bbf1368cc6a16db2be71abf549d7cf5f7c2ef9046ed3271ae08ada2758b",
+    "archives/customer-attraction/tools/evidence/coupled-latest-menu-check-boss3/replay/latest/all-row-slacks.json": "28c83dab7ec3bbe8f511816addc2c737f815a90e25462de8d133e346a0ee2428",
+    "archives/customer-attraction/tools/evidence/coupled-latest-menu-check-boss3/original/check_B_menu_actual_last_price.py": "c4869eee1b813a827343a3eba9bcd2ac6820b0b420b5840f429e4b3e3e367a7f",
+    "archives/customer-attraction/tools/evidence/coupled-latest-menu-check-boss3/original/B_menu_actual_last_price_check.json": "a8094defe8d02f6145e977e37122cc3e76fa07e11f62c248314c79fe149a7290",
+    "archives/customer-attraction/tools/evidence/coupled-latest-menu-check-boss3/replay/latest/summary.json": "06b4c6ed1d2d0789c857b1a807eefebce0a02e1c43aee66bdd9332c1119325ee",
+    "archives/customer-attraction/tools/evidence/coupled-latest-menu-check-boss3/related/coupled_pending_cuts.json": "0f97192f11c330976aa391b0aea979fff60009b46e4a98b16825113672e793f0"
+  },
+  "review_digest": "bf6082f1e8c3ab72efc663b8de10fbb5af8cfb36410ac7f2c23777b1d42eb692"
+}
