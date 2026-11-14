@@ -269,12 +269,53 @@
       "budget_status": "reading-scope-expanded-reestimate"
     }
   },
-  "state": "claimed",
+  "state": "done",
   "owner": "Boss5",
-  "request_id": "2a48d8b8b8014238a624baa633fe8bb1",
+  "request_id": "c567568b0f8847f8a4bb40e828f3db26",
   "requests": {
     "905d01fc8f6f4ed6b21c630e8dd6afa7": "plan",
     "597ef794a0da466ca308d5e58ec741ad": "claim",
-    "2a48d8b8b8014238a624baa633fe8bb1": "read-add"
+    "2a48d8b8b8014238a624baa633fe8bb1": "read-add",
+    "c567568b0f8847f8a4bb40e828f3db26": "done"
+  },
+  "edge_paths": {
+    "boss5-fixed-five-net-q-pays-five-distinct-slots": "map/edges/boss5-fixed-five-q-3a-79ebde1b6d5ce70c/net-q-pays-five-distinct-slots.json",
+    "boss5-fixed-five-single-policy-hall-pays-feasible-repeated-slots": "map/edges/boss5-fixed-five-q-3a-79ebde1b6d5ce70c/single-policy-hall-pays-feasible-repeated-slots.json"
+  },
+  "receipt": {
+    "coverage": {
+      "CA-TWO-FIXED-FIVE-PLAYER-ALL-OPTIMAL-TUPLE-UNSIGNED-Q-v1": {
+        "state": "linked",
+        "object_pin": "e4a80eb486bf50f6789fa5240644394bc585f8cf62675114bfb3bb197e7bd630",
+        "comparison_scope": "完整实读本体、原净线性费用及无符号 Hall 判据正文与冻结证据。分别重建 σ252 实际路径 00011 与 σ48 实际路径 01010 的完整有序动作域、原实际前缀真叶和全历史非自身偏离。比较 21 个五异槽支持、331/338 个单表 Hall 可行的重复多重集、110/103 个单表 Hall 失败的重复多重集，以及两表共用逐型判据的不同量词。原净费、独立净费、Hall、重复元组有理证书四项复验与各自冻结输出逐字节一致。",
+        "reason": "原净费逐型证书保同一排列，命中时外部信用为零，未命中时真付款与无符号费均为零，付清五异槽分支。单表 Hall 完美匹配保每个槽并逐型付清 331/338 个重复多重集。两支的实际有序 IC 逐人各用一次，给 Bπ≤W；同元组的逐项调和费给 F≤Q。\n对其余 110/103 个单表 Hall 失败的重复 T，最优性强迫每个正重数的非空会员型命中 T：替换一个重复副本保留旧覆盖，如有正型未命中还会严格扩张。因此 r 支持在 H(T)，且 T 已覆盖全目录能覆盖的客户。重放每表 2801 个有序历史与 16806 个非自身真偏离，将 60 倍偏离减规定收益行去零去重后字典序排序，得 1867/1912 个 IC 行。精确检查 213 组 λ≥0、Σλ=1 与 μ≥0 在 H(T) 的 22440 个坐标：Σλ·60(Pπ−q_T)+Σμ·I≥ρσ。乘 r 求和并用 I·r≤0，得 maxπ Bπ−Q≥ρσ R/60。分布只依表和 T，可在整个受限锥复用；每个 r 可从正权排列中抽取达到或超过平均的一个，保留原重复次数。\n对各表上述逐型失败的 T 和该受限完整 SPE 锥上的每个 r，ρ252=260/89、ρ48=318953632903493464985/140121019389084438054，均严格大于 60/27。R 为非空类型总量，W≤R，因此 R>0 时 maxπ Bπ−Q>R/27≥W/27；R=0 时费用与福利均为零。全标签类型正质量给每个该受限锥的非零可行点。余量结论只覆盖这 213 个单表失败对；最优归一余量仍需锐性证书。逐型 Hall 失败仅排除全非负客户重数上统一逐型支付，不排除固定真实 SPE 锥的聚合付款。",
+        "edge_ids": [
+          "boss5-fixed-five-net-q-pays-five-distinct-slots",
+          "boss5-fixed-five-single-policy-hall-pays-feasible-repeated-slots"
+        ]
+      }
+    },
+    "assets": [
+      {
+        "path": "map/edges/boss5-fixed-five-q-3a-79ebde1b6d5ce70c/net-q-pays-five-distinct-slots.json",
+        "sha256": "ef65ba0468c2b3e4b460ac55acc3b329a070e6639f77e61b2ff91edec19b1ab4"
+      },
+      {
+        "path": "map/edges/boss5-fixed-five-q-3a-79ebde1b6d5ce70c/single-policy-hall-pays-feasible-repeated-slots.json",
+        "sha256": "31faea3a572e2e58a3f76187fae0940fc7265cabbf4c1ef8d6c9ab74d6ba5db4"
+      }
+    ],
+    "closed_overlaps": [
+      {
+        "core_id": "CA-TWO-FIXED-FIVE-PLAYER-ALL-OPTIMAL-TUPLE-UNSIGNED-Q-v1",
+        "peer_id": "CA-TWO-FIXED-FIVE-PLAYER-NET-Q-MATCH-v1",
+        "reason": "本包已把原净证书落实为全部五异槽的无符号贡献。原净费的同覆盖扩充是存在型结论；它可保最优覆盖并集，却改变给定重复元组的 d_b，因而无法用该扩充支付给定重复槽。该区别及重复分支的独立证书已核，原二端比较无待续步骤。"
+      },
+      {
+        "core_id": "CA-TWO-FIXED-FIVE-PLAYER-ALL-OPTIMAL-TUPLE-UNSIGNED-Q-v1",
+        "peer_id": "CA-TWO-FIXED-FIVE-PLAYER-UNSIGNED-Q-AND-SLOT-MATCHING-v1",
+        "reason": "本包已把单表 Hall 的充分方向落实为 331/338 个重复多重集的贡献。另 110/103 个单表失败对在最优蕴含的命中域内由真 IC 组合支付。共用判据要求同一排列或分布逐型支付两表，其 220 个可行多重集及三个五异槽失败支持不决定单表真实锥付款。两端适用域和对应分支均已核实。"
+      }
+    ]
   }
 }
