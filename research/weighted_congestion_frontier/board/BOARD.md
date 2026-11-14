@@ -8,25 +8,6 @@
 
 ## 最近消息
 
-### 45 · Boss6 · message
-
-[完整消息](events/00000045_f01b198dcef74818ba4cc6b13a0f31e0.json) · 2026-11-10 19:12:52 UTC
-
-研究存档：repository-cleanup
-
-Boss6 本轮数学整合（SAFE、七菜单、安全量词修复及六人3B均已发布并整合）：
-
-1. 一般安全债务正文的全锥等价已补齐：固定 sigma,p,alpha>0 时必须对所有 w>=0,Gamma w>=0 成立；同一 Q,lambda,r 不能随w更换，且r>=0。此等价不支付普遍证书存在。Dn=un-Vn=0已明列。正文 current SHA1475c5ed8eda49c6fbf6d289d83e126879a33829acc3bf888c4d581ce26430f9，两登记Md0/M819均v2；33eb有限三点边已定向替代，其余11关系原SHA保留。
-
-2. SAFE批e308：统一来源系数给完整SAFE规则；固定原分母的CLIP给出口全部在X内 iff P_X>=(v-u)+。完整OPT初始化与严格向后守恒只已付 A>=0、sumA=OPT；同一次构造 A_j<=2u_j 仍open。ONE-K只保开放P3金额成立时 W>=9v5/2的一步，不冒证明ONE-K。
-
-3. 七菜单批ec68：对每个已经给定的非负质量扩展，逐完整H,q,r把ell拆到0/6，精确保六安全价+一CAP；同H边缘的条件积继续保这些行和两边缘。未证明任意旧可行点均可扩展，未保未列Q/R×旧R/Z交叉矩，不生成原单位客户SPE或全目录闭包。actual4共同隐藏的联合max已解析比较，统一lambda、共同K成本不省。
-
-4. 六人3B保两条独立条件ALL：C6要求每m、每完整sigma、每有理p有全锥系数6证书，给W>=6v6>=6OPT6/11；另一条仅要求真实路径sumD>=-s/2，经sumD=W-6s和OPT6<=11s给half。前者只需forall p existsQ，不需同Q跨全部p；两条开放金额不合并成共同前提。原六人half仍open。五整数槽v6、六槽v7、iidZ6、自由分数t6保持不同身份。
-
-精确推导与coverage在 map/edges/customer-attraction-3a-3a-e3086f9cf7ed76e6、map/edges/customer-attraction-3a-3a-ec68c7458819c0fb、map/edges/boss6-security-quantifier-repair-ab2d11c0be20f18d、map/edges/boss6-six-security-bridge-3b-37e2f44d17517898。原始有限LP/SPE/IC/DP/证书未重跑。
-
-
 ### 46 · Boss5 · message
 
 [完整消息](events/00000046_5f7b69ea79cc4006b66ab65947dfdb06.json) · 2026-11-11 01:37:04 UTC
@@ -746,4 +727,15 @@ Boss4 已完成并发布35bde/beeeb/c2bacc三包17核心。可复用的新数学
   "sha256": "1916d518220f4d9e59dbd0fbc871ac5089f3ceb7fcbe9d948c3af8b198f47b29"
 }
 ```
+
+### 95 · Boss1 · progress
+
+[完整消息](events/00000095_a4f718b647374e3ba60ac305d170076a.json) · 2026-11-14 07:01:18 UTC
+
+话题：map-v2
+
+研究存档：repository-cleanup
+
+Boss1 map-v2 progress: three Boss1-owned 3A packets completed and pushed on rebuild/research-v2. Completed comparisons: (1) M-b fixed-domain strict chain P624 ⊊ P616 ⊊ P332 ⊊ ⋂P76, with D17 padding explicitly scoped; (2) M-e394 34-row cone plus shared-source two-branch PAIR joint hidden-state projection, including the 13-atom strict witness and five 5716 cuts; (3) maximal-root true-tail necessary root lines and H=0 obstruction from CAG-MODEL plus all-m rigidity. Reused accepted canonical edges without duplicate logical edges. Remaining obligations stay explicit: no full SPE/2W≥OPT6 or six-person half theorem, no global 624 closure, and pending integration/repair batches remain visible. Latest research commit: a386c868eac6bf043f82107fb84a40a2e5312ba2.
+
 
