@@ -1,0 +1,47 @@
+{
+  "edge_id": "ca-423-cites-disjoint-last-payoff-family",
+  "kind": "cites",
+  "status": "accepted",
+  "source_ids": [
+    "M-c7a58d27573545b28c29fb6067f25d12"
+  ],
+  "target_ids": [
+    "customer-attraction/last-payoff-not-uniformly-shared-disjoint-family"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "有限单位客户、有限非空共同标签目录、单位权顺序提供者、完整有序历史纯SPE；允许空主题、同覆盖异标签、重复选择与任意弱平局；偏离沿同一完整策略真实后继。",
+  "roles": {
+    "M-c7a58d27573545b28c29fb6067f25d12": "给出五人七标签35客户的独立完整策略证书：实际路径(3,3,2,2,4)，收益(413/60,413/60,373/60,373/60,44/5)，W=OPT5=35，4u_last-W=1/5；2801个有序节点、19607项含自身比较全部通过。",
+    "customer-attraction/last-payoff-not-uniformly-shared-disjoint-family": "给出每个m>=2的两客户大题加m-1个不交单例全历史完整SPE，实际收益(1,...,1,2)、W=OPT=m+1，并在m>=4时(m-1)u_last-W=m-3>0。"
+  },
+  "explanation": "35客户段明确把本证书与既有不交全人数族区分保存：两者是不同输入和不同量词层级下对同一辅助预算桥 (m-1)u_last<=W 的独立有限/解析见证。对本点，4*(44/5)-35=1/5>0；对族，m>=4时差为m-3。族不能推出本点的35客户标签、路径或2801节点策略，本点也不能推出族的全m解析构造，因此这里只保留正文引用和独立核验语境，不写implies或equivalent_to。两者均有W=OPT，故不反驳half主目标，也不提供一般福利结论。",
+  "scope": "仅用于同一末位人数均摊辅助桥的语境对照与独立见证索引；不把该桥失败升级为六人half反例，不比较静态安全值或外部多主题残余，也不把共同模型定义当作推导。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/计算/根门槛与末位人数预算的三个完整历史有限证书--计算.md",
+      "sha256": "07a80666c417f26d08409e14bb01930b7a3020a252ed08afd75736dd17f2d6dd",
+      "section": "4. 五人35客户：末位人数预算严格超支"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/background-induction-seven-primary/last-fixed-exact-audit.json",
+      "sha256": "85a4cf81d6878d6eaa5beceef1bbcae8e7dad392bbb0048bb2a6d1d8b0d8e30e"
+    },
+    {
+      "path": "archives/customer-attraction/state/反例/末位收益不可按人数均摊的全历史不交族--反例.md",
+      "sha256": "5d4b2f6e25c23837f8c397ee8b9475cc606e03c9c288b1a9a63adeca671e94d9"
+    }
+  ],
+  "reviewed_by": "Boss2",
+  "review_note": "Fresh 3A worker 完整读取任务声明的四个对象/证据文件及关系审查，重核35客户输入、2801节点与19607项真实后继比较；独立读取不交全人数族登记正文并逐项核对其m量词与差值。未把共享定义或程序语境造作逻辑边。",
+  "endpoint_pins": {
+    "M-c7a58d27573545b28c29fb6067f25d12": "1f0aeecce943f79b9a7221d8a33565f16749302fa6ff335e7ce58ccbcae16bb0",
+    "customer-attraction/last-payoff-not-uniformly-shared-disjoint-family": "326cdc2eb1a08b2f598df4fcefd87af9d0d1e5799aaf4a73e8315947d17978c6"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/计算/根门槛与末位人数预算的三个完整历史有限证书--计算.md": "07a80666c417f26d08409e14bb01930b7a3020a252ed08afd75736dd17f2d6dd",
+    "archives/customer-attraction/tools/evidence/background-induction-seven-primary/last-fixed-exact-audit.json": "85a4cf81d6878d6eaa5beceef1bbcae8e7dad392bbb0048bb2a6d1d8b0d8e30e",
+    "archives/customer-attraction/state/反例/末位收益不可按人数均摊的全历史不交族--反例.md": "5d4b2f6e25c23837f8c397ee8b9475cc606e03c9c288b1a9a63adeca671e94d9"
+  },
+  "review_digest": "8e6bb09936d55f03d2f0bf35148e491e536a9284ba30a95ac16565fc2a23aeb7"
+}
