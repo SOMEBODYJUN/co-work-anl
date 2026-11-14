@@ -1,0 +1,67 @@
+{
+  "edge_id": "boss3-40ed-boolean-positivity-separates-new-positive-tenth-up",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-37b7d7de813c4ff69c63fcb679950f36"
+  ],
+  "target_ids": [
+    "CA-TRUNCATED-SHAPLEY-POSITIVE-ROOT-UP-NO-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "本反例的冻结五阶截断 C，沿用其可见同标签坐标。客户表示指任意非负实客户质量，故包括单位客户。全终局收益保真量化全部五人终局，容许统一正倍数。",
+  "roles": {
+    "M-37b7d7de813c4ff69c63fcb679950f36": "给出截断可见并值到交集矩的容斥变换，以及全布尔非负多项式的必要矩正性。",
+    "CA-TRUNCATED-SHAPLEY-POSITIVE-ROOT-UP-NO-v1": "给出可见 C 的七个三标签坐标。关系支付这一反例的非负客户实现边界。"
+  },
+  "explanation": "在标签 1、2、3 上 z_1 z_2 z_3 逐布尔点非负。对应交集矩容斥为 C(1)+C(2)+C(3)−C(12)−C(13)−C(23)+C(123)，七个数依次为 (4/5,9/40,9/40,1,1,9/20,1)，结果 −1/5。另在四标签 0、1、2、3 上令 k=z_1+z_2+z_3。二阶多项式 z_0(1−k)+binom(k,2) 在 z_0=0 时为 binom(k,2)，在 z_0=1 时为 (k−1)(k−2)/2，逐点非负。其矩值 9/10−(7/10+9/40+9/40)+(1/40+1/40+0)=−1/5。每个非空至多五标签的可见支持可补重复至五槽，Shapley 效率使终局总收益等于该支持的 C。因此保全五人终局收益也将恢复这个负矩；统一正倍数仍为负。",
+  "scope": "分别用三个标签的至三阶坐标或四个标签的至二阶坐标，均排除同标签非负客户精确表示、全终局收益保真及其统一正缩放。单条路径或部分 IC 符号的保真另需条件。对全域单调次模延拓的排除有独立证明。",
+  "contribution": {
+    "result": "把冻结 00001 输入的单位客户实现边界支付为两个显式布尔分离。三标签三阶交集为 −1/5，四标签二阶多项式矩值也为 −1/5。保全部五人终局收益或其同倍缩放也不可能。",
+    "remaining": "完整有序纯 SPE、两根删除边际、唯一最优支持和 25 个真实查询形成的强付款反例，须由本对象的冻结输入及全历史重放证明。全域次模延拓边界须另用六标签并集的单调次模冲突。"
+  },
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/有限阶交集矩的全收益表示与布尔正性--定理.md",
+      "sha256": "c6f61661e403b1336b0668ff5ef8f77ea3398878d16e64e5ddbb996918fadd30",
+      "section": "精确客户实现锥与固定全树证书"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/有限阶交集矩的全收益表示与布尔正性--定理.md",
+      "sha256": "c6f61661e403b1336b0668ff5ef8f77ea3398878d16e64e5ddbb996918fadd30",
+      "section": "全部终局表的精确数据"
+    },
+    {
+      "path": "archives/customer-attraction/state/反例/五阶截断共同次模的正根均匀付款反例--反例.md",
+      "sha256": "9ce772e78a3c811491b907e5ceb0a9706ca2811f5f670e1e95a6ca4749cc13cf"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/truncated-shapley-positive-root-uniform-payment/positive-tenth-witness.json",
+      "sha256": "ea7e0c350f3d617b6522e07652b0b5c22b2acda9940d5176d9bb023d3b7ff7f6"
+    },
+    {
+      "path": "map/edges/boss3-wave8-new-3a-40ed8aef023ad3c8/review.md",
+      "sha256": "beca7148fb661152d6554b234602fcec34f3d7d8537a312786d06754f0b78a7c",
+      "section": "三标签布尔分离与全域次模边界"
+    },
+    {
+      "path": "map/edges/boss3-wave8-new-3a-40ed8aef023ad3c8/replay.json",
+      "sha256": "c42252009566c6025150184a6c5dd72c9f7589c1fb129ef0301e0d48fbd49654"
+    }
+  ],
+  "reviewed_by": "Boss3",
+  "review_note": "独立重算三个标签的三阶交集和四个标签的二阶矩，逐布尔点核两多项式非负。按终局 Shapley 效率确认全部收益保真的逆向范围。另按冻结完整策略核全部真实偏离及原模型边界。",
+  "endpoint_pins": {
+    "CA-TRUNCATED-SHAPLEY-POSITIVE-ROOT-UP-NO-v1": "7cf8857e34481659e269890e3c1221e68306eae72bf124a1ce8b430c0a70d861",
+    "M-37b7d7de813c4ff69c63fcb679950f36": "5329e1cd6176147be295fc12f2f201e020a27181836b63fe2456b0468a8538aa"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/有限阶交集矩的全收益表示与布尔正性--定理.md": "c6f61661e403b1336b0668ff5ef8f77ea3398878d16e64e5ddbb996918fadd30",
+    "archives/customer-attraction/state/反例/五阶截断共同次模的正根均匀付款反例--反例.md": "9ce772e78a3c811491b907e5ceb0a9706ca2811f5f670e1e95a6ca4749cc13cf",
+    "archives/customer-attraction/tools/evidence/truncated-shapley-positive-root-uniform-payment/positive-tenth-witness.json": "ea7e0c350f3d617b6522e07652b0b5c22b2acda9940d5176d9bb023d3b7ff7f6",
+    "map/edges/boss3-wave8-new-3a-40ed8aef023ad3c8/review.md": "beca7148fb661152d6554b234602fcec34f3d7d8537a312786d06754f0b78a7c",
+    "map/edges/boss3-wave8-new-3a-40ed8aef023ad3c8/replay.json": "c42252009566c6025150184a6c5dd72c9f7589c1fb129ef0301e0d48fbd49654"
+  },
+  "review_digest": "2e085b2851e035618cbc3a831c384b1d67a949923891322085231cf57ef1e53a"
+}
