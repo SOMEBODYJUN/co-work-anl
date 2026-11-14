@@ -292,11 +292,85 @@
       ]
     }
   },
-  "state": "claimed",
+  "state": "done",
   "owner": "Boss1",
-  "request_id": "04315334b7564704b1ef7a08f7365b63",
+  "request_id": "1b793dec5d6e418486bf5f0180496437",
   "requests": {
     "c77ec76b08b948c4ac8c43dc65353af7": "plan",
-    "04315334b7564704b1ef7a08f7365b63": "claim"
+    "04315334b7564704b1ef7a08f7365b63": "claim",
+    "1b793dec5d6e418486bf5f0180496437": "done"
+  },
+  "edge_paths": {},
+  "receipt": {
+    "task_id": "customer-attraction-3a-3a-398a76cd16d83fbb",
+    "owner": "Boss1",
+    "request_id": "04315334b7564704b1ef7a08f7365b63",
+    "definition_pin": "4039c5f4eb9be24ee0265fe434e86f623a80ae637d8234b83078a7cbf35406d5",
+    "coverage": {
+      "M-ad91b1aee1fc48fc867ded29f60f3361": {
+        "state": "isolated-after-review",
+        "object_pin": "398a4dfea5bafca38f7ffac08c1ddedb39c4222c4dba360b02a6a7bf5a8331f7",
+        "edge_ids": [],
+        "comparison_scope": "完整复核三层 211/599/1905 必要系统、3889 条逐行余量、末两人强PAIR与任意索引聚合、448 格真实必要投影及 13 项后继点积；复用现役 3B 投影边，不新增同义逻辑边。",
+        "reason": "当前对象已有接受的三层投影覆盖：ca-rz-fixed-1905-to-599-proper-projection、ca-rz-fixed-599-to-1905-overlap-lift、ca-rz-fixed-211-to-1905-fixed-fiber-lift。该任务只增加独立的完整阅读、whole/局部/条件边界审计与 deferred overlap 处置；为避免重复边，本批不再发布逻辑边。448 格负投影对三点共同 actual/d 边缘给完整 SPE 补全的严格排除；3889 点本身仍只是有限必要松弛精确可行点。",
+        "reused_edge_ids": [
+          "ca-rz-fixed-1905-to-599-proper-projection",
+          "ca-rz-fixed-599-to-1905-overlap-lift",
+          "ca-rz-fixed-211-to-1905-fixed-fiber-lift"
+        ]
+      }
+    },
+    "comparison_dispositions": [
+      {
+        "core_id": "M-ad91b1aee1fc48fc867ded29f60f3361",
+        "peer_id": "M-e960d7f4ebca40a38760eb3ae044cc19",
+        "scope": "末两人强PAIR全文；在实际前四位同一合法背景上对 R_e/Z_e basic-pair 行的精确特化，并与 3889 第三层跨稳定组行分开。",
+        "disposition": "closed-local-contribution",
+        "reason": "强PAIR已由 ca-actual-pair-pays-rz-two-family-rows 支付第二层两族 basic-pair 行；P-M/COVER 不支付 180 条 Z→R、R→Z、PAIR(R,R) 全部交叉行，也不支付容量、四态或 SPE 完成。故不造 M-e960→M-ad91 whole 边，剩余对象自身关系已由现役三层边和 448 证书分别承担。"
+      }
+    ],
+    "closed_overlaps": [
+      {
+        "core_id": "M-ad91b1aee1fc48fc867ded29f60f3361",
+        "peer_id": "M-e960d7f4ebca40a38760eb3ae044cc19",
+        "reason": "Deferred 3B 比较已在局部贡献层解决：普遍强PAIR的三IC恒等式与任意索引聚合已完整核验，并由现役 ca-actual-pair-pays-rz-two-family-rows 特化到本对象 basic-pair 行。第三层 180 行、1306 个双边缘上界、1905 点 slack、448 格真投影和 13 项点积都有独立公式/证书，不应冒作强PAIR的 whole implication；因此无独立未付 overlap 任务，也不保留虚假全对象边。"
+      }
+    ],
+    "follow_up_tasks": [],
+    "assets": [
+      {
+        "path": "map/edges/customer-attraction-3a-3a-398a76cd16d83fbb/review.md",
+        "sha256": "8ded39229a08db2a0513adbf82800fad937dd2323cc8296ead815363d40a55ab"
+      },
+      {
+        "path": "map/edges/customer-attraction-3a-3a-398a76cd16d83fbb/read-ledger.json",
+        "sha256": "e0a88a9ccc71fb55a3dbed4a43f967bea0dcdb7c6f03b1db9c97dc085cb534d4"
+      }
+    ],
+    "input_pins": {
+      "M-ad91b1aee1fc48fc867ded29f60f3361": "398a4dfea5bafca38f7ffac08c1ddedb39c4222c4dba360b02a6a7bf5a8331f7"
+    },
+    "source_freshness": {
+      "all_eight_reading_refs_match": true,
+      "task_definition_pin_matches": true,
+      "read_add_used": false,
+      "canonical_edges_reused_without_new_edge": true,
+      "canonical_edge_ids": [
+        "ca-rz-fixed-1905-to-599-proper-projection",
+        "ca-rz-fixed-599-to-1905-overlap-lift",
+        "ca-rz-fixed-211-to-1905-fixed-fiber-lift",
+        "ca-actual-pair-pays-rz-two-family-rows"
+      ]
+    },
+    "execution_boundary": {
+      "new_scientific_programs": 0,
+      "new_lp_runs": 0,
+      "new_rng_runs": 0,
+      "new_spe_tree_searches": 0,
+      "new_448_table_rebuilds": 0,
+      "new_21504_state_audits": 0,
+      "new_13_term_rebuilds": 0,
+      "note": "Exact JSONs and mature projection certificates were fully read and parsed; historical executions are retained under their declared source roles."
+    }
   }
 }
