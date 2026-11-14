@@ -1,0 +1,56 @@
+{
+  "schema": 2,
+  "task_id": "boss3-truncated-root-saturation-3a-acfdbad18c7781f8",
+  "stage": "3A",
+  "object_ids": [
+    "CA-TRUNCATED-SHAPLEY-ROOT-SATURATION-v1"
+  ],
+  "read_object_ids": [
+    "B6-ROOT-NEAR-SATURATION-v1"
+  ],
+  "input_pins": {
+    "CA-TRUNCATED-SHAPLEY-ROOT-SATURATION-v1": "9b7a6d3483c8d478bc6bf4abd92964adbd3cf5c59988430474576046ad01f138",
+    "B6-ROOT-NEAR-SATURATION-v1": "1d15a68fab01de46f1ceb2bc96f442daf14a4065211d0c08b29bbd472a926554"
+  },
+  "coverage": {
+    "CA-TRUNCATED-SHAPLEY-ROOT-SATURATION-v1": {
+      "state": "linked",
+      "object_pin": "9b7a6d3483c8d478bc6bf4abd92964adbd3cf5c59988430474576046ad01f138",
+      "comparison_scope": "全文核对截断共同次模Shapley根饱和定理：根偏离、末位IC、全域(2−1/m)强化、单位客户专用付款、m≥4 sharp族、m=2锐界、R275冻结点及m=2/3离轨失败边界；与B6的E=0映射和单位客户全域覆盖解释。",
+      "reason": "单位客户覆盖值C(A)=|∪cov|在全标签域归一单调次模；E=0等价于CA的r=K/m假设，因此CA完整域上界、根分支边际零和W≥K特化为B6的E=0结论。R275/sharp族属于较大截断共同次模值模型，未给非负单位客户实现，故不切断B6。",
+      "edge_ids": [
+        "boss3-ca-root-saturation-specializes-b6-unit-coverage"
+      ]
+    },
+    "B6-ROOT-NEAR-SATURATION-v1": {
+      "state": "linked",
+      "object_pin": "1d15a68fab01de46f1ceb2bc96f442daf14a4065211d0c08b29bbd472a926554",
+      "comparison_scope": "全文核对B6精确交换式m|D\\C|+|D∩C|≤K+(m−1)^2E、并集OPT界、E=0最大主题同覆盖/真实尾刚性、W≥K和小E half阈值，并与CA全域E=0特化逐式对照。",
+      "reason": "CA提供B6 E=0分支的共同截断Shapley证明和全域(2−1/m)界；B6保留CA没有的E>0误差项、最大主题单向差和条件half，因此只登记specializes/conditional关系，不登记等价或反向蕴含。",
+      "edge_ids": [
+        "boss3-ca-root-saturation-specializes-b6-unit-coverage"
+      ]
+    }
+  },
+  "assets": [
+    {
+      "path": "map/edges/boss3-truncated-root-saturation-3a-acfdbad18c7781f8/unit-coverage-specialization.json",
+      "sha256": "8e5525740aacea93a9130d2879c9837e7f57dba0f524cefd7aabcb00cd0ae41e"
+    }
+  ],
+  "follow_up_tasks": [],
+  "closed_overlaps": [],
+  "resolved_in_packet_comparisons": [
+    {
+      "core_id": "CA-TRUNCATED-SHAPLEY-ROOT-SATURATION-v1",
+      "peer_id": "B6-ROOT-NEAR-SATURATION-v1",
+      "result": "E=0且单位客户全域覆盖时，CA根饱和定理特化为B6的OPT≤(2−1/m)K≤(2−1/m)W与最大主题/真实尾同覆盖刚性；B6的E>0延拓保持未由CA支付。",
+      "reason": "共同模型和量词、根收益参数、全域覆盖次模映射及R275/sharp族反例边界均已全文核对；R275不是真实单位客户反例。"
+    }
+  ],
+  "mathematical_result": "在单位客户全域覆盖且E=mr−K=0时，C(A)=|∪cov|满足CA的根饱和前提，得到OPT_m≤(2−1/m)K≤(2−1/m)W，并得到最大主题同覆盖与强制最大根后的真实尾覆盖刚性。",
+  "mathematical_remaining": "尚未证明一般单位客户SPE必有小E阈值；CA根饱和定理不推出B6的E>0项。R275 q32完整W=1、OPT=2及m≥4 sharp_family均是较大截断共同次模值证书，未给全域非负单位客户实现。",
+  "reviewed_by": "Boss2 / solver_saturation",
+  "review_note": "按任务11份reading_refs逐一核对SHA并全文读取核心/依赖正文及证据；运行check_sharp_bounds.py与sharp_family.py的精确检查均通过。边已本地edge-bind/edge-check通过；未修改队列状态，未提交或推送。",
+  "read_scope_note": "R275巨型JSON以结构化解析完整读取全部字段，并对exact_candidate 2801历史、16806非自身偏离、W=1/OPT=2及customer_attraction_half_status=OPEN作范围核对；未把broader-class证书写成客户吸引反例。"
+}

@@ -1,0 +1,63 @@
+{
+  "edge_id": "b3r1-static-unique-load-pays-actual-prefix",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-921cb4daa29e43c6b2816c1ec73720b5"
+  ],
+  "target_ids": [
+    "M-3b33bff2ccf041a9a82eb35664d00a69"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "同一n≥1目录满足(2n−1)v_n=OPT_n；同一完整SPE实际前n−1个动作产生的逐客户负载恰等于S2唯一L，末位为真实BR。实际嵌入是额外条件，不由静态存在/舍入支付。",
+  "roles": {
+    "M-921cb4daa29e43c6b2816c1ec73720b5": "唯一L、g≤v、纯背景cap=v及ΣL/(1+L)=(n−1)v。",
+    "M-3b33bff2ccf041a9a82eb35664d00a69": "实际前缀嵌入后的末位等号、逐人下界及总覆盖。"
+  },
+  "explanation": "面对L末位真实BR恰为v。实际前缀B产生L，故按槽Σg(a)=Σ_xL_x/(1+L_x)=(n−1)v；每槽≤v，于是每槽g=v。末位至多加一层，前缀玩家终局分母≤1+L，其收入≥g=v。零背景根收入和等于W，得W≥nv。n1空前缀直接成立，不对任取q支持强取等；不要求B属于预选Q支持。",
+  "scope": "目标整条条件命题，保全部有序历史和弱平局，无普遍嵌入保证。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/静态安全值的亏量刚性与纯背景舍入--定理.md",
+      "sha256": "3d10d512cd632bacdbcc7c9bd8553438dd9fa3ad08a4aabaa61e638c17e4ad64",
+      "section": "4. S2：取等强制固定的纯对偶负载"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/静态安全值的亏量刚性与纯背景舍入--定理.md",
+      "sha256": "3d10d512cd632bacdbcc7c9bd8553438dd9fa3ad08a4aabaa61e638c17e4ad64",
+      "section": "5. 显式原始最优分布与所有最坏回复"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/静态安全值的亏量刚性与纯背景舍入--定理.md",
+      "sha256": "3d10d512cd632bacdbcc7c9bd8553438dd9fa3ad08a4aabaa61e638c17e4ad64",
+      "section": "6. 全部最优对偶之间的客户负载唯一性"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/静态安全值的亏量刚性与纯背景舍入--定理.md",
+      "sha256": "3d10d512cd632bacdbcc7c9bd8553438dd9fa3ad08a4aabaa61e638c17e4ad64",
+      "section": "8. 退化边界与真正能接回 SPE 的条件推论"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-54b1539bc147e0b3/review.md",
+      "sha256": "a5bef67a1dfd2075cbae9290e80552bb2679c57f5a43a53a6f23b9bfb2f2117c"
+    }
+  ],
+  "reviewed_by": "Boss3/boss3-single-player-boundary-repair-671659461d75219b",
+  "review_note": "Fresh Solver ordered-pass boundary repair; six prior relations retained with current input bindings.",
+  "whole_result": "在静态锐界且同一SPE实际前缀负载为L时，末位恰获v_n，每个前缀主题g=v_n，每个实际玩家收入≥v_n，W≥n v_n；n1和零值边界均成立。",
+  "endpoint_pins": {
+    "M-3b33bff2ccf041a9a82eb35664d00a69": "3f806751ffafb741306cfd9dbb14b74757d4564563e438ed4ae123d85289ae70",
+    "M-921cb4daa29e43c6b2816c1ec73720b5": "16aa564c605768797d2d59d18424960974bf082756ff55102020870b9781a55e"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/静态安全值的亏量刚性与纯背景舍入--定理.md": "3d10d512cd632bacdbcc7c9bd8553438dd9fa3ad08a4aabaa61e638c17e4ad64",
+    "map/edges/customer-attraction-3a-3a-54b1539bc147e0b3/review.md": "a5bef67a1dfd2075cbae9290e80552bb2679c57f5a43a53a6f23b9bfb2f2117c"
+  },
+  "review_digest": "6c6c2dbc1736be8a064c8eddc3376542ece02da9499f76d528d0efb08fce59b5",
+  "replacement_of": {
+    "task": "boss4-source-clarification-repair-repair-eb9c65b4dae79501",
+    "edge_id": "ca54r5-static-unique-load-pays-actual-prefix",
+    "path": "map/edges/boss4-source-clarification-repair-repair-eb9c65b4dae79501/ca54-static-unique-load-pays-actual-prefix.json"
+  }
+}
