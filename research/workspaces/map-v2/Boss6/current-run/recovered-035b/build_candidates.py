@@ -20,6 +20,22 @@ old=read(f'map/receipts/{OLD}.json')
 registry={o['object_id']:o for o in read('research/registry.json')['objects']}
 pin=lambda d:hashlib.sha256(json.dumps(d,ensure_ascii=False,sort_keys=True,separators=(',',':')).encode()).hexdigest()
 assert all(pin(registry[i])==v for i,v in t['input_pins'].items())
+if '--installed' in sys.argv:
+    # Finalizing a bound installation must not regenerate drafts from the
+    # replacement files or append the review evidence a second time.
+    plan=read(W/'install-plan.json')
+    receipt=read(W/'receipt-candidate.json')
+    replaced={c['destination'] for c in plan['copies']}
+    for asset in receipt['assets']:
+        actual=sha(asset['path'])
+        if asset['path'] not in replaced:
+            assert actual==asset['sha256'], asset['path']
+        asset['sha256']=actual
+    dump(W/'receipt-candidate.json',receipt)
+    plan['status']='installed-assets-refreshed-without-changing-bound-edges'
+    dump(W/'install-plan.json',plan)
+    print(json.dumps({'status':plan['status'],'assets':len(receipt['assets'])},ensure_ascii=False))
+    raise SystemExit(0)
 note=str((W/'review.md').relative_to(ROOT))
 note_ref=ref(note)
 common=f'map/edges/{OLD}/common-small-witness-to-schedule.json'
@@ -29,7 +45,7 @@ destinations={common:W/'candidates/common-small-witness-to-schedule.json',
               pair:W/'candidates/pair-subdivision-preserves-method-gap.json',
               new:W/'candidates/fixed-half-one-sided-finder-obstruction.json'}
 for target in (common,pair):
-    edge=read(target)
+    edge=read(W/'backup'/target)
     for k in ['endpoint_pins','evidence_pins','review_digest']:
         edge.pop(k,None)
     for r in edge['evidence']: r['sha256']=sha(r['path'])
