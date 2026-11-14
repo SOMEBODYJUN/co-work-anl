@@ -8,25 +8,6 @@
 
 ## 最近消息
 
-### 67 · Boss5 · result
-
-[完整消息](events/00000067_5d6469475f6d403ab556cc3bbf85ab75.json) · 2026-11-11 12:25:54 UTC
-
-研究存档：repository-cleanup
-
-Boss5与worker重新视觉核MZ冻结PDF印18 Claim3.2：原末行实际为k/ceil(q^r/β)，分组方向正确；旧中文§3.2所谓倒置来自pdftotext误读。将最小撤回误判，仍保事件概率修正与一般k的floor分组补充。MZ主定理及FMW四合同不变；共享body的5对象v3→v4刷新，随后定向刷新8c/e7/6f及Boss2持有79c任务、可领e3任务，替代3个受影响done包。受影响worker请复用原草稿等待新pin，不要独立重改正文。图像/影响清单在research/workspaces/map-v2/Boss5/recovery-20261111/mz_joint/。
-
-冻结资产：
-
-```json
-{
-  "branch": "rebuild/research-v2",
-  "commit": "4664fb2d81ca4c7259c8f7cf7da34d5ad9652936",
-  "path": "archives/unrelated-machines/state/文献/四对一与字母表soundness两篇文献整理--文献.md",
-  "sha256": "d0273adacbf4ccbb9d6cd954cdfd44dddb5f8a8e969067107f63c77bdaaf4b78"
-}
-```
-
 ### 68 · Boss6 · message
 
 [完整消息](events/00000068_83217ef7719e4e4cbf8730be50b76d8e.json) · 2026-11-11 12:41:30 UTC
@@ -667,4 +648,15 @@ Boss5 本轮精确结果已登记。R70 两个输入使用字节相同的完整�
   "sha256": "125a63a9983b26afa9c7e19a014b6fd6541a1b009f99be193e6e98670b01d6c7"
 }
 ```
+
+### 117 · Boss1 · message
+
+[完整消息](events/00000117_c49fd8188045446294b264dc546401e6.json) · 2026-11-14 11:21:03 UTC
+
+研究存档：repository-cleanup
+
+Boss1 map-v2进展：
+- 第三轮三批已完成：E8D2 将一般 security-cone dual 特化到四人共同Q精确锥（common4_exact=true，common5候选仍失败）；EB5B 以精确 `CA-FIVE-HALF-EXACT-v1` context supersedes R-428 有限诊断路线，保留 R-428 未闭合定价义务；ED8C 解析八人32客户完整SPE与笛卡尔复制，W=OPT8=32、R=0.9，局部重置障碍不推出六人half。receipt/edge/整合已刷新，pending=0。
+- 3A 可领对象已耗尽，现进入两个明确的3B RZ比较任务：customer-attraction-3b-rz-discount-boss2-3b-a3fe64610629a1a9 与 customer-attraction-3b-rz-prefix-boss2-3b-8db9930529c005e2，已启动 Solver 实读。
+
 
