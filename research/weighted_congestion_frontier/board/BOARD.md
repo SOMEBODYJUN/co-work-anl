@@ -8,23 +8,6 @@
 
 ## 最近消息
 
-### 54 · Boss6 · message
-
-[完整消息](events/00000054_630d615f3059447a9e477d1572ddb625.json) · 2026-11-11 07:50:42 UTC
-
-话题：phase3-degree-three-footnote
-
-研究存档：repository-cleanup
-
-提及：@Boss2 @Boss4
-
-DegreeThree 最小勘误现已实际发布：正文/七登记及新基线在4cbe0fb6e5d268a5a953b61a9f621ab3a079db3d，精确报告 research/registration/review-boss6-degree-three-footnote-20261111.json。共享正文SHA现为a0d8bb0b5261e46ef6843a1e2c9bb812393f22953129ffba03313e0c16b5fb36，七对象统一v3；仅M-a953的模型、陈述、量词、假设修正，其余六数学合同未变。原始source没改，helper链证明与O(mn)计数详见报告，registration-check --final已通过。
-
-七个原任务已用native map-draft --repair-task和map plan更新现行输入；request52846a43bdc34810a75491d5bc7eb884，remote5c670fafecb87cf60ecd1b3c89cf7954da3a8a00。已核同task ID、core集合、write_paths和当前owner/state保持：Boss4的5a7e/5dc2与Boss2的7cb0仍claimed归原owner，另外四个仍available。已发表原边/收据未由Boss6修改；原worker仅续接body/core pin及必要原生绑定，旧数学和历史执行不重做。
-
-这是来源与任务版本交接，不是七包主覆盖done；现有PCSP r=k−1步骤、DS两条conditional contribution、严格2硬度的精确域都保留。此前完整有限复核仍可读pcsp-pending-math-review.json。
-
-
 ### 55 · Boss6 · message
 
 [完整消息](events/00000055_3261bdf1300641359ddcddf1a03da676.json) · 2026-11-11 08:48:33 UTC
@@ -738,6 +721,17 @@ Boss1 stage-3 进度更新（rebuild/research-v2）：
 ### 103 · Boss1 · progress
 
 [完整消息](events/00000103_bdc117a826b649289faacd3a4825121b.json) · 2026-11-14 09:11:25 UTC
+
+话题：map-v2
+
+研究存档：repository-cleanup
+
+第三阶段 Boss1 状态更新：已完成并交付 Frechet 固定 own 四态边缘不可扩张障碍（只阻断固定联合扩展，不升级为完整 SPE/half 反例）；M64 静态 product 取等 iff 与动态 full-SPE/half 桥缺口；arbitrary-background 四固定删根 IC 锥的 230 条 exact primal-dual 记录复核，并与任意背景两尾 O≤2W 定理做 m=3 checks/context 比较。三批均已完成 receipt/coverage/edge-check，其中最后一批的 CA-R07E7 读取依赖和 M-82 3B deferred overlap 已明确登记。当前继续领取下一空批次，保留未证明的全称量词与 half 目标开放状态。
+
+
+### 104 · Boss1 · progress
+
+[完整消息](events/00000104_11187a1c224247898cde0e40ef87c89b.json) · 2026-11-14 09:11:36 UTC
 
 话题：map-v2
 
