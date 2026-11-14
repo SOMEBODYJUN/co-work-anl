@@ -1,0 +1,67 @@
+{
+  "edge_id": "boss3-a74-r51-first-deviation-glues-r275-positive-witness",
+  "kind": "transfers",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/closeout-d8798c79c5605dbb76458e5f"
+  ],
+  "target_ids": [
+    "M-1aaa01ac999f425d919258cb7baa70ed"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "使用 R51 正文已证的首次偏离子树拼接，而不把 300 次有限诊断当作一般前提。目标为冻结五人七标签、仅定义到五个不同标签的正根共同 C；各子博弈终局收益仅依选中标签和终局计数，平局允许。目标有序路径 s=00011，各实际位置通过完整可信终局集合的逐行动最小收益门槛。",
+  "roles": {
+    "customer-attraction/closeout-d8798c79c5605dbb76458e5f": "提供可把各首次偏离子树独立实现并同时达到全查询最小值的有序树论证。",
+    "M-1aaa01ac999f425d919258cb7baa70ed": "固定共同 Shapley 输入及比较支持 J；所得另一份完整策略只支付存在该根路径的证明部分。"
+  },
+  "explanation": "将 R51 每个单位客户真实分支的计数收益换为该 C 的有标识玩家随机前驱边际收益，先逐计数递归求所有可信子博弈终局。每个实际前缀的门槛是各行动最低可信收益的最大值。对 s=00011，门槛与实际收益均为 (4/19,4/19,4/19,7/38,7/38)。每个非实际行动根 s_<i a 的子树两两互不为前缀；各选取达到该分支最小值的一份完整子 SPE，保内部 IC，且全部替代收益不超过路径收益，故整体为完整有序纯 SPE。原策略与拼合策略 J 的实际查询和分别是 5 与 175/38，17 项原查询严格下降。独立追踪拼合后全部 2801 历史和 16806 个非自身偏离。计数缓存只保存可实现集合，具体策略仍为全有序树。",
+  "scope": "迁移的是有限树的首次偏离选择与可达性检查。仅支付冻结 C 上 s=00011 的一份完整 SPE 见证，保 W=1、OPT=88/57、两根删除边际。该迁移不需要且不给原单位客户表示；既不移用原策略锥的对偶，也不关闭单位客户 UP。",
+  "contribution": {
+    "result": "在原固定正根输入上同时实现全部 35 个最小真实查询，独立构造完整纯 SPE 保持有序根路径 00011、W=1、OPT=88/57；固定最优比较 J 的 D 从原策略 73/57 降至 101/114。",
+    "remaining": "目标登记还要求原指定动作表的每个真实 IC、1470 条收益系数核对及其固定动作表和固定比较支持锥的精确上界 88/57。这些由原冻结证书及分立重放支付，拼合结论自身不推出它们。"
+  },
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/计算/真实前缀组合的最小续局精确探针--计算.md",
+      "sha256": "b253e8da3f1527c7b30d5f6d48f03f1d6019a2c4853eefb0650e744102847c5b",
+      "section": "程序量词"
+    },
+    {
+      "path": "archives/customer-attraction/state/计算/真实前缀组合的最小续局精确探针--计算.md",
+      "sha256": "b253e8da3f1527c7b30d5f6d48f03f1d6019a2c4853eefb0650e744102847c5b",
+      "section": "为什么最小续局可以同时实现"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/R-51-uniform-portfolio-probes/replay/customer_attraction/exact.py",
+      "sha256": "a4c76d77fd6c8d18ac668ce2070a65f927d9dca6bbe3cdd36f467d1598b4a892"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/R275-credible-search-20261031/original/eb29376c023b5cd9726a__submodular_joint_m5p7_q32_genuine.json",
+      "sha256": "48dd63e02d6623f34967db6bf8e22a55f303f6fe72b1f06a7847e36e139110a0"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-a74dae94a5668ae5/review.md",
+      "sha256": "27e0f4760ca48a97f777a0fbd975e09e1df9b102760230e76cda523310de4bc8",
+      "section": "首次偏离子树与正根真实查询"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-a74dae94a5668ae5/recheck.json",
+      "sha256": "2dd67e2843ae97cb2f13dc843f181d49a6a1ad480a58855b3f40ecd5f8aabe79"
+    }
+  ],
+  "reviewed_by": "Boss3",
+  "review_note": "Boss3 任务实读 R51 两处精确节、原 exact solver 和 R275 原正根冻结动作表。按有序首次偏离枝逐式重构，用独立 Fraction 核对全部原表与同路径拼合表，当前接受的是迁移贡献。",
+  "endpoint_pins": {
+    "M-1aaa01ac999f425d919258cb7baa70ed": "0d4313610bc32b36653aa07e75515d5860793fd939d4fc8d6f5014abaf96ba79",
+    "customer-attraction/closeout-d8798c79c5605dbb76458e5f": "5d12f715d95ac71c1df7f94732bc265bd47ff31d948e1987172cee76c473ab9e"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/计算/真实前缀组合的最小续局精确探针--计算.md": "b253e8da3f1527c7b30d5f6d48f03f1d6019a2c4853eefb0650e744102847c5b",
+    "archives/customer-attraction/tools/evidence/R-51-uniform-portfolio-probes/replay/customer_attraction/exact.py": "a4c76d77fd6c8d18ac668ce2070a65f927d9dca6bbe3cdd36f467d1598b4a892",
+    "archives/customer-attraction/tools/evidence/R275-credible-search-20261031/original/eb29376c023b5cd9726a__submodular_joint_m5p7_q32_genuine.json": "48dd63e02d6623f34967db6bf8e22a55f303f6fe72b1f06a7847e36e139110a0",
+    "map/edges/customer-attraction-3a-3a-a74dae94a5668ae5/review.md": "27e0f4760ca48a97f777a0fbd975e09e1df9b102760230e76cda523310de4bc8",
+    "map/edges/customer-attraction-3a-3a-a74dae94a5668ae5/recheck.json": "2dd67e2843ae97cb2f13dc843f181d49a6a1ad480a58855b3f40ecd5f8aabe79"
+  },
+  "review_digest": "677b4bbd70aa27bcf238ed4e9bbe9a9aa0da7ff51977c57a2739bda29d7e5f5b"
+}
