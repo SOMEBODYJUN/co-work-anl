@@ -1,0 +1,200 @@
+{
+  "definition": {
+    "task_id": "boss5-protected-chain-receipt-repair-896ebd8961cc4ece",
+    "stage": "3A",
+    "registry": "research/registry.json",
+    "supersedes": [
+      "customer-attraction-3a-3a-ac3d3b6b379cfb23"
+    ],
+    "object_ids": [
+      "M-2ca8a524bdb746d286d02ddb687f380d"
+    ],
+    "read_object_ids": [
+      "customer-attraction/finite-reply-chain-protected-omission-relaxations",
+      "customer-attraction/protected-omission-complete-two-player-search"
+    ],
+    "input_pins": {
+      "M-2ca8a524bdb746d286d02ddb687f380d": "8fd29778f8226eb9a67546881d083a404d11c6bf26f6acfb4325210207e36cca",
+      "customer-attraction/finite-reply-chain-protected-omission-relaxations": "a9e042947b6349dc154108184c0e8d3655939979257ec26363573dd58d57cfd7",
+      "customer-attraction/protected-omission-complete-two-player-search": "d1c84a299c86d62fb1164252a90afd0864f5390a026f2311c399315ce7892264"
+    },
+    "write_paths": [
+      "map/edges/boss5-protected-chain-receipt-repair-896ebd8961cc4ece",
+      "map/receipts/boss5-protected-chain-receipt-repair-896ebd8961cc4ece.json",
+      "map/edges/customer-attraction-3a-3a-ac3d3b6b379cfb23/review.md",
+      "map/edges/customer-attraction-3a-3a-ac3d3b6b379cfb23/support.md",
+      "map/edges/customer-attraction-3a-3a-ac3d3b6b379cfb23/readledger.json",
+      "map/edges/customer-attraction-3a-3a-ac3d3b6b379cfb23/finite-lp-to-boundary.json",
+      "map/edges/customer-attraction-3a-3a-ac3d3b6b379cfb23/partial-vs-complete-tail.json"
+    ],
+    "goal": "Resolve the changed inputs or unanswered comparison in customer-attraction-3a-3a-ac3d3b6b379cfb23; reuse still valid coverage, and explicitly dispose each prior asset.",
+    "context_plan": {
+      "budget": {
+        "context_tokens": 500000,
+        "window_source": "official-default",
+        "model": "gpt-6.1-sol",
+        "used_tokens": null,
+        "history_mode": "fresh-worker",
+        "reserve_tokens": 200000,
+        "reading_tokens": 300000,
+        "output_tokens": 100000,
+        "runtime_remaining_tokens": null,
+        "declared_remaining_before_reserve_tokens": null,
+        "assumptions": [
+          "Window source is declared, not discovered from this conversation.",
+          "Reading budget includes source text and object/task metadata.",
+          "Reserved context includes expected generated records and later reasoning/tool growth.",
+          "Fresh worker assumed; actual system/prefix usage is unknown and covered only by the engineering reserve."
+        ],
+        "budget_is_runtime_measurement": false
+      },
+      "reading": {
+        "chars": 653720,
+        "utf8_bytes": 665206,
+        "source_tokens": 374616,
+        "metadata_tokens": 7120,
+        "estimated_tokens": 381832,
+        "metadata_chars": 9251,
+        "metadata_utf8_bytes": 11368,
+        "distinct_files": 14,
+        "reading_segments": 14,
+        "token_count_is_estimate": true,
+        "estimators": [
+          "conservative-math-text-estimate-v1; not a tokenizer count"
+        ],
+        "unmeasured_refs": [],
+        "measurement_scope": "Requested complete text spans plus supplied metadata; binary evidence is not token-counted from raw bytes.",
+        "task_overhead_tokens": 96
+      },
+      "reading_refs": [
+        {
+          "path": "archives/customer-attraction/state/障碍/有限回复链的保护遗漏松弛--障碍.md",
+          "sha256": "17c3b8b568b485ce220a3be950ea4f93cd73473cfff75a4b1bd52c10145e438c",
+          "section": "4. 为何三个点都不能补全原实际路径"
+        },
+        {
+          "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+          "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/protected-search-chains/audit.py",
+          "sha256": "06971c5aa0eec80ec9f0d9fb3c295523aa70423817a68f014f7e4dd7cd7a9251"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/protected-search-chains/original/protected_chain_d1.json",
+          "sha256": "1a6b4555bb296161af1bdc5e291800608485318485e21d66a4fbd3dc9f777748"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/protected-search-chains/original/protected_chain_d2.json",
+          "sha256": "5b3b78a605d233f1b10a2be18c06c8a3abd2864e2cdc20528f1ec9664f0d4bbf"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/protected-search-chains/original/protected_chain_d3.json",
+          "sha256": "e427b25cdd55dee708b36cb6cb3861e5bf61a37f107fe02600188b569b4b1adf"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/protected-search-chains/replay/protected_chain_d1.json",
+          "sha256": "fc8b8e4c94d3313f0da1c0f8ef2252ec48d09fe5f0e63adc6fba7927fe3e93a9"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/protected-search-chains/replay/protected_chain_d2.json",
+          "sha256": "a174690c2d9345804593dbc6bbb83622b8b9b3018316e4f1cb9e7a8e4baecd57"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/protected-search-chains/replay/protected_chain_d3.json",
+          "sha256": "34dcaac9c6b3c2246cae6866029ea1c1f1469fad0707cf89cf4f64198ba78ba2"
+        },
+        {
+          "path": "archives/customer-attraction/state/障碍/有限回复链的保护遗漏松弛--障碍.md",
+          "sha256": "17c3b8b568b485ce220a3be950ea4f93cd73473cfff75a4b1bd52c10145e438c",
+          "section": "3. 精确原对偶证书为何给出上界"
+        },
+        {
+          "path": "archives/customer-attraction/state/障碍/有限回复链的保护遗漏松弛--障碍.md",
+          "sha256": "17c3b8b568b485ce220a3be950ea4f93cd73473cfff75a4b1bd52c10145e438c",
+          "section": "1. 固定模式、原子和全部保留行"
+        },
+        {
+          "path": "archives/customer-attraction/state/障碍/有限回复链的保护遗漏松弛--障碍.md",
+          "sha256": "17c3b8b568b485ce220a3be950ea4f93cd73473cfff75a4b1bd52c10145e438c",
+          "section": "2. 三份保存点及精确有限最优值"
+        },
+        {
+          "path": "archives/customer-attraction/state/计算/保护遗漏的完整两人搜索与候选重核--计算.md",
+          "sha256": "2a1d65886a389e2154f56ca3f35f9a3f74ba7d20e6ce6eabbd10a5602e66f4e0"
+        },
+        {
+          "path": "archives/customer-attraction/state/计算/保护遗漏的完整两人搜索与候选重核--计算.md",
+          "sha256": "2a1d65886a389e2154f56ca3f35f9a3f74ba7d20e6ce6eabbd10a5602e66f4e0",
+          "section": "2. 程序实际枚举了什么"
+        },
+        {
+          "path": "archives/customer-attraction/state/计算/保护遗漏的完整两人搜索与候选重核--计算.md",
+          "sha256": "2a1d65886a389e2154f56ca3f35f9a3f74ba7d20e6ce6eabbd10a5602e66f4e0",
+          "section": "3. 四标签和五标签保存点：同覆盖标签不能合并掉"
+        },
+        {
+          "path": "archives/customer-attraction/state/计算/保护遗漏的完整两人搜索与候选重核--计算.md",
+          "sha256": "2a1d65886a389e2154f56ca3f35f9a3f74ba7d20e6ce6eabbd10a5602e66f4e0",
+          "section": "4. 六标签点：完整尾策略与背景合法性分开"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/protected-search-chains/original/protected_two_probe.py",
+          "sha256": "b5968dbda74b410fcfa038af539cee402aeccfbdbb75dbb0de2629d5eb3dd9f6"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/protected-search-chains/replay/protected_two_p4b5.json",
+          "sha256": "7c1aea858a8dd9e239c88270efccd3f75e26d39df94be7bf99a75a2de3d82fd2"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/protected-search-chains/replay/protected_two_p5b3.json",
+          "sha256": "c08e6765c79e017de3e1f3db2b8d6864ecc61c8cf1e432ed89662e34a718aa6d"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/protected-search-chains/replay/protected_two_p6b1.json",
+          "sha256": "490af5524092d8dd44b68f8fc97862470f56bd8ffda02367002e8852194d2edf"
+        }
+      ],
+      "oversized": true,
+      "requires_export": false,
+      "prior_assets": [
+        {
+          "path": "map/edges/customer-attraction-3a-3a-ac3d3b6b379cfb23/review.md",
+          "sha256": "2367b51f8a4207f9cd15f0b7181c308e934afc4aaf94cfed84d3891c43946a90"
+        },
+        {
+          "path": "map/edges/customer-attraction-3a-3a-ac3d3b6b379cfb23/support.md",
+          "sha256": "8078329c6c1b2f9837b6e48566609c774a7f9676e5ff67453f62da7c8ef2b56a"
+        },
+        {
+          "path": "map/edges/customer-attraction-3a-3a-ac3d3b6b379cfb23/readledger.json",
+          "sha256": "095f8046d8d79424307954fea979f2177a5e599adf2c81572500e10556800436"
+        },
+        {
+          "path": "map/edges/customer-attraction-3a-3a-ac3d3b6b379cfb23/finite-lp-to-boundary.json",
+          "sha256": "06384321054592a4c9894f9185657f7aed596c5ec7653314f31770d860270a0d"
+        },
+        {
+          "path": "map/edges/customer-attraction-3a-3a-ac3d3b6b379cfb23/partial-vs-complete-tail.json",
+          "sha256": "30b43702bd6af7c26c60a8f21d411fbaff2bdab15e751df238f2aa614ef7aca7"
+        }
+      ],
+      "retired_core_object_ids": [],
+      "recheck_core_object_ids": [
+        "M-2ca8a524bdb746d286d02ddb687f380d"
+      ],
+      "repair_reasons": [
+        "receipt-review"
+      ],
+      "note": "Read the previous task and receipt. Carry forward valid work. If needed, read the same scope in ordered passes. A retirement-only task lists no coverage or new assets.",
+      "comparison_priority": 2,
+      "scope_hint": "archives/customer-attraction"
+    }
+  },
+  "state": "available",
+  "owner": null,
+  "request_id": "4cf4ec37303e437b99799656c3881ade",
+  "requests": {
+    "4cf4ec37303e437b99799656c3881ade": "plan"
+  }
+}
