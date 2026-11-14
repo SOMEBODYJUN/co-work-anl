@@ -316,11 +316,66 @@
       ]
     }
   },
-  "state": "claimed",
+  "state": "done",
   "owner": "Boss1",
-  "request_id": "eb18f2dcb2284583b326441078ada831",
+  "request_id": "4d5b644ec1be47949f04588cf2c5d16e",
   "requests": {
     "c77ec76b08b948c4ac8c43dc65353af7": "plan",
-    "eb18f2dcb2284583b326441078ada831": "claim"
-  }
+    "eb18f2dcb2284583b326441078ada831": "claim",
+    "4d5b644ec1be47949f04588cf2c5d16e": "done"
+  },
+  "receipt": {
+    "task_id": "customer-attraction-3a-3a-faf81fb510d6f97b",
+    "stage": "3A",
+    "reader": "Solver / solver_terminal_dual",
+    "internal_word": "SOLVER-TERMINAL-DUAL-FRESH",
+    "status": "complete-frozen-staging; Root native validation pending",
+    "definition_path": "research/operations/map-v2/tasks/customer-attraction-3a-3a-faf81fb510d6f97b.json",
+    "definition_sha256": "242c732b6bcb56dd3d07b4e3c356c38fe283acfedd4c8a971aff4ebb474d4ce9",
+    "input_pins": {
+      "cag-dual-terminal-737-exact-primal-and-full-type-dual": "15580782318ac4dc7937322618e16c81a097367225f6bb80827b01d6c266cf14"
+    },
+    "coverage": {
+      "cag-dual-terminal-737-exact-primal-and-full-type-dual": {
+        "state": "isolated-after-review",
+        "object_pin": "15580782318ac4dc7937322618e16c81a097367225f6bb80827b01d6c266cf14",
+        "comparison_scope": "Complete read of 737 exact primal/full-type dual object, full model/conditioned pricing/parent contract and all 10 declared JSON/code evidence refs. No read_object_ids or overlap comparisons were declared; no read-add was used.",
+        "reason": "The exact result is fully established inside its own necessary-information relaxation: 76 rational primal atoms give W=1,O=beta and 57 positive weights certify every legal type with minimum scaled residual 0. The result is usable as a 737-domain upper/lower certificate, but it does not realize a complete SPE or true OPT. The binary64 1141-column discovery route has two strict negative new O totals. Shared CAG definition and sibling 717/727/728 objects were not promoted to endpoints; the existing canonical 728↔737 cross edge was not duplicated.",
+        "edge_ids": []
+      }
+    },
+    "assets": [
+      {
+        "path": "map/edges/customer-attraction-3a-3a-faf81fb510d6f97b/review.md",
+        "sha256": "fecb9cb4e2eb0468374edc24942066109b94fa2605c279ea3d9f4038ac9719d2"
+      },
+      {
+        "path": "map/edges/customer-attraction-3a-3a-faf81fb510d6f97b/support.md",
+        "sha256": "37bac887325eaf85be004bd1bea359aed660f52c30d18b762ba299e7c8ba0b8b"
+      },
+      {
+        "path": "map/edges/customer-attraction-3a-3a-faf81fb510d6f97b/readledger.json",
+        "sha256": "dcb3e1e80235cd73752ea1ff74e8cdb792154d6d726e2388ac03b7cda720ef36"
+      }
+    ],
+    "follow_up_tasks": [],
+    "closed_overlaps": [],
+    "notes": [
+      "Root should run edge-bind/edge-check/checkpoint and decide whether a later 3B endpoint-read task is warranted.",
+      "No registry, coverage, integration, task state, Git, or queue mutation was performed by this worker."
+    ],
+    "owner": "Boss1",
+    "request_id": "eb18f2dcb2284583b326441078ada831",
+    "reviewed_by": "SOLVER-TERMINAL-DUAL-FRESH",
+    "definition_pin": "242c732b6bcb56dd3d07b4e3c356c38fe283acfedd4c8a971aff4ebb474d4ce9",
+    "review_note": "Fresh-worker fully read the 737 dual/primal evidence and preserved the isolated fixed-relaxation scope; no edge or shared endpoint was added because no overlap was declared.",
+    "root_validation": {
+      "reviewer": "Boss1",
+      "native_binding": "No edge asset declared; isolated-after-review receipt verified",
+      "root_review_path": "map/edges/customer-attraction-3a-3a-faf81fb510d6f97b",
+      "asset_scope": "Current task output only; no claim over unrelated deltas"
+    },
+    "comparison_note": "737 result is an isolated necessary-information relaxation; it does not establish true OPT/SPE or a universal half theorem."
+  },
+  "edge_paths": {}
 }
