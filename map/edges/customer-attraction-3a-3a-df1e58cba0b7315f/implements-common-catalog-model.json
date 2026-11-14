@@ -1,22 +1,22 @@
 {
-  "edge_id": "cag-df1e58-terminal-catalog-implements-common-model",
-  "kind": "implements",
+  "edge_id": "cag-df1e58-common-model-specializes-terminal-catalog",
+  "kind": "specializes",
   "status": "accepted",
   "source_ids": [
-    "customer-attraction/sixty-five-distinct-topics-thirty-three-last-node-skeleton"
-  ],
-  "target_ids": [
     "CAG-MODEL"
   ],
+  "target_ids": [
+    "customer-attraction/sixty-five-distinct-topics-thirty-three-last-node-skeleton"
+  ],
   "premises_mode": "all",
-  "relation_mode": "context",
-  "conditions": "一个具体的五人顺序共同目录实例：65个不同覆盖主题、1180种单位客户类型及其整数重数；提供者按有序历史逐次选题，客户按全部覆盖者均分。仅考察指定的33个四行动末位历史，保留任意弱平局、重复行动和同覆盖标签的模型语义。",
+  "relation_mode": "conditional",
+  "conditions": "在CAG-MODEL的有限单位客户、共同非空标签目录、顺序均分效用和完整有序历史语义下，固定本对象的具体五人目录数据（65个互异主题、1180个单位客户类型、正整数重数）并只要求其33个指定四行动末位节点的最佳回复。",
   "roles": {
-    "customer-attraction/sixty-five-distinct-topics-thirty-three-last-node-skeleton": "给出由427点联合细化经共同S5置换对称化、整数化和GCD约化得到的合法65主题目录，并逐项验证33个指定末位动作对全部65主题均为最佳回复；同时给出ABCDE福利、T族覆盖和完整最佳回复列表。",
-    "CAG-MODEL": "规定有限单位客户、有限非空共同标签目录、顺序玩家的均分效用、覆盖福利、OPT_m及完整有序历史纯SPE量词。"
+    "CAG-MODEL": "提供有限共同目录、均分福利/OPT与顺序玩家真实后继IC的母模型语义。",
+    "customer-attraction/sixty-five-distinct-topics-thirty-three-last-node-skeleton": "将母模型限制到一个具体五人65主题实例，给出33个末位节点全目录BR、单位客户物化和T族覆盖结果。"
   },
-  "explanation": "物化审计从已计算的427点质量和共同索引置换直接导出65个标签与1180个单位客户类型，所有重数为正整数且总客户数为4760200927658775020613643951147453027118905800；逐主题会员列两两不同。对每个3+5·6个指定四行动历史，审计逐1180类型以整数60/d份额比较全部65主题，指定动作达到全目录最大值并保留全部并列最佳回复（共2145项含自身比较）。因此该对象是CAG-MODEL语义下一个合法五人有限实例的局部末位最佳回复骨架，且五个T_i覆盖全部客户，故该实例OPT_5=N，N/W(ABCDE)>2。该实现边不把局部末位记录提升为根至第四人的完整纯SPE，也不构成六人half反例；原联合LP仅是有限支持构造来源，exact_optimality_claimed=false。",
-  "scope": "单一具体五人、65主题、1180类型单位客户实例及33个指定末位节点；证明对象的合法物化和末位BR，不证明完整SPE路径或一般福利不等式。",
+  "explanation": "将共同目录模型固定到该实例的65个标签、1180个单位客户类型和五位顺序玩家后，物化审计逐个指定四行动历史比较全部65个主题，规定动作达到最大收益且保留全部并列最佳回复（33×65=2145项含自身）。共同S5置换、整数化与GCD约化保持同一客户目录；65个主题覆盖列两两不同。五个T_i覆盖全部客户，因而该实例的OPT_5=N，并有N/W(ABCDE)>2。该边只表示母模型的有限实例化/特化；末位骨架没有提供根至第四人的完整纯SPE路径，不能推出六人half反例；联合LP的有限支持报告也明确exact_optimality_claimed=false。",
+  "scope": "CAG-MODEL在一个具体五人、65主题、1180类型目录上的有限特化，以及33个指定末位BR节点；不扩展为完整SPE或一般福利定理。",
   "evidence": [
     {
       "path": "archives/customer-attraction/state/构造/六十五主题目录的三十三个末位最优节点--构造.md",
@@ -68,6 +68,9 @@
       "sha256": "c0ddd984a33a4b3bb80a86ea9f9311ace43af68eed12ca6e2422e116680dae77"
     }
   ],
+  "reviewed_by": "Boss4-terminal-skeleton-worker",
+  "review_note": "实读共同目录定义、构造全文、联合LP及物化审计；核对五人单位客户语义、65个互异覆盖、33个末位历史、2145项全目录比较与OPT_5=N推论，并明确未付完整SPE/六人结论。",
+  "whole_result": "在给定具体目录数据时，CAG-MODEL被特化为该合法五人实例，且其33个指定末位动作对全部65主题均为BR；T0..T4覆盖全客户从而OPT_5=N。",
   "endpoint_pins": {
     "CAG-MODEL": "3216d1db43ff83e0e0c9cf2479e79611277c9d9291a68e7f9b85ec4bb299dc5c",
     "customer-attraction/sixty-five-distinct-topics-thirty-three-last-node-skeleton": "e849ee787ddf529d296fcb42dc3f08d582a1886a43ae61174a95efdf5249bd1a"
@@ -82,7 +85,5 @@
     "archives/customer-attraction/tools/evidence/joint-terminal-refinements-and-materialization-primary/source-manifest.json": "c78380792ea0bcc15413363b83738a2fbe590957e4b9159aa032ab23c2011734",
     "archives/customer-attraction/tools/evidence/joint-terminal-refinements-and-materialization-primary/current-run-001/native-already-computed-unit-type-instance.json": "c0ddd984a33a4b3bb80a86ea9f9311ace43af68eed12ca6e2422e116680dae77"
   },
-  "review_digest": "a3a3ac08bca5b894a68351543e0ecef6066f667e3b5416b58d259f1c0eafbbf3",
-  "reviewed_by": "Boss4-terminal-skeleton-worker",
-  "review_note": "实读共同目录定义、构造全文、联合LP及物化审计；核对五人单位客户语义、65个互异覆盖、33个末位历史、2145项全目录比较与OPT_5=N推论，并明确未付完整SPE/六人结论。"
+  "review_digest": "b4428d280ad3f0497b767780ca3cea96ac2615a226cd3397dd691ed98aa932f4"
 }
