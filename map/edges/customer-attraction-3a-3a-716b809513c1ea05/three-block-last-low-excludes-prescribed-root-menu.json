@@ -1,0 +1,60 @@
+{
+  "edge_id": "boss3-716-three-block-last-low-excludes-prescribed-root-menu",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/disjoint-sixteen-client-block-integer-outcome-sets-and-last-low-cuts",
+    "M-c3beaf1cc3dd451ca6215d4f1dd674cb"
+  ],
+  "target_ids": [
+    "M-0ac49f87966741e9b03c9d816e5ddfec"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "固定n=3、12名玩家、12题、48客户，同一16客户块输入。以冻结整数BI有限输出为前提。u=13/4，z=q_T|q0|q0，指定历史首动T0。q0=(2,1,1,0)，q_A=(2,0,1,1)、q_B=(1,1,1,1)、q_C=(1,0,2,1)、q_D=(1,0,1,2)。",
+  "roles": {
+    "customer-attraction/disjoint-sixteen-client-block-integer-outcome-sets-and-last-low-cuts": "给出三块输入四列的全裸截面严格门槛及强制孩子成员检测。",
+    "M-c3beaf1cc3dd451ca6215d4f1dd674cb": "以相容截面最后一次低收益动作的严格获利偏离排除目标终局。",
+    "M-0ac49f87966741e9b03c9d816e5ddfec": "给出指定R_n静态矩阵的值，其SPE用途需要同一完整策略实现全部强制根列。"
+  },
+  "explanation": "直接按五型算得四列低支持皆为{T0,A1,A2}。在强制T0之后，A1/A2仍各两次待选，故一定存在最后一个低收益行动。任何相容最后低行动的计数p满足e_T0≤p≤z、Σ_{j∈L}(z_j−p_j)=1，包含在原C++枚举的较大截面内。原裸A/B/C/D截面分别192/384/192/192，附首槽条件后分别192/256/192/192；B目标只有一个B0，去掉128个未含B0的前缀。每个裸截面上F≥37/10>13/4；仓库外仅加p_T0>0过滤的同实现重放给相容A/B/C/D的最小F分别37/10、15/4、37/10、37/10，B的裸最小见证不相容，故实际SPE路径的最后低行动会从≤u被一个真孩子保底F>u严格偏离。其余块根由块置换得到相同排除。每列q_T|q0|q0还包含两个q0，并非三块无条件根终局轮廓；这一无条件根检测单独不足以排除低收益强制B列，因为强制根后可实现终局可不属于R(0)。本边直接证明四类强制孩子都排除。",
+  "scope": "只封闭指定R3的可信性条件。静态M3=581/180及其矩阵结论保持，R4的803/240>u仍只属条件矩阵。真实低根收益孩子中有其它终局，固定uniform-D的B/D极值低于u并不评价其它查询分布、其它完整菜单或half。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/程序/不交十六客户块的整数续局全集与末低收益截面--程序.md",
+      "sha256": "a9d179d6afd90af6883c8081972805a07e7052e9ed186c6aad85131a642ddba8",
+      "section": "last-low截面究竟枚举了什么"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/不交十六客户块的整数续局全集与末低收益截面--程序.md",
+      "sha256": "a9d179d6afd90af6883c8081972805a07e7052e9ed186c6aad85131a642ddba8",
+      "section": "指定根列与孩子可实现性"
+    },
+    {
+      "path": "archives/customer-attraction/state/资源/真实分支十项合同与菜单可实现性账本--资源.md",
+      "sha256": "84b4481dfe42a4f8719c1bb2deda224635db59ce5efa0e1c595e30f0e99d6baf",
+      "section": "条件n块矩阵与真实可实现性的分界"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/Boss7-resume-d22-stationary/original/round5_credible/block_menu_n3_probe.json",
+      "sha256": "ee8ea1ec867cbb95f5c09c2f76402336085cb0948efd73e57c1f8a5af0b0b002"
+    }
+  ],
+  "reviewed_by": "Boss3",
+  "review_note": "三块冻结原C++与原JSON实读及同实现重放，除elapsed_ms外全部字段一致。独立Fraction核目标低支持、各保存代表的真实候选收益和所有相容截面基数。旧M-582单前缀证明及canonical局部边保留原作用范围。 另在临时副本中只增加p_T0>0过滤复核相容截面，未修改冻结源码。",
+  "contribution": {
+    "result": "指定三块静态R3的12个强制根目标在各自孩子均不可由完整纯SPE实现，因而不可能由同一完整SPE给出该菜单。",
+    "remaining": "此结论不供任意n的可信性，也不判定R4能否实现。静态矩阵极值定理的其它部分有其独立解析证明。"
+  },
+  "endpoint_pins": {
+    "M-0ac49f87966741e9b03c9d816e5ddfec": "63a3c9df16353443074396067d0dfe7c6ae5207497d2685d810729318d3c4c77",
+    "M-c3beaf1cc3dd451ca6215d4f1dd674cb": "3df24bbf03d443819f8376cebfe5276db1d2675d8e9e76003c3f4f295db6ef41",
+    "customer-attraction/disjoint-sixteen-client-block-integer-outcome-sets-and-last-low-cuts": "4808ad141b69a4d9ab1ee5eff5a7caac2d054792755e46d8b621650881bbf05a"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/程序/不交十六客户块的整数续局全集与末低收益截面--程序.md": "a9d179d6afd90af6883c8081972805a07e7052e9ed186c6aad85131a642ddba8",
+    "archives/customer-attraction/state/资源/真实分支十项合同与菜单可实现性账本--资源.md": "84b4481dfe42a4f8719c1bb2deda224635db59ce5efa0e1c595e30f0e99d6baf",
+    "archives/customer-attraction/tools/evidence/Boss7-resume-d22-stationary/original/round5_credible/block_menu_n3_probe.json": "ee8ea1ec867cbb95f5c09c2f76402336085cb0948efd73e57c1f8a5af0b0b002"
+  },
+  "review_digest": "178c43849604e1b40730277ba5eaf67a06807c65dc021cfc47dd1a390d991670"
+}

@@ -1,0 +1,52 @@
+{
+  "edge_id": "ca-repeated-last-gamma-exact-monotone-threshold",
+  "kind": "implies",
+  "status": "accepted",
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "source_ids": [
+    "B2-REPEATED-LAST-ABSENCE-v1"
+  ],
+  "target_ids": [
+    "CA-REPEATED-LAST-GAMMA-MONOTONE-SECOND-ORDER-v1"
+  ],
+  "conditions": "只使用原空根共同目录末覆盖判据的同一个精确γ，m为正整数、0≤d<m；渐近范围中b位于任意固定紧区间。",
+  "roles": {
+    "B2-REPEATED-LAST-ABSENCE-v1": "给可用的同一C_t系数及γ≥m−1充分条件。",
+    "CA-REPEATED-LAST-GAMMA-MONOTONE-SECOND-ORDER-v1": "精确求该标量判据的单调通过范围与临界二阶位置。"
+  },
+  "explanation": "对固定q直接算d相邻差，得到非负；随着d增大，min域扩张。对固定d算q一、二阶差，前凸后凹；在凸段二分首个非负一阶差并比较凹段端点。临界d=λ√m+b用谐和三项一致展开，极限二次项的内点η=√2，网格就近给上界，统一Lipschitz和配方给下界，代入得到b*。",
+  "scope": "标量条件精确，并由原定理转回通过区域的半覆盖。未通过区域的真实最差均衡另需证明。",
+  "whole_result": "γ(m,m−d)随d非增，并可以精确有限候选和二分求最大认证d。临界λ=√(2+√3)时，对d=λ√m+b且b有界，一致有γ−(m−1)=−√2(1+λ⁻²)(b−b*)/√m+O(1/m)，b*=−17/12+√3/36。远离整数固定距离时最大认证d为floor(λ√m+b*)。",
+  "reviewed_by": "Boss3",
+  "review_note": "实读原系数、两级粗化、六个固定临界数据和旧渐近。独立证明新单调及二阶，Fraction核m≤105精确格和原5050个最小值/取到点。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/末覆盖谐和判据的单调性和临界尺度--引理.md",
+      "sha256": "e2e091962217cb13104408fc4dda1ec485fa2a81af03534b72959f0bb9c1caea"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/末覆盖重数与前缀缺席的半覆盖判据--定理.md",
+      "sha256": "5764ef4b1aed3c63236d3422388780c49f2827556cadcafdd2c333c39a814e8b"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/repeated-last-prefix-and-partition-primary/new-definition-check.json",
+      "sha256": "57b38718dc09a4f71b8d883340ce9501e6aae32f5227c22eb0c827f2b7499306"
+    },
+    {
+      "path": "research/workspaces/map-v2/Boss3/check-repeated-last-gamma-refinement.py",
+      "sha256": "71528b7f7079eab01a6a03693842b5ff5f283619a76b7f44080ef03de96f2b13"
+    }
+  ],
+  "endpoint_pins": {
+    "B2-REPEATED-LAST-ABSENCE-v1": "6f570817497a95dbb0619deb7691bed98de757962ab4530a18a9878531fa5629",
+    "CA-REPEATED-LAST-GAMMA-MONOTONE-SECOND-ORDER-v1": "45487b61a8b7ad5e88096dce0f8452b99700c47f90ec23b85476c70926a00a1b"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/末覆盖谐和判据的单调性和临界尺度--引理.md": "e2e091962217cb13104408fc4dda1ec485fa2a81af03534b72959f0bb9c1caea",
+    "archives/customer-attraction/state/定理/末覆盖重数与前缀缺席的半覆盖判据--定理.md": "5764ef4b1aed3c63236d3422388780c49f2827556cadcafdd2c333c39a814e8b",
+    "archives/customer-attraction/tools/evidence/repeated-last-prefix-and-partition-primary/new-definition-check.json": "57b38718dc09a4f71b8d883340ce9501e6aae32f5227c22eb0c827f2b7499306",
+    "research/workspaces/map-v2/Boss3/check-repeated-last-gamma-refinement.py": "71528b7f7079eab01a6a03693842b5ff5f283619a76b7f44080ef03de96f2b13"
+  },
+  "review_digest": "a112b1884aa9faab7d5b1954bce1a94496aae5262043d02a85d106eb87b56d3d"
+}

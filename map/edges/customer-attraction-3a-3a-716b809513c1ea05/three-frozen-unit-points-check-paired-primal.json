@@ -1,0 +1,67 @@
+{
+  "edge_id": "boss3-716-three-frozen-unit-points-check-paired-primal",
+  "kind": "checks",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/closeout-076ac92a5cfa163528034e7d"
+  ],
+  "target_ids": [
+    "customer-attraction/closeout-aedf7b9ad9d9b7e9efe1f15b"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "只取三份固定形式策略和各自原/规范客户质量，n/p为3/3、4/4、4/5。两边使用同一原/规范早期动作及各自真实终局，末位逐边比较。",
+  "roles": {
+    "customer-attraction/closeout-076ac92a5cfa163528034e7d": "三个冻结原点和独立逐单位客户审计，全真实有序行动、规范化根代表、非负质量及配对行逐索引相核。",
+    "customer-attraction/closeout-aedf7b9ad9d9b7e9efe1f15b": "定义同一早期(h,t)配对约束E0u+E1v≥0、分开的末行和根覆盖归一。"
+  },
+  "explanation": "审计按原根前缀选择规范代表，逐同索引计算两份早期slack再相加，并分别验两套末位行。三个原点正质量侧分别为v、u、v，值为4/3、1、7/4，c·(u+v)=1。共同早期8/63/124、两份末行36/384/1000，总计1615条；1810是另外按两份策略分别统计的非自身比较。各点非零侧自身全IC非负，因此均是(P)中的单侧边界点。配对锥一般允许一侧早期slack为负并由另一侧补偿，这三点没有出现这样的补偿。",
+  "scope": "只验三个保存可行点和相应固定质量的OPT，既无同一模板全域上界/最优对偶，也无大于2的分离或普遍的(C)证书。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/计算/三份配对原始可行点的完整单位客户核验--计算.md",
+      "sha256": "7577892e3e1878e0e7f4dcc09d79520e7f2ed3f21686e8886f1e7c9e959294c7"
+    },
+    {
+      "path": "archives/customer-attraction/state/方法/末回复转移的删槽表示与共同早期乘子锥--方法.md",
+      "sha256": "546de2399dc415e0ead6ed76c38e3714273e0ece7a7e489b30b968e32b2114a9",
+      "section": "共同早期乘子的精确配对判别"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/root-paired-witnesses-and-leaf-square-program/replay-root/verify_root_paired_points_units.py",
+      "sha256": "0052f84f6fe256d5f08bcecc359cd332d1840398fa9731df07ce423aceab5f44"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/root-paired-witnesses-and-leaf-square-program/unit-audit-001/stdout.json",
+      "sha256": "437bc57c95deda812fc8348b2d592d078917aa6d001b91d921558752952e9744"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/root-paired-witnesses-and-leaf-square-program/original/0ff5ed0483e6f60a136c-paired_existing_m4p5.json",
+      "sha256": "a188694db7fc2d2a7e514572b12393d3c6fa7bd50f8bdd442507dfaef4a2ff56"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/root-paired-witnesses-and-leaf-square-program/original/376e65e5dec9b7bbebc6-paired_m4p4_single.json",
+      "sha256": "a7324766a7ec2c5d9b4d6c8083fae079126dcfdc92b12849386a9196545355c5"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/root-paired-witnesses-and-leaf-square-program/original/56e5fe0224fc3057d7fa-paired_m3p3.json",
+      "sha256": "9253302b9c2b996217ed92d7325a52b6bd41d19395606d60ef788798e45d1ca9"
+    }
+  ],
+  "reviewed_by": "Boss3",
+  "review_note": "实读三点固定质量、完整历史核验流程与配对锥，原单位客户审计数据入口重放一致，无LP或随机扫描。",
+  "endpoint_pins": {
+    "customer-attraction/closeout-076ac92a5cfa163528034e7d": "d8a82457b2f753c3b7ffea689c8a51031084d8e2c4511e995d5d3131004f6730",
+    "customer-attraction/closeout-aedf7b9ad9d9b7e9efe1f15b": "667b8aff83950923cd5db447d31e3d2ae0494d6ee66d5e99faec4e201bf127f2"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/计算/三份配对原始可行点的完整单位客户核验--计算.md": "7577892e3e1878e0e7f4dcc09d79520e7f2ed3f21686e8886f1e7c9e959294c7",
+    "archives/customer-attraction/state/方法/末回复转移的删槽表示与共同早期乘子锥--方法.md": "546de2399dc415e0ead6ed76c38e3714273e0ece7a7e489b30b968e32b2114a9",
+    "archives/customer-attraction/tools/evidence/root-paired-witnesses-and-leaf-square-program/replay-root/verify_root_paired_points_units.py": "0052f84f6fe256d5f08bcecc359cd332d1840398fa9731df07ce423aceab5f44",
+    "archives/customer-attraction/tools/evidence/root-paired-witnesses-and-leaf-square-program/unit-audit-001/stdout.json": "437bc57c95deda812fc8348b2d592d078917aa6d001b91d921558752952e9744",
+    "archives/customer-attraction/tools/evidence/root-paired-witnesses-and-leaf-square-program/original/0ff5ed0483e6f60a136c-paired_existing_m4p5.json": "a188694db7fc2d2a7e514572b12393d3c6fa7bd50f8bdd442507dfaef4a2ff56",
+    "archives/customer-attraction/tools/evidence/root-paired-witnesses-and-leaf-square-program/original/376e65e5dec9b7bbebc6-paired_m4p4_single.json": "a7324766a7ec2c5d9b4d6c8083fae079126dcfdc92b12849386a9196545355c5",
+    "archives/customer-attraction/tools/evidence/root-paired-witnesses-and-leaf-square-program/original/56e5fe0224fc3057d7fa-paired_m3p3.json": "9253302b9c2b996217ed92d7325a52b6bd41d19395606d60ef788798e45d1ca9"
+  },
+  "review_digest": "eb1588381bcafeab8412cf843a3feedeb8805f4423c9ef6349c364e78dec0f08"
+}
