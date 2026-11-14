@@ -10,13 +10,13 @@
   ],
   "premises_mode": "all",
   "relation_mode": "unconditional",
-  "conditions": "只取有限证书池正文中 m=5 direct-global 条目：k=m−1=4，主题标签为 0,…,3k+1=13，B=3k=12，T=3k+1=13；重数按该固定实例的 12 类单位客户，量词只覆盖这份 m=5 完整策略及其全部有序历史和单步真实偏离。",
+  "conditions": "只取有限证书池正文中 m=5 direct-global 条目；为逐项核对把 R275 的固定表记作 k=m−1=4、主题标签 0,…,3k+1=13、B=3k=12、T=3k+1=13。重数按该固定实例的 12 类单位客户，量词只覆盖这份 m=5 完整策略及其全部有序历史和单步真实偏离，不把记号提升为任意 m 定理。",
   "roles": {
     "customer-attraction/R275-direct-global-multigadget-m5": "提供 14 主题、26 个单位客户、5 人的冻结完整纯 SPE；路径 (0,1,2,3,12)，收益 (4,4,4,4,5)，W=21，OPT=22，并由定义级核验覆盖 41,371 历史与 537,823 偏离。",
     "customer-attraction/finite-full-spe-certificate-pool-and-six-half-boundary": "接收有限完整 SPE 证书池中同一 m=5 direct-global 条目的精确实例化；其余证书与六人 half 义务仍保持独立开放边界。"
   },
   "whole_result": "R275 冻结证书精确实现有限证书池正文列出的 m=5 direct-global 条目：同一 14 标签/26 单位客户模型、同一路径和收益、同一 41,371 全历史与 537,823 偏离计数，且 W=21、OPT=22。该专化只给这个有限实例，不推出任意 m 递推、目录的最小 SPE 福利或六人 2W≥OPT_6。",
-  "explanation": "逐项解码 R275 的 instance/certificate 并读取共同模型与证书池证明。客户类型恰为 k=4 家族的八个二主题叶块（各重数2）、B/T 单主题块（各重数3）及两个九主题共享块（各重数2），总重数26。动作表包含 14^0+14^1+14^2+14^3+14^4=41,371 个有序历史；冻结 verification.json 报告 valid=true、537,823 个非自身真实偏离、0 个违反，根路径和收益与证书池条目完全相同。穷举覆盖给出 OPT=22（例如 (0,1,2,12,13)），所以该边支付的是同一有限条目，而非把有限证书外推为全局 half 结果。",
+  "explanation": "逐项解码 R275 的 instance/certificate 并读取共同模型与证书池证明。将固定表按 k=4、B=12、T=13 记号重写后，八个二主题叶块各重数2，B/T 单主题块各重数3，两个九主题共享块各重数2，总重数26；这与证书池列出的 m=5 固定数据逐字段吻合。动作表包含 14^0+14^1+14^2+14^3+14^4=41,371 个有序历史；冻结 verification.json 报告 valid=true、537,823 个非自身真实偏离、0 个违反，根路径和收益与证书池条目完全相同。穷举覆盖给出 OPT=22（例如 (0,1,2,12,13)），所以该边支付的是同一有限条目，而非把有限证书外推为全局 half 结果。",
   "scope": "有限 m=5 direct-global 构造的精确专化；不主张 m=3/m=4、任意整数 m、最差 SPE 或六人全称结论。",
   "evidence": [
     {
@@ -58,5 +58,5 @@
     "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
     "archives/customer-attraction/state/证明/有限完整SPE证书池与六人half边界--证明.md": "d751732561877e1936e59a78ea2f4434d8c12171cfdb6a47c21b4cfda4561131"
   },
-  "review_digest": "88b4fb22b129a05e7a172e85011be669ac01e2a62e097c4c9561fdc4ff518522"
+  "review_digest": "2b511a768f58b290836fc78ea94599f21de413ad4d4018a91f7b253eee9a6245"
 }
