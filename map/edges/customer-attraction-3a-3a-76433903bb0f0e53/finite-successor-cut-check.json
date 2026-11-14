@@ -1,0 +1,64 @@
+{
+  "edge_id": "ca-ce128-finite-successor-cut-check",
+  "kind": "checks",
+  "status": "accepted",
+  "source_ids": [
+    "M-ce128b15d03b4872990063540cb13d60"
+  ],
+  "target_ids": [
+    "M-ce128b15d03b4872990063540cb13d60"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "仅检查固定 M-ce128 5043 点与保存的 64/32 连续旧查询切面；连续价格发现、LP 最优性、共同客户实现、完整有序历史 SPE 和一般 six-player half 不在此边条件内。",
+  "roles": {
+    "M-ce128b15d03b4872990063540cb13d60": "承载 1905 列固定必要点、36 floor/72 mixed 行、64/32 连续 cut 表及其有限模型边界；本自检把后继 cut 的精确 Fraction 余量回代到同一 5043 点。"
+  },
+  "context": {
+    "current_point": "原 all_reply_mixed_pair_exact.json，SHA 83b469f45e6017c024d1f87c614c5b1e968be94bb171ed27bb913c7119843613；O=1，W=348849746216199535907980629211183/729080852958937593380920238282304，5043 行，1905 列，184 正列。",
+    "successor_recheck": "使用已读 audit_cuts.py 的 read_point/evaluate Fraction 定义（不运行 LP、未改冻结源）对同一 5043 点重算：old64 为 64 负、0 零、0 正；refinement32 为 32 负、0 零、0 正。两表首条共同余量均为 −31656298537448410947614489967609469/128318230120773016435041961937685504。old64 最大仍负为 −1660673275144715318271976766147377667/135434059245652247346439743463320791040；refinement32 最大仍负为 −3052729112298935014707794753150383/38884312157810004980315746041722880。",
+    "boundary": "该有限回代支持对象所述固定点分离；不把 4971/5075/5108/changed-Z 的四阶段 audit slack 迁移到当前点，也不把 overlap 的 198 项 Frechet 违例解释为已实现客户交叠。"
+  },
+  "explanation": "这是 self-context checks 边，只记录当前 M-ce128 点的后继连续切面回代和结论边界，不增加跨对象逻辑蕴含。它确认 64/32 表确实严格切掉同一 5043 点，而 72 mixed 行本身在该点为 0 负/4 零/68 正；因此不能把 mixed 行的通过性误读成 SPE 或把有限点误读成 half 反例。",
+  "scope": "context-only；有限必要图的精确回代与范围审计，不是连续价格族闭包、LP/图最优性、完整策略构造或一般福利定理。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/计算/混合强配对回复图的有理可行点--计算.md",
+      "sha256": "1aada8e7aa2d7e5b4365ab4cf13ff901607dc2fa388bd9b8b63c939b81f4bf07"
+    },
+    {
+      "path": "archives/customer-attraction/state/计算/旧查询回复的六十四个有理分离切面--计算.md",
+      "sha256": "bec08c5ea5ed6f042b00781b0263f9940953a6932b00beb87e4b80407d36b979"
+    },
+    {
+      "path": "archives/customer-attraction/state/计算/连续旧查询的三十二切面精化表--计算.md",
+      "sha256": "49b9cede81ec51059149ad7bd2ace90d6f63ad3b8a420c6b4853b57aace7b02d"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/mixed-pair-reply-necessary-point/original/all_reply_mixed_pair_exact.json",
+      "sha256": "83b469f45e6017c024d1f87c614c5b1e968be94bb171ed27bb913c7119843613"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/mixed-pair-reply-necessary-point/point-audit.json",
+      "sha256": "07fe1efc2e17ed0983a94b67c198437c8e4b2fbd2d8dfcab9ccee84504702b8a"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/continuous-query-refinement-data/four-stage-cut-audit.json",
+      "sha256": "7fe62de43486045b3931da270788af9c553aea0684c4d1ceb2ae2b5b6340411a"
+    }
+  ],
+  "reviewed_by": "SOLVER-CE128-FRESH",
+  "review_note": "13 个任务声明来源全读且 SHA 匹配；当前点后继 64/32 cut 已用已读 Fraction 积分定义重算。该边仅为 self-context checks，无 whole_result/contribution。",
+  "endpoint_pins": {
+    "M-ce128b15d03b4872990063540cb13d60": "cd047fd3b9f41c0f720c37495f13a362911b5b730b8fce634bc9ddf084d480d9"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/计算/混合强配对回复图的有理可行点--计算.md": "1aada8e7aa2d7e5b4365ab4cf13ff901607dc2fa388bd9b8b63c939b81f4bf07",
+    "archives/customer-attraction/state/计算/旧查询回复的六十四个有理分离切面--计算.md": "bec08c5ea5ed6f042b00781b0263f9940953a6932b00beb87e4b80407d36b979",
+    "archives/customer-attraction/state/计算/连续旧查询的三十二切面精化表--计算.md": "49b9cede81ec51059149ad7bd2ace90d6f63ad3b8a420c6b4853b57aace7b02d",
+    "archives/customer-attraction/tools/evidence/mixed-pair-reply-necessary-point/original/all_reply_mixed_pair_exact.json": "83b469f45e6017c024d1f87c614c5b1e968be94bb171ed27bb913c7119843613",
+    "archives/customer-attraction/tools/evidence/mixed-pair-reply-necessary-point/point-audit.json": "07fe1efc2e17ed0983a94b67c198437c8e4b2fbd2d8dfcab9ccee84504702b8a",
+    "archives/customer-attraction/tools/evidence/continuous-query-refinement-data/four-stage-cut-audit.json": "7fe62de43486045b3931da270788af9c553aea0684c4d1ceb2ae2b5b6340411a"
+  },
+  "review_digest": "fe43aae08c6af6dca6a6aa8beaf565498d534a73ec1d80a1e3ffc65799231748"
+}

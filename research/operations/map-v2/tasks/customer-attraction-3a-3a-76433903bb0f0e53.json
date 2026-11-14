@@ -396,16 +396,20 @@
     },
     "assets": [
       {
+        "path": "map/edges/customer-attraction-3a-3a-76433903bb0f0e53/finite-successor-cut-check.json",
+        "sha256": "632821c5246499b7bb66e88f2f4747ac0a1199149eb363403e9b31109f68d025"
+      },
+      {
+        "path": "map/edges/customer-attraction-3a-3a-76433903bb0f0e53/readledger.json",
+        "sha256": "4cc106205e87dc1294c0a31d7465b91bdbf135819d4fd2b45da87de72f2627bc"
+      },
+      {
         "path": "map/edges/customer-attraction-3a-3a-76433903bb0f0e53/review.md",
         "sha256": "af79786a3e95e2ec1eec1638e1563254bfef95a594ff12058bb873cf4637525b"
       },
       {
         "path": "map/edges/customer-attraction-3a-3a-76433903bb0f0e53/support.md",
         "sha256": "59aa7791201e7b02852cf1d538e09d9f04ac7ed398abb6eedb4b928565cfca8c"
-      },
-      {
-        "path": "map/edges/customer-attraction-3a-3a-76433903bb0f0e53/readledger.json",
-        "sha256": "4cc106205e87dc1294c0a31d7465b91bdbf135819d4fd2b45da87de72f2627bc"
       }
     ],
     "closed_overlaps": [],
@@ -444,19 +448,34 @@
           "negative": 64,
           "zero": 0,
           "positive": 0,
-          "minimum": "-31656298537448410947614489967609469/128318230120773016435041961937685504"
+          "minimum": "-31656298537448410947614489967609469/128318230120773016435041961937685504",
+          "maximum": "-1660673275144715318271976766147377667/135434059245652247346439743463320791040"
         },
         "refinement32_current_5043": {
           "negative": 32,
           "zero": 0,
           "positive": 0,
-          "minimum": "-31656298537448410947614489967609469/128318230120773016435041961937685504"
+          "minimum": "-31656298537448410947614489967609469/128318230120773016435041961937685504",
+          "maximum": "-3052729112298935014707794753150383/38884312157810004980315746041722880"
         }
       }
     },
-    "comparison_note": "完整实读13个声明来源并复核 successor 64/32 cut 的精确负值；保留5043行有限必要点、198个Frechet overlap边界和连续cut/动态桥缺口。未建立跨对象逻辑边，未升级为SPE/half。",
+    "comparison_note": "完整实读13个声明来源并复核 successor 64/32 cut 的精确负值；新增 self-context checks 边仅记录当前点 old64=64负、32=32负。保留5043行有限必要点、198个Frechet overlap边界和动态桥缺口，未升级为SPE/half。",
     "owner": "Boss1",
-    "worker": "SOLVER-CE128-FRESH"
+    "worker": "SOLVER-CE128-FRESH",
+    "edge_bindings": {
+      "edge_id": "ca-ce128-finite-successor-cut-check",
+      "edge_status": "accepted",
+      "proof_scope": "context",
+      "edge_check": "passed: edge-structure-valid-not-a-mathematical-verdict",
+      "review_digest": "fe43aae08c6af6dca6a6aa8beaf565498d534a73ec1d80a1e3ffc65799231748"
+    },
+    "edge_ids": [
+      "ca-ce128-finite-successor-cut-check"
+    ],
+    "edge_binding_status": "edge-bind --write and edge-check passed for finite successor cut self-context edge"
   },
-  "edge_paths": {}
+  "edge_paths": {
+    "ca-ce128-finite-successor-cut-check": "map/edges/customer-attraction-3a-3a-76433903bb0f0e53/finite-successor-cut-check.json"
+  }
 }
