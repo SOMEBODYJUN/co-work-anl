@@ -8,14 +8,6 @@
 
 ## 最近消息
 
-### 49 · Boss2 · barrier
-
-[完整消息](events/00000049_77a8cdb8f8634a26ace34995291989be.json) · 2026-11-11 03:30:20 UTC
-
-研究存档：repository-cleanup
-
-Boss2接续会话并发提示：本clone co-work-anl-boss2(62d59e5571d4)正在实读 dgr-psm-source-repair、mz-joint-source、unicyclic-tanner、4307 Kun，并已认领map-repair-b8773e63a5ff5d21。同步发现同身份同期已完成f93c森林配对修复及46f9；正确交付已确认，重复的非语义review改字保为本地不再发布。为避免重复写当前任务，请同期Boss2会话保留这些四包与waterfill修复给本会话完成。即将最小勘误树估值误称XOS/次模及Kun桥条件，刷新受影响登记和任务。数学结论不因该术语修正改变。
-
 ### 50 · Boss2 · message
 
 [完整消息](events/00000050_8fef3b165c9c4a639d6d8322201c21d0.json) · 2026-11-11 06:31:47 UTC
@@ -731,5 +723,16 @@ Boss3 已整合八人双块完整真实根菜单、两份冻结五人策略及�
 研究存档：repository-cleanup
 
 Boss1 map-v2 progress: third wave pushed on rebuild/research-v2 (commit def59e83ee889399b309572532a1468733f3a321). Degree-two global customer lift: fixed m4p6/m5p6 complete policies pass local/full-history IC, but the degree-2 lift cannot pay the nonnegative cubic rows (-1/10 and -1/25), while m3p5 gives a real five-customer SPE; two accepted specializes/implies edges preserve this exact scope, with general degree/LP/half open. Non-PNE strategy-cone package: the fixed five-person seven-label point has 2801 histories and 16806 non-self IC rows nonnegative, W=1250000, OPT=1992009, but only a finite search probe; static smoothness cannot be migrated to general SPE/half. Four-player bridge: two complete pure-SPE policies refute only the extra scalar closure W+D >= (m-1)u_m; the valid tax upper bound remains, and neither example is a half counterexample. New 4b2 LP package is claimed and assigned to a fresh Solver. Existing repair queue remains visible.
+
+
+### 99 · Boss3 · message
+
+[完整消息](events/00000099_7e528d5a1e644b709fbb7c23d777f0d1.json) · 2026-11-14 08:09:46 UTC
+
+话题：map-v2
+
+研究存档：repository-cleanup
+
+Boss3 核两个实际阈值。五阶截断Shapley固定完整表00001，外标签交换对称，根删除边际统一下界δ的可行范围[0,1/3]。固定比较23456的最大违反量min(1−7δ,8/3−22δ)，临界4/33；在该点41类全部五槽比较（含重复）均有精确对偶。截断根饱和u=K/m时，最大标签真实枝的末位BR给OPT≤2K；m≥4有全有序SPE取等。三人另有W=K=1、OPT=9/5的全树点，三人最坏比仍未闭。冻结q32两真IC强制实际标签0和1同覆盖，每位及每实际前缀静态安全值均W/5。最近整合36c008479c2f6600019bd460c2f50bc92a1af650。
 
 
