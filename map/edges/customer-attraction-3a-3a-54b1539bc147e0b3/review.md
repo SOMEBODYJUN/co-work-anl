@@ -48,6 +48,13 @@
 - `b3r1-common-credit-audit-checks-sharp-interface`：有限同枝审计核 `E=(Q-R)_+`、`E+G≤1-1/d≤1-1/m` 和容量边界；不升级全局遗漏耦合。
 - `b3r1-free-source-audits-check-mismatch-identity`：有限 5184/1225 源/查询域核协方差恒等式与错配项；不升级 Mpath/half。
 
+## 四个 shared/read endpoints
+
+- `M-921cb4daa29e43c6b2816c1ec73720b5`：`linked-conditional`；S2 唯一负载与最坏回复身份只在实际前缀嵌入 `L` 条件下支付目标。
+- `customer-attraction/unique-optimal-omission-existence-counterexample-family`：`linked-conditional`；由线性证书边承接，源 truth_status 未评估，保持条件。
+- `customer-attraction/same-branch-deletion-refund-and-old-prefix-positive-loss-sharp-common-credit`：`context-linked`；只支撑有限同枝 E/G 审计。
+- `customer-attraction/free-complete-menu-source-mismatch-and-conditional-reciprocal-debt`：`context-linked`；只支撑有限 5184/1225 源/查询恒等式。
+
 ## Open gaps, follow-up, overlap disposition
 
 未关闭的数学边界保持开放：一般交叠极大目录的 half、实际 SPE 前缀是否总能嵌入静态唯一 `L`、最优遗漏源证书登记状态、同枝/自由源有限 checks 是否能推出全局遗漏耦合，以及 Mpath/half。它们是明确 open，不是身份或来源 needs-decision。
