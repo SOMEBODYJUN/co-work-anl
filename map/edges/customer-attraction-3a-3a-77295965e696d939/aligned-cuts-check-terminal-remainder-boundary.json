@@ -1,0 +1,63 @@
+{
+  "edge_id": "cag-77295965-aligned-cuts-check-terminal-remainder-boundary",
+  "kind": "checks",
+  "status": "accepted",
+  "source_ids": [
+    "cag-unaligned-all-pair-tax-exact-point-four-aligned-cuts"
+  ],
+  "target_ids": [
+    "customer-attraction/closeout-b4886bab8556761b061a5638"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "共同目录、均分价值、完整有序历史纯SPE的五人投影；核心点固定64个客户坐标和44个正质量，W=1，O为五个指定比较主题的投影覆盖而非补全目录的OPT。closeout仅承担末位余项来源与开放边界，不承担早期离轨支付或Q-CAG-HALF。",
+  "roles": {
+    "cag-unaligned-all-pair-tax-exact-point-four-aligned-cuts": "给出1920条旧行、异索引、跨菜单和全积税全部非负的精确有理点，并在AB、AE、AE、Sbranch四组合法同索引税上给出严格负的总slack，因此保留该投影和质量的完整SPE补全不存在。",
+    "customer-attraction/closeout-b4886bab8556761b061a5638": "记录任意整数背景的末位收益余项、恰两人特例及其停止边界：末位证书不能替代早期真实离轨菜单的信用支付，Q-CAG-HALF仍开放。"
+  },
+  "explanation": "核心审计的四条同索引税是独立于1920条全积税行的合法必要条件；其精确负值说明一个点可以通过已收集的必要投影而仍被早期/同索引激励约束排除。该有限边因此具体核对closeout所记停止边界：末位余项证据不能单独认证完整SPE或半覆盖结论，必须另付早期真实离轨菜单与同索引税。该边是语境一致性检查，不从核心点推出或反驳末位余项引理，也不把核心点称为可实现SPE反例。",
+  "scope": "仅限本任务冻结SHA的五人64坐标、1920行系统、四个同索引税值以及closeout资料的末位余项/开放义务；不外推至重优化点、65列系统、其它质量、完整目录OPT或六人Q-CAG-HALF。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/计算/全积税必要点的精确恢复与四条对齐分离--计算.md",
+      "sha256": "7f72747e665a41c696ac2d07fbf5d5efc9d634f7cd79ae868018f108fcd38275",
+      "section": "4. 全积税为何不能替代同索引税"
+    },
+    {
+      "path": "archives/customer-attraction/state/计算/全积税必要点的精确恢复与四条对齐分离--计算.md",
+      "sha256": "7f72747e665a41c696ac2d07fbf5d5efc9d634f7cd79ae868018f108fcd38275",
+      "section": "5. 四个负项与不可补全范围"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/unaligned-tax-exact-primary/original/research/workspaces/customer-attraction/R-64201cd12083425899e2d643ec9bc087/next_credible/unaligned_exact_obstruction.json",
+      "sha256": "ba642d56de2f383407e5728b7dd7be5c762c4f88adba7b14090ce0628d6bb743"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/unaligned-tax-exact-primary/verified/audit.json",
+      "sha256": "20825feff291c2f8b4f7221a6a8aba3fab544b3e1b88ae917e40f6683f4e7806"
+    },
+    {
+      "path": "archives/customer-attraction/state/资料/动态信用背景探针来源与开放边界--资料.md",
+      "sha256": "3086b6b6802d945629bfb3d01ca26ba9eae6e7346169927e2dd5193af860a02d",
+      "section": "已证、候选与停止边界"
+    },
+    {
+      "path": "archives/customer-attraction/state/资料/动态信用背景探针来源与开放边界--资料.md",
+      "sha256": "3086b6b6802d945629bfb3d01ca26ba9eae6e7346169927e2dd5193af860a02d",
+      "section": "当前接续"
+    }
+  ],
+  "reviewed_by": "Boss4/map_worker_b",
+  "review_note": "完整读取任务定义、AGENTS.md、03-map-worker.md、IMPLEMENTATION.md、核心正文、共同模型、原64原子证书、精确障碍JSON、278KB审计JSON及closeout资料指定section。独立核对1920行=1872正+48零、44正质量、O>2，以及四个direct_four_cuts分子严格为负；确认四条同索引税不被全25对全积税之和蕴含。deferred CA-FIVE-INDEXED-ROWS-NO 与 CA-TWO-REMAINING-TAX 仅保留登记定位，未作为已付比较端点。",
+  "endpoint_pins": {
+    "cag-unaligned-all-pair-tax-exact-point-four-aligned-cuts": "3026d6059951f45242bf201814a96de37058f1cbafbaddbcd3c4389e20bfe121",
+    "customer-attraction/closeout-b4886bab8556761b061a5638": "fd2a93870106a2eca37d24bf1e16c50f373f8f23d0a91ef6d7873c4202c5a8ea"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/计算/全积税必要点的精确恢复与四条对齐分离--计算.md": "7f72747e665a41c696ac2d07fbf5d5efc9d634f7cd79ae868018f108fcd38275",
+    "archives/customer-attraction/tools/evidence/unaligned-tax-exact-primary/original/research/workspaces/customer-attraction/R-64201cd12083425899e2d643ec9bc087/next_credible/unaligned_exact_obstruction.json": "ba642d56de2f383407e5728b7dd7be5c762c4f88adba7b14090ce0628d6bb743",
+    "archives/customer-attraction/tools/evidence/unaligned-tax-exact-primary/verified/audit.json": "20825feff291c2f8b4f7221a6a8aba3fab544b3e1b88ae917e40f6683f4e7806",
+    "archives/customer-attraction/state/资料/动态信用背景探针来源与开放边界--资料.md": "3086b6b6802d945629bfb3d01ca26ba9eae6e7346169927e2dd5193af860a02d"
+  },
+  "review_digest": "4c00d5f7eb6ee4e83b4358f7096e0ad6b7b04a992c11d7e1bd7847c3eecda791"
+}
