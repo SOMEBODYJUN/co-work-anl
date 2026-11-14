@@ -1,0 +1,36 @@
+{
+  "task_id": "boss3-wave8-new-3a-16204087f3260d47",
+  "stage": "3A",
+  "core_object_ids": ["customer-attraction/fixed-distinct-prefix-individual-cone-optimal-J-exact-13-over-4"],
+  "shared_read_object_ids": ["M-7dc7b597f43c46dc9ef0620ec1cc79b4"],
+  "read_completeness": {
+    "declared_reading_refs": 7,
+    "read_segments": 7,
+    "unmeasured_refs": [],
+    "mode": "complete text for Markdown/Python; full JSON parse with exact-record checks"
+  },
+  "references": [
+    {"path": "archives/customer-attraction/state/定理/指定四人不重复比较前缀逐行动锥在最优比较组下仍锐为十三除四--定理.md", "sha256": "97e261372b4d503c3f93cb25bfb30b7d8c6b6fcf4f3f4faef8183c4f3ca4916f", "read_mode": "complete-text", "role": "core theorem"},
+    {"path": "archives/customer-attraction/state/障碍/不重复比较前缀筛选的四人行锥障碍--障碍.md", "sha256": "adbd905448889d8013b8f2ffd96ba856f6a73b9de028149fff318241cc2cd27d", "read_mode": "complete-text", "role": "shared dependency body"},
+    {"path": "archives/customer-attraction/tools/evidence/continuation-dual-resumed-boss2/saved-witness-exact-check.json", "sha256": "5914b78d9c064afdb097504ec32921fcfd514848eaab8be7d5659d016205acc2", "read_mode": "full-json-parse-and-exact-record-checks", "role": "old witness exact report"},
+    {"path": "archives/customer-attraction/tools/evidence/distinct-prefix-individual-optimal-J-13-over-4/verify_optimal_J_13_over_4.py", "sha256": "bb750fe1db5b4f1ebc57af1da0c561cd0ff562094d3d94737bc488023a91f54d", "read_mode": "complete-source-semantics", "role": "core exact verifier"},
+    {"path": "archives/customer-attraction/tools/evidence/distinct-prefix-individual-optimal-J-13-over-4/exact-certificate.json", "sha256": "53f4c2edd7aae38ddc9025fb3d12a587a2b7970ecd6d38c013abde22108c9cf2", "read_mode": "full-json-parse-and-exact-record-checks", "role": "core exact certificate"},
+    {"path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md", "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88", "read_mode": "complete-text", "role": "shared model definition"},
+    {"path": "archives/customer-attraction/tools/evidence/continuation-dual-resumed-boss2/verify_saved_restriction_witness.py", "sha256": "26edfa1a8dc9df8246af5375da62b67d451b948be7bd0facce3053b280f728bd", "read_mode": "complete-source-semantics", "role": "old witness independent verifier"}
+  ],
+  "comparison": {
+    "relation": "specializes",
+    "edge_id": "boss3-wave8-new-3a-16204087f3260d47-relaxed-cone-to-optimal-J",
+    "source": "M-7dc7b597f43c46dc9ef0620ec1cc79b4",
+    "target": "customer-attraction/fixed-distinct-prefix-individual-cone-optimal-J-exact-13-over-4",
+    "preserved": ["共同目录均分模型", "m=4、五标签、固定sigma(h)=0/2", "J={0,1,3,4}", "permutation_prefix 63 条非零行", "三条 h=(0)→1,3,4 权3对偶与13/4上界", "完整策略真实后继语义"],
+    "strengthened": ["target adds O_J=OPT_4", "target replaces 67-customer nonoptimal-J witness with 52-customer optimal-J witness", "target certifies exact sharpness on the optimal-J subdomain"],
+    "reverse_blocker": "旧源见证 W=16,O_J=52,OPT_4=67，违反 target 条件 O_J=OPT_4；不写 equivalent_to 或反向边。"
+  },
+  "mathematical_findings": {
+    "core": "J-optimal 52-customer point masks 1:11,5:5,6:12,12:12,20:12; W=16,O_J=OPT_4=52; exact ratio 13/4; 64 retained rows (63 nonzero), 13 full-tree negative rows.",
+    "dependency": "Relaxed 67-customer point masks 1:16,4:15,6:12,12:12,20:12; W=16,O_J=52,OPT_4=67; same exact ratio 13/4; permutation_prefix has 63 nonzero rows and no negatives, but full strategy is not SPE.",
+    "open_gap": "No edge pays complete 780-row IC, SPE or general OPT_4/W theorem; missing rows include root action2, repeated 00 prefixes, and J-external topic2 deviations."
+  },
+  "validation_boundary": {"new_scientific_runs": 0, "optimizer_calls": 0, "program_replays": 0, "hashes_rechecked": 7}
+}
