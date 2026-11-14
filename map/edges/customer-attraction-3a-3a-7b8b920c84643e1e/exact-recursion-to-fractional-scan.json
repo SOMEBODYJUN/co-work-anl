@@ -1,0 +1,63 @@
+{
+  "edge_id": "ca-7b-exact-spe-recursion-implements-outcome-scan-backend",
+  "kind": "implements",
+  "status": "accepted",
+  "relation_mode": "context",
+  "source_ids": [
+    "CA-EXACT-PURE-SPE-ALL"
+  ],
+  "target_ids": [
+    "customer-attraction/actual-fractional-query-fixed-cone-and-integer-outcome-scans"
+  ],
+  "premises_mode": "all",
+  "conditions": "有限共同目录与完整有序历史；计数递推只缓存可实现终局全集，不把不同有序历史的续局策略 Markov 化；固定策略锥仍须真实 Γ、归一和有理核验。",
+  "roles": {
+    "CA-EXACT-PURE-SPE-ALL": "提供 R(k) 的必要且充分集合值递推、逐有序历史拼接和定义级全树 SPE 验证。",
+    "customer-attraction/actual-fractional-query-fixed-cone-and-integer-outcome-scans": "将该精确终局集合后端与固定 σ 的 Fraction/整数查询锥筛选并列，明确浮点 proposal 与整数 outcome scan 的证据边界。"
+  },
+  "explanation": "目标方法的整数终局扫描与 CA-EXACT 的 R(k) 递推在“全集缓存、逐历史实现、不能认证浮点全锥”上是实现/契约关系。方法另外加入固定策略有理锥与数值筛选，因此不是 CA-EXACT 的等价替代，也不由扫描输出普遍半覆盖。",
+  "scope": "精确终局集合后端与固定锥扫描合同；不宣称所有完整策略或浮点候选已证。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/算法/完整历史纯SPE终局全集--算法.md",
+      "sha256": "667d6f319b1f325bd32538f6b0e5a8e95c1942e2ec97cbc76d7cbaef06b36954",
+      "section": "全集递推及完整证明"
+    },
+    {
+      "path": "archives/customer-attraction/state/算法/完整历史纯SPE终局全集--算法.md",
+      "sha256": "667d6f319b1f325bd32538f6b0e5a8e95c1942e2ec97cbc76d7cbaef06b36954",
+      "section": "完整策略和指定有序路径"
+    },
+    {
+      "path": "archives/customer-attraction/state/算法/完整历史纯SPE终局全集--算法.md",
+      "sha256": "667d6f319b1f325bd32538f6b0e5a8e95c1942e2ec97cbc76d7cbaef06b36954",
+      "section": "定义级独立核验证书"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/实际分数查询的固定策略锥与整数终局扫描--程序.md",
+      "sha256": "d69c776ae4b7377fd06d31f5d5e911e53d366ed2b91f1f11774ccf882ad5d111",
+      "section": "固定策略全重数锥：原probe.py"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/实际分数查询的固定策略锥与整数终局扫描--程序.md",
+      "sha256": "d69c776ae4b7377fd06d31f5d5e911e53d366ed2b91f1f11774ccf882ad5d111",
+      "section": "全SPE终局的整数后端与它没有输出的策略"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/实际分数查询的固定策略锥与整数终局扫描--程序.md",
+      "sha256": "d69c776ae4b7377fd06d31f5d5e911e53d366ed2b91f1f11774ccf882ad5d111",
+      "section": "outcome_probe的筛选、纪录和停止条件"
+    }
+  ],
+  "review_note": "核对递推充分/必要、计数缓存边界、固定锥筛选及浮点/有理限制；关闭该 3B overlap 的身份混淆。",
+  "reviewed_by": "Boss7",
+  "endpoint_pins": {
+    "CA-EXACT-PURE-SPE-ALL": "aaa77e1f9a928bc25a315e66e18f424418e64643ec3fdb8717cbc3adc6310056",
+    "customer-attraction/actual-fractional-query-fixed-cone-and-integer-outcome-scans": "efd7bb4f63c7b0317f281b2521121f506606cb6061a1a7189c418a34744caa7d"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/算法/完整历史纯SPE终局全集--算法.md": "667d6f319b1f325bd32538f6b0e5a8e95c1942e2ec97cbc76d7cbaef06b36954",
+    "archives/customer-attraction/state/程序/实际分数查询的固定策略锥与整数终局扫描--程序.md": "d69c776ae4b7377fd06d31f5d5e911e53d366ed2b91f1f11774ccf882ad5d111"
+  },
+  "review_digest": "06f242f9fe7bf2097b479378c4c9137ccd1380bd16bcc30f9d6df5a5ea6a54c0"
+}

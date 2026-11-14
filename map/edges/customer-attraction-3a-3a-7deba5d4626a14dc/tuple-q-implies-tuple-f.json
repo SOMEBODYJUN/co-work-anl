@@ -1,0 +1,42 @@
+{
+  "edge_id": "cag7de-q-tuple-implies-f-tuple",
+  "kind": "implies",
+  "status": "accepted",
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "reviewed_by": "Boss7-map-v2",
+  "source_ids": [
+    "M-c5280acf6de14745af28bd5489a3bc21"
+  ],
+  "target_ids": [
+    "M-e5eaa0fa39a44340a6c66d2a6c91c781"
+  ],
+  "conditions": "共同目录模型 CAG-MODEL：有限单位客户、有限非空共同标签目录及任意覆盖映射，m≥1 顺序单位提供者，完整有序历史纯SPE，允许重复槽/同覆盖标签/空覆盖/历史依赖平局；actual 负载 c、并集 C、福利 W，与所选最优支持或元组的 d、O、E 取同一比较。 源候选 M-c5280 的存在型量词成立；同一最优恰 m 槽元组用于两费用。",
+  "roles": {
+    "M-c5280acf6de14745af28bd5489a3bc21": "提供同一最优恰 m 槽元组的 Q(c,d)≤W+E 预算。",
+    "M-e5eaa0fa39a44340a6c66d2a6c91c781": "接收同一元组的调和费 F(c,d) 结论。"
+  },
+  "explanation": "逐客户整数 c,d≥0 有 H_{c+d}-H_c=Σ_{r=1}^d 1/(c+r)≤d/(c+1)，故 F(c,d)≤Q(c,d)。若源候选为每个实例、每份完整 SPE 选出一个满足 Q≤W+E 的最优恰 m 元组，则同一元组立即满足 F≤Q≤W+E；没有改变 O、E 或量词。",
+  "whole_result": "在上述共同模型和源候选 M-c528 的全称存在断言成立时，M-e5 的最优恰 m 元组净调和 F 预算成立；这是 Q→F 的同元组单向蕴含，不反向。",
+  "scope": "仅比较恰 m 元组 Q 与 F 两个开放预算候选；不证明源候选，也不把 F≤Q 误写成 Q≤F。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+    },
+    {
+      "path": "archives/customer-attraction/state/证明/终局净预算的元组支持量词与条件付款--证明.md",
+      "sha256": "48d94f566501f30480fbe1fd6b6f9f5451754ca7a9bb80c95d60c5887002d137"
+    }
+  ],
+  "review_note": "实读终局净预算证明的逐客户不等式、元组量词与共同模型；核对同一 O/E 和非反向方向。源为 open，故关系明确标 conditional。",
+  "endpoint_pins": {
+    "M-c5280acf6de14745af28bd5489a3bc21": "633ea2a9aead32beceaf055654c2c65f20419f6ae0ce387131efdfb8c439fb5a",
+    "M-e5eaa0fa39a44340a6c66d2a6c91c781": "9f67d3e873f812e59e7aefdda10404f3faac08d9580153690d58e3ecda06f24f"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+    "archives/customer-attraction/state/证明/终局净预算的元组支持量词与条件付款--证明.md": "48d94f566501f30480fbe1fd6b6f9f5451754ca7a9bb80c95d60c5887002d137"
+  },
+  "review_digest": "58df6eae43da1219f31f092770f68be55bbbe679734f243b077b163f5bdc46ca"
+}

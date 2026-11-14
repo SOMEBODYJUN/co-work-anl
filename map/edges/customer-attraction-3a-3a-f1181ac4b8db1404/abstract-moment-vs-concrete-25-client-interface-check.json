@@ -1,0 +1,58 @@
+{
+  "edge_id": "ca-f1181-abstract-moment-vs-concrete-policy-interface-check",
+  "kind": "checks",
+  "status": "accepted",
+  "source_ids": [
+    "M-9c5a80801675407da5e5705ed5e0b8ac"
+  ],
+  "target_ids": [
+    "customer-attraction/closeout-d6e23fee8bb65218cb2d0061"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "仅比较两份当前冻结对象及其声明的完整范围：M-9c5a... 是 n=5,p=7 的截断单调次模共同 Shapley 矩、完整 2801 历史动作的 36 锥有限搜索，其 best_exact_feasible_ratio=7/5 且 customer_realizability=not_claimed、Q_CAG_HALF=OPEN；closeout-d6... 是四名单位玩家、五标签、25 客户固定实例上的 156 节点紧凑策略 σ′，其全层纸面 SPE 分类、W=20/OPT=23、同计数核 π=(1/4,0,7/24,1/3,1/8)、cap=23/4−40/7=1/28 与 scaled=161/160 只在该具体实例成立。",
+  "roles": {
+    "M-9c5a80801675407da5e5705ed5e0b8ac": "提供抽象共同矩搜索的完整冻结输出与范围审计：36轮/36锥、每轮19607有序比较、best 7/5；明确没有单位客户正性实现，不能直接解释为客户福利。",
+    "customer-attraction/closeout-d6e23fee8bb65218cb2d0061": "提供同一客户吸引档案中的具体25客户、四玩家、五标签有限游戏，以及对156有序历史的 σ′ 全层最佳响应分类和其有限核/封顶计算；不承担抽象矩LP的候选认证。"
+  },
+  "explanation": "逐项核对后，两对象只有存档主题与“完整历史/SPE”词汇相交，输入空间、量词和结论对象不同。M-9 的矩坐标不是非负单位客户质量，其 7/5 仅是一次 seed 下 36 个抽象相邻锥候选的精确有理可行比；closeout 的 156 节点证明则固定 4 人/25 客户实例并沿同一 σ′ 真实后继逐层验证，且仅在该实例复用计数核和 cap。故该检查允许在图中引用两者的接口边界：不得把 7/5 或抽象 Q_CAG_HALF=OPEN 当作 closeout 的客户福利定理，也不得用 closeout 的具体 σ′ 或 161/160 反向认证 M-9 的抽象LP搜索。两对象均保留各自有限范围与未付义务；没有由共享目录或 full-history 名称生成逻辑迁移。",
+  "scope": "仅作 customer-attraction 档案内的模型/证据接口检查与防误读标注；不产生 implies/refutes/specializes 边。M-9 的抽象客户可实现性、全锥完备性及 Q_CAG_HALF 仍 OPEN；closeout 仅覆盖固定 25 客户四玩家五标签实例，不外推一般人数或自由根菜单。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/审查/二支持末段审计与全历史相邻锥有限证据--审查.md",
+      "sha256": "1bde29497e0044e4c36671ef3ec39ff9e03137d1552dbda9ba7b7bac461b19cc",
+      "section": "三、`full_history_walk`：程序合同与运行输出"
+    },
+    {
+      "path": "research/registration/evidence/register-lead-recovered-evidence-01/full_history_walk.json",
+      "sha256": "5fffc743211433ee53db2703bd082dfef7a9c359cb76c7675f27932e273933a0"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/terminal-pair-and-full-history-walk-primary/full_history_walk_summary.json",
+      "sha256": "80a5699da2e3f0725460f73aa1541fa953dacc078526d49dc9f8015510c8cf37"
+    },
+    {
+      "path": "archives/customer-attraction/state/审查/R275完整历史矩锥最近邻与全子模两次回归--审查.md",
+      "sha256": "41a426693febef849dab500a4896e1f87e9cd3d59dd6f777670bc805d1156944"
+    },
+    {
+      "path": "archives/customer-attraction/state/资源/二十五客户弱核见证的紧凑全历史策略与双版本--资源.md",
+      "sha256": "4a46c000f7e58eb553a4ba35ce0824c0cfe85da5916e6fddf8e94a5045c27a3c",
+      "section": "是同一个客户游戏，不是同一份完整策略"
+    }
+  ],
+  "reviewed_by": "Boss7",
+  "review_note": "Fresh worker 完整读取本任务 5 个 reading_refs（含 317303 字节 full_history_walk 原 JSON、R275 全文、完整摘要及两份当前对象正文）。独立重建了两对象的模型、量词、数值与开放义务，并逐项核对其 SHA256/section。本边只登记 context/checks 接口检查，刻意不升级为逻辑蕴含或客户福利结论。",
+  "endpoint_pins": {
+    "M-9c5a80801675407da5e5705ed5e0b8ac": "cfc28d470d030b5c2574e8045d3c38d846f57cbfb969233c434333604f661cd6",
+    "customer-attraction/closeout-d6e23fee8bb65218cb2d0061": "f225ae0cd25bc61f867932b69a0c9d3ab51543f87c037727c1b6fe2e3c5d97d5"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/审查/二支持末段审计与全历史相邻锥有限证据--审查.md": "1bde29497e0044e4c36671ef3ec39ff9e03137d1552dbda9ba7b7bac461b19cc",
+    "research/registration/evidence/register-lead-recovered-evidence-01/full_history_walk.json": "5fffc743211433ee53db2703bd082dfef7a9c359cb76c7675f27932e273933a0",
+    "archives/customer-attraction/tools/evidence/terminal-pair-and-full-history-walk-primary/full_history_walk_summary.json": "80a5699da2e3f0725460f73aa1541fa953dacc078526d49dc9f8015510c8cf37",
+    "archives/customer-attraction/state/审查/R275完整历史矩锥最近邻与全子模两次回归--审查.md": "41a426693febef849dab500a4896e1f87e9cd3d59dd6f777670bc805d1156944",
+    "archives/customer-attraction/state/资源/二十五客户弱核见证的紧凑全历史策略与双版本--资源.md": "4a46c000f7e58eb553a4ba35ce0824c0cfe85da5916e6fddf8e94a5045c27a3c"
+  },
+  "review_digest": "e8d3973eef350d3d92215c3c882f38733d54c71ca25152c8bc8461317665136b"
+}

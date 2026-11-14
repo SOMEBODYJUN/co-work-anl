@@ -1,0 +1,58 @@
+{
+  "edge_id": "ca-7b-common-q-generator-boundary-isolated",
+  "kind": "implements",
+  "status": "accepted",
+  "relation_mode": "context",
+  "source_ids": [
+    "customer-attraction/common-static-q-certificate-generator"
+  ],
+  "target_ids": [
+    "customer-attraction/actual-fractional-query-fixed-cone-and-integer-outcome-scans"
+  ],
+  "premises_mode": "all",
+  "conditions": "固定完整策略锥与给定目标向量；common Q 输出必须存在且 exact、所有 Γ 行/背景域均闭合；当前源无配套 common_Q 输出。",
+  "roles": {
+    "customer-attraction/common-static-q-certificate-generator": "定义同一静态 Q 同时支付全部查询的浮点 LP/有理后验合同，但没有认证运行输出。",
+    "customer-attraction/actual-fractional-query-fixed-cone-and-integer-outcome-scans": "提供另一种固定 σ 的有理重数锥与整数终局扫描合同，明确不把浮点 proposal 当全锥证明。"
+  },
+  "explanation": "两者都属固定策略层的方法接口，却使用不同输入/目标/证据责任。没有 common_Q 输出，不能把 generator 当 actual scan 的已证付款或替代；该边仅记录实现语境与边界。",
+  "scope": "方法/证据合同层，不产生逻辑 half 结论。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/计算/共同静态Q证书生成器--计算.md",
+      "sha256": "d45ad34630dca9e5afb82b882b5c2373b4b031fa0e2b6fb0283b8fe1967a5289",
+      "section": "线性证书的准确含义"
+    },
+    {
+      "path": "archives/customer-attraction/state/计算/共同静态Q证书生成器--计算.md",
+      "sha256": "d45ad34630dca9e5afb82b882b5c2373b4b031fa0e2b6fb0283b8fe1967a5289",
+      "section": "有理恢复与严格边界"
+    },
+    {
+      "path": "archives/customer-attraction/state/计算/共同静态Q证书生成器--计算.md",
+      "sha256": "d45ad34630dca9e5afb82b882b5c2373b4b031fa0e2b6fb0283b8fe1967a5289",
+      "section": "与既有对象的关系"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/实际分数查询的固定策略锥与整数终局扫描--程序.md",
+      "sha256": "d69c776ae4b7377fd06d31f5d5e911e53d366ed2b91f1f11774ccf882ad5d111",
+      "section": "固定策略全重数锥：原probe.py"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/实际分数查询的固定策略锥与整数终局扫描--程序.md",
+      "sha256": "d69c776ae4b7377fd06d31f5d5e911e53d366ed2b91f1f11774ccf882ad5d111",
+      "section": "全SPE终局的整数后端与它没有输出的策略"
+    }
+  ],
+  "review_note": "完整读生成器源与方法合同；明确无输出、无策略锥闭合、无一般付款结论。",
+  "reviewed_by": "Boss7",
+  "endpoint_pins": {
+    "customer-attraction/actual-fractional-query-fixed-cone-and-integer-outcome-scans": "efd7bb4f63c7b0317f281b2521121f506606cb6061a1a7189c418a34744caa7d",
+    "customer-attraction/common-static-q-certificate-generator": "b6edf44967567d32896075c0291bd01605ebcd52b8a24bba584e41662cfaa8be"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/计算/共同静态Q证书生成器--计算.md": "d45ad34630dca9e5afb82b882b5c2373b4b031fa0e2b6fb0283b8fe1967a5289",
+    "archives/customer-attraction/state/程序/实际分数查询的固定策略锥与整数终局扫描--程序.md": "d69c776ae4b7377fd06d31f5d5e911e53d366ed2b91f1f11774ccf882ad5d111"
+  },
+  "review_digest": "ee10345b523a8185b94a67cf77d3367e97da3c766dd18ea850d951137daa9aff"
+}

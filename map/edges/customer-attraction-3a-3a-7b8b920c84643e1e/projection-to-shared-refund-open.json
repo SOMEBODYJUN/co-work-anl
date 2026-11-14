@@ -1,0 +1,51 @@
+{
+  "edge_id": "ca-7b-projection-regret-identities-to-shared-refund-obligation",
+  "kind": "implies",
+  "status": "accepted",
+  "relation_mode": "conditional",
+  "source_ids": [
+    "customer-attraction/customer-projection-all-history-regret-and-shared-external-credit"
+  ],
+  "target_ids": [
+    "M-eb4e91518a6d4256b2e524e60b4b8a2e"
+  ],
+  "premises_mode": "all",
+  "conditions": "固定同一完整原纯SPE σ，保留全部标签、全部有序历史和真实偏离后继；O 为同一最优 m 主题并集时定义 D、E、g_i，且每个 g_i 使用同一最终遗漏集。",
+  "roles": {
+    "customer-attraction/customer-projection-all-history-regret-and-shared-external-credit": "给出 PROJ-EXACT、REGRET/RESERVE、同一 actual 路径 EXACT-PATH，以及 H=Σ[g_i−u_i]_+≤E 的共享退款等价式。",
+    "M-eb4e91518a6d4256b2e524e60b4b8a2e": "承接“是否存在同一最优 O 使 H≤E”这一未决全称/存在量词，及其与 half 的关系。"
+  },
+  "contribution": {
+    "result": "对任意 O，投影增益满足 v_dev−v_actual=e_actual−e_dev−Γ；沿同一 actual 路径有 Σδ_i+Σmin_A(e_dev+Γ)=E；固定最优 O 后，共享非负退款可行当且仅当 H≤E，并满足 H−E=OPT_m−2W+S。",
+    "remaining": "没有证明每份 SPE 存在同一最优 O 使 H≤E，也没有把投影后悔/保留信用接成覆盖付款或 whole-IC 的共同预算。"
+  },
+  "scope": "解析恒等式、路径预算和共享退款代数；不作投影SPE证明、不把互斥分支钱包合并、不宣称 half。",
+  "explanation": "该边只承接正文已经完成的等式和等价性。目标对象的 open 部分正是外层共同选择与覆盖付款；因此 relation_mode 标为 conditional。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/客户投影的全历史后悔与共同外部信用--引理.md",
+      "sha256": "125be2f9201e3c84148ed41d42f78293c67be6041142d3d91a67defdfd0d4793",
+      "section": "全历史精确后悔及保留信用"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/客户投影的全历史后悔与共同外部信用--引理.md",
+      "sha256": "125be2f9201e3c84148ed41d42f78293c67be6041142d3d91a67defdfd0d4793",
+      "section": "最优并集下遗漏边际的三层合同"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/客户投影的全历史后悔与共同外部信用--引理.md",
+      "sha256": "125be2f9201e3c84148ed41d42f78293c67be6041142d3d91a67defdfd0d4793",
+      "section": "已有接口尚未接到覆盖"
+    }
+  ],
+  "review_note": "逐段核对投影后继、Γ非负、同路径 E 与 H/S 量词；保留 RF/SHARED/half 分层。",
+  "reviewed_by": "Boss7",
+  "endpoint_pins": {
+    "M-eb4e91518a6d4256b2e524e60b4b8a2e": "617a5f1d582aba4e9f2650ba069cf560fae41c77b314a27c4547faa94977bfe9",
+    "customer-attraction/customer-projection-all-history-regret-and-shared-external-credit": "b8a2a42b1d341acdcabf50c910f30f8accd62be7b6380704749f5db80cc559ca"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/客户投影的全历史后悔与共同外部信用--引理.md": "125be2f9201e3c84148ed41d42f78293c67be6041142d3d91a67defdfd0d4793"
+  },
+  "review_digest": "4d8ebd7d98ecbe08b5aaf16ddc7497c2089c43d8151ef247161df74096bfa95a"
+}

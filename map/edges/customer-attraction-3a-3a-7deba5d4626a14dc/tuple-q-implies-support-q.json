@@ -1,0 +1,42 @@
+{
+  "edge_id": "cag7de-q-tuple-implies-support-q",
+  "kind": "implies",
+  "status": "accepted",
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "reviewed_by": "Boss7-map-v2",
+  "source_ids": [
+    "M-c5280acf6de14745af28bd5489a3bc21"
+  ],
+  "target_ids": [
+    "M-a376477eb1a04352975bc853aefd3aad"
+  ],
+  "conditions": "共同目录模型 CAG-MODEL：有限单位客户、有限非空共同标签目录及任意覆盖映射，m≥1 顺序单位提供者，完整有序历史纯SPE，允许重复槽/同覆盖标签/空覆盖/历史依赖平局；actual 负载 c、并集 C、福利 W，与所选最优支持或元组的 d、O、E 取同一比较。 源候选给出的恰 m 元组含重复槽时，只删除重复副本，保留其不同主题支持且支持大小≤m。",
+  "roles": {
+    "M-c5280acf6de14745af28bd5489a3bc21": "提供带槽位重数 d 的最优恰 m 元组及 Q 预算。",
+    "M-a376477eb1a04352975bc853aefd3aad": "接收去重后的不同主题支持及其 Q 预算。"
+  },
+  "explanation": "从源最优恰 m 槽元组删除重复主题副本，覆盖并集 O 不变，因每项 d_x/(c_x+1)非负而 Q 不增；支持至多 m 个不同标签且仍达到 OPT_m。E=|C\\O|保持不变，因此 Q支持≤Q元组≤W+E。该步骤不声称可将支持再重复补回而保预算。",
+  "whole_result": "若 M-c528 的恰 m 元组存在型 Q 候选成立，则每个实例同一 SPE 存在至多 m 个不同主题的最优支持满足 M-a376 的 Q(c,S)≤W+|C\\∪S|。",
+  "scope": "恰 m 槽→≤m 不同主题支持的单向去重；不把支持版反推槽版。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+    },
+    {
+      "path": "archives/customer-attraction/state/证明/终局净预算的元组支持量词与条件付款--证明.md",
+      "sha256": "48d94f566501f30480fbe1fd6b6f9f5451754ca7a9bb80c95d60c5887002d137"
+    }
+  ],
+  "review_note": "实读证明中“删除重复槽保 O/E 并降 Q”的精确方向与支持量词；源候选 open，故标 conditional。",
+  "endpoint_pins": {
+    "M-a376477eb1a04352975bc853aefd3aad": "39a8ddb09c76df272f9f88ffc74f246c8b8fc40ee2f02390e0268fc02a0e51a8",
+    "M-c5280acf6de14745af28bd5489a3bc21": "633ea2a9aead32beceaf055654c2c65f20419f6ae0ce387131efdfb8c439fb5a"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+    "archives/customer-attraction/state/证明/终局净预算的元组支持量词与条件付款--证明.md": "48d94f566501f30480fbe1fd6b6f9f5451754ca7a9bb80c95d60c5887002d137"
+  },
+  "review_digest": "d3148b6c5ddf64dbca46d4539dd53d7ceb2832a30ae6a10baf59610ee7449583"
+}

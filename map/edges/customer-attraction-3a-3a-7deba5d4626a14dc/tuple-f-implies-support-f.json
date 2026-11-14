@@ -1,0 +1,47 @@
+{
+  "edge_id": "cag7de-f-tuple-implies-support-f",
+  "kind": "implies",
+  "status": "accepted",
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "reviewed_by": "Boss7-map-v2",
+  "source_ids": [
+    "M-e5eaa0fa39a44340a6c66d2a6c91c781"
+  ],
+  "target_ids": [
+    "M-913764be148746a69d4d2be33426c902"
+  ],
+  "conditions": "共同目录模型 CAG-MODEL：有限单位客户、有限非空共同标签目录及任意覆盖映射，m≥1 顺序单位提供者，完整有序历史纯SPE，允许重复槽/同覆盖标签/空覆盖/历史依赖平局；actual 负载 c、并集 C、福利 W，与所选最优支持或元组的 d、O、E 取同一比较。 源候选给出的最优恰 m 槽元组按槽位删除重复副本；F 对每客户的调和增量随 d 非减。",
+  "roles": {
+    "M-e5eaa0fa39a44340a6c66d2a6c91c781": "提供满足 F≤W+E 的最优恰 m 槽元组。",
+    "M-913764be148746a69d4d2be33426c902": "接收去重后的不同主题支持及其调和预算。"
+  },
+  "explanation": "重复槽删除不改变覆盖并集 O，故 E 不变；对每客户 F_x=H_{c_x+d_x}-H_{c_x} 随整数 d_x 单调不减，删除重复副本使每个 d_x 不增，因而 F 不增。得到非空（若源元组覆盖 OPT_m>0；零覆盖实例按候选约定可另行平凡处理）至多 m 支持，仍覆盖 OPT_m，满足支持 F 预算。",
+  "whole_result": "在源 M-e5 的全称存在型恰 m 调和预算成立时，M-913 的≤m不同主题支持调和预算成立；仅为去重单向蕴含。",
+  "scope": "恰 m 调和候选到不同主题支持调和候选；不处理源候选的证明，也不将支持补槽提升回恰 m。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+    },
+    {
+      "path": "archives/customer-attraction/state/证明/终局净预算的元组支持量词与条件付款--证明.md",
+      "sha256": "48d94f566501f30480fbe1fd6b6f9f5451754ca7a9bb80c95d60c5887002d137"
+    },
+    {
+      "path": "archives/customer-attraction/state/候选/signed-harmonic支持归约与交换义务--候选.md",
+      "sha256": "db0f545582829e4af092f4b5de67cde8e0dbfd99530ce0f12990811a43a16872"
+    }
+  ],
+  "review_note": "核对 H 增量对 d 的单调性、O/E 保持和原支持稿的支持量词；零覆盖边界按共同模型福利平凡约定保留。",
+  "endpoint_pins": {
+    "M-913764be148746a69d4d2be33426c902": "be21d4e4522aafaf1d38068847078ed4b06c874ab3191644156aa0ac56989467",
+    "M-e5eaa0fa39a44340a6c66d2a6c91c781": "9f67d3e873f812e59e7aefdda10404f3faac08d9580153690d58e3ecda06f24f"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+    "archives/customer-attraction/state/证明/终局净预算的元组支持量词与条件付款--证明.md": "48d94f566501f30480fbe1fd6b6f9f5451754ca7a9bb80c95d60c5887002d137",
+    "archives/customer-attraction/state/候选/signed-harmonic支持归约与交换义务--候选.md": "db0f545582829e4af092f4b5de67cde8e0dbfd99530ce0f12990811a43a16872"
+  },
+  "review_digest": "3f3a37f6a6a28da619f699adf9ae22b4bf22d872c727dadb08f050dcadebd73d"
+}

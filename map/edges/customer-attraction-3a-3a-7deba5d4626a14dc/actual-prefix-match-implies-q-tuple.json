@@ -1,0 +1,42 @@
+{
+  "edge_id": "cag7de-actual-prefix-match-implies-q-tuple",
+  "kind": "implies",
+  "status": "accepted",
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "reviewed_by": "Boss7-map-v2",
+  "source_ids": [
+    "M-31697dbf0acf42ecb27a433f134566e0"
+  ],
+  "target_ids": [
+    "M-c5280acf6de14745af28bd5489a3bc21"
+  ],
+  "conditions": "共同目录模型 CAG-MODEL：有限单位客户、有限非空共同标签目录及任意覆盖映射，m≥1 顺序单位提供者，完整有序历史纯SPE，允许重复槽/同覆盖标签/空覆盖/历史依赖平局；actual 负载 c、并集 C、福利 W，与所选最优支持或元组的 d、O、E 取同一比较。 源候选中的 M_ij 取原 σ 的实际 i 前缀强制 T_j 后沿同一 σ 的真实后继；存在最优恰 m 元组及排列 π 满足 B_π=Σ_i M_iπ(i)≥Q(c,d)−E。",
+  "roles": {
+    "M-31697dbf0acf42ecb27a433f134566e0": "提供实际前缀矩阵 M 与共同排列的 MATCH 付款不等式。",
+    "M-c5280acf6de14745af28bd5489a3bc21": "接收由 M_ij≤u_i 且 Σ_i u_i=W 导出的净 Q 预算。"
+  },
+  "explanation": "完整 SPE 的源节点 IC 给每个强制收益 M_ij≤u_i，因此 B_π≤Σ_i u_i=W。源 MATCH 条件 B_π≥Q−E 合并即 Q≤B_π+E≤W+E，且同一 T 的 O、E 未改变。由此恰 m 元组满足 M-c528 的 Q 预算。该边不把累积最优前缀、互斥分支收益或缺失程序字段冒作 actual M。",
+  "whole_result": "在 M-31697 的 actual-prefix MATCH 存在型候选成立时，M-c528 的存在型最优恰 m 元组 Q 预算成立；条件仅是该候选的同源 M 矩阵付款，不是 MATCH 的普遍证明。",
+  "scope": "actual-prefix MATCH→恰 m Q 的充分接口；保留固定源历史和同一完整 σ 量词。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+    },
+    {
+      "path": "archives/customer-attraction/state/证明/终局净预算的元组支持量词与条件付款--证明.md",
+      "sha256": "48d94f566501f30480fbe1fd6b6f9f5451754ca7a9bb80c95d60c5887002d137"
+    }
+  ],
+  "review_note": "实读终局证明关于 M_ij≤u_i、B_π≤W 和 MATCH⇒Q 的完整推导；特别核对不使用累积前缀账单。",
+  "endpoint_pins": {
+    "M-31697dbf0acf42ecb27a433f134566e0": "910d574319630c9dd710d6f6c78b0944b478135b967ba148874ab66f7e028221",
+    "M-c5280acf6de14745af28bd5489a3bc21": "633ea2a9aead32beceaf055654c2c65f20419f6ae0ce387131efdfb8c439fb5a"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+    "archives/customer-attraction/state/证明/终局净预算的元组支持量词与条件付款--证明.md": "48d94f566501f30480fbe1fd6b6f9f5451754ca7a9bb80c95d60c5887002d137"
+  },
+  "review_digest": "8fab989c236bf86e0578cb4f9484cf6ea56a271929e4c973533a10ff455f70b0"
+}
