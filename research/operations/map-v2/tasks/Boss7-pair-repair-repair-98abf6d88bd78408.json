@@ -120,11 +120,121 @@
       "scope_hint": "archives/customer-attraction"
     }
   },
-  "state": "claimed",
+  "state": "done",
   "owner": "Boss7",
-  "request_id": "4e0d075e0a6c44f49a76e31605c92ddb",
+  "request_id": "18e2fbcfa3ea473897a4705668ca5c25",
   "requests": {
     "bc6ed1ce03e64795ab92d96ea40d1517": "plan",
-    "4e0d075e0a6c44f49a76e31605c92ddb": "claim"
+    "4e0d075e0a6c44f49a76e31605c92ddb": "claim",
+    "18e2fbcfa3ea473897a4705668ca5c25": "done"
+  },
+  "edge_paths": {
+    "cag-pairrepair-strong-pair-vs-path-boundary": "map/edges/Boss7-pair-repair-repair-98abf6d88bd78408/strong-pair-vs-path-completion.json"
+  },
+  "receipt": {
+    "task_id": "Boss7-pair-repair-repair-98abf6d88bd78408",
+    "stage": "3B",
+    "task_definition_pin": "63a85bda3adc38c21fc2ce666c60972a38acce6949b79fc28524e973842b7909",
+    "object_ids": [
+      "M-bb7d149596394020804ac192335b8678",
+      "M-e960d7f4ebca40a38760eb3ae044cc19"
+    ],
+    "read_object_ids": [],
+    "input_pins": {
+      "M-bb7d149596394020804ac192335b8678": "d79c118f0827499aeb038fdcf54f1fa7f5ac2e594636201f897b3012ceaa3bf9",
+      "M-e960d7f4ebca40a38760eb3ae044cc19": "ab054800337d5944cb152e30ad29e8398e6cb46284ce218ad99be5485c5c3406"
+    },
+    "status": "complete-repair-and-mathematical-delivery",
+    "review_state": "isolated-after-review",
+    "coverage": {
+      "M-bb7d149596394020804ac192335b8678": {
+        "state": "isolated-after-review",
+        "object_pin": "d79c118f0827499aeb038fdcf54f1fa7f5ac2e594636201f897b3012ceaa3bf9",
+        "comparison_scope": "receipt-review successor for fixed thirteen-customer A/B/T completion boundary; preserve all nine strong-PAIR rows, the TB negative root-first IC and self-tax cancellation, BR/L/G threshold, direct T deviation, two complete SPE and W=OPT=11; zero-tax semantics are stated separately.",
+        "reason": "The prior strong-PAIR projection remains valid but is only necessary: the TB row can hide a negative root-first IC behind self-tax. The independent G=6 threshold screens advertised AB (U=4), while zeroing only the identity remainder changes TB from 0 to -2; full g≡0 requires a fresh BR/L/G calculation.",
+        "context_edge_ids": [
+          "cag-pairrepair-strong-pair-vs-path-boundary"
+        ]
+      },
+      "M-e960d7f4ebca40a38760eb3ae044cc19": {
+        "state": "isolated-after-review",
+        "object_pin": "ab054800337d5944cb152e30ad29e8398e6cb46284ce218ad99be5485c5c3406",
+        "comparison_scope": "receipt-review successor rechecks the strong-PAIR definition, three true IC identity, nonnegative overlap remainder and arbitrary-index aggregation against the thirteen-customer nine-row completion test, including both zero-tax interpretations.",
+        "reason": "Strong PAIR supplies nine nonnegative necessary rows and does not establish the independent G gate or ancestor reachability. The repair keeps the precise local result and its open obligations without upgrading to global SPE/half.",
+        "context_edge_ids": [
+          "cag-pairrepair-strong-pair-vs-path-boundary"
+        ]
+      }
+    },
+    "reading": {
+      "staged_passes": 9,
+      "declared_source_spans": 9,
+      "distinct_files": 4,
+      "ledger_path": "map/edges/Boss7-pair-repair-repair-98abf6d88bd78408/reading-ledger.json",
+      "ledger_sha256": "d1fd840c736bdc40c3e5002b7a9eafcd9e44b80d1b7c5b54014da1e6f2d11536",
+      "notes": "Successor reuses the prior four-file, nine-pass complete read. The repair adds no new source dependency; it resolves receipt-review by preserving the staged mathematics and making zero-tax semantics explicit."
+    },
+    "assets": [
+      {
+        "path": "map/edges/Boss7-pair-repair-repair-98abf6d88bd78408/strong-pair-vs-path-completion.json",
+        "sha256": "30c548cfe2c11c9a60aa3a09e9996bb92214098aec118f61114aec720adf9215"
+      },
+      {
+        "path": "map/edges/Boss7-pair-repair-repair-98abf6d88bd78408/review.md",
+        "sha256": "03606f55730a42c5962ffb0169a4af8a87d6d259318a49474df64902fa9a4737"
+      },
+      {
+        "path": "map/edges/Boss7-pair-repair-repair-98abf6d88bd78408/reading-ledger.json",
+        "sha256": "d1fd840c736bdc40c3e5002b7a9eafcd9e44b80d1b7c5b54014da1e6f2d11536"
+      }
+    ],
+    "supersession": {
+      "boss5-pair-completion-3b-6fbc92490a240988": {
+        "reason": "Receipt-review successor replaces the prior three published assets while preserving the valid local strong-PAIR/path-boundary mathematics. The successor records the zero-tax clarification: identity-remainder zero changes TB from 0 to -2 and directly screens AB; full g≡0 changes BR/L/G and needs recomputation. Old bytes remain historical and are not silently rewritten.",
+        "assets": {
+          "map/edges/boss5-pair-completion-3b-6fbc92490a240988/strong-pair-vs-path-completion.json": {
+            "disposition": "replaced",
+            "replacement_paths": [
+              "map/edges/Boss7-pair-repair-repair-98abf6d88bd78408/strong-pair-vs-path-completion.json"
+            ],
+            "reason": "Current successor edge has a unique ID, refreshed native bindings, and the repaired zero-tax clarification."
+          },
+          "map/edges/boss5-pair-completion-3b-6fbc92490a240988/review.md": {
+            "disposition": "replaced",
+            "replacement_paths": [
+              "map/edges/Boss7-pair-repair-repair-98abf6d88bd78408/review.md"
+            ],
+            "reason": "Successor review preserves the prior conclusion and explicitly states both zero-tax interpretations and remaining ancestor/global gaps."
+          },
+          "map/edges/boss5-pair-completion-3b-6fbc92490a240988/reading-ledger.json": {
+            "disposition": "replaced",
+            "replacement_paths": [
+              "map/edges/Boss7-pair-repair-repair-98abf6d88bd78408/reading-ledger.json"
+            ],
+            "reason": "Successor ledger carries forward the prior complete staged reading with repair attribution and no invented reads."
+          }
+        }
+      }
+    },
+    "closed_overlaps": [],
+    "follow_up_tasks": [],
+    "reviewed_by": "Boss7/map_worker_pairrepair",
+    "review_note": "Receipt-review repair complete. The fixed thirteen-customer result is a context/checks boundary: nine strong-PAIR aggregate rows can hide a -2 root-first IC via +2 self-tax, and the independent G=6 gate rejects advertised AB with U=4. Zeroing only g(C,C)-g(C,R_T) changes TB to -2 and directly screens AB; setting all g to zero requires recomputing BR/L/G. No global SPE/half or ancestor reachability is claimed. Prior edge, review, and ledger are individually superseded by the three successor assets.",
+    "edge_binding_status": "edge-bind --write and edge-check passed",
+    "edge_ids": [],
+    "context_edge_ids": [
+      "cag-pairrepair-strong-pair-vs-path-boundary"
+    ],
+    "edge_digests": {
+      "cag-pairrepair-strong-pair-vs-path-boundary": "51c81fdc431e67eda322b4caf7fa9282fafc05f996d0db84d6dfdfa5a5e5c834"
+    },
+    "execution_boundary": {
+      "registry_modified": false,
+      "coverage_modified": false,
+      "integration_modified": false,
+      "task_state_modified": false,
+      "git_commit_or_push": false
+    },
+    "delivery_note": "Only successor edge/review/ledger and receipt under the declared repair write paths are written. No claim, done, checkpoint, assemble, commit, or push was performed by this worker."
   }
 }
