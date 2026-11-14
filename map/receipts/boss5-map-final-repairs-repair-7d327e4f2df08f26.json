@@ -1,0 +1,90 @@
+{
+  "task_id": "boss5-map-final-repairs-repair-7d327e4f2df08f26",
+  "stage": "3A",
+  "status": "complete-frozen-staging; native edge review completed; no new 728 endpoint edge claimed",
+  "coverage": {
+    "cag-dual-terminal-737-exact-primal-and-full-type-dual": {
+      "state": "isolated-after-review",
+      "object_pin": "15580782318ac4dc7937322618e16c81a097367225f6bb80827b01d6c266cf14",
+      "comparison_scope": "完整读取10个737 declared refs及3个prior assets；复核737 exact primal/full-type dual、binary64边界、现行728↔737数学分离与P7/P13/7497 HQR context。未新增728 full-object read。",
+      "reason": "737 exact relaxation、76点/57权证书和有限浮点失败边界均保持。现有728↔737数学内容是双向不包含，但旧单向 implies/unconditional 封装不能继续作为当前唯一语义；本 repair 不伪造未声明的728端点读取，因此只保留 isolated-after-review 与待owner重绑说明，不把必要点提升为真实SPE/OPT_5。",
+      "reused_edge_ids": [
+        "cag-exact-728-and-737-feasible-sets-cross",
+        "cag-actual-p7-separates-four-frozen-terminal-points",
+        "cag-7497-projection-violates-shared-terminal-1o",
+        "cag-actual-p13-separates-four-frozen-terminal-points"
+      ]
+    }
+  },
+  "assets": [
+    {
+      "path": "map/edges/boss5-map-final-repairs-repair-7d327e4f2df08f26/mathematical-review.md",
+      "sha256": "04cdc7a74bcfbdd1f7deb392da46d78ddce4ddef6f8c745d15033874723c0823",
+      "bytes": 21904
+    },
+    {
+      "path": "map/edges/boss5-map-final-repairs-repair-7d327e4f2df08f26/support.md",
+      "sha256": "9fe2a0b60f1962028f87b7c230e04ff515b44618a44732d186c1cdeb9c89cfdf",
+      "bytes": 1462
+    },
+    {
+      "path": "map/edges/boss5-map-final-repairs-repair-7d327e4f2df08f26/readledger.json",
+      "sha256": "9cf1f3d2cca1f82afe00d4f9df2d6b10fe37d19e68d09d002d90f8e919eefdba",
+      "bytes": 1309
+    }
+  ],
+  "supersession": {
+    "customer-attraction-3a-3a-faf81fb510d6f97b": {
+      "reason": "替换旧 receipt 的 isolated/pending 集成措辞，保留737数学证书并明确728↔737双向分离的当前封装边界。",
+      "assets": {
+        "map/edges/customer-attraction-3a-3a-faf81fb510d6f97b/review.md": {
+          "disposition": "replaced",
+          "replacement_paths": [
+            "map/edges/boss5-map-final-repairs-repair-7d327e4f2df08f26/mathematical-review.md"
+          ],
+          "reason": "完整复核与当前整合语义更新。"
+        },
+        "map/edges/customer-attraction-3a-3a-faf81fb510d6f97b/support.md": {
+          "disposition": "replaced",
+          "replacement_paths": [
+            "map/edges/boss5-map-final-repairs-repair-7d327e4f2df08f26/support.md"
+          ],
+          "reason": "保留证书数值并修复cross边语义。"
+        },
+        "map/edges/customer-attraction-3a-3a-faf81fb510d6f97b/readledger.json": {
+          "disposition": "replaced",
+          "replacement_paths": [
+            "map/edges/boss5-map-final-repairs-repair-7d327e4f2df08f26/readledger.json"
+          ],
+          "reason": "重记当前读取、复用边和未重跑边界。"
+        }
+      }
+    }
+  },
+  "closed_overlaps": [
+    {
+      "core_id": "cag-dual-terminal-737-exact-primal-and-full-type-dual",
+      "peer_id": "customer-attraction/three-cross-family-terminal-templates-matching-exact-certificates-and-floating-traces",
+      "reason": "现有canonical材料已给出两个冻结点的双向非包含数值；本repair未重新读728全文，故不新增边，只要求owner重绑或退休旧单向implication封装。"
+    }
+  ],
+  "follow_up_tasks": [],
+  "read_scope": {
+    "declared_files": 10,
+    "full_read": true,
+    "prior_assets_read": 3,
+    "read_add": [],
+    "deferred_candidates_not_read": [
+      "728 full-object endpoint; no new 728 endpoint claimed"
+    ]
+  },
+  "verification": {
+    "sha256_all_declared_refs": true,
+    "exact_primal": "76 rational atoms, 737 rows, W=1, O=beta",
+    "full_type_dual": "57 positive weights, 47574 type contexts, negative_columns=[]",
+    "binary64": "not exact; two strict negative single-O totals",
+    "new_runs": false
+  },
+  "reviewed_by": "Boss4-fresh-worker-review",
+  "review_note": "完整保留737 exact relaxation的模型、量词、证书和边界；修复旧receipt语义并明确728交叉边需owner重绑，不把有限必要信息提升为真实SPE结论。"
+}
