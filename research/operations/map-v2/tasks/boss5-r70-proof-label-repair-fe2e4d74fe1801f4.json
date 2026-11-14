@@ -235,11 +235,107 @@
       "scope_hint": "archives/customer-attraction"
     }
   },
-  "state": "claimed",
+  "state": "done",
   "owner": "Boss5",
-  "request_id": "1a4dfe82015947d795a2d8a8b0b52580",
+  "request_id": "303889a1159d4bf8998bddab84a13c83",
   "requests": {
     "cf8a1b24a2c34c5d9232cf6e3979fb28": "plan",
-    "1a4dfe82015947d795a2d8a8b0b52580": "claim"
+    "1a4dfe82015947d795a2d8a8b0b52580": "claim",
+    "303889a1159d4bf8998bddab84a13c83": "done"
+  },
+  "edge_paths": {
+    "cag-r70-fixed-sigma-cone-six-eleven": "map/edges/boss5-r70-proof-label-repair-fe2e4d74fe1801f4/fixed-sigma-cone-six-eleven.json"
+  },
+  "receipt": {
+    "task_id": "boss5-r70-proof-label-repair-fe2e4d74fe1801f4",
+    "stage": "3A",
+    "owner": "Boss5",
+    "request_id": "1a4dfe82015947d795a2d8a8b0b52580",
+    "definition_pin": "85e7d217fe3ed6a9f1fe7a3cc482de021499f1000f7242b8dc63a4bcf3043cc8",
+    "object_ids": [
+      "cag-r70-six-player-seven-topic-fixed-complete-strategy-lp"
+    ],
+    "read_object_ids": [
+      "M-c5e460641b3e47729159aa9e7cb6a175",
+      "CAG-MODEL",
+      "CA-STRATEGY-CONE"
+    ],
+    "input_pins": {
+      "cag-r70-six-player-seven-topic-fixed-complete-strategy-lp": "b85fbfeafe5b02e918438e2de0d948d6296a19524e6f06adb310a997d34eb2bb",
+      "M-c5e460641b3e47729159aa9e7cb6a175": "cfb8aca64886120754f2457a388c80e70d73430d4804ba0d027f9db08f6d63d9",
+      "CAG-MODEL": "3216d1db43ff83e0e0c9cf2479e79611277c9d9291a68e7f9b85ec4bb299dc5c",
+      "CA-STRATEGY-CONE": "291bd4d94e33d40566453a33b5cf07b1c620b77362268417582efecb42b0c4bb"
+    },
+    "coverage": {
+      "cag-r70-six-player-seven-topic-fixed-complete-strategy-lp": {
+        "state": "linked",
+        "object_pin": "b85fbfeafe5b02e918438e2de0d948d6296a19524e6f06adb310a997d34eb2bb",
+        "comparison_scope": "现行固定锥、共同标签模型、通用固定策略锥及 58 客户比较对象的登记。核对绑定同一 19,608 节点动作表的七组有理对偶及双输入审计，承接原 4b2f 逐项读取及相邻独立回算。",
+        "reason": "CAG-MODEL 与 CA-STRATEGY-CONE 共同给出真实全历史锥。七组有理对偶合用 21 条真实 IC，给遗漏 0、2 的 6/11 和其余遗漏的 3/5 下界。独立 point-audit.json 的 points.lp_integer 以 11 客户在同一 σ 上通过 137,256 项真实比较（含自身），W=6、OPT6=11，取得固定锥最小值 6/11。M-c5e 的主陈述对应 points.random 的另一 58 客户输入，其全 SPE 比值为 43/58。",
+        "edge_ids": [
+          "cag-r70-fixed-sigma-cone-six-eleven"
+        ]
+      }
+    },
+    "assets": [
+      {
+        "path": "map/edges/boss5-r70-proof-label-repair-fe2e4d74fe1801f4/review.md",
+        "sha256": "c26b61d77b301e28a1b10b05195362284eae808477a339711773323bbff7d1f2"
+      },
+      {
+        "path": "map/edges/boss5-r70-proof-label-repair-fe2e4d74fe1801f4/support.md",
+        "sha256": "2e284ffd95a6c199c64056fb53b875392b8b09afc072b59c42b3122089e026b8"
+      },
+      {
+        "path": "map/edges/boss5-r70-proof-label-repair-fe2e4d74fe1801f4/readledger.json",
+        "sha256": "8e35a3ca5cfb00d924f61cb7775bdb67fe8f797e917e99dd0bda7086c6ee3fc8"
+      },
+      {
+        "path": "map/edges/boss5-r70-proof-label-repair-fe2e4d74fe1801f4/fixed-sigma-cone-six-eleven.json",
+        "sha256": "2391e08b14bd212c8dd458f1d05943f21b642f1c53f522fca52ae34c5c19e16f"
+      }
+    ],
+    "supersession": {
+      "customer-attraction-3a-3a-4b2f43276f388bc1": {
+        "reason": "修复 whole 边及其说明、读取账本和回执中的证据归属。承接固定锥下界、同 σ 取等及原审计，历史交付保持原字节。",
+        "assets": {
+          "map/edges/customer-attraction-3a-3a-4b2f43276f388bc1/review.md": {
+            "disposition": "replaced",
+            "replacement_paths": [
+              "map/edges/boss5-r70-proof-label-repair-fe2e4d74fe1801f4/review.md"
+            ],
+            "reason": "保留原范围与数学核对，逐项明确七组对偶的下界、points.lp_integer 的达到性和 points.random 的登记量词。"
+          },
+          "map/edges/customer-attraction-3a-3a-4b2f43276f388bc1/support.md": {
+            "disposition": "replaced",
+            "replacement_paths": [
+              "map/edges/boss5-r70-proof-label-repair-fe2e4d74fe1801f4/support.md"
+            ],
+            "reason": "保留固定锥证明与证据统计，直接绑定独立取等点并把 M-c5e 历史 read-add 置于双输入比较。"
+          },
+          "map/edges/customer-attraction-3a-3a-4b2f43276f388bc1/readledger.json": {
+            "disposition": "replaced",
+            "replacement_paths": [
+              "map/edges/boss5-r70-proof-label-repair-fe2e4d74fe1801f4/readledger.json"
+            ],
+            "reason": "按原回执、逐项 SHA 和相邻独审承接有效读取及回放，区分本轮直接核对与原操作。"
+          },
+          "map/edges/customer-attraction-3a-3a-4b2f43276f388bc1/fixed-sigma-cone-six-eleven.json": {
+            "disposition": "replaced",
+            "replacement_paths": [
+              "map/edges/boss5-r70-proof-label-repair-fe2e4d74fe1801f4/fixed-sigma-cone-six-eleven.json"
+            ],
+            "reason": "保留稳定 edge_id 和两项 ALL 前提，以同审计的独立 11 客户输入证明达到性。"
+          }
+        }
+      }
+    },
+    "closed_overlaps": [],
+    "follow_up_tasks": [],
+    "review_note": "确认现行登记与审计 SHA，检查取等点掩码、根覆盖、七组精确证书的符号和余项。沿用原动作表结构核对与相邻定向比较的逐历史独立回算。原 DP、原 verify、LP 求解和随机搜索本轮均未执行。",
+    "reviewed_by": "Boss5",
+    "worker_internal": "SOLVER-R70-LABEL-FRESH",
+    "comparison_note": "whole 边的联合前提为 CAG-MODEL 与 CA-STRATEGY-CONE。七组对偶给下界，独立 points.lp_integer 给同一固定 σ 的取等。M-c5e 的 58 客户全 SPE 结果由同审计的 points.random 核对。结论限定指定 σ 的根福利。",
+    "edge_review_digest": "e97ed59d695b1fdf2cd0601cb8da8416a340371c3ba451a3b0bab447c0b5ba89"
   }
 }
