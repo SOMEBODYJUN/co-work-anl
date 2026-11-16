@@ -12,7 +12,7 @@ Boss7，2026-11-16。原目标 `UM-TARGET-v1` 仍为 **open**。当前图有可�
 | `map/coverage.json` | `13e4679a603f05bd4ce9767b73afadd9b6c1d5018afaa6e0f581994d0e286f18` | `51d9a531636b1e8c0fe358546cf39bfb065828e05acff6698d4c393541872ab7` |
 | `map/integration.json` | `135bdadeca23e9346a77097d2818dd9c005e68f7d906af6b4eae587977b141fb` | `6764c7300f0d954df5fbbea0537f77e2a52b04981a40a58e023ea56238efe62b` |
 
-Boss5 本轮最终补记：17:06 快照中 `boss5-cartesian-receipt-repair-01720ef708fa6bdb` 尚为 claimed；后续已 done 并 integrated，旧 b77 已被有效后继替代。修复只处理收据元数据，五项原 SHA 资产及数学保留。下述 E1 使用现役 **0bde** 路径和 Cartesian **v3**；旧 reading SHA 与 f663/v2 仅是历史记录。当前验收见 [本轮完成记录](../../Boss5/finalization-20261116/phase3-completion.md)。
+Boss5 本轮最终补记：17:06 快照中 `boss5-cartesian-receipt-repair-01720ef708fa6bdb` 尚为 claimed；后续已 done 并 integrated，旧 b77 已被有效后继替代。修复只处理收据元数据，五项原 SHA 资产及数学保留。下述 E1 使用现役 **0bde** 路径和 Cartesian **v3**；旧 reading SHA 与 f663/v2 仅是历史记录。独立复核见 [后继收据审读](cartesian-receipt-successor-review.json)，最新验收状态见 [本轮总说明](README.md) 及 [本轮完成记录](../../Boss5/finalization-20261116/phase3-completion.md)。
 
 起点实读 `archives/unrelated-machines/问题--问题.md` 全文（`UM-TARGET-v1` v4）及 `state/定义/不相关机器与两个调度松弛--定义.md` 全文（`UM-MODEL-v1` v1）。问题是：存在统一常数 \(\varepsilon>0\) 和一个确定性总位多项式算法，对**每个**有限显式非负二进制有理/∞矩阵（每个原 job 至少有一个有限端），输出每个原 job 恰一次、只用有限端的实际调度，满足 \(C_{\max}\le(2-\varepsilon)OPT\)。机器数与全部编码位数均为输入；空任务、每任务有零端的零最优分支须保留。
 
@@ -107,7 +107,7 @@ L_{selected}=2-r_g,\qquad L_{unselected}=1,\qquad L_{resource}\le1.
 \]
 故全矩阵峰≤2，少于 ηn 个 selected roots 超过 \(2-q_\eta\)；unit allocation 才直接给实际 OPT=1。软件 A–F 尚未实现是工程状态，不撤回已证数学规格。
 
-**接续缺口：** 把少于 ηn 个例外 selected roots 接到**同一实际全机容量**的修复/重选机制，并证明固定余量与总位复杂度；或给所研究外部源的显式 norm1、正-support LP、原组/资源和全部 jobs 保持接口。NSW 乘积不控制全组 minimum，当前结论不保证全机 \(2-\varepsilon\)。加权、oracle-only 或一般次可加后端均不在 B 的已证域。当前 integration 的 R50 若仍泛称上述 B/C/D/E 未付，应按现行 v6 收窄，不能据旧条件综合对象回退该成果。
+**接续缺口：** 把少于 ηn 个例外 selected roots 接到**同一实际全机容量**的修复/重选机制，并证明固定余量与总位复杂度；或给所研究外部源的显式 norm1、正-support LP、原组/资源和全部 jobs 保持接口。NSW 乘积不控制全组 minimum，当前结论不保证全机 \(2-\varepsilon\)。加权、oracle-only 或一般次可加后端均不在 B 的已证域。现行 integration 的 R50 已按上述 v6 范围修正；旧条件综合对象保留自己的原陈述，不能用来回退 B/C/D/E 已付的保证。
 
 ## 4. 独立定义/障碍线：保原机器分组与全局 coupling
 
@@ -138,7 +138,7 @@ S 的容量一星族对每 k≥2 在 T=1有全部 GPC₂ pairs，真实 \(OPT=2-
 | Main | `UM-TARGET-v1`、`UM-MODEL-v1`、E0 | 保原题全部量词；对所选方案说明原输入怎样入域、阈值过程的成功/FAIL、固定余量和总位复杂度。三线成果作为各自的局部工具，只有补全共同前提才能组合。 |
 | Solver 1 | A、N、E1 的 ALL 闭包及 R §§2–5；另带 E1b 的 free+quota ALL 闭包 | 明确全部 indexed states 和实际 jobs，覆盖任意 full-vector 重选；证明真实 NO 或新的低峰→一致性及 YES/位长保持。同菜单统一常数保值的逐坐标事后 repair 已否；改变菜单/任务/资源的新编译须给自己的全调度证明。再次保值降度本身不产生 gap。 |
 | Solver 2 | B、C、E2 whole | 固定例如 η=1/2（q=2^−48）后，针对拟用修复机制写清例外根的原任务去向和**共同**接收容量；证明全组/全机固定改善，或给该机制的精确反例。B 的同输出全 y 保证及 C/D/E 不重列开放。 |
-| Solver 3 | G、S、L、E3 whole | 选择并写清一个可计算的加强共同状态合同：能自主选择 pairs 时保哪些原行/标签，怎样取实际元组；证明所选结构的完备性或精确障碍。避开“给定任意 W 均可粘”这个已否命题。 |
+| Solver 3（独立障碍组） | 原题、UM-MODEL-v1、S 及三机指定 pairs 的矛盾；先独立推导，随后可用 G/L/E3 对照 | 从原机器与实际 jobs 出发判断局部证书究竟缺哪项全局条件，独立提出可计算的加强或精确反例；若允许自主选择 pairs，须说明保留的原行/标签和实际元组恢复。避开“给定任意 W 均可粘”这个已否命题。 |
 
 用 `context`/packet 消费时，E1 必保 A 与 N 两个前提；E1b 必保 A 与 quota 两个前提；E3 必保 G 与 S。E2 的 source 单一但目标 norm1/unit-FSLP/REPAIR 条件不能被过滤掉。若只拿 contribution，携带其 remaining；若选 whole，仍按完整目标陈述消费。正支持、反驳、条件结果和研究线索分别阅读。当前这些路线没有一条已经支付 E0 所需的全原输入接口。
 

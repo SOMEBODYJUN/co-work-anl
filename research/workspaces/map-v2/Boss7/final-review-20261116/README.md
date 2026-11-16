@@ -4,7 +4,7 @@
 
 ## 当前交付状态
 
-本轮四个 Cartesian v3 定向替代包已全部 pushed、done，并按精确收据 pin 完成整合。当前继续跟进 Boss3 的 SUMmin 两项局部预算比较，以及 Boss5 对第四包冗余 input_pins 的定向元数据后继；它们完成并纳入最新图后再执行最终检查。本段将在原生 `map status`、`research check --final` 和 `research build --final` 的最新回执产生后更新。开放数学命题保留自己的状态；图谱任务的完成不意味着这些命题获得证明。
+本轮四个 Cartesian v3 定向替代包已全部 pushed、done；第四包的冗余 input_pins 遗漏也已由 Boss5 的正式后继 01720 修复并整合。Boss3 d86 的两项 SUMmin 局部预算已推送并纳入图。最新一次原生状态为 680 个有效 done 批次，任务队列已无 available、claimed、blocked 或 handoff；其中 678 批已整合，最后两批 3313 与 7383 已正式推送、done，正在接入最新总图。待采用该整合快照后执行最终检查。开放数学命题保留自己的状态；图谱任务的完成不意味着这些命题获得证明。
 
 ## 本轮实际完成的数学复核
 
@@ -21,6 +21,27 @@
 - **NSW 的同一输出和实际 flat-UM 后果。** [现行 NSW 义务复核](nsw-current-obligation-review.md) 直接核了 B1–B6 及 C/D/E：显式无权 XOS 后端先固定实际输出，再对 H 上全部比较双射及所有正有限有理分数 benchmark 成立。原 norm1 显式菜单加正 support unit-FSLP 可行性，支付 almost-all 质量、准确共享 REPAIR promise 的 LP 判定与全部原 jobs 的 makespan≤2；它不支付任意 source 的保真正规化或全机器统一 `2−ε`。
 
 这些审读分别核对了原陈述、模型、量词、必要证明、证据绑定及反例的否定对象。此前有效且没有变化的包仍按其原审读和精确资产 SHA 继承；本轮没有声称重新证明全仓所有对象。
+
+## 两项最后交付的实际数学
+
+### 全部完整 SPE 的联合局部预算
+
+正式边 `boss5-all-spe-summin-budget-7383c8bf44f753cc` 由 **{`CA-AGGREGATE-LAST-FLOOR-NO`, `CA-MOBIUS-FULL-HISTORY-EMBED`}** 一条 ALL 支持，`accepted / unconditional / contribution`。原 \(K=6M+4\) 正编译输入的每份完整 SPE 都在全部有序重复历史上 fresh；较大 K 的参数桥用 \(K/2-2M=M+2>0\) 明确支付。任意 distinct 实际叶的 signed 福利至少 n−1，未用查询的 signed 价为 \(-F(Z)\)，已用查询严格较小，于是对每个同一 \(p\)
+
+\[
+\sum_iR_i(p)\le n[K\beta_n-F(Z)]\le nK\beta_n<W(\sigma),
+\qquad W(\sigma)\ge KC+n-1.
+\]
+
+一般 \(\sigma\) 不沿用源展示策略的固定路径或福利等式。Boss3 d86 的指定策略结果及原资产完整保留。新关系只扩大同一明确输入族的策略量词，不解决一般 SUMmin 或一般六人 half。[实际正式边、两份证明和收据终审](all-spe-formal-delivery-review.md) 独立核了全部输入、证据、覆盖及三对象对处置。
+
+### uniform 与 SUMmin 的完整双向身份
+
+正式边 `boss3-uniform-summin-full-budget-equivalence-3313f41b4a46c9dc` 为 `accepted / equivalent_to / conditional / whole_result`。同一完整策略、actual 前缀、完整 m 槽和同一独立查询 \(p\) 下，每列有限求和给 \(\mathbb E_pK_i(T,A)=G_p(Z_i(A))\)，所以 \(R_i(p)=\psi_i(p)\)。两个完整全称预算双向等价；两端仍 open，未发生 \(\min\)/期望交换或候选真值升级。
+
+精确金额对应为：SUMmin 的 \(L_i\) 是带查询边际的删槽折扣 \(\Delta_i\)，uniform 的 \(L_i\) 是重新选列收益 \(G_i\)，协方差自身税不带查询边际。桥是 \(D_i-C_i^{full}=\kappa_i+\Delta_i=\sum_x\operatorname{Cov}_i+\tau_i^{self}\)。既有末两位贡献据此重写，恰六人仍欠前四行共同债；末位两种储备只取 max，不重复计费。详见 [正式身份关系及尾路线终审](uniform-formal-delivery-review.md)。
+
+[阈值前沿辨析](threshold-frontier-disambiguation.md) 还闭合了一个易误读的比较：已否的是 m−1 槽 \(W\ge m\theta_m\)，仍 open 的 `M-8f66f1abb0374762883f01d13235901c` 使用完整 m 槽 \(\theta_{m+1}\)。原正编译反族的每份完整 SPE 反而满足 \(n\theta_{n+1}\le n\max_aK(a,z)\le nK\beta_n<W\)。它是同列证明的直接后果，不另起重复任务或新边，也不求 \(\theta\) 的最优值。
 
 ## 一处证据记号的最小勘误
 
@@ -45,7 +66,15 @@ b_i+g_i a_i=\ell_i\pmod 2.
 
 每包的新说明位于 `map/edges/<任务ID>/source-delta-review.md`，完整 coverage、输入版本和逐资产 supersession 位于 `map/receipts/<任务ID>.json`。
 
-第四包 `b77` 的 task definition 和 source-delta 已用 v3，但冗余顶层 `input_pins` 漏保了旧 A 指纹。该记录矛盾已经确认，Boss5 的 `boss5-cartesian-receipt-repair-01720ef708fa6bdb` 正按定向替代流程修复，并保留五项已有资产的原 SHA。此处不将元数据遗漏隐去，也不撤回未变的数学。
+第四包 `b77` 的 task definition 和 source-delta 已用 v3，但冗余顶层 `input_pins` 漏保了旧 A 指纹。Boss5 的 `boss5-cartesian-receipt-repair-01720ef708fa6bdb` 已按定向替代流程修复、正式 done 并整合。新收据的 18 个输入全部 current；五项资产保持原 SHA，15 核心仍为 7 linked、8 isolated-after-review，coverage 与既有比较逐项不变。详见 [后继收据及数学实读](cartesian-receipt-successor-review.json) 与 [实际整合接入](cartesian-adoption-merge-review.json)。旧 b77 收据保留历史字节，未变的数学不撤回。
+
+## 已完成工作与真正开放义务的区分
+
+[工作流历史核对](workflow-obligation-audit.json)、[CA 六组历史后继](ca-historical-workflow-audit.json) 及 [Wave20 精确复核](ca-wave20-workflow-tail-review.md) 追到现行正式收据和有效资产，再清理过时的“尚待交付”文字。撤销批按 withdrawn 记录，不伪写成 done。旧稿的待办句不覆盖现行证明与收据。
+
+Wave20 的 T/35 证明适用于指定四人六标签完整策略的整个非负客户锥；root A 的同后继等锥与其他五根分开，mask49 的根 B 真实遗憾为 1/4。两份 230 分别优化 FREE 的 \(O_J\) 与付费的 \(O_J-3\Delta\)，不合并成一个目标。上述交付的完成不支付一般 full-tax、共同查询预算或序贯 half。
+
+NSW 的 R50 已按现行 v6 收窄：先固定同一实际输出，再量化 H 上全部比较双射及所有正有限有理 benchmark 的保证已付；原 norm1 显式菜单的 C/D/E 后果已付。一般原输入的保真接口、例外根的共同容量修复及全机固定改善仍保留。
 
 ## 有限计算的实际责任
 
@@ -58,6 +87,8 @@ b_i+g_i a_i=\ell_i\pmod 2.
 ## 沿图继续研究
 
 主入口是 [全图](../../../../../map/graph-v2.json)、[对象登记](../../../../../research/registry.json)、[覆盖判定](../../../../../map/coverage.json) 和 [跨包整合记录](../../../../../map/integration.json)。各存档及最深子档还有自身 `map/graph-v2.json` 投影，保留关系所需的外部端点。
+
+本轮另外整理了三份可直接供后续 Main / Solver 阅读的入口：[客户吸引](ca-research-entry.md)、[不相关机器](um-research-entry.md)、[静态补覆盖迁移](wc-research-entry.md)。入口把原题与定义、独立障碍、可复用成果、真实共同前提和下一项数学责任放在一起；不会启动旧研究系统，也不替后续研究者预先选定未证路线。
 
 从原题或候选对象 ID 出发，先读其完整陈述与 truth status，再读取相关边的 `source_ids`、`premises_mode`、`conditions` 和 `roles`。一条 ALL 边的全部前提需要同时满足；独立路线按不同边判断。`whole_result` 表示边支付的整条目标，`contribution.result/remaining` 分开记录已完成步骤与目标欠账；`relation_mode:conditional` 保留开放前提，`context` 不构成证明。反例应按实际否定目标使用，有限 checks 应按其参数域使用。
 
