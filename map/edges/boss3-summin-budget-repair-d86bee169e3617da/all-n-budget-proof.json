@@ -1,0 +1,246 @@
+{
+  "schema": 1,
+  "record_kind": "independent-analytic-proof-attachment",
+  "title": "指定K=6M+4全n聚合θ反族实际满足全部混合查询SUMmin-full",
+  "task_id": "boss3-summin-budget-repair-d86bee169e3617da",
+  "author": {
+    "boss": "Boss3",
+    "worker": "/root/summin_alln_proof",
+    "role": "仅独立重建全n预算证明；主笔为/root/summin_packet_author"
+  },
+  "status": "proved-with-exact-family-and-policy-scope",
+  "statement": {
+    "domain": "每个整数n≥3；P=X⊔Y，各组有n个不同标签；原正文式(2)的整数子集势F、式(3)的signed整数反演x_B、M=Σ_(B≠∅)|x_B|、K=6M+4以及正整数类型r_B=K+x_B。每个类型的r_B名客户是不同单位客户，所有n名提供者单位权。",
+    "policy_quantifier": "固定原正文指定的全部distinct有序历史辅助策略：根取X首标签；第二人取首标签相反组的最小未用标签；长度≥2的纯组前缀继续其组，混合前缀继续第二标签所属组，均取该组最小未用标签。取这份完整fresh辅助策略的任意一份完整原游戏纯SPE扩展σ。扩展存在且可不唯一；不是对该输入全部SPE作全称。",
+    "query_quantifier": "对同一个任意p∈Δ(P)，包括任意实概率和所有支撑；每行i∈{1,…,n}都使用原actual前缀，强制A后沿同一个σ真实完成全部n槽Z_i(A)。独立查询T∼p不占竞争槽。",
+    "coarse_budget": "令C=2^(2n)−2^n，β_n=[2^(2n)−2^(n−1)]/(n+1)，δ_n=C−nβ_n。原actual z有n个不同标签，W=KC+n−1=nθ_n−1，且Σ_iR_i(p)≤n(Kβ_n+M)<W。其严格裕量为Kδ_n+n−1−nM>n(K−M)+n−1>0。",
+    "tight_budget": "同一反族与同一σ量词下，max_(t∈P)Q_t(z)=Kβ_n，故Σ_iR_i(p)≤nKβ_n<W；实际共同预算裕量至少Kδ_n+n−1。这里Q_t(z)=Σ_(x∈cov(t))1/(1+c_x(z))。",
+    "target_scope": "这是SUMmin开放目标在一个明确每n反族及原指定策略扩展上的已证局部贡献；不证明一般输入、一般σ或一般SUMmin，也不反驳SUMmin。"
+  },
+  "endpoint_audit": [
+    {
+      "object_id": "CA-AGGREGATE-LAST-FLOOR-NO",
+      "version": 2,
+      "truth_status": "proved",
+      "task_input_pin": "699ba4cd7ebf119cdeb83f960aa4519f05068694f6f8507893ff071f155045ed",
+      "source_role": "原文提供合法每n输入、指定完整SPE存在及actual W=nθ_n−1；本附件新给这份反族的真实全p完整槽预算。"
+    },
+    {
+      "object_id": "customer-attraction/e7-summin-full-common-budget-exact-discount-and-finite-tests",
+      "version": 2,
+      "truth_status": "open",
+      "task_input_pin": "e37e6d0b6d0236152b44c5bd1d840157a5f2673bfcf99f9170af932a33e87332",
+      "target_role": "保持一般全称预算open；本结论只作为contribution，不能标whole_result。"
+    }
+  ],
+  "sources": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "20293db840f907c32f774b0d7f72450c56e6c0ad937720699d14f7c02e693cc9",
+      "bytes": 5518,
+      "qualification": "instruction",
+      "actual_read_scope": "全文实读；仓库数学、范围与worker写入规范。"
+    },
+    {
+      "path": "research/IMPLEMENTATION.md",
+      "sha256": "fb6613cd0c429f28b8bcfb1064076a629540cfbee8f7e3d670b0b39e78ff0d4b",
+      "bytes": 31889,
+      "qualification": "instruction",
+      "actual_read_scope": "全文实读，分两段1–150及151–329行补齐；本worker只写父Boss指定证明附件，不执行其中Git/队列接口。"
+    },
+    {
+      "path": "prompts/03-map-worker.md",
+      "sha256": "6629f71923c54d994297d54c3737b285227b72c463641d318c3f61c9342d07b2",
+      "bytes": 2559,
+      "qualification": "instruction",
+      "actual_read_scope": "全文实读。"
+    },
+    {
+      "path": "research/operations/map-v2/tasks/boss3-summin-budget-repair-d86bee169e3617da.json",
+      "sha256": "676e9b2d69498cc96da8b388b305bb01b889912622f71f7dba937f423ec165c0",
+      "bytes": 7277,
+      "qualification": "task",
+      "actual_read_scope": "全文实读；本地实际记录claimed、owner Boss3、2个核心和2个共享端点；本worker不据此自行进行队列操作。"
+    },
+    {
+      "path": "research/registry.json",
+      "sha256": "cf75d1f26442e39c9d1a44627c60772f1536cabcd9029d5a4985a9bfae0e8932",
+      "bytes": 16723817,
+      "qualification": "registry",
+      "actual_read_scope": "只实读CA-AGGREGATE-LAST-FLOOR-NO与SUMmin端点的完整object记录及顶层键；未声称全文读16723817字节registry。"
+    },
+    {
+      "path": "archives/customer-attraction/state/反例/三人及以上聚合末位保底--反例.md",
+      "sha256": "d316702ecc98a5976769d1d2e0094341474e0c4655deaac825bc208ae81d36e7",
+      "bytes": 9447,
+      "qualification": "mathematical-primary",
+      "actual_read_scope": "全文实读；独立重建原两组F、x_B整数、K=6M+4、指定distinct策略及完整扩展、actual W与θ_n范围。"
+    },
+    {
+      "path": "archives/customer-attraction/state/候选/全槽逐行最小价格的共同预算与有限报告--候选.md",
+      "sha256": "e952c73849b2ac561ac4ebb761b3ae0c1af06d61f27e743c593ea0103c52698a",
+      "bytes": 9217,
+      "qualification": "mathematical-primary",
+      "actual_read_scope": "全文实读；使用原actual前缀、同一完整σ、完整m槽、独立查询与min_A E_p定义；有限探针只作边界，不用其数值作全p证明。"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+      "bytes": 7598,
+      "qualification": "mathematical-primary",
+      "actual_read_scope": "全文实读；标签、客户、策略、完整有序历史及同σ真实续行量词。"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/子集调和势的Möbius反演--定理.md",
+      "sha256": "9c7e58e4642077607ce2b49c67e7598c97b47b4cdb1b43a34cf335dd2aec5629",
+      "bytes": 6532,
+      "qualification": "mathematical-primary",
+      "actual_read_scope": "全文实读；全Boolean子集F的调和反演及额外fresh标签的边际恒等式。"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/无重复辅助博弈的完整历史编译--定理.md",
+      "sha256": "e6e06a43973f7c37673b498074475fdf8aa37338d448aff53b2bf9b2e7fa0dd4",
+      "bytes": 8159,
+      "qualification": "mathematical-primary",
+      "actual_read_scope": "全文实读；初次组合输出末段由80行起至文件末尾补齐；只使用本反族所需的正编译与重复离轨扩展接口，不重新扩展研究该一般定理。"
+    },
+    {
+      "path": "research/workspaces/map-v2/Boss3/final-review-20261116/summin-conditional-review.json",
+      "sha256": "82792be5888d09d9822fa21b9794e8b149932d340f6b0aaff61cc778bc424c15",
+      "bytes": 27456,
+      "qualification": "prior-comparison",
+      "actual_read_scope": "实读其中counterexample_boundary_and_new_actual_budgets.all_n_positive_compilation_full_budget及邻近来源/边界文字作比较；主证明从上列原正文及积分独立重建。组合输出其余段有截断，未声称此JSON全文实读。"
+    }
+  ],
+  "notation": {
+    "labels_and_clients": "p的查询值是目录标签t，其覆盖为所有B∋t类型中的客户；B是客户兴趣类型，不是n−1槽背景。若写T，均指所查询主题的覆盖客户集。",
+    "actual_leaf": "z=(x_1,y_1,…,y_(n−1))，在原组内固定顺序下root选x_1且后继选Y依次首个未用标签；S={x_1,y_1,…,y_(n−1)}⊂P，|S|=n。",
+    "load": "B型客户在z中的负载为|B∩S|；query t的完整槽额外分母是1+|B∩S|。即使t∈S，额外查询仍只查询，不删原强制者、不把分母改回|B∩S|。",
+    "decomposition": "Q_t(z)=K b_t(S)+s_t(S)，b_t(S)=Σ_(B⊆P:B∋t)1/(1+|B∩S|)，s_t(S)=Σ_(B⊆P:B∋t)x_B/(1+|B∩S|)。所有求和B非空由B∋t自动保证。",
+    "row": "K_i(T,A)=Σ_(x∈T)1/(1+c_x(Z_i(A)))，R_i(p)=min_(A∈P)E_(T∼p)K_i(T,A)。"
+  },
+  "original_source_reconstruction": [
+    {
+      "step": 1,
+      "claim": "F:2^P→Z，F(∅)=0；|S|=n且S为纯组时F(S)=1；|S|=n−1且S交两组时F(S)=−1；其余为0。",
+      "argument": "对distinct n标签终局，选a的signed收益由M1为F(S)−F(S\\{a})。纯组终局人人1；混合终局中所属组唯一成员0，该组至少两成员时该玩家1。所以所有这类收益在{0,1}。"
+    },
+    {
+      "step": 2,
+      "claim": "指定fresh辅助策略是完整distinct-history SPE，actual signed收益(0,1,…,1)。",
+      "argument": "任一非根指定玩家得1：纯前缀继续成纯组；混合前缀加入第二标签组，终局该组至少两名；特别第二人在相反组后还有n−2≥1名后继进入其组。所有fresh偏离收益至多1。根无论选哪组，第二人转入相反组，后继继续该组，根最终是其组唯一成员，收益0，故全部根fresh选择平局。每组n标签保证每步指定fresh存在。"
+    },
+    {
+      "step": 3,
+      "claim": "x_B、M、K、r_B均为整数，r_B>0且实例有限。",
+      "argument": "M1反演c_A=Σ_(U⊆A)(−1)^(|A|−|U|)F(U)、z_A=(−1)^(|A|+1)|A|c_A、x_B=Σ_(A⊇B)(−1)^(|A|−|B|)z_A只有整数加减乘。共有2^(2n)−1个非空类型，|x_B|≤M，r_B≥K−M=5M+4>0；每类型展开r_B名不同单位客户。singleton类型正保证标签覆盖两两不同。b=C/n或β等收益常数不要求整数。"
+    },
+    {
+      "step": 4,
+      "claim": "原游戏没有fresh行动限制；指定策略能扩为所有有序历史上的完整纯SPE。",
+      "argument": "已实读M2在任意重复前缀上的逆向归纳接口：所有后继fresh时，当前fresh对old的单位全类型偏置差≥1/2，signed收益差最坏−2M，故K/2−2M=M+2>0。因K=6M+4≥4M+1，old动作被严格排除；distinct-history上的fresh比较和平局只平移相同偏置。重复离轨子树可各自用有限逆向归纳选fresh受限子SPE再拼接。这里只使用源已证完整扩展接口，不重新枚举或研究一般编译问题。"
+    },
+    {
+      "step": 5,
+      "claim": "actual福利W=KC+n−1，其中C=2^(2n)−2^n；θ_n=K(C/n)+1，故W=nθ_n−1。",
+      "argument": "n个不同标签覆盖的非空类型恰为全部类型减去不交S的类型，数目(2^(2n)−1)−(2^n−1)=C。signed均分守恒给signed覆盖=actual signed收益总和=n−1。源对θ的distinct背景得Kb+1，并另用重复背景拆分偏置损失≥1/3证明含重复的n−1槽背景不能降低θ；K/3−M= M+4/3>1。该θ接口保留源量词，预算证明以下完全直接使用真实Q而不把θ代入R_i。"
+    }
+  ],
+  "analytic_budget_proof": [
+    {
+      "step": 1,
+      "claim": "每行存在同一个实际终局列：Z_i(z_i)=z。",
+      "argument": "h_i是z的实际前i−1个标签。强制actual动作z_i后，历史与原actual长度i前缀完全相同；σ是固定的确定性完整策略，故所有后继逐步与actual相同。没有更换SPE，没有将偏离后的后继冻结。此列含全部n槽并包含强制者。"
+    },
+    {
+      "step": 2,
+      "claim": "对同一个任意p，R_i(p)≤E_(t∼p)Q_t(z)，所以Σ_iR_i(p)≤n E_pQ_t(z)。",
+      "argument": "在min_A中选择合法固定列A=z_i即可。这个A仅依行i，不依查询抽样t；先选列后独立抽查询的顺序正确。对全部行使用同一个p，线性求和。无需假设互斥离轨枝能同时发生。"
+    },
+    {
+      "step": 3,
+      "claim": "若t∉S，单位全类型偏置额外查询价b_t(S)=β_n=[2^(2n)−2^(n−1)]/(n+1)。",
+      "argument": "B必须含t；S内恰有j个标签入B有binom(n,j)种；P\\(S∪{t})的n−1个标签自由入B，给2^(n−1)倍。因此b_t=2^(n−1)Σ_(j=0)^n binom(n,j)/(j+1)=2^(n−1)∫_0^1(1+u)^n du=2^(n−1)(2^(n+1)−1)/(n+1)。积分只把有限和逐项积分，故是对任意n的精确恒等式。"
+    },
+    {
+      "step": 4,
+      "claim": "若t∈S，单位全类型偏置额外查询价b_t(S)=γ_n=[(n−1)2^(2n)+2^n]/[n(n+1)]<β_n。",
+      "argument": "B已含t，S\\{t}内j个标签入B有binom(n−1,j)种，未选的n标签自由入B给2^n倍，且分母2+j。因此b_t=2^nΣ_(j=0)^(n−1)binom(n−1,j)/(j+2)=2^n∫_0^1u(1+u)^(n−1)du。令v=1+u，原函数v^(n+1)/(n+1)−v^n/n在1和2处作差，即得所示γ。两者之差β−γ=2^(n−1)∫_0^1(1−u)(1+u)^(n−1)du>0；也等于2^(n−1)(2^(n+1)−n−2)/[n(n+1)]。"
+    },
+    {
+      "step": 5,
+      "claim": "对每个t，|s_t(S)|≤M，故Q_t(z)≤Kβ_n+M；由此Σ_iR_i(p)≤n(Kβ_n+M)。",
+      "argument": "每个分母1+|B∩S|≥1，三角不等式给|Σ_(B∋t)x_B/(1+|B∩S|)|≤Σ_(B∋t)|x_B|≤M。这是真正完整槽额外query的signed界，不是玩家收益界的未经证明替用。有限目录上的任意实概率p按凸组合保留同一上界。"
+    },
+    {
+      "step": 6,
+      "claim": "δ_n=C−nβ_n=2^(n−1)(2^(n+1)−n−2)/(n+1)=n(β_n−γ_n)>n，对每个整数n≥3。",
+      "argument": "前两个等号直接通分得到。全n严格下界：2^(n−1)≥n+1以n=3时4=4为基础；若在n成立，则2^n≥2(n+1)≥n+2，故递推。另2^(n+1)>2(n+1)以n=3时16>8为基础；若成立，则2^(n+2)>4(n+1)≥2(n+2)，故递推。因此括号2^(n+1)−n−2>n，而前因子2^(n−1)/(n+1)≥1，遂δ_n>n。此处没有从δ>0直接跳到压过signed误差。"
+    },
+    {
+      "step": 7,
+      "claim": "共同预算严格支付：W−Σ_iR_i(p)≥Kδ_n+n−1−nM>n(K−M)+n−1=5nM+5n−1>0。",
+      "argument": "将W=KC+n−1与上界n(Kβ+M)相减，再用δ_n>n、K>0及K=6M+4。此解析界同时处理任意n≥3和全部p；没有有限n计算或有限p扫描外推。"
+    }
+  ],
+  "tightening_discovered_in_this_reconstruction": {
+    "status": "proved-for-the-same-family-and-specified-policy-extensions",
+    "unused_query_signed_identity": "actual S为混合n标签集合，F(S)=0。任一未用t∉S使S∪{t}为n+1标签集合，F(S∪{t})=0。M1在所有Boolean子集成立，且调和边际给s_t(S)=Σ_(B∋t)x_B/(1+|B∩S|)=Φ_x(1_S+e_t)−Φ_x(1_S)=F(S∪{t})−F(S)=0。这里1_S+e_t仍为Boolean计数，因此没有将F套在重复计数上。",
+    "used_query_bound": "t∈S时仍只用已证|s_t|≤M；因δ_n=n(β−γ)>n，K(β−γ)>K>M，故Q_t(z)≤Kγ+M<Kβ。此处不对重复的extra-used query套Boolean F。",
+    "exact_query_maximum": "共有n个未用标签，每个Q_t(z)=Kβ；全部已用标签严格小于Kβ，因此max_(t∈P)Q_t(z)=Kβ_n。这个等号针对actual终局查询价，不宣称逐行min的最大精确等于它。",
+    "tight_common_budget": "Σ_iR_i(p)≤nE_pQ_t(z)≤nKβ_n，W−Σ_iR_i(p)≥Kδ_n+n−1>0。若p只支持未用标签，E_pQ_t=Kβ；这不证明各行actual列均为argmin，故不宣称ΣR达到nKβ。",
+    "scope_note": "与主粗界为同一contribution的更紧结果，不需新建第三条边，也不改变一般SUMmin的open状态。"
+  },
+  "quantifier_and_boundary_audit": {
+    "all_n": "解析证明取任意整数n≥3；n≥3是原指定fresh辅助SPE中第二人需要n−2≥1后继同组的条件。未扩大到n=1或2。",
+    "integrality": "合法客户r_B严格正整数；M、K为整数且有限。β、γ、δ、b和θ可为有理数；福利W作为实际单位客户覆盖为整数。没有错误要求C/n为整数。",
+    "original_sigma": "只固定原文指定distinct-history辅助策略并取其任一完整原SPE扩展。重复历史的扩展选择可不同，但所有这些σ的actual z相同；本证明只取actual动作列，所以不依扩展的具体离轨tie-break。",
+    "original_actual_prefix": "每行使用原actual前i−1个有序动作；未采用deviation后另一个actual、虚构前缀或删槽菜单。",
+    "all_p": "对有限目录Δ(P)中任意实概率p，包括纯p、任意混合支撑及边界。没有有理恢复、有限query候选、采样或min/expectation交换。",
+    "not_all_equilibria": "没有证明此输入的全部完整SPE均具有原实际W或此actual z，也没有把每个合法SPE必须fresh等同于原指定策略在全部distinct历史的行为。",
+    "not_all_counterexamples": "未外推所有聚合θ反例、36客户实例、其他偏置K、其他F或其他菜单障碍。36客户由同级worker单独处理。",
+    "not_general_U": "SUMmin目标要求全部m≥1、全部合法输入、每份完整σ及每个p；本族仅给其中明确实例和σ族的预算。一般U仍open；该结论不能作为SUMmin的whole证明。",
+    "theta_and_full_slot": "θ使用n−1个纯竞争背景后再取最佳回复；本证明Q使用actual n个完整槽再加独立query的1，且各真实行取min_A E_p。W<nθ与本族严格满足SUMmin同时成立；二者不能等同。",
+    "half_target": "源族严格half并非本预算对一般half的新证明；n=6特化仍只是该反族的局部验证，原SUMmin⇒六人half条件链由主笔保留。"
+  },
+  "limited_arithmetic_checks": {
+    "purpose": "仅核公式抄写与通分，均不充当全n证明；没有计算完整x_B表，没有重跑历史枚举、LP、IC或优化器。",
+    "method": "Python标准库Fraction和binom，在n=3与n=6对两个有限子集和与β/γ闭式以及δ=n(β−γ)逐项精确一致。",
+    "values": [
+      {
+        "n": 3,
+        "beta": "15",
+        "gamma": "34/3",
+        "delta": "11"
+      },
+      {
+        "n": 6,
+        "beta": "4064/7",
+        "gamma": "3424/7",
+        "delta": "3840/7"
+      }
+    ],
+    "general_proof_owner": "全n结论由上面的有限和积分恒等式、两条归纳不等式及预算代数承担。"
+  },
+  "findings": {
+    "mathematical_gap_found": null,
+    "prior_review_comparison": "独立粗界与先导审读中给出的β、γ、δ、严格付款一致；新增未用query的signed恒等0给更紧的nKβ上界。原来源没有因本证明发现需要修订的数学错误。",
+    "suggested_use": "主笔可从CA-AGGREGATE-LAST-FLOOR-NO到SUMmin目标写accepted、unconditional的contribution，明确指定反族/σ范围与一般U剩余义务。来源为proved，关系论证本身已闭合；本附件不是edge。"
+  },
+  "operations": {
+    "written_paths": [
+      "map/edges/boss3-summin-budget-repair-d86bee169e3617da/all-n-budget-proof.json"
+    ],
+    "read_only_operations": "本地cat/sed/rg、两条registry记录提取、完整文件SHA-256、标准库短算术核对。",
+    "not_performed": [
+      "Git操作",
+      "队列/claim/plan/done",
+      "凭据或账号连接器操作",
+      "边/receipt/registry写入",
+      "全历史枚举",
+      "旧全历史证书重跑",
+      "LP/MILP/科学优化器"
+    ],
+    "handoff": "本JSON完成并解析核验、报最终SHA后停止写入，供父Boss和主笔绑定同一字节。"
+  }
+}
