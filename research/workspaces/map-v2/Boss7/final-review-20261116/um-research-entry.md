@@ -12,9 +12,9 @@ Boss7，2026-11-16。原目标 `UM-TARGET-v1` 仍为 **open**。当前图有可�
 | `map/coverage.json` | `13e4679a603f05bd4ce9767b73afadd9b6c1d5018afaa6e0f581994d0e286f18` | `51d9a531636b1e8c0fe358546cf39bfb065828e05acff6698d4c393541872ab7` |
 | `map/integration.json` | `135bdadeca23e9346a77097d2818dd9c005e68f7d906af6b4eae587977b141fb` | `6764c7300f0d954df5fbbea0537f77e2a52b04981a40a58e023ea56238efe62b` |
 
-本地 `boss5-cartesian-receipt-repair-01720ef708fa6bdb` 为 claimed、owner Boss5，definition 明确只修旧 b77 收据元数据并保留五项原 SHA 资产；本入口不预判其完成、不改旧 done 资产。下述 E1 采用已在当前 registry 中的 **0bde** 路径和 Cartesian **v3**，不是旧复核报告的 f663 路径/v2。
+Boss5 本轮最终补记：17:06 快照中 `boss5-cartesian-receipt-repair-01720ef708fa6bdb` 尚为 claimed；后续已 done 并 integrated，旧 b77 已被有效后继替代。修复只处理收据元数据，五项原 SHA 资产及数学保留。下述 E1 使用现役 **0bde** 路径和 Cartesian **v3**；旧 reading SHA 与 f663/v2 仅是历史记录。当前验收见 [本轮完成记录](../../Boss5/finalization-20261116/phase3-completion.md)。
 
-起点实读 `archives/unrelated-machines/问题--问题.md` 全文（`UM-TARGET-v1` v4）及 `state/定义/不相关机器与两个调度松弛--定义.md` 全文（`UM-MODEL-v1` v1）。问题是：存在统一常数 \(\varepsilon>0\) 和一个确定性总位多项式算法，对**每个**有限显式非负二进制有理/∞矩阵，输出每个原 job 恰一次、只用有限端的实际调度，满足 \(C_{\max}\le(2-\varepsilon)OPT\)。机器数与全部编码位数均为输入；空任务、每任务有零端的零最优分支须保留。
+起点实读 `archives/unrelated-machines/问题--问题.md` 全文（`UM-TARGET-v1` v4）及 `state/定义/不相关机器与两个调度松弛--定义.md` 全文（`UM-MODEL-v1` v1）。问题是：存在统一常数 \(\varepsilon>0\) 和一个确定性总位多项式算法，对**每个**有限显式非负二进制有理/∞矩阵（每个原 job 至少有一个有限端），输出每个原 job 恰一次、只用有限端的实际调度，满足 \(C_{\max}\le(2-\varepsilon)OPT\)。机器数与全部编码位数均为输入；空任务、每任务有零端的零最优分支须保留。
 
 原题到下面各线首先是**问题/定义导航**，不是逻辑蕴含。当前真正接回原题的一条可用条件边是：
 
@@ -59,6 +59,18 @@ V(P_t^*)=1-2^{-t},\quad OPT(P_t^*)=1+2^{-t}.
 资源度按**全部菜单的组数**计，不是组交互度 M；构造按显式总位长多项式，非 poly(t)。输出含 singleton，已脱离裸 Cartesian 族。精确保值压态/降度只保留已经改善的 NO 值，不能恢复源 gap。
 
 **接续缺口：** 若要走困难性/放大，须另给 normalized 显式源的真实 YES 与“全部选态、任意 partial”NO，或在完整 ordinary 矩阵中从任意低峰实际调度解出所需跨坐标一致性并保 YES/位长。裸积、任意一般 UM 入 flat、未归一化源入 norm1 都未由本边支付。不能把状态支持为 product 偷换为标签 \(\ell_i\) 只依赖 \(g_i\)。
+
+### 已付的同菜单修复障碍（E1b）
+
+`UM-COORDINATE-OBLIVIOUS-CARTESIAN-MENU-QUOTA-v1` 给每个固定共同函数族 \(f_i:\mathbb F_2\to\mathbb F_2\)、\(\ell_i(g)=f_i(g_i)\) 的精确受限值
+
+\[
+V_{obl}(t)=\frac{\lfloor(3/2)^t\rfloor}{2^t}.
+\]
+
+它允许任意 partial，且重选全部 f 仍不增这个最优值。与 A 的 free 值 \(1-2^{-t}\) 联合，现役边 `um-cartesian-free-and-coordinate-quota-imply-no-constant-repair`（文件 `map/edges/boss7-tensor-notation-repair-0bde5bd3570dc738/um-cartesian-free-and-coordinate-quota-imply-no-constant-repair.json`）以 **ALL {A, quota} / accepted / unconditional / whole_result** 完整推出 `UM-CARTESIAN-COORDINATE-CONSTANT-REPAIR-OBSTRUCTION-v1`。
+
+对任意固定高值门槛 \(\theta<1\) 和比例 \(c>0\)，足够大 t 的同菜单高值分配 \(A_t\) 满足 \(v(A_t)\ge\theta\)，但所有逐坐标分配 B 都有 \(v(B)<c\,v(A_t)\)，因为 \(\lfloor(3/2)^t\rfloor/(2^t-1)\to0\)。连这样的统一保值修复**存在性**都失败，不依赖计算效率。这不排除改变菜单、资源或任务的新一致性编译，也不针对随 t 衰减的保值比例或本族中空的 \(\theta=1\) 输入域；这些范围须分别陈述。后续不再把同菜单正常数保值的逐坐标事后 repair 列作开放工具。
 
 ## 3. 成果线二：显式 XOS fractional NSW → unit-FSLP/REPAIR/全部 jobs
 
@@ -124,11 +136,11 @@ S 的容量一星族对每 k≥2 在 T=1有全部 GPC₂ pairs，真实 \(OPT=2-
 | 角色 | 精确起点 | 下一项应产出的数学责任 |
 | --- | --- | --- |
 | Main | `UM-TARGET-v1`、`UM-MODEL-v1`、E0 | 保原题全部量词；对所选方案说明原输入怎样入域、阈值过程的成功/FAIL、固定余量和总位复杂度。三线成果作为各自的局部工具，只有补全共同前提才能组合。 |
-| Solver 1 | A、N、E1 的 ALL 闭包及 R §§2–5 | 对拟用的源/乘积明确全部 indexed states 和实际 jobs；证明真实 NO 或低峰→一致性及 YES 保持，先过循环跨坐标重选反例。单纯再次保值降度不是新 gap。 |
+| Solver 1 | A、N、E1 的 ALL 闭包及 R §§2–5；另带 E1b 的 free+quota ALL 闭包 | 明确全部 indexed states 和实际 jobs，覆盖任意 full-vector 重选；证明真实 NO 或新的低峰→一致性及 YES/位长保持。同菜单统一常数保值的逐坐标事后 repair 已否；改变菜单/任务/资源的新编译须给自己的全调度证明。再次保值降度本身不产生 gap。 |
 | Solver 2 | B、C、E2 whole | 固定例如 η=1/2（q=2^−48）后，针对拟用修复机制写清例外根的原任务去向和**共同**接收容量；证明全组/全机固定改善，或给该机制的精确反例。B 的同输出全 y 保证及 C/D/E 不重列开放。 |
 | Solver 3 | G、S、L、E3 whole | 选择并写清一个可计算的加强共同状态合同：能自主选择 pairs 时保哪些原行/标签，怎样取实际元组；证明所选结构的完备性或精确障碍。避开“给定任意 W 均可粘”这个已否命题。 |
 
-用 `context`/packet 消费时，E1 必保 A 与 N 两个前提；E3 必保 G 与 S。E2 的 source 单一但目标 norm1/unit-FSLP/REPAIR 条件不能被过滤掉。若只拿 contribution，携带其 remaining；若选 whole，仍按完整目标陈述消费。正支持、反驳、条件结果和研究线索分别阅读。当前这些路线没有一条已经支付 E0 所需的全原输入接口。
+用 `context`/packet 消费时，E1 必保 A 与 N 两个前提；E1b 必保 A 与 quota 两个前提；E3 必保 G 与 S。E2 的 source 单一但目标 norm1/unit-FSLP/REPAIR 条件不能被过滤掉。若只拿 contribution，携带其 remaining；若选 whole，仍按完整目标陈述消费。正支持、反驳、条件结果和研究线索分别阅读。当前这些路线没有一条已经支付 E0 所需的全原输入接口。
 
 ## 6. 精确证据定位与本轮核对
 
@@ -140,5 +152,8 @@ S 的容量一星族对每 k≥2 在 T=1有全部 GPC₂ pairs，真实 \(OPT=2-
 | E1 | `e6c3a2932b3a2ba565dd5b16c3cc2c52e80d7a3b116f7deaddf4be185db48903` |
 | E2 | `cc507044caf4d53b3efe0c60cd2fbd5651331535ee1343842fbb2833e5b92d0a` |
 | E3 | `2ffdeb2fbd7575a13e5a23da97f6203dd8704c4195307ef217fab625ebaea2a0` |
+| E1b（Boss5本轮补入） | `30532f4b034ef64d4b06c3cf9e53896bbba11a8902128e88548b4e4b8de8b6b7` |
 
-四边均在上述两次快照 `registry.edge_files`；逐项按现行序列化规则重算 endpoint pins、review_digest 和各直接 evidence 的全文 SHA，全部匹配；所用十一个登记对象的主 body SHA 亦匹配。这里的字节核对辅助导航，不代替以上数学判断；未新增科学实验、实现或全仓验收。本轮未发现所采用关系在其明示范围内的承重缺步；列出的缺口均是从这些已付局部结果继续研究一般目标时尚需另证的责任。
+原入口的 E0–E3 四边均在上述两次快照 `registry.edge_files`；逐项按现行序列化规则重算 endpoint pins、review_digest 和各直接 evidence 的全文 SHA，全部匹配；所用十一个登记对象的主 body SHA 亦匹配。这里的字节核对辅助导航，不代替以上数学判断；未新增科学实验、实现或全仓验收。本轮未发现所采用关系在其明示范围内的承重缺步；列出的缺口均是从这些已付局部结果继续研究一般目标时尚需另证的责任。
+
+Boss5 增补 E1b 前已实读原 free 构造、整数配额与同菜单阻断证明，并对照现役完整联合边；独立 fresh 终审见 `research/workspaces/map-v2/Boss5/finalization-20261116/um-entry-final-review.json`。E1b 的两源与目标均为现役 proved 对象；该补充只使已有障碍可见，没有新造关系或扩大阻断域。
