@@ -1,0 +1,292 @@
+{
+  "schema": 1,
+  "record_kind": "independent-comparison-review",
+  "task_id": "boss5-summin-all-spe-3b-7383c8bf44f753cc",
+  "reviewed_by": "Boss5 / all_spe_packet_author",
+  "date_utc": "2026-11-16",
+  "decision": "新增accepted unconditional ALL contribution；原K=6M+4输入的全部完整纯SPE、同一任意合法查询p的严格SUMmin-full预算。旧Boss3指定策略贡献原字节保留，不替代、不supersede。",
+  "task_and_endpoint_audit": {
+    "task_file": {
+      "path": "research/operations/map-v2/tasks/boss5-summin-all-spe-3b-7383c8bf44f753cc.json",
+      "sha256": "81a38890cec33b16ed3184f6aef42eaab550115cbda9a7d8358e2a14a78c9ae2"
+    },
+    "definition_pin": "76d897e45dabfebd1c84dfcce2dac042d01a73ded74a6b3bdf6705ba58187d62",
+    "state_observed": "claimed",
+    "owner_observed": "Boss5",
+    "claim_request_id": "403ac80d0caf4cd2bca525f6d286d882",
+    "pushed_dispatch_provenance": "父Boss派工回执报告本task已claimed/Boss5并在3e92307f19b3936557499940a6264ee4c368c7b4推送；本worker独立核本地task字段及三条当前registry记录，不执行远端/队列/Git操作。",
+    "current_endpoints": [
+      {
+        "object_id": "CA-AGGREGATE-LAST-FLOOR-NO",
+        "version": 2,
+        "truth_status": "proved",
+        "registration_pin": "699ba4cd7ebf119cdeb83f960aa4519f05068694f6f8507893ff071f155045ed"
+      },
+      {
+        "object_id": "CA-MOBIUS-FULL-HISTORY-EMBED",
+        "version": 1,
+        "truth_status": "proved",
+        "registration_pin": "42694a561f1d7d9687fce7fe834aa833e5fa2d8b5b7d84eb1bf54115e118d09a"
+      },
+      {
+        "object_id": "customer-attraction/e7-summin-full-common-budget-exact-discount-and-finite-tests",
+        "version": 2,
+        "truth_status": "open",
+        "registration_pin": "e37e6d0b6d0236152b44c5bd1d840157a5f2673bfcf99f9170af932a33e87332"
+      }
+    ],
+    "follow_up_status": "实际task未标记follow-up对象对；本包具体比较闭合，没有未处置follow-up。一般U与六人half是原有open数学义务。"
+  },
+  "notation_and_quantifiers": {
+    "input": "每个整数n≥3；P=X⊔Y，各组n个不同标签。固定原CA正文式(2)两组势F、式(3)全部非空类型整数反演x_B、M=Σ|x_B|、K=6M+4、r_B=x_B+K；每个r_B展开为不同单位客户。",
+    "F": "F(S)=1当|S|=n且为纯组；F(S)=−1当|S|=n−1且混合；其余0，含F(∅)=0。D=1。",
+    "policy": "同一上述输入的每一份完整原模型纯SPE σ；全部有序前缀、重复离轨历史和任意历史依赖平局均在原定义域。没有预先固定源展示fresh辅助策略或根路径。",
+    "actual": "对该σ取自己的actual有序叶z=(S_1,…,S_n)，Z={S_1,…,S_n}。全历史fresh结论给|Z|=n。每行使用此同一σ原actual前i−1个动作，强制A后沿同一σ真实完成Z_i(A)；恰n槽且含强制者。",
+    "query": "p∈Δ(P)任意合法实概率分布，所有行使用同一个p；T∼p独立于已选竞争列，在列选定后抽样。Q_a(z)=Σ_(B∋a)r_B/(1+|B∩Z|)，g_p(z)=E_(a∼p)Q_a(z)，R_i(p)=min_A E_pK_i(T,A)。",
+    "constants": "C=2^(2n)−2^n，β_n=(2^(2n)−2^(n−1))/(n+1)，γ_n=((n−1)2^(2n)+2^n)/(n(n+1))，Δ_n=C−nβ_n=n(β_n−γ_n)。这里p只表示查询分布，M2标签数为2n。"
+  },
+  "proof": [
+    {
+      "step": 1,
+      "claim": "合法整数输入及M1内部身份。",
+      "argument": "F为整数，原式(3)只作整数加减及乘整数，x_B整数；有限2^(2n)−1类型，M有限且r_B≥K−M=5M+4>0。singleton类型正，故目录标签的覆盖互异。CA正文式(4)已自足给Σ_Bx_BH_|B∩S|=F(S)；额外fresh标签的signed价等于两Boolean调和势之差。M1正文实读作来源核实和计算说明；本身份是CA具体构造内部已有事实，不是隐藏的第三独立前件。"
+    },
+    {
+      "step": 2,
+      "claim": "M2从4M+1到原6M+4的参数桥支付完毕。",
+      "argument": "任意长度d<n有序前缀可含重复，已用k≤d个标签；2n−k≥n−d个fresh可用。按剩余深度归纳，任意给定完整SPE的每个动作孩子的真实后继都fresh。对当前fresh a与old b（前缀出现v≥1次），分别只对两个均匀偏置值作未用标签置换，将各自后继标签集对齐至一个不含a的共同集合T。fresh支置换固定已用标签及a；old支只须固定已用标签，所以即使该支真实后继使用a，也可把a移到T。signed两叶及σ均不置换。正规化偏置差Σ_(C⊆P\\{a,b})[1/(1+s_C)−1/(1+v+s_C)]≥1/2；signed真实差≥−2M。K=6M+4使总差≥K/2−2M=M+2>0。归纳同时覆盖每个有序重复前缀及任意孩子SPE，故每份完整原SPE都处处fresh，actual n标签必互异。distinct子树fresh比较偏置相等，保留辅助比较/平局；所有重复节点可自后向前完整扩展，但本预算不固定某个扩展。"
+    },
+    {
+      "step": 3,
+      "claim": "实际动作列给Σ_iR_i(p)≤n g_p(z)。",
+      "argument": "取每行合法列A=S_i。其前缀与原actual长度i前缀完全一致；确定性同一σ逐步重现真实actual后继，所以Z_i(S_i)=z。故R_i(p)≤g_p(z)，求和得n g_p(z)。列S_i在查询抽样前固定，不依抽中的T；无需min与期望交换，也不将偏离后的后继冻结。这个上界不是在断言actual列为argmin。"
+    },
+    {
+      "step": 4,
+      "claim": "任意distinct n叶的全类型查询价。",
+      "argument": "a∉Z时b_a=2^(n−1)Σ_(j=0)^n binom(n,j)/(j+1)=2^(n−1)∫_0^1(1+t)^n dt=β_n。a∈Z时b_a=2^nΣ_(j=0)^(n−1)binom(n−1,j)/(j+2)=2^n∫_0^1t(1+t)^(n−1)dt=γ_n。β_n−γ_n=2^(n−1)∫_0^1(1−t)(1+t)^(n−1)dt=Δ_n/n>0。每个signed查询价s_a=Σ_(B∋a)x_B/(1+|B∩Z|)绝对值≤M。因此Q_a(z)≤Kβ_n+M，所有p有ΣR≤n(Kβ_n+M)。"
+    },
+    {
+      "step": 5,
+      "claim": "解析粗界独立完成严格付款。",
+      "argument": "distinct Z覆盖C个全类型，signed覆盖绝对值≤M，所以W≥KC−M。通分给Δ_n=2^(n−1)(2^(n+1)−n−2)/(n+1)>n：n≥3有2^(n−1)≥n+1及2^(n+1)>2(n+1)，两者均可从n=3递推。于是W−ΣR≥KΔ_n−(n+1)M>nK−(n+1)M=(5n−1)M+4n>0。这里只用任意实际distinct叶，不借源展示路径W等式。"
+    },
+    {
+      "step": 6,
+      "claim": "全distinct终局的0/1 signed收益给W≥KC+n−1。",
+      "argument": "反演收益为F(Z)−F(Z\\{a})。纯组n叶：F(Z)=1、全部删除叶F=0，人人signed收益1，总n。混合n叶：F(Z)=0，删除a后若仍混合则F=−1，收益1；若a为其组唯一成员则删除后纯组、F=0，收益0。n≥3时至多一名这样的singleton玩家，因此总signed覆盖n或n−1。signed支付总和等于signed覆盖是逐类型守恒代数恒等式。因此每份σ有W≥KC+n−1；只有源展示叶及相同singleton构成叶给等号，不能把W=KC+n−1写成全部σ。"
+    },
+    {
+      "step": 7,
+      "claim": "精确actual查询最大价为max_a Q_a(z)=Kβ_n−F(Z)。",
+      "argument": "任意未用a有Z∪{a}大小n+1，F(Z∪{a})=0；CA式(4)相减给s_a=F(Z∪{a})−F(Z)=−F(Z)，其中F(Z)∈{0,1}。所以全部n个未用查询Q_a=Kβ_n−F(Z)。已用查询会产生重复计数，不能套Boolean F，保留|s_a|≤M。由Δ_n/n=β_n−γ_n>1、K−M=5M+4>1，Q_a≤Kγ_n+M<Kβ_n−1≤Kβ_n−F(Z)。故最大恰由未用标签达到。"
+    },
+    {
+      "step": 8,
+      "claim": "tight全σ、全p共同预算。",
+      "argument": "对每份完整σ、同一个任意合法p，Σ_iR_i(p)≤n g_p(z)≤n[Kβ_n−F(Z)]≤nKβ_n<W(σ)。余量W−ΣR≥KΔ_n+n−1+nF(Z)≥KΔ_n+n−1>0。此处maxQ等号属于actual叶的查询价，不声称ΣR的最优值等于n maxQ。一般U、一般六人half仍open。"
+    }
+  ],
+  "comparison_with_boss3": {
+    "old_edge": {
+      "path": "map/edges/boss3-summin-budget-repair-d86bee169e3617da/all-n-counterexample-summin-contribution.json",
+      "sha256": "4eb5151221da99f7b46822bc4615dff81e6bca8febdb44d4ef1b21410bdd6a71"
+    },
+    "old_proof": {
+      "path": "map/edges/boss3-summin-budget-repair-d86bee169e3617da/all-n-budget-proof.json",
+      "sha256": "fa494cd2ac03e245f46a158fe6a3169cd945b95e10516b68b7240dfb4da8e154"
+    },
+    "old_receipt": {
+      "path": "map/receipts/boss3-summin-budget-repair-d86bee169e3617da.json",
+      "sha256": "6367602e636649e5ef1a53f4dcecd7f4362cbabf1cded1bf43c48930a7fbffbd"
+    },
+    "old_quantifiers": "Boss3边只量化源指定distinct-history辅助策略的任意完整原SPE扩展；该范围actual为一X及n−1Y，F(Z)=0，W=KC+n−1，maxQ=Kβ_n。旧边明确不含同输入任意其它SPE。",
+    "new_quantifiers": "本边在完全相同的F、x_B、K=6M+4、r_B输入上量化每一份完整原SPE，以M2全历史结论显式作为第二ALL源；不改变输入，不把CA反例存在性直接当作策略全称。",
+    "change_required": "任意σ可有不同有序actual叶及不同W。故旧等式替换为先有W≥KC−M、再有W≥KC+n−1；未用signed查询由0改为−F(Z)，maxQ由Kβ改为Kβ−F(Z)。",
+    "preservation": "新增不同策略量词的关系；不修改、替换、退役或supersede Boss3任何边、receipt或附件。旧有限n=6结果只核展示路径，不可作为新全σ命题的枚举证据。",
+    "finite_evidence_limits": "实读旧数值报告的来源绑定、n=6参数/全部12查询/计数及运行边界；未全文逐项读取small_36_customer_example的大型全部比较数组；未重跑旧脚本、原实验、LP、IC或全历史枚举。"
+  },
+  "source_read_refs": [
+    {
+      "path": "archives/customer-attraction/state/反例/三人及以上聚合末位保底--反例.md",
+      "sha256": "d316702ecc98a5976769d1d2e0094341474e0c4655deaac825bc208ae81d36e7",
+      "bytes": 9447,
+      "actual_read_scope": "全文实读；核相应定义、承重解析、有限证据资格和未付边界；正文中的历史运行声明归原作者，不冒称本次运行。"
+    },
+    {
+      "path": "archives/customer-attraction/state/反例/三人聚合末位保底--反例.md",
+      "sha256": "f2ff6b486d46f5e05d9acb2497ec1114ac8ab4698460fb46656d320e640fe4c0",
+      "bytes": 5935,
+      "actual_read_scope": "全文实读；核相应定义、承重解析、有限证据资格和未付边界；正文中的历史运行声明归原作者，不冒称本次运行。"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+      "bytes": 7598,
+      "actual_read_scope": "全文实读；核相应定义、承重解析、有限证据资格和未付边界；正文中的历史运行声明归原作者，不冒称本次运行。"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/子集调和势的Möbius反演--定理.md",
+      "sha256": "9c7e58e4642077607ce2b49c67e7598c97b47b4cdb1b43a34cf335dd2aec5629",
+      "bytes": 6532,
+      "actual_read_scope": "全文实读；核相应定义、承重解析、有限证据资格和未付边界；正文中的历史运行声明归原作者，不冒称本次运行。"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/无重复辅助博弈的完整历史编译--定理.md",
+      "sha256": "e6e06a43973f7c37673b498074475fdf8aa37338d448aff53b2bf9b2e7fa0dd4",
+      "bytes": 8159,
+      "actual_read_scope": "全文实读；核相应定义、承重解析、有限证据资格和未付边界；正文中的历史运行声明归原作者，不冒称本次运行。"
+    },
+    {
+      "path": "archives/customer-attraction/state/计算/静态安全值与聚合保底的精确核验--计算.md",
+      "sha256": "9ca3c8ce9e23da06f04168123bbbef57e70998a16a11b22f90c79c4c07da35f9",
+      "bytes": 8460,
+      "actual_read_scope": "全文实读；核相应定义、承重解析、有限证据资格和未付边界；正文中的历史运行声明归原作者，不冒称本次运行。"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/aggregate-security/original/examples/customer_attraction/aggregate_theta_failure.json",
+      "sha256": "be0e1a54d3a7ddfeba327c03ce1975932e8fd1018926147b9c555fe6af180aaf",
+      "bytes": 1846,
+      "actual_read_scope": "全文实读；核相应定义、承重解析、有限证据资格和未付边界；正文中的历史运行声明归原作者，不冒称本次运行。"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/aggregate-security/original/evidence/certificates/customer_attraction/aggregate_theta_failure.json",
+      "sha256": "cf08edab0813de8eccee8d5466d15b40bd42c980da9b0b68c925f4ae80991010",
+      "bytes": 4339,
+      "actual_read_scope": "全文实读；核相应定义、承重解析、有限证据资格和未付边界；正文中的历史运行声明归原作者，不冒称本次运行。"
+    },
+    {
+      "path": "archives/customer-attraction/state/候选/全槽逐行最小价格的共同预算与有限报告--候选.md",
+      "sha256": "e952c73849b2ac561ac4ebb761b3ae0c1af06d61f27e743c593ea0103c52698a",
+      "bytes": 9217,
+      "actual_read_scope": "全文实读；核相应定义、承重解析、有限证据资格和未付边界；正文中的历史运行声明归原作者，不冒称本次运行。"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/完整槽末位最小价格的精确折扣与静态充分桥--引理.md",
+      "sha256": "a2c504c39c6b1ab1d4a2a8d9f48b5a977ad2aa648aab0ac066771d22ff5ccf2a",
+      "bytes": 7410,
+      "actual_read_scope": "全文实读；核相应定义、承重解析、有限证据资格和未付边界；正文中的历史运行声明归原作者，不冒称本次运行。"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/五人全槽行最小价格与三尾混合整数探针--程序.md",
+      "sha256": "2a628a5dca7cbf847fc23df2036d9c08fb83f7616bb82a720e3146c547db923e",
+      "bytes": 12320,
+      "actual_read_scope": "全文实读；核相应定义、承重解析、有限证据资格和未付边界；正文中的历史运行声明归原作者，不冒称本次运行。"
+    }
+  ],
+  "operations_read_refs": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "20293db840f907c32f774b0d7f72450c56e6c0ad937720699d14f7c02e693cc9",
+      "bytes": 5518,
+      "actual_read_scope": "全文实读。"
+    },
+    {
+      "path": "research/IMPLEMENTATION.md",
+      "sha256": "fb6613cd0c429f28b8bcfb1064076a629540cfbee8f7e3d670b0b39e78ff0d4b",
+      "bytes": 31889,
+      "actual_read_scope": "分段补齐全文；实际执行限定本worker三文件，Git/队列/绑定/检查交父Boss。"
+    },
+    {
+      "path": "prompts/03-map-worker.md",
+      "sha256": "6629f71923c54d994297d54c3737b285227b72c463641d318c3f61c9342d07b2",
+      "bytes": 2559,
+      "actual_read_scope": "全文实读。"
+    },
+    {
+      "path": "research/operations/map-v2/tasks/boss5-summin-all-spe-3b-7383c8bf44f753cc.json",
+      "sha256": "81a38890cec33b16ed3184f6aef42eaab550115cbda9a7d8358e2a14a78c9ae2",
+      "bytes": 7981,
+      "actual_read_scope": "全文实读；核claimed/Boss5、三core、input_pins、独占write_paths及无follow-up标记。"
+    },
+    {
+      "path": "research/registry.json",
+      "sha256": "ee1148cd8c8053496e64e259902fb4890ea9a5add5a9c5a090b0d14739fc64ac",
+      "bytes": 16724032,
+      "actual_read_scope": "只实读本包三个完整object记录；其余仅JSON加载，不声称全仓全文阅读。"
+    },
+    {
+      "path": "tools/research_runtime.py",
+      "sha256": "414713215bc28a062a2ef0330b150f81298987e893278fe90b44b38c7f4d4023",
+      "bytes": 119092,
+      "actual_read_scope": "1–100行及registration_pin定向检索；核pin为ensure_ascii=False、sort_keys=True、紧凑JSON的SHA256。"
+    },
+    {
+      "path": "tools/map_tasks.py",
+      "sha256": "041a92846e7981883d76658879f47c68f256bfefff527a5ad7ca544a4d2dcf62",
+      "bytes": 94499,
+      "actual_read_scope": "500–575行及definition_pin定向检索；核core coverage/input pin合同，不执行队列。"
+    }
+  ],
+  "prior_comparison_read_refs": [
+    {
+      "path": "map/edges/boss3-summin-budget-repair-d86bee169e3617da/all-n-counterexample-summin-contribution.json",
+      "sha256": "4eb5151221da99f7b46822bc4615dff81e6bca8febdb44d4ef1b21410bdd6a71",
+      "bytes": 9336,
+      "actual_read_scope": "全文实读；核accepted/unconditional/contribution和指定策略限制。"
+    },
+    {
+      "path": "map/edges/boss3-summin-budget-repair-d86bee169e3617da/all-n-budget-proof.json",
+      "sha256": "fa494cd2ac03e245f46a158fe6a3169cd945b95e10516b68b7240dfb4da8e154",
+      "bytes": 18857,
+      "actual_read_scope": "全文实读；逐步比较粗界、tight及明确not-all-equilibria范围。"
+    },
+    {
+      "path": "map/edges/boss3-summin-budget-repair-d86bee169e3617da/comparison-review.json",
+      "sha256": "367e6ffe393a1b80fa04c433da84b50ec491a5e157244c2b2770950b5aca1671",
+      "bytes": 19770,
+      "actual_read_scope": "全文分段实读；含主证明、读取边界、数值特化及Boss终审。"
+    },
+    {
+      "path": "map/receipts/boss3-summin-budget-repair-d86bee169e3617da.json",
+      "sha256": "6367602e636649e5ef1a53f4dcecd7f4362cbabf1cded1bf43c48930a7fbffbd",
+      "bytes": 11922,
+      "actual_read_scope": "全文实读；核旧coverage、旧asset SHA及既有supersession范围；本新包不延续该supersession。"
+    },
+    {
+      "path": "map/edges/boss3-summin-budget-repair-d86bee169e3617da/reading-ledger-corrected.json",
+      "sha256": "0a48a36f611b1624a5b9628274512f3a4ae5b179dcf4c955d8fc8bfce41622bd",
+      "bytes": 6431,
+      "actual_read_scope": "全文实读；历史Boss7条件链来源纠正及运行声明保持其作者归属。"
+    },
+    {
+      "path": "map/edges/boss3-summin-budget-repair-d86bee169e3617da/verify-budget-examples.py",
+      "sha256": "be5abb09832f3025dc4392616ce49b87e53f33743df93b23f5b5c350b2179281",
+      "bytes": 25065,
+      "actual_read_scope": "只实读1–107及226–448行：源绑定、n=6两种反演/查询和main/运行边界；未读108–225行36例实现，未执行脚本。"
+    },
+    {
+      "path": "map/edges/boss3-summin-budget-repair-d86bee169e3617da/budget-example-results.json",
+      "sha256": "58da89eb345d0dfa2bad2091095e4c14f65ec8dcba6b6ee3b9323edf9a6a1920",
+      "bytes": 80625,
+      "actual_read_scope": "读取顶层schema/task_id/owner/purpose、完整input_binding、完整all_n_family_n6_regression、execution和conclusion_limits；不声称全文读small_36_customer_example。"
+    }
+  ],
+  "independent_attachment_review": [
+    {
+      "path": "map/edges/boss5-summin-all-spe-3b-7383c8bf44f753cc/full-history-parameter-proof.json",
+      "sha256": "754b58b16c1e56e1b5c561d27a237e1cdebc5eb167c395a10444735f717244fb",
+      "author": {
+        "boss": "Boss5",
+        "worker": "all_spe_history_proof",
+        "role": "fresh正式数学worker；完整历史及偏置参数证明",
+        "date": "2026-11-16"
+      },
+      "actual_read_scope": "全文实读；逐步核A1–A4合法性/计数收益、两个真实孩子偏置的分别置换（特别old续局可含a）、K/2−2M=M+2、B1–B5全部有序历史归纳、C1–C5投影及完整重复子树扩展、量词/读取边界。未修改同级proof。",
+      "comparison_result": "与主笔独立证明一致，完整支付第二ALL源在原更大K上的策略全称；只推出任意actual distinct，不固定路径或W。"
+    },
+    {
+      "path": "map/edges/boss5-summin-all-spe-3b-7383c8bf44f753cc/all-spe-query-budget-proof.json",
+      "sha256": "5d7f8a6135faaa0f9fe4748ee4d0560f9e093ea35d608e02b19a336f3fd74543",
+      "author": {
+        "boss": "Boss5",
+        "worker": "/root/all_spe_query_proof",
+        "role": "同包独立查询预算证明；主笔/root/all_spe_packet_author负责边与收据"
+      },
+      "actual_read_scope": "全文实读；逐步核12步证明和全部范围审计：actual列、C/β/γ/Δ粗界、W的0/1分类、unused的−F(Z)、used严格<Kβ−1、tight maxQ及统一余量。未修改同级proof。",
+      "comparison_result": "粗界及tight界与主笔独立重导一致，无数学缺口；全部同一p结论不靠有限扫描，目标一般U保持open。"
+    }
+  ],
+  "unpaid_math": "所有一般合法有限输入、所有m≥1及其每份完整SPE的混合SUMmin-full共同预算仍open；无条件恰六人half和一般早期跨枝付款仍未付。本族n=6特化只属本族，不推出一般六人结论。",
+  "execution_limits": "本worker仅本地读取、hash、对象/任务canonical pin核对、解析推导和三文件写入；无Git、同步、队列、凭据、connector、外部账号、原脚本/优化器、历史实验或全历史枚举。无新的数值扫描。父Boss负责最终edge-bind/edge-check、checkpoint与done。 两份同级成熟附件已由本主笔全文实读并仅按最终当前SHA引用，作者保其原标识。"
+}
