@@ -29,7 +29,7 @@ related_objects:
 对 `t=1,2,3,4`，令 `D=2^t`，独立枚举全部资源 tuples `U^t`，由真实检查
 
 \[
-b_i+g_i a_i=\ell_i(g_i)\pmod 2
+b_i+g_i a_i=\ell_i\pmod 2
 \]
 
 筛出支持。输出保留全部 resource/private machines、selectors、每个 indexed state 的全部 incidence jobs 及全部有限 processing entries；未选 state 的 incidence jobs 仍留在 private，未使用资源也保留。时间统一为整数单位 `1/D`：private incidence 为 1 unit，selector/resource 为 `D` units；审计禁止 float。
