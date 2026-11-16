@@ -1,0 +1,93 @@
+{
+  "schema": 1,
+  "review_id": "boss3-degree-two-root-and-all-spe-final-review-20261116",
+  "reviewed_by": "Boss3",
+  "date": "2026-11-16",
+  "snapshot_commit": "cd0dc1ef88c5c51d66bf8994012f4dbc7602620e",
+  "purpose": "3D mathematical review of already published source and contribution edges; no new primary coverage claimed.",
+  "object_ids": [
+    "degree-two-shared-customers-complete-spe-negative-stationary-flux-family",
+    "customer-attraction/degree-two-exact-credible-root-floor-and-all-spe-optimality",
+    "customer-attraction/closeout-67a92b6751929baa34cc1de3"
+  ],
+  "read_refs": [
+    {
+      "path": "archives/customer-attraction/state/定理/二元共享客户族的真实根门槛与全策略最优福利--定理.md",
+      "sha256": "b5f7f6ccf1e6a8787210cf650b866f4d97095fd2e0dfcfca20d675235f52adc6"
+    },
+    {
+      "path": "archives/customer-attraction/state/构造/二元共享客户的完整均衡负驻留族--构造.md",
+      "sha256": "5c9cf2906b68aaa4bdb21172f11d29ad52d58c0f16baaab8b59d0a0e112ef0d4"
+    },
+    {
+      "path": "archives/customer-attraction/state/资源/完整后继门槛的阶段接口与选中枝边界--资源.md",
+      "sha256": "9d8ab71d9a269651754ed48114eb9803e65a90bc8eb7946f8c8fcf1a0b4250a7"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+    },
+    {
+      "path": "archives/customer-attraction/state/反例/三人聚合末位保底--反例.md",
+      "sha256": "f2ff6b486d46f5e05d9acb2497ec1114ac8ab4698460fb46656d320e640fe4c0"
+    },
+    {
+      "path": "map/edges/boss5-binary-credible-scope-repair-e5be8a5e8d2b0dd2/degree-two-credible-root-threshold.json",
+      "sha256": "6be38f547b163b96e652df8e3cc037953edca0ba89c4cf22e9e9071570e403f5"
+    },
+    {
+      "path": "map/edges/boss5-degree-two-allspe-3a-3a-da980ec821d5cfa3/construction-attains-credible-root-floor.json",
+      "sha256": "829fc3dc649822d0aa1ae3a8cbe2063861bd3fe42b23dcf62140075b775f444d"
+    }
+  ],
+  "model": "q≥2,b≥1,0≤a≤b are integers; two groups of q labelled topics; b distinct unit customers per cross-group pair and a per within-group pair; m=q+1 sequential unit providers with every ordered history, legal repetition and weak tie retained.",
+  "mathematical_checks": [
+    {
+      "claim": "Single-use terminal payoff and every genuine subgame continuation floor",
+      "derivation": "Put S=qb+(q−1)a and L=S−qb/2. If terminal z_v=1, the other q actions give u_v=Σ_w μ_vw/(1+z_w)≥S−(b/2)Σ_w z_w=L, using 1/(1+k)≥1−k/2 for integer k≥0 and μ_vw≤b. At any history before a move at most q topics have appeared, so a fresh topic exists among 2q labels. Force it in the same complete strategy. Either it remains single-use or a later mover repeats it. In the latter case the forced mover and that later mover have identical terminal payoff; the later mover belongs to a strictly deeper genuine subgame and the backward induction floor applies. Current optimality then gives every still-to-move actual player at least L. The same two cases prove L_h(v)≥L for every previously unused forced v without requiring that forced move itself to be optimal."
+    },
+    {
+      "claim": "Exact root threshold uses the existential construction only for the opposite inequality",
+      "derivation": "The source controller, with the specified most-recent-group tie rule and complete backward-induction exits after the first repeat, supplies a complete child SPE after every root v. Its q followers use all q opposite-group labels once. The root earns qb/2+(q−1)a=L. Hence L_empty(v)≤L for each v; the universal child floor gives equality and Θ_empty=L. An arbitrary group tie rule would not give this witness, and no such relaxation is used."
+    },
+    {
+      "claim": "Independent algebra for the true coverage optimum",
+      "derivation": "A support may be enlarged to m=q+1 distinct labels, leaving x+y=q−1 unused labels in the two groups. Its uncovered customer count is a[binom(x,2)+binom(y,2)]+bxy=a binom(q−1,2)+(b−a)xy. Since b≥a, the minimum is attained by x=0 or y=0. Subtracting from N=q²b+q(q−1)a gives OPT=q²b+(q−1)(q+2)a/2. This also handles a=b and a=0."
+    },
+    {
+      "claim": "The same actual path admits the needed ordering of an optimal support",
+      "derivation": "Assign the m distinct optimal labels backward from position m. At step i there remain i candidates while the actual prefix h_i contains at most i−1 distinct labels, so one candidate is fresh. Thus Σ_i L_hi(T_i)≥mL. Actual welfare is Σ_i u_i≥mL, and 2mL−OPT=qb+(q−1)(3q+2)a/2>0, so Σ_i L_hi(T_i)≥OPT−W. The independent full-continuation recursion supplies L_hi(T_i)≤Θ_hi≤u_i(actual), which closes half for this family."
+    },
+    {
+      "claim": "All complete root SPE are optimal when a>0",
+      "derivation": "A new repeater receives at most S/2<L, contradicting the actual mover floor; root outcomes therefore have distinct labels. When a=b every m-label support has the same coverage. For 0<a<b, F(s)=S−[b(q+1−s)+a(s−1)]/2 strictly increases with the mover’s final own-group count. At a no-repeat prefix x>y≥1 with x+y≤q, joining the majority produces own-group count q+1−y; joining the minority gives y+1 if x≥y+2 or at most q−y if x=y+1, both strictly smaller. For x>y=0 and x≥2, the majority route reaches q and a minority deviation leaves the deviator alone. Balanced prefixes choose either next majority. Root-prefix cases therefore end at counts (q,1) or (1,q), attaining the optimum just calculated."
+    },
+    {
+      "claim": "The a=0 weak-tie boundary also preserves all-SPE optimality",
+      "derivation": "Any repeated label earns at most L, strictly less when an opposite-group label is present or the label appears at least three times. Actual movers are all at least L. Consequently a root outcome with a repeat uses only one group and each repeated label occurs exactly twice. If a second repeat action were contemplated, there is an earlier label of count at least two. Switching to a fresh opposite-group topic produces, in every genuine continuation, a single-use deviating label: copying any label after both groups appear would be strictly below L for its new copier. The deviator earns bΣ_w1/(1+z_w)>qb−(b/2)Σ_w z_w≥qb/2=L because an existing z_w≥2 makes the integer bound strict. Thus the second repeat is impossible. With q+1 actions, a one-group outcome uses all q labels and covers every cross customer. If both groups occur, no copies can be added and the majority argument gives (q,1) or (1,q). Every case attains OPT."
+    },
+    {
+      "claim": "The aggregate-floor counterexample attacks a different universal statement",
+      "derivation": "The fully described 36-customer three-player instance has a complete SPE with payoff (10,12,12), W=34, θ_3=12 and OPT=36. Thus W≥3θ_3 fails, while 2W≥OPT holds. Its customers include four-label membership types, so it is outside the two-label-membership family reviewed here. It neither refutes the family theorem nor supplies the missing general same-path payment inequality."
+    }
+  ],
+  "edge_review": [
+    {
+      "edge_id": "cag-degree-two-construction-attains-credible-root-floor",
+      "verdict": "valid contribution",
+      "reason": "The source provides an attaining credible child and an optimal support. It does not alone prove the all-children lower bound or universal all-SPE optimality; contribution.remaining accurately names the independent target proof obligations."
+    },
+    {
+      "edge_id": "cag-degree-two-credible-root-threshold-local",
+      "verdict": "valid contribution",
+      "reason": "The proved family theorem supplies the full family-specific route5 payment step. The target resource concerns general catalogues, so contribution rather than whole_result is required and is present. The original complete ordered-history model is retained."
+    }
+  ],
+  "open_obligations": [
+    "For a general common catalogue, the actual-path optimal-position payment Σ_i L_hi(T_i)≥OPT−W remains a separate obligation.",
+    "The reviewed family theorem does not determine exact L_h(A) for previously used labels or all nonempty-history Θ_h.",
+    "The general exact-six half-cover target and open SUMmin budget are not promoted by this restricted-family theorem."
+  ],
+  "verdict": "No mathematical or scope correction is required in the two current contribution edges. The universal family theorem and its root-attainment source have distinct, correctly recorded proof roles.",
+  "validation_basis": "Symbolic and quantifier-level derivation from the cited complete proofs. No new finite computation is presented as a universal proof."
+}
