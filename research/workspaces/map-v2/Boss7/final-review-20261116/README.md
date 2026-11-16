@@ -4,7 +4,26 @@
 
 ## 当前交付状态
 
-本轮四个 Cartesian v3 定向替代包已全部 pushed、done；第四包的冗余 input_pins 遗漏也已由 Boss5 的正式后继 01720 修复并整合。Boss3 d86 的两项 SUMmin 局部预算已推送并纳入图。最新一次原生状态为 680 个有效 done 批次，任务队列已无 available、claimed、blocked 或 handoff；其中 678 批已整合，最后两批 3313 与 7383 已正式推送、done，正在接入最新总图。待采用该整合快照后执行最终检查。开放数学命题保留自己的状态；图谱任务的完成不意味着这些命题获得证明。
+**全仓现役第三阶段构图任务、覆盖与整合已完成，原生最终检查和构建均通过。** 最新采用的正式整合为 `fe43decf02ac2d6090dc486d4f15eb7ff3b7435b`；两项最后交付 3313 与 7383 已按正式收据进入现行总图。Boss7 保留了同行所有有效审读，并把完整 m 槽纯门槛与已否的 m−1 槽门槛作了最小消歧。没有新增未领、执行中、阻塞或待整合的已知工作。
+
+| 验收项 | 最终结果 |
+| --- | ---: |
+| 当前任务总记录 | 1,050 |
+| 历史 done / withdrawn | 935 / 115 |
+| 仍有效 done / 已整合批次 | 680 / 680 |
+| available / claimed / blocked / handoff / pending integration | 全部 0 |
+| 现役对象 / 登记材料 | 3,821 / 5,137 |
+| 已连边 / 经比较保留孤立的覆盖 | 2,656 / 1,165 |
+| 关系记录总数 | 2,673 |
+| accepted / proposed / rejected | 2,667 / 5 / 1 |
+| 最终图文件 | 21（根图及 20 个存档、子档投影） |
+| 未登记材料 / 待定材料 | 0 / 0 |
+
+935 个历史 done 中，255 个已由后继替代；最终有效集合为 680，未把历史重复计成新增成果。经比较保留孤立是完整的覆盖判定，不是未读或待决；相应理由仍在各对象 coverage。5 个 proposed 和 1 个 rejected 保留其记录及证据范围，发布图只收录 2,667 个 accepted 关系。开放数学命题保留自己的状态；图谱任务完成不意味着这些命题获得证明。
+
+实际验收输出为 [final-check.json](final-check.json)、[final-build.json](final-build.json) 和 [final-map-status.json](final-map-status.json)；完整计数、全部 21 个投影路径及 SHA、canonical 指纹和范围说明见 [final-acceptance.json](final-acceptance.json)。最后两批的精确采用与文字消歧见 [final-delivery-adoption-review.json](final-delivery-adoption-review.json)。原生 build 输出的 `publication: local-not-pushed` 是生成动作当时的记录；随后 checkpoint 的实际 pushed 回执与公屏最终提交负责确认发布。
+
+本目录其它审读报告保留各自的真实读取快照；其中当时的 claimed、尚待 canonical 等措辞属于该次审读时点，当前总状态以本节及最终验收文件为准。成熟旧成果按其原审读和当前精确资产继承，本轮没有冒称重新证明全部 3,821 个对象。
 
 ## 本轮实际完成的数学复核
 
@@ -15,7 +34,7 @@
 | 裸 Cartesian 族怎样经过正规形迁移 | 对每个 t≥1，完整实际矩阵满足 `V=1−2^(−t)`、`OPT=1+2^(−t)`；联合已证的选择树和路径保值桥，得到三态、资源组度三的同值族。该后果不恢复裸乘积丢掉的 NO 间隙，也不产生一般 UM 困难源。 | [实际任务与正规形迁移](um-transfer-review.md) |
 | 局部配对何时能给出原机器的实际调度 | 给定的全部 pair 若有同一个全机延拓，逐任务重数几乎处处为 0/1 且期望为 1，故每个原任务恰一次。反向只保证存在一份 Dirac 见证；可调度不保证任意指定配对可延拓。容量一星族的实际 `OPT=2−1/k` 排除 T=1 的全局延拓。 | [分组配置全局耦合](cross-glue-review.md) |
 
-另两组当前比较也已完成独立数学审读，正式关系和整合由现有任务负责人承接：
+以下两组也已完成独立数学审读，并按各自实际范围接入本轮整合：
 
 - **聚合末位保底反例与 SUMmin。** [36 客户固定策略](summin-36-budget-review.md) 对所有混合查询均有 `ΣR_i(p)≤57/2<34=W`。原 `K=6M+4`、`2n` 标签的[正编译输入族](summin-alln-budget-review.md) 对每个 `n≥3`、该输入的每份完整纯 SPE、每个混合查询分布都有 `ΣR_i(p)<W`。后一量词通过完整历史 fresh 编译桥支付；共同前提需要一条 ALL 关系。这两类对较强阈值的反例没有切断 SUMmin 路线，但都只是原候选的局部贡献。
 - **NSW 的同一输出和实际 flat-UM 后果。** [现行 NSW 义务复核](nsw-current-obligation-review.md) 直接核了 B1–B6 及 C/D/E：显式无权 XOS 后端先固定实际输出，再对 H 上全部比较双射及所有正有限有理分数 benchmark 成立。原 norm1 显式菜单加正 support unit-FSLP 可行性，支付 almost-all 质量、准确共享 REPAIR promise 的 LP 判定与全部原 jobs 的 makespan≤2；它不支付任意 source 的保真正规化或全机器统一 `2−ε`。
