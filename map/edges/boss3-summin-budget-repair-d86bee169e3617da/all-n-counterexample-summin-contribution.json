@@ -1,0 +1,82 @@
+{
+  "edge_id": "boss3-all-n-counterexample-summin-contribution-d86bee169e3617da",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "CA-AGGREGATE-LAST-FLOOR-NO"
+  ],
+  "target_ids": [
+    "customer-attraction/e7-summin-full-common-budget-exact-discount-and-finite-tests"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "reviewed_by": "Boss3; Boss3 / summin_packet_author",
+  "conditions": "每个整数n≥3，使用源正文式(2)的两组势F及式(3)的全部非空类型整数反演x_B，M=Σ|x_B|，严格采用源反族K=6M+4、r_B=x_B+K，并展开为不同单位客户。取源指定fresh辅助完整策略的任意完整原模型纯SPE扩展σ；包括全部有序重复离轨历史和弱平局。actual叶z有n个distinct标签（一X、n−1个Y），每行保原actual前缀、强制者和沿同一σ真实续行，完整竞争槽数m=n。全部行使用同一个任意合法查询分布p，查询在列选定后独立抽样。",
+  "roles": {
+    "CA-AGGREGATE-LAST-FLOOR-NO": "提供每个n≥3的明确正整数单位客户反族、指定fresh辅助策略到全部原历史SPE的扩展，以及actual W=KC+n−1；本贡献针对该指定构造与其扩展，不把源∃量词扩大为所有反例。",
+    "customer-attraction/e7-summin-full-common-budget-exact-discount-and-finite-tests": "接收这一具体反族在全部p上的严格SUMmin-full预算，作为一般开放共同预算的一类已付输入；目标全称实例/σ/m命题仍open。"
+  },
+  "explanation": "固定n与指定完整扩展σ，记actual z=(S_1,…,S_n)、Z={S_1,…,S_n}。对每行实际动作S_i，沿同一σ重现原路径，故Z_i(S_i)=z。记g_p(z)=Σ_Tp_TK(T,z)，则对同一p有Σ_iR_i(p)≤n g_p(z)≤n max_a K(a,z)。单位全类型偏置的查询a∉Z价为β_n=2^(n−1)Σ_(k=0)^n binom(n,k)/(k+1)=(2^(2n)−2^(n−1))/(n+1)；a∈Z价为γ_n=2^n∫_0^1t(1+t)^(n−1)dt，且β_n−γ_n=2^(n−1)∫_0^1(1−t)(1+t)^(n−1)dt>0。signed项Σ_(B∋a)x_B/(1+|B∩Z|)绝对值≤M，所以每个查询K(a,z)≤Kβ_n+M，得到Σ_iR_i(p)≤n(Kβ_n+M)。令C=2^(2n)−2^n，原文actual W=KC+n−1。δ_n=C−nβ_n=2^(n−1)[2^(n+1)−n−2]/(n+1)>n：n≥3时2^(n−1)≥n+1且2^(n+1)>2(n+1)。因此W−n(Kβ_n+M)=Kδ_n+n−1−nM>n(K−M)+n−1>0，K=6M+4。此为所有p的解析统一界，不是有限分布扫描。正客户、distinct实际路径和完整σ由源Möbius/全历史编译证明承担；不把signed辅助或fresh限制冒作原模型。 同一范围还可紧化：CA源正文式(4)给所有Boolean子集的调和身份。actual Z为混合n集合，F(Z)=0；任意未用a的Z∪{a}有n+1标签，F(Z∪{a})=0。因此其signed额外查询价s_a=F(Z∪{a})−F(Z)=0，故K(a,z)=Kβ_n。已用a仍用|s_a|≤M，有K(a,z)≤Kγ_n+M<Kβ_n，因为β_n−γ_n=δ_n/n>1且K>M。恰有n个未用标签，遂max_aK(a,z)=Kβ_n，进一步Σ_iR_i(p)≤nKβ_n<W，裕量Kδ_n+n−1。此tight结果只用源已含式(4)的内部计算；M1作为精确evidence核来源，不是遗漏的独立联合前提。未对已用查询的重复计数套Boolean F，也未宣称nKβ_n是ΣR的精确最优值。",
+  "contribution": {
+    "result": "原文K=6M+4两组正编译反族，对每个n≥3、指定fresh辅助策略的任意完整原模型SPE扩展σ及每个同一合法查询分布p，有Σ_(i=1)^n min_A E_pK_i(T,A)≤n(Kβ_n+M)<W(σ)，β_n=(2^(2n)−2^(n−1))/(n+1)。所以这些明确的聚合θ反例实际严格满足SUMmin-full。 同一指定反族/σ范围中，源内部调和身份还给max_aK(a,z)=Kβ_n，故更紧地Σ_iR_i(p)≤nKβ_n<W，裕量至少Kδ_n+n−1。",
+    "remaining": "目标要求所有有限共同目录、所有m≥1和所有完整纯SPE上的同一p共同预算；本边仅支付源的明确反族与指定策略扩展，不证明一般SUMmin，也不证明无条件六人half。源中的任意其它反例或任意其它SPE不在本结论量词内。"
+  },
+  "scope": "源proved具体构造到open SUMmin的accepted unconditional contribution；结论为目标的一类输入及指定策略的全p解析预算，非whole。m=n槽含强制者，不是θ_n的n−1背景。",
+  "evidence": [
+    {
+      "path": "map/edges/boss3-summin-budget-repair-d86bee169e3617da/comparison-review.json",
+      "sha256": "367e6ffe393a1b80fa04c433da84b50ec491a5e157244c2b2770950b5aca1671"
+    },
+    {
+      "path": "archives/customer-attraction/state/候选/全槽逐行最小价格的共同预算与有限报告--候选.md",
+      "sha256": "e952c73849b2ac561ac4ebb761b3ae0c1af06d61f27e743c593ea0103c52698a",
+      "section": "真完整列、逐行最小与开放付款"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+      "section": "策略、真实续局与全部历史量词"
+    },
+    {
+      "path": "archives/customer-attraction/state/反例/三人及以上聚合末位保底--反例.md",
+      "sha256": "d316702ecc98a5976769d1d2e0094341474e0c4655deaac825bc208ae81d36e7"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/子集调和势的Möbius反演--定理.md",
+      "sha256": "9c7e58e4642077607ce2b49c67e7598c97b47b4cdb1b43a34cf335dd2aec5629"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/无重复辅助博弈的完整历史编译--定理.md",
+      "sha256": "e6e06a43973f7c37673b498074475fdf8aa37338d448aff53b2bf9b2e7fa0dd4"
+    },
+    {
+      "path": "map/edges/boss3-summin-budget-repair-d86bee169e3617da/all-n-budget-proof.json",
+      "sha256": "fa494cd2ac03e245f46a158fe6a3169cd945b95e10516b68b7240dfb4da8e154"
+    },
+    {
+      "path": "map/edges/boss3-summin-budget-repair-d86bee169e3617da/verify-budget-examples.py",
+      "sha256": "be5abb09832f3025dc4392616ce49b87e53f33743df93b23f5b5c350b2179281"
+    },
+    {
+      "path": "map/edges/boss3-summin-budget-repair-d86bee169e3617da/budget-example-results.json",
+      "sha256": "58da89eb345d0dfa2bad2091095e4c14f65ec8dcba6b6ee3b9323edf9a6a1920"
+    }
+  ],
+  "review_note": "本轮重新全文实读SUMmin、共同模型、一般反族、M1/M2与相应六人/静态桥边界，独立重导Zi(S_i)=z、β/γ全标签最大界、signed误差M及δ_n>n，确认K=6M+4足以压过nM而给严格付款。反族的∃构造被固定为源指定F、偏置与fresh策略的完整SPE扩展；没有断言全部反例或同输入全部SPE。源v2为proved，允许unconditional；target仍open且只写contribution。原SUMmin⇒six-half条件整边保持原字节。 进一步独立核源Eq(4)在actual混合n集合加未用标签的signed边际恰0、已用标签Kγ+M<Kβ，故tight实际查询最大价恰Kβ。该加法是源自足构造内部性质，不另造冗余共同前提；同级all-n-budget-proof.json已全文读并同主粗界/tight逐步一致。 同级精确脚本已实读且新结果n=6直接对全部12查询用正类型和系数积分双核，未用signed值全0，maxQ=11620065152/7、tight总界69720390912/7、margin10979589155/7；这只是解析全n界的数值特化，未运行n=6全历史枚举。 Boss3最终实读边、正式收据和独立解析推导，复核量词、target范围、全部p的固定actual列及紧界；36有限源保持conditional，全n构造源保持unconditional，各为局部contribution。核验脚本最小修正为允许正常done后重放，累计成功2次；数值结果未变。",
+  "endpoint_pins": {
+    "CA-AGGREGATE-LAST-FLOOR-NO": "699ba4cd7ebf119cdeb83f960aa4519f05068694f6f8507893ff071f155045ed",
+    "customer-attraction/e7-summin-full-common-budget-exact-discount-and-finite-tests": "e37e6d0b6d0236152b44c5bd1d840157a5f2673bfcf99f9170af932a33e87332"
+  },
+  "evidence_pins": {
+    "map/edges/boss3-summin-budget-repair-d86bee169e3617da/comparison-review.json": "367e6ffe393a1b80fa04c433da84b50ec491a5e157244c2b2770950b5aca1671",
+    "archives/customer-attraction/state/候选/全槽逐行最小价格的共同预算与有限报告--候选.md": "e952c73849b2ac561ac4ebb761b3ae0c1af06d61f27e743c593ea0103c52698a",
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+    "archives/customer-attraction/state/反例/三人及以上聚合末位保底--反例.md": "d316702ecc98a5976769d1d2e0094341474e0c4655deaac825bc208ae81d36e7",
+    "archives/customer-attraction/state/定理/子集调和势的Möbius反演--定理.md": "9c7e58e4642077607ce2b49c67e7598c97b47b4cdb1b43a34cf335dd2aec5629",
+    "archives/customer-attraction/state/定理/无重复辅助博弈的完整历史编译--定理.md": "e6e06a43973f7c37673b498074475fdf8aa37338d448aff53b2bf9b2e7fa0dd4",
+    "map/edges/boss3-summin-budget-repair-d86bee169e3617da/all-n-budget-proof.json": "fa494cd2ac03e245f46a158fe6a3169cd945b95e10516b68b7240dfb4da8e154",
+    "map/edges/boss3-summin-budget-repair-d86bee169e3617da/verify-budget-examples.py": "be5abb09832f3025dc4392616ce49b87e53f33743df93b23f5b5c350b2179281",
+    "map/edges/boss3-summin-budget-repair-d86bee169e3617da/budget-example-results.json": "58da89eb345d0dfa2bad2091095e4c14f65ec8dcba6b6ee3b9323edf9a6a1920"
+  },
+  "review_digest": "c18c311a4d092b710cfcf01376196255e25d781628fc4cc8773862be3b80fc98"
+}
