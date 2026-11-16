@@ -1,0 +1,2138 @@
+{
+  "seed_ids": [
+    "weighted-congestion/harmonic-complement-monochromatic-pne-global-minimum"
+  ],
+  "hops": 0,
+  "navigation_only": true,
+  "registry": "research/registry.json",
+  "registry_pin": "3d98c25870bee0614edd3c1e8a1176337eb0976231b5c742ccb4cc06091ea845",
+  "support_semantics": "OR between support_options; ALL within each option. Conditions and unpaid premises remain explicit. Proof-step contributions stay in research_leads with their result and remaining obligations.",
+  "proof_closure_object_ids": [
+    "M-c81148ab9bca4553bd1b73e97b080e81",
+    "customer-attraction/submodular-shapley-monochromatic-static-pne-global-potential",
+    "weighted-congestion/harmonic-complement-monochromatic-pne-global-minimum",
+    "weighted-congestion/static-customer-coverage-complement-harmonic-transfer"
+  ],
+  "support_options": {
+    "weighted-congestion/harmonic-complement-monochromatic-pne-global-minimum": [
+      {
+        "edge_id": "ca-wc-shapley-and-complement-transfer-global-minimum",
+        "direction": "forward",
+        "all_premises": [
+          "customer-attraction/submodular-shapley-monochromatic-static-pne-global-potential",
+          "weighted-congestion/static-customer-coverage-complement-harmonic-transfer"
+        ],
+        "conclusion_ids": [
+          "weighted-congestion/harmonic-complement-monochromatic-pne-global-minimum"
+        ],
+        "conditions": "有限资源集 X、共同有限非空资源子集目录 A、m≥1 名单位权活动玩家；每资源质量 v_x>0 和固定实参数 b_x≥0。目标费用为非负系数多项式，全部可访问正整数节点满足 p_x(j)=v_x/(b_x+m+1−j)，1≤j≤m；静态补集桥给共同次数 O(m²) 的此类合法多项式。目标起点 s=(B,…,B) 为精确静态 PNE；t 遍历 A^m 的全部完整目标剖面。每项单方比较固定其余玩家于同一个 s_{−i}。",
+        "scope": "完整迁移到所列调和补集节点费用的单位权非负多项式拥塞子类；并非全部非负多项式拥塞的类结论。允许 m=1、空动作、重复覆盖标签、弱收益平局及任意固定非负实背景。只用实际访问的正负载节点，不要求 p_x(0) 匹配调和式。结论为 Rosenthal 势和固定同一起点的静态偏离总下界，不自动给社会总成本、一般异权或完整序贯策略保持。完整历史中根偏离会改变后继玩家动作和 K_i，13 客户例严格否定同一完整 SPE 的直接保持。",
+        "relation_mode": "unconditional",
+        "explanation": "对每个目标动作 A∈A 取源覆盖 X∖A，保留原标签；若先对相同资源子集取商，统一把起点 B 提升到同一个覆盖 X∖B 的源标签，比较剖面逐项任意提升，效用与势不变。令源起点 s̄=(X∖B,…,X∖B)，t̄_i=X∖t_i。给定其他玩家，记 c_x^{−i} 为其源覆盖数，K_i(s̄_{−i})=Σ_x v_x/(b_x+1+c_x^{−i})。目标玩家使用资源 x 时，其负载为 m−c_x^{−i}，故 C_i(A_i,s_{−i})=K_i(s̄_{−i})−u_i(X∖A_i,s̄_{−i})。固定同一个 s_{−i}，K_i 抵消，因此 δ_i^C:=C_i(t_i,s_{−i})−C_i(s)=−δ_i^u，其中 δ_i^u:=u_i(t̄_i,s̄_{−i})−u_i(s̄)。弱 PNE 双向保留，故 s̄ 为源同色静态 PNE 且所有 δ_i^u≤0。为支付实背景的源不等式，逐 p∈(0,1) 取归零单调次模 C_p(U)=Σ_{x∈∪U}v_x(1−p)^{b_x}；源同色证明逐 p 使用的仍是归零、单调及次模性，不要求 b_x 是背景玩家数。若 j 位活动玩家覆盖 x，每覆盖者积分边际为 v_x∫₀¹(1−p)^{b_x+j−1}dp=v_x/(b_x+j)，势客户项为 v_xΣ_{ℓ=1}^j1/(b_x+ℓ)，j=0 时为零。因此源定量结论完整给出 Φ(t̄)−Φ(s̄)≤Σ_iδ_i^u≤0。再令 H_b(c)=Σ_{ℓ=1}^c1/(b+ℓ)。补集负载 k_x=m−c_x 给 Ψ=Σ_xΣ_{j=1}^{m−c_x}v_x/(b_x+m+1−j)=Σ_xv_xH_{b_x}(m)−Φ；常数对全部完整剖面相同。于是对每个 t∈A^m，Ψ(t)−Ψ(s)=−[Φ(t̄)−Φ(s̄)]≥−Σ_iδ_i^u=Σ_iδ_i^C≥0。两个源须同时保留：补集桥只识别两侧缺口，次模 Shapley 同色势差上界才给该缺口所需符号。",
+        "evidence": [
+          {
+            "path": "archives/customer-attraction/state/定理/固定背景下单色静态Shapley均衡的全局势最大性--定理.md",
+            "sha256": "bb44ea464f60d7da0fc13551dafca11f08d9f86b69a77e17d4cac4aaeab01e57",
+            "section": "从单方收益到全部活动配置"
+          },
+          {
+            "path": "archives/customer-attraction/state/定理/固定背景下单色静态Shapley均衡的全局势最大性--定理.md",
+            "sha256": "bb44ea464f60d7da0fc13551dafca11f08d9f86b69a77e17d4cac4aaeab01e57",
+            "section": "任意外生负载的覆盖专门化"
+          },
+          {
+            "path": "archives/weighted-congestion/state/定理/客户均分到非负多项式拥塞的静态补集转移--定理.md",
+            "sha256": "e6b18c3998549abe895e26851e05645168eaee8ac0ddd2b8afecabff53ff80ed",
+            "section": "静态偏离与势的精确对应"
+          },
+          {
+            "path": "archives/weighted-congestion/state/定理/客户均分到非负多项式拥塞的静态补集转移--定理.md",
+            "sha256": "e6b18c3998549abe895e26851e05645168eaee8ac0ddd2b8afecabff53ff80ed",
+            "section": "正系数插值与有理位长"
+          },
+          {
+            "path": "archives/weighted-congestion/state/定理/客户均分到非负多项式拥塞的静态补集转移--定理.md",
+            "sha256": "e6b18c3998549abe895e26851e05645168eaee8ac0ddd2b8afecabff53ff80ed",
+            "section": "序贯边界"
+          },
+          {
+            "path": "archives/weighted-congestion/state/定理/调和补集拥塞的同动作精确均衡是全局势最小点--定理.md",
+            "sha256": "278f3b3307126edc820681ccfefbc917d657893119e0bef28c148dc3c3f50f13"
+          }
+        ],
+        "unpaid_premises": [],
+        "unknown_endpoints": [],
+        "endpoint_binding_changes": [],
+        "current_declared_support": true,
+        "premise_support_options": [
+          "customer-attraction/submodular-shapley-monochromatic-static-pne-global-potential",
+          "weighted-congestion/static-customer-coverage-complement-harmonic-transfer"
+        ]
+      }
+    ],
+    "customer-attraction/submodular-shapley-monochromatic-static-pne-global-potential": [
+      {
+        "edge_id": "ca-r33-shapley-bernoulli-fixed-background-monochromatic",
+        "direction": "forward",
+        "all_premises": [
+          "M-c81148ab9bca4553bd1b73e97b080e81"
+        ],
+        "conclusion_ids": [
+          "customer-attraction/submodular-shapley-monochromatic-static-pne-global-potential"
+        ],
+        "conditions": "有限非空共同合法标签目录，C 为同一个归零单调次模集合函数。任意有限带身份背景玩家固定选题，r≥1 名同目录活动玩家；静态替换固定所有其他玩家。全 B 为 PNE 时应用全局最优推论。",
+        "scope": "任意真实有限固定背景的抽象静态 Shapley 博弈及任意非负实外生背景的覆盖专门化。重复标签、收益平局及 r=1 均可。",
+        "relation_mode": "unconditional",
+        "explanation": "对全部有身份玩家独立以 p 抽样，若某标签计数为 q_a，出现概率为 1−(1−p)^q_a，各标签因槽位不交而独立。令 p=1−t，源的势即 Φ(s)=∫₀¹ E[C(supp s_{S_p})]/p dp。删除指定玩家时，被积期望差恰为 p 乘其对其余抽中玩家的边际；对其余 n−1 人中的每个子集 S 积分，系数为 |S|!(n−1−|S|)!/n!，故删除收益正是同一全体合作游戏的带身份 Shapley 值。令 C_p(U)=E[C(R_p∪U)−C(R_p)]，R_p 为抽中的固定背景标签支持，K_p=C_p({B})，d_p(T)=C_p({B,T})−K_p。C_p 保归零、单调、次模。抽中活动槽 I 为空时差为 0；仅抽 i 时差为 C_p({T_i})−K_p；至少两槽时，先加 B 再逐个加 T_i，由单调和边际递减，差至多 Σ_{i∈I}d_p(T_i)。除以 p 后，i 单独入样和 i 与别槽同入样的系数分别为 (1−p)^{r−1} 与 1−(1−p)^{r−1}。积分给 Φ(T)−Φ(B^r)≤Σ_i[u_i(T_i,B_{−i})−u_i(B^r)]：两项恰对应静态替换时未抽中或抽中其他活动玩家。PNE 逐个压低的是积分后的真实收益差。对外生覆盖同一逐参数论证取 C_p(U)=Σ_{x∈∪U}w_x(1−p)^{b_x}，w_x,b_x≥0。每客户出现 j 次时，边际积分为 w_x/(b_x+j)，势积分展开有限几何和为 w_xΣ_{ℓ=1}^j1/(b_x+ℓ)。",
+        "evidence": [
+          {
+            "path": "archives/customer-attraction/state/定理/共同删除势的全域效率与单调次模提升--定理.md",
+            "sha256": "1b92a86f1c58a9ca45c9599cff05f7d38a6739491a17a6f05ad1674bb03317d5",
+            "section": "全域构造和收益积分"
+          },
+          {
+            "path": "archives/customer-attraction/state/定理/固定背景下单色静态Shapley均衡的全局势最大性--定理.md",
+            "sha256": "bb44ea464f60d7da0fc13551dafca11f08d9f86b69a77e17d4cac4aaeab01e57",
+            "section": "势与收益的同一抽样公式"
+          },
+          {
+            "path": "archives/customer-attraction/state/定理/固定背景下单色静态Shapley均衡的全局势最大性--定理.md",
+            "sha256": "bb44ea464f60d7da0fc13551dafca11f08d9f86b69a77e17d4cac4aaeab01e57",
+            "section": "从单方收益到全部活动配置"
+          },
+          {
+            "path": "archives/customer-attraction/state/定理/固定背景下单色静态Shapley均衡的全局势最大性--定理.md",
+            "sha256": "bb44ea464f60d7da0fc13551dafca11f08d9f86b69a77e17d4cac4aaeab01e57",
+            "section": "任意外生负载的覆盖专门化"
+          }
+        ],
+        "unpaid_premises": [],
+        "unknown_endpoints": [],
+        "endpoint_binding_changes": [],
+        "current_declared_support": true,
+        "premise_support_options": [
+          "M-c81148ab9bca4553bd1b73e97b080e81"
+        ]
+      }
+    ],
+    "weighted-congestion/static-customer-coverage-complement-harmonic-transfer": [],
+    "M-c81148ab9bca4553bd1b73e97b080e81": []
+  },
+  "objects": [
+    {
+      "object_id": "M-39089a04f9444753a75cc06873542b82",
+      "version": 1,
+      "title": "同背景全选同主题的静态PNE全局最大化调和势",
+      "kind": "lemma",
+      "truth_status": "proved",
+      "model": "有限不同单位客户；有限非空共同标签目录及任意覆盖映射；单位权提供者按固定次序各行动一次，观察全部有序历史，客户价值在终局覆盖者间均分。允许空覆盖、同覆盖异标签、重复行动、零客户及任意离轨平局；偏离后使用同一完整策略的真实后继。",
+      "statement": "任意实背景b_x≥0、r≥1，若同时静态r玩家全选B是PNE，则B^r在所有r合法主题元组中全局最大化Φ_b(Z)=Σ_xΣ_(j=1)^c_x(Z)1/(b_x+j)。PNE给每T的B外1/(b+1)利润≤B内1/(b+r)损失，逐槽相加控制全部势变化。完整SPE单色后缀的末位BR可给同背景PNE条件。",
+      "quantifiers": "每个非负实背景、正整数r及所有合法r主题元组。",
+      "assumptions": [
+        "全部比较固定同一背景；势内仅c_x>0项求和"
+      ],
+      "scope": "不能因此比较改前缀后的真实多玩家SPE，也不支付一般VA跨背景税。",
+      "objections": "本轮实读本批成熟Markdown及共同模型，复用成熟证明，未运行数学程序、BI、LP或旧审计；完整原始数组/程序未在本轮逐行复读。",
+      "body": {
+        "path": "archives/customer-attraction/state/资料/双尾推送与单色续局的版本接口--资料.md",
+        "sha256": "c09c980bb67b01fcd76bb6b99149d02eee42ce91d68f4c1b1a022d76902bc129",
+        "section": "单色税的实际义务和可独立使用的静态势引理"
+      },
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+          "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+        },
+        {
+          "path": "archives/customer-attraction/state/资料/双尾推送与单色续局的版本接口--资料.md",
+          "sha256": "c09c980bb67b01fcd76bb6b99149d02eee42ce91d68f4c1b1a022d76902bc129"
+        }
+      ],
+      "sources": [
+        "p25-register-v2:register-ab98f323ad-0052",
+        "archives/customer-attraction/state/资料/双尾推送与单色续局的版本接口--资料.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-d22a706a03c5499d941a6a97f94128a8/induction/README.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/workspaces/customer-attraction/R-d22a706a03c5499d941a6a97f94128a8/induction/README.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-d22a706a03c5499d941a6a97f94128a8/tree/README.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/workspaces/customer-attraction/R-d22a706a03c5499d941a6a97f94128a8/tree/README.md"
+      ],
+      "registration_pin": "dad75f445713abab0f516a06336a36051bd1721eccfe0c0b5dc14d4feaec236c",
+      "body_binding": {
+        "reference": {
+          "path": "archives/customer-attraction/state/资料/双尾推送与单色续局的版本接口--资料.md",
+          "sha256": "c09c980bb67b01fcd76bb6b99149d02eee42ce91d68f4c1b1a022d76902bc129",
+          "section": "单色税的实际义务和可独立使用的静态势引理"
+        },
+        "status": "current",
+        "current_sha256": "c09c980bb67b01fcd76bb6b99149d02eee42ce91d68f4c1b1a022d76902bc129"
+      },
+      "evidence_bindings": [
+        {
+          "reference": {
+            "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+            "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+          },
+          "status": "current",
+          "current_sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+        },
+        {
+          "reference": {
+            "path": "archives/customer-attraction/state/资料/双尾推送与单色续局的版本接口--资料.md",
+            "sha256": "c09c980bb67b01fcd76bb6b99149d02eee42ce91d68f4c1b1a022d76902bc129"
+          },
+          "status": "current",
+          "current_sha256": "c09c980bb67b01fcd76bb6b99149d02eee42ce91d68f4c1b1a022d76902bc129"
+        }
+      ],
+      "binding_status": "current"
+    },
+    {
+      "object_id": "M-65906d1bd9974e8c94cbbc65ab1f6b81",
+      "version": 1,
+      "title": "三标签秩二Shapley势严格超出非负coverage锥",
+      "kind": "counterexample",
+      "truth_status": "proved",
+      "model": "有限非空主题标签集P，任意归零有限实值集合函数C:2^P→R；计数q∈Z_≥0^P表示有标号行动槽的主题多重选择。共同全域势Phi与删除边际定义各槽Shapley收益；不预设非负客户coverage表示，单调/次模等为逐对象明确增加的条件。",
+      "statement": "C(S)=min(|S|,2)单调次模，三阶覆盖交替量−1排除非负客户表示；signed质量（各二标签1、三标签−1）给Phi=H_(qa+qb)+H_(qa+qc)+H_(qb+qc)−H_(qa+qb+qc)，满足全域提升性质。",
+      "quantifiers": "存在三标签归零单调次模C及其所有计数q。",
+      "assumptions": [
+        "这是抽象signed辅助模型，非原单位客户"
+      ],
+      "scope": "存在三标签归零单调次模C及其所有计数q。",
+      "objections": "完整读取正式正文，核对精确陈述、条件和承重证明位置；复用成熟解析论证与已有证据。此登记未重跑数学程序，未新增外审或新颖性认证；不将辅助合同升级为一般六人半覆盖。",
+      "body": {
+        "path": "archives/customer-attraction/state/定理/共同删除势的全域效率与单调次模提升--定理.md",
+        "sha256": "1b92a86f1c58a9ca45c9599cff05f7d38a6739491a17a6f05ad1674bb03317d5",
+        "section": "严格大于非负coverage的合法抽象例"
+      },
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+          "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+        },
+        {
+          "path": "archives/customer-attraction/state/定理/共同删除势的全域效率与单调次模提升--定理.md",
+          "sha256": "1b92a86f1c58a9ca45c9599cff05f7d38a6739491a17a6f05ad1674bb03317d5"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/potential-flow-and-submodular-lift-primary/primary-manifest.json",
+          "sha256": "014f2077324c56ae0b317857a395a447324b75934bf0600865c25380c43fd7a6"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/potential-flow-and-submodular-lift-primary/original/research/workspaces/customer-attraction/R-64201cd12083425899e2d643ec9bc087/next_independent/submodular_shapley_global_lift.md",
+          "sha256": "677d69ad86d97a1739bdd0c89eb5a8899568ad508d186abcff159fe0d785bc79"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/potential-flow-and-submodular-lift-primary/original/research/workspaces/customer-attraction/R-64201cd12083425899e2d643ec9bc087/next_tree/global_submodular_lift_review.md",
+          "sha256": "d21cce18c38acb2c176cf167f401bf73d5a343d839423fddf56731f90c3476f9"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-64201cd12083425899e2d643ec9bc087/next_independent/submodular_shapley_global_lift.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-64201cd12083425899e2d643ec9bc087/next_tree/global_submodular_lift_review.md"
+      ],
+      "registration_pin": "4589b050ec18196e3cdbdeae1aeb73034e7cccf827823109ded9d5083cac31d0",
+      "body_binding": {
+        "reference": {
+          "path": "archives/customer-attraction/state/定理/共同删除势的全域效率与单调次模提升--定理.md",
+          "sha256": "1b92a86f1c58a9ca45c9599cff05f7d38a6739491a17a6f05ad1674bb03317d5",
+          "section": "严格大于非负coverage的合法抽象例"
+        },
+        "status": "current",
+        "current_sha256": "1b92a86f1c58a9ca45c9599cff05f7d38a6739491a17a6f05ad1674bb03317d5"
+      },
+      "evidence_bindings": [
+        {
+          "reference": {
+            "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+            "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+          },
+          "status": "current",
+          "current_sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+        },
+        {
+          "reference": {
+            "path": "archives/customer-attraction/state/定理/共同删除势的全域效率与单调次模提升--定理.md",
+            "sha256": "1b92a86f1c58a9ca45c9599cff05f7d38a6739491a17a6f05ad1674bb03317d5"
+          },
+          "status": "current",
+          "current_sha256": "1b92a86f1c58a9ca45c9599cff05f7d38a6739491a17a6f05ad1674bb03317d5"
+        },
+        {
+          "reference": {
+            "path": "archives/customer-attraction/tools/evidence/potential-flow-and-submodular-lift-primary/primary-manifest.json",
+            "sha256": "014f2077324c56ae0b317857a395a447324b75934bf0600865c25380c43fd7a6"
+          },
+          "status": "current",
+          "current_sha256": "014f2077324c56ae0b317857a395a447324b75934bf0600865c25380c43fd7a6"
+        },
+        {
+          "reference": {
+            "path": "archives/customer-attraction/tools/evidence/potential-flow-and-submodular-lift-primary/original/research/workspaces/customer-attraction/R-64201cd12083425899e2d643ec9bc087/next_independent/submodular_shapley_global_lift.md",
+            "sha256": "677d69ad86d97a1739bdd0c89eb5a8899568ad508d186abcff159fe0d785bc79"
+          },
+          "status": "current",
+          "current_sha256": "677d69ad86d97a1739bdd0c89eb5a8899568ad508d186abcff159fe0d785bc79"
+        },
+        {
+          "reference": {
+            "path": "archives/customer-attraction/tools/evidence/potential-flow-and-submodular-lift-primary/original/research/workspaces/customer-attraction/R-64201cd12083425899e2d643ec9bc087/next_tree/global_submodular_lift_review.md",
+            "sha256": "d21cce18c38acb2c176cf167f401bf73d5a343d839423fddf56731f90c3476f9"
+          },
+          "status": "current",
+          "current_sha256": "d21cce18c38acb2c176cf167f401bf73d5a343d839423fddf56731f90c3476f9"
+        }
+      ],
+      "binding_status": "current"
+    },
+    {
+      "object_id": "M-c81148ab9bca4553bd1b73e97b080e81",
+      "version": 1,
+      "title": "单调次模集合函数的全计数格Shapley删除势提升",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "有限非空主题标签集P，任意归零有限实值集合函数C:2^P→R；计数q∈Z_≥0^P表示有标号行动槽的主题多重选择。共同全域势Phi与删除边际定义各槽Shapley收益；不预设非负客户coverage表示，单调/次模等为逐对象明确增加的条件。",
+      "statement": "对有限归零单调次模C及t∈(0,1)，R_t(q)⊆P独立以概率1−t^{q_a}包含每个标签a，Phi_C(q)=∫_0^1 E[C(R_t(q))]/(1−t)dt在全部非负整数计数格有限。仅当q_a>0时定义删除收益U_a(q)=Phi_C(q)−Phi_C(q−e_a)=∫_0^1 t^(q_a−1)E[Δ_aC(R_t(q_−a))]dt≥0；q_−a把a坐标置零，Δ_aC(S)=C(S∪{a})−C(S)。Phi全域单调DR，满足自拥挤序、每层Σ_(a:q_a>0)q_aU_a(q)=C(supp q)及Phi_C(ke_a)=H_kC({a})。",
+      "quantifiers": "任意有限非空标签集P与归零单调次模C:2^P→R；Phi_C对所有q∈Z_≥0^P定义，U_a(q)仅对a∈P且q_a>0定义；纯态结论对每个a∈P和整数k≥1。",
+      "assumptions": [
+        "共同同一C，不要求非负客户表示"
+      ],
+      "scope": "任意有限非空标签集P与归零单调次模C:2^P→R；Phi_C对所有q∈Z_≥0^P定义，U_a(q)仅对a∈P且q_a>0定义；纯态结论对每个a∈P和整数k≥1。",
+      "objections": "body给构造；evidence全文保单调DR/自拥挤/全层E与纯态证明。一般C为抽象辅助模型，未得SPE福利half。TC-DIL-1稀释定理为另对象，本页只是其应用。",
+      "body": {
+        "path": "archives/customer-attraction/state/定理/共同删除势的全域效率与单调次模提升--定理.md",
+        "sha256": "1b92a86f1c58a9ca45c9599cff05f7d38a6739491a17a6f05ad1674bb03317d5",
+        "section": "全域构造和收益积分"
+      },
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+          "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+        },
+        {
+          "path": "archives/customer-attraction/state/定理/共同删除势的全域效率与单调次模提升--定理.md",
+          "sha256": "1b92a86f1c58a9ca45c9599cff05f7d38a6739491a17a6f05ad1674bb03317d5"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/potential-flow-and-submodular-lift-primary/primary-manifest.json",
+          "sha256": "014f2077324c56ae0b317857a395a447324b75934bf0600865c25380c43fd7a6"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/potential-flow-and-submodular-lift-primary/original/research/workspaces/customer-attraction/R-64201cd12083425899e2d643ec9bc087/next_independent/submodular_shapley_global_lift.md",
+          "sha256": "677d69ad86d97a1739bdd0c89eb5a8899568ad508d186abcff159fe0d785bc79"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/potential-flow-and-submodular-lift-primary/original/research/workspaces/customer-attraction/R-64201cd12083425899e2d643ec9bc087/next_tree/global_submodular_lift_review.md",
+          "sha256": "d21cce18c38acb2c176cf167f401bf73d5a343d839423fddf56731f90c3476f9"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-64201cd12083425899e2d643ec9bc087/next_independent/submodular_shapley_global_lift.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-64201cd12083425899e2d643ec9bc087/next_tree/global_submodular_lift_review.md"
+      ],
+      "registration_pin": "5161f546ac32f02ecb11a141b839bf3ff5e03be8bc10342355bccd68a7a59f85",
+      "body_binding": {
+        "reference": {
+          "path": "archives/customer-attraction/state/定理/共同删除势的全域效率与单调次模提升--定理.md",
+          "sha256": "1b92a86f1c58a9ca45c9599cff05f7d38a6739491a17a6f05ad1674bb03317d5",
+          "section": "全域构造和收益积分"
+        },
+        "status": "current",
+        "current_sha256": "1b92a86f1c58a9ca45c9599cff05f7d38a6739491a17a6f05ad1674bb03317d5"
+      },
+      "evidence_bindings": [
+        {
+          "reference": {
+            "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+            "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+          },
+          "status": "current",
+          "current_sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+        },
+        {
+          "reference": {
+            "path": "archives/customer-attraction/state/定理/共同删除势的全域效率与单调次模提升--定理.md",
+            "sha256": "1b92a86f1c58a9ca45c9599cff05f7d38a6739491a17a6f05ad1674bb03317d5"
+          },
+          "status": "current",
+          "current_sha256": "1b92a86f1c58a9ca45c9599cff05f7d38a6739491a17a6f05ad1674bb03317d5"
+        },
+        {
+          "reference": {
+            "path": "archives/customer-attraction/tools/evidence/potential-flow-and-submodular-lift-primary/primary-manifest.json",
+            "sha256": "014f2077324c56ae0b317857a395a447324b75934bf0600865c25380c43fd7a6"
+          },
+          "status": "current",
+          "current_sha256": "014f2077324c56ae0b317857a395a447324b75934bf0600865c25380c43fd7a6"
+        },
+        {
+          "reference": {
+            "path": "archives/customer-attraction/tools/evidence/potential-flow-and-submodular-lift-primary/original/research/workspaces/customer-attraction/R-64201cd12083425899e2d643ec9bc087/next_independent/submodular_shapley_global_lift.md",
+            "sha256": "677d69ad86d97a1739bdd0c89eb5a8899568ad508d186abcff159fe0d785bc79"
+          },
+          "status": "current",
+          "current_sha256": "677d69ad86d97a1739bdd0c89eb5a8899568ad508d186abcff159fe0d785bc79"
+        },
+        {
+          "reference": {
+            "path": "archives/customer-attraction/tools/evidence/potential-flow-and-submodular-lift-primary/original/research/workspaces/customer-attraction/R-64201cd12083425899e2d643ec9bc087/next_tree/global_submodular_lift_review.md",
+            "sha256": "d21cce18c38acb2c176cf167f401bf73d5a343d839423fddf56731f90c3476f9"
+          },
+          "status": "current",
+          "current_sha256": "d21cce18c38acb2c176cf167f401bf73d5a343d839423fddf56731f90c3476f9"
+        }
+      ],
+      "binding_status": "current"
+    },
+    {
+      "object_id": "M-e5979db9ca2b46a09115e0ece14768b1",
+      "version": 1,
+      "title": "共同全域删除势与全层效率的唯一表示及单调DR反向刻画",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "有限非空主题标签集P，任意归零有限实值集合函数C:2^P→R；计数q∈Z_≥0^P表示有标号行动槽的主题多重选择。共同全域势Phi与删除边际定义各槽Shapley收益；不预设非负客户coverage表示，单调/次模等为逐对象明确增加的条件。",
+      "statement": "对归零有限实值C，令R_t(q)独立以概率1−t^{q_a}包含各标签a（0<t<1），Phi_C(q)=∫_0^1 E[C(R_t(q))]/(1−t)dt。若同一个全域Phi(0)=0的删除边际U_a(q)=Phi(q)−Phi(q−e_a)（仅q_a>0定义）在每层满足Σ_(a:q_a>0)q_aU_a(q)=C(supp q)，则对q≠0的递推|q|Phi(q)=C(supp q)+Σ_(a:q_a>0)q_aPhi(q−e_a)唯一迫Phi=Phi_C；在此共同势+全层效率论域内，Phi单调DR当且仅当C单调次模。",
+      "quantifiers": "任意有限非空P与归零有限实值C；Phi定义在整个Z_≥0^P且Phi(0)=0；U_a(q)只在q_a>0定义，效率对每个q成立，零计数求和为空和。",
+      "assumptions": [
+        "预设同一共同Phi或收益的可积/BC兼容性",
+        "全层效率，不是固定m截断"
+      ],
+      "scope": "任意有限非空P与归零有限实值C；Phi定义在整个Z_≥0^P且Phi(0)=0；U_a(q)只在q_a>0定义，效率对每个q成立，零计数求和为空和。",
+      "objections": "完整读取正式正文，核对精确陈述、条件和承重证明位置；复用成熟解析论证与已有证据。此登记未重跑数学程序，未新增外审或新颖性认证；不将辅助合同升级为一般六人半覆盖。",
+      "body": {
+        "path": "archives/customer-attraction/state/定理/共同删除势的全域效率与单调次模提升--定理.md",
+        "sha256": "1b92a86f1c58a9ca45c9599cff05f7d38a6739491a17a6f05ad1674bb03317d5",
+        "section": "共同势加全层E的反向刻画"
+      },
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+          "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+        },
+        {
+          "path": "archives/customer-attraction/state/定理/共同删除势的全域效率与单调次模提升--定理.md",
+          "sha256": "1b92a86f1c58a9ca45c9599cff05f7d38a6739491a17a6f05ad1674bb03317d5"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/potential-flow-and-submodular-lift-primary/primary-manifest.json",
+          "sha256": "014f2077324c56ae0b317857a395a447324b75934bf0600865c25380c43fd7a6"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/potential-flow-and-submodular-lift-primary/original/research/workspaces/customer-attraction/R-64201cd12083425899e2d643ec9bc087/next_independent/submodular_shapley_global_lift.md",
+          "sha256": "677d69ad86d97a1739bdd0c89eb5a8899568ad508d186abcff159fe0d785bc79"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/potential-flow-and-submodular-lift-primary/original/research/workspaces/customer-attraction/R-64201cd12083425899e2d643ec9bc087/next_tree/global_submodular_lift_review.md",
+          "sha256": "d21cce18c38acb2c176cf167f401bf73d5a343d839423fddf56731f90c3476f9"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-64201cd12083425899e2d643ec9bc087/next_independent/submodular_shapley_global_lift.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-64201cd12083425899e2d643ec9bc087/next_tree/global_submodular_lift_review.md"
+      ],
+      "registration_pin": "5e8f0e7696f77c6167f74b60da8d51f0f4d25d87310838f2dc36bf3949f349f3",
+      "body_binding": {
+        "reference": {
+          "path": "archives/customer-attraction/state/定理/共同删除势的全域效率与单调次模提升--定理.md",
+          "sha256": "1b92a86f1c58a9ca45c9599cff05f7d38a6739491a17a6f05ad1674bb03317d5",
+          "section": "共同势加全层E的反向刻画"
+        },
+        "status": "current",
+        "current_sha256": "1b92a86f1c58a9ca45c9599cff05f7d38a6739491a17a6f05ad1674bb03317d5"
+      },
+      "evidence_bindings": [
+        {
+          "reference": {
+            "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+            "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+          },
+          "status": "current",
+          "current_sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+        },
+        {
+          "reference": {
+            "path": "archives/customer-attraction/state/定理/共同删除势的全域效率与单调次模提升--定理.md",
+            "sha256": "1b92a86f1c58a9ca45c9599cff05f7d38a6739491a17a6f05ad1674bb03317d5"
+          },
+          "status": "current",
+          "current_sha256": "1b92a86f1c58a9ca45c9599cff05f7d38a6739491a17a6f05ad1674bb03317d5"
+        },
+        {
+          "reference": {
+            "path": "archives/customer-attraction/tools/evidence/potential-flow-and-submodular-lift-primary/primary-manifest.json",
+            "sha256": "014f2077324c56ae0b317857a395a447324b75934bf0600865c25380c43fd7a6"
+          },
+          "status": "current",
+          "current_sha256": "014f2077324c56ae0b317857a395a447324b75934bf0600865c25380c43fd7a6"
+        },
+        {
+          "reference": {
+            "path": "archives/customer-attraction/tools/evidence/potential-flow-and-submodular-lift-primary/original/research/workspaces/customer-attraction/R-64201cd12083425899e2d643ec9bc087/next_independent/submodular_shapley_global_lift.md",
+            "sha256": "677d69ad86d97a1739bdd0c89eb5a8899568ad508d186abcff159fe0d785bc79"
+          },
+          "status": "current",
+          "current_sha256": "677d69ad86d97a1739bdd0c89eb5a8899568ad508d186abcff159fe0d785bc79"
+        },
+        {
+          "reference": {
+            "path": "archives/customer-attraction/tools/evidence/potential-flow-and-submodular-lift-primary/original/research/workspaces/customer-attraction/R-64201cd12083425899e2d643ec9bc087/next_tree/global_submodular_lift_review.md",
+            "sha256": "d21cce18c38acb2c176cf167f401bf73d5a343d839423fddf56731f90c3476f9"
+          },
+          "status": "current",
+          "current_sha256": "d21cce18c38acb2c176cf167f401bf73d5a343d839423fddf56731f90c3476f9"
+        }
+      ],
+      "binding_status": "current"
+    },
+    {
+      "object_id": "customer-attraction/actual-coverage-and-overlapping-optimal-catalog-static-harmonic-boundary",
+      "version": 1,
+      "title": "half等号且唯一最优元组仍静态欠调和重叠信用的全参数族",
+      "kind": "counterexample",
+      "truth_status": "proved",
+      "model": "有限不同单位客户、有限非空共同标签目录及覆盖映射、单位权顺序提供者；完整纯策略保全部合法有序历史，含空覆盖、同覆盖异标签、重复行动、零客户及任意离轨平局。终局每客户由全部覆盖者均分；真实强制动作后沿同一原策略继续。根无外生背景时W=Σu_i为实际覆盖；合法非零背景下只算剩余利润时另行说明。",
+      "statement": "每整数m≥2、a≥2，m个不交实际题A_i各a客户；m个比较题T_j=K∪P_j，|K|=m(a−1)、|P_j|=a+1，与全部A_i及P_j相互不交。静态actual(A_1,…,A_m)有W=ma；唯一最优m多重集是全T各一次，OPT=2ma=2W，G=W。B_h=Σ(H_(c+d)−H_c)=2W+|K|(H_m−1)>W+G。全部最优元组重排也不能消债；每个T→A交换严格损覆盖1。",
+      "quantifiers": "每m≥2,a≥2存在上述有限单位目录与静态终局；不声称该终局为SPE。",
+      "assumptions": [
+        "所有块不交且目录恰所列A/T",
+        "末位可从A_m改T获严格更多，故此路径确定非SPE"
+      ],
+      "scope": "否定仅用half/静态最优性支付调和预算的桥；不是SPE signed-harmonic或half反例。",
+      "objections": "完整实读本页精确陈述、条件、证明位置和成熟证据范围；复用成熟解析证明，不新增原程序运行或全SPE复验。独立数学open和本条已证结论分别保留。",
+      "body": {
+        "path": "archives/customer-attraction/state/资源/实际覆盖与重叠最优目录的静态调和边界--资源.md",
+        "sha256": "fbec04d58e0bcd653081085b1ea5fcb12ab01538733f4104bd5690d1f81436e2"
+      },
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+          "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+        }
+      ],
+      "sources": [
+        "canonical:archives/customer-attraction/state/资源/实际覆盖与重叠最优目录的静态调和边界--资源.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-7c3db62487a34730a704a4f2eb401556/FAILED_ROUTES.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-7c3db62487a34730a704a4f2eb401556/README.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-7c3db62487a34730a704a4f2eb401556/construction/README.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-7c3db62487a34730a704a4f2eb401556/harmonic/README.md"
+      ],
+      "registration_pin": "5aa29259d3add6ae0896aac68464aebf89e8e8d8e1a9ae513fe6bfb7530efa1d",
+      "body_binding": {
+        "reference": {
+          "path": "archives/customer-attraction/state/资源/实际覆盖与重叠最优目录的静态调和边界--资源.md",
+          "sha256": "fbec04d58e0bcd653081085b1ea5fcb12ab01538733f4104bd5690d1f81436e2"
+        },
+        "status": "current",
+        "current_sha256": "fbec04d58e0bcd653081085b1ea5fcb12ab01538733f4104bd5690d1f81436e2"
+      },
+      "evidence_bindings": [
+        {
+          "reference": {
+            "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+            "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+          },
+          "status": "current",
+          "current_sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+        }
+      ],
+      "binding_status": "current"
+    },
+    {
+      "object_id": "customer-attraction/submodular-shapley-monochromatic-static-pne-global-potential",
+      "version": 1,
+      "kind": "theorem",
+      "truth_status": "proved",
+      "title": "固定背景下单色静态Shapley均衡的全局势最大性",
+      "model": "归零单调次模集合价值按有序主题配置的集合支持计值。静态个人收益取带身份玩家的Shapley值，有限背景玩家固定选择。",
+      "statement": "活动玩家在固定背景下全选同一合法B且为PNE时，该配置在全部活动配置中最大化Shapley势。任意配置的势差由各玩家在全B时单方改选相应主题的Shapley收益差总和上界。",
+      "quantifiers": "任意有限主题、任意归零单调次模C、任意有限固定背景玩家和r≥1个活动玩家，允许重复、收益平局和任意合法主题。",
+      "assumptions": [
+        "静态合作价值只由选题支持决定，活跃收益和势均用同一全体合作游戏的Shapley权。"
+      ],
+      "scope": "抽象次模值允许有限真实固定背景，覆盖专门化还允许任意外生逐客户背景。",
+      "objections": "静态全单色配置的全局势保证。动态SPE势最大化属于独立命题。",
+      "body": {
+        "path": "archives/customer-attraction/state/定理/固定背景下单色静态Shapley均衡的全局势最大性--定理.md",
+        "sha256": "bb44ea464f60d7da0fc13551dafca11f08d9f86b69a77e17d4cac4aaeab01e57"
+      },
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/定理/共同删除势的全域效率与单调次模提升--定理.md",
+          "sha256": "1b92a86f1c58a9ca45c9599cff05f7d38a6739491a17a6f05ad1674bb03317d5",
+          "section": "全域构造和收益积分"
+        },
+        {
+          "path": "archives/customer-attraction/state/定理/共同删除势的全域效率与单调次模提升--定理.md",
+          "sha256": "1b92a86f1c58a9ca45c9599cff05f7d38a6739491a17a6f05ad1674bb03317d5",
+          "section": "共同势加全层E的反向刻画"
+        }
+      ],
+      "sources": [],
+      "registration_pin": "d486c874dacc5ca04ad36ec8e82d749dccfb07c758eaba5104a9b4f0f7c777b6",
+      "body_binding": {
+        "reference": {
+          "path": "archives/customer-attraction/state/定理/固定背景下单色静态Shapley均衡的全局势最大性--定理.md",
+          "sha256": "bb44ea464f60d7da0fc13551dafca11f08d9f86b69a77e17d4cac4aaeab01e57"
+        },
+        "status": "current",
+        "current_sha256": "bb44ea464f60d7da0fc13551dafca11f08d9f86b69a77e17d4cac4aaeab01e57"
+      },
+      "evidence_bindings": [
+        {
+          "reference": {
+            "path": "archives/customer-attraction/state/定理/共同删除势的全域效率与单调次模提升--定理.md",
+            "sha256": "1b92a86f1c58a9ca45c9599cff05f7d38a6739491a17a6f05ad1674bb03317d5",
+            "section": "全域构造和收益积分"
+          },
+          "status": "current",
+          "current_sha256": "1b92a86f1c58a9ca45c9599cff05f7d38a6739491a17a6f05ad1674bb03317d5"
+        },
+        {
+          "reference": {
+            "path": "archives/customer-attraction/state/定理/共同删除势的全域效率与单调次模提升--定理.md",
+            "sha256": "1b92a86f1c58a9ca45c9599cff05f7d38a6739491a17a6f05ad1674bb03317d5",
+            "section": "共同势加全层E的反向刻画"
+          },
+          "status": "current",
+          "current_sha256": "1b92a86f1c58a9ca45c9599cff05f7d38a6739491a17a6f05ad1674bb03317d5"
+        }
+      ],
+      "binding_status": "current"
+    },
+    {
+      "object_id": "weighted-congestion/harmonic-complement-monochromatic-pne-global-minimum",
+      "version": 1,
+      "title": "调和补集拥塞的同动作精确均衡是全局势最小点",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "单位权原子拥塞，有限共同目录，正负载节点费用为调和补集式。",
+      "statement": "任意同动作精确PNE全局最小化Rosenthal势，且对任意完整目标剖面的势增量不小于从同动作起点的逐玩家单方成本增量之和。",
+      "quantifiers": "任意有限资源、m≥1、正客户质量与固定非负背景；每个完整目标剖面。",
+      "assumptions": [
+        "同动作精确PNE、单位权、调和补集费用节点。"
+      ],
+      "scope": "抽象次模Shapley的同色势差经实际补集精确解码得到的目标保证。",
+      "objections": "目标一般加权、总成本及序贯保证分别需证。",
+      "body": {
+        "path": "archives/weighted-congestion/state/定理/调和补集拥塞的同动作精确均衡是全局势最小点--定理.md",
+        "sha256": "278f3b3307126edc820681ccfefbc917d657893119e0bef28c148dc3c3f50f13"
+      },
+      "evidence": [
+        {
+          "path": "archives/weighted-congestion/state/定理/客户均分到非负多项式拥塞的静态补集转移--定理.md",
+          "sha256": "e6b18c3998549abe895e26851e05645168eaee8ac0ddd2b8afecabff53ff80ed"
+        },
+        {
+          "path": "archives/customer-attraction/state/定理/固定背景下单色静态Shapley均衡的全局势最大性--定理.md",
+          "sha256": "bb44ea464f60d7da0fc13551dafca11f08d9f86b69a77e17d4cac4aaeab01e57"
+        }
+      ],
+      "sources": [],
+      "registration_pin": "a0eb45ab28a36557c6e83a92c110708f75f0e87fdd413ebe7215dd02f3d524b6",
+      "body_binding": {
+        "reference": {
+          "path": "archives/weighted-congestion/state/定理/调和补集拥塞的同动作精确均衡是全局势最小点--定理.md",
+          "sha256": "278f3b3307126edc820681ccfefbc917d657893119e0bef28c148dc3c3f50f13"
+        },
+        "status": "current",
+        "current_sha256": "278f3b3307126edc820681ccfefbc917d657893119e0bef28c148dc3c3f50f13"
+      },
+      "evidence_bindings": [
+        {
+          "reference": {
+            "path": "archives/weighted-congestion/state/定理/客户均分到非负多项式拥塞的静态补集转移--定理.md",
+            "sha256": "e6b18c3998549abe895e26851e05645168eaee8ac0ddd2b8afecabff53ff80ed"
+          },
+          "status": "current",
+          "current_sha256": "e6b18c3998549abe895e26851e05645168eaee8ac0ddd2b8afecabff53ff80ed"
+        },
+        {
+          "reference": {
+            "path": "archives/customer-attraction/state/定理/固定背景下单色静态Shapley均衡的全局势最大性--定理.md",
+            "sha256": "bb44ea464f60d7da0fc13551dafca11f08d9f86b69a77e17d4cac4aaeab01e57"
+          },
+          "status": "current",
+          "current_sha256": "bb44ea464f60d7da0fc13551dafca11f08d9f86b69a77e17d4cac4aaeab01e57"
+        }
+      ],
+      "binding_status": "current"
+    },
+    {
+      "object_id": "weighted-congestion/static-customer-coverage-complement-harmonic-transfer",
+      "version": 1,
+      "title": "客户均分到非负多项式拥塞的静态补集转移",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "有限静态覆盖、单位活动玩家和固定实逐客户背景，映到等权非负多项式原子拥塞。",
+      "statement": "策略逐客户取补集，正整数负载j的目标费用精确v_x/(b_x+m+1−j)。共同次数O(m²)正系数插值，有理数据位长和构造时间多项式。逐静态偏离成本减量等于源收益增量，Rosenthal势为固定常数减调和势。静态PNE、混合Nash、CE、CCE逐偏离保持；13客户例严格排除同一完整序贯策略的直接保持。",
+      "quantifiers": "任意有限共同目录、m≥1、正质量与固定非负背景；逐状态、逐固定对手偏离。",
+      "assumptions": [
+        "单位活动玩家，外生背景固定，精确匹配全部访问正负载。"
+      ],
+      "scope": "静态偏离和势的双向精确解码。",
+      "objections": "实际序贯分支可改对手常数，乘法倍率及社会总成本各有独立合同。",
+      "body": {
+        "path": "archives/weighted-congestion/state/定理/客户均分到非负多项式拥塞的静态补集转移--定理.md",
+        "sha256": "e6b18c3998549abe895e26851e05645168eaee8ac0ddd2b8afecabff53ff80ed"
+      },
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+          "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+        },
+        {
+          "path": "archives/weighted-congestion/state/资料/加权拥塞成果入口的模型与结论范围--资料.md",
+          "sha256": "be4d633bd4eea3e8983aa688bfdb92864f4f5e5b1fcd0528a074ccd072f5669a",
+          "section": "加权拥塞成果入口的模型与结论范围"
+        }
+      ],
+      "sources": [],
+      "registration_pin": "28e31c3ca9c22526a6deaefa756b18799393a7cbeb4e735617f69286c812ef4d",
+      "body_binding": {
+        "reference": {
+          "path": "archives/weighted-congestion/state/定理/客户均分到非负多项式拥塞的静态补集转移--定理.md",
+          "sha256": "e6b18c3998549abe895e26851e05645168eaee8ac0ddd2b8afecabff53ff80ed"
+        },
+        "status": "current",
+        "current_sha256": "e6b18c3998549abe895e26851e05645168eaee8ac0ddd2b8afecabff53ff80ed"
+      },
+      "evidence_bindings": [
+        {
+          "reference": {
+            "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+            "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+          },
+          "status": "current",
+          "current_sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+        },
+        {
+          "reference": {
+            "path": "archives/weighted-congestion/state/资料/加权拥塞成果入口的模型与结论范围--资料.md",
+            "sha256": "be4d633bd4eea3e8983aa688bfdb92864f4f5e5b1fcd0528a074ccd072f5669a",
+            "section": "加权拥塞成果入口的模型与结论范围"
+          },
+          "status": "current",
+          "current_sha256": "be4d633bd4eea3e8983aa688bfdb92864f4f5e5b1fcd0528a074ccd072f5669a"
+        }
+      ],
+      "binding_status": "current"
+    }
+  ],
+  "edges": [
+    {
+      "edge_id": "ca-r33-shapley-bernoulli-fixed-background-monochromatic",
+      "kind": "implies",
+      "status": "accepted",
+      "source_ids": [
+        "M-c81148ab9bca4553bd1b73e97b080e81"
+      ],
+      "target_ids": [
+        "customer-attraction/submodular-shapley-monochromatic-static-pne-global-potential"
+      ],
+      "premises_mode": "all",
+      "relation_mode": "unconditional",
+      "conditions": "有限非空共同合法标签目录，C 为同一个归零单调次模集合函数。任意有限带身份背景玩家固定选题，r≥1 名同目录活动玩家；静态替换固定所有其他玩家。全 B 为 PNE 时应用全局最优推论。",
+      "roles": {
+        "M-c81148ab9bca4553bd1b73e97b080e81": "给全计数共同势和同一势的删除收益积分",
+        "customer-attraction/submodular-shapley-monochromatic-static-pne-global-potential": "识别带身份 Shapley 收益并给任意同背景配置的势差上界及 PNE 推论"
+      },
+      "explanation": "对全部有身份玩家独立以 p 抽样，若某标签计数为 q_a，出现概率为 1−(1−p)^q_a，各标签因槽位不交而独立。令 p=1−t，源的势即 Φ(s)=∫₀¹ E[C(supp s_{S_p})]/p dp。删除指定玩家时，被积期望差恰为 p 乘其对其余抽中玩家的边际；对其余 n−1 人中的每个子集 S 积分，系数为 |S|!(n−1−|S|)!/n!，故删除收益正是同一全体合作游戏的带身份 Shapley 值。令 C_p(U)=E[C(R_p∪U)−C(R_p)]，R_p 为抽中的固定背景标签支持，K_p=C_p({B})，d_p(T)=C_p({B,T})−K_p。C_p 保归零、单调、次模。抽中活动槽 I 为空时差为 0；仅抽 i 时差为 C_p({T_i})−K_p；至少两槽时，先加 B 再逐个加 T_i，由单调和边际递减，差至多 Σ_{i∈I}d_p(T_i)。除以 p 后，i 单独入样和 i 与别槽同入样的系数分别为 (1−p)^{r−1} 与 1−(1−p)^{r−1}。积分给 Φ(T)−Φ(B^r)≤Σ_i[u_i(T_i,B_{−i})−u_i(B^r)]：两项恰对应静态替换时未抽中或抽中其他活动玩家。PNE 逐个压低的是积分后的真实收益差。对外生覆盖同一逐参数论证取 C_p(U)=Σ_{x∈∪U}w_x(1−p)^{b_x}，w_x,b_x≥0。每客户出现 j 次时，边际积分为 w_x/(b_x+j)，势积分展开有限几何和为 w_xΣ_{ℓ=1}^j1/(b_x+ℓ)。",
+      "scope": "任意真实有限固定背景的抽象静态 Shapley 博弈及任意非负实外生背景的覆盖专门化。重复标签、收益平局及 r=1 均可。",
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/定理/共同删除势的全域效率与单调次模提升--定理.md",
+          "sha256": "1b92a86f1c58a9ca45c9599cff05f7d38a6739491a17a6f05ad1674bb03317d5",
+          "section": "全域构造和收益积分"
+        },
+        {
+          "path": "archives/customer-attraction/state/定理/固定背景下单色静态Shapley均衡的全局势最大性--定理.md",
+          "sha256": "bb44ea464f60d7da0fc13551dafca11f08d9f86b69a77e17d4cac4aaeab01e57",
+          "section": "势与收益的同一抽样公式"
+        },
+        {
+          "path": "archives/customer-attraction/state/定理/固定背景下单色静态Shapley均衡的全局势最大性--定理.md",
+          "sha256": "bb44ea464f60d7da0fc13551dafca11f08d9f86b69a77e17d4cac4aaeab01e57",
+          "section": "从单方收益到全部活动配置"
+        },
+        {
+          "path": "archives/customer-attraction/state/定理/固定背景下单色静态Shapley均衡的全局势最大性--定理.md",
+          "sha256": "bb44ea464f60d7da0fc13551dafca11f08d9f86b69a77e17d4cac4aaeab01e57",
+          "section": "任意外生负载的覆盖专门化"
+        }
+      ],
+      "reviewed_by": "Boss1",
+      "review_note": "核对抽样对带身份槽与按标签支持的转换、删除边际的 Beta 权重、抽空背景和 r=1。由次模值条件逐参数证明势差，由 PNE 只控制积分后各项。",
+      "whole_result": "对任意同背景的候选活动配置，Shapley 势差由全 B 下逐槽真实静态单方收益差之和上界，故全 B 静态 PNE 全局最大化 Shapley 势；非负覆盖权及任意外生实背景也得到同一结论及对应调和势。",
+      "endpoint_pins": {
+        "M-c81148ab9bca4553bd1b73e97b080e81": "5161f546ac32f02ecb11a141b839bf3ff5e03be8bc10342355bccd68a7a59f85",
+        "customer-attraction/submodular-shapley-monochromatic-static-pne-global-potential": "d486c874dacc5ca04ad36ec8e82d749dccfb07c758eaba5104a9b4f0f7c777b6"
+      },
+      "evidence_pins": {
+        "archives/customer-attraction/state/定理/共同删除势的全域效率与单调次模提升--定理.md": "1b92a86f1c58a9ca45c9599cff05f7d38a6739491a17a6f05ad1674bb03317d5",
+        "archives/customer-attraction/state/定理/固定背景下单色静态Shapley均衡的全局势最大性--定理.md": "bb44ea464f60d7da0fc13551dafca11f08d9f86b69a77e17d4cac4aaeab01e57"
+      },
+      "review_digest": "521c30697afabb17e2bc007e2b53bf677ba78f80b510e42d5c5197ab56982173",
+      "path": "map/edges/phase3-math-round33-shapley-3a-821d1061aedde9ad/shapley-bernoulli-fixed-background-monochromatic.json",
+      "declaration_pin": "843b32e8b8abe8a23844e446648b7c1dd9b6912db42ac3427b2db9a1f7e6f2cf",
+      "evidence_bindings": [
+        {
+          "reference": {
+            "path": "archives/customer-attraction/state/定理/共同删除势的全域效率与单调次模提升--定理.md",
+            "sha256": "1b92a86f1c58a9ca45c9599cff05f7d38a6739491a17a6f05ad1674bb03317d5",
+            "section": "全域构造和收益积分"
+          },
+          "status": "current",
+          "current_sha256": "1b92a86f1c58a9ca45c9599cff05f7d38a6739491a17a6f05ad1674bb03317d5"
+        },
+        {
+          "reference": {
+            "path": "archives/customer-attraction/state/定理/固定背景下单色静态Shapley均衡的全局势最大性--定理.md",
+            "sha256": "bb44ea464f60d7da0fc13551dafca11f08d9f86b69a77e17d4cac4aaeab01e57",
+            "section": "势与收益的同一抽样公式"
+          },
+          "status": "current",
+          "current_sha256": "bb44ea464f60d7da0fc13551dafca11f08d9f86b69a77e17d4cac4aaeab01e57"
+        },
+        {
+          "reference": {
+            "path": "archives/customer-attraction/state/定理/固定背景下单色静态Shapley均衡的全局势最大性--定理.md",
+            "sha256": "bb44ea464f60d7da0fc13551dafca11f08d9f86b69a77e17d4cac4aaeab01e57",
+            "section": "从单方收益到全部活动配置"
+          },
+          "status": "current",
+          "current_sha256": "bb44ea464f60d7da0fc13551dafca11f08d9f86b69a77e17d4cac4aaeab01e57"
+        },
+        {
+          "reference": {
+            "path": "archives/customer-attraction/state/定理/固定背景下单色静态Shapley均衡的全局势最大性--定理.md",
+            "sha256": "bb44ea464f60d7da0fc13551dafca11f08d9f86b69a77e17d4cac4aaeab01e57",
+            "section": "任意外生负载的覆盖专门化"
+          },
+          "status": "current",
+          "current_sha256": "bb44ea464f60d7da0fc13551dafca11f08d9f86b69a77e17d4cac4aaeab01e57"
+        }
+      ],
+      "binding_status": "current",
+      "binding_errors": []
+    },
+    {
+      "edge_id": "ca-r33-shapley-construction-pays-forward-deletion-characterization",
+      "kind": "implies",
+      "status": "accepted",
+      "source_ids": [
+        "M-c81148ab9bca4553bd1b73e97b080e81"
+      ],
+      "target_ids": [
+        "M-e5979db9ca2b46a09115e0ece14768b1"
+      ],
+      "premises_mode": "all",
+      "relation_mode": "unconditional",
+      "conditions": "P 有限，C 归零，所有 q 遍历非负整数计数格。比较的是同一个共同势和同一个集合福利。",
+      "roles": {
+        "M-c81148ab9bca4553bd1b73e97b080e81": "给单调次模 C 的共同积分势和全域 DR、效率 E",
+        "M-e5979db9ca2b46a09115e0ece14768b1": "给全域共同删除势加 E 的唯一性及 DR 反向"
+      },
+      "explanation": "独立出现概率 1−t^{q_a} 给有限积分 Φ_C；每个有效删除边际是 t^{q_a−1} 乘预期集合边际的积分。单调使期望非负，增加自身坐标多乘 t、增加其它坐标可用共同随机数放大竞争集合，故单调 DR。−F_q′(t) 逐项等于 q_a 乘积分边际的被积函数，积分给每层 E。在 C 单调次模的方向，已有积分势正是反向刻画比较的同一对象。",
+      "scope": "全计数格的正向存在性和单调 DR。不能从固定 m 上有限 DR 推回集合福利。",
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/定理/共同删除势的全域效率与单调次模提升--定理.md",
+          "sha256": "1b92a86f1c58a9ca45c9599cff05f7d38a6739491a17a6f05ad1674bb03317d5"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/potential-flow-and-submodular-lift-primary/original/research/workspaces/customer-attraction/R-64201cd12083425899e2d643ec9bc087/next_independent/submodular_shapley_global_lift.md",
+          "sha256": "677d69ad86d97a1739bdd0c89eb5a8899568ad508d186abcff159fe0d785bc79"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/potential-flow-and-submodular-lift-primary/original/research/workspaces/customer-attraction/R-64201cd12083425899e2d643ec9bc087/next_tree/global_submodular_lift_review.md",
+          "sha256": "d21cce18c38acb2c176cf167f401bf73d5a343d839423fddf56731f90c3476f9"
+        },
+        {
+          "path": "archives/customer-attraction/state/定理/共同删除势的全域效率与单调次模提升--定理.md",
+          "sha256": "1b92a86f1c58a9ca45c9599cff05f7d38a6739491a17a6f05ad1674bb03317d5",
+          "section": "全域构造和收益积分"
+        },
+        {
+          "path": "archives/customer-attraction/state/定理/共同删除势的全域效率与单调次模提升--定理.md",
+          "sha256": "1b92a86f1c58a9ca45c9599cff05f7d38a6739491a17a6f05ad1674bb03317d5",
+          "section": "共同势加全层E的反向刻画"
+        }
+      ],
+      "reviewed_by": "Boss1",
+      "review_note": "核了 q_a=0 不定义删除收益、前向独审的实际范围及反向预设共同可积势。",
+      "contribution": {
+        "result": "建立集合福利单调次模 ⇒ 积分共同势单调 DR 且满足全人口层删除效率。",
+        "remaining": "任意有限实值 C 的绝对收敛、共同势唯一递推以及按 L→∞ 恢复边际的反向，需保目标的完整另外论证。"
+      },
+      "endpoint_pins": {
+        "M-c81148ab9bca4553bd1b73e97b080e81": "5161f546ac32f02ecb11a141b839bf3ff5e03be8bc10342355bccd68a7a59f85",
+        "M-e5979db9ca2b46a09115e0ece14768b1": "5e8f0e7696f77c6167f74b60da8d51f0f4d25d87310838f2dc36bf3949f349f3"
+      },
+      "evidence_pins": {
+        "archives/customer-attraction/state/定理/共同删除势的全域效率与单调次模提升--定理.md": "1b92a86f1c58a9ca45c9599cff05f7d38a6739491a17a6f05ad1674bb03317d5",
+        "archives/customer-attraction/tools/evidence/potential-flow-and-submodular-lift-primary/original/research/workspaces/customer-attraction/R-64201cd12083425899e2d643ec9bc087/next_independent/submodular_shapley_global_lift.md": "677d69ad86d97a1739bdd0c89eb5a8899568ad508d186abcff159fe0d785bc79",
+        "archives/customer-attraction/tools/evidence/potential-flow-and-submodular-lift-primary/original/research/workspaces/customer-attraction/R-64201cd12083425899e2d643ec9bc087/next_tree/global_submodular_lift_review.md": "d21cce18c38acb2c176cf167f401bf73d5a343d839423fddf56731f90c3476f9"
+      },
+      "review_digest": "3019c9894cc1d5596d2f1adde0882a3539a03e740d03150c7de3fa03a6330cc8",
+      "path": "map/edges/customer-attraction-3a-3a-ffc3b3fbd42f02a3/shapley-construction-pays-forward-deletion-characterization.json",
+      "declaration_pin": "d614dd5f338b0b836c5f576b6b9d698e81b3abe65d915fd8614aa75bddb2c5a0",
+      "evidence_bindings": [
+        {
+          "reference": {
+            "path": "archives/customer-attraction/state/定理/共同删除势的全域效率与单调次模提升--定理.md",
+            "sha256": "1b92a86f1c58a9ca45c9599cff05f7d38a6739491a17a6f05ad1674bb03317d5"
+          },
+          "status": "current",
+          "current_sha256": "1b92a86f1c58a9ca45c9599cff05f7d38a6739491a17a6f05ad1674bb03317d5"
+        },
+        {
+          "reference": {
+            "path": "archives/customer-attraction/tools/evidence/potential-flow-and-submodular-lift-primary/original/research/workspaces/customer-attraction/R-64201cd12083425899e2d643ec9bc087/next_independent/submodular_shapley_global_lift.md",
+            "sha256": "677d69ad86d97a1739bdd0c89eb5a8899568ad508d186abcff159fe0d785bc79"
+          },
+          "status": "current",
+          "current_sha256": "677d69ad86d97a1739bdd0c89eb5a8899568ad508d186abcff159fe0d785bc79"
+        },
+        {
+          "reference": {
+            "path": "archives/customer-attraction/tools/evidence/potential-flow-and-submodular-lift-primary/original/research/workspaces/customer-attraction/R-64201cd12083425899e2d643ec9bc087/next_tree/global_submodular_lift_review.md",
+            "sha256": "d21cce18c38acb2c176cf167f401bf73d5a343d839423fddf56731f90c3476f9"
+          },
+          "status": "current",
+          "current_sha256": "d21cce18c38acb2c176cf167f401bf73d5a343d839423fddf56731f90c3476f9"
+        },
+        {
+          "reference": {
+            "path": "archives/customer-attraction/state/定理/共同删除势的全域效率与单调次模提升--定理.md",
+            "sha256": "1b92a86f1c58a9ca45c9599cff05f7d38a6739491a17a6f05ad1674bb03317d5",
+            "section": "全域构造和收益积分"
+          },
+          "status": "current",
+          "current_sha256": "1b92a86f1c58a9ca45c9599cff05f7d38a6739491a17a6f05ad1674bb03317d5"
+        },
+        {
+          "reference": {
+            "path": "archives/customer-attraction/state/定理/共同删除势的全域效率与单调次模提升--定理.md",
+            "sha256": "1b92a86f1c58a9ca45c9599cff05f7d38a6739491a17a6f05ad1674bb03317d5",
+            "section": "共同势加全层E的反向刻画"
+          },
+          "status": "current",
+          "current_sha256": "1b92a86f1c58a9ca45c9599cff05f7d38a6739491a17a6f05ad1674bb03317d5"
+        }
+      ],
+      "binding_status": "current",
+      "binding_errors": []
+    },
+    {
+      "edge_id": "ca-r33-shapley-finite-downset-potential-identification",
+      "kind": "implies",
+      "status": "accepted",
+      "source_ids": [
+        "M-e5979db9ca2b46a09115e0ece14768b1"
+      ],
+      "target_ids": [
+        "customer-attraction/submodular-shapley-monochromatic-static-pne-global-potential"
+      ],
+      "premises_mode": "all",
+      "relation_mode": "unconditional",
+      "conditions": "同一有限标签集合、同一归零实值 C。取包含零、固定背景计数与所需全部活动配置总计数的有限向下闭集 D，使用定义于 D 的同一个归零共同删除势，并在 D 每一非零人口状态要求包含背景玩家的总份额效率。",
+      "roles": {
+        "M-e5979db9ca2b46a09115e0ece14768b1": "给共同删除势的按人口递推及已知积分解",
+        "customer-attraction/submodular-shapley-monochromatic-static-pne-global-potential": "在比较所需的有限层识别实际静态 Shapley 势与带身份删除收益"
+      },
+      "explanation": "可取 D={q: |q|≤|b|+r}，其中 b 为有限固定背景玩家的标签计数。向下闭保证 q_a>0 时 q−e_a∈D。把 U_a(q)=Φ(q)−Φ(q−e_a) 代入 Σ_a q_a U_a(q)=C(supp q)，得 |q|Φ(q)=C(supp q)+Σ_{a:q_a>0}q_aΦ(q−e_a)。从 Φ(0)=0 按 |q| 归纳，D 上唯一，并与源的积分解逐点相同。活动配置 z 的可比势可用 Φ_C(b+z)−Φ_C(b)，同一固定背景常数抵消。带身份活动玩家从 B 改 T 的势差是两份终局势各减同一删除该玩家的势所得到的收益差，故正好是同一背景下的静态替换收益差。",
+      "scope": "局部识别可用于任何有限真实背景的比较层。有限递推可识别已给 C 的势，原全域 DR 反向刻画仍需任意大 L；此处背景效率含真实玩家，不套给任意外生实负载。",
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/定理/共同删除势的全域效率与单调次模提升--定理.md",
+          "sha256": "1b92a86f1c58a9ca45c9599cff05f7d38a6739491a17a6f05ad1674bb03317d5",
+          "section": "共同势加全层E的反向刻画"
+        },
+        {
+          "path": "archives/customer-attraction/state/定理/固定背景下单色静态Shapley均衡的全局势最大性--定理.md",
+          "sha256": "bb44ea464f60d7da0fc13551dafca11f08d9f86b69a77e17d4cac4aaeab01e57",
+          "section": "势与收益的同一抽样公式"
+        }
+      ],
+      "reviewed_by": "Boss1",
+      "review_note": "核 q_a=0 不取删除值、共同势与全 D 效率是条件，且只需实际依赖到的向下闭层。比较固定背景常数及共同删一玩家的状态。",
+      "contribution": {
+        "result": "在有限向下闭层唯一识别共同删除势为同一 Shapley 势，并给出固定背景下任一单槽势差等于对应静态单方收益差。",
+        "remaining": "全 B 的任意同时替换势差仍须由归零单调次模值的带身份 Bernoulli 抽样界控制，再用 PNE 逐项收口。有限层效率与共同势自身不给全局最优。"
+      },
+      "endpoint_pins": {
+        "M-e5979db9ca2b46a09115e0ece14768b1": "5e8f0e7696f77c6167f74b60da8d51f0f4d25d87310838f2dc36bf3949f349f3",
+        "customer-attraction/submodular-shapley-monochromatic-static-pne-global-potential": "d486c874dacc5ca04ad36ec8e82d749dccfb07c758eaba5104a9b4f0f7c777b6"
+      },
+      "evidence_pins": {
+        "archives/customer-attraction/state/定理/共同删除势的全域效率与单调次模提升--定理.md": "1b92a86f1c58a9ca45c9599cff05f7d38a6739491a17a6f05ad1674bb03317d5",
+        "archives/customer-attraction/state/定理/固定背景下单色静态Shapley均衡的全局势最大性--定理.md": "bb44ea464f60d7da0fc13551dafca11f08d9f86b69a77e17d4cac4aaeab01e57"
+      },
+      "review_digest": "1c2ba9d9e236f69141ac000d430666f28fa38d680d1fda8ccc8c9548214537f5",
+      "path": "map/edges/phase3-math-round33-shapley-3a-821d1061aedde9ad/shapley-finite-downset-potential-identification.json",
+      "declaration_pin": "3e0890daba9a9d71d31d5510bfb72663a1a3b63a44d00cbd88d1f21262944970",
+      "evidence_bindings": [
+        {
+          "reference": {
+            "path": "archives/customer-attraction/state/定理/共同删除势的全域效率与单调次模提升--定理.md",
+            "sha256": "1b92a86f1c58a9ca45c9599cff05f7d38a6739491a17a6f05ad1674bb03317d5",
+            "section": "共同势加全层E的反向刻画"
+          },
+          "status": "current",
+          "current_sha256": "1b92a86f1c58a9ca45c9599cff05f7d38a6739491a17a6f05ad1674bb03317d5"
+        },
+        {
+          "reference": {
+            "path": "archives/customer-attraction/state/定理/固定背景下单色静态Shapley均衡的全局势最大性--定理.md",
+            "sha256": "bb44ea464f60d7da0fc13551dafca11f08d9f86b69a77e17d4cac4aaeab01e57",
+            "section": "势与收益的同一抽样公式"
+          },
+          "status": "current",
+          "current_sha256": "bb44ea464f60d7da0fc13551dafca11f08d9f86b69a77e17d4cac4aaeab01e57"
+        }
+      ],
+      "binding_status": "current",
+      "binding_errors": []
+    },
+    {
+      "edge_id": "ca-r33-shapley-harmonic-increment-static-boundary",
+      "kind": "checks",
+      "status": "accepted",
+      "source_ids": [
+        "M-c81148ab9bca4553bd1b73e97b080e81"
+      ],
+      "target_ids": [
+        "customer-attraction/actual-coverage-and-overlapping-optimal-catalog-static-harmonic-boundary"
+      ],
+      "premises_mode": "all",
+      "relation_mode": "context",
+      "conditions": "真实覆盖集合 C(S)=Σ_B w_B k_S(B)，固定同一实际计数 q 与比较计数 d。",
+      "roles": {
+        "M-c81148ab9bca4553bd1b73e97b080e81": "给真实非负 coverage 的全计数调和势",
+        "customer-attraction/actual-coverage-and-overlapping-optimal-catalog-static-harmonic-boundary": "给唯一最优并集仍需额外调和信用的精确静态族"
+      },
+      "explanation": "积分按类型线性即 Φ(q)=Σ_B w_B H_{q(B)}。因此目标的 B_h(c,d) 恰为同一势 Φ(q+d)−Φ(q)。静态族中比较并集重复共有核心，其增量超过 W+G 的量是 |K|(H_m−1)>0；原 actual 末位由 A_m 改比较题即可严格增加收益。因此全层势性质和静态 OPT/half 都在该例兼容，无法单靠它们支付动态调和预算。",
+      "scope": "只作势到同一静态差额的精确语境桥，原终局不是真SPE。",
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/定理/共同删除势的全域效率与单调次模提升--定理.md",
+          "sha256": "1b92a86f1c58a9ca45c9599cff05f7d38a6739491a17a6f05ad1674bb03317d5"
+        },
+        {
+          "path": "archives/customer-attraction/state/资源/实际覆盖与重叠最优目录的静态调和边界--资源.md",
+          "sha256": "fbec04d58e0bcd653081085b1ea5fcb12ab01538733f4104bd5690d1f81436e2"
+        }
+      ],
+      "reviewed_by": "Boss1",
+      "review_note": "保同一最优元组、比较题重复会员位和全部最优排列；无客户价值搬到另一枝。",
+      "endpoint_pins": {
+        "M-c81148ab9bca4553bd1b73e97b080e81": "5161f546ac32f02ecb11a141b839bf3ff5e03be8bc10342355bccd68a7a59f85",
+        "customer-attraction/actual-coverage-and-overlapping-optimal-catalog-static-harmonic-boundary": "5aa29259d3add6ae0896aac68464aebf89e8e8d8e1a9ae513fe6bfb7530efa1d"
+      },
+      "evidence_pins": {
+        "archives/customer-attraction/state/定理/共同删除势的全域效率与单调次模提升--定理.md": "1b92a86f1c58a9ca45c9599cff05f7d38a6739491a17a6f05ad1674bb03317d5",
+        "archives/customer-attraction/state/资源/实际覆盖与重叠最优目录的静态调和边界--资源.md": "fbec04d58e0bcd653081085b1ea5fcb12ab01538733f4104bd5690d1f81436e2"
+      },
+      "review_digest": "955eb5d84b087d023f9dc5cf5502379a587f3cccf8975de487ac77b14ad2ac77",
+      "path": "map/edges/customer-attraction-3a-3a-ffc3b3fbd42f02a3/shapley-harmonic-increment-static-boundary.json",
+      "declaration_pin": "7ae2e891bc384cc5f09a87660d8a2a15a2807f0b7555d2e4b9a44e27494a05e9",
+      "evidence_bindings": [
+        {
+          "reference": {
+            "path": "archives/customer-attraction/state/定理/共同删除势的全域效率与单调次模提升--定理.md",
+            "sha256": "1b92a86f1c58a9ca45c9599cff05f7d38a6739491a17a6f05ad1674bb03317d5"
+          },
+          "status": "current",
+          "current_sha256": "1b92a86f1c58a9ca45c9599cff05f7d38a6739491a17a6f05ad1674bb03317d5"
+        },
+        {
+          "reference": {
+            "path": "archives/customer-attraction/state/资源/实际覆盖与重叠最优目录的静态调和边界--资源.md",
+            "sha256": "fbec04d58e0bcd653081085b1ea5fcb12ab01538733f4104bd5690d1f81436e2"
+          },
+          "status": "current",
+          "current_sha256": "fbec04d58e0bcd653081085b1ea5fcb12ab01538733f4104bd5690d1f81436e2"
+        }
+      ],
+      "binding_status": "current",
+      "binding_errors": []
+    },
+    {
+      "edge_id": "ca-r33-shapley-integral-pays-monochrome-global-potential",
+      "kind": "transfers",
+      "status": "accepted",
+      "source_ids": [
+        "M-c81148ab9bca4553bd1b73e97b080e81"
+      ],
+      "target_ids": [
+        "M-39089a04f9444753a75cc06873542b82"
+      ],
+      "premises_mode": "all",
+      "relation_mode": "unconditional",
+      "conditions": "r≥1，同一静态竞争背景固定；对任意有限非负客户质量 w_x 和 b_x≥0，或更一般逐 t 取有限归零单调次模 C_t 且积分有限。",
+      "roles": {
+        "M-c81148ab9bca4553bd1b73e97b080e81": "给以各标签独立出现概率写共同 Shapley 势的积分形式",
+        "M-39089a04f9444753a75cc06873542b82": "给任意真实外生背景下单色静态 PNE 的全局势最大化"
+      },
+      "explanation": "令 t∈(0,1)，C_t(S)=Σ_{x∈∪S}w_x t^{b_x}。对 r 个带身份槽各以概率 1−t 独立选入，标签支持的出现率恰为 1−t^{q_a}；积分 E[C_t]/(1−t) 对每个客户给 w_x∫t^{b_x}(1−t^{c_x})/(1−t)dt= w_x Σ_{j=1}^{c_x}1/(b_x+j)，即原背景势。令 K_t=C_t({B})、d_t(T)=C_t({B,T})−K_t。B^r 的单槽改 T 的势差是 ∫[t^{r−1}(C_t(T)−K_t)+(1−t^{r−1})d_t(T)]dt。任意 r 槽候选均匀取 k 个槽，记全槽的 C_t(T), d_t(T) 均值为 C̄_t,d̄_t。k=1 的比较势被积差为 β_1(C̄_t−K_t)；k≥2 由单调次模给 C_t(子槽支持)≤K_t+Σ_{选槽}d_t(T)，故差至多 kβ_k d̄_t。β_k=binom(r,k)(1−t)^{k−1}t^{r−k}，β_1=rt^{r−1} 且 Σ_{k≥2}kβ_k=r(1−t^{r−1})。积分总差至多 r 个静态单槽替换势差之和，PNE 使每项非正。若真有序尾单色，在同一固定旧背景下其末位 BR 恰给上述单槽 PNE 条件。",
+      "scope": "完整原任意逐客背景的定理。对 C_t≡C 也给零外加背景的抽象单调次模 Shapley 势扩张。PNE 仅要求每条比较积分非正。",
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/定理/共同删除势的全域效率与单调次模提升--定理.md",
+          "sha256": "1b92a86f1c58a9ca45c9599cff05f7d38a6739491a17a6f05ad1674bb03317d5"
+        },
+        {
+          "path": "archives/customer-attraction/state/定理/共同删除势的全域效率与单调次模提升--定理.md",
+          "sha256": "1b92a86f1c58a9ca45c9599cff05f7d38a6739491a17a6f05ad1674bb03317d5",
+          "section": "全域构造和收益积分"
+        },
+        {
+          "path": "archives/customer-attraction/state/资料/双尾推送与单色续局的版本接口--资料.md",
+          "sha256": "c09c980bb67b01fcd76bb6b99149d02eee42ce91d68f4c1b1a022d76902bc129",
+          "section": "单色税的实际义务和可独立使用的静态势引理"
+        },
+        {
+          "path": "archives/customer-attraction/state/资料/双尾推送与单色续局的版本接口--资料.md",
+          "sha256": "c09c980bb67b01fcd76bb6b99149d02eee42ce91d68f4c1b1a022d76902bc129"
+        }
+      ],
+      "reviewed_by": "Boss1",
+      "review_note": "用二项槽抽样核逐 t 共同系数，未把总 PNE 偷换成逐 t 假设。可另按固定基集逐客户核单替换成本，结论仍只在同背景。",
+      "whole_result": "任意非负实背景及 r，若静态 r 人全选 B 为 PNE，则 B^r 在全部 r 槽合法主题元组上全局最大化原调和势。单色真实尾的末位最佳回复给同背景 PNE 条件。",
+      "endpoint_pins": {
+        "M-39089a04f9444753a75cc06873542b82": "dad75f445713abab0f516a06336a36051bd1721eccfe0c0b5dc14d4feaec236c",
+        "M-c81148ab9bca4553bd1b73e97b080e81": "5161f546ac32f02ecb11a141b839bf3ff5e03be8bc10342355bccd68a7a59f85"
+      },
+      "evidence_pins": {
+        "archives/customer-attraction/state/定理/共同删除势的全域效率与单调次模提升--定理.md": "1b92a86f1c58a9ca45c9599cff05f7d38a6739491a17a6f05ad1674bb03317d5",
+        "archives/customer-attraction/state/资料/双尾推送与单色续局的版本接口--资料.md": "c09c980bb67b01fcd76bb6b99149d02eee42ce91d68f4c1b1a022d76902bc129"
+      },
+      "review_digest": "bc91c7ba710149d10f88cf644564d9ff97786420dae23e2efb9a564522dfe86c",
+      "path": "map/edges/customer-attraction-3a-3a-ffc3b3fbd42f02a3/shapley-integral-pays-monochrome-global-potential.json",
+      "declaration_pin": "2374a92a6213fa4ddbda2627cf0a8517a1d5df2d75d6431d51b6305fc8284ece",
+      "evidence_bindings": [
+        {
+          "reference": {
+            "path": "archives/customer-attraction/state/定理/共同删除势的全域效率与单调次模提升--定理.md",
+            "sha256": "1b92a86f1c58a9ca45c9599cff05f7d38a6739491a17a6f05ad1674bb03317d5"
+          },
+          "status": "current",
+          "current_sha256": "1b92a86f1c58a9ca45c9599cff05f7d38a6739491a17a6f05ad1674bb03317d5"
+        },
+        {
+          "reference": {
+            "path": "archives/customer-attraction/state/定理/共同删除势的全域效率与单调次模提升--定理.md",
+            "sha256": "1b92a86f1c58a9ca45c9599cff05f7d38a6739491a17a6f05ad1674bb03317d5",
+            "section": "全域构造和收益积分"
+          },
+          "status": "current",
+          "current_sha256": "1b92a86f1c58a9ca45c9599cff05f7d38a6739491a17a6f05ad1674bb03317d5"
+        },
+        {
+          "reference": {
+            "path": "archives/customer-attraction/state/资料/双尾推送与单色续局的版本接口--资料.md",
+            "sha256": "c09c980bb67b01fcd76bb6b99149d02eee42ce91d68f4c1b1a022d76902bc129",
+            "section": "单色税的实际义务和可独立使用的静态势引理"
+          },
+          "status": "current",
+          "current_sha256": "c09c980bb67b01fcd76bb6b99149d02eee42ce91d68f4c1b1a022d76902bc129"
+        },
+        {
+          "reference": {
+            "path": "archives/customer-attraction/state/资料/双尾推送与单色续局的版本接口--资料.md",
+            "sha256": "c09c980bb67b01fcd76bb6b99149d02eee42ce91d68f4c1b1a022d76902bc129"
+          },
+          "status": "current",
+          "current_sha256": "c09c980bb67b01fcd76bb6b99149d02eee42ce91d68f4c1b1a022d76902bc129"
+        }
+      ],
+      "binding_status": "current",
+      "binding_errors": []
+    },
+    {
+      "edge_id": "ca-r33-shapley-lift-specializes-to-rank-two",
+      "kind": "specializes",
+      "status": "accepted",
+      "source_ids": [
+        "M-c81148ab9bca4553bd1b73e97b080e81"
+      ],
+      "target_ids": [
+        "M-65906d1bd9974e8c94cbbc65ab1f6b81"
+      ],
+      "premises_mode": "all",
+      "relation_mode": "unconditional",
+      "conditions": "三标签 P={a,b,c}，C(S)=min(|S|,2)。从非负客户表示向抽象次模福利比较。",
+      "roles": {
+        "M-c81148ab9bca4553bd1b73e97b080e81": "给任意归零单调次模集合函数的全域 Shapley 势",
+        "M-65906d1bd9974e8c94cbbc65ab1f6b81": "给三标签秩二实例并分离非负 coverage 锥"
+      },
+      "explanation": "该 C 的边际在集合大小 0、1、≥2 时分别为1、1、0，故满足全域提升条件。三阶覆盖交替值 3−6+2=−1，真实非负覆盖中该交替值等于全兴趣客户质量，遂排除。各二标签兴趣型质量1，三标签型质量−1，合成的有符号覆盖恰等于 C；积分线性把每个兴趣型 B 送到 H_{q(B)}，得到三项二标签调和数之和减全标签调和数。",
+      "scope": "存在三标签的抽象合法全计数提升，严格超出共同非负客户表示；未否任何原单位客户的 SPE 不等式。",
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/定理/共同删除势的全域效率与单调次模提升--定理.md",
+          "sha256": "1b92a86f1c58a9ca45c9599cff05f7d38a6739491a17a6f05ad1674bb03317d5",
+          "section": "严格大于非负coverage的合法抽象例"
+        },
+        {
+          "path": "archives/customer-attraction/state/定理/共同删除势的全域效率与单调次模提升--定理.md",
+          "sha256": "1b92a86f1c58a9ca45c9599cff05f7d38a6739491a17a6f05ad1674bb03317d5"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/potential-flow-and-submodular-lift-primary/original/research/workspaces/customer-attraction/R-64201cd12083425899e2d643ec9bc087/next_independent/submodular_shapley_global_lift.md",
+          "sha256": "677d69ad86d97a1739bdd0c89eb5a8899568ad508d186abcff159fe0d785bc79"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/potential-flow-and-submodular-lift-primary/original/research/workspaces/customer-attraction/R-64201cd12083425899e2d643ec9bc087/next_tree/global_submodular_lift_review.md",
+          "sha256": "d21cce18c38acb2c176cf167f401bf73d5a343d839423fddf56731f90c3476f9"
+        }
+      ],
+      "reviewed_by": "Boss1",
+      "review_note": "按客户型容斥核−1，验证有符号型同时给所有子集的 C。",
+      "whole_result": "三标签秩二 C 具全域单调 DR、效率和共同 Shapley 删除势，势为三个二标签调和项减全标签调和项，且没有非负覆盖表示。",
+      "endpoint_pins": {
+        "M-65906d1bd9974e8c94cbbc65ab1f6b81": "4589b050ec18196e3cdbdeae1aeb73034e7cccf827823109ded9d5083cac31d0",
+        "M-c81148ab9bca4553bd1b73e97b080e81": "5161f546ac32f02ecb11a141b839bf3ff5e03be8bc10342355bccd68a7a59f85"
+      },
+      "evidence_pins": {
+        "archives/customer-attraction/state/定理/共同删除势的全域效率与单调次模提升--定理.md": "1b92a86f1c58a9ca45c9599cff05f7d38a6739491a17a6f05ad1674bb03317d5",
+        "archives/customer-attraction/tools/evidence/potential-flow-and-submodular-lift-primary/original/research/workspaces/customer-attraction/R-64201cd12083425899e2d643ec9bc087/next_independent/submodular_shapley_global_lift.md": "677d69ad86d97a1739bdd0c89eb5a8899568ad508d186abcff159fe0d785bc79",
+        "archives/customer-attraction/tools/evidence/potential-flow-and-submodular-lift-primary/original/research/workspaces/customer-attraction/R-64201cd12083425899e2d643ec9bc087/next_tree/global_submodular_lift_review.md": "d21cce18c38acb2c176cf167f401bf73d5a343d839423fddf56731f90c3476f9"
+      },
+      "review_digest": "9168a1ba9b677321462a13de0adec27a176bd31db85fd3a8db5f56866801b212",
+      "path": "map/edges/customer-attraction-3a-3a-ffc3b3fbd42f02a3/shapley-lift-specializes-to-rank-two.json",
+      "declaration_pin": "ae4ac7eaf575cc613c793d3c94713b819b98fee2356cacde416fdcdff3059fac",
+      "evidence_bindings": [
+        {
+          "reference": {
+            "path": "archives/customer-attraction/state/定理/共同删除势的全域效率与单调次模提升--定理.md",
+            "sha256": "1b92a86f1c58a9ca45c9599cff05f7d38a6739491a17a6f05ad1674bb03317d5",
+            "section": "严格大于非负coverage的合法抽象例"
+          },
+          "status": "current",
+          "current_sha256": "1b92a86f1c58a9ca45c9599cff05f7d38a6739491a17a6f05ad1674bb03317d5"
+        },
+        {
+          "reference": {
+            "path": "archives/customer-attraction/state/定理/共同删除势的全域效率与单调次模提升--定理.md",
+            "sha256": "1b92a86f1c58a9ca45c9599cff05f7d38a6739491a17a6f05ad1674bb03317d5"
+          },
+          "status": "current",
+          "current_sha256": "1b92a86f1c58a9ca45c9599cff05f7d38a6739491a17a6f05ad1674bb03317d5"
+        },
+        {
+          "reference": {
+            "path": "archives/customer-attraction/tools/evidence/potential-flow-and-submodular-lift-primary/original/research/workspaces/customer-attraction/R-64201cd12083425899e2d643ec9bc087/next_independent/submodular_shapley_global_lift.md",
+            "sha256": "677d69ad86d97a1739bdd0c89eb5a8899568ad508d186abcff159fe0d785bc79"
+          },
+          "status": "current",
+          "current_sha256": "677d69ad86d97a1739bdd0c89eb5a8899568ad508d186abcff159fe0d785bc79"
+        },
+        {
+          "reference": {
+            "path": "archives/customer-attraction/tools/evidence/potential-flow-and-submodular-lift-primary/original/research/workspaces/customer-attraction/R-64201cd12083425899e2d643ec9bc087/next_tree/global_submodular_lift_review.md",
+            "sha256": "d21cce18c38acb2c176cf167f401bf73d5a343d839423fddf56731f90c3476f9"
+          },
+          "status": "current",
+          "current_sha256": "d21cce18c38acb2c176cf167f401bf73d5a343d839423fddf56731f90c3476f9"
+        }
+      ],
+      "binding_status": "current",
+      "binding_errors": []
+    },
+    {
+      "edge_id": "ca-r33-shapley-specializes-fixed-real-load-harmonic-potential",
+      "kind": "specializes",
+      "status": "accepted",
+      "source_ids": [
+        "customer-attraction/submodular-shapley-monochromatic-static-pne-global-potential"
+      ],
+      "target_ids": [
+        "M-39089a04f9444753a75cc06873542b82"
+      ],
+      "premises_mode": "all",
+      "relation_mode": "unconditional",
+      "conditions": "同一有限单位客户集及有限非空共同覆盖目录，r≥1，固定任意逐客户非负实背景 b_x；同背景静态 r 人全选 B 为 PNE。",
+      "roles": {
+        "customer-attraction/submodular-shapley-monochromatic-static-pne-global-potential": "给归零单调次模的逐参数势差上界，以及任意非负实外生负载的覆盖代入",
+        "M-39089a04f9444753a75cc06873542b82": "给任意非负实背景下单色静态 PNE 的调和势最大性，并指出真实单色尾的末位最佳回复接口"
+      },
+      "explanation": "逐 p 取 C_p(U)=Σ_{x∈∪U}(1−p)^{b_x}。当 j≥1 个活动槽覆盖 x 时，每覆盖者边际积分 ∫₀¹(1−p)^{b_x+j−1}dp=1/(b_x+j)，势的客户项为 ∫₀¹(1−p)^{b_x}[1−(1−p)^j]/p dp=Σ_{ℓ=1}^j1/(b_x+ℓ)，j=0 的势项为零。故源的同背景静态定量不等式原样传为 Φ_b(Z)−Φ_b(B^r)≤Σ_i[u_i(T_i,B_{−i};b)−u_i(B^r;b)]≤0。亦可直接逐客户核对：B 外的势增量至多 c_x(Z)/(b_x+1)，B 内的势损失至少 (r−c_x(Z))/(b_x+r)，其和恰受各槽全 B 单方替换控制。若考察有序历史的真实单色尾，必须另外在固定前缀后的末节点对所有合法主题用 BR；在那里其他 r−1 个活动动作已固定为 B，因而同背景的静态全 B PNE 条件成立。",
+      "scope": "覆盖对象的固定实背景静态部分。合法真实单色尾接入时仍只在原前缀固定的比较范围，改前缀会改变真实续局和背景。",
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/定理/固定背景下单色静态Shapley均衡的全局势最大性--定理.md",
+          "sha256": "bb44ea464f60d7da0fc13551dafca11f08d9f86b69a77e17d4cac4aaeab01e57",
+          "section": "从单方收益到全部活动配置"
+        },
+        {
+          "path": "archives/customer-attraction/state/定理/固定背景下单色静态Shapley均衡的全局势最大性--定理.md",
+          "sha256": "bb44ea464f60d7da0fc13551dafca11f08d9f86b69a77e17d4cac4aaeab01e57",
+          "section": "任意外生负载的覆盖专门化"
+        },
+        {
+          "path": "archives/customer-attraction/state/资料/双尾推送与单色续局的版本接口--资料.md",
+          "sha256": "c09c980bb67b01fcd76bb6b99149d02eee42ce91d68f4c1b1a022d76902bc129",
+          "section": "单色税的实际义务和可独立使用的静态势引理"
+        },
+        {
+          "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+          "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+          "section": "策略、真实续局与全部历史量词"
+        }
+      ],
+      "reviewed_by": "Boss1",
+      "review_note": "核实负载可为任意非负实数，无需把它当作整数背景玩家。已比较 FFC 规范边直接从全域积分到覆盖对象的推导；此边从新抽象核心落实静态覆盖专门化。",
+      "contribution": {
+        "result": "任意固定实背景的单位覆盖收益和调和势逐项识别，得到全 B 静态 PNE 对所有同背景合法配置的势最大性及定量势差上界。",
+        "remaining": "将该静态部分用于某份真实单色 SPE 尾时，须从该尾同一前缀下的末位真实 BR 支付 PNE 前提；换前缀后比较另一份真实续局仍需单独论证。"
+      },
+      "endpoint_pins": {
+        "M-39089a04f9444753a75cc06873542b82": "dad75f445713abab0f516a06336a36051bd1721eccfe0c0b5dc14d4feaec236c",
+        "customer-attraction/submodular-shapley-monochromatic-static-pne-global-potential": "d486c874dacc5ca04ad36ec8e82d749dccfb07c758eaba5104a9b4f0f7c777b6"
+      },
+      "evidence_pins": {
+        "archives/customer-attraction/state/定理/固定背景下单色静态Shapley均衡的全局势最大性--定理.md": "bb44ea464f60d7da0fc13551dafca11f08d9f86b69a77e17d4cac4aaeab01e57",
+        "archives/customer-attraction/state/资料/双尾推送与单色续局的版本接口--资料.md": "c09c980bb67b01fcd76bb6b99149d02eee42ce91d68f4c1b1a022d76902bc129",
+        "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+      },
+      "review_digest": "eb0137c3d97f8581a0fe34b3cafd6e96ac3c06e087a146816e5051db50d893ab",
+      "path": "map/edges/phase3-math-round33-shapley-3a-821d1061aedde9ad/shapley-specializes-fixed-real-load-harmonic-potential.json",
+      "declaration_pin": "432205336636b7436b811837eefba2ee4af07d2d597acefda42883d72268dc67",
+      "evidence_bindings": [
+        {
+          "reference": {
+            "path": "archives/customer-attraction/state/定理/固定背景下单色静态Shapley均衡的全局势最大性--定理.md",
+            "sha256": "bb44ea464f60d7da0fc13551dafca11f08d9f86b69a77e17d4cac4aaeab01e57",
+            "section": "从单方收益到全部活动配置"
+          },
+          "status": "current",
+          "current_sha256": "bb44ea464f60d7da0fc13551dafca11f08d9f86b69a77e17d4cac4aaeab01e57"
+        },
+        {
+          "reference": {
+            "path": "archives/customer-attraction/state/定理/固定背景下单色静态Shapley均衡的全局势最大性--定理.md",
+            "sha256": "bb44ea464f60d7da0fc13551dafca11f08d9f86b69a77e17d4cac4aaeab01e57",
+            "section": "任意外生负载的覆盖专门化"
+          },
+          "status": "current",
+          "current_sha256": "bb44ea464f60d7da0fc13551dafca11f08d9f86b69a77e17d4cac4aaeab01e57"
+        },
+        {
+          "reference": {
+            "path": "archives/customer-attraction/state/资料/双尾推送与单色续局的版本接口--资料.md",
+            "sha256": "c09c980bb67b01fcd76bb6b99149d02eee42ce91d68f4c1b1a022d76902bc129",
+            "section": "单色税的实际义务和可独立使用的静态势引理"
+          },
+          "status": "current",
+          "current_sha256": "c09c980bb67b01fcd76bb6b99149d02eee42ce91d68f4c1b1a022d76902bc129"
+        },
+        {
+          "reference": {
+            "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+            "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+            "section": "策略、真实续局与全部历史量词"
+          },
+          "status": "current",
+          "current_sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+        }
+      ],
+      "binding_status": "current",
+      "binding_errors": []
+    },
+    {
+      "edge_id": "ca-wc-shapley-and-complement-transfer-global-minimum",
+      "kind": "transfers",
+      "status": "accepted",
+      "source_ids": [
+        "customer-attraction/submodular-shapley-monochromatic-static-pne-global-potential",
+        "weighted-congestion/static-customer-coverage-complement-harmonic-transfer"
+      ],
+      "target_ids": [
+        "weighted-congestion/harmonic-complement-monochromatic-pne-global-minimum"
+      ],
+      "premises_mode": "all",
+      "relation_mode": "unconditional",
+      "conditions": "有限资源集 X、共同有限非空资源子集目录 A、m≥1 名单位权活动玩家；每资源质量 v_x>0 和固定实参数 b_x≥0。目标费用为非负系数多项式，全部可访问正整数节点满足 p_x(j)=v_x/(b_x+m+1−j)，1≤j≤m；静态补集桥给共同次数 O(m²) 的此类合法多项式。目标起点 s=(B,…,B) 为精确静态 PNE；t 遍历 A^m 的全部完整目标剖面。每项单方比较固定其余玩家于同一个 s_{−i}。",
+      "roles": {
+        "customer-attraction/submodular-shapley-monochromatic-static-pne-global-potential": "在覆盖专门化及固定任意非负实逐客户背景下，给同色静态源 PNE 的定量势差上界；它支付补集桥本身尚未支付的源势缺口非负性。",
+        "weighted-congestion/static-customer-coverage-complement-harmonic-transfer": "双向取补集、保全部合法静态偏离及弱 PNE；给成本差与收益差变号、Rosenthal 势与源调和势之和为常数，并构造合法非负多项式节点费用。",
+        "weighted-congestion/harmonic-complement-monochromatic-pne-global-minimum": "所得完整目标保证：全部比较剖面的 Rosenthal 势增量至少为同动作起点逐玩家单方成本增量之和，故该 PNE 全局最小化 Rosenthal 势。"
+      },
+      "explanation": "对每个目标动作 A∈A 取源覆盖 X∖A，保留原标签；若先对相同资源子集取商，统一把起点 B 提升到同一个覆盖 X∖B 的源标签，比较剖面逐项任意提升，效用与势不变。令源起点 s̄=(X∖B,…,X∖B)，t̄_i=X∖t_i。给定其他玩家，记 c_x^{−i} 为其源覆盖数，K_i(s̄_{−i})=Σ_x v_x/(b_x+1+c_x^{−i})。目标玩家使用资源 x 时，其负载为 m−c_x^{−i}，故 C_i(A_i,s_{−i})=K_i(s̄_{−i})−u_i(X∖A_i,s̄_{−i})。固定同一个 s_{−i}，K_i 抵消，因此 δ_i^C:=C_i(t_i,s_{−i})−C_i(s)=−δ_i^u，其中 δ_i^u:=u_i(t̄_i,s̄_{−i})−u_i(s̄)。弱 PNE 双向保留，故 s̄ 为源同色静态 PNE 且所有 δ_i^u≤0。为支付实背景的源不等式，逐 p∈(0,1) 取归零单调次模 C_p(U)=Σ_{x∈∪U}v_x(1−p)^{b_x}；源同色证明逐 p 使用的仍是归零、单调及次模性，不要求 b_x 是背景玩家数。若 j 位活动玩家覆盖 x，每覆盖者积分边际为 v_x∫₀¹(1−p)^{b_x+j−1}dp=v_x/(b_x+j)，势客户项为 v_xΣ_{ℓ=1}^j1/(b_x+ℓ)，j=0 时为零。因此源定量结论完整给出 Φ(t̄)−Φ(s̄)≤Σ_iδ_i^u≤0。再令 H_b(c)=Σ_{ℓ=1}^c1/(b+ℓ)。补集负载 k_x=m−c_x 给 Ψ=Σ_xΣ_{j=1}^{m−c_x}v_x/(b_x+m+1−j)=Σ_xv_xH_{b_x}(m)−Φ；常数对全部完整剖面相同。于是对每个 t∈A^m，Ψ(t)−Ψ(s)=−[Φ(t̄)−Φ(s̄)]≥−Σ_iδ_i^u=Σ_iδ_i^C≥0。两个源须同时保留：补集桥只识别两侧缺口，次模 Shapley 同色势差上界才给该缺口所需符号。",
+      "scope": "完整迁移到所列调和补集节点费用的单位权非负多项式拥塞子类；并非全部非负多项式拥塞的类结论。允许 m=1、空动作、重复覆盖标签、弱收益平局及任意固定非负实背景。只用实际访问的正负载节点，不要求 p_x(0) 匹配调和式。结论为 Rosenthal 势和固定同一起点的静态偏离总下界，不自动给社会总成本、一般异权或完整序贯策略保持。完整历史中根偏离会改变后继玩家动作和 K_i，13 客户例严格否定同一完整 SPE 的直接保持。",
+      "whole_result": "{固定背景次模 Shapley 同色静态势定理，静态客户覆盖补集转移} 共同完整推出：对任意满足所列节点费用的目标单位权共同目录游戏、任意同动作精确静态 PNE s，以及任意完整目标剖面 t，都有 Ψ(t)−Ψ(s)≥Σ_i[C_i(t_i,s_{−i})−C_i(s)]≥0；因此 s 是全部合法完整剖面中的全局 Rosenthal 势最小点。方向为源同色势差上界经补集反号迁至目标势差下界。",
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/定理/固定背景下单色静态Shapley均衡的全局势最大性--定理.md",
+          "sha256": "bb44ea464f60d7da0fc13551dafca11f08d9f86b69a77e17d4cac4aaeab01e57",
+          "section": "从单方收益到全部活动配置"
+        },
+        {
+          "path": "archives/customer-attraction/state/定理/固定背景下单色静态Shapley均衡的全局势最大性--定理.md",
+          "sha256": "bb44ea464f60d7da0fc13551dafca11f08d9f86b69a77e17d4cac4aaeab01e57",
+          "section": "任意外生负载的覆盖专门化"
+        },
+        {
+          "path": "archives/weighted-congestion/state/定理/客户均分到非负多项式拥塞的静态补集转移--定理.md",
+          "sha256": "e6b18c3998549abe895e26851e05645168eaee8ac0ddd2b8afecabff53ff80ed",
+          "section": "静态偏离与势的精确对应"
+        },
+        {
+          "path": "archives/weighted-congestion/state/定理/客户均分到非负多项式拥塞的静态补集转移--定理.md",
+          "sha256": "e6b18c3998549abe895e26851e05645168eaee8ac0ddd2b8afecabff53ff80ed",
+          "section": "正系数插值与有理位长"
+        },
+        {
+          "path": "archives/weighted-congestion/state/定理/客户均分到非负多项式拥塞的静态补集转移--定理.md",
+          "sha256": "e6b18c3998549abe895e26851e05645168eaee8ac0ddd2b8afecabff53ff80ed",
+          "section": "序贯边界"
+        },
+        {
+          "path": "archives/weighted-congestion/state/定理/调和补集拥塞的同动作精确均衡是全局势最小点--定理.md",
+          "sha256": "278f3b3307126edc820681ccfefbc917d657893119e0bef28c148dc3c3f50f13"
+        }
+      ],
+      "reviewed_by": "Boss2",
+      "review_note": "逐式实读三个 v1 端点及其全部必要证明。核同一身份 Shapley 积分、任意实 b_x 的逐参数覆盖专门化、目标正负载与源覆盖负载之和为 m、逐偏离差和势差的双重反号、全部完整目标剖面量词及同色标签提升。复用既有 3A 缺口恒等式但补齐其非负性，故本边为两源 ALL 的完整结果。另核独立非减费用证明及 13 客户例，准确保留静态/完整序贯和势/总成本边界。",
+      "endpoint_pins": {
+        "customer-attraction/submodular-shapley-monochromatic-static-pne-global-potential": "d486c874dacc5ca04ad36ec8e82d749dccfb07c758eaba5104a9b4f0f7c777b6",
+        "weighted-congestion/harmonic-complement-monochromatic-pne-global-minimum": "a0eb45ab28a36557c6e83a92c110708f75f0e87fdd413ebe7215dd02f3d524b6",
+        "weighted-congestion/static-customer-coverage-complement-harmonic-transfer": "28e31c3ca9c22526a6deaefa756b18799393a7cbeb4e735617f69286c812ef4d"
+      },
+      "evidence_pins": {
+        "archives/customer-attraction/state/定理/固定背景下单色静态Shapley均衡的全局势最大性--定理.md": "bb44ea464f60d7da0fc13551dafca11f08d9f86b69a77e17d4cac4aaeab01e57",
+        "archives/weighted-congestion/state/定理/客户均分到非负多项式拥塞的静态补集转移--定理.md": "e6b18c3998549abe895e26851e05645168eaee8ac0ddd2b8afecabff53ff80ed",
+        "archives/weighted-congestion/state/定理/调和补集拥塞的同动作精确均衡是全局势最小点--定理.md": "278f3b3307126edc820681ccfefbc917d657893119e0bef28c148dc3c3f50f13"
+      },
+      "review_digest": "ed1da223955a1e03ee1e1658f129ed808ed333cf2e1138f55e7439eb27ce9fc3",
+      "path": "map/edges/ca-wc-static-complement-transfer-3c-ccaee520d97ff0de/shapley-and-complement-transfer-global-minimum.json",
+      "declaration_pin": "28dd1bd6bf5fecbd2cf695bd98e5ca822073dfa3b00179be1efb64487f92dcfa",
+      "evidence_bindings": [
+        {
+          "reference": {
+            "path": "archives/customer-attraction/state/定理/固定背景下单色静态Shapley均衡的全局势最大性--定理.md",
+            "sha256": "bb44ea464f60d7da0fc13551dafca11f08d9f86b69a77e17d4cac4aaeab01e57",
+            "section": "从单方收益到全部活动配置"
+          },
+          "status": "current",
+          "current_sha256": "bb44ea464f60d7da0fc13551dafca11f08d9f86b69a77e17d4cac4aaeab01e57"
+        },
+        {
+          "reference": {
+            "path": "archives/customer-attraction/state/定理/固定背景下单色静态Shapley均衡的全局势最大性--定理.md",
+            "sha256": "bb44ea464f60d7da0fc13551dafca11f08d9f86b69a77e17d4cac4aaeab01e57",
+            "section": "任意外生负载的覆盖专门化"
+          },
+          "status": "current",
+          "current_sha256": "bb44ea464f60d7da0fc13551dafca11f08d9f86b69a77e17d4cac4aaeab01e57"
+        },
+        {
+          "reference": {
+            "path": "archives/weighted-congestion/state/定理/客户均分到非负多项式拥塞的静态补集转移--定理.md",
+            "sha256": "e6b18c3998549abe895e26851e05645168eaee8ac0ddd2b8afecabff53ff80ed",
+            "section": "静态偏离与势的精确对应"
+          },
+          "status": "current",
+          "current_sha256": "e6b18c3998549abe895e26851e05645168eaee8ac0ddd2b8afecabff53ff80ed"
+        },
+        {
+          "reference": {
+            "path": "archives/weighted-congestion/state/定理/客户均分到非负多项式拥塞的静态补集转移--定理.md",
+            "sha256": "e6b18c3998549abe895e26851e05645168eaee8ac0ddd2b8afecabff53ff80ed",
+            "section": "正系数插值与有理位长"
+          },
+          "status": "current",
+          "current_sha256": "e6b18c3998549abe895e26851e05645168eaee8ac0ddd2b8afecabff53ff80ed"
+        },
+        {
+          "reference": {
+            "path": "archives/weighted-congestion/state/定理/客户均分到非负多项式拥塞的静态补集转移--定理.md",
+            "sha256": "e6b18c3998549abe895e26851e05645168eaee8ac0ddd2b8afecabff53ff80ed",
+            "section": "序贯边界"
+          },
+          "status": "current",
+          "current_sha256": "e6b18c3998549abe895e26851e05645168eaee8ac0ddd2b8afecabff53ff80ed"
+        },
+        {
+          "reference": {
+            "path": "archives/weighted-congestion/state/定理/调和补集拥塞的同动作精确均衡是全局势最小点--定理.md",
+            "sha256": "278f3b3307126edc820681ccfefbc917d657893119e0bef28c148dc3c3f50f13"
+          },
+          "status": "current",
+          "current_sha256": "278f3b3307126edc820681ccfefbc917d657893119e0bef28c148dc3c3f50f13"
+        }
+      ],
+      "binding_status": "current",
+      "binding_errors": []
+    },
+    {
+      "edge_id": "wc-static-complement-transports-same-action-deficit",
+      "kind": "implies",
+      "status": "accepted",
+      "source_ids": [
+        "weighted-congestion/static-customer-coverage-complement-harmonic-transfer"
+      ],
+      "target_ids": [
+        "weighted-congestion/harmonic-complement-monochromatic-pne-global-minimum"
+      ],
+      "premises_mode": "all",
+      "relation_mode": "conditional",
+      "conditions": "有限资源 X，m≥1 名单位权活动玩家，共同有限非空目标资源子集目录。固定逐资源 v_x>0、b_x≥0。费用在所有 j=1,…,m 节点取 p_x(j)=v_x/(b_x+m+1−j)。同动作目标起点 s=(B,…,B) 为精确静态 PNE，比较 t 遍历共同目录的全部 m 元剖面。每项单方比较固定其余玩家在 s 中的动作。另需假设解码后的源共同缺口满足 Φ(t̄)−Φ(s̄)≤Σ_i[u_i(t̄_i,s̄_{−i})−u_i(s̄)]≤0；本边只建立恒等式和 PNE/偏离的变号。",
+      "roles": {
+        "weighted-congestion/static-customer-coverage-complement-harmonic-transfer": "给补集剖面和合法偏离的双向解码，以及固定对手的成本与收益差变号和势差变号。",
+        "weighted-congestion/harmonic-complement-monochromatic-pne-global-minimum": "在另行支付源共同缺口非负性的条件下，把该缺口经补集恒等式转为目标势下界；没有该条件时本边不推出完整全局最小结论。"
+      },
+      "explanation": "对目标每个动作 A 取源覆盖 X∖A。源活动玩家若选覆盖 X∖B 的同一合法主题，所得同色剖面记为 s̄；任意完整目标剖面 t 解码为 t̄。若原目录有同覆盖异标签，为 s̄ 的所有玩家选同一个覆盖为 X∖B 的原标签，t̄ 可逐玩家任意提升。标签代表不影响效用、势和任何静态比较。给定 i 和其余原覆盖，c_x^{−i} 固定。当 i 使用目标资源 x 时负载为 m−c_x^{−i}，其费用是 v_x/(b_x+1+c_x^{−i})。故 C_i(t_i,s_{−i})−C_i(s)=−[u_i(t̄_i,s̄_{−i})−u_i(s̄)]，对全部合法 t_i 成立，弱 PNE 双向保留。又以 c_x 为原活动覆盖数，目标负载 m−c_x 给 Ψ=Σ_x v_x H_{b_x}(m)−Φ，其中 Φ=Σ_x v_x H_{b_x}(c_x)。因此 Ψ(t)−Ψ(s)−Σ_i[C_i(t_i,s_{−i})−C_i(s)] 恰等于 Σ_i[u_i(t̄_i,s̄_{−i})−u_i(s̄)]−[Φ(t̄)−Φ(s̄)]。源端的 t̄ 可以是任意合法完整静态剖面。因而本边的逻辑方向仅是条件性的：若另行支付源缺口非负性，则恒等式与变号推出目标势下界；该支付不是本边的结论，已由3C联合边 ca-wc-shapley-and-complement-transfer-global-minimum 另行给出。",
+      "scope": "精确静态偏离与势差解码。允许空动作、弱平局与任意固定实逐客户背景。费用只在实际访问的正整数节点参与等式。完整序贯偏离可改变他人的后继动作，固定对手的变号等式无法直接比较该类分支。",
+      "evidence": [
+        {
+          "path": "archives/weighted-congestion/state/定理/客户均分到非负多项式拥塞的静态补集转移--定理.md",
+          "sha256": "e6b18c3998549abe895e26851e05645168eaee8ac0ddd2b8afecabff53ff80ed",
+          "section": "静态偏离与势的精确对应"
+        },
+        {
+          "path": "archives/weighted-congestion/state/定理/调和补集拥塞的同动作精确均衡是全局势最小点--定理.md",
+          "sha256": "278f3b3307126edc820681ccfefbc917d657893119e0bef28c148dc3c3f50f13"
+        }
+      ],
+      "reviewed_by": "Boss2",
+      "review_note": "实读两端证明并将本边降为条件性 proof-step：源端只给补集解码、PNE保留和缺口恒等式；完整目标势下界还需独立同色 Shapley 势差上界。已核对对应3C ALL联合边承接该缺口，故不再把单源步骤写成无条件全局定理。",
+      "contribution": {
+        "result": "任意同动作目标精确 PNE 解码为同色源精确静态 PNE。对每个完整比较剖面，目标势增量减同一起点的逐玩家单方成本增量之和，恒等于源逐玩家单方收益增量之和减源势增量。PNE 还使目标逐偏离成本增量各自非负。",
+        "remaining": "完整目标保证还需要证明这个共同缺口对所有比较剖面非负。跨档路线需加入允许实外生背景的同色静态 Shapley 势差上界。目标正文另有独立的单位权非减费用证明。"
+      },
+      "endpoint_pins": {
+        "weighted-congestion/harmonic-complement-monochromatic-pne-global-minimum": "a0eb45ab28a36557c6e83a92c110708f75f0e87fdd413ebe7215dd02f3d524b6",
+        "weighted-congestion/static-customer-coverage-complement-harmonic-transfer": "28e31c3ca9c22526a6deaefa756b18799393a7cbeb4e735617f69286c812ef4d"
+      },
+      "evidence_pins": {
+        "archives/weighted-congestion/state/定理/客户均分到非负多项式拥塞的静态补集转移--定理.md": "e6b18c3998549abe895e26851e05645168eaee8ac0ddd2b8afecabff53ff80ed",
+        "archives/weighted-congestion/state/定理/调和补集拥塞的同动作精确均衡是全局势最小点--定理.md": "278f3b3307126edc820681ccfefbc917d657893119e0bef28c148dc3c3f50f13"
+      },
+      "review_digest": "8ec1e3425244188a93928454b1a1b8fe34dc860eb1767a3a5a758b7a6099468e",
+      "path": "map/edges/wc-boss4-deficit-repair-repair-3be320ec40a8e3a3/static-complement-transports-same-action-deficit.json",
+      "declaration_pin": "28a040f5afa6b30f5817654271aa92e03d3d2a2aa44b8cd9824b905eead2464f",
+      "evidence_bindings": [
+        {
+          "reference": {
+            "path": "archives/weighted-congestion/state/定理/客户均分到非负多项式拥塞的静态补集转移--定理.md",
+            "sha256": "e6b18c3998549abe895e26851e05645168eaee8ac0ddd2b8afecabff53ff80ed",
+            "section": "静态偏离与势的精确对应"
+          },
+          "status": "current",
+          "current_sha256": "e6b18c3998549abe895e26851e05645168eaee8ac0ddd2b8afecabff53ff80ed"
+        },
+        {
+          "reference": {
+            "path": "archives/weighted-congestion/state/定理/调和补集拥塞的同动作精确均衡是全局势最小点--定理.md",
+            "sha256": "278f3b3307126edc820681ccfefbc917d657893119e0bef28c148dc3c3f50f13"
+          },
+          "status": "current",
+          "current_sha256": "278f3b3307126edc820681ccfefbc917d657893119e0bef28c148dc3c3f50f13"
+        }
+      ],
+      "binding_status": "current",
+      "binding_errors": []
+    }
+  ],
+  "refutations": [],
+  "research_leads": [
+    {
+      "edge_id": "ca-r33-shapley-construction-pays-forward-deletion-characterization",
+      "kind": "implies",
+      "status": "accepted",
+      "source_ids": [
+        "M-c81148ab9bca4553bd1b73e97b080e81"
+      ],
+      "target_ids": [
+        "M-e5979db9ca2b46a09115e0ece14768b1"
+      ],
+      "premises_mode": "all",
+      "relation_mode": "unconditional",
+      "conditions": "P 有限，C 归零，所有 q 遍历非负整数计数格。比较的是同一个共同势和同一个集合福利。",
+      "roles": {
+        "M-c81148ab9bca4553bd1b73e97b080e81": "给单调次模 C 的共同积分势和全域 DR、效率 E",
+        "M-e5979db9ca2b46a09115e0ece14768b1": "给全域共同删除势加 E 的唯一性及 DR 反向"
+      },
+      "explanation": "独立出现概率 1−t^{q_a} 给有限积分 Φ_C；每个有效删除边际是 t^{q_a−1} 乘预期集合边际的积分。单调使期望非负，增加自身坐标多乘 t、增加其它坐标可用共同随机数放大竞争集合，故单调 DR。−F_q′(t) 逐项等于 q_a 乘积分边际的被积函数，积分给每层 E。在 C 单调次模的方向，已有积分势正是反向刻画比较的同一对象。",
+      "scope": "全计数格的正向存在性和单调 DR。不能从固定 m 上有限 DR 推回集合福利。",
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/定理/共同删除势的全域效率与单调次模提升--定理.md",
+          "sha256": "1b92a86f1c58a9ca45c9599cff05f7d38a6739491a17a6f05ad1674bb03317d5"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/potential-flow-and-submodular-lift-primary/original/research/workspaces/customer-attraction/R-64201cd12083425899e2d643ec9bc087/next_independent/submodular_shapley_global_lift.md",
+          "sha256": "677d69ad86d97a1739bdd0c89eb5a8899568ad508d186abcff159fe0d785bc79"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/potential-flow-and-submodular-lift-primary/original/research/workspaces/customer-attraction/R-64201cd12083425899e2d643ec9bc087/next_tree/global_submodular_lift_review.md",
+          "sha256": "d21cce18c38acb2c176cf167f401bf73d5a343d839423fddf56731f90c3476f9"
+        },
+        {
+          "path": "archives/customer-attraction/state/定理/共同删除势的全域效率与单调次模提升--定理.md",
+          "sha256": "1b92a86f1c58a9ca45c9599cff05f7d38a6739491a17a6f05ad1674bb03317d5",
+          "section": "全域构造和收益积分"
+        },
+        {
+          "path": "archives/customer-attraction/state/定理/共同删除势的全域效率与单调次模提升--定理.md",
+          "sha256": "1b92a86f1c58a9ca45c9599cff05f7d38a6739491a17a6f05ad1674bb03317d5",
+          "section": "共同势加全层E的反向刻画"
+        }
+      ],
+      "reviewed_by": "Boss1",
+      "review_note": "核了 q_a=0 不定义删除收益、前向独审的实际范围及反向预设共同可积势。",
+      "contribution": {
+        "result": "建立集合福利单调次模 ⇒ 积分共同势单调 DR 且满足全人口层删除效率。",
+        "remaining": "任意有限实值 C 的绝对收敛、共同势唯一递推以及按 L→∞ 恢复边际的反向，需保目标的完整另外论证。"
+      },
+      "endpoint_pins": {
+        "M-c81148ab9bca4553bd1b73e97b080e81": "5161f546ac32f02ecb11a141b839bf3ff5e03be8bc10342355bccd68a7a59f85",
+        "M-e5979db9ca2b46a09115e0ece14768b1": "5e8f0e7696f77c6167f74b60da8d51f0f4d25d87310838f2dc36bf3949f349f3"
+      },
+      "evidence_pins": {
+        "archives/customer-attraction/state/定理/共同删除势的全域效率与单调次模提升--定理.md": "1b92a86f1c58a9ca45c9599cff05f7d38a6739491a17a6f05ad1674bb03317d5",
+        "archives/customer-attraction/tools/evidence/potential-flow-and-submodular-lift-primary/original/research/workspaces/customer-attraction/R-64201cd12083425899e2d643ec9bc087/next_independent/submodular_shapley_global_lift.md": "677d69ad86d97a1739bdd0c89eb5a8899568ad508d186abcff159fe0d785bc79",
+        "archives/customer-attraction/tools/evidence/potential-flow-and-submodular-lift-primary/original/research/workspaces/customer-attraction/R-64201cd12083425899e2d643ec9bc087/next_tree/global_submodular_lift_review.md": "d21cce18c38acb2c176cf167f401bf73d5a343d839423fddf56731f90c3476f9"
+      },
+      "review_digest": "3019c9894cc1d5596d2f1adde0882a3539a03e740d03150c7de3fa03a6330cc8",
+      "path": "map/edges/customer-attraction-3a-3a-ffc3b3fbd42f02a3/shapley-construction-pays-forward-deletion-characterization.json",
+      "declaration_pin": "d614dd5f338b0b836c5f576b6b9d698e81b3abe65d915fd8614aa75bddb2c5a0",
+      "evidence_bindings": [
+        {
+          "reference": {
+            "path": "archives/customer-attraction/state/定理/共同删除势的全域效率与单调次模提升--定理.md",
+            "sha256": "1b92a86f1c58a9ca45c9599cff05f7d38a6739491a17a6f05ad1674bb03317d5"
+          },
+          "status": "current",
+          "current_sha256": "1b92a86f1c58a9ca45c9599cff05f7d38a6739491a17a6f05ad1674bb03317d5"
+        },
+        {
+          "reference": {
+            "path": "archives/customer-attraction/tools/evidence/potential-flow-and-submodular-lift-primary/original/research/workspaces/customer-attraction/R-64201cd12083425899e2d643ec9bc087/next_independent/submodular_shapley_global_lift.md",
+            "sha256": "677d69ad86d97a1739bdd0c89eb5a8899568ad508d186abcff159fe0d785bc79"
+          },
+          "status": "current",
+          "current_sha256": "677d69ad86d97a1739bdd0c89eb5a8899568ad508d186abcff159fe0d785bc79"
+        },
+        {
+          "reference": {
+            "path": "archives/customer-attraction/tools/evidence/potential-flow-and-submodular-lift-primary/original/research/workspaces/customer-attraction/R-64201cd12083425899e2d643ec9bc087/next_tree/global_submodular_lift_review.md",
+            "sha256": "d21cce18c38acb2c176cf167f401bf73d5a343d839423fddf56731f90c3476f9"
+          },
+          "status": "current",
+          "current_sha256": "d21cce18c38acb2c176cf167f401bf73d5a343d839423fddf56731f90c3476f9"
+        },
+        {
+          "reference": {
+            "path": "archives/customer-attraction/state/定理/共同删除势的全域效率与单调次模提升--定理.md",
+            "sha256": "1b92a86f1c58a9ca45c9599cff05f7d38a6739491a17a6f05ad1674bb03317d5",
+            "section": "全域构造和收益积分"
+          },
+          "status": "current",
+          "current_sha256": "1b92a86f1c58a9ca45c9599cff05f7d38a6739491a17a6f05ad1674bb03317d5"
+        },
+        {
+          "reference": {
+            "path": "archives/customer-attraction/state/定理/共同删除势的全域效率与单调次模提升--定理.md",
+            "sha256": "1b92a86f1c58a9ca45c9599cff05f7d38a6739491a17a6f05ad1674bb03317d5",
+            "section": "共同势加全层E的反向刻画"
+          },
+          "status": "current",
+          "current_sha256": "1b92a86f1c58a9ca45c9599cff05f7d38a6739491a17a6f05ad1674bb03317d5"
+        }
+      ],
+      "binding_status": "current",
+      "binding_errors": []
+    },
+    {
+      "edge_id": "ca-r33-shapley-finite-downset-potential-identification",
+      "kind": "implies",
+      "status": "accepted",
+      "source_ids": [
+        "M-e5979db9ca2b46a09115e0ece14768b1"
+      ],
+      "target_ids": [
+        "customer-attraction/submodular-shapley-monochromatic-static-pne-global-potential"
+      ],
+      "premises_mode": "all",
+      "relation_mode": "unconditional",
+      "conditions": "同一有限标签集合、同一归零实值 C。取包含零、固定背景计数与所需全部活动配置总计数的有限向下闭集 D，使用定义于 D 的同一个归零共同删除势，并在 D 每一非零人口状态要求包含背景玩家的总份额效率。",
+      "roles": {
+        "M-e5979db9ca2b46a09115e0ece14768b1": "给共同删除势的按人口递推及已知积分解",
+        "customer-attraction/submodular-shapley-monochromatic-static-pne-global-potential": "在比较所需的有限层识别实际静态 Shapley 势与带身份删除收益"
+      },
+      "explanation": "可取 D={q: |q|≤|b|+r}，其中 b 为有限固定背景玩家的标签计数。向下闭保证 q_a>0 时 q−e_a∈D。把 U_a(q)=Φ(q)−Φ(q−e_a) 代入 Σ_a q_a U_a(q)=C(supp q)，得 |q|Φ(q)=C(supp q)+Σ_{a:q_a>0}q_aΦ(q−e_a)。从 Φ(0)=0 按 |q| 归纳，D 上唯一，并与源的积分解逐点相同。活动配置 z 的可比势可用 Φ_C(b+z)−Φ_C(b)，同一固定背景常数抵消。带身份活动玩家从 B 改 T 的势差是两份终局势各减同一删除该玩家的势所得到的收益差，故正好是同一背景下的静态替换收益差。",
+      "scope": "局部识别可用于任何有限真实背景的比较层。有限递推可识别已给 C 的势，原全域 DR 反向刻画仍需任意大 L；此处背景效率含真实玩家，不套给任意外生实负载。",
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/定理/共同删除势的全域效率与单调次模提升--定理.md",
+          "sha256": "1b92a86f1c58a9ca45c9599cff05f7d38a6739491a17a6f05ad1674bb03317d5",
+          "section": "共同势加全层E的反向刻画"
+        },
+        {
+          "path": "archives/customer-attraction/state/定理/固定背景下单色静态Shapley均衡的全局势最大性--定理.md",
+          "sha256": "bb44ea464f60d7da0fc13551dafca11f08d9f86b69a77e17d4cac4aaeab01e57",
+          "section": "势与收益的同一抽样公式"
+        }
+      ],
+      "reviewed_by": "Boss1",
+      "review_note": "核 q_a=0 不取删除值、共同势与全 D 效率是条件，且只需实际依赖到的向下闭层。比较固定背景常数及共同删一玩家的状态。",
+      "contribution": {
+        "result": "在有限向下闭层唯一识别共同删除势为同一 Shapley 势，并给出固定背景下任一单槽势差等于对应静态单方收益差。",
+        "remaining": "全 B 的任意同时替换势差仍须由归零单调次模值的带身份 Bernoulli 抽样界控制，再用 PNE 逐项收口。有限层效率与共同势自身不给全局最优。"
+      },
+      "endpoint_pins": {
+        "M-e5979db9ca2b46a09115e0ece14768b1": "5e8f0e7696f77c6167f74b60da8d51f0f4d25d87310838f2dc36bf3949f349f3",
+        "customer-attraction/submodular-shapley-monochromatic-static-pne-global-potential": "d486c874dacc5ca04ad36ec8e82d749dccfb07c758eaba5104a9b4f0f7c777b6"
+      },
+      "evidence_pins": {
+        "archives/customer-attraction/state/定理/共同删除势的全域效率与单调次模提升--定理.md": "1b92a86f1c58a9ca45c9599cff05f7d38a6739491a17a6f05ad1674bb03317d5",
+        "archives/customer-attraction/state/定理/固定背景下单色静态Shapley均衡的全局势最大性--定理.md": "bb44ea464f60d7da0fc13551dafca11f08d9f86b69a77e17d4cac4aaeab01e57"
+      },
+      "review_digest": "1c2ba9d9e236f69141ac000d430666f28fa38d680d1fda8ccc8c9548214537f5",
+      "path": "map/edges/phase3-math-round33-shapley-3a-821d1061aedde9ad/shapley-finite-downset-potential-identification.json",
+      "declaration_pin": "3e0890daba9a9d71d31d5510bfb72663a1a3b63a44d00cbd88d1f21262944970",
+      "evidence_bindings": [
+        {
+          "reference": {
+            "path": "archives/customer-attraction/state/定理/共同删除势的全域效率与单调次模提升--定理.md",
+            "sha256": "1b92a86f1c58a9ca45c9599cff05f7d38a6739491a17a6f05ad1674bb03317d5",
+            "section": "共同势加全层E的反向刻画"
+          },
+          "status": "current",
+          "current_sha256": "1b92a86f1c58a9ca45c9599cff05f7d38a6739491a17a6f05ad1674bb03317d5"
+        },
+        {
+          "reference": {
+            "path": "archives/customer-attraction/state/定理/固定背景下单色静态Shapley均衡的全局势最大性--定理.md",
+            "sha256": "bb44ea464f60d7da0fc13551dafca11f08d9f86b69a77e17d4cac4aaeab01e57",
+            "section": "势与收益的同一抽样公式"
+          },
+          "status": "current",
+          "current_sha256": "bb44ea464f60d7da0fc13551dafca11f08d9f86b69a77e17d4cac4aaeab01e57"
+        }
+      ],
+      "binding_status": "current",
+      "binding_errors": []
+    },
+    {
+      "edge_id": "ca-r33-shapley-harmonic-increment-static-boundary",
+      "kind": "checks",
+      "status": "accepted",
+      "source_ids": [
+        "M-c81148ab9bca4553bd1b73e97b080e81"
+      ],
+      "target_ids": [
+        "customer-attraction/actual-coverage-and-overlapping-optimal-catalog-static-harmonic-boundary"
+      ],
+      "premises_mode": "all",
+      "relation_mode": "context",
+      "conditions": "真实覆盖集合 C(S)=Σ_B w_B k_S(B)，固定同一实际计数 q 与比较计数 d。",
+      "roles": {
+        "M-c81148ab9bca4553bd1b73e97b080e81": "给真实非负 coverage 的全计数调和势",
+        "customer-attraction/actual-coverage-and-overlapping-optimal-catalog-static-harmonic-boundary": "给唯一最优并集仍需额外调和信用的精确静态族"
+      },
+      "explanation": "积分按类型线性即 Φ(q)=Σ_B w_B H_{q(B)}。因此目标的 B_h(c,d) 恰为同一势 Φ(q+d)−Φ(q)。静态族中比较并集重复共有核心，其增量超过 W+G 的量是 |K|(H_m−1)>0；原 actual 末位由 A_m 改比较题即可严格增加收益。因此全层势性质和静态 OPT/half 都在该例兼容，无法单靠它们支付动态调和预算。",
+      "scope": "只作势到同一静态差额的精确语境桥，原终局不是真SPE。",
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/定理/共同删除势的全域效率与单调次模提升--定理.md",
+          "sha256": "1b92a86f1c58a9ca45c9599cff05f7d38a6739491a17a6f05ad1674bb03317d5"
+        },
+        {
+          "path": "archives/customer-attraction/state/资源/实际覆盖与重叠最优目录的静态调和边界--资源.md",
+          "sha256": "fbec04d58e0bcd653081085b1ea5fcb12ab01538733f4104bd5690d1f81436e2"
+        }
+      ],
+      "reviewed_by": "Boss1",
+      "review_note": "保同一最优元组、比较题重复会员位和全部最优排列；无客户价值搬到另一枝。",
+      "endpoint_pins": {
+        "M-c81148ab9bca4553bd1b73e97b080e81": "5161f546ac32f02ecb11a141b839bf3ff5e03be8bc10342355bccd68a7a59f85",
+        "customer-attraction/actual-coverage-and-overlapping-optimal-catalog-static-harmonic-boundary": "5aa29259d3add6ae0896aac68464aebf89e8e8d8e1a9ae513fe6bfb7530efa1d"
+      },
+      "evidence_pins": {
+        "archives/customer-attraction/state/定理/共同删除势的全域效率与单调次模提升--定理.md": "1b92a86f1c58a9ca45c9599cff05f7d38a6739491a17a6f05ad1674bb03317d5",
+        "archives/customer-attraction/state/资源/实际覆盖与重叠最优目录的静态调和边界--资源.md": "fbec04d58e0bcd653081085b1ea5fcb12ab01538733f4104bd5690d1f81436e2"
+      },
+      "review_digest": "955eb5d84b087d023f9dc5cf5502379a587f3cccf8975de487ac77b14ad2ac77",
+      "path": "map/edges/customer-attraction-3a-3a-ffc3b3fbd42f02a3/shapley-harmonic-increment-static-boundary.json",
+      "declaration_pin": "7ae2e891bc384cc5f09a87660d8a2a15a2807f0b7555d2e4b9a44e27494a05e9",
+      "evidence_bindings": [
+        {
+          "reference": {
+            "path": "archives/customer-attraction/state/定理/共同删除势的全域效率与单调次模提升--定理.md",
+            "sha256": "1b92a86f1c58a9ca45c9599cff05f7d38a6739491a17a6f05ad1674bb03317d5"
+          },
+          "status": "current",
+          "current_sha256": "1b92a86f1c58a9ca45c9599cff05f7d38a6739491a17a6f05ad1674bb03317d5"
+        },
+        {
+          "reference": {
+            "path": "archives/customer-attraction/state/资源/实际覆盖与重叠最优目录的静态调和边界--资源.md",
+            "sha256": "fbec04d58e0bcd653081085b1ea5fcb12ab01538733f4104bd5690d1f81436e2"
+          },
+          "status": "current",
+          "current_sha256": "fbec04d58e0bcd653081085b1ea5fcb12ab01538733f4104bd5690d1f81436e2"
+        }
+      ],
+      "binding_status": "current",
+      "binding_errors": []
+    },
+    {
+      "edge_id": "ca-r33-shapley-integral-pays-monochrome-global-potential",
+      "kind": "transfers",
+      "status": "accepted",
+      "source_ids": [
+        "M-c81148ab9bca4553bd1b73e97b080e81"
+      ],
+      "target_ids": [
+        "M-39089a04f9444753a75cc06873542b82"
+      ],
+      "premises_mode": "all",
+      "relation_mode": "unconditional",
+      "conditions": "r≥1，同一静态竞争背景固定；对任意有限非负客户质量 w_x 和 b_x≥0，或更一般逐 t 取有限归零单调次模 C_t 且积分有限。",
+      "roles": {
+        "M-c81148ab9bca4553bd1b73e97b080e81": "给以各标签独立出现概率写共同 Shapley 势的积分形式",
+        "M-39089a04f9444753a75cc06873542b82": "给任意真实外生背景下单色静态 PNE 的全局势最大化"
+      },
+      "explanation": "令 t∈(0,1)，C_t(S)=Σ_{x∈∪S}w_x t^{b_x}。对 r 个带身份槽各以概率 1−t 独立选入，标签支持的出现率恰为 1−t^{q_a}；积分 E[C_t]/(1−t) 对每个客户给 w_x∫t^{b_x}(1−t^{c_x})/(1−t)dt= w_x Σ_{j=1}^{c_x}1/(b_x+j)，即原背景势。令 K_t=C_t({B})、d_t(T)=C_t({B,T})−K_t。B^r 的单槽改 T 的势差是 ∫[t^{r−1}(C_t(T)−K_t)+(1−t^{r−1})d_t(T)]dt。任意 r 槽候选均匀取 k 个槽，记全槽的 C_t(T), d_t(T) 均值为 C̄_t,d̄_t。k=1 的比较势被积差为 β_1(C̄_t−K_t)；k≥2 由单调次模给 C_t(子槽支持)≤K_t+Σ_{选槽}d_t(T)，故差至多 kβ_k d̄_t。β_k=binom(r,k)(1−t)^{k−1}t^{r−k}，β_1=rt^{r−1} 且 Σ_{k≥2}kβ_k=r(1−t^{r−1})。积分总差至多 r 个静态单槽替换势差之和，PNE 使每项非正。若真有序尾单色，在同一固定旧背景下其末位 BR 恰给上述单槽 PNE 条件。",
+      "scope": "完整原任意逐客背景的定理。对 C_t≡C 也给零外加背景的抽象单调次模 Shapley 势扩张。PNE 仅要求每条比较积分非正。",
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/定理/共同删除势的全域效率与单调次模提升--定理.md",
+          "sha256": "1b92a86f1c58a9ca45c9599cff05f7d38a6739491a17a6f05ad1674bb03317d5"
+        },
+        {
+          "path": "archives/customer-attraction/state/定理/共同删除势的全域效率与单调次模提升--定理.md",
+          "sha256": "1b92a86f1c58a9ca45c9599cff05f7d38a6739491a17a6f05ad1674bb03317d5",
+          "section": "全域构造和收益积分"
+        },
+        {
+          "path": "archives/customer-attraction/state/资料/双尾推送与单色续局的版本接口--资料.md",
+          "sha256": "c09c980bb67b01fcd76bb6b99149d02eee42ce91d68f4c1b1a022d76902bc129",
+          "section": "单色税的实际义务和可独立使用的静态势引理"
+        },
+        {
+          "path": "archives/customer-attraction/state/资料/双尾推送与单色续局的版本接口--资料.md",
+          "sha256": "c09c980bb67b01fcd76bb6b99149d02eee42ce91d68f4c1b1a022d76902bc129"
+        }
+      ],
+      "reviewed_by": "Boss1",
+      "review_note": "用二项槽抽样核逐 t 共同系数，未把总 PNE 偷换成逐 t 假设。可另按固定基集逐客户核单替换成本，结论仍只在同背景。",
+      "whole_result": "任意非负实背景及 r，若静态 r 人全选 B 为 PNE，则 B^r 在全部 r 槽合法主题元组上全局最大化原调和势。单色真实尾的末位最佳回复给同背景 PNE 条件。",
+      "endpoint_pins": {
+        "M-39089a04f9444753a75cc06873542b82": "dad75f445713abab0f516a06336a36051bd1721eccfe0c0b5dc14d4feaec236c",
+        "M-c81148ab9bca4553bd1b73e97b080e81": "5161f546ac32f02ecb11a141b839bf3ff5e03be8bc10342355bccd68a7a59f85"
+      },
+      "evidence_pins": {
+        "archives/customer-attraction/state/定理/共同删除势的全域效率与单调次模提升--定理.md": "1b92a86f1c58a9ca45c9599cff05f7d38a6739491a17a6f05ad1674bb03317d5",
+        "archives/customer-attraction/state/资料/双尾推送与单色续局的版本接口--资料.md": "c09c980bb67b01fcd76bb6b99149d02eee42ce91d68f4c1b1a022d76902bc129"
+      },
+      "review_digest": "bc91c7ba710149d10f88cf644564d9ff97786420dae23e2efb9a564522dfe86c",
+      "path": "map/edges/customer-attraction-3a-3a-ffc3b3fbd42f02a3/shapley-integral-pays-monochrome-global-potential.json",
+      "declaration_pin": "2374a92a6213fa4ddbda2627cf0a8517a1d5df2d75d6431d51b6305fc8284ece",
+      "evidence_bindings": [
+        {
+          "reference": {
+            "path": "archives/customer-attraction/state/定理/共同删除势的全域效率与单调次模提升--定理.md",
+            "sha256": "1b92a86f1c58a9ca45c9599cff05f7d38a6739491a17a6f05ad1674bb03317d5"
+          },
+          "status": "current",
+          "current_sha256": "1b92a86f1c58a9ca45c9599cff05f7d38a6739491a17a6f05ad1674bb03317d5"
+        },
+        {
+          "reference": {
+            "path": "archives/customer-attraction/state/定理/共同删除势的全域效率与单调次模提升--定理.md",
+            "sha256": "1b92a86f1c58a9ca45c9599cff05f7d38a6739491a17a6f05ad1674bb03317d5",
+            "section": "全域构造和收益积分"
+          },
+          "status": "current",
+          "current_sha256": "1b92a86f1c58a9ca45c9599cff05f7d38a6739491a17a6f05ad1674bb03317d5"
+        },
+        {
+          "reference": {
+            "path": "archives/customer-attraction/state/资料/双尾推送与单色续局的版本接口--资料.md",
+            "sha256": "c09c980bb67b01fcd76bb6b99149d02eee42ce91d68f4c1b1a022d76902bc129",
+            "section": "单色税的实际义务和可独立使用的静态势引理"
+          },
+          "status": "current",
+          "current_sha256": "c09c980bb67b01fcd76bb6b99149d02eee42ce91d68f4c1b1a022d76902bc129"
+        },
+        {
+          "reference": {
+            "path": "archives/customer-attraction/state/资料/双尾推送与单色续局的版本接口--资料.md",
+            "sha256": "c09c980bb67b01fcd76bb6b99149d02eee42ce91d68f4c1b1a022d76902bc129"
+          },
+          "status": "current",
+          "current_sha256": "c09c980bb67b01fcd76bb6b99149d02eee42ce91d68f4c1b1a022d76902bc129"
+        }
+      ],
+      "binding_status": "current",
+      "binding_errors": []
+    },
+    {
+      "edge_id": "ca-r33-shapley-lift-specializes-to-rank-two",
+      "kind": "specializes",
+      "status": "accepted",
+      "source_ids": [
+        "M-c81148ab9bca4553bd1b73e97b080e81"
+      ],
+      "target_ids": [
+        "M-65906d1bd9974e8c94cbbc65ab1f6b81"
+      ],
+      "premises_mode": "all",
+      "relation_mode": "unconditional",
+      "conditions": "三标签 P={a,b,c}，C(S)=min(|S|,2)。从非负客户表示向抽象次模福利比较。",
+      "roles": {
+        "M-c81148ab9bca4553bd1b73e97b080e81": "给任意归零单调次模集合函数的全域 Shapley 势",
+        "M-65906d1bd9974e8c94cbbc65ab1f6b81": "给三标签秩二实例并分离非负 coverage 锥"
+      },
+      "explanation": "该 C 的边际在集合大小 0、1、≥2 时分别为1、1、0，故满足全域提升条件。三阶覆盖交替值 3−6+2=−1，真实非负覆盖中该交替值等于全兴趣客户质量，遂排除。各二标签兴趣型质量1，三标签型质量−1，合成的有符号覆盖恰等于 C；积分线性把每个兴趣型 B 送到 H_{q(B)}，得到三项二标签调和数之和减全标签调和数。",
+      "scope": "存在三标签的抽象合法全计数提升，严格超出共同非负客户表示；未否任何原单位客户的 SPE 不等式。",
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/定理/共同删除势的全域效率与单调次模提升--定理.md",
+          "sha256": "1b92a86f1c58a9ca45c9599cff05f7d38a6739491a17a6f05ad1674bb03317d5",
+          "section": "严格大于非负coverage的合法抽象例"
+        },
+        {
+          "path": "archives/customer-attraction/state/定理/共同删除势的全域效率与单调次模提升--定理.md",
+          "sha256": "1b92a86f1c58a9ca45c9599cff05f7d38a6739491a17a6f05ad1674bb03317d5"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/potential-flow-and-submodular-lift-primary/original/research/workspaces/customer-attraction/R-64201cd12083425899e2d643ec9bc087/next_independent/submodular_shapley_global_lift.md",
+          "sha256": "677d69ad86d97a1739bdd0c89eb5a8899568ad508d186abcff159fe0d785bc79"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/potential-flow-and-submodular-lift-primary/original/research/workspaces/customer-attraction/R-64201cd12083425899e2d643ec9bc087/next_tree/global_submodular_lift_review.md",
+          "sha256": "d21cce18c38acb2c176cf167f401bf73d5a343d839423fddf56731f90c3476f9"
+        }
+      ],
+      "reviewed_by": "Boss1",
+      "review_note": "按客户型容斥核−1，验证有符号型同时给所有子集的 C。",
+      "whole_result": "三标签秩二 C 具全域单调 DR、效率和共同 Shapley 删除势，势为三个二标签调和项减全标签调和项，且没有非负覆盖表示。",
+      "endpoint_pins": {
+        "M-65906d1bd9974e8c94cbbc65ab1f6b81": "4589b050ec18196e3cdbdeae1aeb73034e7cccf827823109ded9d5083cac31d0",
+        "M-c81148ab9bca4553bd1b73e97b080e81": "5161f546ac32f02ecb11a141b839bf3ff5e03be8bc10342355bccd68a7a59f85"
+      },
+      "evidence_pins": {
+        "archives/customer-attraction/state/定理/共同删除势的全域效率与单调次模提升--定理.md": "1b92a86f1c58a9ca45c9599cff05f7d38a6739491a17a6f05ad1674bb03317d5",
+        "archives/customer-attraction/tools/evidence/potential-flow-and-submodular-lift-primary/original/research/workspaces/customer-attraction/R-64201cd12083425899e2d643ec9bc087/next_independent/submodular_shapley_global_lift.md": "677d69ad86d97a1739bdd0c89eb5a8899568ad508d186abcff159fe0d785bc79",
+        "archives/customer-attraction/tools/evidence/potential-flow-and-submodular-lift-primary/original/research/workspaces/customer-attraction/R-64201cd12083425899e2d643ec9bc087/next_tree/global_submodular_lift_review.md": "d21cce18c38acb2c176cf167f401bf73d5a343d839423fddf56731f90c3476f9"
+      },
+      "review_digest": "9168a1ba9b677321462a13de0adec27a176bd31db85fd3a8db5f56866801b212",
+      "path": "map/edges/customer-attraction-3a-3a-ffc3b3fbd42f02a3/shapley-lift-specializes-to-rank-two.json",
+      "declaration_pin": "ae4ac7eaf575cc613c793d3c94713b819b98fee2356cacde416fdcdff3059fac",
+      "evidence_bindings": [
+        {
+          "reference": {
+            "path": "archives/customer-attraction/state/定理/共同删除势的全域效率与单调次模提升--定理.md",
+            "sha256": "1b92a86f1c58a9ca45c9599cff05f7d38a6739491a17a6f05ad1674bb03317d5",
+            "section": "严格大于非负coverage的合法抽象例"
+          },
+          "status": "current",
+          "current_sha256": "1b92a86f1c58a9ca45c9599cff05f7d38a6739491a17a6f05ad1674bb03317d5"
+        },
+        {
+          "reference": {
+            "path": "archives/customer-attraction/state/定理/共同删除势的全域效率与单调次模提升--定理.md",
+            "sha256": "1b92a86f1c58a9ca45c9599cff05f7d38a6739491a17a6f05ad1674bb03317d5"
+          },
+          "status": "current",
+          "current_sha256": "1b92a86f1c58a9ca45c9599cff05f7d38a6739491a17a6f05ad1674bb03317d5"
+        },
+        {
+          "reference": {
+            "path": "archives/customer-attraction/tools/evidence/potential-flow-and-submodular-lift-primary/original/research/workspaces/customer-attraction/R-64201cd12083425899e2d643ec9bc087/next_independent/submodular_shapley_global_lift.md",
+            "sha256": "677d69ad86d97a1739bdd0c89eb5a8899568ad508d186abcff159fe0d785bc79"
+          },
+          "status": "current",
+          "current_sha256": "677d69ad86d97a1739bdd0c89eb5a8899568ad508d186abcff159fe0d785bc79"
+        },
+        {
+          "reference": {
+            "path": "archives/customer-attraction/tools/evidence/potential-flow-and-submodular-lift-primary/original/research/workspaces/customer-attraction/R-64201cd12083425899e2d643ec9bc087/next_tree/global_submodular_lift_review.md",
+            "sha256": "d21cce18c38acb2c176cf167f401bf73d5a343d839423fddf56731f90c3476f9"
+          },
+          "status": "current",
+          "current_sha256": "d21cce18c38acb2c176cf167f401bf73d5a343d839423fddf56731f90c3476f9"
+        }
+      ],
+      "binding_status": "current",
+      "binding_errors": []
+    },
+    {
+      "edge_id": "ca-r33-shapley-specializes-fixed-real-load-harmonic-potential",
+      "kind": "specializes",
+      "status": "accepted",
+      "source_ids": [
+        "customer-attraction/submodular-shapley-monochromatic-static-pne-global-potential"
+      ],
+      "target_ids": [
+        "M-39089a04f9444753a75cc06873542b82"
+      ],
+      "premises_mode": "all",
+      "relation_mode": "unconditional",
+      "conditions": "同一有限单位客户集及有限非空共同覆盖目录，r≥1，固定任意逐客户非负实背景 b_x；同背景静态 r 人全选 B 为 PNE。",
+      "roles": {
+        "customer-attraction/submodular-shapley-monochromatic-static-pne-global-potential": "给归零单调次模的逐参数势差上界，以及任意非负实外生负载的覆盖代入",
+        "M-39089a04f9444753a75cc06873542b82": "给任意非负实背景下单色静态 PNE 的调和势最大性，并指出真实单色尾的末位最佳回复接口"
+      },
+      "explanation": "逐 p 取 C_p(U)=Σ_{x∈∪U}(1−p)^{b_x}。当 j≥1 个活动槽覆盖 x 时，每覆盖者边际积分 ∫₀¹(1−p)^{b_x+j−1}dp=1/(b_x+j)，势的客户项为 ∫₀¹(1−p)^{b_x}[1−(1−p)^j]/p dp=Σ_{ℓ=1}^j1/(b_x+ℓ)，j=0 的势项为零。故源的同背景静态定量不等式原样传为 Φ_b(Z)−Φ_b(B^r)≤Σ_i[u_i(T_i,B_{−i};b)−u_i(B^r;b)]≤0。亦可直接逐客户核对：B 外的势增量至多 c_x(Z)/(b_x+1)，B 内的势损失至少 (r−c_x(Z))/(b_x+r)，其和恰受各槽全 B 单方替换控制。若考察有序历史的真实单色尾，必须另外在固定前缀后的末节点对所有合法主题用 BR；在那里其他 r−1 个活动动作已固定为 B，因而同背景的静态全 B PNE 条件成立。",
+      "scope": "覆盖对象的固定实背景静态部分。合法真实单色尾接入时仍只在原前缀固定的比较范围，改前缀会改变真实续局和背景。",
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/定理/固定背景下单色静态Shapley均衡的全局势最大性--定理.md",
+          "sha256": "bb44ea464f60d7da0fc13551dafca11f08d9f86b69a77e17d4cac4aaeab01e57",
+          "section": "从单方收益到全部活动配置"
+        },
+        {
+          "path": "archives/customer-attraction/state/定理/固定背景下单色静态Shapley均衡的全局势最大性--定理.md",
+          "sha256": "bb44ea464f60d7da0fc13551dafca11f08d9f86b69a77e17d4cac4aaeab01e57",
+          "section": "任意外生负载的覆盖专门化"
+        },
+        {
+          "path": "archives/customer-attraction/state/资料/双尾推送与单色续局的版本接口--资料.md",
+          "sha256": "c09c980bb67b01fcd76bb6b99149d02eee42ce91d68f4c1b1a022d76902bc129",
+          "section": "单色税的实际义务和可独立使用的静态势引理"
+        },
+        {
+          "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+          "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+          "section": "策略、真实续局与全部历史量词"
+        }
+      ],
+      "reviewed_by": "Boss1",
+      "review_note": "核实负载可为任意非负实数，无需把它当作整数背景玩家。已比较 FFC 规范边直接从全域积分到覆盖对象的推导；此边从新抽象核心落实静态覆盖专门化。",
+      "contribution": {
+        "result": "任意固定实背景的单位覆盖收益和调和势逐项识别，得到全 B 静态 PNE 对所有同背景合法配置的势最大性及定量势差上界。",
+        "remaining": "将该静态部分用于某份真实单色 SPE 尾时，须从该尾同一前缀下的末位真实 BR 支付 PNE 前提；换前缀后比较另一份真实续局仍需单独论证。"
+      },
+      "endpoint_pins": {
+        "M-39089a04f9444753a75cc06873542b82": "dad75f445713abab0f516a06336a36051bd1721eccfe0c0b5dc14d4feaec236c",
+        "customer-attraction/submodular-shapley-monochromatic-static-pne-global-potential": "d486c874dacc5ca04ad36ec8e82d749dccfb07c758eaba5104a9b4f0f7c777b6"
+      },
+      "evidence_pins": {
+        "archives/customer-attraction/state/定理/固定背景下单色静态Shapley均衡的全局势最大性--定理.md": "bb44ea464f60d7da0fc13551dafca11f08d9f86b69a77e17d4cac4aaeab01e57",
+        "archives/customer-attraction/state/资料/双尾推送与单色续局的版本接口--资料.md": "c09c980bb67b01fcd76bb6b99149d02eee42ce91d68f4c1b1a022d76902bc129",
+        "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+      },
+      "review_digest": "eb0137c3d97f8581a0fe34b3cafd6e96ac3c06e087a146816e5051db50d893ab",
+      "path": "map/edges/phase3-math-round33-shapley-3a-821d1061aedde9ad/shapley-specializes-fixed-real-load-harmonic-potential.json",
+      "declaration_pin": "432205336636b7436b811837eefba2ee4af07d2d597acefda42883d72268dc67",
+      "evidence_bindings": [
+        {
+          "reference": {
+            "path": "archives/customer-attraction/state/定理/固定背景下单色静态Shapley均衡的全局势最大性--定理.md",
+            "sha256": "bb44ea464f60d7da0fc13551dafca11f08d9f86b69a77e17d4cac4aaeab01e57",
+            "section": "从单方收益到全部活动配置"
+          },
+          "status": "current",
+          "current_sha256": "bb44ea464f60d7da0fc13551dafca11f08d9f86b69a77e17d4cac4aaeab01e57"
+        },
+        {
+          "reference": {
+            "path": "archives/customer-attraction/state/定理/固定背景下单色静态Shapley均衡的全局势最大性--定理.md",
+            "sha256": "bb44ea464f60d7da0fc13551dafca11f08d9f86b69a77e17d4cac4aaeab01e57",
+            "section": "任意外生负载的覆盖专门化"
+          },
+          "status": "current",
+          "current_sha256": "bb44ea464f60d7da0fc13551dafca11f08d9f86b69a77e17d4cac4aaeab01e57"
+        },
+        {
+          "reference": {
+            "path": "archives/customer-attraction/state/资料/双尾推送与单色续局的版本接口--资料.md",
+            "sha256": "c09c980bb67b01fcd76bb6b99149d02eee42ce91d68f4c1b1a022d76902bc129",
+            "section": "单色税的实际义务和可独立使用的静态势引理"
+          },
+          "status": "current",
+          "current_sha256": "c09c980bb67b01fcd76bb6b99149d02eee42ce91d68f4c1b1a022d76902bc129"
+        },
+        {
+          "reference": {
+            "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+            "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+            "section": "策略、真实续局与全部历史量词"
+          },
+          "status": "current",
+          "current_sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+        }
+      ],
+      "binding_status": "current",
+      "binding_errors": []
+    },
+    {
+      "edge_id": "wc-static-complement-transports-same-action-deficit",
+      "kind": "implies",
+      "status": "accepted",
+      "source_ids": [
+        "weighted-congestion/static-customer-coverage-complement-harmonic-transfer"
+      ],
+      "target_ids": [
+        "weighted-congestion/harmonic-complement-monochromatic-pne-global-minimum"
+      ],
+      "premises_mode": "all",
+      "relation_mode": "conditional",
+      "conditions": "有限资源 X，m≥1 名单位权活动玩家，共同有限非空目标资源子集目录。固定逐资源 v_x>0、b_x≥0。费用在所有 j=1,…,m 节点取 p_x(j)=v_x/(b_x+m+1−j)。同动作目标起点 s=(B,…,B) 为精确静态 PNE，比较 t 遍历共同目录的全部 m 元剖面。每项单方比较固定其余玩家在 s 中的动作。另需假设解码后的源共同缺口满足 Φ(t̄)−Φ(s̄)≤Σ_i[u_i(t̄_i,s̄_{−i})−u_i(s̄)]≤0；本边只建立恒等式和 PNE/偏离的变号。",
+      "roles": {
+        "weighted-congestion/static-customer-coverage-complement-harmonic-transfer": "给补集剖面和合法偏离的双向解码，以及固定对手的成本与收益差变号和势差变号。",
+        "weighted-congestion/harmonic-complement-monochromatic-pne-global-minimum": "在另行支付源共同缺口非负性的条件下，把该缺口经补集恒等式转为目标势下界；没有该条件时本边不推出完整全局最小结论。"
+      },
+      "explanation": "对目标每个动作 A 取源覆盖 X∖A。源活动玩家若选覆盖 X∖B 的同一合法主题，所得同色剖面记为 s̄；任意完整目标剖面 t 解码为 t̄。若原目录有同覆盖异标签，为 s̄ 的所有玩家选同一个覆盖为 X∖B 的原标签，t̄ 可逐玩家任意提升。标签代表不影响效用、势和任何静态比较。给定 i 和其余原覆盖，c_x^{−i} 固定。当 i 使用目标资源 x 时负载为 m−c_x^{−i}，其费用是 v_x/(b_x+1+c_x^{−i})。故 C_i(t_i,s_{−i})−C_i(s)=−[u_i(t̄_i,s̄_{−i})−u_i(s̄)]，对全部合法 t_i 成立，弱 PNE 双向保留。又以 c_x 为原活动覆盖数，目标负载 m−c_x 给 Ψ=Σ_x v_x H_{b_x}(m)−Φ，其中 Φ=Σ_x v_x H_{b_x}(c_x)。因此 Ψ(t)−Ψ(s)−Σ_i[C_i(t_i,s_{−i})−C_i(s)] 恰等于 Σ_i[u_i(t̄_i,s̄_{−i})−u_i(s̄)]−[Φ(t̄)−Φ(s̄)]。源端的 t̄ 可以是任意合法完整静态剖面。因而本边的逻辑方向仅是条件性的：若另行支付源缺口非负性，则恒等式与变号推出目标势下界；该支付不是本边的结论，已由3C联合边 ca-wc-shapley-and-complement-transfer-global-minimum 另行给出。",
+      "scope": "精确静态偏离与势差解码。允许空动作、弱平局与任意固定实逐客户背景。费用只在实际访问的正整数节点参与等式。完整序贯偏离可改变他人的后继动作，固定对手的变号等式无法直接比较该类分支。",
+      "evidence": [
+        {
+          "path": "archives/weighted-congestion/state/定理/客户均分到非负多项式拥塞的静态补集转移--定理.md",
+          "sha256": "e6b18c3998549abe895e26851e05645168eaee8ac0ddd2b8afecabff53ff80ed",
+          "section": "静态偏离与势的精确对应"
+        },
+        {
+          "path": "archives/weighted-congestion/state/定理/调和补集拥塞的同动作精确均衡是全局势最小点--定理.md",
+          "sha256": "278f3b3307126edc820681ccfefbc917d657893119e0bef28c148dc3c3f50f13"
+        }
+      ],
+      "reviewed_by": "Boss2",
+      "review_note": "实读两端证明并将本边降为条件性 proof-step：源端只给补集解码、PNE保留和缺口恒等式；完整目标势下界还需独立同色 Shapley 势差上界。已核对对应3C ALL联合边承接该缺口，故不再把单源步骤写成无条件全局定理。",
+      "contribution": {
+        "result": "任意同动作目标精确 PNE 解码为同色源精确静态 PNE。对每个完整比较剖面，目标势增量减同一起点的逐玩家单方成本增量之和，恒等于源逐玩家单方收益增量之和减源势增量。PNE 还使目标逐偏离成本增量各自非负。",
+        "remaining": "完整目标保证还需要证明这个共同缺口对所有比较剖面非负。跨档路线需加入允许实外生背景的同色静态 Shapley 势差上界。目标正文另有独立的单位权非减费用证明。"
+      },
+      "endpoint_pins": {
+        "weighted-congestion/harmonic-complement-monochromatic-pne-global-minimum": "a0eb45ab28a36557c6e83a92c110708f75f0e87fdd413ebe7215dd02f3d524b6",
+        "weighted-congestion/static-customer-coverage-complement-harmonic-transfer": "28e31c3ca9c22526a6deaefa756b18799393a7cbeb4e735617f69286c812ef4d"
+      },
+      "evidence_pins": {
+        "archives/weighted-congestion/state/定理/客户均分到非负多项式拥塞的静态补集转移--定理.md": "e6b18c3998549abe895e26851e05645168eaee8ac0ddd2b8afecabff53ff80ed",
+        "archives/weighted-congestion/state/定理/调和补集拥塞的同动作精确均衡是全局势最小点--定理.md": "278f3b3307126edc820681ccfefbc917d657893119e0bef28c148dc3c3f50f13"
+      },
+      "review_digest": "8ec1e3425244188a93928454b1a1b8fe34dc860eb1767a3a5a758b7a6099468e",
+      "path": "map/edges/wc-boss4-deficit-repair-repair-3be320ec40a8e3a3/static-complement-transports-same-action-deficit.json",
+      "declaration_pin": "28a040f5afa6b30f5817654271aa92e03d3d2a2aa44b8cd9824b905eead2464f",
+      "evidence_bindings": [
+        {
+          "reference": {
+            "path": "archives/weighted-congestion/state/定理/客户均分到非负多项式拥塞的静态补集转移--定理.md",
+            "sha256": "e6b18c3998549abe895e26851e05645168eaee8ac0ddd2b8afecabff53ff80ed",
+            "section": "静态偏离与势的精确对应"
+          },
+          "status": "current",
+          "current_sha256": "e6b18c3998549abe895e26851e05645168eaee8ac0ddd2b8afecabff53ff80ed"
+        },
+        {
+          "reference": {
+            "path": "archives/weighted-congestion/state/定理/调和补集拥塞的同动作精确均衡是全局势最小点--定理.md",
+            "sha256": "278f3b3307126edc820681ccfefbc917d657893119e0bef28c148dc3c3f50f13"
+          },
+          "status": "current",
+          "current_sha256": "278f3b3307126edc820681ccfefbc917d657893119e0bef28c148dc3c3f50f13"
+        }
+      ],
+      "binding_status": "current",
+      "binding_errors": []
+    }
+  ],
+  "unavailable_edge_files": [],
+  "instruction": "Read the selected body and exact evidence on demand. Accepted is an author declaration, not a mathematical verdict. Navigation hops do not truncate selected logical ALL-premise closure. Context links and proposed/rejected relations never supply proved premises."
+}
