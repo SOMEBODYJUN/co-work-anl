@@ -1,0 +1,110 @@
+{
+  "reviewed_by": "Boss7",
+  "task_id": "boss3-summin-budget-repair-d86bee169e3617da",
+  "receipt_sha256": "6367602e636649e5ef1a53f4dcecd7f4362cbabf1cded1bf43c48930a7fbffbd",
+  "inputs": {
+    "customer-attraction/e7-summin-full-common-budget-exact-discount-and-finite-tests": {
+      "receipt_pin": "e37e6d0b6d0236152b44c5bd1d840157a5f2673bfcf99f9170af932a33e87332",
+      "current_pin": "e37e6d0b6d0236152b44c5bd1d840157a5f2673bfcf99f9170af932a33e87332",
+      "matches": true
+    },
+    "customer-attraction/six-providers/exact-six-full-history-half-cover": {
+      "receipt_pin": "2d5b191271cb052c435121a41935eb3958540d5a53cb05013f13dd45a70f6e31",
+      "current_pin": "2d5b191271cb052c435121a41935eb3958540d5a53cb05013f13dd45a70f6e31",
+      "matches": true
+    },
+    "CA-AGGREGATE-LAST-FLOOR-NO": {
+      "receipt_pin": "699ba4cd7ebf119cdeb83f960aa4519f05068694f6f8507893ff071f155045ed",
+      "current_pin": "699ba4cd7ebf119cdeb83f960aa4519f05068694f6f8507893ff071f155045ed",
+      "matches": true
+    },
+    "customer-attraction/three-player-aggregate-last-floor-counterexample": {
+      "receipt_pin": "6e2eff72ae933314d8823b47d7d0398f00dc4ade2ebebd6f5b0f43427df2cb95",
+      "current_pin": "6e2eff72ae933314d8823b47d7d0398f00dc4ade2ebebd6f5b0f43427df2cb95",
+      "matches": true
+    }
+  },
+  "assets": [
+    {
+      "path": "map/edges/Boss7-summin-six-half-3b-3b-17d90d43aa54c665/summin-conditionally-pays-six-half.json",
+      "sha256": "699209dd36c7bc2c5f7b5e040bb2adffe481cea5a35bd52188447b03b7974a5f",
+      "matches": true
+    },
+    {
+      "path": "map/edges/Boss7-summin-six-half-3b-3b-17d90d43aa54c665/review.md",
+      "sha256": "c5ca559fa6824bb6d9008b494a7de53f6bf098d8cfc3de72ca638e1374a021aa",
+      "matches": true
+    },
+    {
+      "path": "map/edges/boss3-summin-budget-repair-d86bee169e3617da/all-n-counterexample-summin-contribution.json",
+      "sha256": "4eb5151221da99f7b46822bc4615dff81e6bca8febdb44d4ef1b21410bdd6a71",
+      "matches": true
+    },
+    {
+      "path": "map/edges/boss3-summin-budget-repair-d86bee169e3617da/three-player-36-summin-contribution.json",
+      "sha256": "b0802cd74bc7d229396e1ebb65718b787b5aeee7022faee6010de0526aae5131",
+      "matches": true
+    },
+    {
+      "path": "map/edges/boss3-summin-budget-repair-d86bee169e3617da/reading-ledger-corrected.json",
+      "sha256": "0a48a36f611b1624a5b9628274512f3a4ae5b179dcf4c955d8fc8bfce41622bd",
+      "matches": true
+    },
+    {
+      "path": "map/edges/boss3-summin-budget-repair-d86bee169e3617da/comparison-review.json",
+      "sha256": "367e6ffe393a1b80fa04c433da84b50ec491a5e157244c2b2770950b5aca1671",
+      "matches": true
+    },
+    {
+      "path": "map/edges/boss3-summin-budget-repair-d86bee169e3617da/all-n-budget-proof.json",
+      "sha256": "fa494cd2ac03e245f46a158fe6a3169cd945b95e10516b68b7240dfb4da8e154",
+      "matches": true
+    },
+    {
+      "path": "map/edges/boss3-summin-budget-repair-d86bee169e3617da/verify-budget-examples.py",
+      "sha256": "be5abb09832f3025dc4392616ce49b87e53f33743df93b23f5b5c350b2179281",
+      "matches": true
+    },
+    {
+      "path": "map/edges/boss3-summin-budget-repair-d86bee169e3617da/budget-example-results.json",
+      "sha256": "58da89eb345d0dfa2bad2091095e4c14f65ec8dcba6b6ee3b9323edf9a6a1920",
+      "matches": true
+    }
+  ],
+  "actual_math_read": [
+    "Full text of both new edge JSONs and receipt",
+    "All-n original source, M2, SUMmin candidate and common full-history model",
+    "All-n proof attachment analytic steps, source reconstruction, tightening and scope audit",
+    "Comparison review proof sections and corrected historical ledger"
+  ],
+  "accepted_results": [
+    "Fixed 36-client sigma: all p sum R <= 57/2 < 34; finite source keeps conditional contribution.",
+    "All n >= 3 original K=6M+4 family and specified fresh-policy complete extensions: max actual query = K beta, so all p sum R <= n K beta < W; proved source gives unconditional contribution.",
+    "Original complete conditional SUMmin -> exact-six half edge and review remain exact SHA; historical ledger source field alone corrected."
+  ],
+  "root_derivation": "Actual action column reproduces actual leaf under the same sigma. Uniform type prices are beta for unused queries, gamma for used, with delta=C-n beta=n(beta-gamma)>n. In the specified mixed n-label leaf F(Z)=F(Z+a)=0 for unused a, so its signed query price vanishes. Used query <=K gamma+M<K beta since K>M and beta-gamma>1. This proves the new tight max-query statement, without claiming each actual action column minimizes its row.",
+  "not_adopted_as_current_edge": "Every complete SPE on the same family is a separately reviewed stronger scope requiring the all-history fresh bridge and a path-independent welfare lower bound; d86 intentionally does not assert it. Boss7 will formalize that distinct comparison under a new ALL contribution.",
+  "open_math": [
+    "Universal SUMmin for arbitrary inputs and complete SPE",
+    "Unconditional general exact-six half"
+  ],
+  "new_scientific_executions_by_this_review": 0,
+  "adopted_pending_changes": {
+    "object_ids": [
+      "CA-AGGREGATE-LAST-FLOOR-NO",
+      "customer-attraction/e7-summin-full-common-budget-exact-discount-and-finite-tests",
+      "customer-attraction/six-providers/exact-six-full-history-half-cover",
+      "customer-attraction/three-player-aggregate-last-floor-counterexample"
+    ],
+    "edge_ids": [
+      "boss3-all-n-counterexample-summin-contribution-d86bee169e3617da",
+      "boss3-three-player-36-summin-contribution-d86bee169e3617da"
+    ],
+    "archive_scopes": [
+      "archives/customer-attraction",
+      "archives/customer-attraction/subarchives/six-providers"
+    ]
+  },
+  "integrated_receipt_pin": "a4193fc2e06654737503561c00311e4cd6f356dc9745a716e0aaba68f0ec02c4",
+  "integration_state": "reviewed-local-awaiting-checkpoint"
+}
