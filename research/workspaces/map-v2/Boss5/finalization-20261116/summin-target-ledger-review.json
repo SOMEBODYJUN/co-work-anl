@@ -1,0 +1,692 @@
+{
+  "schema": 1,
+  "record_kind": "isolated-independent-mathematical-scope-and-ledger-review",
+  "title": "SUMmin完整条件边、族内actual列预算与逐资产替代复核",
+  "reviewed_by": "Boss5 / summin_target_and_ledger_review",
+  "date_utc": "2026-11-16",
+  "write_path": "research/workspaces/map-v2/Boss5/finalization-20261116/summin-target-ledger-review.json",
+  "task_reviewed": "boss3-summin-budget-repair-d86bee169e3617da",
+  "verdict": {
+    "status": "passed-with-explicit-open-boundary",
+    "material_gap_found": false,
+    "required_owner_correction": null,
+    "result": "当前Boss3交付保留原完整SUMmin⇒恰六人half条件边；两新预算只作为各自明确输入/指定策略范围的contribution。corrected ledger与逐资产retained/replaced符合现行数学与收据合同。一般U及无条件六人half仍open。",
+    "general_actual_column_verdict": "actual动作列的公共上界普遍有效，但单凭该事实不能直接得到一般U；还缺针对所有输入与每份完整SPE的actual终局价格上界。此处没有把该更强上界判为已证或已否。"
+  },
+  "current_snapshot": {
+    "registry": {
+      "path": "research/registry.json",
+      "sha256": "ee1148cd8c8053496e64e259902fb4890ea9a5add5a9c5a090b0d14739fc64ac",
+      "actual_read_scope": "仅五条相关object记录"
+    },
+    "new_receipt": {
+      "path": "map/receipts/boss3-summin-budget-repair-d86bee169e3617da.json",
+      "sha256": "6367602e636649e5ef1a53f4dcecd7f4362cbabf1cded1bf43c48930a7fbffbd"
+    },
+    "old_receipt": {
+      "path": "map/receipts/Boss7-summin-six-half-3b-3b-17d90d43aa54c665.json",
+      "sha256": "7926b562c93f82651b780b3c3553b363998f3442049a96bf891725aab960065b"
+    },
+    "version_note": "父Boss告知已同步e92ab4c；本worker未运行Git检查，以本JSON列出的当前文件SHA和重算对象pin为审查版本。"
+  },
+  "endpoint_records": {
+    "customer-attraction/e7-summin-full-common-budget-exact-discount-and-finite-tests": {
+      "version": 2,
+      "truth_status": "open",
+      "registration_pin": "e37e6d0b6d0236152b44c5bd1d840157a5f2673bfcf99f9170af932a33e87332",
+      "body": {
+        "path": "archives/customer-attraction/state/候选/全槽逐行最小价格的共同预算与有限报告--候选.md",
+        "sha256": "e952c73849b2ac561ac4ebb761b3ae0c1af06d61f27e743c593ea0103c52698a"
+      },
+      "new_receipt_pin_matches": true
+    },
+    "customer-attraction/six-providers/exact-six-full-history-half-cover": {
+      "version": 1,
+      "truth_status": "open",
+      "registration_pin": "2d5b191271cb052c435121a41935eb3958540d5a53cb05013f13dd45a70f6e31",
+      "body": {
+        "path": "archives/customer-attraction/subarchives/six-providers/state/问题/六人完整历史半覆盖目标--问题.md",
+        "sha256": "0626668e7a825108fc0b3699e42394b75b1c2e2a526df220a90d91a02afc8a0c"
+      },
+      "new_receipt_pin_matches": true
+    },
+    "M-73d3a9bedfd449d292f04323e540d4ca": {
+      "version": 3,
+      "truth_status": "proved",
+      "registration_pin": "da3d0bbed112a0897b1514eb63acac5dc6da174460f1264a731aa6b46a82e638",
+      "body": {
+        "path": "archives/customer-attraction/state/候选/全槽逐行最小价格的共同预算与有限报告--候选.md",
+        "sha256": "e952c73849b2ac561ac4ebb761b3ae0c1af06d61f27e743c593ea0103c52698a"
+      }
+    },
+    "CA-AGGREGATE-LAST-FLOOR-NO": {
+      "version": 2,
+      "truth_status": "proved",
+      "registration_pin": "699ba4cd7ebf119cdeb83f960aa4519f05068694f6f8507893ff071f155045ed",
+      "body": {
+        "path": "archives/customer-attraction/state/反例/三人及以上聚合末位保底--反例.md",
+        "sha256": "d316702ecc98a5976769d1d2e0094341474e0c4655deaac825bc208ae81d36e7"
+      },
+      "new_receipt_pin_matches": true
+    },
+    "customer-attraction/three-player-aggregate-last-floor-counterexample": {
+      "version": 1,
+      "truth_status": "finite",
+      "registration_pin": "6e2eff72ae933314d8823b47d7d0398f00dc4ade2ebebd6f5b0f43427df2cb95",
+      "body": {
+        "path": "archives/customer-attraction/state/反例/三人聚合末位保底--反例.md",
+        "sha256": "f2ff6b486d46f5e05d9acb2497ec1114ac8ab4698460fb46656d320e640fe4c0",
+        "section": "三人36客户完整SPE的聚合末位保底反例"
+      },
+      "new_receipt_pin_matches": true
+    }
+  },
+  "read_refs": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "20293db840f907c32f774b0d7f72450c56e6c0ad937720699d14f7c02e693cc9",
+      "actual_read_scope": "全文",
+      "role": "instructions"
+    },
+    {
+      "path": "prompts/03-map-worker.md",
+      "sha256": "6629f71923c54d994297d54c3737b285227b72c463641d318c3f61c9342d07b2",
+      "actual_read_scope": "全文",
+      "role": "instructions"
+    },
+    {
+      "path": "research/IMPLEMENTATION.md",
+      "sha256": "fb6613cd0c429f28b8bcfb1064076a629540cfbee8f7e3d670b0b39e78ff0d4b",
+      "actual_read_scope": "定向检索边/引用/量词/收据合同；完整读取180—300行，含ALL、whole/contribution、accepted conditional与supersession逐资产合同；不声称全文读取",
+      "role": "instructions"
+    },
+    {
+      "path": "research/registry.json",
+      "sha256": "ee1148cd8c8053496e64e259902fb4890ea9a5add5a9c5a090b0d14739fc64ac",
+      "actual_read_scope": "实际读取SUMmin、six-half、M-73d、CA-AGGREGATE-LAST-FLOOR-NO及36客户反例五条完整object记录；其余仅JSON加载",
+      "role": "current-endpoint-records"
+    },
+    {
+      "path": "research/operations/map-v2/tasks/boss3-summin-budget-repair-d86bee169e3617da.json",
+      "sha256": "eb33aed7fbf82ac9230e7c5a829acfd404e244836b46f73b6704e9f2be9151e1",
+      "actual_read_scope": "实际读取definition、goal、pins、write_paths、done状态、receipt和assets处置；不以任务状态代替数学",
+      "role": "task-snapshot"
+    },
+    {
+      "path": "archives/customer-attraction/state/候选/全槽逐行最小价格的共同预算与有限报告--候选.md",
+      "sha256": "e952c73849b2ac561ac4ebb761b3ae0c1af06d61f27e743c593ea0103c52698a",
+      "actual_read_scope": "全文实读；核本评审所述定义、承重推导和适用范围",
+      "role": "mathematical-primary"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+      "actual_read_scope": "全文实读；核本评审所述定义、承重推导和适用范围",
+      "role": "mathematical-primary"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/完整槽末位最小价格的精确折扣与静态充分桥--引理.md",
+      "sha256": "a2c504c39c6b1ab1d4a2a8d9f48b5a977ad2aa648aab0ac066771d22ff5ccf2a",
+      "actual_read_scope": "全文实读；核本评审所述定义、承重推导和适用范围",
+      "role": "mathematical-primary"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/五人全槽行最小价格与三尾混合整数探针--程序.md",
+      "sha256": "2a628a5dca7cbf847fc23df2036d9c08fb83f7616bb82a720e3146c547db923e",
+      "actual_read_scope": "全文实读；核本评审所述定义、承重推导和适用范围",
+      "role": "mathematical-primary"
+    },
+    {
+      "path": "archives/customer-attraction/subarchives/six-providers/state/问题/六人完整历史半覆盖目标--问题.md",
+      "sha256": "0626668e7a825108fc0b3699e42394b75b1c2e2a526df220a90d91a02afc8a0c",
+      "actual_read_scope": "全文实读；核本评审所述定义、承重推导和适用范围",
+      "role": "mathematical-primary"
+    },
+    {
+      "path": "archives/customer-attraction/subarchives/six-providers/问题--问题.md",
+      "sha256": "21391fbaaa2893fef7b228a345fcf1d7f5c5d1dc8a42cc642d6bfbbeccc7c065",
+      "actual_read_scope": "全文实读；核本评审所述定义、承重推导和适用范围",
+      "role": "mathematical-primary"
+    },
+    {
+      "path": "archives/customer-attraction/state/反例/三人及以上聚合末位保底--反例.md",
+      "sha256": "d316702ecc98a5976769d1d2e0094341474e0c4655deaac825bc208ae81d36e7",
+      "actual_read_scope": "全文实读；核本评审所述定义、承重推导和适用范围",
+      "role": "mathematical-primary"
+    },
+    {
+      "path": "archives/customer-attraction/state/反例/三人聚合末位保底--反例.md",
+      "sha256": "f2ff6b486d46f5e05d9acb2497ec1114ac8ab4698460fb46656d320e640fe4c0",
+      "actual_read_scope": "全文实读；核本评审所述定义、承重推导和适用范围",
+      "role": "mathematical-primary"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/子集调和势的Möbius反演--定理.md",
+      "sha256": "9c7e58e4642077607ce2b49c67e7598c97b47b4cdb1b43a34cf335dd2aec5629",
+      "actual_read_scope": "全文实读；核本评审所述定义、承重推导和适用范围",
+      "role": "mathematical-primary"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/无重复辅助博弈的完整历史编译--定理.md",
+      "sha256": "e6e06a43973f7c37673b498074475fdf8aa37338d448aff53b2bf9b2e7fa0dd4",
+      "actual_read_scope": "全文实读；核本评审所述定义、承重推导和适用范围",
+      "role": "mathematical-primary"
+    },
+    {
+      "path": "archives/customer-attraction/state/资源/可信全端点菜单的别名复核与静态付款下界--资源.md",
+      "sha256": "040788b4bc4d648619ed341829885887df80502bd34b82fb0806d08e5fd82ac6",
+      "actual_read_scope": "只完整读取所列唯一标题章节；核M-73d当前evidence的独立静态证明与合法前缀边界",
+      "role": "M-73d-evidence",
+      "section": "独审直接证明的静态下界与half充分性"
+    },
+    {
+      "path": "archives/customer-attraction/state/资源/有利可信完成与同次净券付款的根账本--资源.md",
+      "sha256": "4c3f804f8e43ae2dc05a52c74ef10bf9da788a0075bdb56fadf79da624ca22d0",
+      "actual_read_scope": "只完整读取所列唯一标题章节；核M-73d当前evidence的独立静态证明与合法前缀边界",
+      "role": "M-73d-evidence",
+      "section": "为什么ADM付款足以half：合法静态下界"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/合法前缀的静态额外槽预算与条件归约--引理.md",
+      "sha256": "e9433c2f9fbb770a1432e90147379d17e229b6fda0ce6494698f249ec5ef7096",
+      "actual_read_scope": "只完整读取所列唯一标题章节；核M-73d当前evidence的独立静态证明与合法前缀边界",
+      "role": "M-73d-evidence",
+      "section": "合法前缀的静态下界"
+    },
+    {
+      "path": "map/edges/Boss7-summin-six-half-3b-3b-17d90d43aa54c665/summin-conditionally-pays-six-half.json",
+      "sha256": "699209dd36c7bc2c5f7b5e040bb2adffe481cea5a35bd52188447b03b7974a5f",
+      "actual_read_scope": "全文实读",
+      "role": "reviewed-formal-asset"
+    },
+    {
+      "path": "map/edges/Boss7-summin-six-half-3b-3b-17d90d43aa54c665/review.md",
+      "sha256": "c5ca559fa6824bb6d9008b494a7de53f6bf098d8cfc3de72ca638e1374a021aa",
+      "actual_read_scope": "全文实读",
+      "role": "reviewed-formal-asset"
+    },
+    {
+      "path": "map/edges/Boss7-summin-six-half-3b-3b-17d90d43aa54c665/reading-ledger.json",
+      "sha256": "e0c2439b9bb28c2aab5576cbb978ebb6766e198d1914f888020cf5f4c0e1f48f",
+      "actual_read_scope": "全文实读",
+      "role": "reviewed-formal-asset"
+    },
+    {
+      "path": "map/receipts/Boss7-summin-six-half-3b-3b-17d90d43aa54c665.json",
+      "sha256": "7926b562c93f82651b780b3c3553b363998f3442049a96bf891725aab960065b",
+      "actual_read_scope": "全文实读",
+      "role": "reviewed-formal-asset"
+    },
+    {
+      "path": "map/receipts/boss3-summin-budget-repair-d86bee169e3617da.json",
+      "sha256": "6367602e636649e5ef1a53f4dcecd7f4362cbabf1cded1bf43c48930a7fbffbd",
+      "actual_read_scope": "全文实读",
+      "role": "reviewed-formal-asset"
+    },
+    {
+      "path": "map/edges/boss3-summin-budget-repair-d86bee169e3617da/reading-ledger-corrected.json",
+      "sha256": "0a48a36f611b1624a5b9628274512f3a4ae5b179dcf4c955d8fc8bfce41622bd",
+      "actual_read_scope": "全文实读",
+      "role": "reviewed-formal-asset"
+    },
+    {
+      "path": "map/edges/boss3-summin-budget-repair-d86bee169e3617da/all-n-counterexample-summin-contribution.json",
+      "sha256": "4eb5151221da99f7b46822bc4615dff81e6bca8febdb44d4ef1b21410bdd6a71",
+      "actual_read_scope": "全文实读",
+      "role": "reviewed-formal-asset"
+    },
+    {
+      "path": "map/edges/boss3-summin-budget-repair-d86bee169e3617da/three-player-36-summin-contribution.json",
+      "sha256": "b0802cd74bc7d229396e1ebb65718b787b5aeee7022faee6010de0526aae5131",
+      "actual_read_scope": "全文实读",
+      "role": "reviewed-formal-asset"
+    },
+    {
+      "path": "map/edges/boss3-summin-budget-repair-d86bee169e3617da/all-n-budget-proof.json",
+      "sha256": "fa494cd2ac03e245f46a158fe6a3169cd945b95e10516b68b7240dfb4da8e154",
+      "actual_read_scope": "全文实读",
+      "role": "reviewed-formal-asset"
+    },
+    {
+      "path": "map/edges/boss3-summin-budget-repair-d86bee169e3617da/comparison-review.json",
+      "sha256": "367e6ffe393a1b80fa04c433da84b50ec491a5e157244c2b2770950b5aca1671",
+      "actual_read_scope": "实际读取全部顶层键、四端点、shared_row_argument、两项证明、retained条件证明、资产处置、终审；读取source/operations/附件及n=6部分作范围核对，不重做数值",
+      "role": "reviewed-proof-and-provenance"
+    },
+    {
+      "path": "map/edges/boss3-summin-budget-repair-d86bee169e3617da/verify-budget-examples.py",
+      "sha256": "be5abb09832f3025dc4392616ce49b87e53f33743df93b23f5b5c350b2179281",
+      "actual_read_scope": "只核当前文件SHA与receipt/evidence绑定；未全文读源码、未运行",
+      "role": "hash-only-existing-numerical-attachment"
+    },
+    {
+      "path": "map/edges/boss3-summin-budget-repair-d86bee169e3617da/budget-example-results.json",
+      "sha256": "58da89eb345d0dfa2bad2091095e4c14f65ec8dcba6b6ee3b9323edf9a6a1920",
+      "actual_read_scope": "只核当前文件SHA与receipt/evidence绑定；数值结论按已读正式边/receipt定位，不声称全报告实读",
+      "role": "hash-only-existing-numerical-attachment"
+    },
+    {
+      "path": "tools/research_runtime.py",
+      "sha256": "414713215bc28a062a2ef0330b150f81298987e893278fe90b44b38c7f4d4023",
+      "actual_read_scope": "读取pin(record)及edge_digest定义以独立重算现有bindings；未调用原生任务或运行接口",
+      "role": "read-only-binding-definition"
+    },
+    {
+      "path": "archives/customer-attraction/state/反例/四人实际根总税--反例.md",
+      "sha256": "2efa02ba1a7186cf23fcc29e0f70f6cbeb36ce5db6614960091b3233e5b5aab4",
+      "actual_read_scope": "全文作旁证范围检索；不是本评审承重输入，未将m−1前缀查询值混入完整m槽",
+      "role": "context-only-not-used-in-proof"
+    }
+  ],
+  "complete_target_contract": {
+    "input_quantifiers": "∀有限不同单位客户N，∀有限非空共同标签集S及任意cov:S→2^N，∀正整数m的完整纯SPE σ；六人终点取m=6。允许空覆盖、同覆盖异标签、重复行动、零客户与所有弱平局。",
+    "full_history_quantifiers": "σ_i:S^(i−1)→S在全部合法有序历史有定义，且∀i∀h∀A满足沿给定σ真实后继的非严格偏离比较；同负载历史可以使用不同离轨续局。只比较一条actual路径不足以认证SPE。",
+    "exact_U": "先固定输入与同一完整σ，令actual z=(S_1,…,S_m)，h_i为其原actual前缀，Z_i(A)是在h_i强制A后按同一σ完成的恰m槽叶。K_i(T,A)=Σ_(x∈cov(T))1/(1+c_x(Z_i(A)))，R_i(p)=min_(A∈S) E_(T∼p)K_i(T,A)。U为∀同一合法p∈Δ(S)，Σ_iR_i(p)≤W(z)。全称SUMmin还量化全部这些输入、m、σ。",
+    "query_and_column_order": "p可为任意实概率，包括边界。每行列A可依i和p选择，必须在本次独立T抽样前固定，不能依抽出的T。全部行使用同一个p和同一σ。Z_i(A)包括强制者；K是额外查询价，不等于被强制者自己的收益。",
+    "benefit_and_degenerate_cases": "W=Σ_i u_i=实际覆盖；OPT_m是m个合法标签的最大并集，允许重复。零客户/OPT=0用乘法弱式，不取0/0。six-half的完整目标为∀输入∀六人完整σ，OPT_6≤2W(σ)。"
+  },
+  "min_expectation_and_pure_query_audit": {
+    "passed": true,
+    "pure_proof": "p=δ_T时每行可取A=T，R_i(δ_T)≤K_i(T,T)≤Σ_(x∈T)1/c_x(Z_i(T))=u_i(Z_i(T))≤u_i(z)。强制者保证有关c≥1；最后一步是同一σ在原actual节点的真实偏离IC。",
+    "mixed_obstruction": "一般仅有E_p[min_AK_i(T,A)]≤min_AE_p[K_i(T,A)]。纯证明的A=T随所抽T变化，不能在抽样前作为单一列；将纯点相加/取期望给的是较小的左侧量，不控制所需R_i(p)。",
+    "geometric_note": "R_i(p)是有限线性函数的逐点最小，故为凹函数；仅检查查询单纯形顶点处上界不能控制内点的凹峰。五份保存p与有限float锥均没有补齐∀p、∀σ、∀输入量词。"
+  },
+  "conditional_whole_proof_audit": {
+    "passed": true,
+    "source_id": "customer-attraction/e7-summin-full-common-budget-exact-discount-and-finite-tests",
+    "static_proof_basis_id": "M-73d3a9bedfd449d292f04323e540d4ca",
+    "target_id": "customer-attraction/six-providers/exact-six-full-history-half-cover",
+    "steps": [
+      "固定任意输入及σ。若∀p Σ_iR_i(p)≤W，则对每p有min_iR_i(p)=min_(i,A)E_pK_i(T,A)≤W/m。取max_p得M_path≤W/m。",
+      "有限路径菜单Mσ={Z_i(A)}。有限矩阵minimax精确给M_path=max_p min_(i,A)E_pK_i=min_(Q∈Δ(Mσ)) max_T E_QK(T,y)。Q选定后独立抽T；Q可相关，菜单重复叶不改变值。",
+      "对任意全部合法m槽静态背景分布Q，令L_x=E_Qc_x(y)、a_A=m^−1 E_Q#{j:y_j=A}，则a是分布且L_x=mΣ_(A含x)a_A。静态比较无需Q为SPE分布。",
+      "令f_L(T)=Σ_(x∈T)(1+L_x)^−1，取最优m主题的并集O。逐客户分解给OPT_m=|O|≤Σ_(j=1)^m f_L(T_j)+Σ_x L_x/(1+L_x)=Σ_j f_L(T_j)+mΣ_Aa_A f_L(A)≤2m max_T f_L(T)。覆盖外项非负、客户非负、槽数m及合法主题边际共同承担这一步。",
+      "1/(1+t)在t≥0凸，逐客户Jensen给f_L(T)≤E_QK(T,y)。因此对每个合法m槽Q有OPT_m≤2m max_TE_QK；对全部静态Q取min得OPT_m≤2m v_(m+1)(0)。",
+      "路径菜单是全部合法m槽静态背景的子集，最小化Q的可行域更小，故v_(m+1)(0)≤M_path。拼接OPT_m≤2m v≤2mM_path≤2W；m=6即OPT_6≤12(W/6)=2W。"
+    ],
+    "no_missing_ALL_premise": "原边的唯一数学候选source是open U；静态M-73d为已证证明基础且在当前body/evidence与review中完整展开。无漏掉的另一开放共同前提。source不应改成M-73d，否则会把静态下界错误读为已经付清的动态上界。",
+    "scope": "旧边accepted/conditional/whole准确：U前提下完整推出six-half，不能把U或six truth_status改proved。计数使用m比较槽+m竞争槽，因此本推导给2m；不在此断言2m为所有可能证明的最优常数，也没有2m−1所需的另一接口。"
+  },
+  "actual_column_and_local_to_global_boundary": {
+    "universal_fact": "任何固定确定性完整策略的actual动作都满足Z_i(S_i)=z，无须均衡。因每行min可取查询抽样前已固定的A=S_i，对同一个任意p，R_i(p)≤g_p(z):=E_pK(T,z)，故Σ_iR_i(p)≤m g_p(z)≤m max_TK(T,z)。",
+    "exact_missing_general_obligation": "若要仅凭这条actual列上界支付所有p，必须另证AC(σ): max_TK(T,z)≤W(z)/m。因为g_p(z)是p的线性函数，∀p m g_p(z)≤W与m max_TK(T,z)≤W等价。泛用的Z_i(S_i)=z并不包含AC。",
+    "why_SPE_does_not_supply_AC_directly": "SPE IC控制u_i(Z_i(A))≤u_i(z)，其中Z_i(A)含改变后历史的真实响应。K(T,z)把完整actual z作为额外查询背景；这是不同的函数、不同的分母和不同的响应接口。取A=T只能控制K_i(T,T)，不能把它替换为K(T,z)。早期强制行动会改变全部后继，故不能冻结actual后继以得到AC。",
+    "logical_strength": "AC是足以推出固定σ的U的更强条件；U允许各行选不同非actual列，甚至个别R_i>u_i。若某处actual上界不够，也不能反推U失败。本评审未提供一般AC的反例；结论是两项族内证明没有证明该全称义务。",
+    "why_the_36_bound_is_local": "36客户证明的max_TK(T,z)=19/2依赖其18个非零兴趣类型及指定actual z=(0,3,4)。它给3g_p(z)≤57/2<34，但这些输入与σ选择不是任意目录或任意三人σ的参数化。旧SUMmin候选有限报告的aggregate_theta行用另一份onpath证书，不能据同名输入混成同一σ；当前新边正确固定原反例公式σ。",
+    "why_the_all_n_bound_is_local": "全n证明固定P=X⊔Y、|X|=|Y|=n、特殊Boolean F、其signed反演x_B、M=Σ|x_B|、K=6M+4及r_B=K+x_B。指定辅助σ的完整扩展均有一X与n−1个Y的distinct actual集合Z，W=K(2^(2n)−2^n)+n−1。单位全类型偏置才允许将所有额外查询分成β_n和γ_n；signed部分才由同一M控制。",
+    "precise_family_price_payment": "β_n=(2^(2n)−2^(n−1))/(n+1)，γ_n<β_n，δ_n=(2^(2n)−2^n)−nβ_n=n(β_n−γ_n)>n。先得max_TK(T,z)≤Kβ_n+M，W−n(Kβ_n+M)=Kδ_n+n−1−nM>0。更紧界用源F(Z)=F(Z∪{a})=0只对未用a给signed查询项0；已用查询仍用绝对值≤M及Kγ_n+M<Kβ_n。因此max_TK(T,z)=Kβ_n，nKβ_n<W。每一步依赖该族的均匀偏置/特殊F/actual结构，任意CAG输入没有这些结构。",
+    "quantifier_gap": "已证∀n≥3，∀该明确输入族，∀指定fresh辅助策略的完整原SPE扩展σ，∀p：局部预算。目标是∀m≥1，∀合法输入，∀完整σ，∀p。覆盖每个n的一族见证不能把对输入与σ的特定选择提升为全称；n=6只支付该特例，不支付一般六人目录。",
+    "no_loss_of_complete_histories": "新族在原游戏没有fresh行动限制；正编译与M2处理全部有序重复离轨历史。预算本身只用actual列，因而对这些指定扩展的任意离轨补齐均有效。owner选择这一较窄σ范围准确，无需为保持有效性而扩为同输入全部σ。"
+  },
+  "new_contributions_audit": [
+    {
+      "path": "map/edges/boss3-summin-budget-repair-d86bee169e3617da/three-player-36-summin-contribution.json",
+      "result": "固定36客户原公式完整σ，∀p ΣR_i(p)≤57/2<34。",
+      "scope_verdict": "passed",
+      "relation_mode": "conditional",
+      "proof_scope": "contribution",
+      "reason": "源当前finite，关系代数完整但不提升源/目标登记真值。保同p/同σ/原actual前缀/完整3槽，未借θ3或v3替代完整槽查询价。"
+    },
+    {
+      "path": "map/edges/boss3-summin-budget-repair-d86bee169e3617da/all-n-counterexample-summin-contribution.json",
+      "result": "每n≥3，原K=6M+4反族及指定辅助σ的完整原SPE扩展，∀p ΣR_i(p)≤n(Kβ_n+M)<W，且同域更紧ΣR_i(p)≤nKβ_n<W。",
+      "scope_verdict": "passed",
+      "relation_mode": "unconditional",
+      "proof_scope": "contribution",
+      "reason": "源proved且构造内部F身份、M1/M2证明合法性；两者作为准确evidence，不漏一个独立开放前提。未将源存在性扩为所有反例/所有σ。"
+    }
+  ],
+  "ledger_correction_audit": {
+    "passed": true,
+    "old_source": "M-73d3a9bedfd449d292f04323e540d4ca",
+    "corrected_source": "customer-attraction/e7-summin-full-common-budget-exact-discount-and-finite-tests",
+    "expected_source": "customer-attraction/e7-summin-full-common-budget-exact-discount-and-finite-tests",
+    "only_single_field_plus_correction_provenance_changed": true,
+    "original_file_sha256": "e0c2439b9bb28c2aab5576cbb978ebb6766e198d1914f888020cf5f4c0e1f48f",
+    "corrected_file_sha256": "0a48a36f611b1624a5b9628274512f3a4ae5b179dcf4c955d8fc8bfce41622bd",
+    "correction_original_sha_matches": true,
+    "provenance_verdict": "原Boss7作者、task、read_files、运行/绑定声明逐值保留，并明确都是历史记录；不是Boss3本轮实读或执行声明。旧文件保留原字节，仅新copy修单字段。M-73d作为静态基础的数学用途仍完整在旧证明与新comparison中保存。"
+  },
+  "old_assets_disposition_audit": [
+    {
+      "path": "map/edges/Boss7-summin-six-half-3b-3b-17d90d43aa54c665/summin-conditionally-pays-six-half.json",
+      "old_receipt_sha256": "699209dd36c7bc2c5f7b5e040bb2adffe481cea5a35bd52188447b03b7974a5f",
+      "current_sha256": "699209dd36c7bc2c5f7b5e040bb2adffe481cea5a35bd52188447b03b7974a5f",
+      "old_bytes_unchanged": true,
+      "disposition": "retained",
+      "reason": "原accepted conditional whole SUMmin⇒六人half完整有效，当前端点pins未变；新receipt保原SHA699209dd36c7bc2c5f7b5e040bb2adffe481cea5a35bd52188447b03b7974a5f。",
+      "new_receipt_preserves_same_sha": true
+    },
+    {
+      "path": "map/edges/Boss7-summin-six-half-3b-3b-17d90d43aa54c665/review.md",
+      "old_receipt_sha256": "c5ca559fa6824bb6d9008b494a7de53f6bf098d8cfc3de72ca638e1374a021aa",
+      "current_sha256": "c5ca559fa6824bb6d9008b494a7de53f6bf098d8cfc3de72ca638e1374a021aa",
+      "old_bytes_unchanged": true,
+      "disposition": "retained",
+      "reason": "原完整条件证明及量词边界有效，原SHAc5ca559fa6824bb6d9008b494a7de53f6bf098d8cfc3de72ca638e1374a021aa原字节保留。",
+      "new_receipt_preserves_same_sha": true
+    },
+    {
+      "path": "map/edges/Boss7-summin-six-half-3b-3b-17d90d43aa54c665/reading-ledger.json",
+      "old_receipt_sha256": "e0c2439b9bb28c2aab5576cbb978ebb6766e198d1914f888020cf5f4c0e1f48f",
+      "current_sha256": "e0c2439b9bb28c2aab5576cbb978ebb6766e198d1914f888020cf5f4c0e1f48f",
+      "old_bytes_unchanged": true,
+      "disposition": "replaced",
+      "reason": "旧mathematical_comparison.source误写M-73d3a9bedfd449d292f04323e540d4ca。新copy仅改为SUMmin实际端点并加纠正provenance，原作者/原read记录与历史运行声明逐值保留且可辨；旧文件不编辑。",
+      "replacement_paths": [
+        "map/edges/boss3-summin-budget-repair-d86bee169e3617da/reading-ledger-corrected.json"
+      ],
+      "all_replacements_are_current_new_assets": true
+    }
+  ],
+  "current_binding_audit": {
+    "asset_checks": [
+      {
+        "path": "map/edges/Boss7-summin-six-half-3b-3b-17d90d43aa54c665/summin-conditionally-pays-six-half.json",
+        "receipt_sha256": "699209dd36c7bc2c5f7b5e040bb2adffe481cea5a35bd52188447b03b7974a5f",
+        "current_sha256": "699209dd36c7bc2c5f7b5e040bb2adffe481cea5a35bd52188447b03b7974a5f",
+        "matches": true
+      },
+      {
+        "path": "map/edges/Boss7-summin-six-half-3b-3b-17d90d43aa54c665/review.md",
+        "receipt_sha256": "c5ca559fa6824bb6d9008b494a7de53f6bf098d8cfc3de72ca638e1374a021aa",
+        "current_sha256": "c5ca559fa6824bb6d9008b494a7de53f6bf098d8cfc3de72ca638e1374a021aa",
+        "matches": true
+      },
+      {
+        "path": "map/edges/boss3-summin-budget-repair-d86bee169e3617da/all-n-counterexample-summin-contribution.json",
+        "receipt_sha256": "4eb5151221da99f7b46822bc4615dff81e6bca8febdb44d4ef1b21410bdd6a71",
+        "current_sha256": "4eb5151221da99f7b46822bc4615dff81e6bca8febdb44d4ef1b21410bdd6a71",
+        "matches": true
+      },
+      {
+        "path": "map/edges/boss3-summin-budget-repair-d86bee169e3617da/three-player-36-summin-contribution.json",
+        "receipt_sha256": "b0802cd74bc7d229396e1ebb65718b787b5aeee7022faee6010de0526aae5131",
+        "current_sha256": "b0802cd74bc7d229396e1ebb65718b787b5aeee7022faee6010de0526aae5131",
+        "matches": true
+      },
+      {
+        "path": "map/edges/boss3-summin-budget-repair-d86bee169e3617da/reading-ledger-corrected.json",
+        "receipt_sha256": "0a48a36f611b1624a5b9628274512f3a4ae5b179dcf4c955d8fc8bfce41622bd",
+        "current_sha256": "0a48a36f611b1624a5b9628274512f3a4ae5b179dcf4c955d8fc8bfce41622bd",
+        "matches": true
+      },
+      {
+        "path": "map/edges/boss3-summin-budget-repair-d86bee169e3617da/comparison-review.json",
+        "receipt_sha256": "367e6ffe393a1b80fa04c433da84b50ec491a5e157244c2b2770950b5aca1671",
+        "current_sha256": "367e6ffe393a1b80fa04c433da84b50ec491a5e157244c2b2770950b5aca1671",
+        "matches": true
+      },
+      {
+        "path": "map/edges/boss3-summin-budget-repair-d86bee169e3617da/all-n-budget-proof.json",
+        "receipt_sha256": "fa494cd2ac03e245f46a158fe6a3169cd945b95e10516b68b7240dfb4da8e154",
+        "current_sha256": "fa494cd2ac03e245f46a158fe6a3169cd945b95e10516b68b7240dfb4da8e154",
+        "matches": true
+      },
+      {
+        "path": "map/edges/boss3-summin-budget-repair-d86bee169e3617da/verify-budget-examples.py",
+        "receipt_sha256": "be5abb09832f3025dc4392616ce49b87e53f33743df93b23f5b5c350b2179281",
+        "current_sha256": "be5abb09832f3025dc4392616ce49b87e53f33743df93b23f5b5c350b2179281",
+        "matches": true
+      },
+      {
+        "path": "map/edges/boss3-summin-budget-repair-d86bee169e3617da/budget-example-results.json",
+        "receipt_sha256": "58da89eb345d0dfa2bad2091095e4c14f65ec8dcba6b6ee3b9323edf9a6a1920",
+        "current_sha256": "58da89eb345d0dfa2bad2091095e4c14f65ec8dcba6b6ee3b9323edf9a6a1920",
+        "matches": true
+      }
+    ],
+    "edge_checks": [
+      {
+        "path": "map/edges/Boss7-summin-six-half-3b-3b-17d90d43aa54c665/summin-conditionally-pays-six-half.json",
+        "edge_id": "boss7-summin-conditionally-pays-six-half-3b-3b-17d90d43aa54c665",
+        "status": "accepted",
+        "relation_mode": "conditional",
+        "proof_scope": "whole",
+        "endpoint_pins_current": true,
+        "review_digest_matches": true
+      },
+      {
+        "path": "map/edges/boss3-summin-budget-repair-d86bee169e3617da/all-n-counterexample-summin-contribution.json",
+        "edge_id": "boss3-all-n-counterexample-summin-contribution-d86bee169e3617da",
+        "status": "accepted",
+        "relation_mode": "unconditional",
+        "proof_scope": "contribution",
+        "endpoint_pins_current": true,
+        "review_digest_matches": true
+      },
+      {
+        "path": "map/edges/boss3-summin-budget-repair-d86bee169e3617da/three-player-36-summin-contribution.json",
+        "edge_id": "boss3-three-player-36-summin-contribution-d86bee169e3617da",
+        "status": "accepted",
+        "relation_mode": "conditional",
+        "proof_scope": "contribution",
+        "endpoint_pins_current": true,
+        "review_digest_matches": true
+      }
+    ],
+    "evidence_ref_checks": [
+      {
+        "edge_id": "boss7-summin-conditionally-pays-six-half-3b-3b-17d90d43aa54c665",
+        "path": "map/edges/Boss7-summin-six-half-3b-3b-17d90d43aa54c665/review.md",
+        "section": "2. 已证明的条件边",
+        "sha256": "c5ca559fa6824bb6d9008b494a7de53f6bf098d8cfc3de72ca638e1374a021aa",
+        "sha_matches": true,
+        "evidence_pin_matches": true,
+        "section_unique": true
+      },
+      {
+        "edge_id": "boss7-summin-conditionally-pays-six-half-3b-3b-17d90d43aa54c665",
+        "path": "archives/customer-attraction/state/候选/全槽逐行最小价格的共同预算与有限报告--候选.md",
+        "section": "真完整列、逐行最小与开放付款",
+        "sha256": "e952c73849b2ac561ac4ebb761b3ae0c1af06d61f27e743c593ea0103c52698a",
+        "sha_matches": true,
+        "evidence_pin_matches": true,
+        "section_unique": true
+      },
+      {
+        "edge_id": "boss7-summin-conditionally-pays-six-half-3b-3b-17d90d43aa54c665",
+        "path": "archives/customer-attraction/state/候选/全槽逐行最小价格的共同预算与有限报告--候选.md",
+        "section": "静态充分关系与完整槽数",
+        "sha256": "e952c73849b2ac561ac4ebb761b3ae0c1af06d61f27e743c593ea0103c52698a",
+        "sha_matches": true,
+        "evidence_pin_matches": true,
+        "section_unique": true
+      },
+      {
+        "edge_id": "boss7-summin-conditionally-pays-six-half-3b-3b-17d90d43aa54c665",
+        "path": "archives/customer-attraction/state/引理/完整槽末位最小价格的精确折扣与静态充分桥--引理.md",
+        "section": "完整槽的静态比较常数恰按2m计",
+        "sha256": "a2c504c39c6b1ab1d4a2a8d9f48b5a977ad2aa648aab0ac066771d22ff5ccf2a",
+        "sha_matches": true,
+        "evidence_pin_matches": true,
+        "section_unique": true
+      },
+      {
+        "edge_id": "boss7-summin-conditionally-pays-six-half-3b-3b-17d90d43aa54c665",
+        "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+        "section": "策略、真实续局与全部历史量词",
+        "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+        "sha_matches": true,
+        "evidence_pin_matches": true,
+        "section_unique": true
+      },
+      {
+        "edge_id": "boss7-summin-conditionally-pays-six-half-3b-3b-17d90d43aa54c665",
+        "path": "archives/customer-attraction/subarchives/six-providers/state/问题/六人完整历史半覆盖目标--问题.md",
+        "section": "当前可确立的边界",
+        "sha256": "0626668e7a825108fc0b3699e42394b75b1c2e2a526df220a90d91a02afc8a0c",
+        "sha_matches": true,
+        "evidence_pin_matches": true,
+        "section_unique": true
+      },
+      {
+        "edge_id": "boss7-summin-conditionally-pays-six-half-3b-3b-17d90d43aa54c665",
+        "path": "archives/customer-attraction/state/程序/五人全槽行最小价格与三尾混合整数探针--程序.md",
+        "section": "2. 行最小搜索的完整合同",
+        "sha256": "2a628a5dca7cbf847fc23df2036d9c08fb83f7616bb82a720e3146c547db923e",
+        "sha_matches": true,
+        "evidence_pin_matches": true,
+        "section_unique": true
+      },
+      {
+        "edge_id": "boss7-summin-conditionally-pays-six-half-3b-3b-17d90d43aa54c665",
+        "path": "archives/customer-attraction/subarchives/six-providers/问题--问题.md",
+        "section": "恰六人半覆盖",
+        "sha256": "21391fbaaa2893fef7b228a345fcf1d7f5c5d1dc8a42cc642d6bfbbeccc7c065",
+        "sha_matches": true,
+        "evidence_pin_matches": true,
+        "section_unique": true
+      },
+      {
+        "edge_id": "boss3-all-n-counterexample-summin-contribution-d86bee169e3617da",
+        "path": "map/edges/boss3-summin-budget-repair-d86bee169e3617da/comparison-review.json",
+        "sha256": "367e6ffe393a1b80fa04c433da84b50ec491a5e157244c2b2770950b5aca1671",
+        "sha_matches": true,
+        "evidence_pin_matches": true,
+        "section_unique": true
+      },
+      {
+        "edge_id": "boss3-all-n-counterexample-summin-contribution-d86bee169e3617da",
+        "path": "archives/customer-attraction/state/候选/全槽逐行最小价格的共同预算与有限报告--候选.md",
+        "sha256": "e952c73849b2ac561ac4ebb761b3ae0c1af06d61f27e743c593ea0103c52698a",
+        "section": "真完整列、逐行最小与开放付款",
+        "sha_matches": true,
+        "evidence_pin_matches": true,
+        "section_unique": true
+      },
+      {
+        "edge_id": "boss3-all-n-counterexample-summin-contribution-d86bee169e3617da",
+        "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+        "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+        "section": "策略、真实续局与全部历史量词",
+        "sha_matches": true,
+        "evidence_pin_matches": true,
+        "section_unique": true
+      },
+      {
+        "edge_id": "boss3-all-n-counterexample-summin-contribution-d86bee169e3617da",
+        "path": "archives/customer-attraction/state/反例/三人及以上聚合末位保底--反例.md",
+        "sha256": "d316702ecc98a5976769d1d2e0094341474e0c4655deaac825bc208ae81d36e7",
+        "sha_matches": true,
+        "evidence_pin_matches": true,
+        "section_unique": true
+      },
+      {
+        "edge_id": "boss3-all-n-counterexample-summin-contribution-d86bee169e3617da",
+        "path": "archives/customer-attraction/state/定理/子集调和势的Möbius反演--定理.md",
+        "sha256": "9c7e58e4642077607ce2b49c67e7598c97b47b4cdb1b43a34cf335dd2aec5629",
+        "sha_matches": true,
+        "evidence_pin_matches": true,
+        "section_unique": true
+      },
+      {
+        "edge_id": "boss3-all-n-counterexample-summin-contribution-d86bee169e3617da",
+        "path": "archives/customer-attraction/state/定理/无重复辅助博弈的完整历史编译--定理.md",
+        "sha256": "e6e06a43973f7c37673b498074475fdf8aa37338d448aff53b2bf9b2e7fa0dd4",
+        "sha_matches": true,
+        "evidence_pin_matches": true,
+        "section_unique": true
+      },
+      {
+        "edge_id": "boss3-all-n-counterexample-summin-contribution-d86bee169e3617da",
+        "path": "map/edges/boss3-summin-budget-repair-d86bee169e3617da/all-n-budget-proof.json",
+        "sha256": "fa494cd2ac03e245f46a158fe6a3169cd945b95e10516b68b7240dfb4da8e154",
+        "sha_matches": true,
+        "evidence_pin_matches": true,
+        "section_unique": true
+      },
+      {
+        "edge_id": "boss3-all-n-counterexample-summin-contribution-d86bee169e3617da",
+        "path": "map/edges/boss3-summin-budget-repair-d86bee169e3617da/verify-budget-examples.py",
+        "sha256": "be5abb09832f3025dc4392616ce49b87e53f33743df93b23f5b5c350b2179281",
+        "sha_matches": true,
+        "evidence_pin_matches": true,
+        "section_unique": true
+      },
+      {
+        "edge_id": "boss3-all-n-counterexample-summin-contribution-d86bee169e3617da",
+        "path": "map/edges/boss3-summin-budget-repair-d86bee169e3617da/budget-example-results.json",
+        "sha256": "58da89eb345d0dfa2bad2091095e4c14f65ec8dcba6b6ee3b9323edf9a6a1920",
+        "sha_matches": true,
+        "evidence_pin_matches": true,
+        "section_unique": true
+      },
+      {
+        "edge_id": "boss3-three-player-36-summin-contribution-d86bee169e3617da",
+        "path": "map/edges/boss3-summin-budget-repair-d86bee169e3617da/comparison-review.json",
+        "sha256": "367e6ffe393a1b80fa04c433da84b50ec491a5e157244c2b2770950b5aca1671",
+        "sha_matches": true,
+        "evidence_pin_matches": true,
+        "section_unique": true
+      },
+      {
+        "edge_id": "boss3-three-player-36-summin-contribution-d86bee169e3617da",
+        "path": "archives/customer-attraction/state/候选/全槽逐行最小价格的共同预算与有限报告--候选.md",
+        "sha256": "e952c73849b2ac561ac4ebb761b3ae0c1af06d61f27e743c593ea0103c52698a",
+        "section": "真完整列、逐行最小与开放付款",
+        "sha_matches": true,
+        "evidence_pin_matches": true,
+        "section_unique": true
+      },
+      {
+        "edge_id": "boss3-three-player-36-summin-contribution-d86bee169e3617da",
+        "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+        "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+        "section": "策略、真实续局与全部历史量词",
+        "sha_matches": true,
+        "evidence_pin_matches": true,
+        "section_unique": true
+      },
+      {
+        "edge_id": "boss3-three-player-36-summin-contribution-d86bee169e3617da",
+        "path": "archives/customer-attraction/state/反例/三人聚合末位保底--反例.md",
+        "sha256": "f2ff6b486d46f5e05d9acb2497ec1114ac8ab4698460fb46656d320e640fe4c0",
+        "sha_matches": true,
+        "evidence_pin_matches": true,
+        "section_unique": true
+      },
+      {
+        "edge_id": "boss3-three-player-36-summin-contribution-d86bee169e3617da",
+        "path": "map/edges/boss3-summin-budget-repair-d86bee169e3617da/verify-budget-examples.py",
+        "sha256": "be5abb09832f3025dc4392616ce49b87e53f33743df93b23f5b5c350b2179281",
+        "sha_matches": true,
+        "evidence_pin_matches": true,
+        "section_unique": true
+      },
+      {
+        "edge_id": "boss3-three-player-36-summin-contribution-d86bee169e3617da",
+        "path": "map/edges/boss3-summin-budget-repair-d86bee169e3617da/budget-example-results.json",
+        "sha256": "58da89eb345d0dfa2bad2091095e4c14f65ec8dcba6b6ee3b9323edf9a6a1920",
+        "sha_matches": true,
+        "evidence_pin_matches": true,
+        "section_unique": true
+      }
+    ],
+    "evidence_reference_count": 23,
+    "all_current_asset_hashes_match": true,
+    "all_evidence_sha_pins_and_sections_match": true,
+    "all_edge_endpoint_pins_and_review_digests_match": true,
+    "method": "直接按原字节SHA-256；按已实读pin定义对当前object/edge语义JSON作canonical hash；逐evidence标题检查唯一性。未运行edge-bind/edge-check原生接口。"
+  },
+  "open_obligations_retained": [
+    "一般完整历史模型的混合SUMmin共同付款U。",
+    "仅凭actual共同列证明一般U时所需的全称AC价格上界；本包只付两类特定输入。",
+    "恰六人任意共同目录、每份完整σ的无条件half原题。",
+    "任何2m−1目标需要独立匹配的静态竞争槽接口与动态付款，当前2m链未承担。"
+  ],
+  "operations": {
+    "written_paths": [
+      "research/workspaces/map-v2/Boss5/finalization-20261116/summin-target-ledger-review.json"
+    ],
+    "prohibited_operations_performed": [],
+    "not_run": [
+      "Git、sync及任何远端操作",
+      "队列、claim、plan、done或任务写入",
+      "凭据、外部账号、connector",
+      "原优化器、LP/MILP、全历史搜索/枚举",
+      "verify-budget-examples.py或现有数值重放"
+    ],
+    "actual_work": "本地源文件读取、解析审查、原字节SHA及纯JSON绑定/差分核验；仅写此指定隔离评审。已有数值由其它审读及原资产承担，本worker不重做。"
+  }
+}
