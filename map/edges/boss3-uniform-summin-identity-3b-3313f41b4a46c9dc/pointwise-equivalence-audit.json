@@ -1,0 +1,409 @@
+{
+  "schema": 1,
+  "record_type": "pointwise-equivalence-audit",
+  "task_id": "boss3-uniform-summin-identity-3b-3313f41b4a46c9dc",
+  "prepared_for": "Boss3",
+  "write_scope": "仅本附件；主边、收据、其他worker附件及登记均未改动。",
+  "conclusion": {
+    "relation_proved": "两个现役open候选的完整全称预算双向等价；其每一实例/完整策略/实际路径/位置/查询分布上的被求和项已逐点相等。",
+    "pointwise_identity": "forall legal (N,S,cov,m,sigma), forall p in Delta(S), forall i in {1,...,m}: R_i(p)=psi_i(p).",
+    "whole_statement_equivalence": "[forall legal instances, complete pure SPE sigma and p, sum_i R_i(p)<=W] iff [forall legal instances, complete pure SPE sigma and p, sum_i psi_i(p)<=W].",
+    "candidate_truth_status": "open；本审读证明两个陈述及其债务表述的同一性，不证明共同预算不等式本身成立。",
+    "scope_of_whole_statement": "整条等价覆盖两个登记对象的开放全称主预算及U所列债务等价式；不声称两正文全部附带有限报告、程序合同或历史说明彼此相同。"
+  },
+  "registered_endpoints": [
+    {
+      "object_id": "customer-attraction/e7-summin-full-common-budget-exact-discount-and-finite-tests",
+      "version": 2,
+      "truth_status": "open",
+      "input_pin": "e37e6d0b6d0236152b44c5bd1d840157a5f2673bfcf99f9170af932a33e87332",
+      "statement_as_registered": "真实完整m槽Zi(A)含原actual前缀及沿同σ的真实后继，K_i(T,A)=Σ_T1/(1+c(Zi(A)))，R_i(p)=min_A E_pK_i(T,A)。候选Σ_iR_i(p)≤W对所有p成立；纯p取A=T已逐行≤u_i，一般混合预算未付。",
+      "quantifiers_as_registered": "全部原模型m≥1完整SPE、同一个合法查询分布p；各行最小列可随i,p变化。",
+      "assumptions_as_registered": [
+        "独立额外查询；竞争列m槽且含强制者，不是m−1尾。"
+      ]
+    },
+    {
+      "object_id": "customer-attraction/uniform-universal-time-full-prefix-menu-and-covariance-budget",
+      "version": 1,
+      "truth_status": "open",
+      "input_pin": "b212ad552728e9da70fb989b946192181201732de5421bf10e967dbc47656ff5",
+      "statement_as_registered": "在原实际前缀的每一位置i强制任意行动A并沿同一σ完成完整m槽Z_i(A)，令ψ_i(p)=min_AΣ_x Pr_p[x∈T]/(1+c_x(Z_i(A)))。待证∀K,p有Σ_iψ_i(p)≤W；等价于全部位置负选择协方差由插入税、真实IC松弛e_i及同菜单重选列收益L_i共同支付。",
+      "quantifiers_as_registered": "所有m≥1、所有合法实例、每份完整纯SPE和每个独立查询分布p；和跨同一实际路径全部位置。",
+      "assumptions_as_registered": [
+        "保完整旧前缀和当前槽",
+        "每位防御列可依赖p但不观察查询实现"
+      ]
+    }
+  ],
+  "shared_endpoint_boundary": {
+    "object_id": "customer-attraction/complete-terminal-push-own-discount-and-paid-tail-reserve",
+    "version": 2,
+    "truth_status_as_registered": "proved",
+    "input_pin": "7c682339f08a67d9ec2318753c645c30ff0249a9515ddd12f325ec9fd981daeb",
+    "actual_read": "仅完整登记记录；其正文和其余证据本worker未实读，未据此重新证明末两位储备。",
+    "role_in_this_audit": "逐列身份及两账变换不依赖末两位储备。经psi_i=R_i，另已核实的同菜单末两位结论可原值换名；本附件不宣称早期共同债务已付。"
+  },
+  "common_domain_and_quantifier_order": {
+    "fully_expanded_domain": [
+      "先任取正整数m>=1；任取有限客户集N（允许N为空）；任取有限非空标签目录S及任意覆盖映射cov:S->2^N。",
+      "m名单位提供者按固定顺序各选一次目录标签，终局客户单位价值在所有覆盖者间均分。允许空覆盖标签、重复行动、多个相同覆盖的不同标签。",
+      "再任取定义在每个合法有序历史上的完整纯SPE sigma；对每个i、每个h in S^(i-1)、每个A in S，都保真实偏离后沿同一sigma的收益不等式。所有在轨/离轨节点及历史依赖平局均量化，不压缩成负载策略。",
+      "由固定sigma产生唯一actual叶z=(S_1,...,S_m)，h_i=(S_1,...,S_(i-1))；实际u_i=u_i(z)，W=W(z)=sum_i u_i。",
+      "再任取同一个p in Delta(S)，定义在全部标签上，允许任意实概率及零概率；p只定义额外数学查询，不改变原sigma或实际叶。",
+      "对每一i和固定防御行动A，Z_i(A)=alpha((h_i,A),sigma_(i+1),...,sigma_m)是完整m槽：原actual前缀、强制当前槽及原sigma在改变后有序历史上的真实后继全部保留。",
+      "查询T~p在Z_i(A)确定后独立抽取。每位防御行动可随i、实例、sigma和p变化，但选定后不观察本次T。两个候选都没有额外的逐查询列选择自由。"
+    ],
+    "same_query_domain": "两式均为合法目录标签上的同一p in Delta(S)，并非一个对客户边际任意优化、另一个对目录分布优化。t_x必须由该p诱导。",
+    "pointwise_identity_needs_less": "R_i=psi_i及有限求和身份对任意固定的完整确定性策略同样成立，不用SPE不等式；保持SPE域是为了两个登记陈述严格同域，且e_i>=0确实要用IC。",
+    "m_boundary": "m=1时前缀和后继均可为空，Z_1(A)=(A)；所有恒等式原样有效。m=0不在任一核心对象量词内。"
+  },
+  "pointwise_column_proof": [
+    {
+      "step": 1,
+      "claim": "固定同一实例、sigma、actual叶、i、p及一个固定标签A；置c_x(A)=c_x(Z_i(A))和t_x=sum_(T in S) p_T 1[x in cov(T)]。所有c_x(A)均为0至m的整数，1+c_x(A)>=1。"
+    },
+    {
+      "step": 2,
+      "equation": "E_(T~p) K_i(T,A) = sum_(T in S) p_T sum_(x in N) 1[x in cov(T)]/(1+c_x(A)).",
+      "reason": "K_i按查询主题所覆盖客户求和，改写为N上的指示函数和；此时A及其真实后继固定，不依赖T。"
+    },
+    {
+      "step": 3,
+      "equation": "sum_(T in S) p_T sum_(x in N) 1[x in cov(T)]/(1+c_x(A)) = sum_(x in N) (sum_(T in S) p_T 1[x in cov(T)])/(1+c_x(A)).",
+      "reason": "S、N有限，仅交换两项有限求和；未交换最小值和期望，也不需独立客户假设。"
+    },
+    {
+      "step": 4,
+      "equation": "E_(T~p) K_i(T,A)=sum_(x in N) t_x/(1+c_x(Z_i(A)))=G_p(Z_i(A)).",
+      "reason": "括号内正是t_x；这是每个防御列的数值恒等。"
+    },
+    {
+      "step": 5,
+      "equation": "R_i(p)=min_(A in S) E_(T~p)K_i(T,A)=min_(A in S)G_p(Z_i(A))=psi_i(p).",
+      "reason": "两边在完全同一有限非空标签目录上取最小。极值达到；同覆盖不同标签不作商，亦不需要不同标签后继相同。"
+    },
+    {
+      "step": 6,
+      "equation": "sum_(i=1)^m R_i(p)-W=sum_(i=1)^m psi_i(p)-W.",
+      "reason": "W与i域来自同一实际路径。故任一固定实例/策略/p的满足或违反情况逐点相同。"
+    }
+  ],
+  "both_directions_with_full_quantifiers": {
+    "U_implies_SUMmin": "假设对每个m>=1、每个上述合法实例、每份完整纯SPE sigma及每个独立查询分布p，sum_i psi_i(p)<=W。任取同域一个(m,N,S,cov,sigma,p)，逐位置以R_i=psi_i替换，得到sum_i R_i(p)<=W；任取性给SUMmin-full的完整全称结论。无需新增条件或另选sigma/p。",
+    "SUMmin_implies_U": "假设对每个m>=1、每个上述合法实例、每份完整纯SPE sigma及每个独立查询分布p，sum_i R_i(p)<=W。任取同域一个(m,N,S,cov,sigma,p)，逐位置以psi_i=R_i替换，得到sum_i psi_i(p)<=W；任取性给U的完整全称结论。",
+    "uniform_time_normalization": "对每个固定正整数m，sum_i psi_i<=W与sum_i (1/m)psi_i<=W/m恰等价；lambda_i=1/m只依赖m。此处没有把“存在某个通用lambda”推成“均匀lambda有效”。",
+    "failure_transfer": "如将来在合法完整SPE上有某p使任一预算严格超W，同一实例、同一sigma、同一p无需改变即严格违反另一预算；当前没有由本审读构造这样的正分离。"
+  },
+  "definition_mapping": [
+    {
+      "summin": "actual叶z；u_i；W",
+      "uniform": "actual叶a；u_i；W",
+      "audit": "同一实际完整叶及实际收益；记号z/a无数学差别。"
+    },
+    {
+      "summin": "Z_i(A)",
+      "uniform": "Z_i(A)",
+      "audit": "同一actual有序前缀强制A、原sigma真实后继、恰m槽。"
+    },
+    {
+      "summin": "K_i(T,A)",
+      "uniform": "K_i(T,A)",
+      "audit": "相同矩阵；行T为额外查询标签，列A为强制防御标签。"
+    },
+    {
+      "summin": "E_(T~p) K_i(T,A)",
+      "uniform": "G_p(Z_i(A))",
+      "audit": "逐列有限求和恒等，t_x=Pr_p[x in T]。"
+    },
+    {
+      "summin": "R_i(p)",
+      "uniform": "psi_i(p)",
+      "audit": "同一非空标签目录上的同一列最小。"
+    },
+    {
+      "summin": "D_i",
+      "uniform": "D_i",
+      "audit": "D_i=E_(A~p)d_i(A)，d_i(A)为强制玩家本人的真实收益。"
+    },
+    {
+      "summin": "e_i=u_i-D_i",
+      "uniform": "e_i=u_i-D_i",
+      "audit": "相同非负IC平均松弛。"
+    },
+    {
+      "summin": "C_i^full",
+      "uniform": "C_i=p^T K_i p",
+      "audit": "相同双独立抽样平均；不是行最小R_i/psi_i。"
+    },
+    {
+      "summin": "C_i^old",
+      "uniform": "未单独命名",
+      "audit": "删强制者后的m-1竞争槽价格，记C_i^old；仅用于两账比较，不替换真实m槽候选。"
+    },
+    {
+      "summin": "kappa_i=D_i-C_i^old",
+      "uniform": "协方差加带(1-t_x)的自税部分",
+      "audit": "kappa_i=sum_x Cov_p(I,v)+sum_x(1-t_x)E_p J。可有符号。"
+    },
+    {
+      "summin": "正文L_i",
+      "uniform": "不是uniform正文L_i，也不是其无边际权自税",
+      "audit": "改记tau_i=sum_x t_x E_p J=C_i^old-C_i^full>=0，是旧槽到完整槽的折扣。"
+    },
+    {
+      "summin": "无此单独命名",
+      "uniform": "式(2)/(3)自税",
+      "audit": "记s_i=sum_x E_p J>=0；通常与tau_i不同。"
+    },
+    {
+      "summin": "C_i^full-R_i(p)（未在该页单独命名）",
+      "uniform": "正文L_i",
+      "audit": "改记g_i=C_i^full-psi_i(p)>=0，是同菜单重选防御列收益。"
+    },
+    {
+      "summin": "kappa_i+tau_i",
+      "uniform": "sum_x Cov_p(I,v)+s_i",
+      "audit": "此和恰相等，不能把两个税项逐项同名对应。"
+    }
+  ],
+  "uniform_covariance_and_IC_audit": {
+    "independent_sampling": "计算C_i时A,T为两次独立p抽样。p^T K_i p=sum_(A,T)p_A p_T K_i(T,A)，不把A与T锁为同一实现；逐列定义R_i本身不需抽样A。",
+    "safe_customer_definitions": "固定i,x及A~p，I(A)=1[x in cov(A)]，c(A)=c_x(Z_i(A))，v(A)=1/(1+c(A))。定义a(A)=1/c(A)若I(A)=1，否则a(A)=0；定义J(A)=1/[c(A)(1+c(A))]若I(A)=1，否则J(A)=0。因为强制者属于Zi(A)，I=1必c>=1。所有写作I/c或I/[c(c+1)]之处都严格解释为这两个分段函数；I=0且c=0时直接取0，不实际形成0/0。",
+    "per_customer_identity": "a(A)=I(A)v(A)+J(A)，即在I=1时1/c=1/(c+1)+1/[c(c+1)]，在I=0时0=0+0。",
+    "real_payoff": "d_i(A)=sum_x a_x(A)；D_i=sum_A p_A d_i(A)。原actual节点IC给每一A的d_i(A)<=u_i，所以e_i=u_i-D_i>=0。客户分量不需逐项满足IC。",
+    "C_expression": "由逐列恒等，C_i=C_i^full=sum_x t_x E_A v_x(A)。t_x=E_A I_x(A)，因A与查询具有同一分布p。",
+    "covariance_definition": "Cov_p(I,v)=E_p[I v]-(E_p I)(E_p v)=E_p[I v]-t_x E_p v。",
+    "equation_2": "D_i-C_i^full=sum_x (E[I v]+E[J]-t_x E[v])=sum_x Cov_p(I,v)+s_i，其中s_i=sum_x E[J]。这逐项验证uniform正文式(2)。",
+    "selection_gain": "g_i=C_i^full-min_A(p^T K_i)_A=C_i^full-psi_i(p)>=0，因为C_i^full=sum_A p_A(p^T K_i)_A为同菜单列价的凸组合。没有将C_i^full=p^T K_i p写成最小值。",
+    "equation_1": "psi_i-u_i=(C_i^full-g_i)-(D_i+e_i)=C_i^full-D_i-e_i-g_i。对i求和且sum_i u_i=W，得到uniform正文式(1)。",
+    "equation_3": "sum_i psi_i-W=sum_(i,x)(-Cov_p(I_x,v_x))-sum_i s_i-sum_i e_i-sum_i g_i。因此U等价于sum_(i,x)(-Cov_p(I_x,v_x))<=sum_i s_i+sum_i e_i+sum_i g_i，正是uniform式(3)。此处Cov有符号，不把每个负协方差债当逐客户非负。"
+  },
+  "oldslot_to_fullslot_accounting_audit": {
+    "deleted_tuple": "B_i(A)是把Zi(A)中的第i槽强制者静态删除后的m-1元组；n_x(A)=c_x(A)-I_x(A)>=0。删除只是比较价格，未改变Zi(A)的真实后继。",
+    "definitions": "D_i=E_A sum_x I_x/(1+n_x)（与真实强制收益相同）；C_i^old=sum_x t_x E_A[1/(1+n_x)]；kappa_i=D_i-C_i^old。",
+    "safe_discount_identity": "1/(1+n_x)-1/(1+c_x)=J_x(A)：若I=0则n=c两项相等；若I=1则n=c-1，差为1/c-1/(c+1)=1/[c(c+1)]。这里原两分母1+n、1+c始终正。",
+    "summin_tax": "tau_i=C_i^old-C_i^full=sum_x t_x E_A[J_x(A)]=E_(A,T)sum_(x in cov(A) intersect cov(T))1/[c_x(Z_i(A))(1+c_x(Z_i(A)))]。末式只对交集内客户求和，c>=1；这是SUMmin正文的L_i。",
+    "taxes_are_distinct": "uniform自税s_i=sum_x E J；SUMmin旧槽折扣tau_i=sum_x t_x E J。0<=tau_i<=s_i，但一般不相等。uniform正文L_i则是第三个量g_i，与前两者均不应按名字直接合并。",
+    "kappa_bridge": "kappa_i=D_i-C_i^old=(D_i-C_i^full)-(C_i^old-C_i^full)=sum_x Cov_p(I_x,v_x)+s_i-tau_i=sum_x Cov_p(I_x,v_x)+sum_x(1-t_x)E J_x。",
+    "exact_sum_bridge": "kappa_i+tau_i=sum_x Cov_p(I_x,v_x)+s_i。",
+    "summin_equation_D": "W-sum_i C_i^full=sum_i(e_i+kappa_i+tau_i)，验证SUMmin正文(D)。",
+    "same_budget_after_reselection": "W-sum_i R_i=sum_i(e_i+kappa_i+tau_i+g_i)=sum_i e_i+sum_(i,x)Cov_p(I_x,v_x)+sum_i s_i+sum_i g_i。因R_i=psi_i，非负性正是uniform式(3)。",
+    "stronger_average_boundary": "R_i<=C_i^full只说明sum_i C_i^full<=W足以推出共同候选；反向不成立为一般逻辑规则。g_i不可删掉，e_i亦不可删掉。",
+    "analytic_sanity_example": {
+      "instance": "m=1，N={x}，两个标签E、F分别覆盖空集与{x}；完整SPE actual选F；p_E=p_F=1/2。",
+      "values": "I=1当A=F，c=I；t=1/2；EJ=1/4；s=1/4而tau=1/8；Cov(I,v)=-1/8；C_old=1/2，C_full=3/8，D=1/2，kappa=0；R=psi=1/4，g=1/8，e=1/2，W=1。",
+      "purpose": "手算展示s与tau在合法原模型中不同，并同时含I=0,c=0边界；不是新增程序搜索、全称候选证明或反例。"
+    }
+  },
+  "boundary_checks": [
+    {
+      "case": "空客户集或全目录空覆盖",
+      "result": "所有客户和为空，K、G、R、psi、D、C_old、C_full、tau、s、g、e、W均为0；不除以W或OPT，不产生效率比0/0。"
+    },
+    {
+      "case": "空主题及零概率标签",
+      "result": "空查询主题对应的查询行和为0；空强制行动仍占一个合法槽且后继沿原sigma。零p标签仍留在最小列目录中，不能只在supp(p)上最小。"
+    },
+    {
+      "case": "重复动作",
+      "result": "按出现次数计c_x，不把完整m元组改成主题集合。实际或强制后可重复选择同一标签。"
+    },
+    {
+      "case": "同覆盖异标签",
+      "result": "有限求和对标签T加权。虽然两查询行可能同值，不同强制标签A可触发不同有序历史后继；本证明保全部标签和各自列，从不合并它们。"
+    },
+    {
+      "case": "全有序离轨历史和平局",
+      "result": "Zi(A)始终读取给定完整sigma在真实改变后有序历史上的行动。相同负载不等于相同历史；不另选平局selector，不重新选SPE。身份不依赖唯一最佳回复。"
+    },
+    {
+      "case": "独立query及随p选列",
+      "result": "对给定p可各位置取不同argmin A_i(p)，但不能看T再选A_i(T)。若对查询实现自适应，则优化量变成E_T min_A K_i(T,A)，不是任一核心对象。"
+    },
+    {
+      "case": "m槽与m-1槽",
+      "result": "候选K、G、R、psi的分母均为完整m槽负载外加1。m-1 tuple仅在旧账C_old定义内使用，不能据此更换候选或把静态系数2m换为2m-1。"
+    },
+    {
+      "case": "pure p",
+      "result": "p=delta_T时选固定A=T，则R_i=psi_i<=K_i(T,T)<=d_i(T)<=u_i；在x in T上强制者保证c>=1。对各位置求和得纯查询边界。该论证没有把min与一般混合期望交换。"
+    }
+  ],
+  "nonclaims_and_unpaid_obligations": [
+    "没有证明sum_i R_i<=W、sum_i psi_i<=W或其协方差付款式对所有混合p成立；早期跨位置共同债仍开放。",
+    "没有把p^T K_i p、对角锁定A=T的期望、固定p的列最小、max_p的菜单值相互替换。",
+    "没有用一个根位置R_i>u_i或强平均C_i>u_i反驳全路径预算；没有把银行根菜单反例移作U或SUMmin反例。",
+    "没有把存在一份只依赖m的通用lambda等价式当成均匀lambda有效的证明；指定均匀版本本身仍开放。",
+    "没有把两个候选推出自由全位置菜单及half的条件充分关系升级成无条件福利结论。",
+    "有限阴性探针、保存p点、浮点最优值和既有程序报告均不承重本解析身份，未用于支付全称义务；本轮无需重复执行这些程序。"
+  ],
+  "read_refs": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "20293db840f907c32f774b0d7f72450c56e6c0ad937720699d14f7c02e693cc9",
+      "read_line_ranges_inclusive": [
+        [
+          1,
+          40
+        ]
+      ],
+      "read_role": "完整实读仓库规则"
+    },
+    {
+      "path": "research/IMPLEMENTATION.md",
+      "sha256": "fb6613cd0c429f28b8bcfb1064076a629540cfbee8f7e3d670b0b39e78ff0d4b",
+      "read_line_ranges_inclusive": [
+        [
+          1,
+          329
+        ]
+      ],
+      "read_role": "完整实读；首次合并输出截断后分1–160及161–329重新完整读取"
+    },
+    {
+      "path": "prompts/03-map-worker.md",
+      "sha256": "6629f71923c54d994297d54c3737b285227b72c463641d318c3f61c9342d07b2",
+      "read_line_ranges_inclusive": [
+        [
+          1,
+          11
+        ]
+      ],
+      "read_role": "完整实读worker数学比较指令"
+    },
+    {
+      "path": "research/operations/map-v2/tasks/boss3-uniform-summin-identity-3b-3313f41b4a46c9dc.json",
+      "sha256": "d9f49a0e0001d98bce5ce6418109b1389f4595221c8bab47881b44b1819543d7",
+      "read_line_ranges_inclusive": [
+        [
+          1,
+          115
+        ]
+      ],
+      "read_role": "完整实读任务；落盘前再次解析核本地claimed/Boss3及输入范围"
+    },
+    {
+      "path": "research/registry.json",
+      "sha256": "ee1148cd8c8053496e64e259902fb4890ea9a5add5a9c5a090b0d14739fc64ac",
+      "read_line_ranges_inclusive": [
+        [
+          172899,
+          172945
+        ],
+        [
+          175548,
+          175583
+        ],
+        [
+          214912,
+          214949
+        ]
+      ],
+      "read_role": "只实读两个核心与共享末两位对象的完整登记记录；未全文阅读整个registry"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+      "read_line_ranges_inclusive": [
+        [
+          1,
+          129
+        ]
+      ],
+      "read_role": "全文实读；承重域及全部有序历史量词"
+    },
+    {
+      "path": "archives/customer-attraction/state/候选/全槽逐行最小价格的共同预算与有限报告--候选.md",
+      "sha256": "e952c73849b2ac561ac4ebb761b3ae0c1af06d61f27e743c593ea0103c52698a",
+      "read_line_ranges_inclusive": [
+        [
+          1,
+          102
+        ]
+      ],
+      "read_role": "全文实读；主预算、完整列、旧槽折扣与有限计算界限"
+    },
+    {
+      "path": "archives/customer-attraction/state/候选/均匀通用时间的完整前缀菜单与关联预算--候选.md",
+      "sha256": "9f321cd13380ffabb302dd18b17028dfc7eb444c001b29b2b09056bc23164c81",
+      "read_line_ranges_inclusive": [
+        [
+          1,
+          81
+        ]
+      ],
+      "read_role": "全文实读；U、协方差、自税、真实IC松弛及同菜单重选收益"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/完整槽末位最小价格的精确折扣与静态充分桥--引理.md",
+      "sha256": "a2c504c39c6b1ab1d4a2a8d9f48b5a977ad2aa648aab0ac066771d22ff5ccf2a",
+      "read_line_ranges_inclusive": [
+        [
+          1,
+          134
+        ]
+      ],
+      "read_role": "全文实读；完整m槽、纯查询与静态2m条件桥"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/五人全槽行最小价格与三尾混合整数探针--程序.md",
+      "sha256": "2a628a5dca7cbf847fc23df2036d9c08fb83f7616bb82a720e3146c547db923e",
+      "read_line_ranges_inclusive": [
+        [
+          1,
+          131
+        ]
+      ],
+      "read_role": "全文实读；仅核程序报告使用界限，未运行原程序或打开其所有冻结附件"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/有限跨树重入的同步菜单与静态极限--定理.md",
+      "sha256": "b69ae2bb1429bf449a7c7b047ce18a7ad36ae26f4bc0ed5899aa80f30ff92594",
+      "read_line_ranges_inclusive": [
+        [
+          72,
+          95
+        ]
+      ],
+      "read_role": "只实读指定唯一章节；区分均匀固定lambda与存在通用lambda",
+      "section": "3. 通用位置集合分布：全称等价，不是存在性结论"
+    },
+    {
+      "path": "archives/customer-attraction/state/反例/银行完整根列的两查询最小分离--反例.md",
+      "sha256": "de029690ad3bc92a323a87536cbcdae41cae202ffaa8088a6a57fa6db652c04b",
+      "read_line_ranges_inclusive": [
+        [
+          78,
+          107
+        ]
+      ],
+      "read_role": "只实读指定唯一章节；区分独立行列抽样、固定p价格与完整菜单值",
+      "section": "全菜单最优值是另一个优化问题"
+    }
+  ],
+  "source_anchor_ranges": {
+    "model_domain_and_complete_SPE": "共同目录完整历史模型--定义.md:22–75；m>=1/标签/空覆盖/同覆盖历史均在这里明确。",
+    "SUMmin_statement_and_independent_columns": "全槽逐行最小价格的共同预算与有限报告--候选.md:15–25。",
+    "SUMmin_old_full_accounting": "同文件:45–59，尤其52行L_i为旧→完整折扣。",
+    "U_statement_and_lambda_boundary": "均匀通用时间的完整前缀菜单与关联预算--候选.md:17–31。",
+    "U_e_and_selection_gain": "同文件:35–48，39行L_i为重选列收益。",
+    "U_covariance_and_self_tax": "同文件:52–65。",
+    "U_pure_and_actual_column_boundaries": "同文件:69–75。"
+  },
+  "execution_boundary": {
+    "method": "独立实读登记/正文后作有限代数证明；本地shell只用于读文本、JSON解析、确定引用行范围、SHA256及写本附件。",
+    "original_program_runs": 0,
+    "optimizer_runs": 0,
+    "BI_runs": 0,
+    "IC_certificate_runs": 0,
+    "new_strategy_searches": 0,
+    "finite_report_reruns": 0,
+    "network_connector_library_actions": 0,
+    "git_commands": 0,
+    "queue_mutations": 0,
+    "read_only_until_authorized": "在Boss的WRITE-OK消息前无落盘；获WRITE-OK后仅写指定pointwise-equivalence-audit.json。",
+    "validation": "写出时核task本地claimed/Boss3；七项context_plan reading_refs的全文SHA均与任务声明一致；核两个核心登记truth_status均为open。此类字节检查不替代数学证明。",
+    "not_read": "未全文读registry其他对象；未读取共享末两位资源正文或其未列入本任务七项reading_refs的证据全文；未读取/执行两候选引用的冻结原探针及所有报告。"
+  }
+}
