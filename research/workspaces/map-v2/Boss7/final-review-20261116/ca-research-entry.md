@@ -1,8 +1,8 @@
 # customer-attraction：原题、SUMmin 与完整历史编译的研究入口
 
-Boss7，2026-11-16。本入口实读下列原题、定义、候选、反例及边的数学正文后写成；只写本文件，未执行 Git、sync、队列、公屏或 canonical 写入，未运行旧优化器、策略枚举或证书。以下“完整关系”按目标对象整条陈述判断，`contribution` 只表示其中明确的一部分。
+Boss7，2026-11-16。本入口依据下列原题、定义、候选、反例及正式关系的数学实读整理；旧优化器、策略枚举及证书的实际责任仍按各原审读记录。以下“完整关系”按目标对象整条陈述判断，`contribution` 只表示其中明确的一部分。
 
-本地快照：`research/registry.json` SHA256 `202c608164e5e7f706c6178d16a0f13089c01abf7b7fdc3cc5b091370fb1f4a8`；`map/integration.json` SHA256 `135bdadeca23e9346a77097d2818dd9c005e68f7d906af6b4eae587977b141fb`。Boss3 `boss3-summin-budget-repair-d86bee169e3617da` 已在本快照正式 `done`，收据 `map/receipts/boss3-summin-budget-repair-d86bee169e3617da.json` SHA256 `6367602e636649e5ef1a53f4dcecd7f4362cbabf1cded1bf43c48930a7fbffbd`，新边及证明资产已经落盘；两条新边尚未列入上述 registry 的 `edge_files`，由 Boss 串行整合。本入口不把此前尚无新边的审读快照当作当前交付状态。
+初稿读取快照（历史）：`research/registry.json` SHA256 `202c608164e5e7f706c6178d16a0f13089c01abf7b7fdc3cc5b091370fb1f4a8`；`map/integration.json` SHA256 `135bdadeca23e9346a77097d2818dd9c005e68f7d906af6b4eae587977b141fb`。当时 Boss3 `boss3-summin-budget-repair-d86bee169e3617da` 已正式 `done`，两条新边尚待整合；其后已纳入现行 registry、coverage 与 integration。正式收据 `map/receipts/boss3-summin-budget-repair-d86bee169e3617da.json` SHA256 为 `6367602e636649e5ef1a53f4dcecd7f4362cbabf1cded1bf43c48930a7fbffbd`。本轮增量交付和最新验收状态统一见 [总说明](README.md)，不沿用旧快照判断当前是否完成。
 
 ## 共同起点：先固定真正要证明的量词
 
@@ -44,6 +44,48 @@ M_{\rm path}=\max_p\min_{i,A}\mathbb E_pK_i(T,A)\le W/m
 
 **这条路线真正未付的是**：一般实例、每份完整 \(\sigma\)、同一任意混合 \(p\) 的总预算；六人子域若单独付清也足以使用同一链。五份保存 \(p\) 的精确负余量、固定策略浮点客户锥及三尾子博弈都不是该全称证明。证据边界可读候选页《2617B原质量探针与本次五存p绑定》《4350B固定策略客户锥：三个不同目标》及 `archives/customer-attraction/state/程序/五人全槽行最小价格与三尾混合整数探针--程序.md`《2. 行最小搜索的完整合同》《4. 三尾 MILP 的较强任意背景问题》。当前五人 half 的别证也不能反推更强 SUMmin。
 
+### 同一预算的另一入口：均匀时间与协方差
+
+`customer-attraction/uniform-universal-time-full-prefix-menu-and-covariance-budget` 是同一全称预算的另一种写法。已发布边 `boss3-uniform-summin-full-budget-equivalence-3313f41b4a46c9dc`，路径 `map/edges/boss3-uniform-summin-identity-3b-3313f41b4a46c9dc/uniform-summin-equivalence.json`，为 `accepted / equivalent_to / ALL / conditional / whole_result`。精确推导及现役末两位关系的使用见同目录 `comparison-review.json`、`pointwise-equivalence-audit.json`、`tail-route-audit.json`。
+
+固定同一完整 \(\sigma\)、原 actual 前缀、同一个 \(p\)，令 \(q_x=\Pr_{T\sim p}[x\in T]\)。每列 \(A\) 都在查询抽样前固定，且两稿使用同一个完整 \(Z_i(A)\)，所以只交换有限求和便得
+
+\[
+\mathbb E_{T\sim p}K_i(T,A)
+=\sum_x\frac{q_x}{1+c_x(Z_i(A))}
+=G_p(Z_i(A)),\qquad R_i(p)=\psi_i(p).
+\]
+
+相同的最小化集合还给相同的 argmin。两方向逐行代入即可；\(m\ge1\)、空覆盖、重复动作、同覆盖异标签、零客户和全部弱平局均保持。这不是交换 \(\min\) 与期望，也不是把指定均匀时间权重换成“存在某个通用时间分布”。两端仍为 open，图中的 conditional 保留这一点；双向变形本身没有缺步。
+
+两稿的同名符号须按下面的金额区分：
+
+| 本入口统一记号 | 实际金额 | 原稿记号 |
+| --- | --- | --- |
+| \(C_i^{full}\) | 同 \(p\) 独立查询与强制行动的完整列均值 | uniform 的 \(C_i\)，末两位资源的 \(P_i\) |
+| \(\Delta_i=C_i^{old}-C_i^{full}\) | 删去强制槽所增加的查询价，含查询边际 \(q_x\) | SUMmin 的 \(L_i\)，末两位资源的 \(R_i\)；并非行最小 \(R_i(p)\) |
+| \(G_i=C_i^{full}-R_i\) | 同菜单重新选择固定列的收益 | uniform 的 \(L_i\)，末两位资源的 \(G_i\) |
+| \(\tau_i^{self}\) | \(\sum_x\mathbb E[\mathbf1_{x\in A}/(c_x(c_x+1))]\)，不含额外 \(q_x\) | uniform 协方差式的自身插入税 |
+
+令 \(D_i\) 为强制者的同 \(p\) 真实收益均值，\(e_i=u_i-D_i\ge0\)，\(\kappa_i=D_i-C_i^{old}\)。精确桥是
+
+\[
+\kappa_i+\Delta_i
+=\sum_x\operatorname{Cov}_p\!\left(\mathbf1_{x\in A},\frac1{1+c_x(Z_i(A))}\right)+\tau_i^{self},
+\quad
+\sum_iR_i-W=-\sum_i(e_i+\kappa_i+\Delta_i+G_i).
+\]
+
+\(\kappa_i\) 和协方差没有固定符号。对 \(m\ge2\)，现役 `ca-r34-tail-reserves-pay-two-prefix-positions` 只支付末两位；令 \(\ell\) 为倒二末 BR 松弛，完整精确剩余为
+
+\[
+\sum_iR_i-W
+=\sum_{i\le m-2}(P_i-u_i)
+-[e_{m-1}+\ell+V+Q+e_m+V_m]-\sum_iG_i.
+\]
+
+所以恰六人的下一项责任是前四行共同债务与右侧同一份储备的比较。末位曲率 \(V_m\) 与 actual 列退款 \(R_m^{actual}\) 只能通过 \(V_m+G_m\ge\max\{V_m,R_m^{actual}\}\) 使用，不能再把两者相加。这个重写复用既有局部贡献，不把它当成已经支付一般 SUMmin 的 whole 前提。
+
 ## 路线二：完整历史编译，精确识别反例的范围并支付指定输入族
 
 这条路线有完整的策略迁移和解析子类预算；它把辅助势的可信结构变成合法客户实例，供研究者检验共同付款机制。设标签数为 \(d\)（源文用字母 p 表示标签数，此处与混合分布 p 区分）。
@@ -67,6 +109,17 @@ M1 唯一确定 signed 类型及重复计数的调和扩张，不能任意补填
 
 是 **n−1 个纯背景槽后最佳回复（背景允许重复）**；不是 SUMmin 的完整 n 槽额外查询价，也不是混合安全值 \(v_n\)。`CA-AGGREGATE-LAST-FLOOR-NO` v2（proved）的量词是 **∀n≥3，∃合法输入及至少一份完整 SPE**，使 \(W=n\theta_n-1\)；不能由该存在量词外推所有 SPE。两组势、整数反演、K=6M+4、重复背景拆分与福利界在上一表所指反例正文有自足证明。
 
+另一个现役 open 候选 `M-8f66f1abb0374762883f01d13235901c` 要求的是 \(W\ge m\theta_{m+1}\)，其中背景恰为 **m 个**可重复槽。正文 `archives/customer-attraction/state/资源/额外槽饱和势与真实偏离分支覆盖上界--资源.md`《纯额外槽静态计数成立》已证 \(\mathrm{OPT}_m\le2m\theta_{m+1}\)；混合安全值只保证 \(v_{m+1}\le\theta_{m+1}\)，不能当作相等。已否的 \(m-1\) 槽结论与这条完整槽动态候选分开保留。
+
+同列预算还直接说明上述反族并未切断完整槽候选：对正编译族任意完整 SPE，actual distinct \(z\) 本身是合法 n 槽背景，因而
+
+\[
+\theta_{n+1}\le\max_aK(a,z)=K\beta_n-F(Z)\le K\beta_n,
+\qquad W\ge KC+n-1>nK\beta_n\ge n\theta_{n+1}.
+\]
+
+36 客户例的指定 \(\sigma\) 也有 \(3\theta_4\le3\max_aK(a,z)=57/2<34\)。这里只用实际列给上界，没有求 \(\theta\) 的最优值，也没有把 36 例的指定策略扩大成全部 SPE。这是本轮同列证明的已闭直接比较，详见 [阈值前沿辨析](threshold-frontier-disambiguation.md)；一般完整槽纯阈值、一般 SUMmin 仍各保其未证状态。
+
 独立固定源 `customer-attraction/three-player-aggregate-last-floor-counterexample` v1（当前 registry 为 finite）：`archives/customer-attraction/state/反例/三人聚合末位保底--反例.md`《被否定的命题及原模型输入》《终局算术与全部历史策略》《θ_3、真正安全值及失败范围》。六标签 X/Y 各三，九个跨组 pair 各一客户、九个“两 X 两 Y”类型各三客户；完整 43 节点策略 actual z=(0,3,4)、u=(10,12,12)、W=34、θ_3=12、OPT_3=36、v_3=10。它否定 W≥3θ_3，且严格满足 half；不是一般 n 正偏置族的一个小参数点。原输入为 `archives/customer-attraction/tools/evidence/aggregate-security/original/examples/customer_attraction/aggregate_theta_failure.json`，完整证书为 `archives/customer-attraction/tools/evidence/aggregate-security/original/evidence/certificates/customer_attraction/aggregate_theta_failure.json`。
 
 Boss3 d86 的两条**独立局部贡献**已正式落盘，不能串成一般 SUMmin 的 whole：
@@ -80,7 +133,18 @@ Boss3 d86 的两条**独立局部贡献**已正式落盘，不能串成一般 SU
 
 **这条路线真正留下的义务**：充分偏置已保证其根严格 half，继续用相同充分偏置无法把 signed 福利坏点变成原题反例；其他合法化机制若用于反例，须另证全部原历史 IC 与实际福利失真。若用于正面付款，上述实际动作列目前只在明确输入族被证明足够小，仍需一般输入、一般完整 σ 的共同金额。不能再把已否 W≥nθ_n 当作一般引理，亦不能由反例族满足 SUMmin 推出一般 SUMmin。
 
-本轮另有一个**正在正式交付、尚不列作本入口当前边**的量词加强：将同一正编译反族与 `CA-MOBIUS-FULL-HISTORY-EMBED` 作单条 ALL 前提，使用全部原 SPE 的 fresh 性、W≥KC−M 与 ΣR≤n(Kβ_n+M)，证明同输入族每份完整 SPE 的裕量≥Kδ_n−(n+1)M>0。它与 d86 指定 σ 更紧界是不同范围，不能代替或静改 d86。待本轮正式边落盘后，由 Boss 在这里补精确 edge ID/path 和实际交付状态；此前 Boss7/Boss5 审读中的这一加强不冒作已交付边。
+同输入族的全部策略量词现已由另一正式 done 包交付：
+
+**`boss5-all-spe-summin-budget-7383c8bf44f753cc`**，路径 `map/edges/boss5-summin-all-spe-3b-7383c8bf44f753cc/all-spe-summin-budget.json`，`accepted / implies / ALL / unconditional / contribution`。前提是 **{`CA-AGGREGATE-LAST-FLOOR-NO`, `CA-MOBIUS-FULL-HISTORY-EMBED`}**，目标仍为一般 SUMmin 候选。证明及精确输入分别在同目录 `full-history-parameter-proof.json`、`all-spe-query-budget-proof.json`、`comparison-review.json`；独立终审见 [正式交付复核](all-spe-formal-delivery-review.md)。
+
+原 M2 的严格差在本族更大 \(K=6M+4\) 下为 \(K/2-2M=M+2>0\)，所以同一输入的**每份完整原 SPE**在全部有序重复历史上都 fresh。任意 actual distinct 叶满足 \(W\ge KC+n-1\)；未用查询 signed 价为 \(-F(Z)\)，已用查询仍按重复计数、只用绝对界，得到
+
+\[
+\max_aK(a,z)=K\beta_n-F(Z),\qquad
+\sum_iR_i(p)\le n[K\beta_n-F(Z)]\le nK\beta_n<W.
+\]
+
+其共同预算裕量至少 \(K\delta_n+n-1>0\)。这是全部 \(\sigma\)、全部同一 \(p\) 的解析证明，未枚举全部策略，也未假设它们拥有源展示策略的相同路径或相同 \(W\)。原 d86 的固定策略等式与资产继续有效；本新边只扩大同一明确输入族的策略量词，没有证明其它输入的 SUMmin 或一般六人 half。
 
 ## 使用本入口时的最后边界
 
