@@ -1072,7 +1072,7 @@ def init_run(root, run_id, spec_file, registry=REGISTRY, *, mode='comparison'):
 
 
 def update_run(root, run_id, solver_id, profile, note, next_action, state, feedback=None, agent_id=None, ack_feedback=False,
-               model=None, reasoning_effort=None, fork_turns=None):
+               model=None, reasoning_effort=None, fork_turns=None, *, session_tag=None, read_ledger=None):
     identity(solver_id)
     if profile not in {'obstacle', 'full'} or state not in STATES or not next_action.strip():
         raise ValueError('Explicit solver profile, state and concrete next action required')
@@ -1090,6 +1090,14 @@ def update_run(root, run_id, solver_id, profile, note, next_action, state, feedb
         raise ValueError('Use a declared Solver roster slot with its original profile')
     old = run['solvers'].get(solver_id, {})
     same_agent = agent_id is None or agent_id == old.get('agent_id')
+    if session_tag is not None:
+        nonempty({'session_tag': session_tag}, ['session_tag'])
+    if read_ledger is not None:
+        if not isinstance(read_ledger, dict) or not isinstance(read_ledger.get('reads'), list):
+            raise ValueError('Read ledger requires an explicit reads list')
+        nonempty(read_ledger, ['note'])
+        for ref in read_ledger['reads']:
+            ref_bytes(root, ref)
     launch = copy.deepcopy(old.get('launch', {})) if same_agent else {}
     if fork_turns is not None and fork_turns not in {'none', 'all'}:
         raise ValueError('fork_turns must be none or all')
@@ -1116,6 +1124,16 @@ def update_run(root, run_id, solver_id, profile, note, next_action, state, feedb
              'feedback_inherited': feedback is None and old.get('feedback') is not None,
              'feedback_pending': feedback is not None or (old_pending and not ack_feedback),
              'feedback_acknowledged': bool(ack_feedback and old_pending)}
+    tag = session_tag if session_tag is not None else old.get('session_tag') if same_agent else None
+    if tag is not None:
+        event['session_tag'] = tag
+    if read_ledger is not None:
+        ledger_path = snapshot.with_name(event_id + '-reads.json')
+        _write_json(ledger_path, read_ledger)
+        event['read_ledger'] = {'path': ledger_path.relative_to(root).as_posix(),
+                                'sha256': digest(ledger_path.read_bytes())}
+    elif same_agent and old.get('read_ledger'):
+        event['read_ledger'] = copy.deepcopy(old['read_ledger'])
     if launch:
         event['launch'] = launch
     _write_json(_safe_path(root, (path.parent / 'events' / (event_id + '.json')).relative_to(root).as_posix()), event)

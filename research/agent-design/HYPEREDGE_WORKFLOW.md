@@ -13,7 +13,7 @@
 | 本 RUN 四人工作室、notes/events | 保全研究中的每项有用进展、失败、反馈和接续 | 保存不等于正式准入，旧 working 不等于在线 |
 | studio.json 与 studio/ 记录 | 索引承重成果、真实采用、冻结复核和回流计划 | 不另建数学真值、调度队列或模型服务 |
 
-先读当前 AGENTS、README、research 的入口/接口/研究流程/交接说明，再读实际 spec、packet、工作区和所需正文。旧 RUN 可以定位旧数学，不能照旧 roster 或日志恢复旧协作方案。当前分支是 rebuild/research-v2，main 是另一工作面。
+先按[完整启动词](../../prompts/research-runtime.md)恢复 clone 并读当前入口，再读实际 spec、packet、工作区和所需正文。旧 RUN 用于恢复数学，不按旧 roster 或日志重启退役协作。
 
 ## 2. 固定原题并建立四人工作室
 
@@ -40,7 +40,6 @@ research/runs/<RUN>/notes/、events/、studio.json、studio/
 
 ```sh
 python work.py research studio init RUN --spec research/workspaces/RUN/spec.json --expect-branch rebuild/research-v2 --expect-remote https://github.com/SOMEBODYJUN/co-work-anl.git
-python work.py research studio status RUN --session-tag ACTUAL-SESSION-TAG
 ```
 
 init 复用现有 packet/init_run，保存 full 与 obstacle 两种不可变输入和四人目录；它返回 agents_launched:0。Main 必须通过 Work 实际派出 independent、informed-a、informed-b，自己同时研究。默认子代理 gpt-6.1-sol / ultra / fork_turns:none，遵守用户实际配置并记录平台真值。
@@ -63,15 +62,12 @@ init 复用现有 packet/init_run，保存 full 与 obstacle 两种不可变输�
 ```sh
 python work.py research studio line RUN --line main --note research/workspaces/RUN/main/journal.md --next '自己的当前推导与下一步' --agent-id ACTUAL-MAIN-ID --session-tag ACTUAL-SESSION-TAG
 python work.py research studio line RUN --line independent --note research/workspaces/RUN/independent/journal.md --next '从原题接续本线数学' --agent-id ACTUAL-INDEPENDENT-ID --session-tag ACTUAL-SESSION-TAG --model gpt-6.1-sol --reasoning-effort ultra --fork-turns none
-python work.py research studio line RUN --line informed-b --note research/workspaces/RUN/informed-b/journal.md --next '接续互补数学义务' --agent-id ACTUAL-INFORMED-B-ID --session-tag ACTUAL-SESSION-TAG --model gpt-6.1-sol --reasoning-effort ultra --fork-turns none
-python work.py research studio line RUN --line informed-a --note research/workspaces/RUN/informed-a/journal.md --next '接续本次确切推导' --agent-id ACTUAL-WORK-AGENT-ID --session-tag ACTUAL-SESSION-TAG --model gpt-6.1-sol --reasoning-effort ultra --fork-turns none
-python work.py research save RUN --solver main --profile full --note research/workspaces/RUN/main/journal.md --next '接续本次确切未付桥' --state working --agent-id ACTUAL-MAIN-ID
 python work.py checkpoint research/workspaces/RUN research/runs/RUN -m 'Save substantive research and its exact continuation'
 ```
 
-首次登记后，普通有用进展原 save 或 line 二选一即可，不必对同一变化各存一遍。首次真实派出、换 agent 或换会话时记录实际配置；未知项不猜填。session_tag 由 Main 为本次真实 Work 会话显式创建，仅标记记录来自哪次会话，不是平台认证或活跃凭证。每个有用结果先落盘/save，checkpoint 由 Main 按实际变化串行做；只有命令确认 pushed 才报远端已保存。
+另两条成果线按其实际槽位和 ID 各记录一次，不复填同一派工。首次登记后，普通有用进展用原 save 或 studio line 二选一，不对同一变化存两遍；原 save 沿同一 agent 的已记配置和 session_tag 接续。首次真实派出、换 agent 或换会话时记录实际配置；未知项不猜填。session_tag 由 Main 为本次真实 Work 会话显式创建，仅标记记录来自哪次会话，不是平台认证或活跃凭证。每个有用结果先落盘/save，checkpoint 由 Main 按实际变化串行做；只有命令确认 pushed 才报远端已保存。
 
-实读账可在本人目录写成下式，再给 line 加 --read-ledger 路径。账只保读过哪里及未读段，不支付数学前提。
+实读账可在本人目录写成下式，再给 line 加 --read-ledger 路径。可选账只保最后声明的已读范围及未读段，不支付数学前提；普通保存无需另造账。
 
 ```json
 {"reads":[{"path":"本次实际已读文件","sha256":"实际完整文件SHA256","section":"可选精确唯一标题"}],"note":"实际读过的范围、用途和仍未读部分"}
@@ -101,13 +97,13 @@ show --body 只展开 body，必要 evidence 仍须按 path/SHA/section 实读�
 | transfers | 原结果与桥共同用，保模型、参数代价、复杂度、编码和解码保证 |
 | refutes / finite / context | 反例只否精确目标；有限扫描、引用、实现或相似不形成一般证明 |
 
-frontier 给的是假设边条件成立的结构闭包和研究线索；不分析自由文本条件、不执行证明助手、不改 truth_status。实际采用必须写本题论证。
+frontier 给的是假设边条件成立的结构闭包和研究线索；不分析自由文本条件、不执行证明助手、不改 truth_status，也不启动或接续代理。Main 据报告选择有用欠项，通过 Work 真实 followup 原线或派出临时研究者。实际采用仍须写本题论证。
 
 ## 5. 只有真实采用才写 adopt
 
 adopt 的 record-file 放在本 RUN workspace。它绑定当前 spec、edge 和全部端点，逐项记录付款、联合桥、条件及上游欠账；程序能拒绝显式记录的漏项、过期 pin 和应用循环，不能识别证明文本中未声明的隐藏依赖，也不能判断所填 proof_ref 是否真的证明了文字。
 
-指纹有不同含义，不能混填：path/sha256 绑定完整文件原始字节；problem_spec_pin 取 run.json 的 spec_pin；edge_declaration_pin/object_pins 取当前 context/show 的 declaration_pin/registration_pin；应用 revision_pin 取 adopt 返回值。
+指纹有不同含义，不能混填：path/sha256 绑定完整文件原始字节；problem_spec_pin 取 run.json 的 spec_pin；edge_declaration_pin/object_pins 取当前 context/show 的 declaration_pin/registration_pin；应用 revision_pin 取 adopt 返回值。承重 proof_ref 使用 save 事件中 note 指向的现有不可变快照，或已固定字节的独立证明文件；journal 继续写并链接该论证。直接引用持续编辑的 journal 会随下一次更新失效，不必为此每步另建 artifact。
 
 下面是全部必需字段的模板。premise_bindings 按实际正向 sources 或等价反向 targets 逐一列全；paid 状态必须给 proof_ref，开放状态必须给稳定 obligation_id。condition_discharge 至少保整段 conditions_text，其 argument 对每个实际条件逐项论证；可另列各子句。即使无额外假设也说明模型适用性。remaining 非空文字准确说明仍欠什么；没有就明确写无，本次结论范围已付。
 
@@ -177,14 +173,14 @@ python work.py research studio adopt RUN --record-file research/workspaces/RUN/r
 }
 ```
 
-需正式回流时先准备准确 state 正文、登记 batch 和必要边的最终字节，把它们及全部必要 evidence 加入 publication_refs，再 artifact/freeze/review。这仅针对成熟交付，不每轮复制草稿。可以先写独立 lemma.md，journal 链接它；正式正文保持已审字节，不从长 journal 摘一句代替完整数学。
+需正式回流时先准备准确 state 正文、登记 batch 和必要边的最终字节。在 publication_refs 列 batch、边及尚未由这些声明覆盖的待发布材料；freeze 自动展开其中 body/evidence/materials，不重复抄证据清单，再 artifact/freeze/review。这仅针对成熟交付，不每轮复制草稿。可以先写独立 lemma.md，journal 链接它；正式正文保持已审字节，不从长 journal 摘一句代替完整数学。
 
 ```sh
 python work.py research studio artifact RUN --record-file research/workspaces/RUN/records/artifact.json
 python work.py research studio freeze RUN --artifact RESULT-ID --freeze-id RESULT-REV1
 ```
 
-artifact 自动保不可变 note 快照；freeze 绑定当前成果、输入、应用 revision 和全部 content_refs，并自动纳入显式采用的应用 JSON、递归上游、全局边、全部端点 body/evidence 和各付款 proof_ref；证明内隐藏依赖仍须研究者如实列全。证据及拟发布字节不得在审读中悄改；修复另给成果版本和 freeze ID。freeze 本身不是复核、发布或数学通过。
+artifact 自动保不可变 note 快照；freeze 绑定当前成果、原题/定义/允许障碍的实际字节、应用 revision 和全部 content_refs；自动展开显式应用的递归上游、边、端点 body/evidence、付款 proof_ref，以及 publication_refs 内对象/边的必要证据。证明内隐藏依赖仍须研究者如实列全。证据及拟发布字节不得在审读中悄改；修复另给成果版本和 freeze ID。freeze 本身不是复核、发布或数学通过。
 
 Main 真实派未参与生成的研究者，用 [挑战词](../../prompts/research-review-design.md) 实读 freeze 的全部内容，按证明顺序核推导，也尝试推翻错误指控。给 confirmed/not-real/unresolved、成立部分、缺口、影响和最小修复；未找到反例不等于核完。独立输入污染在报告单列。已登记 independent 不得用原身份接成果线复核输入；需要时先保其断点、让出实际槽位，再派 fresh 挑战者，或显式新 spec/RUN 约定新输入，不能冒称原 obstacle 代理仍独立。
 
@@ -219,7 +215,7 @@ python work.py research edge-bind map/edges/本次目录/真实边.json --batch-
 python work.py research edge-check map/edges/本次目录/真实边.json --batch-file research/workspaces/RUN/records/registration-batch.json
 ```
 
-先定准确 status、reviewed_by/review_note 和最终数学文字，再绑定；之后改变承重字段须重核重绑。边、batch、正式正文和必要证据都必须进入 publication_refs，按第 6 节 artifact→freeze→真实复核→review。已审旧字节不能包办新增元数据。无需另造 preflight registry 或先把未审对象正式登记。
+先定准确 status、reviewed_by/review_note 和最终数学文字，再绑定；之后改变承重字段须重核重绑。在 publication_refs 列本次 batch 与边，已声明的正文、材料、端点和必要证据由 freeze 自动展开，按第 6 节 artifact→freeze→真实复核→review。已审旧字节不能包办新增元数据。无需另造 preflight registry 或先把未审对象正式登记。
 
 promote 的完整输入如下。它检查本次受审字节并生成候选 registry 和回流计划，不修改正式总表，不运行模型，不确认 push。
 
@@ -250,30 +246,15 @@ python work.py research check
 python work.py research build
 ```
 
-非空边逐条 check；没有新增边省略该行。build 返回实际 projections。普通 journal 保存仍用一次 checkpoint；承重正式发布复用现有两段接口，不新增发布服务：先把本次正式正文/证据、registry、边、RUN 记录和 build 返回投影路径准确 checkpoint --local-only，再核该命令返回的实际 commit，最后 checkpoint --publish-only。Main 与作者约定承重交付字节暂不编辑，普通 journal 可继续。
+非空边逐条 check；没有新增边省略该行。build 返回实际 projections。Main 将本次正式正文/证据、registry、边、RUN 记录和实际投影路径一并发布；承重交付用 promote 返回的计划 path：
 
 ```sh
-python work.py checkpoint ACTUAL-PUBLICATION-PATHS --local-only -m 'Commit exact reviewed research increment'
+python work.py checkpoint ACTUAL-PUBLICATION-PATHS --review-plan ACTUAL-PLAN-RECORD-PATH -m 'Publish reviewed research increment'
 ```
 
-ACTUAL-PUBLICATION-PATHS 换成本次全部实际路径。用 freeze 返回 path 所指的 JSON（不是 studio.json）和 local-only 返回的 commit，运行以下只读检查；SHA 始终核完整文件，带 section 的引用也不例外。
+ACTUAL-PUBLICATION-PATHS 是本次全部实际路径；promote 返回的 checkpoint_review_args 已给 --review-plan 及不可变 plan JSON 路径，可直接复用。需要一次发布多项时可重复 --review-plan。checkpoint 在最后 push 前（包括远端推进后的合并重试）核计划、冻结、审查、正式对象/边及投影的实际 commit 字节，变化就停下定向修复/复核；只有返回 pushed 才称已审增量已发布。promote 本身仍未登记或发布。此检查仅由显式 --review-plan 触发；普通 journal、未完候选和计划随时沿原 checkpoint 保全。
 
-```sh
-set -e
-python - ACTUAL-FREEZE-RECORD-PATH ACTUAL-COMMIT <<'CHECK_REVIEW_BYTES'
-import hashlib, json, subprocess, sys
-from pathlib import Path
-frozen = json.loads(Path(sys.argv[1]).read_text(encoding='utf-8'))
-for ref in frozen['content_refs']:
-    raw = subprocess.check_output(['git', 'show', sys.argv[2] + ':' + ref['path']])
-    if hashlib.sha256(raw).hexdigest() != ref['sha256']:
-        raise SystemExit('Reviewed bytes differ: ' + ref['path'])
-print('All reviewed content matches this commit; mathematics is not checked.')
-CHECK_REVIEW_BYTES
-python work.py checkpoint ACTUAL-PUBLICATION-PATHS --publish-only
-```
-
-只有前项成功才发布；命令失败就停止后续命令。publish-only 可能因远端推进而合并，在确认 status:pushed 后，用同一脚本再核它返回的实际 pushed_head，不能沿用发布前 commit 冒称远端版本。遇差异保未审状态并定向修复/复核，不称已审版本已发布。确认实际远端 commit 全部匹配，才算本次正式回流已发布；失败保 local-only，不把 promote receipt 当入库完成。这是执行者核对流程，尚不是 checkpoint 内的原子语义审查闸门。
+每项增量发布或同步发现相关新边/改版后，Main 重新读取受影响目标的 context/frontier、正文和必要 evidence，核新增支持能支付什么、旧采用是否仍有效、还有哪些义务。把具体结论和下一缺口通过真实 followup 送回相关线，或按空位派工，保存其实际接续。只写新边或 backflow plan 不会触发调度，也不等整题结束才使用新增数学。
 
 日常研究增量不带 --final。该参数还核第三阶段 baseline、全量 coverage/integration 和旧任务队列；不为一个新引理重开全仓构图，也不把新对象伪装成已纳入旧 680 批。保历史构图交付快照，本次新增量按实际对象/材料/边及准确版本单独说明。
 
@@ -282,11 +263,10 @@ python work.py checkpoint ACTUAL-PUBLICATION-PATHS --publish-only
 ## 8. 恢复、持续和完成
 
 ```sh
-python work.py research resume RUN
 python work.py research studio status RUN --session-tag ACTUAL-CURRENT-SESSION-TAG
 ```
 
-先读原 packet 与有效 notes/events，未答反馈、真实计算 job ID、应用/边版本变化及未付义务。status 的 application_version_issues 也检查尚未 freeze 的采用是否在同步后改版，不能只盯已冻结结果。status 的 session_match 只比较标签，platform_liveness 始终未验证；同标签也先查 Work 平台实际 agent 状态。能调用才 followup，不可恢复就用相同数学输入和原线路实物新派，记新 ID 与 continuation，不假装跨会话恢复旧模型。旧 RUN 无 studio 仍用 resume/save 保全，不用 init 覆盖旧记录。
+status 已包含原 resume 的 recovery，不必再对同一状态重复运行 resume。先读原 packet 与有效 notes/events，未答反馈、真实计算 job ID、应用/边版本变化及未付义务。status 的 application_version_issues 也检查尚未 freeze 的采用是否在同步后改版，不能只盯已冻结结果。status 的 session_match 只比较标签，platform_liveness 始终未验证；同标签也先查 Work 平台实际 agent 状态。能调用才 followup，不可恢复就用相同数学输入和原线路实物新派，记新 ID 与 continuation，不假装跨会话恢复旧模型。旧 RUN 无 studio 仍用 resume/save 保全，不用 init 覆盖旧记录。
 
 未闭合就继续有价值路线，成熟异步接回；不因一次提交、一轮代理、队列暂空或自设预算结束。重复同一机制失败时，综合最强近成功、精确排除范围和未探索部分，提出不同表示/构造/合成，并说明何种证据改变判断。暂停前保存四人完整实物与准确下一动作，不声称离线后台执行。
 

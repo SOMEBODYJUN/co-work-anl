@@ -11,6 +11,7 @@ import subprocess
 import tempfile
 import unittest
 
+import research_frontier as frontier
 import research_runtime as runtime
 import research_studio as studio
 
@@ -120,6 +121,18 @@ class RealSUMminTests(unittest.TestCase):
         result = self.adopt(self.application(EQUIVALENCE))
         self.assertIn('uniform-budget-unproved', result['unpaid_obligation_ids'])
         self.assertEqual(result['status'], 'application-recorded-not-a-proof')
+
+    def test_real_open_equivalence_frontier_has_no_self_funded_base(self):
+        edge = self.selected[EQUIVALENCE][1]
+        endpoints = set(edge['source_ids'] + edge['target_ids'])
+        context = runtime.context(self.root, edge['target_ids'], edge_ids=[EQUIVALENCE])
+        report = frontier.frontier_report(context)
+        self.assertFalse(endpoints.intersection(report['declared_bases']))
+        self.assertFalse(endpoints.intersection(report['structural_assuming_conditions_closure']))
+        cycle = next(row for row in report['cyclic_dependency_components']
+                     if endpoints <= set(row['object_ids']))
+        self.assertFalse(cycle['self_payment_allowed'])
+        self.assertTrue(endpoints <= set(cycle['unresolved_object_ids']))
 
     def test_real_two_source_contribution_keeps_scope_and_refuses_missing_premise(self):
         record = self.application(CONTRIBUTION)

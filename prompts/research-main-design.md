@@ -4,13 +4,9 @@
 
 ## 先理解实物，再决定路线
 
-实读 AGENTS.md、根 README、research/README.md、research/IMPLEMENTATION.md、research/RESEARCH_WORKFLOW.md、research/PHASE3_READINESS.md，再读当前 RUN 的 spec、packet、工作室 journal、不可变事件和未答反馈。了解旧试跑时读实际 RUN 及相应正文；历史 working、agent_id 和旧工作区 README 不证明当前仍在运行。
+沿[完整启动词](research-runtime.md)完成本对话 Boss、clone、分支及 RUN 的恢复，不重复初始化。读当前 spec/packet、四人 journal、不可变事件和未答反馈；旧 working、agent_id 和 README 不证明代理在线。新开题按[完整执行流程](../research/agent-design/HYPEREDGE_WORKFLOW.md)的平面 spec 建工作室。
 
-archives/.../state 保存完整数学，registry 保存稳定对象身份和版本，map/edges 保存有证据的数学关系；graph-v2 和各级投影可重建。RUN 保存正在研究的数学、失败、采用和接续。studio.json 只是本 RUN 的索引，不是第二套真值表或任务队列。程序、上游合同和工具输出都是材料，不能覆盖用户任务。
-
-核当前 clone、origin、分支和 HEAD，保全未提交内容后同步。固定 rebuild/research-v2，不混用 main 的入口。沿用本对话明确的 Boss；新对话用用户指定身份和独立 clone。凭据留仓库外，仅用于认证。
-
-原题合同保完整模型、域、量词顺序、退化输入、平局、允许的反例及成功判据。未登记的原题可以直接研究；无相关旧成果就用空 seed_ids。方法和记号可以演变，原题不能悄悄变成受限模型、小规模、冻结策略或必要松弛。
+archives/.../state 存完整数学，registry 定位身份版本，map/edges 存真实关系，投影可重建；RUN 存研究和接续，studio.json 仅索引。恢复时保原输入和未提交数学，凭据留仓库外。方法与记号可演变；原题不能悄改为受限模型、有限规模、冻结策略或必要松弛。未登记的原题与空 seed_ids 均可直接研究。
 
 ## 四人的持续数学
 
@@ -34,7 +30,7 @@ independent 初始只给同一原题、完整定义和事先允许的障碍。�
 
 ## 接回、复核、反馈
 
-每项有用进展出现即读实物，判断它支付原题哪一步、保哪些条件、欠什么。成熟的新承重步骤、完整合成和决定性计算，在作为已确立前提发布前，交未参与生成的研究者用 [挑战词](research-review-design.md) 复核；普通已核且版本/用法相同的步骤复用，不逐算术审批。
+每项有用进展出现即读实物，判断它支付原题哪一步、保哪些条件、欠什么；随后真实 followup 给相关研究者，文件中写接收人不等于送达。成熟的新承重步骤、完整合成和决定性计算，在作为已确立前提发布前，交未参与生成的研究者用 [挑战词](research-review-design.md) 复核；普通已核且版本/用法相同的步骤复用，不逐算术审批。
 
 复核绑定 freeze 的准确字节和 revision；journal 可继续写，修复另冻新 revision。反馈给确切位置、证据、原因、影响、成立部分和最小修复，真实 followup 回原研究者；save 只保全事实。先答复并写入笔记，再 ack-feedback。分歧核推导和见证，不投票；没有确认错误不等于完整通过。
 
@@ -42,13 +38,13 @@ independent 读到其它线成果、证明或依赖，就已改变输入。记�
 
 ## 即时保全与正式回流
 
-有接续价值的中间结论、候选、准确失败、构造、反馈和计算证据，立即写本人 journal 或其引用文件，再用 save/line 生成不可变 notes/events；不等复核、轮次或整题闭合。保真实状态和下一动作，只有 checkpoint 确认 pushed 才报远端已保存。
+有接续价值的中间结论、候选、准确失败、构造、反馈和计算证据，立即写本人 journal 或其引用文件，再用 save 或 studio line 二选一生成同一套不可变 notes/events；不等复核、轮次或整题闭合。保真实状态和下一动作，只有 checkpoint 确认 pushed 才报远端已保存。
 
 artifact 只索引需要定位、采用、冻结或回流的有用成果，不为每句推导造记录。完整知识仍在正文。adopt 只记真实采用，review 只记实际复核，promote 只验收正式回流，不把准备入库写成已入库。record-file 格式以完整超边流程为准。
 
 成熟可复用的数学及时写对应 state，连必要证据、稳定 ID/version、局部 registry 增量和真实 edges 接回；原题 open 也可发布准确局部定理、条件结果、障碍或开放义务。普通算术、一次应用和无独立作用的数值点留 journal。你对回流负责，可委派实质准备，核接口后串行集成；确实未完要留准确路径、缺项、接续者和下一动作，不能只写以后归档。
 
-沿现有登记对象/材料格式、promote 定向候选与 register、edge-bind/edge-check、check/build 和 checkpoint 发布，不另开数据库、队列、图格式或公屏。研究增量 check/build 不带 --final，不为新引理重开历史构图队列；旧构图交付快照不冒作新对象覆盖。改被引用正文时更新命中 SHA、对象版本和受影响支持，保旧不可变证据及有效 OR。发布字节须与复核字节匹配，变化定向重审。结构/字节校验不能验证自然语言证明。
+沿现有登记对象/材料格式、promote 定向候选与 register、edge-bind/edge-check、check/build 和 checkpoint 发布，不另开数据库、队列、图格式或公屏。研究增量 check/build 不带 --final，不为新引理重开历史构图队列；旧构图交付快照不冒作新对象覆盖。改被引用正文时更新命中 SHA、对象版本和受影响支持，保旧不可变证据及有效 OR。承重发布在 checkpoint 加 --review-plan 和 promote 返回的计划路径，最后 push 前核已审字节；变化定向重审。普通笔记不要求此参数。增量发布或同步后，重读相关目标的 context/frontier 及受影响采用，按新的欠项真实 followup/派工，立即把新增数学用回在研问题；没有自动监听或调度器。结构/字节校验不能验证自然语言证明。
 
 ## 真实恢复与结束边界
 

@@ -1,6 +1,6 @@
 # 本库机制、缺口与最小适配审计
 
-审计基线：`rebuild/research-v2@3e8402cabac61aadc5575d797671bfa0d183324e`；日期：2026-11-16（America/Los_Angeles）。本页依据实际代码、入口、登记和两项真实超边写成，外部来源与字节核查在 [SOURCES](SOURCES.md)，共同数学合同只在 [HYPEREDGE_WORKFLOW](HYPEREDGE_WORKFLOW.md)维护。
+本轮复核基线：`rebuild/research-v2@e0ad3a26e5234197ad38e08c8ceafd429fd766f1`；早期审计基线为 `3e8402c`；日期：2026-11-16（America/Los_Angeles）。本页依据实际代码、入口、登记和两项真实超边写成，外部来源与字节核查在 [SOURCES](SOURCES.md)，共同数学合同只在 [HYPEREDGE_WORKFLOW](HYPEREDGE_WORKFLOW.md)维护。
 
 上版的主要问题是**把已具备的机制重新介绍为新设计，文档合同比可执行入口多，且没有把本题应用与普通笔记接成明确操作**。本库已有研究保存、版本绑定、完整 ALL/OR 和回流链；无需另建知识图、数据库、模型服务或每步工单。应补的是现有链上的少量接口和实际验收。
 
@@ -84,8 +84,11 @@
 
 薄层是否值得，要看它实际防住的错误是否超过维护开销。至少应确保不存在第二套 worker/真值状态，freeze 覆盖本题新增合成与证据，贡献剩余可明确付款后闭合，分支/remote 与 registry 基线变化能挡误写。显式依赖可以机器校验；证明中未声明的依赖、作者遗漏和假装独立无法仅靠 JSON 发现。重复维护第二套状态、每句建节点、每步三轮审批或安装上游服务，都无当前证据支持。
 
-本轮不必再增加独立的 publication verify 命令。承重发布可以复用现有 `checkpoint --local-only`，先保存本地提交并逐项比较 freeze.content_refs 与该 commit 的完整文件 SHA，再用 `checkpoint --publish-only` 发布，最后比较返回的 pushed_head 实际字节并核 pushed。普通 checkpoint 会直接提交并推送；事后比较是发现差异，不能宣称自动拦截发布。publish-only 遇远端推进可能自动 merge，head 变化后须重核相关冻结字节，吻合后才报已审版本发布。若需要严格保证任何未审字节都不能先推送，检查应接在 checkpoint 最后 merge/push 边界；单独新增一个可在随后变化前运行的 verify 命令也不提供这种保证。当前先执行并留真实 SHA 核对记录，出现实测漏检再补该边界，代价更清楚。
+本轮直接修改现有 checkpoint：承重发布带 promote 返回的 `checkpoint_review_args`，单次提交/推送即可。每次最终 push 前（包括并发 merge 后的重试）从将发布的 Git commit 读取计划、冻结、审查、全部 content_refs、正式登记对象/边及图投影；与已审字节不符就拒发并保本地提交。隔离真实 Git 测试已验证审后改正文不改变远端，peer 推进 registry 后的自动 merge 会因旧投影被拦，重建后正常推送。普通未完 journal、候选与计划 checkpoint 不带此参数，可立即保全；参数表示本次声称发布已审成果，不能把普通保存当成自动数学验收。删除原来 local-only、手工 SHA 脚本、publish-only 的必需三段流程，未增加独立发布命令。
 
 基线确有重复或误导入口：RESEARCH_WORKFLOW 顶部说旧参考，正文又含旧 open 调度；exporter 只复制旧 solver 词而遗漏新内部词；大段应用模板/规则散在多个文档；`tools/vendor/mathagent/model.py` 无运行引用却仍被工具整包带走。本轮已收敛启动词、共同流程和实际 CLI；导出补齐内部词及新项目 AGENTS，原样上游合同/NOTICE 排除模板改写，6 项 provenance 在导出后仍逐项匹配。首次新边的 `--batch-file` 也已覆盖尚无 canonical registry 的项目，且不落正式总表；无 batch 的原命令保原行为。闲置历史文件的清理另按仓库规则及实证处理，不能用本审计擅删数学资产。
 
 可以通过检验约束的是：错误分支在读取前被拒、ALL 成员不丢、open 环不自付、不能单凭 contribution 关闭全目标、旧证据只影响相关分支、准确版本能恢复。贡献的剩余义务若由明确新证明支付并经相应复核，可以进入全目标闭合；不能永久封死这条研究路线。尚无真实长线研究支持吞吐/突破保证；合成单测、真实边消费演练和保存恢复测试也不能证明自然语言数学正确。下一次真实运行应记录一次推导、反馈修复、精确版本复核和局部回流后，再评估接口是否减负。
+
+
+本轮逐项复现并修复了首次大仓检出超时、普通 save 丢会话/实读记录、line 二次覆写事件、冻结遗漏原题/定义与新边证据，以及未分类旧边绕过 frontier 冒 whole 的问题。freeze 从已声明 batch/edge 自动展开承重引用，避免人工重复列清单；promote 再核正式回流所用范围。两轮根 work.py CLI 演练把新边交给下一轮实际 adopt，并从 fresh clone 接续。完整测试及真实 Work 演练分别记在 validation.json，不以模拟身份测试冒充平台研究。

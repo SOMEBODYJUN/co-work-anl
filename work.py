@@ -89,10 +89,10 @@ def environment(path=None, mode='token'):
     return env
 
 
-def run(repo, *args, env=None, check=True):
+def run(repo, *args, env=None, check=True, timeout=45):
     try:
         r = subprocess.run(["git", *args], cwd=repo, env=env or environment(),
-                           capture_output=True, timeout=45)
+                           capture_output=True, timeout=timeout)
     except subprocess.TimeoutExpired as exc:
         raise Stop("Git 超时；本地工作已保留，可重试同一命令。") from exc
     if check and r.returncode:
@@ -427,13 +427,29 @@ def start(args):
         if SECRET.search(remote.encode()) or re.search(r"https?://[^/]*@", remote):
             raise Stop("仓库地址请使用普通 Git URL。")
         target = checked_branch(repo.parent, getattr(args, "branch", None) or DEFAULT_BRANCH)
-        run(repo.parent, "clone", "--quiet", "--depth=1", "--single-branch", "--branch", target, remote, str(repo), env=env)
+        # Download and checkout are separate: the archive contains nearly
+        # 100,000 files and checkout alone can exceed the old 45-second limit.
+        run(repo.parent, "clone", "--quiet", "--no-checkout", "--depth=1", "--single-branch", "--branch", target, remote, str(repo), env=env, timeout=300)
+        run(repo, "config", "--local", "wcg.bootstrapCheckout", value(repo, "rev-parse", "HEAD"))
         created_clone=True
     repo = checked_repo(repo)
     origin = value(repo, "remote", "get-url", "--all", "origin")
     push_origin = value(repo, "remote", "get-url", "--push", "--all", "origin")
     if origin != args.remote or push_origin != origin:
         raise Stop("目标目录的 origin 与本研究仓库不一致；请使用本研究的独立目录。")
+    pending_checkout = run(repo, "config", "--local", "--get", "wcg.bootstrapCheckout", check=False).stdout.decode().strip()
+    if pending_checkout:
+        if pending_checkout != value(repo, "rev-parse", "HEAD"):
+            raise Stop("未完成的首次检出与当前 HEAD 不同；已保留本地文件，请核对后恢复。")
+        # Rebuilding the index is safe for this marked, not-yet-bound clone.
+        # checkout-index never overwrites an existing file, including a draft
+        # a user added after an interrupted start.
+        run(repo, "reset", "--quiet", "--mixed", "HEAD", timeout=300)
+        run(repo, "checkout-index", "--all", "--quiet", check=False, timeout=300)
+        if run(repo, "diff", "--quiet", "HEAD", check=False).returncode:
+            raise Stop("首次检出中已有不同于远端的本地文件，已保留；请保全这些草稿后重试。")
+        run(repo, "config", "--local", "--unset", "wcg.bootstrapCheckout")
+        created_clone=True
     target = branch_id(repo, getattr(args, "branch", None))
     branch = value(repo, "symbolic-ref", "--quiet", "--short", "HEAD")
     legacy = target == "main" and branch.startswith("wcg/work/") and not getattr(args, "branch", None)
@@ -722,6 +738,7 @@ def main():
                    help="明确允许首次发布绑定分支；基线为远端main，不覆盖已有分支")
     c.add_argument('--local-only',action='store_true')
     c.add_argument('--publish-only', action='store_true', help='只发布已有提交，保留暂存及未提交草稿')
+    c.add_argument('--review-plan', action='append', default=[], help='成熟成果的既有promote计划；在最终push前核对已审字节，可重复')
     sub.add_parser("pending", help="查看待发送消息")
     r = sub.add_parser("retry", help="以原消息 ID 重试发送")
     r.add_argument("event_id")
@@ -864,6 +881,7 @@ def main():
             command += ["--create-branch"]
         if a.local_only:command.append('--local-only')
         if a.publish_only:command.append('--publish-only')
+        for plan in a.review_plan:command.extend(['--review-plan', plan])
         return subprocess.call(command, env=env)
     return 0
 

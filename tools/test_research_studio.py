@@ -5,7 +5,9 @@ from pathlib import Path
 import subprocess
 import tempfile
 import unittest
+from unittest import mock
 
+import research_frontier as frontier
 import research_runtime as runtime
 import research_studio as studio
 
@@ -140,7 +142,7 @@ class StudioTests(unittest.TestCase):
             record.update(resolves_review_ids=resolves, resolution_argument='The exact objection is addressed in the frozen proof and this report')
         return studio.review(self.root, 'run', self.record(record, rid))
 
-    def backflow(self, *, applications=None, state='established'):
+    def backflow(self, *, applications=None, state='established', edge_evidence=None):
         objects = [self.obj('X', 'conditional' if state == 'conditional' else 'open' if state == 'open' else 'proved'), self.obj('Y')]
         if state in {'conditional', 'open'}:
             objects = objects[:1]
@@ -155,7 +157,7 @@ class StudioTests(unittest.TestCase):
                     'conditions': 'Same exact full-domain model', 'scope': 'full domain',
                     'explanation': 'X gives the complete Y statement',
                     'roles': {'X': 'full sufficient input', 'Y': 'whole conclusion'},
-                    'evidence': [objects[0]['body']], 'relation_mode': 'unconditional',
+                    'evidence': edge_evidence or [objects[0]['body']], 'relation_mode': 'unconditional',
                     'whole_result': 'X implies the whole Y', 'reviewed_by': 'independent-reviewer',
                     'review_note': 'Examined the complete full-domain argument'}
             edge.update(runtime.edge_bindings(self.root, edge, by_id))
@@ -191,6 +193,41 @@ class StudioTests(unittest.TestCase):
         self.assertEqual(result['lines']['main']['platform_liveness'], 'not-verified')
         self.assertIn('main', result['recovery']['pending_feedback'])
         self.assertEqual(self.read(self.home + '/studio.json')['artifacts'], {})
+
+    def test_four_lines_resume_same_problem_and_save_preserves_agent_session_and_reads(self):
+        events = {}
+        for slot in studio.LINES:
+            ledger = self.write(self.work + '/' + slot + '/reads.json',
+                                {'reads': [self.problem], 'note': 'Read the unchanged original question'})
+            with mock.patch.object(runtime, '_write_json', wraps=runtime._write_json) as writes:
+                saved = studio.line(self.root, 'run', slot, self.work + '/' + slot + '/journal.md',
+                                    'Continue this exact mathematical line', 'agent-' + slot, 'session-one',
+                                    model='actual-model', reasoning_effort='ultra', fork_turns='none',
+                                    read_ledger=ledger['path'], feedback='Pay the precise missing step')
+            event_writes = [call for call in writes.call_args_list if '/events/' in str(call.args[0])]
+            self.assertEqual(len(event_writes), 1, 'A saved immutable event must be written once')
+            original = self.read(self.home + '/events/' + saved['event_id'] + '.json')
+            continued = runtime.update_run(self.root, 'run', slot, studio.LINES[slot],
+                                           self.work + '/' + slot + '/journal.md', 'Answer the pending feedback',
+                                           'working', agent_id='agent-' + slot)
+            events[slot] = self.read(self.home + '/events/' + continued['event_id'] + '.json')
+            self.assertEqual(events[slot]['continuation_of'], saved['event_id'])
+            self.assertEqual(events[slot]['session_tag'], 'session-one')
+            self.assertEqual(events[slot]['read_ledger'], original['read_ledger'])
+            self.assertEqual(self.read(self.home + '/events/' + saved['event_id'] + '.json'), original)
+        recovered = studio.status(self.root, 'run', 'session-one')
+        self.assertEqual(set(recovered['lines']), set(studio.LINES))
+        self.assertTrue(all(line['session_match'] for line in recovered['lines'].values()))
+        self.assertEqual(set(recovered['recovery']['pending_feedback']), set(studio.LINES))
+        self.assertEqual(set(recovered['recovery']['packet_bindings']), {'full', 'obstacle'})
+        replacement = runtime.update_run(self.root, 'run', 'informed-a', 'full',
+                                         self.work + '/informed-a/journal.md', 'Recover the same original line',
+                                         'working', agent_id='fresh-replacement')
+        replaced = self.read(self.home + '/events/' + replacement['event_id'] + '.json')
+        self.assertNotIn('session_tag', replaced)
+        self.assertNotIn('read_ledger', replaced)
+        self.assertEqual(replaced['continuation_of'], events['informed-a']['event_id'])
+        self.assertTrue(replaced['feedback_pending'])
 
     def test_foreign_boss_branch_remote_and_path_writes_are_rejected(self):
         with self.assertRaises(ValueError):
@@ -239,6 +276,16 @@ class StudioTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'Every ALL'):
             self.adopt(reverse)
 
+    def test_legacy_edge_without_declared_result_scope_cannot_be_adopted_as_whole(self):
+        self.graph()
+        self.edge.pop('whole_result')
+        self.edge.update(runtime.edge_bindings(self.root, self.edge, self.objects))
+        self.write(self.edge_ref['path'], self.edge)
+        report = frontier.frontier_report(runtime.context(self.root, ['C']))
+        self.assertIn('whole-result-scope-requires-review', report['routes'][0]['structural_blockers'])
+        with self.assertRaisesRegex(ValueError, 'whole_result'):
+            self.adopt(self.application(open_b=False))
+
     def test_upstream_debt_must_be_inherited_and_only_explicit_proof_can_remove_it(self):
         self.graph()
         upstream = self.adopt(self.application('upstream'))
@@ -253,6 +300,25 @@ class StudioTests(unittest.TestCase):
         child['discharged_obligations'] = [{'obligation_id': 'B-required', 'proof_ref': self.note}]
         child['unpaid_obligation_ids'] = []
         self.assertEqual(self.adopt(child)['unpaid_obligation_ids'], [])
+
+    def test_open_condition_and_bridge_debts_survive_downstream_adoption(self):
+        self.graph()
+        upstream = self.application('upstream', open_b=False)
+        upstream['bridge_obligation'].update(state='gap', obligation_id='joint-bridge')
+        upstream['bridge_obligation'].pop('proof_ref')
+        upstream['condition_discharge'][0].update(state='open', obligation_id='same-instance')
+        upstream['condition_discharge'][0].pop('proof_ref')
+        upstream['unpaid_obligation_ids'] = ['joint-bridge', 'same-instance']
+        result = self.adopt(upstream)
+        child = self.application('child', open_b=False)
+        child['depends_on_applications'] = [{'application_id': 'upstream', 'revision_pin': result['revision_pin']}]
+        child['inherited_unpaid_obligation_ids'] = ['joint-bridge']
+        child['unpaid_obligation_ids'] = ['joint-bridge']
+        with self.assertRaisesRegex(ValueError, 'Inherited upstream debt'):
+            self.adopt(child)
+        child['inherited_unpaid_obligation_ids'] = ['joint-bridge', 'same-instance']
+        child['unpaid_obligation_ids'] = ['joint-bridge', 'same-instance']
+        self.assertEqual(self.adopt(child)['unpaid_obligation_ids'], ['joint-bridge', 'same-instance'])
 
     def test_conditional_dependency_cycle_cannot_pay_itself(self):
         self.graph()
@@ -270,6 +336,11 @@ class StudioTests(unittest.TestCase):
     def test_freeze_includes_application_and_new_bridge_proof_bytes(self):
         self.graph()
         proof = self.write(self.work + '/main/new-bridge.md', '# New synthesis\nActual complete synthesis argument.\n')
+        global_proof = self.write('archives/example/state/命题/global-edge-proof.md',
+                                  '# Prior relation\nFull independent global relation argument.\n')
+        self.edge['evidence'] = [global_proof]
+        self.edge.update(runtime.edge_bindings(self.root, self.edge, self.objects))
+        self.write(self.edge_ref['path'], self.edge)
         app = self.application(open_b=False)
         app['bridge_obligation']['proof_ref'] = proof
         app = self.adopt(app)
@@ -277,6 +348,7 @@ class StudioTests(unittest.TestCase):
         frozen = studio.freeze(self.root, 'run', 'result')
         record = self.read(frozen['path'])
         self.assertIn(proof, record['content_refs'])
+        self.assertIn(global_proof, record['content_refs'])
         self.assertIn({key: app[key] for key in ('path', 'sha256')}, record['content_refs'])
 
     def test_status_detects_changed_adoption_even_before_any_freeze(self):
@@ -299,6 +371,36 @@ class StudioTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'new revision'):
             studio.promote(self.root, 'run', self.record(plan, 'publish'))
         self.assertEqual(self.read(self.home + '/studio.json')['freezes'], old['freezes'])
+
+    def test_original_problem_bytes_are_frozen_and_old_review_rejects_replaced_input(self):
+        plan = self.backflow()
+        frozen = self.read(self.read(self.home + '/studio.json')['freezes']['frozen']['path'])
+        self.assertIn(self.problem, frozen['content_refs'])
+        self.write(self.problem['path'], '# A different original problem\nChanged quantifiers and domain.\n')
+        with self.assertRaisesRegex(ValueError, 'Stale content binding'):
+            studio.promote(self.root, 'run', self.record(plan, 'publish'))
+
+    def test_publication_declarations_automatically_freeze_all_named_evidence(self):
+        proof = self.write(self.work + '/main/edge-proof.md', '# Relation proof\nComplete argument for the new edge.\n')
+        plan = self.backflow(edge_evidence=[proof])
+        frozen = self.read(self.read(self.home + '/studio.json')['freezes']['frozen']['path'])
+        self.assertIn(proof, frozen['content_refs'])
+        self.write(proof['path'], '# Relation proof\nAn unreviewed stronger argument.\n')
+        with self.assertRaisesRegex(ValueError, 'Stale content binding'):
+            studio.promote(self.root, 'run', self.record(plan, 'publish'))
+
+    def test_legacy_freeze_missing_new_edge_evidence_cannot_backflow(self):
+        proof = self.write(self.work + '/main/edge-proof.md', 'Actual new edge proof')
+        plan = self.backflow(edge_evidence=[proof])
+        index = self.read(self.home + '/studio.json')
+        frozen = self.read(index['freezes']['frozen']['path'])
+        frozen['content_refs'].remove(proof)
+        index['freezes']['frozen'] = studio._store(self.root, 'run', 'freezes', 'frozen', frozen)
+        studio._save_index(self.root, 'run', index)
+        self.review('frozen', rid='legacy-review')
+        plan['review_id'] = 'legacy-review'
+        with self.assertRaisesRegex(ValueError, 'New edge evidence'):
+            studio.promote(self.root, 'run', self.record(plan, 'publish'))
 
     def test_review_by_author_and_unresolved_later_objection_block_backflow(self):
         plan = self.backflow()
@@ -326,7 +428,31 @@ class StudioTests(unittest.TestCase):
         runtime.build(self.root)
         context = runtime.context(self.root, ['Y'], edge_ids=['new-support'])
         self.assertEqual(context['support_options']['Y'][0]['all_premises'], ['X'])
+        fresh = frontier.frontier_report(context)
+        self.assertTrue(fresh['routes'][0]['structurally_eligible'])
+        body = next(obj['body'] for obj in candidate['objects'] if obj['object_id'] == 'X')
+        self.write(body['path'], '# X\nChanged proof bytes after registration.\n')
+        stale = frontier.frontier_report(runtime.context(self.root, ['Y'], edge_ids=['new-support']))
+        self.assertFalse(stale['routes'][0]['structurally_eligible'])
+        self.assertIn('bindings-require-refresh', stale['routes'][0]['structural_blockers'])
         self.assertNotIn('backflow_guard', self.read(runtime.REGISTRY))
+
+    def test_promoted_candidate_cannot_erase_a_later_registration(self):
+        self.graph()
+        plan = self.backflow()
+        result = studio.promote(self.root, 'run', self.record(plan, 'publish'))
+        peer = self.read(runtime.REGISTRY)
+        extra = self.obj('PEER')
+        peer['objects'].append(extra)
+        peer['materials'].append(self.material(extra))
+        self.write(runtime.REGISTRY, peer)
+        peer_bytes = (self.root / runtime.REGISTRY).read_bytes()
+        with self.assertRaisesRegex(ValueError, 'Backflow base changed'):
+            runtime.register(self.root, result['candidate_registry_ref']['path'])
+        self.assertEqual((self.root / runtime.REGISTRY).read_bytes(), peer_bytes)
+        refreshed = studio.promote(self.root, 'run', self.record(plan, 'publish'))
+        runtime.register(self.root, refreshed['candidate_registry_ref']['path'])
+        self.assertIn('PEER', {obj['object_id'] for obj in self.read(runtime.REGISTRY)['objects']})
 
     def test_changed_batch_or_edge_after_review_is_rejected(self):
         plan = self.backflow()
@@ -355,6 +481,28 @@ class StudioTests(unittest.TestCase):
         plan['target_discharges'] = [{'obligation_id': 'C-global-remaining', 'argument': 'The frozen complete synthesis pays this precise remaining step',
                                      'proof_ref': self.read(self.read(self.home + '/studio.json')['freezes']['frozen']['path'])['content_refs'][0]}]
         self.assertEqual(studio.promote(self.root, 'run', self.record(plan, 'whole-publish'))['status'], 'backflow-plan-ready-local-not-published')
+
+    def test_whole_downstream_application_preserves_upstream_contribution_remaining(self):
+        registry = self.graph(partial=True)
+        upstream = self.adopt(self.application('partial', open_b=False, partial=True))
+        edge = copy.deepcopy(self.edge)
+        edge.update(edge_id='downstream-whole', whole_result='ALL premises give the exact whole local conclusion')
+        edge.pop('contribution')
+        edge.update(runtime.edge_bindings(self.root, edge, self.objects))
+        ref = self.write('map/edges/downstream-whole.json', edge)
+        registry['edge_files'].append(ref['path'])
+        self.write(runtime.REGISTRY, registry)
+        child = self.application('child', open_b=False)
+        child.update(edge_id=edge['edge_id'], edge_declaration_pin=runtime.pin(edge),
+                     depends_on_applications=[{'application_id': 'partial', 'revision_pin': upstream['revision_pin']}])
+        result = self.adopt(child)
+        self.assertEqual(result['unpaid_obligation_ids'], [])
+        self.assertEqual(result['target_remaining'], {'C-global-remaining': self.edge['contribution']['remaining']})
+        plan = self.backflow(applications=[{'application_id': 'child', 'revision_pin': result['revision_pin']}])
+        studio.promote(self.root, 'run', self.record(plan, 'local'))
+        plan['claim_scope'] = 'whole-target'
+        with self.assertRaisesRegex(ValueError, 'target remaining'):
+            studio.promote(self.root, 'run', self.record(plan, 'whole'))
 
     def test_open_mathematical_obligation_can_backflow_without_claiming_target_complete(self):
         plan = self.backflow(state='open')

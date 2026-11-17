@@ -200,7 +200,7 @@ def line(root, run_id, line_id, note, next_action, agent_id, session_tag, *,
     if old.get('session_tag') != session_tag or old.get('agent_id') != agent_id:
         if line_id != 'main' and any(value is None for value in (model, reasoning_effort, fork_turns)):
             raise ValueError('A new session/agent requires its actual model, reasoning effort and fork mode')
-    ledger_ref = None
+    ledger = None
     if read_ledger:
         _own(root, run_id, read_ledger, line=line_id)
         ledger = _json(root, read_ledger)
@@ -213,27 +213,10 @@ def line(root, run_id, line_id, note, next_action, agent_id, session_tag, *,
             own_prefix = _names(run_id)[1] + '/independent/'
             if any(ref not in allowed and not ref['path'].startswith(own_prefix) for ref in ledger['reads']):
                 raise ValueError('Independent input contains informed material; preserve this RUN and open an explicit new input contract')
-        ledger_ref = _ref(root, read_ledger)
     result = runtime.update_run(root, run_id, line_id, LINES[line_id], note,
                                 next_action, state, feedback, agent_id, ack_feedback,
-                                model, reasoning_effort, fork_turns)
-    # Extend the same immutable continuation event, never make a second worker
-    # state table in studio.json. A recorded ID does not verify platform state.
-    home, _ = _names(run_id)
-    event_path = home + '/events/' + result['event_id'] + '.json'
-    event = _json(root, event_path)
-    event['session_tag'] = session_tag
-    if line_id == 'main' and any(value is None for value in (model, reasoning_effort, fork_turns)):
-        event['launch_configuration_status'] = 'Main session settings not reported; no configuration inferred'
-    if ledger_ref:
-        # Snapshot the ledger alongside the note to keep earlier actual reads.
-        ledger_name = home + '/notes/' + result['event_id'] + '-reads.json'
-        runtime._write_json(_safe_path(root, ledger_name), ledger)
-        event['read_ledger'] = _ref(root, ledger_name)
-    runtime._write_json(_safe_path(root, event_path), event)
-    current = _json(root, home + '/run.json')
-    current['solvers'][line_id] = dict(event, latest_event=event['event_id'])
-    runtime._write_json(runtime.run_path(root, run_id), current)
+                                model, reasoning_effort, fork_turns,
+                                session_tag=session_tag, read_ledger=ledger)
     return {**result, 'session_tag': session_tag, 'platform_liveness': 'not-verified'}
 
 
@@ -262,6 +245,7 @@ def _validate_application(root, run_id, record, index, run, *, ancestry=None):
         raise ValueError('Reverse adoption requires an equivalence')
     if edge['kind'] not in runtime.LOGICAL or edge['kind'] == 'refutes':
         raise ValueError('Context/refutation edges are evidence, not positive support applications')
+    runtime.require_edge_result(edge)
     premises = edge['source_ids'] if direction == 'forward' else edge['target_ids']
     bindings = record.get('premise_bindings')
     if not isinstance(bindings, list) or len(bindings) != len(premises) or {row.get('source_id') for row in bindings} != set(premises):
@@ -451,6 +435,7 @@ def _application_content(root, run_id, selections, index):
         refs.append({key: ref[key] for key in ('path', 'sha256')})
         edge_path, edge = catalog[application['edge_id']]
         refs.append(_ref(root, edge_path))
+        refs.extend(edge['evidence'])
         for oid in dict.fromkeys(edge['source_ids'] + edge['target_ids']):
             refs.extend([objects[oid]['body'], *objects[oid]['evidence']])
         refs.extend(application['evidence_refs'])
@@ -458,6 +443,53 @@ def _application_content(root, run_id, selections, index):
                     *application['condition_discharge'], *application['discharged_obligations']]
         refs.extend(row['proof_ref'] for row in payments if 'proof_ref' in row)
         queue.extend(application['depends_on_applications'])
+    return refs
+
+
+def _input_content(root, run):
+    spec = _json(root, run['spec'])
+    if runtime.pin(spec) != run['spec_pin']:
+        raise ValueError('Original spec bytes changed')
+    refs = [_ref(root, run['spec'])]
+    for profile, expected in run['packet_pins'].items():
+        name = _names(run['run_id'])[0] + '/packet-' + profile + '.json'
+        packet = _json(root, name)
+        if runtime.pin(packet) != expected:
+            raise ValueError('Saved packet bytes changed')
+        inputs = packet.get('input_refs', spec)
+        refs.extend([_ref(root, name), inputs['problem'], *inputs['definitions'], *inputs['obstacles']])
+    _references(root, refs, 'original inputs')
+    return refs
+
+
+def _publication_content(root, item, run):
+    """Expand the explicit batch/edge inputs without requiring duplicate refs."""
+    refs, declarations, objects = [], [], {}
+    for publication in item['publication_refs']:
+        raw = runtime.ref_bytes(root, publication)
+        try:
+            document = json.loads(raw)
+        except (ValueError, UnicodeError):
+            continue
+        if not isinstance(document, dict):
+            continue
+        if document.get('schema') == 2 and isinstance(document.get('objects'), list):
+            objects.update((obj['object_id'], obj) for obj in document['objects'])
+            for obj in document['objects']:
+                refs.extend([obj['body'], *obj['evidence']])
+            refs.extend({key: row[key] for key in ('path', 'sha256')} for row in document['materials'])
+        elif {'edge_id', 'source_ids', 'target_ids'} <= document.keys():
+            declarations.append(document)
+            refs.extend(document['evidence'])
+    if declarations:
+        canonical = _safe_path(root, run['registry'])
+        existing = runtime.load(root, run['registry'], verify=False)[1] if canonical.exists() else {}
+        existing.update(objects)
+        for edge in declarations:
+            for oid in set(edge['source_ids'] + edge['target_ids']):
+                if oid not in existing:
+                    raise ValueError('Publication edge endpoint requires its registered object or reviewed batch: ' + oid)
+                refs.extend([existing[oid]['body'], *existing[oid]['evidence']])
     return refs
 
 
@@ -470,6 +502,8 @@ def freeze(root, run_id, artifact_id, freeze_id=None):
     applications, debts, target_remaining = _application_refs(root, run_id, item['applications'], index, run)
     debts |= set(item['unpaid_obligation_ids'])
     refs = [item['note_ref'], *item['evidence_refs'], *item['publication_refs'],
+            {'path': ref['path'], 'sha256': ref['sha256']}, *_input_content(root, run),
+            *_publication_content(root, item, run),
             *_application_content(root, run_id, item['applications'], index)]
     refs = list({runtime.pin(ref): ref for ref in refs}.values())
     _references(root, refs, 'frozen content')
@@ -500,13 +534,8 @@ def _current_freeze(root, run_id, freeze_id, index, run):
     item = _read_indexed(root, run_id, frozen['artifact_ref'])
     _application_refs(root, run_id, item['applications'], index, run)
     _references(root, frozen['content_refs'], 'frozen content')
-    # A modified live spec/packet is a recovery task, never silently adopted.
-    if runtime.pin(_json(root, run['spec'])) != frozen['spec_pin']:
-        raise ValueError('Original spec bytes changed')
-    home, _ = _names(run_id)
-    for profile, expected in frozen['packet_pins'].items():
-        if runtime.pin(_json(root, home + '/packet-' + profile + '.json')) != expected:
-            raise ValueError('Saved packet bytes changed')
+    # Also check original source bytes for freezes made before input expansion.
+    _input_content(root, run)
     return ref, frozen, item
 
 
@@ -611,6 +640,9 @@ def promote(root, run_id, record_file):
         raise ValueError('A contribution cannot close the whole target until every target remaining obligation is explicitly discharged')
     if (batch_ref['path'], batch_ref['sha256'], batch_ref.get('section')) not in content:
         raise ValueError('Registration batch metadata was not among the reviewed frozen bytes')
+    for material in batch['materials']:
+        if (material['path'], material['sha256'], None) not in content:
+            raise ValueError('Publication material was not among the reviewed frozen bytes')
     for obj in objects.values():
         if obj['truth_status'] not in truths[frozen['state']]:
             raise ValueError('Batch truth_status exceeds the reviewed artifact state')
@@ -622,6 +654,9 @@ def promote(root, run_id, record_file):
     for ref in edge_refs:
         if (ref['path'], ref['sha256'], ref.get('section')) not in content:
             raise ValueError('New edge declaration was not among the reviewed frozen bytes')
+        for evidence in _json(root, ref['path'])['evidence']:
+            if (evidence['path'], evidence['sha256'], evidence.get('section')) not in content:
+                raise ValueError('New edge evidence was not among the reviewed frozen bytes')
     # Compose the explicit delta into the existing registry, preserving its
     # historical registration baseline and all unrelated identities. This is
     # the same object/material format consumed by existing research register.
@@ -658,7 +693,12 @@ def promote(root, run_id, record_file):
         raise ValueError('Candidate output cannot overwrite its input or reviewed content')
     # Validate each explicit edge against the in-memory merged objects first.
     for ref in edge_refs:
-        runtime.verify_endpoints(root, _json(root, ref['path']), combined)
+        edge = _json(root, ref['path'])
+        runtime.verify_endpoints(root, edge, combined)
+        for oid in set(edge['source_ids'] + edge['target_ids']):
+            for reference in [combined[oid]['body'], *combined[oid]['evidence']]:
+                if (reference['path'], reference['sha256'], reference.get('section')) not in content:
+                    raise ValueError('Publication edge endpoint body/evidence was not among the reviewed frozen bytes')
         runtime.edges(root, dict(proposed, edge_files=[ref['path']]), combined)
     runtime._write_json(_safe_path(root, candidate_name), proposed)
     candidate = _ref(root, candidate_name)
@@ -678,7 +718,9 @@ def promote(root, run_id, record_file):
     _save_index(root, run_id, index)
     return {'status': plan['status'], 'plan_id': pid, **saved,
             'candidate_registry_ref': candidate,
-            'commands': plan['commands'], 'canonical_registry_modified': False}
+            'commands': plan['commands'], 'canonical_registry_modified': False,
+            'checkpoint_review_args': ['--review-plan', saved['path']],
+            'publication_instruction': 'After register/check/build, checkpoint the exact publication paths with these review arguments; checkpoint verifies the final pushed commit against the frozen review.'}
 
 
 def status(root, run_id, session_tag=None):

@@ -14,7 +14,7 @@ python work.py research studio --help
 
 `studio line` 调同一套 save 记录真实派工、笔记和反馈。普通中间结果用 journal/save 即时保全；`adopt` 仅用于真正采用超边；`artifact/freeze/review/promote` 用于承重采用或成熟回流，字段及完整实例集中在上述实操，不由用户手填。
 
-新对象还没进当前总表时，可先 `research edge-bind EDGE --batch-file BATCH --write` 和 `research edge-check EDGE --batch-file BATCH` 绑定检查审前关系；只在内存组合明确批次，不改现役 registry。冻结并实际复核后，promote 从已审 batch/edge 生成保留同行内容的完整候选；现有 `research register --record-file CANDIDATE` 才正式写唯一总表。候选绑定当前 registry 字节，基线变化会拒绝覆盖，须同步并重建。随后正式 edge-check、check/build 及 checkpoint，确认 pushed。
+新对象还没进当前总表时，可先 `research edge-bind EDGE --batch-file BATCH --write` 和 `research edge-check EDGE --batch-file BATCH` 绑定检查审前关系；只在内存组合明确批次，不改现役 registry。冻结并实际复核后，promote 从已审 batch/edge 生成保留同行内容的完整候选；现有 `research register --record-file CANDIDATE` 才正式写唯一总表。候选绑定当前 registry 字节，基线变化会拒绝覆盖，须同步并重建。随后正式 edge-check、check/build，用 promote 返回的 checkpoint_review_args 调同一个 checkpoint，在最终 push 前核已审文件、正式登记与图投影；确认 pushed。普通未完笔记、候选和计划仍可直接 checkpoint。
 
 研究增量使用 `research check/build` 不带 `--final`。`--final` 保留为第三阶段已完成全队列和 frozen baseline 的验收，不作为每个后续研究结果的准入条件。Python 只核结构与字节，真实 Work 派工、独立数学复核及原题闭合判断由研究者完成。
 
@@ -324,7 +324,7 @@ python work.py research frontier OBJECT-ID --edge EDGE-ID --expect-branch rebuil
 
 以下 init/packet/save/resume 接口可作文件工具复用；旧 Main 调度与公屏方案仍不启用。JSON 生成不是模型派工。
 
-Main按[完整研究词](../prompts/research-runtime.md)操作；新Project明确Boss号与精确研究题目，独立clone用start --role boss --save <实际研究存档>，不复用登记/构图角色或套旧题。同一对话沿原clone/RUN恢复数学与原输入，普通派工按当前设计判断；明确对照才保原输入隔离。普通研究用init --mode open生成full packet，经平台真实spawn/followup，以save记实际ID。init只写本地计划和包，不启动模型。
+Main按[完整研究词](../prompts/research-runtime.md)操作；新Project明确Boss号与精确研究题目，独立clone用start --role boss --save <实际研究存档>，不复用登记/构图角色或套旧题。同一对话沿原clone/RUN恢复数学与原输入，普通派工按当前设计判断；明确对照才保原输入隔离。四人研究用studio init生成原题/障碍与full两份packet，经平台真实spawn/followup，以line或save记实际ID。下列init --mode open保留为低层兼容接口，不另开第二套四线状态；初始化只写本地计划和包，不启动模型。
 
 spec含problem_id、problem引用、definitions引用数组、obstacles引用数组、seed_ids；可加hops、edge_ids、edge_statuses、relation_kinds。原题和定义完整保模型、域、量词和约束。Main先核本对话/RUN中的实际原题；已有自主选题授权可从该范围的真实开放义务选题，只有会改变题意的关键条件不明才询问。没有相关既有成果时写`seed_ids:[]`，full packet以空objects/edges启动，原题、定义和障碍仍完整；不强塞无关旧对象，也不要求先登记原题才准研究。选择了具体edge_ids则须给真实相关seed，防止丢掉明确选择的证明分支。obstacle只接原题/定义/障碍，full另给按需登记成果；用户明确要求继承时照办并准确说明实际输入。packet不代表权限隔离。对照运行沿各槽的原 profile 派工和反馈。明确改变实验输入时建立新 spec/RUN。
 
@@ -342,7 +342,7 @@ python work.py research resume RUN
 
 普通 open 运行返回明确 worker 默认配置（gpt-6.1-sol / ultra / none），实际派工服从用户本轮配置。save 的 --model、--reasoning-effort、--fork-turns 可记录实际配置，后续事件沿用已记录值；旧记录不猜填。配置与 agent_id 是执行者对实际平台派工的记录。
 
-新版设计见 agent-design；开题需固定用户原题并真实派工，本轮只交设计与读取原型。research peers从保存且pin匹配的packet/input_refs定位同行RUN、数学工作区和主笔记，改版/不同定义保持可辨别；返回status=retired，shared_entry/shared_workspace及legacy入口均为空，不创建合作目录。普通resume保原packet、工作文件和未答反馈，不表示已恢复活动公屏或启动研究者。
+新版设计见 agent-design；开题需固定用户原题并真实派工；程序、完整启动词和保存/两轮回流/恢复测试见当前验收。新成果实际发布后重读受影响context/frontier再由Main真实派工，报告本身不启动代理。research peers从保存且pin匹配的packet/input_refs定位同行RUN、数学工作区和主笔记，改版/不同定义保持可辨别；返回status=retired，shared_entry/shared_workspace及legacy入口均为空，不创建合作目录。普通resume保原packet、工作文件和未答反馈，不表示已恢复活动公屏或启动研究者。
 
 旧远端公屏和试跑文件板已删除；唯一保留的公屏为wcg/board-map-v2。旧read/send/inbox/board-init在退役路由上拒绝执行，不自动重建，也不把旧研究消息转发到构图公屏。构图mapper/workflow map-v2继续用原公屏；其他角色没有默认公屏。旧清洗reset apply停用，避免重建旧屏或重置构图状态。
 

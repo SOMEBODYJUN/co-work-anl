@@ -75,6 +75,83 @@ def relative(repo, path):
     return result or "."
 
 
+def audit_review_plans(repo, head, plans):
+    """Check existing studio receipts against the commit about to be pushed.
+
+    Read Git objects, never the mutable checkout. A merge retry calls this
+    again on its new HEAD; ordinary journal checkpoints need no plan.
+    """
+    from research_runtime import pin
+
+    def read(name):
+        name = relative(repo, name)
+        result = git(repo, "show", head + ":" + name, check=False)
+        if result.returncode:
+            raise Stop("Reviewed publication is missing from final commit: " + name)
+        return result.stdout
+
+    def checked(ref):
+        raw = read(ref['path'])
+        if hashlib.sha256(raw).hexdigest() != ref['sha256']:
+            raise Stop("Reviewed publication bytes changed before push: " + ref['path'])
+        if 'revision_pin' in ref and pin(json.loads(raw)) != ref['revision_pin']:
+            raise Stop("Reviewed record revision changed before push: " + ref['path'])
+        return raw
+
+    checked_plans = []
+    for name in dict.fromkeys(plans):
+        match = re.fullmatch(r'research/runs/([^/]+)/studio/backflow-plans/[^/]+/[0-9a-f]{64}\.json', name)
+        if not match:
+            raise Stop("Use the exact immutable plan path returned by studio promote")
+        plan = json.loads(read(name))
+        frozen = json.loads(checked(plan['freeze_ref']))
+        review = json.loads(checked(plan['review_ref']))
+        index = json.loads(read('research/runs/' + match[1] + '/studio.json'))
+        if (plan.get('status') != 'backflow-plan-ready-local-not-published'
+                or index['backflow_plans'].get(plan['plan_id'], {}).get('path') != name
+                or index['freezes'].get(frozen['freeze_id']) != plan['freeze_ref']
+                or index['artifacts'].get(frozen['artifact_id']) != frozen['artifact_ref']
+                or index['reviews'].get(review['review_id']) != plan['review_ref']):
+            raise Stop("Publication plan no longer matches its current reviewed artifact")
+        checked(index['backflow_plans'][plan['plan_id']])
+        checked(frozen['artifact_ref'])
+        if (review.get('verdict') != 'approve' or review.get('independent') is not True
+                or review['reviewer_agent_id'] in frozen['authors']
+                or review['freeze_id'] != frozen['freeze_id']
+                or review['freeze_revision_pin'] != plan['freeze_ref']['revision_pin']
+                or review.get('reviewed_content_refs') != frozen['content_refs']):
+            raise Stop("Publication review does not approve these exact frozen bytes")
+        checked(review['report_ref'])
+        for reference in frozen['content_refs']:
+            checked(reference)
+        for review_id, reference in index['reviews'].items():
+            other = json.loads(checked(reference))
+            if (other['freeze_id'] == frozen['freeze_id']
+                    and other['freeze_revision_pin'] == plan['freeze_ref']['revision_pin']
+                    and other['verdict'] != 'approve'
+                    and review_id not in review.get('resolves_review_ids', [])):
+                raise Stop("Unresolved exact-version review objection blocks publication")
+        candidate = json.loads(checked(plan['candidate_registry_ref']))
+        canonical = json.loads(read(candidate['backflow_guard']['registry']))
+        batch = json.loads(checked(plan['registration_batch_ref']))
+        objects = {row['object_id']: row for row in canonical['objects']}
+        if any(objects.get(row['object_id']) != row for row in batch['objects']):
+            raise Stop("Reviewed results are not installed in the final canonical registry")
+        graph = json.loads(read('map/graph-v2.json'))
+        if graph.get('registry_pin') != pin(canonical):
+            raise Stop("Research graph is stale in the final commit; rebuild before publication")
+        for reference in plan['edge_refs']:
+            edge = json.loads(checked(reference))
+            if reference['path'] not in canonical['edge_files']:
+                raise Stop("Reviewed edge is not installed in the final canonical registry")
+            if edge.get('status') == 'accepted':
+                endpoints = {oid: pin(objects[oid]) for oid in set(edge['source_ids'] + edge['target_ids'])}
+                if edge.get('endpoint_pins') != endpoints or graph['edges'].get(edge['edge_id']) != edge:
+                    raise Stop("Reviewed edge has stale endpoints or is missing from the final graph")
+        checked_plans.append(name)
+    return checked_plans
+
+
 def audit_outgoing(repo, head, remote_tip, paths):
     """Inspect every unpublished revision, including blobs later overwritten/deleted.
 
@@ -539,6 +616,10 @@ def locked_save(repo, common, cache, args):
                 raise Stop(str(exc) + " Draft retained at " + backup +
                            ". Run work.py sync, then map assemble and rebuild.") from exc
             raise Stop(str(exc) + " Local checkpoint retained. Sync, assemble and rebuild before publishing.") from exc
+        plans = list(getattr(args, 'review_plan', []) or [])
+        result['reviewed_plans'] = audit_review_plans(repo, head, plans)
+        if plans:
+            result['review_checked_head'] = head
         pushed = git(repo, "push", "--quiet", "origin", head + ":" + ref, check=False)
         fetched = git(repo, "fetch", "--quiet", "--no-tags", "--no-write-fetch-head",
                       "origin", "+" + ref + ":" + private, check=False)
@@ -593,6 +674,7 @@ def main():
                         help="Allow first publication of the bound branch, audited against remote main")
     parser.add_argument('--local-only',action='store_true')
     parser.add_argument('--publish-only', action='store_true', help='Publish existing commits without staging or committing workspace changes')
+    parser.add_argument('--review-plan', action='append', default=[], help='Existing studio promote receipt checked against the final commit before every push')
     args = parser.parse_args()
     print(json.dumps(save(args), ensure_ascii=False, indent=2))
 

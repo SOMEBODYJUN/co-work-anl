@@ -1,21 +1,17 @@
 {
   "schema": 2,
-  "status": "passed-studio-backflow-and-source-project-regressions",
+  "status": "passed-full-cycle-regressions-and-actual-work-rehearsal-github-bootstrap-pending",
   "date": "2026-11-16",
   "timezone": "America/Los_Angeles",
-  "base_commit": "3e8402cabac61aadc5575d797671bfa0d183324e",
+  "base_commit": "e0ad3a26e5234197ad38e08c8ceafd429fd766f1",
   "branch": "rebuild/research-v2",
   "test_runs": [
     {
       "command": "python -m unittest discover -s tools -p 'test_*.py' -v",
-      "tests": 56,
-      "exit_code": 0
-    },
-    {
-      "command": "python -m unittest discover -s tools -p 'test_research_template.py' -v",
-      "tests": 1,
+      "tests": 77,
       "exit_code": 0,
-      "reason": "Exporter then gained a minimal AGENTS file; the exported-entry and exact upstream-byte checks were rerun."
+      "seconds": 17.019,
+      "log": "tools/evidence/research-runtime-live-cycle-20261116/tests.log"
     }
   ],
   "native_final_check": {
@@ -31,14 +27,15 @@
     }
   },
   "backflow_integration": {
-    "test": "StudioTests.test_backflow_builds_complete_candidate_then_existing_register_and_context_use_new_edge",
+    "test": "ResearchCycleCLITests.test_two_backflows_reconsumption_and_fresh_clone_recovery",
     "observed": [
-      "Full registry candidate preserves peer objects and historical fields",
-      "Actual register writes canonical registry and strips stale-base control guard",
-      "Actual non-final check/build creates projections",
-      "Actual context retrieves newly registered objects and accepted edge"
+      "Root work.py CLI saves all four lines and pending/answered feedback",
+      "A first new object and edge are registered, built and pushed; the second round actually adopts that edge",
+      "A second new object and edge are registered, built and pushed through one checkpoint --review-plan call",
+      "Fresh clone restores original input, event chains, feedback, freezes and applications; the next round adopts the second new edge",
+      "All frozen bytes are checked against pushed_head"
     ],
-    "environment": "Isolated temporary Git project, declared synthetic test claims; no mathematical correctness inference and no actual Work model launches."
+    "environment": "Isolated local bare remote; synthetic IDs in the regression test, separately repeated with actual Work actors as recorded below"
   },
   "real_consumption": {
     "tests": "RealSUMminTests",
@@ -65,27 +62,80 @@
     "Exported original upstream contracts and licenses retain identical bytes"
   ],
   "runtime_limits": [
-    "Natural-language proof validity, concealed dependencies and quantifier correspondence require substantive mathematical review.",
-    "Author/reviewer IDs, actual reads and independence remain declarations checked against real Work execution by Main.",
-    "No long-running new mathematical problem has been launched or solved.",
-    "There is no automatic final Git-merge/push review hook; the documented existing local-only/check-hashes/publish-only/recheck-pushed-head sequence must be executed for load-bearing publication.",
-    "The registration guard is a local stale-input guard; serial clone writes and existing Git/checkpoint handle remote concurrency."
+    "No finite test suite guarantees zero defects, network availability, permissions or platform session resurrection.",
+    "Python validates declared structure, hashes and versions; it does not certify mathematical truth, hidden dependencies or real independence.",
+    "Only explicit --review-plan claims receive the mature-publication gate; ordinary draft saving remains unblocked.",
+    "Main must reread affected context/frontier and perform actual Work spawn/followup after new knowledge; Python does not launch models.",
+    "No difficult new public problem has been run long term or solved; the live mathematical rehearsal is deliberately elementary."
   ],
   "tested_source_sha256": {
-    "work.py": "b8e385c2fed5e93d41dfbcb3fb9ba10aadaea8760a119babbb71aa2447d303c4",
-    "tools/research_runtime.py": "7ec2b60c348ef97427b35d770f145f6a74d69d47ddd26445d26716e1f38a2c58",
-    "tools/research_studio.py": "e016a6d88bfa2c37b3d54bd009a18ac3410c25e1b77560021cb6b37ab7d5de0f",
+    "README.md": "2f41e0af87fd53b4b9ce41e3f31f9bb1cff8026e062a27304619f72ac029e81b",
+    "prompts/research-line-design.md": "c1860cda8a02e67b5f9f0c2d0847b9fbf5a795c67c90e11cf170daf734ec085a",
+    "prompts/research-main-design.md": "1c586063055d522fe1479169fcf5172cd0c9bd8de71633ffb009c0b6670f79a2",
+    "prompts/research-review-design.md": "678071d1210041d1b5aa86afecd7ac066e47cbd1728e1da6243c0b51afa32689",
+    "prompts/research-runtime.md": "b09b7953877306932a4041b544b9cc169c8d64d5c2d2afe9e5df97104e0105ba",
+    "research/IMPLEMENTATION.md": "d0eb4fc13bfbb83a8e418bba64ddd06a97b221e21523dc035ce2730d3a82765c",
+    "research/PHASE3_READINESS.md": "87f94907555efeebc2e9ca79907a08b3e90a70c7e7dde7607d3ad084dc3c58b1",
+    "research/agent-design/ARCHITECTURE_AUDIT.md": "b1772127d0ac06fd0063e3bed1553dd1be9b82749f30083e5356c04424a53cf7",
+    "research/agent-design/HYPEREDGE_WORKFLOW.md": "d3398389aa56645b7934c26244280ff4f25c7c2a95bf644041cae65d3004be1a",
+    "research/agent-design/README.md": "3018cfc3cf28399bdfe61451fa83fb1c12cb3f9e755ba3e79acebec8e200e036",
+    "research/agent-design/spec-template.json": "497cd2c97857861afafb253c3caaa90f45debe65f770a13b6c12c3a88f033dc2",
+    "tools/checkpoint.py": "59986ffc98c3ff9453ffbaa6357422b214f335a2d1deae77be8c045424c8a857",
     "tools/export_research_template.py": "55614ad20136cf285480ccfe96269bd31e49f606c1f60bbdca69282592c9149d",
+    "tools/research_runtime.py": "02d3307b2b6838a9c14bbb523abe2ac46ecfa1334de8424620a4a240383bac92",
+    "tools/research_studio.py": "aae7dbe8aeaa45c60e92dfd7d997bd7bfce40d613a7435347d6fe21f5287d7af",
+    "tools/test_checkpoint_review.py": "d8ad87e97c856d72e87274dd764c91728243def215e0282a05b96f7c23b26985",
+    "tools/test_research_cycle.py": "6d370988abeb0f80033d9a54ff3b0ef047ab962162cca891a19b02793ca7dfbb",
     "tools/test_research_frontier.py": "5b9235545c37b8de26ad6d7e8735c22201a6fe0719754232e387c191cd8fe860",
     "tools/test_research_incremental.py": "aa153dc1a30a803b9c9f8dc6be8da9d936d25fe7d5430bef3626b2777290adbc",
-    "tools/test_research_studio.py": "0e8f0eb45caac3ce3645af461e413862ebb339f3d9bbd99c684be68132aee34a",
-    "tools/test_research_studio_real.py": "daf028f7beff09302147987510fd112f16d6d5ba1a9f9ac8584c2f053a22d1a9",
+    "tools/test_research_studio.py": "742470e755a89730e0fccdb3f842e78e3b695962186c1c55cf4510cba4742544",
+    "tools/test_research_studio_real.py": "13d8c903a7b64a14514d2ab0e405603cdc82bc97d13750a07260bf147e89ffd6",
     "tools/test_research_template.py": "bd9e479497bdff7696ce745bb51785abcefbcc824c4ac41e3b7e8f56de6f9cc9",
-    "prompts/research-runtime.md": "cc54137d64d632a8bb17f1beff18d319963a9280736cc5138e250ac38833beba",
-    "prompts/research-main-design.md": "239f2b902fd950354dd1039d3836a6586d19f89bb4e30e190ad9010fe83f87e0",
-    "prompts/research-line-design.md": "da74db7522f2e7eaf588b11b32b066632b2f3874d2655d61abd40b4e1bdccf4b",
-    "prompts/research-review-design.md": "75c1785a621e40b92c8febc434259cb65c680f57c136b0b7a160866dc89349fb",
-    "research/agent-design/HYPEREDGE_WORKFLOW.md": "1af270c2efa41d480f67b7eaf4e1336224820a20265374a7cebcd2c5de879362",
-    "research/agent-design/spec-template.json": "497cd2c97857861afafb253c3caaa90f45debe65f770a13b6c12c3a88f033dc2"
+    "tools/test_work_bootstrap.py": "99e5f492902e656c6733cd95b4b59c5f7cbf9964a1559da299f50698b8604d78",
+    "work.py": "5e8f15290c503a88aedc3ef73d190b55dfde8123b2761beca7b50ac9102b731a"
+  },
+  "actual_work_rehearsal": {
+    "evidence": "tools/evidence/research-runtime-live-cycle-20261116/execution.json",
+    "archive": "tools/evidence/research-runtime-live-cycle-20261116/rehearsal.tar.gz",
+    "actors": {
+      "main": "/root",
+      "independent": "/root/workflow_simplify",
+      "informed-a": "/root/end_to_end",
+      "informed-b": "/root/runtime_review"
+    },
+    "problem": "For every integer n, n+4 >= n; elementary engineering rehearsal, not novel mathematical research",
+    "observed": "Actual Work mathematical contributions, exact-version nonauthor reviews of both rounds, real followup after the first new edge, two adoptions and two backflows, fresh-clone continuation",
+    "transport": "Local bare remote for rehearsal mathematics; source GitHub authentication/publication is verified separately",
+    "model_configuration": "Platform inherited; exact model and effort not reported, no invented settings"
+  },
+  "full_registry_compatibility": {
+    "source_objects_preserved": 3821,
+    "source_edges_preserved": 2673,
+    "isolated_result_objects": 3824,
+    "isolated_result_edges": 2675,
+    "result": "register/check/build passed, all original object records and historical registry metadata preserved; source registry and edges unchanged"
+  },
+  "bugs_reproduced_and_fixed": [
+    "A single 45-second clone/checkout timeout interrupted the real 94,721-file repository startup; separate download/checkout and resume a marked partial checkout without overwriting local drafts",
+    "Ordinary save discarded session tags and read ledgers; studio line wrote the immutable event twice",
+    "A changed original problem/definition source could pass an old freeze review",
+    "New edge evidence and existing endpoint proofs could be omitted from reviewed frozen content",
+    "An accepted legacy edge without whole_result/contribution bypassed the frontier scope restriction in adopt",
+    "Final commit could differ after review or concurrent merge; checkpoint --review-plan now checks the actual final commit before every push"
+  ],
+  "publication_boundary_tests": [
+    "Changed reviewed body blocks the actual push and leaves the remote unchanged",
+    "A concurrent registry increment merges locally, then stale projection blocks the retry; rebuilding allows publication",
+    "Modified plan metadata itself is rejected",
+    "Unresolved late review objection is rejected",
+    "Uncommitted ongoing journals do not change a reviewed Git commit; ordinary draft checkpoints remain available"
+  ],
+  "github_fresh_bootstrap": {
+    "status": "pending-post-push-check",
+    "reason": "Will be replaced only after the newly published work.py restores the actual full GitHub repository in a separate clone."
+  },
+  "evidence_sha256": {
+    "tools/evidence/research-runtime-live-cycle-20261116/execution.json": "551609ec3bd501ffc6d3949875c07e9094be88832eccf8edd14e901b7bb5262c",
+    "tools/evidence/research-runtime-live-cycle-20261116/rehearsal.tar.gz": "11105fba7c1e3fa8d49871a60aa62ba2b1a70bcf60802ecd201a60d4c4f2af62"
   }
 }
