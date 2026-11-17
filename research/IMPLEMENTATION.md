@@ -2,6 +2,22 @@
 
 用户每阶段只需根work.py、仓库外凭据和对应[完整Boss词](../prompts/README.md)。启动器恢复独立clone后，进入该clone并只用其根程序；内部模块和说明由执行者自行读取。当前接口保持prepare-inputs、独立edge-check和即时计算保存，同时用同一阶段队列处理登记/构图，不另设每轮人工分配系统。
 
+## 后续研究的当前入口
+
+第三阶段完成后使用[完整 Main 词](../prompts/research-runtime.md)和[超边/保存/入库实操](agent-design/HYPEREDGE_WORKFLOW.md)。原有 `init/save/resume`、登记及构图命令继续兼容；新 `studio` 将它们接成 Main 与三研究线的工作室，普通数学不套登记/构图任务队列。
+
+```sh
+python work.py research studio init RUN --spec PATH --expect-branch rebuild/research-v2 --expect-remote https://github.com/SOMEBODYJUN/co-work-anl.git
+python work.py research studio status RUN --session-tag CURRENT_SESSION
+python work.py research studio --help
+```
+
+`studio line` 调同一套 save 记录真实派工、笔记和反馈。普通中间结果用 journal/save 即时保全；`adopt` 仅用于真正采用超边；`artifact/freeze/review/promote` 用于承重采用或成熟回流，字段及完整实例集中在上述实操，不由用户手填。
+
+新对象还没进当前总表时，可先 `research edge-bind EDGE --batch-file BATCH --write` 和 `research edge-check EDGE --batch-file BATCH` 绑定检查审前关系；只在内存组合明确批次，不改现役 registry。冻结并实际复核后，promote 从已审 batch/edge 生成保留同行内容的完整候选；现有 `research register --record-file CANDIDATE` 才正式写唯一总表。候选绑定当前 registry 字节，基线变化会拒绝覆盖，须同步并重建。随后正式 edge-check、check/build 及 checkpoint，确认 pushed。
+
+研究增量使用 `research check/build` 不带 `--final`。`--final` 保留为第三阶段已完成全队列和 frozen baseline 的验收，不作为每个后续研究结果的准入条件。Python 只核结构与字节，真实 Work 派工、独立数学复核及原题闭合判断由研究者完成。
+
 ## 阶段与持续协作
 
 | 阶段 | workflow-run | role | 公屏 | 队列入口 |

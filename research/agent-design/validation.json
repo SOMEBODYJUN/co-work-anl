@@ -1,62 +1,23 @@
 {
-  "schema": 1,
-  "status": "passed-design-and-read-only-prototype-checks",
-  "base_commit": "7dc42458573b6653fccd6606afc2555f2fb466c8",
+  "schema": 2,
+  "status": "passed-studio-backflow-and-source-project-regressions",
+  "date": "2026-11-16",
+  "timezone": "America/Los_Angeles",
+  "base_commit": "3e8402cabac61aadc5575d797671bfa0d183324e",
   "branch": "rebuild/research-v2",
-  "registry_pin": "e7f7eda667a206cf71a54a584f8596608f7dc4a59717256da32b36692e82d142",
-  "command": [
-    "python",
-    "work.py",
-    "research",
-    "frontier",
-    "customer-attraction/e7-summin-full-common-budget-exact-discount-and-finite-tests",
-    "--expect-branch",
-    "rebuild/research-v2"
-  ],
-  "target": "customer-attraction/e7-summin-full-common-budget-exact-discount-and-finite-tests",
-  "native_command_exit_code": 0,
-  "real_consumption_assertions": {
-    "SUMmin_not_structurally_paid": true,
-    "equivalence_directions_preserved": [
-      "forward",
-      "reverse"
-    ],
-    "open_cycle_not_self_paid": true,
-    "all_spe_contribution_preserves_both_sources": true,
-    "contribution_remaining_nonempty": true,
-    "contribution_pays_whole_target": false
-  },
-  "counts": {
-    "routes": 2,
-    "contributions": 6,
-    "cycles": 1,
-    "declared_bases": 5
-  },
-  "upstream_files": [
-    {
-      "file": "research/agent-design/upstream/ansatz-23367c6/provenance.json",
-      "commit": "23367c6568c344d9c4dbf59be3f39b39f5d54324",
-      "files_verified": 3
-    },
-    {
-      "file": "research/agent-design/upstream/osverify-c43385b/provenance.json",
-      "commit": "c43385bcbedec943cabe0d7e95df5b50404d9acb",
-      "files_verified": 3
-    }
-  ],
   "test_runs": [
     {
-      "command": "python -m unittest discover -s tools -p 'test_research_*.py' -v",
-      "tests": 24,
+      "command": "python -m unittest discover -s tools -p 'test_*.py' -v",
+      "tests": 56,
       "exit_code": 0
     },
     {
-      "command": "python -m unittest discover -s tools -p 'test_board_retirement.py' -v",
-      "tests": 4,
-      "exit_code": 0
+      "command": "python -m unittest discover -s tools -p 'test_research_template.py' -v",
+      "tests": 1,
+      "exit_code": 0,
+      "reason": "Exporter then gained a minimal AGENTS file; the exported-entry and exact upstream-byte checks were rerun."
     }
   ],
-  "limitations": "No new mathematical problem was launched or solved; natural-language conditions and applications are not verified by the frontier prototype.",
   "native_final_check": {
     "command": "python work.py research check --final",
     "exit_code": 0,
@@ -69,15 +30,62 @@
       "final_coverage": true
     }
   },
-  "tested_source_sha256": {
-    "work.py": "bb823caf9175f5c6a2b71632b3079c9fc9c0fd4c2bbf44fb7a297ce86c5b3ff7",
-    "tools/research_runtime.py": "e32b77366bcb939300a936ab6dc6d03524b45cad91d28b9087de9351b313bce2",
-    "tools/research_frontier.py": "b52338bbdd6c55d8b3639bdff2e996b1224baa3cf5ac66cf0f1d835c987c15f1",
-    "tools/test_research_frontier.py": "5b9235545c37b8de26ad6d7e8735c22201a6fe0719754232e387c191cd8fe860"
+  "backflow_integration": {
+    "test": "StudioTests.test_backflow_builds_complete_candidate_then_existing_register_and_context_use_new_edge",
+    "observed": [
+      "Full registry candidate preserves peer objects and historical fields",
+      "Actual register writes canonical registry and strips stale-base control guard",
+      "Actual non-final check/build creates projections",
+      "Actual context retrieves newly registered objects and accepted edge"
+    ],
+    "environment": "Isolated temporary Git project, declared synthetic test claims; no mathematical correctness inference and no actual Work model launches."
   },
-  "design_reviews": {
-    "source_facts": "Independent source review; OSVerify NOTICE included; latest Ansatz clarification retained.",
-    "workflow": "Independent review; per-premise bindings, explicit bridge, inherited debt and immutable reviewed revisions added.",
-    "automatic_enforcement_limit": "Application schema, inherited-obligation validation and reviewed-byte publication checks are execution contracts; this prototype does not implement those automatic admission gates."
+  "real_consumption": {
+    "tests": "RealSUMminTests",
+    "actual_edge_ids": [
+      "boss3-uniform-summin-full-budget-equivalence-3313f41b4a46c9dc",
+      "boss5-all-spe-summin-budget-7383c8bf44f753cc"
+    ],
+    "checks": [
+      "Open equivalence application retains unpaid universal-budget premise",
+      "Both ALL sources required for the original K=6M+4 input-family contribution",
+      "Partial result cannot be relabeled as whole target"
+    ]
+  },
+  "other_boundaries_tested": [
+    "Upstream explicit debt and target remaining are retained; explicit proof references are required to discharge",
+    "Changed review/body/registration batch/edge bytes rejected",
+    "Later unresolved independent review cannot be hidden by selecting an earlier approval",
+    "Stale registry candidate cannot overwrite an advanced local canonical registry",
+    "New unregistered endpoints can bind/check via explicit batch without early admission",
+    "Independent packet excludes informed context and declared reads are checked",
+    "Session tags never certify agent liveness; new/changed selected applications surface on resume",
+    "Wrong Boss, branch, remote and path writes rejected",
+    "Exported empty project can init/status through root work.py without a registry",
+    "Exported original upstream contracts and licenses retain identical bytes"
+  ],
+  "runtime_limits": [
+    "Natural-language proof validity, concealed dependencies and quantifier correspondence require substantive mathematical review.",
+    "Author/reviewer IDs, actual reads and independence remain declarations checked against real Work execution by Main.",
+    "No long-running new mathematical problem has been launched or solved.",
+    "There is no automatic final Git-merge/push review hook; the documented existing local-only/check-hashes/publish-only/recheck-pushed-head sequence must be executed for load-bearing publication.",
+    "The registration guard is a local stale-input guard; serial clone writes and existing Git/checkpoint handle remote concurrency."
+  ],
+  "tested_source_sha256": {
+    "work.py": "b8e385c2fed5e93d41dfbcb3fb9ba10aadaea8760a119babbb71aa2447d303c4",
+    "tools/research_runtime.py": "7ec2b60c348ef97427b35d770f145f6a74d69d47ddd26445d26716e1f38a2c58",
+    "tools/research_studio.py": "e016a6d88bfa2c37b3d54bd009a18ac3410c25e1b77560021cb6b37ab7d5de0f",
+    "tools/export_research_template.py": "55614ad20136cf285480ccfe96269bd31e49f606c1f60bbdca69282592c9149d",
+    "tools/test_research_frontier.py": "5b9235545c37b8de26ad6d7e8735c22201a6fe0719754232e387c191cd8fe860",
+    "tools/test_research_incremental.py": "aa153dc1a30a803b9c9f8dc6be8da9d936d25fe7d5430bef3626b2777290adbc",
+    "tools/test_research_studio.py": "0e8f0eb45caac3ce3645af461e413862ebb339f3d9bbd99c684be68132aee34a",
+    "tools/test_research_studio_real.py": "daf028f7beff09302147987510fd112f16d6d5ba1a9f9ac8584c2f053a22d1a9",
+    "tools/test_research_template.py": "bd9e479497bdff7696ce745bb51785abcefbcc824c4ac41e3b7e8f56de6f9cc9",
+    "prompts/research-runtime.md": "cc54137d64d632a8bb17f1beff18d319963a9280736cc5138e250ac38833beba",
+    "prompts/research-main-design.md": "239f2b902fd950354dd1039d3836a6586d19f89bb4e30e190ad9010fe83f87e0",
+    "prompts/research-line-design.md": "da74db7522f2e7eaf588b11b32b066632b2f3874d2655d61abd40b4e1bdccf4b",
+    "prompts/research-review-design.md": "75c1785a621e40b92c8febc434259cb65c680f57c136b0b7a160866dc89349fb",
+    "research/agent-design/HYPEREDGE_WORKFLOW.md": "77f518be599a58d50838abb5f0a907e421731fe62dcde05adb740ef21ab8810c",
+    "research/agent-design/spec-template.json": "497cd2c97857861afafb253c3caaa90f45debe65f770a13b6c12c3a88f033dc2"
   }
 }

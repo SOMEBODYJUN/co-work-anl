@@ -13,7 +13,7 @@
 | 后续研究 Agent | [新版设计与开题入口](prompts/research-runtime.md) | Work 原生 Main/三 Solver；开题固定用户原题，不启动旧协作方案 |
 | 已完成整理的必要追溯/修订 | [既有任务操作](research/CURATION_OPERATIONS.md) | 原curation-run及工作区，不重新启动旧阶段 |
 
-具体阶段接口见[交接说明](research/PHASE3_READINESS.md)及[命令](research/IMPLEMENTATION.md)。第三阶段收尾后的 [2026-11 新设计](research/agent-design/README.md)按用户本轮要求给出完整超边消费及角色词；它尚未启动新数学原题或完成长线实战。旧 Main 和合作区不再作为执行方案。保留数学正文、证据、超边、RUN、packet和未完研究文件，peers/resume只定位已存数学，不创建公屏。旧研究、清洗、整理、登记公屏及试跑合作页已按用户授权退役删除，唯一保留公屏wcg/board-map-v2用于构图必要修订；旧路由不得重建，也不把旧研究消息转入构图屏。维护不替其他Boss认领数学任务。
+具体阶段接口见[交接说明](research/PHASE3_READINESS.md)及[命令](research/IMPLEMENTATION.md)。第三阶段收尾后的[研究入口](research/agent-design/README.md)提供 Work 原生 Main/三研究线、research studio、完整超边采用、连续保存及定向入库；它尚未启动新数学原题或完成长线实战。旧 Main 和合作区不再作为执行方案。保留数学正文、证据、超边、RUN、packet和未完研究文件，peers/resume只定位已存数学，不创建公屏。旧研究、清洗、整理、登记公屏及试跑合作页已按用户授权退役删除，唯一保留公屏wcg/board-map-v2用于构图必要修订；旧路由不得重建，也不把旧研究消息转入构图屏。维护不替其他Boss认领数学任务。
 
 ## 协作与持续执行
 

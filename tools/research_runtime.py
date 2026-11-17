@@ -14,6 +14,7 @@ import os
 from pathlib import Path
 import re
 import subprocess
+import sys
 import tempfile
 import uuid
 
@@ -208,11 +209,31 @@ def load(root, name=REGISTRY, provided=None, verify=True):
 def register(root, record_file, registry=REGISTRY):
     """Publish an explicit reviewed registration locally, preserving identity."""
     data = json.loads(_safe_path(root, record_file).read_text())
+    # A studio candidate is prepared against one exact canonical version.  A
+    # later sync must never let it erase another researcher's newer objects.
+    # This is a local stale-input guard; Git/checkpoint still handles the remote
+    # branch and the Main serializes writes within this clone.
+    guard = data.pop('backflow_guard', None)
+    destination = _safe_path(root, registry)
+
+    def check_backflow_base():
+        if guard is None:
+            return
+        if (not isinstance(guard, dict) or set(guard) != {'registry', 'base_sha256'}
+                or guard['registry'] != registry):
+            raise ValueError('Backflow candidate must bind this exact canonical registry path')
+        expected = guard['base_sha256']
+        if expected is not None and not re.fullmatch(r'[0-9a-f]{64}', str(expected)):
+            raise ValueError('Invalid backflow base SHA-256')
+        actual = digest(destination.read_bytes()) if destination.exists() else None
+        if actual != expected:
+            raise ValueError('Backflow base changed; preserve the candidate, sync and promote again against the current registry')
+
+    check_backflow_base()
     _, objects = load(root, registry, provided=data)
     # Registration is independently usable before graph construction. A changed
     # object may leave incident edge reviews stale; map check/build evaluates
     # those reviews rather than blocking an unrelated identity update here.
-    destination = _safe_path(root, registry)
     if destination.exists():
         # Previous byte pins are expected to be stale when explicitly updating
         # a changed proof. Read identity/version metadata without re-admitting
@@ -229,6 +250,7 @@ def register(root, record_file, registry=REGISTRY):
         dispositions = data.get('retired_objects', {})
         if any(not isinstance(dispositions.get(oid), str) or not dispositions[oid].strip() for oid in removed):
             raise ValueError('Retired IDs require explicit recoverable reasons; do not silently drop objects')
+    check_backflow_base()
     _write_json(destination, data)
     return {'status': 'registered-local-not-pushed', 'objects': len(objects), 'registry': registry}
 
@@ -314,14 +336,32 @@ def verify_endpoints(root, edge, objects):
             ref_bytes(root,ref)
 
 
-def check_edge(root, edge_file, registry=REGISTRY, verify=True):
+def edge_context(root, registry=REGISTRY, batch_file=None):
+    """Use an explicit unregistered delta for draft bindings, without admission."""
+    if batch_file is not None and not _safe_path(root, registry).exists():
+        data, objects = {'schema': 2, 'objects': [], 'materials': [], 'edge_files': []}, {}
+    else:
+        data, objects = load(root, registry, verify=False)
+    if batch_file is not None:
+        import registration
+        batch = json.loads(_safe_path(root, batch_file).read_text())
+        own = {obj['object_id']: obj for obj in batch['objects']}
+        registration.validate_batch(root, batch, peer_objects={oid: obj for oid, obj in objects.items() if oid not in own})
+        for oid, obj in own.items():
+            if oid in objects and obj != objects[oid] and obj['version'] <= objects[oid]['version']:
+                raise ValueError('Changed draft object requires a new version: ' + oid)
+        objects = {**objects, **own}
+    return data, objects
+
+
+def check_edge(root, edge_file, registry=REGISTRY, verify=True, batch_file=None):
     """Validate one proposed/accepted edge before it enters the canonical registry.
 
     Stage-3 workers intentionally do not edit ``registry.json``.  This command
     gives ``map done`` a real semantic gate for the edge it is delivering,
     instead of relying on the registry's current ``edge_files`` list.
     """
-    data, objects = load(root, registry, verify=False)
+    data, objects = edge_context(root, registry, batch_file)
     name = _safe_path(root, edge_file).relative_to(root).as_posix()
     edge = json.loads(_safe_path(root,name).read_text())
     if verify: verify_endpoints(root,edge,objects)
@@ -333,7 +373,8 @@ def check_edge(root, edge_file, registry=REGISTRY, verify=True):
             'edge_file': name, 'edge_id': edge['edge_id'],
             'edge_status': edge['status'], 'registry': registry,
             'proof_scope': 'step' if 'contribution' in edge else 'whole' if edge['kind'] in LOGICAL else 'context',
-            'objects': sorted(set(edge['source_ids'] + edge['target_ids']))}
+            'objects': sorted(set(edge['source_ids'] + edge['target_ids'])),
+            **({'draft_batch': batch_file, 'canonical_registry_modified': False} if batch_file else {})}
 
 
 def inventory(root, registry=REGISTRY):
@@ -986,7 +1027,7 @@ def peers(root, run_id):
             'same_target_revisions': revisions,
             'scope_conflicts': scope_conflicts,
             'discovery_warnings': warnings,
-            'instruction': 'Research boards and collaboration pages have been retired and deleted. Inspect peer RUNs, saved mathematical workspaces and exact inputs only; do not create or recreate a shared board. Research-agent design is paused until hypergraph closeout. Exact-source matching is not proof of mathematical equivalence; revisions and scope conflicts need source comparison. Saved states do not establish live agents. This command neither contacts peers nor claims work.'}
+            'instruction': 'Research boards and collaboration pages have been retired and deleted. Inspect peer RUNs, saved mathematical workspaces and exact inputs only; do not create or recreate a shared board. Use the current research-runtime prompt and studio commands. Exact-source matching is not proof of mathematical equivalence; revisions and scope conflicts need source comparison. Saved states do not establish live agents. This command neither contacts peers nor claims work.'}
 
 
 def init_run(root, run_id, spec_file, registry=REGISTRY, *, mode='comparison'):
@@ -1828,6 +1869,18 @@ def draft_map_tasks(root, output='map/planned-tasks.json', registry=REGISTRY,
 
 
 def main(argv=None):
+    # Studio has its own small parser; keep the original research commands and
+    # immutable RUN event format as the common persistence mechanism.
+    arguments = list(sys.argv[1:] if argv is None else argv)
+    bootstrap = argparse.ArgumentParser(add_help=False)
+    bootstrap.add_argument('--repo', type=Path)
+    bootstrap.add_argument('--registry', default=REGISTRY)
+    options, remaining = bootstrap.parse_known_args(arguments)
+    if remaining and remaining[0] == 'studio':
+        if options.repo is None:
+            bootstrap.error('--repo is required')
+        from research_studio import main as studio_main
+        return studio_main(['--repo', str(options.repo), '--registry', options.registry, *remaining[1:]])
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument('--repo', type=Path, required=True)
     p.add_argument('--registry', default=REGISTRY)
@@ -1849,6 +1902,7 @@ def main(argv=None):
                 'output_tokens': args.output_tokens, 'inherited': args.context_mode == 'inherited'}
 
     sub.add_parser('inventory')
+    sub.add_parser('studio', help='Main/three-line workspace, saved results, exact applications and reviewed publication receipts')
     q = sub.add_parser('inputs'); q.add_argument('--out', default='research/registration/inputs.json')
     q.add_argument('--scope', choices=['repository','partial'], default='repository')
     q.add_argument('--coverage-note', required=True); q.add_argument('--paths-file')
@@ -1898,7 +1952,9 @@ def main(argv=None):
     q.add_argument('ids', nargs='+'); q.add_argument('--edge', action='append')
     q.add_argument('--expect-branch', help='Reject a different local Git branch before reading mathematical inputs')
     q = sub.add_parser('edge-bind'); q.add_argument('edge_file'); q.add_argument('--write', action='store_true')
+    q.add_argument('--batch-file', help='Explicit new object delta for draft bindings; does not register it')
     q = sub.add_parser('edge-check'); q.add_argument('edge_file')
+    q.add_argument('--batch-file', help='Check draft endpoints from an explicit object delta without registration')
     q = sub.add_parser('packet'); q.add_argument('spec'); q.add_argument('--profile', choices=['obstacle', 'full'], required=True)
     q = sub.add_parser('init'); q.add_argument('run_id'); q.add_argument('--spec', required=True)
     q.add_argument('--mode', choices=['comparison', 'open'], default='comparison')
@@ -1977,7 +2033,7 @@ def main(argv=None):
         selected_context['snapshot'] = snapshot
         result = frontier_report(selected_context)
     elif a.command == 'edge-bind':
-        _, objs = load(root,a.registry,verify=False)
+        _, objs = edge_context(root, a.registry, a.batch_file)
         path = _safe_path(root,a.edge_file)
         edge = json.loads(path.read_text())
         verify_endpoints(root,edge,objs)
@@ -1985,7 +2041,7 @@ def main(argv=None):
         if a.write:
             edge.update(result)
             _write_json(path, edge)
-    elif a.command == 'edge-check': result = check_edge(root, a.edge_file, a.registry)
+    elif a.command == 'edge-check': result = check_edge(root, a.edge_file, a.registry, batch_file=a.batch_file)
     elif a.command == 'packet': result = packet(root, json.loads(_safe_path(root, a.spec).read_text()), a.profile, a.registry)
     elif a.command == 'init': result = init_run(root, a.run_id, a.spec, a.registry, mode=a.mode)
     elif a.command == 'resume': result = resume(root, a.run_id)

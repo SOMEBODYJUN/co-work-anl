@@ -2,7 +2,13 @@
 
 研究存档：`repository-cleanup`；发布身份：`Boss2`。
 
-## 当前研究与恢复
+## 当前接续：研究 Agent 工程（2026-11-16）
+
+第三阶段已完成并验收；下列构图批次叙述是历史数学记录，不是当前队列状态。本次沿 Boss2 恢复，读取基线 `3e8402c`，与三名 fresh worker 实读运行链、源设计及实际 SUMmin 数学消费，完成新研究入口的工作室、连续保存、应用、冻结复核及定向回流实现。
+
+当前入口为 [完整 Main 词](../../../../prompts/research-runtime.md)，具体交付、实测与限制见 [研究 Agent](../../../../research/agent-design/README.md) 和 [validation](../../../../research/agent-design/validation.json)。本次没有选定新数学原题、创建实战 RUN 或把已有开放命题声称为已解。下一次研究按用户原题开题；恢复旧研究保其准确 packet/笔记及事件，不依据以下旧“未完成”进度重开构图。
+
+## 阶段三历史批次记录
 
 本轮沿用同一 Boss2 / mapper / map-v2 身份和实例，在 `rebuild/research-v2` 分支恢复了 10 个仍归 Boss2 的已领包。读取基线为 `79e400be9516472e82bd8e275f2e42ffd1a80fa5`。本轮20条新边和10份收据已推送，另复用1条既有ALL边；10包均已远端 `map done`。当前继续发布三范围实质数学整合，并推进下一轮。
 

@@ -23,7 +23,7 @@ WORKSPACES = "research/workspaces"
 # New-conversation phase defaults are separate below and are applied by start.
 DEFAULT_SAVE = "customer-attraction"
 # The hypergraph closeout board is the only active chat. Other roles have no
-# implicit board while the research agent is being redesigned.
+# implicit board; research uses its saved RUN and four mathematical studios.
 DEFAULT_BRANCH = "rebuild/research-v2"
 DEFAULT_BOARD_BRANCH = ""
 MAP_BOARD_BRANCH = "wcg/board-map-v2"
@@ -582,9 +582,11 @@ def start(args):
     if selected_role == "boss" and valid_archive:
         result.update(research_prompt=result["role_prompt"],
                       research_runbook="research/agent-design/README.md",
-                      research_status="design-ready-not-started",
+                      research_status="runtime-ready-problem-not-started",
                       research_collaboration={
                           "discover": "python work.py research peers RUN",
+                          "initialize": "python work.py research studio init RUN --spec PATH --expect-branch " + target,
+                          "restore": "python work.py research studio status RUN --session-tag CURRENT_SESSION",
                           "instruction": "Research boards are retired. Inspect saved RUNs and mathematical workspaces; do not recreate collaboration pages. Follow the Work/GitHub design and fix the actual problem before native agent dispatch; file initialization does not launch a model.",
                       })
     if save == "customer-attraction" and not selected_sub:
@@ -666,7 +668,7 @@ def main():
     registration_tasks = sub.add_parser('registration-task', help='登记批次的认领、接续、交付和集成')
     registration_tasks.add_argument('args', nargs=argparse.REMAINDER)
     research = sub.add_parser('research', help='登记、按需读取超边、两类Solver输入和持续研究恢复',
-                              epilog='Commands: inputs, prepare-inputs, inventory, batches-draft, map-draft, freeze, assignments-draft, assignments-check, new-id, compose, register, registration-check, check, build, search, show, context, frontier, edge-bind, edge-check, packet, init, save, resume, compute. See research/IMPLEMENTATION.md.')
+                              epilog='Commands: studio, inputs, prepare-inputs, inventory, batches-draft, map-draft, freeze, assignments-draft, assignments-check, new-id, compose, register, registration-check, check, build, search, show, context, frontier, edge-bind, edge-check, packet, init, save, resume, compute. See research/IMPLEMENTATION.md.')
     research.add_argument('--registry', help='显式选择v2登记文件；省略使用research/registry.json')
     research.add_argument('args', nargs=argparse.REMAINDER)
     computation = sub.add_parser('compute', help='实际计算或生成明确云端批处理请求')
