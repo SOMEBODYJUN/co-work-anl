@@ -298,6 +298,16 @@ collect给已交付成果和待补办批，--full返回详细内容。status与d
 
 ## 后续Main与Solver消费
 
+2026-11 新版设计及完整角色词见 [agent-design](agent-design/README.md)。新增只读前沿：
+
+```sh
+python work.py research frontier OBJECT-ID --edge EDGE-ID --expect-branch rebuild/research-v2
+```
+
+它复用 context 的完整 ALL/OR 支持，列开放前提、适用条件、局部贡献 remaining、绑定刷新与不自证的循环。`structural_assuming_conditions_closure` 假设所有条件成立，仅用于规划；不验证条件、不更新数学真值、不启动模型。`--expect-branch` 在读取数学前拒绝其它本地分支；输出 local snapshot 的 commit/remote/dirty 与 registry pin，不冒称远端确认。本题实际使用必须另留 spec+edge+object pins、模型/量词对应、条件付款和准确证据，详见 [完整流程](agent-design/HYPEREDGE_WORKFLOW.md)。
+
+以下 init/packet/save/resume 接口可作文件工具复用；旧 Main 调度与公屏方案仍不启用。JSON 生成不是模型派工。
+
 Main按[完整研究词](../prompts/research-runtime.md)操作；新Project明确Boss号与精确研究题目，独立clone用start --role boss --save <实际研究存档>，不复用登记/构图角色或套旧题。同一对话沿原clone/RUN恢复数学与原输入，普通派工按当前设计判断；明确对照才保原输入隔离。普通研究用init --mode open生成full packet，经平台真实spawn/followup，以save记实际ID。init只写本地计划和包，不启动模型。
 
 spec含problem_id、problem引用、definitions引用数组、obstacles引用数组、seed_ids；可加hops、edge_ids、edge_statuses、relation_kinds。原题和定义完整保模型、域、量词和约束。Main先核本对话/RUN中的实际原题；已有自主选题授权可从该范围的真实开放义务选题，只有会改变题意的关键条件不明才询问。没有相关既有成果时写`seed_ids:[]`，full packet以空objects/edges启动，原题、定义和障碍仍完整；不强塞无关旧对象，也不要求先登记原题才准研究。选择了具体edge_ids则须给真实相关seed，防止丢掉明确选择的证明分支。obstacle只接原题/定义/障碍，full另给按需登记成果；用户明确要求继承时照办并准确说明实际输入。packet不代表权限隔离。对照运行沿各槽的原 profile 派工和反馈。明确改变实验输入时建立新 spec/RUN。
@@ -316,7 +326,7 @@ python work.py research resume RUN
 
 普通 open 运行返回明确 worker 默认配置（gpt-6.1-sol / ultra / none），实际派工服从用户本轮配置。save 的 --model、--reasoning-effort、--fork-turns 可记录实际配置，后续事件沿用已记录值；旧记录不猜填。配置与 agent_id 是执行者对实际平台派工的记录。
 
-研究系统暂停，等待超边收尾后从头设计。research peers从保存且pin匹配的packet/input_refs定位同行RUN、数学工作区和主笔记，改版/不同定义保持可辨别；返回status=retired，shared_entry/shared_workspace及legacy入口均为空，不创建合作目录。普通resume保原packet、工作文件和未答反馈，不表示已恢复活动公屏或启动研究者。
+新版设计见 agent-design；开题需固定用户原题并真实派工，本轮只交设计与读取原型。research peers从保存且pin匹配的packet/input_refs定位同行RUN、数学工作区和主笔记，改版/不同定义保持可辨别；返回status=retired，shared_entry/shared_workspace及legacy入口均为空，不创建合作目录。普通resume保原packet、工作文件和未答反馈，不表示已恢复活动公屏或启动研究者。
 
 旧远端公屏和试跑文件板已删除；唯一保留的公屏为wcg/board-map-v2。旧read/send/inbox/board-init在退役路由上拒绝执行，不自动重建，也不把旧研究消息转发到构图公屏。构图mapper/workflow map-v2继续用原公屏；其他角色没有默认公屏。旧清洗reset apply停用，避免重建旧屏或重置构图状态。
 

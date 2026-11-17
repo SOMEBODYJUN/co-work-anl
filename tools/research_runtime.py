@@ -1894,6 +1894,9 @@ def main(argv=None):
     q = sub.add_parser('context'); q.add_argument('ids', nargs='+'); q.add_argument('--hops', type=int, default=0)
     q.add_argument('--edge', action='append'); q.add_argument('--edge-status', action='append', choices=['accepted','proposed','rejected'])
     q.add_argument('--relation-kind', action='append', choices=sorted(LOGICAL|CONTEXT))
+    q = sub.add_parser('frontier', help='Read-only ALL/OR frontier; structural closure assumes conditions, never proves a target')
+    q.add_argument('ids', nargs='+'); q.add_argument('--edge', action='append')
+    q.add_argument('--expect-branch', help='Reject a different local Git branch before reading mathematical inputs')
     q = sub.add_parser('edge-bind'); q.add_argument('edge_file'); q.add_argument('--write', action='store_true')
     q = sub.add_parser('edge-check'); q.add_argument('edge_file')
     q = sub.add_parser('packet'); q.add_argument('spec'); q.add_argument('--profile', choices=['obstacle', 'full'], required=True)
@@ -1967,6 +1970,12 @@ def main(argv=None):
         result = object_view(root,objs[a.object_id],body=a.body)
     elif a.command == 'context':
         result = context(root,a.ids,a.registry,a.hops,edge_ids=a.edge,edge_statuses=a.edge_status,relation_kinds=a.relation_kind)
+    elif a.command == 'frontier':
+        from research_frontier import frontier_report, repository_snapshot
+        snapshot = repository_snapshot(root, a.expect_branch)
+        selected_context = context(root, a.ids, a.registry, edge_ids=a.edge)
+        selected_context['snapshot'] = snapshot
+        result = frontier_report(selected_context)
     elif a.command == 'edge-bind':
         _, objs = load(root,a.registry,verify=False)
         path = _safe_path(root,a.edge_file)

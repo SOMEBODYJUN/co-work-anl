@@ -1,0 +1,83 @@
+{
+  "schema": 1,
+  "status": "passed-design-and-read-only-prototype-checks",
+  "base_commit": "7dc42458573b6653fccd6606afc2555f2fb466c8",
+  "branch": "rebuild/research-v2",
+  "registry_pin": "e7f7eda667a206cf71a54a584f8596608f7dc4a59717256da32b36692e82d142",
+  "command": [
+    "python",
+    "work.py",
+    "research",
+    "frontier",
+    "customer-attraction/e7-summin-full-common-budget-exact-discount-and-finite-tests",
+    "--expect-branch",
+    "rebuild/research-v2"
+  ],
+  "target": "customer-attraction/e7-summin-full-common-budget-exact-discount-and-finite-tests",
+  "native_command_exit_code": 0,
+  "real_consumption_assertions": {
+    "SUMmin_not_structurally_paid": true,
+    "equivalence_directions_preserved": [
+      "forward",
+      "reverse"
+    ],
+    "open_cycle_not_self_paid": true,
+    "all_spe_contribution_preserves_both_sources": true,
+    "contribution_remaining_nonempty": true,
+    "contribution_pays_whole_target": false
+  },
+  "counts": {
+    "routes": 2,
+    "contributions": 6,
+    "cycles": 1,
+    "declared_bases": 5
+  },
+  "upstream_files": [
+    {
+      "file": "research/agent-design/upstream/ansatz-23367c6/provenance.json",
+      "commit": "23367c6568c344d9c4dbf59be3f39b39f5d54324",
+      "files_verified": 3
+    },
+    {
+      "file": "research/agent-design/upstream/osverify-c43385b/provenance.json",
+      "commit": "c43385bcbedec943cabe0d7e95df5b50404d9acb",
+      "files_verified": 3
+    }
+  ],
+  "test_runs": [
+    {
+      "command": "python -m unittest discover -s tools -p 'test_research_*.py' -v",
+      "tests": 24,
+      "exit_code": 0
+    },
+    {
+      "command": "python -m unittest discover -s tools -p 'test_board_retirement.py' -v",
+      "tests": 4,
+      "exit_code": 0
+    }
+  ],
+  "limitations": "No new mathematical problem was launched or solved; natural-language conditions and applications are not verified by the frontier prototype.",
+  "native_final_check": {
+    "command": "python work.py research check --final",
+    "exit_code": 0,
+    "result": {
+      "status": "structure-valid-not-a-mathematical-verdict",
+      "objects": 3821,
+      "edges": 2673,
+      "unregistered_materials": 0,
+      "pending_materials": 0,
+      "final_coverage": true
+    }
+  },
+  "tested_source_sha256": {
+    "work.py": "bb823caf9175f5c6a2b71632b3079c9fc9c0fd4c2bbf44fb7a297ce86c5b3ff7",
+    "tools/research_runtime.py": "e32b77366bcb939300a936ab6dc6d03524b45cad91d28b9087de9351b313bce2",
+    "tools/research_frontier.py": "b52338bbdd6c55d8b3639bdff2e996b1224baa3cf5ac66cf0f1d835c987c15f1",
+    "tools/test_research_frontier.py": "5b9235545c37b8de26ad6d7e8735c22201a6fe0719754232e387c191cd8fe860"
+  },
+  "design_reviews": {
+    "source_facts": "Independent source review; OSVerify NOTICE included; latest Ansatz clarification retained.",
+    "workflow": "Independent review; per-premise bindings, explicit bridge, inherited debt and immutable reviewed revisions added.",
+    "automatic_enforcement_limit": "Application schema, inherited-obligation validation and reviewed-byte publication checks are execution contracts; this prototype does not implement those automatic admission gates."
+  }
+}

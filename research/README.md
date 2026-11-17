@@ -2,6 +2,8 @@
 
 完整数学在archives；本目录保存定位、阶段规则和实际运行断点。准备好流程不等于真实登记、正式图或Solver已运行。
 
+- [2026-11 新研究 Agent 设计](agent-design/README.md)：Work 原生 Main/三 Solver、完整超边消费、最新一手项目、可复用合同、只读前沿原型和完整提示词。未擅自启动新原题。
+
 - [阶段入口](PHASE3_READINESS.md)：2.5第三步与第三阶段的完整词、任务、公屏及完成条件。
 - [命令与数据](IMPLEMENTATION.md)：分批登记、协作、超边集成、研究读取与恢复。
 - [研究流程](RESEARCH_WORKFLOW.md)：Main/Solver实质研究、完整支持、反馈接续与成果回流。

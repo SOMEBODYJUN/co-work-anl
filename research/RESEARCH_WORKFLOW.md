@@ -1,4 +1,4 @@
-> 当前状态：研究系统暂停重新设计。现行启动入口见[暂停说明](../prompts/research-runtime.md)，下文为旧设计参考，不得据此重建已删除公屏。
+> 当前状态：2026-11 新设计已给出，见[新版开题入口](../prompts/research-runtime.md)及[完整超边消费](agent-design/HYPEREDGE_WORKFLOW.md)。尚未启动新数学原题。下文为旧设计参考，不得据此重建已删除公屏。
 
 # 从已有数学到实际研究，再把成果接回仓库
 
@@ -16,7 +16,7 @@ Main 通过平台真实派工，给精确子命题、当前条件、候选超边
 
 ## 旧研究公屏已删除
 
-研究 Agent 等超边收尾后从头设计，本页其余内容只供核对旧方案，不是继续启动指令。仓库级合作区、六人试跑板及旧研究公屏均已退役，不建立替代板。research peers/resume只定位保存的数学与RUN，shared_entry为空。当前唯一活动公屏为构图的wcg/board-map-v2。
+新研究设计在 [agent-design](agent-design/README.md)；本页其余内容只供核对旧方案，不是继续启动指令。仓库级合作区、六人试跑板及旧研究公屏均已退役，不建立替代板。research peers/resume只定位保存的数学与RUN，shared_entry为空。当前唯一活动公屏为构图的wcg/board-map-v2。
 
 ## 子代理取证，Main 接回数学
 
