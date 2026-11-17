@@ -270,7 +270,7 @@ for ref in frozen['content_refs']:
         raise SystemExit('Reviewed bytes differ: ' + ref['path'])
 print('All reviewed content matches this commit; mathematics is not checked.')
 CHECK_REVIEW_BYTES
-python work.py checkpoint --publish-only
+python work.py checkpoint ACTUAL-PUBLICATION-PATHS --publish-only
 ```
 
 只有前项成功才发布；命令失败就停止后续命令。publish-only 可能因远端推进而合并，在确认 status:pushed 后，用同一脚本再核它返回的实际 pushed_head，不能沿用发布前 commit 冒称远端版本。遇差异保未审状态并定向修复/复核，不称已审版本已发布。确认实际远端 commit 全部匹配，才算本次正式回流已发布；失败保 local-only，不把 promote receipt 当入库完成。这是执行者核对流程，尚不是 checkpoint 内的原子语义审查闸门。
