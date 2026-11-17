@@ -1,34 +1,13 @@
-# 统一入口work.py
+# 运行工具
 
-用户每阶段只需根work.py、仓库外凭据及一份[完整阶段词](../prompts/README.md)。程序恢复独立clone后，先cd进入该clone，再使用其根最新版；内部模块由程序调用，不让用户另配一组Python。
-
-先检查本地目录、Git状态、remote和远端，保留已有工作。新对话显式--actor Boss编号；继续原对话沿用身份、clone和未完任务。具体阶段启动命令见[阶段入口](../research/PHASE3_READINESS.md)。凭据不进remote、正文或提交。
-
-| 入口 | 实际用途 |
-| --- | --- |
-| start / doctor / sync / checkpoint | 身份与真实写端点、同步、明确路径保存及pushed确认 |
-| registration-task | 登记批次的lead、plan、list、claim-next --count、done --record-file、handoff、collect |
-| map | 同引擎的构图任务，另有read-add及assemble集成 |
-| research | prepare-inputs/freeze、batches-draft/map-draft自动分包、compose/register、完整超边读取、packet/save/resume |
-| compute / github | 普通云端批处理请求、运行与结果取回；按需环境管理 |
-| read / inbox / send | 当前绑定公屏；消息不代替认领或完成回执 |
-| clean / triage / curation-task | 原来源及前两步任务，不混入新阶段 |
-
-常用保存与读取：
+当前运行入口是仓库根 `work.py`。研究只依赖现行运行模块、研究 RUN、唯一 registry、正式超边和必要计算资源。
 
 ```sh
-python work.py sync
-python work.py checkpoint <本次明确路径> -m '具体成果及范围'
-python work.py read --thread rebuild-v2 --limit 20
-python work.py inbox
+python work.py --repo <clone> start --actor BossN --save <archive> --token-file <external-token>
+python work.py --repo <clone> research search <query>
+python work.py --repo <clone> research frontier <object-id>
+python work.py --repo <clone> research check
+python work.py --repo <clone> checkpoint <paths...> -m '保存研究断点'
 ```
 
-任务读最新元数据；普通竞争自动重选，响应未知核原request_id，不反复新认领。Boss串行组织同clone Git，各worker直接写约定独立文件。正文/边/批次和收据先确认pushed，再done。暂停用当前阶段handoff --all --reason，lead另交接；认证受阻仅local-only保全，不冒称完成。
-
-[实际命令与字段](../research/IMPLEMENTATION.md)说明两阶段批次、共享只读依赖、自动汇总和最终数学整合。[研究流程](../research/RESEARCH_WORKFLOW.md)说明完整ALL支持、替代分支、候选与反驳、原Solver接续。[云端入口](../research/GITHUB_RESOURCES.md)说明普通程序如何提交及取回结果；不默认开Codespaces，不默认在创建环境时跑旧演示或整套测试。
-
-旧map check/build与原型已移除；图检查和投影使用research check/build。curate只用于前置记录；旧来源命令见[cleanup](../cleanup/README.md)，原对象群命令见[CURATION_OPERATIONS](../research/CURATION_OPERATIONS.md)。
-
-已有research compute保留“执行本次计算并立即保存”的入口；它与通用云端compute request共用实际计算后端，输出、日志和检查点随本次结果保存，具体用法见云端说明。
-
-默认Sol窗口按官方500K声明，规划预留200K（包含生成记录/推导/工具空间），正文与元数据预算300K；字符数、token估计与实际窗口遥测分别标明。具体模型或已用上下文不同则按实报调整。一个包可含几十/百份，多个包可一次CAS领取和交付；不另造逐材料工单。
+旧阶段的 board、cleanup、curation、registration-task、map-task 和全仓 final 验收不再存在。新增对象和超边按当前研究 RUN 的回流合同写入，准确绑定正文、证据、版本和剩余义务后再 checkpoint。

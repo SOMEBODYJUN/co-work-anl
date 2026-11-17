@@ -11,7 +11,7 @@ import subprocess
 import sys
 
 from compute import DEFAULT_MANIFEST, run as run_experiment
-from curation import _safe_path
+from path_utils import _safe_path
 
 
 def _json_stdout(value: str):

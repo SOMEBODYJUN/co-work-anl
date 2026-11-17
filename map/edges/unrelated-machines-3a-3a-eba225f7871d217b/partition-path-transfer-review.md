@@ -15,7 +15,7 @@
 
 本轮实际读取，而非仅继承上轮审读结论：
 
-1. 仓库 `AGENTS.md`、`prompts/03-map-worker.md`、`research/IMPLEMENTATION.md`，当前任务原文以及上述两个对象的完整当前登记合同。
+1. 仓库 `AGENTS.md`、`prompts/research-runtime.md`、`research/IMPLEMENTATION.md`，当前任务原文以及上述两个对象的完整当前登记合同。
 2. 当前 `archives/unrelated-machines/state/资料/Asahiro等--图取向最小最大加权出度--资料.md` 全文，SHA-256 `3fe059248d81113e400a7c5fe3084cccc9eb53267d4c4f1a570e086bc1a06e0f`。重点核对 §1 模型、§3 显式支付两子表配对的安全 DP、§4.1 多重外平面归约、§4.2 简单系列并行归约及 §5 模型边界。
 3. 按 PDF skill 从冻结作者稿 `research/registration/evidence/boss6-0104/asahiro-miyano-ono-2011.pdf` 重新用 `pdftotext -layout` 读取全部 21 页（分 1–10、11–21 两段，输出均未截断）。PDF SHA-256 `5db93652d80fd92b6440e0a0e22edfdeb09f78e2b886c95cb4adf171c67ee147`，大小 271837 字节。实读摘要、模型与定义、仙人掌算法及证明、树分解 DP、Theorem 11–13 全部证明、结论和参考文献；没有据此声称参考文献内容已独立核验。
 4. 将 PDF 印页 13–15 渲染后逐页目视：印页 13 的两子状态最小化公式、Theorem 10 计费句和 Theorem 11；印页 14 的 Fig.4 两点平行边、Theorem 11 证明、Theorem 12 构造；印页 15 的 Fig.5 三边路径与 Theorem 12 两向证明。图中例子确为元素 `1,2,4,5,6`、半总和 9；三边路外边按元素赋权，中边权 9。

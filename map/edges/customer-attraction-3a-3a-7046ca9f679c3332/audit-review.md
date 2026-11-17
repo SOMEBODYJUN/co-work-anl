@@ -4,7 +4,7 @@
 
 ## 实际阅读范围与方法
 
-- 本 worker 实读本 clone 的 `AGENTS.md`、`prompts/03-map-worker.md`、本目录八条带 `edge_id` 的 JSON、三条完整结果相关的当前登记精确 statement/quantifiers/assumptions。
+- 本 worker 实读本 clone 的 `AGENTS.md`、`prompts/research-runtime.md`、本目录八条带 `edge_id` 的 JSON、三条完整结果相关的当前登记精确 statement/quantifiers/assumptions。
 - 本 worker 全文实读《驻留根菜单的最优标量包络与尾收益界》《驻留标量锐菜单的完整策略边界》《R879工作区的精确命题登记与失败路线时态》《任意背景的两预算安全最优菜单不能普遍付款》《任意合法背景的前两人额外槽安全值》《两层续局补偿族的安全扩充福利上限》《两层笛卡尔续局补偿的完整均衡族》《同人数不交目录扩充的完整策略保持》及《共同目录完整历史模型》。
 - 本 worker 另精读《驻留标量原审查与两份三人策略的有限核验》的“原内部审查的准确先验及覆盖”、《R-3f637平稳中间关联系数与主线停界》的“完整条件结论：平稳逐客户因子”及 six-providers《合法背景首对利润与静态安全下界诊断》的“后续状态：任意背景PB已反，实际前缀仍须另判”。其余算术或策略章节未被当成运行结果使用。
 - 同 clone 只读子复核 worker `contribution_check` 实读五条 contribution 的全部所列 evidence 成熟正文，并回传逐边数学理由；未修改文件。下列五条局部结论综合其实际阅读报告。

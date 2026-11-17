@@ -18,7 +18,7 @@ import sys
 import tempfile
 import uuid
 
-from curation import _safe_path, formal_paths
+from path_utils import _safe_path, formal_paths
 
 REGISTRY = 'research/registry.json'
 LOGICAL = {'implies', 'refutes', 'specializes', 'transfers', 'equivalent_to'}
@@ -1919,45 +1919,7 @@ def main(argv=None):
                 'used_tokens': args.used_tokens, 'reserve_tokens': args.reserve_tokens,
                 'output_tokens': args.output_tokens, 'inherited': args.context_mode == 'inherited'}
 
-    sub.add_parser('inventory')
     sub.add_parser('studio', help='Main/three-line workspace, saved results, exact applications and reviewed publication receipts')
-    q = sub.add_parser('inputs'); q.add_argument('--out', default='research/registration/inputs.json')
-    q.add_argument('--scope', choices=['repository','partial'], default='repository')
-    q.add_argument('--coverage-note', required=True); q.add_argument('--paths-file')
-    q = sub.add_parser('prepare-inputs', help='Freeze a byte inventory for 2.5.3; no mathematical admission')
-    q.add_argument('--output', default='research/registration/inputs.json')
-    q.add_argument('--scope', choices=['repository', 'partial'], default='repository')
-    q.add_argument('--coverage-note', required=True)
-    q.add_argument('--path', action='append', default=[])
-    q = sub.add_parser('freeze'); q.add_argument('--inputs-file', required=True); q.add_argument('--out', default='research/registration/baseline.json')
-    q = sub.add_parser('compose'); q.add_argument('--manifest', required=True); q.add_argument('--out', default='research/registration/proposed.json')
-    q = sub.add_parser('batches-draft', help='Draft whole registration batches from real frozen materials and a reading budget')
-    q.add_argument('--baseline', default='research/registration/baseline.json')
-    q.add_argument('--output', default='research/registration/tasks.json')
-    q.add_argument('--max-materials', type=int, default=200)
-    q.add_argument('--task-prefix', default='register')
-    q.add_argument('--include-registered', action='store_true')
-    reading_options(q)
-    q = sub.add_parser('map-draft', help='Draft related complete-object comparisons within a declared context budget')
-    q.add_argument('--output', default='map/planned-tasks.json')
-    q.add_argument('--stage', choices=['3A', '3B', '3C'], default='3A')
-    q.add_argument('--object-id', action='append')
-    q.add_argument('--objects-file')
-    q.add_argument('--scope', help='3A: start in this archive or subarchive, such as archives/facility-games/subarchives/common-two')
-    q.add_argument('--comparison', help='3B/3C: concrete mathematical question on the selected endpoints')
-    q.add_argument('--repair-task', action='append', help='Refresh unfinished or replace completed work on current inputs')
-    q.add_argument('--task-prefix', default='map')
-    q.add_argument('--max-objects', type=int)
-    reading_options(q)
-    q = sub.add_parser('registration-check'); q.add_argument('--final', action='store_true')
-    q = sub.add_parser('assignments-draft', help='Optional scheduling draft; review it before publishing actual CAS tasks')
-    q.add_argument('--baseline', default='research/registration/baseline.json')
-    q.add_argument('--owners', required=True)
-    q.add_argument('--output', default='research/registration/assignments.draft.json')
-    q.add_argument('--batch-size', type=int, default=80)
-    q = sub.add_parser('assignments-check'); q.add_argument('--assignment-file', default='research/registration/assignments.json')
-    q = sub.add_parser('new-id'); q.add_argument('--count', type=int, default=1)
-    q = sub.add_parser('register'); q.add_argument('--record-file', required=True)
     for command in ('check', 'build'):
         q = sub.add_parser(command); q.add_argument('--final', action='store_true')
     q = sub.add_parser('search'); q.add_argument('query'); q.add_argument('--limit', type=int, default=20)
@@ -1992,50 +1954,7 @@ def main(argv=None):
     q.add_argument('--model'); q.add_argument('--reasoning-effort')
     q.add_argument('--fork-turns', choices=['none', 'all'])
     a = p.parse_args(argv); root = a.repo.resolve()
-    if a.command == 'inventory': result = inventory(root, a.registry)
-    elif a.command == 'inputs':
-        import registration
-        result = registration.prepare_inputs(root,a.out,a.scope,a.coverage_note,a.paths_file)
-    elif a.command == 'prepare-inputs': result = prepare_inputs(root, a.output, a.scope, a.coverage_note, a.path)
-    elif a.command == 'batches-draft':
-        import registration
-        result = registration.draft_registration_tasks(root, a.baseline, a.output,
-            max_materials=a.max_materials, task_prefix=a.task_prefix,
-            context_options=reading_plan(a), include_registered=a.include_registered)
-    elif a.command == 'map-draft':
-        ids = a.object_id
-        comparison = a.comparison
-        if a.objects_file:
-            selected = json.loads(_safe_path(root, a.objects_file).read_text())
-            if isinstance(selected, dict):
-                saved_comparison = selected.get('comparison')
-                if comparison is not None and saved_comparison is not None and comparison != saved_comparison:
-                    raise ValueError('Give the same comparison in the file and command, or use only one')
-                comparison = comparison if comparison is not None else saved_comparison
-                selected = selected.get('object_ids')
-            strings(selected, 'selected object IDs', True)
-            ids = list(dict.fromkeys([*(ids or []), *selected]))
-        if a.repair_task:
-            if ids or a.max_objects is not None or a.scope is not None or comparison is not None:
-                raise ValueError('Repair uses the complete surviving scope of the named task; omit object selection and limits')
-            result = draft_map_repairs(root, a.repair_task, a.output, a.registry, a.task_prefix,
-                                       context_options=reading_plan(a))
-        else:
-            result = draft_map_tasks(root, output=a.output, registry=a.registry,
-                stage=a.stage, object_ids=ids, task_prefix=a.task_prefix,
-                context_options=reading_plan(a), max_objects=a.max_objects,
-                scope=a.scope, comparison=comparison)
-    elif a.command in {'freeze', 'compose', 'registration-check', 'assignments-draft', 'assignments-check', 'new-id'}:
-        import registration
-        if a.command == 'freeze': result = registration.freeze(root, a.inputs_file, a.out)
-        elif a.command == 'compose': result = registration.compose(root, a.manifest, a.out)
-        elif a.command == 'registration-check': result = registration.check(root, a.registry, a.final)
-        elif a.command == 'assignments-draft':
-            result = registration.draft_assignments(root, a.baseline, [x.strip() for x in a.owners.split(',') if x.strip()], a.output, a.batch_size)
-        elif a.command == 'assignments-check': result = registration.check_assignments(root, a.assignment_file)
-        else: result = registration.new_ids(a.count)
-    elif a.command == 'register': result = register(root, a.record_file, a.registry)
-    elif a.command in {'check', 'build'}: result = globals()[a.command](root, a.registry, a.final)
+    if a.command in {'check', 'build'}: result = globals()[a.command](root, a.registry, a.final)
     elif a.command == 'search':
         if a.limit < 1: raise ValueError('Positive display limit required')
         result = search(root,a.query,a.registry,a.limit,model=a.model,truth_statuses=a.truth_status,kinds=a.kind)

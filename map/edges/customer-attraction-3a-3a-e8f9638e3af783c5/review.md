@@ -4,7 +4,7 @@ Boss6；任务`customer-attraction-3a-3a-e8f9638e3af783c5`；2026-11-11。初领
 
 ## 输入、模型与实际阅读
 
-已全文读AGENTS.md、prompts/03-map-worker.md、research/IMPLEMENTATION.md、初领及read-add后的实际task，及registry中15 core与3 read对象的完整原记录。原35条reading_refs对应31个不同文件；指定全文和精确章节均按有序范围实读，所有输入文件SHA与task一致。新REP完整body/evidence共8 refs另逐项读齐（共同模型复用，7个新文件），task对象声明的实际阅读合计38个不同文件。大report共4955行，以完整JSON语义的无遗漏compact分段读取：根所有字段、cases 0–3全部字段与14条records、case4所有非records字段与0–149全部150条records，总164条。源码230行全文读，没有执行import/main。另为R18读取README、两个原完整策略证书与25客户完整精确审计。范围、行号、SHA和用途逐项见reading-ledger.json。
+已全文读AGENTS.md、prompts/research-runtime.md、research/IMPLEMENTATION.md、初领及read-add后的实际task，及registry中15 core与3 read对象的完整原记录。原35条reading_refs对应31个不同文件；指定全文和精确章节均按有序范围实读，所有输入文件SHA与task一致。新REP完整body/evidence共8 refs另逐项读齐（共同模型复用，7个新文件），task对象声明的实际阅读合计38个不同文件。大report共4955行，以完整JSON语义的无遗漏compact分段读取：根所有字段、cases 0–3全部字段与14条records、case4所有非records字段与0–149全部150条records，总164条。源码230行全文读，没有执行import/main。另为R18读取README、两个原完整策略证书与25客户完整精确审计。范围、行号、SHA和用途逐项见reading-ledger.json。
 
 共同目录使用标签集，允许同覆盖异标签、空覆盖、重复行动、零客户和任意弱平局。真实策略在全部有序历史定义，IC使用同一原策略改变历史后的真实后继；计数压缩收益不限制历史平局。静态组合结论不需SPE。fresh自留R0=Σ_(c>0)1/(1+c)与模型R_b(c)剩余总利润是不同量，不能因为符号相同而替换。除具体跨组问题外，六comparison_groups分别审查。
 

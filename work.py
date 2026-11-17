@@ -26,19 +26,15 @@ DEFAULT_SAVE = "customer-attraction"
 # implicit board; research uses its saved RUN and four mathematical studios.
 DEFAULT_BRANCH = "rebuild/research-v2"
 DEFAULT_BOARD_BRANCH = ""
-MAP_BOARD_BRANCH = "wcg/board-map-v2"
-RETIRED_BOARD_BRANCHES = {"wcg/board", "wcg/board-cleanup-20261028",
-                          "wcg/board-curation-25", "wcg/board-registration-v2"}
-DEFAULT_START_SAVE = "repository-cleanup"
+DEFAULT_START_SAVE = "customer-attraction"
 RESEARCH_ENTRIES = {
-    "repository-cleanup": {"research_entry": "cleanup/README.md", "research_prompt": "prompts/02.5-3-register.md", "research_runbook": "tools/README.md"},
     "customer-attraction": {"research_entry": "archives/customer-attraction/README.md", "research_prompt": "archives/customer-attraction/prompts/README.md", "research_runbook": "tools/README.md"},
     "facility-games": {"research_entry": "archives/facility-games/README.md", "research_prompt": "archives/facility-games/prompts/README.md", "research_runbook": "tools/README.md"},
     "weighted-congestion": {"research_entry": "archives/weighted-congestion/README.md", "research_prompt": "archives/weighted-congestion/prompts/README.md", "research_runbook": "tools/README.md"},
     "unrelated-machines": {"research_entry": "archives/unrelated-machines/README.md", "research_prompt": "archives/unrelated-machines/prompts/README.md", "research_runbook": "tools/README.md"},
     "positive-kernels": {"research_entry": "archives/positive-kernels/README.md", "research_prompt": "archives/positive-kernels/prompts/README.md", "research_runbook": "tools/README.md"},
 }
-ROLE_PROMPTS = {"boss": "prompts/research-runtime.md", "cleaner": "cleanup/README.md", "curator": "prompts/02.5-3-register.md", "mapper": "prompts/03-map.md"}
+ROLE_PROMPTS = {"boss": "prompts/research-runtime.md"}
 CLEANUP_ROLE_PROMPTS = ROLE_PROMPTS
 IDENTIFIER = re.compile(r"[A-Za-z0-9][A-Za-z0-9_.-]{0,63}")
 TOKEN = re.compile(rb"(?:github_pat_|ghp_)[A-Za-z0-9_]{12,}")
@@ -128,24 +124,12 @@ def branch_id(repo, requested=None):
 
 
 def board_branch(repo, requested=None, *, allow_none=False):
-    saved = run(repo, "config", "--local", "--get", "wcg.boardBranch",
-                check=False).stdout.decode().strip()
-    role = run(repo, "config", "--local", "--get", "wcg.role", check=False).stdout.decode().strip()
-    workflow = run(repo, "config", "--local", "--get", "wcg.workflowRun", check=False).stdout.decode().strip()
-    fallback = MAP_BOARD_BRANCH if role == "mapper" or workflow == "map-v2" else DEFAULT_BOARD_BRANCH
-    if requested in RETIRED_BOARD_BRANCHES:
-        raise Stop("该旧公屏已退役删除；构图使用 wcg/board-map-v2，其他阶段不再启用旧公屏。")
-    chosen = requested or (saved if saved not in RETIRED_BOARD_BRANCHES else "") or fallback
-    if not chosen:
-        if allow_none:
-            return None
-        raise Stop("当前角色没有活动公屏；旧公屏已删除，新研究设计不重建旧路由。")
-    chosen = checked_branch(repo, chosen, board=True)
-    if chosen == branch_id(repo):
-        raise Stop("公屏分支与研究文件分支必须分开。")
-    if saved and saved not in RETIRED_BOARD_BRANCHES and requested and saved != chosen:
-        raise Stop("本clone已绑定公屏 " + saved + "；新公屏使用独立clone。")
-    return chosen
+    saved = run(repo, "config", "--local", "--get", "wcg.boardBranch", check=False).stdout.decode().strip()
+    if requested or saved:
+        raise Stop("公屏已退役；研究通过 RUN、工作区和 GitHub 文件协作，不重建公屏。")
+    if allow_none:
+        return None
+    raise Stop("当前研究没有活动公屏。")
 
 
 def default_repo():
@@ -258,11 +242,8 @@ def sync(repo, env, allow_legacy=False):
                 **({"main": tip} if target == "main" else {}), "preserved_work": True})
 
 
-def finish_sync(repo,result):
-    if (repo/'tools/restart.py').is_file() and (repo/'cleanup/reset-receipt.json').is_file():
-        cleanup=subprocess.run([sys.executable,str(repo/'tools/restart.py'),'--repo',str(repo),'clean-local'],capture_output=True,text=True)
-        try:result['reset_cleanup']=json.loads(cleanup.stdout)
-        except ValueError:result['reset_cleanup']={'status':'needs-attention','detail':cleanup.stderr[-700:]}
+def finish_sync(repo, result):
+    # Research state is explicit RUN/workspace data; no retired stage reset hook.
     return result
 
 
@@ -292,34 +273,20 @@ def role_id(repo, requested=None, prompts=None, default="boss"):
 
 
 def workspace_path(repo, save, who):
-    workflow = run(repo, 'config', '--local', '--get', 'wcg.workflowRun', check=False).stdout.decode().strip()
-    if workflow:
-        if not IDENTIFIER.fullmatch(workflow) or not IDENTIFIER.fullmatch(who) or save != 'repository-cleanup':
-            raise Stop('Invalid workflow run binding')
-        from_path = Path('research/workspaces') / workflow / who
-        cursor = repo
-        for part in from_path.parts:
-            cursor /= part
-            if cursor.is_symlink(): raise Stop('工作区路径不能经过符号链接。')
-        return from_path
     if not IDENTIFIER.fullmatch(save) or not IDENTIFIER.fullmatch(who):
         raise Stop("工作区 ID 不合法。")
+    if run(repo, "config", "--local", "--get", "wcg.workflowRun", check=False).stdout.decode().strip():
+        raise Stop("旧阶段运行绑定已退役；请从研究 RUN 和个人工作区接续。")
     subarchive=run(repo,"config","--local","--get","wcg.subarchive",check=False).stdout.decode().strip()
     base=Path("archives")/save
     if subarchive:
-        if not IDENTIFIER.fullmatch(subarchive):raise Stop("子存档绑定不合法。")
+        if not IDENTIFIER.fullmatch(subarchive): raise Stop("子存档绑定不合法。")
         base=base/"subarchives"/subarchive
-    curation_run=run(repo,'config','--local','--get','wcg.curationRun',check=False).stdout.decode().strip()
-    if curation_run and (not IDENTIFIER.fullmatch(curation_run) or save!='repository-cleanup'):
-        raise Stop('2.5运行绑定不合法。')
-    relative = (Path('curation/workspaces')/curation_run/who if curation_run else
-                Path("cleanup/workspaces") / who if save == "repository-cleanup"
-                else base / "workspaces" / who)
-    cursor = repo
+    relative=base/"workspaces"/who
+    cursor=repo
     for part in relative.parts:
         cursor /= part
-        if cursor.is_symlink():
-            raise Stop("工作区路径不能经过符号链接。")
+        if cursor.is_symlink(): raise Stop("工作区路径不能经过符号链接。")
     return relative
 
 
@@ -456,6 +423,8 @@ def start(args):
     if branch != target and not legacy:
         raise Stop("当前分支不是 " + target + "；不自动切换或合并其他分支，请使用独立clone。")
     selected_board = board_branch(repo, getattr(args, "board_branch", None), allow_none=True)
+    if getattr(args, "curation_run", None) or getattr(args, "workflow_run", None):
+        raise Stop("2.5.3 与第三阶段队列已退役；请使用研究 RUN 和 studio。")
     if selected_board == target:
         raise Stop("公屏分支与研究文件分支必须分开。")
     env = auth(repo, args)
@@ -478,8 +447,8 @@ def start(args):
     if (Path(__file__).resolve() != current_program.resolve()
             or current_program.read_bytes() != running_source):
         forwarded = ["--repo", str(repo), "start", "--remote", args.remote,
-                     "--board-limit", str(board_limit)]
-        for name in ("actor", "role", "token_file", "save", "branch", "board_branch", "subarchive",'auth','curation_run','workflow_run'):
+                     "--board-limit", "0"]
+        for name in ("actor", "role", "token_file", "save", "branch", "board_branch", "subarchive",'auth'):
             supplied = getattr(args, name, None)
             if supplied is not None:
                 forwarded.extend(["--" + name.replace("_", "-"), str(supplied)])
@@ -491,9 +460,6 @@ def start(args):
             'program_sha256':hashlib.sha256(current_program.read_bytes()).hexdigest(),'result':result}))
         return subprocess.call([sys.executable, str(current_program), *forwarded], env=forwarded_env)
     who = actor(repo, args.actor,getattr(args,'adopt_legacy',False))
-    policy_file=repo/'cleanup/coordination.json';rules=json.loads(policy_file.read_text()) if policy_file.exists() else {}
-    if rules.get('require_boss_number') and not re.fullmatch(r'Boss[1-9][0-9]*',who):
-        raise Stop('本轮须按提示词绑定Boss编号；旧UUID对话用--actor Boss编号 --adopt-legacy。')
     if not run(repo, "config", "--local", "--get", "user.name", check=False).stdout:
         run(repo, "config", "--local", "user.name", "WCG " + who)
     if not run(repo, "config", "--local", "--get", "user.email", check=False).stdout:
@@ -509,63 +475,31 @@ def start(args):
         raise Stop("研究存档请使用安全ID。")
     selected_sub=requested_sub or saved_sub
     if selected_sub:
-        if preview_save=='repository-cleanup' or not (repo/'archives'/preview_save/'subarchives'/selected_sub/'README.md').is_file():
+        if not (repo/'archives'/preview_save/'subarchives'/selected_sub/'README.md').is_file():
             raise Stop("不存在该研究子存档；先按实际问题建立目录。")
     save = save_id(repo, requested_save,
                    DEFAULT_START_SAVE if target == DEFAULT_BRANCH else DEFAULT_SAVE)
     if selected_sub:
         run(repo,"config","--local","wcg.subarchive",selected_sub)
     requested_role = getattr(args, "role", None)
-    prompts = CLEANUP_ROLE_PROMPTS if save == "repository-cleanup" else ROLE_PROMPTS
+    prompts = ROLE_PROMPTS
     valid_archive=(repo/'archives'/save/'README.md').is_file()
     if requested_role is not None and save not in RESEARCH_ENTRIES and not valid_archive:
         raise Stop("请先为明确研究问题建立存档README，再绑定此角色。")
     selected_role = role_id(repo, requested_role, prompts,
-                            "cleaner" if save == "repository-cleanup" else "boss") if save in RESEARCH_ENTRIES or valid_archive else None
-    previous_run=run(repo,'config','--local','--get','wcg.curationRun',check=False).stdout.decode().strip()
-    requested_run=getattr(args,'curation_run',None)
-    curation_run=requested_run or previous_run
-    if previous_run and requested_run and previous_run!=requested_run:
-        raise Stop('本clone已绑定另一2.5运行；请用独立clone。')
-    if curation_run:
-        if (not IDENTIFIER.fullmatch(curation_run) or selected_role!='curator' or save!='repository-cleanup'
-                or not (repo/'curation/runs'/curation_run/'run.json').is_file()):
-            raise Stop('2.5运行须已发布，角色curator、存档repository-cleanup。')
-        run(repo,'config','--local','wcg.curationRun',curation_run)
-    previous_workflow = run(repo, 'config', '--local', '--get', 'wcg.workflowRun', check=False).stdout.decode().strip()
-    requested_workflow = getattr(args, 'workflow_run', None)
-    workflow_run = requested_workflow or previous_workflow
+                            "boss") if save in RESEARCH_ENTRIES or valid_archive else None
+    if getattr(args, 'curation_run', None) or getattr(args, 'workflow_run', None):
+        raise Stop("2.5.3 与第三阶段队列已退役；请使用研究 RUN 和 studio。")
+    if run(repo, 'config', '--local', '--get', 'wcg.curationRun', check=False).stdout.decode().strip():
+        raise Stop("当前clone绑定旧阶段；请使用新的研究clone。")
+    if run(repo, 'config', '--local', '--get', 'wcg.workflowRun', check=False).stdout.decode().strip():
+        raise Stop("当前clone绑定旧阶段；请使用新的研究clone。")
     workflow_config = None
-    if previous_workflow and requested_workflow and previous_workflow != requested_workflow:
-        raise Stop('本clone已绑定另一工作阶段；请用独立clone。')
-    if workflow_run:
-        if curation_run or not IDENTIFIER.fullmatch(workflow_run) or save != 'repository-cleanup':
-            raise Stop('登记/建图运行与2.5第二步独立；使用独立clone和repository-cleanup路由。')
-        if not previous_workflow and run(repo, 'config', '--local', '--get', 'wcg.instance', check=False).stdout:
-            raise Stop('已有对话工作区不能改绑新阶段；请保留它并使用独立clone。')
-        config_path = repo / 'research/operations' / workflow_run / 'run.json'
-        if not config_path.is_file(): raise Stop('请先发布明确的工作阶段run.json')
-        workflow_config = json.loads(config_path.read_text())
-        if workflow_config.get('schema') != 1 or workflow_config.get('role') != selected_role or workflow_config.get('phase') not in {'registration', 'map'}:
-            raise Stop('工作阶段与角色不匹配。')
-        prompt_path = Path(workflow_config['prompt'])
-        if prompt_path.is_absolute() or '..' in prompt_path.parts or not (repo / prompt_path).is_file():
-            raise Stop('工作阶段缺少明确启动词。')
-        expected_board = workflow_config.get('board_branch') or None
-        if expected_board:
-            expected_board = checked_branch(repo, expected_board, board=True)
-            if expected_board in RETIRED_BOARD_BRANCHES:
-                expected_board = None
-        if getattr(args, 'board_branch', None) and selected_board != expected_board:
-            raise Stop('公屏与该工作阶段配置不一致。')
-        selected_board = expected_board
-        run(repo, 'config', '--local', 'wcg.workflowRun', workflow_run)
-    if not selected_board and selected_role == 'mapper':
-        selected_board = MAP_BOARD_BRANCH
+    curation_run = None
+    workflow_run = None
     if selected_board:
-        run(repo, "config", "--local", "wcg.boardBranch", selected_board)
-    else:
-        run(repo, "config", "--local", "--unset", "wcg.boardBranch", check=False)
+        raise Stop("公屏已退役；请用 research studio 保存研究过程。")
+    run(repo, "config", "--local", "--unset", "wcg.boardBranch", check=False)
     if legacy:
         # sync has already preserved staged/unstaged/untracked work and stopped
         # on any real conflict. Keep any existing local main under a local ref
@@ -607,39 +541,9 @@ def start(args):
                       })
     if save == "customer-attraction" and not selected_sub:
         result["context_entry"] = "archives/customer-attraction/README.md"
-    elif save == "repository-cleanup":
-        result["context_entry"] = ("prompts/03-map.md" if selected_role == "mapper" else
-                                   "prompts/02.5-3-register.md" if selected_role == "curator" else "cleanup/README.md")
-    if curation_run:
-        entry='research/CURATION_OPERATIONS.md'
-        result.update(curation_run=curation_run,context_entry=entry,research_entry=entry,
-                      role_prompt=entry,research_prompt=entry,
-                      research_runbook='research/CURATION_OPERATIONS.md')
-    if workflow_config:
-        result.update(workflow_run=workflow_run, context_entry=workflow_config['prompt'],
-                      role_prompt=workflow_config['prompt'], research_prompt=workflow_config['prompt'])
-    result["recent_board_limit"] = board_limit
-    if rules.get('require_boss_number') and save=='repository-cleanup':
-        command=[sys.executable,str(repo/TOOLS/'coordination.py'),'--repo',str(repo),'register']
-        registered=subprocess.run(command,env=env,capture_output=True,text=True)
-        try:detail=json.loads(registered.stdout)
-        except ValueError:detail={'status':'write-blocked','detail':registered.stderr[:800]}
-        result['identity_registration']=detail
-        if registered.returncode:
-            result.update(status='read-only',write_access='blocked');print(json.dumps(result,ensure_ascii=False));return registered.returncode
-        result['write_access']='verified'
+    result["recent_board_limit"] = 0
     print(json.dumps(result, ensure_ascii=False), flush=True)
-    if not board_limit or not selected_board:
-        return 0
-    return board(repo, env, "view", ["--save", save, "--limit", str(board_limit)])
-
-
-def board(repo, env, command, extra):
-    path = repo / TOOLS / "board.py"
-    if not path.is_file():
-        raise Stop("仓库缺少公屏程序；请运行 sync 更新程序。")
-    return subprocess.call([sys.executable, str(path), "--repo", str(repo),
-                            "--branch", board_branch(repo), command, *extra], env=env)
+    return 0
 
 
 def main():
@@ -653,237 +557,70 @@ def main():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument("--repo", default=default_repo())
     p.add_argument("--token-file")
-    p.add_argument('--auth',choices=('token','ssh'),help='HTTPS令牌或本环境SSH agent；SSH模式不读取令牌文件')
-    p.add_argument("--save", help="研究存档 ID；新clone默认 repository-cleanup，已绑定clone保持原存档")
+    p.add_argument("--auth", choices=("token", "ssh"))
+    p.add_argument("--save", help="研究存档 ID；新 clone 默认 customer-attraction")
     sub = p.add_subparsers(dest="command", required=True)
-    s = sub.add_parser("start", help="恢复项目，固定角色号并同步；公屏按需读取")
-    s.add_argument('--actor',help='提示词明确指定的Boss编号；首次必填，接续复用')
-    s.add_argument('--adopt-legacy',action='store_true')
-    s.add_argument('--auth',choices=('token','ssh'),default=argparse.SUPPRESS)
-    s.add_argument("--role", choices=tuple(ROLE_PROMPTS), help="显式选择当前阶段角色；既有绑定复用")
-    s.add_argument("--token-file", default=argparse.SUPPRESS)
-    s.add_argument("--remote", default=REMOTE)
-    s.add_argument("--save", default=argparse.SUPPRESS)
-    s.add_argument("--resume", action="store_true", help="明确接续已存在的同号工作区")
-    s.add_argument("--subarchive", help="父存档下的明确子问题；首次绑定，继续同clone复用")
-    s.add_argument('--curation-run',help='已发布的2.5运行ID；独立工作区/身份/任务，不混入旧来源')
-    s.add_argument('--workflow-run', help='已发布的登记/建图阶段；独立身份与工作区，不改绑旧阶段')
-    s.add_argument("--branch", help="文件分支；新clone默认长期共用分支，既有绑定不变")
-    s.add_argument("--board-branch", help="构图公屏wcg/board-map-v2；其他阶段无默认公屏，旧公屏已退役")
-    s.add_argument("--board-limit", type=int, default=0,
-                   help="启动时读取最近几条公屏；默认0不自动读取，完整历史用read按需查询")
-    sub.add_parser("sync", help="只同步绑定分支并保留本地工作")
-    sub.add_parser('doctor',help='不改远端，检查实际写端点权限')
-    restart=sub.add_parser('reset',help='生成或执行保留真实done的协作重置')
-    restart.add_argument('args',nargs=argparse.REMAINDER)
-    sub.add_parser("board-init", help="初始化绑定公屏；已有公屏不删除消息")
-    clean = sub.add_parser("clean", help="来源、逐文件认领/勾选与覆盖")
-    clean.add_argument("args", nargs=argparse.REMAINDER)
-    mapping = sub.add_parser("map", help="超边任务与集成；投影使用research build")
-    mapping.add_argument("args", nargs=argparse.REMAINDER)
-    registration_tasks = sub.add_parser('registration-task', help='登记批次的认领、接续、交付和集成')
-    registration_tasks.add_argument('args', nargs=argparse.REMAINDER)
-    research = sub.add_parser('research', help='登记、按需读取超边、两类Solver输入和持续研究恢复',
-                              epilog='Commands: studio, inputs, prepare-inputs, inventory, batches-draft, map-draft, freeze, assignments-draft, assignments-check, new-id, compose, register, registration-check, check, build, search, show, context, frontier, edge-bind, edge-check, packet, init, save, resume, compute. See research/IMPLEMENTATION.md.')
-    research.add_argument('--registry', help='显式选择v2登记文件；省略使用research/registry.json')
-    research.add_argument('args', nargs=argparse.REMAINDER)
-    computation = sub.add_parser('compute', help='实际计算或生成明确云端批处理请求')
-    computation.add_argument('args', nargs=argparse.REMAINDER)
-    github = sub.add_parser('github', help='使用仓库外凭据调用GitHub研究资源；status只读',
-                            epilog='提交计算请求、查询run并取回产物；Codespaces按实际环境需要使用。')
-    github.add_argument('args', nargs=argparse.REMAINDER)
-    curate = sub.add_parser("curate", help="2.5固定原文、逐对象处置与数学准入；只操作本地明确文件")
-    curate.add_argument("args", nargs=argparse.REMAINDER)
-    triage = sub.add_parser("triage", help="2.5.1材料定性批次、覆盖与目录；不判断数学真值")
-    triage.add_argument("args", nargs=argparse.REMAINDER)
-    tasks = sub.add_parser('curation-task',help='2.5对象群短表/status、批量认领/finish、持久重试和一键交接')
-    tasks.add_argument('args',nargs=argparse.REMAINDER)
-    r = sub.add_parser("read", help="读取异步公屏")
-    r.add_argument("--json", action="store_true")
-    r.add_argument("--thread")
-    r.add_argument("--limit", type=int,
-                   help="只显示最近若干条消息；0 表示全部")
-    s = sub.add_parser("send", help="署名发言，回复和资产引用均可选")
-    text = s.add_mutually_exclusive_group(required=True)
-    text.add_argument("--text")
-    text.add_argument("--text-file")
-    for name in ("thread", "reply-to", "asset-json", "kind", "event-id"):
-        s.add_argument("--" + name)
-    s.add_argument("--mention", action="append", default=[])
-    s.add_argument("--to", help="定向私聊收件人；省略时为公屏")
-    dm = sub.add_parser("dm", help="发送或读取与一位 Worker 的双方私聊")
-    dm.add_argument("--to", required=True)
-    text = dm.add_mutually_exclusive_group()
-    text.add_argument("--text")
-    text.add_argument("--text-file")
-    dm.add_argument("--json", action="store_true")
-    for name in ("thread", "reply-to", "asset-json", "kind", "event-id"):
-        dm.add_argument("--" + name)
-    inbox = sub.add_parser("inbox", help="查看自己的私聊、提及和回复；默认未读")
-    inbox.add_argument("--json", action="store_true")
-    inbox.add_argument("--all", action="store_true")
-    inbox.add_argument("--limit", type=int)
-    ack = sub.add_parser("ack", help="标记收件箱消息已读，不代表数学采用")
-    ack.add_argument("ids", nargs="+")
-    workspace = sub.add_parser("workspace", help="准备自己的个人研究工作区")
+    start_parser = sub.add_parser("start", help="恢复研究仓库并绑定数学研究身份")
+    start_parser.add_argument("--actor", help="显式 Boss 编号；首次启动必须提供")
+    start_parser.add_argument("--adopt-legacy", action="store_true")
+    start_parser.add_argument("--auth", choices=("token", "ssh"), default=argparse.SUPPRESS)
+    start_parser.add_argument("--role", choices=tuple(ROLE_PROMPTS), default="boss")
+    start_parser.add_argument("--token-file", default=argparse.SUPPRESS)
+    start_parser.add_argument("--remote", default=REMOTE)
+    start_parser.add_argument("--save", default=argparse.SUPPRESS)
+    start_parser.add_argument("--resume", action="store_true")
+    start_parser.add_argument("--subarchive")
+    start_parser.add_argument("--branch")
+    sub.add_parser("sync", help="只同步绑定研究分支并保留本地工作")
+    research = sub.add_parser("research", help="读取超边、恢复 RUN、保存研究结果")
+    research.add_argument("--registry")
+    research.add_argument("args", nargs=argparse.REMAINDER)
+    computation = sub.add_parser("compute", help="执行明确登记的研究计算")
+    computation.add_argument("args", nargs=argparse.REMAINDER)
+    github = sub.add_parser("github", help="读取或操作明确的 GitHub 研究资源")
+    github.add_argument("args", nargs=argparse.REMAINDER)
+    workspace = sub.add_parser("workspace", help="准备当前研究身份的个人工作区")
     workspace.add_argument("--resume", action="store_true")
-    v = sub.add_parser("visit", help="只读访问别人已推送的工作区文件")
-    v.add_argument("actor")
-    v.add_argument("--path", default="README.md")
-    v.add_argument("--branch", help="只读其他文件分支；默认绑定分支")
-    c = sub.add_parser("checkpoint", help="立即保存阶段资产并推送")
-    c.add_argument("paths", nargs="*")
-    c.add_argument("-m", "--message")
-    c.add_argument("--create-branch", action="store_true",
-                   help="明确允许首次发布绑定分支；基线为远端main，不覆盖已有分支")
-    c.add_argument('--local-only',action='store_true')
-    c.add_argument('--publish-only', action='store_true', help='只发布已有提交，保留暂存及未提交草稿')
-    c.add_argument('--review-plan', action='append', default=[], help='成熟成果的既有promote计划；在最终push前核对已审字节，可重复')
-    sub.add_parser("pending", help="查看待发送消息")
-    r = sub.add_parser("retry", help="以原消息 ID 重试发送")
-    r.add_argument("event_id")
-    r = sub.add_parser("discard", help="删除一条未发送的本地草稿")
-    r.add_argument("event_id")
+    visit = sub.add_parser("visit", help="只读访问已推送的研究文件")
+    visit.add_argument("actor")
+    visit.add_argument("--path", default="README.md")
+    visit.add_argument("--branch")
+    checkpoint = sub.add_parser("checkpoint", help="保存研究资产并按明确范围推送")
+    checkpoint.add_argument("paths", nargs="*")
+    checkpoint.add_argument("-m", "--message")
+    checkpoint.add_argument("--create-branch", action="store_true")
+    checkpoint.add_argument("--local-only", action="store_true")
+    checkpoint.add_argument("--publish-only", action="store_true")
+    checkpoint.add_argument("--review-plan", action="append", default=[])
     a = p.parse_args()
     if a.command == "start":
         return start(a)
     repo = checked_repo(a.repo)
-    if a.command == 'research':
-        registry = ['--registry', a.registry] if a.registry else []
-        # Bound planners and map final checks read the latest shared queue.
-        # Local reads and help do not need authentication.
-        planner = a.args and a.args[0] in {'batches-draft', 'map-draft'}
-        map_final = (a.args and a.args[0] in {'check', 'build'} and '--final' in a.args
-                     and run(repo, 'config', '--local', '--get', 'wcg.role', check=False).stdout.decode().strip() == 'mapper')
-        workflow = run(repo, 'config', '--local', '--get', 'wcg.workflowRun', check=False).stdout.decode().strip() if planner or map_final else ''
-        env = auth(repo, a) if workflow and not any(x in a.args for x in ('-h', '--help')) else None
-        return subprocess.call([sys.executable, str(repo / TOOLS / 'research_runtime.py'), '--repo', str(repo), *registry, *a.args], env=env)
-    if a.command == 'compute':
-        return subprocess.call([sys.executable, str(repo / TOOLS / 'compute.py'), '--repo', str(repo), *a.args])
-    task_commands = {'inventory', 'lead', 'plan', 'compact', 'list', 'claim', 'claim-next', 'done',
-                     'handoff', 'reclaim', 'withdraw', 'status', 'collect', 'assemble', 'read-add'}
-    if a.command == 'registration-task' or (a.command == 'map' and a.args and a.args[0] in task_commands):
-        phase = 'registration' if a.command == 'registration-task' else 'map'
-        command = [sys.executable, str(repo / TOOLS / 'map_tasks.py'), '--repo', str(repo),
-                   '--phase', phase, *a.args]
-        if any(option in a.args for option in ('-h', '--help')):
-            return subprocess.call(command)
-        env = auth(repo, a)
-        result = subprocess.run(command, env=env, capture_output=True, text=True)
-        if result.stderr: sys.stderr.write(result.stderr)
-        if result.returncode:
-            sys.stdout.write(result.stdout)
-            return result.returncode
-        receipt = json.loads(result.stdout)
-        if isinstance(receipt, dict) and receipt.get('status') == 'pushed':
-            try: receipt['local_sync'] = sync(repo, env)
-            except (Stop, OSError) as exc: receipt['local_sync'] = {'status': 'needs-attention', 'detail': str(exc)}
-        print(json.dumps(receipt, ensure_ascii=False, indent=2))
-        return 0
-    if a.command == 'map':
-        raise Stop('Use map task commands; graph checking and projection use research check/build.')
-    if a.command in ("curate", "triage"):
-        module = {"curate":"curation.py", "triage":"triage.py"}[a.command]
-        return subprocess.call([sys.executable, str(repo / TOOLS / module), "--repo", str(repo), *a.args])
+    if a.command == "research":
+        registry = ["--registry", a.registry] if a.registry else []
+        return subprocess.call([sys.executable, str(repo / TOOLS / "research_runtime.py"), "--repo", str(repo), *registry, *a.args])
+    if a.command == "compute":
+        return subprocess.call([sys.executable, str(repo / TOOLS / "compute.py"), "--repo", str(repo), *a.args])
     env = auth(repo, a)
-    if a.command == 'github':
-        return subprocess.call([sys.executable, str(repo / TOOLS / 'github_resources.py'), '--repo', str(repo), *a.args], env=env)
-    if a.command=='curation-task':
-        return subprocess.call([sys.executable,str(repo/TOOLS/'curation_tasks.py'),'--repo',str(repo),*a.args],env=env)
-    if a.command=='doctor':
-        return subprocess.call([sys.executable,str(repo/TOOLS/'coordination.py'),'--repo',str(repo),'doctor'],env=env)
-    if a.command=='reset':
-        return subprocess.call([sys.executable,str(repo/TOOLS/'restart.py'),'--repo',str(repo),*a.args],env=env)
+    if a.command == "github":
+        return subprocess.call([sys.executable, str(repo / TOOLS / "github_resources.py"), "--repo", str(repo), *a.args], env=env)
     who = actor(repo)
     save = save_id(repo, a.save)
-    target = getattr(a, "to", None)
-    if target is not None and (not IDENTIFIER.fullmatch(target) or target == who):
-        raise Stop("私聊必须指定另一位 Worker 的有效编号；不会改发到公屏。")
-    if a.command == "clean":
-        module = "cleanup.py"
-        command=[sys.executable, str(repo / TOOLS / module), "--repo", str(repo), *a.args]
-        if a.command=='clean' and a.args and a.args[0] in ('claim','done','release','handoff'):
-            result=subprocess.run(command,env=env,capture_output=True,text=True)
-            if result.stderr:sys.stderr.write(result.stderr)
-            if result.returncode:
-                sys.stdout.write(result.stdout)
-                return result.returncode
-            receipt=json.loads(result.stdout)
-            if receipt.get('status')=='pushed':
-                try:receipt['local_sync']=sync(repo,env)
-                except (Stop,OSError) as exc:
-                    # The remote operation succeeded even if restoring local
-                    # drafts needs attention; keep that success distinguishable.
-                    receipt['local_sync']={'status':'needs-attention','detail':str(exc)}
-            print(json.dumps(receipt,ensure_ascii=False,indent=2))
-            return 0
-        return subprocess.call(command, env=env)
     if a.command == "sync":
-        print(json.dumps(sync(repo, env), ensure_ascii=False))
-        return 0
-    if a.command == "board-init":
-        return board(repo, env, "init", [])
-    if a.command == "read":
-        extra = ["--save", save] + (["--json"] if a.json else [])
-        if a.thread is not None:
-            extra += ["--thread", a.thread]
-        if a.limit is not None:
-            if a.limit < 0:
-                raise Stop("read --limit 必须是非负整数。")
-            extra += ["--limit", str(a.limit)]
-        return board(repo, env, "view", extra)
+        print(json.dumps(sync(repo, env), ensure_ascii=False)); return 0
     if a.command == "workspace":
-        print(json.dumps(workspace_init(repo, save, who, a.resume), ensure_ascii=False))
-        return 0
+        print(json.dumps(workspace_init(repo, save, who, a.resume), ensure_ascii=False)); return 0
     if a.command == "visit":
-        print(json.dumps(visit(repo, env, save, a.actor, a.path, a.branch), ensure_ascii=False, indent=2))
-        return 0
-    if a.command == "ack":
-        extra = ["--actor", who, "--save", save]
-        for ident in a.ids:
-            extra += ["--event-id", ident]
-        return board(repo, env, "ack", extra)
-    if a.command == "inbox":
-        extra = ["--actor", who, "--save", save, "--inbox"]
-        if not a.all:
-            extra += ["--unread"]
-        if a.json:
-            extra += ["--json"]
-        if a.limit is not None:
-            extra += ["--limit", str(a.limit)]
-        return board(repo, env, "view", extra)
-    if a.command == "dm" and a.text is None and a.text_file is None:
-        extra = ["--actor", who, "--save", save, "--peer", a.to]
-        if a.json:
-            extra += ["--json"]
-        if a.thread:
-            extra += ["--thread", a.thread]
-        return board(repo, env, "view", extra)
-    if a.command in ("send", "dm"):
-        extra = ["--actor", who, "--save", save]
-        for name in ("text", "text_file", "thread", "reply_to", "asset_json", "kind", "event_id"):
-            v = getattr(a, name)
-            if v is not None:
-                extra += ["--" + name.replace("_", "-"), v]
-        if getattr(a, "to", None) is not None:
-            extra += ["--to", a.to]
-        for person in getattr(a, "mention", []):
-            extra += ["--mention", person]
-        return board(repo, env, "say", extra)
-    if a.command in ("pending", "retry", "discard"):
-        return board(repo, env, a.command,
-                     ["--event-id", a.event_id, "--actor", who] if a.command != "pending" else [])
+        print(json.dumps(visit(repo, env, save, a.actor, a.path, a.branch), ensure_ascii=False, indent=2)); return 0
     if a.command == "checkpoint":
         command = [sys.executable, str(repo / TOOLS / "checkpoint.py"), "--repo", str(repo), *a.paths]
-        if a.message:
-            command += ["-m", a.message]
-        if a.create_branch:
-            command += ["--create-branch"]
-        if a.local_only:command.append('--local-only')
-        if a.publish_only:command.append('--publish-only')
-        for plan in a.review_plan:command.extend(['--review-plan', plan])
+        if a.message: command += ["-m", a.message]
+        if a.create_branch: command.append("--create-branch")
+        if a.local_only: command.append("--local-only")
+        if a.publish_only: command.append("--publish-only")
+        for plan in a.review_plan: command.extend(["--review-plan", plan])
         return subprocess.call(command, env=env)
-    return 0
+    raise Stop("未知研究命令")
 
 
 if __name__ == "__main__":

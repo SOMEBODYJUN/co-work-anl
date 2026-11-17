@@ -4,7 +4,7 @@
 
 ## 1. 实际阅读、比较与继承范围
 
-本轮实读 AGENTS.md、`prompts/03-map-worker.md`、`research/IMPLEMENTATION.md` 第三阶段接口及本任务原文。定向实读材料为：
+本轮实读 AGENTS.md、`prompts/research-runtime.md`、`research/IMPLEMENTATION.md` 第三阶段接口及本任务原文。定向实读材料为：
 
 - A=`UM-NORMALIZED-FLAT-CARTESIAN-TENSOR-REVERSE-AMPLIFICATION-v1` 当前登记 v3、全部模型／陈述／量词／证据绑定，以及主反例《裸笛卡尔菜单乘积的精确反向放大》全文；承重数学为其 §§1–5。
 - 已订正的《裸Cartesian张量反向放大独立实际稀疏审计》全文，以及冻结原件 `tensor-reverse-actual-audit-20261031/original/tensor_reverse_actual_audit_review.md` 全文。

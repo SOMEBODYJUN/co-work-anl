@@ -6,7 +6,7 @@ from pathlib import Path, PurePosixPath
 import subprocess
 import uuid
 
-from curation import _safe_path, formal_paths, is_formal_path
+from path_utils import _safe_path, formal_paths, is_formal_path
 import research_runtime as runtime
 
 

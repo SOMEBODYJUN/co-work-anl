@@ -2,7 +2,7 @@
 
 ## 完整读取
 
-本轮完整读取任务定义（含 read-add 后的 `M-c213464ff5db45bcb0625547ae7f20a1`）、`AGENTS.md`、`research/IMPLEMENTATION.md`、`prompts/03-map-worker.md`、登记总表中两个 endpoint 的完整记录，以及任务声明的 8 份材料。两份 81 万字节级 JSON 和 43 万字节级 replay JSON 以原始字节读取并解析全部顶层字段、1905 列、所有保存质量和 4 个 point summaries；未把截断的终端输出当作读取范围。全部声明 SHA 匹配。
+本轮完整读取任务定义（含 read-add 后的 `M-c213464ff5db45bcb0625547ae7f20a1`）、`AGENTS.md`、`research/IMPLEMENTATION.md`、`prompts/research-runtime.md`、登记总表中两个 endpoint 的完整记录，以及任务声明的 8 份材料。两份 81 万字节级 JSON 和 43 万字节级 replay JSON 以原始字节读取并解析全部顶层字段、1905 列、所有保存质量和 4 个 point summaries；未把截断的终端输出当作读取范围。全部声明 SHA 匹配。
 
 ## 数学判断
 

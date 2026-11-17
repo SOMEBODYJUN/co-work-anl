@@ -16,7 +16,7 @@ import subprocess
 import sys
 
 import research_runtime as runtime
-from curation import _safe_path
+from path_utils import _safe_path
 from research_frontier import repository_snapshot
 
 

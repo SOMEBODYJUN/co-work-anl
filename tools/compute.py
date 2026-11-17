@@ -12,7 +12,7 @@ import sys
 import time
 import uuid
 
-from curation import _safe_path, _write_json
+from path_utils import _safe_path, _write_json
 
 DEFAULT_MANIFEST = 'research/experiments.json'
 REQUESTS = 'research/compute-requests'

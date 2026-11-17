@@ -11,7 +11,7 @@ import urllib.error
 import urllib.parse
 import urllib.request
 
-from curation import _safe_path
+from path_utils import _safe_path
 from compute import request as compute_request
 
 

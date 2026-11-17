@@ -14,9 +14,9 @@ import sys
 import time
 
 SCOPE = "tools"
-DEFAULT_SAVE = "repository-cleanup"
+DEFAULT_SAVE = "customer-attraction"
 COMMON_PATHS = ["README.md", "AGENTS.md"]
-SAVE_PATHS = {"repository-cleanup": ["cleanup", "curation", "research", "prompts", "tools", "map", "work.py"]}
+SAVE_PATHS = {}
 SAVE_PATTERNS = {}
 SECRET = re.compile(rb"(?:github_pat_|gh[pousr]_)[A-Za-z0-9_]{12,}|-----BEGIN [A-Z ]*PRIVATE KEY-----")
 ROUTING = ("GIT_DIR", "GIT_WORK_TREE", "GIT_COMMON_DIR", "GIT_INDEX_FILE",
@@ -422,7 +422,7 @@ def default_paths(repo):
         paths.extend(sorted(matches))
     paths = list(dict.fromkeys(paths))
     if actor:
-        paths.append(("cleanup/workspaces/" + actor) if save == "repository-cleanup" else (archive_base + "/workspaces/" + actor))
+        paths.append(archive_base + "/workspaces/" + actor)
     paths = [p for p in paths if (repo / p).exists()
              or git(repo, "ls-files", "--", ":(literal)" + p).stdout]
     if not paths:
@@ -585,14 +585,6 @@ def locked_save(repo, common, cache, args):
                 # the creation race; the next iteration fetches that peer tip.
                 git(repo, "fetch", "--quiet", "--no-tags", "--no-write-fetch-head",
                     "origin", "+refs/heads/main:" + private)
-                frozen=repo/"cleanup/sources.json"
-                if frozen.is_file():
-                    source_contract=json.loads(frozen.read_text())
-                    anchor=source_contract.get("main_at_freeze")
-                    if source_contract.get("target_branch")==branch and anchor:
-                        if git(repo,"merge-base","--is-ancestor",anchor,private,check=False).returncode:
-                            raise Stop("Frozen source anchor is not on current remote main")
-                        git(repo,"update-ref",private,anchor)
                 if git(repo, "merge-base", "--is-ancestor", private, head, check=False).returncode:
                     raise Stop("New branch must descend from its verified remote-main source anchor; local snapshot retained.")
             else:

@@ -1,16 +1,23 @@
 # 数学研究仓库
 
-新 Project 只需 **work.py、仓库外凭据、当前阶段的一份完整提示词**。程序会恢复仓库并自行读取内部模块和 worker 说明，不需要下载一组程序、Project 文档或历史版本。
+这是研究运行树：保存可复用的数学正文、证据、超边、研究 RUN 和未完成义务。旧的 2.5.3／第三阶段队列、公屏、清点台账、重复登记表和派生图已经退出当前树，不再作为研究启动前置条件。
 
-| 当前下载 | 用途 |
-| --- | --- |
-| [work.py](work.py) | 唯一程序入口，直接覆盖旧同名文件 |
-| [2.5.3 登记完整词](prompts/02.5-3-register.md) | 批量登记成熟数学对象、正文和证据入口 |
-| [第三阶段构图完整词](prompts/03-map.md) | 从内到外建立研究可直接使用的超边 |
-| [数学研究完整词](prompts/research-runtime.md) | Main 与三条研究线、工作室、超边采用及成果回流 |
+新工作区只需要仓库外凭据和当前版本的 `work.py`：
 
-2.5.3 先自动按材料关联、文本及输出预算分成阅读包，再批领、批交。单包可含几十份材料，短材料可达百份；Boss 一次可领取实际空位对应的多个包，不逐材料远端登记。构图按完整数学对象及必要证据分包，共享引用去重；不固定每包 3–5 篇，也不为填满上下文硬拼无关对象。
+```sh
+python work.py --repo <clone> start --actor BossN --save customer-attraction --token-file <仓库外凭据>
+python work.py --repo <clone> research studio init <RUN> --spec <原题spec> --expect-branch rebuild/research-v2
+```
 
-[阶段入口](research/PHASE3_READINESS.md)与[程序命令](research/IMPLEMENTATION.md)由执行者按需读取。第三阶段已完成；后续研究使用[完整启动词](prompts/research-runtime.md)和 `research studio`。Main 真实调用 Work 派三条同题研究线，自己同时做数学；studio 保存 RUN 与实物，不自动启动或调度模型。每项有用中间结果即时 journal/save，成熟局部成果即回流登记和真实超边；发布或同步后 Main 重读相关 frontier 并实际接续派工，不等原题全解。工作室、结果回流与工程边界见[设计及验收](research/agent-design/README.md)。旧研究、清洗、整理、登记公屏及试跑合作页已退役，仅保留wcg/board-map-v2用于构图必要修订。已存数学与研究断点保留；具体新原题按用户任务固定。
+研究过程写入 `archives/<问题>/workspaces/` 与 `research/runs/`。Main 和三条研究线用 Work 实际派工；中间推导、失败、反馈和断点先保存，成熟数学再更新对象、证据和超边。研究读取使用 `research search/show/context/frontier`，结构检查使用 `research check/build`，不依赖旧阶段账本或公屏。
 
-前两步160群及原第二阶段10,921个来源版本已经准确处置。完整数学在[存档](archives/README.md)，必要证据在tools/evidence；[分类目录](curation/catalogs/INDEX.md)和既有任务账本供追溯，不重新派工。失效提示词已经直接移除，不保留另一套历史下载入口。协作按[AGENTS.md](AGENTS.md)执行。
+数学核心保留在 `archives/`、`tools/evidence/`、`research/registry.json` 和 `map/edges/`。迁移后仍有数学作用的阶段证据统一放在 `tools/evidence/canonical/`，并由绑定清单和 SHA-256 固定；它们是现行证据，不是历史下载包。
+
+常用入口：
+
+- `work.py`：同步、启动、工作区、研究、计算、GitHub 资源和 checkpoint。
+- `prompts/research-runtime.md`：Main、独立障碍线和两条成果线的运行词。
+- `research/registry.json`：唯一当前对象、材料和正式超边登记。
+- `map/edges/`：可复用的完整联合前提、替代证明、条件和未付义务。
+
+新问题必须由用户明确指定；仓库不会从已删除的阶段任务或公屏推断研究目标。

@@ -4,7 +4,7 @@
 
 本交付处理 `unrelated-machines-3a-3a-effdbb6d60f56b34`，核心为 `M-232414c2d8e744ccaba95138638a15dc`（M232），只读来源为 `M-247deecec83946358afe4e89413a7bd1`（M247）。本轮初读两端均为 v3：M232 pin `037638b148f2b51444341f14dc95545968466fd4541106af21854e842e91db76`，M247 pin `f2082f5eaf3a9d65644b2cfe1be641dca8c0d1013cf4712153ec597b09f36f07`。最后采用的版本及精确来源字节以本目录 reading-ledger 和正式 task 为准；源 PDF 字节未改。
 
-worker 实读了仓库 `AGENTS.md`、`prompts/03-map-worker.md`、`research/IMPLEMENTATION.md`、read-add 后的完整 task、两端当前完整登记记录、共享中文正文全部 191 行、基础模型定义全文，以及已有 `boss5-localfix-repair-c739a698e9b04ffc/review.md` 全文。后者仅复用其 introduce-edge / flag / load 的正确性思路；其中固定 k 的 `n^{O(k)}` 分解搜索不用于本轮 FPT 声明。
+worker 实读了仓库 `AGENTS.md`、`prompts/research-runtime.md`、`research/IMPLEMENTATION.md`、read-add 后的完整 task、两端当前完整登记记录、共享中文正文全部 191 行、基础模型定义全文，以及已有 `boss5-localfix-repair-c739a698e9b04ffc/review.md` 全文。后者仅复用其 introduce-edge / flag / load 的正确性思路；其中固定 k 的 `n^{O(k)}` 分解搜索不用于本轮 FPT 声明。
 
 本轮将原 PDF 导出为文本，连续实读 PDF 页 1–11：模型、三图定义、Theorems 1–3、两种无结构 DP、树分解定义及分解取得前提、Remark 7–8、Lemma 9–16 和页 11 的运行时及回溯句。另亲自渲染并视觉核对页 4、5、7、9、10、11：完整 Cmax / OPT 定义、团共同袋、树宽定义、原 primal 的 check 记号、dual 状态与原 join 证明，以及最终 `2^{O(k)} O(nm)` / `L^{O(k)} O(nm)` 公式和 backtracking。没有把中文 frontmatter 历史的“19 页全文实读”冒称为本 worker 的新增 PDF 阅读；未读的 rankwidth 证明不承重。
 

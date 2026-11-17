@@ -152,7 +152,7 @@ Q_\tau=S+(\tau/5)Z+V_{\rm menu}/5
 
 ## 实读与复用的证据清单
 
-全文实读：三个当前合同；仓库 `AGENTS.md`、`research/IMPLEMENTATION.md`、`prompts/03-map-worker.md`；任务定义；共同目录模型、核心、G程序、五根表、61计算、五人菜单包络六份正文；原 `coupled_terminal_oracle.py/.json`、`cross_root_last.py`、`root_penultimate_query.py`；固定绑定 `result.json`、旧 `audit_cross_root_last.json`；上述既有canonical边；独立3D报告 `research/workspaces/map-v2/Boss2/recovery-20261112-e8cf4c/wave18-diagonal-matching-3d-review.md`（SHA `d995cfccc9d93c5772f34c3b1765923bd578e844f922ea38f19ce67e2afa11da`）。
+全文实读：三个当前合同；仓库 `AGENTS.md`、`research/IMPLEMENTATION.md`、`prompts/research-runtime.md`；任务定义；共同目录模型、核心、G程序、五根表、61计算、五人菜单包络六份正文；原 `coupled_terminal_oracle.py/.json`、`cross_root_last.py`、`root_penultimate_query.py`；固定绑定 `result.json`、旧 `audit_cross_root_last.json`；上述既有canonical边；独立3D报告 `research/workspaces/map-v2/Boss2/recovery-20261112-e8cf4c/wave18-diagonal-matching-3d-review.md`（SHA `d995cfccc9d93c5772f34c3b1765923bd578e844f922ea38f19ce67e2afa11da`）。
 
 大数据实读范围：gzip全量解析，全部元数据、12轮、45权、source身份和2206原子字段结构；菜单JSON全量解析元数据和20×32×6形状；61输入全量解析顶层与全部原子字段，核缺五根字段，不重审slacks4007值。成熟3D报告提供独立61项Fraction回代和原有细节，准确复用其已付结果，不冒称本包又重跑了一遍。
 

@@ -74,7 +74,7 @@ c739 的 edge/review/ledger 三资产全部逐项 replaced，分别指向本新�
 | M247 version / registration pin | 3 / `f2082f5eaf3a9d65644b2cfe1be641dca8c0d1013cf4712153ec597b09f36f07` |
 | 未变的 primary PDF SHA256 | `4b47eaccfcffe81f6713522269b6afa2124bec3d619d6ef3a1b5341db7e48bae` |
 
-新 worker 实读了 `AGENTS.md`、`research/IMPLEMENTATION.md`、`prompts/03-map-worker.md`，新旧完整任务、新旧版本问题所涉的两个完整当前对象合同、旧 receipt、完整旧 edge/review/reading-ledger，以及当前共享中文全文。另读取已经交付的精确远端增量审查，并亲自用 `git show` / `git diff` 对照提交 `56650ea6813513decee236e0353647e07ff7cc63` 与 `724c402aeef432b2e6848fe1b1b67a0ddae33ba3`：正文只变一个 rankwidth 计数段，两对象完整记录均只变 `body.sha256` 与 `version:2→3`；当前工作树正文也独立核为上表 SHA。随后独立检查下文的上界、舍入、cap、分解递归、负载 DP、回溯与位复杂度。
+新 worker 实读了 `AGENTS.md`、`research/IMPLEMENTATION.md`、`prompts/research-runtime.md`，新旧完整任务、新旧版本问题所涉的两个完整当前对象合同、旧 receipt、完整旧 edge/review/reading-ledger，以及当前共享中文全文。另读取已经交付的精确远端增量审查，并亲自用 `git show` / `git diff` 对照提交 `56650ea6813513decee236e0353647e07ff7cc63` 与 `724c402aeef432b2e6848fe1b1b67a0ddae33ba3`：正文只变一个 rankwidth 计数段，两对象完整记录均只变 `body.sha256` 与 `version:2→3`；当前工作树正文也独立核为上表 SHA。随后独立检查下文的上界、舍入、cap、分解递归、负载 DP、回溯与位复杂度。
 
 旧 task850 的 primary 实读记录作为历史继承：PDF 文本页1–11，加页12开头至 Lemma17 前半；视觉核页4、6、7、9、11、12；未把页13–19算作那次重审。此次没有新增 PDF 逐页阅读或视觉核对，也没有重做旧记录的 1,962 条 canonical 端点扫描。当前中文正文 frontmatter 的历史“19页实读”是更早资源整理的来源说明，不是本 worker 的阅读声明。新 ledger 原样保存旧 ledger 内容，并另列本次实际阅读和独立证明范围。
 

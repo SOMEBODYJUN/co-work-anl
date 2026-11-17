@@ -168,7 +168,7 @@ T=0 的同一 flat 支撑论证也给0负载，n=0 可直接取空分配 Dirac�
 
 ## 9. 实读证据与检查界限
 
-- 已核 actualtask claimed/Boss2、当前 registry 的 M8a v2/NF v4 与精确 pins；读 AGENTS.md、IMPLEMENTATION.md 的实际阶段/边/收据合同及 prompts/03-map-worker.md。
+- 已核 actualtask claimed/Boss2、当前 registry 的 M8a v2/NF v4 与精确 pins；读 AGENTS.md、IMPLEMENTATION.md 的实际阶段/边/收据合同及 prompts/research-runtime.md。
 - M8a 共同文献页指定§2完整实读；Laurent–Mourrain 原 PDF SHA256 `a79a6aae70263cdc0b15415f838df666cfb99d6a00ef87bb1dae381493478fad` 的12页全文实际抽读，并目视第3、9、10页，核 C connected、普通 Hankel、Theorem 3.2 与 localizer 应用的次数。
 - NF 主审查指定§二、完整原证明、冻结增量、共同 rational Gram 资源、独立 HS 资源、有限审查、六输入证书页、未归档配置审查全文及指定§6均已完整实读并逐文件核 SHA。有限21/6 fixtures 和强 helper 的额外条件只作为证据范围，未重跑旧科学程序，也未拿运行 PASS 代替证明。
 - 当前任务 read-add 后仍 claimed/Boss2，request `6041ec5adede4a97b96140f436045e3b`，definition canonical SHA256 `331782b11fe1dbb54944748b7b62091001c6c500fbd68beb8598083ee6d2da7a`。PREFIX v4 pin `8a54b4990271f92b3532688d041d6e81792fa3cc5a4fe8db671c45d50864f528` 的完整 record、body§3与五个去重后 evidence 文件均已实读核字节；不扩大到它们提及而本任务未需的外部算法。
