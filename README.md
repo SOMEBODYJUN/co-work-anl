@@ -17,14 +17,14 @@ python work.py --repo <clone> research studio status <RUN> --session-tag <本次
 
 RUN ID 和原始题目可从仓库的 [research/runs/](research/runs/) 查到。首次下载中断时，重跑同一条 `start` 即可。
 
-研究过程写入 `archives/<问题>/workspaces/` 与 `research/runs/`。Main 和三条研究线用 Work 实际派工；中间推导、失败、反馈和断点先保存，成熟数学再更新对象、证据和超边。研究读取使用 `research search/show/context/frontier`，结构检查使用 `research check/build`，不依赖旧阶段账本或公屏。
+Main 用 Work 派工，查看超边和短回执，负责选路线和发布。idea 子代理提出可检验路线，执行子代理用 `research search/show/context/frontier` 按需读依赖、正文和证据。工作者从研究笔记和精确引用恢复，接近上下文上限时换 fresh 子代理。推导、失败、反馈和断点先保存，成熟数学再更新对象、证据和超边。
 
 数学核心保留在 `archives/`、`tools/evidence/`、`research/registry.json` 和 `map/edges/`。迁移后仍有数学作用的阶段证据统一放在 `tools/evidence/canonical/`，并由绑定清单和 SHA-256 固定；它们是现行证据，不是历史下载包。
 
 常用入口：
 
 - `work.py`：同步、启动、工作区、研究、计算、GitHub 资源和 checkpoint。
-- `prompts/research-runtime.md`：Main、独立障碍线和两条成果线的运行词。
+- `prompts/research-runtime.md`：Main、独立障碍线、idea 和执行线的运行词。
 - `research/registry.json`：唯一当前对象、材料和正式超边登记。
 - `map/edges/`：可复用的完整联合前提、替代证明、条件和未付义务。
 

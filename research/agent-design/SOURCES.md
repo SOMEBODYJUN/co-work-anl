@@ -8,13 +8,17 @@
 
 | 来源与版本 | 可核的机制 | 本库取用 | 证据边界 |
 | --- | --- | --- | --- |
-| Ansatz / Continual Graph Memory：[arXiv v2](https://arxiv.org/abs/2610.02945v2)，首发 10-02、修订 11-06；[官方仓库](https://github.com/uclanlp/continual-graph-memory)；参考合同固定 `23367c6568c344d9c4dbf59be3f39b39f5d54324` | 已接纳事实与探索状态分开，按依赖取证；curator 合同要求 AND 全部闭合、localization 的 reassembly 与 reduction 的 bridge | 取完整前提、失败和未付前沿；原文 curator/verifier 只作参考；本库 Main 仍做数学，不增设常驻 curator | v2 报两批各九项 local-verifier closure，第二批另有 partial 按研究准则计 pass；模型评定与专家确认不同。不能沿用 v1 的 10/10 解题宣传；09-26 的合同快照不等于 11-06 全部实验的精确部署版本 |
+| Ansatz / Continual Graph Memory：[arXiv v2](https://arxiv.org/abs/2610.02945v2)，首发 10-02、修订 11-06；[官方仓库](https://github.com/uclanlp/continual-graph-memory)；参考合同固定 `23367c6568c344d9c4dbf59be3f39b39f5d54324` | 已接纳事实与探索状态分开，按依赖取证；curator 合同要求 AND 全部闭合、localization 的 reassembly 与 reduction 的 bridge | 取完整前提、失败和未付前沿；按需实读由 worker 完成，Work 的 idea 子代理承担策略咨询。原文 curator/verifier 作为参考 | v2 报两批各九项 local-verifier closure，第二批另有 partial 按研究准则计 pass；模型评定与专家确认不同。不能沿用 v1 的 10/10 解题宣传；09-26 的合同快照不等于 11-06 全部实验的精确部署版本 |
 | CoCo-Prover：[论文 v1 / 附录 B、E](https://arxiv.org/html/2610.09681v1)，10-07 | 声明内 AND/OR proof hypergraph、声明间 lemma DAG；Lean 返回完整子目标；provisional 可探索，stable 要求 kernel 接受和依赖 stable；失效只回滚相关依赖 | 用完整联合义务与独立替代分支解释本库已有 ALL/OR；临时探索与可采用结果分开 | soundness 相对于明确 Lean 环境和禁止占位公理等前提；本库自然语言审查没有这一保证。五项程序验证基准不等于一般开放数学；未核实公开完整代码/许可证，不复制其工程或附录提示词 |
 | PACE：[官方 arXiv 记录](https://arxiv.org/abs/2610.33690)，10-24 | 摘要可核：机制构造、whole prover、独立 verifier；候选或条件改变时重审证据，区分已核前提、探索材料和未付义务 | 本题应用范围/条件变化触发定向重审，保留旧引理本体；不允许改弱用户原题来闭合 | 本次官方摘要检索可得，abs/html/pdf 直接读取均返回 DisabledError，故不声称本次重读附录 E/F/G。未核到可安装代码和许可；不把 Trace231/ProofLoom 当 PACE 仓库，不借其基准分数保证本库增益 |
 | Euler：[论文 v1](https://arxiv.org/html/2610.19864v1)，10-14；[官方架构](https://github.com/canghaimeng/Euler/blob/main/ARCHITECTURE.md)、[许可](https://github.com/canghaimeng/Euler/blob/main/LICENSE) | 原题合同、Obligation/Route、范围化证据、依赖上下文和长期恢复；路线除全部 premises 还保 closing implication | 用现有 spec/RUN 保存原题与研究线；联合应用另写本题合成桥，不由前提分别成立默认合成 | 工程为 PolyForm Noncommercial 1.0.0，本轮未复制代码。论文案例与当前 main 不是同一精确版本；不能把案例、人工参与、形式化和当前控制器的贡献混为自主解题证明。main 架构链接只作阅读入口 |
 | OSVerify：[论文 v2](https://arxiv.org/abs/2610.18089)，首发 10-13、修订 10-22；[官方 README](https://github.com/OSVerify/OSVerify)；policy 固定 `c43385bcbedec943cabe0d7e95df5b50404d9acb` | 错误提出与验证分开；反馈逐字审计；保原始输入和范围；部分进展不因未解全题被判错 | 承重交付按需独立挑战，具体问题回原作者；confirmed/not_real/unresolved 分开，审查绑定准确字节 | READY_FOR_HUMAN 交人确认；partial PASS 允许继续，均不认证正确。本库未运行上游 OSVerify engine；本轮自行实现冻结字节与 review 版本绑定，仍不验证证明语义 |
 
-这五项支持不同局部选择，没有一项能够证明拼接后必定顺畅、正确或攻克难题。实际应用合同见 [HYPEREDGE_WORKFLOW](HYPEREDGE_WORKFLOW.md)。
+### 实际读图与派工
+
+Ansatz 先查找简短声明、事实 ID 和图路径，按需取所选事实的先决依赖，再单独打开完整证明和证据。Main 的原合同把数学证明交给 worker，并在真正的新进展或阻塞触发独立策略咨询。新 worker 会话按任务和持久记录恢复。这三项分别见 [论文 §2.1、§2.3、§9.6](https://arxiv.org/html/2610.02945v2)、[固定版本 Main 合同](https://github.com/uclanlp/continual-graph-memory/blob/23367c6568c344d9c4dbf59be3f39b39f5d54324/CLAUDE.md) 和 [consult 合同](https://github.com/uclanlp/continual-graph-memory/blob/23367c6568c344d9c4dbf59be3f39b39f5d54324/.claude/skills/consult/SKILL.md)。
+
+当前流程用本仓的 search/context/show 和 Git 版本实现按需读取及接续。Main 按用户要求只取超边和短回执。Work idea 子代理承担策略咨询，另一个子代理执行与取证，原独立障碍槽保原输入。见 [HYPEREDGE_WORKFLOW](HYPEREDGE_WORKFLOW.md)。
 
 ## 原样保留的实物
 
@@ -31,7 +35,7 @@
 
 总计 60,054 字节。准确来源 URL 和 commit 见 [Ansatz provenance](upstream/ansatz-23367c6/provenance.json)、[OSVerify provenance](upstream/osverify-c43385b/provenance.json)。OSVerify NOTICE 保留 shared policy 对 Rethlas `887cc46427636bbdd235160a112f9a30ae81d040` 的改写归属；本库未把那些 skills 注册为活动工具。
 
-不照搬原合同的权限：Ansatz curator 的“不做数学”、fact_submit 唯一接纳入口和专有服务路径，不是本库规定；OSVerify 的自动 release gate 也未因保存 policy 就在本库生效。实际活动词由本库改写，入口为 [research-runtime](../../prompts/research-runtime.md)。
+本库使用自身的 Git 与 RUN 权限，实际活动词见 [research-runtime](../../prompts/research-runtime.md)。上游 curator、fact_submit 服务和 OSVerify release gate 属于各自运行时。
 
 ## 思想适配与本库实现
 

@@ -342,7 +342,7 @@ python work.py research resume RUN
 
 普通 open 运行返回明确 worker 默认配置（gpt-6.1-sol / ultra / none），实际派工服从用户本轮配置。save 的 --model、--reasoning-effort、--fork-turns 可记录实际配置，后续事件沿用已记录值；旧记录不猜填。配置与 agent_id 是执行者对实际平台派工的记录。
 
-新版设计见 agent-design；开题需固定用户原题并真实派工；程序、完整启动词和保存/两轮回流/恢复测试见当前验收。新成果实际发布后重读受影响context/frontier再由Main真实派工，报告本身不启动代理。research peers从保存且pin匹配的packet/input_refs定位同行RUN、数学工作区和主笔记，改版/不同定义保持可辨别；返回status=retired，shared_entry/shared_workspace及legacy入口均为空，不创建合作目录。普通resume保原packet、工作文件和未答反馈，不表示已恢复活动公屏或启动研究者。
+新版设计见 agent-design。开题固定用户原题，Main 实际安排 idea 和执行子代理。新成果发布后，Main 把新增边和义务交给工作者，工作者重读受影响的 context/frontier、正文与必要证据，再回报下一项缺口。research peers 从保存且 pin 匹配的 packet/input_refs 定位同行 RUN、工作区和主笔记，保留不同版本和定义。普通 resume 保原 packet、工作文件和未答反馈。
 
 旧远端公屏和试跑文件板已删除；唯一保留的公屏为wcg/board-map-v2。旧read/send/inbox/board-init在退役路由上拒绝执行，不自动重建，也不把旧研究消息转发到构图公屏。构图mapper/workflow map-v2继续用原公屏；其他角色没有默认公屏。旧清洗reset apply停用，避免重建旧屏或重置构图状态。
 

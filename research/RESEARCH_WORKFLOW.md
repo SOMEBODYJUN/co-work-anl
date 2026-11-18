@@ -6,9 +6,9 @@
 
 先恢复本对话已有目标和 RUN；新开题固定用户原题的模型、域、全部量词、约束及成功标准。原题没有准确正文就写本 RUN 的 problem.md/definitions.md。没有相关成果可以空 seed_ids 研究，不为进入图而更改问题或硬选已有节点。没有用户指定原题时只完成工程准备。
 
-用 `research studio init RUN --spec PATH --expect-branch BRANCH --expect-remote URL` 复用现有 init，生成两份准确输入 packet 和 `research/workspaces/<RUN>/` 下的 main、independent、informed-a、informed-b 四个目录。Main 真实调用 Work 派出三名研究者，同时在自己的 journal 做承重数学。初始化文件没有启动模型。
+用 `research studio init RUN --spec PATH --expect-branch BRANCH --expect-remote URL` 复用现有 init，生成两份准确输入 packet 和 `research/workspaces/<RUN>/` 下的四个原目录。Main 实际派工，查看超边和短回执，串行发布。
 
-独立线从同一原题、定义和允许障碍出发，寻找证明、构造或原模型反例；两条成果线围绕互补缺口实读正文和完整超边。长线有价值就接原研究者继续；临时取证完成才释放，不把局部交付当成整条线路结束。反馈交给原作者修具体推理，Main 核综合接口与原题范围。
+independent 从同一原题、定义和允许障碍独立研究。informed-a 负责 idea，给出可检验路线及首个区分步骤。informed-b 按义务实读原文、执行数学和实现。上下文充足时可以 followup。临近上限时原代理保存逻辑断点和精确引用，再换 fresh 工作者接续，不继承整段聊天。反馈交给原作者修具体推理。
 
 `studio line` 调原来的 save，记录真实 agent_id、配置、本次 session_tag 和同一条不可变 notes/events 链；反馈答复实写后才 ack。恢复时查 Work 实际状态，旧 working 或 agent_id 不证明仍在线。跨会话不能接续就从准确 packet、最新数学、未答反馈、应用和外部 job 标识重新派出，保原线路的数学身份。旧 RUN 的 resume 仍可读；新四槽合同不静默改旧试跑的输入。
 
@@ -22,7 +22,7 @@
 
 ## 超边怎样变成研究义务
 
-从缺失的实际结论 search，show --body 读陈述与正文，context/frontier 展开完整承重支持，同时打开必要 evidence、勘误、精确反驳和独立 OR。每条边内全部前提 ALL，不同证明分别 OR；hops 不截掉选定证明的必要前提。查到边、accepted、SHA 当前或结构可达均不等于本题已证。
+子代理从缺失的实际结论 search，用 context/frontier 跟当前义务的边和依赖，再以 show --body 和原文件读承重段落、必要 evidence 和精确反驳。每条边内全部前提 ALL，不同证明分别 OR。子代理保完整论证，向 Main 交结论、边 ID、证据位置和剩余。
 
 采用时在本 RUN 写全对象/边版本、变量模型和量词对应、每个共同前提、自由文本条件、closing implication，以及证据或精确未付义务。条件债务沿显式应用依赖传递；改名、换人或开放等价环不能消债。局部 contribution 的 result 可以复用，目标 remaining 继续存在，只有具体证明和复核才能支付。失败辅助桥与反驳原题分开，有限扫描与普遍结论分开。
 

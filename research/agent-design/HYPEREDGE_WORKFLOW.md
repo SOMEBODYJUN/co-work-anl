@@ -13,7 +13,7 @@
 | 本 RUN 四人工作室、notes/events | 保全研究中的每项有用进展、失败、反馈和接续 | 保存不等于正式准入，旧 working 不等于在线 |
 | studio.json 与 studio/ 记录 | 索引承重成果、真实采用、冻结复核和回流计划 | 不另建数学真值、调度队列或模型服务 |
 
-先按[完整启动词](../../prompts/research-runtime.md)恢复 clone 并读当前入口，再读实际 spec、packet、工作区和所需正文。旧 RUN 用于恢复数学，不按旧 roster 或日志重启退役协作。
+先按[完整启动词](../../prompts/research-runtime.md)恢复 clone。Main 从现有 RUN 定位原题、超边、短回执和待办。实读 spec、packet、正文和必要证据由相应子代理完成。
 
 ## 2. 固定原题并建立四人工作室
 
@@ -42,16 +42,16 @@ research/runs/<RUN>/notes/、events/、studio.json、studio/
 python work.py research studio init RUN --spec research/workspaces/RUN/spec.json --expect-branch rebuild/research-v2 --expect-remote https://github.com/SOMEBODYJUN/co-work-anl.git
 ```
 
-init 复用现有 packet/init_run，保存 full 与 obstacle 两种不可变输入和四人目录；它返回 agents_launched:0。Main 必须通过 Work 实际派出 independent、informed-a、informed-b，自己同时研究。默认子代理 gpt-6.1-sol / ultra / fork_turns:none，遵守用户实际配置并记录平台真值。
+init 复用现有 packet/init_run，保存 full 与 obstacle 两种不可变输入和四个目录。Main 通过 Work 派出实际可用的子代理。默认 gpt-6.1-sol / ultra，新会话 fork_turns:none，遵守用户的模型与并发配置。
 
 | 槽位 | profile | 初始输入及数学责任 |
 | --- | --- | --- |
-| main | full | 自己推导、构造、做关键合成；串行发布 |
-| independent | obstacle | 同一原题、定义、预先允许障碍；独立研究，不当盲审席 |
-| informed-a | full | 当前承重缺口与有用的完整支持，自主换方法 |
-| informed-b | full | 互补路线或合成义务，不重复同一冻结计算 |
+| main | full | 看超边和短回执，选路线、派工、串行发布 |
+| independent | obstacle | 从同一原题、定义、允许障碍独立研究 |
+| informed-a | full | idea，查图提出可检验的首选和备选，挑战 Main 的初案 |
+| informed-b | full | 按选中超边实读正文与证据，执行推导、构造、计算或合成 |
 
-长线沿原研究者接续，不凑一轮才反馈；局部成熟即接回，其余人继续。承重复核临时借未参与论证的现有研究者，不加常驻汇报或审批席。Main 自己的推导和失败同样要留在 main/journal。
+先向 idea 子代理要可检验的路线，再给执行者一项明确数学义务。Main 提出的尝试同样交执行者。只有一个并发槽时在同一槽先后派两次。长线在上下文充足时可 followup，接近上限时在保存逻辑断点后换 fresh 子代理。承重复核派未参与论证的子代理。Main 在 main/journal 记录决策与短回执。
 
 ## 3. 每项有用结果即时保全，不逐步填多表
 
@@ -60,7 +60,7 @@ init 复用现有 packet/init_run，保存 full 与 obstacle 两种不可变输�
 先真实派工再用 studio line 登记四人的本次 agent/session；Main 未被平台报告的 model/effort/fork 可以省略，不套用子代理默认冒充自报。子代理首次或换会话必须给实际派工配置。line 是同一 update_run 的包装，另记 session_tag 与可选实读账，不产生第二条状态链。
 
 ```sh
-python work.py research studio line RUN --line main --note research/workspaces/RUN/main/journal.md --next '自己的当前推导与下一步' --agent-id ACTUAL-MAIN-ID --session-tag ACTUAL-SESSION-TAG
+python work.py research studio line RUN --line main --note research/workspaces/RUN/main/journal.md --next '选定当前义务和接续者' --agent-id ACTUAL-MAIN-ID --session-tag ACTUAL-SESSION-TAG
 python work.py research studio line RUN --line independent --note research/workspaces/RUN/independent/journal.md --next '从原题接续本线数学' --agent-id ACTUAL-INDEPENDENT-ID --session-tag ACTUAL-SESSION-TAG --model gpt-6.1-sol --reasoning-effort ultra --fork-turns none
 python work.py checkpoint research/workspaces/RUN research/runs/RUN -m 'Save substantive research and its exact continuation'
 ```
@@ -77,16 +77,19 @@ independent 的账只能列原 obstacle packet 的 problem/definitions/obstacles
 
 ## 4. 超边消费：反向找路线，正向核完整联合推导
 
+Main 只看选定超边和短回执。首次探索由 idea 子代理查图。完整的查询输出可以重定向到本地文件，工作者按当前义务提取一条边和所需资源。下面是 idea 或执行子代理的按需读取入口。
+
 ```sh
 python work.py research search '本次缺失结论及同义词' --model '本题实际模型'
-python work.py research show OBJECT-ID --body
 python work.py research context TARGET-ID --edge EDGE-ID --hops 0
-python work.py research frontier TARGET-ID --edge EDGE-ID --expect-branch rebuild/research-v2
+python work.py research show OBJECT-ID --body
 ```
 
 show --body 只展开 body，必要 evidence 仍须按 path/SHA/section 实读。context 的一条支持内部 ALL，替代完整证明之间 OR；--edge 选择当前目标的支持，必要源前提继续完整展开。hops=0 只限额外导航，不截断选定支持。大对象按同一义务分 pass，保已读/未读范围，不能静默丢前提。
 
-从 frontier 选当前欠项后，可直接用 show --body 打开目标与指定边的端点，再按边的 evidence 打开实际承重证据。选贡献边时 context 仍会显示邻接导航，实际阅读由该贡献的 source_ids、conditions、result 和 remaining 决定。每次确实改变派工或路线，把原欠项、边 ID、正文段落、实际改动与下一步写在已有 journal。检索结果、重复笔记和自然语言证明的状态分别如实记录。
+工作者按当前边的端点、条件和 remaining 限定阅读，跟先决依赖，打开实际承重的 evidence。与义务无关的邻接导航先保留在文件里。向 Main 回送结论或障碍、边 ID、原文段落和剩余，完整数学留在已有 journal 或其引用文件。
+
+上下文接近上限时保全完整当前推导，再以 fresh worker 续接。交接只含当前义务、固定原题引用、当前边、已读和待读的文件段落、准确版本及未付前提。新代理自己读原文。一个 ALL 支持若分给多次阅读，另派工作者读这些引用并核全部前提在同一模型、量词和见证下怎样合成。
 
 逐项核：目标原句与本题用途、每个前提的实际作用、变量/模型/量词对应、同一见证/策略/概率空间/参数、全部附加条件、联合 closing implication 和剩余。A 与 B 分别成立不能默认合成桥成立；开放前提只能支持准确条件路线。
 
@@ -206,7 +209,7 @@ verdict 可 approve/changes-required/inconclusive，evidence_level 可 internal-
 
 ## 7. 成熟数学定向回流：准备与实际发布分开
 
-可复用结果不必等原题全解。Main 对入库负责，可委派正文/证据/登记实质准备，自己核接口并串行发布。state 保存完整陈述与证明，registry 用稳定 ID/version 与精确 body/evidence，真实数学关系才入 edges；普通算式/代码/log/数值点不造对象，已认真比较没有边也不凑边。
+可复用结果及时回流。工作者准备正文、证据、登记和边，非作者实读复核，Main 看版本与短回执并串行发布。state 保存完整陈述与证明，registry 用稳定 ID/version 与精确 body/evidence，真实数学关系才入 edges。普通算式和日志留在工作区。
 
 本次 registry batch 沿用 IMPLEMENTATION 的 schema:2、objects、materials、edge_files:[]，放本 RUN workspace。每对象完整填 title/kind/truth_status/model/statement/quantifiers/assumptions/scope/objections/body/evidence/sources；每材料列实际 path/SHA/disposition/object_ids/reason。成熟状态与数学范围必须吻合：局部证明可 proved，未付假设 conditional，有限观察 finite，准确开放义务 open。失败尝试本身不自动成为反例或已证障碍；需要提炼独立精确结论。
 
@@ -239,7 +242,7 @@ python work.py research studio promote RUN --record-file research/workspaces/RUN
 
 edge_refs 可空，不能伪造关系。whole-target 只可用于完整原题证明且无未付假设债，scope_argument 仍由人核；conditional 不得冒作闭合。存在直接或继承的 contribution.target_remaining 时，在 promote 输入加 target_discharges:[{obligation_id,argument,proof_ref}] 逐项支付，proof_ref 必须已列入本次受审 content_refs；local-result 不因原题剩余而受阻。promote 只合本次明确增量，保旧登记 baseline 和无关数学，返回 backflow-plan-ready-local-not-published、candidate_registry_ref 与真实后续 commands。
 
-Main 先检查候选及 base_registry_ref 仍匹配当前正式总表；候选自带 backflow_guard，register 拒绝基表变化后的覆盖。若他人已推进，重读相关对象并重新生成本次候选，不覆盖其有效增量。然后执行返回的现有命令：
+发布前核对候选的 base_registry_ref 和当前正式总表。register 以 backflow_guard 拒绝陈旧基表。若有同行增量，子代理按新快照重读受影响对象并准备新候选。通过后串行执行现有命令：
 
 ```sh
 python work.py research register --record-file research/workspaces/RUN/backflow/BACKFLOW-ID/proposed.json
@@ -256,7 +259,7 @@ python work.py checkpoint ACTUAL-PUBLICATION-PATHS --review-plan ACTUAL-PLAN-REC
 
 promote 返回的 checkpoint_review_args 给出 --review-plan 及不可变计划路径。一次发布多项时可重复 --review-plan。checkpoint 在每次 push 前核对实际提交中的计划、冻结、审查、正式登记对象、超边及其证据字节。确认返回 pushed 后，审查过的增量才已经发布。普通笔记和未完成候选继续使用常规 checkpoint。
 
-每项增量发布或同步发现相关新边/改版后，Main 重新读取受影响目标的 context/frontier、正文和必要 evidence，核新增支持能支付什么、旧采用是否仍有效、还有哪些义务。把具体结论和下一缺口通过真实 followup 送回相关线，或按空位派工，保存其实际接续。只写新边或 backflow plan 不会触发调度，也不等整题结束才使用新增数学。
+每项增量发布或同步发现相关新边/改版后，Main 把边 ID 与受影响义务实际派给工作者。工作者读取 context/frontier、正文和必要 evidence，核新增支持、旧采用和待证项后回短回执。Main 据此继续派工并保存实际接续。
 
 日常研究增量不带 --final。该参数还核第三阶段 baseline、全量 coverage/integration 和旧任务队列；不为一个新引理重开全仓构图，也不把新对象伪装成已纳入旧 680 批。保历史构图交付快照，本次新增量按实际对象/材料/边及准确版本单独说明。
 
@@ -268,7 +271,7 @@ promote 返回的 checkpoint_review_args 给出 --review-plan 及不可变计划
 python work.py research studio status RUN --session-tag ACTUAL-CURRENT-SESSION-TAG
 ```
 
-status 已包含原 resume 的 recovery，不必再对同一状态重复运行 resume。先读原 packet 与有效 notes/events，未答反馈、真实计算 job ID、应用/边版本变化及未付义务。status 的 application_version_issues 也检查尚未 freeze 的采用是否在同步后改版，不能只盯已冻结结果。status 的 session_match 只比较标签，platform_liveness 始终未验证；同标签也先查 Work 平台实际 agent 状态。能调用才 followup，不可恢复就用相同数学输入和原线路实物新派，记新 ID 与 continuation，不假装跨会话恢复旧模型。旧 RUN 无 studio 仍用 resume/save 保全，不用 init 覆盖旧记录。
+status 已含 resume 的 recovery。Main 取超边变化、未答反馈、待办与文件引用，把原 packet、notes/events、计算输入和证据交工作者按需读取。application_version_issues 同样包含尚未 freeze 的采用。先查实际 Work 状态和当前上下文容量，再决定 followup 或保存后 fresh 接续。换人保原数学输入、线路和 continuation，记录新 ID。旧 RUN 无 studio 用 resume/save 保全原记录。
 
 note_change 标明最近保存的笔记与前一事件相同、与 HEAD 中的原文件相同、或字节不同。旧事件没有此字段时按未知处理。字节不同还需说明新增的数学、证据或失败边界，才算研究进展。
 
@@ -284,7 +287,7 @@ note_change 标明最近保存的笔记与前一事件相同、与 HEAD 中的�
 2. 全 SPE 贡献边 boss5-all-spe-summin-budget-7383c8bf44f753cc：保全部共同前提和固定 K=6M+4 输入族，只支付局部 result，remaining 不得丢失，不能关闭一般 SUMmin 或无条件六人 half。
 3. 两条 OR 路线仅一条过期：定向刷新该支，保另一路；无支持待证不等于判假。
 
-例如六人半覆盖，边 `boss2-partial-fractional-cover-to-six-half` 只支付截断覆盖量足够的实例。打开源定理 `CA-SIX-PARTIAL-FRACTIONAL-COVER-v1` 的正文与证书。分数全覆盖数超过充分阈值时，先核能否用同样的预算覆盖足够多的最优客户。仍不足时保留这类实例，再核四种额外覆盖边的目录条件，或把未覆盖的那个条件交给成果线。每一步都保留同一最优并集和真实完整历史。
+例如六人半覆盖，Main 给 idea 子代理边 `boss2-partial-fractional-cover-to-six-half` 与缺口“最优并集的截断覆盖量不足”。idea 提出检验哪个目录子类，执行者打开源定理 `CA-SIX-PARTIAL-FRACTIONAL-COVER-v1` 和证书，核同一最优并集可否满足条件，再核四种额外覆盖边是否提供独立路线。回执只给成立范围、证据和下一项缺口。
 
 可重放的完整工程实例在 [studio 集成测试](../../tools/test_research_studio.py)：test_backflow_builds_complete_candidate_then_existing_register_and_context_use_new_edge 实际写临时正文、batch、边、冻结与复核记录，生成 guarded 候选，经既有 register/check/build 后再用 context 取到新关系。[真实对象消费测试](../../tools/test_research_studio_real.py) 使用上述 SUMmin 端点及原始证据，核完整 ALL 与局部范围。
 
