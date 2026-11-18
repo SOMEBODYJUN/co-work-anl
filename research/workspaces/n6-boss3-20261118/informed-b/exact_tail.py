@@ -20,6 +20,8 @@ class Solver:
         self.members = [tuple(a for a, c in enumerate(self.cov) if x in c)
                         for x in range(self.n)]
         self.branches = {}
+        self.state_evaluations = 0
+        self.terminal_evaluations = 0
 
     def child(self, q, a):
         v = list(q); v[a] += 1
@@ -27,6 +29,7 @@ class Solver:
 
     @lru_cache(None)
     def terminal(self, y):
+        self.terminal_evaluations += 1
         payoff = [0] * self.A
         welfare = 0
         for membership in self.members:
@@ -39,6 +42,7 @@ class Solver:
 
     @lru_cache(None)
     def E(self, q):
+        self.state_evaluations += 1
         if sum(q) == 6:
             self.terminal(q)
             return frozenset((q,))
@@ -159,8 +163,8 @@ def run(data, do_root, certificate_path):
         result['root_min_welfare'] = sol.terminal(worst)[1]
         result['root_worst_terminal_counts'] = list(worst)
         result['root_half_inequality_gap'] = 2*result['root_min_welfare']-6*data['K']
-    result['count_states_evaluated'] = sol.E.cache_info().currsize
-    result['terminal_profiles_evaluated'] = sol.terminal.cache_info().currsize
+    result['count_states_evaluated'] = sol.state_evaluations
+    result['terminal_profiles_evaluated'] = sol.terminal_evaluations
     result['elapsed_seconds'] = round(time.perf_counter()-started, 6)
     return result
 
