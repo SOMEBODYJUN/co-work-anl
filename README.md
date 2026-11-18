@@ -6,10 +6,15 @@
 
 ```sh
 python work.py --repo <clone> start --actor BossN --save customer-attraction --token-file <仓库外凭据>
-python work.py --repo <clone> research studio init <RUN> --spec <原题spec> --expect-branch rebuild/research-v2
 ```
 
-如果接续旧研究，使用原来的 Boss 和存档，在 `start` 加 `--resume`。启动后读取对应 RUN 的状态和原始资料。
+新 Boss 用自己的空目录。start 绑定个人工作区。进入 clone 后，先在 `research/workspaces/<RUN>/spec.json` 填写[原题 spec 模板](research/agent-design/spec-template.json)，再创建该 Boss 的研究工作室。
+
+```sh
+python work.py research studio init <RUN> --spec research/workspaces/<RUN>/spec.json --expect-branch rebuild/research-v2
+```
+
+如果接续旧研究，使用原来的 Boss 和存档，在 `start` 加 `--resume`，然后读取自己的原 RUN。新 Boss 可以沿同一原题研究，使用自己的 RUN。
 
 ```sh
 python work.py --repo <clone> research studio status <RUN> --session-tag <本次会话标签>

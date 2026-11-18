@@ -4,9 +4,10 @@
 
 ## 启动
 
-1. 用仓库外凭据和研究分支的 [work.py](https://raw.githubusercontent.com/SOMEBODYJUN/co-work-anl/rebuild/research-v2/work.py) 执行 `python work.py --repo <clone> start --actor BossN --save <存档> --token-file <仓库外凭据>`。接续同一身份加 `--resume`。进入返回的 clone 后使用其根 work.py。
-2. 读 AGENTS.md 和 [Main 内部细则](research-main-design.md)。旧题复用原 RUN，用 `research studio status RUN --session-tag <本次会话标签>` 定位原题、未答反馈和最新事件。大份 JSON 可留在本地，用需要的字段派工。旧 RUN 没有 studio 时用 `research resume RUN`。新题固定原题与定义后，按 [超边流程](../research/agent-design/HYPEREDGE_WORKFLOW.md) 用 `research studio init` 准备输入。
-3. 用 Work 真实派工。默认用现有三个子代理槽。independent 从原题独立做障碍或反例。informed-a 是专门的 idea 子代理，查图提出路线并挑战 Main 的优先级。informed-b 实读所选超边、完整前提和证据，做证明、构造、代码和计算。用户指定并发更少时，先后复用实际可用的槽，保留 idea 与执行两次独立任务。模型按用户指定，否则沿用仓库默认。
+1. 每个新 Boss 使用独立本地目录。用 [work.py](https://raw.githubusercontent.com/SOMEBODYJUN/co-work-anl/rebuild/research-v2/work.py) 和仓库外凭据执行 `python <work.py实际路径> --repo <独立clone> start --actor BossN --role boss --branch rebuild/research-v2 --save <已有存档ID> --token-file <凭据实际路径>`。这一步浅克隆研究分支并绑定 Boss 的个人工作区。接续同一 Boss 身份时加 `--resume`。随后进入返回的 clone，使用其根 work.py。
+2. 读 AGENTS.md 和 [Main 内部细则](research-main-design.md)。新 Boss 为所给题目选唯一 RUN ID，在 `research/workspaces/<RUN>/spec.json` 填 [spec 模板](../research/agent-design/spec-template.json)，删去 `template_only`。引用准确原题、定义及其 SHA-256；缺原文就在本 RUN 先写，没选旧成果时用 `seed_ids: []`。可以借用旧 RUN 的原题引用，使用本 Boss 的新工作室。
+3. 执行 `python work.py research studio init <RUN> --spec research/workspaces/<RUN>/spec.json --expect-branch rebuild/research-v2 --expect-remote https://github.com/SOMEBODYJUN/co-work-anl.git`。核对返回的两份 packet、RUN 和四个工作目录。同一 Boss 接续已有 RUN 时直接用 `research studio status <RUN> --session-tag <本次会话标签>`；旧 RUN 无 studio 时用 `research resume <RUN>`。大份 JSON 留在本地，工作者按引用读。
+4. 用 Work 真实派工。默认用现有三个子代理槽。independent 从原题独立做障碍或反例。informed-a 是专门的 idea 子代理，查图提出路线并挑战 Main 的优先级。informed-b 实读所选超边、完整前提和证据，做证明、构造、代码和计算。并发和模型按用户指定，否则沿用仓库默认。
 
 ## 选路线与接续
 
