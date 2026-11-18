@@ -3,7 +3,7 @@ name: Research computation
 on:
   push:
     branches: [rebuild/research-v2]
-    paths: ['research/compute-requests/*.json', 'work.py', 'tools/test_work_bootstrap.py', '.github/workflows/research-compute.yml']
+    paths: ['research/compute-requests/*.json', 'work.py', 'tools/test_work_bootstrap.py', 'tools/test_research_cycle.py', 'tools/checkpoint.py', '.github/workflows/research-compute.yml']
   workflow_dispatch:
     inputs:
       experiment:
@@ -53,6 +53,8 @@ jobs:
           python-version: '3.12'
       - name: Verify first startup and version handoff
         run: python -m unittest discover -s tools -p test_work_bootstrap.py
+      - name: Verify research publication and recovery
+        run: python -m unittest discover -s tools -p test_research_cycle.py
       - id: requests
         run: python tools/compute.py prepare-actions --event-file "$GITHUB_EVENT_PATH" --github-output "$GITHUB_OUTPUT"
 

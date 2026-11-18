@@ -58,6 +58,11 @@ class ResearchCycleCLITests(unittest.TestCase):
         shutil.copytree(SOURCE / 'tools/vendor', self.root / 'tools/vendor',
                         ignore=shutil.ignore_patterns('__pycache__', '*.pyc'))
         self.write('.gitignore', '__pycache__/\n*.pyc\n')
+        self.write('archives/fixture/README.md', '# Fixture archive\n')
+        self.write('prompts/research-runtime.md', '# Fixture launch instructions\n')
+        self.write('archives/fixture/workspaces/Boss2/README.md', '# Fixture workspace\n')
+        self.write('archives/fixture/workspaces/Boss2/workspace.json',
+                   {'schema': 1, 'save': 'fixture', 'actor': 'Boss2', 'instance': '1' * 32})
         self.git('init', '-q', '-b', BRANCH)
         self.bind_clone()
         self.problem = self.write(WORK + '/problem.md',
@@ -347,11 +352,16 @@ class ResearchCycleCLITests(unittest.TestCase):
         second_push = self.publish([freeze1, freeze2], [plan1, plan2])
         self.assertNotEqual(first_push['pushed_head'], second_push['pushed_head'])
 
-        # A genuinely fresh checkout has only the remote's committed bytes.
+        # A blank-conversation startup must restore only the remote's committed bytes.
         clone = self.base / 'recovered'
-        self.git('clone', '-q', '--branch', BRANCH, str(self.remote), str(clone), cwd=self.base)
+        launcher = self.base / 'work.py'
+        shutil.copy2(SOURCE / 'work.py', launcher)
+        startup = json.loads(self.command([sys.executable, str(launcher), '--repo', str(clone),
+            'start', '--actor', 'Boss2', '--save', 'fixture', '--remote', str(self.remote),
+            '--branch', BRANCH, '--auth', 'ssh', '--resume'], cwd=self.base))
+        self.assertEqual(startup['remote_tip'], second_push['pushed_head'])
+        self.assertFalse(startup['workspace']['created'])
         self.root = clone
-        self.bind_clone()
         resumed = self.cli('research', 'resume', RUN)
         self.assertEqual(resumed['recovery_warnings'], [])
         self.assertEqual(resumed['run']['spec_pin'], self.run['spec_pin'])

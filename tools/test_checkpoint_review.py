@@ -71,27 +71,27 @@ class ReviewedCommitTests(unittest.TestCase):
         with self.assertRaisesRegex(checkpoint.Stop, 'bytes changed'):
             self.audit(self.commit())
 
-    def test_candidate_is_not_a_registered_and_built_result(self):
-        runtime.register(self.f.root, self.candidate)
-        with self.assertRaisesRegex(checkpoint.Stop, 'missing from final commit'):
+    def test_candidate_must_be_installed_but_does_not_require_a_projection(self):
+        self.f.write(runtime.REGISTRY, {'schema': 2, 'objects': [], 'materials': [], 'edge_files': []})
+        with self.assertRaisesRegex(checkpoint.Stop, 'not installed in the final canonical registry'):
             self.audit(self.commit())
+        (self.f.root / runtime.REGISTRY).unlink()
+        runtime.register(self.f.root, self.candidate)
+        self.assertEqual(self.audit(self.commit()), [self.plan])
 
-    def test_graph_must_match_registry_after_a_peer_merge(self):
+    def test_disjoint_peer_metadata_does_not_require_rebuilding_a_projection(self):
         head = self.install()
         self.f.git('branch', 'peer', head)
         self.f.git('checkout', '-q', 'peer')
         registry = self.f.read(runtime.REGISTRY)
-        registry['peer_metadata'] = 'A concurrent registry increment needs a new projection'
+        registry['peer_metadata'] = 'A disjoint registry increment'
         self.f.write(runtime.REGISTRY, registry)
         self.commit()
         self.f.git('checkout', '-q', 'research-test')
         self.f.write('peer-independent-note.md', 'Disjoint local research.\n')
         self.commit()
         self.f.git('merge', '--no-edit', 'peer')
-        with self.assertRaisesRegex(checkpoint.Stop, 'graph is stale'):
-            self.audit(self.f.git('rev-parse', 'HEAD'))
-        runtime.build(self.f.root)
-        self.assertEqual(self.audit(self.commit()), [self.plan])
+        self.assertEqual(self.audit(self.f.git('rev-parse', 'HEAD')), [self.plan])
 
     def test_unresolved_objection_added_after_promote_blocks_publication(self):
         self.install()
@@ -109,23 +109,23 @@ class ReviewedCommitTests(unittest.TestCase):
         self.assertEqual(self.remote_head(remote), approved)
         self.assertEqual(self.f.git('rev-parse', 'HEAD'), local)
 
-    def test_push_retry_rechecks_merged_commit_and_allows_rebuilt_projection(self):
+    def test_push_retry_rechecks_reviewed_bytes_after_merging(self):
         approved = self.install()
         remote = self.local_remote()
+        path = 'archives/example/state/命题/X--命题.md'
+        original = (self.f.root / path).read_bytes()
         self.f.git('checkout', '-qb', 'peer', approved)
-        registry = self.f.read(runtime.REGISTRY)
-        registry['peer_increment'] = 'A disjoint, preserved registry update'
-        self.f.write(runtime.REGISTRY, registry)
+        self.f.write(path, 'Peer changed a reviewed proof.\n')
         peer = self.commit()
         self.f.git('push', '-q', 'origin', 'peer:research-test')
         self.f.git('checkout', '-q', 'research-test')
         self.f.write('local-next-obligation.md', 'Continue the separate local route.\n')
         self.commit()
-        with self.assertRaisesRegex(checkpoint.Stop, 'graph is stale'):
+        with self.assertRaisesRegex(checkpoint.Stop, 'bytes changed'):
             self.publish()
         self.assertEqual(self.remote_head(remote), peer)
         self.assertEqual(len(self.f.git('show', '-s', '--format=%P', 'HEAD').split()), 2)
-        runtime.build(self.f.root)
+        (self.f.root / path).write_bytes(original)
         result = self.publish(publish_only=False)
         self.assertEqual(result['status'], 'pushed')
         self.assertEqual(result['review_checked_head'], result['pushed_head'])
