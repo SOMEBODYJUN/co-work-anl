@@ -86,6 +86,8 @@ python work.py research frontier TARGET-ID --edge EDGE-ID --expect-branch rebuil
 
 show --body 只展开 body，必要 evidence 仍须按 path/SHA/section 实读。context 的一条支持内部 ALL，替代完整证明之间 OR；--edge 选择当前目标的支持，必要源前提继续完整展开。hops=0 只限额外导航，不截断选定支持。大对象按同一义务分 pass，保已读/未读范围，不能静默丢前提。
 
+从 frontier 选当前欠项后，可直接用 show --body 打开目标与指定边的端点，再按边的 evidence 打开实际承重证据。选贡献边时 context 仍会显示邻接导航，实际阅读由该贡献的 source_ids、conditions、result 和 remaining 决定。每次确实改变派工或路线，把原欠项、边 ID、正文段落、实际改动与下一步写在已有 journal。检索结果、重复笔记和自然语言证明的状态分别如实记录。
+
 逐项核：目标原句与本题用途、每个前提的实际作用、变量/模型/量词对应、同一见证/策略/概率空间/参数、全部附加条件、联合 closing implication 和剩余。A 与 B 分别成立不能默认合成桥成立；开放前提只能支持准确条件路线。
 
 | 关系语义 | 本题必须保留的限制 |
@@ -268,6 +270,8 @@ python work.py research studio status RUN --session-tag ACTUAL-CURRENT-SESSION-T
 
 status 已包含原 resume 的 recovery，不必再对同一状态重复运行 resume。先读原 packet 与有效 notes/events，未答反馈、真实计算 job ID、应用/边版本变化及未付义务。status 的 application_version_issues 也检查尚未 freeze 的采用是否在同步后改版，不能只盯已冻结结果。status 的 session_match 只比较标签，platform_liveness 始终未验证；同标签也先查 Work 平台实际 agent 状态。能调用才 followup，不可恢复就用相同数学输入和原线路实物新派，记新 ID 与 continuation，不假装跨会话恢复旧模型。旧 RUN 无 studio 仍用 resume/save 保全，不用 init 覆盖旧记录。
 
+note_change 标明最近保存的笔记与前一事件相同、与 HEAD 中的原文件相同、或字节不同。旧事件没有此字段时按未知处理。字节不同还需说明新增的数学、证据或失败边界，才算研究进展。
+
 未闭合就继续有价值路线，成熟异步接回；不因一次提交、一轮代理、队列暂空或自设预算结束。重复同一机制失败时，综合最强近成功、精确排除范围和未探索部分，提出不同表示/构造/合成，并说明何种证据改变判断。暂停前保存四人完整实物与准确下一动作，不声称离线后台执行。
 
 完整原题证明或满足原模型所有条件的真实反例才报闭合。局部 closed、条件结果、有限观测、内部独立复核、形式化、外审与发表分开。程序只执行已实现的结构、显式依赖与字节一致性检查；自由文本证明、未声明依赖、实际阅读/作者独立性、Work 活跃和 Git 远端成功仍须按真实证据报告，不能据此保证数学真理或解决公开难题。
@@ -279,6 +283,8 @@ status 已包含原 resume 的 recovery，不必再对同一状态重复运行 r
 1. SUMmin/uniform 等价边 boss3-uniform-summin-full-budget-equivalence-3313f41b4a46c9dc：两个 open 端点、全部 m、完整 σ/槽及同一 p，环不能生成已证预算。
 2. 全 SPE 贡献边 boss5-all-spe-summin-budget-7383c8bf44f753cc：保全部共同前提和固定 K=6M+4 输入族，只支付局部 result，remaining 不得丢失，不能关闭一般 SUMmin 或无条件六人 half。
 3. 两条 OR 路线仅一条过期：定向刷新该支，保另一路；无支持待证不等于判假。
+
+例如六人半覆盖，边 `boss2-partial-fractional-cover-to-six-half` 只支付截断覆盖量足够的实例。打开源定理 `CA-SIX-PARTIAL-FRACTIONAL-COVER-v1` 的正文与证书。分数全覆盖数超过充分阈值时，先核能否用同样的预算覆盖足够多的最优客户。仍不足时保留这类实例，再核四种额外覆盖边的目录条件，或把未覆盖的那个条件交给成果线。每一步都保留同一最优并集和真实完整历史。
 
 可重放的完整工程实例在 [studio 集成测试](../../tools/test_research_studio.py)：test_backflow_builds_complete_candidate_then_existing_register_and_context_use_new_edge 实际写临时正文、batch、边、冻结与复核记录，生成 guarded 候选，经既有 register/check/build 后再用 context 取到新关系。[真实对象消费测试](../../tools/test_research_studio_real.py) 使用上述 SUMmin 端点及原始证据，核完整 ALL 与局部范围。
 

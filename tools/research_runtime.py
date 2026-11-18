@@ -1109,16 +1109,34 @@ def update_run(root, run_id, solver_id, profile, note, next_action, state, feedb
     old_pending = old.get('feedback_pending', bool(old.get('feedback')))
     if old and old['profile'] != profile:
         raise ValueError('Do not silently change a solver context profile')
-    note_bytes = _safe_path(root, note).read_bytes()
+    source = _safe_path(root, note)
+    note_bytes = source.read_bytes()
     note_bytes.decode('utf-8')
+    note_hash = digest(note_bytes)
+    previous_hash = (old.get('note') or {}).get('sha256')
+    if note_hash == previous_hash:
+        note_change = 'same-as-previous-event'
+    else:
+        # A new session can save a newer snapshot of a journal that was
+        # already committed. Compare the actual source, not just its event.
+        try:
+            committed = subprocess.run(['git', 'show', 'HEAD:' + note],
+                                      cwd=root, capture_output=True, timeout=5)
+        except (OSError, subprocess.TimeoutExpired):
+            note_change = 'comparison-unavailable'
+        else:
+            note_change = ('same-as-committed-source'
+                           if committed.returncode == 0 and digest(committed.stdout) == note_hash
+                           else 'different-note-bytes')
     # Immutable events retain the previous result and all pending feedback.
     event_id = uuid.uuid4().hex
     snapshot = _safe_path(root, (path.parent / 'notes' / (event_id + '.md')).relative_to(root).as_posix())
     snapshot.parent.mkdir(parents=True, exist_ok=True)
     snapshot.write_bytes(note_bytes)
-    ref = {'path': snapshot.relative_to(root).as_posix(), 'sha256': digest(note_bytes)}
+    ref = {'path': snapshot.relative_to(root).as_posix(), 'sha256': note_hash}
     event = {'event_id': event_id, 'continuation_of': old.get('latest_event'), 'solver_id': solver_id,
-             'profile': profile, 'note': ref, 'next_action': next_action, 'state': state,
+             'profile': profile, 'note': ref, 'note_change': note_change,
+             'next_action': next_action, 'state': state,
              'agent_id': agent_id or old.get('agent_id'),
              'feedback': feedback if feedback is not None else old.get('feedback'),
              'feedback_inherited': feedback is None and old.get('feedback') is not None,
@@ -1142,7 +1160,8 @@ def update_run(root, run_id, solver_id, profile, note, next_action, state, feedb
         run['solver_roster'].append({'solver_id': solver_id, 'profile': profile})
         run['solver_count'] = len(run['solver_roster'])
     _write_json(path, run)
-    return {'status': 'saved-local-not-pushed', 'event_id': event_id, 'continuation_of': event['continuation_of']}
+    return {'status': 'saved-local-not-pushed', 'event_id': event_id,
+            'continuation_of': event['continuation_of'], 'note_change': note_change}
 
 
 def resume(root, run_id):

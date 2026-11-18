@@ -17,6 +17,8 @@ fresh 不是共享文件系统隔离。澄清、复核或融合时记录实际�
 
 成果线按 [完整超边流程](../research/agent-design/HYPEREDGE_WORKFLOW.md) 的共同合同取证与应用。明确需要哪句，search 后 show --body，context/frontier 取全支持，打开必要 evidence。保 ALL 全部前提、独立 OR、等价反向全部 targets、共同模型/见证/策略/概率空间与量词顺序。accepted、current binding 和结构闭包不支付条件。
 
+图或原文改变本线选择时，直接在 journal 写明具体欠项、边 ID 或正文段落、可沿用的一步或已排除的一步，以及先前与现在分别准备攻什么。承重反例实读见证及所否定的精确陈述。只查到或搬运同一份笔记时，按检索或恢复记录保存。
+
 同步或 Main 送来相关新边后，重新取当前 context/frontier 并核新增支持和原采用；报告可以改变本线义务，但不会自动派工。真正采用才在本线 applications 章节/文件写准确版本、变量模型对应、逐项前提/条件的证据或开放义务、联合 closing implication、实际结论及继承欠账。只用 contribution.result，remaining 进入前沿；上游债务向下继承，只有明确 discharge 才消债。普通代数无需造节点或填全套 JSON。
 
 反例满足原模型全部前提并否定精确目标；失败辅助桥与原题反例分开。有限扫描、浮点输出、退出 0、PASS 和未找到反例都不构成一般证明。迁移保原结果和桥、参数代价及解码保证。支持缺步只停用该路，核有效 OR，不把无支持后继自动判假。

@@ -733,6 +733,7 @@ def status(root, run_id, session_tag=None):
         tag = saved.get('session_tag')
         lines[line_id] = {'profile': profile, 'agent_id': saved.get('agent_id'),
                           'saved_session_tag': tag, 'state': saved.get('state', 'not-dispatched'),
+                          'note_change': saved.get('note_change'),
                           'session_match': None if session_tag is None else bool(tag and tag == session_tag),
                           'action': 'inspect-platform-before-followup' if tag and tag == session_tag else 'recover-input-notes-feedback-and-check-platform',
                           'platform_liveness': 'not-verified'}

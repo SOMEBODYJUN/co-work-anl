@@ -194,6 +194,23 @@ class StudioTests(unittest.TestCase):
         self.assertIn('main', result['recovery']['pending_feedback'])
         self.assertEqual(self.read(self.home + '/studio.json')['artifacts'], {})
 
+    def test_restart_distinguishes_committed_journal_from_new_note_bytes(self):
+        committed = self.write(self.note['path'], 'A prior journal saved before this restart.\n')
+        self.git('add', committed['path'])
+        self.git('commit', '-qm', 'Prior journal')
+        restarted = studio.line(self.root, 'run', 'main', committed['path'],
+                                'Resume the existing derivation', 'actual-main', 'session-two')
+        self.assertEqual(restarted['note_change'], 'same-as-committed-source')
+        repeated = studio.line(self.root, 'run', 'main', committed['path'],
+                               'Record feedback without editing the note', 'actual-main', 'session-two')
+        self.assertEqual(repeated['note_change'], 'same-as-previous-event')
+        updated = self.write(committed['path'], 'A derivation with an additional step.\n')
+        advance = studio.line(self.root, 'run', 'main', updated['path'],
+                              'Check the new step', 'actual-main', 'session-two')
+        self.assertEqual(advance['note_change'], 'different-note-bytes')
+        status = studio.status(self.root, 'run', 'session-two')
+        self.assertEqual(status['lines']['main']['note_change'], advance['note_change'])
+
     def test_four_lines_resume_same_problem_and_save_preserves_agent_session_and_reads(self):
         events = {}
         for slot in studio.LINES:
