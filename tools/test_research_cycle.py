@@ -77,6 +77,7 @@ class ResearchCycleCLITests(unittest.TestCase):
         self.spec = WORK + '/spec.json'
         self.write(self.spec, {'problem_id': 'integer-order-fixture', 'problem': self.problem,
                                'definitions': [self.definition], 'obstacles': [self.obstacle],
+                               'collaboration_scope': 'archives/fixture',
                                'seed_ids': ['fixture-A']})
         self.objects = {'fixture-A': self.object('fixture-A', 1)}
         self.write(REGISTRY, {'schema': 2, 'objects': list(self.objects.values()),

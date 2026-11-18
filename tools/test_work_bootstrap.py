@@ -37,10 +37,11 @@ class BootstrapTests(unittest.TestCase):
         self.assertEqual(result.returncode, 0, result.stderr)
         return result.stdout.strip()
 
-    def start(self, *extra, actor='Boss2'):
+    def start(self, *extra, actor='Boss2', save='customer-attraction'):
         identity = ['--actor', actor] if actor else []
+        archive = ['--save', save] if save is not None else []
         return subprocess.run([sys.executable, str(self.bootstrap), '--repo', str(self.clone),
-            'start', *identity, '--role', 'boss', '--save', 'customer-attraction',
+            'start', *identity, '--role', 'boss', *archive,
             '--remote', str(self.remote), '--branch', 'research-test', *extra], cwd=self.root,
             capture_output=True, text=True, timeout=30)
 
@@ -90,6 +91,33 @@ class BootstrapTests(unittest.TestCase):
         result = self.start(actor='Boss3')
         self.assertEqual(result.returncode, 0, result.stderr)
         self.assertEqual(json.loads(result.stdout)['actor'], 'Boss3')
+
+    def test_first_start_never_guesses_an_archive(self):
+        result = self.start(save=None)
+        self.assertIn('明确的 --save ID', result.stderr)
+        self.assertFalse(self.clone.exists())
+
+    def test_create_new_archive_and_retry_the_same_start(self):
+        first = self.start('--create-archive', save='new-topic')
+        self.assertEqual(first.returncode, 0, first.stderr)
+        result = json.loads(first.stdout)
+        self.assertEqual(result['archive_scope'], 'archives/new-topic')
+        self.assertTrue(result['archive_created'])
+        self.assertEqual(result['workspace']['path'], 'archives/new-topic/workspaces/Boss2')
+        retry = self.start('--create-archive', save='new-topic')
+        self.assertEqual(retry.returncode, 0, retry.stderr)
+        self.assertFalse(json.loads(retry.stdout)['archive_created'])
+
+    def test_create_child_requires_an_existing_parent_and_does_not_reuse_an_existing_name(self):
+        occupied = self.start('--create-archive')
+        self.assertIn('存档已存在', occupied.stderr)
+        missing = self.start('--create-archive', '--subarchive', 'new-child', save='missing-parent')
+        self.assertIn('父存档', missing.stderr)
+        created = self.start('--create-archive', '--subarchive', 'new-child')
+        self.assertEqual(created.returncode, 0, created.stderr)
+        child = json.loads(created.stdout)
+        self.assertEqual(child['archive_scope'], 'archives/customer-attraction/subarchives/new-child')
+        self.assertEqual(child['workspace']['path'], child['archive_scope'] + '/workspaces/Boss2')
 
     def test_saved_identity_and_untracked_journal_survive_an_update(self):
         first = self.start()

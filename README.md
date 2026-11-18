@@ -5,16 +5,20 @@
 新对话从 [研究分支的 work.py](https://raw.githubusercontent.com/SOMEBODYJUN/co-work-anl/rebuild/research-v2/work.py) 起步，使用仓库外凭据。启动成功后，后续命令使用检出目录内的程序。
 
 ```sh
-python work.py --repo <clone> start --actor BossN --save customer-attraction --token-file <仓库外凭据>
+python work.py --repo <clone> start --actor BossN --save <存档ID> --token-file <仓库外凭据>
 ```
 
-新 Boss 用自己的空目录。start 绑定个人工作区。进入 clone 后，先在 `research/workspaces/<RUN>/spec.json` 填写[原题 spec 模板](research/agent-design/spec-template.json)，再创建该 Boss 的研究工作室。
+新 Boss 用自己的空目录，首次启动显式选存档。独立主题没有旧 ID 时，取一个简短英文 ID，如 `sequential-allocation`，用 `--save sequential-allocation --create-archive` 创建；补写新存档 README 的原题与范围。不相关机用 `--save unrelated-machines`。六人题用 `--save customer-attraction --subarchive six-providers`。
+
+start 返回 `archive_scope`。个人工作区在该存档的 `workspaces/BossN/`，RUN 草稿在 `research/workspaces/<RUN>/`。在[原题 spec 模板](research/agent-design/spec-template.json)把 `collaboration_scope` 填为实际 `archive_scope`，再创建工作室。原题已经位于 `archives/` 时，还须匹配原文所在的最深存档。本 RUN 经复核登记的正式正文放在该存档的 `state/`。
 
 ```sh
 python work.py research studio init <RUN> --spec research/workspaces/<RUN>/spec.json --expect-branch rebuild/research-v2
 ```
 
 如果接续旧研究，使用原来的 Boss 和存档，在 `start` 加 `--resume`，然后读取自己的原 RUN。新 Boss 可以沿同一原题研究，使用自己的 RUN。
+
+超边可以跨存档引用。工作者须核对定义、模型、参数和迁移证明，按当前 RUN 的存档回写新结论。
 
 ```sh
 python work.py --repo <clone> research studio status <RUN> --session-tag <本次会话标签>

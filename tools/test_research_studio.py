@@ -211,6 +211,36 @@ class StudioTests(unittest.TestCase):
         status = studio.status(self.root, 'run', 'session-two')
         self.assertEqual(status['lines']['main']['note_change'], advance['note_change'])
 
+    def test_scoped_studio_rejects_another_archive_and_cannot_be_rebound(self):
+        scope = 'archives/customer-attraction/subarchives/six-providers'
+        self.write('archives/customer-attraction/README.md', '# Parent\n')
+        self.write(scope + '/README.md', '# Child\n')
+        self.git('config', 'wcg.save', 'customer-attraction')
+        self.git('config', 'wcg.subarchive', 'six-providers')
+        spec = {**self.spec, 'collaboration_scope': 'archives/unrelated-machines'}
+        self.write('scoped.json', spec)
+        with self.assertRaisesRegex(ValueError, 'RUN archive mismatch'):
+            studio.init(self.root, 'scoped', 'scoped.json', expect_branch='research-test')
+        self.assertFalse((self.root / 'research/runs/scoped').exists())
+        spec['collaboration_scope'] = scope
+        self.write('scoped.json', spec)
+        result = studio.init(self.root, 'scoped', 'scoped.json', expect_branch='research-test')
+        self.assertEqual(result['archive_scope'], scope)
+        self.assertEqual(studio.status(self.root, 'scoped')['studio']['archive_scope'], scope)
+        self.git('config', '--unset', 'wcg.subarchive')
+        with self.assertRaisesRegex(ValueError, 'clone bound to this studio archive'):
+            studio.status(self.root, 'scoped')
+
+    def test_reviewed_backflow_rejects_a_body_in_a_different_archive(self):
+        record = self.backflow()
+        index = self.read(self.home + '/studio.json')
+        index['archive_scope'] = 'archives/target'
+        self.write(self.home + '/studio.json', index)
+        self.write('archives/target/README.md', '# Target archive\n')
+        self.git('config', 'wcg.save', 'target')
+        with self.assertRaisesRegex(ValueError, 'Register the RUN result under archives/target/state/'):
+            studio.promote(self.root, 'run', self.record(record, 'backflow'))
+
     def test_four_lines_resume_same_problem_and_save_preserves_agent_session_and_reads(self):
         events = {}
         for slot in studio.LINES:

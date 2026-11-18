@@ -46,6 +46,23 @@ def _actor(root):
     return value
 
 
+def _bound_archive(root):
+    def config(key):
+        return subprocess.run(['git', 'config', '--local', '--get', key], cwd=root,
+                              capture_output=True, text=True).stdout.strip()
+
+    save = config('wcg.save')
+    if not save:
+        return None
+    scope = 'archives/' + runtime.identity(save)
+    subarchive = config('wcg.subarchive')
+    if subarchive:
+        scope += '/subarchives/' + runtime.identity(subarchive)
+    if not _safe_path(root, scope + '/README.md').is_file():
+        raise ValueError('Bound research archive is missing its README: ' + scope)
+    return scope
+
+
 def _names(run_id):
     runtime.identity(run_id)
     return ('research/runs/' + run_id, 'research/workspaces/' + run_id)
@@ -71,6 +88,8 @@ def _studio(root, run_id):
         raise ValueError('Invalid studio index')
     if index.get('owner') != _actor(root):
         raise ValueError('This studio belongs to another Boss; use its own clone/RUN')
+    if index.get('archive_scope') and index['archive_scope'] != _bound_archive(root):
+        raise ValueError('Use the clone bound to this studio archive: ' + index['archive_scope'])
     snapshot = repository_snapshot(root, index['opening_snapshot']['branch'])
     if snapshot['remote'] != index['opening_snapshot']['remote']:
         raise ValueError('Studio origin changed; recover its original repository route')
@@ -159,6 +178,13 @@ def init(root, run_id, spec_file, registry=runtime.REGISTRY, *, expect_branch, e
     spec = _json(root, spec_file)
     if spec.get('template_only') is True:
         raise ValueError('Fill the real target references and remove template_only before opening a research RUN')
+    bound = _bound_archive(root)
+    if bound is not None:
+        scope = runtime._collaboration_scope(root, spec['problem']['path'], spec.get('collaboration_scope'))
+        if scope != bound:
+            raise ValueError(f'RUN archive mismatch: clone is bound to {bound}; '
+                             f'problem scope is {scope or "unset"}. '
+                             'Set the exact collaboration_scope or use the correct independent clone.')
     # Validate both inputs before init writes anything. No library results enter
     # the obstacle packet, even though all workers share a filesystem.
     obstacle = runtime.packet(root, spec, 'obstacle', registry)
@@ -174,6 +200,8 @@ def init(root, run_id, spec_file, registry=runtime.REGISTRY, *, expect_branch, e
     runtime._write_json(runtime.run_path(root, run_id), run)
     index = {'schema': 1, 'run_id': run_id, 'owner': owner, 'opening_snapshot': snapshot,
              'artifacts': {}, 'applications': {}, 'freezes': {}, 'reviews': {}, 'backflow_plans': {}}
+    if bound is not None:
+        index['archive_scope'] = bound
     _save_index(root, run_id, index)
     for line_id in LINES:
         name = work + '/' + line_id + '/journal.md'
@@ -183,6 +211,7 @@ def init(root, run_id, spec_file, registry=runtime.REGISTRY, *, expect_branch, e
             path.write_text('# ' + line_id + '\n\n## Current mathematical obligation\n\n## Derivation and evidence\n\n## Unpaid obligations and next action\n', encoding='utf-8')
     return {**initialized, 'status': 'studio-initialized-local-not-pushed',
             'studio': home + '/studio.json', 'workspace': work,
+            'archive_scope': bound,
             'solver_count': 4, 'subagent_count': 3, 'solver_roster': run['solver_roster'],
             'packets': [home + '/packet-' + profile + '.json' for profile in ('obstacle', 'full')],
             'agents_launched': 0}
@@ -619,6 +648,12 @@ def promote(root, run_id, record_file):
     objects = {obj['object_id']: obj for obj in batch['objects']}
     if set(requested) != set(objects):
         raise ValueError('Backflow plan must account for every batch object')
+    scope = index.get('archive_scope')
+    if scope:
+        for obj in objects.values():
+            body = obj['body']['path']
+            if not body.startswith(scope + '/state/'):
+                raise ValueError(f'Register the RUN result under {scope}/state/: {body}')
     truths = {'established': {'proved', 'definition'}, 'conditional': {'conditional'},
               'finite': {'finite'}, 'refuted': {'refuted'}, 'open': {'open'}}
     content = {(ref['path'], ref['sha256'], ref.get('section')) for ref in frozen['content_refs']}

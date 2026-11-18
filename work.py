@@ -26,7 +26,7 @@ START_COMMAND = "__wcg_start_v1__"
 START_RECEIPT = "WCG_START_HANDOFF_V1"
 # Stable launcher inputs, independent of the public CLI and its defaults.
 START_FIELDS = ("remote", "branch", "actor", "save", "role", "subarchive",
-                "resume", "adopt_legacy", "token_file", "auth")
+                "resume", "adopt_legacy", "token_file", "auth", "create_archive")
 TRANSFER_TIMEOUT = 600
 ROLE_PROMPTS = {"boss": "prompts/research-runtime.md"}
 IDENTIFIER = re.compile(r"[A-Za-z0-9][A-Za-z0-9_.-]{0,63}")
@@ -274,19 +274,55 @@ def role_id(repo, requested=None, *, bind=True):
     return chosen
 
 
+def archive_path(repo, save, subarchive):
+    if not IDENTIFIER.fullmatch(save):
+        raise Stop("存档 ID 不合法。")
+    base = Path("archives") / save
+    if subarchive:
+        if not IDENTIFIER.fullmatch(subarchive):
+            raise Stop("子存档 ID 不合法。")
+        base /= Path("subarchives") / subarchive
+    if any(path.is_symlink() for path in (repo / base, *(repo / p for p in base.parents))):
+        raise Stop("存档路径不能经过符号链接。")
+    return base
+
+
+def prepare_archive(repo, base, *, create, already_bound):
+    entry = base / "README.md"
+    path = repo / entry
+    if path.is_symlink():
+        raise Stop("存档入口不能是符号链接。")
+    if not create:
+        if not path.is_file():
+            raise Stop("研究启动所需文件缺失：" + entry.as_posix() +
+                       "。请核对 ID；明确创建时使用 --create-archive。")
+        return False
+    with write_lock(repo):
+        outline = f"# {base.name}\n\n## 研究范围\n\n填写本存档的原题、模型和适用范围。\n"
+        if path.is_file():
+            tracked = run(repo, "cat-file", "-e", "HEAD:" + entry.as_posix(), check=False)
+            if already_bound or (tracked.returncode and path.read_text(encoding="utf-8") == outline):
+                return False
+            raise Stop("存档已存在：" + base.as_posix() + "。使用现有存档时去掉 --create-archive。")
+        if len(base.parts) > 2 and not (repo / base.parents[1] / "README.md").is_file():
+            raise Stop("先创建或选择现有父存档，再创建子存档。")
+        if path.parent.exists() and (not path.parent.is_dir() or any(path.parent.iterdir())):
+            raise Stop("存档目录已有内容，已保留：" + base.as_posix())
+        path.parent.mkdir(parents=True, exist_ok=True)
+        with path.open("x", encoding="utf-8") as stream:
+            stream.write(outline)
+        return True
+
+
 def workspace_path(repo, save, who, *, subarchive=None):
-    if not IDENTIFIER.fullmatch(save) or not IDENTIFIER.fullmatch(who):
+    if not IDENTIFIER.fullmatch(who):
         raise Stop("工作区 ID 不合法。")
-    if run(repo, "config", "--local", "--get", "wcg.workflowRun", check=False).stdout.decode().strip():
+    if local_config(repo, "wcg.workflowRun"):
         raise Stop("旧阶段运行绑定已退役；请从研究 RUN 和个人工作区接续。")
     if subarchive is None:
         subarchive = local_config(repo, "wcg.subarchive")
-    base=Path("archives")/save
-    if subarchive:
-        if not IDENTIFIER.fullmatch(subarchive): raise Stop("子存档绑定不合法。")
-        base=base/"subarchives"/subarchive
-    relative=base/"workspaces"/who
-    cursor=repo
+    relative = archive_path(repo, save, subarchive) / "workspaces" / who
+    cursor = repo
     for part in relative.parts:
         cursor /= part
         if cursor.is_symlink(): raise Stop("工作区路径不能经过符号链接。")
@@ -440,6 +476,8 @@ def start(args, *, receipt=None, require_receipt=False):
         except ValueError:
             receipt = None
     repo = Path(args.repo).expanduser().resolve()
+    if not args.save and (args.create_archive or not (repo / ".git").exists()):
+        raise Stop("首次启动或创建存档须带明确的 --save ID。")
     if (args.save == "repository-cleanup" or getattr(args, "curation_run", None)
             or getattr(args, "workflow_run", None) or getattr(args, "board_branch", None)
             or getattr(args, "board_limit", 0)):
@@ -511,25 +549,25 @@ def start(args, *, receipt=None, require_receipt=False):
                                env=dict(env, **{START_RECEIPT: json.dumps(payload)}))
 
     who = actor(repo, args.actor, args.adopt_legacy, bind=False)
+    previous_save = local_config(repo, "wcg.save")
+    if not args.save and not previous_save:
+        raise Stop("首次启动须带明确的 --save ID。")
     save = save_id(repo, args.save, bind=False)
     if save == "repository-cleanup":
         raise Stop("旧阶段存档已退役；请为研究使用独立目录。")
     role = role_id(repo, args.role, bind=False)
-    previous_save = local_config(repo, "wcg.save")
     saved_sub = local_config(repo, "wcg.subarchive")
     if args.subarchive and previous_save and args.subarchive != saved_sub:
         raise Stop("子存档变更请使用独立 clone；已有绑定已保留。")
     subarchive = args.subarchive or saved_sub
-    base = Path("archives") / save
-    if subarchive:
-        if not IDENTIFIER.fullmatch(subarchive):
-            raise Stop("子存档 ID 不合法。")
-        base = base / "subarchives" / subarchive
+    base = archive_path(repo, save, subarchive)
     entry = base / "README.md"
     role_prompt = ROLE_PROMPTS[role]
-    for required in (entry, Path(role_prompt), Path(TOOLS) / "research_runtime.py"):
+    for required in (Path(role_prompt), Path(TOOLS) / "research_runtime.py"):
         if not (repo / required).is_file():
             raise Stop("研究启动所需文件缺失：" + required.as_posix())
+    archive_created = prepare_archive(repo, base, create=args.create_archive,
+                                      already_bound=previous_save == save and saved_sub == subarchive)
 
     if legacy:
         with write_lock(repo):
@@ -550,6 +588,7 @@ def start(args, *, receipt=None, require_receipt=False):
     bind_auth(repo, args, auth_mode)
 
     result.update(actor=who, save=save, workspace=workspace, repo=str(repo), branch=target,
+                  archive_scope=base.as_posix(), archive_created=archive_created,
                   context_entry=entry.as_posix(), research_entry=entry.as_posix(),
                   research_prompt=role_prompt, role_prompt=role_prompt, role=role,
                   research_runbook="research/agent-design/README.md",
@@ -579,7 +618,7 @@ def main():
     p.add_argument("--repo", default=default_repo())
     p.add_argument("--token-file")
     p.add_argument("--auth", choices=("token", "ssh"))
-    p.add_argument("--save", help="研究存档 ID；新 clone 默认 customer-attraction")
+    p.add_argument("--save", help="研究存档 ID；首次启动显式指定")
     sub = p.add_subparsers(dest="command", required=True)
     start_parser = sub.add_parser("start", help="恢复研究仓库并绑定数学研究身份")
     start_parser.add_argument("--actor", help="显式 Boss 编号；首次启动必须提供")
@@ -591,6 +630,8 @@ def main():
     start_parser.add_argument("--save", default=argparse.SUPPRESS)
     start_parser.add_argument("--resume", action="store_true")
     start_parser.add_argument("--subarchive")
+    start_parser.add_argument("--create-archive", action="store_true",
+                              help="创建明确选择的新存档；指定子存档时父存档须已存在")
     start_parser.add_argument("--branch")
     # These names are only parsed to accept the former default (0) or explain
     # that an explicit legacy workflow has been retired.

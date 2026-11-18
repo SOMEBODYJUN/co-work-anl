@@ -17,7 +17,7 @@
 
 ## 2. 固定原题并建立四人工作室
 
-先核 clone、origin、分支、HEAD 和未提交成果，保全后同步；使用用户明确的 Boss，凭据留仓库外。原题合同保模型、域、量词顺序、全部约束、退化/平局、成功目标和反例标准。原题尚未登记可直接研究，无相关旧成果就 seed_ids:[]。
+先核 clone、origin、分支、HEAD 和未提交成果，保全后同步。使用用户明确的 Boss、存档和可选子存档，凭据留仓库外。新存档用明确的 `--save ID --create-archive`。个人工作区和正式正文随存档走，RUN 草稿使用独立目录。原题合同保模型、域、量词顺序、全部约束、退化/平局、成功目标和反例标准。原题尚未登记可直接研究，无相关旧成果就 seed_ids:[]。
 
 统一路径如下。RUN 是实际运行 ID，不是默认要启动的题目；新工作室不得覆盖旧 RUN。
 
@@ -34,7 +34,7 @@ research/runs/<RUN>/run.json、packet-full.json、packet-obstacle.json
 research/runs/<RUN>/notes/、events/、studio.json、studio/
 ```
 
-直接复制 [开题合同](spec-template.json) 到本 RUN 的 spec.json，填实际 problem_id、problem、definitions、obstacles、seed_ids 与目标约束，移除 template_only 后直接传 --spec；没有另一层 math_spec 需要抽取，不手填 registry 指纹。所有 path 都相对当前 clone，引用是实际文件完整字节的 SHA256，可带原文精确且唯一的 section 标题。init 捕获实际 branch/remote/HEAD，后续 studio 操作核原仓库路由。
+直接复制 [开题合同](spec-template.json) 到本 RUN 的 spec.json，填实际 problem_id、problem、definitions、obstacles、seed_ids 与目标约束，将 collaboration_scope 填为 start 返回的 archive_scope。原题在 archives 下时按其最深存档核对。移除 template_only 后传 --spec。所有 path 都相对当前 clone，引用是实际文件完整字节的 SHA256，可带原文精确且唯一的 section 标题。init 核 clone 绑定，记录 branch、remote、HEAD 和 archive_scope。不同存档可提供证明证据或迁移桥，按目标 RUN 的 state 路径登记新正式正文。
 
 以下命令中的 RUN、路径、ID、数学文字和 SHA 必须换成本次实值；示例不是已经运行的研究或回执。用户没有原题时不执行 init。
 
