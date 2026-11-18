@@ -43,9 +43,10 @@ def token(path):
 def git(repo, *args, check=True, input_data=None):
     env = {k: v for k, v in os.environ.items() if k not in ROUTING}
     env["GIT_TERMINAL_PROMPT"] = "0"
+    timeout = 600 if args[0] in {"fetch", "push"} else 45
     try:
         result = subprocess.run(["git", *args], cwd=repo, env=env, input=input_data,
-                                capture_output=True, timeout=45)
+                                capture_output=True, timeout=timeout)
     except subprocess.TimeoutExpired:
         raise Stop("Git timed out. Rerun the same command; local commits are retained.")
     if check and result.returncode:

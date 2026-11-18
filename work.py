@@ -11,31 +11,24 @@ import os
 from pathlib import Path
 import re
 import shlex
+import signal
 import subprocess
 import sys
 import tempfile
+from types import SimpleNamespace
 import uuid
 
 REMOTE = "https://github.com/SOMEBODYJUN/co-work-anl.git"
 TOOLS = "tools"
-WORKSPACES = "research/workspaces"
-# Legacy unbound non-start/checkpoint fallback; preserve topic compatibility.
-# New-conversation phase defaults are separate below and are applied by start.
 DEFAULT_SAVE = "customer-attraction"
-# The hypergraph closeout board is the only active chat. Other roles have no
-# implicit board; research uses its saved RUN and four mathematical studios.
 DEFAULT_BRANCH = "rebuild/research-v2"
-DEFAULT_BOARD_BRANCH = ""
-DEFAULT_START_SAVE = "customer-attraction"
-RESEARCH_ENTRIES = {
-    "customer-attraction": {"research_entry": "archives/customer-attraction/README.md", "research_prompt": "archives/customer-attraction/prompts/README.md", "research_runbook": "tools/README.md"},
-    "facility-games": {"research_entry": "archives/facility-games/README.md", "research_prompt": "archives/facility-games/prompts/README.md", "research_runbook": "tools/README.md"},
-    "weighted-congestion": {"research_entry": "archives/weighted-congestion/README.md", "research_prompt": "archives/weighted-congestion/prompts/README.md", "research_runbook": "tools/README.md"},
-    "unrelated-machines": {"research_entry": "archives/unrelated-machines/README.md", "research_prompt": "archives/unrelated-machines/prompts/README.md", "research_runbook": "tools/README.md"},
-    "positive-kernels": {"research_entry": "archives/positive-kernels/README.md", "research_prompt": "archives/positive-kernels/prompts/README.md", "research_runbook": "tools/README.md"},
-}
+START_COMMAND = "__wcg_start_v1__"
+START_RECEIPT = "WCG_START_HANDOFF_V1"
+# Stable launcher inputs, independent of the public CLI and its defaults.
+START_FIELDS = ("remote", "branch", "actor", "save", "role", "subarchive",
+                "resume", "adopt_legacy", "token_file", "auth")
+TRANSFER_TIMEOUT = 600
 ROLE_PROMPTS = {"boss": "prompts/research-runtime.md"}
-CLEANUP_ROLE_PROMPTS = ROLE_PROMPTS
 IDENTIFIER = re.compile(r"[A-Za-z0-9][A-Za-z0-9_.-]{0,63}")
 TOKEN = re.compile(rb"(?:github_pat_|ghp_)[A-Za-z0-9_]{12,}")
 SECRET = re.compile(rb"(?:github_pat_|gh[pousr]_)[A-Za-z0-9_]{12,}")
@@ -86,11 +79,20 @@ def environment(path=None, mode='token'):
 
 
 def run(repo, *args, env=None, check=True, timeout=45):
-    try:
-        r = subprocess.run(["git", *args], cwd=repo, env=env or environment(),
-                           capture_output=True, timeout=timeout)
-    except subprocess.TimeoutExpired as exc:
-        raise Stop("Git 超时；本地工作已保留，可重试同一命令。") from exc
+    command = ["git", *args]
+    with subprocess.Popen(command, cwd=repo, env=env or environment(),
+                          stdout=subprocess.PIPE, stderr=subprocess.PIPE,
+                          start_new_session=True) as process:
+        try:
+            stdout, stderr = process.communicate(timeout=timeout)
+        except (subprocess.TimeoutExpired, KeyboardInterrupt) as exc:
+            with contextlib.suppress(ProcessLookupError):
+                os.killpg(process.pid, signal.SIGKILL)
+            process.communicate()
+            if isinstance(exc, KeyboardInterrupt):
+                raise
+            raise Stop(f"Git {args[0]} 在 {timeout} 秒后超时；本地工作已保留，可重试同一命令。") from exc
+        r = subprocess.CompletedProcess(command, process.returncode, stdout, stderr)
     if check and r.returncode:
         detail = SECRET.sub(b"[REDACTED]", r.stderr).decode(errors="replace")
         raise Stop(detail.strip()[:1200])
@@ -101,20 +103,19 @@ def value(repo, *args, env=None):
     return run(repo, *args, env=env).stdout.decode().strip()
 
 
-def checked_branch(repo, name, board=False):
+def checked_branch(repo, name):
     if (not name or name.startswith("-") or name == "HEAD"
             or SECRET.search(name.encode())
             or run(repo, "check-ref-format", "refs/heads/" + name,
                    check=False).returncode):
         raise Stop("分支名不合法。")
-    if not board and (name == "wcg/board" or name.startswith("wcg/board-")):
+    if name == "wcg/board" or name.startswith("wcg/board-"):
         raise Stop("公屏分支不能用作研究文件分支。")
     return name
 
 
 def branch_id(repo, requested=None):
-    saved = run(repo, "config", "--local", "--get", "wcg.branch",
-                check=False).stdout.decode().strip()
+    saved = local_config(repo, "wcg.branch")
     current = value(repo, "branch", "--show-current")
     fallback = DEFAULT_BRANCH if current == DEFAULT_BRANCH else "main"
     chosen = checked_branch(repo, requested or saved or fallback)
@@ -123,13 +124,8 @@ def branch_id(repo, requested=None):
     return chosen
 
 
-def board_branch(repo, requested=None, *, allow_none=False):
-    saved = run(repo, "config", "--local", "--get", "wcg.boardBranch", check=False).stdout.decode().strip()
-    if requested or saved:
-        raise Stop("公屏已退役；研究通过 RUN、工作区和 GitHub 文件协作，不重建公屏。")
-    if allow_none:
-        return None
-    raise Stop("当前研究没有活动公屏。")
+def local_config(repo, key):
+    return run(repo, "config", "--local", "--get", key, check=False).stdout.decode().strip()
 
 
 def default_repo():
@@ -151,25 +147,28 @@ def checked_repo(path):
     return repo
 
 
-def auth(repo, args):
-    mode=getattr(args,'auth',None) or run(repo,'config','--local','--get','wcg.auth',check=False).stdout.decode().strip() or 'token'
-    if getattr(args,'auth',None):run(repo,'config','--local','wcg.auth',mode)
-    if mode=='ssh':return environment(mode='ssh')
-    supplied = getattr(args, "token_file", None)
-    path = supplied or run(repo, "config", "--local", "--get", "wcg.tokenFile",
-                           check=False).stdout.decode().strip()
+def auth(repo, args, *, bind=True):
+    mode = args.auth or local_config(repo, "wcg.auth") or "token"
+    path = (args.token_file or local_config(repo, "wcg.tokenFile")) if mode == "token" else None
     if path:
         path = Path(path).expanduser().resolve()
         if path.is_relative_to(repo):
             raise Stop("凭据文件请放在仓库外。")
-        credential(path)
-        if supplied:
-            run(repo, "config", "--local", "wcg.tokenFile", str(path))
-    return environment(path)
+    env = environment(path, mode=mode)
+    if bind:
+        bind_auth(repo, args, mode)
+    return env
 
 
-def actor(repo, requested=None, adopt_legacy=False):
-    saved = run(repo, "config", "--local", "--get", "wcg.actor", check=False).stdout.decode().strip()
+def bind_auth(repo, args, mode):
+    if args.auth:
+        run(repo, "config", "--local", "wcg.auth", args.auth)
+    if mode == "token" and args.token_file:
+        run(repo, "config", "--local", "wcg.tokenFile", str(Path(args.token_file).expanduser().resolve()))
+
+
+def actor(repo, requested=None, adopt_legacy=False, *, bind=True):
+    saved = local_config(repo, "wcg.actor")
     # A caller may pin a role without putting it in the command line.  This is
     # useful for an explicitly assigned research lead while preserving the
     # historical random fallback for ordinary sessions.
@@ -178,10 +177,12 @@ def actor(repo, requested=None, adopt_legacy=False):
     if not chosen or not re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9_.-]{0,63}", chosen):
         raise Stop('首次启动必须按提示词给出 --actor Boss编号；程序不再随机分配身份。')
     if saved and saved != chosen:
-        if adopt_legacy and re.fullmatch(r'R-[0-9a-f]{32}',saved) and re.fullmatch(r'Boss[1-9][0-9]*',chosen):
-            run(repo,'config','--local','wcg.legacyActor',saved);run(repo,'config','--local','wcg.actor',chosen)
-        else:raise Stop('本目录已绑定 '+saved+'；同一旧对话迁移需明确 --adopt-legacy，其他对话用独立clone。')
-    if not saved:
+        if not (adopt_legacy and re.fullmatch(r"R-[0-9a-f]{32}", saved)
+                and re.fullmatch(r"Boss[1-9][0-9]*", chosen)):
+            raise Stop("本目录已绑定 " + saved + "；同一旧对话迁移需明确 --adopt-legacy，其他对话用独立 clone。")
+        if bind:
+            run(repo, "config", "--local", "wcg.legacyActor", saved)
+    if bind and saved != chosen:
         run(repo, "config", "--local", "wcg.actor", chosen)
     return chosen
 
@@ -200,9 +201,9 @@ def write_lock(repo):
         yield
 
 
-def sync(repo, env, allow_legacy=False):
+def sync(repo, env, allow_legacy=False, target=None):
     with write_lock(repo):
-        target = branch_id(repo)
+        target = branch_id(repo, target)
         branch = value(repo, "branch", "--show-current")
         if branch != target and not (allow_legacy and target == "main" and branch.startswith("wcg/work/")):
             raise Stop("当前分支与绑定分支 " + target + " 不同；保留本地工作，不自动切换。")
@@ -214,22 +215,24 @@ def sync(repo, env, allow_legacy=False):
             raise Stop("请先处理现有文件冲突；本地内容和同步备份仍保留。")
         tracking = "refs/remotes/origin/" + target
         run(repo, "fetch", "--quiet", "--no-tags", "origin",
-            "+refs/heads/" + target + ":" + tracking, env=env)
+            "+refs/heads/" + target + ":" + tracking, env=env, timeout=TRANSFER_TIMEOUT)
         tip = value(repo, "rev-parse", tracking)
         if run(repo, "merge-base", "--is-ancestor", tip, "HEAD", check=False).returncode == 0:
             return finish_sync(repo,{"status": "synced", "branch": target, "remote_tip": tip,
                     **({"main": tip} if target == "main" else {}), "preserved_work": True})
         stash = None
-        if run(repo, "status", "--porcelain").stdout:
-            run(repo, "stash", "push", "--quiet", "--include-untracked", "-m", "work sync " + uuid.uuid4().hex)
+        if run(repo, "status", "--porcelain", timeout=TRANSFER_TIMEOUT).stdout:
+            run(repo, "stash", "push", "--quiet", "--include-untracked", "-m", "work sync " + uuid.uuid4().hex,
+                timeout=TRANSFER_TIMEOUT)
             stash = value(repo, "rev-parse", "refs/stash")
         merged = run(repo, "-c", "user.name=WCG Researcher", "-c",
-                     "user.email=wcg@users.noreply.github.com", "merge", "--no-edit", tip, check=False)
+                     "user.email=wcg@users.noreply.github.com", "merge", "--no-edit", tip,
+                     check=False, timeout=TRANSFER_TIMEOUT)
         if merged.returncode:
-            run(repo, "merge", "--abort", check=False)
+            run(repo, "merge", "--abort", check=False, timeout=TRANSFER_TIMEOUT)
         restored = None
         if stash:
-            restored = run(repo, "stash", "apply", "--index", stash, check=False)
+            restored = run(repo, "stash", "apply", "--index", stash, check=False, timeout=TRANSFER_TIMEOUT)
             if restored.returncode == 0:
                 # Remove only our own saved copy after every byte was reapplied.
                 if value(repo, "rev-parse", "refs/stash") == stash:
@@ -247,37 +250,37 @@ def finish_sync(repo, result):
     return result
 
 
-def save_id(repo, requested=None, default=None):
-    saved = run(repo, "config", "--local", "--get", "wcg.save", check=False).stdout.decode().strip()
-    chosen = requested if requested is not None else (saved or default or DEFAULT_SAVE)
+def save_id(repo, requested=None, *, bind=True):
+    saved = local_config(repo, "wcg.save")
+    chosen = requested if requested is not None else (saved or DEFAULT_SAVE)
     if not IDENTIFIER.fullmatch(chosen):
         raise Stop("研究存档请使用安全 ID：字母、数字、点、下划线或连字符。")
     if saved and requested and requested != saved:
         raise Stop("本目录已绑定存档 " + saved + "；其他存档请使用独立 clone。")
-    if not saved:
+    if bind and not saved:
         run(repo, "config", "--local", "wcg.save", chosen)
     return chosen
 
 
-def role_id(repo, requested=None, prompts=None, default="boss"):
-    prompts = prompts or ROLE_PROMPTS
-    saved = run(repo, "config", "--local", "--get", "wcg.role", check=False).stdout.decode().strip()
-    chosen = requested if requested is not None else (saved or default)
-    if chosen not in prompts:
-        raise Stop("本存档支持角色：" + "、".join(prompts))
+def role_id(repo, requested=None, *, bind=True):
+    saved = local_config(repo, "wcg.role")
+    chosen = requested if requested is not None else (saved or "boss")
+    if chosen not in ROLE_PROMPTS:
+        raise Stop("本存档支持角色：" + "、".join(ROLE_PROMPTS))
     if saved and saved != chosen:
         raise Stop("本clone已绑定角色 " + saved + "；另一个角色使用独立clone。")
-    if not saved:
+    if bind and not saved:
         run(repo, "config", "--local", "wcg.role", chosen)
     return chosen
 
 
-def workspace_path(repo, save, who):
+def workspace_path(repo, save, who, *, subarchive=None):
     if not IDENTIFIER.fullmatch(save) or not IDENTIFIER.fullmatch(who):
         raise Stop("工作区 ID 不合法。")
     if run(repo, "config", "--local", "--get", "wcg.workflowRun", check=False).stdout.decode().strip():
         raise Stop("旧阶段运行绑定已退役；请从研究 RUN 和个人工作区接续。")
-    subarchive=run(repo,"config","--local","--get","wcg.subarchive",check=False).stdout.decode().strip()
+    if subarchive is None:
+        subarchive = local_config(repo, "wcg.subarchive")
     base=Path("archives")/save
     if subarchive:
         if not IDENTIFIER.fullmatch(subarchive): raise Stop("子存档绑定不合法。")
@@ -290,12 +293,12 @@ def workspace_path(repo, save, who):
     return relative
 
 
-def workspace_init(repo, save, who, resume=False):
+def workspace_init(repo, save, who, resume=False, *, branch=None, subarchive=None):
     with write_lock(repo):
-        target = branch_id(repo)
+        target = branch_id(repo, branch)
         if value(repo, "branch", "--show-current") != target:
             raise Stop("个人工作区只能在绑定分支 " + target + " 准备。")
-        relative = workspace_path(repo, save, who)
+        relative = workspace_path(repo, save, who, subarchive=subarchive)
         root = repo / relative
         profile = root / "workspace.json"
         readme = root / "README.md"
@@ -320,11 +323,13 @@ def workspace_init(repo, save, who, resume=False):
                     raise Stop("这个编号已有其他工作区；新对话换编号，确实接续旧身份时用 start --resume。")
                 instance = old["instance"]
         root.mkdir(parents=True, exist_ok=True)
+        run(repo, "config", "--local", "wcg.instance", instance)
         if created:
-            with profile.open("x") as stream:
+            with tempfile.NamedTemporaryFile(mode="w", dir=root, delete=False) as stream:
                 json.dump({"schema": 1, "save": save, "actor": who, "instance": instance},
                           stream, ensure_ascii=False, indent=2)
                 stream.write("\n")
+            os.replace(stream.name, profile)
         if not readme.exists():
             with readme.open("x") as stream:
                 stream.write(f"# {who} 的个人研究工作区\n\n研究存档：`{save}`；发布身份：`{who}`。\n\n"
@@ -333,9 +338,8 @@ def workspace_init(repo, save, who, resume=False):
                              "未完成、未核验或后来发现错误的研究也可以提交，标明现状即可；不要等结果成熟才备份。\n\n"
                              f"保存本人目录：python3 work.py checkpoint {relative.as_posix()} -m '阶段备份：当前推导与下一步'\n\n"
                              "共享正文与研究地图按数学对象组织，不按角色分区；材料检查整理后再正式入库，此处链接正文。\n\n"
-                             "## 交流与状态\n\n可以通过同一 work.py 私聊这个发布身份；其他人可访问已推送材料。"
+                             "## 交流与状态\n\n通过研究 RUN 留下反馈；其他人可访问已推送材料。"
                              "本地草稿只有完成 checkpoint 并确认 pushed 后才对其他 clone 可见。\n")
-        run(repo, "config", "--local", "wcg.instance", instance)
         remote = run(repo, "ls-tree", "refs/remotes/origin/" + target,
                      "--", relative.as_posix(), check=False)
         return {"path": relative.as_posix(), "created": created,
@@ -353,7 +357,8 @@ def visit(repo, env, save, who, path="README.md", branch=None):
     target = (relative / tail).as_posix()
     with write_lock(repo):
         run(repo, "fetch", "--quiet", "--no-tags", "origin",
-            "+refs/heads/" + target_branch + ":refs/remotes/origin/" + target_branch, env=env)
+            "+refs/heads/" + target_branch + ":refs/remotes/origin/" + target_branch,
+            env=env, timeout=TRANSFER_TIMEOUT)
         tip = value(repo, "rev-parse", "refs/remotes/origin/" + target_branch)
         entry = run(repo, "ls-tree", tip, "--", ":(literal)" + target).stdout
         if not entry.startswith((b"100644 blob ", b"100755 blob ")):
@@ -363,185 +368,199 @@ def visit(repo, env, save, who, path="README.md", branch=None):
             "commit": tip, "path": target, "text": content}
 
 
-def start(args):
-    # A downloaded copy stays a bootstrap. After restoring the selected branch
-    # it hands control to that branch's current root program, before binding a
-    # phase/save/role. Later prompt and phase updates therefore live on GitHub.
-    running_source = Path(__file__).read_bytes()
-    # Consume a one-hop handoff receipt. The bootstrap has just fetched this
-    # exact checkout; its current program need not repeat the same network sync.
-    try:handoff=json.loads(os.environ.pop('WCG_START_HANDOFF','null'))
-    except (ValueError,TypeError):handoff=None
-    created_clone=False
-    board_limit = getattr(args, "board_limit", 0)
-    if board_limit < 0:
-        raise Stop("start --board-limit 必须是非负整数；0 表示不自动读取公屏。")
-    repo = Path(args.repo).expanduser().resolve()
-    if not getattr(args,'auth',None) and (repo/'.git').exists():
-        saved_auth=run(repo,'config','--local','--get','wcg.auth',check=False).stdout.decode().strip()
-        if saved_auth:args.auth=saved_auth
-    if getattr(args,'auth',None)=='ssh' and args.remote==REMOTE:
-        args.remote='git@github.com:SOMEBODYJUN/co-work-anl.git'
-    if not (repo / ".git").exists():
-        if repo.exists() and any(repo.iterdir()):
+def clone_for_start(repo, remote, target, env):
+    repo.parent.mkdir(parents=True, exist_ok=True)
+    # Publish a complete checkout atomically. A killed transfer can only leave a
+    # disposable staging directory, never a half-initialized research clone.
+    with (repo.parent / f".{repo.name}.wcg-start.lock").open("a") as lock:
+        fcntl.flock(lock, fcntl.LOCK_EX)
+        if (repo / ".git").exists():
+            return False
+        if repo.exists() and (not repo.is_dir() or any(repo.iterdir())):
             raise Stop("目标目录有其他文件；请为仓库指定空目录。")
-        path = Path(args.token_file).expanduser().resolve() if args.token_file else None
-        if path and path.is_relative_to(repo):
+        with tempfile.TemporaryDirectory(prefix=f".{repo.name}.download-", dir=repo.parent) as stage:
+            checkout = Path(stage) / "checkout"
+            run(repo.parent, "clone", "--quiet", "--depth=1", "--single-branch",
+                "--branch", target, "--", remote, str(checkout), env=env, timeout=TRANSFER_TIMEOUT)
+            checkout.rename(repo)
+        return True
+
+
+def finish_legacy_checkout(repo, head):
+    pending = local_config(repo, "wcg.bootstrapCheckout")
+    if not pending:
+        return
+    with write_lock(repo):
+        if pending != head or local_config(repo, "wcg.instance"):
+            raise Stop("旧启动器留下的首次检出标记与当前工作区不一致；已保留本地工作。")
+        index = repo / value(repo, "rev-parse", "--git-path", "index")
+        if not index.exists():
+            run(repo, "read-tree", "HEAD", timeout=TRANSFER_TIMEOUT)
+        if run(repo, "diff", "--cached", "--quiet", "HEAD", check=False).returncode:
+            raise Stop("首次检出中有暂存改动；已保留本地内容。")
+        # Without --force, existing files cannot be overwritten.
+        run(repo, "checkout-index", "--all", "--quiet", check=False, timeout=TRANSFER_TIMEOUT)
+        if run(repo, "diff", "--quiet", "HEAD", check=False).returncode:
+            raise Stop("首次检出中的本地改动已保留；保全草稿后重试。")
+        run(repo, "config", "--local", "--unset", "wcg.bootstrapCheckout")
+
+
+def verified_receipt(receipt, repo, target, head, program_sha):
+    return (
+        isinstance(receipt, dict)
+        and receipt.get("repo") == str(repo)
+        and receipt.get("branch") == target
+        and receipt.get("head") == head
+        and receipt.get("program_sha256") == program_sha
+        and isinstance(receipt.get("result"), dict)
+        and receipt["result"].get("status") == "synced"
+        and receipt["result"].get("branch") == target
+    )
+
+
+def consume_start_handoff():
+    # Reserved entry point. Public flags may change without changing this ABI.
+    encoded = os.environ.pop(START_RECEIPT, "")
+    receipt = json.loads(encoded) if encoded else None
+    if not isinstance(receipt, dict) or not isinstance(receipt.get("inputs"), dict):
+        raise Stop("启动交接凭据缺失；请直接重跑 start。")
+    inputs = receipt["inputs"]
+    args = SimpleNamespace(repo=receipt.get("repo"), **{key: inputs.get(key) for key in START_FIELDS})
+    if args.repo != str(Path(__file__).resolve().parent):
+        raise Stop("启动交接目录不匹配；请直接重跑 start。")
+    return start(args, receipt=receipt, require_receipt=True)
+
+
+def start(args, *, receipt=None, require_receipt=False):
+    running_source = Path(__file__).read_bytes()
+    if not require_receipt:
+        # Compatibility with uploaded launchers issued before the fixed interface.
+        try:
+            receipt = json.loads(os.environ.pop("WCG_START_HANDOFF", "null"))
+        except ValueError:
+            receipt = None
+    repo = Path(args.repo).expanduser().resolve()
+    if (args.save == "repository-cleanup" or getattr(args, "curation_run", None)
+            or getattr(args, "workflow_run", None) or getattr(args, "board_branch", None)
+            or getattr(args, "board_limit", 0)):
+        raise Stop("旧阶段及公屏已退役；请选择数学存档并使用研究 RUN。")
+    if args.token_file:
+        args.token_file = str(Path(args.token_file).expanduser().resolve())
+        if Path(args.token_file).is_relative_to(repo):
             raise Stop("凭据文件请放在仓库外。")
-        env = environment(path,mode=getattr(args,'auth',None) or 'token')
-        repo.parent.mkdir(parents=True, exist_ok=True)
-        remote = args.remote
-        if SECRET.search(remote.encode()) or re.search(r"https?://[^/]*@", remote):
-            raise Stop("仓库地址请使用普通 Git URL。")
-        target = checked_branch(repo.parent, getattr(args, "branch", None) or DEFAULT_BRANCH)
-        # Download and checkout are separate: the archive contains nearly
-        # 100,000 files and checkout alone can exceed the old 45-second limit.
-        run(repo.parent, "clone", "--quiet", "--no-checkout", "--depth=1", "--single-branch", "--branch", target, remote, str(repo), env=env, timeout=300)
-        run(repo, "config", "--local", "wcg.bootstrapCheckout", value(repo, "rev-parse", "HEAD"))
-        created_clone=True
+
+    remote = args.remote
+    auth_mode = args.auth or (local_config(repo, "wcg.auth") if (repo / ".git").exists() else "") or "token"
+    if auth_mode == "ssh" and remote == "https://github.com/SOMEBODYJUN/co-work-anl.git":
+        remote = "git@github.com:SOMEBODYJUN/co-work-anl.git"
+    if not remote or remote.startswith("-") or SECRET.search(remote.encode()) or re.search(r"https?://[^/]*@", remote):
+        raise Stop("仓库地址请使用普通 Git URL。")
+
+    created = False
+    if not (repo / ".git").exists():
+        if require_receipt:
+            raise Stop("启动交接的检出目录缺失；请直接重跑 start。")
+        who = args.actor or os.environ.get("WCG_ACTOR", "").strip()
+        if not IDENTIFIER.fullmatch(who):
+            raise Stop("首次启动须带 --actor Boss编号。")
+        target = checked_branch(Path.cwd(), args.branch or DEFAULT_BRANCH)
+        clone_env = environment(args.token_file, mode=auth_mode)
+        created = clone_for_start(repo, remote, target, clone_env)
     repo = checked_repo(repo)
     origin = value(repo, "remote", "get-url", "--all", "origin")
-    push_origin = value(repo, "remote", "get-url", "--push", "--all", "origin")
-    if origin != args.remote or push_origin != origin:
+    if origin != remote or value(repo, "remote", "get-url", "--push", "--all", "origin") != origin:
         raise Stop("目标目录的 origin 与本研究仓库不一致；请使用本研究的独立目录。")
-    pending_checkout = run(repo, "config", "--local", "--get", "wcg.bootstrapCheckout", check=False).stdout.decode().strip()
-    if pending_checkout:
-        if pending_checkout != value(repo, "rev-parse", "HEAD"):
-            raise Stop("未完成的首次检出与当前 HEAD 不同；已保留本地文件，请核对后恢复。")
-        # Rebuilding the index is safe for this marked, not-yet-bound clone.
-        # checkout-index never overwrites an existing file, including a draft
-        # a user added after an interrupted start.
-        run(repo, "reset", "--quiet", "--mixed", "HEAD", timeout=300)
-        run(repo, "checkout-index", "--all", "--quiet", check=False, timeout=300)
-        if run(repo, "diff", "--quiet", "HEAD", check=False).returncode:
-            raise Stop("首次检出中已有不同于远端的本地文件，已保留；请保全这些草稿后重试。")
-        run(repo, "config", "--local", "--unset", "wcg.bootstrapCheckout")
-        created_clone=True
-    target = branch_id(repo, getattr(args, "branch", None))
-    branch = value(repo, "symbolic-ref", "--quiet", "--short", "HEAD")
-    legacy = target == "main" and branch.startswith("wcg/work/") and not getattr(args, "branch", None)
+    if local_config(repo, "wcg.curationRun") or local_config(repo, "wcg.workflowRun"):
+        raise Stop("当前目录绑定旧阶段；请为研究使用独立目录。")
+    target = branch_id(repo, args.branch)
+    branch = value(repo, "branch", "--show-current")
+    legacy = target == "main" and branch.startswith("wcg/work/") and not args.branch
     if branch != target and not legacy:
-        raise Stop("当前分支不是 " + target + "；不自动切换或合并其他分支，请使用独立clone。")
-    selected_board = board_branch(repo, getattr(args, "board_branch", None), allow_none=True)
-    if getattr(args, "curation_run", None) or getattr(args, "workflow_run", None):
-        raise Stop("2.5.3 与第三阶段队列已退役；请使用研究 RUN 和 studio。")
-    if selected_board == target:
-        raise Stop("公屏分支与研究文件分支必须分开。")
-    env = auth(repo, args)
-    run(repo, "config", "--local", "wcg.branch", target)
+        raise Stop("当前分支不是 " + target + "；请使用独立 clone，已有工作已保留。")
+
+    head = value(repo, "rev-parse", "HEAD")
+    finish_legacy_checkout(repo, head)
     current_program = repo / "work.py"
-    valid_handoff=(isinstance(handoff,dict) and handoff.get('repo')==str(repo)
-                   and handoff.get('branch')==target
-                   and handoff.get('head')==value(repo,'rev-parse','HEAD')
-                   and handoff.get('program_sha256')==hashlib.sha256(current_program.read_bytes()).hexdigest()
-                   and isinstance(handoff.get('result'),dict)
-                   and handoff['result'].get('status')=='synced'
-                   and handoff['result'].get('branch')==target)
-    if valid_handoff:
-        result=handoff['result']
-    elif created_clone:
-        tip=value(repo,'rev-parse','refs/remotes/origin/'+target)
-        result={'status':'synced','branch':target,'remote_tip':tip,'preserved_work':True}
+    env = auth(repo, args, bind=False)
+    valid = current_program.is_file() and verified_receipt(
+        receipt, repo, target, head, hashlib.sha256(current_program.read_bytes()).hexdigest())
+    if valid:
+        result = receipt["result"]
+    elif require_receipt:
+        raise Stop("启动交接与当前分支或程序版本不一致；请直接重跑 start。")
+    elif created:
+        result = {"status": "synced", "branch": target, "remote_tip": head, "preserved_work": True}
     else:
-        result = sync(repo, env, allow_legacy=legacy)
-    if (Path(__file__).resolve() != current_program.resolve()
-            or current_program.read_bytes() != running_source):
-        forwarded = ["--repo", str(repo), "start", "--remote", args.remote,
-                     "--board-limit", "0"]
-        for name in ("actor", "role", "token_file", "save", "branch", "board_branch", "subarchive",'auth'):
-            supplied = getattr(args, name, None)
-            if supplied is not None:
-                forwarded.extend(["--" + name.replace("_", "-"), str(supplied)])
-        if getattr(args, "resume", False):
-            forwarded.append("--resume")
-        if getattr(args,'adopt_legacy',False):forwarded.append('--adopt-legacy')
-        forwarded_env=dict(env,WCG_START_HANDOFF=json.dumps({
-            'repo':str(repo),'branch':target,'head':value(repo,'rev-parse','HEAD'),
-            'program_sha256':hashlib.sha256(current_program.read_bytes()).hexdigest(),'result':result}))
-        return subprocess.call([sys.executable, str(current_program), *forwarded], env=forwarded_env)
-    who = actor(repo, args.actor,getattr(args,'adopt_legacy',False))
-    if not run(repo, "config", "--local", "--get", "user.name", check=False).stdout:
-        run(repo, "config", "--local", "user.name", "WCG " + who)
-    if not run(repo, "config", "--local", "--get", "user.email", check=False).stdout:
-        run(repo, "config", "--local", "user.email", "wcg@users.noreply.github.com")
-    previous_save=run(repo,"config","--local","--get","wcg.save",check=False).stdout.decode().strip()
-    saved_sub=run(repo,"config","--local","--get","wcg.subarchive",check=False).stdout.decode().strip()
-    requested_sub=getattr(args,"subarchive",None)
-    if requested_sub and (not IDENTIFIER.fullmatch(requested_sub) or (previous_save and requested_sub!=saved_sub)):
-        raise Stop("子存档变更请使用独立clone；不改写已有绑定。")
-    requested_save=getattr(args,"save",None)
-    preview_save=requested_save or previous_save or (DEFAULT_START_SAVE if target==DEFAULT_BRANCH else DEFAULT_SAVE)
-    if not IDENTIFIER.fullmatch(preview_save):
-        raise Stop("研究存档请使用安全ID。")
-    selected_sub=requested_sub or saved_sub
-    if selected_sub:
-        if not (repo/'archives'/preview_save/'subarchives'/selected_sub/'README.md').is_file():
-            raise Stop("不存在该研究子存档；先按实际问题建立目录。")
-    save = save_id(repo, requested_save,
-                   DEFAULT_START_SAVE if target == DEFAULT_BRANCH else DEFAULT_SAVE)
-    if selected_sub:
-        run(repo,"config","--local","wcg.subarchive",selected_sub)
-    requested_role = getattr(args, "role", None)
-    prompts = ROLE_PROMPTS
-    valid_archive=(repo/'archives'/save/'README.md').is_file()
-    if requested_role is not None and save not in RESEARCH_ENTRIES and not valid_archive:
-        raise Stop("请先为明确研究问题建立存档README，再绑定此角色。")
-    selected_role = role_id(repo, requested_role, prompts,
-                            "boss") if save in RESEARCH_ENTRIES or valid_archive else None
-    if getattr(args, 'curation_run', None) or getattr(args, 'workflow_run', None):
-        raise Stop("2.5.3 与第三阶段队列已退役；请使用研究 RUN 和 studio。")
-    if run(repo, 'config', '--local', '--get', 'wcg.curationRun', check=False).stdout.decode().strip():
-        raise Stop("当前clone绑定旧阶段；请使用新的研究clone。")
-    if run(repo, 'config', '--local', '--get', 'wcg.workflowRun', check=False).stdout.decode().strip():
-        raise Stop("当前clone绑定旧阶段；请使用新的研究clone。")
-    workflow_config = None
-    curation_run = None
-    workflow_run = None
-    if selected_board:
-        raise Stop("公屏已退役；请用 research studio 保存研究过程。")
-    run(repo, "config", "--local", "--unset", "wcg.boardBranch", check=False)
+        result = sync(repo, env, allow_legacy=legacy, target=target)
+
+    if not current_program.is_file() or current_program.is_symlink():
+        raise Stop("研究分支缺少普通文件 work.py；请核对所选版本。")
+    program_bytes = current_program.read_bytes()
+    if Path(__file__).resolve() != current_program or program_bytes != running_source:
+        if require_receipt:
+            raise Stop("启动交接期间工作区程序发生变化；请直接重跑 start。")
+        if not valid and run(repo, "diff", "--quiet", "HEAD", "--", "work.py", check=False).returncode:
+            raise Stop("检出的 work.py 有本地改动；请保全修改后再启动。")
+        payload = {
+            "repo": str(repo), "branch": target, "head": value(repo, "rev-parse", "HEAD"),
+            "program_sha256": hashlib.sha256(program_bytes).hexdigest(), "result": result,
+            "inputs": {**{key: getattr(args, key) for key in START_FIELDS}, "remote": remote},
+        }
+        # Do not forward public CLI options or inherited defaults.
+        return subprocess.call([sys.executable, str(current_program), START_COMMAND], cwd=repo,
+                               env=dict(env, **{START_RECEIPT: json.dumps(payload)}))
+
+    who = actor(repo, args.actor, args.adopt_legacy, bind=False)
+    save = save_id(repo, args.save, bind=False)
+    if save == "repository-cleanup":
+        raise Stop("旧阶段存档已退役；请为研究使用独立目录。")
+    role = role_id(repo, args.role, bind=False)
+    previous_save = local_config(repo, "wcg.save")
+    saved_sub = local_config(repo, "wcg.subarchive")
+    if args.subarchive and previous_save and args.subarchive != saved_sub:
+        raise Stop("子存档变更请使用独立 clone；已有绑定已保留。")
+    subarchive = args.subarchive or saved_sub
+    base = Path("archives") / save
+    if subarchive:
+        if not IDENTIFIER.fullmatch(subarchive):
+            raise Stop("子存档 ID 不合法。")
+        base = base / "subarchives" / subarchive
+    entry = base / "README.md"
+    role_prompt = ROLE_PROMPTS[role]
+    for required in (entry, Path(role_prompt), Path(TOOLS) / "research_runtime.py"):
+        if not (repo / required).is_file():
+            raise Stop("研究启动所需文件缺失：" + required.as_posix())
+
     if legacy:
-        # sync has already preserved staged/unstaged/untracked work and stopped
-        # on any real conflict. Keep any existing local main under a local ref
-        # before renaming the old work branch. No remote branch is created.
         with write_lock(repo):
             previous = run(repo, "rev-parse", "--verify", "refs/heads/main", check=False)
             if previous.returncode == 0:
                 run(repo, "update-ref", "refs/wcg/recovery/main-" + uuid.uuid4().hex,
                     previous.stdout.decode().strip())
             run(repo, "branch", "-M", "main")
-    workspace = workspace_init(repo, save, who, getattr(args, "resume", False))
-    result.update(actor=who, save=save, workspace=workspace,
-                  repo=str(repo), branch=value(repo, "branch", "--show-current"))
-    result.update(RESEARCH_ENTRIES.get(save, {
-        "research_entry": None, "research_prompt": None,
-        "research_note": "Unregistered archive: select its research entry explicitly; no topic is inherited.",
-    }))
-    if save not in RESEARCH_ENTRIES and valid_archive:
-        base=(Path('archives')/save).as_posix()
-        prompt=base+'/prompts/README.md'
-        result.update(research_entry=base+'/README.md',research_prompt=prompt if (repo/prompt).is_file() else 'prompts/README.md',research_runbook='tools/README.md')
-    if result.get('research_entry'):
-        result['context_entry']=result['research_entry']
-    if selected_sub:
-        base=(Path('archives')/save/'subarchives'/selected_sub).as_posix()
-        result.update(subarchive=selected_sub,research_entry=base+'/README.md',research_prompt=base+'/prompts/README.md',context_entry=base+'/README.md')
-    result.update(role=selected_role,
-                  role_prompt=prompts[selected_role] if selected_role else None,
-                  board_branch=selected_board)
-    if selected_role == "boss" and valid_archive:
-        result.update(research_prompt=result["role_prompt"],
-                      research_runbook="research/agent-design/README.md",
-                      research_status="runtime-ready-problem-not-started",
-                      research_collaboration={
-                          "discover": "python work.py research peers RUN",
-                          "initialize": "python work.py research studio init RUN --spec PATH --expect-branch " + target,
-                          "restore": "python work.py research studio status RUN --session-tag CURRENT_SESSION",
-                          "instruction": "Research boards are retired. Inspect saved RUNs and mathematical workspaces; do not recreate collaboration pages. Follow the Work/GitHub design and fix the actual problem before native agent dispatch; file initialization does not launch a model.",
-                      })
-    if save == "customer-attraction" and not selected_sub:
-        result["context_entry"] = "archives/customer-attraction/README.md"
-    result["recent_board_limit"] = 0
+
+    workspace = workspace_init(repo, save, who, args.resume, branch=target, subarchive=subarchive)
+    actor(repo, who, args.adopt_legacy)
+    save_id(repo, save)
+    role_id(repo, role)
+    for key, val in {"wcg.branch": target, "wcg.subarchive": subarchive,
+                     "user.name": "WCG " + who, "user.email": "wcg@users.noreply.github.com"}.items():
+        if val and not local_config(repo, key):
+            run(repo, "config", "--local", key, val)
+    bind_auth(repo, args, auth_mode)
+
+    result.update(actor=who, save=save, workspace=workspace, repo=str(repo), branch=target,
+                  context_entry=entry.as_posix(), research_entry=entry.as_posix(),
+                  research_prompt=role_prompt, role_prompt=role_prompt, role=role,
+                  research_runbook="research/agent-design/README.md",
+                  research_status="runtime-ready-problem-not-started",
+                  research_collaboration={
+                      "discover": "python work.py research peers RUN",
+                      "initialize": "python work.py research studio init RUN --spec PATH --expect-branch " + target,
+                      "restore": "python work.py research studio status RUN --session-tag CURRENT_SESSION",
+                  })
+    if subarchive:
+        result["subarchive"] = subarchive
     print(json.dumps(result, ensure_ascii=False), flush=True)
     return 0
 
@@ -554,6 +573,8 @@ def main():
         if sys.argv[1].startswith("Password"):
             print(credential(os.environ["WCG_CHECKPOINT_TOKEN_FILE"]))
             return 0
+    if sys.argv[1:] == [START_COMMAND]:
+        return consume_start_handoff()
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument("--repo", default=default_repo())
     p.add_argument("--token-file")
@@ -564,13 +585,18 @@ def main():
     start_parser.add_argument("--actor", help="显式 Boss 编号；首次启动必须提供")
     start_parser.add_argument("--adopt-legacy", action="store_true")
     start_parser.add_argument("--auth", choices=("token", "ssh"), default=argparse.SUPPRESS)
-    start_parser.add_argument("--role", choices=tuple(ROLE_PROMPTS), default="boss")
+    start_parser.add_argument("--role", choices=tuple(ROLE_PROMPTS))
     start_parser.add_argument("--token-file", default=argparse.SUPPRESS)
     start_parser.add_argument("--remote", default=REMOTE)
     start_parser.add_argument("--save", default=argparse.SUPPRESS)
     start_parser.add_argument("--resume", action="store_true")
     start_parser.add_argument("--subarchive")
     start_parser.add_argument("--branch")
+    # These names are only parsed to accept the former default (0) or explain
+    # that an explicit legacy workflow has been retired.
+    start_parser.add_argument("--board-limit", type=int, default=0, help=argparse.SUPPRESS)
+    for retired in ("board-branch", "curation-run", "workflow-run"):
+        start_parser.add_argument("--" + retired, help=argparse.SUPPRESS)
     sub.add_parser("sync", help="只同步绑定研究分支并保留本地工作")
     research = sub.add_parser("research", help="读取超边、恢复 RUN、保存研究结果")
     research.add_argument("--registry")
@@ -601,7 +627,7 @@ def main():
         return subprocess.call([sys.executable, str(repo / TOOLS / "research_runtime.py"), "--repo", str(repo), *registry, *a.args])
     if a.command == "compute":
         return subprocess.call([sys.executable, str(repo / TOOLS / "compute.py"), "--repo", str(repo), *a.args])
-    env = auth(repo, a)
+    env = environment() if a.command == "checkpoint" and a.local_only else auth(repo, a)
     if a.command == "github":
         return subprocess.call([sys.executable, str(repo / TOOLS / "github_resources.py"), "--repo", str(repo), *a.args], env=env)
     who = actor(repo)
@@ -626,6 +652,9 @@ def main():
 if __name__ == "__main__":
     try:
         raise SystemExit(main())
+    except KeyboardInterrupt:
+        print("启动或运行已中断；可重跑原命令。", file=sys.stderr)
+        raise SystemExit(130)
     except (Stop, OSError, ValueError) as exc:
         message = SECRET.sub(b"[REDACTED]", str(exc).encode()).decode()
         print("ERROR: " + message, file=sys.stderr)
