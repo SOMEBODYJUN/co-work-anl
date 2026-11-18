@@ -409,6 +409,52 @@ def describe_assets(repo, directory, commit, files, branch="main"):
     return assets
 
 
+def audit_studio_owners(repo, files, baseline, candidate=None):
+    runs = set()
+    for name in files:
+        parts = name.split("/")
+        if len(parts) > 3 and parts[0] == "research" and parts[1] in {"runs", "workspaces"}:
+            runs.add(parts[2])
+    if not runs:
+        return
+    actor = git(repo, "config", "--local", "--get", "wcg.actor",
+                check=False).stdout.decode().strip()
+    save = git(repo, "config", "--local", "--get", "wcg.save",
+               check=False).stdout.decode().strip()
+    subarchive = git(repo, "config", "--local", "--get", "wcg.subarchive",
+                     check=False).stdout.decode().strip()
+    bound = f"archives/{save}" if save else None
+    if bound and subarchive:
+        bound += f"/subarchives/{subarchive}"
+    for run_id in sorted(runs):
+        name = f"research/runs/{run_id}/studio.json"
+        before = git(repo, "show", baseline + ":" + name, check=False)
+        if candidate is None:
+            path = repo / name
+            if path.is_symlink():
+                raise Stop("Studio index must be an ordinary file: " + name)
+            data = path.read_bytes() if path.is_file() else None
+        else:
+            after = git(repo, "show", candidate + ":" + name, check=False)
+            data = after.stdout if after.returncode == 0 else None
+        if before.returncode == 0 and data is None:
+            raise Stop("Checkpoint cannot remove a studio ownership record: " + name)
+        previous = json.loads(before.stdout) if before.returncode == 0 else None
+        current = json.loads(data) if data is not None else None
+        for exists, record in ((before.returncode == 0, previous), (data is not None, current)):
+            if not exists:
+                continue
+            if not isinstance(record, dict) or record.get("run_id") != run_id:
+                raise Stop("Invalid studio ownership record: " + name)
+            if not actor or record.get("owner") != actor:
+                raise Stop("Checkpoint includes changes in another Boss's studio: " + run_id +
+                           ". Keep the draft and publish from the owning clone.")
+            if record.get("archive_scope") and record["archive_scope"] != bound:
+                raise Stop("Checkpoint requires the clone bound to " + record["archive_scope"] + ": " + run_id)
+        if previous and previous.get("archive_scope") and current.get("archive_scope") != previous["archive_scope"]:
+            raise Stop("Checkpoint cannot change the studio archive scope: " + run_id)
+
+
 def default_paths(repo):
     actor = git(repo, "config", "--local", "--get", "wcg.actor", check=False).stdout.decode().strip()
     save = git(repo, "config", "--local", "--get", "wcg.save", check=False).stdout.decode().strip() or DEFAULT_SAVE
@@ -529,6 +575,7 @@ def locked_save(repo, common, cache, args):
         changed.update(names(git(repo, "diff", "HEAD", "--name-only", "-z", "--", *specs)))
         changed.update(selected)
         changed.update(names(git(repo, "ls-files", "--others", "--exclude-standard", "-z", "--", *specs)))
+    audit_studio_owners(repo, changed, "HEAD")
     for name in changed:
         p = repo / name
         if p.is_symlink():
@@ -604,6 +651,8 @@ def locked_save(repo, common, cache, args):
                 break
         baseline = value(repo, "rev-parse", private)
         commits, outgoing = audit_outgoing(repo, head, baseline, paths)
+        plans = list(getattr(args, 'review_plan', []) or [])
+        audit_studio_owners(repo, [*outgoing, *plans], baseline, head)
         result["outgoing_commits"] = list(dict.fromkeys(result["outgoing_commits"] + commits))
         result["outgoing_files"] = sorted(set(result["outgoing_files"]) | set(outgoing))
         result["files"] = sorted(set(result["files"]) | set(outgoing))
@@ -618,7 +667,6 @@ def locked_save(repo, common, cache, args):
                 raise Stop(str(exc) + " Draft retained at " + backup +
                            ". Run work.py sync, then map assemble and rebuild.") from exc
             raise Stop(str(exc) + " Local checkpoint retained. Sync, assemble and rebuild before publishing.") from exc
-        plans = list(getattr(args, 'review_plan', []) or [])
         result['reviewed_plans'] = audit_review_plans(repo, head, plans)
         if plans:
             result['review_checked_head'] = head

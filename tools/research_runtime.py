@@ -2008,8 +2008,13 @@ def main(argv=None):
     elif a.command == 'compute':
         import codespace_math
         result = codespace_math.run(root, a.experiment, a.out, a.message, a.local_only, a.manifest, a.resume_from)
-    else: result = update_run(root, a.run_id, a.solver, a.profile, a.note, a.next, a.state, a.feedback, a.agent_id, a.ack_feedback,
-                             a.model, a.reasoning_effort, a.fork_turns)
+    else:
+        if run_path(root, a.run_id).with_name('studio.json').is_file():
+            from research_studio import _own, _studio
+            _studio(root, a.run_id)
+            _own(root, a.run_id, a.note, line=a.solver)
+        result = update_run(root, a.run_id, a.solver, a.profile, a.note, a.next, a.state, a.feedback, a.agent_id,
+                            a.ack_feedback, a.model, a.reasoning_effort, a.fork_turns)
     print(json.dumps(result, ensure_ascii=False, indent=2))
     return 0
 

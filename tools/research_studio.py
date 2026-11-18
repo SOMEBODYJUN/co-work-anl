@@ -180,6 +180,7 @@ def init(root, run_id, spec_file, registry=runtime.REGISTRY, *, expect_branch, e
         raise ValueError('Fill the real target references and remove template_only before opening a research RUN')
     bound = _bound_archive(root)
     if bound is not None:
+        _own(root, run_id, spec_file, workspace=True)
         scope = runtime._collaboration_scope(root, spec['problem']['path'], spec.get('collaboration_scope'))
         if scope != bound:
             raise ValueError(f'RUN archive mismatch: clone is bound to {bound}; '
@@ -700,8 +701,11 @@ def promote(root, run_id, record_file):
         'schema': 2, 'objects': [], 'materials': [], 'edge_files': []}
     old = {obj['object_id']: obj for obj in previous['objects']}
     for oid, obj in objects.items():
-        if oid in old and obj != old[oid] and obj['version'] <= old[oid]['version']:
-            raise ValueError('Changed object requires a new version')
+        if oid in old and obj != old[oid]:
+            if scope and runtime._collaboration_scope(root, old[oid]['body']['path']) != scope:
+                raise ValueError('Existing object belongs to another archive; cite it under its original ID: ' + oid)
+            if obj['version'] <= old[oid]['version']:
+                raise ValueError('Changed object requires a new version')
     combined = dict(old)
     combined.update(objects)
     materials = {row['path']: copy.deepcopy(row) for row in previous['materials']}

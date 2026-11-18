@@ -5,7 +5,7 @@
 ## 启动
 
 1. 每个新 Boss 使用独立本地目录。执行 `python <work.py实际路径> --repo <独立clone> start --actor BossN --role boss --branch rebuild/research-v2 --save <存档ID> --token-file <凭据实际路径>`。用户要创建新存档而没有 ID 时，为题目取一个未占用的简短英文 ID，加 `--create-archive`，补写存档 README 的原题与范围。已有六人题用 `--save customer-attraction --subarchive six-providers`，不相关机用 `--save unrelated-machines`。续接同一 Boss 身份时加 `--resume`。随后进入返回的 clone，使用其根 work.py。
-2. 读 AGENTS.md 和 [Main 内部细则](research-main-design.md)。为所给题目选唯一 RUN ID，在 `research/workspaces/<RUN>/spec.json` 填 [spec 模板](../research/agent-design/spec-template.json)，删去 `template_only`。把 `collaboration_scope` 填成 start 返回的 `archive_scope`。引用准确原题、定义及其 SHA-256；缺原文就在本 RUN 先写，没选旧成果时用 `seed_ids: []`。原题已在正式存档下时按原文最深存档绑定。工作者可按实际数学用途跨存档读证据并核迁移，新正式正文写入本 RUN 存档的 `state/`。
+2. 读 AGENTS.md 和 [Main 内部细则](research-main-design.md)。新 Boss 复用同一个原题时，也给自己的 RUN 独立建 spec。六人题直接用[六人开题入口](../archives/customer-attraction/subarchives/six-providers/README.md)的已绑定 spec。其他题在 `research/workspaces/<RUN>/spec.json` 填 [spec 模板](../research/agent-design/spec-template.json)，删去 `template_only`。把 `collaboration_scope` 填成 start 返回的 `archive_scope`，保准确原题、定义和 SHA-256。原题已在正式存档下时按最深存档绑定。工作者可按实际数学用途跨存档读证据并核迁移，新正式正文写入本 RUN 存档的 `state/`。
 3. 执行 `python work.py research studio init <RUN> --spec research/workspaces/<RUN>/spec.json --expect-branch rebuild/research-v2 --expect-remote https://github.com/SOMEBODYJUN/co-work-anl.git`。核对返回的两份 packet、RUN 和四个工作目录。同一 Boss 接续已有 RUN 时直接用 `research studio status <RUN> --session-tag <本次会话标签>`；旧 RUN 无 studio 时用 `research resume <RUN>`。大份 JSON 留在本地，工作者按引用读。
 4. 用 Work 真实派工。默认用现有三个子代理槽。independent 从原题独立做障碍或反例。informed-a 是专门的 idea 子代理，查图提出路线并挑战 Main 的优先级。informed-b 实读所选超边、完整前提和证据，做证明、构造、代码和计算。并发和模型按用户指定，否则沿用仓库默认。
 

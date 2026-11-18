@@ -18,6 +18,8 @@ python work.py research studio init <RUN> --spec research/workspaces/<RUN>/spec.
 
 如果接续旧研究，使用原来的 Boss 和存档，在 `start` 加 `--resume`，然后读取自己的原 RUN。新 Boss 可以沿同一原题研究，使用自己的 RUN。
 
+例如 [Boss3 从空目录开同一个六人题](archives/customer-attraction/subarchives/six-providers/README.md)。
+
 超边可以跨存档引用。工作者须核对定义、模型、参数和迁移证明，按当前 RUN 的存档回写新结论。
 
 ```sh

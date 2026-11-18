@@ -1,5 +1,9 @@
-# 本层超图（第三阶段待建）
+# 六人研究的现役超边入口
 
-本层与下层数学对象共享稳定ID。第二阶段先写自足Markdown对象；第三阶段逐条斟酌关系，说明共同前提、保持条件、联系理由和实际来源。多前提共同推导必须保留为一条多源超边，不能拆成若干各自蕴含结论的边。
+从仓库根目录定位当前支持、替代路线和未付条件。
 
-`graph.json`是程序生成的本层投影，正文和边的解释在Markdown中；当前仅为draft-scaffold，不表示知识已清洗或数学图已完成。边写入`edges/`，格式见根`map/README.md`。允许孤立对象；没有已知联系时如实写明，不能为连通而造边。
+```sh
+python work.py research frontier customer-attraction/six-providers/exact-six-full-history-half-cover --expect-branch rebuild/research-v2
+```
+
+现役来源是[登记总表](../../../../../research/registry.json)和根 [map/edges](../../../../../map/edges)。工作者根据当前义务展开所选边、全部共同前提及证据。此处的 `graph.json` 保留早期索引。开题用[六人子档入口](../README.md)。

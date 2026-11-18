@@ -218,13 +218,14 @@ class StudioTests(unittest.TestCase):
         self.git('config', 'wcg.save', 'customer-attraction')
         self.git('config', 'wcg.subarchive', 'six-providers')
         spec = {**self.spec, 'collaboration_scope': 'archives/unrelated-machines'}
-        self.write('scoped.json', spec)
+        spec_path = 'research/workspaces/scoped/spec.json'
+        self.write(spec_path, spec)
         with self.assertRaisesRegex(ValueError, 'RUN archive mismatch'):
-            studio.init(self.root, 'scoped', 'scoped.json', expect_branch='research-test')
+            studio.init(self.root, 'scoped', spec_path, expect_branch='research-test')
         self.assertFalse((self.root / 'research/runs/scoped').exists())
         spec['collaboration_scope'] = scope
-        self.write('scoped.json', spec)
-        result = studio.init(self.root, 'scoped', 'scoped.json', expect_branch='research-test')
+        self.write(spec_path, spec)
+        result = studio.init(self.root, 'scoped', spec_path, expect_branch='research-test')
         self.assertEqual(result['archive_scope'], scope)
         self.assertEqual(studio.status(self.root, 'scoped')['studio']['archive_scope'], scope)
         self.git('config', '--unset', 'wcg.subarchive')

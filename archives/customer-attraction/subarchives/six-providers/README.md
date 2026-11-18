@@ -1,12 +1,31 @@
 # 恰六人半覆盖
 
-存档ID：`customer-attraction/six-providers`。父存档：`customer-attraction`。
+启动参数为 `--save customer-attraction --subarchive six-providers`。
 
 恰六名单位权提供者、任意有限单位客户和有限非空共同目录；每一个完整历史纯SPE覆盖数≥最大六主题覆盖数/2，允许空、重复、零客户及任意离轨平局。
 
 ## 研究入口
 
-恰六人半覆盖仍开放。当前先完成超边，研究Agent随后从头设计，见[暂停说明](../../../../prompts/research-runtime.md)。旧试跑合作公屏已删除；[原题](问题--问题.md)、[共同模型](../../state/定义/共同目录完整历史模型--定义.md)、实际研究文件和未完问题保留。
+恰六人半覆盖仍开放。以[正式原题](state/问题/六人完整历史半覆盖目标--问题.md)和[共同模型](../../state/定义/共同目录完整历史模型--定义.md)固定研究范围。
+
+### 新 Boss 做同一个 n=6 原题
+
+例如 Boss3 首次开工，在空的新目录用最新版启动器。把示例的凭据和程序路径替换成实际路径。
+
+```sh
+python <work.py路径> --repo co-work-anl-boss3 start --actor Boss3 --role boss --branch rebuild/research-v2 --save customer-attraction --subarchive six-providers --token-file <凭据路径>
+cd co-work-anl-boss3
+RUN=n6-boss3-20261118
+mkdir -p "research/workspaces/$RUN"
+cp -n archives/customer-attraction/subarchives/six-providers/research-spec.json "research/workspaces/$RUN/spec.json"
+python work.py research studio init "$RUN" --spec "research/workspaces/$RUN/spec.json" --expect-branch rebuild/research-v2 --expect-remote https://github.com/SOMEBODYJUN/co-work-anl.git
+```
+
+新 Boss 使用自己的 clone 和尚未使用的 RUN ID。已有自己的同名 RUN 用 `studio status` 续接。Boss2 的 [研究笔记](../../../../research/workspaces/n6-boss2-astra-20261118/main/journal.md)可供成果线参考。本 [开题 spec](research-spec.json)只固定原题和模型，独立线只收 obstacle packet 的节选。idea 和执行子代理从 spec 的 `registry_object_id` 按需读当前超边，再打开相关正文和证据。已发布的[部分分数覆盖边](../../../../map/edges/n6-boss2-astra-20261118/partial-fractional-cover-to-six-half.json)和[四种额外覆盖边](../../../../map/edges/n6-boss2-astra-20261118/four-extras-to-six-half.json)分别处理各自的条件子类。
+
+第一次 checkpoint 明确列出 `archives/customer-attraction/subarchives/six-providers/workspaces/Boss3`、`research/workspaces/$RUN` 和 `research/runs/$RUN`。以后 Boss3 从空目录接续这个 RUN 时，用相同存档参数和 `--resume`，再运行 `python work.py research studio status "$RUN" --session-tag <实际会话标签>`。
+
+两份 RUN 可以并行保存。正式成果共享 `research/registry.json`，回流前同步。若其他 Boss 已先发布，保留自己的草稿和检查记录，把本 RUN 的增量重新合到新基表；承重证据或端点变动时重新复核。父档已有成果保原 ID 和正文，新成果归本子档。
 
 已有数学与断点可直接打开：
 
@@ -18,7 +37,7 @@ Boss1主笔记提及的后继_stage目录不在当前已推送快照，不冒称
 
 ## 内容位置
 
-- [问题身份](问题--问题.md)
+- [登记原题](state/问题/六人完整历史半覆盖目标--问题.md)
 - `state/`：按数学对象类别组织自足Markdown，可随清洗增加新类别。
 - `workspaces/`：Boss/清洗者个人临时研究，可自由保存未成熟内容。
 - `papers/`：论文稿件及其必要依赖，保留与正式数学对象的对应。
