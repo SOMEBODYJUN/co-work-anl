@@ -28,7 +28,7 @@ BASE = "archives/customer-attraction/"
 SOURCE_PATHS = {
     "rules": "AGENTS.md",
     "implementation": "research/IMPLEMENTATION.md",
-    "worker": "prompts/research-runtime.md",
+    "worker": "retired-stage-source/prompts/03-map-worker.md",
     "task": f"research/operations/map-v2/tasks/{TASK}.json",
     "registry": "research/registry.json",
     "model": BASE + "state/定义/共同目录完整历史模型--定义.md",

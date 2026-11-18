@@ -246,13 +246,13 @@ python work.py research check
 python work.py research build
 ```
 
-非空边逐条 check；没有新增边省略该行。build 返回实际 projections。Main 将本次正式正文/证据、registry、边、RUN 记录和实际投影路径一并发布；承重交付用 promote 返回的计划 path：
+非空边逐条 check；没有新增边省略该行。build 的投影供本地检查。Main 发布本次正式正文、证据、唯一 registry、正式边及 RUN 记录。候选总表和派生投影保留在本地。承重交付用 promote 返回的计划 path：
 
 ```sh
 python work.py checkpoint ACTUAL-PUBLICATION-PATHS --review-plan ACTUAL-PLAN-RECORD-PATH -m 'Publish reviewed research increment'
 ```
 
-ACTUAL-PUBLICATION-PATHS 是本次全部实际路径；promote 返回的 checkpoint_review_args 已给 --review-plan 及不可变 plan JSON 路径，可直接复用。需要一次发布多项时可重复 --review-plan。checkpoint 在最后 push 前（包括远端推进后的合并重试）核计划、冻结、审查、正式对象/边及投影的实际 commit 字节，变化就停下定向修复/复核；只有返回 pushed 才称已审增量已发布。promote 本身仍未登记或发布。此检查仅由显式 --review-plan 触发；普通 journal、未完候选和计划随时沿原 checkpoint 保全。
+promote 返回的 checkpoint_review_args 给出 --review-plan 及不可变计划路径。一次发布多项时可重复 --review-plan。checkpoint 在每次 push 前核对实际提交中的计划、冻结、审查、正式登记对象、超边及其证据字节。确认返回 pushed 后，审查过的增量才已经发布。普通笔记和未完成候选继续使用常规 checkpoint。
 
 每项增量发布或同步发现相关新边/改版后，Main 重新读取受影响目标的 context/frontier、正文和必要 evidence，核新增支持能支付什么、旧采用是否仍有效、还有哪些义务。把具体结论和下一缺口通过真实 followup 送回相关线，或按空位派工，保存其实际接续。只写新边或 backflow plan 不会触发调度，也不等整题结束才使用新增数学。
 

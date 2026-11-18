@@ -1920,6 +1920,8 @@ def main(argv=None):
                 'output_tokens': args.output_tokens, 'inherited': args.context_mode == 'inherited'}
 
     sub.add_parser('studio', help='Main/three-line workspace, saved results, exact applications and reviewed publication receipts')
+    q = sub.add_parser('register', help='Install an explicit reviewed research increment in the current registry')
+    q.add_argument('--record-file', required=True)
     for command in ('check', 'build'):
         q = sub.add_parser(command); q.add_argument('--final', action='store_true')
     q = sub.add_parser('search'); q.add_argument('query'); q.add_argument('--limit', type=int, default=20)
@@ -1955,6 +1957,7 @@ def main(argv=None):
     q.add_argument('--fork-turns', choices=['none', 'all'])
     a = p.parse_args(argv); root = a.repo.resolve()
     if a.command in {'check', 'build'}: result = globals()[a.command](root, a.registry, a.final)
+    elif a.command == 'register': result = register(root, a.record_file, a.registry)
     elif a.command == 'search':
         if a.limit < 1: raise ValueError('Positive display limit required')
         result = search(root,a.query,a.registry,a.limit,model=a.model,truth_statuses=a.truth_status,kinds=a.kind)

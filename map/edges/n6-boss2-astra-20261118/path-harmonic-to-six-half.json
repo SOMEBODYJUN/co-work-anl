@@ -1,0 +1,70 @@
+{
+  "edge_id": "boss2-path-harmonic-condition-to-six-half",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "CA-PATH-HARMONIC-CONDITION-HALF-v1"
+  ],
+  "target_ids": [
+    "customer-attraction/six-providers/exact-six-full-history-half-cover"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "同一单位客户共同标签模型及同一完整六人SPE；全部客户及命中/未中标签对满足H_x(A)(1+L_x(B))≥1。不将此条件当作全部SPE自动成立。",
+  "roles": {
+    "CA-PATH-HARMONIC-CONDITION-HALF-v1": "提供跨原实际位置平均的完整条件half证明，且有合法SPE严格扩大旧逐行/算术条件。",
+    "customer-attraction/six-providers/exact-six-full-history-half-cover": "六人全目录原题；本边仅支付满足共同调和条件的完整SPE。"
+  },
+  "explanation": "将源定理任意m实例化为m=6。H先使每个统一p下全客户付款，逐行真实整行动IC给mΣ_xP_x≤W；闭凸价格上集分离得到同一个合法完整六槽平均背景v，其每主题查询价格≤W/6；最优六主题和v自身槽权各付一次，得OPT6≤12W/6=2W。单客户可分析各自极值，但实际使用的p始终同一，不能逐客户混挑p。源证明及六人真实构造完整，不支付一般H条件的存在/必然性。",
+  "scope": "与分数覆盖71/15独立的条件OR路线；存在含每标签私客、最优并集分数覆盖数6的已给对称SPE满足本条件，因此不由71/15条件域自动涵盖。",
+  "contribution": {
+    "result": "每份满足全客户共同调和条件的六人完整SPE均有2W≥OPT_6；可直接按原策略真实列检验，不需冻结后继。",
+    "remaining": "一般六人仍须处理不满足该条件且不被其它已证条件覆盖的完整SPE，或发展允许跨客户补偿的共同预算；H失败不等于half反例。"
+  },
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/跨实际位置共同调和判据的条件半覆盖--定理.md",
+      "sha256": "e48787e7736fff7e435a76570c666cd31e16531d44e06da75bf6df04bb3d8a7d"
+    },
+    {
+      "path": "tools/evidence/six-harmonic-path/coordinate-price-r1.md",
+      "sha256": "aee8af4406166cc392b11a73df991efebb5213cc934523ec8c1195fd4b7d6ed6"
+    },
+    {
+      "path": "tools/evidence/six-harmonic-path/harmonic-strict-r1.md",
+      "sha256": "8196afea33ec903a6e12ff8c94d49bba2adb34f4757350aab00d54c2c122d582"
+    },
+    {
+      "path": "tools/evidence/six-harmonic-path/audit-harmonic-strict-r1.py",
+      "sha256": "c2de28d27dca098b3a63708d087abe74f870aabc826de107d6b1754b1c1f7232"
+    },
+    {
+      "path": "tools/evidence/six-harmonic-path/harmonic-strict-replay-r1.json",
+      "sha256": "7aca33ea8df78fb7f243c82182d87b8b6afe148bd632ddc391e0b844b6c40ae3"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+    },
+    {
+      "path": "archives/customer-attraction/subarchives/six-providers/state/问题/六人完整历史半覆盖目标--问题.md",
+      "sha256": "0626668e7a825108fc0b3699e42394b75b1c2e2a526df220a90d91a02afc8a0c"
+    }
+  ],
+  "reviewed_by": "Boss2 Main /root",
+  "review_note": "Main非作者实读全证明、全路径坐标定义和两个严格分离，逐项核同一p、H的客户充要性、闭凸上集分离与2m分拆；另实际重放28客户8标签的全部37449有序决策节点和299592含自身IC比较。未将有限运行外推为一般H成立或half原题闭合。",
+  "endpoint_pins": {
+    "CA-PATH-HARMONIC-CONDITION-HALF-v1": "d72a5263e07a2d069c954437304c3c4aa9d58e99a79cca14d47af46c5efcf139",
+    "customer-attraction/six-providers/exact-six-full-history-half-cover": "2d5b191271cb052c435121a41935eb3958540d5a53cb05013f13dd45a70f6e31"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/跨实际位置共同调和判据的条件半覆盖--定理.md": "e48787e7736fff7e435a76570c666cd31e16531d44e06da75bf6df04bb3d8a7d",
+    "tools/evidence/six-harmonic-path/coordinate-price-r1.md": "aee8af4406166cc392b11a73df991efebb5213cc934523ec8c1195fd4b7d6ed6",
+    "tools/evidence/six-harmonic-path/harmonic-strict-r1.md": "8196afea33ec903a6e12ff8c94d49bba2adb34f4757350aab00d54c2c122d582",
+    "tools/evidence/six-harmonic-path/audit-harmonic-strict-r1.py": "c2de28d27dca098b3a63708d087abe74f870aabc826de107d6b1754b1c1f7232",
+    "tools/evidence/six-harmonic-path/harmonic-strict-replay-r1.json": "7aca33ea8df78fb7f243c82182d87b8b6afe148bd632ddc391e0b844b6c40ae3",
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+    "archives/customer-attraction/subarchives/six-providers/state/问题/六人完整历史半覆盖目标--问题.md": "0626668e7a825108fc0b3699e42394b75b1c2e2a526df220a90d91a02afc8a0c"
+  },
+  "review_digest": "745a3d6440dd4a37ee2ad992f042f2c44015dbf03cbcc51ac5b36f85fccfdbda"
+}

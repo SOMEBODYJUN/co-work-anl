@@ -7468,6 +7468,52 @@
       ]
     },
     {
+      "object_id": "CA-PATH-HARMONIC-CONDITION-HALF-v1",
+      "version": 1,
+      "title": "跨实际位置共同调和条件的任意人数半覆盖及真实严格分离",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "有限单位客户、有限非空共同标签目录及任意覆盖映射，m≥1单位顺序提供者，均分终局价值；全部有序历史纯SPE，空/重复/同覆盖标签/弱平局保留。",
+      "statement": "同一完整SPE下L_x(A)=m^-1Σ_i c_x(Z_i(A))，命中时H_x(A)=m^-1Σ_i1/c_x(Z_i(A))。若对所有x∈A、x∉B有H_x(A)(1+L_x(B))≥1，则2W≥OPT_m。该H条件恰等价于每客户对全部统一目录分布p支付共同时间平均全槽池，且严格弱于L_hit≤1+L_miss及旧逐行非强化条件，严格性有完整六人SPE。",
+      "quantifiers": "∀m≥1 ∀有限原模型 ∀完整有序历史纯SPE：全客户全命中/未中标签对H条件 ⇒ half。逐客户全p付款的充要性在给定同一策略上，非half必要条件。",
+      "assumptions": [
+        "同一原策略和原实际前缀下的真实完整m槽Z_i(A)",
+        "全客户全标签对H_x(A)(1+L_x(B))≥1；无未中标签的退化客户直接付款"
+      ],
+      "scope": "一般人数条件定理，尤其恰六人；已给两个全策略严格分离构造；一般六人H是否成立未证且不把H失败当half失败。",
+      "objections": "内部非作者逐式核验与精确六人全树重放；全称证明依靠同一p、闭凸上集分离及2m静态分拆。没有外审或一般原题闭合。",
+      "body": {
+        "path": "archives/customer-attraction/state/定理/跨实际位置共同调和判据的条件半覆盖--定理.md",
+        "sha256": "e48787e7736fff7e435a76570c666cd31e16531d44e06da75bf6df04bb3d8a7d"
+      },
+      "evidence": [
+        {
+          "path": "tools/evidence/six-harmonic-path/coordinate-price-r1.md",
+          "sha256": "aee8af4406166cc392b11a73df991efebb5213cc934523ec8c1195fd4b7d6ed6"
+        },
+        {
+          "path": "tools/evidence/six-harmonic-path/harmonic-strict-r1.md",
+          "sha256": "8196afea33ec903a6e12ff8c94d49bba2adb34f4757350aab00d54c2c122d582"
+        },
+        {
+          "path": "tools/evidence/six-harmonic-path/audit-harmonic-strict-r1.py",
+          "sha256": "c2de28d27dca098b3a63708d087abe74f870aabc826de107d6b1754b1c1f7232"
+        },
+        {
+          "path": "tools/evidence/six-harmonic-path/harmonic-strict-replay-r1.json",
+          "sha256": "7aca33ea8df78fb7f243c82182d87b8b6afe148bd632ddc391e0b844b6c40ae3"
+        },
+        {
+          "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+          "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+        }
+      ],
+      "sources": [
+        "本次成果线 /root/n6_informed，n6-boss2-astra-20261118；Main /root作非作者复核",
+        "旧逐行跨覆盖分支非强化充分判据与统一全槽静态桥；此处给自足证明和严格扩大子类"
+      ]
+    },
+    {
       "object_id": "CA-PAY-PARAMETER-LEFT-JUMP-v1",
       "version": 1,
       "title": "PAY尚未支付的相邻真实前缀可有唯一最优参数严格左跳",
@@ -8626,6 +8672,47 @@
         "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-a8ee6fdb155c47da95540775b4a6a2db/closure/joint_atoms_exact.json",
         "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-a8ee6fdb155c47da95540775b4a6a2db/closure/joint_atoms_old_schema.json",
         "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-a8ee6fdb155c47da95540775b4a6a2db/closure/joint_atoms_verify.json"
+      ]
+    },
+    {
+      "object_id": "CA-SIX-FRACTIONAL-COVER-71-15-v1",
+      "version": 1,
+      "title": "分数覆盖数至多71/15的六人完整SPE半覆盖",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "有限单位客户、有限非空共同标签目录及任意覆盖映射；六单位提供者顺序行动；终局价值均分；完整有序历史纯SPE，保同覆盖异标签、空覆盖、重复与离轨弱平局。",
+      "statement": "任意六人完整纯SPE与任意可覆盖客户集C，若C的合法主题分数覆盖数τ_C≤71/15，则2W≥|C|。因此若某个最优六主题并集C满足该条件，则2W≥OPT_6。",
+      "quantifiers": "∀有限(N,S,cov) ∀完整六人纯SPE ∀可覆盖C：τ_C≤71/15 ⇒ 2W≥|C|。",
+      "assumptions": [
+        "C具有非负合法主题分数覆盖且总重≤71/15；空C单独直接成立"
+      ],
+      "scope": "任意客户/标签规模；条件子类普遍证明；不关闭一般六人原题。",
+      "objections": "内部作者解析及完整128型Fraction有理恒等式。未证明所有最优C满足τ_C≤71/15；不称阈值锐或外审。",
+      "body": {
+        "path": "archives/customer-attraction/state/定理/六人分数覆盖七十一比十五条件半覆盖--定理.md",
+        "sha256": "84f186492228bee031e491e4b8efd27f674b48c0731f62437c58327817d6a129"
+      },
+      "evidence": [
+        {
+          "path": "tools/evidence/six-fractional-cover-71-15/certificate.json",
+          "sha256": "1d94ec0a2160ef0d1f2f796d2f6c274f3de0ba0fcaebdc07a27a041e0c2bbdd9"
+        },
+        {
+          "path": "tools/evidence/six-fractional-cover-71-15/verify.py",
+          "sha256": "ec3e05718779e36125fa28407e166917afbc3a0c13a5692d74cdd5f71b744500"
+        },
+        {
+          "path": "tools/evidence/six-fractional-cover-71-15/exact-replay.json",
+          "sha256": "742223414320dbe4d16978609901dc441c4f294e0c2a1b49afa7d3fbe38e8251"
+        },
+        {
+          "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+          "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+        }
+      ],
+      "sources": [
+        "本次Main /root Boss2，RUN n6-boss2-astra-20261118；十行共同付款的精确有理证书",
+        "复用真实前缀安全与末两人η=1/2包络的机制；旧9/2定理并非本结果的逻辑前提"
       ]
     },
     {
@@ -115952,6 +116039,52 @@
       ]
     },
     {
+      "object_id": "customer-attraction/degree-two-exact-credible-root-floor-and-all-spe-optimality",
+      "version": 1,
+      "title": "二元共享客户族的真实根门槛与全策略最优福利",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "共同目录的顺序单位提供者与有限单位客户终局均分模型；完整有序历史纯 SPE，允许所有弱平局和合法重复。",
+      "statement": "固定两个各q个主题的组；跨组每对b单位客户、同组每对a单位客户，q+1人。设L=qb/2+(q−1)a。任一合法前缀的任一完整子SPE中，所有尚未出场角色实际收益至少L。任一此前未出现的强制主题在所有完整孩子中的当前最低收益L_h(A)≥L；每个强制根的最低收益恰L，故根门槛Θ∅=L。每份完整根SPE均W=OPT。沿任意实际路径可排序一个最优的q+1个不同主题，逐个保持此前未出现，从而ΣL_h(T_i)≥(q+1)L并支付原half接口。",
+      "quantifiers": "任意整数 q≥2、b≥1、0≤a≤b。对该目录任意完整纯SPE及合法有序前缀，遍历全部真实弱平局后继。",
+      "assumptions": [
+        "目录恰含两个各 q 主题的组",
+        "每名客户恰喜欢一对主题，跨边重数 b、组内边重数 a",
+        "q+1 名单位提供者",
+        "L_h(A)按强制主题的全部可信孩子终局取最小"
+      ],
+      "scope": "同目录全策略最优性、完整可信根最低利润、最优比较排序。a>0 时新重复动作不存在；a=0 时允许单组恰一重复但仍最优。",
+      "objections": "一般目录仍需自己的可信收益与跨枝共同付款证明；原指定策略的根后聚合尾利润由独立节点给出。本结论不要求所有合法前缀都是实际前缀。",
+      "body": {
+        "path": "archives/customer-attraction/state/定理/二元共享客户族的真实根门槛与全策略最优福利--定理.md",
+        "sha256": "b5f7f6ccf1e6a8787210cf650b866f4d97095fd2e0dfcfca20d675235f52adc6"
+      },
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/构造/二元共享客户的完整均衡负驻留族--构造.md",
+          "sha256": "5c9cf2906b68aaa4bdb21172f11d29ad52d58c0f16baaab8b59d0a0e112ef0d4"
+        },
+        {
+          "path": "archives/customer-attraction/state/资源/完整后继门槛的阶段接口与选中枝边界--资源.md",
+          "sha256": "9d8ab71d9a269651754ed48114eb9803e65a90bc8eb7946f8c8fcf1a0b4250a7"
+        },
+        {
+          "path": "tools/evidence/canonical/9d3b78179df4c788-verify-degree-two-credible-threshold.py",
+          "sha256": "18174bb2f373f5d435714727e387f096c999bfdb4d18aad69fd477ed17bb6706"
+        }
+      ],
+      "sources": [
+        "map:boss5-degree-two-credible-floor-3b-3b-cca009dfcf0a8929"
+      ],
+      "keywords": [
+        "degree-two",
+        "全策略",
+        "完整后继",
+        "最优福利",
+        "可信根门槛"
+      ]
+    },
+    {
       "object_id": "customer-attraction/degree-two-exact-root-tail-profit",
       "version": 1,
       "title": "二元共享客户完整策略的精确根后尾利润",
@@ -169983,52 +170116,6 @@
         "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/reviews/weighted_congestion/density_padding/review.md#6",
         "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/reviews/weighted_congestion/density_padding/review.md#6"
       ]
-    },
-    {
-      "object_id": "customer-attraction/degree-two-exact-credible-root-floor-and-all-spe-optimality",
-      "version": 1,
-      "title": "二元共享客户族的真实根门槛与全策略最优福利",
-      "kind": "theorem",
-      "truth_status": "proved",
-      "model": "共同目录的顺序单位提供者与有限单位客户终局均分模型；完整有序历史纯 SPE，允许所有弱平局和合法重复。",
-      "statement": "固定两个各q个主题的组；跨组每对b单位客户、同组每对a单位客户，q+1人。设L=qb/2+(q−1)a。任一合法前缀的任一完整子SPE中，所有尚未出场角色实际收益至少L。任一此前未出现的强制主题在所有完整孩子中的当前最低收益L_h(A)≥L；每个强制根的最低收益恰L，故根门槛Θ∅=L。每份完整根SPE均W=OPT。沿任意实际路径可排序一个最优的q+1个不同主题，逐个保持此前未出现，从而ΣL_h(T_i)≥(q+1)L并支付原half接口。",
-      "quantifiers": "任意整数 q≥2、b≥1、0≤a≤b。对该目录任意完整纯SPE及合法有序前缀，遍历全部真实弱平局后继。",
-      "assumptions": [
-        "目录恰含两个各 q 主题的组",
-        "每名客户恰喜欢一对主题，跨边重数 b、组内边重数 a",
-        "q+1 名单位提供者",
-        "L_h(A)按强制主题的全部可信孩子终局取最小"
-      ],
-      "scope": "同目录全策略最优性、完整可信根最低利润、最优比较排序。a>0 时新重复动作不存在；a=0 时允许单组恰一重复但仍最优。",
-      "objections": "一般目录仍需自己的可信收益与跨枝共同付款证明；原指定策略的根后聚合尾利润由独立节点给出。本结论不要求所有合法前缀都是实际前缀。",
-      "body": {
-        "path": "archives/customer-attraction/state/定理/二元共享客户族的真实根门槛与全策略最优福利--定理.md",
-        "sha256": "b5f7f6ccf1e6a8787210cf650b866f4d97095fd2e0dfcfca20d675235f52adc6"
-      },
-      "evidence": [
-        {
-          "path": "archives/customer-attraction/state/构造/二元共享客户的完整均衡负驻留族--构造.md",
-          "sha256": "5c9cf2906b68aaa4bdb21172f11d29ad52d58c0f16baaab8b59d0a0e112ef0d4"
-        },
-        {
-          "path": "archives/customer-attraction/state/资源/完整后继门槛的阶段接口与选中枝边界--资源.md",
-          "sha256": "9d8ab71d9a269651754ed48114eb9803e65a90bc8eb7946f8c8fcf1a0b4250a7"
-        },
-        {
-          "path": "tools/evidence/canonical/9d3b78179df4c788-verify-degree-two-credible-threshold.py",
-          "sha256": "18174bb2f373f5d435714727e387f096c999bfdb4d18aad69fd477ed17bb6706"
-        }
-      ],
-      "sources": [
-        "map:boss5-degree-two-credible-floor-3b-3b-cca009dfcf0a8929"
-      ],
-      "keywords": [
-        "degree-two",
-        "全策略",
-        "完整后继",
-        "最优福利",
-        "可信根门槛"
-      ]
     }
   ],
   "materials": [
@@ -175408,6 +175495,15 @@
       "reason": "完整解析证明、所有整数参数和取等支持分类。"
     },
     {
+      "path": "archives/customer-attraction/state/定理/二元共享客户族的真实根门槛与全策略最优福利--定理.md",
+      "sha256": "b5f7f6ccf1e6a8787210cf650b866f4d97095fd2e0dfcfca20d675235f52adc6",
+      "disposition": "objects",
+      "object_ids": [
+        "customer-attraction/degree-two-exact-credible-root-floor-and-all-spe-optimality"
+      ],
+      "reason": "全参数全策略和真实门槛的解析证明及精确有限回归。"
+    },
+    {
       "path": "archives/customer-attraction/state/定理/二进制全码银行的三人有序续局与精确根门槛--定理.md",
       "sha256": "26cb54184783f358a0edeb80efc39db80ebb4a98718b7bf6681df406bb438caf",
       "disposition": "objects",
@@ -175621,6 +175717,15 @@
         "customer-attraction/six-theme-three-player-conditional-iid-payment"
       ],
       "reason": "实读成熟正文的模型、精确陈述、量词、条件和必要论证位置；复用完整正文证明，按独立数学身份列出本页所有自有对象。未重跑历史程序、未声称新增盲审，不建超边。"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/六人分数覆盖七十一比十五条件半覆盖--定理.md",
+      "sha256": "84f186492228bee031e491e4b8efd27f674b48c0731f62437c58327817d6a129",
+      "disposition": "objects",
+      "object_ids": [
+        "CA-SIX-FRACTIONAL-COVER-71-15-v1"
+      ],
+      "reason": "本次完整条件定理及其必要精确系数证据"
     },
     {
       "path": "archives/customer-attraction/state/定理/六人分数覆盖条件半覆盖--定理.md",
@@ -177144,6 +177249,15 @@
         "M-37b7d7de813c4ff69c63fcb679950f36"
       ],
       "reason": "完整实读精确陈述、模型量词、条件和成熟证明/必要证据；独立Claim按稳定身份登记，未重跑或重清洗，无超边。"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/跨实际位置共同调和判据的条件半覆盖--定理.md",
+      "sha256": "e48787e7736fff7e435a76570c666cd31e16531d44e06da75bf6df04bb3d8a7d",
+      "disposition": "objects",
+      "object_ids": [
+        "CA-PATH-HARMONIC-CONDITION-HALF-v1"
+      ],
+      "reason": "完整跨位置调和条件定理、真实严格分离与完整历史核验证据"
     },
     {
       "path": "archives/customer-attraction/state/定理/跨覆盖分支负载条件的半覆盖保证--定理.md",
@@ -215210,69 +215324,6 @@
       "reason": "同一已登记三一致超图硬度的完整证明入口与局部勘误证据：明确分离阈值0<δ≤1/2；KS14相关量取sqrt(θ)，保真实测试分布并重选维数无关参数。共享正文及冻结作者PDF不改。"
     },
     {
-      "path": "tools/evidence/canonical/e0b9725ce864fc74-ks14-correlation-and-threshold-correction.md",
-      "sha256": "d265421442f7bcb9479889803a785927315fb8bd250e4c17a0bb7bc22f506482",
-      "disposition": "attachment",
-      "object_ids": [
-        "M-9f8033b6e1a4485b97636171b09f8218"
-      ],
-      "reason": "同一已登记三一致超图硬度的完整证明入口与局部勘误证据：明确分离阈值0<δ≤1/2；KS14相关量取sqrt(θ)，保真实测试分布并重选维数无关参数。共享正文及冻结作者PDF不改。"
-    },
-    {
-      "path": "tools/evidence/canonical/1a59f6ec9ca41713-retuned-gap-4-19.md",
-      "sha256": "e8a73482a28fbb5ffd6ee0220a43d4c297a6ed075100e100ceb814fe62ad050f",
-      "disposition": "objects",
-      "object_ids": [
-        "M-546d167881384ce790c41cd47626d72a"
-      ],
-      "reason": "本页已承载有限区间严格非存在与全m≥3合成；由新精确起点对象统一承接，正式独立正文定位完整论证。"
-    },
-    {
-      "path": "tools/evidence/canonical/350d8f5d3f920180-retuned-gap-4-19.py",
-      "sha256": "8920d631796040941dadc14a1c6d0f73d0f476154979f291d6acfe01b5c550cf",
-      "disposition": "attachment",
-      "object_ids": [
-        "M-546d167881384ce790c41cd47626d72a"
-      ],
-      "reason": "精确整数起点定理的必要数学证据附件；不为程序、日志或一次数值另造节点。"
-    },
-    {
-      "path": "tools/evidence/canonical/26df06fbb86f57fd-exact-check.json",
-      "sha256": "67642f79d484ed0d915b75d1b923e881b21828cf63768f2849a073d2651eb1a8",
-      "disposition": "attachment",
-      "object_ids": [
-        "customer-attraction/four-provider-weak-row-cone-scaled-actual-load-obstruction"
-      ],
-      "reason": "独立六类型有理数核验：明确20/25弱行及125/625比较元组、固定L0缺口和ABQ唯一真实末回复；非完整SPE搜索。"
-    },
-    {
-      "path": "tools/evidence/canonical/76193ed25e5b9724-verify-small.py",
-      "sha256": "faaa32432bdb173373658b4e37c56a3cf1cf7b76493d7ebbcbbfb2a423e643d3",
-      "disposition": "attachment",
-      "object_ids": [
-        "customer-attraction/four-provider-weak-row-cone-scaled-actual-load-obstruction"
-      ],
-      "reason": "独立六类型有理数核验：明确20/25弱行及125/625比较元组、固定L0缺口和ABQ唯一真实末回复；非完整SPE搜索。"
-    },
-    {
-      "path": "tools/evidence/canonical/c68d72823deffad0-exact_kernel.py",
-      "sha256": "500efe3276b6909505baff442b636e0e0107d8994a10590441dffba35fe009c7",
-      "disposition": "attachment",
-      "object_ids": [
-        "UM-FOREST-FIXED-GPC2-PAIR-LAW-EXTENSION-NO-v1"
-      ],
-      "reason": "明确六机三任务固定GPC2家族：分数关联森林与可实现指定行律不保证任意指定全部pair共同延拓；解析三比特不等式和单实例精确核验。"
-    },
-    {
-      "path": "tools/evidence/canonical/0f6b3defbef8eb6f-exact_kernel_output.json",
-      "sha256": "012dc9810e66d8e8ace9fab6dc8109ff03877af15f5ab6a92177841e604fe4e3",
-      "disposition": "attachment",
-      "object_ids": [
-        "UM-FOREST-FIXED-GPC2-PAIR-LAW-EXTENSION-NO-v1"
-      ],
-      "reason": "明确六机三任务固定GPC2家族：分数关联森林与可实现指定行律不保证任意指定全部pair共同延拓；解析三比特不等式和单实例精确核验。"
-    },
-    {
       "path": "research/workspaces/six-boss1-20261111/actual_pair_20910.md",
       "sha256": "c1c52adbea7c84611a03f14af9cdee4e9064bb49ddd94887f0b1948044b947f4",
       "disposition": "attachment",
@@ -224333,13 +224384,130 @@
       "reason": "Boss2实读并核对的同源跨枝/折扣闭包及有限必要LP证据；具体范围由对象正文限定。"
     },
     {
-      "path": "archives/customer-attraction/state/定理/二元共享客户族的真实根门槛与全策略最优福利--定理.md",
-      "sha256": "b5f7f6ccf1e6a8787210cf650b866f4d97095fd2e0dfcfca20d675235f52adc6",
+      "path": "tools/evidence/canonical/0f6b3defbef8eb6f-exact_kernel_output.json",
+      "sha256": "012dc9810e66d8e8ace9fab6dc8109ff03877af15f5ab6a92177841e604fe4e3",
+      "disposition": "attachment",
+      "object_ids": [
+        "UM-FOREST-FIXED-GPC2-PAIR-LAW-EXTENSION-NO-v1"
+      ],
+      "reason": "明确六机三任务固定GPC2家族：分数关联森林与可实现指定行律不保证任意指定全部pair共同延拓；解析三比特不等式和单实例精确核验。"
+    },
+    {
+      "path": "tools/evidence/canonical/1a59f6ec9ca41713-retuned-gap-4-19.md",
+      "sha256": "e8a73482a28fbb5ffd6ee0220a43d4c297a6ed075100e100ceb814fe62ad050f",
       "disposition": "objects",
       "object_ids": [
-        "customer-attraction/degree-two-exact-credible-root-floor-and-all-spe-optimality"
+        "M-546d167881384ce790c41cd47626d72a"
       ],
-      "reason": "全参数全策略和真实门槛的解析证明及精确有限回归。"
+      "reason": "本页已承载有限区间严格非存在与全m≥3合成；由新精确起点对象统一承接，正式独立正文定位完整论证。"
+    },
+    {
+      "path": "tools/evidence/canonical/26df06fbb86f57fd-exact-check.json",
+      "sha256": "67642f79d484ed0d915b75d1b923e881b21828cf63768f2849a073d2651eb1a8",
+      "disposition": "attachment",
+      "object_ids": [
+        "customer-attraction/four-provider-weak-row-cone-scaled-actual-load-obstruction"
+      ],
+      "reason": "独立六类型有理数核验：明确20/25弱行及125/625比较元组、固定L0缺口和ABQ唯一真实末回复；非完整SPE搜索。"
+    },
+    {
+      "path": "tools/evidence/canonical/350d8f5d3f920180-retuned-gap-4-19.py",
+      "sha256": "8920d631796040941dadc14a1c6d0f73d0f476154979f291d6acfe01b5c550cf",
+      "disposition": "attachment",
+      "object_ids": [
+        "M-546d167881384ce790c41cd47626d72a"
+      ],
+      "reason": "精确整数起点定理的必要数学证据附件；不为程序、日志或一次数值另造节点。"
+    },
+    {
+      "path": "tools/evidence/canonical/76193ed25e5b9724-verify-small.py",
+      "sha256": "faaa32432bdb173373658b4e37c56a3cf1cf7b76493d7ebbcbbfb2a423e643d3",
+      "disposition": "attachment",
+      "object_ids": [
+        "customer-attraction/four-provider-weak-row-cone-scaled-actual-load-obstruction"
+      ],
+      "reason": "独立六类型有理数核验：明确20/25弱行及125/625比较元组、固定L0缺口和ABQ唯一真实末回复；非完整SPE搜索。"
+    },
+    {
+      "path": "tools/evidence/canonical/c68d72823deffad0-exact_kernel.py",
+      "sha256": "500efe3276b6909505baff442b636e0e0107d8994a10590441dffba35fe009c7",
+      "disposition": "attachment",
+      "object_ids": [
+        "UM-FOREST-FIXED-GPC2-PAIR-LAW-EXTENSION-NO-v1"
+      ],
+      "reason": "明确六机三任务固定GPC2家族：分数关联森林与可实现指定行律不保证任意指定全部pair共同延拓；解析三比特不等式和单实例精确核验。"
+    },
+    {
+      "path": "tools/evidence/canonical/e0b9725ce864fc74-ks14-correlation-and-threshold-correction.md",
+      "sha256": "d265421442f7bcb9479889803a785927315fb8bd250e4c17a0bb7bc22f506482",
+      "disposition": "attachment",
+      "object_ids": [
+        "M-9f8033b6e1a4485b97636171b09f8218"
+      ],
+      "reason": "同一已登记三一致超图硬度的完整证明入口与局部勘误证据：明确分离阈值0<δ≤1/2；KS14相关量取sqrt(θ)，保真实测试分布并重选维数无关参数。共享正文及冻结作者PDF不改。"
+    },
+    {
+      "path": "tools/evidence/six-fractional-cover-71-15/certificate.json",
+      "sha256": "1d94ec0a2160ef0d1f2f796d2f6c274f3de0ba0fcaebdc07a27a041e0c2bbdd9",
+      "disposition": "attachment",
+      "object_ids": [
+        "CA-SIX-FRACTIONAL-COVER-71-15-v1"
+      ],
+      "reason": "本次完整条件定理及其必要精确系数证据"
+    },
+    {
+      "path": "tools/evidence/six-fractional-cover-71-15/exact-replay.json",
+      "sha256": "742223414320dbe4d16978609901dc441c4f294e0c2a1b49afa7d3fbe38e8251",
+      "disposition": "attachment",
+      "object_ids": [
+        "CA-SIX-FRACTIONAL-COVER-71-15-v1"
+      ],
+      "reason": "本次完整条件定理及其必要精确系数证据"
+    },
+    {
+      "path": "tools/evidence/six-fractional-cover-71-15/verify.py",
+      "sha256": "ec3e05718779e36125fa28407e166917afbc3a0c13a5692d74cdd5f71b744500",
+      "disposition": "attachment",
+      "object_ids": [
+        "CA-SIX-FRACTIONAL-COVER-71-15-v1"
+      ],
+      "reason": "本次完整条件定理及其必要精确系数证据"
+    },
+    {
+      "path": "tools/evidence/six-harmonic-path/audit-harmonic-strict-r1.py",
+      "sha256": "c2de28d27dca098b3a63708d087abe74f870aabc826de107d6b1754b1c1f7232",
+      "disposition": "attachment",
+      "object_ids": [
+        "CA-PATH-HARMONIC-CONDITION-HALF-v1"
+      ],
+      "reason": "完整跨位置调和条件定理、真实严格分离与完整历史核验证据"
+    },
+    {
+      "path": "tools/evidence/six-harmonic-path/coordinate-price-r1.md",
+      "sha256": "aee8af4406166cc392b11a73df991efebb5213cc934523ec8c1195fd4b7d6ed6",
+      "disposition": "attachment",
+      "object_ids": [
+        "CA-PATH-HARMONIC-CONDITION-HALF-v1"
+      ],
+      "reason": "完整跨位置调和条件定理、真实严格分离与完整历史核验证据"
+    },
+    {
+      "path": "tools/evidence/six-harmonic-path/harmonic-strict-r1.md",
+      "sha256": "8196afea33ec903a6e12ff8c94d49bba2adb34f4757350aab00d54c2c122d582",
+      "disposition": "attachment",
+      "object_ids": [
+        "CA-PATH-HARMONIC-CONDITION-HALF-v1"
+      ],
+      "reason": "完整跨位置调和条件定理、真实严格分离与完整历史核验证据"
+    },
+    {
+      "path": "tools/evidence/six-harmonic-path/harmonic-strict-replay-r1.json",
+      "sha256": "7aca33ea8df78fb7f243c82182d87b8b6afe148bd632ddc391e0b844b6c40ae3",
+      "disposition": "attachment",
+      "object_ids": [
+        "CA-PATH-HARMONIC-CONDITION-HALF-v1"
+      ],
+      "reason": "完整跨位置调和条件定理、真实严格分离与完整历史核验证据"
     }
   ],
   "edge_files": [
@@ -227015,6 +227183,8 @@
     "map/edges/weighted-congestion-3a-3a-d49ee314a1bb0671/oc-interface-completes-light-characterization.json",
     "map/edges/weighted-congestion-3a-3a-d49ee314a1bb0671/shapley-envelope-to-local-pne.json",
     "map/edges/weighted-envelope-topology-finite-d-3b-eb6b7f0078ba59bc/finite-ceiling-and-sharp-source-transfer.json",
-    "map/edges/weighted-model-errata-repair-ce098c336867ec28/frontier-ledger-locates-multicolumn-contract.json"
+    "map/edges/weighted-model-errata-repair-ce098c336867ec28/frontier-ledger-locates-multicolumn-contract.json",
+    "map/edges/n6-boss2-astra-20261118/fractional-71-15-to-six-half.json",
+    "map/edges/n6-boss2-astra-20261118/path-harmonic-to-six-half.json"
   ]
 }

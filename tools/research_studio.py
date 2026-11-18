@@ -705,6 +705,7 @@ def promote(root, run_id, record_file):
     checks = [runtime.check_edge(root, ref['path'], candidate_name) for ref in edge_refs]
     plan = {**record, 'freeze_ref': freeze_ref, 'review_ref': selected,
             'candidate_registry_ref': candidate,
+            'registry_path': run['registry'],
             'validation': validation, 'edge_checks': checks,
             'base_registry_ref': _ref(root, run['registry']) if canonical_path.exists() else None,
             'status': 'backflow-plan-ready-local-not-published',
@@ -720,7 +721,7 @@ def promote(root, run_id, record_file):
             'candidate_registry_ref': candidate,
             'commands': plan['commands'], 'canonical_registry_modified': False,
             'checkpoint_review_args': ['--review-plan', saved['path']],
-            'publication_instruction': 'After register/check/build, checkpoint the exact publication paths with these review arguments; checkpoint verifies the final pushed commit against the frozen review.'}
+            'publication_instruction': 'After register/check/build, checkpoint the reviewed source, evidence, canonical registry, edges and RUN records. Keep the proposed registry and rebuilt projections local.'}
 
 
 def status(root, run_id, session_tag=None):

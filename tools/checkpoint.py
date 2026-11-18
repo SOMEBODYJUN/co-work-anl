@@ -81,7 +81,7 @@ def audit_review_plans(repo, head, plans):
     Read Git objects, never the mutable checkout. A merge retry calls this
     again on its new HEAD; ordinary journal checkpoints need no plan.
     """
-    from research_runtime import pin
+    from research_runtime import REGISTRY, edge_digest, pin
 
     def read(name):
         name = relative(repo, name)
@@ -131,23 +131,32 @@ def audit_review_plans(repo, head, plans):
                     and other['verdict'] != 'approve'
                     and review_id not in review.get('resolves_review_ids', [])):
                 raise Stop("Unresolved exact-version review objection blocks publication")
-        candidate = json.loads(checked(plan['candidate_registry_ref']))
-        canonical = json.loads(read(candidate['backflow_guard']['registry']))
+        # The proposed full registry and graph projections are local working
+        # files. Publish the reviewed delta and canonical registry, without
+        # requiring duplicate registries or rebuildable graphs in every clone.
+        base_ref = plan.get('base_registry_ref') or {}
+        canonical_path = plan.get('registry_path', base_ref.get('path', REGISTRY))
+        canonical = json.loads(read(canonical_path))
         batch = json.loads(checked(plan['registration_batch_ref']))
         objects = {row['object_id']: row for row in canonical['objects']}
         if any(objects.get(row['object_id']) != row for row in batch['objects']):
             raise Stop("Reviewed results are not installed in the final canonical registry")
-        graph = json.loads(read('map/graph-v2.json'))
-        if graph.get('registry_pin') != pin(canonical):
-            raise Stop("Research graph is stale in the final commit; rebuild before publication")
         for reference in plan['edge_refs']:
             edge = json.loads(checked(reference))
             if reference['path'] not in canonical['edge_files']:
                 raise Stop("Reviewed edge is not installed in the final canonical registry")
             if edge.get('status') == 'accepted':
                 endpoints = {oid: pin(objects[oid]) for oid in set(edge['source_ids'] + edge['target_ids'])}
-                if edge.get('endpoint_pins') != endpoints or graph['edges'].get(edge['edge_id']) != edge:
-                    raise Stop("Reviewed edge has stale endpoints or is missing from the final graph")
+                if edge.get('endpoint_pins') != endpoints:
+                    raise Stop("Reviewed edge has stale endpoints in the final canonical registry")
+                if edge.get('review_digest') != edge_digest(edge):
+                    raise Stop("Reviewed edge declaration changed before push")
+                evidence_pins = {}
+                for evidence in edge['evidence']:
+                    checked(evidence)
+                    evidence_pins[evidence['path']] = evidence['sha256']
+                if edge.get('evidence_pins') != evidence_pins:
+                    raise Stop("Reviewed edge has stale evidence bindings before push")
         checked_plans.append(name)
     return checked_plans
 

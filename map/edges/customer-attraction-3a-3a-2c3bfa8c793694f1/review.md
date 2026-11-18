@@ -117,7 +117,7 @@ CA-OBLIVIOUS-MIXED-SECURITY-2N1使用同一客户总体、同一八标签目录�
 |---|---|---|
 | AGENTS.md | 20293db840f907c32f774b0d7f72450c56e6c0ad937720699d14f7c02e693cc9 | 全文 |
 | research/IMPLEMENTATION.md | fb6613cd0c429f28b8bcfb1064076a629540cfbee8f7e3d670b0b39e78ff0d4b | 全文分段；重点ALL、contribution、收据和共享canonical规则 |
-| prompts/research-runtime.md | 6629f71923c54d994297d54c3737b285227b72c463641d318c3f61c9342d07b2 | 全文 |
+| retired-stage-source/prompts/03-map-worker.md | 6629f71923c54d994297d54c3737b285227b72c463641d318c3f61c9342d07b2 | 全文 |
 | research/operations/map-v2/tasks/customer-attraction-3a-3a-2c3bfa8c793694f1.json | 83cf1f7fef9625ff26645f61c8bc75c722594a9f9589e9cbc84ae8612314be80 | 完整定义、三个read-add端点及本地owner/state |
 | research/registry.json | df18a812d37f7957bc41e04692b2223cba6e84bdb942f3afec673626dd9bdd14 | 指定完整合同；canonical列表内端点扫描 |
 | archives/customer-attraction/state/资料/客户分数负载覆盖与固定策略锥的审计合同--资料.md | 0013a2a0986eb81e11735bc2a794e47e5f650cad43c173817a02a14f01ddb3aa | 全文，含21锥、其它审计及可扩大边界 |

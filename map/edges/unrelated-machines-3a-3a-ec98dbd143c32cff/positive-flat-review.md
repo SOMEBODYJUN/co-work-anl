@@ -193,6 +193,6 @@ NF v4 的原合同要求 pₑ≤T，才有强式 (1+3δ)T；未剪枝时只能�
 
 ## 8. 本轮实读与操作界限
 
-本轮实际读取：AGENTS.md、prompts/research-runtime.md、IMPLEMENTATION.md 第三阶段及收据接口；当前 task 与父 Boss 提供的完整三对象合同导出；共享文献页全文（承重为§2）；原 PDF 必要定理和证明、原 NF 正文全文、当前主审查全文、共同有理 Gram 资源全文；既有 canonical step 全文及其 proof、三原子证据全文；NF→PREFIX canonical 文件全文仅作上述去重。
+本轮实际读取：AGENTS.md、retired-stage-source/prompts/03-map-worker.md、IMPLEMENTATION.md 第三阶段及收据接口；当前 task 与父 Boss 提供的完整三对象合同导出；共享文献页全文（承重为§2）；原 PDF 必要定理和证明、原 NF 正文全文、当前主审查全文、共同有理 Gram 资源全文；既有 canonical step 全文及其 proof、三原子证据全文；NF→PREFIX canonical 文件全文仅作上述去重。
 
 本轮没有把旧包记录的“已读全部 refs”继承成本轮实读范围，也没有重跑历史科学计算。只写本 task 的 write_paths；没有执行 Git、work.py、native 队列、全局 registry/coverage/integration 或 spawn。原 PDF 目视截图为临时阅读产物，交付前移除。父 Boss 负责最终 native 检查、保存与队列动作。

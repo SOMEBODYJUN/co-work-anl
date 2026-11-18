@@ -69,7 +69,7 @@ n=3…6冻结数值回归只检正输入和菜单算术；本条任意n证明由
 
 ## 阅读范围、关系处置及开放边界
 
-全文实读：AGENTS.md、research/IMPLEMENTATION.md的相关第三阶段接口、prompts/research-runtime.md；原任务与read-add后完整definition；三个核心、CAG-MODEL、M1和M2的当前registry记录；共同障碍正文200行、模型正文129行、逐人安全与全树流增量审查正文119行；菜单审计226行及replay-menu.json213行；去相关审计112行及replay-decorrelation.json48行；M1正文、M2正文。四人原附件的有限结构/指定策略行读取边界已单列。三core及CAG-MODEL的research show均返回当前registration_pin，与任务一致；新增M1/M2按read-add定义pin核对。所有被使用原始文件SHA与登记/冻结replay绑定一致。
+全文实读：AGENTS.md、research/IMPLEMENTATION.md的相关第三阶段接口、retired-stage-source/prompts/03-map-worker.md；原任务与read-add后完整definition；三个核心、CAG-MODEL、M1和M2的当前registry记录；共同障碍正文200行、模型正文129行、逐人安全与全树流增量审查正文119行；菜单审计226行及replay-menu.json213行；去相关审计112行及replay-decorrelation.json48行；M1正文、M2正文。四人原附件的有限结构/指定策略行读取边界已单列。三core及CAG-MODEL的research show均返回当前registration_pin，与任务一致；新增M1/M2按read-add定义pin核对。所有被使用原始文件SHA与登记/冻结replay绑定一致。
 
 不为同页或共享定义造ALL边。保留三条实质关系：M2实例化完整推出一般反族；36例和一般族分别给普遍D否定的局部贡献。后两条source登记truth_status=refuted指被否桥，运行时按conditional保存；其conditions明确使用已核反例证书的存在与数值，数学上没有额外开放假设。四人D失败但菜单可封顶，故没有D→M失败边；两个菜单失败但静态v不大于u、half严格成立，故没有通往真正逐人安全反例、聚合安全失败或六人half否定的边。36例与一般族输入并非同一，故没有彼此的完整specializes边。
 

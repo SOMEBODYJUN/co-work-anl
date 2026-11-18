@@ -200,7 +200,7 @@ A<d<d+1，且最小 S 为 1/A，故这些界的最大比值恰为
 
 ## 本轮实读、继承记录和已有边的范围
 
-本 worker 已读 AGENTS.md、research/IMPLEMENTATION.md、prompts/research-runtime.md、任务全文及 registry 中三端点的完整记录。任务当前给定 input_pins 为 F=93d33edeb95f5257122583259d5347ea913e25f04dfefe41e9e5f281c1c2b704、T=1a0edceaed3cbc80e104df06697385be3406c7aa2b6eed26b2203f66c2609413、R=2064d4dcea77a85b0b3d5cd4a82fa4f44edcbc717a4f920fcc146fc65e9fe005；Boss 在派工时核对了最新领取与输入。worker 只读本地状态，不另作远端所有权承诺。
+本 worker 已读 AGENTS.md、research/IMPLEMENTATION.md、retired-stage-source/prompts/03-map-worker.md、任务全文及 registry 中三端点的完整记录。任务当前给定 input_pins 为 F=93d33edeb95f5257122583259d5347ea913e25f04dfefe41e9e5f281c1c2b704、T=1a0edceaed3cbc80e104df06697385be3406c7aa2b6eed26b2203f66c2609413、R=2064d4dcea77a85b0b3d5cd4a82fa4f44edcbc717a4f920fcc146fc65e9fe005；Boss 在派工时核对了最新领取与输入。worker 只读本地状态，不另作远端所有权承诺。
 
 本轮六个不同源文件均已全文实读并核原字节 SHA256；审查和账本也在本轮全文读取，任务中特定 section 是最小定位而非本轮实际读取上限：
 
