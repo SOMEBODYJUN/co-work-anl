@@ -1,0 +1,71 @@
+{
+  "application_id": "APP-SIX-ANCHOR-49-10",
+  "line": "main",
+  "problem_spec_pin": "28b796047d7dfb12eec05857e56c4ea3c089b8eae93ab26f3421d22ac545ba39",
+  "edge_id": "boss2-real-branch-anchor-49-10-to-six-half",
+  "edge_declaration_pin": "37affd19ff8ba496e23cc3285ac9ec802e9b48a9370e8445e775ed6acf704af3",
+  "direction": "forward",
+  "object_pins": {
+    "CA-SIX-FRACTIONAL-COVER-49-10-v1": "8e3ed61523943c959940a3eaaf5b16a1104323d89c5cb024239db459ebf316f2",
+    "customer-attraction/six-providers/exact-six-full-history-half-cover": "2d5b191271cb052c435121a41935eb3958540d5a53cb05013f13dd45a70f6e31"
+  },
+  "source_to_target_mapping": "将源定理任意C取为任一满足τ_C≤49/10的最优六主题并集，使用同一完整SPE。",
+  "applicability": {
+    "model": "当前原共同目录、单位客户、六人完整SPE。",
+    "quantifiers": "任意实例、任意完整策略，限定存在合格最优并集的子类。",
+    "scope": "仅分数覆盖总重≤49/10条件；仍需处理超过阈值实例。"
+  },
+  "premise_bindings": [
+    {
+      "source_id": "CA-SIX-FRACTIONAL-COVER-49-10-v1",
+      "source_pin": "8e3ed61523943c959940a3eaaf5b16a1104323d89c5cb024239db459ebf316f2",
+      "local_statement": "对任意目标客户集C，若其分数覆盖总重≤49/10，则每份完整六人纯SPE满足 W≥(3135715367829425393001704420123484550603340/6199239059252383558859054468436725716169101)|C|，系数严格大于1/2。",
+      "applicability": "源的任意C允许最优并集。",
+      "state": "established-here",
+      "proof_ref": {
+        "path": "archives/customer-attraction/state/定理/五条真实偏离的六人分数覆盖四十九比十--定理.md",
+        "sha256": "53ecce096d49980c79e028fa4a51b68541f5ed0697ea7b8b3ce612eb7c5804e3"
+      }
+    }
+  ],
+  "bridge_obligation": {
+    "state": "global-whole-argument-applies",
+    "statement": "取C为合格最优并集，W≥α|C|=αOPT6，α>1/2。",
+    "proof_ref": {
+      "path": "research/workspaces/n6-boss2-astra-20261118/main/anchor-menu-49-10.md",
+      "sha256": "2aa9d26e3b8c95534c0a152c5689a62438f7330dee279592f40b167ed51387c6"
+    }
+  },
+  "conditions_text": "同一完整有序历史六人纯SPE，存在最优六主题并集C可用总重至多49/10的合法非负主题权覆盖。",
+  "condition_discharge": [
+    {
+      "condition": "同一完整有序历史六人纯SPE，存在最优六主题并集C可用总重至多49/10的合法非负主题权覆盖。",
+      "argument": "原模型条件固定；一般输入是否存在低分数覆盖数的最优并集尚无定理。",
+      "state": "open",
+      "obligation_id": "SIX-FC-49-10-OPT-EXISTENCE"
+    }
+  ],
+  "result_scope": "contribution",
+  "actual_result": "若存在最优并集C的分数覆盖总重≤49/10，则2W≥OPT6。",
+  "remaining": "仍须处理所有最优并集分数覆盖数均>49/10且其它条件定理也不适用的实例。",
+  "target_remaining": {
+    "statement": "仍须处理所有最优并集分数覆盖数均>49/10且其它条件定理也不适用的实例。",
+    "obligation_id": "SIX-HIGH-TAU-49-10-REMAINDER"
+  },
+  "evidence_refs": [
+    {
+      "path": "research/workspaces/n6-boss2-astra-20261118/main/anchor-menu-49-10.md",
+      "sha256": "2aa9d26e3b8c95534c0a152c5689a62438f7330dee279592f40b167ed51387c6"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/五条真实偏离的六人分数覆盖四十九比十--定理.md",
+      "sha256": "53ecce096d49980c79e028fa4a51b68541f5ed0697ea7b8b3ce612eb7c5804e3"
+    }
+  ],
+  "depends_on_applications": [],
+  "inherited_unpaid_obligation_ids": [],
+  "discharged_obligations": [],
+  "unpaid_obligation_ids": [
+    "SIX-FC-49-10-OPT-EXISTENCE"
+  ]
+}

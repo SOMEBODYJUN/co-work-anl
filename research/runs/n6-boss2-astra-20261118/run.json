@@ -8,23 +8,23 @@
   "registry": "research/registry.json",
   "solvers": {
     "main": {
-      "event_id": "b0db9a04440240c1a128cb08bd4a827c",
-      "continuation_of": null,
+      "event_id": "4a8e443c4f544580889a43751df5b4fc",
+      "continuation_of": "b0db9a04440240c1a128cb08bd4a827c",
       "solver_id": "main",
       "profile": "full",
       "note": {
-        "path": "research/runs/n6-boss2-astra-20261118/notes/b0db9a04440240c1a128cb08bd4a827c.md",
-        "sha256": "a32297de2abc2d5aee8f081c4be237d5f6ba5dd18c5fa43598f2869b9807eda4"
+        "path": "research/runs/n6-boss2-astra-20261118/notes/4a8e443c4f544580889a43751df5b4fc.md",
+        "sha256": "f2ba38baf5cc35919c28bffa378872cc6d0a12c4c7a4e649c36e1a32f14c2792"
       },
-      "next_action": "核真实末位IC与新推导的共同钱包；接回两线结果",
+      "next_action": "接续任意分数覆盖数大于49/10的目录及强跨组重叠，补真实比较标签的全历史一致性",
       "state": "working",
       "agent_id": "/root",
       "feedback": null,
       "feedback_inherited": false,
       "feedback_pending": false,
       "feedback_acknowledged": false,
-      "session_tag": "work-n6-astra-20261118",
-      "latest_event": "b0db9a04440240c1a128cb08bd4a827c"
+      "session_tag": "n6-astra-continuation",
+      "latest_event": "4a8e443c4f544580889a43751df5b4fc"
     },
     "independent": {
       "event_id": "c25c2112325f4e8d8c66dfb449552c3d",
@@ -73,9 +73,33 @@
         "fork_turns": "none"
       },
       "latest_event": "39948eced8e64923a2da000a2575b2d2"
+    },
+    "informed-b": {
+      "event_id": "7903234424b84dacb8092c14865c5552",
+      "continuation_of": null,
+      "solver_id": "informed-b",
+      "profile": "full",
+      "note": {
+        "path": "research/runs/n6-boss2-astra-20261118/notes/7903234424b84dacb8092c14865c5552.md",
+        "sha256": "26eeeeacd64a96e3cb6f88185a34e362bcba7603da222f54f80180780d76a5d8"
+      },
+      "next_action": "研究五人背景尾的共同根收益桥，保留完整真实偏离",
+      "state": "working",
+      "agent_id": "/root/n6_astra_continuation",
+      "feedback": null,
+      "feedback_inherited": false,
+      "feedback_pending": false,
+      "feedback_acknowledged": false,
+      "session_tag": "n6-astra-continuation",
+      "launch": {
+        "model": "gpt-6.2-astra",
+        "reasoning_effort": "ultra",
+        "fork_turns": "none"
+      },
+      "latest_event": "7903234424b84dacb8092c14865c5552"
     }
   },
-  "solver_count": 3,
+  "solver_count": 4,
   "solver_roster": [
     {
       "solver_id": "main",
@@ -88,13 +112,17 @@
     {
       "solver_id": "informed-a",
       "profile": "full"
+    },
+    {
+      "solver_id": "informed-b",
+      "profile": "full"
     }
   ],
   "launch_plan": {
     "platform": "Work",
     "mode": "studio",
-    "subagent_count": 2,
-    "instruction": "Explicit user override: Main plus independent and informed-a only; both actual launches gpt-6.2-astra/ultra/fork_turns:none. No informed-b agent."
+    "subagent_count": 1,
+    "instruction": "Current continuation uses one full-input Astra/ultra subagent, informed-b. The prior two lines remain saved as historical sessions."
   },
   "registry_pin": "4e82b405e0c9f374a4e13926c2da95d980aa3db79b01dbea134fb0cff4302fc1",
   "context_snapshot": {
@@ -129,5 +157,5 @@
     "obstacle": "58979396f76563df6b39a1519d2dcdd74b9c3a911aa3bfee9fd449c95e17ea13"
   },
   "note": "No agents were launched by this command; Main starts them through the Work orchestration API.",
-  "subagent_count": 2
+  "subagent_count": 1
 }
