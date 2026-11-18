@@ -1,0 +1,76 @@
+{
+  "edge_id": "boss3-five-extras-B-prefix-half-contribution",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "CA-SIX-DISJOINT-MAXIMA-FIVE-EXTRAS-B-PREFIX-v1"
+  ],
+  "target_ids": [
+    "customer-attraction/six-providers/exact-six-full-history-half-cover"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "同一有限单位客户、有限非空原标签目录、六名单位提供者、全部原有序历史完整纯SPE及任意弱平局；目录含六个两两不交的大小为全目录最大值K的锚，除锚外不同非空覆盖q≤5。所支付B类为任意合法三人原有序前缀的覆盖多重集等于两个不同锚及一个额外非空覆盖E，三项顺序任意；强制各新锚后沿同一σ在新历史上的真实后继。只形成结构条件域中的局部贡献，不推出whole target。",
+  "roles": {
+    "CA-SIX-DISJOINT-MAXIMA-FIVE-EXTRAS-B-PREFIX-v1": "支付q≤5全历史归纳中B类前缀，保真实后继/同一客户空间。",
+    "customer-attraction/six-providers/exact-six-full-history-half-cover": "接收B局部付款；一般半覆盖仍开放。"
+  },
+  "explanation": "源定理对每个结构域B类原有序历史、同一完整σ给当前K/2。已审q5-prefix-reduction-v2.md §3的完整前缀归纳只剩A/B/C，故本边精确删除其中B欠项；§4同叶账明确其余前四位仍是条件项，不能与已付末尾7K/6凑成无条件W≥3K。没有把互斥强制枝福利相加，也不把325/632双extra模型界提升到所有B节点。",
+  "scope": "conditional structural-domain ALL contribution；只付六不交最大锚、q≤5原目录全部B历史当前K/2，原一般half仍open。",
+  "contribution": {
+    "result": "六不交最大锚且q≤5时，全部B类合法三人前缀的第四位规定收益≥K/2。",
+    "remaining": "q≤5统一归纳仍欠A（第三位前两不同锚）和C（第四位前一锚加同额外两次）；原目标还含无六不交最大锚、更多额外覆盖及其它未由独立充分条件处理的目录。一般六人半覆盖仍开放。"
+  },
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/subarchives/six-providers/state/定理/六不交最大锚与五额外目录的B类前缀--定理.md",
+      "sha256": "1a5571d8f872f578a61f89656681185044bf3adff3550bc8890ffd69f3e0278b"
+    },
+    {
+      "path": "tools/evidence/six-five-extra-B-prefix/verify_B_all_orbits.py",
+      "sha256": "8cfd37578233a67ff55db43b2700f0c092a2ddf7927be5d00ae53cd666a8ca27"
+    },
+    {
+      "path": "tools/evidence/six-five-extra-B-prefix/B-all-orbit-rational-certificates.json",
+      "sha256": "47a1e8b2a792b31fc2ddca384a8b75ef10dec54d6695aafe320c8203f80db1b9"
+    },
+    {
+      "path": "tools/evidence/six-five-extra-B-prefix/B-1365-to-69-orbit-map.json",
+      "sha256": "f326dbcebf8b18688dfd4a71b76d294568d7cb5936d99f91935ac9bd0ecf976c"
+    },
+    {
+      "path": "tools/evidence/six-five-extra-B-prefix/B-all-orbit-exact-replay.json",
+      "sha256": "3ed6a868cb9ef45d99ade8d0143b2bbeb18ffb3f2ea3953c6655062247ee28f6"
+    },
+    {
+      "path": "tools/evidence/six-five-extra-B-prefix/certify_B_all_orbits.py",
+      "sha256": "9cf85d342a683438db132b31dd485f5e4f114f02f73188c067484ba15f0829ac"
+    },
+    {
+      "path": "tools/evidence/six-five-extra-B-prefix/B-all-orbit-discovery-summary.json",
+      "sha256": "14b2b3e5501c56766c18a2cb68938fcfc04f45ee06d8785cf19948c3ac08ad7a"
+    },
+    {
+      "path": "research/workspaces/n6-boss3-20261118/informed-b/q5-prefix-reduction-v2.md",
+      "sha256": "bf78bb43f183698f3d5db02582f1a576c8b78fb3da8058ad4cc2d3eed606127c",
+      "section": "3. 前四位条件归纳：互斥穷尽的A/B/C缺口"
+    }
+  ],
+  "review_note": "已完整实读共同模型、四额外正式定理、末两位及目录计数正式来源；核全部69有理对偶、1365到69覆盖与223型solver-free重放，合成锚后手分支只得一般B的K/2；核已审A/B/C缩减和同叶已付/条件账。源theorem范围、目标条件及remaining均显式保留。本accepted是关系作者声明，不冒称Main尚未完成的正式迁移/注册字节独立审查。",
+  "reviewed_by": "Boss3 informed-b /root/execution（作者实读与精确重放；非作者审查由Main另记）",
+  "endpoint_pins": {
+    "CA-SIX-DISJOINT-MAXIMA-FIVE-EXTRAS-B-PREFIX-v1": "469f09ec1e12612119525eefc16b4772f9da613f21aab5237f344d62965f0d6f",
+    "customer-attraction/six-providers/exact-six-full-history-half-cover": "2d5b191271cb052c435121a41935eb3958540d5a53cb05013f13dd45a70f6e31"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/subarchives/six-providers/state/定理/六不交最大锚与五额外目录的B类前缀--定理.md": "1a5571d8f872f578a61f89656681185044bf3adff3550bc8890ffd69f3e0278b",
+    "tools/evidence/six-five-extra-B-prefix/verify_B_all_orbits.py": "8cfd37578233a67ff55db43b2700f0c092a2ddf7927be5d00ae53cd666a8ca27",
+    "tools/evidence/six-five-extra-B-prefix/B-all-orbit-rational-certificates.json": "47a1e8b2a792b31fc2ddca384a8b75ef10dec54d6695aafe320c8203f80db1b9",
+    "tools/evidence/six-five-extra-B-prefix/B-1365-to-69-orbit-map.json": "f326dbcebf8b18688dfd4a71b76d294568d7cb5936d99f91935ac9bd0ecf976c",
+    "tools/evidence/six-five-extra-B-prefix/B-all-orbit-exact-replay.json": "3ed6a868cb9ef45d99ade8d0143b2bbeb18ffb3f2ea3953c6655062247ee28f6",
+    "tools/evidence/six-five-extra-B-prefix/certify_B_all_orbits.py": "9cf85d342a683438db132b31dd485f5e4f114f02f73188c067484ba15f0829ac",
+    "tools/evidence/six-five-extra-B-prefix/B-all-orbit-discovery-summary.json": "14b2b3e5501c56766c18a2cb68938fcfc04f45ee06d8785cf19948c3ac08ad7a",
+    "research/workspaces/n6-boss3-20261118/informed-b/q5-prefix-reduction-v2.md": "bf78bb43f183698f3d5db02582f1a576c8b78fb3da8058ad4cc2d3eed606127c"
+  },
+  "review_digest": "5c9e4cf1260d0c07d82b281b8e1e6db811360f0b1c5d4decd5db501b1a25de8a"
+}

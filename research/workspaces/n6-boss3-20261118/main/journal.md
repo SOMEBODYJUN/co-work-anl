@@ -1,5 +1,9 @@
 # Boss3 Main journal — n6-boss3-20261118
 
+## 当前研究断点
+
+原题仍开放，尚未正式 register 新节点。B 类整体候选已完成全部 69 轨道的有理证书，非作者正在核准确数学及正式迁移/登记/贡献边；C 类已并行接续，未付。v2 局部缩减/勘误/有限计算已通过准确版本审查；不等于一般 q=5 或六人半覆盖证明。独立线已完成至多两种在轨覆盖的 137/70 界再推导，但 idea 已核该精确常数也由现有正式预算直接推出，不新增同义节点。最新实物见 informed-b 的 `B-all-orbits-proof.md`、`bc-tail-progress.md`、各线 journal 及 `records/review-B-*`；下面保留路线变更和纠错链。
+
 ## 2026-11-18：首次启动与真实派工
 
 - 身份：Boss3；Main 的实际平台名称 `/root`；本次 session tag `boss3-20261118-live1`。
@@ -113,3 +117,55 @@ clean v2 稿 SHA 为 `bf78bb43f183698f3d5db02582f1a576c8b78fb3da8058ad4cc2d3eed6
 把尾部 K/2 换成 7K/12 的廉价试验没有改善原 B/C 独立尾部松弛坏值，因为其它已加约束更强。旧共享菜单探针还遗漏旧锚 block 的背景 +1 层，故其 100 模式值只适用于额外不碰旧锚的受限目录，不能认作一般必要松弛。执行者另文件扩为六个锚 block 加真正锚外客户，保同一客户空间和所有公共背景。
 
 idea 提出、执行者待核的进一步缩减是：B 的四条坏强制新锚枝均须由两种不同未出现额外覆盖作末两步；C 至少四个适当新锚枝有此性质。若核通，再完整枚举并精确认证同一共享菜单模式；不能把仅 100 个浮点模式当成完整必要模型或一般定理。Main 继续要求任何真实候选同时检查同一实际叶的 W/OPT，而不混淆局部加强与原半覆盖目标。
+
+### 第三次发布、v2 approve 与继续研究
+
+第三次 checkpoint 已确认 `pushed`：`49ce702b835539d38874e3b35fbf86b4077ce5e7`，77 个变动文件，保 v1 错误/真实审查/勘误/v2 冻结及探针断点。
+
+非作者 v2 `approve` 已随后登记为 `boss3-q5-review-v2`，revision `6c602ac78f9079ffbc5bcb0863847c819c0f49e331b495c5d418dd59dcd41da3`。其准确范围为勘误、7K/12 正式实例化、A/B/C 条件接口、同叶账和固定真正 q5 目录的有限全 SPE 结果；全部 20 条 v2 引用及全部 v1 引用原 SHA 未改。旧 v1 changes-required 保持绑定旧字节，新报告说明修复，不跨 freeze 填虚假的 resolves。
+
+独立线 `/root/independent` 已真实 followup，从自己单支持断点研究恰两种在轨覆盖的六步排列；仅读原 obstacle 节选和本人实物，不向其回送查重、成果线或复核内容，未更换 profile。
+
+### B 完整模式的精确失败机制与新行
+
+执行者已核 B 四强制分枝的后手只能是两种不同未出现 extra（若要当前玩家严格低于 K/2）；4 个 fresh 锚置换得到 1365 个有序对多重集，四 extra 同时重标号后为 69 轨道。首轮全枚举找到 3 个低于 half 的模式，同属配对轨道 `[(F0,F1),(F1,F0),(F2,F3),(F3,F2)]`。相应有理 `67/136` 点逐 101 条必要行及 6 个锚等式精确通过，故是该必要模型的精确可行坏点；未经全对偶认证，不把浮点最小值冒作精确最优。
+
+把该点清分母为 K68、408 单位客户的同一 11 标签原目录后：在固定 B 前缀强制 T0 的候选 `(F0,F1)` 中，F1 是真实末位最佳回复，但倒二从 F0 改选 F2 后真实唯一末位回复为 F3，收益由 51 提升为 63。该候选不是 SPE；固定 B 前缀的所有真实 SPE 福利 371、当前最小收益 105/2，完整根部所有 SPE 唯一六锚各一次、福利 408。候选叶本身福利 334，也高于半覆盖阈值 204。精确输入、偏离表、递推与 DAG 见 `informed-b/shared-B-67-136-*`。
+
+Main 提出的“只对所有不重复末位回复取最小”廉价替代被精确否决：倒二改 F2 后，未出现回复 T2 可使其收益 95/2<51，但 T2 不是真实末位最佳回复；末位查 F3 就有 63>44，排掉 T2。这一失败和有效最短查询均保留。
+
+idea 随后导出真实末位查询的线性消元行：固定倒二背景 b、任意合法 T,Q，规定倒二收益满足 `U_A >= f_b(T)+U_b(Q,T)-K`。未知真实回复保在同一策略里，由最后玩家对 Q 的比较及收益交换恒等式消去；并未把坏点的唯一回复硬编码到所有目录。该点取 F2/F3 给 58>51。执行线实读完整证明后把四 extra 的全部 16 对加到同一 B 模型，重查完整模式；行能切一坏点不表示已证 B。完整数学仍由 idea/执行线保存，待新准确版本复核。
+
+### B 整体候选、双冻结与并行 C 接续
+
+执行线先给配对轨道的精确 `21K/40` 平均强制收益证书，再完成 69/69 轨道有理对偶。独立标准库重建回放覆盖全部 1365 模式、223 客户型、每模式 165 行/224 列，最低证书界为 `325/632`。该界只在四强制枝全双 extra 的模型里适用；与解析锚后手分支合成后，B 类一般结论仅为 `K/2`。q≤4 直接用旧定理，q=5 才用四个原合法 F，无新增行动占位；保 K=0、前缀次序、异标签及任意离轨平局。
+
+自足 B 稿 SHA `1a5571d8f872f578a61f89656681185044bf3adff3550bc8890ffd69f3e0278b`，全依赖在 `B-all-orbits-review-manifest.json`。数学冻结 `boss3-B-math-v1` 的 revision 为 `99258d5407253dff5506ea508350b730ba77013a88c7f75823a2a1b7a8514420`；真实非作者 `/root/review_q5` 已接新任务逐项审查。其短回执已确认独立重建全部 69 个 165×224 有理系统及 15456 列对偶条件，并穷举 20736 原有序模式，映射恰覆盖 1365 多重集/69 轨道；完整审查记录尚待落盘。
+
+Main 已授权作者准备新 child-state 正文、`tools/evidence/six-five-extra-B-prefix/`、本 RUN batch 和贡献边。只创建新草稿，没有更改原题或旧数学，未 register。新对象拟 ID 为 `CA-SIX-DISJOINT-MAXIMA-FIVE-EXTRAS-B-PREFIX-v1`；边 `boss3-five-extras-B-prefix-half-contribution` 完整保结构条件，result 只付 B，remaining 明列 A/C 与一般无锚/多 extra 目录。batch 叠加 bind/check 已过，正式总表未改。
+
+正式发布冻结 `boss3-B-publication-v1` 的 revision 为 `a3b9567feaa1db69ce19e39e47d13dc444742dca41dff06821a72ca3d2dea56c`，artifact 为 `SIX-FIVE-EXTRAS-B-PREFIX`。同一非作者在数学审查后将对迁移、batch、边与全部必要引用作窄核；相同 SHA 的数学不无谓重跑，新的元数据和作用范围须实读。Main 待准确 approve、同步与 guarded promote 后再正式登记和带计划推送。
+
+idea 的定向查重没有找到旧正式对象全域覆盖新 B 类；独立线完成的至多两覆盖 `70OPT_6 <= 137W` 则与旧 Claim B/THM 完整同义，精确预算映射保存在 `informed-a/two-support-137-70-prior-budget-map.md`。未把该信息回送原 obstacle 线，其两覆盖自足稿/16 原子核验/62 排列及 manifest 仍按自主再推导保存。
+
+C 已实际派给 idea 和执行线接续：前缀一个旧锚加同 E 两次，五新锚中选择至少四轻锚 `|E∩Tj|<=K/2`；第五新锚保持新并参与查询，不能沿用 B 的旧背景。先检配对模式，idea 得有理 `77/144` 单模式证书（尚非独立全域核验），执行线正在生成 C 自己的全部轨道模型/证书。B 的受审与正式草稿字节保持不变，C 未付时不宣称一般 q5 或原题闭合。
+
+### B 正式回流准备完成；C 精确候选待最终审查
+
+B-math-v1 的 approve 已登记，revision `b032f70f619931e6103dc32517d1821adab42ca08493c2499fdb240bc7f41da1`。publication-v1 的六附件处置元数据错误已由新 batch `B-registration-batch-v2.json` 修复：仅六个 `objects` 改为 `attachment`，正文仍 `objects`，所有旧冻结保原字节。pub-v1 的 changes-required 原报告完整保存；工具在 artifact 已有新 revision 后拒绝补登旧 freeze 的 review，未回滚或绕过此限制。当前 pub-v2 的准确 approve 已合法登记，revision `389fd7c699b8840bc7ec18af83fbcc96d0b23c7d225130c3df2c0a120c29650f`。
+
+作者和审查者暂停写入后，`work.py sync` 确认 remote tip 仍为 `49ce702b835539d38874e3b35fbf86b4077ce5e7`，`preserved_work=true`。一次尝试的只读 `visit` 命令因程序内部 ArgumentParser 同名遮蔽返回 TypeError；未修改工具程序，改走正常 sync 后继续研究。
+
+B guarded promote 已生成计划 `research/runs/n6-boss3-20261118/studio/backflow-plans/boss3-B-prefix-publication/d64b460eb83be1c2efd595617279e0936de4e59ecfabb41b51c185fc36e05ce2.json`。顺序执行 register、edge-check、check、build 均成功；本地正式总表为 3827 对象/2679 边，唯一未登记材料为待审 C 新正文。B 已本地登记，须带该 review plan checkpoint 返回 pushed 后才称远端发布。候选总表与重建投影仅供本地使用。
+
+C 作者完成全部 69 新对偶，189×224 标准库重建与 1365→69 覆盖全过，最低模型界 `1001/1896`；自足稿 SHA `70695f00db9594fab71adf2d94de7bd3db15640fb9642578549d940b57b794ea`。新 canonical/body/batch/贡献边已准备且未改 B 字节，正文 objects、七附件 attachment。冻结 `boss3-C-publication-v1` 的 revision 为 `3c2d3dbeb69959f860939853073407a870db5775df38f012de8ff155bb55a60e`。真实 fresh 非作者 `/root/review_c`（gpt-6.1-sol/ultra/fork none，session `boss3-20261118-review-C-publication-v1`）正在独立核数学、整个矩阵与正式发布内容；短回执已确认全部 2921184 不等式系数与独立重建一致、15456 对偶列和 20736 模式覆盖通过，最终 report/approve 尚待落盘。
+
+### A 的准确研究断点
+
+idea 已把已有二值四尾两斜率定理用于真实前两不同最大锚的同一续局，得到 `31W_h >= 94K`；非负恒等式与输入/源/逐整数检查在 `A-same-leaf-welfare-r1.md` 及 manifest。只有 h 是实际前缀时它支付原实际 W；离轨 h 只支付那条离轨总福利，不能替代第三位个体 K/2。此应用仍按研究稿保存，未正式新建同义节点。
+
+`A-three-distinct-extras-reduction-r1.md` 将潜在坏 A 的四强制枝收束为后三手皆五个 extra 中的三种不同覆盖（任一后三手为锚可支付当前 K/2）。`A-common-fourth-response-r1.md` 对共同第四位 E 响应重新实例化已核 B 矩阵组件，保真实原历史 `(h,Tj,E)`，未直接跨节点援用 B 定理，也未交换历史。
+
+最小两响应试验仅跑两个固定模式、223 型/265 条必要行：共同响应对照约 0.525；2+2 模式 `[(0,1,2),(0,2,1),(1,3,4),(1,4,3)]` 约 0.49924698795，数值上显示当前必要行不足。恢复候选为 `663/1328`、候选 K 尺度 1328；只核了六锚质量和五 extra 容量，265 行尚未精确全核，没有原目录化或完整 SPE。完整第五位 IC 也未核，不能因有 H/TQ 就跳过它只查第四位。下一最小动作是先精确核必要点，再清分母回灌同一菜单，从末位向前逐真实偏离核验并保同叶 W/OPT；不能扩大不完整枚举或把互斥枝福利相加。
+
+idea 本子回合已在 `informed-a/A-two-response-checkpoint-r1.md`（SHA `332b2da4283720e34fc779d03e04cfcad82169c6637a746efae2509e91164af5`）及 manifest 保存上述全部解析稿、模型、输出、候选与未付义务，并结束到自足断点。A 三份解析应用仍作为本轮研究稿保存，未冒作已正式回流的 A 全域结果。
