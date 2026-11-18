@@ -11,6 +11,8 @@ from itertools import combinations_with_replacement
 from math import lcm
 from pathlib import Path
 import json
+import random
+import sys
 
 from probe_glued_branches import anchors
 
@@ -19,18 +21,38 @@ LABELS = 13
 SCALE = 60
 
 
-def game():
+def game(seed=None):
     witness = Path(__file__).with_name("tau-six-marginal-relaxation-witness.json")
     raw = defaultdict(Fraction)
+    target_types = []
     for (branch, i, tail), value in json.loads(witness.read_text())["mass"]:
         if branch is None:
             anchor, member = anchors[i]
             indices = tuple(j for j, bit in enumerate(anchor) if bit)
             if member:
-                for j in range(7, LABELS):
-                    raw[indices+(j,)] += Fraction(value)/6
+                target_types.append((indices, Fraction(value)))
             elif indices:
                 raw[indices] += Fraction(value)
+    if seed is None:
+        for indices, value in target_types:
+            for j in range(7, LABELS):
+                raw[indices+(j,)] += value/6
+    else:
+        # Concentrate each type into as few comparison blocks as possible.
+        # The shared customer types and the six equal block sizes still agree.
+        random.Random(seed).shuffle(target_types)
+        block = 7
+        remaining = Fraction(1, 6)
+        for indices, value in target_types:
+            while value:
+                mass = min(remaining, value)
+                raw[indices+(block,)] += mass
+                value -= mass
+                remaining -= mass
+                if remaining == 0:
+                    block += 1
+                    remaining = Fraction(1, 6)
+        assert block == LABELS
     unit_multiplier = lcm(*(v.denominator for v in raw.values()))
     return {labels:int(value*unit_multiplier) for labels,value in raw.items()},unit_multiplier
 
@@ -90,6 +112,7 @@ def solve(weights):
 
 
 if __name__ == "__main__":
-    weights,normalization = game()
+    seed = int(sys.argv[1]) if len(sys.argv)>1 else None
+    weights,normalization = game(seed)
     result=solve(weights)
-    print(json.dumps({**result,"target_block_total":normalization,"input_types":len(weights)},indent=2))
+    print(json.dumps({**result,"packing_seed":seed,"target_block_total":normalization,"input_types":len(weights)},indent=2))
