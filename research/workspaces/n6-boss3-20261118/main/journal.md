@@ -2,7 +2,7 @@
 
 ## 当前研究断点
 
-原题仍开放，尚未正式 register 新节点。B 类整体候选已完成全部 69 轨道的有理证书，非作者正在核准确数学及正式迁移/登记/贡献边；C 类已并行接续，未付。v2 局部缩减/勘误/有限计算已通过准确版本审查；不等于一般 q=5 或六人半覆盖证明。独立线已完成至多两种在轨覆盖的 137/70 界再推导，但 idea 已核该精确常数也由现有正式预算直接推出，不新增同义节点。最新实物见 informed-b 的 `B-all-orbits-proof.md`、`bc-tail-progress.md`、各线 journal 及 `records/review-B-*`；下面保留路线变更和纠错链。
+原题仍开放。B 类第四位 K/2 局部定理已通过完整非作者复核、正式登记并推送于 `936c67416df25ca2a39e5492633e3dbdea47a85f`；C 类同类局部定理已通过 fresh 非作者完整复核、正式登记及结构构建，当前正作带 review plan 的发布 checkpoint。二者共同前提为六个不交最大 K 锚、其余互异非空覆盖至多五种；不等于一般 q=5 或原六人半覆盖证明。A 的准确断点为两响应 2+2 必要模型候选 `663/1328`：265 行未作全有理核验，也没有真实第五/第四位 IC 或完整 SPE。原独立线完成的单/双支持界由旧正式预算覆盖，保自主再推导和证书而不重复登记。最新短回执、正式超边、准确证据及恢复步骤见本节末尾；以下保留路线变更和纠错链。
 
 ## 2026-11-18：首次启动与真实派工
 
@@ -169,3 +169,17 @@ idea 已把已有二值四尾两斜率定理用于真实前两不同最大锚的
 最小两响应试验仅跑两个固定模式、223 型/265 条必要行：共同响应对照约 0.525；2+2 模式 `[(0,1,2),(0,2,1),(1,3,4),(1,4,3)]` 约 0.49924698795，数值上显示当前必要行不足。恢复候选为 `663/1328`、候选 K 尺度 1328；只核了六锚质量和五 extra 容量，265 行尚未精确全核，没有原目录化或完整 SPE。完整第五位 IC 也未核，不能因有 H/TQ 就跳过它只查第四位。下一最小动作是先精确核必要点，再清分母回灌同一菜单，从末位向前逐真实偏离核验并保同叶 W/OPT；不能扩大不完整枚举或把互斥枝福利相加。
 
 idea 本子回合已在 `informed-a/A-two-response-checkpoint-r1.md`（SHA `332b2da4283720e34fc779d03e04cfcad82169c6637a746efae2509e91164af5`）及 manifest 保存上述全部解析稿、模型、输出、候选与未付义务，并结束到自足断点。A 三份解析应用仍作为本轮研究稿保存，未冒作已正式回流的 A 全域结果。
+
+### B 已远端发布；C 完成非作者复核及正式结构检查
+
+B 的带计划 checkpoint 已返回 `status:pushed`，`pushed_head=remote_tip=936c67416df25ca2a39e5492633e3dbdea47a85f`。正式对象 `CA-SIX-DISJOINT-MAXIMA-FIVE-EXTRAS-B-PREFIX-v1` 与条件贡献边 `boss3-five-extras-B-prefix-half-contribution` 已发布；准确回执在 `records/B-checkpoint-receipt.json`。它只支付三个有序前手覆盖为两不同锚与一个额外覆盖时第四位收益至少 K/2。
+
+fresh 非作者 `/root/review_c` 的完整 C 审查为 approve/local-result。其独立重建 69 个 189×224 系统、逐列检查 15456 个有理对偶条件、核对 2921184 个不等式系数并穷举全模式覆盖，另逐项实读轻锚选择、真实历史、标签/平局、旧锚背景、七附件处置和贡献边范围。准确报告 `records/review-C-publication-v1.json` 的 SHA 为 `8a6ae469b724bef2d0e09d676270f3bab804df0400abf95bc476779642e9823c`；绑定冻结 `3c2d3dbeb69959f860939853073407a870db5775df38f012de8ff155bb55a60e`，review revision 为 `3946fd390d1e3925ab1573f54ebbd4215c3334bc3055a33baca7ad6411e34f43`。
+
+C guarded promote 的计划为 `research/runs/n6-boss3-20261118/studio/backflow-plans/boss3-C-prefix-publication/9b2b7fcb090e6e4122105335cdfb44a5c52049b21044e8feeed3cb96289ae4d6.json`。随后 register、edge-check、check、build 全成功；正式总表为 3828 对象/2680 边，未登记与待处置材料均为 0。`final_coverage=true` 是材料处置覆盖，程序返回 `structure-valid-not-a-mathematical-verdict`，绝不表示原题闭合或数学已由程序证明。C 正式对象 `CA-SIX-DISJOINT-MAXIMA-FIVE-EXTRAS-C-PREFIX-v1` 只付一锚加同一额外覆盖两次的三步前缀之后第四位 K/2。
+
+B/C 的受限全双-extra 模型证书分别为 `325/632`、`1001/1896`；一般 B/C 局部定理均仅声明 K/2。两个贡献超边均保条件前提、原题开放和 A/一般目录未付义务。候选大总表和重建投影仅本地保存；本次 C 发布只纳入准确复核的正文、附件、正式 registry、贡献边及本人/RUN 记录。
+
+### 恢复顺序与运行状态
+
+独立、idea、执行及两位非作者均已结束到落盘断点，未留后台研究承诺。恢复先读取本 journal、studio 状态和 A 的准确 manifest；下一最小义务是对 `A-two-response-checkpoint-r1.md` 中候选逐 265 条必要行作有理精确检查，再原目录化，从真实末位往前核第五位、第四位偏离及同一叶 W/OPT。若真实偏离切掉候选，就补该有据可证的必要约束；若点不可精确恢复，先报告该失败。不得把约 0.499247 的松弛数值称作完整历史 SPE 反例。

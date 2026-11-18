@@ -6,7 +6,7 @@
 
 当前 RUN：`n6-boss3-20261118`；分支：`rebuild/research-v2`；本次会话：`boss3-20261118-live1`。
 
-当前成果与断点：B 类（两不同最大锚加一额外覆盖的三步前缀）第四位 `K/2` 局部界已完成全部69有理模式证书及非作者数学/发布字节复核，正式增量由 Main 串行回流；C 类（一锚加同额外两次）已有自己的69有理证书，另由 fresh 非作者复核。A 类个体界与一般原题仍未闭合；A 的2+2适应响应必要模型已出现待原目录化的约0.499247松弛点，不能称SPE反例。
+当前成果与断点：在六个不交最大 K 锚、锚外互异非空覆盖至多五种的条件下，B 类（两不同锚加一额外覆盖的三步前缀）第四位 `K/2` 局部定理已完整非作者复核、登记并推送于 `936c67416df25ca2a39e5492633e3dbdea47a85f`；C 类（一锚加同额外两次）同类局部定理也已通过 fresh 非作者完整数学/发布审查及正式登记检查，当前作带计划的发布 checkpoint。两者均有覆盖全部69轨道的有理证书。A 类个体界、q≤5 整体与一般原题仍未闭合；A 的2+2适应响应必要模型候选为 `663/1328`，尚未逐265行精确核验、原目录化或核真实第五/第四位 IC，不能称 SPE 反例。
 
 所有推导、失败、勘误、证据、准确冻结与审查都在本 RUN；发布以 Main journal 的实际 `pushed` 回执为准，不把本地 register/approve 等同远端发布。原独立线的单/双覆盖再推导及完整策略证书保持原输入隔离，已有正式预算覆盖的结论没有重复登记。
 
@@ -16,7 +16,7 @@
 
 真实派工：`/root/independent` 仅接 obstacle 输入独立研究；`/root/idea` 为 informed-a，按需读 Boss2 成果并提出路线；`/root/execution` 为 informed-b，核全文证据并执行选中义务。三个子代理使用仓库默认 `gpt-6.1-sol / ultra / fork none`。Main 仅看超边及短回执，串行保存和发布。
 
-首次启动已复制六人子档开题 spec 并完成 studio init；首次 checkpoint 必须同时指定本个人目录与本 RUN 的 workspace、runs 两处目录。启动 HEAD 为 `e0b8e7d28c5164fbd5fd0ef689886c1279e380b7`。运行状态和发布回执见 Main journal 与 RUN 事件。
+首次启动已复制六人子档开题 spec 并完成 studio init；首次 checkpoint 明确同时指定本个人目录与本 RUN 的 workspace、runs 两处目录，已推送于 `ff6a11181bb0692831def3f4fd908a82e8cfdc15`。启动 HEAD 为 `e0b8e7d28c5164fbd5fd0ef689886c1279e380b7`。运行状态和后续发布回执见 Main journal 与 RUN 事件。
 
 从空目录续接 Boss3 时，以同一存档/子档参数执行 start 并加 `--resume`，随后运行 `python work.py research studio status n6-boss3-20261118 --session-tag <本次实际标签>`。保存的 working 不证明后台仍在线，须先查实际代理状态再续派。
 

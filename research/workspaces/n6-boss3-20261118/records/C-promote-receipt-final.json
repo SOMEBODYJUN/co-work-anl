@@ -1,0 +1,46 @@
+{
+  "status": "backflow-plan-ready-local-not-published",
+  "plan_id": "boss3-C-prefix-publication",
+  "path": "research/runs/n6-boss3-20261118/studio/backflow-plans/boss3-C-prefix-publication/9b2b7fcb090e6e4122105335cdfb44a5c52049b21044e8feeed3cb96289ae4d6.json",
+  "sha256": "336b1d8cdf660b7bd393eeb052591a64280213ec48372d92001f3acfa1e6e7cd",
+  "revision_pin": "9b2b7fcb090e6e4122105335cdfb44a5c52049b21044e8feeed3cb96289ae4d6",
+  "candidate_registry_ref": {
+    "path": "research/workspaces/n6-boss3-20261118/backflow/boss3-C-prefix-publication/proposed.json",
+    "sha256": "b71d803b864b0649a56f1238956fda4de34b5a663d9ebce86787d95ba7e194b3"
+  },
+  "commands": [
+    [
+      "python",
+      "work.py",
+      "research",
+      "register",
+      "--record-file",
+      "research/workspaces/n6-boss3-20261118/backflow/boss3-C-prefix-publication/proposed.json"
+    ],
+    [
+      "python",
+      "work.py",
+      "research",
+      "edge-check",
+      "map/edges/n6-boss3-20261118/C-prefix-half-contribution.json"
+    ],
+    [
+      "python",
+      "work.py",
+      "research",
+      "check"
+    ],
+    [
+      "python",
+      "work.py",
+      "research",
+      "build"
+    ]
+  ],
+  "canonical_registry_modified": false,
+  "checkpoint_review_args": [
+    "--review-plan",
+    "research/runs/n6-boss3-20261118/studio/backflow-plans/boss3-C-prefix-publication/9b2b7fcb090e6e4122105335cdfb44a5c52049b21044e8feeed3cb96289ae4d6.json"
+  ],
+  "publication_instruction": "After register/check/build, checkpoint the reviewed source, evidence, canonical registry, edges and RUN records. Keep the proposed registry and rebuilt projections local."
+}
