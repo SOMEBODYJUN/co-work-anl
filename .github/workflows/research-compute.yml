@@ -3,7 +3,7 @@ name: Research computation
 on:
   push:
     branches: [rebuild/research-v2]
-    paths: ['research/compute-requests/*.json']
+    paths: ['research/compute-requests/*.json', 'work.py', 'tools/test_work_bootstrap.py', '.github/workflows/research-compute.yml']
   workflow_dispatch:
     inputs:
       experiment:
@@ -51,6 +51,8 @@ jobs:
       - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
         with:
           python-version: '3.12'
+      - name: Verify first startup and version handoff
+        run: python -m unittest discover -s tools -p test_work_bootstrap.py
       - id: requests
         run: python tools/compute.py prepare-actions --event-file "$GITHUB_EVENT_PATH" --github-output "$GITHUB_OUTPUT"
 
