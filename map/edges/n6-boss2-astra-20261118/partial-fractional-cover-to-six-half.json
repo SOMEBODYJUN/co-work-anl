@@ -1,0 +1,70 @@
+{
+  "edge_id": "boss2-partial-fractional-cover-to-six-half",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "CA-SIX-PARTIAL-FRACTIONAL-COVER-v1"
+  ],
+  "target_ids": [
+    "customer-attraction/six-providers/exact-six-full-history-half-cover"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "同一六人纯SPE模型，存在一个最优六主题并集C及总重至多4977/1000的非负合法主题权，其在C上截断覆盖量至少OPT₆/(2α)。若C的分数覆盖数至多2α·4977/1000，则缩放权向量自动满足。",
+  "roles": {
+    "CA-SIX-PARTIAL-FRACTIONAL-COVER-v1": "给同一实际福利的截断分数覆盖普遍下界。",
+    "customer-attraction/six-providers/exact-six-full-history-half-cover": "一般六人半覆盖；此边支持明确的部分分数覆盖条件。"
+  },
+  "explanation": "对同一最优并集C使用源定理。由截断量达到OPT₆/(2α)，得W≥α·OPT₆/(2α)。分数全覆盖条件通过等比缩放直接支付截断量。",
+  "scope": "原完整有序历史、标签、空主题、重复选择及弱平局量词均保留。",
+  "contribution": {
+    "result": "符合截断量条件的实例均有2W≥OPT₆。",
+    "remaining": "所有最优并集均欠截断覆盖量且无其它已证充分条件的六人实例。"
+  },
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/六人分数部分覆盖与有效覆盖量--定理.md",
+      "sha256": "d82021f48569db0925888b527f29caae538acd5cf3b75ed19f5c8e7b30587294"
+    },
+    {
+      "path": "tools/evidence/six-partial-fractional-cover/certificate.json",
+      "sha256": "6baf25300c2b2632016c2ccb933b48e87f91622c1041b44932e2385216e35640"
+    },
+    {
+      "path": "tools/evidence/six-partial-fractional-cover/verify.py",
+      "sha256": "14ad123e1f5176638237b9356ecff1fea28cb035e77af656991cdfa406bc0815"
+    },
+    {
+      "path": "tools/evidence/six-partial-fractional-cover/replay.json",
+      "sha256": "6172cdbb37b8b7864b8a98c2d0ffef8b07cd7f9b607a9fad870c3421c448da28"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/五条真实偏离的六人分数覆盖四十九比十--定理.md",
+      "sha256": "53ecce096d49980c79e028fa4a51b68541f5ed0697ea7b8b3ce612eb7c5804e3"
+    },
+    {
+      "path": "archives/customer-attraction/subarchives/six-providers/state/问题/六人完整历史半覆盖目标--问题.md",
+      "sha256": "0626668e7a825108fc0b3699e42394b75b1c2e2a526df220a90d91a02afc8a0c"
+    }
+  ],
+  "reviewed_by": "Boss2 /root",
+  "review_note": "主线核所用真实行、连续权两端点插值及截断量推论。冻结发布另有非作者审查。",
+  "endpoint_pins": {
+    "CA-SIX-PARTIAL-FRACTIONAL-COVER-v1": "41e9685e4d0a96c30b6a5cbdc9431cb19cd40de149325683699bb632c9cd3c7d",
+    "customer-attraction/six-providers/exact-six-full-history-half-cover": "2d5b191271cb052c435121a41935eb3958540d5a53cb05013f13dd45a70f6e31"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/六人分数部分覆盖与有效覆盖量--定理.md": "d82021f48569db0925888b527f29caae538acd5cf3b75ed19f5c8e7b30587294",
+    "tools/evidence/six-partial-fractional-cover/certificate.json": "6baf25300c2b2632016c2ccb933b48e87f91622c1041b44932e2385216e35640",
+    "tools/evidence/six-partial-fractional-cover/verify.py": "14ad123e1f5176638237b9356ecff1fea28cb035e77af656991cdfa406bc0815",
+    "tools/evidence/six-partial-fractional-cover/replay.json": "6172cdbb37b8b7864b8a98c2d0ffef8b07cd7f9b607a9fad870c3421c448da28",
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+    "archives/customer-attraction/state/定理/五条真实偏离的六人分数覆盖四十九比十--定理.md": "53ecce096d49980c79e028fa4a51b68541f5ed0697ea7b8b3ce612eb7c5804e3",
+    "archives/customer-attraction/subarchives/six-providers/state/问题/六人完整历史半覆盖目标--问题.md": "0626668e7a825108fc0b3699e42394b75b1c2e2a526df220a90d91a02afc8a0c"
+  },
+  "review_digest": "667b0ac0413414bfdfb77eff25c4cf2ebc5774ecc013f7b07115c8e5a5e99454"
+}
