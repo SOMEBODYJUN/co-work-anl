@@ -40,3 +40,9 @@ idea 短回执提出以同叶总收益余量绕开A个体半K下界的解析路�
 execution独立重建并逐项核旧候选：265条必要不等式、6条锚等式和224个非负坐标精确通过；60704个系数与固定旧生成器一致。证据 `informed-b/candidate-audit.json`、`audit_candidate.py`，同一整数菜单 `integer-menu.json`。但是该菜单四候选枝均有真实第五位严格有利偏离；因此该必要松弛候选不是SPE反例。要求作者固定偏离/末位BR完整证据后停止扩大旧候选扫描，转作idea自足整体证明的非作者挑战。此结论仅排除这一精确候选，未证明A个体界。
 
 独立线首轮回执：有限目录扫描未见所试强条件的反例；末位平均界已被精确不交双标签反例否定。另得尾二步共用阻挡标签候选引理，已将引用交idea查是否重复已知结果。完整量词与证据留独立线，Main不以有限扫描升级一般定理。独立线继续更长尾研究，未接成果线信息。
+
+## 两份固定交接
+
+旧候选作者审计固定：`informed-b/candidate-manifest.json` SHA `a9931ae769a4e46abf9b6bfb936f8d0e50a5cf4cf0c01bf96a06c9f920c98821`；`informed-b/A-two-response-audit.md` SHA `f4f889f0528b8198cfc62c66682648a0147d8760c8e7b0ecae41320077f0c8b8`。回执称全5324个三尾原有序终局已枚举，根和旧两锚前缀真实SPE都覆盖六锚；精确见证排除本候选，不关闭一般A界。
+
+idea固定新受限类数学稿：`informed-a/lemma.md` SHA `384dd4d20f2f0fe197437c1d11a3abd0cf3e7a95469b26e97f38d927ba0e0905`。Main已核文件字节SHA。已派execution作为非作者实读模型、B/C必要全文证据与该稿全部推导；重点同一σ所有历史、弱平局、分类、复制继承和同叶相加。正式批准需最终freeze全部content_refs，当前不宣布已证。idea继续准备冻结与publication记录，q=6扩展另文件不改v1。
