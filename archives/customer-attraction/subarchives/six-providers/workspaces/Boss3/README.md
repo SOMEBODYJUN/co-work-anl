@@ -4,6 +4,8 @@
 
 ## 当前研究与恢复
 
+本轮新 RUN：`n6-boss3-20261119`；会话 `boss3-20261119-live1`。沿用Boss3身份并按用户要求新建未占用RUN，已复制六人开题spec并完成studio init。三条真实子代理线为 `/root/independent`、`/root/idea`、`/root/execution`，均 `gpt-6.2-astra / max / fork none`。Main仅看超边与短回执；先核旧A候选，再查同一原菜单真实后继IC，idea可调整路线。原题仍开放。新恢复入口 `research/workspaces/n6-boss3-20261119/main/journal.md`。下文为旧RUN断点记录。
+
 当前 RUN：`n6-boss3-20261118`；分支：`rebuild/research-v2`；本次会话：`boss3-20261118-live1`。
 
 当前成果与断点：在六个不交最大 K 锚、锚外互异非空覆盖至多五种的条件下，B 类（两不同锚加一额外覆盖的三步前缀）第四位 `K/2` 局部定理已完整非作者复核、登记并推送于 `936c67416df25ca2a39e5492633e3dbdea47a85f`；C 类（一锚加同额外两次）同类局部定理也已通过 fresh 非作者完整数学/发布审查，带计划 checkpoint 已推送于 `de58cc701bf4bdc55bbbb4a921161b77ab79f6f2`。两者均有覆盖全部69轨道的有理证书。A 类个体界、q≤5 整体与一般原题仍未闭合；A 的2+2适应响应必要模型候选为 `663/1328`，尚未逐265行精确核验、原目录化或核真实第五/第四位 IC，不能称 SPE 反例。
