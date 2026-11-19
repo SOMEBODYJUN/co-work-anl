@@ -4,7 +4,7 @@
 
 ## 当前研究与恢复
 
-本轮新 RUN：`n6-boss3-20261119`；会话 `boss3-20261119-live1`。沿用Boss3身份并按用户要求新建未占用RUN，已复制六人开题spec并完成studio init。三条真实子代理线为 `/root/independent`、`/root/idea`、`/root/execution`，均 `gpt-6.2-astra / max / fork none`。Main仅看超边与短回执；先核旧A候选，再查同一原菜单真实后继IC，idea可调整路线。原题仍开放。新恢复入口 `research/workspaces/n6-boss3-20261119/main/journal.md`。下文为旧RUN断点记录。
+当前接续 RUN：`n6-boss3-20261119`；会话 `boss3-20261119-live2`。沿用Boss3身份并按用户要求新建未占用RUN，已复制六人开题spec并完成studio init。三条真实子代理线为 `/root/independent`、`/root/idea`、`/root/execution`，均 `gpt-6.2-astra / max / fork none`。Main仅看超边与短回执；先核旧A候选，再查同一原菜单真实后继IC，idea可调整路线。原题仍开放。新恢复入口 `research/workspaces/n6-boss3-20261119/main/journal.md`。下文为旧RUN断点记录。
 
 当前 RUN：`n6-boss3-20261118`；分支：`rebuild/research-v2`；本次会话：`boss3-20261118-live1`。
 
@@ -35,3 +35,5 @@
 ## 交流与状态
 
 通过研究 RUN 留下反馈；其他人可访问已推送材料。本地草稿只有完成 checkpoint 并确认 pushed 后才对其他 clone 可见。
+
+本次恢复 HEAD `f199d267585feb4cf13bf8d5c23df6be61e7c195`，真实新派三名 `gpt-6.2-astra/max/fork none`。旧数学冻结 Q5-WELFARE-MATH-r1 仍待非作者审查与最终发布；精确接续记录见本 RUN main/journal.md。
