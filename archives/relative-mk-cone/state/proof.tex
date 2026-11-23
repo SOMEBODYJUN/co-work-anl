@@ -1,0 +1,46 @@
+\section{Abstract reductions with complete proofs}
+All interiors below are ambient interiors. These lemmas do not assert that their hypotheses hold for the geometric target. No originality is claimed for these elementary reductions.
+
+\begin{lemma}[Finite-stabilizer refinement]\label{lem:finite}
+Let $V_{\mathbb Q}$ be finite-dimensional, let $\Gamma\subset\operatorname{GL}(V_{\mathbb Q})$, and let $C\subset V_{\mathbb R}$ be invariant and have nonempty interior. Suppose a full-dimensional rational polyhedral cone $P\subset C$ satisfies $\Gamma P=C$ and, for every $g\in\Gamma$, either $gP=P$ or $gP\cap\operatorname{Int}(P)=\varnothing$. If $H=\operatorname{Stab}_\Gamma(P)$ is finite, then $C$ has a strong rational polyhedral fundamental domain for $\Gamma$.
+\end{lemma}
+\begin{proof}
+For each $h\in H\setminus\{1\}$, the rational subspace of covectors fixed by $h$ is proper, because the action on $V$ is faithful. A finite union of proper rational subspaces cannot exhaust $V_{\mathbb Q}^*$. Choose a rational covector $\ell$ outside their union and put
+\[
+ D=P\cap\bigcap_{h\in H}\{x:\ell(x)\leq\ell(hx)\}.
+\]
+This is rational polyhedral. For every $x\in P$, choose $h_0$ minimizing $\ell(hx)$ among $h\in H$. Then $h_0x\in D$, so $P=HD$ and $\Gamma D=C$. The cone $D$ is full-dimensional: otherwise the finite union $HD$ lies in a finite union of proper linear subspaces and cannot cover $\operatorname{Int}(P)$.
+
+For $h\in H\setminus\{1\}$ and $y\in\operatorname{Int}(D)$ one has $\ell(y)<\ell(hy)$. Indeed, equality for a nonzero linear form $\ell\circ h-\ell$ cannot occur at an ambient interior point of a set contained in its nonnegative half-space. If $y\in hD\cap\operatorname{Int}(D)$ and $x=h^{-1}y\in D$, the strict inequality for $h^{-1}$ gives $\ell(y)<\ell(x)$, whereas $x\in D$ gives $\ell(x)\leq\ell(hx)=\ell(y)$, a contradiction. For $g\notin H$, $gD\subset gP$ and $\operatorname{Int}(D)\subset\operatorname{Int}(P)$, so the assumed weak separation gives $gD\cap\operatorname{Int}(D)=\varnothing$. Thus this exclusion holds for every nonidentity $g$; since $D$ has nonempty interior, its stabilizer is trivial.
+\end{proof}
+
+\begin{lemma}[Pointed polyhedral stabilizer]\label{lem:pointed}
+Let a lattice $\Lambda\subset V$ be preserved by $\Gamma\subset\operatorname{GL}(V)$. If $P$ is full-dimensional, pointed and rational polyhedral with respect to $\Lambda\otimes_{\mathbb Z}\mathbb Q$, then $\operatorname{Stab}_\Gamma(P)$ is finite.
+\end{lemma}
+\begin{proof}
+A stabilizer element permutes the finitely many extremal rays. On each ray there is a unique primitive lattice generator. An invertible lattice map sends it to the primitive generator of the image ray. The induced permutation action is faithful, since the ray generators span $V$. The stabilizer therefore embeds in a finite symmetric group. In dimension zero the image group is trivial and the assertion holds separately.
+\end{proof}
+
+\begin{corollary}\label{cor:pointed}
+If $C\cap(-C)=0$ and a lattice-preserving action on $C$ admits a full-dimensional weak rational polyhedral domain, that domain can be refined to a strong one, even when the closure of $C$ has nonzero lineality.
+\end{corollary}
+\begin{proof}
+Every subcone of $C$ is pointed. Apply Lemmas~\ref{lem:pointed} and \ref{lem:finite}.
+\end{proof}
+
+\begin{proposition}[An obstruction to a universal saturated-lift argument]\label{prop:shear}
+Let $V=\mathbb R^2$, $C=\{(x,y):y\geq0\}$ and $g(x,y)=(x+y,y)$. The action of $\Gamma=\langle g\rangle\subset\operatorname{GL}_2(\mathbb Z)$ has a strong rational polyhedral domain for the quotient action image on the quotient by $W=\mathbb R(1,0)$, but it has no convex conical strong domain on $C$. This is an abstract example, not a Calabi--Yau counterexample.
+\end{proposition}
+\begin{proof}
+The quotient action image is trivial and the quotient cone is $\mathbb R_{\geq0}$, its own domain. Suppose $P\subset C$ is a convex cone with $\Gamma P=C$. Every point of $W$ is fixed by every group element, hence coverage forces $W\subset P$. Coverage of $(0,1)$ also forces $P$ to contain some $v$ with positive second coordinate. Since $W+\mathbb R_{\geq0}v=C$, one gets $P=C$. Every $g^n$ stabilizes $P$, and $g\neq1$, contradicting the strong-domain requirement.
+\end{proof}
+
+\begin{proposition}[Why the effective boundary matters]\label{prop:open}
+For the same action, $C_0=\{(x,y):y>0\}\cup\{0\}$ has the strong rational polyhedral domain $D=\{(x,y):0\leq x\leq y\}$. Here $C_0\cap(-C_0)=0$ but the closure has lineality $W$.
+\end{proposition}
+\begin{proof}
+For $y>0$, subtracting $\lfloor x/y\rfloor y$ from $x$ puts $(x,y)$ in $D$, and $0\in D$. On interiors, $g^nD$ has $ny<x<(n+1)y$, which is disjoint from $0<x<y$ for $n\neq0$. More strongly, the closed intervals $[ny,(n+1)y]$ do not meet $(0,y)$ for nonzero integral $n$. Thus the exact strong separation holds. The assertions on lineality follow directly from the definitions.
+\end{proof}
+
+\section{The still missing geometric step}
+The lemmas prove a sufficient conditional route: a weak rational polyhedral domain on the actual $C_e$ with finite stabilizer implies the original strong conclusion. Neither existence on this exact cone nor finite stabilizers for every target fibration has been proved here. Results for $\operatorname{Mov}_{+}$ cannot be substituted without proving the required comparison. No proof of Conjecture~\ref{conj:target} is supplied.
