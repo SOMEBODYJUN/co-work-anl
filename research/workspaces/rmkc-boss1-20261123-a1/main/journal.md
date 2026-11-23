@@ -29,3 +29,15 @@ A potential full route is now quotient by T (not merely closed-Mov lineality W),
 Main supplied a finite Voronoi lemma to informed-a for proof: rational PSD forms admit rational LDL expressions. The common sign fan of all rational linear factors has finitely generated lattice monoids by Gordan. In each cone, conformal lattice decompositions make every quadratic form superadditive, reducing all Voronoi inequalities to finitely many generator inequalities. Proposed finite-coset extension handles rational affine crystallographic holonomy without assuming a split group. Worker must verify and compute an exact non-diagonal rank-two certificate.
 
 Remaining key obligations: exact geometry of the Pic0 quotient; actual relative lifts of Aut0 and finite-index generic automorphisms with vertical boundary; positivity on numerical quotient; effective boundary characterization; full-lattice/discreteness; uniform affine offsets and finite holonomy; finite polyhedral domain with exact Def3.4 separation; formal nonauthor review and full target synthesis. None is assumed from abstract computations.
+
+## Frozen abstract mechanism; fresh nonauthor audit active
+
+The operator-domain candidate and exact rank-two computation were confirmed pushed at b0def7da5a396ca2f1e5dd671d50ba9a203e814f. Freeze RMKC-OPERATOR-DOMAIN-FREEZE-V1 has revision 304a1e979c9b338c102707786e1edf64ded7e831273fd4c2b1c38242ce2c3f8c. Its mathematical conclusion is conditional on five explicit geometric bridges; no full result is declared.
+
+Actual computation rmkc-voronoi-rank2-sign-fan completed via root work.py compute; Main read result.json-equivalent rank2-receipt.json, stdout, empty stderr, manifest and certificate, not just exit status. Six unimodular sign sectors, eighteen symbolic identities, three paired inequalities and eight parameter faces were verified for the displayed rational PSD pencil. The general proof uses exact lattice/Gordan or Dickson arguments, not finite enumeration.
+
+The independent original-input phase concluded with immutable independent/independent_route_v1.md SHA256 40cbe27650ec906c51ec36e780ac52ec05fbbe3e9eae9af54ed419cac420627b. It found no geometric refutation and independently developed compatible vertical-kernel, q1 and q2 routes. Its status closed means only that actual worker phase ended, not that the main problem was solved.
+
+The released concurrency slot was immediately filled by /root/fresh_audit, fresh fork_turns:none, gpt-6.2-astra, reasoning max, as an actual nonauthor full-context challenger. This is not a continuation of the obstacle-profile independent line. Reviewer writes records/reviewer1_*; original three-worker history is preserved. Live research workers now cone_mechanism, literature_core and fresh_audit.
+
+The fresh reviewer reports preliminary verification of the frozen abstract theorem and exact certificate replay, and is preparing a formal review record. It has not yet approved the entire geometry. literature_core is synthesizing proof_v1.md and auditing all five bridges; cone_mechanism checks source and boundary subtleties. Main has not promoted any truth status.
