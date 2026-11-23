@@ -1,16 +1,11 @@
-# Unchanged proof-stage acceptance
+# 唯一数学完成条件
 
-`PASS` iff all eight gates hold. An unverified gate is not TRUE. Intake readiness is a different status.
+本存档唯一目标是解决 `main_problem.md` 中的原命题。运行采用 `prompts/pro-loop.md`；不再设“资料 Boss 完成后交证明 Boss”、论文格式验收或局部修正的独立终点。
 
-| Gate | Requirement | Evidence necessary |
-|---|---|---|
-| G1 | Originality | Up-to-date, version-specific prior-art audit; no already complete proof of this exact target. Absence of search hits is insufficient. |
-| G2 | Generality | Every object in the fixed target; no extra nondegeneracy, base, fibre, boundary or absolute-dimension assumption. |
-| G3 | Full coverage | A proof of \(\Gamma\Pi=C_e\), including effective boundary classes. |
-| G4 | Strong domain | Exact Definition 3.4 separation and trivial stabilizer, hence the requested disjoint interiors. |
-| G5 | Degenerate case | Complete treatment of nonzero lineality of the closed movable cone, with correct cone and kernel. |
-| G6 | Complete proof | All key lemmas and the theorem proved, with no open bridge or circular obligation. |
-| G7 | Independent scrutiny | Proof independent of unsupported computations/conjectures; actual adversarial checking of exact statements and versions. Model agreement alone is insufficient. |
-| G8 | Reviewable paper | Complete English LaTeX manuscript with accurate references and the required companion files. |
+完整证明必须覆盖原题全部对象，给出 `Π⊂C` 的有理多面体性、`ΓΠ=C`、Definition 3.4 的强分离与平凡稳定子，完整处理退化情形。每个承重步骤必须有严格依据；不改变模型、量词、假设或目标，不把有限实验当一般定理。
 
-The proof-stage final response begins exactly `✅ PASS` or `❌ FAIL`. When every gate is TRUE, it may say: `✅ PASS — 研究目标已在本次工作中达到所定义的证明标准，形成可供专家复核的原创数学论文草稿。` Otherwise it must say: `❌ FAIL — 尚未满足完整研究目标。`
+已知文献若已完整解决，须实际核清范围与证明并准确引用，不伪称原创。若主命题为假，须给符合全部几何假设的严格反例，明确主命题被否定；原“证明该命题”任务仍为 FAIL，不改弱题宣布证明成功。
+
+局部引理、条件结果、资料整理、算例、结构检查、固定轮数及文稿制作均不是完成条件。它们只有推进主命题的作用。
+
+数学尚未解决时持续进行当前平台实际支持的研究。用户明确暂停或真实资源边界使所有可行继续方式都不可用时，尽可能先保存并推送证明状态、计算断点和下一步，明确“未解决／资源暂停”。不得凭空推断额度耗尽，不声称平台终止后仍在后台研究。

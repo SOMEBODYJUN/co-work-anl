@@ -1,25 +1,23 @@
-# Strong relative Morrison–Kawamata movable cone problem
+# 强形式相对 Morrison–Kawamata 可动锥主问题
 
-Archive ID: `relative-mk-cone`. Scope: `archives/relative-mk-cone`.
+存档 ID：`relative-mk-cone`；范围：`archives/relative-mk-cone`。**唯一目标：解决主命题。当前仍未解决。**
 
-Status: **OPEN — initial research intake, not a proved theorem.** Created 2026-11-22 (America/Los_Angeles). The original target and G1–G8 are fixed in [problem.md](state/problem.md) and [acceptance.md](state/acceptance.md). No restriction to the six-provider problem or any other existing archive applies.
+唯一现役启动词：[Pro 持续研究](prompts/pro-loop.md)。把它与当前 `work.py`、仓库外的 `githubtoken.txt` 交给新对话，按真实可用的平台工具开工。
 
-## Start here
+不再分资料 Pro 和证明 Pro。文献读取、超边采用、引理、计算和反例审查都嵌入同一持续研究循环，局部成果不构成完成。运行持续到严格解决、用户明确暂停或真实资源上限；保留工作室、推导和计算断点以便接续。
 
-1. [Pro 1: acquire, read, register and connect the literature](prompts/pro1-intake.md). This is one continuing assignment with saved reading passes, not a promise that one context can hold all papers.
-2. [Intake acceptance and handoff](state/intake_contract.md). `INTAKE_READY` is different from theorem `PASS`.
-3. [Pro 2: attack the unchanged target](prompts/pro2-proof.md). Read the exact target first, then the relevant full hyperedges and their proof evidence.
+## 原题与工作室
 
-The workflow retains the useful mathematical functions of acquisition, exact registration and hyperedge synthesis. It does **not** restore the deleted phase queues, boards or historical workflows. Use the current `work.py research` and `studio` commands.
+- [唯一主命题与完整范围](state/main_problem.md)、[数学完成条件](state/acceptance.md)。
+- 每个 Boss 独立 clone 和 RUN；新 RUN 复制本档 [research-spec.json](research-spec.json)，再执行现行 `studio init`。真实恢复用自己的 `--resume` 和 `studio status`。
+- 所有共同前提、条件和剩余义务按原超边规则实读；已有候选路线可替换，不强制沿一条辅助路线走到底。
 
-## Current assets and limits
+## 可用研究资产
 
-- [Definitions and unresolved conventions](state/definitions.md).
-- [Preliminary literature audit](state/literature_audit.md) and [source manifest](sources/manifest.json).
-- [Abstract reductions with complete proofs](state/proof.tex), [counterexample audit](state/counterexample_audit.md).
-- [Current G1–G8 verdict](state/verification.md): FAIL; general geometric lifting and novelty are unresolved.
-- [English working note](state/research_paper.tex); this explicitly is not a proof of the target.
+- [初始文献与版本缺口](state/literature_audit.md)、[原始资料清单](sources/manifest.json)。按当前证明需要补读，不等待一轮独立资料验收。
+- [凸锥局部证明](state/proof.tex)、[反例边界](state/counterexample_audit.md)。这些均不解决一般几何主命题。
+- 主对象 `RMKC-STRONG-REL2` 与现有完整条件路线可用 `research frontier/context/show` 调用。
 
-Two arXiv papers with verified CC BY 4.0 licenses are stored unchanged under `sources/`; attribution is in [ATTRIBUTION.md](sources/ATTRIBUTION.md). Three other primary PDFs were downloaded for the present reading session; their exact URLs and hashes are retained. Publisher versions have metadata but no completed independent full-text comparison. Missing material is an explicit intake obligation, not a silently satisfied gate.
+计算沿用 `work.py compute`、`work.py github`、Codespaces 和 Actions。启动词给出实用命令；按实际权限、机型和额度执行承重计算，取回日志与证书，不把提交计算或进程成功当证明。
 
-Main reads the relevant hyperedges and short receipts. Reading, idea generation, proof attempts and adversarial checks belong to workers; save precise handoffs before starting fresh contexts. Every Boss uses a separate clone and its own RUN. Tokens remain outside Git.
+此前已冻结的 Boss2 初始读取 RUN 保持原字节以便准确恢复；其旧资料阶段说明不再是现役运行规则。程序没有新增调度系统，Git 写入和成熟结果回流仍沿用原工程。
