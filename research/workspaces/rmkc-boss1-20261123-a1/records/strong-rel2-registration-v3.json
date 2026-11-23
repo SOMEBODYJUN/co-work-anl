@@ -1,0 +1,265 @@
+{
+  "schema": 2,
+  "objects": [
+    {
+      "object_id": "RMKC-PROJECTED-OPERATOR-DOMAIN",
+      "version": 1,
+      "title": "A strong polyhedral domain for a positive semidefinite translation pencil",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "A rational exact sequence 0→U→L→R→0, a countable faithful rational action G preserving a full-dimensional convex cone ℂ⊂L and the exact-sequence subspace, and its image on R.",
+      "statement": "If the base image has a strong rational polyhedral domain B, the actual real fibres over B are s(d)+im T_d for a rational section s and normalized rational self-adjoint positive semidefinite pencil T, and a full translation lattice is normal of finite index in the base kernel, then ℂ has one rational polyhedral domain with full closed-translate separation and trivial setwise stabilizer.",
+      "quantifiers": "Every such rational sequence, group and cone; every real d in every face of B; the full group G, including nonsplit finite extensions of its translations.",
+      "assumptions": [
+        "B covers the base cone and satisfies Li–Zhao Definition 3.4 for the faithful base image.",
+        "In a rational positive definite scalar product the operators T_d for d in B are self-adjoint positive semidefinite, a positive combination of the rational generator operators is positive definite, and T_H=I at some rational H.",
+        "The entire fibre equals s(d)+im T_d at each real d in B. The full lattice acts by x↦x+T_{πx}z and is normal of finite index in the base kernel."
+      ],
+      "scope": "A theorem with explicit hypotheses on a group action and an effective fibre description; rational lineality of auxiliary cones is allowed.",
+      "objections": "Without the exact boundary fibres or the finite-index lattice assumption, this result makes no assertion about a particular geometric action.",
+      "body": {
+        "path": "archives/relative-mk-cone/state/projected_operator_domain.md",
+        "sha256": "7b5dd56f6cee0082c9e91a2a59f248127871e21a1c7d6539d6d2c92bcef8ac2f"
+      },
+      "evidence": [
+        {
+          "path": "archives/relative-mk-cone/state/strong-rel2/informed-a/operator_domain_v1.md",
+          "sha256": "d1883cc9fea81b6e7db6cd27885279f69c886da52ae857c4245ba8b827b088ba"
+        },
+        {
+          "path": "archives/relative-mk-cone/state/proof.tex",
+          "sha256": "fa13506ec49a3e8aa72bd0c4dd8da467cb74a557a14340da8f34ed6300236583"
+        }
+      ],
+      "sources": [
+        "Rational polyhedral Dirichlet construction of informed-a and Main, RUN rmkc-boss1-20261123-a1.",
+        "Li–Zhao, Proc. Lond. Math. Soc. 131 (2025), e70099, Definition 3.4; the exact whole-translate condition is used."
+      ]
+    },
+    {
+      "object_id": "RMKC-VERTICAL-KERNEL-LIFT",
+      "version": 1,
+      "title": "Finite kernel modulo vertical divisors and lifting a domain on the actual cone",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "A complex klt Calabi–Yau fibration with normal projective Q-factorial total space and normal quasi-projective base; existence of good minimal models for effective klt pairs in its relative dimension. Γ is the relative numerical pseudoautomorphism group preserving the boundary support (or its coefficients).",
+      "statement": "Let T be the span of all vertical prime divisor classes and p:V→V/T. Then the action on T and the kernel of the action on V/T are finite. For rational relatively ample a its stabilizer over p(a) is finite. Any full-dimensional weak rational polyhedral domain on p(C) with finite stabilizer lifts and refines to a strong rational polyhedral domain on the actual C for all of Γ.",
+      "quantifiers": "Every such fibration, every rational relatively ample a, and every qualifying weak quotient domain; no assumption that all directions of the closed movable cone are effective.",
+      "assumptions": [
+        "The relative numerical group uses all complete curves contracted by f.",
+        "For the lifting conclusion, the image in GL(V/T) acts on the actual p(C) with the stated quotient domain.",
+        "Low relative dimension at most two verifies the good-model premise used for the target."
+      ],
+      "scope": "Vertical classes of both signs are relatively effective. This controls the kernel on V/T and transfers full closed-translate separation; the base need not be Q-factorial.",
+      "objections": "The kernel on V/T is distinct from the kernel after division by all lineality of the closed movable cone; the latter need not be finite.",
+      "body": {
+        "path": "archives/relative-mk-cone/state/vertical_kernel_and_domain_lift.md",
+        "sha256": "9fde24efe991b3bb56cf449682ef4545d3dbe66bee5ba2098686f09be23773a1"
+      },
+      "evidence": [
+        {
+          "path": "archives/relative-mk-cone/sources/li_zhao_2206.13701v8.pdf",
+          "sha256": "2e049458d6193fa8b2a19c91f36d598b8e1be630ca508ea1ad0c1691a76f7e93"
+        },
+        {
+          "path": "archives/relative-mk-cone/sources/li_2309.04673v1.pdf",
+          "sha256": "cb74a10d5ae6fa77f6c3776d74a000f2e7250dad493f81876c3badf5b519ae59"
+        }
+      ],
+      "sources": [
+        "Li–Zhao, arXiv:2206.13701v8, §§2.1–2.3, Theorems 2.4 and 2.7, Lemma 5.1.",
+        "Li, arXiv:2309.04673v1, Lemma 2.5(2).",
+        "Informed-a and Main, RUN rmkc-boss1-20261123-a1, finite vertical kernel and domain lifting.",
+        "Hacon–Xu, arXiv:1107.4149v2, Corollary 1.6, and Z. Li, arXiv:2006.01370v1, Definition 3.1, Remark 3.2 and Corollary 1.2; the integral round-down proof applies to every effective real perturbation of the same-support rational klt working pair."
+      ]
+    },
+    {
+      "object_id": "RMKC-GENERIC-PICARD-REALIZATION",
+      "version": 1,
+      "title": "Generic Picard realization of the effective movable cone and its actual group",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "For every complex terminal Calabi–Yau fibre space f:(X,Δ)→S in the Li–Zhao sense, with X normal, projective and Q-factorial, K_X+Δ numerically trivial over S, and dim X−dim S in {0,1,2}. Include all admissible effective real boundaries, arbitrary absolute dimension and arbitrary allowed base. Use the full faithful numerical image Γ of the relative support-preserving pseudo-automorphisms on V=N¹(X/S)_R, defined by all complete contracted curves. The cone is C=closure(Mov(X/S))∩Eff(X/S).",
+      "statement": "For positive relative dimension and absolute dimension at least two, quotient by the span of vertical primes identifies L_Q with Pic(F)_Q/J with J⊂Pic⁰(F)(k)_Q. The image p(C) is the image of the actual effective generically nef Picard classes. Its generic numerical image D has a strong rational polyhedral domain B for the actual relative-group image. If U=Pic⁰(F)(k)_R/J_R is nonzero, all real fibres above B, the pencil T, the invariant scalar product and the finite-index full translation lattice verify the operator theorem's hypotheses. For U=0 the projected cone identifies with D. The zero-dimensional relative and low absolute cases satisfy the elementary alternatives stated in the body.",
+      "quantifiers": "Every fibration in the geometric hypotheses; all real points of all faces of B, all components of the admissible boundary, and the whole actual relative numerical group including its finite holonomy.",
+      "assumptions": [
+        "The original target hypotheses only; the generic field is k=C(S).",
+        "In the positive-dimensional realization the projection T is by vertical prime classes in the numerical space defined by all contracted curves."
+      ],
+      "scope": "Covers the actual Picard, effective and numerical images and the full group in the original problem. It includes the cases U=0, q=1, and q=2 and the elementary boundary cases.",
+      "objections": "The covering on generic numerical classes descends from the geometric surface using a finite Albanese marking and Galois-fixed actual automorphisms. Extension of a finite-index subgroup suffices at the subsequent projection from the relative group. Both assertions concern their specified faithful numerical images.",
+      "body": {
+        "path": "archives/relative-mk-cone/state/strong_rel2_statements.md",
+        "sha256": "b37e7dcf1b7dd779702e7c9d7abaee9031726e8cc23e8106967ebd5ea55bcf64",
+        "section": "Realization on the generic Picard group"
+      },
+      "evidence": [
+        {
+          "path": "archives/relative-mk-cone/state/strong_rel2_statements.md",
+          "sha256": "b37e7dcf1b7dd779702e7c9d7abaee9031726e8cc23e8106967ebd5ea55bcf64",
+          "section": "Geometric hypotheses"
+        },
+        {
+          "path": "archives/relative-mk-cone/state/strong-rel2/informed-b/proof.md",
+          "sha256": "c27e24be990f43c82b6c63e852e9ddfc2fbefd7e045363d5734cee4dbb62a0f2"
+        },
+        {
+          "path": "archives/relative-mk-cone/state/strong-rel2/informed-a/operator_domain_v1.md",
+          "sha256": "d1883cc9fea81b6e7db6cd27885279f69c886da52ae857c4245ba8b827b088ba"
+        },
+        {
+          "path": "archives/relative-mk-cone/sources/li_zhao_2206.13701v8.pdf",
+          "sha256": "2e049458d6193fa8b2a19c91f36d598b8e1be630ca508ea1ad0c1691a76f7e93"
+        },
+        {
+          "path": "archives/relative-mk-cone/sources/li_2309.04673v1.pdf",
+          "sha256": "cb74a10d5ae6fa77f6c3776d74a000f2e7250dad493f81876c3badf5b519ae59"
+        },
+        {
+          "path": "archives/relative-mk-cone/state/strong-rel2/informed-b/source_audit_v3.md",
+          "sha256": "e788f16c0bc05eb7a69ac6c86580d58db7e3c093c8ad8a3b8be33c4ac2396551"
+        },
+        {
+          "path": "archives/relative-mk-cone/state/strong-rel2/informed-b/marked_generic_descent_v2.md",
+          "sha256": "895f2b4a29b70a3c87cd1b190fd0a883f2fc1f4e5c275c77bc6fa22b6cf41a81"
+        }
+      ],
+      "sources": [
+        "Complete marked Albanese-torsor and Picard realization proof in RUN rmkc-boss1-20261123-a1, §§1–6, with the complete marked descent contributed by /root/final_geometry_audit.",
+        "Totaro, The cone conjecture for Calabi–Yau pairs in dimension two, §2 and Theorem 4.1. Jinsong Xu, arXiv:1611.01804, Theorem 4.5. Looijenga, Discrete automorphism groups of convex cones of finite type, Theorem 3.8, Proposition–Definition 4.1, proof of Proposition 4.6, and Corollary 4.15. Fujino–Gongyo, Log pluricanonical representations and the abundance conjecture, Theorem 1.1. Milne, Abelian Varieties, §§12 and 17."
+      ]
+    },
+    {
+      "object_id": "RMKC-STRONG-REL2-THEOREM",
+      "version": 1,
+      "title": "Strong relative Morrison–Kawamata movable cone theorem in relative dimension at most two",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "For every complex terminal Calabi–Yau fibre space f:(X,Δ)→S in the Li–Zhao sense, with X normal, projective and Q-factorial, K_X+Δ numerically trivial over S, and dim X−dim S in {0,1,2}. Include all admissible effective real boundaries, arbitrary absolute dimension and arbitrary allowed base. Use the full faithful numerical image Γ of the relative support-preserving pseudo-automorphisms on V=N¹(X/S)_R, defined by all complete contracted curves. The cone is C=closure(Mov(X/S))∩Eff(X/S).",
+      "statement": "There is one rational polyhedral cone Π⊂C such that ΓΠ=C, γΠ∩Int Π is empty for every nonidentity γ∈Γ, and Stab_Γ(Π) is trivial, exactly as in Li–Zhao Definition 3.4.",
+      "quantifiers": "Every terminal pair over C satisfying the full stipulated fibre-space definition, for relative dimensions zero, one and two; no bound on dim X, base Q-factoriality, restriction on fibre type, or nondegeneracy assumption.",
+      "assumptions": [
+        "Exactly the geometric data in the model; relative numerical equivalence is as in Li–Zhao. All boundary coefficients admitted by the terminal pair convention are included."
+      ],
+      "scope": "The whole original quantified strong statement, including effective boundary faces, degeneracy of the closed movable cone and full closed-translate separation.",
+      "objections": "The open original problem registration preserves its input bytes and version. This separate theorem supplies a full-scope mathematical answer through the directed implication to that registration.",
+      "body": {
+        "path": "archives/relative-mk-cone/state/strong_rel2_statements.md",
+        "sha256": "b37e7dcf1b7dd779702e7c9d7abaee9031726e8cc23e8106967ebd5ea55bcf64",
+        "section": "Strong relative movable-cone theorem"
+      },
+      "evidence": [
+        {
+          "path": "archives/relative-mk-cone/state/strong_rel2_statements.md",
+          "sha256": "b37e7dcf1b7dd779702e7c9d7abaee9031726e8cc23e8106967ebd5ea55bcf64",
+          "section": "Geometric hypotheses"
+        },
+        {
+          "path": "archives/relative-mk-cone/state/strong-rel2/informed-b/proof.md",
+          "sha256": "c27e24be990f43c82b6c63e852e9ddfc2fbefd7e045363d5734cee4dbb62a0f2"
+        },
+        {
+          "path": "archives/relative-mk-cone/state/projected_operator_domain.md",
+          "sha256": "7b5dd56f6cee0082c9e91a2a59f248127871e21a1c7d6539d6d2c92bcef8ac2f"
+        },
+        {
+          "path": "archives/relative-mk-cone/state/vertical_kernel_and_domain_lift.md",
+          "sha256": "9fde24efe991b3bb56cf449682ef4545d3dbe66bee5ba2098686f09be23773a1"
+        },
+        {
+          "path": "archives/relative-mk-cone/state/strong-rel2/informed-a/operator_domain_v1.md",
+          "sha256": "d1883cc9fea81b6e7db6cd27885279f69c886da52ae857c4245ba8b827b088ba"
+        },
+        {
+          "path": "archives/relative-mk-cone/state/main_problem.md",
+          "sha256": "8f4c5fbf8dfe829773f16aa79adc3bb3a0da959ed56cea7263f1a2662673ed13"
+        },
+        {
+          "path": "archives/relative-mk-cone/state/strong-rel2/informed-b/source_audit_v3.md",
+          "sha256": "e788f16c0bc05eb7a69ac6c86580d58db7e3c093c8ad8a3b8be33c4ac2396551"
+        },
+        {
+          "path": "archives/relative-mk-cone/state/strong-rel2/informed-b/marked_generic_descent_v2.md",
+          "sha256": "895f2b4a29b70a3c87cd1b190fd0a883f2fc1f4e5c275c77bc6fa22b6cf41a81"
+        }
+      ],
+      "sources": [
+        "Complete proof V3 by the informed lines, the contributor of the marked generic descent, and Main, RUN rmkc-boss1-20261123-a1; §7 and its accompanying audit identify the primary sources and prove the required scope."
+      ]
+    }
+  ],
+  "materials": [
+    {
+      "path": "archives/relative-mk-cone/state/projected_operator_domain.md",
+      "sha256": "7b5dd56f6cee0082c9e91a2a59f248127871e21a1c7d6539d6d2c92bcef8ac2f",
+      "disposition": "objects",
+      "object_ids": [
+        "RMKC-PROJECTED-OPERATOR-DOMAIN",
+        "RMKC-STRONG-REL2-THEOREM"
+      ],
+      "reason": "Standalone exact operator theorem with its finite inequality construction and final finite-group refinement."
+    },
+    {
+      "path": "archives/relative-mk-cone/state/vertical_kernel_and_domain_lift.md",
+      "sha256": "9fde24efe991b3bb56cf449682ef4545d3dbe66bee5ba2098686f09be23773a1",
+      "disposition": "objects",
+      "object_ids": [
+        "RMKC-VERTICAL-KERNEL-LIFT",
+        "RMKC-STRONG-REL2-THEOREM"
+      ],
+      "reason": "Standalone finite vertical-kernel and lifting proof, with its full group and cone scope."
+    },
+    {
+      "path": "archives/relative-mk-cone/state/strong_rel2_statements.md",
+      "sha256": "b37e7dcf1b7dd779702e7c9d7abaee9031726e8cc23e8106967ebd5ea55bcf64",
+      "disposition": "objects",
+      "object_ids": [
+        "RMKC-GENERIC-PICARD-REALIZATION",
+        "RMKC-STRONG-REL2-THEOREM"
+      ],
+      "reason": "Explicit hypotheses, independently addressable realization and full theorem; both share the complete proof."
+    },
+    {
+      "path": "archives/relative-mk-cone/state/strong-rel2/informed-b/proof.md",
+      "sha256": "c27e24be990f43c82b6c63e852e9ddfc2fbefd7e045363d5734cee4dbb62a0f2",
+      "disposition": "objects",
+      "object_ids": [
+        "RMKC-GENERIC-PICARD-REALIZATION",
+        "RMKC-STRONG-REL2-THEOREM"
+      ],
+      "reason": "Complete geometric proof with all cases, actual cone and group, original quantifiers and source ledger; the reviewed source bytes are preserved."
+    },
+    {
+      "path": "archives/relative-mk-cone/state/strong-rel2/informed-a/operator_domain_v1.md",
+      "sha256": "d1883cc9fea81b6e7db6cd27885279f69c886da52ae857c4245ba8b827b088ba",
+      "disposition": "objects",
+      "object_ids": [
+        "RMKC-PROJECTED-OPERATOR-DOMAIN",
+        "RMKC-GENERIC-PICARD-REALIZATION",
+        "RMKC-STRONG-REL2-THEOREM"
+      ],
+      "reason": "The precise abstract proof cited by the complete geometric proof, preserving its reproducible relative link and bytes."
+    },
+    {
+      "path": "archives/relative-mk-cone/state/strong-rel2/informed-b/source_audit_v3.md",
+      "sha256": "e788f16c0bc05eb7a69ac6c86580d58db7e3c093c8ad8a3b8be33c4ac2396551",
+      "disposition": "attachment",
+      "object_ids": [
+        "RMKC-GENERIC-PICARD-REALIZATION",
+        "RMKC-STRONG-REL2-THEOREM"
+      ],
+      "reason": "Frozen V3 source audit identifies the ordinary-relative-Kodaira-dimension payment, the marked descent and all geometric premises; local links in the complete proof resolve to canonical bytes."
+    },
+    {
+      "path": "archives/relative-mk-cone/state/strong-rel2/informed-b/marked_generic_descent_v2.md",
+      "sha256": "895f2b4a29b70a3c87cd1b190fd0a883f2fc1f4e5c275c77bc6fa22b6cf41a81",
+      "disposition": "objects",
+      "object_ids": [
+        "RMKC-GENERIC-PICARD-REALIZATION",
+        "RMKC-STRONG-REL2-THEOREM"
+      ],
+      "reason": "Full general-field surface-covering descent with a Galois-stable Albanese marking, finite numerical kernel, Siegel property, actual fixed automorphisms and effective norm descent. The argument is also proved in §2 of the complete manuscript."
+    }
+  ],
+  "edge_files": []
+}
