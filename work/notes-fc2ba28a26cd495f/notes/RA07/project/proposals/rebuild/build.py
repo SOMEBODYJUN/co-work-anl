@@ -20,7 +20,7 @@ def build():
     sources=[]; targets=[]; pchecks=[]; rchecks=[]; recoveries=[]; issues=[]
     toc='\n'.join(f'{i+1}. [{p["title"]}](#{p["anchor"]})' for i,p in enumerate(study_plan or pages))
     front={
-      'T': '# 实分析 7：原序保真转写\n\n原件：实分析7.pdf，共 13 物理页。按原稿页序保留公式、旁注、问题、重复及原错误。中性编号标识尚不能唯一恢复的字迹；数学补充不冒充原文。当前为作者首遍提议稿。',
+      'T': '# 实分析 7：原序保真转写\n\n原件：实分析7.pdf，共 13 物理页。按原稿页序保留公式、旁注、问题、重复及原错误。中性编号标识尚不能唯一恢复的字迹；数学补充不冒充原文。',
       'N': '# 实分析 7：测度与 Lebesgue 外测度\n\n## 阅读约定\n\n普通正文保留原稿内容与原有路线。蓝色 `info` 块按“补充”“补证”“纠错”说明新增内容；红色只标原稿明确未答位置。中性疑字编号见独立疑点表。\n\n## 目录\n\n'+toc
     }
     blocks={'T':[('T-INTRO',front['T'],[], 'editorial','说明原序转写的编辑约定。','resolved')], 'N':[('N-INTRO',front['N'],[], 'editorial','编排阅读说明和完整目录，不冒充原稿标题。','resolved')]}
