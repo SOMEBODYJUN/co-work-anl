@@ -1,0 +1,53 @@
+import json
+from pathlib import Path
+P=Path(__file__).parent;U=[]
+def u(label,bbox,t,supp=None,ev=None,status=None):
+ d={'label':label,'bbox':bbox,'transcript':t}
+ if supp:d['supplements']=supp
+ if ev:d['extra_evidence']=ev
+ if status:d['status']=status
+ U.append(d)
+u('任意测试集量词',[225,555,550,710],r'$\forall T\subset\mathbb R^n$。')
+u('有限并可测目标式及括号缺省',[170,800,1865,975],r'$$m^*(T)\ge m^*(T\cap(A\cup B))+m^*(T\cap A\cup B^c).$$',supp=[r'''> [!info] 纠错：补集的括号范围
+> 这一行承接前页 $A,B$ 可测、欲证 $A\cup B$ 可测。末项原写没有给 $A\cup B$ 加成对括号，若按通常运算优先次序读成 $m^*((T\cap A)\cup B^c)$，便不是所需命题。正确目标应写为
+> $$m^*(T)\ge m^*(T\cap(A\cup B))+m^*(T\cap(A\cup B)^c).$$
+> 其相反不等式总由次可加性成立。以下分块证明的是这个补全括号后的目标。'''])
+u('三圆图及四个编号区域',[275,990,815,1740],r'''原图：三个相交圆分别标 $A$、$B$、$T$；$T$ 圆较大，位于下方。其内部写 1、2、3、4，分别落在仅与 $A$ 相交、三圆公共、仅与 $B$ 相交、与 $A,B$ 都不交的部分。
+
+![原稿三圆四区域图](https://raw.githubusercontent.com/SOMEBODYJUN/co-work-anl/refs/heads/work/notes/work/notes-fc2ba28a26cd495f/notes/RA07/project/evidence/p0011-diagram.png)''',ev=['artifact:p0011-diagram'],supp=[r'''> [!info] 补充：图中编号的集合表达
+> 令 $D_1=T\cap A\cap B^c$、$D_2=T\cap A\cap B$、$D_3=T\cap A^c\cap B$、$D_4=T\cap A^c\cap B^c$。四块两两不交且并为 $T$；其中 $D_1\cup D_2\cup D_3=T\cap(A\cup B)$，$D_4=T\cap(A\cup B)^c$。这是把图上编号翻译成公式，原图没有给四块另写 $D_i$ 名字。'''])
+u('并集内部的三块分解',[870,1050,2365,1235],r'$(T\cap A\cap B)\cup(T\cap A\cap B^c)\cup(T\cap B\cap A^c)$')
+u('三块合为与并集相交',[865,1295,1445,1425],r'$=T\cap(A\cup B)$。')
+u('取外测度提示',[790,1465,1350,1595],r'则取外测度。',ev=['artifact:p0011-bridge'])
+u('由B可测合并第一与第二块',[725,1690,2375,1890],r'$$m^*(T\cap A\cap B^c)+m^*(T\cap A\cap B)=m^*(T\cap A).$$',supp=[r'''> [!info] 补证：该等号的依据
+> 将测试集 $T\cap A$ 代入 $B$ 的可测性条件，即得本行等式。它在图上对应 $m^*(D_1)+m^*(D_2)=m^*(T\cap A)$；此时 $T\cap A$ 本身无需预先被判为可测。'''])
+u('由A可测合并及衔接字',[640,1940,1960,2095],r'''〔Q004：公式前的三个衔接字〕
+$$m^*(T\cap A)+m^*(T\cap A^c)=m^*(T).$$''',ev=['artifact:p0011-bridge'],status='unresolved',supp=[r'''> [!info] 补证：补齐第三、第四块后完成有限并证明
+> 还应把 $T\cap A^c$ 作为测试集代入 $B$ 的可测性，得到 $m^*(D_3)+m^*(D_4)=m^*(T\cap A^c)$。再与原稿已写的两式合并，
+> $$\sum_{i=1}^{4}m^*(D_i)=m^*(T\cap A)+m^*(T\cap A^c)=m^*(T).$$
+> 次可加性给 $m^*(D_1\cup D_2\cup D_3)\le\sum_{i=1}^{3}m^*(D_i)$，故
+> $$m^*(T\cap(A\cup B))+m^*(T\cap(A\cup B)^c)\le\sum_{i=1}^{4}m^*(D_i)=m^*(T).$$
+> 与开头的一般反向界合并，即证 $A\cup B$ 可测。这条四块路线与前面的有限交路线均保留。衔接语 Q004 不影响两条完整原公式的含义。'''])
+u('可测集补集可测命题',[130,2100,945,2335],r'**Prop.** $S$ 可测，$S^c$ 可测。')
+u('双重补集换写的原证明',[165,2400,1995,2620],r'''$$m^*(T\cap S)+m^*(T\cap S^c)
+\overset{\text{性质}}{=}m^*(T\cap S^{cc})+m^*(T\cap S^c).$$
+
+〔原稿右边在 $S$ 上连写两个补集符号。〕''',supp=[r'''> [!info] 补证：改写成补集的定义式
+> $S^{cc}=(S^c)^c=S$，而 $S$ 可测使本行两边都等于 $m^*(T)$。交换右边两项即可写成 $m^*(T\cap S^c)+m^*(T\cap(S^c)^c)=m^*(T)$，这对每个 $T$ 成立，故 $S^c$ 可测。'''])
+u('有限交可测命题',[145,2710,1145,2855],r'$A,B$ 可测，$A\cap B$ 可测。',supp=[r'''> [!info] 补证：用已证的并与补
+> 由 $A^c,B^c$ 可测以及有限并封闭知 $A^c\cup B^c$ 可测，再取补得 $(A^c\cup B^c)^c=A\cap B$ 可测。它与前面直接切分测试集证明有限交的路线等价。'''])
+u('有限可加命题的条件',[145,2940,1260,3135],r'**Prop.** $A,B\in\mathcal M$，$A\cap B=\varnothing$。')
+u('有限可加命题结论',[150,3210,1095,3370],r'$$m(A\cup B)=m(A)+m(B).$$',supp=[r'''> [!info] 补证：不交有限可加
+> 用 $A$ 的可测性测试 $T=A\cup B$，有 $T\cap A=A$、$T\cap A^c=B$，从而 $m^*(A\cup B)=m^*(A)+m^*(B)$。三者都可测，故可以将 $m^*$ 写为 $m$。多于两个集合的有限不交可加性由归纳得到，且允许各项等于 $\infty$。'''])
+p={'page':11,'title':'有限并的四块证明、补与交及有限可加','anchor':'finite-operations-proof','units':U,
+'layout':'页首留白较大，之后承接有限并证明，目标不等式下有三圆图及三块并集分解；中部给两条按可测性相加的等式；下半依次补可测、交可测、有限可加。图中四块数字完整，T标签在圆下方。',
+'observation':'实际看整页、六区、图和衔接语两裁图。目标式末项括号缺少，未静默把字面式改正确；三圆图1至4的区域已对应数学块。中间公式前的三字衔接词虽回看仍不唯一，记Q004；公式本体清晰。完整补证补出原稿未写的第三第四块相加。',
+'regions':[
+'首为∀T⊂Rn，末为三圆图上半及三块分解第一块。目标不等号≥可辨；上部空白不算缺文。',
+'首为目标式第二项，末为三块分解中的后两块；末项原写T∩A∪B^c而缺并集括号，三块上的Ac/Bc则清楚。',
+'首为图中1、2、3与4，末为Prop S可测Sc可测。图的T在下方，右侧是= T∩(A∪B)、则取外测度、第一合并等式与下一合并式的衔接字。',
+'首为三块公式右部，末为m*(T∩A)+m*(T∩Ac)=m*(T)右半。核对第一合并式的B补与B非补正好成对，右侧普通空白。',
+'首为S与Sc命题尾部，末为m(A∪B)=m(A)+m(B)。双补等号上方有性质二字，之后A∩B可测与不交有限可加条件均完整。',
+'首为双补改写的公式右半，末为有限可加条件中空集符号的残边，其余空白。']}
+p['issues']=[{'id':'RA07-Q004','status':'open','description':'第11页m*(T∩A)+m*(T∩Ac)=m*(T)之前三个衔接汉字不唯一；候选读法为“待后有”或“随后有”等，数学公式本体清楚。','related_ids':['RA07-P011-U008','T-P011-008','N-P011-008'],'evidence_ids':['image:p0011','image:p0011-r2c1','artifact:p0011-bridge'],'resolution':'独立保留中性字迹编号；两条原公式完整转写，学习稿按可测性补出四块相加证明，不借此冒充衔接字的视觉恢复。'}]
+(P/'p011.json').write_text(json.dumps(p,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')

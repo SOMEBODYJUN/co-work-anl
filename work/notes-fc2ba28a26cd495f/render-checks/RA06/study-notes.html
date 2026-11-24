@@ -1,0 +1,1358 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>实分析6数学排版检查</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="review.css" />
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">实分析6数学排版检查</h1>
+</header>
+<!-- unit: N-title -->
+<h1 id="实分析-6紧性导集与开集分解">实分析 6：紧性、导集与开集分解</h1>
+<!-- unit: N-editorial -->
+<p>原稿内容按黑色正文保留；蓝色信息块标明补充、补证或纠错；红色仅标示原稿明确待填的位置。原稿使用的拼写
+Lindeloff 在正文中保留，通常拼作 Lindelöf。</p>
+<!-- unit: N-toc -->
+<h2 id="目录">目录</h2>
+<ul>
+<li><a href="#s1">1. 紧性与 Lindeloff 性</a></li>
+<li><a href="#s2">2. 度量空间中的紧集必有界且闭</a>
+<ul>
+<li><a href="#s2-1">2.1 原稿路线：用有限子覆盖证明闭性</a></li>
+<li><a href="#s2-2">2.2 原稿反例：一般拓扑空间中的紧集未必闭</a></li>
+<li><a href="#s2-3">2.3 补证：紧集必有界</a></li>
+<li><a href="#s2-4">2.4 证明工具：紧空间的闭子集仍紧</a></li>
+</ul></li>
+<li><a href="#s3">3. 原稿练习：欧氏空间中的 Heine–Borel 结论</a>
+<ul>
+<li><a href="#s3-1">3.1 完整解答：嵌套方块的公共点路线</a></li>
+<li><a href="#s3-2">3.2 原稿的等价关系提要</a></li>
+<li><a href="#s3-3">3.3 子列工具：有限维 Bolzano–Weierstrass
+定理</a></li>
+<li><a href="#s3-4">3.4 原稿路线：二分闭方块证明 Heine–Borel</a></li>
+</ul></li>
+<li><a href="#s4">4. 导集、自密集与孤立点</a>
+<ul>
+<li><a href="#s4-1">4.1 完全集</a></li>
+</ul></li>
+<li><a href="#s5">5. 实轴开集、局部区间与基的计数</a>
+<ul>
+<li><a href="#s5-1">5.1 原稿 Ex 1 与计数旁注</a></li>
+<li><a href="#s5-2">5.2 点的邻域：原稿两问及解答</a></li>
+<li><a href="#s5-3">5.3 原稿路线：构造含点的最大开区间</a></li>
+<li><a href="#s5-4">5.4 原稿 Ex 2：通常实轴的拓扑基有多少种</a></li>
+</ul></li>
+<li><a href="#s6">6. 构成区间与开集的唯一分解</a>
+<ul>
+<li><a href="#s6-1">6.1 先备例题：实区间连通</a></li>
+<li><a href="#s6-2">6.2 构成区间的定义</a></li>
+<li><a href="#s6-3">6.3 不同构成区间不相交</a></li>
+<li><a href="#s6-4">6.4 唯一分解及可数性</a></li>
+<li><a href="#s6-5">6.5 原旁注：高维的表示不唯一</a></li>
+</ul></li>
+<li><a href="#s7">7. 第二可数、局部连通空间中的开集分解</a></li>
+</ul>
+<!-- unit: N-p1-01 -->
+<p><a id="s1"></a> ## 1. 紧性与 Lindeloff 性</p>
+<!-- unit: N-p1-definition -->
+<blockquote>
+<p>[!info] 补充：开覆盖与紧性 设
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>M</mi><annotation encoding="application/x-tex">M</annotation></semantics></math>
+是拓扑空间
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>
+的子集。一族
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>
+中的开集
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><msub><mi>U</mi><mi>α</mi></msub><msub><mo stretchy="false" form="postfix">}</mo><mrow><mi>α</mi><mo>∈</mo><mi>A</mi></mrow></msub></mrow><annotation encoding="application/x-tex">\{U_\alpha\}_{\alpha\in A}</annotation></semantics></math>
+若满足
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi><mo>⊂</mo><msub><mo>⋃</mo><mrow><mi>α</mi><mo>∈</mo><mi>A</mi></mrow></msub><msub><mi>U</mi><mi>α</mi></msub></mrow><annotation encoding="application/x-tex">M\subset\bigcup_{\alpha\in A}U_\alpha</annotation></semantics></math>，就称为
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>M</mi><annotation encoding="application/x-tex">M</annotation></semantics></math>
+的开覆盖。若每个开覆盖都有有限子覆盖，就称
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>M</mi><annotation encoding="application/x-tex">M</annotation></semantics></math>
+紧。用子空间中的开覆盖定义紧性，所得概念相同：子空间开集可写作
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi><mo>∩</mo><msub><mi>U</mi><mi>α</mi></msub></mrow><annotation encoding="application/x-tex">M\cap U_\alpha</annotation></semantics></math>。</p>
+</blockquote>
+<!-- unit: N-p1-02 -->
+<p><strong>原定义。</strong>Lindeloff（空间）：任意开覆盖有可数子覆盖。</p>
+<!-- unit: N-p1-03 -->
+<p><strong>原命题。</strong>第二可数
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>⇒</mo><mi>X</mi></mrow><annotation encoding="application/x-tex">\Rightarrow X</annotation></semantics></math>
+是 Lindeloff，逆不一定。</p>
+<!-- unit: N-p1-countable-proof -->
+<blockquote>
+<p>[!info] 补证：第二可数蕴含 Lindeloff 第二可数指存在可数拓扑基
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><msub><mi>V</mi><mi>n</mi></msub><mo>:</mo><mi>n</mi><mo>∈</mo><mi>ℕ</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{V_n:n\in\mathbb N\}</annotation></semantics></math>。给定开覆盖
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝒰</mi><annotation encoding="application/x-tex">\mathcal U</annotation></semantics></math>，对每个满足“存在
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>U</mi><mo>∈</mo><mi>𝒰</mi></mrow><annotation encoding="application/x-tex">U\in\mathcal U</annotation></semantics></math>
+使
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>V</mi><mi>n</mi></msub><mo>⊂</mo><mi>U</mi></mrow><annotation encoding="application/x-tex">V_n\subset U</annotation></semantics></math>”的
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>，选定这样一个
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>U</mi><mi>n</mi></msub><annotation encoding="application/x-tex">U_n</annotation></semantics></math>。所选开集至多可数。
+对任意
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∈</mo><mi>X</mi></mrow><annotation encoding="application/x-tex">x\in X</annotation></semantics></math>，先取覆盖中的
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>U</mi><annotation encoding="application/x-tex">U</annotation></semantics></math>
+使
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∈</mo><mi>U</mi></mrow><annotation encoding="application/x-tex">x\in U</annotation></semantics></math>，再由基的定义选
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>V</mi><mi>n</mi></msub><annotation encoding="application/x-tex">V_n</annotation></semantics></math>
+使
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∈</mo><msub><mi>V</mi><mi>n</mi></msub><mo>⊂</mo><mi>U</mi></mrow><annotation encoding="application/x-tex">x\in V_n\subset U</annotation></semantics></math>。该
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>
+参与上述选择，所以
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∈</mo><msub><mi>V</mi><mi>n</mi></msub><mo>⊂</mo><msub><mi>U</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">x\in V_n\subset U_n</annotation></semantics></math>。因此
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><msub><mi>U</mi><mi>n</mi></msub><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{U_n\}</annotation></semantics></math>
+覆盖
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>。</p>
+</blockquote>
+<!-- unit: N-p1-04 -->
+<p><strong>原旁注。</strong><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>⇒</mo><annotation encoding="application/x-tex">\Rightarrow</annotation></semantics></math>
+反证法，构造子列；<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>⇐</mo><annotation encoding="application/x-tex">\Leftarrow</annotation></semantics></math>
+已知是距离空间。</p>
+<!-- unit: N-p1-margin-explanation -->
+<blockquote>
+<p>[!info] 补充：旁注的范围及度量空间中的逆命题
+原稿将这两条方向提示写在页右上，没有画线指向某个完整公式，故保留其原位置关系而不强行指定所证命题。与本页命题相关的准确结论是：度量空间中，Lindeloff
+性也蕴含第二可数。 对每个正整数
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>，从覆盖
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mi>B</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>,</mo><mn>1</mn><mi>/</mi><mi>n</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>:</mo><mi>x</mi><mo>∈</mo><mi>X</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{B(x,1/n):x\in X\}</annotation></semantics></math>
+中选可数子覆盖，记所选中心集为
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>D</mi><mi>n</mi></msub><annotation encoding="application/x-tex">D_n</annotation></semantics></math>。则
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi><mo>=</mo><msub><mo>⋃</mo><mi>n</mi></msub><msub><mi>D</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">D=\bigcup_nD_n</annotation></semantics></math>
+可数且稠密：给定
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>
+及
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ε</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\varepsilon&gt;0</annotation></semantics></math>，取
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mi>/</mi><mi>n</mi><mo>&lt;</mo><mi>ε</mi></mrow><annotation encoding="application/x-tex">1/n&lt;\varepsilon</annotation></semantics></math>，有某个
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi><mo>∈</mo><msub><mi>D</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">d\in D_n</annotation></semantics></math>
+使
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>d</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>&lt;</mo><mn>1</mn><mi>/</mi><mi>n</mi><mo>&lt;</mo><mi>ε</mi></mrow><annotation encoding="application/x-tex">d(x,d)&lt;1/n&lt;\varepsilon</annotation></semantics></math>。
+集合族
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mi>B</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>d</mi><mo>,</mo><mi>q</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>:</mo><mi>d</mi><mo>∈</mo><mi>D</mi><mo>,</mo><mspace width="0.222em"></mspace><mi>q</mi><mo>∈</mo><msub><mi>ℚ</mi><mrow><mo>&gt;</mo><mn>0</mn></mrow></msub><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{B(d,q):d\in D,\ q\in\mathbb Q_{&gt;0}\}</annotation></semantics></math>
+是可数基。若
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∈</mo><mi>U</mi></mrow><annotation encoding="application/x-tex">x\in U</annotation></semantics></math>
+且
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>B</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>ε</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>⊂</mo><mi>U</mi></mrow><annotation encoding="application/x-tex">B(x,\varepsilon)\subset U</annotation></semantics></math>，选
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi><mo>∈</mo><mi>D</mi></mrow><annotation encoding="application/x-tex">d\in D</annotation></semantics></math>
+使
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>d</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>&lt;</mo><mi>ε</mi><mi>/</mi><mn>3</mn></mrow><annotation encoding="application/x-tex">d(x,d)&lt;\varepsilon/3</annotation></semantics></math>，再选有理数
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>q</mi><annotation encoding="application/x-tex">q</annotation></semantics></math>
+使
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>d</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>&lt;</mo><mi>q</mi><mo>&lt;</mo><mi>ε</mi><mo>−</mo><mi>d</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>d</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">d(x,d)&lt;q&lt;\varepsilon-d(x,d)</annotation></semantics></math>。于是
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∈</mo><mi>B</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>d</mi><mo>,</mo><mi>q</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>⊂</mo><mi>B</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>ε</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>⊂</mo><mi>U</mi></mrow><annotation encoding="application/x-tex">x\in B(d,q)\subset B(x,\varepsilon)\subset U</annotation></semantics></math>。</p>
+</blockquote>
+<!-- unit: N-p1-nonconverse -->
+<blockquote>
+<p>[!info] 补充：一般拓扑空间中逆命题的反例 在不可数集合
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>
+上取余可数拓扑：开集为
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>⌀</mi><annotation encoding="application/x-tex">\varnothing</annotation></semantics></math>
+和所有补集至多可数的集合。任给开覆盖，选其中一个非空开集
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>U</mi><annotation encoding="application/x-tex">U</annotation></semantics></math>；<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>X</mi><mo>\</mo><mi>U</mi></mrow><annotation encoding="application/x-tex">X\setminus U</annotation></semantics></math>
+至多可数，再为其中每一点各选一个覆盖成员，就得到可数子覆盖。
+它不满足第二可数。若在
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>
+处有可数局部基
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><msub><mi>V</mi><mi>n</mi></msub><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{V_n\}</annotation></semantics></math>，每个
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>V</mi><mi>n</mi></msub><annotation encoding="application/x-tex">V_n</annotation></semantics></math>
+都不可数，可递归选互异的
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mi>n</mi></msub><mo>∈</mo><msub><mi>V</mi><mi>n</mi></msub><mo>\</mo><mo stretchy="false" form="prefix">{</mo><mi>x</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">x_n\in V_n\setminus\{x\}</annotation></semantics></math>。开集
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>X</mi><mo>\</mo><mo stretchy="false" form="prefix">{</mo><msub><mi>x</mi><mi>n</mi></msub><mo>:</mo><mi>n</mi><mo>∈</mo><mi>ℕ</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">X\setminus\{x_n:n\in\mathbb N\}</annotation></semantics></math>
+含
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>，却不包含任何
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>V</mi><mi>n</mi></msub><annotation encoding="application/x-tex">V_n</annotation></semantics></math>，矛盾。</p>
+</blockquote>
+<!-- unit: N-p1-06 -->
+<p><a id="s2"></a> ## 2. 度量空间中的紧集必有界且闭</p>
+<p><strong>原定理。</strong>设
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi><mo>⊂</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>X</mi><mo>,</mo><mi>d</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">M\subset(X,d)</annotation></semantics></math>
+且
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>M</mi><annotation encoding="application/x-tex">M</annotation></semantics></math>
+紧，则
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>M</mi><annotation encoding="application/x-tex">M</annotation></semantics></math>
+是有界闭集。原稿括注：“至少是距离空间”。</p>
+<!-- unit: N-p1-07 -->
+<p><a id="s2-1"></a> ### 2.1 原稿路线：用有限子覆盖证明闭性</p>
+<p>先证
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>M</mi><mi>c</mi></msup><annotation encoding="application/x-tex">M^c</annotation></semantics></math>
+开。固定
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∈</mo><msup><mi>M</mi><mi>c</mi></msup></mrow><annotation encoding="application/x-tex">x\in M^c</annotation></semantics></math>，目标是找到
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>δ</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\delta&gt;0</annotation></semantics></math>
+使
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>B</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>δ</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>⊂</mo><msup><mi>M</mi><mi>c</mi></msup></mrow><annotation encoding="application/x-tex">B(x,\delta)\subset M^c</annotation></semantics></math>。</p>
+<!-- unit: N-p1-08 -->
+<p>由
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>T</mi><mn>2</mn></msub><annotation encoding="application/x-tex">T_2</annotation></semantics></math>，对每个
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mo>∈</mo><mi>M</mi></mrow><annotation encoding="application/x-tex">y\in M</annotation></semantics></math>，存在
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>δ</mi><mi>y</mi></msub><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\delta_y&gt;0</annotation></semantics></math>，使
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>B</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>,</mo><msub><mi>δ</mi><mi>y</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>∩</mo><mi>B</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>y</mi><mo>,</mo><msub><mi>δ</mi><mi>y</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>⌀</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
+B(x,\delta_y)\cap B(y,\delta_y)=\varnothing.\tag{2.1}
+</annotation></semantics></math> 原稿在这一句中重复写了两次“由
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>T</mi><mn>2</mn></msub><annotation encoding="application/x-tex">T_2</annotation></semantics></math>”。</p>
+<!-- unit: N-p1-radius -->
+<blockquote>
+<p>[!info] 补充：共同半径的具体选择 因
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∉</mo><mi>M</mi></mrow><annotation encoding="application/x-tex">x\notin M</annotation></semantics></math>、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mo>∈</mo><mi>M</mi></mrow><annotation encoding="application/x-tex">y\in M</annotation></semantics></math>，有
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">d(x,y)&gt;0</annotation></semantics></math>，可取
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>δ</mi><mi>y</mi></msub><mo>=</mo><mi>d</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>/</mi><mn>3</mn></mrow><annotation encoding="application/x-tex">\delta_y=d(x,y)/3</annotation></semantics></math>。若某点同时属于两个球，三角不等式给出
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>&lt;</mo><mn>2</mn><mi>d</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>/</mi><mn>3</mn></mrow><annotation encoding="application/x-tex">d(x,y)&lt;2d(x,y)/3</annotation></semantics></math>，矛盾。此处“<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>T</mi><mn>2</mn></msub><annotation encoding="application/x-tex">T_2</annotation></semantics></math>”表示
+Hausdorff 分离性；在一般 Hausdorff
+空间中可改用两组不交开邻域证明紧子集闭，但“有界”需要度量等额外结构。</p>
+</blockquote>
+<!-- unit: N-p1-09 -->
+<p>这些球给出开覆盖
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi><mo>⊂</mo><munder><mo>⋃</mo><mrow><mi>y</mi><mo>∈</mo><mi>M</mi></mrow></munder><mi>B</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>y</mi><mo>,</mo><msub><mi>δ</mi><mi>y</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">
+M\subset\bigcup_{y\in M}B(y,\delta_y).
+</annotation></semantics></math> 因
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>M</mi><annotation encoding="application/x-tex">M</annotation></semantics></math>
+紧，存在
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>y</mi><mn>1</mn></msub><mo>,</mo><mi>…</mi><mo>,</mo><msub><mi>y</mi><mi>m</mi></msub><mo>∈</mo><mi>M</mi></mrow><annotation encoding="application/x-tex">y_1,\ldots,y_m\in M</annotation></semantics></math>，使
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi><mo>⊂</mo><munderover><mo>⋃</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>m</mi></munderover><mi>B</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>y</mi><mi>i</mi></msub><mo>,</mo><msub><mi>δ</mi><msub><mi>y</mi><mi>i</mi></msub></msub><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">
+M\subset\bigcup_{i=1}^{m}B(y_i,\delta_{y_i}).
+</annotation></semantics></math></p>
+<!-- unit: N-p1-10 -->
+<p>令
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>δ</mi><mo>=</mo><mo>min</mo><mo stretchy="false" form="prefix">{</mo><msub><mi>δ</mi><msub><mi>y</mi><mn>1</mn></msub></msub><mo>,</mo><mi>…</mi><mo>,</mo><msub><mi>δ</mi><msub><mi>y</mi><mi>m</mi></msub></msub><mo stretchy="false" form="postfix">}</mo><mo>&gt;</mo><mn>0</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">
+\delta=\min\{\delta_{y_1},\ldots,\delta_{y_m}\}&gt;0.
+</annotation></semantics></math> 由式 (2.1)，
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>B</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>δ</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>∩</mo><mrow><mo stretchy="true" form="prefix">(</mo><munderover><mo>⋃</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>m</mi></munderover><mi>B</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>y</mi><mi>i</mi></msub><mo>,</mo><msub><mi>δ</mi><msub><mi>y</mi><mi>i</mi></msub></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>⌀</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
+B(x,\delta)\cap\left(\bigcup_{i=1}^{m}B(y_i,\delta_{y_i})\right)=\varnothing.
+</annotation></semantics></math> 因此
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>B</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>δ</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>⊂</mo><msup><mi>M</mi><mi>c</mi></msup></mrow><annotation encoding="application/x-tex">B(x,\delta)\subset M^c</annotation></semantics></math>，所以
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>M</mi><mi>c</mi></msup><annotation encoding="application/x-tex">M^c</annotation></semantics></math>
+开，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>M</mi><annotation encoding="application/x-tex">M</annotation></semantics></math>
+闭。</p>
+<!-- unit: N-p1-empty -->
+<blockquote>
+<p>[!info] 补充：空集边界情形 若
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi><mo>=</mo><mi>⌀</mi></mrow><annotation encoding="application/x-tex">M=\varnothing</annotation></semantics></math>，闭性和有界性都直接成立，不需要取上述有限个半径的最小值。</p>
+</blockquote>
+<!-- unit: N-p1-11 -->
+<p><a id="s2-2"></a> ### 2.2 原稿反例：一般拓扑空间中的紧集未必闭</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>X</mi><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="false" form="postfix">}</mo><mo>,</mo><mspace width="2.0em"></mspace><mi>𝒯</mi><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mi>⌀</mi><mo>,</mo><mi>X</mi><mo>,</mo><mo stretchy="false" form="prefix">{</mo><mi>a</mi><mo stretchy="false" form="postfix">}</mo><mo stretchy="false" form="postfix">}</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+X=\{a,b\},\qquad\mathcal T=\{\varnothing,X,\{a\}\}.
+</annotation></semantics></math>
+原稿结论：<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mi>a</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{a\}</annotation></semantics></math>
+紧，是开集。</p>
+<!-- unit: N-p1-example-explain -->
+<blockquote>
+<p>[!info] 补充：反例的完整核验
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mi>a</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{a\}</annotation></semantics></math>
+的任意开覆盖必有一个成员含
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>，单取这一成员就是有限子覆盖，故
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mi>a</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{a\}</annotation></semantics></math>
+紧。它属于
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝒯</mi><annotation encoding="application/x-tex">\mathcal T</annotation></semantics></math>，所以开；但其补集
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mi>b</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{b\}</annotation></semantics></math>
+不在
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝒯</mi><annotation encoding="application/x-tex">\mathcal T</annotation></semantics></math>
+中，所以它不闭。此空间不是 Hausdorff：含
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>b</mi><annotation encoding="application/x-tex">b</annotation></semantics></math>
+的唯一开邻域是
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>，必与含
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>
+的开邻域相交。因此去掉分离性后，紧子集闭的结论确实会失效。</p>
+</blockquote>
+<!-- unit: N-compact-bounded-proof -->
+<p><a id="s2-3"></a> ### 2.3 补证：紧集必有界</p>
+<blockquote>
+<p>[!info] 补证：把有界性的论证置于调用前 若
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi><mo>=</mo><mi>⌀</mi></mrow><annotation encoding="application/x-tex">M=\varnothing</annotation></semantics></math>，结论成立。否则固定
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mo>*</mo></msub><mo>∈</mo><mi>M</mi></mrow><annotation encoding="application/x-tex">x_*\in M</annotation></semantics></math>，开球族
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mi>B</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>x</mi><mo>*</mo></msub><mo>,</mo><mi>k</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>:</mo><mi>k</mi><mo>∈</mo><msub><mi>ℕ</mi><mrow><mo>&gt;</mo><mn>0</mn></mrow></msub><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{B(x_*,k):k\in\mathbb N_{&gt;0}\}</annotation></semantics></math>
+覆盖
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>M</mi><annotation encoding="application/x-tex">M</annotation></semantics></math>。紧性给出有限子覆盖。取其中所用半径的最大值
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>，就有
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi><mo>⊂</mo><mi>B</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>x</mi><mo>*</mo></msub><mo>,</mo><mi>N</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">M\subset B(x_*,N)</annotation></semantics></math>，故
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>M</mi><annotation encoding="application/x-tex">M</annotation></semantics></math>
+有界。</p>
+</blockquote>
+<!-- unit: N-p2-02 -->
+<p><a id="s2-4"></a> ### 2.4 证明工具：紧空间的闭子集仍紧</p>
+<p>原稿括注：“闭[Q001]性”。原引理：在
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mi>X</mi><mo>,</mo><mi>τ</mi><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(X,\tau)</annotation></semantics></math>
+中，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>M</mi><annotation encoding="application/x-tex">M</annotation></semantics></math>
+紧，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>F</mi><annotation encoding="application/x-tex">F</annotation></semantics></math>
+是
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>M</mi><annotation encoding="application/x-tex">M</annotation></semantics></math>
+的闭子集，则
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>F</mi><annotation encoding="application/x-tex">F</annotation></semantics></math>
+紧。</p>
+<!-- unit: N-p2-closed-proof -->
+<blockquote>
+<p>[!info] 补证：闭子集引理 给定
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>F</mi><annotation encoding="application/x-tex">F</annotation></semantics></math>
+的相对开覆盖
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><msub><mi>U</mi><mi>α</mi></msub><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{U_\alpha\}</annotation></semantics></math>，可将各成员写为
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi><mo>∩</mo><msub><mi>V</mi><mi>α</mi></msub></mrow><annotation encoding="application/x-tex">F\cap V_\alpha</annotation></semantics></math>，其中
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>V</mi><mi>α</mi></msub><annotation encoding="application/x-tex">V_\alpha</annotation></semantics></math>
+在
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>M</mi><annotation encoding="application/x-tex">M</annotation></semantics></math>
+中开。因
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>F</mi><annotation encoding="application/x-tex">F</annotation></semantics></math>
+在
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>M</mi><annotation encoding="application/x-tex">M</annotation></semantics></math>
+中闭，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi><mo>\</mo><mi>F</mi></mrow><annotation encoding="application/x-tex">M\setminus F</annotation></semantics></math>
+在
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>M</mi><annotation encoding="application/x-tex">M</annotation></semantics></math>
+中开。于是
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><msub><mi>V</mi><mi>α</mi></msub><mo stretchy="false" form="postfix">}</mo><mo>∪</mo><mo stretchy="false" form="prefix">{</mo><mi>M</mi><mo>\</mo><mi>F</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{V_\alpha\}\cup\{M\setminus F\}</annotation></semantics></math>
+是紧空间
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>M</mi><annotation encoding="application/x-tex">M</annotation></semantics></math>
+的开覆盖。选出有限子覆盖后删去
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi><mo>\</mo><mi>F</mi></mrow><annotation encoding="application/x-tex">M\setminus F</annotation></semantics></math>，对应的有限个
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>U</mi><mi>α</mi></msub><annotation encoding="application/x-tex">U_\alpha</annotation></semantics></math>
+仍覆盖
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>F</mi><annotation encoding="application/x-tex">F</annotation></semantics></math>。
+这通常称为紧性的闭遗传性。原稿括注中间的两个字尚在独立识读记录 Q001
+中保留候选，不影响引理正文和证明。</p>
+</blockquote>
+<!-- unit: N-p1-05 -->
+<p><a id="s3"></a> ## 3. 原稿练习：欧氏空间中的 Heine–Borel 结论</p>
+<p><strong>题目。</strong>示出整个思路，在
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>ℝ</mi><mi>n</mi></msup><annotation encoding="application/x-tex">\mathbb R^n</annotation></semantics></math>
+中有界闭集
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>⇔</mo><annotation encoding="application/x-tex">\Longleftrightarrow</annotation></semantics></math>
+紧。</p>
+<!-- unit: N-p1-exercise-answer -->
+<p><a id="s3-1"></a> ### 3.1 完整解答：嵌套方块的公共点路线</p>
+<blockquote>
+<p>[!info] 补证：练习的完整解答 正向先证明闭长方体
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Q</mi><mo>⊂</mo><msup><mi>ℝ</mi><mi>n</mi></msup></mrow><annotation encoding="application/x-tex">Q\subset\mathbb R^n</annotation></semantics></math>
+紧。若有开覆盖没有有限子覆盖，将
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Q</mi><annotation encoding="application/x-tex">Q</annotation></semantics></math>
+每条边二等分；在所得有限个小长方体中，至少一个仍不能被有限个覆盖成员盖住。递归得到嵌套闭长方体
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Q</mi><mn>1</mn></msub><mo>⊃</mo><msub><mi>Q</mi><mn>2</mn></msub><mo>⊃</mo><mi>⋯</mi></mrow><annotation encoding="application/x-tex">Q_1\supset Q_2\supset\cdots</annotation></semantics></math>，其直径趋于零。每个坐标区间的端点单调且有界，故存在唯一公共点
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∈</mo><msub><mo>⋂</mo><mi>k</mi></msub><msub><mi>Q</mi><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">x\in\bigcap_kQ_k</annotation></semantics></math>。取一个覆盖成员
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>U</mi><annotation encoding="application/x-tex">U</annotation></semantics></math>
+含
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>，由开性存在
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ε</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\varepsilon&gt;0</annotation></semantics></math>
+使
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>B</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>ε</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>⊂</mo><mi>U</mi></mrow><annotation encoding="application/x-tex">B(x,\varepsilon)\subset U</annotation></semantics></math>。当
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>k</mi><annotation encoding="application/x-tex">k</annotation></semantics></math>
+足够大，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>diam</mo><msub><mi>Q</mi><mi>k</mi></msub><mo>&lt;</mo><mi>ε</mi></mrow><annotation encoding="application/x-tex">\operatorname{diam}Q_k&lt;\varepsilon</annotation></semantics></math>，且
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∈</mo><msub><mi>Q</mi><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">x\in Q_k</annotation></semantics></math>，故
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Q</mi><mi>k</mi></msub><mo>⊂</mo><mi>U</mi></mrow><annotation encoding="application/x-tex">Q_k\subset U</annotation></semantics></math>，与选择矛盾。
+现在设
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi><mo>⊂</mo><msup><mi>ℝ</mi><mi>n</mi></msup></mrow><annotation encoding="application/x-tex">F\subset\mathbb R^n</annotation></semantics></math>
+有界且闭。选闭长方体
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Q</mi><annotation encoding="application/x-tex">Q</annotation></semantics></math>
+包含
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>F</mi><annotation encoding="application/x-tex">F</annotation></semantics></math>。给
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>F</mi><annotation encoding="application/x-tex">F</annotation></semantics></math>
+的任意开覆盖补上开集
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>ℝ</mi><mi>n</mi></msup><mo>\</mo><mi>F</mi></mrow><annotation encoding="application/x-tex">\mathbb R^n\setminus F</annotation></semantics></math>，就成为
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Q</mi><annotation encoding="application/x-tex">Q</annotation></semantics></math>
+的开覆盖。从中取有限子覆盖，删去补上的开集后，剩余成员仍覆盖
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>F</mi><annotation encoding="application/x-tex">F</annotation></semantics></math>，故
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>F</mi><annotation encoding="application/x-tex">F</annotation></semantics></math>
+紧。 反向的闭性已由 §2.1 证明。证明有界性：若
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi><mo>≠</mo><mi>⌀</mi></mrow><annotation encoding="application/x-tex">F\ne\varnothing</annotation></semantics></math>，固定
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mn>0</mn></msub><mo>∈</mo><mi>F</mi></mrow><annotation encoding="application/x-tex">x_0\in F</annotation></semantics></math>。开球族
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mi>B</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo>,</mo><mi>k</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>:</mo><mi>k</mi><mo>∈</mo><msub><mi>ℕ</mi><mrow><mo>&gt;</mo><mn>0</mn></mrow></msub><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{B(x_0,k):k\in\mathbb N_{&gt;0}\}</annotation></semantics></math>
+覆盖
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>F</mi><annotation encoding="application/x-tex">F</annotation></semantics></math>，紧性给出有限子覆盖，取所用整数的最大值
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>，即得
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi><mo>⊂</mo><mi>B</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo>,</mo><mi>N</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">F\subset B(x_0,N)</annotation></semantics></math>。空集的情形直接成立。</p>
+</blockquote>
+<!-- unit: N-p2-01 -->
+<p><a id="s3-2"></a> ### 3.2 原稿的等价关系提要</p>
+<p>原稿写：“有限性：iff 列紧
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>⇔</mo><annotation encoding="application/x-tex">\Longleftrightarrow</annotation></semantics></math>
+闭集有界。可以定义有限性（某些教材）。”</p>
+<!-- unit: N-p2-scope -->
+<blockquote>
+<p>[!info] 补充：提要的适用范围
+此处保留原稿“有限性”的用词；结合本页后面的 Heine–Borel
+定理，这一提要讨论的是有限子覆盖所定义的紧性。对于
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>ℝ</mi><mi>n</mi></msup><annotation encoding="application/x-tex">\mathbb R^n</annotation></semantics></math>
+的子集，紧、列紧、有界闭三者等价。在一般度量空间中，紧与列紧等价，但“有界闭”不能单独推出紧；例如无限集合配离散度量
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">d(x,y)=1</annotation></semantics></math>（<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>≠</mo><mi>y</mi></mrow><annotation encoding="application/x-tex">x\ne y</annotation></semantics></math>），整个空间有界且闭，单点开集组成的覆盖却没有有限子覆盖。</p>
+</blockquote>
+<!-- unit: N-sequential-equivalence-proof -->
+<blockquote>
+<p>[!info] 补证：度量空间中紧与列紧等价
+列紧指每个点列都有收敛到空间内某点的子列。 <strong>紧
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>⇒</mo><annotation encoding="application/x-tex">\Rightarrow</annotation></semantics></math>
+列紧。</strong>给定点列
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>x</mi><mi>n</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(x_n)</annotation></semantics></math>。若每一点都有一个只含有限多个点列指标的邻域，紧性选出的有限子覆盖就只能包含有限多个指标，与点列有无限多个指标矛盾。所以存在
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>，使每个
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>B</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>,</mo><mn>1</mn><mi>/</mi><mi>k</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">B(x,1/k)</annotation></semantics></math>
+都含有无限多个点列指标。可递归选
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>n</mi><mn>1</mn></msub><mo>&lt;</mo><msub><mi>n</mi><mn>2</mn></msub><mo>&lt;</mo><mi>⋯</mi></mrow><annotation encoding="application/x-tex">n_1&lt;n_2&lt;\cdots</annotation></semantics></math>
+且
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><msub><mi>n</mi><mi>k</mi></msub></msub><mo>∈</mo><mi>B</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>,</mo><mn>1</mn><mi>/</mi><mi>k</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">x_{n_k}\in B(x,1/k)</annotation></semantics></math>，从而
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><msub><mi>n</mi><mi>k</mi></msub></msub><mo>→</mo><mi>x</mi></mrow><annotation encoding="application/x-tex">x_{n_k}\to x</annotation></semantics></math>。
+<strong>列紧
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>⇒</mo><annotation encoding="application/x-tex">\Rightarrow</annotation></semantics></math>
+紧。</strong>先证对每个
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ε</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\varepsilon&gt;0</annotation></semantics></math>
+有有限个半径
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>ε</mi><annotation encoding="application/x-tex">\varepsilon</annotation></semantics></math>
+的球覆盖空间，否则可递归选点，使任意两点的距离至少为
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>ε</mi><annotation encoding="application/x-tex">\varepsilon</annotation></semantics></math>，这种点列没有收敛子列，矛盾。
+再给定任意开覆盖
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝒰</mi><annotation encoding="application/x-tex">\mathcal U</annotation></semantics></math>，证明存在
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>δ</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\delta&gt;0</annotation></semantics></math>，使每个球
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>B</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>δ</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">B(x,\delta)</annotation></semantics></math>
+都包含于某个覆盖成员。如果不存在，选
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>x</mi><mi>n</mi></msub><annotation encoding="application/x-tex">x_n</annotation></semantics></math>
+使
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>B</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>x</mi><mi>n</mi></msub><mo>,</mo><mn>1</mn><mi>/</mi><mi>n</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">B(x_n,1/n)</annotation></semantics></math>
+不包含于任何成员。列紧给出
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><msub><mi>n</mi><mi>k</mi></msub></msub><mo>→</mo><mi>x</mi></mrow><annotation encoding="application/x-tex">x_{n_k}\to x</annotation></semantics></math>；取
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>U</mi><mo>∈</mo><mi>𝒰</mi></mrow><annotation encoding="application/x-tex">U\in\mathcal U</annotation></semantics></math>
+含
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>，再取
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">r&gt;0</annotation></semantics></math>
+使
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>B</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>r</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>⊂</mo><mi>U</mi></mrow><annotation encoding="application/x-tex">B(x,r)\subset U</annotation></semantics></math>。当
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>k</mi><annotation encoding="application/x-tex">k</annotation></semantics></math>
+足够大时，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>x</mi><msub><mi>n</mi><mi>k</mi></msub></msub><mo>,</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>&lt;</mo><mi>r</mi><mi>/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">d(x_{n_k},x)&lt;r/2</annotation></semantics></math>
+且
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mi>/</mi><msub><mi>n</mi><mi>k</mi></msub><mo>&lt;</mo><mi>r</mi><mi>/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">1/n_k&lt;r/2</annotation></semantics></math>，便有
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>B</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>x</mi><msub><mi>n</mi><mi>k</mi></msub></msub><mo>,</mo><mn>1</mn><mi>/</mi><msub><mi>n</mi><mi>k</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>⊂</mo><mi>U</mi></mrow><annotation encoding="application/x-tex">B(x_{n_k},1/n_k)\subset U</annotation></semantics></math>，矛盾。
+最后用第一步选有限个半径
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>δ</mi><annotation encoding="application/x-tex">\delta</annotation></semantics></math>
+的球覆盖空间，每个球都包含于一个覆盖成员，故取出有限子覆盖。上述球和开集均可理解为空间自身或给定子空间中的球和开集。</p>
+</blockquote>
+<!-- unit: N-bw-tool -->
+<p><a id="s3-3"></a> ### 3.3 子列工具：有限维 Bolzano–Weierstrass
+定理</p>
+<blockquote>
+<p>[!info] 补证：有界点列有收敛子列
+一维情形中，把含有界数列所有项的闭区间二等分，选一个含无限多个指标的闭半区间；持续二分，得到嵌套闭区间
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>I</mi><mi>k</mi></msub><mo>=</mo><mrow><mo stretchy="true" form="prefix">[</mo><msub><mi>a</mi><mi>k</mi></msub><mo>,</mo><msub><mi>b</mi><mi>k</mi></msub><mo stretchy="true" form="postfix">]</mo></mrow></mrow><annotation encoding="application/x-tex">I_k=[a_k,b_k]</annotation></semantics></math>，各含无限多个点列指标，长度趋于零。
+由实数完备性，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><msub><mo>sup</mo><mi>k</mi></msub><msub><mi>a</mi><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">x=\sup_k a_k</annotation></semantics></math>
+存在。对每个固定
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>k</mi><annotation encoding="application/x-tex">k</annotation></semantics></math>，所有左端点都不超过
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>b</mi><mi>k</mi></msub><annotation encoding="application/x-tex">b_k</annotation></semantics></math>，故
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>k</mi></msub><mo>≤</mo><mi>x</mi><mo>≤</mo><msub><mi>b</mi><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">a_k\le x\le b_k</annotation></semantics></math>，于是
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∈</mo><msub><mo>⋂</mo><mi>k</mi></msub><msub><mi>I</mi><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">x\in\bigcap_k I_k</annotation></semantics></math>；长度趋零保证公共点唯一。递归选递增指标
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>n</mi><mi>k</mi></msub><annotation encoding="application/x-tex">n_k</annotation></semantics></math>，使第
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>n</mi><mi>k</mi></msub><annotation encoding="application/x-tex">n_k</annotation></semantics></math>
+项落在
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>I</mi><mi>k</mi></msub><annotation encoding="application/x-tex">I_k</annotation></semantics></math>
+中，便有
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">|</mo><msub><mi>x</mi><msub><mi>n</mi><mi>k</mi></msub></msub><mo>−</mo><mi>x</mi><mo stretchy="true" form="postfix">|</mo></mrow><mo>≤</mo><msub><mi>b</mi><mi>k</mi></msub><mo>−</mo><msub><mi>a</mi><mi>k</mi></msub><mo>→</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">|x_{n_k}-x|\le b_k-a_k\to0</annotation></semantics></math>。
+对
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>ℝ</mi><mi>n</mi></msup><annotation encoding="application/x-tex">\mathbb R^n</annotation></semantics></math>
+中的有界点列，先按第一坐标抽取收敛子列，再从此子列按第二坐标抽取子列，直到第
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>
+坐标。最后的子列每个坐标都收敛，因而在欧氏范数下收敛。该论证只用实数完备性和有限次抽列，不依赖
+Heine–Borel 定理。</p>
+</blockquote>
+<!-- unit: N-norm-equivalence-tool -->
+<blockquote>
+<p>[!info] 补充：题设若取任意范数 设
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="postfix">∥</mo><mi>⋅</mi><mo stretchy="false" form="postfix">∥</mo></mrow><annotation encoding="application/x-tex">\|\cdot\|</annotation></semantics></math>
+是
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>ℝ</mi><mi>n</mi></msup><annotation encoding="application/x-tex">\mathbb R^n</annotation></semantics></math>
+的任意范数，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>e</mi><mi>i</mi></msub><annotation encoding="application/x-tex">e_i</annotation></semantics></math>
+为标准基。由三角不等式与 Cauchy–Schwarz 不等式，
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="postfix">∥</mo><mi>x</mi><mo stretchy="false" form="postfix">∥</mo><mo>≤</mo><munderover><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></munderover><mrow><mo stretchy="true" form="prefix">|</mo><msub><mi>x</mi><mi>i</mi></msub><mo stretchy="true" form="postfix">|</mo></mrow><mo stretchy="false" form="postfix">∥</mo><msub><mi>e</mi><mi>i</mi></msub><mo stretchy="false" form="postfix">∥</mo><mo>≤</mo><mi>C</mi><mo stretchy="false" form="postfix">∥</mo><mi>x</mi><msub><mo stretchy="false" form="postfix">∥</mo><mn>2</mn></msub><mo>,</mo><mspace width="2.0em"></mspace><mi>C</mi><mo>=</mo><msup><mrow><mo stretchy="true" form="prefix">(</mo><munder><mo>∑</mo><mi>i</mi></munder><mo stretchy="false" form="postfix">∥</mo><msub><mi>e</mi><mi>i</mi></msub><msup><mo stretchy="false" form="postfix">∥</mo><mn>2</mn></msup><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mn>1</mn><mi>/</mi><mn>2</mn></mrow></msup><mi>.</mi></mrow><annotation encoding="application/x-tex">
+\|x\|\le\sum_{i=1}^n|x_i|\|e_i\|\le C\|x\|_2,
+\qquad C=\left(\sum_i\|e_i\|^2\right)^{1/2}.
+</annotation></semantics></math> 也存在
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>c</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">c&gt;0</annotation></semantics></math>
+使
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>c</mi><mo stretchy="false" form="postfix">∥</mo><mi>x</mi><msub><mo stretchy="false" form="postfix">∥</mo><mn>2</mn></msub><mo>≤</mo><mo stretchy="false" form="postfix">∥</mo><mi>x</mi><mo stretchy="false" form="postfix">∥</mo></mrow><annotation encoding="application/x-tex">c\|x\|_2\le\|x\|</annotation></semantics></math>。否则可取
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="postfix">∥</mo><msub><mi>x</mi><mi>k</mi></msub><msub><mo stretchy="false" form="postfix">∥</mo><mn>2</mn></msub><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\|x_k\|_2=1</annotation></semantics></math>
+而
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="postfix">∥</mo><msub><mi>x</mi><mi>k</mi></msub><mo stretchy="false" form="postfix">∥</mo><mo>→</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\|x_k\|\to0</annotation></semantics></math>；刚证明的
+Bolzano–Weierstrass 定理给出欧氏收敛子列
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><msub><mi>k</mi><mi>j</mi></msub></msub><mo>→</mo><mi>x</mi></mrow><annotation encoding="application/x-tex">x_{k_j}\to x</annotation></semantics></math>，其中
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="postfix">∥</mo><mi>x</mi><msub><mo stretchy="false" form="postfix">∥</mo><mn>2</mn></msub><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\|x\|_2=1</annotation></semantics></math>。上界估计给出
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="postfix">∥</mo><msub><mi>x</mi><msub><mi>k</mi><mi>j</mi></msub></msub><mo>−</mo><mi>x</mi><mo stretchy="false" form="postfix">∥</mo><mo>→</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\|x_{k_j}-x\|\to0</annotation></semantics></math>，再由反三角不等式得
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="postfix">∥</mo><mi>x</mi><mo stretchy="false" form="postfix">∥</mo><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\|x\|=0</annotation></semantics></math>，矛盾。
+所以两种范数给出相同的开集、收敛、闭集和有界性，紧性结论也相同。原稿直径公式中的
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msqrt><mi>n</mi></msqrt><annotation encoding="application/x-tex">\sqrt n</annotation></semantics></math>
+对应欧氏范数；任意范数时可再乘上常数
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>C</mi><annotation encoding="application/x-tex">C</annotation></semantics></math>。</p>
+</blockquote>
+<!-- unit: N-p2-03 -->
+<p><a id="s3-4"></a> ### 3.4 原稿路线：二分闭方块证明 Heine–Borel</p>
+<p>原稿标题拼作“Hine Borel”。设
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi><mo>⊂</mo><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>ℝ</mi><mi>n</mi></msup><mo>,</mo><mo stretchy="false" form="postfix">∥</mo><mi>⋅</mi><mo stretchy="false" form="postfix">∥</mo><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">M\subset(\mathbb R^n,\|\cdot\|)</annotation></semantics></math>，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>M</mi><annotation encoding="application/x-tex">M</annotation></semantics></math>
+有界且闭，则
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>M</mi><annotation encoding="application/x-tex">M</annotation></semantics></math>
+紧。</p>
+<!-- unit: N-p2-04 -->
+<p>原稿从有界性开始：<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∃</mo><mi>a</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\exists a&gt;0</annotation></semantics></math>，使
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi><mo>⊂</mo><msup><mrow><mo stretchy="true" form="prefix">[</mo><mi>−</mi><mi>a</mi><mo>,</mo><mi>a</mi><mo stretchy="true" form="postfix">]</mo></mrow><mtext mathvariant="normal">[Q002]</mtext></msup></mrow><annotation encoding="application/x-tex">M\subset[-a,a]^{\text{[Q002]}}</annotation></semantics></math>。这里指数笔形不清，留中性编号；下一行明确出现指数
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>。</p>
+<!-- unit: N-p2-05 -->
+<p>原稿下一行写“仅证
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">[</mo><mi>−</mi><mi>a</mi><mo>,</mo><mi>a</mi><msup><mo stretchy="false" form="postfix">)</mo><mi>n</mi></msup></mrow><annotation encoding="application/x-tex">[-a,a)^n</annotation></semantics></math>
+是紧的”，右端点的括号形状保留如原图。</p>
+<!-- unit: N-p2-cube-exponent -->
+<blockquote>
+<p>[!info] 上下文恢复：方块的指数 原稿上一行的指数据
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi><mo>⊂</mo><msup><mi>ℝ</mi><mi>n</mi></msup></mrow><annotation encoding="application/x-tex">M\subset\mathbb R^n</annotation></semantics></math>、后续
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mn>2</mn><mi>n</mi></msup><annotation encoding="application/x-tex">2^n</annotation></semantics></math>
+等分及直径公式恢复为
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>；这属于数学语境恢复，不能单凭证明正确就判定原笔画。</p>
+</blockquote>
+<!-- unit: N-p2-cube-correction -->
+<blockquote>
+<p>[!info] 纠错：必须使用闭方块 此证明应取
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Q</mi><mn>0</mn></msub><mo>=</mo><msup><mrow><mo stretchy="true" form="prefix">[</mo><mi>−</mi><mi>a</mi><mo>,</mo><mi>a</mi><mo stretchy="true" form="postfix">]</mo></mrow><mi>n</mi></msup></mrow><annotation encoding="application/x-tex">Q_0=[-a,a]^n</annotation></semantics></math>。
+若按半开方块
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">[</mo><mi>−</mi><mi>a</mi><mo>,</mo><mi>a</mi><msup><mo stretchy="false" form="postfix">)</mo><mi>n</mi></msup></mrow><annotation encoding="application/x-tex">[-a,a)^n</annotation></semantics></math>
+理解，则它不是紧集：在第一坐标中取趋向被排除端点
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>
+的点列，其极限不属于该集合。后面使用嵌套闭区间的步骤也要求各
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>Q</mi><mi>m</mi></msub><annotation encoding="application/x-tex">Q_m</annotation></semantics></math>
+闭。因此学习时统一采用闭方块，保真转写另存原括号形状。 由 §2.4，只需证明
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>Q</mi><mn>0</mn></msub><annotation encoding="application/x-tex">Q_0</annotation></semantics></math>
+紧，因为
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>M</mi><annotation encoding="application/x-tex">M</annotation></semantics></math>
+是
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>Q</mi><mn>0</mn></msub><annotation encoding="application/x-tex">Q_0</annotation></semantics></math>
+的相对闭子集。直径中
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msqrt><mi>n</mi></msqrt><annotation encoding="application/x-tex">\sqrt n</annotation></semantics></math>
+的常数对应欧氏范数；若题设范数任意，须使用有限维范数等价或相应的常数估计。</p>
+</blockquote>
+<!-- unit: N-p2-06 -->
+<p>任取开覆盖
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><msub><mi>G</mi><mi>i</mi></msub><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{G_i\}</annotation></semantics></math>。反设
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>Q</mi><mn>0</mn></msub><annotation encoding="application/x-tex">Q_0</annotation></semantics></math>
+无有限子覆盖。</p>
+<!-- unit: N-p2-07 -->
+<p>将
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>Q</mi><mn>0</mn></msub><annotation encoding="application/x-tex">Q_0</annotation></semantics></math>
+等分成
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mn>2</mn><mi>n</mi></msup><annotation encoding="application/x-tex">2^n</annotation></semantics></math>
+个小方块，至少存在一个小方块仍无有限子覆盖。原稿此处将所取小方块记为
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>Q</mi><mi>m</mi></msub><annotation encoding="application/x-tex">Q_m</annotation></semantics></math>。</p>
+<!-- unit: N-p2-first-index -->
+<blockquote>
+<p>[!info] 纠错：首次细分的编号 为使递归编号连贯，第一次选择应记为
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>Q</mi><mn>1</mn></msub><annotation encoding="application/x-tex">Q_1</annotation></semantics></math>。若每个小方块都有有限子覆盖，把这有限多个有限族并起来就能覆盖
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>Q</mi><mn>0</mn></msub><annotation encoding="application/x-tex">Q_0</annotation></semantics></math>，与反设矛盾。</p>
+</blockquote>
+<!-- unit: N-p2-08 -->
+<p>归纳地，把
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>Q</mi><mi>m</mi></msub><annotation encoding="application/x-tex">Q_m</annotation></semantics></math>
+等分为
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mn>2</mn><mi>n</mi></msup><annotation encoding="application/x-tex">2^n</annotation></semantics></math>
+个小方块，再选其中一个无有限子覆盖的方块
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>Q</mi><mrow><mi>m</mi><mo>+</mo><mn>1</mn></mrow></msub><annotation encoding="application/x-tex">Q_{m+1}</annotation></semantics></math>。</p>
+<!-- unit: N-p2-09 -->
+<p>于是
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Q</mi><mn>0</mn></msub><mo>⊃</mo><msub><mi>Q</mi><mn>1</mn></msub><mo>⊃</mo><mi>⋯</mi><mo>⊃</mo><msub><mi>Q</mi><mi>m</mi></msub><mo>⊃</mo><msub><mi>Q</mi><mrow><mi>m</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>⊃</mo><mi>⋯</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
+Q_0\supset Q_1\supset\cdots\supset Q_m\supset Q_{m+1}\supset\cdots.
+</annotation></semantics></math></p>
+<!-- unit: N-p2-10 -->
+<p>且
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>diam</mo><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>Q</mi><mi>m</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>≤</mo><mfrac><mrow><mn>2</mn><mi>a</mi><msqrt><mi>n</mi></msqrt></mrow><msup><mn>2</mn><mi>m</mi></msup></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">
+\operatorname{diam}(Q_m)\leq\frac{2a\sqrt n}{2^m}.
+</annotation></semantics></math> 原稿证明接续下一物理页。</p>
+<!-- unit: N-p3-01 -->
+<p>原稿接续：在相邻方块的差集中选点，
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mrow><mi>m</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>∈</mo><msub><mi>Q</mi><mi>m</mi></msub><mo>\</mo><msub><mi>Q</mi><mrow><mi>m</mi><mo>+</mo><mn>1</mn></mrow></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">
+x_{m+1}\in Q_m\setminus Q_{m+1}.
+</annotation></semantics></math></p>
+<!-- unit: N-p3-02 -->
+<p>于是
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><msub><mi>x</mi><mi>m</mi></msub><mo stretchy="false" form="postfix">}</mo><mo>⊂</mo><msub><mi>Q</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">\{x_m\}\subset Q_0</annotation></semantics></math>。</p>
+<!-- unit: N-p3-03 -->
+<p>原稿再取收敛子列：
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><msub><mi>m</mi><mi>k</mi></msub></msub><mo>→</mo><msub><mi>x</mi><mn>0</mn></msub><mo>∈</mo><msup><mi>ℝ</mi><mi>n</mi></msup><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>x</mi><mn>0</mn></msub><mo>∈</mo><msub><mi>Q</mi><mn>0</mn></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">
+x_{m_k}\longrightarrow x_0\in\mathbb R^n,
+\qquad x_0\in Q_0.
+</annotation></semantics></math></p>
+<!-- unit: N-p3-subsequence-explain -->
+<blockquote>
+<p>[!info] 补充：为何能取子列、为何极限留在方块中 方块
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>Q</mi><mn>0</mn></msub><annotation encoding="application/x-tex">Q_0</annotation></semantics></math>
+有界，所以点列有界；有限维 Bolzano–Weierstrass
+定理给出收敛子列。<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>Q</mi><mn>0</mn></msub><annotation encoding="application/x-tex">Q_0</annotation></semantics></math>
+是闭集，故子列极限仍在
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>Q</mi><mn>0</mn></msub><annotation encoding="application/x-tex">Q_0</annotation></semantics></math>
+中。这里使用的是有界点列的子列定理，尚未把“闭有界集紧”作为前提，避免循环论证。</p>
+</blockquote>
+<!-- unit: N-p3-04 -->
+<p>原稿写
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mn>0</mn></msub><mo>∈</mo><mi>Q</mi><mo>⊂</mo><msub><mo>⋃</mo><mrow><mi>λ</mi><mo>∈</mo><mi>Λ</mi></mrow></msub><msub><mi>G</mi><mi>λ</mi></msub></mrow><annotation encoding="application/x-tex">x_0\in Q\subset\bigcup_{\lambda\in\Lambda}G_\lambda</annotation></semantics></math>，此处
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Q</mi><annotation encoding="application/x-tex">Q</annotation></semantics></math>
+承接初始方块
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>Q</mi><mn>0</mn></msub><annotation encoding="application/x-tex">Q_0</annotation></semantics></math>。</p>
+<!-- unit: N-p3-05 -->
+<p>从而存在
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>λ</mi><mn>0</mn></msub><annotation encoding="application/x-tex">\lambda_0</annotation></semantics></math>
+使
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mn>0</mn></msub><mo>∈</mo><msub><mi>G</mi><msub><mi>λ</mi><mn>0</mn></msub></msub></mrow><annotation encoding="application/x-tex">x_0\in G_{\lambda_0}</annotation></semantics></math>（原行在
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>
+处省略下标
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>0</mn><annotation encoding="application/x-tex">0</annotation></semantics></math>）。</p>
+<!-- unit: N-p3-06 -->
+<p>由覆盖成员的开性，存在
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>δ</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\delta&gt;0</annotation></semantics></math>，使
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>B</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo>,</mo><mi>δ</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>⊂</mo><msub><mi>G</mi><msub><mi>λ</mi><mn>0</mn></msub></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">
+B(x_0,\delta)\subset G_{\lambda_0}.
+</annotation></semantics></math></p>
+<!-- unit: N-p3-07 -->
+<p>原稿继续写：当
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>k</mi><annotation encoding="application/x-tex">k</annotation></semantics></math>
+充分大时，
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="postfix">∥</mo><msub><mi>x</mi><msub><mi>m</mi><mi>k</mi></msub></msub><mo>−</mo><msub><mi>x</mi><mn>0</mn></msub><mo stretchy="false" form="postfix">∥</mo><mo>&lt;</mo><mfrac><mi>δ</mi><mn>2</mn></mfrac><mo>,</mo><mspace width="2.0em"></mspace><mo>diam</mo><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>Q</mi><msub><mi>m</mi><mi>k</mi></msub></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>&lt;</mo><mfrac><mi>δ</mi><mn>2</mn></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">
+\|x_{m_k}-x_0\|&lt;\frac\delta2,
+\qquad\operatorname{diam}(Q_{m_k})&lt;\frac\delta2.
+</annotation></semantics></math></p>
+<!-- unit: N-p3-08 -->
+<p>原稿末行：<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Q</mi><msub><mi>m</mi><mi>k</mi></msub></msub><mo>⊂</mo><mi>B</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo>,</mo><mi>δ</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>⊂</mo><msub><mi>G</mi><msub><mi>λ</mi><mn>0</mn></msub></msub></mrow><annotation encoding="application/x-tex">Q_{m_k}\subset B(x_0,\delta)\subset G_{\lambda_0}</annotation></semantics></math>。</p>
+<!-- unit: N-p3-index-repair -->
+<blockquote>
+<p>[!info] 纠错与补证：下标错位及矛盾的完整结束 按前面所选
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mrow><mi>m</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>∈</mo><msub><mi>Q</mi><mi>m</mi></msub><mo>\</mo><msub><mi>Q</mi><mrow><mi>m</mi><mo>+</mo><mn>1</mn></mrow></msub></mrow><annotation encoding="application/x-tex">x_{m+1}\in Q_m\setminus Q_{m+1}</annotation></semantics></math>，只能保证
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><msub><mi>m</mi><mi>k</mi></msub></msub><mo>∈</mo><msub><mi>Q</mi><mrow><msub><mi>m</mi><mi>k</mi></msub><mo>−</mo><mn>1</mn></mrow></msub></mrow><annotation encoding="application/x-tex">x_{m_k}\in Q_{m_k-1}</annotation></semantics></math>，原稿末行不能直接用
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>Q</mi><msub><mi>m</mi><mi>k</mi></msub></msub><annotation encoding="application/x-tex">Q_{m_k}</annotation></semantics></math>
+的直径控制它与方块内各点的距离。保留原选点路线时，应选
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>k</mi><annotation encoding="application/x-tex">k</annotation></semantics></math>
+充分大，使
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="postfix">∥</mo><msub><mi>x</mi><msub><mi>m</mi><mi>k</mi></msub></msub><mo>−</mo><msub><mi>x</mi><mn>0</mn></msub><mo stretchy="false" form="postfix">∥</mo><mo>&lt;</mo><mfrac><mi>δ</mi><mn>2</mn></mfrac><mo>,</mo><mspace width="2.0em"></mspace><mo>diam</mo><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>Q</mi><mrow><msub><mi>m</mi><mi>k</mi></msub><mo>−</mo><mn>1</mn></mrow></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>&lt;</mo><mfrac><mi>δ</mi><mn>2</mn></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">
+\|x_{m_k}-x_0\|&lt;\frac\delta2,
+\qquad\operatorname{diam}(Q_{m_k-1})&lt;\frac\delta2.
+</annotation></semantics></math> 对任意
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mo>∈</mo><msub><mi>Q</mi><mrow><msub><mi>m</mi><mi>k</mi></msub><mo>−</mo><mn>1</mn></mrow></msub></mrow><annotation encoding="application/x-tex">y\in Q_{m_k-1}</annotation></semantics></math>，由三角不等式，
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="postfix">∥</mo><mi>y</mi><mo>−</mo><msub><mi>x</mi><mn>0</mn></msub><mo stretchy="false" form="postfix">∥</mo><mo>≤</mo><mo stretchy="false" form="postfix">∥</mo><mi>y</mi><mo>−</mo><msub><mi>x</mi><msub><mi>m</mi><mi>k</mi></msub></msub><mo stretchy="false" form="postfix">∥</mo><mi>+</mi><mo stretchy="false" form="postfix">∥</mo><msub><mi>x</mi><msub><mi>m</mi><mi>k</mi></msub></msub><mo>−</mo><msub><mi>x</mi><mn>0</mn></msub><mo stretchy="false" form="postfix">∥</mo><mo>≤</mo><mo>diam</mo><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>Q</mi><mrow><msub><mi>m</mi><mi>k</mi></msub><mo>−</mo><mn>1</mn></mrow></msub><mo stretchy="true" form="postfix">)</mo></mrow><mi>+</mi><mo stretchy="false" form="postfix">∥</mo><msub><mi>x</mi><msub><mi>m</mi><mi>k</mi></msub></msub><mo>−</mo><msub><mi>x</mi><mn>0</mn></msub><mo stretchy="false" form="postfix">∥</mo><mo>&lt;</mo><mi>δ</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
+\|y-x_0\|\le\|y-x_{m_k}\|+\|x_{m_k}-x_0\|
+\le\operatorname{diam}(Q_{m_k-1})+\|x_{m_k}-x_0\|&lt;\delta.
+</annotation></semantics></math> 所以
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Q</mi><mrow><msub><mi>m</mi><mi>k</mi></msub><mo>−</mo><mn>1</mn></mrow></msub><mo>⊂</mo><mi>B</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo>,</mo><mi>δ</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>⊂</mo><msub><mi>G</mi><msub><mi>λ</mi><mn>0</mn></msub></msub></mrow><annotation encoding="application/x-tex">Q_{m_k-1}\subset B(x_0,\delta)\subset G_{\lambda_0}</annotation></semantics></math>。一个覆盖成员就盖住了
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>Q</mi><mrow><msub><mi>m</mi><mi>k</mi></msub><mo>−</mo><mn>1</mn></mrow></msub><annotation encoding="application/x-tex">Q_{m_k-1}</annotation></semantics></math>，与它无有限子覆盖的选择矛盾。故
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>Q</mi><mn>0</mn></msub><annotation encoding="application/x-tex">Q_0</annotation></semantics></math>
+紧，再由闭子集引理得
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>M</mi><annotation encoding="application/x-tex">M</annotation></semantics></math>
+紧。 另一种等价修订是从开始直接取
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mi>m</mi></msub><mo>∈</mo><msub><mi>Q</mi><mi>m</mi></msub></mrow><annotation encoding="application/x-tex">x_m\in Q_m</annotation></semantics></math>，这样原稿末尾的
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>Q</mi><msub><mi>m</mi><mi>k</mi></msub></msub><annotation encoding="application/x-tex">Q_{m_k}</annotation></semantics></math>
+下标可以保留。两种修订都只修复下标，不改变“二分—子列—开球”的证明路线。</p>
+</blockquote>
+<!-- unit: N-derived-heading -->
+<p><a id="s4"></a> ## 4. 导集、自密集与孤立点</p>
+<!-- unit: N-derived-definition -->
+<blockquote>
+<p>[!info] 补充：导集与孤立点的记号 以下在度量空间
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mi>X</mi><mo>,</mo><mi>d</mi><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(X,d)</annotation></semantics></math>
+内讨论。<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><mi>′</mi></mrow><annotation encoding="application/x-tex">E&#39;</annotation></semantics></math>
+表示
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>E</mi><annotation encoding="application/x-tex">E</annotation></semantics></math>
+的导集：点
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>
+属于
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><mi>′</mi></mrow><annotation encoding="application/x-tex">E&#39;</annotation></semantics></math>，是指每个去心球
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>B</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>r</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>\</mo><mo stretchy="false" form="prefix">{</mo><mi>x</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">B(x,r)\setminus\{x\}</annotation></semantics></math>
+都与
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>E</mi><annotation encoding="application/x-tex">E</annotation></semantics></math>
+相交。<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>Iso</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>E</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\operatorname{Iso}(E)</annotation></semantics></math>
+表示
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>E</mi><annotation encoding="application/x-tex">E</annotation></semantics></math>
+的孤立点集合，即满足某个
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">r&gt;0</annotation></semantics></math>
+使
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>B</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>r</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>∩</mo><mi>E</mi><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mi>x</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">B(x,r)\cap E=\{x\}</annotation></semantics></math>
+的点
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∈</mo><mi>E</mi></mrow><annotation encoding="application/x-tex">x\in E</annotation></semantics></math>。<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mover><mi>E</mi><mo accent="true">¯</mo></mover><annotation encoding="application/x-tex">\overline E</annotation></semantics></math>
+是闭包，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>E</mi><mo>∘</mo></msup><annotation encoding="application/x-tex">E^\circ</annotation></semantics></math>
+是内部，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>∂</mi><mi>E</mi></mrow><annotation encoding="application/x-tex">\partial E</annotation></semantics></math>
+是边界。</p>
+</blockquote>
+<!-- unit: N-p3-09 -->
+<p><strong>原定义与判别。</strong>自密：<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><mo>⊂</mo><mi>E</mi><mi>′</mi></mrow><annotation encoding="application/x-tex">E\subset E&#39;</annotation></semantics></math>。闭集的判别：<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><mi>′</mi><mo>⊂</mo><mi>E</mi></mrow><annotation encoding="application/x-tex">E&#39;\subset E</annotation></semantics></math>。</p>
+<!-- unit: N-derived-basic-proof -->
+<blockquote>
+<p>[!info] 补证：闭包分解与闭集判别 若
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∈</mo><mover><mi>E</mi><mo accent="true">¯</mo></mover><mo>\</mo><mi>E</mi></mrow><annotation encoding="application/x-tex">x\in\overline E\setminus E</annotation></semantics></math>，则每个球都与
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>E</mi><annotation encoding="application/x-tex">E</annotation></semantics></math>
+相交，而
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∉</mo><mi>E</mi></mrow><annotation encoding="application/x-tex">x\notin E</annotation></semantics></math>，所以
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∈</mo><mi>E</mi><mi>′</mi></mrow><annotation encoding="application/x-tex">x\in E&#39;</annotation></semantics></math>。反之，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><mo>⊂</mo><mover><mi>E</mi><mo accent="true">¯</mo></mover></mrow><annotation encoding="application/x-tex">E\subset\overline E</annotation></semantics></math>
+且
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><mi>′</mi><mo>⊂</mo><mover><mi>E</mi><mo accent="true">¯</mo></mover></mrow><annotation encoding="application/x-tex">E&#39;\subset\overline E</annotation></semantics></math>，于是
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi>E</mi><mo accent="true">¯</mo></mover><mo>=</mo><mi>E</mi><mo>∪</mo><mi>E</mi><mi>′</mi></mrow><annotation encoding="application/x-tex">\overline E=E\cup E&#39;</annotation></semantics></math>。因此
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>E</mi><annotation encoding="application/x-tex">E</annotation></semantics></math>
+闭当且仅当
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi>E</mi><mo accent="true">¯</mo></mover><mo>=</mo><mi>E</mi></mrow><annotation encoding="application/x-tex">\overline E=E</annotation></semantics></math>，也当且仅当
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><mi>′</mi><mo>⊂</mo><mi>E</mi></mrow><annotation encoding="application/x-tex">E&#39;\subset E</annotation></semantics></math>。
+对
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∈</mo><mi>E</mi></mrow><annotation encoding="application/x-tex">x\in E</annotation></semantics></math>，不是聚点就意味着存在某个球只在
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>
+处与
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>E</mi><annotation encoding="application/x-tex">E</annotation></semantics></math>
+相交，即
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>
+是孤立点。因此
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><mo>\</mo><mi>E</mi><mi>′</mi><mo>=</mo><mo>Iso</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>E</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">E\setminus E&#39;=\operatorname{Iso}(E)</annotation></semantics></math>，并且
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi>E</mi><mo accent="true">¯</mo></mover><mo>=</mo><mi>E</mi><mi>′</mi><mover><mo>∪</mo><mo accent="true">̇</mo></mover><mo>Iso</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>E</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">
+\overline E=E&#39;\mathbin{\dot\cup}\operatorname{Iso}(E).
+</annotation></semantics></math>
+点上方的点并符号表示不交并。这一公式即原稿浅色旁注所用的分解。</p>
+</blockquote>
+<!-- unit: N-p3-12 -->
+<p><strong>原等价命题。</strong>对于度量空间中的集合
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>E</mi><annotation encoding="application/x-tex">E</annotation></semantics></math>，
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> 自密</mtext></mrow><mspace width="1.0em"></mspace><mo>⇔</mo><mspace width="1.0em"></mspace><mo>Iso</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>E</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>⌀</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
+E\text{ 自密}\quad\Longleftrightarrow\quad\operatorname{Iso}(E)=\varnothing.
+</annotation></semantics></math></p>
+<!-- unit: N-p3-13 -->
+<p>原稿的
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>⇒</mo><annotation encoding="application/x-tex">\Rightarrow</annotation></semantics></math>
+浅色旁证写：<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi>E</mi><mo accent="true">¯</mo></mover><mo>=</mo><mi>E</mi><mi>′</mi><mover><mo>∪</mo><mo accent="true">̇</mo></mover><mo>Iso</mo></mrow><annotation encoding="application/x-tex">\overline E=E&#39;\mathbin{\dot\cup}\operatorname{Iso}</annotation></semantics></math>，并记“<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>Iso</mo><mo>∉</mo><mi>E</mi><mi>′</mi></mrow><annotation encoding="application/x-tex">\operatorname{Iso}\notin E&#39;</annotation></semantics></math>”。</p>
+<!-- unit: N-p3-forward-repair -->
+<blockquote>
+<p>[!info] 说明与补证：孤立点集和导集不交
+原记号把集合与元素的“不属于”混用；准确写法是
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>Iso</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>E</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>∩</mo><mi>E</mi><mi>′</mi><mo>=</mo><mi>⌀</mi></mrow><annotation encoding="application/x-tex">\operatorname{Iso}(E)\cap E&#39;=\varnothing</annotation></semantics></math>。若
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>E</mi><annotation encoding="application/x-tex">E</annotation></semantics></math>
+自密，则
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><mo>⊂</mo><mi>E</mi><mi>′</mi></mrow><annotation encoding="application/x-tex">E\subset E&#39;</annotation></semantics></math>；又
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>Iso</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>E</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>⊂</mo><mi>E</mi></mrow><annotation encoding="application/x-tex">\operatorname{Iso}(E)\subset E</annotation></semantics></math>，因此孤立点集同时包含于
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><mi>′</mi></mrow><annotation encoding="application/x-tex">E&#39;</annotation></semantics></math>
+且与它不交，只能为空。</p>
+</blockquote>
+<!-- unit: N-p3-14 -->
+<p>原稿的
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>⇐</mo><annotation encoding="application/x-tex">\Leftarrow</annotation></semantics></math>
+浅色旁证写：
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><mi>′</mi><mo>=</mo><mover><mi>E</mi><mo accent="true">¯</mo></mover><mo>=</mo><mi>E</mi><mo>∪</mo><mi>E</mi><mi>′</mi><mspace width="1.0em"></mspace><mo>⇒</mo><mspace width="1.0em"></mspace><mi>E</mi><mo>⊂</mo><mi>E</mi><mi>′</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
+E&#39;=\overline E=E\cup E&#39;\quad\Rightarrow\quad E\subset E&#39;.
+</annotation></semantics></math></p>
+<!-- unit: N-p3-backward-explain -->
+<blockquote>
+<p>[!info] 补证：无孤立点蕴含自密 前提是
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>Iso</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>E</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>⌀</mi></mrow><annotation encoding="application/x-tex">\operatorname{Iso}(E)=\varnothing</annotation></semantics></math>。把它代入闭包的不交分解，得到
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi>E</mi><mo accent="true">¯</mo></mover><mo>=</mo><mi>E</mi><mi>′</mi></mrow><annotation encoding="application/x-tex">\overline E=E&#39;</annotation></semantics></math>；再由
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><mo>⊂</mo><mover><mi>E</mi><mo accent="true">¯</mo></mover></mrow><annotation encoding="application/x-tex">E\subset\overline E</annotation></semantics></math>
+得
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><mo>⊂</mo><mi>E</mi><mi>′</mi></mrow><annotation encoding="application/x-tex">E\subset E&#39;</annotation></semantics></math>。这正是原稿右向回推中省略的前提。</p>
+</blockquote>
+<!-- unit: N-p3-15 -->
+<p>原稿另外记：“前文证过（<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><mi>′</mi></mrow><annotation encoding="application/x-tex">E&#39;</annotation></semantics></math>
+是闭），（闭）<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>′</mi><mo>⊂</mo></mrow><annotation encoding="application/x-tex">&#39;\subset</annotation></semantics></math>（闭）”。</p>
+<!-- unit: N-derived-closed-proof -->
+<blockquote>
+<p>[!info] 补证：度量空间中导集是闭集 设
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∉</mo><mi>E</mi><mi>′</mi></mrow><annotation encoding="application/x-tex">x\notin E&#39;</annotation></semantics></math>。存在
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">r&gt;0</annotation></semantics></math>，使
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">(</mo><mi>B</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>r</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>\</mo><mo stretchy="false" form="prefix">{</mo><mi>x</mi><mo stretchy="false" form="postfix">}</mo><mo stretchy="true" form="postfix">)</mo></mrow><mo>∩</mo><mi>E</mi><mo>=</mo><mi>⌀</mi></mrow><annotation encoding="application/x-tex">(B(x,r)\setminus\{x\})\cap E=\varnothing</annotation></semantics></math>。若
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mo>∈</mo><mi>B</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>r</mi><mi>/</mi><mn>2</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">y\in B(x,r/2)</annotation></semantics></math>
+且
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mo>≠</mo><mi>x</mi></mrow><annotation encoding="application/x-tex">y\ne x</annotation></semantics></math>，可取
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>&lt;</mo><mi>ρ</mi><mo>&lt;</mo><mo>min</mo><mo stretchy="false" form="prefix">{</mo><mi>d</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo><mi>r</mi><mo>−</mo><mi>d</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">0&lt;\rho&lt;\min\{d(x,y),r-d(x,y)\}</annotation></semantics></math>。于是
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>B</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>y</mi><mo>,</mo><mi>ρ</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>⊂</mo><mi>B</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>r</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>\</mo><mo stretchy="false" form="prefix">{</mo><mi>x</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">B(y,\rho)\subset B(x,r)\setminus\{x\}</annotation></semantics></math>，故这个球与
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>E</mi><annotation encoding="application/x-tex">E</annotation></semantics></math>
+不交，所以
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mo>∉</mo><mi>E</mi><mi>′</mi></mrow><annotation encoding="application/x-tex">y\notin E&#39;</annotation></semantics></math>。而
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>
+本来不在
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><mi>′</mi></mrow><annotation encoding="application/x-tex">E&#39;</annotation></semantics></math>，故
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>B</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>r</mi><mi>/</mi><mn>2</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>⊂</mo><mi>X</mi><mo>\</mo><mi>E</mi><mi>′</mi></mrow><annotation encoding="application/x-tex">B(x,r/2)\subset X\setminus E&#39;</annotation></semantics></math>。补集开，导集闭。</p>
+</blockquote>
+<!-- unit: N-p3-10 -->
+<p>原稿写出的高阶导集关系为
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>E</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>n</mi><mo stretchy="true" form="postfix">)</mo></mrow></msup><mo>⊂</mo><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>E</mi><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msup><mo stretchy="true" form="postfix">)</mo></mrow><mi>′</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
+E^{(n)}\subset(E^{n-1})&#39;.
+</annotation></semantics></math>
+原式右侧上标没有括号，包含号照原式保留。</p>
+<!-- unit: N-p3-11 -->
+<p>原稿随后要求
+proof：<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>E</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>n</mi><mo stretchy="true" form="postfix">)</mo></mrow></msup><mo>⊂</mo><msup><mi>E</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>n</mi><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow></msup></mrow><annotation encoding="application/x-tex">E^{(n)}\subset E^{(n-1)}</annotation></semantics></math>。</p>
+<!-- unit: N-derived-iteration -->
+<blockquote>
+<p>[!info] 补充与限定：高阶导集的定义和下降性 按通常递归记号，令
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>E</mi><mrow><mo stretchy="true" form="prefix">(</mo><mn>0</mn><mo stretchy="true" form="postfix">)</mo></mrow></msup><mo>=</mo><mi>E</mi></mrow><annotation encoding="application/x-tex">E^{(0)}=E</annotation></semantics></math>，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>E</mi><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow></msup><mo>=</mo><mi>E</mi><mi>′</mi></mrow><annotation encoding="application/x-tex">E^{(1)}=E&#39;</annotation></semantics></math>，并令
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>E</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>n</mi><mo stretchy="true" form="postfix">)</mo></mrow></msup><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>E</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>n</mi><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow></msup><mo stretchy="true" form="postfix">)</mo></mrow><mi>′</mi></mrow><annotation encoding="application/x-tex">E^{(n)}=(E^{(n-1)})&#39;</annotation></semantics></math>。因此原稿前一行的包含关系实际可写成等号。
+对
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>≥</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">n\ge2</annotation></semantics></math>，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>E</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>n</mi><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow></msup><annotation encoding="application/x-tex">E^{(n-1)}</annotation></semantics></math>
+已是某个集合的导集，所以闭；由闭集判别得
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>E</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>n</mi><mo stretchy="true" form="postfix">)</mo></mrow></msup><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>E</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>n</mi><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow></msup><mo stretchy="true" form="postfix">)</mo></mrow><mi>′</mi><mo>⊂</mo><msup><mi>E</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>n</mi><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow></msup><mi>.</mi></mrow><annotation encoding="application/x-tex">
+E^{(n)}=(E^{(n-1)})&#39;\subset E^{(n-1)}.
+</annotation></semantics></math> 对
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">n=1</annotation></semantics></math>，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><mi>′</mi><mo>⊂</mo><mi>E</mi></mrow><annotation encoding="application/x-tex">E&#39;\subset E</annotation></semantics></math>
+需要额外假设
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>E</mi><annotation encoding="application/x-tex">E</annotation></semantics></math>
+闭，一般不能直接成立。例如
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>⊂</mo><mi>ℝ</mi></mrow><annotation encoding="application/x-tex">E=(0,1)\subset\mathbb R</annotation></semantics></math>
+时，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><mi>′</mi><mo>=</mo><mrow><mo stretchy="true" form="prefix">[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="true" form="postfix">]</mo></mrow><mo>⊄</mo><mi>E</mi></mrow><annotation encoding="application/x-tex">E&#39;=[0,1]\not\subset E</annotation></semantics></math>。若原命题从闭集
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>E</mi><annotation encoding="application/x-tex">E</annotation></semantics></math>
+开始，则下降关系对所有
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>≥</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">n\ge1</annotation></semantics></math>
+成立。</p>
+</blockquote>
+<!-- unit: N-p3-16 -->
+<p>原稿另记
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi>E</mi><mo accent="true">¯</mo></mover><mo>=</mo><mi>E</mi><mo>=</mo><msup><mi>E</mi><mo>∘</mo></msup><mo>∪</mo><mi>∂</mi><mi>E</mi><mo>,</mo><mspace width="2.0em"></mspace><mi>E</mi><mi>′</mi><mo>⊂</mo><mi>E</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
+\overline E=E=E^\circ\cup\partial E,
+\qquad E&#39;\subset E.
+</annotation></semantics></math></p>
+<!-- unit: N-p3-closure-scope -->
+<blockquote>
+<p>[!info] 补充：这条旁注的闭集条件 这里第一处等号
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi>E</mi><mo accent="true">¯</mo></mover><mo>=</mo><mi>E</mi></mrow><annotation encoding="application/x-tex">\overline E=E</annotation></semantics></math>
+明确需要
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>E</mi><annotation encoding="application/x-tex">E</annotation></semantics></math>
+闭。在此条件下，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi>E</mi><mo accent="true">¯</mo></mover><mo>=</mo><msup><mi>E</mi><mo>∘</mo></msup><mo>∪</mo><mi>∂</mi><mi>E</mi></mrow><annotation encoding="application/x-tex">\overline E=E^\circ\cup\partial E</annotation></semantics></math>
+给出内部与边界的分解，而
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><mi>′</mi><mo>⊂</mo><mi>E</mi></mrow><annotation encoding="application/x-tex">E&#39;\subset E</annotation></semantics></math>
+是同一个闭性条件的导集表述。</p>
+</blockquote>
+<!-- unit: N-p4-01 -->
+<p><a id="s4-1"></a> ### 4.1 完全集</p>
+<p><strong>原定义。</strong>perfect set
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>⇔</mo><mi>E</mi><mo>=</mo><mi>E</mi><mi>′</mi></mrow><annotation encoding="application/x-tex">\Longleftrightarrow E=E&#39;</annotation></semantics></math>，即自密闭集。</p>
+<!-- unit: N-perfect-proof -->
+<blockquote>
+<p>[!info] 补证与例子
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><mo>=</mo><mi>E</mi><mi>′</mi></mrow><annotation encoding="application/x-tex">E=E&#39;</annotation></semantics></math>
+同时给出
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><mo>⊂</mo><mi>E</mi><mi>′</mi></mrow><annotation encoding="application/x-tex">E\subset E&#39;</annotation></semantics></math>
+和
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><mi>′</mi><mo>⊂</mo><mi>E</mi></mrow><annotation encoding="application/x-tex">E&#39;\subset E</annotation></semantics></math>，分别表示自密与闭。反过来，这两个包含关系一起给出相等。因此完全集就是没有孤立点的闭集。
+例如
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="true" form="postfix">]</mo></mrow><mo>⊂</mo><mi>ℝ</mi></mrow><annotation encoding="application/x-tex">[0,1]\subset\mathbb R</annotation></semantics></math>
+是完全集：每个点（包括两个端点）都是它的聚点，且区间闭；<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(0,1)</annotation></semantics></math>
+自密但不闭；<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mn>0</mn><mo stretchy="false" form="postfix">}</mo><mo>∪</mo><mo stretchy="false" form="prefix">{</mo><mn>1</mn><mi>/</mi><mi>n</mi><mo>:</mo><mi>n</mi><mo>≥</mo><mn>1</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{0\}\cup\{1/n:n\ge1\}</annotation></semantics></math>
+闭，但各
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mi>/</mi><mi>n</mi></mrow><annotation encoding="application/x-tex">1/n</annotation></semantics></math>
+是孤立点，所以不完美。按
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><mo>=</mo><mi>E</mi><mi>′</mi></mrow><annotation encoding="application/x-tex">E=E&#39;</annotation></semantics></math>
+的定义，空集也满足；某些教材另把非空写入定义，使用时应看具体约定。</p>
+</blockquote>
+<!-- unit: N-open-heading -->
+<p><a id="s5"></a> ## 5. 实轴开集、局部区间与基的计数</p>
+<!-- unit: N-p4-02 -->
+<p><a id="s5-1"></a> ### 5.1 原稿 Ex 1 与计数旁注</p>
+<p>原题首行写“<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>ℝ</mi><annotation encoding="application/x-tex">\mathbb R</annotation></semantics></math>
+能[Q003]拓扑；<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mn>2</mn><mi>c</mi></msup><annotation encoding="application/x-tex">2^c</annotation></semantics></math>”。中间字词和所数对象尚未唯一确定，保留原句与原数值。</p>
+<!-- unit: N-p4-04 -->
+<p>原稿右侧同时记
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mi>ℝ</mi><mo>,</mo><mi>τ</mi><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(\mathbb R,\tau)</annotation></semantics></math>、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝒫</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>ℝ</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msup><mn>2</mn><mi>c</mi></msup></mrow><annotation encoding="application/x-tex">\mathcal P(\mathbb R)=2^c</annotation></semantics></math>、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝒰</mi><mo>⊆</mo><mi>𝒫</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>ℝ</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\mathcal U\subseteq\mathcal P(\mathbb R)</annotation></semantics></math>，并把
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mn>2</mn><mi>c</mi></msup><annotation encoding="application/x-tex">2^c</annotation></semantics></math>
+框起强调。</p>
+<!-- unit: N-cardinality-distinction -->
+<blockquote>
+<p>[!info] 说明与可确定部分的完整解答 令
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>c</mi><mo>=</mo><mrow><mo stretchy="true" form="prefix">|</mo><mi>ℝ</mi><mo stretchy="true" form="postfix">|</mo></mrow><mo>=</mo><msup><mn>2</mn><msub><mo>ℵ</mo><mn>0</mn></msub></msup></mrow><annotation encoding="application/x-tex">c=|\mathbb R|=2^{\aleph_0}</annotation></semantics></math>。<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">|</mo><mi>𝒫</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>ℝ</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">|</mo></mrow><mo>=</mo><msup><mn>2</mn><mi>c</mi></msup></mrow><annotation encoding="application/x-tex">|\mathcal P(\mathbb R)|=2^c</annotation></semantics></math>
+计算的是实数集的所有子集；“通常拓扑中的开集数”“通常拓扑的基有多少种”与“在同一底集上能赋予多少个拓扑”是不同问题，不能互换。
+通常拓扑的开集恰有
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>c</mi><annotation encoding="application/x-tex">c</annotation></semantics></math>
+个。设
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>ℬ</mi><mn>0</mn></msub><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>p</mi><mo>,</mo><mi>q</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>:</mo><mi>p</mi><mo>,</mo><mi>q</mi><mo>∈</mo><mi>ℚ</mi><mo>,</mo><mi>p</mi><mo>&lt;</mo><mi>q</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\mathcal B_0=\{(p,q):p,q\in\mathbb Q,p&lt;q\}</annotation></semantics></math>；这是可数基，每个开集都是其中某个子族的并，故开集总数不超过
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>2</mn><msub><mo>ℵ</mo><mn>0</mn></msub></msup><mo>=</mo><mi>c</mi></mrow><annotation encoding="application/x-tex">2^{\aleph_0}=c</annotation></semantics></math>。而不同实数
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>
+给出不同开集
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mi>−</mi><mi>∞</mi><mo>,</mo><mi>a</mi><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(-\infty,a)</annotation></semantics></math>，所以至少有
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>c</mi><annotation encoding="application/x-tex">c</annotation></semantics></math>
+个，合得恰为
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>c</mi><annotation encoding="application/x-tex">c</annotation></semantics></math>。
+原题若询问的是所有拓扑结构，单凭
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">|</mo><mi>𝒫</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>ℝ</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">|</mo></mrow><mo>=</mo><msup><mn>2</mn><mi>c</mi></msup></mrow><annotation encoding="application/x-tex">|\mathcal P(\mathbb R)|=2^c</annotation></semantics></math>
+并不能得出原行结论；本稿保留 Q003
+的对象歧义，不把后面的开集和基计数冒作该题的字面恢复。</p>
+</blockquote>
+<!-- unit: N-p4-03 -->
+<p><a id="s5-2"></a> ### 5.2 点的邻域：原稿两问及解答</p>
+<p>设
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>⌀</mi><mo>≠</mo><mi>U</mi></mrow><annotation encoding="application/x-tex">\varnothing\ne U</annotation></semantics></math>
+是
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mi>ℝ</mi><mo>,</mo><mrow><mo stretchy="true" form="prefix">|</mo><mi>⋅</mi><mo stretchy="true" form="postfix">|</mo></mrow><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(\mathbb R,|\cdot|)</annotation></semantics></math>
+的开集。</p>
+<!-- unit: N-p4-05 -->
+<p><strong><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>Q</mi><mn>1</mn></msub><annotation encoding="application/x-tex">Q_1</annotation></semantics></math>：</strong>给定
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∈</mo><mi>U</mi></mrow><annotation encoding="application/x-tex">x\in U</annotation></semantics></math>，满足
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>B</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>δ</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>⊂</mo><mi>U</mi></mrow><annotation encoding="application/x-tex">B(x,\delta)\subset U</annotation></semantics></math>
+的球有多少个？</p>
+<!-- unit: N-ball-count-answer -->
+<blockquote>
+<p>[!info]
+补证：<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>Q</mi><mn>1</mn></msub><annotation encoding="application/x-tex">Q_1</annotation></semantics></math>
+的完整解答 由开性可取
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">r&gt;0</annotation></semantics></math>，使
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>B</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>r</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>⊂</mo><mi>U</mi></mrow><annotation encoding="application/x-tex">B(x,r)\subset U</annotation></semantics></math>。每个
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>&lt;</mo><mi>δ</mi><mo>≤</mo><mi>r</mi></mrow><annotation encoding="application/x-tex">0&lt;\delta\le r</annotation></semantics></math>
+都给出一个符合条件的球，且在实轴上不同半径的球不同。因此至少有
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>c</mi><annotation encoding="application/x-tex">c</annotation></semantics></math>
+个。所有候选半径组成
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mn>0</mn><mo>,</mo><mi>∞</mi><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(0,\infty)</annotation></semantics></math>
+的子集，总数不超过
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>c</mi><annotation encoding="application/x-tex">c</annotation></semantics></math>，故恰有
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>c</mi><annotation encoding="application/x-tex">c</annotation></semantics></math>
+个。</p>
+</blockquote>
+<!-- unit: N-p4-06 -->
+<p><strong><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>Q</mi><mn>2</mn></msub><annotation encoding="application/x-tex">Q_2</annotation></semantics></math>：</strong>有无最大？</p>
+<!-- unit: N-ball-max-answer -->
+<blockquote>
+<p>[!info] 补证：分清“同心球”与“含点开区间”的最大性 若仍指
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>Q</mi><mn>1</mn></msub><annotation encoding="application/x-tex">Q_1</annotation></semantics></math>
+中以固定
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>
+为中心的球，当
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>U</mi><mo>≠</mo><mi>ℝ</mi></mrow><annotation encoding="application/x-tex">U\ne\mathbb R</annotation></semantics></math>
+时，令
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>r</mi><mo>*</mo></msub><mo>=</mo><mo>inf</mo><mo stretchy="false" form="prefix">{</mo><mrow><mo stretchy="true" form="prefix">|</mo><mi>x</mi><mo>−</mo><mi>z</mi><mo stretchy="true" form="postfix">|</mo></mrow><mo>:</mo><mi>z</mi><mo>∈</mo><mi>ℝ</mi><mo>\</mo><mi>U</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">r_*=\inf\{|x-z|:z\in\mathbb R\setminus U\}</annotation></semantics></math>。开性保证
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>r</mi><mo>*</mo></msub><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">r_*&gt;0</annotation></semantics></math>，补集非空保证
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>r</mi><mo>*</mo></msub><mo>&lt;</mo><mi>∞</mi></mrow><annotation encoding="application/x-tex">r_*&lt;\infty</annotation></semantics></math>。若
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">|</mo><mi>y</mi><mo>−</mo><mi>x</mi><mo stretchy="true" form="postfix">|</mo></mrow><mo>&lt;</mo><msub><mi>r</mi><mo>*</mo></msub></mrow><annotation encoding="application/x-tex">|y-x|&lt;r_*</annotation></semantics></math>
+则
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mo>∈</mo><mi>U</mi></mrow><annotation encoding="application/x-tex">y\in U</annotation></semantics></math>，故
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>B</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>,</mo><msub><mi>r</mi><mo>*</mo></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>⊂</mo><mi>U</mi></mrow><annotation encoding="application/x-tex">B(x,r_*)\subset U</annotation></semantics></math>；若
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi><mo>&gt;</mo><msub><mi>r</mi><mo>*</mo></msub></mrow><annotation encoding="application/x-tex">r&gt;r_*</annotation></semantics></math>，由下确界定义可找补集中的
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>z</mi><annotation encoding="application/x-tex">z</annotation></semantics></math>
+满足
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">|</mo><mi>x</mi><mo>−</mo><mi>z</mi><mo stretchy="true" form="postfix">|</mo></mrow><mo>&lt;</mo><mi>r</mi></mrow><annotation encoding="application/x-tex">|x-z|&lt;r</annotation></semantics></math>，故
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>B</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>r</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>⊄</mo><mi>U</mi></mrow><annotation encoding="application/x-tex">B(x,r)\not\subset U</annotation></semantics></math>。因此最大球是
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>B</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>,</mo><msub><mi>r</mi><mo>*</mo></msub><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">B(x,r_*)</annotation></semantics></math>。当
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>U</mi><mo>=</mo><mi>ℝ</mi></mrow><annotation encoding="application/x-tex">U=\mathbb R</annotation></semantics></math>
+时半径可任意增大，没有最大有限半径球。 原稿后续改用所有含
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>
+的开区间，它们不必以
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>
+为中心。该集合族有唯一最大成员，端点允许为
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>±</mi><mi>∞</mi></mrow><annotation encoding="application/x-tex">\pm\infty</annotation></semantics></math>。下面完整保留原稿构造路线。</p>
+</blockquote>
+<!-- unit: N-p4-10 -->
+<p><a id="s5-3"></a> ### 5.3 原稿路线：构造含点的最大开区间</p>
+<p>对
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∈</mo><mi>U</mi></mrow><annotation encoding="application/x-tex">x\in U</annotation></semantics></math>，原稿定义
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>G</mi><mi>x</mi></msub><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>∣</mo><mi>x</mi><mo>∈</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>⊂</mo><mi>U</mi><mo stretchy="false" form="postfix">}</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+G_x=\{(a,b)\mid x\in(a,b)\subset U\}.
+</annotation></semantics></math></p>
+<!-- unit: N-p4-11 -->
+<p>记
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>α</mi><mo>=</mo><mo>inf</mo><mo stretchy="false" form="prefix">{</mo><mi>a</mi><mo>:</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>∈</mo><msub><mi>G</mi><mi>x</mi></msub><mo stretchy="false" form="postfix">}</mo><mo>,</mo><mspace width="2.0em"></mspace><mi>β</mi><mo>=</mo><mo>sup</mo><mo stretchy="false" form="prefix">{</mo><mi>b</mi><mo>:</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>∈</mo><msub><mi>G</mi><mi>x</mi></msub><mo stretchy="false" form="postfix">}</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+\alpha=\inf\{a:(a,b)\in G_x\},
+\qquad
+\beta=\sup\{b:(a,b)\in G_x\}.
+</annotation></semantics></math>
+原稿简写为“<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>α</mi><mo>=</mo><mo>inf</mo><mi>a</mi></mrow><annotation encoding="application/x-tex">\alpha=\inf a</annotation></semantics></math>，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>β</mi><mo>=</mo><mo>sup</mo><mi>b</mi></mrow><annotation encoding="application/x-tex">\beta=\sup b</annotation></semantics></math>”。</p>
+<!-- unit: N-p4-12 -->
+<p>原稿断言
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">(</mo><mi>α</mi><mo>,</mo><mi>β</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>∈</mo><msub><mi>G</mi><mi>x</mi></msub></mrow><annotation encoding="application/x-tex">(\alpha,\beta)\in G_x</annotation></semantics></math>；同一行后半的符号保留为
+Q004，不能唯一辨定的部分另存精确位置。</p>
+<!-- unit: N-p4-family-notation -->
+<blockquote>
+<p>[!info] 补充：集合族与最大区间的记号 原稿
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>G</mi><mi>x</mi></msub><annotation encoding="application/x-tex">G_x</annotation></semantics></math>
+此时是“区间组成的集合族”。为避免后面把它当作点集，以下另用
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>I</mi><mi>x</mi></msub><mo>=</mo><munder><mo>⋃</mo><mrow><mi>J</mi><mo>∈</mo><msub><mi>G</mi><mi>x</mi></msub></mrow></munder><mi>J</mi><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>α</mi><mo>,</mo><mi>β</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">
+I_x=\bigcup_{J\in G_x}J=(\alpha,\beta)
+</annotation></semantics></math> 表示最大区间。若端点无界，就允许
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>α</mi><mo>=</mo><mi>−</mi><mi>∞</mi></mrow><annotation encoding="application/x-tex">\alpha=-\infty</annotation></semantics></math>
+或
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>β</mi><mo>=</mo><mi>+</mi><mi>∞</mi></mrow><annotation encoding="application/x-tex">\beta=+\infty</annotation></semantics></math>；这种情形下，严格说应把原族扩充到允许无穷端点的开区间，或把原稿的“属于”改为“这个并仍为开区间”。</p>
+</blockquote>
+<!-- unit: N-p4-13 -->
+<p>原稿证明开头：<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∈</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>α</mi><mo>,</mo><mi>β</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">x\in(\alpha,\beta)</annotation></semantics></math>；再任取
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mo>∈</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>α</mi><mo>,</mo><mi>β</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">y\in(\alpha,\beta)</annotation></semantics></math>。</p>
+<!-- unit: N-component-construction-proof -->
+<blockquote>
+<p>[!info] 补证：把开头补成完整构造证明 由
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>U</mi><annotation encoding="application/x-tex">U</annotation></semantics></math>
+开，至少有一个
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>a</mi><mn>0</mn></msub><mo>,</mo><msub><mi>b</mi><mn>0</mn></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>∈</mo><msub><mi>G</mi><mi>x</mi></msub></mrow><annotation encoding="application/x-tex">(a_0,b_0)\in G_x</annotation></semantics></math>，所以
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>α</mi><mo>≤</mo><msub><mi>a</mi><mn>0</mn></msub><mo>&lt;</mo><mi>x</mi><mo>&lt;</mo><msub><mi>b</mi><mn>0</mn></msub><mo>≤</mo><mi>β</mi></mrow><annotation encoding="application/x-tex">\alpha\le a_0&lt;x&lt;b_0\le\beta</annotation></semantics></math>，即
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∈</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>α</mi><mo>,</mo><mi>β</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">x\in(\alpha,\beta)</annotation></semantics></math>。
+对任意
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mo>∈</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>α</mi><mo>,</mo><mi>β</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">y\in(\alpha,\beta)</annotation></semantics></math>，若
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mo>&lt;</mo><mi>x</mi></mrow><annotation encoding="application/x-tex">y&lt;x</annotation></semantics></math>，由下确界定义可选
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>∈</mo><msub><mi>G</mi><mi>x</mi></msub></mrow><annotation encoding="application/x-tex">(a,b)\in G_x</annotation></semantics></math>
+使
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>&lt;</mo><mi>y</mi></mrow><annotation encoding="application/x-tex">a&lt;y</annotation></semantics></math>；又
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>b</mi><mo>&gt;</mo><mi>x</mi><mo>&gt;</mo><mi>y</mi></mrow><annotation encoding="application/x-tex">b&gt;x&gt;y</annotation></semantics></math>，故
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mo>∈</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>⊂</mo><mi>U</mi></mrow><annotation encoding="application/x-tex">y\in(a,b)\subset U</annotation></semantics></math>。若
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mo>&gt;</mo><mi>x</mi></mrow><annotation encoding="application/x-tex">y&gt;x</annotation></semantics></math>，由上确界定义可选
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>∈</mo><msub><mi>G</mi><mi>x</mi></msub></mrow><annotation encoding="application/x-tex">(a,b)\in G_x</annotation></semantics></math>
+使
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>b</mi><mo>&gt;</mo><mi>y</mi></mrow><annotation encoding="application/x-tex">b&gt;y</annotation></semantics></math>，又
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>&lt;</mo><mi>x</mi><mo>&lt;</mo><mi>y</mi></mrow><annotation encoding="application/x-tex">a&lt;x&lt;y</annotation></semantics></math>，同样得
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mo>∈</mo><mi>U</mi></mrow><annotation encoding="application/x-tex">y\in U</annotation></semantics></math>。<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mo>=</mo><mi>x</mi></mrow><annotation encoding="application/x-tex">y=x</annotation></semantics></math>
+已知。因此
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">(</mo><mi>α</mi><mo>,</mo><mi>β</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>⊂</mo><mi>U</mi></mrow><annotation encoding="application/x-tex">(\alpha,\beta)\subset U</annotation></semantics></math>。
+每个
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>∈</mo><msub><mi>G</mi><mi>x</mi></msub></mrow><annotation encoding="application/x-tex">(a,b)\in G_x</annotation></semantics></math>
+都有
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>α</mi><mo>≤</mo><mi>a</mi><mo>&lt;</mo><mi>b</mi><mo>≤</mo><mi>β</mi></mrow><annotation encoding="application/x-tex">\alpha\le a&lt;b\le\beta</annotation></semantics></math>，故包含于
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mi>α</mi><mo>,</mo><mi>β</mi><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(\alpha,\beta)</annotation></semantics></math>。所以
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>I</mi><mi>x</mi></msub><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>α</mi><mo>,</mo><mi>β</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">I_x=(\alpha,\beta)</annotation></semantics></math>
+就是所有这些区间的并，也是含
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>
+且包含于
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>U</mi><annotation encoding="application/x-tex">U</annotation></semantics></math>
+的唯一最大开区间。</p>
+</blockquote>
+<!-- unit: N-p4-14 -->
+<p>原稿再写：且
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>α</mi><mo>∉</mo><mi>U</mi></mrow><annotation encoding="application/x-tex">\alpha\notin U</annotation></semantics></math>、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>β</mi><mo>∉</mo><mi>U</mi></mrow><annotation encoding="application/x-tex">\beta\notin U</annotation></semantics></math>；“反证，若不然”。</p>
+<!-- unit: N-component-endpoint-proof -->
+<blockquote>
+<p>[!info] 补证：有限端点不属于开集 若
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>α</mi><mo>∈</mo><mi>ℝ</mi></mrow><annotation encoding="application/x-tex">\alpha\in\mathbb R</annotation></semantics></math>
+且
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>α</mi><mo>∈</mo><mi>U</mi></mrow><annotation encoding="application/x-tex">\alpha\in U</annotation></semantics></math>，由开性有
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ε</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\varepsilon&gt;0</annotation></semantics></math>
+使
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">(</mo><mi>α</mi><mo>−</mo><mi>ε</mi><mo>,</mo><mi>α</mi><mo>+</mo><mi>ε</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>⊂</mo><mi>U</mi></mrow><annotation encoding="application/x-tex">(\alpha-\varepsilon,\alpha+\varepsilon)\subset U</annotation></semantics></math>。它与
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>I</mi><mi>x</mi></msub><annotation encoding="application/x-tex">I_x</annotation></semantics></math>
+相交，二者并成的开区间仍在
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>U</mi><annotation encoding="application/x-tex">U</annotation></semantics></math>
+内且含
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>，但左端点小于
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>α</mi><annotation encoding="application/x-tex">\alpha</annotation></semantics></math>，与
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>α</mi><annotation encoding="application/x-tex">\alpha</annotation></semantics></math>
+的下确界性质矛盾。右端点
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>β</mi><annotation encoding="application/x-tex">\beta</annotation></semantics></math>
+的证明相同。因此有限端点都不在
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>U</mi><annotation encoding="application/x-tex">U</annotation></semantics></math>。无穷端点不是实数，不应把
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>±</mi><mi>∞</mi><mo>∉</mo><mi>U</mi></mrow><annotation encoding="application/x-tex">\pm\infty\notin U</annotation></semantics></math>
+当作额外拓扑结论。</p>
+</blockquote>
+<!-- unit: N-p4-07 -->
+<p><a id="s5-4"></a> ### 5.4 原稿 Ex 2：通常实轴的拓扑基有多少种</p>
+<p><strong>题目。</strong><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mi>ℝ</mi><mo>,</mo><mrow><mo stretchy="true" form="prefix">|</mo><mi>⋅</mi><mo stretchy="true" form="postfix">|</mo></mrow><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(\mathbb R,|\cdot|)</annotation></semantics></math>
+有
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mn>2</mn><mi>c</mi></msup><annotation encoding="application/x-tex">2^c</annotation></semantics></math>
+种基。</p>
+<!-- unit: N-p4-08 -->
+<p>原稿浅色提示：<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝒫</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>A</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msup><mn>2</mn><mi>c</mi></msup><mo>⇒</mo></mrow><annotation encoding="application/x-tex">\mathcal P(A)=2^c\Rightarrow</annotation></semantics></math>。</p>
+<!-- unit: N-basis-count-proof -->
+<blockquote>
+<p>[!info] 补证：上界与下界都要证明 通常实轴的开集族
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>τ</mi><annotation encoding="application/x-tex">\tau</annotation></semantics></math>
+有
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>c</mi><annotation encoding="application/x-tex">c</annotation></semantics></math>
+个成员，而每个拓扑基都是
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>τ</mi><annotation encoding="application/x-tex">\tau</annotation></semantics></math>
+的子集，故基的种数不超过
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mn>2</mn><mi>c</mi></msup><annotation encoding="application/x-tex">2^c</annotation></semantics></math>。
+固定可数基
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>ℬ</mi><mn>0</mn></msub><annotation encoding="application/x-tex">\mathcal B_0</annotation></semantics></math>。集合
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>τ</mi><mo>\</mo><msub><mi>ℬ</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">\tau\setminus\mathcal B_0</annotation></semantics></math>
+仍有
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>c</mi><annotation encoding="application/x-tex">c</annotation></semantics></math>
+个元素。对它的每个子集
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>A</mi><annotation encoding="application/x-tex">A</annotation></semantics></math>，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>ℬ</mi><mn>0</mn></msub><mo>∪</mo><mi>A</mi></mrow><annotation encoding="application/x-tex">\mathcal B_0\cup A</annotation></semantics></math>
+都是同一个通常拓扑的基：所添元素本来就是开集，而原基已能细化每个开邻域。不同的
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>A</mi><annotation encoding="application/x-tex">A</annotation></semantics></math>
+给出不同的基，故至少有
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mn>2</mn><mi>c</mi></msup><annotation encoding="application/x-tex">2^c</annotation></semantics></math>
+种。与上界合并即得恰有
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mn>2</mn><mi>c</mi></msup><annotation encoding="application/x-tex">2^c</annotation></semantics></math>
+种。</p>
+</blockquote>
+<!-- unit: N-p4-09 -->
+<p>原稿还列出基的覆盖条件
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>⋃</mo><mo stretchy="false" form="prefix">{</mo><msub><mi>G</mi><mi>i</mi></msub><mo stretchy="false" form="postfix">}</mo><mo>=</mo><mi>ℝ</mi></mrow><annotation encoding="application/x-tex">\bigcup\{G_i\}=\mathbb R</annotation></semantics></math>，并简记
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∀</mo><mi>x</mi><mo>∈</mo><msub><mi>G</mi><mi>i</mi></msub><mspace width="0.222em"></mspace><mo>∃</mo><mi>x</mi><mo>∈</mo><msub><mi>G</mi><mi>k</mi></msub><mo>⊂</mo><msub><mi>G</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">\forall x\in G_i\ \exists x\in G_k\subset G_i</annotation></semantics></math>。</p>
+<!-- unit: N-basis-criterion -->
+<blockquote>
+<p>[!info] 补充：基的准确局部条件 对已经给定的拓扑
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>τ</mi><annotation encoding="application/x-tex">\tau</annotation></semantics></math>，开集族
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ℬ</mi><mo>⊂</mo><mi>τ</mi></mrow><annotation encoding="application/x-tex">\mathcal B\subset\tau</annotation></semantics></math>
+是基，当且仅当每个开集
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>U</mi><annotation encoding="application/x-tex">U</annotation></semantics></math>、每个
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∈</mo><mi>U</mi></mrow><annotation encoding="application/x-tex">x\in U</annotation></semantics></math>
+都能找到
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>B</mi><mo>∈</mo><mi>ℬ</mi></mrow><annotation encoding="application/x-tex">B\in\mathcal B</annotation></semantics></math>
+使
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∈</mo><mi>B</mi><mo>⊂</mo><mi>U</mi></mrow><annotation encoding="application/x-tex">x\in B\subset U</annotation></semantics></math>。原稿简记若只用同一族的
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>G</mi><mi>i</mi></msub><annotation encoding="application/x-tex">G_i</annotation></semantics></math>，条件会退化为取
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>G</mi><mi>k</mi></msub><mo>=</mo><msub><mi>G</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">G_k=G_i</annotation></semantics></math>，不足以表述对全部开邻域的细化。
+若从一个集合族出发定义拓扑，则须检查它覆盖
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>，并且对任意
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>B</mi><mn>1</mn></msub><mo>,</mo><msub><mi>B</mi><mn>2</mn></msub><mo>∈</mo><mi>ℬ</mi></mrow><annotation encoding="application/x-tex">B_1,B_2\in\mathcal B</annotation></semantics></math>
+与
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∈</mo><msub><mi>B</mi><mn>1</mn></msub><mo>∩</mo><msub><mi>B</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">x\in B_1\cap B_2</annotation></semantics></math>，存在
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>B</mi><mn>3</mn></msub><mo>∈</mo><mi>ℬ</mi></mrow><annotation encoding="application/x-tex">B_3\in\mathcal B</annotation></semantics></math>
+使
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∈</mo><msub><mi>B</mi><mn>3</mn></msub><mo>⊂</mo><msub><mi>B</mi><mn>1</mn></msub><mo>∩</mo><msub><mi>B</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">x\in B_3\subset B_1\cap B_2</annotation></semantics></math>。这时所有基元的任意并组成拓扑。</p>
+</blockquote>
+<!-- unit: N-components-heading -->
+<p><a id="s6"></a> ## 6. 构成区间与开集的唯一分解</p>
+<!-- unit: N-p5-10 -->
+<p><a id="s6-1"></a> ### 6.1 先备例题：实区间连通</p>
+<p><strong>原题。</strong>实区间均连。</p>
+<!-- unit: N-p5-11 -->
+<p>原稿的证明提示：“<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>p</mi><annotation encoding="application/x-tex">p</annotation></semantics></math>
+进制小数[Q005]展开。”</p>
+<!-- unit: N-interval-connected-proof -->
+<blockquote>
+<p>[!info] 补证：任意实区间连通 原题中的“连”按通常用法理解为连通。设区间
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>I</mi><annotation encoding="application/x-tex">I</annotation></semantics></math>
+不连通，存在不交、非空的相对开集
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>,</mo><mi>B</mi></mrow><annotation encoding="application/x-tex">A,B</annotation></semantics></math>，使
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>I</mi><mo>=</mo><mi>A</mi><mo>∪</mo><mi>B</mi></mrow><annotation encoding="application/x-tex">I=A\cup B</annotation></semantics></math>。选
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>∈</mo><mi>A</mi></mrow><annotation encoding="application/x-tex">a\in A</annotation></semantics></math>、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>b</mi><mo>∈</mo><mi>B</mi></mrow><annotation encoding="application/x-tex">b\in B</annotation></semantics></math>；交换名称后可设
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>&lt;</mo><mi>b</mi></mrow><annotation encoding="application/x-tex">a&lt;b</annotation></semantics></math>。由于
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>I</mi><annotation encoding="application/x-tex">I</annotation></semantics></math>
+是区间，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">[</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="true" form="postfix">]</mo></mrow><mo>⊂</mo><mi>I</mi></mrow><annotation encoding="application/x-tex">[a,b]\subset I</annotation></semantics></math>。
+令
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>c</mi><mo>=</mo><mo>sup</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>A</mi><mo>∩</mo><mrow><mo stretchy="true" form="prefix">[</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="true" form="postfix">]</mo></mrow><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">c=\sup(A\cap[a,b])</annotation></semantics></math>，则
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>c</mi><mo>∈</mo><mrow><mo stretchy="true" form="prefix">[</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="true" form="postfix">]</mo></mrow><mo>⊂</mo><mi>I</mi></mrow><annotation encoding="application/x-tex">c\in[a,b]\subset I</annotation></semantics></math>。如果
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>c</mi><mo>∈</mo><mi>A</mi></mrow><annotation encoding="application/x-tex">c\in A</annotation></semantics></math>，由
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>A</mi><annotation encoding="application/x-tex">A</annotation></semantics></math>
+相对开及
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>b</mi><mo>∉</mo><mi>A</mi></mrow><annotation encoding="application/x-tex">b\notin A</annotation></semantics></math>，有
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>c</mi><mo>&lt;</mo><mi>b</mi></mrow><annotation encoding="application/x-tex">c&lt;b</annotation></semantics></math>，且某个
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>c</mi><annotation encoding="application/x-tex">c</annotation></semantics></math>
+右侧的点仍属于
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>∩</mo><mrow><mo stretchy="true" form="prefix">[</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="true" form="postfix">]</mo></mrow></mrow><annotation encoding="application/x-tex">A\cap[a,b]</annotation></semantics></math>，与上确界矛盾。如果
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>c</mi><mo>∈</mo><mi>B</mi></mrow><annotation encoding="application/x-tex">c\in B</annotation></semantics></math>，则
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>c</mi><mo>≠</mo><mi>a</mi></mrow><annotation encoding="application/x-tex">c\ne a</annotation></semantics></math>；由
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>B</mi><annotation encoding="application/x-tex">B</annotation></semantics></math>
+相对开，某个
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>c</mi><annotation encoding="application/x-tex">c</annotation></semantics></math>
+左侧邻域与
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>A</mi><annotation encoding="application/x-tex">A</annotation></semantics></math>
+不交，却与
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>c</mi><annotation encoding="application/x-tex">c</annotation></semantics></math>
+为
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>∩</mo><mrow><mo stretchy="true" form="prefix">[</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="true" form="postfix">]</mo></mrow></mrow><annotation encoding="application/x-tex">A\cap[a,b]</annotation></semantics></math>
+的上确界矛盾。两种情形均不可能，所以
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>I</mi><annotation encoding="application/x-tex">I</annotation></semantics></math>
+连通。单点区间与空区间按定义也连通。
+原稿最后一句的中间字形尚未唯一辨定，不能据此声称它已经给出了完整证明。若意在使用进制展开，应另行说明展开规则及它如何推出区间不可分；上述上确界证明给出了本题独立可用的完整解答。</p>
+</blockquote>
+<!-- unit: N-connected-subset-interval -->
+<blockquote>
+<p>[!info] 补充：实直线的连通子集必为区间 若
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi><mo>⊂</mo><mi>ℝ</mi></mrow><annotation encoding="application/x-tex">C\subset\mathbb R</annotation></semantics></math>
+含
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>&lt;</mo><mi>b</mi></mrow><annotation encoding="application/x-tex">a&lt;b</annotation></semantics></math>，却漏掉某个
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mo>∈</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">t\in(a,b)</annotation></semantics></math>，则
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi><mo>∩</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>−</mi><mi>∞</mi><mo>,</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">C\cap(-\infty,t)</annotation></semantics></math>
+与
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi><mo>∩</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo>,</mo><mi>∞</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">C\cap(t,\infty)</annotation></semantics></math>
+是两个非空、不交的相对开集，其并为
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>C</mi><annotation encoding="application/x-tex">C</annotation></semantics></math>，故
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>C</mi><annotation encoding="application/x-tex">C</annotation></semantics></math>
+不连通。因此连通子集必包含任意两点之间的所有点，即为区间。结合前题，实直线的连通子集恰为区间。</p>
+</blockquote>
+<!-- unit: N-p5-01 -->
+<p><a id="s6-2"></a> ### 6.2 构成区间的定义</p>
+<p>原稿设
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>G</mi><mo>⊂</mo><mi>ℝ</mi></mrow><annotation encoding="application/x-tex">G\subset\mathbb R</annotation></semantics></math>，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>⊂</mo><mi>G</mi></mrow><annotation encoding="application/x-tex">(a,b)\subset G</annotation></semantics></math>。</p>
+<!-- unit: N-p5-02 -->
+<p>若
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>∉</mo><mi>G</mi></mrow><annotation encoding="application/x-tex">a\notin G</annotation></semantics></math>、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>b</mi><mo>∉</mo><mi>G</mi></mrow><annotation encoding="application/x-tex">b\notin G</annotation></semantics></math>，则称
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(a,b)</annotation></semantics></math>
+为
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>G</mi><annotation encoding="application/x-tex">G</annotation></semantics></math>
+的构成区间。</p>
+<!-- unit: N-component-definition-scope -->
+<blockquote>
+<p>[!info] 补充：开集、无穷端点与最大性 以下取
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>G</mi><annotation encoding="application/x-tex">G</annotation></semantics></math>
+为开集。允许端点属于扩充实数
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi>ℝ</mi><mo accent="true">¯</mo></mover><mo>=</mo><mi>ℝ</mi><mo>∪</mo><mo stretchy="false" form="prefix">{</mo><mi>−</mi><mi>∞</mi><mo>,</mo><mi>+</mi><mi>∞</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\overline{\mathbb R}=\mathbb R\cup\{-\infty,+\infty\}</annotation></semantics></math>；当端点有限时要求它不在
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>G</mi><annotation encoding="application/x-tex">G</annotation></semantics></math>
+中，无穷端点不作为实点讨论。构成区间可以是有界开区间、开射线或整个
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>ℝ</mi><annotation encoding="application/x-tex">\mathbb R</annotation></semantics></math>。
+§5 中对每个
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∈</mo><mi>G</mi></mrow><annotation encoding="application/x-tex">x\in G</annotation></semantics></math>
+构造的最大开区间
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>I</mi><mi>x</mi></msub><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>α</mi><mi>x</mi></msub><mo>,</mo><msub><mi>β</mi><mi>x</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">I_x=(\alpha_x,\beta_x)</annotation></semantics></math>
+就是一个构成区间。反之，端点条件保证
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(a,b)</annotation></semantics></math>
+不能向任何一侧扩大而仍留在
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>G</mi><annotation encoding="application/x-tex">G</annotation></semantics></math>
+中，所以它是包含其任一点的最大开区间。实直线的连通子集都是区间，因此这些最大区间恰好是
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>G</mi><annotation encoding="application/x-tex">G</annotation></semantics></math>
+的连通分支。</p>
+</blockquote>
+<!-- unit: N-p5-03 -->
+<p><a id="s6-3"></a> ### 6.3 不同构成区间不相交</p>
+<p><strong>原命题。</strong>开集
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>G</mi><annotation encoding="application/x-tex">G</annotation></semantics></math>
+的不同构成区间互不相交。</p>
+<!-- unit: N-p5-04 -->
+<p><strong>原证明提示。</strong>反证，可以用两个构成区间。</p>
+<!-- unit: N-components-disjoint-proof -->
+<blockquote>
+<p>[!info] 补证：保留原反证路线 设两个构成区间
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>I</mi><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">I=(a,b)</annotation></semantics></math>、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>J</mi><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>c</mi><mo>,</mo><mi>d</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">J=(c,d)</annotation></semantics></math>
+相交，却不相等。它们的并是一个开区间，而且仍包含于
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>G</mi><annotation encoding="application/x-tex">G</annotation></semantics></math>。这个并严格包含至少一个原区间，与构成区间的最大性矛盾。因此相交的构成区间必相等，不同的构成区间必不相交。
+也可以直接用端点：不妨设
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>≤</mo><mi>c</mi></mrow><annotation encoding="application/x-tex">a\le c</annotation></semantics></math>。相交意味着
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>c</mi><mo>&lt;</mo><mi>b</mi></mrow><annotation encoding="application/x-tex">c&lt;b</annotation></semantics></math>。若
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>&lt;</mo><mi>c</mi></mrow><annotation encoding="application/x-tex">a&lt;c</annotation></semantics></math>，有限端点
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>c</mi><annotation encoding="application/x-tex">c</annotation></semantics></math>
+就属于
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>⊂</mo><mi>G</mi></mrow><annotation encoding="application/x-tex">(a,b)\subset G</annotation></semantics></math>，与
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>c</mi><mo>∉</mo><mi>G</mi></mrow><annotation encoding="application/x-tex">c\notin G</annotation></semantics></math>
+矛盾，故
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>=</mo><mi>c</mi></mrow><annotation encoding="application/x-tex">a=c</annotation></semantics></math>；同理可得
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>b</mi><mo>=</mo><mi>d</mi></mrow><annotation encoding="application/x-tex">b=d</annotation></semantics></math>。这同时给出端点条件的直观作用。</p>
+</blockquote>
+<!-- unit: N-p5-05 -->
+<p><strong>原推论。</strong>若
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mn>0</mn></msub><mo>≠</mo><msub><mi>y</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">x_0\ne y_0</annotation></semantics></math>，包含
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>x</mi><mn>0</mn></msub><annotation encoding="application/x-tex">x_0</annotation></semantics></math>
+与
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>y</mi><mn>0</mn></msub><annotation encoding="application/x-tex">y_0</annotation></semantics></math>
+的构成区间只有两种可能：相等，或不相交。原稿以大括号并列这两个分支。</p>
+<!-- unit: N-components-corollary-proof -->
+<blockquote>
+<p>[!info] 补证 每一点各属于唯一的最大区间
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>I</mi><msub><mi>x</mi><mn>0</mn></msub></msub><annotation encoding="application/x-tex">I_{x_0}</annotation></semantics></math>、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>I</mi><msub><mi>y</mi><mn>0</mn></msub></msub><annotation encoding="application/x-tex">I_{y_0}</annotation></semantics></math>。若二者有交点，则上一命题给出二者相等；否则二者不相交。<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mn>0</mn></msub><mo>≠</mo><msub><mi>y</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">x_0\ne y_0</annotation></semantics></math>
+不表示两个区间必不同，例如
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>G</mi><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">G=(0,1)</annotation></semantics></math>
+中任意两点都在同一构成区间里。</p>
+</blockquote>
+<!-- unit: N-p5-06 -->
+<p><a id="s6-4"></a> ### 6.4 唯一分解及可数性</p>
+<p>原稿写：“得到了开区间的唯一表示。”</p>
+<!-- unit: N-open-decomposition-proof -->
+<blockquote>
+<p>[!info] 纠错与补证：应为开集的构成区间表示 此处承接的是开集
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>G</mi><annotation encoding="application/x-tex">G</annotation></semantics></math>
+的分解。每个
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∈</mo><mi>G</mi></mrow><annotation encoding="application/x-tex">x\in G</annotation></semantics></math>
+都在其最大开区间
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>I</mi><mi>x</mi></msub><mo>⊂</mo><mi>G</mi></mrow><annotation encoding="application/x-tex">I_x\subset G</annotation></semantics></math>
+中，所以
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>G</mi><mo>=</mo><msub><mo>⋃</mo><mrow><mi>x</mi><mo>∈</mo><mi>G</mi></mrow></msub><msub><mi>I</mi><mi>x</mi></msub></mrow><annotation encoding="application/x-tex">G=\bigcup_{x\in G}I_x</annotation></semantics></math>。删除相同的区间后，各区间两两不交。
+每个非空开区间都含有有理数。固定
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>ℚ</mi><annotation encoding="application/x-tex">\mathbb Q</annotation></semantics></math>
+的枚举，在每个构成区间里选择枚举次序最小的有理数；不相交区间选出的数不同，因而构成区间至多可数。于是
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>G</mi><mo>=</mo><msub><mo></mo><mrow><mi>j</mi><mo>∈</mo><mi>J</mi></mrow></msub><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>a</mi><mi>j</mi></msub><mo>,</mo><msub><mi>b</mi><mi>j</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo><mspace width="2.0em"></mspace><mi>J</mi><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> 至多可数</mtext></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">
+G=\mathop{\dot\bigcup}_{j\in J}(a_j,b_j),\qquad J\text{ 至多可数}.
+</annotation></semantics></math>
+这是按构成区间作出的唯一分解，唯一性指忽略编号后的区间族唯一：任何构成区间中的点，其最大开区间已经由
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>G</mi><annotation encoding="application/x-tex">G</annotation></semantics></math>
+确定。若另给两两不交的非空开区间分解，它们也必须是这些最大区间，因为一个连通的最大区间不能被两个以上相对开且不交的非空部分分开。空开集对应空区间族。
+例：<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>G</mi><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>−</mi><mn>2</mn><mo>,</mo><mi>−</mi><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>∪</mo><mrow><mo stretchy="true" form="prefix">(</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>∪</mo><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>,</mo><mn>3</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">G=(-2,-1)\cup(0,1)\cup(1,3)</annotation></semantics></math>
+有三个构成区间，其中
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(0,1)</annotation></semantics></math>
+与
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>,</mo><mn>3</mn><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(1,3)</annotation></semantics></math>
+不能合并，因为中间点
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>∉</mo><mi>G</mi></mrow><annotation encoding="application/x-tex">1\notin G</annotation></semantics></math>。</p>
+</blockquote>
+<!-- unit: N-p5-07 -->
+<p><a id="s6-5"></a> ### 6.5 原旁注：高维的表示不唯一</p>
+<p>原稿写：“<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>ℝ</mi><mi>n</mi></msup><annotation encoding="application/x-tex">\mathbb R^n</annotation></semantics></math>，中可表示为
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(a,b)</annotation></semantics></math>
+可数个，且表示不唯一。”</p>
+<!-- unit: N-rn-boxes-proof -->
+<blockquote>
+<p>[!info] 说明与补证：可数个开长方体之并
+这句省略了所讨论集合及并的符号。与前后开集内容相容的准确表述是：<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>ℝ</mi><mi>n</mi></msup><annotation encoding="application/x-tex">\mathbb R^n</annotation></semantics></math>
+的每个开集都能表示为至多可数个开长方体的并，此种表示通常不唯一。记
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><munderover><mo>∏</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></munderover><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>a</mi><mi>i</mi></msub><mo>,</mo><msub><mi>b</mi><mi>i</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>a</mi><mi>i</mi></msub><mo>&lt;</mo><msub><mi>b</mi><mi>i</mi></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">
+(a,b)=\prod_{i=1}^n(a_i,b_i),\qquad a_i&lt;b_i.
+</annotation></semantics></math>
+所有端点均为有理数的开长方体构成可数基。给定开集
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>G</mi><annotation encoding="application/x-tex">G</annotation></semantics></math>
+及
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∈</mo><mi>G</mi></mrow><annotation encoding="application/x-tex">x\in G</annotation></semantics></math>，取
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">r&gt;0</annotation></semantics></math>
+使
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>B</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>r</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>⊂</mo><mi>G</mi></mrow><annotation encoding="application/x-tex">B(x,r)\subset G</annotation></semantics></math>，再在各坐标上选有理端点，得到
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∈</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>⊂</mo><mi>B</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>r</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>⊂</mo><mi>G</mi></mrow><annotation encoding="application/x-tex">x\in(a,b)\subset B(x,r)\subset G</annotation></semantics></math>。因此把所有包含于
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>G</mi><annotation encoding="application/x-tex">G</annotation></semantics></math>
+的有理端点长方体并起来就得到
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>G</mi><annotation encoding="application/x-tex">G</annotation></semantics></math>，所用集合至多可数。
+表示不唯一，例如
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mrow><mo stretchy="true" form="prefix">(</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mi>n</mi></msup><annotation encoding="application/x-tex">(0,1)^n</annotation></semantics></math>
+既是一个长方体，也等于
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo minsize="1.2" maxsize="1.2" stretchy="false" form="prefix">(</mo><mrow><mo stretchy="true" form="prefix">(</mo><mn>0</mn><mo>,</mo><mn>2</mn><mi>/</mi><mn>3</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>×</mo><msup><mrow><mo stretchy="true" form="prefix">(</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msup><mo minsize="1.2" maxsize="1.2" stretchy="false" form="postfix">)</mo><mspace width="0.222em"></mspace><mo>∪</mo><mspace width="0.222em"></mspace><mo minsize="1.2" maxsize="1.2" stretchy="false" form="prefix">(</mo><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mi>/</mi><mn>3</mn><mo>,</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>×</mo><msup><mrow><mo stretchy="true" form="prefix">(</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msup><mo minsize="1.2" maxsize="1.2" stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+\bigl((0,2/3)\times(0,1)^{n-1}\bigr)\ \cup\
+\bigl((1/3,1)\times(0,1)^{n-1}\bigr).
+</annotation></semantics></math>
+这里的长方体可以重叠；这种表示和前面的唯一“构成区间分解”并非同一条件。在
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>≥</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">n\ge2</annotation></semantics></math>
+时，连通分支还未必是长方体，例如圆盘的唯一连通分支就是圆盘本身。</p>
+</blockquote>
+<!-- unit: N-p5-08 -->
+<p><a id="s7"></a> ## 7. 第二可数、局部连通空间中的开集分解</p>
+<p><strong>原定理条件。</strong><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mi>X</mi><mo>,</mo><mi>τ</mi><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(X,\tau)</annotation></semantics></math>
+是第二可数、局部连通，原稿随后写
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∀</mo><mi>U</mi><mo>⊂</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>X</mi><mo>,</mo><mi>τ</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\forall U\subset(X,\tau)</annotation></semantics></math>。</p>
+<!-- unit: N-p5-09 -->
+<p><strong>原结论。</strong>可表示为至多可数个连通分支的并。</p>
+<!-- unit: N-local-connected-definition -->
+<blockquote>
+<p>[!info] 补充：连通分支与局部连通
+集合的连通分支是其中极大的非空连通子集。每个点所在的分支可以定义为所有含该点的连通子集之并：这些集合共有该点，它们的并仍连通。若一个分离把此并分成两个相对开部分，含公共点的每个连通集合都只能落在同一部分，另一部分便为空。因此分支存在；相交的两个分支之并连通，由极大性二者相等，所以分支划分原集合。
+局部连通指每一点都有由连通开邻域组成的邻域基。因而对于开集
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>U</mi><annotation encoding="application/x-tex">U</annotation></semantics></math>
+中的每个
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>，可找到连通开集
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>V</mi><annotation encoding="application/x-tex">V</annotation></semantics></math>
+使
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∈</mo><mi>V</mi><mo>⊂</mo><mi>U</mi></mrow><annotation encoding="application/x-tex">x\in V\subset U</annotation></semantics></math>。</p>
+</blockquote>
+<!-- unit: N-local-connected-theorem-proof -->
+<blockquote>
+<p>[!info] 纠错与完整证明：必须要求
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>U</mi><annotation encoding="application/x-tex">U</annotation></semantics></math>
+开 准确结论：若
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>
+第二可数且局部连通，则每个开集
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>U</mi><mo>⊂</mo><mi>X</mi></mrow><annotation encoding="application/x-tex">U\subset X</annotation></semantics></math>
+都是至多可数个两两不交的连通开集的并，这些集合正是
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>U</mi><annotation encoding="application/x-tex">U</annotation></semantics></math>
+的连通分支。 先证每个分支
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>C</mi><annotation encoding="application/x-tex">C</annotation></semantics></math>
+在
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>
+中开。任取
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∈</mo><mi>C</mi></mrow><annotation encoding="application/x-tex">x\in C</annotation></semantics></math>，由局部连通取连通开集
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>V</mi><mi>x</mi></msub><annotation encoding="application/x-tex">V_x</annotation></semantics></math>
+使
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∈</mo><msub><mi>V</mi><mi>x</mi></msub><mo>⊂</mo><mi>U</mi></mrow><annotation encoding="application/x-tex">x\in V_x\subset U</annotation></semantics></math>。由于
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>V</mi><mi>x</mi></msub><annotation encoding="application/x-tex">V_x</annotation></semantics></math>
+与
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>C</mi><annotation encoding="application/x-tex">C</annotation></semantics></math>
+有交点，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>V</mi><mi>x</mi></msub><mo>∪</mo><mi>C</mi></mrow><annotation encoding="application/x-tex">V_x\cup C</annotation></semantics></math>
+连通，分支的极大性给出
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>V</mi><mi>x</mi></msub><mo>⊂</mo><mi>C</mi></mrow><annotation encoding="application/x-tex">V_x\subset C</annotation></semantics></math>。因此
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi><mo>=</mo><msub><mo>⋃</mo><mrow><mi>x</mi><mo>∈</mo><mi>C</mi></mrow></msub><msub><mi>V</mi><mi>x</mi></msub></mrow><annotation encoding="application/x-tex">C=\bigcup_{x\in C}V_x</annotation></semantics></math>
+开。 再证分支至多可数。取
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>
+的可数基
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><msub><mi>B</mi><mi>m</mi></msub><mo>:</mo><mi>m</mi><mo>∈</mo><mi>ℕ</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{B_m:m\in\mathbb N\}</annotation></semantics></math>。每个非空开分支
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>C</mi><annotation encoding="application/x-tex">C</annotation></semantics></math>
+都含有某个非空基元素；选满足
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>⌀</mi><mo>≠</mo><msub><mi>B</mi><mi>m</mi></msub><mo>⊂</mo><mi>C</mi></mrow><annotation encoding="application/x-tex">\varnothing\ne B_m\subset C</annotation></semantics></math>
+的最小
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>m</mi><annotation encoding="application/x-tex">m</annotation></semantics></math>。不同分支互不相交，因此不会选中同一基元素。这样把分支族单射到
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>ℕ</mi><annotation encoding="application/x-tex">\mathbb N</annotation></semantics></math>，证明了可数性。分支本来就划分
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>U</mi><annotation encoding="application/x-tex">U</annotation></semantics></math>，故所求分解成立且分支族唯一。
+原稿的包含号旁未明确写“开”。若把
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>U</mi><annotation encoding="application/x-tex">U</annotation></semantics></math>
+当作任意子集，结论错误：取
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>X</mi><mo>=</mo><mi>ℝ</mi></mrow><annotation encoding="application/x-tex">X=\mathbb R</annotation></semantics></math>、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>U</mi><mo>=</mo><mi>ℝ</mi><mo>\</mo><mi>ℚ</mi></mrow><annotation encoding="application/x-tex">U=\mathbb R\setminus\mathbb Q</annotation></semantics></math>，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>
+第二可数且局部连通，而
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>U</mi><annotation encoding="application/x-tex">U</annotation></semantics></math>
+的每个连通分支都是单点，且这样的分支不可数。因为任意两个不同无理数之间都有有理数，含两个点的子集不可能是实区间；再用
+§6.1 的连通子集判别即可。
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>ℝ</mi><mi>n</mi></msup><annotation encoding="application/x-tex">\mathbb R^n</annotation></semantics></math>
+是第二可数、局部连通的，所以其每个开集的连通分支至多可数且各自开；这与
+§6.5 中任意长方体表示的不唯一性相容。</p>
+</blockquote>
+</body>
+</html>

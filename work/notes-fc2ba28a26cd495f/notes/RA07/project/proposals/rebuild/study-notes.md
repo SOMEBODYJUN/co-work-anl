@@ -13,6 +13,11 @@
 4. [可列次可加性及零外测度例子](#subadditivity-and-null-sets)
 5. [区间体积、内测度与可测性的引入](#inner-measure-introduction)
 6. [Carathéodory 条件与选择公理旁注](#caratheodory-and-choice)
+7. [矩形测试判据与跨内外加性](#rectangle-test)
+8. [加性判据原证明与正距离加性](#distance-additivity)
+9. [可测族运算、零测集与可测族的势](#null-and-cardinality)
+10. [不可测并集问题、Vitali 构造与集合族基数](#nonmeasurable-subsets)
+11. [有限并的四块证明、补与交及有限可加](#finite-operations-proof)
 
 <!-- unit: N-P001-HEAD -->
 <a id="measure-basics"></a>
@@ -500,7 +505,7 @@ $$m^*(I)=m^*(I\cap E)+m^*(I\cap E^c),$$
 
 <!-- unit: N-P006-003-S1 -->
 > [!info] 补充：限制外测度
-> 对可测集定义 $m(E)=m^*(E)$，得到 Lebesgue 测度；这里也保留原稿的 $m_L$ 记号。$mathcal M$ 上的可列可加性将在后续可测集性质中证明，而不是由“定义”一词直接获得。
+> 对可测集定义 $m(E)=m^*(E)$，得到 Lebesgue 测度；这里也保留原稿的 $m_L$ 记号。$\mathcal M$ 上的可列可加性将在后续可测集性质中证明，而不是由“定义”一词直接获得。
 
 <!-- unit: N-P006-004 -->
 记全体为 $\mathcal M$。
@@ -508,7 +513,7 @@ $$m^*(I)=m^*(I\cap E)+m^*(I\cap E^c),$$
 <!-- unit: N-P006-005 -->
 原图：左上较小圆与右下较大圆相交，圆上方写 $E$；右下圆未写名称，没有阴影或箭头。
 
-![原稿中的相交集合图](../../evidence/p0006-diagram.png)
+![原稿中的相交集合图](https://raw.githubusercontent.com/SOMEBODYJUN/co-work-anl/refs/heads/work/notes/work/notes-fc2ba28a26cd495f/notes/RA07/project/evidence/p0006-diagram.png)
 
 <!-- unit: N-P006-005-S1 -->
 > [!info] 补充：图与公式的对应
@@ -560,3 +565,448 @@ $$ZFC\to P.$$
 <!-- unit: N-P006-013-S1 -->
 > [!info] 纠错：这两行没有导出矛盾
 > 因为 $ZFC$ 包含 $ZF$，这个推导本身成立；但 $ZFC\vdash P$ 原本就是已知结论，所以不能据此证明 $ZF\nvdash P$。要排除 $ZF\vdash P$，应使用满足 $ZF+\neg P$ 的 Solovay 模型。要排除 $ZF\vdash\neg P$，则可反设它成立，推出 $ZFC\vdash\neg P$，与一致的 $ZFC$ 中 $P$ 的证明冲突。原稿的正负号原样保留于上方。
+
+<!-- unit: N-P007-HEAD -->
+<a id="rectangle-test"></a>
+
+## 矩形测试判据与跨内外加性
+
+<!-- unit: N-P007-001 -->
+**Th.**
+$$E\in\mathcal M\iff m^*(I)=m^*(I\cap E)+m^*(I\cap E^c),$$
+$\forall I\subset\mathbb R$ 区间（矩形）。
+
+<!-- unit: N-P007-001-S1 -->
+> [!info] 补充：定理的精确范围
+> 在 $\mathbb R^n$ 中，只对所有有界开矩形（开长方体）$I=\prod_{j=1}^n(a_j,b_j)$ 检查分割等式，就足以推出对任意测试集 $T\subset\mathbb R^n$ 的 Carathéodory 条件。原稿在条件行写 $\mathbb R$，并附“矩形”；以下覆盖证明对任意维数 $n$ 同样适用。必要性直接来自定义。
+
+<!-- unit: N-P007-002 -->
+〔左边缘另有被裁切的公式尾段，能读出 $E^c)$；没有足够图像恢复其前项。〕
+
+<!-- unit: N-P007-003 -->
+**pf.** $\Rightarrow$：显然。
+
+<!-- unit: N-P007-004 -->
+$\Leftarrow$：由外测度次可加性，仅证
+$$m^*(T)\ge m^*(T\cap E)+m^*(T\cap E^c).$$
+
+<!-- unit: N-P007-004-S1 -->
+> [!info] 补证：固定任意测试集
+> 任取 $T\subset\mathbb R^n$。因为 $T=(T\cap E)\cup(T\cap E^c)$，次可加性已给出 $m^*(T)\le m^*(T\cap E)+m^*(T\cap E^c)$；所以下面只需得到相反方向，不能把 $T$ 预先假设为矩形。
+
+<!-- unit: N-P007-005 -->
+（1）若 $m^*(T)=+\infty$，成立。
+
+<!-- unit: N-P007-005-S1 -->
+> [!info] 补充：扩展实数的这一分支
+> 当 $m^*(T)=+\infty$ 时，所需“$\ge$”自动成立；已有的“$\le$”又迫使右端也是 $+\infty$，因此得到等式。后面的取覆盖步骤是在 $m^*(T)<\infty$ 的分支中进行。
+
+<!-- unit: N-P007-006 -->
+（2）$\forall\varepsilon>0$，$\exists\{I_k\}\in LC(T)$，s.t.
+$$\sum_{k=1}^{\infty}|I_k|<m^*(T)+\varepsilon.$$
+
+<!-- unit: N-P007-007 -->
+$$T\cap E\subset\bigcup_{k=1}^{\infty}(E\cap I_k).$$
+
+<!-- unit: N-P007-008 -->
+$$T\cap E^c\subset\bigcup_{k=1}^{\infty}(E^c\cap I_k).$$
+
+<!-- unit: N-P007-009 -->
+$$m^*(T\cap E)\le m^*\left(\bigcup_{k=1}^{\infty}(E\cap I_k)\right)
+\le\sum_{k=1}^{\infty}m^*(E\cap I_k)<+\infty.$$
+
+<!-- unit: N-P007-009-S1 -->
+> [!info] 补证：最后一个严格界与补集对应式
+> 每个 $E\cap I_k\subset I_k$，所以 $\sum_km^*(E\cap I_k)\le\sum_km^*(I_k)=\sum_k|I_k|<m^*(T)+\varepsilon<\infty$。同样，$m^*(T\cap E^c)\le\sum_km^*(E^c\cap I_k)<\infty$。这里使用了上一节“矩形的外测度等于体积”，没有先用待证的可测性。
+
+<!-- unit: N-P007-010 -->
+$$m^*(T\cap E)+m^*(T\cap E^c)
+\le\sum_{k=1}^{\infty}m^*(E\cap I_k)+\sum_{k=1}^{\infty}m^*(E^c\cap I_k).$$
+
+<!-- unit: N-P007-011 -->
+（“题设”标在下一等号处。）
+$$=\sum_{k=1}^{\infty}m^*(I_k)=\sum_{k=1}^{\infty}|I_k|<m^*(T)+\varepsilon.$$
+
+<!-- unit: N-P007-011-S1 -->
+> [!info] 补证：等号为何合法
+> 非负级数可逐项相加，故两串和合成 $\sum_k[m^*(E\cap I_k)+m^*(E^c\cap I_k)]$。每个 $I_k$ 是题设允许检验的矩形，方括号内恰等于 $m^*(I_k)$。再用矩形体积定理与近最优覆盖估计，即得所需的 $\varepsilon$ 上界。
+
+<!-- unit: N-P007-012 -->
+$\varepsilon\to0^+$。
+
+<!-- unit: N-P007-012-S1 -->
+> [!info] 补证：收尾
+> 左端 $m^*(T\cap E)+m^*(T\cap E^c)$ 与 $\varepsilon$ 无关；对每个 $\varepsilon>0$ 它都不超过 $m^*(T)+\varepsilon$，故令 $\varepsilon\downarrow0$ 得到反向不等式。与次可加性合并，任意 $T$ 都满足分割等式，所以 $E\in\mathcal M$。
+
+<!-- unit: N-P007-013 -->
+**Th.** $E\in\mathcal M\iff\forall A\subset E$，且 $B\subset E^c$，有
+$$m^*(A\cup B)=m^*(A)+m^*(B).$$
+
+<!-- unit: N-P007-013-S1 -->
+> [!info] 补证：与定义双向等价
+> 若 $E$ 可测，取测试集 $T=A\cup B$；由于 $A\subset E$、$B\subset E^c$，有 $T\cap E=A$、$T\cap E^c=B$，即得等式。反之，对任意 $T$ 取 $A=T\cap E$、$B=T\cap E^c$，题设恰给出 Carathéodory 等式。本页原稿只列定理，故此处将两步直接补全。
+
+<!-- unit: N-P008-HEAD -->
+<a id="distance-additivity"></a>
+
+## 加性判据原证明与正距离加性
+
+<!-- unit: N-P008-001 -->
+$\Rightarrow$：令 $T=A\cup B$，则
+
+<!-- unit: N-P008-002 -->
+$$T\cap E=A.$$
+
+<!-- unit: N-P008-003 -->
+$$T\cap E^c=B.$$
+
+<!-- unit: N-P008-004 -->
+因 $E\in\mathcal M$，$m^*(T)=m^*(A)+m^*(B)$。
+
+<!-- unit: N-P008-005 -->
+$\Leftarrow$：任取 $T\subset\mathbb R^n$。
+
+<!-- unit: N-P008-006 -->
+令 $A=T\cap E$，$B=T\cap E^c$。
+
+<!-- unit: N-P008-006-S1 -->
+> [!info] 补证：原稿省略的最后代回
+> 两集合满足 $A\subset E$、$B\subset E^c$，且 $A\cup B=T$。把它们代入前页所列的加性条件，得到 $m^*(T)=m^*(T\cap E)+m^*(T\cap E^c)$。由于 $T$ 任意，$E$ 可测。本页是前页定理的原稿证明，虽与编者前附的解释相同，仍按原有路线完整保留。
+
+<!-- unit: N-P008-007 -->
+注意：$A\cap B=\varnothing$，
+$$m^*(A\cup B)\ne m^*(A)+m^*(B),$$
+$A,B$ 可测成立。
+
+<!-- unit: N-P008-007-S1 -->
+> [!info] 纠错：原稿的不等号表示“不保证等号”
+> 不能把此处 $\ne$ 理解为“任意两个不交集合都严格不等”；例如 $A=\varnothing$ 时必相等。准确说法是：仅知 $A\cap B=\varnothing$，不能推出外测度可加；若 $A,B$ 可测则等号成立。实际上只要其中一个可测，取 $T=A\cup B$ 使用它的 Carathéodory 条件就足够。
+>
+> 若存在不可测集 $E$，按定义存在测试集 $T$ 使分割等式失败。令 $A=T\cap E$、$B=T\cap E^c$，它们不交，而次可加性结合“不相等”给出 $m^*(A\cup B)<m^*(A)+m^*(B)$，这说明条件不能省掉。
+
+<!-- unit: N-P008-008 -->
+若 $d(A,B)>0$，则上式成立。
+
+<!-- unit: N-P008-008-S1 -->
+> [!info] 补充：此处“上式成立”指等号成立
+> 对 $d(A,B)=\inf\{|a-b|:a\in A,b\in B\}>0$，结论是
+> $$m^*(A\cup B)=m^*(A)+m^*(B).$$
+> 这是 Lebesgue 外测度的度量可加性，$A,B$ 均不必可测。原稿上一行写了 $\ne$，这里按上下文恢复成欲说明的加性结论，纠正单独标出。
+
+<!-- unit: N-P008-008-S2 -->
+> [!info] 补证：小直径覆盖给出度量可加性
+> 设 $\delta=d(A,B)>0$。若 $m^*(A\cup B)=\infty$，次可加性已迫使两外测度的和为 $\infty$，等式成立。以下设有限。给定 $\varepsilon>0$，取 $A\cup B$ 的开矩形覆盖，其体积和小于 $m^*(A\cup B)+\varepsilon/2$。
+>
+> 可将覆盖中的第 $k$ 个有界矩形细分成有限个直径小于 $\delta/2$ 的闭小矩形；这些小矩形总体积等于原矩形体积，再各自微量放大成直径小于 $\delta$ 的开矩形，使第 $k$ 组新增总体积小于 $\varepsilon/2^{k+1}$。这样得到全部直径小于 $\delta$、总体积小于 $m^*(A\cup B)+\varepsilon$ 的可数开覆盖。
+>
+> 每个小矩形不可能同时碰到 $A$ 与 $B$，否则其中两点距离小于 $\delta$。把相交于 $A$ 的矩形和相交于 $B$ 的矩形分为互不重叠的两组，分别覆盖 $A,B$；完全不相交的矩形可弃去。因此
+> $$m^*(A)+m^*(B)\le\sum_{I\text{ 属于两组}}|I|<m^*(A\cup B)+\varepsilon.$$
+> 令 $\varepsilon\downarrow0$，再结合次可加性，等式得证。这里分的是覆盖的指标组，并未假定覆盖矩形彼此不交。
+
+<!-- unit: N-P008-009 -->
+$$A\cap B=\varnothing\quad(A\text{ 闭，}\ B\text{ 紧})\ \Rightarrow\ d(A,B)>0.$$
+
+<!-- unit: N-P008-010 -->
+**Proof：**
+
+<span style="color:red">〔原稿待填：该 Proof 标题后未写证明；下一物理页已转入零测集等新主题。〕</span>
+
+<!-- unit: N-P008-010-S1 -->
+> [!info] 补证：闭集与紧集的正距离
+> 若其中一个集合为空，按 $\inf\varnothing=\infty$ 结论成立。否则，对每个 $b\in B$，因为 $A$ 闭且 $b\notin A$，存在 $r_b>0$ 使 $B(b,r_b)\cap A=\varnothing$，故 $d(b,A)>0$。函数 $b\mapsto d(b,A)$ 为 $1$-Lipschitz：由三角不等式有 $d(b,A)\le|b-b'|+d(b',A)$，交换 $b,b'$ 即得绝对值估计。它在非空紧集 $B$ 上取得最小值；取得该值的点也不在 $A$，故最小值严格正，即 $d(A,B)>0$。
+>
+> 紧性不可随意去掉：$A=\{n:n\ge1\}$ 与 $B=\{n+1/(n+1):n\ge1\}$ 都是 $\mathbb R$ 中的闭集且不交，但两者距离为 $0$。
+
+<!-- unit: N-P009-HEAD -->
+<a id="null-and-cardinality"></a>
+
+## 可测族运算、零测集与可测族的势
+
+<!-- unit: N-P009-001 -->
+（1）$\varnothing\in\mathcal M$，$\mathbb R^n\in\mathcal M$。
+
+<!-- unit: N-P009-001-S1 -->
+> [!info] 补证：空集与全空间
+> 对任意测试集 $T$，用 $\varnothing$ 切分时得到 $\varnothing$ 与 $T$，用 $\mathbb R^n$ 切分时得到 $T$ 与 $\varnothing$。因为 $m^*(\varnothing)=0$，两次都满足定义中的等式。
+
+<!-- unit: N-P009-002 -->
+（2）不可测，可测。
+
+<!-- unit: N-P009-002-S1 -->
+> [!info] 补充：提纲式原文
+> 本行只有“不可测，可测”两个词，没有写关系或完整命题，故按提纲片段保留；后面关于封闭运算的完整表述另补如下。
+
+<!-- unit: N-P009-003 -->
+（3）并、交、补，上下极限。
+
+<!-- unit: N-P009-003-S1 -->
+> [!info] 补充：可测集族的封闭运算
+> 精确命题是：$\mathcal M$ 对补、可数并、可数交封闭，从而对可测集列的上极限、下极限也封闭。任意不可数并、交一般不能由这条命题推出。下面给出全部步骤，原稿此处仅列关键词。
+
+<!-- unit: N-P009-003-S2 -->
+> [!info] 补证：补与有限运算
+> 若 $E$ 可测，把分割等式中的 $E,E^c$ 交换即知 $E^c$ 可测。若 $E,F$ 可测，对任意 $T$ 先用 $E$ 分割，再用 $F$ 分割 $T\cap E$，得到
+> $$m^*(T)=m^*(T\cap E\cap F)+m^*(T\cap E\cap F^c)+m^*(T\cap E^c).$$
+> 因为后两块并成 $T\cap(E\cap F)^c$，次可加性使上式右端不小于 $m^*(T\cap E\cap F)+m^*(T\cap(E\cap F)^c)$。再结合通常的相反不等式，即得 $E\cap F$ 可测。由 De Morgan 律，有限并和差集也可测。整个推导没有作 $\infty-\infty$。
+
+<!-- unit: N-P009-003-S3 -->
+> [!info] 补证：可数并与可数可加性
+> 先设 $E_k$ 两两不交且可测，令 $E=\bigcup_{k\ge1}E_k$、$F_N=\bigcup_{k=1}^NE_k$。反复使用有限次分割等式，并用 $T\setminus E\subset T\setminus F_N$，得
+> $$m^*(T)=\sum_{k=1}^Nm^*(T\cap E_k)+m^*(T\setminus F_N)
+> \ge\sum_{k=1}^Nm^*(T\cap E_k)+m^*(T\setminus E).$$
+> 对非负部分和取上确界，结合 $m^*(T\cap E)\le\sum_{k\ge1}m^*(T\cap E_k)$，得到 $m^*(T)\ge m^*(T\cap E)+m^*(T\setminus E)$。次可加性给另一方向，所以 $E$ 可测。一般可测集列 $A_k$ 可改写成不交列 $E_1=A_1$、$E_k=A_k\setminus\bigcup_{j<k}A_j$，并集不变，故可数并封闭；可数交再由补和 De Morgan 律得到。
+>
+> 在两两不交的情形中取 $T=E$，上述有限部分和估计给出 $m(E)\ge\sum_km(E_k)$；次可加性给反向，故 $m(E)=\sum_km(E_k)$。这同时证明 $m=m^*|_{\mathcal M}$ 是测度。
+
+<!-- unit: N-P009-003-S4 -->
+> [!info] 补证：上下极限
+> 对集合列 $E_k$，
+> $$\limsup_{k\to\infty}E_k=\bigcap_{N=1}^{\infty}\bigcup_{k\ge N}E_k,\qquad
+> \liminf_{k\to\infty}E_k=\bigcup_{N=1}^{\infty}\bigcap_{k\ge N}E_k.$$
+> 前者由“无穷多次属于”这些集合的点组成，后者由“从某项起每次属于”的点组成。两式都只用可数并交，因此当各 $E_k$ 可测时，上下极限可测。
+
+<!-- unit: N-P009-004 -->
+**Def.** 外测度为 $0$ 之集，称为零测集。
+
+<!-- unit: N-P009-005 -->
+**Prop.** 零测集必可测。
+
+<!-- unit: N-P009-006 -->
+$$0\le m^*(T\cap E)\le m^*(E)=0.$$
+
+<!-- unit: N-P009-007 -->
+因 $m^*(T)\ge m^*(T\cap E)$。
+
+<!-- unit: N-P009-007-S1 -->
+> [!info] 纠错及补证：第二行还需补集部分
+> 原稿第二行末项确写 $T\cap E$，没有可辨的补集上标。该不等式虽真，只能说明 $m^*(T)\ge0$，尚不足以得到分割等式。正确收尾是由单调性
+> $$m^*(T)\ge m^*(T\cap E^c)=m^*(T\cap E)+m^*(T\cap E^c),$$
+> 其中最后一步用已证的 $m^*(T\cap E)=0$。再由次可加性得到相反不等式，故 $E$ 可测。对 $m^*(T)=\infty$ 仍合法，因为没有作减法。
+
+<!-- unit: N-P009-008 -->
+（2）零测集子集是零测集。
+
+<!-- unit: N-P009-008-S1 -->
+> [!info] 补证：完备性
+> 若 $A\subset E$ 且 $m^*(E)=0$，单调性给出 $0\le m^*(A)\le0$，所以 $A$ 也是零测集；上一命题又说明 $A$ 可测。Lebesgue 测度因而是完备测度，即每个可测零测集的任意子集仍可测。
+
+<!-- unit: N-P009-009 -->
+（3）至多个可数个零测集并是零测集。
+
+<!-- unit: N-P009-009-S1 -->
+> [!info] 补证：可数并
+> 把“至多个可数个”整理为“至多可数个”。若 $m^*(E_k)=0$，则 $0\le m^*(\bigcup_kE_k)\le\sum_km^*(E_k)=0$。有限并可补上空集成为可数列；空并也是空集。不可数并不能照此推出，例如所有单点的并可为整个 $[0,1]$。
+
+<!-- unit: N-P009-010 -->
+**Def.** $A\cap B=\varnothing$，$\overline{\overline A}=\alpha$，$\overline{\overline B}=\beta$。
+
+<!-- unit: N-P009-010-S1 -->
+> [!info] 补充：双横线表示基数
+> 这里 $\overline{\overline A}=|A|$ 表示集合的势，不是拓扑闭包。设 $\alpha=|A|$、$\beta=|B|$，以下三式定义基数的加法、乘法与幂。为定义加法可先取不交的带标记副本，故 $A\cap B=\varnothing$ 不限制可定义的两个基数。
+
+<!-- unit: N-P009-011 -->
+（1）$\overline{\overline{A\cup B}}=\alpha+\beta$。
+
+<!-- unit: N-P009-012 -->
+（2）$\alpha\cdot\beta=\overline{\overline{A\times B}}$。
+
+<!-- unit: N-P009-013 -->
+（3）$\alpha^\beta=\overline{\overline{A^B}}=\{f:B\to A\}$。
+
+<!-- unit: N-P009-013-S1 -->
+> [!info] 纠错：函数集与其基数
+> 原稿把函数集合直接接在基数的等号之后。应分为 $A^B=\{f\mid f:B\to A\}$ 和 $\alpha^\beta=|A^B|$。例如幂集 $\mathcal P(B)$ 与 $\{0,1\}^B$ 由特征函数一一对应，所以 $|\mathcal P(B)|=2^{|B|}$。
+
+<!-- unit: N-P009-014 -->
+$$2^c\le\overline{\overline{\mathcal M}}\le2^c.$$
+
+<!-- unit: N-P009-015 -->
+Cantor（上方标 $c$）：任意子集可测，$2^c$。
+
+<!-- unit: N-P009-015-S1 -->
+> [!info] 补证：为什么可测集族有 $2^c$ 个元素
+> 三分 Cantor 集 $C$ 的外测度是 $0$、势为 $c$，前面已分别证明。因此 $\mathcal P(C)\subset\mathcal M$，而 $|\mathcal P(C)|=2^c$，给出下界。另一方面 $\mathcal M\subset\mathcal P(\mathbb R^n)$，且有限维欧氏空间的势为 $c$，故 $|\mathcal M|\le2^c$。由两边夹逼，$|\mathcal M|=2^c$。
+>
+> 这里说的是“可测集本身所组成的集合族”有多大；并不表示每个可测集都具有相同的势，也不把所有 $\mathbb R^n$ 的子集都判为可测。
+
+<!-- unit: N-P010-HEAD -->
+<a id="nonmeasurable-subsets"></a>
+
+## 不可测并集问题、Vitali 构造与集合族基数
+
+<!-- unit: N-P010-001 -->
+**问题 1（原稿）。** $A,B$ 不可测，是否推出 $A\cup B$ 不可测？
+
+<span style="color:red">〔原稿提问处未写一般情形答案。〕</span>
+
+<!-- unit: N-P010-001-S1 -->
+> [!info] 补充：答案与反例
+> 不推出。取一个不可测集 $V\subset\mathbb R$，令 $A=V$、$B=V^c$。若 $V^c$ 可测，则其补集 $V$ 也可测，矛盾；所以两者均不可测，但 $A\cup B=\mathbb R$ 可测。另一方面令 $A=B=V$，并集仍不可测，说明一般情况下两种结果都可能。
+
+<!-- unit: N-P010-002 -->
+**问题 2（原稿）。** $A$ 可测、$B$ 不可测，$A\cup B$ 是否不可测？
+
+<span style="color:red">〔原稿以 Q 引出，后面只讨论附加条件与推导路线。〕</span>
+
+<!-- unit: N-P010-002-S1 -->
+> [!info] 补充：一般结论仍不成立
+> 令 $A=\mathbb R$、$B=V$ 为不可测集，则并为可测的 $\mathbb R$；令 $A=\varnothing$ 则并为不可测的 $V$。正确的判断要看 $B$ 在 $A$ 之外的部分，下面保留原稿路线并修正差集方向。
+
+<!-- unit: N-P010-003 -->
+$$A\cup V=A\cup(A\setminus V).$$
+
+<!-- unit: N-P010-003-S1 -->
+> [!info] 纠错：差集方向写反
+> 原式右端恒等于 $A$，一般不等于左端；取 $A=\varnothing$、$V\ne\varnothing$ 即得到反例。正确的分解是
+> $$A\cup V=A\cup(V\setminus A),\qquad A\cap(V\setminus A)=\varnothing.$$
+> 这里原稿的错误等式仍在上方保留，蓝色公式是编者修正。
+
+<!-- unit: N-P010-004 -->
+若 $A$ 可测，$A\cup V$ 可测 $\iff A\setminus V$ 可测。
+
+<!-- unit: N-P010-004-S1 -->
+> [!info] 纠错及补证：正确的等价条件
+> 在 $A\in\mathcal M$ 下，正确命题是
+> $$A\cup V\in\mathcal M\iff V\setminus A\in\mathcal M.$$
+> 若左端成立，作可测差集 $(A\cup V)\setminus A=V\setminus A$ 即得右端。若右端成立，由上一条正确分解，两个可测集之并可测，得到左端。原写 $A\setminus V$ 则不对：仍取 $A=\varnothing$、$V$ 不可测，右边可测而左边不可测。
+
+<!-- unit: N-P010-005 -->
+**Cor.** $A$ 可测，$A\cap V=\varnothing$，则 $A\cup V$ 不可测。
+
+<!-- unit: N-P010-005-S1 -->
+> [!info] 补充及补证：承接的假设
+> 这里须承接 $V$ 不可测。由于 $V\setminus A=V$，正确等价式立即说明 $A\cup V$ 不可测。也可反设并可测，再作差 $(A\cup V)\setminus A=V$，得到矛盾。仅有“$A$ 可测且不交”而不要求 $V$ 不可测，结论当然不成立。
+
+<!-- unit: N-P010-006 -->
+$$\Phi:2^{[2,3]}\longrightarrow2^{\mathbb R}.$$
+
+〔定义域的底数 $2$ 写在 $[2,3]$ 的左下方，按幂集记号排版。〕
+
+<!-- unit: N-P010-007 -->
+$[2,3]\supset A\longmapsto A\cup V$。
+
+<!-- unit: N-P010-008 -->
+〔Q003：起首动词及衔接字〕 Vatelli 〔Q003〕 $[2,3]^c$；可测〔子〕集，$2^c$。
+
+〔外文名按可见拼写保留，通常名称为 Vitali。〕
+
+<!-- unit: N-P010-008-S1 -->
+> [!info] 补充：由相邻映射恢复数学意图
+> 相邻两行清楚给出 $A\subset[2,3]$ 及 $A\mapsto A\cup V$，本行又有 $[2,3]^c$。可据此按“固定一个位于 $[2,3]^c$ 的不可测 Vitali 集 $V$”恢复论证，但起首及衔接字的确切字形仍记 Q003，不把数学通顺当成已经读清原字。可具体选 $V\subset[0,1]$。
+
+<!-- unit: N-P010-008-S2 -->
+> [!info] 补证：不可测集也有 $2^c$ 个
+> 原映射可在 $[2,3]$ 的所有子集上定义。为证明它给出 $2^c$ 个不可测集合，只需限制到 $C_0=C+2\subset[2,3]$ 的所有子集，其中 $C$ 是三分 Cantor 集。平移不改变外测度，所以 $C_0$ 仍零测、势为 $c$，其 $2^c$ 个子集 $A$ 全可测，且都与固定的不可测 $V\subset[0,1]$ 不交。前一推论说明每个 $A\cup V$ 不可测。
+>
+> 若 $A_1\cup V=A_2\cup V$，两边与 $[2,3]$ 相交，集合恒等式给 $A_1=A_2$，因此映射为单射。不可测集合族的势至少 $2^c$，而它包含于 $\mathcal P(\mathbb R)$，势至多 $2^c$；故恰为 $2^c$。这里求交只是证明两个集合相等的操作，不依赖先断言该区间可测。
+
+<!-- unit: N-P010-009 -->
+凡测度 $>0$ 之集，必 $\exists$ 不可测子集。
+
+<!-- unit: N-P010-009-S1 -->
+> [!info] 补充：命题的范围与平移引理
+> 这里的测度指 Lebesgue 测度，构造使用选择公理。实际上若 $E\subset\mathbb R^n$ 满足 $m^*(E)>0$，即使尚未知道 $E$ 可测，也含有不可测子集。
+>
+> 先补本构造及上一基数论证使用的平移性质：将覆盖 $E$ 的每个开矩形平移向量 $t$，总体积不变，得到 $m^*(E+t)\le m^*(E)$；再平移 $-t$ 得反向，所以 $m^*(E+t)=m^*(E)$。若 $E$ 可测，把任意 $T-t$ 代入其分割等式，并将两部分平移 $t$，可得 $E+t$ 的分割等式。因此可测性和平移后的测度都保持。
+
+<!-- unit: N-P010-009-S2 -->
+> [!info] 补证：不可测子集的完整构造
+> 取整数 $N\ge1$ 使 $F=E\cap[-N,N]^n$ 满足 $m^*(F)>0$。这样的 $N$ 必存在；否则 $E$ 是一列零外测度集合的并，次可加性将给出 $m^*(E)=0$。
+>
+> 在 $F$ 上定义 $x\sim y\iff x-y\in\mathbb Q^n$。用选择公理从每个等价类中选一点，组成 $V\subset F$。设 $D=\mathbb Q^n\cap[-2N,2N]^n$，则 $D$ 为可数无限集，且
+> $$F\subset\bigcup_{q\in D}(V+q)\subset[-3N,3N]^n.$$
+> 第一包含因为每个 $x\in F$ 与所选代表 $v\in F$ 相差一个属于 $D$ 的有理向量，第二包含来自坐标界。
+>
+> 这些平移两两不交：若 $v_1+q_1=v_2+q_2$，则 $v_1-v_2\in\mathbb Q^n$，代表选择迫使 $v_1=v_2$，继而 $q_1=q_2$。若 $V$ 可测，则各 $V+q$ 可测且测度同为 $a=m(V)$。如果 $a=0$，可数次可加性与第一包含给出 $m^*(F)=0$，矛盾；如果 $a>0$，任取 $D$ 中 $K$ 个不同向量，有限可加性及第二包含给出 $Ka\le m^*([-3N,3N]^n)=(6N)^n$，让 $K$ 任意大又矛盾。因此 $V$ 不可测。
+>
+> 取 $E=[0,1]$ 即给出前面问题所需的 Vitali 型例子；取任意正外测度 $E$ 则给出本页和第 5 页旁注的结论。
+
+<!-- unit: N-P010-010 -->
+运算性质。
+
+<!-- unit: N-P010-011 -->
+（1）$A,B\in\mathcal M$，$A\cup B\in\mathcal M$。
+
+<!-- unit: N-P011-HEAD -->
+<a id="finite-operations-proof"></a>
+
+## 有限并的四块证明、补与交及有限可加
+
+<!-- unit: N-P011-001 -->
+$\forall T\subset\mathbb R^n$。
+
+<!-- unit: N-P011-002 -->
+$$m^*(T)\ge m^*(T\cap(A\cup B))+m^*(T\cap A\cup B^c).$$
+
+<!-- unit: N-P011-002-S1 -->
+> [!info] 纠错：补集的括号范围
+> 这一行承接前页 $A,B$ 可测、欲证 $A\cup B$ 可测。末项原写没有给 $A\cup B$ 加成对括号，若按通常运算优先次序读成 $m^*((T\cap A)\cup B^c)$，便不是所需命题。正确目标应写为
+> $$m^*(T)\ge m^*(T\cap(A\cup B))+m^*(T\cap(A\cup B)^c).$$
+> 其相反不等式总由次可加性成立。以下分块证明的是这个补全括号后的目标。
+
+<!-- unit: N-P011-003 -->
+原图：三个相交圆分别标 $A$、$B$、$T$；$T$ 圆较大，位于下方。其内部写 1、2、3、4，分别落在仅与 $A$ 相交、三圆公共、仅与 $B$ 相交、与 $A,B$ 都不交的部分。
+
+![原稿三圆四区域图](https://raw.githubusercontent.com/SOMEBODYJUN/co-work-anl/refs/heads/work/notes/work/notes-fc2ba28a26cd495f/notes/RA07/project/evidence/p0011-diagram.png)
+
+<!-- unit: N-P011-003-S1 -->
+> [!info] 补充：图中编号的集合表达
+> 令 $D_1=T\cap A\cap B^c$、$D_2=T\cap A\cap B$、$D_3=T\cap A^c\cap B$、$D_4=T\cap A^c\cap B^c$。四块两两不交且并为 $T$；其中 $D_1\cup D_2\cup D_3=T\cap(A\cup B)$，$D_4=T\cap(A\cup B)^c$。这是把图上编号翻译成公式，原图没有给四块另写 $D_i$ 名字。
+
+<!-- unit: N-P011-004 -->
+$(T\cap A\cap B)\cup(T\cap A\cap B^c)\cup(T\cap B\cap A^c)$
+
+<!-- unit: N-P011-005 -->
+$=T\cap(A\cup B)$。
+
+<!-- unit: N-P011-006 -->
+则取外测度。
+
+<!-- unit: N-P011-007 -->
+$$m^*(T\cap A\cap B^c)+m^*(T\cap A\cap B)=m^*(T\cap A).$$
+
+<!-- unit: N-P011-007-S1 -->
+> [!info] 补证：该等号的依据
+> 将测试集 $T\cap A$ 代入 $B$ 的可测性条件，即得本行等式。它在图上对应 $m^*(D_1)+m^*(D_2)=m^*(T\cap A)$；此时 $T\cap A$ 本身无需预先被判为可测。
+
+<!-- unit: N-P011-008 -->
+〔Q004：公式前的三个衔接字〕
+$$m^*(T\cap A)+m^*(T\cap A^c)=m^*(T).$$
+
+<!-- unit: N-P011-008-S1 -->
+> [!info] 补证：补齐第三、第四块后完成有限并证明
+> 还应把 $T\cap A^c$ 作为测试集代入 $B$ 的可测性，得到 $m^*(D_3)+m^*(D_4)=m^*(T\cap A^c)$。再与原稿已写的两式合并，
+> $$\sum_{i=1}^{4}m^*(D_i)=m^*(T\cap A)+m^*(T\cap A^c)=m^*(T).$$
+> 次可加性给 $m^*(D_1\cup D_2\cup D_3)\le\sum_{i=1}^{3}m^*(D_i)$，故
+> $$m^*(T\cap(A\cup B))+m^*(T\cap(A\cup B)^c)\le\sum_{i=1}^{4}m^*(D_i)=m^*(T).$$
+> 与开头的一般反向界合并，即证 $A\cup B$ 可测。这条四块路线与前面的有限交路线均保留。衔接语 Q004 不影响两条完整原公式的含义。
+
+<!-- unit: N-P011-009 -->
+**Prop.** $S$ 可测，$S^c$ 可测。
+
+<!-- unit: N-P011-010 -->
+$$m^*(T\cap S)+m^*(T\cap S^c)
+\overset{\text{性质}}{=}m^*(T\cap S^{cc})+m^*(T\cap S^c).$$
+
+〔原稿右边在 $S$ 上连写两个补集符号。〕
+
+<!-- unit: N-P011-010-S1 -->
+> [!info] 补证：改写成补集的定义式
+> $S^{cc}=(S^c)^c=S$，而 $S$ 可测使本行两边都等于 $m^*(T)$。交换右边两项即可写成 $m^*(T\cap S^c)+m^*(T\cap(S^c)^c)=m^*(T)$，这对每个 $T$ 成立，故 $S^c$ 可测。
+
+<!-- unit: N-P011-011 -->
+$A,B$ 可测，$A\cap B$ 可测。
+
+<!-- unit: N-P011-011-S1 -->
+> [!info] 补证：用已证的并与补
+> 由 $A^c,B^c$ 可测以及有限并封闭知 $A^c\cup B^c$ 可测，再取补得 $(A^c\cup B^c)^c=A\cap B$ 可测。它与前面直接切分测试集证明有限交的路线等价。
+
+<!-- unit: N-P011-012 -->
+**Prop.** $A,B\in\mathcal M$，$A\cap B=\varnothing$。
+
+<!-- unit: N-P011-013 -->
+$$m(A\cup B)=m(A)+m(B).$$
+
+<!-- unit: N-P011-013-S1 -->
+> [!info] 补证：不交有限可加
+> 用 $A$ 的可测性测试 $T=A\cup B$，有 $T\cap A=A$、$T\cap A^c=B$，从而 $m^*(A\cup B)=m^*(A)+m^*(B)$。三者都可测，故可以将 $m^*$ 写为 $m$。多于两个集合的有限不交可加性由归纳得到，且允许各项等于 $\infty$。

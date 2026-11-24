@@ -449,15 +449,16 @@
     },
     {
       "id": "N-P002-S03",
-      "text": "> [!info] 适用范围核验：外测度与 Borel 代数\n> 对 Lebesgue 外测度，上面的非 Borel 零测子集说明，Carathéodory 可测集族严格大于 Borel 集族。原页进一步写了“**不存在外测度**”这一全称断言，未附一般论证；它不能仅由 Lebesgue 外测度这个特例推出。本次首遍保留原断言，并登记数学核验项 M001，等待一般论证的独立核验。",
+      "text": "> [!info] 【完整补证】Borel 代数不能恰为外测度的 Carathéodory 可测集族\n> 原断言在 $X=\\mathbb R^n$、$n\\ge1$ 时成立。下面先列所需的两个描述集合论工具，再证明原稿省略的全称结论。\n>\n> **工具一：解析集的普遍可测性。** Polish 空间（可分且可完全度量的拓扑空间）的解析集，可理解为 Polish 空间的连续像；每个解析集对任一有限 Borel 测度都属于其完备化。具体地，若 $A$ 解析、$\\nu$ 是有限 Borel 测度，则有 Borel 集 $B\\subset A\\subset C$，满足 $\\nu(C\\setminus B)=0$。参见 Philipp Schlicht，[《Lecture Notes on Descriptive Set Theory》](https://www.math.uni-bonn.de/ag/logik/teaching/2013SS/advanced%20topics/Lecture%20notes%20on%20descriptive%20set%20theory.pdf)，2013 年，Proposition 3.26，PDF 第 16 页及其前面的 Lemmas 3.22–3.25。\n>\n> **工具二：存在解析非 Borel 集。** Justin Moore 的 [《MATH 7870: Descriptive Set Theory》](https://pi.math.cornell.edu/~justin/Limited2Cornell/DST_lecture_notes.pdf)，Lecture 6，Theorem 13 与 Corollary 5（PDF 第 14 页）给出 Baire 空间乘积中的普遍解析非 Borel 集。交错排列坐标把该乘积同胚到 Baire 空间，再用 Baire 空间与无理数集的同胚（同讲义 Lecture 2，第 4 页），可将它作为 $\\mathbb R$ 中的解析非 Borel 集；若其像在 $\\mathbb R$ 中是 Borel 集，连续逆像将迫使原集 Borel，矛盾。嵌入坐标直线可得到 $\\mathbb R^n$ 中的例子。\n>\n> 现在设任意外测度 $\\mu^*$ 的 Carathéodory 可测集族包含 $\\mathcal B(X)$，取一个解析非 Borel 集 $A\\subset X$。任取测试集 $T\\subset X$，证明\n> $$\\mu^*(T)=\\mu^*(T\\cap A)+\\mu^*(T\\setminus A).$$\n> 若 $\\mu^*(T)=\\infty$，外测度次可加性已给出 $\\infty\\le\\mu^*(T\\cap A)+\\mu^*(T\\setminus A)$，所以右边也是无穷，等式成立。\n>\n> 若 $\\mu^*(T)<\\infty$，对 Borel 集 $D$ 定义 $\\nu_T(D)=\\mu^*(T\\cap D)$。这里 $T$ 不必可测。证明 $\\nu_T$ 是有限 Borel 测度：对两两不交的 Borel 集 $D_i$，把各 $D_i$ 的 Carathéodory 分割性质逐次用于 $T\\cap\\bigcup_iD_i$，得到对每个 $N$，\n> $$\\mu^*\\!\\left(T\\cap\\bigcup_iD_i\\right)\\ge\\sum_{i=1}^N\\mu^*(T\\cap D_i).$$\n> 令 $N\\to\\infty$ 得到不小于整个级数；反向不等式由外测度可列次可加性给出。因此 $\\nu_T$ 可列可加，且 $\\nu_T(X)=\\mu^*(T)<\\infty$。\n>\n> 应用工具一，选 Borel 集 $B\\subset A\\subset C$ 使 $\\nu_T(C\\setminus B)=0$。有限测度的可加性给出 $\\nu_T(B)=\\nu_T(C)$，由单调性夹逼，\n> $$\\mu^*(T\\cap A)=\\nu_T(B)=\\nu_T(C).$$\n> 同样 $C^c\\subset A^c\\subset B^c$ 且 $\\nu_T(B^c\\setminus C^c)=0$，所以\n> $$\\mu^*(T\\setminus A)=\\nu_T(C^c)=\\nu_T(B^c).$$\n> 两式相加为 $\\nu_T(B)+\\nu_T(B^c)=\\nu_T(X)=\\mu^*(T)$。因为 $T$ 任意，$A$ 满足 Carathéodory 条件；但 $A$ 非 Borel，故该可测集族严格包含 $\\mathcal B(X)$，不可能恰好等于它。\n>\n> 这个论证不假设原外测度局部有限或 $\\sigma$ 有限，也没有使用无穷量相减。",
       "source_ids": [
-        "RA09-P002-U007",
-        "RA09-P002-U005",
-        "RA09-P002-U006"
+        "RA09-P002-U007"
       ],
       "origin": "supplement",
-      "explanation": "区分原稿全称断言与已经证明的 Lebesgue 特例，不静默删去或误作已证明。",
-      "status": "resolved"
+      "explanation": "保留原全称命题；采用/root贡献的局部有限化论证，并由/root/ra09_rebuild实际打开两份大学讲义核对先用工具，完成一般证明。",
+      "status": "resolved",
+      "extra_evidence_ids": [
+        "artifact:ra09-m001-research"
+      ]
     },
     {
       "id": "N-P002-S04",
@@ -515,7 +516,7 @@
     },
     {
       "id": "M001",
-      "status": "open",
+      "status": "resolved",
       "description": "原稿称不存在任何外测度由 Carathéodory 条件恰好生成 Borel 代数，未给一般论证。Lebesgue 外测度特例已由 Cantor 零测子集证明；全称结论需独立数学核验。",
       "related_ids": [
         "RA09-P002-U007",
@@ -524,9 +525,10 @@
       "evidence_ids": [
         "image:p0002",
         "image:p0002-r2c1",
-        "image:p0002-r2c2"
+        "image:p0002-r2c2",
+        "artifact:ra09-m001-research"
       ],
-      "resolution": "保留原断言，学习稿就地区分特例与全称命题；尚未标记该一般命题为错误。"
+      "resolution": "历史：首读仅核实Lebesgue特例，暂留一般命题。现由/root给出局部有限化证明，作者实际打开Schlicht Prop3.26及Moore Th13/Cor5核对工具，已就地补全并确认X=Rn,n≥1时为真。"
     }
   ]
 }

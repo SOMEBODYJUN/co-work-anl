@@ -484,6 +484,17 @@
       "status": "resolved"
     },
     {
+      "id": "N-P001-S04",
+      "origin": "supplement",
+      "status": "resolved",
+      "source_ids": [
+        "RA09-P001-U005",
+        "RA09-P001-U006"
+      ],
+      "explanation": "以无理数集给出Gδ非Fσ的具体反例，并用嵌套区间补齐所需Baire论证。",
+      "text": "> [!info] 【例子与证明补全】无理数集是 $G_\\delta$，却不是 $F_\\sigma$\n> 已知 $\\mathbb Q$ 是 $F_\\sigma$，故 $\\mathbb R\\setminus\\mathbb Q$ 是 $G_\\delta$。假设反过来它也是 $F_\\sigma$，写成 $\\mathbb R\\setminus\\mathbb Q=\\bigcup_{n\\ge1}F_n$，其中各 $F_n$ 在 $\\mathbb R$ 中闭。由于 $F_n$ 不含有理数，而每个非空开区间都含有理数，$F_n$ 的内部为空。把有理数列成 $q_1,q_2,\\ldots$，并交错排列闭集 $H_{2n-1}=F_n$、$H_{2n}=\\{q_n\\}$。这些 $H_k$ 都闭且内部为空，却覆盖了 $\\mathbb R$。\n>\n> 以下直接证明这不可能，无需先引用 Baire 定理。取非退化闭区间 $I_0=[0,1]$。若 $I_{k-1}$ 已选定，$H_k$ 内部为空且闭，所以 $\\operatorname{int}I_{k-1}\\setminus H_k$ 是非空开集，可在其中选非退化闭区间 $I_k$，并使其长度小于 $2^{-k}$。于是 $I_k\\subset\\operatorname{int}I_{k-1}$、$I_k\\cap H_k=\\varnothing$。由实数闭区间套性质，$\\bigcap_kI_k$ 有一点 $x$；对每个 $k$，$x\\in I_k$，所以 $x\\notin H_k$，与全部 $H_k$ 覆盖 $\\mathbb R$ 矛盾。因此无理数集不是 $F_\\sigma$。"
+    },
+    {
       "id": "N-P001-S02",
       "text": "> [!info] 补充证明：度量空间中的闭集是 $G_\\delta$\n> 此处 $F$ 必须为闭集。先设 $F\\ne\\varnothing$。三角不等式给出\n> $$\n> |d(x,F)-d(y,F)|\\le d(x,y),\n> $$\n> 所以距离函数连续。$[0,1/n)$ 是 $[0,\\infty)$ 的相对开集，因此 $U_n$ 开。又 $F\\subset U_n$ 对每个 $n$ 成立；若 $x\\notin F$，闭性给出 $r>0$ 使 $B(x,r)\\cap F=\\varnothing$，选 $1/n\\le r$，便有 $x\\notin U_n$。于是 $F=\\bigcap_nU_n$。$F=\\varnothing$ 时直接取 $U_n=\\varnothing$。对闭集取补，得到每个开集都是 $F_\\sigma$。\n>\n> 原页写“设 $F\\subset(X,d)$”，未重写闭性；此处补明它来自上文“闭是否是 $G_\\delta$”这一问题。",
       "source_ids": [

@@ -232,3 +232,47 @@ $\forall y\in(\alpha,\beta)$。
 且 $\alpha\notin U$，$\beta\notin U$。
 
 反证，若不然。
+
+
+<!-- unit: T-p5-heading -->
+## 原稿第 5 页
+
+<!-- unit: T-p5-01 -->
+设 $G\subset\mathbb R$，若 $(a,b)\subset G$。
+
+<!-- unit: T-p5-02 -->
+$a\notin G$，$b\notin G$，$(a,b)$ 是 $G$ 的构成区间。
+
+<!-- unit: T-p5-03 -->
+**prop：**开集 $G$ 的不同构成区间互不相交。
+
+<!-- unit: T-p5-04 -->
+蓝笔补记：反证，可以用两个构成区间。
+
+<!-- unit: T-p5-05 -->
+**Cor：**若 $x_0\ne y_0$，包含 $x_0$、$y_0$ 的构成区间
+$$
+\begin{cases}
+\text{相等},\\
+\text{不相交}.
+\end{cases}
+$$
+两种情形在原稿右侧用左大括号分列。
+
+<!-- unit: T-p5-06 -->
+得到了开区间的唯一表示。
+
+<!-- unit: T-p5-07 -->
+$\mathbb R^n$，中可表示为 $(a,b)$ 可数个，且表示不唯一。
+
+<!-- unit: T-p5-08 -->
+**Thm：**$(X,\tau)$ 是第二可数，局部连通，$\forall U\subset(X,\tau)$。
+
+<!-- unit: T-p5-09 -->
+可表示为至多可数个连通分支的并。
+
+<!-- unit: T-p5-10 -->
+**Ex 1：**实区间均连。
+
+<!-- unit: T-p5-11 -->
+**pf：**$p$ 进制小数[Q005]展开。

@@ -308,3 +308,224 @@ $$
 
 <!-- unit: T-P005-U013 -->
 (2) $\Sigma_f$ 是 s.t. $f$ 连续的最大拓扑。
+
+<!-- unit: T-P006-H -->
+## 物理第 6 页
+
+<!-- unit: T-P006-U001 -->
+### 可测
+
+<!-- unit: T-P006-U002 -->
+**定义** $f:(X,\Sigma_X)\to(Y,\Sigma_Y)$。
+
+<!-- unit: T-P006-U003 -->
+若 $\forall U\in\Sigma_Y$，有 $f^{-1}(U)\in\Sigma_X$，则 $f$ 是 $(\Sigma_X,\Sigma_Y)$ 可测映射。
+
+<!-- unit: T-P006-U004 -->
+**引理** 若存在 $\mathcal D\subset\Sigma_Y$，使 $\sigma(\mathcal D)=\Sigma_Y$，
+
+<!-- unit: T-P006-U005 -->
+则 $f$ 是 $(\Sigma_X,\Sigma_Y)$ 可测 $\Longleftrightarrow\mathcal D\subset\Sigma_f$。
+
+<!-- unit: T-P006-U006 -->
+仅证 $\Longleftarrow$。$\Sigma_f$ 是〔疑字003〕$\sigma$ 代数。
+
+<!-- unit: T-P006-U007 -->
+$\Sigma_Y\subset\Sigma_f$。〔右侧有证明结束小记号。〕
+
+<!-- unit: T-P006-U008 -->
+$\Sigma_Y$ 变动，有不同的……〔原行止于“的”。〕
+
+<!-- unit: T-P006-U009 -->
+### 广义 $\overline{\mathbb R}$ 上的拓扑
+
+<!-- unit: T-P006-U010 -->
+（1）定义开区间。
+
+<!-- unit: T-P006-U011 -->
+（2）半直线。
+
+<!-- unit: T-P006-U012 -->
+只要邻域，〔疑字004〕（1）（2）线序拓扑。
+
+<!-- unit: T-P007-H -->
+## 物理第 7 页
+
+<!-- unit: T-P007-U001 -->
+令由开集生成的 $\sigma$ 代数。
+
+<!-- unit: T-P007-U002 -->
+（1）$\mathcal B(O(\mathbb R))=\mathcal B(\mathbb R,\{-\infty\},\{+\infty\})$。
+
+<!-- unit: T-P007-U003 -->
+$=$ <span style="color:red">〔原稿等号后留空，待填。〕</span>
+
+<!-- unit: T-P007-U004 -->
+$\mathbb R\longrightarrow\overline{\mathbb R}$。
+
+<!-- unit: T-P007-U005 -->
+Borel 集 $\longrightarrow\mathcal B(\overline{\mathbb R})$，扩充了。
+
+<!-- unit: T-P007-U006 -->
+（2）$\mathcal B(\overline{\mathbb R})=\sigma\{[a,+\infty]:a\in\mathbb R\}$。
+
+<!-- unit: T-P007-U007 -->
+＝四种广义半直线，在广义 $\mathbb R$ 上。
+
+<!-- unit: T-P007-U008 -->
+$\overline{\mathbb R}$ 与 $[0,1]$ 同胚。
+
+<!-- unit: T-P007-U009 -->
+可以证明 $\{-\infty\}$、$\{+\infty\}$ 是闭集，
+
+<!-- unit: T-P007-U010 -->
+则 $\{a\}\in\mathcal B(\overline{\mathbb R})$，$\forall a\in\overline{\mathbb R}$。
+
+<!-- unit: T-P007-U011 -->
+### 限制 $\Sigma$ 代数
+
+<!-- unit: T-P007-U012 -->
+$E\subset\mathbb R^n$，$\mathcal M$ 是 Lebesgue $\sigma$。
+
+<!-- unit: T-P007-U013 -->
+$\Sigma_E=\{E\cap F:F\in\mathcal M\}$。
+
+<!-- unit: T-P007-U014 -->
+称 trace $\sigma$ 代数。
+
+<!-- unit: T-P007-U015 -->
+特别的，若 $E$ 可测，则 $\Sigma_E=\{F\in\mathcal M:F\subset E\}$。
+
+<!-- unit: T-P008-H -->
+## 物理第 8 页
+
+<!-- unit: T-P008-U001 -->
+$B\subset E$，则
+
+<!-- unit: T-P008-U002 -->
+$B\in\Sigma_E\Longleftrightarrow B\in\mathcal M$。
+
+<!-- unit: T-P008-U003 -->
+**定义** $E\in\mathcal M$，称 $f:E\to\overline{\mathbb R}$ 可测：
+
+<!-- unit: T-P008-U004 -->
+$\forall a\in\mathbb R$，有 $E[f>a]=\{x\in E:f(x)>a\}\in\mathcal M$。
+
+<!-- unit: T-P008-U005 -->
+$E$ 上所有 Lebesgue 可测函数集合为 $\operatorname{MF}(E)$。
+
+<!-- unit: T-P008-U006 -->
+**Th** 设 $E\in\mathcal M$，则 $f\in\operatorname{MF}(E)$。〔原稿先如此起笔，下一行另起 “Th”。〕
+
+<!-- unit: T-P008-U007 -->
+**Th** $E\in\mathcal M$。令 $\mathrm E_f=\{B\subset\overline{\mathbb R}:f^{-1}(B)\in\Sigma_E\}$。〔首符号字形近 $\mathrm E_f$，本行后续及以下均记为 $\Sigma_f$。〕
+
+<!-- unit: T-P008-U008 -->
+则 $f\in\operatorname{MF}(E)\Longleftrightarrow\mathcal B(\overline{\mathbb R})\subset\Sigma_f$。
+
+<!-- unit: T-P008-U009 -->
+$\Longleftarrow$ 显然。
+
+<!-- unit: T-P008-U010 -->
+$\Longrightarrow$ 用生成〔疑字005〕。
+
+<!-- unit: T-P008-U011 -->
+$\mathcal D=\{(a,+\infty)\}$。
+
+<!-- unit: T-P008-U012 -->
+$\mathcal D\subset\mathcal B(\overline{\mathbb R})$。
+
+<!-- unit: T-P008-U013 -->
+$f:(\mathbb R^n,\Sigma)\longrightarrow(\overline{\mathbb R},\Sigma_f)$。
+
+<!-- unit: T-P008-U014 -->
+原图下方左列为 $\mathcal M$、$\mathcal B(\mathbb R^n)$，右列为 $\mathcal M(\overline{\mathbb R})$、$\mathcal B(\overline{\mathbb R})$。蓝色斜箭头从左上 $\mathcal M$ 指向右下 $\mathcal B(\overline{\mathbb R})$。
+
+![原稿的源端与目标端集合族示意及蓝色箭头](../../crops/p0008-diagram.png)
+
+<!-- unit: T-P008-U015 -->
+$\mathcal B(\overline{\mathbb R})\subset\mathcal M(\overline{\mathbb R})\subset\Sigma_f$。
+
+<!-- unit: T-P009-H -->
+## 物理第 9 页
+
+<!-- unit: T-P009-U001 -->
+$(\mathcal M\to\mathcal B)$，Leb。
+
+<!-- unit: T-P009-U002 -->
+$(\mathcal M\to\mathcal M)$。
+
+<!-- unit: T-P009-U003 -->
+<span style="color:red">请比较 4 个组合的可测的强弱。</span>
+
+<!-- unit: T-P009-U004 -->
+$E[a\le f<b]\in\mathcal M$，$\forall a,b\in\mathbb R$，
+
+<!-- unit: T-P009-U005 -->
+$\not\Longrightarrow f\in\operatorname{MF}(E)$。
+
+<!-- unit: T-P009-U006 -->
+$\sigma(\mathcal I)=B\cup\{+\infty,-\infty\}$，$B\in\mathcal B(\mathbb R)$。
+
+<!-- unit: T-P009-U007 -->
+**例** $E$ 是 $\mathbb R^n$ 上不可测集。
+
+<!-- unit: T-P009-U008 -->
+令 $f(x)=\begin{cases}+\infty,&x\in E,\\-\infty,&x\notin E.\end{cases}$
+
+<!-- unit: T-P009-U009 -->
+$E[a\le f<b]=\varnothing$。
+
+<!-- unit: T-P009-U010 -->
+$E[f=\{-\infty,+\infty\}]=\mathbb R^n\in\mathcal M$。
+
+<!-- unit: T-P009-U011 -->
+$E\{f\ge a\}=E$，不可测。
+
+<!-- unit: T-P009-U012 -->
+**例** $E\in\mathcal M$，
+
+<!-- unit: T-P009-U013 -->
+$f(x)=C$ 可测。
+
+<!-- unit: T-P010-H -->
+## 物理第 10 页
+
+<!-- unit: T-P010-U001 -->
+$A\subset E\in\mathcal M$，$\chi_A:E\to\overline{\mathbb R}$。
+
+<!-- unit: T-P010-U002 -->
+$\chi_A(x)=\begin{cases}1,&x\in A,\\0,&x\notin A.\end{cases}$
+
+<!-- unit: T-P010-U003 -->
+$\chi_A\in\operatorname{MF}(E)$ iff $A\in\mathcal M$。
+
+<!-- unit: T-P010-U004 -->
+**proof** 原稿把 $E[f>a]$ 分成以下三段：
+
+<!-- unit: T-P010-U005 -->
+$E[f>a]=E$，$a<0$。
+
+<!-- unit: T-P010-U006 -->
+$E[f>a]=A$，$0<a$。
+
+<!-- unit: T-P010-U007 -->
+$E[f>a]=\varnothing$，$a>1$。
+
+<!-- unit: T-P010-U008 -->
+### 连续
+
+<!-- unit: T-P010-U009 -->
+孤立点本无法定义连续。
+
+<!-- unit: T-P010-U010 -->
+$f:E\to\mathbb R$，在 $E$ 上连续，$E\in\mathcal M(\mathbb R^n)$，
+
+<!-- unit: T-P010-U011 -->
+则 $\mathcal M f\in\operatorname{MF}(E)$。〔原稿在 $f$ 前另有 $\mathcal M$ 形符号。〕
+
+<!-- unit: T-P010-U012 -->
+$\Sigma_f$。
+
+<!-- unit: T-P010-U013 -->
+$\tau_f$。

@@ -275,7 +275,7 @@ $$m^*(I)=m^*(I\cap E)+m^*(I\cap\cdots).$$
 <!-- unit: T-P006-005 -->
 原图：左上较小圆与右下较大圆相交，圆上方写 $E$；右下圆未写名称，没有阴影或箭头。
 
-![原稿中的相交集合图](../../evidence/p0006-diagram.png)
+![原稿中的相交集合图](https://raw.githubusercontent.com/SOMEBODYJUN/co-work-anl/refs/heads/work/notes/work/notes-fc2ba28a26cd495f/notes/RA07/project/evidence/p0006-diagram.png)
 
 <!-- unit: T-P006-006 -->
 一般：
@@ -305,3 +305,226 @@ $$ZF\nvdash P,\qquad ZF\nvdash\neg P.$$
 <!-- unit: T-P006-013 -->
 若 $ZF\to P$，
 $$ZFC\to P.$$
+
+<!-- unit: T-P007-HEAD -->
+## 物理第 7 页
+
+<!-- unit: T-P007-001 -->
+**Th.**
+$$E\in\mathcal M\iff m^*(I)=m^*(I\cap E)+m^*(I\cap E^c),$$
+$\forall I\subset\mathbb R$ 区间（矩形）。
+
+<!-- unit: T-P007-002 -->
+〔左边缘另有被裁切的公式尾段，能读出 $E^c)$；没有足够图像恢复其前项。〕
+
+<!-- unit: T-P007-003 -->
+**pf.** $\Rightarrow$：显然。
+
+<!-- unit: T-P007-004 -->
+$\Leftarrow$：由外测度次可加性，仅证
+$$m^*(T)\ge m^*(T\cap E)+m^*(T\cap E^c).$$
+
+<!-- unit: T-P007-005 -->
+（1）若 $m^*(T)=+\infty$，成立。
+
+<!-- unit: T-P007-006 -->
+（2）$\forall\varepsilon>0$，$\exists\{I_k\}\in LC(T)$，s.t.
+$$\sum_{k=1}^{\infty}|I_k|<m^*(T)+\varepsilon.$$
+
+<!-- unit: T-P007-007 -->
+$$T\cap E\subset\bigcup_{k=1}^{\infty}(E\cap I_k).$$
+
+<!-- unit: T-P007-008 -->
+$$T\cap E^c\subset\bigcup_{k=1}^{\infty}(E^c\cap I_k).$$
+
+<!-- unit: T-P007-009 -->
+$$m^*(T\cap E)\le m^*\left(\bigcup_{k=1}^{\infty}(E\cap I_k)\right)
+\le\sum_{k=1}^{\infty}m^*(E\cap I_k)<+\infty.$$
+
+<!-- unit: T-P007-010 -->
+$$m^*(T\cap E)+m^*(T\cap E^c)
+\le\sum_{k=1}^{\infty}m^*(E\cap I_k)+\sum_{k=1}^{\infty}m^*(E^c\cap I_k).$$
+
+<!-- unit: T-P007-011 -->
+（“题设”标在下一等号处。）
+$$=\sum_{k=1}^{\infty}m^*(I_k)=\sum_{k=1}^{\infty}|I_k|<m^*(T)+\varepsilon.$$
+
+<!-- unit: T-P007-012 -->
+$\varepsilon\to0^+$。
+
+<!-- unit: T-P007-013 -->
+**Th.** $E\in\mathcal M\iff\forall A\subset E$，且 $B\subset E^c$，有
+$$m^*(A\cup B)=m^*(A)+m^*(B).$$
+
+<!-- unit: T-P008-HEAD -->
+## 物理第 8 页
+
+<!-- unit: T-P008-001 -->
+$\Rightarrow$：令 $T=A\cup B$，则
+
+<!-- unit: T-P008-002 -->
+$$T\cap E=A.$$
+
+<!-- unit: T-P008-003 -->
+$$T\cap E^c=B.$$
+
+<!-- unit: T-P008-004 -->
+因 $E\in\mathcal M$，$m^*(T)=m^*(A)+m^*(B)$。
+
+<!-- unit: T-P008-005 -->
+$\Leftarrow$：任取 $T\subset\mathbb R^n$。
+
+<!-- unit: T-P008-006 -->
+令 $A=T\cap E$，$B=T\cap E^c$。
+
+<!-- unit: T-P008-007 -->
+注意：$A\cap B=\varnothing$，
+$$m^*(A\cup B)\ne m^*(A)+m^*(B),$$
+$A,B$ 可测成立。
+
+<!-- unit: T-P008-008 -->
+若 $d(A,B)>0$，则上式成立。
+
+<!-- unit: T-P008-009 -->
+$$A\cap B=\varnothing\quad(A\text{ 闭，}\ B\text{ 紧})\ \Rightarrow\ d(A,B)>0.$$
+
+<!-- unit: T-P008-010 -->
+**Proof：**
+
+〔本页该标题以下未写推导，余下大段为空白。〕
+
+<!-- unit: T-P009-HEAD -->
+## 物理第 9 页
+
+<!-- unit: T-P009-001 -->
+（1）$\varnothing\in\mathcal M$，$\mathbb R^n\in\mathcal M$。
+
+<!-- unit: T-P009-002 -->
+（2）不可测，可测。
+
+<!-- unit: T-P009-003 -->
+（3）并、交、补，上下极限。
+
+<!-- unit: T-P009-004 -->
+**Def.** 外测度为 $0$ 之集，称为零测集。
+
+<!-- unit: T-P009-005 -->
+**Prop.** 零测集必可测。
+
+<!-- unit: T-P009-006 -->
+$$0\le m^*(T\cap E)\le m^*(E)=0.$$
+
+<!-- unit: T-P009-007 -->
+因 $m^*(T)\ge m^*(T\cap E)$。
+
+<!-- unit: T-P009-008 -->
+（2）零测集子集是零测集。
+
+<!-- unit: T-P009-009 -->
+（3）至多个可数个零测集并是零测集。
+
+<!-- unit: T-P009-010 -->
+**Def.** $A\cap B=\varnothing$，$\overline{\overline A}=\alpha$，$\overline{\overline B}=\beta$。
+
+<!-- unit: T-P009-011 -->
+（1）$\overline{\overline{A\cup B}}=\alpha+\beta$。
+
+<!-- unit: T-P009-012 -->
+（2）$\alpha\cdot\beta=\overline{\overline{A\times B}}$。
+
+<!-- unit: T-P009-013 -->
+（3）$\alpha^\beta=\overline{\overline{A^B}}=\{f:B\to A\}$。
+
+<!-- unit: T-P009-014 -->
+$$2^c\le\overline{\overline{\mathcal M}}\le2^c.$$
+
+<!-- unit: T-P009-015 -->
+Cantor（上方标 $c$）：任意子集可测，$2^c$。
+
+<!-- unit: T-P010-HEAD -->
+## 物理第 10 页
+
+<!-- unit: T-P010-001 -->
+**Q.** $A,B$ 不可测，$\overset{?}{\Rightarrow}$ $A\cup B$ 不可测。
+
+<!-- unit: T-P010-002 -->
+**Q.** $A$ 可测，$B$ 不可测；$A\cup B$ 不可测。
+
+<!-- unit: T-P010-003 -->
+$$A\cup V=A\cup(A\setminus V).$$
+
+<!-- unit: T-P010-004 -->
+若 $A$ 可测，$A\cup V$ 可测 $\iff A\setminus V$ 可测。
+
+<!-- unit: T-P010-005 -->
+**Cor.** $A$ 可测，$A\cap V=\varnothing$，则 $A\cup V$ 不可测。
+
+<!-- unit: T-P010-006 -->
+$$\Phi:2^{[2,3]}\longrightarrow2^{\mathbb R}.$$
+
+〔定义域的底数 $2$ 写在 $[2,3]$ 的左下方，按幂集记号排版。〕
+
+<!-- unit: T-P010-007 -->
+$[2,3]\supset A\longmapsto A\cup V$。
+
+<!-- unit: T-P010-008 -->
+〔Q003：起首动词及衔接字〕 Vatelli 〔Q003〕 $[2,3]^c$；可测〔子〕集，$2^c$。
+
+〔外文名按可见拼写保留，通常名称为 Vitali。〕
+
+<!-- unit: T-P010-009 -->
+凡测度 $>0$ 之集，必 $\exists$ 不可测子集。
+
+<!-- unit: T-P010-010 -->
+运算性质。
+
+<!-- unit: T-P010-011 -->
+（1）$A,B\in\mathcal M$，$A\cup B\in\mathcal M$。
+
+<!-- unit: T-P011-HEAD -->
+## 物理第 11 页
+
+<!-- unit: T-P011-001 -->
+$\forall T\subset\mathbb R^n$。
+
+<!-- unit: T-P011-002 -->
+$$m^*(T)\ge m^*(T\cap(A\cup B))+m^*(T\cap A\cup B^c).$$
+
+<!-- unit: T-P011-003 -->
+原图：三个相交圆分别标 $A$、$B$、$T$；$T$ 圆较大，位于下方。其内部写 1、2、3、4，分别落在仅与 $A$ 相交、三圆公共、仅与 $B$ 相交、与 $A,B$ 都不交的部分。
+
+![原稿三圆四区域图](https://raw.githubusercontent.com/SOMEBODYJUN/co-work-anl/refs/heads/work/notes/work/notes-fc2ba28a26cd495f/notes/RA07/project/evidence/p0011-diagram.png)
+
+<!-- unit: T-P011-004 -->
+$(T\cap A\cap B)\cup(T\cap A\cap B^c)\cup(T\cap B\cap A^c)$
+
+<!-- unit: T-P011-005 -->
+$=T\cap(A\cup B)$。
+
+<!-- unit: T-P011-006 -->
+则取外测度。
+
+<!-- unit: T-P011-007 -->
+$$m^*(T\cap A\cap B^c)+m^*(T\cap A\cap B)=m^*(T\cap A).$$
+
+<!-- unit: T-P011-008 -->
+〔Q004：公式前的三个衔接字〕
+$$m^*(T\cap A)+m^*(T\cap A^c)=m^*(T).$$
+
+<!-- unit: T-P011-009 -->
+**Prop.** $S$ 可测，$S^c$ 可测。
+
+<!-- unit: T-P011-010 -->
+$$m^*(T\cap S)+m^*(T\cap S^c)
+\overset{\text{性质}}{=}m^*(T\cap S^{cc})+m^*(T\cap S^c).$$
+
+〔原稿右边在 $S$ 上连写两个补集符号。〕
+
+<!-- unit: T-P011-011 -->
+$A,B$ 可测，$A\cap B$ 可测。
+
+<!-- unit: T-P011-012 -->
+**Prop.** $A,B\in\mathcal M$，$A\cap B=\varnothing$。
+
+<!-- unit: T-P011-013 -->
+$$m(A\cup B)=m(A)+m(B).$$
