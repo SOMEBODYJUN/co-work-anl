@@ -52,3 +52,128 @@ $$
 X=\{a,b\},\qquad\mathcal T=\{\varnothing,X,\{a\}\}.
 $$
 $\{a\}$ 紧，是开集。
+
+<!-- unit: T-p2-heading -->
+## 原稿第 2 页
+
+<!-- unit: T-p2-01 -->
+有限性：iff 列紧 $\Longleftrightarrow$ 闭集有界。
+
+可以定义有限性（某些教材）。
+
+<!-- unit: T-p2-02 -->
+（闭[Q001]性）
+
+**lemma.** $(X,\tau)$，$M$ 紧，$F$ 是 $M$ 闭子集，$F$ 是紧。
+
+<!-- unit: T-p2-03 -->
+**Hine Borel.** 设 $M\subset(\mathbb R^n,\|\cdot\|)$，$M$ 有界闭，则 $M$ 紧。
+
+<!-- unit: T-p2-04 -->
+**pf.** $M$ 有界，$\exists a>0$，s.t.
+$$
+M\subset[-a,a]^{\text{[Q002]}}.
+$$
+
+<!-- unit: T-p2-05 -->
+仅证 $[-a,a)^n$ 是紧的。
+
+<!-- unit: T-p2-06 -->
+任取 $\{G_i\}$。
+
+若不然，$Q_0$ 无有限子覆盖。
+
+<!-- unit: T-p2-07 -->
+等分 $Q_0$，$2^n$ 个，存在一个小集，无有限子覆盖，记作 $Q_m$。
+
+<!-- unit: T-p2-08 -->
+归纳地，将 $Q_m$，$2^n$ 等分，存在 $Q_{m+1}$ 无有限子覆盖。
+
+<!-- unit: T-p2-09 -->
+$$
+Q_0\supset\cdots\supset Q_{m+1}\supset\cdots.
+$$
+
+<!-- unit: T-p2-10 -->
+$$
+\operatorname{diam}(Q_m)\leq\frac{2a\sqrt n}{2^m}.
+$$
+
+<!-- unit: T-p3-heading -->
+## 原稿第 3 页
+
+<!-- unit: T-p3-01 -->
+$$
+\exists x_{m+1}\in Q_m\setminus Q_{m+1}.
+$$
+
+<!-- unit: T-p3-02 -->
+$$
+\{x_m\}\subset Q_0.
+$$
+
+<!-- unit: T-p3-03 -->
+$$
+\exists x_{m_k}\to x_0\in\mathbb R^n,\qquad x_0\in Q_0.
+$$
+
+<!-- unit: T-p3-04 -->
+$$
+x_0\in Q\subset\bigcup_{\lambda\in\Lambda}G_\lambda.
+$$
+
+<!-- unit: T-p3-05 -->
+从而 $\exists\lambda_0$，$x\in G_{\lambda_0}$。
+
+<!-- unit: T-p3-06 -->
+$$
+\exists B(x_0,\delta)\subset G_{\lambda_0}.
+$$
+
+<!-- unit: T-p3-07 -->
+当 $k$ 充分大，
+$$
+\|x_{m_k}-x_0\|<\frac\delta2,
+\qquad\operatorname{diam}(Q_{m_k})<\frac\delta2.
+$$
+
+<!-- unit: T-p3-08 -->
+由 $Q_{m_k}\subset B(x_0,\delta)\subset G_{\lambda_0}$。
+
+<!-- unit: T-p3-09 -->
+自密：$E\subset E'$，闭集是 $E'\subset E$。
+
+<!-- unit: T-p3-10 -->
+$$
+E^{(n)}\subset(E^{n-1})'.
+$$
+
+<!-- unit: T-p3-11 -->
+proof：$E^{(n)}\subset E^{(n-1)}$。
+
+<!-- unit: T-p3-12 -->
+自密 $\Longleftrightarrow E\subset(X,d)$，$\operatorname{Iso}(E)=\varnothing$。
+
+<!-- unit: T-p3-13 -->
+右下浅色旁注，$\Rightarrow$ 方向：
+$$
+\overline E=E'\mathbin{\dot\cup}\operatorname{Iso},
+\qquad\operatorname{Iso}\notin E'.
+$$
+
+<!-- unit: T-p3-14 -->
+右下浅色旁注，$\Leftarrow$ 方向：
+$$
+E'=\overline E=E\cup E'
+\quad\Rightarrow\quad E\subset E'.
+$$
+
+<!-- unit: T-p3-15 -->
+浅色补记：前文证过（$E'$ 是闭），（闭）$'\subset$（闭）。
+
+<!-- unit: T-p3-16 -->
+另，
+$$
+\overline E=E=E^\circ\cup\partial E,
+\qquad E'\subset E.
+$$

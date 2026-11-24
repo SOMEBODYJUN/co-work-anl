@@ -104,3 +104,201 @@ $$
 > 正向先证明闭长方体 $Q\subset\mathbb R^n$ 紧。若有开覆盖没有有限子覆盖，将 $Q$ 每条边二等分；在所得有限个小长方体中，至少一个仍不能被有限个覆盖成员盖住。递归得到嵌套闭长方体 $Q_1\supset Q_2\supset\cdots$，其直径趋于零。每个坐标区间的端点单调且有界，故存在唯一公共点 $x\in\bigcap_kQ_k$。取一个覆盖成员 $U$ 含 $x$，由开性存在 $\varepsilon>0$ 使 $B(x,\varepsilon)\subset U$。当 $k$ 足够大，$\operatorname{diam}Q_k<\varepsilon$，且 $x\in Q_k$，故 $Q_k\subset U$，与选择矛盾。
 > 现在设 $F\subset\mathbb R^n$ 有界且闭。选闭长方体 $Q$ 包含 $F$。给 $F$ 的任意开覆盖补上开集 $\mathbb R^n\setminus F$，就成为 $Q$ 的开覆盖。从中取有限子覆盖，删去补上的开集后，剩余成员仍覆盖 $F$，故 $F$ 紧。
 > 反向的闭性已由 §2.1 证明。证明有界性：若 $F\ne\varnothing$，固定 $x_0\in F$。开球族 $\{B(x_0,k):k\in\mathbb N_{>0}\}$ 覆盖 $F$，紧性给出有限子覆盖，取所用整数的最大值 $N$，即得 $F\subset B(x_0,N)$。空集的情形直接成立。
+
+<!-- unit: N-p2-01 -->
+### 3.1 原稿的等价关系提要
+
+原稿写：“有限性：iff 列紧 $\Longleftrightarrow$ 闭集有界。可以定义有限性（某些教材）。”
+
+<!-- unit: N-p2-scope -->
+> [!info] 补充：提要的适用范围
+> 此处保留原稿“有限性”的用词；结合本页后面的 Heine–Borel 定理，这一提要讨论的是有限子覆盖所定义的紧性。对于 $\mathbb R^n$ 的子集，紧、列紧、有界闭三者等价。在一般度量空间中，紧与列紧等价，但“有界闭”不能单独推出紧；例如无限集合配离散度量 $d(x,y)=1$（$x\ne y$），整个空间有界且闭，单点开集组成的覆盖却没有有限子覆盖。
+
+<!-- unit: N-p2-02 -->
+### 3.2 证明工具：紧空间的闭子集仍紧
+
+原稿括注：“闭[Q001]性”。原引理：在 $(X,\tau)$ 中，$M$ 紧，$F$ 是 $M$ 的闭子集，则 $F$ 紧。
+
+<!-- unit: N-p2-closed-proof -->
+> [!info] 补证：闭子集引理
+> 给定 $F$ 的相对开覆盖 $\{U_\alpha\}$，可将各成员写为 $F\cap V_\alpha$，其中 $V_\alpha$ 在 $M$ 中开。因 $F$ 在 $M$ 中闭，$M\setminus F$ 在 $M$ 中开。于是 $\{V_\alpha\}\cup\{M\setminus F\}$ 是紧空间 $M$ 的开覆盖。选出有限子覆盖后删去 $M\setminus F$，对应的有限个 $U_\alpha$ 仍覆盖 $F$。
+> 这通常称为紧性的闭遗传性。原稿括注中间的两个字尚在独立识读记录 Q001 中保留候选，不影响引理正文和证明。
+
+<!-- unit: N-p2-03 -->
+### 3.3 原稿路线：二分闭方块证明 Heine–Borel
+
+原稿标题拼作“Hine Borel”。设 $M\subset(\mathbb R^n,\|\cdot\|)$，$M$ 有界且闭，则 $M$ 紧。
+
+<!-- unit: N-p2-04 -->
+原稿从有界性开始：$\exists a>0$，使 $M\subset[-a,a]^{\text{[Q002]}}$。这里指数笔形不清，留中性编号；下一行明确出现指数 $n$。
+
+<!-- unit: N-p2-05 -->
+原稿下一行写“仅证 $[-a,a)^n$ 是紧的”，右端点的括号形状保留如原图。
+
+<!-- unit: N-p2-cube-correction -->
+> [!info] 纠错与上下文恢复：必须使用闭方块
+> 此证明应取 $Q_0=[-a,a]^n$。原稿上一行的指数据 $M\subset\mathbb R^n$、后续 $2^n$ 等分及直径公式恢复为 $n$；这属于数学语境恢复，不能单凭证明正确就判定原笔画。
+> 若按半开方块 $[-a,a)^n$ 理解，则它不是紧集：在第一坐标中取趋向被排除端点 $a$ 的点列，其极限不属于该集合。后面使用嵌套闭区间的步骤也要求各 $Q_m$ 闭。因此学习时统一采用闭方块，保真转写另存原括号形状。
+> 由 §3.2，只需证明 $Q_0$ 紧，因为 $M$ 是 $Q_0$ 的相对闭子集。直径中 $\sqrt n$ 的常数对应欧氏范数；若题设范数任意，须使用有限维范数等价或相应的常数估计。
+
+<!-- unit: N-p2-06 -->
+任取开覆盖 $\{G_i\}$。反设 $Q_0$ 无有限子覆盖。
+
+<!-- unit: N-p2-07 -->
+将 $Q_0$ 等分成 $2^n$ 个小方块，至少存在一个小方块仍无有限子覆盖。原稿此处将所取小方块记为 $Q_m$。
+
+<!-- unit: N-p2-first-index -->
+> [!info] 纠错：首次细分的编号
+> 为使递归编号连贯，第一次选择应记为 $Q_1$。若每个小方块都有有限子覆盖，把这有限多个有限族并起来就能覆盖 $Q_0$，与反设矛盾。
+
+<!-- unit: N-p2-08 -->
+归纳地，把 $Q_m$ 等分为 $2^n$ 个小方块，再选其中一个无有限子覆盖的方块 $Q_{m+1}$。
+
+<!-- unit: N-p2-09 -->
+于是
+$$
+Q_0\supset Q_1\supset\cdots\supset Q_m\supset Q_{m+1}\supset\cdots.
+$$
+
+<!-- unit: N-p2-10 -->
+且
+$$
+\operatorname{diam}(Q_m)\leq\frac{2a\sqrt n}{2^m}.
+$$
+原稿证明接续下一物理页。
+
+<!-- unit: N-p3-01 -->
+原稿接续：在相邻方块的差集中选点，
+$$
+x_{m+1}\in Q_m\setminus Q_{m+1}.
+$$
+
+<!-- unit: N-p3-02 -->
+于是 $\{x_m\}\subset Q_0$。
+
+<!-- unit: N-p3-03 -->
+原稿再取收敛子列：
+$$
+x_{m_k}\longrightarrow x_0\in\mathbb R^n,
+\qquad x_0\in Q_0.
+$$
+
+<!-- unit: N-p3-subsequence-explain -->
+> [!info] 补充：为何能取子列、为何极限留在方块中
+> 方块 $Q_0$ 有界，所以点列有界；有限维 Bolzano–Weierstrass 定理给出收敛子列。$Q_0$ 是闭集，故子列极限仍在 $Q_0$ 中。这里使用的是有界点列的子列定理，尚未把“闭有界集紧”作为前提，避免循环论证。
+
+<!-- unit: N-p3-04 -->
+原稿写 $x_0\in Q\subset\bigcup_{\lambda\in\Lambda}G_\lambda$，此处 $Q$ 承接初始方块 $Q_0$。
+
+<!-- unit: N-p3-05 -->
+从而存在 $\lambda_0$ 使 $x_0\in G_{\lambda_0}$（原行在 $x$ 处省略下标 $0$）。
+
+<!-- unit: N-p3-06 -->
+由覆盖成员的开性，存在 $\delta>0$，使
+$$
+B(x_0,\delta)\subset G_{\lambda_0}.
+$$
+
+<!-- unit: N-p3-07 -->
+原稿继续写：当 $k$ 充分大时，
+$$
+\|x_{m_k}-x_0\|<\frac\delta2,
+\qquad\operatorname{diam}(Q_{m_k})<\frac\delta2.
+$$
+
+<!-- unit: N-p3-08 -->
+原稿末行：$Q_{m_k}\subset B(x_0,\delta)\subset G_{\lambda_0}$。
+
+<!-- unit: N-p3-index-repair -->
+> [!info] 纠错与补证：下标错位及矛盾的完整结束
+> 按前面所选 $x_{m+1}\in Q_m\setminus Q_{m+1}$，只能保证 $x_{m_k}\in Q_{m_k-1}$，原稿末行不能直接用 $Q_{m_k}$ 的直径控制它与方块内各点的距离。保留原选点路线时，应选 $k$ 充分大，使
+> $$
+> \|x_{m_k}-x_0\|<\frac\delta2,
+> \qquad\operatorname{diam}(Q_{m_k-1})<\frac\delta2.
+> $$
+> 对任意 $y\in Q_{m_k-1}$，由三角不等式，
+> $$
+> \|y-x_0\|\le\|y-x_{m_k}\|+\|x_{m_k}-x_0\|
+> \le\operatorname{diam}(Q_{m_k-1})+\|x_{m_k}-x_0\|<\delta.
+> $$
+> 所以 $Q_{m_k-1}\subset B(x_0,\delta)\subset G_{\lambda_0}$。一个覆盖成员就盖住了 $Q_{m_k-1}$，与它无有限子覆盖的选择矛盾。故 $Q_0$ 紧，再由闭子集引理得 $M$ 紧。
+> 另一种等价修订是从开始直接取 $x_m\in Q_m$，这样原稿末尾的 $Q_{m_k}$ 下标可以保留。两种修订都只修复下标，不改变“二分—子列—开球”的证明路线。
+
+<!-- unit: N-derived-heading -->
+## 4. 导集、自密集与孤立点
+
+<!-- unit: N-derived-definition -->
+> [!info] 补充：导集与孤立点的记号
+> 以下在度量空间 $(X,d)$ 内讨论。$E'$ 表示 $E$ 的导集：点 $x$ 属于 $E'$，是指每个去心球 $B(x,r)\setminus\{x\}$ 都与 $E$ 相交。$\operatorname{Iso}(E)$ 表示 $E$ 的孤立点集合，即满足某个 $r>0$ 使 $B(x,r)\cap E=\{x\}$ 的点 $x\in E$。$\overline E$ 是闭包，$E^\circ$ 是内部，$\partial E$ 是边界。
+
+<!-- unit: N-p3-09 -->
+**原定义与判别。**自密：$E\subset E'$。闭集的判别：$E'\subset E$。
+
+<!-- unit: N-derived-basic-proof -->
+> [!info] 补证：闭包分解与闭集判别
+> 若 $x\in\overline E\setminus E$，则每个球都与 $E$ 相交，而 $x\notin E$，所以 $x\in E'$。反之，$E\subset\overline E$ 且 $E'\subset\overline E$，于是 $\overline E=E\cup E'$。因此 $E$ 闭当且仅当 $\overline E=E$，也当且仅当 $E'\subset E$。
+> 对 $x\in E$，不是聚点就意味着存在某个球只在 $x$ 处与 $E$ 相交，即 $x$ 是孤立点。因此 $E\setminus E'=\operatorname{Iso}(E)$，并且
+> $$
+> \overline E=E'\mathbin{\dot\cup}\operatorname{Iso}(E).
+> $$
+> 点上方的点并符号表示不交并。这一公式即原稿浅色旁注所用的分解。
+
+<!-- unit: N-p3-12 -->
+**原等价命题。**对于度量空间中的集合 $E$，
+$$
+E\text{ 自密}\quad\Longleftrightarrow\quad\operatorname{Iso}(E)=\varnothing.
+$$
+
+<!-- unit: N-p3-13 -->
+原稿的 $\Rightarrow$ 浅色旁证写：$\overline E=E'\mathbin{\dot\cup}\operatorname{Iso}$，并记“$\operatorname{Iso}\notin E'$”。
+
+<!-- unit: N-p3-forward-repair -->
+> [!info] 说明与补证：孤立点集和导集不交
+> 原记号把集合与元素的“不属于”混用；准确写法是 $\operatorname{Iso}(E)\cap E'=\varnothing$。若 $E$ 自密，则 $E\subset E'$；又 $\operatorname{Iso}(E)\subset E$，因此孤立点集同时包含于 $E'$ 且与它不交，只能为空。
+
+<!-- unit: N-p3-14 -->
+原稿的 $\Leftarrow$ 浅色旁证写：
+$$
+E'=\overline E=E\cup E'\quad\Rightarrow\quad E\subset E'.
+$$
+
+<!-- unit: N-p3-backward-explain -->
+> [!info] 补证：无孤立点蕴含自密
+> 前提是 $\operatorname{Iso}(E)=\varnothing$。把它代入闭包的不交分解，得到 $\overline E=E'$；再由 $E\subset\overline E$ 得 $E\subset E'$。这正是原稿右向回推中省略的前提。
+
+<!-- unit: N-p3-15 -->
+原稿另外记：“前文证过（$E'$ 是闭），（闭）$'\subset$（闭）”。
+
+<!-- unit: N-derived-closed-proof -->
+> [!info] 补证：度量空间中导集是闭集
+> 设 $x\notin E'$。存在 $r>0$，使 $(B(x,r)\setminus\{x\})\cap E=\varnothing$。若 $y\in B(x,r/2)$ 且 $y\ne x$，可取 $0<\rho<\min\{d(x,y),r-d(x,y)\}$。于是 $B(y,\rho)\subset B(x,r)\setminus\{x\}$，故这个球与 $E$ 不交，所以 $y\notin E'$。而 $x$ 本来不在 $E'$，故 $B(x,r/2)\subset X\setminus E'$。补集开，导集闭。
+
+<!-- unit: N-p3-10 -->
+原稿写出的高阶导集关系为
+$$
+E^{(n)}\subset(E^{n-1})'.
+$$
+原式右侧上标没有括号，包含号照原式保留。
+
+<!-- unit: N-p3-11 -->
+原稿随后要求 proof：$E^{(n)}\subset E^{(n-1)}$。
+
+<!-- unit: N-derived-iteration -->
+> [!info] 补充与限定：高阶导集的定义和下降性
+> 按通常递归记号，令 $E^{(0)}=E$，$E^{(1)}=E'$，并令 $E^{(n)}=(E^{(n-1)})'$。因此原稿前一行的包含关系实际可写成等号。
+> 对 $n\ge2$，$E^{(n-1)}$ 已是某个集合的导集，所以闭；由闭集判别得
+> $$
+> E^{(n)}=(E^{(n-1)})'\subset E^{(n-1)}.
+> $$
+> 对 $n=1$，$E'\subset E$ 需要额外假设 $E$ 闭，一般不能直接成立。例如 $E=(0,1)\subset\mathbb R$ 时，$E'=[0,1]\not\subset E$。若原命题从闭集 $E$ 开始，则下降关系对所有 $n\ge1$ 成立。
+
+<!-- unit: N-p3-16 -->
+原稿另记
+$$
+\overline E=E=E^\circ\cup\partial E,
+\qquad E'\subset E.
+$$
+
+<!-- unit: N-p3-closure-scope -->
+> [!info] 补充：这条旁注的闭集条件
+> 这里第一处等号 $\overline E=E$ 明确需要 $E$ 闭。在此条件下，$\overline E=E^\circ\cup\partial E$ 给出内部与边界的分解，而 $E'\subset E$ 是同一个闭性条件的导集表述。
