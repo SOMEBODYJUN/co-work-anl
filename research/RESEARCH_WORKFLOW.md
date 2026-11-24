@@ -34,7 +34,7 @@ Main 对有独立复用价值的数学负责定向回流，原题仍开放也及
 
 `artifact → freeze → review → promote` 只用于这类承重交付。冻结须含完整正文、应用的新桥与证据、待发布对象和边 JSON；修复产生新版本。promote 生成本 RUN 的全量 registry 候选及回流收据，并不表示已经登记。Main 再用原 `register`、正式 edge-check、research check/build 和 checkpoint 完成实际回流；只有确认 pushed 才称远端保存。register 的基线守卫拒绝覆盖已推进的 registry；同步后重建增量，不丢同行结果。
 
-研究增量用 check/build **不带 --final**。第三阶段 --final 绑定其已完成任务队列、baseline、coverage 和 integration，是历史全阶段验收，不能强迫每项后续研究重开整批构图。新研究保自己的定向范围和精确证据。
+研究增量用 `check/build`。旧整阶段验收参数已移除，新研究保自己的定向范围和精确证据。
 
 旧证据被核实有误时，先停用精确失败支持，修当前正文、版本、命中引用与实际消费者；保有效 OR。不能自动把全部后继判假，也不让无关研究等待全仓重清洗。具体更正和接手位置随数学保存。
 
@@ -44,4 +44,4 @@ Main 对有独立复用价值的数学负责定向回流，原题仍开放也及
 
 Main 和三线异步推进，成熟即交，重复失败时综合最强近成功及准确排除范围，再转向实质不同的表示、机制或合成。以覆盖原题全部域、量词和约束的完整证明，或满足全部条件并否定目标的见证判断闭合。内部复核、形式化、外审与发表分别说明。没有闭合就持续有价值研究到用户暂停或真实运行边界，保存原输入、四人笔记、未付义务、反馈和下一动作，不声称后台继续。
 
-[来源和取舍](agent-design/SOURCES.md)、[实际仓库审计](agent-design/ARCHITECTURE_AUDIT.md)及[验收](agent-design/validation.json)说明哪些已有、哪些新增以及程序不能保证什么。在其它仓库复用用现有 export_research_template：只带工具、完整提示词与合同，不带本项目数学、凭据、历史或代理；从空 seed_ids 也能开题。
+[来源和取舍](agent-design/SOURCES.md)说明借鉴边界；当前能力以实际运行与准确版本为准。在其它仓库复用用现有 export_research_template：只带工具、完整提示词与合同，不带本项目数学、凭据、历史或代理；从空 seed_ids 也能开题。

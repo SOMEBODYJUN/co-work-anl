@@ -1,6 +1,6 @@
 # 设计来源、实际借入字节与运行边界
 
-核查日期：2026-11-16（America/Los_Angeles）；研究窗口：2026-09-01 至 2026-11-16。仓库审计基线为 `rebuild/research-v2@3e8402cabac61aadc5575d797671bfa0d183324e`。[架构审计](ARCHITECTURE_AUDIT.md)说明来源怎样接到已有仓库。
+核查日期：2026-11-16（America/Los_Angeles）；研究窗口：2026-09-01 至 2026-11-16。仓库审计基线为 `rebuild/research-v2@3e8402cabac61aadc5575d797671bfa0d183324e`。具体消费与保存合同见 [HYPEREDGE_WORKFLOW](HYPEREDGE_WORKFLOW.md)。
 
 实际借入的是 **3 份参考合同，共 36,587 字节**，另有 LICENSE/NOTICE 共 23,467 字节。没有安装 Ansatz、CoCo-Prover、PACE、Euler 或 OSVerify 的研究运行时。保存在 `upstream/` 的合同不是活动指令；本库程序不读取它们来调度、接纳证明或写图。
 
@@ -43,19 +43,14 @@ Ansatz 先查找简短声明、事实 ID 和图路径，按需取所选事实的
 | --- | --- | --- |
 | 原样参考数据 | 上表合同和许可/NOTICE | 外部原文；不是被 import 的组件或已启动代理 |
 | 机制适配 | 本库 Main/Solver/review 词，HYPEREDGE_WORKFLOW 的原题映射、bridge、复核、回流 | 本库编写，借鉴上表局部机制；不是安装上游提示词包 |
-| 已有本库实现 | `research_runtime.py` 的 registry/context/packet/init/save/resume；`registration.py`、`map_tasks.py` | 本轮之前已有；不把稳定 ID、完整 ALL/OR、SHA 绑定和 RUN 续接记成本轮新增 |
+| 已有本库实现 | `research_runtime.py` 的 registry/context/packet/init/save/resume；`registration.py` 的增量校验 | 本轮之前已有；不把稳定 ID、完整 ALL/OR、SHA 绑定和 RUN 续接记成本轮新增 |
 | 本轮本库实现 | `research_frontier.py` 的条件结构闭包、循环与贡献报告；studio 薄接口 | 复用现有 JSON/Markdown 独立编写，未复制上述项目 Python 运行时。“本库实现”是工程归属，不宣称通用思想具有研究新颖性 |
 
 引用检查没有发现从 `agent-design/upstream/` 读合同、调用 `cgm`、`euler` 或 `osverify` 的运行路径。`work.py → research_runtime.py → research_frontier.py` 使用标准库及本库模块；模型由 Work 实际工具启动。
 
-## 历史适配仍须如实说明
+## 早期来源与当前许可
 
-[tools/vendor/UPSTREAM.md](../../tools/vendor/UPSTREAM.md) 是历史来源记录，不属于本次窗口的新证据。“本轮没装外部运行时”不等于仓库没有第三方代码。
-
-| 历史实物 | 固定来源与许可 | 当前关系 |
-| --- | --- | --- |
-| `tools/vendor/matek/frontmatter.py`，4,312 字节，SHA256 `bbe2434384171146e50be431d0915c8f6d6f9b05190ec4e21d16d05c590907db` | [MATEK](https://github.com/PhillipKerger/matek-theorem-agent) `1de478c12f34fc1adea32bbc3f0c5aadadfd6ca5`，MIT；本库提取/修改 flat frontmatter，非整文件原样复制 | `research_runtime → curation → vendor.matek.frontmatter` 为实际间接依赖；未引入 MATEK Agent/Pydantic runtime |
-| `tools/vendor/mathagent/model.py`，8,607 字节，SHA256 `e72a5f7ce23622b50155af8d83f26166a5779f651fd972ba165b8acc213d8ae7` | 目录有 Apache-2.0 LICENSE；历史记录指 [math-agent](https://github.com/Ephemeral6/math-agent) `3a161e1f6ced822c340b9e23c0ada2a4b82dbdbe`，缺逐文件 provenance | 全树 Python 引用检查未发现 import/调用；仍在树内的闲置模型。缺凭据时不能称其为该 commit 原样源码。`compute.py` 的 `tools/vendor/**` 和 tools 整包导出仍可能携带它；本次不擅自删除历史归属 |
+[tools/vendor/UPSTREAM.md](../../tools/vendor/UPSTREAM.md) 保留早期来源说明。闲置的 math-agent 数据模型和 MATEK frontmatter 适配源码已移除；当前运行代码不导入这两个组件。其许可文本继续保留，供已有证据快照及可能的历史派生内容追溯。当前原样合同、NOTICE 和 provenance 仍按上表分发。
 
 早期 HyperGraphRAG、GraphRAG、Pharos 的来源在 [UPSTREAM_ADAPTATION](../UPSTREAM_ADAPTATION.md)，不充当本窗口新证据。此前列出的 ProofLoom、Noemesis、LEVER 等仅保补充阅读地位；本次核心适配限于上表可核五项，不把未重核创建日期、许可或成果数写成已完成审计。
 

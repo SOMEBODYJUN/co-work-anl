@@ -1,6 +1,6 @@
 # 数学超边与研究Agent的一手依据
 
-采用下列论文或官方代码中可核对的具体做法，落实到[构图指令](../prompts/03-map-worker.md)和[研究流程](RESEARCH_WORKFLOW.md)。这些做法支持发现、组织和取用数学材料；边是否成立仍由完整条件与论证决定。
+采用下列论文或官方代码中可核对的具体做法，落实到[超边与回流流程](agent-design/HYPEREDGE_WORKFLOW.md)和[研究流程](RESEARCH_WORKFLOW.md)。这些做法支持发现、组织和取用数学材料；边是否成立仍由完整条件与论证决定。
 
 | 一手位置 | 作者实际提示词或机制 | 本仓库采用处 | 数学上不能直接迁移处 |
 |---|---|---|---|
@@ -19,17 +19,17 @@
 3. **写定向all边。** 前提A为末两人逐人保底，B为最坏背景值及目录计数接口（$\theta_n\ge O/(2n-1)$及$\theta_n\ge[2O-(n-1)K]/(2n)$），结论C为$W\ge4(n-1)O/[n(2n-1)]$。理由写明：早位玩家各有$K/n$真实偏离保证，所以$W\ge(n-2)K/n+2\theta_n$；代入B的两个下界，按$1/(n-1)$、$(n-2)/(n-1)$加权消去$K$。$n=2$时第二权重为零。A和B共同使用，不能拆成各自单独推出C的两条边。共同模型列`conditions`；准确证明位置为末两人正文§2—3。A与C是同页不同陈述，须由2.5.3分别登记后引用，不能把整页ID接回自身。
 4. **研究消费。** Solver要用C时同时读取A、B、共同条件和这段论证；六人代入只得$10/33$。若目标为六人半覆盖，反馈应准确说明此接口还缺提高系数的论证，继续寻找有用桥接，而不能把“相连”报成目标已证。若B改变模型或背景，先复核该all边的适用性。
 
-Boss编号、公屏、共同分支、持续补位与频繁Git保存按本项目约定执行。这里不引入新服务、数据库或依赖。Pharos固定版本的[README](https://github.com/frenzymath/Pharos/blob/aa0b72e4a7211311a3156ef7d993cd3be9f57445/README.md)标注Preview、软件许可为Apache-2.0；本页为机制转述，未复制上游源码或提示词正文，已有vendored依赖的LICENSE/UPSTREAM继续保留。
+Boss 身份、共同分支、RUN 接续与 Git 保存按当前启动词执行。这里不引入新服务、数据库或依赖。Pharos固定版本的[README](https://github.com/frenzymath/Pharos/blob/aa0b72e4a7211311a3156ef7d993cd3be9f57445/README.md)标注Preview、软件许可为Apache-2.0；本页为机制转述，未复制上游源码或提示词正文，已有vendored依赖的LICENSE/UPSTREAM继续保留。
 
 ## 研究运行中实际复用的实现
 
 - **Noemesis。** 在固定版本运行真实引理的定向证据包和分段恢复，并从原入口重跑 ENS-lifting 有限域检查。46 个实例与 26,988 项乘子检查通过。它把当前研究状态、按需打开的原证和计算回执分开保存。我们分别沿用 `research resume/save`、`research context` 和 `research compute`，交接长度由当前数学义务决定。[实跑版本](https://github.com/kbr-/math-research/tree/25239211058ef718402a908b3272f01480c159c4)
 - **Ansatz。** 将真实的两人税、PAIR O 加强、原五尾证书和合成结论写入上游 FactGraph。检索找到了加强结论，正向可取合成所需的两个前提，反向可查旧引理的后继。我们的超边保留联合前提和替代证明。发现一条旧证明失效时，定向复核受影响的边，并检查其他仍成立的证明。[FactGraph 固定源码](https://github.com/uclanlp/continual-graph-memory/blob/23367c6568c344d9c4dbf59be3f39b39f5d54324/cgm/core/factgraph.py)
-- **Station。** 公开研究轨迹显示构造经共享结果档案被下一位研究者接到新参数族。借这种证据交接组织公屏。数学放在可直接取用的正文和证明，公屏发可复用结果、决定性障碍及影响别人的更正。[真实协作轨迹](https://arxiv.org/html/2608.23691v2)
+- **Station。** 公开研究轨迹显示构造经共享结果档案被下一位研究者接到新参数族。借这种证据交接组织 RUN 回执。数学放在可直接取用的正文和证明，短回执给出结果、障碍及影响别人的更正。[真实协作轨迹](https://arxiv.org/html/2608.23691v2)
 
 ## 研究运行职责的具体适配
 
-下表来自实际源码及角色词，不把上游成功当本仓已验收。行为已接到现行Main、solver-full与RESEARCH_WORKFLOW；既有ALL/OR语义保留，不增数据库、检索器或常驻审批岗位。
+下表来自实际源码及角色词，不把上游成功当本仓已验收。行为已接到现行 Main、研究线提示词与 RESEARCH_WORKFLOW；既有ALL/OR语义保留，不增数据库、检索器或常驻审批岗位。
 
 | 固定源码 | 本仓采用的行为 | 适配边界 |
 | --- | --- | --- |
@@ -38,4 +38,4 @@ Boss编号、公屏、共同分支、持续补位与频繁Git保存按本项目�
 | Ansatz [identify-key-failures](https://github.com/uclanlp/continual-graph-memory/blob/23367c6568c344d9c4dbf59be3f39b39f5d54324/agents/skills/worker/identify-key-failures/SKILL.md)；Station [Exploration/Revival](https://github.com/dualverse-ai/station/blob/f2603c817694145610b4a1057eeee7fb6f31d516/station/constants.py) | 重复同一障碍时综合失败范围、最强近成功与未探索部分，重提数学分解或表示；说明新路线逃出什么旧限制、什么证据会改变判断 | 不照搬按分数tick计时的阈值、固定配比或排行榜；不把加参数与算量冒作新机制 |
 | Ansatz [FactGraph撤回](https://github.com/uclanlp/continual-graph-memory/blob/23367c6568c344d9c4dbf59be3f39b39f5d54324/cgm/core/factgraph.py) | 失败支持定向停用，更正送达实际消费者，接收者在原推导撤用或重证 | 上游按DAG全后继撤回不能直接照搬；本仓保独立OR支持，无有效支持恢复待证而非判假 |
 
-本次设计反驳可检验职责、输入和失败处置是否自洽；档内公屏与发现路由可由现有RUN核验。真正跨Pro接用、机动调度收益及新版长线实战仍须留下实际研究证据，不能以文档或代码检查通过代替。
+本次设计反驳可检验职责、输入和失败处置是否自洽；派工与发现路由由实际 RUN 记录核验。真正跨Pro接用、机动调度收益及新版长线实战仍须留下实际研究证据，不能以文档或代码检查通过代替。

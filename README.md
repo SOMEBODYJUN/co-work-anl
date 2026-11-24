@@ -40,3 +40,5 @@ Main 用 Work 派工，查看超边和短回执，负责选路线和发布。ide
 - `map/edges/`：可复用的完整联合前提、替代证明、条件和未付义务。
 
 新问题必须由用户明确指定；仓库不会从已删除的阶段任务或公屏推断研究目标。
+
+笔记识读与工作存档使用独立的 [work/notes 分支](https://github.com/SOMEBODYJUN/co-work-anl/tree/work/notes)，启动词和目录规则在该分支根目录。

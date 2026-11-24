@@ -19,7 +19,9 @@ class ResearchTemplateTests(unittest.TestCase):
                          'research-line-design.md', 'research-review-design.md']:
                 self.assertTrue((root / 'prompts' / name).is_file(), name)
             self.assertTrue((root / 'research/agent-design/HYPEREDGE_WORKFLOW.md').is_file())
-            self.assertTrue((root / 'research/templates/research-packet.md').is_file())
+            self.assertTrue((root / 'research/schemas/research-packet.schema.json').is_file())
+            self.assertFalse((root / 'research/operations').exists())
+            self.assertFalse((root / 'research/CURATION.md').exists())
             self.assertTrue((root / 'AGENTS.md').is_file())
             self.assertFalse((root / 'research/registry.json').exists())
             self.assertFalse((root / 'archives').exists())
@@ -28,7 +30,8 @@ class ResearchTemplateTests(unittest.TestCase):
                     exported = root / original.relative_to(source)
                     self.assertEqual(exported.read_bytes(), original.read_bytes(), str(original))
             entry = (root / 'work.py').read_text()
-            self.assertIn('DEFAULT_BOARD_BRANCH = ""', entry)
+            self.assertIn('DEFAULT_BRANCH = "research"', entry)
+            self.assertIn('REMOTE = "https://github.com/example/new-math.git"', entry)
 
             def execute(*args):
                 result = subprocess.run([sys.executable, 'work.py', *args], cwd=root,
