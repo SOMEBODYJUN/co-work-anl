@@ -13,8 +13,8 @@
 
 - 原序转写：`proposals/integration-v2/source-transcript.md`
 - 学习稿：`proposals/integration-v2/study-notes.md`
-- 转写 SHA256：`664743fbb6f8fc546ca23841fe91c0461b28bb36b31abae570a816efb7bb62a2`
-- 学习稿 SHA256：`7bf6d2ec3ea07f300a2793e4ffdd4a0f519759323d230facaf8f835b58a1f572`
+- 转写 SHA256：`2294913e155df421144c5e539107dd021a41cdfe56cbb469d84adddac1897ade`
+- 学习稿 SHA256：`1ae50ce2b146366409e31c2121a0fcb6a8f746928e46f65f458c55a9b9ba03ba`
 
 ## 已纳入的实质整合
 
