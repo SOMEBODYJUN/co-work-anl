@@ -1,5 +1,7 @@
 # 强形式相对 Morrison–Kawamata 可动锥主问题
 
+本题现作为[完整 Morrison–Kawamata 全维数任务](../morrison-kawamata-cone/README.md)的[相对维数 ≤2 movable 子题](../morrison-kawamata-cone/subarchives/relative-movable-rel2/README.md)保留。下列状态与稿件属于原受限任务，不是新主问题 A、B、C 的全范围完成声明；原正文与冻结引用未迁移。
+
 存档 ID：`relative-mk-cone`；范围：`archives/relative-mk-cone`。**原固定主命题已给出完整证明（V3），并通过两份全范围独立内部数学复核。**
 
 ## 当前完整证明
