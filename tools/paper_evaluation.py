@@ -528,14 +528,23 @@ def finish(root, args):
     temp = Path(tempfile.mkdtemp(prefix=".pending-", dir=outputs))
     try:
         dump(temp / "review.json", report)
-        (temp / "report.md").write_text(render(report, manifest, catalog), encoding="utf-8")
+        rendered = render(report, manifest, catalog).encode("utf-8")
+        (temp / "report.md").write_bytes(rendered)
+        dump(temp / "integrity.json", {"review_id": result_id, "report_sha256": digest(rendered)})
         inspect(run)
         try:
             temp.rename(target)
         except OSError:
             require(target.is_dir() and not target.is_symlink() and
-                    all(read_bytes(target / x) == read_bytes(temp / x) for x in ("review.json", "report.md")),
+                    digest(canonical(read_json(target / "review.json"))) == result_id,
                     "Report directory already exists with different content")
+            saved = read_bytes(target / "report.md")
+            receipt = target / "integrity.json"
+            if receipt.exists():
+                require(read_json(receipt) == {"review_id": result_id, "report_sha256": digest(saved)},
+                        "Previously generated report was modified")
+            else:
+                require(saved == rendered, "Existing report predates integrity records and differs from this rendering")
     finally:
         if temp.exists():
             shutil.rmtree(temp)
