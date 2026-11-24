@@ -302,3 +302,115 @@ $$
 <!-- unit: N-p3-closure-scope -->
 > [!info] 补充：这条旁注的闭集条件
 > 这里第一处等号 $\overline E=E$ 明确需要 $E$ 闭。在此条件下，$\overline E=E^\circ\cup\partial E$ 给出内部与边界的分解，而 $E'\subset E$ 是同一个闭性条件的导集表述。
+
+<!-- unit: N-p4-01 -->
+### 4.1 完全集
+
+**原定义。**perfect set $\Longleftrightarrow E=E'$，即自密闭集。
+
+<!-- unit: N-perfect-proof -->
+> [!info] 补证与例子
+> $E=E'$ 同时给出 $E\subset E'$ 和 $E'\subset E$，分别表示自密与闭。反过来，这两个包含关系一起给出相等。因此完全集就是没有孤立点的闭集。
+> 例如 $[0,1]\subset\mathbb R$ 是完全集：每个点（包括两个端点）都是它的聚点，且区间闭；$(0,1)$ 自密但不闭；$\{0\}\cup\{1/n:n\ge1\}$ 闭，但各 $1/n$ 是孤立点，所以不完美。按 $E=E'$ 的定义，空集也满足；某些教材另把非空写入定义，使用时应看具体约定。
+
+<!-- unit: N-open-heading -->
+## 5. 实轴开集、局部区间与基的计数
+
+<!-- unit: N-p4-02 -->
+### 5.1 原稿 Ex 1 与计数旁注
+
+原题首行写“$\mathbb R$ 能[Q003]拓扑；$2^c$”。中间字词和所数对象尚未唯一确定，保留原句与原数值。
+
+<!-- unit: N-p4-04 -->
+原稿右侧同时记 $(\mathbb R,\tau)$、$\mathcal P(\mathbb R)=2^c$、$\mathcal U\subseteq\mathcal P(\mathbb R)$，并把 $2^c$ 框起强调。
+
+<!-- unit: N-cardinality-distinction -->
+> [!info] 说明与可确定部分的完整解答
+> 令 $c=|\mathbb R|=2^{\aleph_0}$。$|\mathcal P(\mathbb R)|=2^c$ 计算的是实数集的所有子集；“通常拓扑中的开集数”“通常拓扑的基有多少种”与“在同一底集上能赋予多少个拓扑”是不同问题，不能互换。
+> 通常拓扑的开集恰有 $c$ 个。设 $\mathcal B_0=\{(p,q):p,q\in\mathbb Q,p<q\}$；这是可数基，每个开集都是其中某个子族的并，故开集总数不超过 $2^{\aleph_0}=c$。而不同实数 $a$ 给出不同开集 $(-\infty,a)$，所以至少有 $c$ 个，合得恰为 $c$。
+> 原题若询问的是所有拓扑结构，单凭 $|\mathcal P(\mathbb R)|=2^c$ 并不能得出原行结论；本稿保留 Q003 的对象歧义，不把后面的开集和基计数冒作该题的字面恢复。
+
+<!-- unit: N-p4-03 -->
+### 5.2 点的邻域：原稿两问及解答
+
+设 $\varnothing\ne U$ 是 $(\mathbb R,|\cdot|)$ 的开集。
+
+<!-- unit: N-p4-05 -->
+**$Q_1$：**给定 $x\in U$，满足 $B(x,\delta)\subset U$ 的球有多少个？
+
+<!-- unit: N-ball-count-answer -->
+> [!info] 补证：$Q_1$ 的完整解答
+> 由开性可取 $r>0$，使 $B(x,r)\subset U$。每个 $0<\delta\le r$ 都给出一个符合条件的球，且在实轴上不同半径的球不同。因此至少有 $c$ 个。所有候选半径组成 $(0,\infty)$ 的子集，总数不超过 $c$，故恰有 $c$ 个。
+
+<!-- unit: N-p4-06 -->
+**$Q_2$：**有无最大？
+
+<!-- unit: N-ball-max-answer -->
+> [!info] 补证：分清“同心球”与“含点开区间”的最大性
+> 若仍指 $Q_1$ 中以固定 $x$ 为中心的球，当 $U\ne\mathbb R$ 时，令 $r_*=\inf\{|x-z|:z\in\mathbb R\setminus U\}$。开性保证 $r_*>0$，补集非空保证 $r_*<\infty$。若 $|y-x|<r_*$ 则 $y\in U$，故 $B(x,r_*)\subset U$；若 $r>r_*$，由下确界定义可找补集中的 $z$ 满足 $|x-z|<r$，故 $B(x,r)\not\subset U$。因此最大球是 $B(x,r_*)$。当 $U=\mathbb R$ 时半径可任意增大，没有最大有限半径球。
+> 原稿后续改用所有含 $x$ 的开区间，它们不必以 $x$ 为中心。该集合族有唯一最大成员，端点允许为 $\pm\infty$。下面完整保留原稿构造路线。
+
+<!-- unit: N-p4-10 -->
+### 5.3 原稿路线：构造含点的最大开区间
+
+对 $x\in U$，原稿定义
+$$
+G_x=\{(a,b)\mid x\in(a,b)\subset U\}.
+$$
+
+<!-- unit: N-p4-11 -->
+记
+$$
+\alpha=\inf\{a:(a,b)\in G_x\},
+\qquad
+\beta=\sup\{b:(a,b)\in G_x\}.
+$$
+原稿简写为“$\alpha=\inf a$，$\beta=\sup b$”。
+
+<!-- unit: N-p4-12 -->
+原稿断言 $(\alpha,\beta)\in G_x$；同一行后半的符号保留为 Q004，不能唯一辨定的部分另存精确位置。
+
+<!-- unit: N-p4-family-notation -->
+> [!info] 补充：集合族与最大区间的记号
+> 原稿 $G_x$ 此时是“区间组成的集合族”。为避免后面把它当作点集，以下另用
+> $$
+> I_x=\bigcup_{J\in G_x}J=(\alpha,\beta)
+> $$
+> 表示最大区间。若端点无界，就允许 $\alpha=-\infty$ 或 $\beta=+\infty$；这种情形下，严格说应把原族扩充到允许无穷端点的开区间，或把原稿的“属于”改为“这个并仍为开区间”。
+
+<!-- unit: N-p4-13 -->
+原稿证明开头：$x\in(\alpha,\beta)$；再任取 $y\in(\alpha,\beta)$。
+
+<!-- unit: N-component-construction-proof -->
+> [!info] 补证：把开头补成完整构造证明
+> 由 $U$ 开，至少有一个 $(a_0,b_0)\in G_x$，所以 $\alpha\le a_0<x<b_0\le\beta$，即 $x\in(\alpha,\beta)$。
+> 对任意 $y\in(\alpha,\beta)$，若 $y<x$，由下确界定义可选 $(a,b)\in G_x$ 使 $a<y$；又 $b>x>y$，故 $y\in(a,b)\subset U$。若 $y>x$，由上确界定义可选 $(a,b)\in G_x$ 使 $b>y$，又 $a<x<y$，同样得 $y\in U$。$y=x$ 已知。因此 $(\alpha,\beta)\subset U$。
+> 每个 $(a,b)\in G_x$ 都有 $\alpha\le a<b\le\beta$，故包含于 $(\alpha,\beta)$。所以 $I_x=(\alpha,\beta)$ 就是所有这些区间的并，也是含 $x$ 且包含于 $U$ 的唯一最大开区间。
+
+<!-- unit: N-p4-14 -->
+原稿再写：且 $\alpha\notin U$、$\beta\notin U$；“反证，若不然”。
+
+<!-- unit: N-component-endpoint-proof -->
+> [!info] 补证：有限端点不属于开集
+> 若 $\alpha\in\mathbb R$ 且 $\alpha\in U$，由开性有 $\varepsilon>0$ 使 $(\alpha-\varepsilon,\alpha+\varepsilon)\subset U$。它与 $I_x$ 相交，二者并成的开区间仍在 $U$ 内且含 $x$，但左端点小于 $\alpha$，与 $\alpha$ 的下确界性质矛盾。右端点 $\beta$ 的证明相同。因此有限端点都不在 $U$。无穷端点不是实数，不应把 $\pm\infty\notin U$ 当作额外拓扑结论。
+
+<!-- unit: N-p4-07 -->
+### 5.4 原稿 Ex 2：通常实轴的拓扑基有多少种
+
+**题目。**$(\mathbb R,|\cdot|)$ 有 $2^c$ 种基。
+
+<!-- unit: N-p4-08 -->
+原稿浅色提示：$\mathcal P(A)=2^c\Rightarrow$。
+
+<!-- unit: N-basis-count-proof -->
+> [!info] 补证：上界与下界都要证明
+> 通常实轴的开集族 $\tau$ 有 $c$ 个成员，而每个拓扑基都是 $\tau$ 的子集，故基的种数不超过 $2^c$。
+> 固定可数基 $\mathcal B_0$。集合 $\tau\setminus\mathcal B_0$ 仍有 $c$ 个元素。对它的每个子集 $A$，$\mathcal B_0\cup A$ 都是同一个通常拓扑的基：所添元素本来就是开集，而原基已能细化每个开邻域。不同的 $A$ 给出不同的基，故至少有 $2^c$ 种。与上界合并即得恰有 $2^c$ 种。
+
+<!-- unit: N-p4-09 -->
+原稿还列出基的覆盖条件 $\bigcup\{G_i\}=\mathbb R$，并简记 $\forall x\in G_i\ \exists x\in G_k\subset G_i$。
+
+<!-- unit: N-basis-criterion -->
+> [!info] 补充：基的准确局部条件
+> 对已经给定的拓扑 $\tau$，开集族 $\mathcal B\subset\tau$ 是基，当且仅当每个开集 $U$、每个 $x\in U$ 都能找到 $B\in\mathcal B$ 使 $x\in B\subset U$。原稿简记若只用同一族的 $G_i$，条件会退化为取 $G_k=G_i$，不足以表述对全部开邻域的细化。
+> 若从一个集合族出发定义拓扑，则须检查它覆盖 $X$，并且对任意 $B_1,B_2\in\mathcal B$ 与 $x\in B_1\cap B_2$，存在 $B_3\in\mathcal B$ 使 $x\in B_3\subset B_1\cap B_2$。这时所有基元的任意并组成拓扑。

@@ -66,7 +66,11 @@ def build():
     if cropfile.exists():
         for c in json.loads(cropfile.read_text()):
             artifacts.append({'id':c['id'],'path':c['path'],'sha256':sha(PROJECT/c['path']),'kind':'evidence','format':'image','source_crop':{'page_id':c['page_id'],'bbox_px':c['bbox_px']}})
-    ledger={'schema_version':'1.0','manifest_sha256':sha(PROJECT/'manifest.json'),'authors':[IDENTITY],'artifacts':artifacts,'source_units':sources,'target_units':targets,'old_units':[],'region_checks':rchecks,'recoveries':recoveries,'issues':issues,'final_rounds':[],'page_checks':pchecks}
+    extra_evidence=HERE/'extra-evidence.json'
+    if extra_evidence.exists():
+        for a in json.loads(extra_evidence.read_text()):
+            artifacts.append({**a,'sha256':sha(PROJECT/a['path'])})
+    ledger={'schema_version':'1.0','manifest_sha256':sha(PROJECT/'manifest.json'),'authors':[IDENTITY,'/root'],'artifacts':artifacts,'source_units':sources,'target_units':targets,'old_units':[],'region_checks':rchecks,'recoveries':recoveries,'issues':issues,'final_rounds':[],'page_checks':pchecks}
     (PROJECT/'ledger.json').write_text(json.dumps(ledger,ensure_ascii=False,indent=2)+'\n')
     (HERE/'source-units.json').write_text(json.dumps(sources,ensure_ascii=False,indent=2)+'\n')
     (HERE/'mapping.json').write_text(json.dumps({'source_to_targets':[{k:s[k] for k in ['id','transcription_target_ids','study_target_ids']} for s in sources],'target_units':targets},ensure_ascii=False,indent=2)+'\n')

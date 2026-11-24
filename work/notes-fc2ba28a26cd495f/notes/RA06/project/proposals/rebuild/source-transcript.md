@@ -177,3 +177,58 @@ $$
 \overline E=E=E^\circ\cup\partial E,
 \qquad E'\subset E.
 $$
+
+<!-- unit: T-p4-heading -->
+## 原稿第 4 页
+
+<!-- unit: T-p4-01 -->
+perfect set $\Longleftrightarrow E=E'$，自密闭集。
+
+<!-- unit: T-p4-02 -->
+**Ex 1.** $\mathbb R$ 能[Q003]拓扑；$2^c$。
+
+<!-- unit: T-p4-03 -->
+$\forall\varnothing\ne U\subset(\mathbb R,|\cdot|)$，包含号下记“开”。
+
+<!-- unit: T-p4-04 -->
+右侧浅色：$(\mathbb R,\tau)$，$\mathcal P(\mathbb R)=2^c$（$2^c$ 被框起）；$\mathcal U\subseteq\mathcal P(\mathbb R)$。
+
+<!-- unit: T-p4-05 -->
+$Q_1$：$x\in U$，$B(x,\delta)\subset U$ 有多少个？
+
+<!-- unit: T-p4-06 -->
+$Q_2$：有无最大？
+
+<!-- unit: T-p4-07 -->
+**Ex 2.** $(\mathbb R,|\cdot|)$ 有 $2^c$ 种基。
+
+<!-- unit: T-p4-08 -->
+浅色：$\mathcal P(A)=2^c\Rightarrow$。
+
+<!-- unit: T-p4-09 -->
+基，$\bigcup\{G_i\}=\mathbb R$；
+
+$\bigl(\forall x\in G_i\ \exists x\in G_k\subset G_i\bigr)$。
+
+<!-- unit: T-p4-10 -->
+$$
+G_x=\{(a,b)\mid x\in(a,b)\subset U\}.
+$$
+
+<!-- unit: T-p4-11 -->
+$$
+\alpha=\inf a,\qquad\beta=\sup b.
+$$
+
+<!-- unit: T-p4-12 -->
+断言 $(\alpha,\beta)\in G_x$，且 [Q004：本行后半记号未唯一辨定；可见 $\gamma$、$G_x$、$\beta$、$G_\gamma$ 及包含/不属于样笔画]。
+
+<!-- unit: T-p4-13 -->
+**pf：**$x\in(\alpha,\beta)$。
+
+$\forall y\in(\alpha,\beta)$。
+
+<!-- unit: T-p4-14 -->
+且 $\alpha\notin U$，$\beta\notin U$。
+
+反证，若不然。

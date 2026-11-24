@@ -253,3 +253,58 @@ $$
 
 <!-- unit: T-P004-U009 -->
 (1) pf：
+
+<span style="color:red">原稿待填：此证明标记之后未写证明。</span>
+
+〔第 5 页直接转入边界零测与积分话题。〕
+
+<!-- unit: T-P005-head -->
+## 物理第 5 页
+
+<!-- unit: T-P005-U001 -->
+$$
+m^*(\partial E)=0\quad\Longrightarrow\quad E\in\mathcal M.
+$$
+
+<!-- unit: T-P005-U002 -->
+## 勒贝格积分
+
+<!-- unit: T-P005-U003 -->
+草式：$E[y_{i-1}\le f<y_i)$。
+
+<!-- unit: T-P005-U004 -->
+$f(\xi_i)m(E)$。〔$\xi_i$ 按取样点语境恢复，原形近似 $G_i$。〕
+
+<!-- unit: T-P005-U005 -->
+连续：对 $\delta$ 基，基的原像是开集。〔原稿记作“$\delta$ 基”，本页未另作定义。〕
+
+<!-- unit: T-P005-U006 -->
+$f^{-1}$ 又对交、并、补取等。
+
+<!-- unit: T-P005-U007 -->
+**Prop.**
+$$
+f:(X,\Sigma\subset\mathcal P(X))\longrightarrow Y.
+$$
+
+<!-- unit: T-P005-U008 -->
+$$
+\Sigma_f=\{B\subset Y:f^{-1}(B)\in\Sigma\}.
+$$
+
+<!-- unit: T-P005-U009 -->
+(1) $\Sigma$ 是 $f$ 上 $\sigma$ 拓扑，$\Sigma_f$ 是 $Y$ 上 $\sigma$ 拓扑。
+
+〔第一个底空间位置原写形为 $f$。〕
+
+<!-- unit: T-P005-U010 -->
+(2) 若……$\sigma$ 代数，$\Sigma_f$ ……$\sigma$ 代数。
+
+<!-- unit: T-P005-U011 -->
+设 $f:(X,\tau_X)\longrightarrow Y$。
+
+<!-- unit: T-P005-U012 -->
+(1) $\Sigma_f$ 是 $Y$ 上 $\sigma$ 拓扑。
+
+<!-- unit: T-P005-U013 -->
+(2) $\Sigma_f$ 是 s.t. $f$ 连续的最大拓扑。

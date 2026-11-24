@@ -45,7 +45,7 @@ $$\delta_x(E)=\begin{cases}1,&x\in E,\\0,&x\notin E.\end{cases}$$
 $$\mathfrak c^{2^{\mathfrak c}}=(2^{\aleph_0})^{2^{\mathfrak c}}=2^{2^{\mathfrak c}}.$$
 
 <!-- unit: T-P001-013 -->
-〔疑字 RA07-Q001〕句首字迹近似“无法不存在”，后接近似“$\wedge m$”的符号；可读部分为：“平移正规性、非平凡测度，？”右端有蓝色圈问号。
+无穷维，不存在〔疑字 RA07-Q001：量词样符号近似“$\wedge m$”〕平移正规性、非平凡测度，？（右端有蓝色圈问号。）
 
 <!-- unit: T-P001-014 -->
 Jordan 测度。（有限覆盖）
@@ -204,3 +204,104 @@ $$m^*(C)\le m^*(C_n)=\left(\frac23\right)^n.$$
 <!-- unit: T-P004-013 -->
 $$m^*(C)=0.$$
 旁注：“势是多少？”答：$\mathfrak c$。
+
+<!-- unit: T-P005-HEAD -->
+## 物理第 5 页
+
+<!-- unit: T-P005-001 -->
+$I\subset\mathbb R^n$ 是有界区间，则 $m^*(I)=|I|$。
+
+<!-- unit: T-P005-002 -->
+若 $I$ 闭，则 $\forall\varepsilon>0$，$\exists I'$ 开，s.t.
+$$|I'|<|I|+\varepsilon.$$
+
+<!-- unit: T-P005-003 -->
+任意测度 $>0$ 的〔集〕存在不可测子集。
+
+<!-- unit: T-P005-004 -->
+### 可测集
+
+引入：$E\subset\mathbb R^n$。
+
+<!-- unit: T-P005-005 -->
+取 $G$ 开，$G\supset I\setminus E$。
+
+<!-- unit: T-P005-006 -->
+$I\setminus G\subset E$ 中紧集。
+
+<!-- unit: T-P005-007 -->
+旁写：$|I|-|G|$。
+
+<!-- unit: T-P005-008 -->
+令 $$m_*(E)=|I|-m^*(I\setminus E).$$
+
+<!-- unit: T-P005-009 -->
+若 $m_*(E)=m^*(E)$，则 $E$ 可测。
+
+<!-- unit: T-P005-010 -->
+$$|I|=m^*(I\cap E^c)+m^*(E).$$
+
+<!-- unit: T-P005-011 -->
+$$|I|=m^*(I\cap E^c)+m^*(E\cap I).$$
+
+<!-- unit: T-P005-012 -->
+$\forall I$ 均成立。
+
+<!-- unit: T-P005-013 -->
+$E$ 有界：$m^*(E)=m_*(E)$。
+
+<!-- unit: T-P005-014 -->
+无界：$E\cap I$ 可测。
+
+<!-- unit: T-P006-HEAD -->
+## 物理第 6 页
+
+<!-- unit: T-P006-001 -->
+Carathéodory。
+
+<!-- unit: T-P006-002 -->
+**Def.** 设 $E\subset\mathbb R^n$，若 $\forall I\subset\mathbb R^n$ 有
+$$m^*(I)=m^*(I\cap E)+m^*(I\cap\cdots).$$
+〔本行扫描右缘截断；根据本页中部完整复写，可恢复末项为 $m^*(I\cap E^c)$。〕
+
+<!-- unit: T-P006-003 -->
+则称 $E$ Lebesgue 可测，记 $m^*(E)=m_L(E)$。
+
+〔下标按本行“Lebesgue”语境整理为 $L$；详见记号局部图。〕
+
+<!-- unit: T-P006-004 -->
+记全体为 $\mathcal M$。
+
+<!-- unit: T-P006-005 -->
+原图：左上较小圆与右下较大圆相交，圆上方写 $E$；右下圆未写名称，没有阴影或箭头。
+
+![原稿中的相交集合图](../../evidence/p0006-diagram.png)
+
+<!-- unit: T-P006-006 -->
+一般：
+$$m^*(I)=m^*(I\cap E)+m^*(I\cap E^c).$$
+
+<!-- unit: T-P006-007 -->
+不可测集存在：
+$$AC+ZF\ \longrightarrow\ P\text{ 成立}. $$
+
+<!-- unit: T-P006-008 -->
+设 $T$ 是一个公理体系。
+
+（1）存在一个 model，s.t. $T+P$。
+
+<!-- unit: T-P006-009 -->
+（2）存在另一个 model，s.t. $T+\neg P$。
+
+<!-- unit: T-P006-010 -->
+则 $P$ 独立于公理体系。
+
+<!-- unit: T-P006-011 -->
+$P$ 在“存在一个不可达基数”情况下：
+
+<!-- unit: T-P006-012 -->
+$$ZF\nvdash P,\qquad ZF\nvdash\neg P.$$
+
+<!-- unit: T-P006-013 -->
+若 $ZF\to P$，
+$$ZFC\to P.$$

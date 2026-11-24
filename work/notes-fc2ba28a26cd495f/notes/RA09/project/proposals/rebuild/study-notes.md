@@ -342,3 +342,92 @@ $$
 
 <!-- unit: N-P004-U009 -->
 (1) pf：
+
+<span style="color:red">原稿待填：此证明标记之后未写证明。</span>
+
+〔第 5 页直接转入边界零测与积分话题。〕
+
+<!-- unit: N-P004-S03 -->
+> [!info] 补充证明：外正则与闭集内正则
+> 单调性先给出 $m(E)\le\inf_{G\supset E,\,G\text{开}}m(G)$ 及 $\sup_{F\subset E,\,F\text{闭}}m(F)\le m(E)$。若 $m(E)<\infty$，开、闭逼近分别给出 $m(G)<m(E)+\varepsilon$ 与 $m(F)>m(E)-\varepsilon$，令 $\varepsilon\downarrow0$ 即得到两边等式。若 $m(E)=\infty$，任何超集 $G$ 都有无限测度，故外侧下确界为无限；取闭 $F\subset E$ 使 $m(E\setminus F)<1$，可加性迫使 $m(F)=\infty$，故内侧上确界也为无限。
+
+<!-- unit: N-P004-S04 -->
+> [!info] 补充证明：有界集的内外测度判据
+> 在此使用 $m_*(E)=\sup\{m(F):F\subset E,\ F\text{闭}\}$ 的内测度表述。设 $a=m^*(E)=m_*(E)$。有界性保证 $a<\infty$。对每个 $j$ 取闭集 $F_j\subset E$ 与开集 $G_j\supset E$，使 $m(F_j)>a-1/j$、$m(G_j)<a+1/j$。于是 $m(G_j\setminus F_j)<2/j$。令 $F=\bigcup_jF_j$、$G=\bigcap_jG_j$，则 $F\subset E\subset G$ 且 $m(G\setminus F)\le m(G_j\setminus F_j)<2/j$ 对每个 $j$ 成立。因而 $m(G\setminus F)=0$，$E$ 是 Borel 集 $F$ 与零测集子集的并，所以可测。
+
+<!-- unit: N-P005-U001 -->
+$$
+m^*(\partial E)=0\quad\Longrightarrow\quad E\in\mathcal M.
+$$
+
+<!-- unit: N-P005-S01 -->
+> [!info] 补充证明：边界零测的判据
+> $E=E^\circ\mathbin{\dot\cup}(E\cap\partial E)$。第一部分开而可测；第二部分包含于零外测度集 $\partial E$，所以也可测。这个条件是充分条件，并非任意可测集的必要条件。
+
+<!-- unit: N-P005-U002 -->
+## 勒贝格积分
+
+<!-- unit: N-P005-U003 -->
+草式：$E[y_{i-1}\le f<y_i)$。
+
+<!-- unit: N-P005-U004 -->
+$f(\xi_i)m(E)$。〔$\xi_i$ 按取样点语境恢复，原形近似 $G_i$。〕
+
+<!-- unit: N-P005-S02 -->
+> [!info] 补充解释：由值域分层引出可测性
+> 这里的 $E[y_{i-1}\le f<y_i)$ 可展开为 $\{x\in E:y_{i-1}\le f(x)<y_i\}$。原稿只写了分层集和一个乘积草式，没有写完整积分定义；后面的可测映射理论保证这些分层集能取测度。若在每层选择样点 $\xi_i$，相应有限和写成 $\sum_i f(\xi_i)m(E_i)$，其中 $E_i$ 是该层原像；这只是解释草式的分片思路。
+
+<!-- unit: N-P005-U005 -->
+连续：对 $\delta$ 基，基的原像是开集。〔原稿记作“$\delta$ 基”，本页未另作定义。〕
+
+<!-- unit: N-P005-U006 -->
+$f^{-1}$ 又对交、并、补取等。
+
+<!-- unit: N-P005-S03 -->
+> [!info] 补充解释：基判别与逆像恒等式
+> 对通常拓扑，检验拓扑基中每个集合的原像为开集即可检验连续性，因为开集是基元素的并，而逆像保持任意并。原稿的“$\delta$ 基”称谓保持原样；这里仅说明通常拓扑基的结论。
+> $$
+> f^{-1}\!\left(\bigcup_\alpha B_\alpha\right)=\bigcup_\alpha f^{-1}(B_\alpha),\qquad
+> f^{-1}\!\left(\bigcap_\alpha B_\alpha\right)=\bigcap_\alpha f^{-1}(B_\alpha),
+> $$
+> $$
+> f^{-1}(Y\setminus B)=X\setminus f^{-1}(B).
+> $$
+
+<!-- unit: N-P005-U007 -->
+**Prop.**
+$$
+f:(X,\Sigma\subset\mathcal P(X))\longrightarrow Y.
+$$
+
+<!-- unit: N-P005-U008 -->
+$$
+\Sigma_f=\{B\subset Y:f^{-1}(B)\in\Sigma\}.
+$$
+
+<!-- unit: N-P005-U009 -->
+(1) $\Sigma$ 是 $f$ 上 $\sigma$ 拓扑，$\Sigma_f$ 是 $Y$ 上 $\sigma$ 拓扑。
+
+〔第一个底空间位置原写形为 $f$。〕
+
+<!-- unit: N-P005-U010 -->
+(2) 若……$\sigma$ 代数，$\Sigma_f$ ……$\sigma$ 代数。
+
+<!-- unit: N-P005-S04 -->
+> [!info] 纠错与补充证明：逆像族继承封闭性质
+> 第一项的底空间按前面的映射定义应为 **$X$**。原稿“$\sigma$ 拓扑”的称谓在正文保留；本页没有重述这个课堂术语的定义。由逆像恒等式，$\Sigma$ 对哪些并、交封闭，$\Sigma_f$ 就对相同类型的并、交封闭，且 $\varnothing,Y$ 的原像分别为 $\varnothing,X$。
+>
+> 第二项的省略句补全为：若 $\Sigma$ 是 $X$ 上的 $\sigma$ 代数，则 $\Sigma_f$ 是 $Y$ 上的 $\sigma$ 代数。具体地，$Y\in\Sigma_f$；$B\in\Sigma_f$ 时，$f^{-1}(B^c)=f^{-1}(B)^c\in\Sigma$；$B_j\in\Sigma_f$ 时，$f^{-1}(\bigcup_jB_j)=\bigcup_jf^{-1}(B_j)\in\Sigma$。三条公理逐项成立。
+
+<!-- unit: N-P005-U011 -->
+设 $f:(X,\tau_X)\longrightarrow Y$。
+
+<!-- unit: N-P005-U012 -->
+(1) $\Sigma_f$ 是 $Y$ 上 $\sigma$ 拓扑。
+
+<!-- unit: N-P005-U013 -->
+(2) $\Sigma_f$ 是 s.t. $f$ 连续的最大拓扑。
+
+<!-- unit: N-P005-S05 -->
+> [!info] 补充证明：使映射连续的最大目标拓扑
+> 这一段取 $\Sigma=\tau_X$。由于 $\tau_X$ 对任意并、有限交封闭，$\Sigma_f$ 实际上是通常意义的拓扑。按它的定义，$f:(X,\tau_X)\to(Y,\Sigma_f)$ 连续。若 $\tau$ 是 $Y$ 上另一个使 $f$ 连续的拓扑，则每个 $V\in\tau$ 都满足 $f^{-1}(V)\in\tau_X$，所以 $V\in\Sigma_f$，即 $\tau\subset\Sigma_f$。这证明“最大”的方向。
