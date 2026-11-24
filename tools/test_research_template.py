@@ -16,7 +16,7 @@ class ResearchTemplateTests(unittest.TestCase):
             root = Path(temporary) / 'new-project'
             export(source, root, 'https://github.com/example/new-math.git', 'research')
             for name in ['research-runtime.md', 'research-main-design.md',
-                         'research-line-design.md', 'research-review-design.md']:
+                         'research-line-design.md', 'research-review-design.md', 'paper-evaluation.md']:
                 self.assertTrue((root / 'prompts' / name).is_file(), name)
             self.assertTrue((root / 'research/agent-design/HYPEREDGE_WORKFLOW.md').is_file())
             self.assertTrue((root / 'research/schemas/research-packet.schema.json').is_file())
@@ -44,6 +44,9 @@ class ResearchTemplateTests(unittest.TestCase):
                             'commit', '--allow-empty', '-qm', 'Empty research project'], cwd=root, check=True)
             problem = root / 'problem.md'
             problem.write_text('# Original problem\nProve the exact stated target.\n')
+            evaluation = execute('research', 'evaluate', '--paper', 'problem.md')
+            self.assertEqual(evaluation['status'], 'awaiting_review')
+            self.assertTrue(Path(evaluation['task']).is_file())
             import hashlib
             spec = {'problem_id': 'new-target',
                     'problem': {'path': 'problem.md', 'sha256': hashlib.sha256(problem.read_bytes()).hexdigest()},

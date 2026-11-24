@@ -42,3 +42,7 @@ Main 用 Work 派工，查看超边和短回执，负责选路线和发布。ide
 新问题必须由用户明确指定；仓库不会从已删除的阶段任务或公屏推断研究目标。
 
 笔记识读与工作存档使用独立的 [work/notes 分支](https://github.com/SOMEBODYJUN/co-work-anl/tree/work/notes)，启动词和目录规则在该分支根目录。
+
+## 论文评价
+
+按需运行 `python work.py research evaluate --paper <稿件路径>`，再按任务包审查并生成报告。用法见 [数学论文评价](tools/PAPER_EVALUATION.md)。

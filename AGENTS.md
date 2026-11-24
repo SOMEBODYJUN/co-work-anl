@@ -14,6 +14,10 @@
 
 Main 看超边和简短回执，负责路线选择、派工和发布。idea 子代理提方案。执行与复核子代理实读正文和证据、完成证明与计算。接近上下文上限时，先保存精确断点，再派 fresh 子代理按原引用接续。
 
+## 论文评价（用户要求时执行）
+
+先运行 `python work.py research evaluate --paper <稿件路径>`，按生成的 TASK 做完证据审查，再用 `--run <ID> --report <完成的评审JSON>` 出报告。需要时传 `--include` 和 `--target-file`。详细用法见 [论文评价](tools/PAPER_EVALUATION.md)。评审草稿留在本地；评价不改变研究 RUN 或数学登记。
+
 ## 文件边界
 
 正式数学在 `archives/`；必要复现输入、程序和证书在 `tools/evidence/` 或 `tools/evidence/canonical/`；唯一当前登记是 `research/registry.json`；正式超边在 `map/edges/`。阶段证据迁移后只能引用新的 canonical 路径，不能保留旧阶段路径或悬空 SHA。
