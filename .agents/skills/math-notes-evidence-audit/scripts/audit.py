@@ -577,7 +577,7 @@ class Auditor:
         return {
             "audit_pass": audit_pass,
             "content_resolved": content_resolved,
-            "status": "RecordsComplete_ContentUnverified" if content_resolved else "NeedsHuman",
+            "status": "RecordsComplete_ContentVerified" if content_resolved else "NeedsModelRecovery",
             "snapshot_sha256": self.snapshot,
             "unresolved_count": len(self.unresolved),
             "unresolved": self.unresolved,

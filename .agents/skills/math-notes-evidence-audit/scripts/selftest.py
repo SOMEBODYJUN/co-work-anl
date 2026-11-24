@@ -379,7 +379,7 @@ class AuditTests(unittest.TestCase):
         self.ledger["final_rounds"][0]["notes"] = "Altered after sealing, without rehashing."
         self.blocked("ROUND_HASH_CHAIN")
 
-    def test_unresolved_issue_keeps_structural_pass_but_needs_human(self):
+    def test_unresolved_issue_keeps_structural_pass_but_needs_model_recovery(self):
         self.ledger["issues"].append({"id": "issue-open", "status": "open",
             "description": "Synthetic uncertainty deliberately remains open.", "related_ids": ["s01"],
             "evidence_ids": ["image:p0001"], "resolution": ""})
@@ -387,7 +387,7 @@ class AuditTests(unittest.TestCase):
         self.assertTrue(report["audit_pass"], report)
         self.assertFalse(report["content_resolved"])
         self.assertEqual(report["unresolved_count"], 1)
-        self.assertEqual(report["status"], "NeedsHuman")
+        self.assertEqual(report["status"], "NeedsModelRecovery")
 
     def test_findings_require_three_later_clear_rounds(self):
         self.ledger["issues"].append({"id": "issue-fixed", "status": "resolved",

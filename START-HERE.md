@@ -2,7 +2,7 @@
 
 本批 12 个 PDF、项目包及来源/待办信息已获用户明确公开上传授权，见 `docs/publication-authorization.md`；同一批相同范围不再重复询问。
 
-直接使用 [启动词](prompts/launch-prompt.md)。使用 `work/notes` 根 `work.py`；之前数学分支的同名程序不是本入口。
+直接使用 [R3 启动词](prompts/notes-pro-launch-r3.md)。使用 `work/notes` 根 `work.py`；之前数学分支的同名程序不是本入口。
 
 ## 启动和认领
 
@@ -42,7 +42,7 @@ python .agents/skills/math-notes-evidence-audit/scripts/prepare_pdf.py input/pdf
 | 真实阻塞 | `python work.py notes block 实际RUN --note 笔记ID --reason "具体阻塞及范围" --handoff work/实际RUN/handoff.md` |
 | 恢复自己的阻塞项 | `python work.py notes resume 实际RUN --note 笔记ID` |
 
-`submit` 运行真实审计，核对全部物理页的原稿指纹、旧稿范围和两份正式正文，先保存完整工作区与正文，再更新共享任务。失败保持未完成。有未决记录则继续修订或保存未完成交接，不标成 `done`。
+`submit` 运行真实审计，核对全部物理页的原稿指纹、旧稿范围和两份正式正文，先保存完整工作区与正文，再更新共享任务。结构审计因未决记录返回时，保持任务认领状态，立即进行模型自主的高分辨率恢复循环，不调用 `notes block`，也不要求用户判字。只有缺页、损坏原件或视觉工具不可用才保存真实阻塞交接。
 
 `release`、`block` 必须引用已推送的非空交接文件，记录页区停点、有效正文/冻结版本、未决项、真实代理参与表及下一动作。保留全部旧工作区，新认领者的 `assignment.json` 含历史交接路径。恢复早前阻塞项不混入另一批正在进行的任务。
 

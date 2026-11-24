@@ -70,6 +70,23 @@ def owned(task, actor, run):
         raise ValueError('Task is owned by another Boss/RUN; preserve its work and request an explicit handoff')
 
 
+CONTENT_UNCERTAINTY_MARKERS = (
+    'content_resolved', 'unresolved', 'glyph', 'recovery', 'ambiguous',
+    '字形', '疑字', '模糊', '恢复', '未决', '判字', '人工', '看不清',
+)
+
+
+def reject_content_block(reason):
+    """Keep visual uncertainty in the claimed work loop.
+
+    A missing/corrupt input or an unavailable tool can be a real block. A
+    recoverable reading uncertainty must be handled by another visual pass,
+    not handed to the user as a manual task.
+    """
+    lowered = reason.casefold()
+    return any(marker.casefold() in lowered for marker in CONTENT_UNCERTAINTY_MARKERS)
+
+
 def remote_hash(repo, tip, path, rt):
     return hashlib.sha256(rt.git(repo, 'show', tip + ':' + path).stdout).hexdigest()
 
@@ -124,6 +141,14 @@ def transition(tasks, args, actor, event_id, handoff=None, completion=None):
             if task['status'] != 'claimed': raise ValueError('Task must be claimed first')
             if action in {'release', 'block'}:
                 if not args.reason.strip(): raise ValueError('Provide a concrete reason')
+                if action == 'block' and reject_content_block(args.reason):
+                    raise ValueError(
+                        'Do not block a note for visual or mathematical uncertainty. '
+                        'Keep the task claimed and run autonomous recovery: render a targeted '
+                        'high-resolution crop, inspect the original image, compare candidates, '
+                        'verify the mathematics in both directions, update the ledger and drafts, '
+                        'then rerun the audit. Block only for missing/corrupt input or unavailable tools.'
+                    )
                 task.update(status='pending' if action == 'release' else 'blocked',
                             handoff=handoff, reason=args.reason)
                 if action == 'release': task.update(owner=None, run=None)
@@ -154,11 +179,26 @@ def audit_submission(repo, args, task, rt):
     result = subprocess.run([sys.executable, str(script), 'check', '--manifest', str(manifest),
         '--ledger', str(ledger), '--report', str(report)], cwd=repo, capture_output=True, timeout=600)
     if result.returncode:
-        raise ValueError('Audit is incomplete or has unresolved records; keep the task open. ' +
-                         rt.SECRET.sub(b'[REDACTED]', result.stderr + result.stdout).decode(errors='replace')[-1600:])
+        detail = rt.SECRET.sub(b'[REDACTED]', result.stderr + result.stdout).decode(errors='replace')[-1600:]
+        if result.returncode == 2:
+            raise ValueError(
+                'AUTONOMOUS_RECOVERY_REQUIRED: the structural audit ran, but visual or '
+                'mathematical records remain unresolved. Do not call notes block and do not '
+                'ask the user. Read every unresolved record, render a targeted high-resolution '
+                'crop, compare at least two candidates against the original image and the '
+                'forward/backward mathematics, update both drafts and the ledger, then rerun '
+                'notes submit. ' + detail
+            )
+        raise ValueError('STRUCTURE_INCOMPLETE: finish the recorded page/region, mapping, or hash work before submitting. ' + detail)
     audit = json.loads(report.read_text())
-    if not audit['audit_pass'] or not audit['content_resolved']:
-        raise ValueError('The audit does not satisfy the submission gate')
+    if not audit['audit_pass']:
+        raise ValueError('STRUCTURE_INCOMPLETE: the audit does not satisfy the structural submission gate')
+    if not audit['content_resolved']:
+        raise ValueError(
+            'AUTONOMOUS_RECOVERY_REQUIRED: content_resolved is false. Keep the task claimed, '
+            'perform the high-resolution visual recovery loop, and submit again. This is not a '
+            'human handoff and must never be converted into notes block.'
+        )
     files = {p.relative_to(repo).as_posix(): digest(p) for p in [manifest, ledger, report]}
     for kind, filename in [('transcription', 'source-transcript.md'), ('study', 'study-notes.md')]:
         artifacts = [a for a in record['artifacts'] if a['kind'] == kind]
