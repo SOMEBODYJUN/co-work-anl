@@ -113,6 +113,16 @@ def exercise(base):
     work(winner, 'notes', 'submit', 'R', '--note', 'N1', '--manifest', 'work/R/notes/N1/manifest.json',
          '--ledger', 'work/R/notes/N1/ledger.json', '--report', 'work/R/notes/N1/reports/final.json', ok=False)
     assert next(t for t in work(winner, 'notes', 'queue')['tasks'] if t['note_id'] == 'N1')['status'] == 'claimed'
+    # Visual uncertainty must stay in the claimed autonomous-recovery loop.
+    blocked_args = SimpleNamespace(action='block', run='R', note='N1', limit=1,
+                                   reason='content_resolved=false; 3 个疑字需要人工高清判字')
+    try:
+        transition([{'note_id': 'N1', 'status': 'claimed', 'owner': 'self', 'run': 'R'}],
+                   blocked_args, 'self', 'content-block-test')
+    except ValueError as exc:
+        assert 'Do not block a note' in str(exc)
+    else:
+        raise AssertionError('content uncertainty was incorrectly accepted as a block')
     # Full valid synthetic evidence passes the real audit and preserves both output hashes.
     shutil.copytree(fixture / 'project', target, dirs_exist_ok=True)
     output = winner / 'output/N1'; output.mkdir(parents=True)
