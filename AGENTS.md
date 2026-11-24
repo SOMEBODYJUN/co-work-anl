@@ -1,5 +1,9 @@
 # 数学手记重识别项目
 
+本批 12 个 PDF、项目包及来源/待办信息已获用户明确公开上传授权，见 `docs/publication-authorization.md`；同一批相同范围不再重复询问。
+
+本批原稿已登记在 `docs/input-map.json`，动态状态由 `notes queue` 读取远端 `tasks/`。新会话用 `start --actor auto` 和 `notes init auto` 获取唯一身份/RUN，认领远端确认后开工，全局最多三份、按固定批次推进。任务状态和 RUN 所属由事务命令维护，不手改 `tasks/` 或 `runs/`。本次未提供对应旧 Markdown，先处理已有 PDF 并明确未做旧稿对照的范围，不借用演示旧稿。验收用 `notes submit`，推送不是停止条件；交接先推送真实非空停点，保留旧工作区。
+
 本树用于 `work/notes` 笔记工作。先读 `START-HERE.md`；使用本分支根 `work.py`，每个 Boss 独立 clone，每次工作使用唯一 RUN。数学研究仍在 `rebuild/research-v2`，不把数学 registry、超边或研究验收规则接入笔记任务。
 
 原稿放 `input/`，正文放 `output/<笔记ID>/`，来源与审计的完整目录和检查点放 `work/<RUN>/`。图像审计工具只能引用其工作目录内的文件，保留它所锁定的完整布局；发布正文副本到 output 时核实哈希相同。原件、来源映射、独立复核、成稿及检查点均须保存，缓存另放 `cache/`。Token 在 clone 外，只保存其路径。主代理串行执行 `work.py checkpoint <实际路径> -m "说明"`，确认 `pushed` 才算远端保存；离线用 `--local-only`。不要将样例与工具自检写成用户笔记完成记录。

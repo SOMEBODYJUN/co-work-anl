@@ -1,40 +1,34 @@
 # 数学手记工作存档
 
-本分支 `work/notes` 保存笔记原稿、保真转写、复习稿、来源映射、疑点、复核与接续记录。
-入口是 [START-HERE.md](START-HERE.md) 与 [完整启动词](prompts/launch-prompt.md)。
+本批 12 个 PDF、项目包及来源/待办信息已获用户明确公开上传授权，见 `docs/publication-authorization.md`；同一批相同范围不再重复询问。
+
+本批原稿已登记，等待 GPT Pro 认领识读。入口：[直接发给 Pro 的完整启动词](prompts/launch-prompt.md)、[操作说明](START-HERE.md)、[本批任务](docs/ready-to-work.md)。
+
+`work/notes` 已保存 12 个 PDF 上传文件，对应 11 份不同原稿、95 个物理页。《实分析12》的两个文件字节相同，保留两个上传名称但只建一个任务。本次未提供对应旧 Markdown，先做已有原稿，不宣称已完成旧稿对照。初始化没有识读正文，也没有用户笔记的复核通过记录。
+
+每个新会话用本分支 `work.py` 自动创建唯一身份和 RUN：
 
 ```sh
-python work.py --repo <独立目录> start --actor Boss1 --token-file <仓库外凭据>
-cd <独立目录>
+python work.py --repo ./co-work-notes start --actor auto --token-file ../githubtoken.txt
+cd co-work-notes
 python work.py doctor
-python work.py notes init <唯一RUN>
+python work.py notes init auto
+python work.py notes queue
 ```
 
-每个新 Boss 使用独立 clone 和 RUN；续接用同一身份及 RUN，执行 `notes status RUN`。
-运行中的笔记、独立审阅与 Git 保存规则见 [AGENTS.md](AGENTS.md)。
+记住返回的实际 RUN，再用 `notes claim 实际RUN --limit 3` 认领。远端确认后才开工；全局最多同时三份，按固定批次推进。每个 Boss 独立 clone；接续使用原身份和 RUN。
 
 | 路径 | 保存内容 |
 | --- | --- |
-| `input/pdf/` | 用户原始 PDF，只读保留 |
-| `input/previous-notes/`、`input/teacher/` | 旧稿与教师材料，只读保留 |
-| `work/<RUN>/` | 课次/页段配对、哈希、识读台账、图像证据、疑点和检查点 |
-| `output/<笔记ID>/` | 按原稿顺序的保真转写、按复习顺序的学习稿及正式导出 |
-| `.agents/skills/` | 项目内逐页复核和数学编辑流程、工具与许可 |
+| `input/pdf/` | 只读原稿，保留上传名称和精确字节 |
+| `input/previous-notes/`、`input/teacher/` | 后续明确提供的旧稿和教师材料 |
+| `input/workflow/math-notes-project.zip` | 本次原始流程包 |
+| `docs/input-map.json` | 来源登记快照、哈希、课次、物理页范围 |
+| `tasks/`、`runs/` | 动态认领状态与唯一 RUN 所属，由程序事务更新 |
+| `work/实际RUN/notes/笔记ID/` | 独立工作区、图像证据、映射、疑点及真实复核记录 |
+| `output/笔记ID/` | 保真转写、学习稿和正式导出 |
+| `.agents/skills/` | 逐页复核流程、工具与许可 |
 
-保存明确范围，并确认返回 `pushed`：
+按 [AGENTS.md](AGENTS.md)、[总协调合同](prompts/coordinator-prompt.md) 与 [单份任务合同](prompts/worker-prompt.md) 实做。`notes submit` 运行真实结构审计、核对来源与两份发布正文，保存证据后才把任务标成 `done`。此状态说明记录门槛满足，不证明数学无错或零遗漏。推送只是保存，不是结束条件。
 
-```sh
-python work.py checkpoint input work/<RUN> output/<笔记ID> -m "保存本次识读与断点"
-```
-
-暂时无法推送时加 `--local-only`；之后用相同完整范围重跑即可。原件、正文、来源映射、审阅报告、已登记的图像证据和检查点均可提交，只有缓存、编译临时文件与凭据被忽略。主代理串行提交；同步会保留本地草稿，真实冲突需解决后接续。
-
-当前没有导入本批待识读的原始笔记，也没有完成任何用户笔记的复核。工具自检只验证程序行为。锁定版本上的三轮独立全量复核仍由真实读图和审阅完成。
-
-数学研究继续使用 `rebuild/research-v2`。两分支各自维护工作目录，按需迁移具体通用修复。
-
-## 自动身份与共享认领程序
-
-新版支持 `start --actor auto`、`notes init auto`、`notes queue`、`notes claim`、`notes release`、`notes block`、`notes resume` 和 `notes submit`。每个 Boss 独立 clone、唯一 RUN；共享认领原子竞争，全局最多三份，按已登记批次推进。正文和审阅完成后由 submit 运行真实结构审计并核对来源及发布文件。推送只是保存，不是笔记完成。
-
-本次发布只含通用程序、通用启动词和合成工程测试，不含任何新附件或其来源/任务元数据。共享登记和原件公开上传须先有对应材料的明确公开授权。
+日常用 `checkpoint` 保存明确路径，离线用 `--local-only`。共享认领必须远端确认。交接先保存具体停点，再 `notes release` 或 `notes block`，不自动抢占。命令见 [START-HERE.md](START-HERE.md)。数学研究继续留在 `rebuild/research-v2`。
