@@ -47,7 +47,10 @@
         455,
         1315
       ],
-      "transcript": "### 可测集\n\n引入：$E\\subset\\mathbb R^n$。"
+      "transcript": "### 可测集\n\n引入：$E\\subset\\mathbb R^n$。",
+      "supplements": [
+        "> [!info] 补证：本节先备的开集、闭集可测性\n> 先用矩形测试判据证明半空间 $H=\\{x:x_j<a\\}$ 可测：任意有界开矩形 $J$ 被超平面 $x_j=a$ 切成两个矩形（允许空或退化），两部分的外测度等于其体积，而体积之和是 $|J|$。所以 $H$ 满足矩形测试条件。闭半空间为其补，亦可测。\n>\n> 对于 $\\{x:x_j>a\\}$ 同样以切矩形证明可测；有界开矩形是这两类开半空间的有限交，故可测。每个开集 $G\\subset\\mathbb R^n$ 都等于包含于它的有理端点开矩形之并：对 $x\\in G$ 先取小球包含于 $G$，再在球内围绕 $x$ 选有理端点矩形；全部有理端点矩形只有可数个。因此开集可测，闭集作为开集的补也可测，特别地紧集可测。这些结论只用前面已证的矩形外测度公式、矩形判据与可数并交封闭。"
+      ]
     },
     {
       "label": "以开集覆盖I减E",
@@ -57,7 +60,10 @@
         865,
         1515
       ],
-      "transcript": "取 $G$ 开，$G\\supset I\\setminus E$。"
+      "transcript": "取 $G$ 开，$G\\supset I\\setminus E$。",
+      "supplements": [
+        "> [!info] 补证：外测度的开集外逼近\n> 对任意 $S\\subset\\mathbb R^n$，有\n> $$m^*(S)=\\inf\\{m(G):S\\subset G,\\ G\\text{ 开}\\}.$$\n> 单调性给出左端不超过每个候选 $m(G)$。若 $m^*(S)<\\infty$，取开矩形覆盖使总体积小于 $m^*(S)+\\varepsilon$，令 $G$ 为这些矩形的并，则 $S\\subset G$，且 $G$ 开、可测，$m(G)\\le\\sum_k|I_k|<m^*(S)+\\varepsilon$。令 $\\varepsilon\\downarrow0$ 得反向。若 $m^*(S)=\\infty$，每个含它的开集也有无限测度，公式仍成立。\n>\n> 因而原稿这里的 $G$ 不仅可以取开覆盖，也可使其测度尽量接近 $m^*(I\\setminus E)$。"
+      ]
     },
     {
       "label": "取补得到E中的紧集",
@@ -93,7 +99,10 @@
         1325,
         2130
       ],
-      "transcript": "令 $$m_*(E)=|I|-m^*(I\\setminus E).$$"
+      "transcript": "令 $$m_*(E)=|I|-m^*(I\\setminus E).$$",
+      "supplements": [
+        "> [!info] 补证：内测度等于紧集内逼近，因而与外框无关\n> 设 $E$ 有界，固定闭长方体 $I\\supset E$。定义式中的两项有限，且 $0\\le m^*(I\\setminus E)\\le|I|$。我们证明\n> $$m_*(E)=\\sup\\{m(K):K\\subset E,\\ K\\text{ 紧}\\}.$$\n> 若 $K\\subset E$ 紧，则 $I\\setminus E\\subset I\\setminus K$，单调性及有限差公式给 $m^*(I\\setminus E)\\le |I|-m(K)$，故 $m(K)\\le m_*(E)$。\n>\n> 反向，给定 $\\varepsilon>0$，按开集外逼近取 $G\\supset I\\setminus E$，使 $m(G)<m^*(I\\setminus E)+\\varepsilon$。则 $K=I\\setminus G$ 是 $E$ 中紧集，且\n> $$m(K)=|I|-m(I\\cap G)\\ge |I|-m(G)>m_*(E)-\\varepsilon.$$\n> 因而上确界不小于 $m_*(E)$，公式得证。右侧不提外框 $I$，所以定义与所选包含 $E$ 的闭长方体无关。又由各 $K\\subset E$ 的单调性，$m_*(E)\\le m^*(E)$。"
+      ]
     },
     {
       "label": "内外测度相等引入可测性",
@@ -103,7 +112,10 @@
         1405,
         2380
       ],
-      "transcript": "若 $m_*(E)=m^*(E)$，则 $E$ 可测。"
+      "transcript": "若 $m_*(E)=m^*(E)$，则 $E$ 可测。",
+      "supplements": [
+        "> [!info] 补证：有界集合的内外测度判据与 Carathéodory 定义等价\n> 若 $E$ 可测，则 $I\\setminus E$ 也可测，有限可加性给 $|I|=m(E)+m(I\\setminus E)$，所以 $m_*(E)=m(E)=m^*(E)$。\n>\n> 反之设 $m_*(E)=m^*(E)=s$，其中 $s<\\infty$。由紧集内逼近，对每个 $j\\ge1$ 取紧集 $K_j\\subset E$，使 $m(K_j)>s-1/j$。令 $K=\\bigcup_jK_j$，则 $K$ 可测且包含于 $E$。将任意 $K_j$ 的可测性用于测试集 $E$，有\n> $$s=m^*(E)=m(K_j)+m^*(E\\setminus K_j),$$\n> 故 $m^*(E\\setminus K)\\le m^*(E\\setminus K_j)<1/j$。令 $j\\to\\infty$，得到 $E\\setminus K$ 零测，因完备性可测。于是 $E=K\\cup(E\\setminus K)$ 可测。取 $s=0$ 时同样成立，可取空紧集；没有遗漏零测情形。"
+      ]
     },
     {
       "label": "包含E的I分割恒等式左半",
@@ -135,7 +147,7 @@
       ],
       "transcript": "$\\forall I$ 均成立。",
       "supplements": [
-        "> [!info] 补充：两行恒等式的量词\n> 当 $E\\subset I$ 时，$E\\cap I=E$，所以上面的两种写法相同。对于不一定包含 $E$ 的测试长方体 $I$，应使用第二种写法：$|I|=m^*(I\\cap E)+m^*(I\\cap E^c)$。下一节把这推广为对任意测试集合 $A$ 的分割条件。"
+        "> [!info] 补充：两行恒等式的量词\n> 当 $E\\subset I$ 时，$E\\cap I=E$，所以上面的两种写法相同。对于不一定包含 $E$ 的测试长方体 $I$，应使用第二种写法：$|I|=m^*(I\\cap E)+m^*(I\\cap E^c)$。本复习稿前面已给出对任意测试集合 $A$ 的分割条件；原稿下一物理页从这一引入过渡到该定义。"
       ]
     },
     {
@@ -158,7 +170,8 @@
       ],
       "transcript": "无界：$E\\cap I$ 可测。",
       "supplements": [
-        "> [!info] 补充：无界时的量词与定义\n> 对无界集合，原稿的局部说法应理解为：对每个有界长方体 $I$，$E\\cap I$ 可测。也可以只检查一列覆盖全空间的有界闭长方体 $[-N,N]^n$。这样避免在 $m_*(E)$ 中使用没有定义的 $+\\infty-(+\\infty)$。等价的统一定义是下一节的 Carathéodory 条件。"
+        "> [!info] 补充：无界时的量词与定义\n> 对无界集合，原稿的局部说法应理解为：对每个有界长方体 $I$，$E\\cap I$ 可测。也可以只检查一列覆盖全空间的有界闭长方体 $[-N,N]^n$。这样避免在 $m_*(E)$ 中使用没有定义的 $+\\infty-(+\\infty)$。等价的统一定义是本复习稿前面已给出的 Carathéodory 条件。",
+        "> [!info] 补证：局部判据的双向推导\n> 若 $E$ 可测，则对每个有界闭长方体 $I$，交集 $E\\cap I$ 可测。反之，若每个 $E\\cap[-N,N]^n$ 可测，则\n> $$E=\\bigcup_{N=1}^{\\infty}\\bigl(E\\cap[-N,N]^n\\bigr)$$\n> 是可数个可测集之并，故可测。因而原稿的无界局部描述与统一的 Carathéodory 定义一致。"
       ]
     }
   ],

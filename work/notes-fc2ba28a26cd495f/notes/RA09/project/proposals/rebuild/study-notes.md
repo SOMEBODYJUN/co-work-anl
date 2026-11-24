@@ -3,11 +3,28 @@
 
 ## 目录
 
-1. $G_\delta$ 集、$F_\sigma$ 集与 Borel 集
-2. 后续章节随原件逐页识读补入
+1. **$G_\delta$、$F_\sigma$ 与 Borel 集**：定义与基本例子；无理数集不是 $F_\sigma$；度量空间中的开闭集表示。
+   - 1.1 **Borel 集与 Lebesgue 可测集**：Borel 集族的基数；Cantor 零测集中的非 Borel 子集；Carathéodory 可测集族严格大于 Borel 族；边界分解。
+2. **开集外逼近与闭集内逼近**：有限测度证明；无限测度的局部分解；取补得到内逼近。
+   - 2.1 **相差零测集的 Borel 外壳与内核**：$G_\delta$ 外壳、$F_\sigma$ 内核及可测性逆向判别。
+   - 2.2 **由开、闭集确定测度**：外正则、闭集内正则与有界集的内外测度判据。
+   - 2.3 **边界零测的充分条件**。
+3. **积分引入与逆像族**：分层草式；拓扑基判别；逆像的交并补恒等式；$\sigma$ 代数及最大目标拓扑。
+4. **可测映射与生成族判别**：两端可测空间；生成族判别的必要性、充分性。
+5. **扩展实数与迹 $\sigma$ 代数**。
+   - 5.1 **序拓扑**：开区间、端点半直线、邻域与子基。
+   - 5.2 **Borel 代数**：端点单点集；从 $\mathbb R$ 到 $\overline{\mathbb R}$；四种半直线；与 $[0,1]$ 的同胚。
+   - 5.3 **限制（迹）$\sigma$ 代数**：任意定义域上的构造及可测定义域的简化。
+6. **Lebesgue 可测函数**：上水平集定义；$\operatorname{MF}(E)$；Borel 逆像判别；原图中源、目标集合族的选择。
+7. **四种可测性的比较与反例**：完整强弱关系；中间条件互不蕴含；有限区间不能区分正负无穷。
+8. **可测函数的基本例子**。
+   - 8.1 **常函数**：包括正负无穷常值。
+   - 8.2 **示性函数**：水平集端点及可测性充要条件。
+   - 8.3 **连续函数**：孤立点辨析与水平集直接证明。
+   - 8.4 **连续蕴含可测的第二条路线**：相对拓扑、逆像族包含、生成 Borel 代数。
 
 > [!info] 编排说明
-> 普通正文保留原稿内容；蓝色信息块分别标明“补充解释”“补充证明”或“纠错”。原稿明确待填的位置另用红色文字保存。中性编号表示尚待判读的字迹，不表示数学练习。
+> 普通正文保留原稿内容；蓝色信息块分别标明补充解释、补充证明或纠错。原稿明确待填的位置用红色文字保存。中性编号表示尚待判读的字迹，不表示数学练习。原稿页序另见保真转写；这里把基础工具与相应证明排在一起，并保留重复表述、不同路线、旁注及原图。
 
 <!-- unit: N-P001-head -->
 ## 1. $G_\delta$ 集、$F_\sigma$ 集与 Borel 集
@@ -27,14 +44,24 @@ $$
 <!-- unit: N-P001-U004 -->
 1. 开集是 $G_\delta$，闭集是 $F_\sigma$。
 
-<!-- unit: N-P001-U005 -->
-2. $G_\delta$ 不一定是 $F_\sigma$。〔“不一定”按上下文恢复〕
-
 <!-- unit: N-P001-U006 -->
-3. $\mathbb Q$ 是 $F_\sigma$，$\mathbb Q^c$ 是 $G_\delta$。
+2. $\mathbb Q$ 是 $F_\sigma$，$\mathbb Q^c$ 是 $G_\delta$。
 
 <!-- unit: N-P001-U007 -->
-4. $\{x\}=\displaystyle\bigcap_{n=1}^{\infty}B(x,1/n)$。单点是 $G_\delta$ 与 $F_\sigma$。
+3. $\{x\}=\displaystyle\bigcap_{n=1}^{\infty}B(x,1/n)$。单点是 $G_\delta$ 与 $F_\sigma$。
+
+<!-- unit: N-P001-S01 -->
+> [!info] 补充证明：定义中的基本例子
+> 若 $U$ 开，则 $U=\bigcap_{n\ge1}U$；若 $F$ 闭，则 $F=\bigcup_{n\ge1}F$。在度量空间中，单点闭且 $\{x\}=\bigcap_{n\ge1}B(x,1/n)$。把 $\mathbb Q$ 枚举为 $\{q_n:n\ge1\}$，便有 $\mathbb Q=\bigcup_{n\ge1}\{q_n\}$，从而其补集为 $G_\delta$。单点的球交表示用到了度量，不能据此断言任意拓扑空间中的单点均为 $G_\delta$。
+
+<!-- unit: N-P001-U005 -->
+4. $G_\delta$ 不一定是 $F_\sigma$。〔“不一定”按上下文恢复〕
+
+<!-- unit: N-P001-S04 -->
+> [!info] 【例子与证明补全】无理数集是 $G_\delta$，却不是 $F_\sigma$
+> 已知 $\mathbb Q$ 是 $F_\sigma$，故 $\mathbb R\setminus\mathbb Q$ 是 $G_\delta$。假设反过来它也是 $F_\sigma$，写成 $\mathbb R\setminus\mathbb Q=\bigcup_{n\ge1}F_n$，其中各 $F_n$ 在 $\mathbb R$ 中闭。由于 $F_n$ 不含有理数，而每个非空开区间都含有理数，$F_n$ 的内部为空。把有理数列成 $q_1,q_2,\ldots$，并交错排列闭集 $H_{2n-1}=F_n$、$H_{2n}=\{q_n\}$。这些 $H_k$ 都闭且内部为空，却覆盖了 $\mathbb R$。
+>
+> 以下直接证明这不可能，无需先引用 Baire 定理。取非退化闭区间 $I_0=[0,1]$。若 $I_{k-1}$ 已选定，$H_k$ 内部为空且闭，所以 $\operatorname{int}I_{k-1}\setminus H_k$ 是非空开集，可在其中选非退化闭区间 $I_k$，并使其长度小于 $2^{-k}$。于是 $I_k\subset\operatorname{int}I_{k-1}$、$I_k\cap H_k=\varnothing$。由实数闭区间套性质，$\bigcap_kI_k$ 有一点 $x$；对每个 $k$，$x\in I_k$，所以 $x\notin H_k$，与全部 $H_k$ 覆盖 $\mathbb R$ 矛盾。因此无理数集不是 $F_\sigma$。
 
 <!-- unit: N-P001-U008 -->
 5. 开集是否是 $F_\sigma$？闭集是否是 $G_\delta$？
@@ -61,25 +88,6 @@ F=\bigcap_n U_n.
 $$
 “开” $\longleftarrow [0,1/n)$ “开”。〔箭头表示以距离函数取逆像。〕
 
-<!-- unit: N-P001-U013 -->
-**Prop.** $F_\sigma$、$G_\delta$ 均为 Borel 集。
-
-<!-- unit: N-P001-U014 -->
-**Prop.**
-$$
-\mathcal B(\mathbb R^n)\subsetneq\mathcal M(\mathbb R^n).
-$$
-
-<!-- unit: N-P001-S01 -->
-> [!info] 补充证明：定义中的基本例子
-> 若 $U$ 开，则 $U=\bigcap_{n\ge1}U$；若 $F$ 闭，则 $F=\bigcup_{n\ge1}F$。在度量空间中，单点闭且 $\{x\}=\bigcap_{n\ge1}B(x,1/n)$。把 $\mathbb Q$ 枚举为 $\{q_n:n\ge1\}$，便有 $\mathbb Q=\bigcup_{n\ge1}\{q_n\}$，从而其补集为 $G_\delta$。单点的球交表示用到了度量，不能据此断言任意拓扑空间中的单点均为 $G_\delta$。
-
-<!-- unit: N-P001-S04 -->
-> [!info] 【例子与证明补全】无理数集是 $G_\delta$，却不是 $F_\sigma$
-> 已知 $\mathbb Q$ 是 $F_\sigma$，故 $\mathbb R\setminus\mathbb Q$ 是 $G_\delta$。假设反过来它也是 $F_\sigma$，写成 $\mathbb R\setminus\mathbb Q=\bigcup_{n\ge1}F_n$，其中各 $F_n$ 在 $\mathbb R$ 中闭。由于 $F_n$ 不含有理数，而每个非空开区间都含有理数，$F_n$ 的内部为空。把有理数列成 $q_1,q_2,\ldots$，并交错排列闭集 $H_{2n-1}=F_n$、$H_{2n}=\{q_n\}$。这些 $H_k$ 都闭且内部为空，却覆盖了 $\mathbb R$。
->
-> 以下直接证明这不可能，无需先引用 Baire 定理。取非退化闭区间 $I_0=[0,1]$。若 $I_{k-1}$ 已选定，$H_k$ 内部为空且闭，所以 $\operatorname{int}I_{k-1}\setminus H_k$ 是非空开集，可在其中选非退化闭区间 $I_k$，并使其长度小于 $2^{-k}$。于是 $I_k\subset\operatorname{int}I_{k-1}$、$I_k\cap H_k=\varnothing$。由实数闭区间套性质，$\bigcap_kI_k$ 有一点 $x$；对每个 $k$，$x\in I_k$，所以 $x\notin H_k$，与全部 $H_k$ 覆盖 $\mathbb R$ 矛盾。因此无理数集不是 $F_\sigma$。
-
 <!-- unit: N-P001-S02 -->
 > [!info] 补充证明：度量空间中的闭集是 $G_\delta$
 > 此处 $F$ 必须为闭集。先设 $F\ne\varnothing$。三角不等式给出
@@ -90,9 +98,18 @@ $$
 >
 > 原页写“设 $F\subset(X,d)$”，未重写闭性；此处补明它来自上文“闭是否是 $G_\delta$”这一问题。
 
+<!-- unit: N-P001-U013 -->
+**Prop.** $F_\sigma$、$G_\delta$ 均为 Borel 集。
+
 <!-- unit: N-P001-S03 -->
 > [!info] 补充证明：Borel 性
 > Borel $\sigma$ 代数含开集，也含开集的补集即闭集，并对可数并、可数交封闭，因此含全部 $G_\delta$ 和 $F_\sigma$ 集。
+
+<!-- unit: N-P001-U014 -->
+**Prop.**
+$$
+\mathcal B(\mathbb R^n)\subsetneq\mathcal M(\mathbb R^n).
+$$
 
 <!-- unit: N-P002-head -->
 ### 1.1 Borel 集与 Lebesgue 可测集的严格区别
@@ -114,6 +131,12 @@ $$
 <!-- unit: N-P002-U004 -->
 上界：Borel 层级，用超限归纳。
 
+<!-- unit: N-P002-S01 -->
+> [!info] 补充证明：$|\mathcal B(\mathbb R^n)|=\mathfrak c$
+> 下界来自互不相同的单点 Borel 集：$x\mapsto\{x\}$ 给出 $\mathbb R^n$ 到 Borel 集族的单射。
+>
+> 上界按原稿提示采用 Borel 层级。$\mathbb R^n$ 有可数基，每个开集都是基元素的某个子族之并，所以开集族的基数不超过 $2^{\aleph_0}=\mathfrak c$。从开集出发，在每个可数序数阶段加入以前各阶段集合的补集和可数并。若已有集合族基数至多 $\mathfrak c$，其可数序列族基数至多 $\mathfrak c^{\aleph_0}=\mathfrak c$；可数极限阶段的并也至多为 $\mathfrak c$。超限归纳得每个可数阶段至多有 $\mathfrak c$ 个集合。全部可数阶段的并对补集和可数并封闭，因为可数个可数序数的上确界仍可数，因此它正是 Borel $\sigma$ 代数。又 $\aleph_1\le\mathfrak c$，全部阶段的集合数仍不超过 $\mathfrak c$，与下界合并即得等式。
+
 <!-- unit: N-P002-U005 -->
 Cantor 集也是 Borel 集，$\exists E\subset C$，但 $E\notin\mathcal B(\mathbb R)$。
 
@@ -125,44 +148,12 @@ $$
 $$
 矛盾。
 
-<!-- unit: N-P002-U007 -->
-不存在外测度 $\mu^*$，s.t. 由 Carathéodory 条件生成 Borel 代数。
-
-<!-- unit: N-P002-U008 -->
-可以理解：
-$$
-\mathrm{Lebesgue}\big|_{\text{Borel 集上}}=\text{Borel 测度}.
-$$
-
-<!-- unit: N-P002-U009 -->
-Borel 集上，
-
-<!-- unit: N-P002-U010 -->
-$$
-E=E^\circ\mathbin{\dot\cup}(E\cap\partial E).
-$$
-
-<!-- unit: N-P002-U011 -->
-**Prop.**
-$$
-E\in\mathcal M\quad\Longleftrightarrow\quad E\cap\partial E\in\mathcal M.
-$$
-
-<!-- unit: N-P002-U012 -->
-测度的完备化，局部逼近。开集〔疑字 002〕扩大逼近〔疑字 002〕。
-
-<!-- unit: N-P002-U013 -->
-**Lemma.** $E\in\mathcal M$，则下述性质成立。〔接第 3 页。〕
-
-<!-- unit: N-P002-S01 -->
-> [!info] 补充证明：$|\mathcal B(\mathbb R^n)|=\mathfrak c$
-> 下界来自互不相同的单点 Borel 集：$x\mapsto\{x\}$ 给出 $\mathbb R^n$ 到 Borel 集族的单射。
->
-> 上界按原稿提示采用 Borel 层级。$\mathbb R^n$ 有可数基，每个开集都是基元素的某个子族之并，所以开集族的基数不超过 $2^{\aleph_0}=\mathfrak c$。从开集出发，在每个可数序数阶段加入以前各阶段集合的补集和可数并。若已有集合族基数至多 $\mathfrak c$，其可数序列族基数至多 $\mathfrak c^{\aleph_0}=\mathfrak c$；可数极限阶段的并也至多为 $\mathfrak c$。超限归纳得每个可数阶段至多有 $\mathfrak c$ 个集合。全部可数阶段的并对补集和可数并封闭，因为可数个可数序数的上确界仍可数，因此它正是 Borel $\sigma$ 代数。又 $\aleph_1\le\mathfrak c$，全部阶段的集合数仍不超过 $\mathfrak c$，与下界合并即得等式。
-
 <!-- unit: N-P002-S02 -->
 > [!info] 补充证明：严格包含
 > 取标准三分 Cantor 集 $C$。它闭、测度为零，且 $|C|=\mathfrak c$。若它的每个子集均为 Borel 集，就有 $|\mathcal P(C)|\le|\mathcal B(\mathbb R)|=\mathfrak c$；但 Cantor 定理给出 $|\mathcal P(C)|=2^{\mathfrak c}>\mathfrak c$，矛盾。因此有非 Borel 子集 $E\subset C$。Lebesgue 测度完备，故这个 $E$ 仍然 Lebesgue 可测且测度为零，于是 $\mathcal B(\mathbb R)\subsetneq\mathcal M(\mathbb R)$。在 $\mathbb R^n$ 中使用 $C\times\{0\}^{n-1}$ 得到相同结论。
+
+<!-- unit: N-P002-U007 -->
+不存在外测度 $\mu^*$，s.t. 由 Carathéodory 条件生成 Borel 代数。
 
 <!-- unit: N-P002-S03 -->
 > [!info] 【完整补证】Borel 代数不能恰为外测度的 Carathéodory 可测集族
@@ -188,9 +179,39 @@ $$
 >
 > 这个论证不假设原外测度局部有限或 $\sigma$ 有限，也没有使用无穷量相减。
 
+<!-- unit: N-P002-U008 -->
+可以理解：
+$$
+\mathrm{Lebesgue}\big|_{\text{Borel 集上}}=\text{Borel 测度}.
+$$
+
+<!-- unit: N-P002-S05 -->
+> [!info] 术语澄清：这里的 Borel 测度
+> 把 Lebesgue 测度 $m$ 限制在 $\mathcal B(\mathbb R^n)$ 上，所得 $m|_{\mathcal B}$ 的定义域是 Borel $\sigma$ 代数，且继承可列可加性，所以是一种 Borel 测度。一般说“Borel 测度”只说明测度定义在 Borel 集上，并不唯一指定 Lebesgue 测度。此处按原稿的限制式理解。
+
+<!-- unit: N-P002-U009 -->
+Borel 集上，
+
+<!-- unit: N-P002-U010 -->
+$$
+E=E^\circ\mathbin{\dot\cup}(E\cap\partial E).
+$$
+
+<!-- unit: N-P002-U011 -->
+**Prop.**
+$$
+E\in\mathcal M\quad\Longleftrightarrow\quad E\cap\partial E\in\mathcal M.
+$$
+
 <!-- unit: N-P002-S04 -->
 > [!info] 补充证明：只需检查边界上的部分
 > 对任意 $E\subset\mathbb R^n$，$E\setminus E^\circ=E\cap\partial E$，两部分不交。由于 $E^\circ$ 开、$\partial E$ 闭，二者都是 Borel 集。若 $E$ 可测，则 $E\cap\partial E$ 可测；反过来，若 $E\cap\partial E$ 可测，则由分解式及可数并封闭性，$E$ 也可测。此处 $\mathcal M$ 可取 Lebesgue 可测集族；同一论证也适用于 Borel 集族。
+
+<!-- unit: N-P002-U012 -->
+测度的完备化，局部逼近。开集〔疑字 002〕扩大逼近〔疑字 002〕。
+
+<!-- unit: N-P002-U013 -->
+**Lemma.** $E\in\mathcal M$，则下述性质成立。〔接第 3 页。〕
 
 <!-- unit: N-P003-head -->
 ## 2. 可测集的开集外逼近与闭集内逼近
@@ -363,9 +384,6 @@ m(E)
 \end{aligned}
 $$
 
-<!-- unit: N-P004-U008 -->
-(2) $E$ 有界，且 $m^*(E)=m_*(E)$，则 $E\in\mathcal M$。
-
 <!-- unit: N-P004-U009 -->
 (1) pf：
 
@@ -377,9 +395,15 @@ $$
 > [!info] 补充证明：外正则与闭集内正则
 > 单调性先给出 $m(E)\le\inf_{G\supset E,\,G\text{开}}m(G)$ 及 $\sup_{F\subset E,\,F\text{闭}}m(F)\le m(E)$。若 $m(E)<\infty$，开、闭逼近分别给出 $m(G)<m(E)+\varepsilon$ 与 $m(F)>m(E)-\varepsilon$，令 $\varepsilon\downarrow0$ 即得到两边等式。若 $m(E)=\infty$，任何超集 $G$ 都有无限测度，故外侧下确界为无限；取闭 $F\subset E$ 使 $m(E\setminus F)<1$，可加性迫使 $m(F)=\infty$，故内侧上确界也为无限。
 
+<!-- unit: N-P004-U008 -->
+(2) $E$ 有界，且 $m^*(E)=m_*(E)$，则 $E\in\mathcal M$。
+
 <!-- unit: N-P004-S04 -->
 > [!info] 补充证明：有界集的内外测度判据
 > 在此使用 $m_*(E)=\sup\{m(F):F\subset E,\ F\text{闭}\}$ 的内测度表述。设 $a=m^*(E)=m_*(E)$。有界性保证 $a<\infty$。对每个 $j$ 取闭集 $F_j\subset E$ 与开集 $G_j\supset E$，使 $m(F_j)>a-1/j$、$m(G_j)<a+1/j$。于是 $m(G_j\setminus F_j)<2/j$。令 $F=\bigcup_jF_j$、$G=\bigcap_jG_j$，则 $F\subset E\subset G$ 且 $m(G\setminus F)\le m(G_j\setminus F_j)<2/j$ 对每个 $j$ 成立。因而 $m(G\setminus F)=0$，$E$ 是 Borel 集 $F$ 与零测集子集的并，所以可测。
+
+<!-- unit: N-P005-head1 -->
+### 2.3 边界零测的充分条件
 
 <!-- unit: N-P005-U001 -->
 $$
@@ -390,8 +414,11 @@ $$
 > [!info] 补充证明：边界零测的判据
 > $E=E^\circ\mathbin{\dot\cup}(E\cap\partial E)$。第一部分开而可测；第二部分包含于零外测度集 $\partial E$，所以也可测。这个条件是充分条件，并非任意可测集的必要条件。
 
+<!-- unit: N-P005-head2 -->
+## 3. 积分引入与逆像族
+
 <!-- unit: N-P005-U002 -->
-## 勒贝格积分
+### 勒贝格积分
 
 <!-- unit: N-P005-U003 -->
 草式：$E[y_{i-1}\le f<y_i)$。
@@ -459,7 +486,7 @@ $$
 > 这一段取 $\Sigma=\tau_X$。由于 $\tau_X$ 对任意并、有限交封闭，$\Sigma_f$ 实际上是通常意义的拓扑。按它的定义，$f:(X,\tau_X)\to(Y,\Sigma_f)$ 连续。若 $\tau$ 是 $Y$ 上另一个使 $f$ 连续的拓扑，则每个 $V\in\tau$ 都满足 $f^{-1}(V)\in\tau_X$，所以 $V\in\Sigma_f$，即 $\tau\subset\Sigma_f$。这证明“最大”的方向。
 
 <!-- unit: N-P006-H -->
-## 6. 可测映射与生成族判别
+## 4. 可测映射与生成族判别
 
 <!-- unit: N-P006-U001 -->
 ### 可测
@@ -490,13 +517,16 @@ $\Sigma_Y\subset\Sigma_f$。〔右侧有证明结束小记号。〕
 > [!info] 【证明补全】生成族判别的两个方向
 > 必要性：若 $f$ 可测，则 $\Sigma_Y\subset\Sigma_f$，所以 $\mathcal D\subset\Sigma_f$。
 >
-> 充分性：假设 $\mathcal D\subset\Sigma_f$。前页已逐项证明：逆像保持全集、补和可列并，因此 $\Sigma_f$ 是 $Y$ 上的 $\sigma$ 代数。由生成 $\sigma$ 代数的最小性，$\Sigma_Y=\sigma(\mathcal D)\subset\Sigma_f$，这正是 $f$ 可测。原稿在“是”与“$\sigma$ 代数”间的连写未唯一辨清；论证只使用已经成立的 $\sigma$ 代数性质。
+> 充分性：假设 $\mathcal D\subset\Sigma_f$。前页已逐项证明：逆像保持全集、补和可列并，因此 $\Sigma_f$ 是 $Y$ 上的 $\sigma$ 代数。由生成 $\sigma$ 代数的最小性，$\Sigma_Y=\sigma(\mathcal D)\subset\Sigma_f$，这正是 $f$ 可测。
 
 <!-- unit: N-P006-U008 -->
 $\Sigma_Y$ 变动，有不同的……〔原行止于“的”。〕
 
+<!-- unit: N-P006-H2 -->
+## 5. 扩展实数与迹 $\sigma$ 代数
+
 <!-- unit: N-P006-U009 -->
-### 广义 $\overline{\mathbb R}$ 上的拓扑
+### 5.1 广义 $\overline{\mathbb R}$ 上的拓扑
 
 <!-- unit: N-P006-U010 -->
 （1）定义开区间。
@@ -511,10 +541,20 @@ $\Sigma_Y$ 变动，有不同的……〔原行止于“的”。〕
 > [!info] 【定义补全】扩展实数及其序拓扑
 > 记 $\overline{\mathbb R}=[-\infty,+\infty]$，按 $-\infty<x<+\infty$（$x\in\mathbb R$）排序。原稿列“开区间”“半直线”两种说明方式，可具体写成以下拓扑基：有限端点的 $(a,b)$，以及包含端点的 $[-\infty,b)$、$(a,+\infty]$，其中 $a,b\in\mathbb R$、$a<b$。任意并组成序拓扑。
 >
-> 等价地，取两类开半直线 $[-\infty,b)$ 和 $(a,+\infty]$ 为子基；它们的有限交给出上述基区间。这些基覆盖全空间，两个基区间交集中每一点仍有更小基区间，故确实确定拓扑。有限点的邻域含某个 $(a,b)$；$+\infty$ 的邻域含某个 $(a,+\infty]$；$-\infty$ 的邻域含某个 $[-\infty,b)$。页末〔疑字004〕不作为这些补充定义的逐字来源。
+> 等价地，取两类开半直线 $[-\infty,b)$ 和 $(a,+\infty]$ 为子基；它们的有限交给出上述基区间。这些基覆盖全空间，两个基区间交集中每一点仍有更小基区间，故确实确定拓扑。有限点的邻域含某个 $(a,b)$；$+\infty$ 的邻域含某个 $(a,+\infty]$；$-\infty$ 的邻域含某个 $[-\infty,b)$。
 
 <!-- unit: N-P007-H -->
-## 7. 扩展实数的 Borel 代数与限制代数
+### 5.2 扩展实数的 Borel 代数
+
+<!-- unit: N-P007-U009 -->
+可以证明 $\{-\infty\}$、$\{+\infty\}$ 是闭集，
+
+<!-- unit: N-P007-U010 -->
+则 $\{a\}\in\mathcal B(\overline{\mathbb R})$，$\forall a\in\overline{\mathbb R}$。
+
+<!-- unit: N-P007-S04 -->
+> [!info] 【证明补全】单点集
+> 对有限 $a$，其补集为 $[-\infty,a)\cup(a,+\infty]$，是开集。$\{+\infty\}$ 的补集 $[-\infty,+\infty)=\bigcup_n[-\infty,n)$ 开；$\{-\infty\}$ 的补集 $(-\infty,+\infty]=\bigcup_n(-n,+\infty]$ 开。因此每个单点闭，故为 Borel 集。
 
 <!-- unit: N-P007-U001 -->
 令由开集生成的 $\sigma$ 代数。
@@ -561,18 +601,8 @@ $\overline{\mathbb R}$ 与 $[0,1]$ 同胚。
 > [!info] 【证明补全】一个具体同胚
 > 对有限 $x$，令 $h(x)=\tfrac12+\tfrac1\pi\arctan x$，并令 $h(-\infty)=0$、$h(+\infty)=1$。这是严格递增双射。有限点处 $h$ 及逆映射 $h^{-1}(t)=\tan(\pi(t-\tfrac12))$ 连续；当 $x\to+\infty$ 或 $x\to-\infty$ 时，$h(x)\to1$ 或 $0$。按前页的端点邻域定义，$h$ 在端点连续，逆映射在 $0,1$ 也连续，故为同胚。
 
-<!-- unit: N-P007-U009 -->
-可以证明 $\{-\infty\}$、$\{+\infty\}$ 是闭集，
-
-<!-- unit: N-P007-U010 -->
-则 $\{a\}\in\mathcal B(\overline{\mathbb R})$，$\forall a\in\overline{\mathbb R}$。
-
-<!-- unit: N-P007-S04 -->
-> [!info] 【证明补全】单点集
-> 对有限 $a$，其补集为 $[-\infty,a)\cup(a,+\infty]$，是开集。$\{+\infty\}$ 的补集 $[-\infty,+\infty)=\bigcup_n[-\infty,n)$ 开；$\{-\infty\}$ 的补集 $(-\infty,+\infty]=\bigcup_n(-n,+\infty]$ 开。因此每个单点闭，故为 Borel 集。
-
 <!-- unit: N-P007-U011 -->
-### 限制 $\Sigma$ 代数
+### 5.3 限制 $\Sigma$ 代数
 
 <!-- unit: N-P007-U012 -->
 $E\subset\mathbb R^n$，$\mathcal M$ 是 Lebesgue $\sigma$。
@@ -593,7 +623,7 @@ $\Sigma_E=\{E\cap F:F\in\mathcal M\}$。
 > 若进一步 $E\in\mathcal M$，则每个 $E\cap F$ 都是环境中的 Lebesgue 可测集且包含于 $E$；反过来，若 $F\in\mathcal M$、$F\subset E$，则 $F=E\cap F\in\Sigma_E$。这证明原稿最后的等式。
 
 <!-- unit: N-P008-H -->
-## 8. Lebesgue 可测函数与 Borel 逆像判别
+## 6. Lebesgue 可测函数与 Borel 逆像判别
 
 <!-- unit: N-P008-U001 -->
 $B\subset E$，则
@@ -665,7 +695,7 @@ $\mathcal B(\overline{\mathbb R})\subset\mathcal M(\overline{\mathbb R})\subset\
 > 改变源端、目标端的集合族是两件不同的事：源端可测集增多会放宽要求；目标端可测集增多会加强要求。下一页“比较四个组合”的原题将逐一落实这些关系。
 
 <!-- unit: N-P009-H -->
-## 9. 四种可测性的强弱与无穷端点反例
+## 7. 四种可测性的强弱与无穷端点反例
 
 <!-- unit: N-P009-U001 -->
 $(\mathcal M\to\mathcal B)$，Leb。
@@ -691,7 +721,7 @@ $(\mathcal M\to\mathcal M)$。
 > $$C_{BM}\Longrightarrow C_{BB}\Longrightarrow C_{MB},\qquad C_{BM}\Longrightarrow C_{MM}\Longrightarrow C_{MB}.$$
 > 第一条链先减少要检验的目标集合，再放宽逆像所属的集合族；第二条链先放宽源端要求，再减少目标检验集。中间的 $C_{BB}$ 与 $C_{MM}$ 一般互不蕴含。以下在 $n=1$ 给出反例，证明图中每条箭头都不能一般反向使用。
 >
-> **$C_{MM}$ 不推出 $C_{BB}$。** 取第 2 节已经构造的 Lebesgue 可测但非 Borel 集 $A$，令 $f=\mathbf1_A$。任意目标集合的逆像只可能是 $\varnothing,A,A^c,\mathbb R$，所以 $f$ 满足 $C_{MM}$；但 $f^{-1}(\{1\})=A$ 不是 Borel，故不满足 $C_{BB}$。
+> **$C_{MM}$ 不推出 $C_{BB}$。** 取第 1.1 节已经构造的 Lebesgue 可测但非 Borel 集 $A$，令 $f=\mathbf1_A$。任意目标集合的逆像只可能是 $\varnothing,A,A^c,\mathbb R$，所以 $f$ 满足 $C_{MM}$；但 $f^{-1}(\{1\})=A$ 不是 Borel，故不满足 $C_{BB}$。
 >
 > **$C_{BB}$ 不推出 $C_{MM}$。** 在 $[0,1)$ 用下列 floor 公式取二进制数位；对有两种展开的二进制有理数选终止型：$b_k(x)=\lfloor2^kx\rfloor-2\lfloor2^{k-1}x\rfloor\in\{0,1\}$，定义 $h(x)=\sum_{k\ge1}2b_k(x)3^{-k}$；在 $\mathbb R\setminus[0,1)$ 令 $h=-\infty$。各部分和 $h_N$ 是 Borel 阶梯函数，且在 $[0,1)$ 上单调增加到 $h$；于是对有限 $a$，$\{h>a\}=[0,1)\cap\bigcup_N\{h_N>a\}$ 是 Borel，故按生成族判别，$h$ 满足 $C_{BB}$。其在 $[0,1)$ 上的像包含于零测 Cantor 集 $C$，并且是单射：若两数字列首次在第 $k$ 位不同，相应三进制和的差的绝对值至少 $2\cdot3^{-k}-\sum_{j>k}2\cdot3^{-j}=3^{-k}>0$。
 >
@@ -739,6 +769,11 @@ $E\{f\ge a\}=E$，不可测。
 >
 > 若额外知道函数只取有限实值，则有限区间的检验足够：对每个 $a$，$\{f>a\}$ 可写成可列个 $\{a+1/k\le f<m\}$ 的并（$k,m\in\mathbb N$），由可列并封闭性可测。该论证在允许 $+\infty$ 时会漏掉它的逆像。
 
+<!-- unit: N-P009-H2 -->
+## 8. 可测函数的基本例子
+
+### 8.1 常函数
+
 <!-- unit: N-P009-U012 -->
 **例** $E\in\mathcal M$，
 
@@ -750,7 +785,7 @@ $f(x)=C$ 可测。
 > 对任意常数 $C\in\overline{\mathbb R}$ 与有限阈值 $a$，$E[f>a]$ 在 $C>a$ 时等于 $E$，其余情形等于 $\varnothing$，二者均可测。因此有限常值及正负无穷常值函数都属于 $\operatorname{MF}(E)$。
 
 <!-- unit: N-P010-H -->
-## 10. 示性函数与连续函数
+### 8.2 示性函数
 
 <!-- unit: N-P010-U001 -->
 $A\subset E\in\mathcal M$，$\chi_A:E\to\overline{\mathbb R}$。
@@ -780,7 +815,7 @@ $E[f>a]=\varnothing$，$a>1$。
 > 若 $A\in\mathcal M$，这三种集合全可测，所以 $\chi_A$ 可测。反过来，若 $\chi_A$ 可测，取 $a=1/2$，得到 $A=E[\chi_A>1/2]\in\mathcal M$。定义域中的“$x\notin A$”始终指 $x\in E\setminus A$。
 
 <!-- unit: N-P010-U008 -->
-### 连续
+### 8.3 连续
 
 <!-- unit: N-P010-U009 -->
 孤立点本无法定义连续。
@@ -808,3 +843,34 @@ $\Sigma_f$。
 
 <!-- unit: N-P010-U013 -->
 $\tau_f$。
+
+<!-- unit: N-P011-H -->
+### 8.4 连续蕴含可测：第二条证明路线
+
+<!-- unit: N-P011-U001 -->
+$f$ 连续 $\Longleftrightarrow\tau_{\mathbb R/E}\subset\tau_f$。
+
+〔原稿下标写作 $R/E$，中间为斜线状分隔笔画。〕
+
+<!-- unit: N-P011-S01 -->
+> [!info] 纠错：区分定义域拓扑与值域拓扑
+> 延续前页 $f:E\to\mathbb R$、$E\in\mathcal M(\mathbb R^n)$ 的条件，令 $\tau_E=\{E\cap U:U\subset\mathbb R^n\text{ 开}\}$ 为定义域的相对拓扑，$\tau_{\mathbb R}$ 为值域的通常拓扑，并令
+> $$\tau_f=\{B\subset\mathbb R:f^{-1}(B)\in\tau_E\},\qquad\Sigma_f=\{B\subset\mathbb R:f^{-1}(B)\in\Sigma_E\}.$$
+> 此时连续性的正确判据是 $f\text{ 连续}\Longleftrightarrow\tau_{\mathbb R}\subset\tau_f$。左边必须是值域 $\mathbb R$ 的拓扑。若原稿 $\tau_{\mathbb R/E}$ 意在表示 $E$ 上的相对拓扑，它就不能放在这个包含式的左侧：$\tau_E$ 的元素是 $E$ 的子集，而 $\tau_f$ 的元素是 $\mathbb R$ 的子集。原稿没有解释该下标，故保留原写法，并用上面的明确定义完成论证。
+
+<!-- unit: N-P011-U002 -->
+只证 $\tau_f\subset\Sigma_f$。
+
+<span style="color:red">原稿待证：此句之后未写推导。</span>
+
+<!-- unit: N-P011-S02 -->
+> [!info] 补充证明：沿原稿的拓扑包含路线逐步完成
+> **第一步，定义域的相对开集可测。** 任取 $V\in\tau_E$，有开集 $U\subset\mathbb R^n$ 使 $V=E\cap U$。开集是 Borel 集，从而 Lebesgue 可测；$E$ 也可测，所以 $V\in\mathcal M$ 且 $V\subset E$。由前述迹 $\sigma$ 代数的表达式，$V\in\Sigma_E$。因此 $\tau_E\subset\Sigma_E$。
+>
+> **第二步，证明原稿留下的包含式。** 任取 $B\in\tau_f$，由定义 $f^{-1}(B)\in\tau_E$，再由第一步 $f^{-1}(B)\in\Sigma_E$，故 $B\in\Sigma_f$。这就证明了 $\tau_f\subset\Sigma_f$。此步只使用定义域的可测性，无须先假定 $f$ 连续。
+>
+> **第三步，使用连续性。** 对每个值域开集 $U\in\tau_{\mathbb R}$，连续性给出 $f^{-1}(U)\in\tau_E$，即 $\tau_{\mathbb R}\subset\tau_f$。与第二步合并，得 $\tau_{\mathbb R}\subset\Sigma_f$。
+>
+> **第四步，从开集推进到 Borel 集。** 前文已证明 $\Sigma_f$ 是 $\mathbb R$ 上的 $\sigma$ 代数；它包含所有开集，故按生成 $\sigma$ 代数的最小性，$\mathcal B(\mathbb R)=\sigma(\tau_{\mathbb R})\subset\Sigma_f$。于是每个 Borel 集 $B\subset\mathbb R$ 的原像 $f^{-1}(B)$ 都在 $\Sigma_E$ 中。
+>
+> **第五步，回到本课的水平集定义。** 对任意有限实数 $a$，$(a,+\infty)$ 是 $\mathbb R$ 中的 Borel 集，故 $E[f>a]=f^{-1}((a,+\infty))\in\Sigma_E\subset\mathcal M$。因此 $f\in\operatorname{MF}(E)$。这是原稿所提示的“拓扑包含—生成 $\sigma$ 代数”路线；前页直接验证水平集的路线也完整保留。

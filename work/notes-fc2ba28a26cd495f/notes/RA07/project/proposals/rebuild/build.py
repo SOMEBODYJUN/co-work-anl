@@ -14,10 +14,11 @@ def overlap(a, b):
 def build():
     manifest=json.loads((PROJECT/'manifest.json').read_text())
     pages=[json.loads(p.read_text()) for p in sorted((HERE/'pages').glob('p*.json'))]
+    study_plan=json.loads((HERE/'study-order.json').read_text()) if (HERE/'study-order.json').exists() else None
     policy=HERE/'editorial-policy.md'
     policy.write_text('RA07 作者首遍。原稿内容保留原式、重复和未完路线；蓝色 info 块是编者补充/补证/纠错；红字仅标原稿明确待填。正文 unit 标记与手工像素框逐一对应。无旧稿。作者和实际会话均为 /root/ra07_rebuild。此文件只说明编辑规则，不证明视觉与数学正确。\n',encoding='utf-8')
     sources=[]; targets=[]; pchecks=[]; rchecks=[]; recoveries=[]; issues=[]
-    toc='\n'.join(f'{i+1}. [{p["title"]}](#{p["anchor"]})' for i,p in enumerate(pages))
+    toc='\n'.join(f'{i+1}. [{p["title"]}](#{p["anchor"]})' for i,p in enumerate(study_plan or pages))
     front={
       'T': '# 实分析 7：原序保真转写\n\n原件：实分析7.pdf，共 13 物理页。按原稿页序保留公式、旁注、问题、重复及原错误。中性编号标识尚不能唯一恢复的字迹；数学补充不冒充原文。当前为作者首遍提议稿。',
       'N': '# 实分析 7：测度与 Lebesgue 外测度\n\n## 阅读约定\n\n普通正文保留原稿内容与原有路线。蓝色 `info` 块按“补充”“补证”“纠错”说明新增内容；红色只标原稿明确未答位置。中性疑字编号见独立疑点表。\n\n## 目录\n\n'+toc
@@ -25,27 +26,45 @@ def build():
     blocks={'T':[('T-INTRO',front['T'],[], 'editorial','说明原序转写的编辑约定。','resolved')], 'N':[('N-INTRO',front['N'],[], 'editorial','编排阅读说明和完整目录，不冒充原稿标题。','resolved')]}
     for p in pages:
         n=p['page']; pid=f'p{n:04d}'; mp=manifest['pages'][n-1]
-        blocks['T'].append((f'T-P{n:03d}-HEAD',f'## 物理第 {n} 页\n',[],'editorial',f'为物理第 {n} 页新增页序定位标题。','resolved'))
-        blocks['N'].append((f'N-P{n:03d}-HEAD',f'<a id="{p["anchor"]}"></a>\n\n## {p["title"]}\n',[],'editorial','为复习编排新增知识单元标题。','resolved'))
+        if not p.get('blank'):
+            blocks['T'].append((f'T-P{n:03d}-HEAD',f'## 物理第 {n} 页\n',[],'editorial',f'为物理第 {n} 页新增页序定位标题。','resolved'))
+            blocks['N'].append((f'N-P{n:03d}-HEAD',f'<a id="{p["anchor"]}"></a>\n\n## {p["title"]}\n',[],'editorial','为复习编排新增知识单元标题。','resolved'))
         for i,u in enumerate(p['units'],1):
             sid=f'RA07-P{n:03d}-U{i:03d}'; tid=f'T-P{n:03d}-{i:03d}'; nid=f'N-P{n:03d}-{i:03d}'
             regs=[r['id'] for r in mp['regions'] if overlap(u['bbox'],r['bbox_px'])]
             ev=['image:'+pid]+['image:'+r for r in regs]+u.get('extra_evidence',[])
             status=u.get('status','resolved')
             sources.append({'id':sid,'page_id':pid,'region_ids':regs,'bbox_px':u['bbox'],'label':u['label'],'status':status,'transcription_target_ids':[tid],'study_target_ids':[nid],'evidence_ids':ev})
-            blocks['T'].append((tid,u['transcript'],[sid],'source','按物理页序转写；具体识读状态见来源清单。',status))
-            blocks['N'].append((nid,u.get('study',u['transcript']),[sid],'source','保留原稿内容，并在相邻蓝色块中另列必要补充。',status))
+            blocks['T'].append((tid,u['transcript'],[sid],'source',f'物理第{n}页“{u["label"]}”原序转写；识读状态见来源清单。',status))
+            blocks['N'].append((nid,u.get('study',u['transcript']),[sid],'source',f'保留原稿“{u["label"]}”，按复习依赖重新定位；新增数学内容另列蓝色单元。',status))
             for j,s in enumerate(u.get('supplements',[]),1):
                 xid=f'N-P{n:03d}-{i:03d}-S{j}'
-                blocks['N'].append((xid,s,[sid],'supplement','蓝色 callout 标明本段为编者新增解释、完整补证或纠错。','resolved'))
+                blocks['N'].append((xid,s,[sid],'supplement',s.splitlines()[0].replace('> [!info] ','')+'；为编者新增内容，不冒充原稿字迹；来源若未决则保守继承其未决状态。',status))
                 sources[-1]['study_target_ids'].append(xid)
         page_sources=[s for s in sources if s['page_id']==pid]
-        common={'pass':1,'reviewer_id':IDENTITY,'session_id':IDENTITY,'assessment':'content'}
+        common={'pass':1,'reviewer_id':IDENTITY,'session_id':IDENTITY,'assessment':'blank' if p.get('blank') else 'content'}
         pchecks.append({'id':'first-'+pid,'page_id':pid,**common,'source_unit_ids':[s['id'] for s in page_sources],'cross_region_unit_ids':[s['id'] for s in page_sources if len(s['region_ids'])>1],'evidence_ids':['image:'+pid],'observation':p['observation'],'layout_observation':p['layout']})
         for r,obs in zip(mp['regions'],p['regions']):
             sids=[s['id'] for s in page_sources if r['id'] in s['region_ids']]
             rchecks.append({'id':'first-'+r['id'],'region_id':r['id'],**common,'assessment':'content' if sids else 'blank','source_unit_ids':sids,'evidence_ids':['image:'+r['id']],'observation':obs})
         issues.extend(p.get('issues',[])); recoveries.extend(p.get('recoveries',[]))
+    if study_plan:
+        original=blocks['N']
+        ordered=[original[0]]
+        used={'N-INTRO'}
+        for group in study_plan:
+            ordered.append((group['id'],f'<a id="{group["anchor"]}"></a>\n\n## {group["title"]}',[],'editorial','按定义、先备工具、证明与应用的依赖关系编排复习章节。','resolved'))
+            for base in group['items']:
+                matches=[b for b in original if b[0]==base or b[0].startswith(base+'-S')]
+                if not matches: raise ValueError('Missing study unit '+base)
+                for block in matches:
+                    if block[0] in used: raise ValueError('Duplicated study unit '+block[0])
+                    used.add(block[0]);ordered.append(block)
+        omitted=[b[0] for b in original if b[0] not in used and not b[0].endswith('-HEAD')]
+        if omitted: raise ValueError('Study order omitted '+repr(omitted))
+        blocks['N']=ordered
+    if (HERE/'recoveries.json').exists():
+        recoveries.extend(json.loads((HERE/'recoveries.json').read_text()))
     artifacts=[]
     lookup={s['id']:s for s in sources}
     for typ,name,kind in [('T','source-transcript.md','transcription'),('N','study-notes.md','study')]:

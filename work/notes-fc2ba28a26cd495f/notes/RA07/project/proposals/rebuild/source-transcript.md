@@ -528,3 +528,18 @@ $A,B$ 可测，$A\cap B$ 可测。
 
 <!-- unit: T-P011-013 -->
 $$m(A\cup B)=m(A)+m(B).$$
+
+<!-- unit: T-P012-HEAD -->
+## 物理第 12 页
+
+<!-- unit: T-P012-001 -->
+$B\subset A^c$。
+
+<!-- unit: T-P012-002 -->
+$A,B\in\mathcal M$，$B\subseteq A$。
+
+<!-- unit: T-P012-003 -->
+$m(B)<\infty$。
+
+<!-- unit: T-P012-004 -->
+$$m(A\setminus B)=m(A)-m(B).$$

@@ -529,3 +529,16 @@ $\Sigma_f$。
 
 <!-- unit: T-P010-U013 -->
 $\tau_f$。
+
+<!-- unit: T-P011-H -->
+## 物理第 11 页
+
+<!-- unit: T-P011-U001 -->
+$f$ 连续 $\Longleftrightarrow\tau_{\mathbb R/E}\subset\tau_f$。
+
+〔原稿下标写作 $R/E$，中间为斜线状分隔笔画。〕
+
+<!-- unit: T-P011-U002 -->
+只证 $\tau_f\subset\Sigma_f$。
+
+<span style="color:red">原稿待证：此句之后未写推导。</span>

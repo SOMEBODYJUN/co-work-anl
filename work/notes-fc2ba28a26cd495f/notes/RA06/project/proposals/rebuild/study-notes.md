@@ -412,6 +412,23 @@ $$
 > 通常拓扑的开集恰有 $c$ 个。设 $\mathcal B_0=\{(p,q):p,q\in\mathbb Q,p<q\}$；这是可数基，每个开集都是其中某个子族的并，故开集总数不超过 $2^{\aleph_0}=c$。而不同实数 $a$ 给出不同开集 $(-\infty,a)$，所以至少有 $c$ 个，合得恰为 $c$。
 > 原题若询问的是所有拓扑结构，单凭 $|\mathcal P(\mathbb R)|=2^c$ 并不能得出原行结论；本稿保留 Q003 的对象歧义，不把后面的开集和基计数冒作该题的字面恢复。
 
+<!-- unit: N-topology-count-candidate -->
+> [!info] 候选题意的完整解答：若问实数底集上的全部拓扑
+> 若 Ex 1 的题意是“实数集上能赋予多少个拓扑”，答案为 $2^{2^c}$。这与原稿的 $2^c$ 不同；以下证明只回答这一明确的数学问题，不把它当作 Q003 字形已确认的依据。该计数结论可参见 Tycho Neve 的 [《Theorems on ultrafilters》](https://math.leidenuniv.nl/scripties/NeveBach.pdf)，Corollary 2.6（正文第9页）；下面直接给出所需构造。
+>
+> **先构造有限独立集族。**设 $K$ 为无限集，$|K|=\kappa$，令
+> $$D=\{(s,H):s\subset K\text{ 有限},\ H\subset\mathcal P(s)\}.$$
+> 每个固定有限 $s$ 只有有限多个 $H$，而 $K$ 的有限子集共有 $\kappa$ 个，故 $|D|=\kappa$。对每个 $A\subset K$ 定义
+> $$I_A=\{(s,H)\in D:A\cap s\in H\}.$$
+> 给定有限多个不同的 $A_i$，并指定每个 $I_{A_i}$ 取自身还是取补集。在每对 $A_i,A_j$ 的对称差中各取一点，合为有限集 $s$，就使所有 $A_i\cap s$ 两两不同。令 $H$ 恰好由指定取自身的那些迹组成，则 $(s,H)$ 同时属于指定的每个集合或补集。因此每个这样的有限交都非空。空有限交取 $D$。不同 $A$ 给出不同 $I_A$，所以该独立族有 $2^\kappa$ 个成员。
+>
+> **由方向选择产生不同拓扑。**对每个函数 $\varepsilon:\mathcal P(K)\to\{0,1\}$，令 $J_A=I_A$（当 $\varepsilon(A)=1$）或 $J_A=D\setminus I_A$（当 $\varepsilon(A)=0$）。用这些 $J_A$ 的有限交为基，定义
+> $$\mathcal F_\varepsilon=\{U\subset D:\text{某个有限交 }J_{A_1}\cap\cdots\cap J_{A_r}\subset U\}.$$
+> 有限独立性保证 $\varnothing\notin\mathcal F_\varepsilon$；该族含 $D$、向上封闭、对有限交封闭。这样的集合族称为真滤子。于是 $\tau_\varepsilon=\mathcal F_\varepsilon\cup\{\varnothing\}$ 是拓扑：有限交封闭已证；非空族的并包含其中任一成员，因而由向上封闭仍在该族中；空族之并则是空集。
+> 若 $\varepsilon\ne\eta$，选 $A$ 使二者在 $A$ 处不同。不妨 $\varepsilon(A)=1$、$\eta(A)=0$，则 $I_A\in\mathcal F_\varepsilon$，而 $D\setminus I_A\in\mathcal F_\eta$。真滤子不能同时含一个集合及其补集，否则含空集；故 $I_A\notin\mathcal F_\eta$，两拓扑不同。方向函数共有 $2^{2^\kappa}$ 个，所以拓扑数至少如此多。
+> 另一方面，每个拓扑都是 $\mathcal P(D)$ 的子集，故总数至多为 $|\mathcal P(\mathcal P(D))|=2^{2^\kappa}$。上下界相等，再用固定双射将拓扑搬回原底集，得到所求结论。取 $\kappa=c$，即得 $2^{2^c}$。
+> 这里计数的是固定底集上的全部拓扑，没有再要求可度量、Hausdorff 或第二可数，也不是按同胚分类。通常实轴的开集数仍为 $c$，其拓扑基的种数则为 $2^c$，后者另见 §5.4。
+
 <!-- unit: N-p4-03 -->
 <a id="s5-2"></a>
 ### 5.2 点的邻域：原稿两问及解答
