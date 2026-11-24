@@ -6,7 +6,7 @@
 - [本轮结论与证明障碍](state/research_status.md)、[文献与方法地图](state/literature_and_strategy.md)。
 - [已完成的抽象引理及反例检验](state/cone_obstructions_and_lifting.md)；这些是辅助结果，不是主猜想的证明。
 - [2026 年构造性结果与有界极化路线](state/constructibility_addendum.md)：有限系数格和伴随公式给出精确的绝对条件有限性，统一极化次数界仍未证明。
-- [持续研究入口](prompts/pro-loop.md)与[新 RUN spec](research-spec.json)。
+- [新对话 GPT Pro 启动提示词](prompts/pro-start.md)、[持续研究入口](prompts/pro-loop.md)与[新 RUN spec](research-spec.json)。
 
 ## 子题与既有稿件
 
