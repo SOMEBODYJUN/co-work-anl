@@ -12,3 +12,9 @@
 所附 `validation/test_upstream_checker.py` 和技能 `selftest.py` 都使用合成材料验证工具。它们的身份、内容和通过记录禁止写进用户笔记的台账。
 
 工程接续回归：`python validation/test_notes_workflow.py`，在临时本地 Git 仓库中验证启动、保存、推送、恢复与草稿同步，不接触用户原稿或真实远端。
+
+## 新版通用协作命令
+
+新会话 start --actor auto 自动生成唯一 Boss，notes init auto 返回唯一 RUN；已有工作使用原身份和 RUN 恢复。待原件与登记已明确获准发布，notes queue 读取共享任务，notes claim 实际RUN --limit 3 远端确认后开工。每份根工作区已有 assignment，切图使用新的 project 子目录。
+
+release 或 block 需要 --note、--reason 和指向已推送非空文件的 --handoff；保留原工作区。resume 只恢复自己原 RUN 的阻塞项。submit 需要 --note、--manifest、--ledger、--report，真实审计和已发布正文校验后才更新完成状态。命令语法可用对应 --help 查看。新原件及来源元数据的公开发布必须有该批材料的明确公开授权，通用程序发布本身不代表已获此授权。

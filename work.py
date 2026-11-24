@@ -144,6 +144,8 @@ def finish_start(payload):
 
 def start(args):
     repo = Path(args.repo).resolve()
+    if args.actor == 'auto':
+        args.actor = (config(repo, 'wcg.actor') if (repo / '.git').exists() else '') or 'BossNotes-' + uuid.uuid4().hex[:12]
     if args.branch != BRANCH:
         raise ValueError('Use work/notes for note work')
     if SECRET.search(args.remote.encode()) or re.search(r'https?://[^/]*@', args.remote):
@@ -175,6 +177,11 @@ def inputs(repo):
 
 
 def notes(repo, args):
+    if args.action not in {'init', 'status'}:
+        from tools.notes_queue import dispatch
+        return dispatch(repo, args, sys.modules[__name__])
+    if args.action == 'init' and args.run == 'auto':
+        args.run = 'notes-' + uuid.uuid4().hex[:16]
     if not IDENT.fullmatch(args.run):
         raise ValueError('Use a simple RUN ID')
     path = repo / 'work' / args.run
@@ -182,13 +189,20 @@ def notes(repo, args):
     if not actor:
         raise ValueError('Run start with your Boss ID first')
     if args.action == 'init':
+        registered = git(repo, 'show', 'origin/' + BRANCH + ':runs/' + args.run + '.json', check=False)
+        if registered.returncode == 0 and json.loads(registered.stdout)['owner'] != actor:
+            raise ValueError('This RUN belongs to another Boss; use notes init auto')
         path.mkdir(parents=True, exist_ok=False)
-        state = {'schema': 1, 'run': args.run, 'owner': actor, 'status': 'awaiting_inputs',
+        catalog = repo / 'docs/input-map.json'
+        mapping = json.loads(catalog.read_text()) if catalog.exists() else {'schema': 1, 'expected_notes': None,
+            'pairing_status': 'not_started', 'source_inventory': inputs(repo), 'notes': []}
+        available = {item['path']: item['sha256'] for item in inputs(repo)}
+        sources_ready = bool(mapping['notes']) and all(available.get(item['path']) == item['sha256'] for item in mapping['source_inventory'])
+        state = {'schema': 1, 'run': args.run, 'owner': actor, 'status': 'ready' if sources_ready else 'awaiting_inputs',
                  'active_notes': [], 'completed_notes': [], 'blocked_notes': [],
                  'next_action': '核实原稿与旧稿的课次和页段；原图独立初读后才比较旧稿。'}
         (path / 'checkpoint.json').write_text(json.dumps(state, ensure_ascii=False, indent=2) + '\n')
-        (path / 'input-map.json').write_text(json.dumps({'schema': 1, 'expected_notes': None,
-            'pairing_status': 'not_started', 'source_inventory': inputs(repo), 'notes': []}, ensure_ascii=False, indent=2) + '\n')
+        (path / 'input-map.json').write_text(json.dumps(mapping, ensure_ascii=False, indent=2) + '\n')
     state = json.loads((path / 'checkpoint.json').read_text())
     mapping = json.loads((path / 'input-map.json').read_text())
     expected = {r['path']: r['sha256'] for r in mapping['source_inventory']}
@@ -226,6 +240,16 @@ def main():
     p = sub.add_parser('notes'); q = p.add_subparsers(dest='action', required=True)
     for action in ['init', 'status']:
         q.add_parser(action).add_argument('run')
+    q.add_parser('queue')
+    for action in ['claim', 'release', 'block', 'resume', 'submit']:
+        p = q.add_parser(action); p.add_argument('run')
+        p.add_argument('--note', required=action != 'claim')
+        if action == 'claim': p.add_argument('--limit', type=int, default=1, choices=[1, 2, 3])
+        if action in {'release', 'block'}:
+            p.add_argument('--reason', required=True); p.add_argument('--handoff', required=True)
+        if action == 'submit':
+            p.add_argument('--manifest', required=True); p.add_argument('--ledger', required=True)
+            p.add_argument('--report', required=True)
     sub.add_parser('checkpoint', help='Save explicit paths; use checkpoint --help for options', add_help=False).add_argument('args', nargs=argparse.REMAINDER)
     args = parser.parse_args()
     if args.command == 'start':

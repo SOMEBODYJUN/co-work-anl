@@ -32,3 +32,9 @@ python work.py checkpoint input work/<RUN> output/<笔记ID> -m "保存本次识
 当前没有导入本批待识读的原始笔记，也没有完成任何用户笔记的复核。工具自检只验证程序行为。锁定版本上的三轮独立全量复核仍由真实读图和审阅完成。
 
 数学研究继续使用 `rebuild/research-v2`。两分支各自维护工作目录，按需迁移具体通用修复。
+
+## 自动身份与共享认领程序
+
+新版支持 `start --actor auto`、`notes init auto`、`notes queue`、`notes claim`、`notes release`、`notes block`、`notes resume` 和 `notes submit`。每个 Boss 独立 clone、唯一 RUN；共享认领原子竞争，全局最多三份，按已登记批次推进。正文和审阅完成后由 submit 运行真实结构审计并核对来源及发布文件。推送只是保存，不是笔记完成。
+
+本次发布只含通用程序、通用启动词和合成工程测试，不含任何新附件或其来源/任务元数据。共享登记和原件公开上传须先有对应材料的明确公开授权。

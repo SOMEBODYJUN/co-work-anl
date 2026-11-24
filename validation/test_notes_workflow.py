@@ -17,6 +17,7 @@ for name in ['work.py', '.notes-project.json', '.gitattributes', '.gitignore']:
 shutil.copytree(ROOT / '.agents', SEED / '.agents', ignore=shutil.ignore_patterns('__pycache__'))
 (SEED / 'tools').mkdir()
 shutil.copy2(ROOT / 'tools/checkpoint.py', SEED / 'tools/checkpoint.py')
+shutil.copy2(ROOT / 'tools/notes_queue.py', SEED / 'tools/notes_queue.py')
 (SEED / 'README.md').write_text('Synthetic persistence fixture.\n')
 for name in ['input/pdf', 'input/previous-notes', 'input/teacher', 'work', 'output']:
     (SEED / name).mkdir(parents=True, exist_ok=True)
