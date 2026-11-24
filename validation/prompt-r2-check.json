@@ -1,0 +1,60 @@
+{
+  "version": "R2",
+  "validation_scope": "CLI and workflow consistency; this is not a model behavior benchmark.",
+  "cli_checks": [
+    {
+      "command": "python work.py start",
+      "help_checked": true
+    },
+    {
+      "command": "python work.py doctor",
+      "help_checked": true
+    },
+    {
+      "command": "python work.py notes init",
+      "help_checked": true
+    },
+    {
+      "command": "python work.py notes status",
+      "help_checked": true
+    },
+    {
+      "command": "python work.py notes queue",
+      "help_checked": true
+    },
+    {
+      "command": "python work.py notes claim",
+      "help_checked": true
+    },
+    {
+      "command": "python work.py notes submit",
+      "help_checked": true
+    },
+    {
+      "command": "python work.py notes release",
+      "help_checked": true
+    },
+    {
+      "command": "python work.py notes block",
+      "help_checked": true
+    },
+    {
+      "command": "python work.py notes resume",
+      "help_checked": true
+    },
+    {
+      "command": "python work.py checkpoint",
+      "help_checked": true
+    }
+  ],
+  "scenarios": {
+    "fresh_run_claims_current_batch": true,
+    "existing_claim_resumes_same_tasks": true,
+    "other_boss_waits_when_full": true,
+    "save_or_one_note_done_does_not_skip_batch": true,
+    "explicit_block_preserves_incomplete_status": true
+  },
+  "canonical_and_named_launch_identical": true,
+  "input_tasks_runtime_and_skills_unchanged": true,
+  "launch_sha256": "8dc59a7abd6846ad3c34b1da3fa320359d48372a0853f3f7791a61c24660f79b"
+}
