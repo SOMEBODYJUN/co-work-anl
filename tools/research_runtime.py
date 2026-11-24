@@ -1040,7 +1040,7 @@ def main(argv=None):
     # Studio has its own small parser; keep the original research commands and
     # immutable RUN event format as the common persistence mechanism.
     arguments = list(sys.argv[1:] if argv is None else argv)
-    bootstrap = argparse.ArgumentParser(add_help=False)
+    bootstrap = argparse.ArgumentParser(add_help=False, allow_abbrev=False)
     bootstrap.add_argument('--repo', type=Path)
     bootstrap.add_argument('--registry', default=REGISTRY)
     options, remaining = bootstrap.parse_known_args(arguments)
@@ -1049,11 +1049,17 @@ def main(argv=None):
             bootstrap.error('--repo is required')
         from research_studio import main as studio_main
         return studio_main(['--repo', str(options.repo), '--registry', options.registry, *remaining[1:]])
+    if remaining and remaining[0] == 'evaluate':
+        if options.repo is None:
+            bootstrap.error('--repo is required')
+        from paper_evaluation import main as evaluate_main
+        return evaluate_main(['--repo', str(options.repo), *remaining[1:]])
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument('--repo', type=Path, required=True)
     p.add_argument('--registry', default=REGISTRY)
     sub = p.add_subparsers(dest='command', required=True)
     sub.add_parser('studio', help='Main/three-line workspace, saved results, exact applications and reviewed publication receipts')
+    sub.add_parser('evaluate', help='Prepare and finish a local, version-bound paper evaluation')
     q = sub.add_parser('register', help='Install an explicit reviewed research increment in the current registry')
     q.add_argument('--record-file', required=True)
     for command in ('check', 'build'):

@@ -26,7 +26,7 @@ def export(root, destination, remote, branch='main'):
         shutil.copytree(root / 'research' / directory, destination / 'research' / directory,
                         ignore=shutil.ignore_patterns('validation.json', '__pycache__'))
     for name in ['research-runtime.md', 'research-main-design.md', 'research-line-design.md',
-                 'research-review-design.md']:
+                 'research-review-design.md', 'paper-evaluation.md']:
         shutil.copy2(root / 'prompts' / name, destination / 'prompts' / name)
     experiments = json.loads((root / 'research/experiments.json').read_text())
     # The mathematical scripts are intentionally not part of this export.
@@ -41,12 +41,14 @@ def export(root, destination, remote, branch='main'):
     (destination / 'work.py').write_text(source)
     (destination / 'README.md').write_text('# Reusable mathematical research workspace\n\n'
         'Read [the executable workflow](research/IMPLEMENTATION.md). Create your own exact problem, model, archive and explicit registration.\n\n'
+        'For mathematical paper evaluation, see [the evaluation workflow](tools/PAPER_EVALUATION.md).\n\n'
         'This export contains tools and prompts, not the original mathematical archive, credentials, Git history or running agents.\n'
         'Initialize the local Git repository with an initial commit, then run `python work.py start --actor Boss1 --role boss --save YOUR_ARCHIVE --create-archive --remote ' + remote + '`.\n')
     (destination / 'prompts/README.md').write_text('# Research prompts\n\nStart with research-runtime.md. Main reads the internal Main, line and review instructions from this repository.\n')
     (destination / 'AGENTS.md').write_text('# Mathematical research workspace\n\n'
         'Use work.py and prompts/research-runtime.md; read research/IMPLEMENTATION.md and research/agent-design/HYPEREDGE_WORKFLOW.md as needed.\n\n'
         'Fix the user\'s original target, model and quantifiers before doing research. Main reads hyperedges and short receipts; idea, execution and independent workers do the substantive reading and mathematics. Python files do not launch models.\n\n'
+        'When asked to evaluate a paper, run research evaluate --paper, follow the generated task, then validate and render the report; see tools/PAPER_EVALUATION.md.\n'
         'Keep credentials outside the repository. Main serializes Git writes, preserves peer changes and reports remote saving only after checkpoint confirms pushed.\n\n'
         'Save useful drafts and failures in each RUN journal promptly. Register reusable mathematics with exact state, scope and evidence; retain ALL premises, alternative proofs and unpaid obligations. Structural checks do not certify mathematical truth.\n\n'
         'This export has no active research board and contains no source-project mathematics or live agents. Add project-specific rules and the exact problem when available.\n')
