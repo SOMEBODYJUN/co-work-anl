@@ -2,7 +2,7 @@
 
 本批 12 个 PDF、项目包及来源/待办信息已获用户明确公开上传授权，见 `docs/publication-authorization.md`；同一批相同范围不再重复询问。
 
-本批原稿已登记，等待 GPT Pro 认领识读。入口：[直接发给 Pro 的 R2 启动词](prompts/notes-pro-launch-r2.md)、[操作说明](START-HERE.md)、[本批任务](docs/ready-to-work.md)。
+本批原稿已登记，等待 GPT Pro 认领识读。入口：[直接发给 Pro 的 R3 启动词](prompts/notes-pro-launch-r3.md)、[操作说明](START-HERE.md)、[本批任务](docs/ready-to-work.md)。
 
 `work/notes` 已保存 12 个 PDF 上传文件，对应 11 份不同原稿、95 个物理页。《实分析12》的两个文件字节相同，保留两个上传名称但只建一个任务。本次未提供对应旧 Markdown，先做已有原稿，不宣称已完成旧稿对照。初始化没有识读正文，也没有用户笔记的复核通过记录。
 

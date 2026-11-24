@@ -20,4 +20,4 @@
 
 命令已对照实际 work.py 的 CLI；新认领、接续、容量已满、当前批次未结束、真实阻塞后推进等情形已用实际队列状态转移函数核对。来源、待办、程序和技能保持原版本。本次是提示词与执行程序的一致性检查，不是模型效果 A/B 测试。结果见 `validation/prompt-r2-check.json`。
 
-正式入口 `prompts/launch-prompt.md` 与单独交付的 `prompts/notes-pro-launch-r2.md` 内容一致。
+正式入口 `prompts/launch-prompt.md` 与单独交付的 `prompts/notes-pro-launch-r3.md` 内容一致。

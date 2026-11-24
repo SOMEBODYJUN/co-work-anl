@@ -2,7 +2,7 @@
 
 本批 12 个 PDF、项目包及来源/待办信息已获用户明确公开上传授权，见 `docs/publication-authorization.md`；同一批相同范围不再重复询问。
 
-直接使用 [启动词](prompts/launch-prompt.md)。使用 `work/notes` 根 `work.py`；之前数学分支的同名程序不是本入口。
+直接使用 [R3 启动词](prompts/notes-pro-launch-r3.md)。使用 `work/notes` 根 `work.py`；之前数学分支的同名程序不是本入口。
 
 ## 启动和认领
 
