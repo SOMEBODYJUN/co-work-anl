@@ -1,0 +1,23 @@
+RA07 visual-second independent finite/algebra checks
+reviewer_id=/root/ra07_visual_second
+session_id=/root/ra07_visual_second
+
+V1 p0005 isolated difference candidates
+Input I=[0,5], G=(0,1), so |I|=5, |I\G|=4, |I∩G|=1, m(G)=1.
+Candidate difference reading |I|-|I\G| gives 5-4=1 (=m(I∩G)).
+Candidate intersection reading |I|-|I∩G| gives 5-1=4 (=m(I\G)).
+Current draft |I|-|G| also gives 5-1=4 only because G⊂I in this test; it does not identify the visible glyph. Use a second input I=[0,5], G=(10,11): |I|-|G|=4 while |I|-|I∩G|=5, so the current line cannot substitute for the exact difference formula without a containment condition.
+
+V2 p0004 error-budget candidates
+For epsilon=1, sum_{k=1..N}2^{-k}=1-2^{-N}; at N=4 the partial sum is 15/16 and the infinite sum is 1.
+For the visually different denominator 2k, sum_{k=1..N}1/(2k) at N=4 is 25/24 and grows without bound (harmonic divergence). Thus the source glyph and the intended geometric budget must be recorded separately.
+
+V3 p0007 I/T test-letter reverse check
+Take E=emptyset, T={0,1}; m*(T)=2, m*(T∩E)+m*(T∩E^c)=0+2=2.
+If the left glyph is interpreted as a distinct test set I=emptyset while the right terms remain T, the asserted equality 0=2 fails. This confirms the blue normalization to one arbitrary test set T, while preserving the original left glyph as an error/variant.
+
+V4 p0009 finite power-set notation
+For a finite set C with |C|=3, |P(C)|=8=2^3. Adding a second overline above the left base is a glyph/notation question; it does not change the finite cardinality calculation. The right-hand upper bound 2^c is compatible with the intended power-set interpretation, but cannot erase the visible left double bar.
+
+V5 p0011 four-region algebra
+For formal indicators a,b,t in {0,1}, the four values t*a*(1-b), t*a*b, t*(1-a)*b, t*(1-a)*(1-b) are pairwise disjoint and sum to t. Hence the four-region proof's finite-additivity target is algebraically correct independently of the unreadable connector word.

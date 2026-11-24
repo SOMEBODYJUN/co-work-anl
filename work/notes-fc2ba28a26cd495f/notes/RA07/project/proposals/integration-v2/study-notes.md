@@ -186,7 +186,7 @@ $$S\cap[0,1]\subset\bigcup_{i=1}^{n}(a_i,b_i),$$
 $$[0,1]\subset\bigcup_{i=1}^{n}[a_i,b_i].$$
 
 <!-- unit: N-P002-007 -->
-Proof：内逼外包。
+Proof：内填外包。
 
 <!-- unit: N-P002-007-S1 -->
 > [!info] 补证：有限性的作用
@@ -229,7 +229,7 @@ $$I_\alpha=(a_1,b_1)\cdots(a_n,b_n),\qquad a_i,b_i\in\mathbb Z.$$
 $$\mathbb R^n=\bigcup_\alpha I_\alpha.$$
 
 <!-- unit: N-P002-013 -->
-$\forall x=(x_1,\ldots,x_n)$，
+$\forall x\in(x_1,\ldots,x_n)$〔原笔为 ∈ 样弯笔；规范坐标等号见蓝色补充〕，
 $$x\in\prod\bigl([x_1]-1,\ldots,[x_n]+1\bigr).$$
 （此处保留原稿压缩的乘积记号。）
 
@@ -251,7 +251,8 @@ $$x\in\prod\bigl([x_1]-1,\ldots,[x_n]+1\bigr).$$
 > 这里遗传性来自欧氏空间的第二可数性；一般 Lindelöf 空间的任意子空间未必 Lindelöf。
 
 <!-- unit: N-P003-002 -->
-2. $LC(E)$：所有覆盖的族，记为 $LC_E$。
+2. $\overline{\overline{LC(E)}}$：所有覆盖的族，记为 $LC_E$。
+〔$LC(E)$ 上方原有两条横笔；含义暂不强定。〕
 
 <!-- unit: N-P003-003 -->
 $\mathcal I=$“$\mathbb R^n$ 中全体开区间”，原稿简记其大小为 $\mathfrak c$，并写
@@ -359,7 +360,8 @@ $$m^*\!\left(\bigcup_{k=1}^{\infty}E_k\right)\le\sum_{(k,j)}|I_{k,j}|.$$
 首个不等式下旁注：“下界”。
 
 <!-- unit: N-P004-007 -->
-$$\sum_{(k,j)}|I_{k,j}|<\sum_km^*(E_k)+\sum_{k=1}^{\infty}\frac{\varepsilon}{2^k}.$$
+$$\sum_{(k,j)}|I_{k,j}|<\sum_km^*(E_k)+\sum_{k=1}^{\infty}\frac{\varepsilon}{2k}.$$
+〔原笔中此处分母 $k$ 与 $2$ 同基线；上文首次预算写为 $2^k$。〕
 
 <!-- unit: N-P004-008 -->
 Tonelli：可交换顺序。
@@ -437,11 +439,11 @@ $$m^*(C)=0.$$
 Carathéodory。
 
 <!-- unit: N-P006-002 -->
-**Carathéodory 条件。** 设 $E\subset\mathbb R^n$。若对每个测试集合 $I\subset\mathbb R^n$，都有
-$$m^*(I)=m^*(I\cap E)+m^*(I\cap E^c),$$
+**Carathéodory 条件。** 设 $E\subset\mathbb R^n$。若对每个测试集合 $T\subset\mathbb R^n$，都有
+$$m^*(T)=m^*(T\cap E)+m^*(T\cap E^c),$$
 则称 $E$ 为 Lebesgue 可测集。
 
-（定义行末项由本页后面的完整复写恢复。）
+（测试字母原笔呈 T 样；定义行末项由本页后面的完整复写恢复。）
 
 <!-- unit: N-P006-002-S1 -->
 > [!info] 补充：测试集不限于区间
@@ -470,7 +472,8 @@ $$m^*(I)=m^*(I\cap E)+m^*(I\cap E^c),$$
 
 <!-- unit: N-P006-006 -->
 一般：
-$$m^*(I)=m^*(I\cap E)+m^*(I\cap E^c).$$
+$$m^*(T)=m^*(T\cap E)+m^*(T\cap E^c).$$
+〔本页完整复写中的测试字母原笔呈 T 样。〕
 
 <!-- unit: N-SEC-08 -->
 <a id="n-sec-08"></a>
@@ -494,7 +497,8 @@ $\forall I\subset\mathbb R$ 区间（矩形）。
 
 <!-- unit: N-P007-004 -->
 $\Leftarrow$：由外测度次可加性，仅证
-$$m^*(T)\ge m^*(T\cap E)+m^*(T\cap E^c).$$
+$$m^*(I)\ge m^*(T\cap E)+m^*(T\cap E^c).$$
+〔左端原笔为 I 样，右端两项为 T；数学规范补充见下方蓝色块。〕
 
 <!-- unit: N-P007-004-S1 -->
 > [!info] 补证：固定任意测试集
@@ -509,7 +513,8 @@ $$m^*(T)\ge m^*(T\cap E)+m^*(T\cap E^c).$$
 
 <!-- unit: N-P007-006 -->
 （2）$\forall\varepsilon>0$，$\exists\{I_k\}\in LC(T)$，s.t.
-$$\sum_{k=1}^{\infty}|I_k|<m^*(T)+\varepsilon.$$
+$$\sum_{k=1}^{\infty}(I_k)<m^*(T)+\varepsilon.$$
+〔原笔求和项两侧为圆括号样笔画；体积双竖线是蓝色数学说明。〕
 
 <!-- unit: N-P007-007 -->
 $$T\cap E\subset\bigcup_{k=1}^{\infty}(E\cap I_k).$$
@@ -584,6 +589,10 @@ $A,B$ 可测成立。
 > 不能把此处 $\ne$ 理解为“任意两个不交集合都严格不等”；例如 $A=\varnothing$ 时必相等。准确说法是：仅知 $A\cap B=\varnothing$，不能推出外测度可加；若 $A,B$ 可测则等号成立。实际上只要其中一个可测，取 $T=A\cup B$ 使用它的 Carathéodory 条件就足够。
 >
 > 若存在不可测集 $E$，按定义存在测试集 $T$ 使分割等式失败。令 $A=T\cap E$、$B=T\cap E^c$，它们不交，而次可加性结合“不相等”给出 $m^*(A\cup B)<m^*(A)+m^*(B)$，这说明条件不能省掉。
+
+<!-- unit: N-P006-014 -->
+> [!info] 页边残笔（原图位置：第6页左缘）
+> 可见一段右括号样弧线，约在 x=0–25、y=2475–2570；无法从残笔唯一恢复其配对或公式，故仅作来源记录，不解释为数学符号。
 
 <!-- unit: N-SEC-09 -->
 <a id="n-sec-09"></a>
@@ -823,7 +832,8 @@ $$0\le m^*(T\cap E)\le m^*(E)=0.$$
 > 把“至多个可数个”整理为“至多可数个”。若 $m^*(E_k)=0$，则 $0\le m^*(\bigcup_kE_k)\le\sum_km^*(E_k)=0$。有限并可补上空集成为可数列；空并也是空集。不可数并不能照此推出，例如所有单点的并可为整个 $[0,1]$。
 
 <!-- unit: N-P009-014 -->
-$$2^c\le\overline{\overline{\mathcal M}}\le2^c.$$
+$$\overline{\overline{2^c}}\le\overline{\overline{\mathcal M}}\le2^c.$$
+〔左端 $2$ 上方原有两条短横；上标 C/c 形仍按原笔保留。〕
 
 <!-- unit: N-P009-015 -->
 Cantor（上方标 $c$）：任意子集可测，$2^c$。
@@ -869,11 +879,14 @@ $I\setminus G\subset E$ 中紧集。
 > 此处应先假设 $E$ 有界，并取包含 $E$ 的闭有界长方体 $I$。因为 $G$ 开，$I\setminus G$ 是紧集；由 $G\supset I\setminus E$ 得 $I\setminus G\subset E$。原稿在引入行没有重新写这些条件。
 
 <!-- unit: N-P005-007 -->
-旁写：$|I|-|G|$。
+旁写：$|I|-|I\,/\,G|$。
+〔第二项中 $I$ 后为单斜杠样笔画，差集/交集读法未决；不是单独的 $|G|$。〕
 
 <!-- unit: N-P005-007-S1 -->
-> [!info] 补充：开集不一定包含于I
-> 若 $G$ 是环境空间中的开集，未必有 $G\subset I$；对应紧集的精确体积关系为 $m(I\setminus G)=|I|-m(I\cap G)$。而 $|I|-m(G)$ 可作下界。此处原稿用“差体积”提示从外逼近补集以得到内逼近，并未写完限定条件。
+> [!info] 补充：孤立差式的两种字形解释
+> 原笔第二项不是单独的 $|G|$，而是在 $G$ 前出现 $I$ 样笔画及斜杠。若将其读作差集 $I\setminus G$，则在 $I$ 有限可测、$G$ 开时
+> $$m(I\setminus G)=|I|-m(I\cap G).$$
+> 若局部斜杠实际意在表示交集，也只能在补全该交号后得到相应的交集公式；原图没有足够拱顶笔画让两者唯一。无论哪一候选，都不能把原笔静默改写成 $|I|-|G|$。
 
 <!-- unit: N-P005-008 -->
 令 $$m_*(E)=|I|-m^*(I\setminus E).$$

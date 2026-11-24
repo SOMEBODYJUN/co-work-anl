@@ -22,13 +22,15 @@ $$
 1. 开集是 $G_\delta$，闭集是 $F_\sigma$。
 
 <!-- unit: T-P001-U005 -->
-2. $G_\delta$ 不一定是 $F_\sigma$。〔“不一定”按上下文恢复〕
+2. $G_\delta$ 的补集是 $F_\sigma$。
 
 <!-- unit: T-P001-U006 -->
 3. $\mathbb Q$ 是 $F_\sigma$，$\mathbb Q^c$ 是 $G_\delta$。
 
 <!-- unit: T-P001-U007 -->
 4. $\{x\}=\displaystyle\bigcap_{n=1}^{\infty}B(x,1/n)$。单点是 $G_\delta$ 与 $F_\sigma$。
+
+〔交号下限按上下文为 $n\ge1$；半径分母原笔仍可能近似 $k$，这里的 $n$ 是统一指标的中性恢复。〕
 
 <!-- unit: T-P001-U008 -->
 5. 开集是否是 $F_\sigma$？闭集是否是 $G_\delta$？
@@ -119,7 +121,7 @@ E\in\mathcal M\quad\Longleftrightarrow\quad E\cap\partial E\in\mathcal M.
 $$
 
 <!-- unit: T-P002-U012 -->
-测度的完备化，局部逼近。开集〔疑字 002〕扩大逼近〔疑字 002〕。
+测度的完备化，局部逼近。开集〔疑字 002-A；位置 [1235,2824,1450,2982]〕扩大逼近〔疑字 002-B；位置 [1765,2824,1995,2982]〕。
 
 <!-- unit: T-P002-U013 -->
 **Lemma.** $E\in\mathcal M$，则下述性质成立。〔接第 3 页。〕
@@ -465,7 +467,7 @@ $E[a\le f<b]\in\mathcal M$，$\forall a,b\in\mathbb R$，
 $\not\Longrightarrow f\in\operatorname{MF}(E)$。
 
 <!-- unit: T-P009-U006 -->
-$\sigma(\mathcal I)=B\cup\{+\infty,-\infty\}$，$B\in\mathcal B(\mathbb R)$。
+$G(E)=B\cup\{+\infty,-\infty\}$，$B\in\mathcal B(\mathbb R)$。
 
 <!-- unit: T-P009-U007 -->
 **例** $E$ 是 $\mathbb R^n$ 上不可测集。

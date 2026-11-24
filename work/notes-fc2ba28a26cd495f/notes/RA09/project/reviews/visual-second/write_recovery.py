@@ -1,0 +1,48 @@
+import json, os
+base='work/notes-fc2ba28a26cd495f/notes/RA09/project'
+out=os.path.join(base,'reviews/visual-second/recovery-proposals.json')
+reviewer='/root/ra09_visual_second'; session='notes-fc2ba28a26cd495f'
+recoveries=[
+ {
+  'id':'VS2-R001','source_ids':['RA09-P001-U005'],
+  'problem':'p0001 U005 的关键补集字样在当前两稿被写成“不一定”，需从实际原图恢复黑色原句并区分蓝色反例说明。',
+  'candidates':[
+   {'id':'c-source-buiji','text':'恢复黑色原句“Gδ 补集是 Fσ”；保留相邻无理数反例作为蓝色补充，而不将反例改写成原句。','evidence_ids':['image:p0001','image:p0001-r1c1','image:p0001-r2c1']},
+   {'id':'c-current-buding','text':'保留当前黑色句“Gδ 不一定是 Fσ”，把“补集”解释为后续蓝色说明。','evidence_ids':['image:p0001','image:p0001-r1c1','image:p0001-r2c1']}],
+  'selected_candidate_id':'c-source-buiji','status':'resolved',
+  'evidence_ids':['image:p0001','image:p0001-r1c1','image:p0001-r2c1'],
+  'forward_validation':{'status':'pass','method':'逐字正向图像核对','inputs':'p0001 全页、p0001-r1c1、p0001-r2c1；来源单元 RA09-P001-U005；当前 source-transcript.md 与 study-notes.md 对应句。','result':'原图该句在“Gδ”之后写“补集”，集字下部木形收笔可见；当前两稿写成“不一定”，故 c-source-buiji 与原字形相符。','evidence_ids':['image:p0001','image:p0001-r1c1','image:p0001-r2c1']},
+  'backward_validation':{'status':'pass','method':'邻接关系反向核验','inputs':'同页 U004“开集是 Gδ、闭集是 Fσ”、U006“有理数是 Fσ，无理数是 Gδ”及两稿相邻黑蓝段落。','result':'从相邻补集闭包句反向读回，原句必须承担“Gδ 的补集是 Fσ”的转写；“不一定”只能作为另加命题，不能解释原图的黑色词位。','evidence_ids':['image:p0001-r1c1','image:p0001-r2c1']},
+  'return_to_image':{'region_ids':['p0001-r1c1','p0001-r2c1'],'evidence_ids':['image:p0001','image:p0001-r1c1','image:p0001-r2c1'],'observation':'两区回图均显示同一黑色句的“补集”二字；蓝色无理数例子位于其后，不能覆盖原黑字。','page_ids':['p0001']},
+  'reviewer_id':reviewer,'session_id':session
+ },
+ {
+  'id':'VS2-R002','source_ids':['RA09-P008-U011'],
+  'problem':'p0008 U011 的生成族 D 只实际写出圆括号端点，无法从原字形恢复右端闭括号和 a∈R 参数尾。',
+  'candidates':[
+   {'id':'c-source-round','text':'按原图照录 D={(a,+∞)}，保留两端圆括号及未写参数条件。','evidence_ids':['image:p0008','image:p0008-r3c1','image:p0008-r3c2','artifact:crop-p0008-generator']},
+   {'id':'c-corrected-ray','text':'按数学补证改为 D={(a,+∞] : a∈R}，右端使用闭括号并补 a∈R。','evidence_ids':['image:p0008','image:p0008-r3c1','image:p0008-r3c2','artifact:crop-p0008-generator']}],
+  'selected_candidate_id':None,'status':'unresolved',
+  'evidence_ids':['image:p0008','image:p0008-r3c1','image:p0008-r3c2','artifact:crop-p0008-generator'],
+  'forward_validation':{'status':'pass','method':'原图端点字形直读','inputs':'p0008 全页、p0008-r3c1、p0008-r3c2 与 crop-p0008-generator；来源单元 RA09-P008-U011。','result':'D 行右端实际是圆括号“)”且后无可辨的 a∈R 尾；下一行另起 D⊂B(R̄)，因此 c-source-round 是可确认的原字形。','evidence_ids':['image:p0008','image:p0008-r3c1','image:p0008-r3c2','artifact:crop-p0008-generator']},
+  'backward_validation':{'status':'fail','method':'端点生成族反向测试','inputs':'候选 (a,+∞) 与 (a,+∞] 连同同页 D⊂B(R̄) 目标及当前蓝色补证。','result':'反向生成 B(R̄) 的标准射线族需要右端包含 +∞ 并量化 a∈R，故数学上偏向 c-corrected-ray；但原图没有闭括号或参数尾，无法据数学需求恢复缺失字形，仍置 null。','evidence_ids':['image:p0008-r3c1','image:p0008-r3c2','artifact:crop-p0008-generator']},
+  'return_to_image':{'region_ids':['p0008-r3c1','p0008-r3c2'],'evidence_ids':['image:p0008','image:p0008-r3c1','image:p0008-r3c2','artifact:crop-p0008-generator'],'observation':'r3c1 的 D 行清楚显示 (a,+∞) 的圆括号，r3c2 只承接右端并进入 D⊂B(R̄)；缺失参数与闭端点不能凭上下文冒写。','page_ids':['p0008']},
+  'reviewer_id':reviewer,'session_id':session
+ },
+ {
+  'id':'VS2-R003','source_ids':['RA09-P010-U005','RA09-P010-U006','RA09-P010-U007'],
+  'problem':'p0010 示性函数分段实际漏写 a=0 与 a=1 端点，需决定保留原黑字并显式补证，还是静默替换为标准三段。',
+  'candidates':[
+   {'id':'c-source-with-blue-correction','text':'黑色原式照录 a<0、0<a、a>1，旁加蓝色校正覆盖 a=0 与 a=1 的端点范围并说明标准三段应为 a<0、0≤a<1、a≥1。','evidence_ids':['image:p0010','image:p0010-r1c1','image:p0010-r1c2','image:p0010-r2c1','image:p0010-r2c2','artifact:crop-p0010-levels']},
+   {'id':'c-standardized-triad','text':'直接把黑色分段改成 a<0、0≤a<1、a≥1，并删除原始端点缺漏痕迹。','evidence_ids':['image:p0010','image:p0010-r1c1','image:p0010-r1c2','image:p0010-r2c1','image:p0010-r2c2','artifact:crop-p0010-levels']}],
+  'selected_candidate_id':'c-source-with-blue-correction','status':'resolved',
+  'evidence_ids':['image:p0010','image:p0010-r1c1','image:p0010-r1c2','image:p0010-r2c1','image:p0010-r2c2','artifact:crop-p0010-levels'],
+  'forward_validation':{'status':'pass','method':'分段黑字逐行图像核对','inputs':'p0010 全页、四个相关区及 crop-p0010-levels；来源单元 U005-U007。','result':'原图三行分别可读为 a<0、0<a、a>1，且端点 0、1 未归入任一行；c-source-with-blue-correction 保留了实际字形。','evidence_ids':['image:p0010','image:p0010-r1c1','image:p0010-r2c1','image:p0010-r2c2','artifact:crop-p0010-levels']},
+  'backward_validation':{'status':'pass','method':'端点取值反向检验','inputs':'把 a=0、a=1 分别代入示性函数四种水平集分段，并与两稿蓝色端点校正及 f∈M(E) 结论核对。','result':'a=0 应落在中段并给 A，a=1 应落在第三段并给空集；标准三段是数学补正，但保留原黑字加蓝校正同时满足来源可追溯与端点完整性。','evidence_ids':['image:p0010-r1c1','image:p0010-r2c1','image:p0010-r2c2','artifact:crop-p0010-levels']},
+  'return_to_image':{'region_ids':['p0010-r1c1','p0010-r1c2','p0010-r2c1','p0010-r2c2'],'evidence_ids':['image:p0010','image:p0010-r1c1','image:p0010-r1c2','image:p0010-r2c1','image:p0010-r2c2','artifact:crop-p0010-levels'],'observation':'四区回图确认三条黑色分支真实缺端点；校正应另标蓝色补证，不能把标准三段冒充原稿字形。','page_ids':['p0010']},
+  'reviewer_id':reviewer,'session_id':session
+ }
+]
+with open(out,'w',encoding='utf-8') as f:
+ json.dump(recoveries,f,ensure_ascii=False,indent=2); f.write('\n')
+print(out)

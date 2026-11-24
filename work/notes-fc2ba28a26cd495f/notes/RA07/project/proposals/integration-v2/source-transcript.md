@@ -81,7 +81,7 @@ $$S\cap[0,1]\subset\bigcup_{i=1}^{n}(a_i,b_i),$$
 $$[0,1]\subset\bigcup_{i=1}^{n}[a_i,b_i].$$
 
 <!-- unit: T-P002-007 -->
-Proof：内逼外包。
+Proof：内填外包。
 
 <!-- unit: T-P002-008 -->
 对无限集定义求和（网）。
@@ -101,7 +101,7 @@ $$I_\alpha=(a_1,b_1)\cdots(a_n,b_n),\qquad a_i,b_i\in\mathbb Z.$$
 $$\mathbb R^n=\bigcup_\alpha I_\alpha.$$
 
 <!-- unit: T-P002-013 -->
-$\forall x=(x_1,\ldots,x_n)$，
+$\forall x\in(x_1,\ldots,x_n)$〔原笔为 ∈ 样弯笔；规范坐标等号见蓝色补充〕，
 $$x\in\prod\bigl([x_1]-1,\ldots,[x_n]+1\bigr).$$
 （此处保留原稿压缩的乘积记号。）
 
@@ -112,7 +112,8 @@ $$x\in\prod\bigl([x_1]-1,\ldots,[x_n]+1\bigr).$$
 或：$\mathbb R^n$ 是 Lindelöf，有遗传性。导出相应区间放大，来证明。
 
 <!-- unit: T-P003-002 -->
-2. $LC(E)$：所有覆盖的族，记为 $LC_E$。
+2. $\overline{\overline{LC(E)}}$：所有覆盖的族，记为 $LC_E$。
+〔$LC(E)$ 上方原有两条横笔；含义暂不强定。〕
 
 <!-- unit: T-P003-003 -->
 $\mathcal I=$“$\mathbb R^n$ 中全体开区间”，原稿简记其大小为 $\mathfrak c$，并写
@@ -181,7 +182,8 @@ $$m^*\!\left(\bigcup_{k=1}^{\infty}E_k\right)\le\sum_{(k,j)}|I_{k,j}|.$$
 首个不等式下旁注：“下界”。
 
 <!-- unit: T-P004-007 -->
-$$\sum_{(k,j)}|I_{k,j}|<\sum_km^*(E_k)+\sum_{k=1}^{\infty}\frac{\varepsilon}{2^k}.$$
+$$\sum_{(k,j)}|I_{k,j}|<\sum_km^*(E_k)+\sum_{k=1}^{\infty}\frac{\varepsilon}{2k}.$$
+〔原笔中此处分母 $k$ 与 $2$ 同基线；上文首次预算写为 $2^k$。〕
 
 <!-- unit: T-P004-008 -->
 Tonelli：可交换顺序。
@@ -230,7 +232,8 @@ $$|I'|<|I|+\varepsilon.$$
 $I\setminus G\subset E$ 中紧集。
 
 <!-- unit: T-P005-007 -->
-旁写：$|I|-|G|$。
+旁写：$|I|-|I\,/\,G|$。
+〔第二项中 $I$ 后为单斜杠样笔画，差集/交集读法未决；不是单独的 $|G|$。〕
 
 <!-- unit: T-P005-008 -->
 令 $$m_*(E)=|I|-m^*(I\setminus E).$$
@@ -260,9 +263,9 @@ $E$ 有界：$m^*(E)=m_*(E)$。
 Carathéodory。
 
 <!-- unit: T-P006-002 -->
-**Def.** 设 $E\subset\mathbb R^n$，若 $\forall I\subset\mathbb R^n$ 有
-$$m^*(I)=m^*(I\cap E)+m^*(I\cap\cdots).$$
-〔本行扫描右缘截断；根据本页中部完整复写，可恢复末项为 $m^*(I\cap E^c)$。〕
+**Def.** 设 $E\subset\mathbb R^n$，若 $\forall T\subset\mathbb R^n$ 有
+$$m^*(T)=m^*(T\cap E)+m^*(T\cap\cdots).$$
+〔本行扫描右缘截断；根据本页中部完整复写，可恢复末项为 $m^*(T\cap E^c)$；测试字母原笔呈 T 样。〕
 
 <!-- unit: T-P006-003 -->
 则称 $E$ Lebesgue 可测，记 $m^*(E)=m_L(E)$。
@@ -279,7 +282,8 @@ $$m^*(I)=m^*(I\cap E)+m^*(I\cap\cdots).$$
 
 <!-- unit: T-P006-006 -->
 一般：
-$$m^*(I)=m^*(I\cap E)+m^*(I\cap E^c).$$
+$$m^*(T)=m^*(T\cap E)+m^*(T\cap E^c).$$
+〔本页完整复写中的测试字母原笔呈 T 样。〕
 
 <!-- unit: T-P006-007 -->
 不可测集存在：
@@ -306,6 +310,9 @@ $$ZF\nvdash P,\qquad ZF\nvdash\neg P.$$
 若 $ZF\to P$，
 $$ZFC\to P.$$
 
+<!-- unit: T-P006-014 -->
+页左缘另有一段右括号样残弧（约 x=0–25、y=2475–2570）；无法据残笔恢复前文，保留为未定页边残笔。
+
 <!-- unit: T-P007-HEAD -->
 ## 物理第 7 页
 
@@ -322,14 +329,16 @@ $\forall I\subset\mathbb R$ 区间（矩形）。
 
 <!-- unit: T-P007-004 -->
 $\Leftarrow$：由外测度次可加性，仅证
-$$m^*(T)\ge m^*(T\cap E)+m^*(T\cap E^c).$$
+$$m^*(I)\ge m^*(T\cap E)+m^*(T\cap E^c).$$
+〔左端原笔为 I 样，右端两项为 T；数学规范补充见学习稿蓝色块。〕
 
 <!-- unit: T-P007-005 -->
 （1）若 $m^*(T)=+\infty$，成立。
 
 <!-- unit: T-P007-006 -->
 （2）$\forall\varepsilon>0$，$\exists\{I_k\}\in LC(T)$，s.t.
-$$\sum_{k=1}^{\infty}|I_k|<m^*(T)+\varepsilon.$$
+$$\sum_{k=1}^{\infty}(I_k)<m^*(T)+\varepsilon.$$
+〔原笔求和项两侧为圆括号样笔画；体积双竖线是蓝色数学说明。〕
 
 <!-- unit: T-P007-007 -->
 $$T\cap E\subset\bigcup_{k=1}^{\infty}(E\cap I_k).$$
@@ -436,7 +445,8 @@ $$0\le m^*(T\cap E)\le m^*(E)=0.$$
 （3）$\alpha^\beta=\overline{\overline{A^B}}=\{f:B\to A\}$。
 
 <!-- unit: T-P009-014 -->
-$$2^c\le\overline{\overline{\mathcal M}}\le2^c.$$
+$$\overline{\overline{2^c}}\le\overline{\overline{\mathcal M}}\le2^c.$$
+〔左端 $2$ 上方原有两条短横；上标 C/c 形仍按原笔保留。〕
 
 <!-- unit: T-P009-015 -->
 Cantor（上方标 $c$）：任意子集可测，$2^c$。

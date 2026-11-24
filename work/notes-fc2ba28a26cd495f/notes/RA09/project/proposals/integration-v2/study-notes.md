@@ -50,12 +50,14 @@ $$
 <!-- unit: N-P001-U007 -->
 3. $\{x\}=\displaystyle\bigcap_{n=1}^{\infty}B(x,1/n)$。单点是 $G_\delta$ 与 $F_\sigma$。
 
+〔交号下限按上下文为 $n\ge1$；半径分母原笔仍可能近似 $k$，这里的 $n$ 是统一指标的中性恢复。〕
+
 <!-- unit: N-P001-S01 -->
 > [!info] 补充证明：定义中的基本例子
 > 若 $U$ 开，则 $U=\bigcap_{n\ge1}U$；若 $F$ 闭，则 $F=\bigcup_{n\ge1}F$。在度量空间中，单点闭且 $\{x\}=\bigcap_{n\ge1}B(x,1/n)$。把 $\mathbb Q$ 枚举为 $\{q_n:n\ge1\}$，便有 $\mathbb Q=\bigcup_{n\ge1}\{q_n\}$，从而其补集为 $G_\delta$。单点的球交表示用到了度量，不能据此断言任意拓扑空间中的单点均为 $G_\delta$。
 
 <!-- unit: N-P001-U005 -->
-4. $G_\delta$ 不一定是 $F_\sigma$。〔“不一定”按上下文恢复〕
+2. $G_\delta$ 的补集是 $F_\sigma$。
 
 <!-- unit: N-P001-S04 -->
 > [!info] 【例子与证明补全】无理数集是 $G_\delta$，却不是 $F_\sigma$
@@ -70,6 +72,10 @@ $$
 
 <!-- unit: N-P001-U009 -->
 一般距离空间中成立。
+
+<!-- unit: N-P001-S02B -->
+> [!info] 【一般拓扑反例】
+> 在 $X=\{0,1\}$ 上取 $\tau=\{\varnothing,\{1\},X\}$。任意可数个开集的交仍属于 $\tau$，所以闭集 $\{0\}$ 不能写成 $G_\delta$；任意可数个闭集的并只能是 $\varnothing,\{0\},X$，所以开集 $\{1\}$ 不能写成 $F_\sigma$。这只补答原稿旁注中的一般拓扑问题，不把反例中的词语冒作原稿字迹。
 
 <!-- unit: N-P001-U010 -->
 设 $F\subset(X,d)$，令
@@ -208,7 +214,7 @@ $$
 > 对任意 $E\subset\mathbb R^n$，$E\setminus E^\circ=E\cap\partial E$，两部分不交。由于 $E^\circ$ 开、$\partial E$ 闭，二者都是 Borel 集。若 $E$ 可测，则 $E\cap\partial E$ 可测；反过来，若 $E\cap\partial E$ 可测，则由分解式及可数并封闭性，$E$ 也可测。此处 $\mathcal M$ 可取 Lebesgue 可测集族；同一论证也适用于 Borel 集族。
 
 <!-- unit: N-P002-U012 -->
-测度的完备化，局部逼近。开集〔疑字 002〕扩大逼近〔疑字 002〕。
+测度的完备化，局部逼近。开集〔疑字 002-A；位置 [1235,2824,1450,2982]〕扩大逼近〔疑字 002-B；位置 [1765,2824,1995,2982]〕。
 
 <!-- unit: N-P002-U013 -->
 **Lemma.** $E\in\mathcal M$，则下述性质成立。〔接第 3 页。〕
@@ -736,11 +742,11 @@ $E[a\le f<b]\in\mathcal M$，$\forall a,b\in\mathbb R$，
 $\not\Longrightarrow f\in\operatorname{MF}(E)$。
 
 <!-- unit: N-P009-U006 -->
-$\sigma(\mathcal I)=B\cup\{+\infty,-\infty\}$，$B\in\mathcal B(\mathbb R)$。
+$G(E)=B\cup\{+\infty,-\infty\}$，$B\in\mathcal B(\mathbb R)$。
 
 <!-- unit: N-P009-S02 -->
 > [!info] 【生成族纠正与证明】有限区间无法分开两个无穷端点
-> 这里 $\mathcal I$ 指有限端点区间族，可取 $\{[a,b):a,b\in\mathbb R,\ a<b\}$。原稿表达式只列出了“加上两个无穷端点”的形式；完整集合族还应包含不加端点的 Borel 集：
+> 这里 $\mathcal I$ 指有限端点区间族，可取 $\{[a,b):a,b\in\mathbb R,\ a<b\}$。原稿在此处写的是 $G(E)=B\cup\{+\infty,-\infty\}$，其中 $B\in\mathcal B(\mathbb R)$；它只列出了“加上两个无穷端点”的形式。完整集合族还应包含不加端点的 Borel 集：
 > $$\sigma_{\overline{\mathbb R}}(\mathcal I)=\{B:B\in\mathcal B(\mathbb R)\}\ \cup\ \{B\cup\{-\infty,+\infty\}:B\in\mathcal B(\mathbb R)\}.$$
 > 证明：右侧是 $\overline{\mathbb R}$ 上的 $\sigma$ 代数且含 $\mathcal I$，所以左侧包含于右侧。反过来，$\mathbb R=\bigcup_n[-n,n)$ 属于左侧；有限开区间可用半开区间作可列并，再由有理端点可数基得到全部 $\mathbb R$ 上开集。因此左侧含全部普通 Borel 集，以及它们在 $\overline{\mathbb R}$ 中的补集，从而含右侧。
 >
