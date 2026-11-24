@@ -102,6 +102,8 @@ class PaperEvaluationTests(unittest.TestCase):
         path.write_text(json.dumps(report))
         scored = self.cli("--run", name, "--report", str(path))
         self.assertIn("35–40 / 100", Path(scored["report"]).read_text())
+        Path(scored["report"]).write_text("Replaced after generation")
+        self.cli("--run", name, "--report", str(path), fail="Previously generated report was modified")
         self.cli("--run", self.start()[0], "--report", str(path), fail="does not match this frozen run")
 
 
