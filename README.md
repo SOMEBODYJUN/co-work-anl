@@ -1,44 +1,34 @@
-# 数学研究仓库
+# 数学手记工作存档
 
-这是研究运行树：保存可复用的数学正文、证据、超边、研究 RUN 和未完成义务。旧的 2.5.3／第三阶段队列、公屏、清点台账、重复登记表和派生图已经退出当前树，不再作为研究启动前置条件。
-
-新对话从 [研究分支的 work.py](https://raw.githubusercontent.com/SOMEBODYJUN/co-work-anl/rebuild/research-v2/work.py) 起步，使用仓库外凭据。启动成功后，后续命令使用检出目录内的程序。
-
-```sh
-python work.py --repo <clone> start --actor BossN --save <存档ID> --token-file <仓库外凭据>
-```
-
-新 Boss 用自己的空目录，首次启动显式选存档。独立主题没有旧 ID 时，取一个简短英文 ID，如 `sequential-allocation`，用 `--save sequential-allocation --create-archive` 创建；补写新存档 README 的原题与范围。不相关机用 `--save unrelated-machines`。六人题用 `--save customer-attraction --subarchive six-providers`。
-
-start 返回 `archive_scope`。个人工作区在该存档的 `workspaces/BossN/`，RUN 草稿在 `research/workspaces/<RUN>/`。在[原题 spec 模板](research/agent-design/spec-template.json)把 `collaboration_scope` 填为实际 `archive_scope`，再创建工作室。原题已经位于 `archives/` 时，还须匹配原文所在的最深存档。本 RUN 经复核登记的正式正文放在该存档的 `state/`。
+本分支 `work/notes` 保存笔记原稿、保真转写、复习稿、来源映射、疑点、复核与接续记录。
+入口是 [START-HERE.md](START-HERE.md) 与 [完整启动词](prompts/launch-prompt.md)。
 
 ```sh
-python work.py research studio init <RUN> --spec research/workspaces/<RUN>/spec.json --expect-branch rebuild/research-v2
+python work.py --repo <独立目录> start --actor Boss1 --token-file <仓库外凭据>
+cd <独立目录>
+python work.py doctor
+python work.py notes init <唯一RUN>
 ```
 
-如果接续旧研究，使用原来的 Boss 和存档，在 `start` 加 `--resume`，然后读取自己的原 RUN。新 Boss 可以沿同一原题研究，使用自己的 RUN。
+每个新 Boss 使用独立 clone 和 RUN；续接用同一身份及 RUN，执行 `notes status RUN`。
+运行中的笔记、独立审阅与 Git 保存规则见 [AGENTS.md](AGENTS.md)。
 
-例如 [Boss3 从空目录开同一个六人题](archives/customer-attraction/subarchives/six-providers/README.md)。
+| 路径 | 保存内容 |
+| --- | --- |
+| `input/pdf/` | 用户原始 PDF，只读保留 |
+| `input/previous-notes/`、`input/teacher/` | 旧稿与教师材料，只读保留 |
+| `work/<RUN>/` | 课次/页段配对、哈希、识读台账、图像证据、疑点和检查点 |
+| `output/<笔记ID>/` | 按原稿顺序的保真转写、按复习顺序的学习稿及正式导出 |
+| `.agents/skills/` | 项目内逐页复核和数学编辑流程、工具与许可 |
 
-超边可以跨存档引用。工作者须核对定义、模型、参数和迁移证明，按当前 RUN 的存档回写新结论。
+保存明确范围，并确认返回 `pushed`：
 
 ```sh
-python work.py --repo <clone> research studio status <RUN> --session-tag <本次会话标签>
+python work.py checkpoint input work/<RUN> output/<笔记ID> -m "保存本次识读与断点"
 ```
 
-RUN ID 和原始题目可从仓库的 [research/runs/](research/runs/) 查到。首次下载中断时，重跑同一条 `start` 即可。
+暂时无法推送时加 `--local-only`；之后用相同完整范围重跑即可。原件、正文、来源映射、审阅报告、已登记的图像证据和检查点均可提交，只有缓存、编译临时文件与凭据被忽略。主代理串行提交；同步会保留本地草稿，真实冲突需解决后接续。
 
-Main 用 Work 派工，查看超边和短回执，负责选路线和发布。idea 子代理提出可检验路线，执行子代理用 `research search/show/context/frontier` 按需读依赖、正文和证据。工作者从研究笔记和精确引用恢复，接近上下文上限时换 fresh 子代理。推导、失败、反馈和断点先保存，成熟数学再更新对象、证据和超边。
+当前没有导入本批待识读的原始笔记，也没有完成任何用户笔记的复核。工具自检只验证程序行为。锁定版本上的三轮独立全量复核仍由真实读图和审阅完成。
 
-数学核心保留在 `archives/`、`tools/evidence/`、`research/registry.json` 和 `map/edges/`。迁移后仍有数学作用的阶段证据统一放在 `tools/evidence/canonical/`，并由绑定清单和 SHA-256 固定；它们是现行证据，不是历史下载包。
-
-常用入口：
-
-- `work.py`：同步、启动、工作区、研究、计算、GitHub 资源和 checkpoint。
-- `prompts/research-runtime.md`：Main、独立障碍线、idea 和执行线的运行词。
-- `research/registry.json`：唯一当前对象、材料和正式超边登记。
-- `map/edges/`：可复用的完整联合前提、替代证明、条件和未付义务。
-
-新问题必须由用户明确指定；仓库不会从已删除的阶段任务或公屏推断研究目标。
-
-笔记识读与工作存档使用独立的 [work/notes 分支](https://github.com/SOMEBODYJUN/co-work-anl/tree/work/notes)，启动词和目录规则在该分支根目录。
+数学研究继续使用 `rebuild/research-v2`。两分支各自维护工作目录，按需迁移具体通用修复。

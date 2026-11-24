@@ -1,7 +1,0 @@
-# Review of SIX-PATH-HARMONIC-R1
-
-I checked every frozen reference and reviewed the proof from the coordinate inequality through the static welfare bound. Each forced column is from the same ordered strategy. For hit rate t, H·(1+L) controls the miss endpoint and Cauchy controls the hit endpoint, so their convex combination pays. Conversely a bad hit/miss pair fails for sufficiently small positive t. The universal p statement gives one common background by separating the closed convex upper price set. Its slot weights sum to m, so the two terms in the optimal-union decomposition separately cost at most W. This does not require the input to satisfy the fractional-cover criterion.
-
-I checked the proof of the all-history fresh-label rule, including histories with repeated labels, and the construction of the true forced continuations. The uneven omission schedules demonstrate strictness. I reran the 28-customer six-player audit and compared its exact output to the frozen replay. All 37,449 decision histories and 299,592 action comparisons agree, and exactly the two stated hit/miss pairs separate the arithmetic and harmonic checks. The separate 32-case integer threshold was recomputed using exact fractions.
-
-I approve the stated conditional half-coverage theorem and its contribution to the six-player problem. The universal original target still requires handling strategies outside the condition. This review is by the Main, who did not generate the argument or the witness.

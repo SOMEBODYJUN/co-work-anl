@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Save a scoped research checkpoint, push normally, and verify remote reachability."""
+"""Save a scoped notes checkpoint, push normally, and verify remote reachability."""
 from __future__ import annotations
 
 import argparse
@@ -13,11 +13,6 @@ import subprocess
 import sys
 import time
 
-SCOPE = "tools"
-DEFAULT_SAVE = "customer-attraction"
-COMMON_PATHS = ["README.md", "AGENTS.md"]
-SAVE_PATHS = {}
-SAVE_PATTERNS = {}
 SECRET = re.compile(rb"(?:github_pat_|gh[pousr]_)[A-Za-z0-9_]{12,}|-----BEGIN [A-Z ]*PRIVATE KEY-----")
 ROUTING = ("GIT_DIR", "GIT_WORK_TREE", "GIT_COMMON_DIR", "GIT_INDEX_FILE",
            "GIT_OBJECT_DIRECTORY", "GIT_ALTERNATE_OBJECT_DIRECTORIES",
@@ -70,92 +65,6 @@ def relative(repo, path):
     except ValueError:
         raise Stop("Paths must stay inside the repository.")
     return result or "."
-
-
-def audit_review_plans(repo, head, plans):
-    """Check existing studio receipts against the commit about to be pushed.
-
-    Read Git objects, never the mutable checkout. A merge retry calls this
-    again on its new HEAD; ordinary journal checkpoints need no plan.
-    """
-    from research_runtime import REGISTRY, edge_digest, pin
-
-    def read(name):
-        name = relative(repo, name)
-        result = git(repo, "show", head + ":" + name, check=False)
-        if result.returncode:
-            raise Stop("Reviewed publication is missing from final commit: " + name)
-        return result.stdout
-
-    def checked(ref):
-        raw = read(ref['path'])
-        if hashlib.sha256(raw).hexdigest() != ref['sha256']:
-            raise Stop("Reviewed publication bytes changed before push: " + ref['path'])
-        if 'revision_pin' in ref and pin(json.loads(raw)) != ref['revision_pin']:
-            raise Stop("Reviewed record revision changed before push: " + ref['path'])
-        return raw
-
-    checked_plans = []
-    for name in dict.fromkeys(plans):
-        match = re.fullmatch(r'research/runs/([^/]+)/studio/backflow-plans/[^/]+/[0-9a-f]{64}\.json', name)
-        if not match:
-            raise Stop("Use the exact immutable plan path returned by studio promote")
-        plan = json.loads(read(name))
-        frozen = json.loads(checked(plan['freeze_ref']))
-        review = json.loads(checked(plan['review_ref']))
-        index = json.loads(read('research/runs/' + match[1] + '/studio.json'))
-        if (plan.get('status') != 'backflow-plan-ready-local-not-published'
-                or index['backflow_plans'].get(plan['plan_id'], {}).get('path') != name
-                or index['freezes'].get(frozen['freeze_id']) != plan['freeze_ref']
-                or index['artifacts'].get(frozen['artifact_id']) != frozen['artifact_ref']
-                or index['reviews'].get(review['review_id']) != plan['review_ref']):
-            raise Stop("Publication plan no longer matches its current reviewed artifact")
-        checked(index['backflow_plans'][plan['plan_id']])
-        checked(frozen['artifact_ref'])
-        if (review.get('verdict') != 'approve' or review.get('independent') is not True
-                or review['reviewer_agent_id'] in frozen['authors']
-                or review['freeze_id'] != frozen['freeze_id']
-                or review['freeze_revision_pin'] != plan['freeze_ref']['revision_pin']
-                or review.get('reviewed_content_refs') != frozen['content_refs']):
-            raise Stop("Publication review does not approve these exact frozen bytes")
-        checked(review['report_ref'])
-        for reference in frozen['content_refs']:
-            checked(reference)
-        for review_id, reference in index['reviews'].items():
-            other = json.loads(checked(reference))
-            if (other['freeze_id'] == frozen['freeze_id']
-                    and other['freeze_revision_pin'] == plan['freeze_ref']['revision_pin']
-                    and other['verdict'] != 'approve'
-                    and review_id not in review.get('resolves_review_ids', [])):
-                raise Stop("Unresolved exact-version review objection blocks publication")
-        # The proposed full registry and graph projections are local working
-        # files. Publish the reviewed delta and canonical registry, without
-        # requiring duplicate registries or rebuildable graphs in every clone.
-        base_ref = plan.get('base_registry_ref') or {}
-        canonical_path = plan.get('registry_path', base_ref.get('path', REGISTRY))
-        canonical = json.loads(read(canonical_path))
-        batch = json.loads(checked(plan['registration_batch_ref']))
-        objects = {row['object_id']: row for row in canonical['objects']}
-        if any(objects.get(row['object_id']) != row for row in batch['objects']):
-            raise Stop("Reviewed results are not installed in the final canonical registry")
-        for reference in plan['edge_refs']:
-            edge = json.loads(checked(reference))
-            if reference['path'] not in canonical['edge_files']:
-                raise Stop("Reviewed edge is not installed in the final canonical registry")
-            if edge.get('status') == 'accepted':
-                endpoints = {oid: pin(objects[oid]) for oid in set(edge['source_ids'] + edge['target_ids'])}
-                if edge.get('endpoint_pins') != endpoints:
-                    raise Stop("Reviewed edge has stale endpoints in the final canonical registry")
-                if edge.get('review_digest') != edge_digest(edge):
-                    raise Stop("Reviewed edge declaration changed before push")
-                evidence_pins = {}
-                for evidence in edge['evidence']:
-                    checked(evidence)
-                    evidence_pins[evidence['path']] = evidence['sha256']
-                if edge.get('evidence_pins') != evidence_pins:
-                    raise Stop("Reviewed edge has stale evidence bindings before push")
-        checked_plans.append(name)
-    return checked_plans
 
 
 def audit_outgoing(repo, head, remote_tip, paths):
@@ -218,84 +127,6 @@ def describe_assets(repo, directory, commit, files, branch="main"):
     return assets
 
 
-def audit_studio_owners(repo, files, baseline, candidate=None):
-    runs = set()
-    for name in files:
-        parts = name.split("/")
-        if len(parts) > 3 and parts[0] == "research" and parts[1] in {"runs", "workspaces"}:
-            runs.add(parts[2])
-    if not runs:
-        return
-    actor = git(repo, "config", "--local", "--get", "wcg.actor",
-                check=False).stdout.decode().strip()
-    save = git(repo, "config", "--local", "--get", "wcg.save",
-               check=False).stdout.decode().strip()
-    subarchive = git(repo, "config", "--local", "--get", "wcg.subarchive",
-                     check=False).stdout.decode().strip()
-    bound = f"archives/{save}" if save else None
-    if bound and subarchive:
-        bound += f"/subarchives/{subarchive}"
-    for run_id in sorted(runs):
-        name = f"research/runs/{run_id}/studio.json"
-        before = git(repo, "show", baseline + ":" + name, check=False)
-        if candidate is None:
-            path = repo / name
-            if path.is_symlink():
-                raise Stop("Studio index must be an ordinary file: " + name)
-            data = path.read_bytes() if path.is_file() else None
-        else:
-            after = git(repo, "show", candidate + ":" + name, check=False)
-            data = after.stdout if after.returncode == 0 else None
-        if before.returncode == 0 and data is None:
-            raise Stop("Checkpoint cannot remove a studio ownership record: " + name)
-        previous = json.loads(before.stdout) if before.returncode == 0 else None
-        current = json.loads(data) if data is not None else None
-        for exists, record in ((before.returncode == 0, previous), (data is not None, current)):
-            if not exists:
-                continue
-            if not isinstance(record, dict) or record.get("run_id") != run_id:
-                raise Stop("Invalid studio ownership record: " + name)
-            if not actor or record.get("owner") != actor:
-                raise Stop("Checkpoint includes changes in another Boss's studio: " + run_id +
-                           ". Keep the draft and publish from the owning clone.")
-            if record.get("archive_scope") and record["archive_scope"] != bound:
-                raise Stop("Checkpoint requires the clone bound to " + record["archive_scope"] + ": " + run_id)
-        if previous and previous.get("archive_scope") and current.get("archive_scope") != previous["archive_scope"]:
-            raise Stop("Checkpoint cannot change the studio archive scope: " + run_id)
-
-
-def default_paths(repo):
-    actor = git(repo, "config", "--local", "--get", "wcg.actor", check=False).stdout.decode().strip()
-    save = git(repo, "config", "--local", "--get", "wcg.save", check=False).stdout.decode().strip() or DEFAULT_SAVE
-    safe_id = r"[A-Za-z0-9][A-Za-z0-9_.-]{0,63}"
-    if not re.fullmatch(safe_id, save) or (actor and not re.fullmatch(safe_id, actor)):
-        raise Stop("Invalid local actor/save ID; repair the local Work configuration first.")
-    # Unknown archives may save shared registers and their own workspace, but
-    # must select new mathematical directories explicitly until registered here.
-    subarchive=git(repo,"config","--local","--get","wcg.subarchive",check=False).stdout.decode().strip()
-    archive_base="archives/"+save
-    if subarchive:
-        if not re.fullmatch(safe_id,subarchive):raise Stop("Invalid subarchive binding")
-        archive_base+="/subarchives/"+subarchive
-    paths = list(SAVE_PATHS.get(save, [archive_base])) + COMMON_PATHS
-    # Legacy CAG audits are flat files. Include new and tracked-deleted matches
-    # without treating glob strings as broad checkpoint pathspecs.
-    for pattern in SAVE_PATTERNS.get(save, []):
-        matches = {p.relative_to(repo).as_posix() for p in repo.glob(pattern)}
-        matches.update(name for name in names(git(repo, "ls-files", "-z", "--", pattern))
-                       if Path(name).match(pattern))
-        paths.extend(sorted(matches))
-    paths = list(dict.fromkeys(paths))
-    if actor:
-        paths.append(archive_base + "/workspaces/" + actor)
-    paths = [p for p in paths if (repo / p).exists()
-             or git(repo, "ls-files", "--", ":(literal)" + p).stdout]
-    if not paths:
-        raise Stop("No default checkpoint paths for archive " + save +
-                   "; initialize your workspace or supply explicit paths.")
-    return paths
-
-
 def save(args):
     repo = Path(value(args.repo, "rev-parse", "--show-toplevel"))
     common = Path(value(repo, "rev-parse", "--git-common-dir"))
@@ -354,7 +185,7 @@ def locked_save(repo, common, cache, args):
             os.environ["WCG_CHECKPOINT_TOKEN_FILE"] = str(credential)
             os.environ["GIT_ASKPASS"] = str(Path(__file__).resolve())
             os.environ["WCG_CHECKPOINT_ASKPASS"] = "1"
-    paths = [relative(repo, p) for p in (args.paths or default_paths(repo))]
+    paths = [relative(repo, p) for p in args.paths]
     specs = [":(literal)" + p for p in paths]
     stage_specs = []
     historical_deletions = None
@@ -384,7 +215,6 @@ def locked_save(repo, common, cache, args):
         changed.update(names(git(repo, "diff", "HEAD", "--name-only", "-z", "--", *specs)))
         changed.update(selected)
         changed.update(names(git(repo, "ls-files", "--others", "--exclude-standard", "-z", "--", *specs)))
-    audit_studio_owners(repo, changed, "HEAD")
     for name in changed:
         p = repo / name
         if p.is_symlink():
@@ -460,17 +290,12 @@ def locked_save(repo, common, cache, args):
                 break
         baseline = value(repo, "rev-parse", private)
         commits, outgoing = audit_outgoing(repo, head, baseline, paths)
-        plans = list(getattr(args, 'review_plan', []) or [])
-        audit_studio_owners(repo, [*outgoing, *plans], baseline, head)
         result["outgoing_commits"] = list(dict.fromkeys(result["outgoing_commits"] + commits))
         result["outgoing_files"] = sorted(set(result["outgoing_files"]) | set(outgoing))
         result["files"] = sorted(set(result["files"]) | set(outgoing))
         result["assets"] = describe_assets(repo, record_dir, head, result["files"], branch)
         result["checked_head"] = head
         receipt.write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n")
-        result['reviewed_plans'] = audit_review_plans(repo, head, plans)
-        if plans:
-            result['review_checked_head'] = head
         pushed = git(repo, "push", "--quiet", "origin", head + ":" + ref, check=False)
         fetched = git(repo, "fetch", "--quiet", "--no-tags", "--no-write-fetch-head",
                       "origin", "+" + ref + ":" + private, check=False)
@@ -513,7 +338,7 @@ def main():
             print(token(os.environ["WCG_CHECKPOINT_TOKEN_FILE"]))
             return
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("paths", nargs="*", help="Repository-root paths; default: this research directory")
+    parser.add_argument("paths", nargs="+", help="Explicit repository-root paths to save")
     parser.add_argument("--repo", default=str(Path(__file__).resolve().parents[1]))
     parser.add_argument("-m", "--message")
     parser.add_argument("--token-file", help="Optional external token file; remembers only its path locally")
@@ -521,7 +346,6 @@ def main():
                         help="Allow first publication of the bound branch, audited against remote main")
     parser.add_argument('--local-only',action='store_true')
     parser.add_argument('--publish-only', action='store_true', help='Publish existing commits without staging or committing workspace changes')
-    parser.add_argument('--review-plan', action='append', default=[], help='Existing studio promote receipt checked against the final commit before every push')
     args = parser.parse_args()
     print(json.dumps(save(args), ensure_ascii=False, indent=2))
 

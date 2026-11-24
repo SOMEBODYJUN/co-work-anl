@@ -1,1 +1,0 @@
-Finite JSON summary of ten existing direct-cover records; compared with weak-matching exact audit and direct-cover README. Matching slack and V matrices remain finite records and do not establish universal weak matching.
