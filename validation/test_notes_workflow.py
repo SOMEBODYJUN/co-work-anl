@@ -50,9 +50,12 @@ git(SEED, 'remote', 'add', 'origin', str(REMOTE))
 git(SEED, 'push', '-q', '-u', 'origin', 'work/notes')
 
 first = BASE / 'cold'
+credential = BASE / 'auth.txt'
+credential.write_text('ghp_' + 'A' * 32)
 r = run(BASE, [sys.executable, str(SEED / 'work.py'), '--repo', str(first), 'start',
-               '--actor', 'BossTest', '--remote', str(REMOTE)])
+               '--actor', 'BossTest', '--remote', str(REMOTE), '--token-file', str(credential)])
 assert json.loads(r.stdout)['status'] == 'notes-runtime-ready'
+assert json.loads(r.stdout)['actor'] == 'BossTest'
 assert work(first, 'doctor')['branch'] == 'work/notes'
 run(first, [sys.executable, 'work.py', 'checkpoint', '--help'])
 
@@ -109,7 +112,7 @@ for path in ['input/pdf/synthetic.pdf', 'input/previous-notes/synthetic.md',
              'work/fixture/prepared/pages/p0001.png']:
     assert run(first, ['git', 'check-ignore', path], success=False).returncode == 1, path
 
-result = {'cold_start': True, 'pdf_preparation': True, 'scoped_local_checkpoint': True,
+result = {'cold_start_with_external_credential': True, 'pdf_preparation': True, 'scoped_local_checkpoint': True,
           'push_and_remote_confirmation': True, 'fresh_clone_restore': True,
           'dirty_sync_preserves_draft': True, 'existing_run_not_overwritten': True,
           'wrong_owner_rejected': True, 'source_change_detected': True,

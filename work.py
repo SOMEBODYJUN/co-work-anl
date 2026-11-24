@@ -200,7 +200,8 @@ def notes(repo, args):
 
 
 def main():
-    if os.environ.get('NOTES_ASKPASS') == '1' and len(sys.argv) == 2:
+    if (os.environ.get('NOTES_ASKPASS') == '1' and len(sys.argv) == 2
+            and sys.argv[1].startswith(('Username', 'Password'))):
         if sys.argv[1].startswith('Username'):
             print('x-access-token')
         elif sys.argv[1].startswith('Password'):
