@@ -1,0 +1,175 @@
+{
+  "scope": "作者有限例子/代数检验；不证明无限基数、一般测度定理或视觉识读。",
+  "checks": [
+    {
+      "name": "f(x)=x的均匀Darboux和",
+      "inputs": {
+        "interval": "[0,1]",
+        "partitions": [
+          1,
+          2,
+          4,
+          8
+        ]
+      },
+      "result": [
+        {
+          "N": 1,
+          "L": "0",
+          "U": "1",
+          "gap": "1"
+        },
+        {
+          "N": 2,
+          "L": "1/4",
+          "U": "3/4",
+          "gap": "1/2"
+        },
+        {
+          "N": 4,
+          "L": "3/8",
+          "U": "5/8",
+          "gap": "1/4"
+        },
+        {
+          "N": 8,
+          "L": "7/16",
+          "U": "9/16",
+          "gap": "1/8"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "name": "Cantor有限阶段长度",
+      "inputs": {
+        "initial": "[0,1]",
+        "operation": "各段删去中间三分之一",
+        "n_max": 6
+      },
+      "result": [
+        {
+          "n": 0,
+          "count": 1,
+          "total_length": "1"
+        },
+        {
+          "n": 1,
+          "count": 2,
+          "total_length": "2/3"
+        },
+        {
+          "n": 2,
+          "count": 4,
+          "total_length": "4/9"
+        },
+        {
+          "n": 3,
+          "count": 8,
+          "total_length": "8/27"
+        },
+        {
+          "n": 4,
+          "count": 16,
+          "total_length": "16/81"
+        },
+        {
+          "n": 5,
+          "count": 32,
+          "total_length": "32/243"
+        },
+        {
+          "n": 6,
+          "count": 64,
+          "total_length": "64/729"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "name": "原错差集式及正确式穷举",
+      "inputs": {
+        "universe": [
+          0,
+          1,
+          2
+        ],
+        "pairs": 64
+      },
+      "result": {
+        "wrong_formula_equal_cases": 27,
+        "correct_formula_equal_cases": 64,
+        "counterexample": {
+          "A": [],
+          "V": [
+            0
+          ],
+          "A_union_V": [
+            0
+          ],
+          "A_union_A_minus_V": []
+        }
+      },
+      "passed": true
+    },
+    {
+      "name": "三圆四块分解穷举",
+      "inputs": {
+        "universe": [
+          0,
+          1,
+          2
+        ],
+        "triples": 512
+      },
+      "result": {
+        "all_partition_identities_hold": 512
+      },
+      "passed": true
+    },
+    {
+      "name": "epsilon分配的几何级数",
+      "inputs": {
+        "terms": "1/2^k, k=1..N"
+      },
+      "result": [
+        {
+          "N": 1,
+          "sum": "1/2",
+          "remainder": "1/2"
+        },
+        {
+          "N": 2,
+          "sum": "3/4",
+          "remainder": "1/4"
+        },
+        {
+          "N": 3,
+          "sum": "7/8",
+          "remainder": "1/8"
+        },
+        {
+          "N": 10,
+          "sum": "1023/1024",
+          "remainder": "1/1024"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "name": "Riesz球半径常数",
+      "inputs": {
+        "R": "1",
+        "center_scale": "1/2",
+        "unit_separation_strictly_greater_than": "1/2",
+        "ball_radius": "1/8"
+      },
+      "result": {
+        "center_separation_lower_threshold": "1/4",
+        "two_radii": "1/4",
+        "containing_radius_bound": "5/8"
+      },
+      "passed": true
+    }
+  ]
+}

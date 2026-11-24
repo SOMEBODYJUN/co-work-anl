@@ -34,5 +34,6 @@ for t in payload.get('tasks',[]):
     lines+=['### '+t['id']+' · '+t['priority']+' · '+t['title'],'','- 来源：'+', '.join(t['source_ids'])+'；目标：'+', '.join(t['target_ids'])+'。','- 位置 bbox：`'+str(t['bbox_px'])+'`。','- 实际字形／内容：'+t['actual'],'- 当前问题：'+t['problem'],'- 建议正文／处理：'+t['suggestion'],'']
 for v in payload.get('mathematical_verifications',[]):
     lines+=['### 数学检查 '+v['id'],'',v['result'],'']
-with (O/'comparison-report.md').open('a') as f:f.write('\n'.join(lines)+'\n')
+report=O/'comparison-report.md'
+report.write_text((report.read_text().rstrip()+'\n\n'+'\n'.join(lines)).rstrip()+'\n')
 print(json.dumps({'page_saved':payload['page_id'],'blind_units_compared':len(d['blind_units_compared']),'tasks':len(d['tasks']),'math_checks':len(d['mathematical_verifications'])},ensure_ascii=False))

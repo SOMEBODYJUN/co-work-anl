@@ -2,7 +2,7 @@
 # 实分析 6：紧性、导集与开集分解
 
 <!-- unit: N-editorial -->
-原稿内容按黑色正文保留；蓝色信息块标明补充、补证或纠错；红色仅标示原稿明确待填的位置。原稿使用的拼写 Lindeloff 在正文中保留，通常拼作 Lindelöf。
+原稿内容按黑色正文保留；蓝色信息块标明补充、补证或纠错；红色仅标示原稿明示待证或未完成的证明。原稿使用的拼写 Lindeloff 在正文中保留，通常拼作 Lindelöf。
 
 <!-- unit: N-toc -->
 ## 目录
@@ -276,10 +276,14 @@ $$
 > 方块 $Q_0$ 有界，所以点列有界；有限维 Bolzano–Weierstrass 定理给出收敛子列。$Q_0$ 是闭集，故子列极限仍在 $Q_0$ 中。这里使用的是有界点列的子列定理，尚未把“闭有界集紧”作为前提，避免循环论证。
 
 <!-- unit: N-p3-04 -->
-原稿写 $x_0\in Q\subset\bigcup_{\lambda\in\Lambda}G_\lambda$，此处 $Q$ 承接初始方块 $Q_0$。
+原稿写 $x_0\in Q\subset\bigcup_{\lambda\in\Lambda}G_\lambda$。
 
 <!-- unit: N-p3-05 -->
-从而存在 $\lambda_0$ 使 $x_0\in G_{\lambda_0}$（原行在 $x$ 处省略下标 $0$）。
+从而存在 $\lambda_0$ 使 $x\in G_{\lambda_0}$。
+
+<!-- unit: N-p3-symbol-convention -->
+> [!info] 补充：本段的点与方块记号
+> 前一行的 $Q$ 承接初始闭方块 $Q_0$。由收敛子列选出的点为 $x_0$，所以上一行原写的 $x\in G_{\lambda_0}$ 在完整证明中应理解为 $x_0\in G_{\lambda_0}$；原行未写下标 $0$，黑色正文保留原笔。
 
 <!-- unit: N-p3-06 -->
 $$
