@@ -1,0 +1,2 @@
+# RA09 visual blind reading
+Reviewer /root/ra09_visual_recovery independently checked p0001-p0012 full pages and all 72 overlapping regions. Content is concentrated in the left and middle columns with occasional pale blue margin notes; p0012 contains the closing continuation. Target crop locations are p0001 U008, p0002 U012, p0006 U006/U012 and p0008 U010. Each was reread from the full page into the listed crop before candidate comparison.

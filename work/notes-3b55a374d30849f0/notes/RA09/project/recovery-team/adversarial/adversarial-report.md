@@ -1,0 +1,2 @@
+# RA09 adversarial report
+The historical project had 20 unresolved records, one-pass page/region coverage, five open issues, and no recovery records. The canonical current ledger is the workspace ledger; historical integration variants and stale final rounds are evidence only. Repair requires a new second page/region pass, five two-candidate recoveries, synchronized source/target text hashes, resolved issue records, and three fresh final rounds after the content snapshot.

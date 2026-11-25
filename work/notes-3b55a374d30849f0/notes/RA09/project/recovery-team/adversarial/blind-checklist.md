@@ -1,0 +1,2 @@
+# RA09 adversarial blind checklist
+Check canonical ledger, manifest and PDF hashes; all 12 page and 72 region checks require pass 1/2; every source/target/recovery/issue must be bidirectionally mapped; stale final rounds must be invalidated after edits; artifact and target text hashes must be recomputed; old draft scope and output copies must match at submit. No main file edited during this blind pass.
