@@ -1,0 +1,106 @@
+{
+  "schema_version": "ra06-math-recovery-1",
+  "independent": true,
+  "source": "project/source.pdf",
+  "scope": "RA06 unresolved mathematics only; no ledger/body/audit mutation",
+  "blind_reading": "blind-reading.md",
+  "candidate_checks": "candidate-math-checks.md",
+  "finite_check_script": "finite_checks.py",
+  "finite_check_output": "finite_checks.out",
+  "source_units": [
+    {
+      "ids": ["RA06-P002-U01", "RA06-P002-U01-B"],
+      "targets": ["T-p2-01", "N-p2-01", "N-p2-scope", "N-sequential-equivalence-proof"],
+      "issue": "Q006",
+      "candidates": ["finite-dimensional", "finite/compactness wording", "general metric compact iff sequentially compact"],
+      "forward": {"finite-dimensional": "pass", "finite/compactness wording": "conditional or false if read as finite set", "general metric": "pass only for compact iff sequentially compact; closed-bounded converse fails"},
+      "backward": "R^n/Heine-Borel context favors finite-dimensional but cannot identify glyph",
+      "status": "undecidable",
+      "visual_needed": ["p0002-r1c1", "p0002-r1c2"]
+    },
+    {
+      "ids": ["RA06-P002-U04"],
+      "targets": ["T-p2-04", "N-p2-04", "N-p2-cube-exponent"],
+      "issue": "Q002",
+      "recovery": "VS-REC-Q002",
+      "candidates": ["[-a,a]^n", "[-a,n]^n", "[-a,a]^c", "[-a,n]^c"],
+      "forward": {"[-a,a]^n": "pass", "[-a,n]^n": "counterexample M={(n+1,0)}", "[-a,a]^c": "type mismatch with R^n", "[-a,n]^c": "endpoint counterexample and type mismatch"},
+      "backward": "subdivision counts use n and favor canonical form; endpoint/upscript glyph remains unresolved",
+      "status": "preferred canonical only; glyph undecidable",
+      "visual_needed": ["p0002-r1c1", "p0002-r1c2", "p0002-r2c1", "p0002-r2c2"]
+    },
+    {
+      "ids": ["RA06-P003-U06"],
+      "targets": ["T-p3-06", "N-p3-06", "N-p3-radius-convention"],
+      "issues": ["Q007"],
+      "recoveries": ["VS-REC-Q007-ENDPOINT", "VS-REC-Q017-DELTA"],
+      "candidates": ["delta_0", "delta"],
+      "forward": {"delta_0": "pass after renaming delta:=delta_0", "delta": "pass"},
+      "backward": "later delta/2 estimate does not determine initial subscript",
+      "status": "undecidable",
+      "visual_needed": ["p0003-r2c1"]
+    },
+    {
+      "ids": ["RA06-P003-U15"],
+      "targets": ["T-p3-15", "N-p3-15", "N-derived-closed-proof"],
+      "issues": ["Q008"],
+      "recoveries": ["VS-REC-Q018-PREFIX"],
+      "candidates": ["already proved/known", "to be proved/prove again"],
+      "forward": {"both": "pass; E' is closed by punctured-ball complement argument"},
+      "backward": "no complete E' proof visible on p1-p3 weakens already-proved reading but does not determine handwriting",
+      "status": "undecidable",
+      "visual_needed": ["p0003-r3c1", "p0003-r3c2"]
+    },
+    {
+      "ids": ["RA06-P003-U16"],
+      "targets": ["T-p3-16", "N-p3-16", "N-p3-closure-scope"],
+      "issues": ["Q009"],
+      "recoveries": ["VS-REC-Q014-SUPER"],
+      "candidates": ["E interior", "E derived set"],
+      "forward": {"E interior": "pass for closed E", "E derived set": "fails on one-point discrete metric space"},
+      "backward": "(X,d) general metric context favors interior formula but cannot identify circle vs prime",
+      "status": "preferred interior only; glyph undecidable",
+      "visual_needed": ["p0003-r3c1", "p0003-r3c2"]
+    },
+    {
+      "ids": ["RA06-P004-U02"],
+      "targets": ["T-p4-02", "N-p4-02", "N-topology-count-candidate"],
+      "issue": "Q003",
+      "recovery": "VS-REC-Q003",
+      "candidates": ["all topologies on R: 2^(2^c)", "usual open sets: c", "subset/base family: 2^c"],
+      "forward": {"all topologies": "pass by upper/lower cardinal bounds", "usual opens": "pass by countable base and intervals", "subset/base family": "conditional on wording"},
+      "backward": "blue 2^c does not identify the Chinese object being counted; finite enumeration n=1,2,3 gives 1,4,29",
+      "status": "undecidable",
+      "visual_needed": ["p0004-r1c1"]
+    },
+    {
+      "ids": ["RA06-P004-U12-B"],
+      "targets": ["T-p4-12-b", "N-p4-12-b"],
+      "issue": "Q004",
+      "recovery": "VS-REC-Q004",
+      "candidates": ["maximal interval endpoints alpha,beta not in U", "alpha,beta not in G_x", "gamma in G_x and beta not in G_gamma"],
+      "forward": {"endpoint complement": "pass for maximal component of open U", "G_x literal alternatives": "type mismatch/suspect when G_x is interval-pair family"},
+      "backward": "later maximal-component route favors endpoint complement but cannot recover source variables/subscript",
+      "status": "preferred theorem only; source glyph undecidable",
+      "visual_needed": ["p0004-r3c1", "p0004-r3c2"]
+    },
+    {
+      "ids": ["RA06-P005-U10"],
+      "targets": ["T-p5-10", "N-p5-10", "N-interval-connected-proof", "N-connected-subset-interval"],
+      "issue": "Q010",
+      "recovery": "VS-REC-Q016-TITLE",
+      "candidates": ["real intervals are all connected", "construction of real intervals", "short title real intervals all connected"],
+      "forward": {"connected": "pass by intermediate-point/supremum proof", "construction": "pass via base-expansion/interval construction route", "short title": "same theorem as connected"},
+      "backward": "p5 contains both maximal interval and base-expansion context; p6 blank, no unique continuation",
+      "status": "undecidable",
+      "visual_needed": ["p0005-r3c1"]
+    }
+  ],
+  "non_math_page_region_records": {
+    "page_checks": ["VS-PASS2-V2-p0002", "VS-PASS2-V2-p0003", "VS-PASS2-V2-p0004", "VS-PASS2-V2-p0005"],
+    "region_checks": ["VS-PASS2-V2-p0002-r1c1", "VS-PASS2-V2-p0002-r1c2", "VS-PASS2-V2-p0002-r2c1", "VS-PASS2-V2-p0002-r2c2", "VS-PASS2-V2-p0003-r2c1", "VS-PASS2-V2-p0003-r3c1", "VS-PASS2-V2-p0003-r3c2", "VS-PASS2-V2-p0004-r1c1", "VS-PASS2-V2-p0004-r3c1", "VS-PASS2-V2-p0004-r3c2", "VS-PASS2-V2-p0005-r3c1"],
+    "candidate": "content-present versus blank/omitted",
+    "status": "math-cannot-decide; visual evidence required"
+  },
+  "global_limitation": "Mathematical coherence, finite enumeration and counterexamples cannot prove the handwritten glyph; every preferred candidate still needs the listed source-region visual evidence."
+}
