@@ -1,0 +1,139 @@
+{
+  "schema_version": "1.0",
+  "mode": "doubt_recovery_campaign",
+  "manual_intervention": false,
+  "created_at": "2026-11-25T09:46:50.634246+00:00",
+  "subject": "real-analysis",
+  "label": "实分析疑点清扫",
+  "boss_run": "notes-3b55a374d30849f0",
+  "notes": [
+    "RA06",
+    "RA07",
+    "RA09",
+    "RA10",
+    "RA11",
+    "RA12"
+  ],
+  "subagents_per_note": 3,
+  "same_note_parallel": true,
+  "rotation": "replace all three subagents only after the current note is fully resolved",
+  "sequence": [
+    "Claim exactly one campaign note at a time under this Boss/RUN.",
+    "Assign three independent subagents to that same note; they inspect the same frozen snapshot and keep separate observations.",
+    "Merge their candidate readings and mathematical checks without averaging away disagreements.",
+    "Resolve every source, target, recovery, issue, page and region record before sealing the note.",
+    "After content changes, invalidate the old final-round chain and run a fresh second pass plus three new final rounds.",
+    "Only when the note audit reports audit_pass=true, content_resolved=true and unresolved_count=0 may the trio be replaced for the next note."
+  ],
+  "gate": {
+    "require_audit_pass": true,
+    "require_content_resolved": true,
+    "require_unresolved_count_zero": true,
+    "require_three_final_rounds_after_last_change": true,
+    "allow_manual_handoff": false
+  },
+  "initial_snapshot": {
+    "subject": "real-analysis",
+    "label": "实分析疑点清扫",
+    "notes": [
+      {
+        "note_id": "RA06",
+        "status": "claimed",
+        "batch": 1,
+        "order": 1,
+        "owner": "BossNotes-c24692a58eaf",
+        "has_existing_work": true,
+        "audit_report": "work/notes-fc2ba28a26cd495f/notes/RA06/project/audit-reports/final-03.json",
+        "audit_pass": true,
+        "content_resolved": false,
+        "unresolved_records": 66,
+        "recovery_priority": true
+      },
+      {
+        "note_id": "RA07",
+        "status": "pending",
+        "batch": 1,
+        "order": 2,
+        "owner": null,
+        "has_existing_work": true,
+        "audit_report": "work/notes-fc2ba28a26cd495f/notes/RA07/project/audit-reports/final-03.json",
+        "audit_pass": true,
+        "content_resolved": false,
+        "unresolved_records": 42,
+        "recovery_priority": true
+      },
+      {
+        "note_id": "RA09",
+        "status": "pending",
+        "batch": 1,
+        "order": 3,
+        "owner": null,
+        "has_existing_work": true,
+        "audit_report": "work/notes-fc2ba28a26cd495f/notes/RA09/project/audit-reports/final-03c.json",
+        "audit_pass": true,
+        "content_resolved": false,
+        "unresolved_records": 39,
+        "recovery_priority": true
+      },
+      {
+        "note_id": "RA10",
+        "status": "pending",
+        "batch": 2,
+        "order": 4,
+        "owner": null,
+        "has_existing_work": true,
+        "audit_report": "work/notes-eaddf6213f3c46ad/notes/RA10/project/audit-report.json",
+        "audit_pass": false,
+        "content_resolved": false,
+        "unresolved_records": 1,
+        "recovery_priority": true
+      },
+      {
+        "note_id": "RA11",
+        "status": "pending",
+        "batch": 2,
+        "order": 5,
+        "owner": null,
+        "has_existing_work": true,
+        "audit_report": "work/notes-eaddf6213f3c46ad/notes/RA11/project/audit-report.json",
+        "audit_pass": false,
+        "content_resolved": false,
+        "unresolved_records": 2,
+        "recovery_priority": true
+      },
+      {
+        "note_id": "RA12",
+        "status": "pending",
+        "batch": 2,
+        "order": 6,
+        "owner": null,
+        "has_existing_work": true,
+        "audit_report": "work/notes-eaddf6213f3c46ad/notes/RA12/project/audit-report.json",
+        "audit_pass": false,
+        "content_resolved": false,
+        "unresolved_records": 3,
+        "recovery_priority": true
+      }
+    ],
+    "unresolved_audit_records": 153,
+    "notes_done": 0,
+    "notes_remaining": 6
+  },
+  "execution_log": [
+    {
+      "note_id": "RA06",
+      "subagents": [
+        "/root/ra06_visual_recovery",
+        "/root/ra06_math_recovery",
+        "/root/ra06_adversarial_audit"
+      ],
+      "unresolved_before": 66,
+      "unresolved_after": 0,
+      "final_audit_report": "work/notes-3b55a374d30849f0/notes/RA06/project/audit-reports/final-ra06.json",
+      "final_snapshot": "322160641b481ac66028f5028959d6de6cf2c58d4e6279d4a100c0b6a2e4c58e",
+      "completed": true,
+      "ended_at": "2026-11-25T11:57:01Z"
+    }
+  ],
+  "next_campaign": "commutative-algebra"
+}
