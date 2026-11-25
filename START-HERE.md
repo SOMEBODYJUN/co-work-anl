@@ -4,6 +4,8 @@
 
 直接使用 [R3 启动词](prompts/notes-pro-launch-r3.md)。使用 `work/notes` 根 `work.py`；之前数学分支的同名程序不是本入口。
 
+如果目标是先清扫已有成果，直接使用 [实分析六篇疑点战役启动词](prompts/recovery-campaign-real-analysis.md)，不要使用普通批次启动词跳到新稿；交换代数完成后使用 [交换代数疑点战役启动词](prompts/recovery-campaign-commutative-algebra.md)。
+
 ## 启动和认领
 
 1. 从仓库外的本分支程序执行 `--repo 独立目录 start --actor auto --token-file 仓库外凭据路径`。首次生成唯一 Boss，已有目录复用绑定身份。

@@ -31,4 +31,6 @@ python work.py notes queue
 
 按 [AGENTS.md](AGENTS.md)、[总协调合同](prompts/coordinator-prompt.md) 与 [单份任务合同](prompts/worker-prompt.md) 实做。`notes submit` 运行真实结构审计、核对来源与两份发布正文，保存证据后才把任务标成 `done`。`content_resolved=false` 要求模型自主做高分辨率候选恢复，不得转成人工任务或阻塞交接。此状态说明记录门槛满足，不证明数学无错或零遗漏。推送只是保存，不是结束条件。
 
+已有成果的集中清扫使用 [实分析六篇疑点战役启动词](prompts/recovery-campaign-real-analysis.md)；交换代数后续使用 [交换代数疑点战役启动词](prompts/recovery-campaign-commutative-algebra.md)。两场战役都要求一个 Boss 顺序处理，一篇固定由三个独立 subagent 共同完成，当前篇的全部疑点和三轮复核完成后才更换下一组三人。
+
 日常用 `checkpoint` 保存明确路径，离线用 `--local-only`。共享认领必须远端确认。交接先保存具体停点，再 `notes release` 或 `notes block`，不自动抢占。命令见 [START-HERE.md](START-HERE.md)。数学研究继续留在 `rebuild/research-v2`。
