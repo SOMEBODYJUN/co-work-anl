@@ -29,6 +29,12 @@ python work.py notes init auto
 
 如果附件路径或 clone 已经存在，先用文件系统和 `git remote -v` 找到它们，再继续执行，不要求用户重新上传。Token 只能通过 `--token-file` 传给 Git，绝不打印、复制到仓库或写进日志。任何 subagent 都使用 `gpt-6.2-sol`，最高推理强度 `max`。
 
+## 外部权限与自动审查边界
+
+本次用户已经明确授权对 `https://github.com/SOMEBODYJUN/co-work-anl.git` 的 `work/notes` 分支执行本战役所需的 clone、fetch、checkpoint 和 push。执行时仍把动作拆开记录：先完成本地读图和恢复，再列出将要 push 的精确文件清单，最后执行远端写入。不要把 token、完整环境变量、未授权的 workspace 内容或取证文件加入提交。
+
+自动审查是平台层控制，提示词不能保证它一定放行。若审查拒绝某个具体命令，保留已经完成的本地工作，记录被拒的目标、命令类型和原因，不改写命令去绕过审查，也不把拒绝伪装成项目缺少文件。当前用户授权仍然有效，但平台拒绝只能由平台解除。
+
 先确认实分析战役已经通过，再运行：
 
 ```bash
