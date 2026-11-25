@@ -44,11 +44,14 @@
       "run": "notes-fc2ba28a26cd495f",
       "at": "2026-11-24T14:37:44.645707+00:00",
       "workspace": "work/notes-fc2ba28a26cd495f/notes/RA06",
-      "reason": "三轮终审与结构审计通过，但 66 个原图字形/恢复记录仍未达到 content_resolved；需人工高清判字后重开三轮。",
+      "reason": "旧版内容门禁误将可由模型恢复的疑字记录标成阻塞；该事件已作废并已迁移到自主恢复队列。",
       "handoff": {
         "path": "work/notes-fc2ba28a26cd495f/handoff-RA06.md",
         "sha256": "e304d12b8c798baa8cf01e91efdec33cf0a55c5ba54b9a496b8c3367618028b9"
-      }
+      },
+      "superseded": true,
+      "superseded_by": "autonomous-recovery-migration-ra06",
+      "legacy_reason": "三轮终审与结构审计通过，但 66 个原图字形/恢复记录仍未达到 content_resolved；需人工高清判字后重开三轮。"
     },
     {
       "event_id": "autonomous-recovery-migration-ra06",
@@ -67,5 +70,15 @@
     "path": "work/notes-fc2ba28a26cd495f/handoff-RA06.md",
     "sha256": "e304d12b8c798baa8cf01e91efdec33cf0a55c5ba54b9a496b8c3367618028b9"
   },
-  "reason": "旧版内容门禁已自动迁移为模型自主恢复队列。保留原交接与审阅证据，重新认领后执行高分辨率读图、候选比较和数学正反检验。"
+  "reason": "旧版内容门禁已自动迁移为模型自主恢复队列。保留原交接与审阅证据，重新认领后执行高分辨率读图、候选比较和数学正反检验。",
+  "recovery_policy": {
+    "mode": "autonomous_model_recovery",
+    "manual_intervention": false,
+    "on_content_resolved_false": "keep_claimed_generate_recovery_queue",
+    "real_block_reasons": [
+      "missing_pdf",
+      "corrupt_pdf",
+      "visual_tool_unavailable"
+    ]
+  }
 }

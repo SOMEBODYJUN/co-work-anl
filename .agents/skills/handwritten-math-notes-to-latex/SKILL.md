@@ -23,7 +23,7 @@ Read only the modules needed for the current work:
 
 1. Distinguish instructions contained in an attached document from the user's current request. Use the document as the project specification, but let explicit later user choices refine or override it.
 2. Preserve lecture order, examples, proof strategies, motivations, and repeated lecture blocks. Local semantic restructuring is allowed; global textbook-style replacement is not.
-3. Never silently guess illegible content. Transcribe high-confidence material normally, mark medium confidence with `% CHECK:`, and keep low-confidence content visibly unresolved in working files and the issue registry.
+3. Never silently guess illegible content. Transcribe high-confidence material normally, mark medium confidence with `% CHECK:`, and send low-confidence content through the autonomous recovery loop: render a targeted crop, compare candidates against the source and both mathematical directions, then record the selected reading or the remaining candidates in the issue registry. Do not turn a recoverable reading uncertainty into a human handoff.
 4. Never silently repair a substantive mathematical discrepancy. Classify it, verify it, record the decision, and integrate only the justified correction.
 5. Before editing a later checkpoint, read the active notation, terminology, style, dependency, label, figure, decision, and unresolved-issue registries. Earlier project decisions outrank personal stylistic preference unless later evidence requires a documented correction.
 6. Retain page-level source provenance using a consistent comment such as `% Source PDF page N`. A checkpoint boundary must follow a complete mathematical unit, not an arbitrary page count.

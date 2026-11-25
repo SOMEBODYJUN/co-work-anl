@@ -186,7 +186,7 @@ handwritten-math-notes-to-latex/
 - It does not replace the manuscript with a standard textbook treatment.
 - It does not treat search-result snippets as mathematical verification.
 - It does not guarantee that copied figures are suitable for public distribution.
-- It does not replace human judgment for genuinely ambiguous or novel mathematics.
+- It does not silently collapse genuinely ambiguous or novel mathematics into a guess; the active project must record candidates, evidence, and independent checks in its autonomous recovery log.
 
 ## Privacy and Public Release
 
@@ -394,7 +394,7 @@ handwritten-math-notes-to-latex/
 - 不会用标准教材的写法替换原稿。
 - 不会把搜索结果摘要当作数学核验证据。
 - 不会保证复制的图形天然适合公开发布。
-- 不会代替人类对真正含糊或全新数学内容的判断。
+- 不会把真正含糊或全新的数学内容压成无依据的单一答案；应在当前项目的自主恢复记录中保留候选、证据和独立检验。
 
 ### 隐私与公开发布
 

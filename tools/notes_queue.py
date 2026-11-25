@@ -87,6 +87,22 @@ def reject_content_block(reason):
     return any(marker.casefold() in lowered for marker in CONTENT_UNCERTAINTY_MARKERS)
 
 
+def prepare_autonomous_recovery(manifest, ledger, report):
+    """Render the next recovery pass before returning the audit refusal.
+
+    This is intentionally best-effort.  A malformed audit input must still
+    remain a normal submission error, while a valid content gate should leave
+    the model with an immediately usable crop queue instead of a handoff to a
+    person.
+    """
+    try:
+        from tools.autonomous_recovery import build
+        project = manifest.parent
+        return build(project, report, project / 'autonomous-recovery', dpi=800, ledger_path=ledger)
+    except (OSError, RuntimeError, ValueError, KeyError, json.JSONDecodeError):
+        return None
+
+
 def remote_hash(repo, tip, path, rt):
     return hashlib.sha256(rt.git(repo, 'show', tip + ':' + path).stdout).hexdigest()
 
@@ -181,23 +197,31 @@ def audit_submission(repo, args, task, rt):
     if result.returncode:
         detail = rt.SECRET.sub(b'[REDACTED]', result.stderr + result.stdout).decode(errors='replace')[-1600:]
         if result.returncode == 2:
+            recovery_plan = prepare_autonomous_recovery(manifest, ledger, report)
+            plan_note = (' Recovery queue generated at ' + recovery_plan.relative_to(repo).as_posix() + '.'
+                         if recovery_plan else
+                         ' The recovery queue could not be generated; inspect the audit report and keep the task claimed.')
             raise ValueError(
                 'AUTONOMOUS_RECOVERY_REQUIRED: the structural audit ran, but visual or '
                 'mathematical records remain unresolved. Do not call notes block and do not '
                 'ask the user. Read every unresolved record, render a targeted high-resolution '
                 'crop, compare at least two candidates against the original image and the '
                 'forward/backward mathematics, update both drafts and the ledger, then rerun '
-                'notes submit. ' + detail
+                'notes submit.' + plan_note + ' ' + detail
             )
         raise ValueError('STRUCTURE_INCOMPLETE: finish the recorded page/region, mapping, or hash work before submitting. ' + detail)
     audit = json.loads(report.read_text())
     if not audit['audit_pass']:
         raise ValueError('STRUCTURE_INCOMPLETE: the audit does not satisfy the structural submission gate')
     if not audit['content_resolved']:
+        recovery_plan = prepare_autonomous_recovery(manifest, ledger, report)
+        plan_note = (' Recovery queue generated at ' + recovery_plan.relative_to(repo).as_posix() + '.'
+                     if recovery_plan else
+                     ' The recovery queue could not be generated; inspect the audit report and keep the task claimed.')
         raise ValueError(
             'AUTONOMOUS_RECOVERY_REQUIRED: content_resolved is false. Keep the task claimed, '
             'perform the high-resolution visual recovery loop, and submit again. This is not a '
-            'human handoff and must never be converted into notes block.'
+            'human handoff and must never be converted into notes block.' + plan_note
         )
     files = {p.relative_to(repo).as_posix(): digest(p) for p in [manifest, ledger, report]}
     for kind, filename in [('transcription', 'source-transcript.md'), ('study', 'study-notes.md')]:

@@ -89,9 +89,9 @@ python .agents/skills/math-notes-evidence-audit/scripts/audit.py text-hash revie
 
 每条 `recoveries` 须记录问题、至少两个不同候选、候选证据、选中候选或 null、前向与反向验证的方法/输入/结果/证据、返回整页与区域的观察，以及复核者/session。`resolved` 要求选中真实存在的候选且两种验证均为 `pass`；两种方法应描述不同检验。程序不执行台账里的任意代码，也不自动证明恢复数学正确。
 
-不能排除歧义时保留 `status: unresolved`，并让关联原稿和目标单元保留未决状态。`issues` 保存其他待定问题或修复解释。历史问题解决后保留记录，`resolution` 写明如何解决。
+不能排除歧义时保留 `status: unresolved`，并让关联原稿和目标单元保留未决状态。`issues` 保存其他待定问题或修复解释。历史问题解决后保留记录，`resolution` 写明如何解决。提交前由模型自动生成高分辨率裁图、候选表和正反向检验清单；这一步不转交人工。
 
-`unresolved_count` 统计未决**记录数**（单元、页区判断、旧稿、恢复和开放问题），不代表互不重复的数学问题个数。同一个歧义可能影响多条记录。结构合法但有未决项时，报告可为 `audit_pass: true`，同时一定是 `content_resolved: false`、`status: NeedsHuman`，不能对外称全确认。
+`unresolved_count` 统计未决**记录数**（单元、页区判断、旧稿、恢复和开放问题），不代表互不重复的数学问题个数。同一个歧义可能影响多条记录。结构合法但有未决项时，报告可为 `audit_pass: true`，同时一定是 `content_resolved: false`、`status: NeedsModelRecovery`。这表示模型恢复循环尚未收敛，不是人工门禁；任务必须保持认领状态，只有缺页、损坏原件或视觉工具不可用才允许 `notes block`。
 
 ## 最后三轮及完整快照
 
