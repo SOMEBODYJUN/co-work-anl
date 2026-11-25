@@ -54,7 +54,10 @@ def board(repo, tip, rt):
 
 
 def current_batch(tasks):
-    return next((t['batch'] for t in tasks if t['status'] in {'pending', 'claimed'}), None)
+    # A blocked task is still unfinished.  Keeping its batch current prevents
+    # a later untouched batch from jumping ahead while an earlier recovery or
+    # tool outage is unresolved.
+    return next((t['batch'] for t in tasks if t['status'] in {'pending', 'claimed', 'blocked'}), None)
 
 
 def summary(tasks):
