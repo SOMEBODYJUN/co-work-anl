@@ -1,0 +1,150 @@
+{
+  "schema": "ra07-final-review-record-v1",
+  "reviewer_id": "/root/ra07_final_01",
+  "session_id": "/root/ra07_final_01",
+  "review_date_utc": "2026-11-24",
+  "project": "/workspace/scratch/5eb228b78d49/co-work-anl-notes/work/notes-fc2ba28a26cd495f/notes/RA07/project",
+  "source": {
+    "path": "input/pdf/source.pdf",
+    "original_name": "实分析7.pdf",
+    "sha256": "c053b24757b997ab489d1c18371df9ba44137919d53596b7158856ac1e8746c8",
+    "pages": 13,
+    "render": {
+      "dpi": 300,
+      "columns": 2,
+      "rows": 3,
+      "overlap_fraction": 0.12,
+      "page_size_px": [2480, 3509]
+    }
+  },
+  "manifest": {
+    "path": "manifest.json",
+    "sha256": "7cd8b8c47a2e6ee020eb41097fe85c4812e483989cf535ebe0a19a9c490b5b03",
+    "page_images": 13,
+    "region_images": 78,
+    "page_region_hash_mismatches": 0
+  },
+  "snapshot_hashes": {
+    "source_transcript_sha256": "72954031a008ad305e8630a826fb7e2ae774f7dd56878178c7377f6d19ec715f",
+    "study_notes_sha256": "3cbfca7725ab6b77a8b9fa91fc350aa28b39779c3864b025a004b45c18772ac0",
+    "ledger_sha256": "3c805322435b7ae18ac662693a0ed1d54dbcc3ccfc283c3fbe3964ef20dac215",
+    "ledger_config_sha256": "012f59fecdc3ce43e3acdfcc03e38023c2c56bcb9725301f3c781055a4c60ce3",
+    "integration_v2_confirmation_sha256": "1c6592348f36cf28693f1ae3bc1cf3be021d4d3ddb27ecd8e0440cf9d0144564"
+  },
+  "coverage": {
+    "source_first": true,
+    "full_pages_viewed": 13,
+    "regions_viewed": 78,
+    "regions_per_page": 6,
+    "content_regions": 68,
+    "blank_regions": 10,
+    "blank_pages": ["p0013"],
+    "partial_pages": ["p0012"],
+    "blank_region_ids": [
+      "p0012-r1c2", "p0012-r2c2", "p0012-r3c1", "p0012-r3c2",
+      "p0013-r1c1", "p0013-r1c2", "p0013-r2c1", "p0013-r2c2", "p0013-r3c1", "p0013-r3c2"
+    ]
+  },
+  "integrity": {
+    "source_units": 149,
+    "target_units": 420,
+    "target_split": {
+      "transcription": 162,
+      "study": 258
+    },
+    "target_marker_hash": {
+      "checked": 420,
+      "passed": 420
+    },
+    "target_text_hash": {
+      "checked": 420,
+      "passed": 420
+    },
+    "mapping_target_ids": {
+      "checked": 420,
+      "passed": 420
+    },
+    "source_target_bidirectional_checks": {
+      "checked": 420,
+      "passed": 420
+    },
+    "source_bbox_region_checks": {
+      "checked": 149,
+      "passed": 149
+    },
+    "artifact_hashes": {
+      "checked": 33,
+      "passed": 33
+    },
+    "ledger_final_rounds": 0
+  },
+  "boundary": {
+    "source_blue_pages": ["p0001", "p0004"],
+    "source_red_pages": [],
+    "study_info_blocks": 93,
+    "study_red_markers": 5,
+    "black_blue_boundary": "pass_with_p0004_denominator_discrepancy_explicitly_preserved",
+    "source_original_errors_or_incomplete_proofs": [
+      "p0002 Darboux sup/inf direction",
+      "p0004 epsilon denominator visual discrepancy",
+      "p0008 unqualified strict inequality",
+      "p0010 Vitali difference direction",
+      "p0011 missing parentheses risk"
+    ]
+  },
+  "named_open_issues": [
+    "RA07-Q001",
+    "RA07-Q002",
+    "RA07-Q003",
+    "RA07-Q004"
+  ],
+  "unresolved_source_units": [
+    "RA07-P001-U013",
+    "RA07-P003-U007",
+    "RA07-P003-U009",
+    "RA07-P005-U007",
+    "RA07-P006-U009",
+    "RA07-P010-U008",
+    "RA07-P011-U008",
+    "RA07-P011-U010",
+    "RA07-P006-U014"
+  ],
+  "unresolved_target_units": 26,
+  "recovery": {
+    "total": 11,
+    "resolved": 8,
+    "unresolved": 3,
+    "unresolved_ids": ["VS-REC-004", "VS-REC-006", "VS-REC-010"]
+  },
+  "findings": [
+    {
+      "severity": "material_but_transparently_marked",
+      "id": "F-01",
+      "description": "原稿存在 Darboux 方向、epsilon 分母、Vitali 差集方向和 p0011 括号等源稿错误或不完整处；正文以黑蓝边界保存并用蓝色补充纠正，没有静默改写为黑色原稿。"
+    },
+    {
+      "severity": "open",
+      "id": "F-02",
+      "description": "四个命名语义 issue 仍无法由源图唯一恢复；对应九个 source unit、26 个 target unit 保持保守 unresolved。"
+    },
+    {
+      "severity": "open",
+      "id": "F-03",
+      "description": "p0005 I/G、p0006 页缘残弧、p0011 双重补集小注三个 recovery 未选候选；独立回看不能唯一决定。"
+    },
+    {
+      "severity": "pass",
+      "id": "F-04",
+      "description": "未发现新的致命数学、图形拓扑、页面裁切或 hash/marker/text 完整性问题。"
+    }
+  ],
+  "verdict": "conditional_hold",
+  "modifications": {
+    "source_transcript": false,
+    "study_notes": false,
+    "ledger": false,
+    "ledger_config": false,
+    "other_reviews": false,
+    "git": false
+  }
+}
