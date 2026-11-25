@@ -1,3 +1,3 @@
-# 未决疑点
+# 历史疑点索引（已闭合）
 
-当前无单独疑点文件；如仍有疑字，以正文中的红色疑点和 ledger issues 为准。
+当前无未决疑点；原索引中的疑字已在 ledger 的 resolved issues、recoveries 和合并裁决中关闭。
