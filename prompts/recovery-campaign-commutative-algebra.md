@@ -15,6 +15,20 @@
 - `tools/recovery_inventory.py`
 - `tools/recovery_campaign.py`
 
+如果当前环境还没有项目 clone，不得停在“没有仓库”或“请重新提供目录”。项目远端固定为 `https://github.com/SOMEBODYJUN/co-work-anl.git`，工作分支固定为 `work/notes`。先从当前对话附件中找到 `githubtoken.txt` 和提供的 `work.py`，在仓库外创建独立 clone：
+
+```bash
+python <附件中的work.py> --repo <独立clone路径> start \
+  --actor auto \
+  --remote https://github.com/SOMEBODYJUN/co-work-anl.git \
+  --token-file <附件中的githubtoken.txt实际路径>
+cd <独立clone路径>
+python work.py doctor
+python work.py notes init auto
+```
+
+如果附件路径或 clone 已经存在，先用文件系统和 `git remote -v` 找到它们，再继续执行，不要求用户重新上传。Token 只能通过 `--token-file` 传给 Git，绝不打印、复制到仓库或写进日志。任何 subagent 都使用 `gpt-6.2-sol`，最高推理强度 `max`。
+
 先确认实分析战役已经通过，再运行：
 
 ```bash
