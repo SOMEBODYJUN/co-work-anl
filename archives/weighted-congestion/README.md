@@ -2,6 +2,10 @@
 
 存档ID：`weighted-congestion`。
 
+## 第三篇论文阅读入口
+
+[近似纯纳什均衡下界聚焦稿](papers/near-degree-focused/README.md)按“引言—模型与例子—构造算法—证明—结论”重写上传的 MOR 稿。先读[中文阅读稿](papers/near-degree-focused/reading_zh.md)，完整资源构造与证明见[英文 PDF](papers/near-degree-focused/main.pdf)。
+
 正权玩家选资源子集，资源费用为次数至多d的非负系数多项式；研究全输入近似PNE保证、严格全状态下界及结构工具。改善环与全状态无均衡须区分。
 
 ## 原始状态与待整理边界

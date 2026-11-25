@@ -1,0 +1,521 @@
+% Focused revision of the user-supplied MOR manuscript.
+% Scope: the near-degree nonexistence theorem and its complete construction.
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools,booktabs,array,tabularx}
+\usepackage{microtype}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{example}[theorem]{Example}
+\newcommand{\PNE}{\mathrm{PNE}}
+\newcommand{\F}{\mathcal F}
+\newcommand{\ind}{\mathbf 1}
+\newcommand{\xor}{\mathbin{\oplus}}
+\newcommand{\N}{\mathbb N}
+\DeclareMathOperator{\pos}{pos}
+\title{An Asymptotically Tight Lower Bound for Approximate Pure Nash Equilibria in Weighted Congestion Games}
+\author{}
+\date{}
+\begin{document}
+\maketitle
+\begin{abstract}
+How large must the approximation factor be to guarantee a pure Nash equilibrium in every weighted congestion game with polynomial latencies of degree at most $d$? A factor of $d$ is known to suffice. We construct, for every integer $d\ge2^{20}$, a finite rational game with no $(d-1200\lceil\log_2d\rceil^2)$-approximate pure Nash equilibrium. Each player has two nonempty disjoint strategies, and every latency is a positive monomial of degree exactly $d$. The construction uses adjacent weight classes to create improving deviations, a return window to cover the remaining structured states, and three-player resource pairs to exclude all other states. We specify every resource and prove that every state admits a strict improvement. Together with the known existence bound, this determines the leading asymptotic constant of the universal approximation threshold.
+\end{abstract}
+
+\section{Introduction}
+Weighted congestion games model indivisible users sharing resources whose latencies increase with total load. A player chooses a set of resources and pays the sum of their latencies. Unequal player weights can prevent pure Nash equilibria from existing. An $\alpha$-approximate pure Nash equilibrium relaxes stability by allowing improvements up to a multiplicative factor $\alpha$.
+
+This paper studies one question: how large must $\alpha$ be to guarantee an approximate pure Nash equilibrium in every game with polynomial latencies of degree at most $d$? Caragiannis and Fanelli~\cite{CF2021} prove that $d$ suffices. Christodoulou, Gairing, Giannakopoulos, Po\c{c}as, and Waldmann~\cite{CGGPW2023} construct games without approximate equilibria at factors of order $\sqrt d/\log d$ and ask how to reduce the gap to $d$.
+
+We give a lower bound of $d-O((\log d)^2)$. Thus the factor $d$ is asymptotically necessary, even when every player has only two strategies and all resources have the same monomial degree. The exact statement is as follows; costs and legal deviations are defined in Section~\ref{sec:model}.
+\begin{theorem}\label{thm:near}
+For every integer $d\ge2^{20}$ there is a finite weighted congestion game with positive rational weights and latencies $c_e(x)=a_ex^d$, where $a_e>0$ is rational, such that every player has exactly two nonempty disjoint resource-set strategies and
+\begin{equation}\label{eq:nearlower}
+ \forall s\ \exists i,t_i:\qquad
+ C_i(s)>\bigl(d-1200\lceil\log_2d\rceil^2\bigr)C_i(t_i,s_{-i}).
+\end{equation}
+\end{theorem}
+
+Let $a_*(d)$ be the infimum of the factors $\alpha\ge1$ for which every finite weighted congestion game with nonnegative-coefficient polynomial latencies of degree at most $d$ has an $\alpha$-$\PNE$. Theorem~\ref{thm:near} and the known upper bound give
+\begin{equation}\label{eq:universalthreshold}
+ d-1200\lceil\log_2d\rceil^2\le a_*(d)\le d,
+ \qquad \lim_{d\to\infty}\frac{a_*(d)}d=1.
+\end{equation}
+The additive term leaves a finite-degree gap; the limit determines its leading constant.
+
+\subsection{Related work}
+Table~\ref{tab:related} collects the existence and nonexistence results directly relevant to this question. An existence bound applies to every game in the stated class. A nonexistence bound is witnessed by a family of games in that class.
+\begin{table}[ht]
+\centering\small
+\caption{Bounds for polynomial weighted congestion games.}\label{tab:related}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{.29\textwidth}>{\raggedright\arraybackslash}p{.13\textwidth}>{\raggedright\arraybackslash}p{.21\textwidth}>{\raggedright\arraybackslash}X@{}}
+\toprule
+Work & Direction & Factor & Role here\\
+\midrule
+Caragiannis et al.~\cite{CFGS2015} & Existence & $d!$ & Approximation by potential games.\\
+Caragiannis and Fanelli~\cite{CF2021} & Existence & $d$ & Upper bound used in~\eqref{eq:universalthreshold}.\\
+Christodoulou et al.~\cite{CGGPW2023} & Nonexistence & $\Omega(\sqrt d/\log d)$ & Earlier superconstant lower bound and the gap addressed here.\\
+This paper & Nonexistence & $d-1200\lceil\log_2d\rceil^2$ & Explicit rational games; two disjoint strategies per player.\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+The upper bound of Caragiannis and Fanelli follows from their approximate potential~\cite[Theorem~2]{CF2021}. Its marginal comparison extends from positive-degree monomials to nonnegative-coefficient polynomials by replacing each resource with one resource per monomial, used together in every strategy. A constant term contributes its coefficient times the load to the potential. These operations preserve player costs and the common marginal interval needed for the factor $d$.
+
+\subsection{Construction and organization}
+Our construction has three parts. First, cyclic windows connect adjacent weight classes. When two adjacent classes are sufficiently out of phase, an endpoint player has a large improvement. Second, a return window connects the lightest class to the heaviest. It supplies an improvement whenever all adjacent classes are nearly aligned. Third, three-player resource pairs give an improvement at every state outside the structured domain used in the first two parts. Their costs on structured states are small enough to preserve the earlier improvements without increasing the degree.
+
+Section~\ref{sec:model} gives the model, an exact feasibility formulation, and two small examples of the construction mechanisms. Section~\ref{sec:application} specifies the construction algorithm. Section~\ref{sec:analysis} proves that every state has an improving deviation and verifies the parameters of Theorem~\ref{thm:near}. Section~\ref{sec:conclusion} concludes with the remaining questions.
+
+\section{Preliminaries and problem formulation}\label{sec:model}
+\subsection{Weighted congestion games}
+A finite weighted congestion game has a player set $I$, a resource set $E$, positive weights $w_i$, and nonempty finite strategy families $S_i\subseteq2^E$. At a state $s\in\prod_iS_i$, let
+\[
+ x_e(s)=\sum_{i:e\in s_i}w_i,\qquad
+ C_i(s)=\sum_{e\in s_i}c_e(x_e(s)),\qquad
+ c_e(x)=\sum_{k=0}^d a_{e,k}x^k,\quad a_{e,k}\ge0.
+\]
+A state is an $\alpha$-$\PNE$, for $\alpha\ge1$, if
+\[
+ C_i(s)\le\alpha C_i(t_i,s_{-i})
+ \quad\text{for every }i\in I\text{ and }t_i\in S_i.
+\]
+We use the improvement margin $C_i(s)-\alpha C_i(t_i,s_{-i})$, which also applies when a deviation has zero cost. All games in the construction have positive rational weights and coefficients. Logarithms are natural unless a base is shown.
+
+The target is an existence threshold over a class of games. To prove a lower bound at $\alpha$, one must specify a legal game and show that \emph{every} state has a strictly positive improvement margin. The construction below does so by selecting one actual player and one legal deviation at each state.
+
+\subsection{An exact mathematical programming formulation}
+For a fixed finite game, let $y_{i,A}\in\{0,1\}$ select player $i$'s strategy $A\in S_i$, and define
+\[
+ \sum_{A\in S_i}y_{i,A}=1,\qquad
+ h_{i,e}(y)=\sum_{A\in S_i:e\in A}y_{i,A},\qquad
+ x_e(y)=\sum_iw_i h_{i,e}(y).
+\]
+Existence of an $\alpha$-$\PNE$ is equivalent to feasibility of the following binary polynomial system:
+\begin{equation}\label{eq:feasibility}
+\begin{aligned}
+ \sum_e h_{i,e}(y)c_e(x_e(y))
+ &\le \alpha\sum_{e\in A}
+ c_e\bigl(x_e(y)+w_i(1-h_{i,e}(y))\bigr)
+ &&(i\in I,\ A\in S_i),\\
+ \sum_{A\in S_i}y_{i,A}&=1,
+ \qquad y_{i,A}\in\{0,1\}
+ &&(i\in I,\ A\in S_i).
+\end{aligned}
+\end{equation}
+For a target resource already used by the mover, the load is unchanged; for a newly entered resource, the argument adds the mover's weight. Thus the right-hand side is its exact deviation cost. Minimizing $\alpha\ge1$ over this system gives the least approximation factor attained by a pure state of the fixed game. Our lower-bound construction gives instances for which~\eqref{eq:feasibility} is infeasible at the stated factor.
+
+When every player has two actions, write $z\in\{0,1\}^{|I|}$ for a state and $z^{\xor i}$ for the state obtained by flipping player $i$'s bit. It is then enough to prove
+\[
+ \forall z\quad\max_{i\in I}
+ \bigl\{C_i(z)-\alpha C_i(z^{\xor i})\bigr\}>0.
+\]
+This is the condition established in Section~\ref{sec:analysis}.
+
+\subsection{Two small examples}
+\begin{example}\label{ex:window}
+Consider a heavy player of weight $1$, light players of weight $1/R$, and latency $x^d$. If $K$ light players share a resource with the heavy player, its latency is $(1+K/R)^d$. The weighted sum of the light players' costs as they enter one by one is
+\[
+ \frac1R\sum_{j=1}^K(1+j/R)^d.
+\]
+For $d=3$, $K=2$, and $R=4$, the endpoint cost is $27/8$ and the sum is $341/256$, giving ratio $864/341>2.53$. As the grid becomes fine, the sum approaches an integral. If $m=K/R$ is small while $(1+m)^d$ is large, the ratio approaches $(d+1)/(1+m)$, which is close to $d$. Adjacent windows use this difference between endpoint and accumulated costs to pass an improvement through the weight classes.
+\end{example}
+
+\begin{example}\label{ex:gate}
+Take three players of equal weight $w$, with action bits $(z_0,z_j,z_k)$. Give them a fresh pair of resources, choosing sides $(z_0,z_j\xor1,z_k)$, with identical latency $M(x/(3w))^d$ on both sides. Their use of the pair is as follows:
+\begin{center}
+\begin{tabular}{@{}ccc@{}}
+\toprule
+Action pattern & Resource sides & Largest player cost\\
+\midrule
+$010$ or $101$ & $000$ or $111$ & $M$\\
+Any other pattern & A pair and a singleton & $M(2/3)^d$\\
+\bottomrule
+\end{tabular}
+\end{center}
+For example, $010$ puts all three players on side zero. Flipping the middle bit gives $000$, whose resource sides are $010$. This changes the mover's gate cost from $M$ to $M(1/3)^d$. We will use many such pairs to rule out alternating patterns. Their aggregate cost on permitted states must also fit within the improvement margin; Section~\ref{app:samedegree} verifies that budget.
+\end{example}
+
+\section{The construction algorithm}\label{sec:application}
+\subsection{Overall idea}
+Order each equal-weight class by clone index. A binary string with at most one change between consecutive positions is called a \emph{front}. We first construct improving deviations on the product of these front sets. Each deviation moves a front by one position and therefore changes only one player's action. Adjacent windows cover relative phases away from two short intervals. The return window covers the case where every adjacent phase lies in those intervals. The three-player pairs of Example~\ref{ex:gate} handle every nonfront state.
+
+\subsection{Parameters}
+Let integers $n\ge2$ and $d\ge16$ satisfy
+\begin{equation}\label{eq:uniformconditions}
+ d\ge8n,\qquad T=(1+1/(8n))^d\ge16nd,\qquad
+ d\log(3/2)>200n(\log d)^2.
+\end{equation}
+The target factor is $\alpha=(1-1/n)d$. Theorem~\ref{thm:near} will follow by choosing $n$ as a function of $d$ in Section~\ref{app:tail}.
+\begin{equation}\label{eq:appfirstparams}
+ \delta=1/n,\quad\alpha=(1-\delta)d,\quad
+ \theta=\delta/8,\quad\kappa=1+\theta,\quad
+ b=1-\delta/2,\quad K=d^4,\quad R=8nd^4.
+\end{equation}
+Thus $K/R=\theta$ and the atomic resolution is $1/R$; these two quantities have separate roles. Set
+\begin{align}
+ H&=T-\alpha,&
+ X&=\sum_{r=1}^K(1+r/R)^d,&
+ Y&=\sum_{r=1}^K(r/R)^d,\label{eq:appXY}\\
+ J&=\alpha X-Y,&S&=\kappa J/H.\nonumber
+\end{align}
+Let $g\ge2$ be the least integer with $b^g\le(192d^2)^{-1}$, and put
+\begin{equation}\label{eq:appdepthparams}
+ N=R^g/d,\qquad\varepsilon=R^{-g},\qquad N\varepsilon=1/d.
+\end{equation}
+The number $N$ is an integer because $d$ divides $R$. Define the return sums and amplitudes
+\begin{align}
+ W_0&=(1+1/d)^d,&
+ U&=\sum_{r=1}^N(1+r\varepsilon)^d,&
+ V&=\sum_{r=1}^N(r\varepsilon)^d,&Z&=U-\alpha V,\label{eq:appreturn}\\
+ A_a&=S^a\quad(0\le a<g),&&
+ A_R&=H/(4\alpha W_0).\nonumber
+\end{align}
+All these definitions use only integer arithmetic, finite rational sums and powers, and rational comparisons. Logarithms enter the estimates but not the game data.
+
+\subsection{Players, resource pairs, and actions}\label{app:resources}
+The parameters determine a game directly: each player selects one side of every resource pair in which it participates.
+There are players $P_{a,j}$ with $0\le a\le g$ and $j\in\mathbb Z/N\mathbb Z$, of weight $w_a=R^{-a}$. Use representatives $j=0,\ldots,N-1$ and the global position $\pos(a,j)=j(g+1)+a$.
+
+A test $\tau=(a,b,k,o)$, $a<b$, has a pair of fresh resources $e_{\tau,j,0},e_{\tau,j,1}$ for each anchor $h=P_{a,j}$. The anchor's action bit selects its resource side. Its window users are $u=P_{b,j+t\bmod N}$ for $t=0,\ldots,k-1$. A window user with action bit $z_u$ selects side
+\begin{equation}\label{eq:appincidence}
+ z_u\xor\ind[\pos(u)>\pos(h)]\xor\ind[o=-1].
+\end{equation}
+No other user occupies the pair. Use the $g$ adjacent tests $(a,a+1,K,-1)$ with both resource latencies $(A_a/w_a^d)x^d$, and the return test $(0,g,N,+1)$ with both latencies $A_Rx^d$. All pairs in all tests are distinct. A player's action is the union of the sides prescribed by its bit over all pairs in which it participates. Every player participates, so both actions are nonempty; the actions are disjoint since each pair contributes opposite sides. There are $(g+1)N$ players and $2(g+1)N$ base resources, all with positive rational data.
+
+
+\subsection{Three-player pairs for nonfront states}
+Write $C_i^B(s)$ for the cost from the adjacent and return tests, before adding the three-player pairs. For the full game, set
+\begin{equation}\label{eq:maincompletion}
+ B_*=(g+1)R^gT,\qquad M=2\alpha B_*.
+\end{equation}
+For every class $a$ and every $1\le j<k<N$, add the pair of Example~\ref{ex:gate} on $P_{a,0},P_{a,j},P_{a,k}$, with latency $M(x/(3w_a))^d$ on both sides. These are ordinary congestion resources. They add no players and preserve the two disjoint actions of every player.
+
+
+Put $\F=\prod_{a=0}^gF_N$, where $F_N$ is the set of fronts of length $N$. For later use, let
+\[
+ L_c=\binom{N-1}{2},\qquad u=M(2/3)^d.
+\]
+There are $L_c$ added pairs per class. Every player participates in at most $L_c$ of them.
+
+\subsection{Finite construction procedure}
+\begin{center}
+\fbox{\begin{minipage}{.93\textwidth}
+\textbf{Algorithm 1. Construct a game without an $\alpha$-$\PNE$.}
+\begin{enumerate}
+\item Input integers $n,d$ satisfying~\eqref{eq:uniformconditions}. Compute the rational parameters in~\eqref{eq:appfirstparams}--\eqref{eq:appreturn}.
+\item Create players $P_{a,j}$ of weight $R^{-a}$, for $0\le a\le g$ and $0\le j<N$.
+\item For each adjacent test $(a,a+1,K,-1)$ and each anchor index, create its resource pair and assign action sides by~\eqref{eq:appincidence}.
+\item Create the return test $(0,g,N,+1)$ using the same side rule.
+\item For every class and $1\le j<k<N$, create the three-player pair on clone indices $0,j,k$ with side offsets $(0,1,0)$.
+\item For each player and bit $b\in\{0,1\}$, output the union of its prescribed sides as its strategy for bit $b$.
+\end{enumerate}
+\end{minipage}}
+\end{center}
+
+The procedure uses finite rational sums, powers, and comparisons. The integer $g$ can be found by repeated multiplication by the rational number $b$; no logarithm is needed to produce the game. The output has
+\[
+ (g+1)N\ \text{players and}\quad
+ 2(g+1)N+2(g+1)\binom{N-1}{2}\ \text{resources}.
+\]
+Every resource is an ordinary congestion resource. Each player uses opposite sides of every pair under its two actions, so its strategies are disjoint; each player participates in an adjacent or return pair, so both strategies are nonempty. All coefficients are positive rational numbers and all latencies have degree exactly $d$. The output may be very large; the construction is a finite existence witness.
+
+For one fully specified member, take $n=2$ and $d=2^{21}$. The parameter conditions hold by the calculation in Section~\ref{sec:fixedexample}, and the target factor is $2^{20}$. The small examples in Section~\ref{sec:model} explain the component mechanisms; Algorithm~1 specifies the complete game.
+
+\section{Analysis of the construction}\label{sec:analysis}\label{app:construction}
+We prove the construction in the same order as its three mechanisms: estimates for adjacent and return windows, an improving deviation at every front state, and an improving deviation at every nonfront state. The final parameter substitution yields Theorem~\ref{thm:near}.
+
+\begin{proposition}\label{thm:uniformfamily}
+For every $n,d$ satisfying~\eqref{eq:uniformconditions}, Algorithm~1 produces a finite rational game in which every state has a strict $\alpha=(1-1/n)d$ improvement.
+\end{proposition}
+
+\subsection{The endpoint estimate}
+The following elementary right-sum estimate makes the local calculation precise. Let $0=x_0<\cdots<x_m=Q$, $a_j=x_j-x_{j-1}$, $T_0=b_0+Q$, and $h=\max_ja_j$, with $b_0\ge0$ and $Q>0$.
+\begin{lemma}\label{lem:area}
+For every nondecreasing function $f$ on $[b_0,T_0]$,
+\begin{equation}\label{eq:areaerror}
+ \int_{b_0}^{T_0}f(t)\,dt\le\sum_ja_jf(b_0+x_j)
+ \le\int_{b_0}^{T_0}f(t)\,dt+h[f(T_0)-f(b_0)].
+\end{equation}
+For $f(t)=t^d$, write $r=b_0/T_0$, $\zeta=h/T_0$, and $\vartheta=M/T_0$ for any $M>0$. Then
+\begin{equation}\label{eq:endpointgain}
+ \frac{(d+1)\vartheta}{1-r^{d+1}+(d+1)\zeta(1-r^d)}
+ \le\frac{MT_0^d}{\sum_ja_j(b_0+x_j)^d}
+ \le\frac{(d+1)\vartheta}{1-r^{d+1}}.
+\end{equation}
+\end{lemma}
+\begin{proof}
+The error on the $j$th interval is nonnegative and at most
+$a_j[f(b_0+x_j)-f(b_0+x_{j-1})]$. Replace $a_j$ by $h$ and telescope. Integrating $t^d$ and dividing gives~\eqref{eq:endpointgain}.
+\end{proof}
+Thus $dh/T_0$ controls the discretization loss. The endpoint coefficient $M$ and the sampled mass $Q$ need not agree. This distinction permits a short, fine window to preserve an amplification approaching $d$.
+\subsection{Endpoint, propagation, and return estimates}
+We begin with the estimates used to transmit an improvement across adjacent weight classes and to close the return window.
+\begin{lemma}\label{lem:appestimates}
+The parameters satisfy $H,J>0$, $1<S\le bR<R$, and
+\begin{equation}\label{eq:appJbounds}
+ J/H\ge K/8>1,\qquad
+ Y/J\le\theta/16,\qquad \alpha X\le2J,\qquad
+ \kappa J-\alpha X\ge\theta J/2.
+\end{equation}
+Furthermore,
+\begin{equation}\label{eq:appreturnbounds}
+ g\le13n\log d,\qquad Z\ge N/2,\qquad
+ \frac{A_RZ}{A_{g-1}J}\ge8,
+\end{equation}
+where $A_{g-1}=S^{g-1}$, and
+\begin{equation}\label{eq:appdefectbounds}
+ N\ge24(d+1)(gK+1)>gK,\qquad
+ (\alpha+1)(t+1)W_0\le Z/4\quad(0\le t\le gK).
+\end{equation}
+\end{lemma}
+\begin{proof}
+Lemma~\ref{lem:area} gives
+\begin{equation}\label{eq:appRiemann}
+ R\frac{(1+\theta)T-1}{d+1}
+ \le X\le R\frac{(1+\theta)T-1}{d+1}+T-1.
+\end{equation}
+The second condition in~\eqref{eq:uniformconditions} implies $\alpha/T\le\delta/16$, and thus $H\ge(1-\delta/16)T>T/2$. Also $d/R\le\delta/32$, and
+\[
+ (1-\delta)(1+\delta/8)^2\le1-3\delta/4,
+ \qquad\kappa(1-\delta)<1.
+\]
+Using $J\le\alpha X$ in~\eqref{eq:appRiemann},
+\begin{equation}\label{eq:appcontraction}
+ \frac SR\le
+ \frac{\kappa(1-\delta)(1+\theta+d/R)}{1-\alpha/T}
+ \le\frac{1-23\delta/32}{1-\delta/16}
+ \le1-\delta/2=b.
+\end{equation}
+Termwise comparison yields $Y\le\rho X$, with $\rho=(\theta/(1+\theta))^d\le\theta^2$. Since $\alpha\ge2$, $J\ge\alpha X/2>0$. The left side of~\eqref{eq:appRiemann} is at least $KT/(d+1)$, as $(1+\theta)T-1\ge\theta T$. Hence $J/H\ge\alpha K/(2(d+1))\ge K/8$, and $S>1$. Moreover
+\[
+ \frac YJ\le\frac{\theta^2}{2-\theta^2}\le\theta^2\le\theta/16,
+\]
+which proves all of~\eqref{eq:appJbounds} by $\alpha X=J+Y$ and $\kappa=1+\theta$.
+
+Since $-\log b\ge1/(2n)$, minimality of $g$ gives
+\[
+ 2\le g\le2n\log(192d^2)+1\le13n\log d.
+\]
+For the last inequality, $d\ge4$ suffices. The elementary exponential bound gives $W_0<3$. Every term in $Z$ is at least $1-\alpha d^{-d}\ge1/2$, so $Z\ge N/2$. As $H=\kappa J/S$,~\eqref{eq:appcontraction} implies
+\[
+ \frac{A_RZ}{A_{g-1}J}
+ =\frac{\kappa Z}{4\alpha W_0S^g}
+ \ge\frac1{24d^2b^g}\ge8.
+\]
+For $g\ge2$, $R^{g-2}\ge2^{g-2}\ge g/2$ by induction. Therefore
+\[
+ N\ge\frac{gR^2}{2d}\ge128gd^7
+ \ge24(d+1)(gK+1)>gK.
+\]
+For example, the penultimate comparison follows from
+$24(d+1)(gK+1)\le96gd^5$. Finally $\alpha\le d$ and $W_0<3$ give
+\[
+ (\alpha+1)(t+1)W_0\le3(d+1)(gK+1)\le N/8\le Z/4,
+\]
+proving~\eqref{eq:appdefectbounds}.
+\end{proof}
+\subsection{All front configurations have a preserving exit}\label{app:frontcoverage}
+A front in class $a$ is represented by $x_a\in\mathbb Z/(2N)\mathbb Z$ through
+\begin{equation}\label{eq:appfront}
+ B_x(j)=\begin{cases}
+ \ind[j<x],&0\le x<N,\\
+ \ind[j\ge x-N],&N\le x<2N.
+ \end{cases}
+\end{equation}
+Forward $x\to x+1$ flips clone $x\bmod N$; backward $x\to x-1$ flips clone $(x-1)\bmod N$. Thus these are genuine one-player deviations, not moves by a whole class.
+
+We first justify a common phase normalization for the base window game from its real resource incidences. Shift all clone indices by one modulo $N$ and flip precisely those player bits crossing $N-1\to0$. If $e_h,e_u$ are the corresponding wrap indicators, the ordering predicate in~\eqref{eq:appincidence} changes by $e_h\xor e_u$. The light player's changed bit cancels $e_u$, and all users of an anchor pair change side by the same $e_h$. Exchange that pair's resource labels when $e_h=1$. The two sides have the same latency, so base-game loads and player costs, including costs after any specified single-player flip, are preserved. In~\eqref{eq:appfront} this transformation adds one to every phase. We may therefore normalize a chosen mover class to phase zero while leaving the relative phases arbitrary.
+
+\begin{lemma}\label{lem:appendpoints}
+Normalize the heavy phase of an adjacent test to zero, and write $r=x_{a+1}-x_a\pmod{2N}$. Its heavy forward mover is clone zero, with old and new costs
+\begin{equation}\label{eq:appheavy}
+ A_a(1+h(r)/R)^d,\qquad
+ A_a(1+(K-h(r))/R)^d,
+\end{equation}
+where
+\[
+ h(r)=\begin{cases}
+ K-\min\{r,K\},&0\le r\le N,\\
+ \min\{r-N,K\},&N\le r<2N.
+ \end{cases}
+\]
+The heavy backward costs are the reverse of~\eqref{eq:appheavy} at $r+1\pmod{2N}$. If $r\notin[0,K]\cup[N,N+K]$, there is a heavy front-preserving direction with costs $(A_aT,A_a)$.
+
+At any relative phase, either front-preserving endpoint flip of a light class has old and new costs at most $A_aX$ in its incoming adjacent test.
+\end{lemma}
+\begin{proof}
+For heavy clone zero all its window users have greater global position. The negative orientation in~\eqref{eq:appincidence} therefore makes their resource sides equal their bits. Count the zero bits of $B_r$ on positions $0,\ldots,K-1$ to obtain $h(r)$ and the two complementary loads in~\eqref{eq:appheavy}. A backward edge is the reversal of the forward edge starting one phase earlier; relative to its normalized starting heavy phase, the light phase is $r+1$. For $K<r<N$ use backward, and for $N+K<r<2N$ use forward, obtaining the displayed costs.
+
+For the light statement normalize its phase to zero and consider its forward mover, clone zero. It belongs to exactly $K$ windows, whose anchors have indices $-k\bmod N$, $0\le k<K$. Among the light users in each window, the number on its current side is $K-k$ and on its target side after moving is $k+1$, including the mover. For $k=0$ the anchor is clone zero and all window positions precede a wrap; for $k>0$ the window wraps through clone zero, with its $k$ high-index light users on the other side. This also gives the same counts at the wrap. Let $e_k\in\{0,1\}$ say whether that window's heavy anchor is on its current side. Its two costs are precisely
+\begin{equation}\label{eq:applight}
+ A_a\sum_{k=0}^{K-1}((K-k)/R+e_k)^d,\qquad
+ A_a\sum_{k=0}^{K-1}((k+1)/R+1-e_k)^d.
+\end{equation}
+Both are at most $A_aX$. A backward edge reverses a forward edge at another relative phase, so the same bounds hold.
+\end{proof}
+
+If an adjacent difference is outside the two short intervals, choose the heavy exit from Lemma~\ref{lem:appendpoints}. For class zero the only other test is its one return pair; its new normalized load is at most $1+N\varepsilon$, so discarding nonnegative old return costs leaves total margin at least
+\begin{equation}\label{eq:approotexit}
+ H-\alpha A_RW_0=3H/4.
+\end{equation}
+For a heavy mover in class $1\le a<g$, the only other test is incoming. The corresponding total margin is at least
+\begin{equation}\label{eq:appmiddleexit}
+ A_aH-\alpha A_{a-1}X
+ =A_{a-1}(\kappa J-\alpha X)
+ \ge(\theta/2)A_{a-1}J\ge\theta H/2.
+\end{equation}
+The last step uses $S>1$ and $J>H$.
+
+It remains to cover every front vector whose adjacent differences all lie in the short intervals. Write
+\begin{equation}\label{eq:appshortdifferences}
+ x_{a+1}-x_a=k_aN+t_a\pmod{2N},\quad
+ k_a\in\{0,1\},\quad0\le t_a\le K.
+\end{equation}
+Summing gives $x_g-x_0=kN+t\pmod{2N}$, with a parity $k\in\{0,1\}$ and $0\le t=\sum_at_a\le gK<N$.
+
+Normalize the last class to phase zero and write $r=x_0-x_g$. For its forward clone zero in the return test, index all $N$ anchors by $h_j=-j\bmod N$. Let $\sigma_0=1$, $\sigma_j=0$ for $j>0$, and $e_j(r)=\ind[B_r(h_j)=\sigma_j]$. By the positive orientation in~\eqref{eq:appincidence}, the unscaled old and new return costs are
+\begin{equation}\label{eq:appreturncosts}
+ O(r)=\sum_{j=0}^{N-1}((N-j)\varepsilon+e_j(r))^d,\qquad
+ Q(r)=\sum_{j=0}^{N-1}((j+1)\varepsilon+1-e_j(r))^d.
+\end{equation}
+Indeed the light-side counts follow the same wrap count as~\eqref{eq:applight}, now with all $N$ light users. The all-one $e$ vector gives $(U,V)$ and the all-zero vector gives $(V,U)$. Flipping a single entry changes each cost by at most $W_0$, because every load is at most $1+N\varepsilon$.
+
+If $k=0$, choose forward, with $r=-t\pmod{2N}$. At $t=0$ only $e_0$ is zero; at $1\le t<N$, precisely $e_0,\ldots,e_t$ are zero. Hence the vector differs from all ones in at most $t+1$ entries. If $k=1$, choose backward, with $r=N-t$. Its old/new costs are $Q(r+1),O(r+1)$. At $t=0$ the vector for $r+1=N+1$ is all zero; at $1\le t<N$ it has exactly $t$ ones. Thus in this direction it differs from all zeros in at most $t+1$ entries. Both parity cases yield a return margin at least
+\begin{equation}\label{eq:appreturnmargin}
+ A_R[Z-(\alpha+1)(t+1)W_0]\ge3A_RZ/4.
+\end{equation}
+The mover's other cost is the incoming adjacent test, whose new cost is at most $A_{g-1}X$. Lemma~\ref{lem:appestimates} therefore gives total margin at least
+\begin{equation}\label{eq:appfinalfrontmargin}
+ 3A_RZ/4-\alpha A_{g-1}X
+ \ge6A_{g-1}J-2A_{g-1}J
+ =4A_{g-1}J>\theta H/2.
+\end{equation}
+The mismatch case and the short-difference case exhaust all phase vectors. We have proved that every product-front state has a preserving real single-player exit with margin at least
+\begin{equation}\label{eq:appeta}
+ \eta=\theta H/4>0.
+\end{equation}
+
+
+\subsection{What the three-player pairs enforce}\label{sec:repair}
+\begin{lemma}\label{lem:gates}
+Within a class, all added pairs are untriggered exactly at front strings. At a nonfront string, the earliest nonanchor bit different from the anchor can be flipped so that every pair involving that mover is untriggered afterwards. In a front-preserving flip, the mover pays exactly $u=M(2/3)^d$ on each added pair in which it participates, both before and after the flip.
+\end{lemma}
+\begin{proof}
+A pair on indices $0,j,k$ triggers exactly when the action pattern is $010$ or $101$, by Example~\ref{ex:gate}. A front has no such alternating subsequence. Conversely, if a string is not a front, let its first bit be $b$, let $i>0$ be the first index with bit $1-b$, and choose a later index $k$ with bit $b$. The pair on $0,i,k$ triggers.
+
+Flip bit $i$ back to $b$. In any pair where $i$ is the middle index, it now agrees with the anchor. In any pair where $i$ is the last index, the middle index is smaller than $i$ and already agrees with the anchor. Thus none of the mover's pairs triggers after this flip, and its new cost per pair is at most $u$.
+
+Finally, consider a flip between two fronts. In each pair involving the mover, the users split into a pair and a singleton at both endpoints. If the mover were the singleton at either endpoint, its flip would join the other two users and trigger the pair at the other endpoint. It must therefore belong to the two-player group at both endpoints and pays $u$ at each.
+\end{proof}
+\subsection{All-state cost cap and same-degree completion}\label{app:samedegree}
+At an arbitrary base state, each adjacent resource has potential load at most $(1+\theta)w_a$. A heavy user uses one pair and a light user uses $K$ pairs. Thus the contribution from any such test is at most $KA_aT$. With $1<S<R$, all adjacent tests together cost any player at most $gKS^{g-1}T\le gR^gT$. The return contribution is at most $NA_RW_0=NH/(4\alpha)\le R^gT$. Consequently
+\begin{equation}\label{eq:appbasecap}
+ \begin{aligned}
+ C_i^B(s)&\le B_*=(g+1)R^gT\quad\text{for all players and all base states},\\
+ B_*/\eta&\le64n(g+1)R^g.
+ \end{aligned}
+\end{equation}
+The three-player pairs were specified after~\eqref{eq:maincompletion}. Their number per class is
+\begin{equation}\label{eq:appclocks}
+ L_c=\binom{N-1}{2}.
+\end{equation}
+To preserve the front improvements and exclude nonfront states, it is enough to prove
+\begin{equation}\label{eq:apprepairtarget}
+ (2/3)^d\le\eta/(4\alpha^2B_*L_c).
+\end{equation}
+Since $L_c\le N^2\le R^{2g}$,~\eqref{eq:appbasecap} yields
+\begin{equation}\label{eq:appGamma}
+ 4\alpha^2B_*L_c/\eta\le
+ \Gamma_*=256nd^2(g+1)R^{3g}.
+\end{equation}
+The first uniform condition and $d\ge16$ imply
+\[
+ \log R\le5\log d,\qquad g\le13n\log d,\qquad
+ g+1\le14n\log d\le14d\log d\le d^3.
+\]
+It follows that
+\begin{equation}\label{eq:appGammalog}
+ \log\Gamma_*\le195n(\log d)^2+8\log d
+ \le200n(\log d)^2<d\log(3/2).
+\end{equation}
+Here $\log(256n)+5\log d\le8\log d$ follows from $n\le d/8$ and $d\ge16$, and $8\log d\le5n(\log d)^2$. The last strict inequality is exactly the third condition in~\eqref{eq:uniformconditions}. Thus~\eqref{eq:apprepairtarget} holds.
+
+For clarity, this budget covers both kinds of state directly. On a front, the preserving exit of margin $\eta$ acquires new gate cost at most $L_cM(2/3)^d$, and its full margin remains at least $\eta/2$. On a nonfront, flip the earliest nonanchor bit different from the anchor back to that anchor. It leaves a triggered gate of cost $M$, all its new gates are untriggered, and its new base cost is at most $B_*$. Its full margin is at least
+\[
+ M-\alpha B_*-\alpha L_cM(2/3)^d
+ \ge\alpha B_*-\eta/2\ge\eta/2>0.
+\]
+This is one deviation in the current state. The last inequality uses $B_*\ge\eta$. Every state therefore has a strict $\alpha$ improvement. The player set and action labels are unchanged, every new coefficient is positive rational, and the resource count is
+\begin{equation}\label{eq:appresourcecount}
+ 2(g+1)N+2(g+1)\binom{N-1}{2}.
+\end{equation}
+Every old and new latency has degree exactly $d$. This proves Proposition~\ref{thm:uniformfamily} with a finite exact construction; the output can be very large.
+
+\subsection{A uniform substitution approaching the degree}\label{app:tail}
+We now check the parameter conditions when the approximation factor approaches $d$ with an explicit additive error. For an arbitrary integer $d\ge2^{20}$, put
+\begin{equation}\label{eq:appnearparams}
+ \ell=\lceil\log_2d\rceil,\qquad
+ n=\left\lceil\frac{d}{1200\ell^2}\right\rceil.
+\end{equation}
+We check all three uniform conditions, including changes of $\ell$ at powers of two.
+First $d>1200\ell^2$ throughout this range. At $d=2^{20}$ this is $2^{20}>1200\cdot20^2$. For $\ell\ge21$, use $d>2^{\ell-1}$ and $2^{20}>1200\cdot21^2$; the latter comparison propagates because $2(\ell/(\ell+1))^2\ge1$ for $\ell\ge3$. Therefore $n\ge2$ and
+\begin{equation}\label{eq:approunding}
+ \frac{d}{1200\ell^2}\le n
+ \le\frac{d}{1200\ell^2}+1
+ \le\frac{d}{600\ell^2}.
+\end{equation}
+In particular $d\ge8n$. The integral inequality $\log(1+x)\ge x/(1+x)$ gives
+\[
+ \log T\ge\frac{d}{8n+1}\ge\frac{d}{9n}
+ \ge\frac{200}{3}\ell^2.
+\]
+But $n\le d$, $\log d\le\ell\log2<\ell$, and $\log16<4$, so
+\[
+ \log(16nd)\le\log16+2\log d<4+2\ell
+ <\frac{200}{3}\ell^2\le\log T.
+\]
+Hence $T>16nd$. Finally~\eqref{eq:approunding} gives
+\[
+ 200n(\log d)^2
+ \le\frac d3(\log d/\ell)^2
+ \le\frac d3(\log2)^2
+ <d/3<d\log(3/2).
+\]
+The last inequality follows by integrating $1/t$ on $[1,3/2]$, giving $\log(3/2)>1/3$. All of~\eqref{eq:uniformconditions} holds. The uniform family has target
+\[
+ \alpha=d-d/n\ge d-1200\ell^2.
+\]
+Since all deviation costs are nonnegative, a strict improvement at factor $\alpha$ is strict at the smaller factor $d-1200\ell^2$ as well. This proves Theorem~\ref{thm:near} for every stated integer degree.
+
+\begin{proof}[Proof of Theorem~\ref{thm:near}]
+Choose $n$ as in~\eqref{eq:appnearparams}. The preceding inequalities verify all the hypotheses of Proposition~\ref{thm:uniformfamily}. Its improvement factor is $d-d/n\ge d-1200\lceil\log_2d\rceil^2$. Since deviation costs are nonnegative, each strict improvement at that factor is also strict at the smaller factor in~\eqref{eq:nearlower}. Algorithm~1 provides the stated positive rational data, pure degree-$d$ latencies, and two nonempty disjoint strategies for every player.
+\end{proof}
+
+\subsection{The explicit fixed-parameter example}\label{sec:fixedexample}
+For $n=2$ and $d=2^{21}$, we have $d\ge8n$ and $d\ge512n^2$. The cubic term of the binomial expansion gives
+\[
+ T\ge\binom d3(8n)^{-3}
+ \ge\frac{d^3}{12288n^3}\ge16nd,
+\]
+where the last comparison uses $d^2\ge196608n^4$. For $d\ge2^{20}$, the inequality $\log d\le d^{1/4}$ holds: it is true at the endpoint, and $d^{1/4}-\log d$ increases for $d\ge256$. Since $\sqrt{2^{21}}>1200=600n$,
+\[
+ d\log(3/2)>d/3>200n\sqrt d\ge200n(\log d)^2.
+\]
+Thus all of~\eqref{eq:uniformconditions} holds. This fully specified game has no $2^{20}$-$\PNE$.
+
+\section{Conclusion and future work}\label{sec:conclusion}
+The construction gives a nonexistence factor within $O((\log d)^2)$ of the known universal existence bound $d$. Its proof covers every state: adjacent windows handle phase mismatch, a return window handles the remaining front configurations, and three-player pairs handle nonfront strings. Each component is realized by positive rational monomial latencies of the original degree.
+
+The remaining finite-degree gap is a natural next question. Further work may improve the additive loss, reduce the number of players and resources, or obtain useful bounds at small degrees. The present construction also leaves open how much of the lower bound survives under additional restrictions on strategy size or the number of weight values.
+
+\section*{AI use statement}
+Generative AI was used in developing and checking mathematical arguments and in preparing and revising the manuscript. The present revision reorganizes the supplied construction and proofs around the nonexistence theorem, and uses exact finite checks to inspect resource-incidence identities. Those checks supplement the mathematical argument. The authors are responsible for the results, references, and final text.
+
+\bibliographystyle{plain}
+\bibliography{references}
+\end{document}
