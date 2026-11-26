@@ -1,0 +1,634 @@
+[
+  {
+    "text": "# 交换代数 7 · 整元素与模有限性\n\n黑字保留原课文，蓝块标出释义、补证及订正，红字沿用原稿的明确提问。中性疑号对应首读候选。",
+    "page_ids": [],
+    "source_labels": [],
+    "origin": "editorial",
+    "status": "resolved",
+    "explanation": "题签与体例为学习稿编排。"
+  },
+  {
+    "text": "## 目录\n\n1. [整元素、代数数与记号](#整元素代数数与记号)\n2. [单生成代数的有限模判据](#单生成代数的有限模判据)\n3. [中间环与忠实模判据](#中间环与忠实模判据)\n4. [二次例题与尖点曲线](#二次例题与尖点曲线)\n5. [线性算子与零化子商环](#线性算子与零化子商环)\n6. [有限多个整元、有限型与代数整数的运算](#有限多个整元有限型与代数整数的运算)",
+    "page_ids": [],
+    "source_labels": [],
+    "origin": "editorial",
+    "status": "resolved",
+    "explanation": "目录由原稿内容重排而来。"
+  },
+  {
+    "text": "## 整元素、代数数与记号",
+    "page_ids": [],
+    "source_labels": [],
+    "origin": "editorial",
+    "status": "resolved",
+    "explanation": "学习稿标题。"
+  },
+  {
+    "text": "代数数。$k/\\mathbb Q$ 有限扩张，$\\forall a$，$f(x)\\in\\mathbb Q[x]$。\n\n$$\nf(a)=0.\n$$\n\n$$\nQ_k=\\{a\\in k\\mid f(x)\\in\\mathbb Z[x]\\text{〔疑 M1.2〕的多项式}\\}\\quad\\text{〔首符号 M1.2〕}.\n$$",
+    "page_ids": [
+      "p0001"
+    ],
+    "source_labels": [
+      "p0001 页顶「代数数」与有限扩张行",
+      "p0001 页顶下一行 f(a)=0",
+      "p0001 紧下有 k 下标的整数组集合与多项式条件"
+    ],
+    "origin": "source",
+    "status": "unresolved",
+    "explanation": "原页顶三处并列。首符号及首一字样未决，求根多项式的存在量词由蓝块补写。"
+  },
+  {
+    "text": "整元素。\n\n$A\\subseteq B$，$b\\in B$。$\\exists a_i\\in A$，$n\\ge1$。\n\n$$\nb^n+a_1b^{\\,\\text{〔疑 M1.6〕}}+\\cdots+a_n=0.\n$$\n\n$b$ 整〔疑 M1.7〕 $b$。",
+    "page_ids": [
+      "p0001"
+    ],
+    "source_labels": [
+      "p0001 下部「整元素」",
+      "p0001 下部 A⊆B、b∈B",
+      "p0001 下部存在 a_i、n≥1 与右侧首一式",
+      "p0001 最下 b 整〔于／元〕b"
+    ],
+    "origin": "source",
+    "status": "unresolved",
+    "explanation": "首读原式，末行尾字保留 b 的形状，指数未用正确数学命题替换。"
+  },
+  {
+    "text": "> [!note] 补充｜整元素与代数整数\n>\n> 环采用带单位的交换环，同一包含中的单位一致。设 $A\\subseteq B$，$b\\in B$。若某个 $n\\ge1$ 和 $a_1,\\ldots,a_n\\in A$ 满足\n>\n> $$\n> b^n+a_1b^{n-1}+\\cdots+a_n=0,\n> $$\n>\n> 就称 $b$ 在 $A$ 上整，或称 $b$ 整于 $A$。这里的基环是 $A$，首一多项式的首项系数为 $1$。\n>\n> 当 $[k:\\mathbb Q]=d<\\infty$ 时，任意 $a\\in k$ 的 $1,a,\\ldots,a^d$ 在 $\\mathbb Q$ 上线性相关，关系的系数不全为零，故存在非零 $f\\in\\mathbb Q[x]$ 满足 $f(a)=0$。在 $\\mathbb Q[x]$ 中可用首项系数归一化。\n>\n> $k$ 中的代数整数要求同一个求根多项式具有整系数且首一。可规范记作 $\\mathcal O_k=\\{a\\in k\\mid \\exists f\\in\\mathbb Z[x]\\text{ 首一},\\,f(a)=0\\}$。例如 $1/2$ 满足 $2x-1=0$。若它满足首一次数 $n\\ge1$ 的整系数式，乘以 $2^n$ 即得 $1$ 加偶数等于 $0$ 的矛盾。",
+    "page_ids": [
+      "p0001"
+    ],
+    "source_labels": [
+      "p0001 页顶有限扩张与 f(a)=0",
+      "p0001 紧下整数组集合",
+      "p0001 下部整元定义的 A⊆B 与首一式",
+      "p0001 最下 b 整〔于／元〕b"
+    ],
+    "origin": "supplement",
+    "status": "resolved",
+    "explanation": "定义及此处反例是蓝色释义。有限维线性关系补足原页未写明的量词，保留两种系数环的区别。"
+  },
+  {
+    "text": "> [!note] 术语表\n>\n> | 记号或术语 | 含义 |\n> | --- | --- |\n> | $A[b_1,\\ldots,b_s]$ | 由 $A$ 与这些元素生成的子代数。对一般结构映射 $A\\to B$，其中的 $A$ 指其像。 |\n> | 有限 $A$ 模、模有限 | 有限生成的 $A$ 模，允许生成元之间有关系。 |\n> | 有限型 $A$ 代数 | 有限多个元素连同 $A$ 的像通过加法、乘法生成整个目标环。 |\n> | $B$ 整于 $A$ | $B$ 中每个元素都满足系数来自 $A$ 的首一关系。 |\n> | $\\operatorname{Ann}_R(M)$ | $\\{r\\in R\\mid rm=0\\ \\text{对所有 }m\\in M\\}$。 |\n> | 忠实 $R$ 模 | $\\operatorname{Ann}_R(M)=(0)$。 |\n> | $R/I$ | $R$ 对理想 $I$ 的商环，元素为陪集 $r+I$。 |\n> | $\\operatorname{End}_A(M)$ | $A$ 线性自映射组成的环，乘法为复合。 |",
+    "page_ids": [
+      "p0002",
+      "p0004",
+      "p0006",
+      "p0007"
+    ],
+    "source_labels": [
+      "p0002 A[b] 模有限与 b 在 A 上整的 iff",
+      "p0004 Thm (3)、(4) 及零化子两行",
+      "p0006 两次商环",
+      "p0007 末页有限型与模有限题签、满同态和商式"
+    ],
+    "origin": "supplement",
+    "status": "resolved",
+    "explanation": "从本篇后文先行提取术语及规范定义，后文仍各自保留原笔。"
+  },
+  {
+    "text": "## 单生成代数的有限模判据",
+    "page_ids": [],
+    "source_labels": [],
+    "origin": "editorial",
+    "status": "resolved",
+    "explanation": "学习稿标题。"
+  },
+  {
+    "text": "〔疑 M2.1〕生成元。$f(b)=0$，$n\\text{〔横〕}\\deg f(x)$。\n\n$$\nA[b]=\\sum_{i=0}^{n}Ab^i.\n$$\n\n$A$ 模生成〔疑 M2.1〕。\n\n$A[b]$ 有限 $A$ 模 iff $b$ 在 $A$ 上整。",
+    "page_ids": [
+      "p0002"
+    ],
+    "source_labels": [
+      "p0002 页首题语、f(b)=0 与 n 横 deg f(x)",
+      "p0002 次行首个 A[b] 求和及 A 模生成字样",
+      "p0002 第 3 行 A[b] 有限 A 模 iff b 在 A 上整"
+    ],
+    "origin": "source",
+    "status": "unresolved",
+    "explanation": "把原先印象中上限为 n 的求和保留在正文；不因后面 n−1 更精简而覆盖这条等式。"
+  },
+  {
+    "text": "> [!note] 补充｜两个证明工具\n>\n> 除以首一 $f(T)\\in A[T]$ 时，若被除多项式当前最高项是 $cT^d$ 且 $d\\ge\\deg f$，减去 $cT^{d-\\deg f}f(T)$ 可消掉最高项。有限次后得到 $g=qf+r$，其中 $r=0$ 或 $\\deg r<\\deg f$。如果有两组商和余数，则 $f(q-q')=r'-r$。当 $q-q'\\ne0$ 时，左边因 $f$ 首一而有次数 $\\deg f+\\deg(q-q')$，与右边矛盾，故商和余数唯一。\n>\n> 设 $C$ 是带单位交换环上的方阵。按行、列展开行列式，由余子式组成的转置矩阵 $\\operatorname{adj}(C)$ 满足 $\\operatorname{adj}(C)C=\\det(C)I$。积的对角项为通常的余子式展开，非对角项为含两条相同行或列的行列式，因而为零。只有 $\\det(C)$ 为单位时，$\\det(C)^{-1}\\operatorname{adj}(C)$ 才给出原环上的逆矩阵。",
+    "page_ids": [
+      "p0002",
+      "p0003"
+    ],
+    "source_labels": [
+      "p0002 页首第 2 行上限 n",
+      "p0002 中左 b^n 的递推",
+      "p0002 中下 g 的除法与低次余式",
+      "p0003 中下分式 C*C/det(C)=I 样"
+    ],
+    "origin": "supplement",
+    "status": "resolved",
+    "explanation": "将两种工具放在证明调用前；交代带零因子的一般交换环也能用首一除法与伴随恒等式。"
+  },
+  {
+    "text": "$\\Leftarrow$，$b$ 在 $A$ 上整，$\\exists n,a_{\\bullet}\\ \\text{s.t.}$\n\n$$\nf(x)=x^n+a_{n-1}x^{n-1}+\\cdots+a_1x+a_0\\qquad\\text{〔末后点迹及 0，疑 M2.2〕}.\n$$\n\n$$\nf(b)=0,\\qquad b^n=-\\sum_{k=0}^{n-1}a_i b^k.\n$$\n\n$\\forall m\\ge n$，$1,\\ldots,b^{n-1}$ 是一组生成元。",
+    "page_ids": [
+      "p0002"
+    ],
+    "source_labels": [
+      "p0002 左向箭、b 在 A 上整及 ∃n,a…s.t.",
+      "p0002 同行首一式至末 0",
+      "p0002 f(b)=0 和 b^n 的求和",
+      "p0002 ∀m≥n 及 1,…,b^{n−1} 生成元"
+    ],
+    "origin": "source",
+    "status": "unresolved",
+    "explanation": "保留时序和异指下标 a_i，省略的归纳写在下一块。"
+  },
+  {
+    "text": "> [!note] 补证与订正｜路线一 · 降幂归纳\n>\n> 式中把求和系数统一作 $a_k$。取 $f(x)=x^n+\\sum_{k=0}^{n-1}a_kx^k$，其关系为 $f(b)=0$。出现的零值应施加于 $b$ 处的求值。\n>\n> 设 $S=A+Ab+\\cdots+Ab^{n-1}$。幂次 $m<n$ 时 $b^m\\in S$。若 $m\\ge n$，用首一关系得到\n>\n> $$\n> b^m=-\\sum_{k=0}^{n-1}a_kb^{m-n+k}.\n> $$\n>\n> 指数 $m-n+k$ 非负且小于 $m$，强归纳法给出 $b^m\\in S$。而 $A[b]$ 的每个元素是有限个幂的 $A$ 线性组合，所以 $A[b]=S$。额外把 $b^n$ 加入生成元也给出同一 $A$ 模，开头的上限 $n$ 可以是冗余生成式。",
+    "page_ids": [
+      "p0002"
+    ],
+    "source_labels": [
+      "p0002 首一式与 f(b)=0",
+      "p0002 b^n 的递推与 ∀m≥n",
+      "p0002 首个上限 n 的求和"
+    ],
+    "origin": "supplement",
+    "status": "resolved",
+    "explanation": "补全原路线的降幂与等式双包含，并就地说明索引和首处上限。"
+  },
+  {
+    "text": "也可以。$g(b)\\in A[b]$，$g(x)\\in A[x]$。\n\n$$\ng(x)=\\text{〔g/q〕}(x)f(x)+r(x),\\qquad \\deg r<\\deg f.\n$$\n\n$$\nA[b]=\\sum_{\\text{〔起标疑 M2.5〕}=0}^{n-1}Ab^k.\n$$",
+    "page_ids": [
+      "p0002"
+    ],
+    "source_labels": [
+      "p0002 中段「也可以」",
+      "p0002 中段 g(b)∈A[b]、g(x)∈A[x]",
+      "p0002 除法式及次数不等式",
+      "p0002 第二个 A[b] 的 n−1 上限求和"
+    ],
+    "origin": "source",
+    "status": "unresolved",
+    "explanation": "原稿第二路线单独保留，商字母及求和下标的笔迹未决。"
+  },
+  {
+    "text": "> [!note] 补证｜路线二 · 首一多项式除法\n>\n> 任取 $u=g(b)\\in A[b]$，其中 $g(x)\\in A[x]$。由前面的首一除法有 $g=qf+r$，这里用 $q$ 命名商，$r=0$ 或 $\\deg r<n$。在 $b$ 处求值，得 $u=q(b)f(b)+r(b)=r(b)$，故 $u$ 落在 $1,b,\\ldots,b^{n-1}$ 的 $A$ 线性包中。这些幂本来就在 $A[b]$，所以得到 $A[b]=\\sum_{k=0}^{n-1}Ab^k$。",
+    "page_ids": [
+      "p0002"
+    ],
+    "source_labels": [
+      "p0002 除法式及次数不等式",
+      "p0002 g(b)∈A[b] 及 g(x)∈A[x]",
+      "p0002 第二个 n−1 上限求和"
+    ],
+    "origin": "supplement",
+    "status": "resolved",
+    "explanation": "单独补全原带余除法路线和任取元素的理由。"
+  },
+  {
+    "text": "$\\Rightarrow$。设 $A[b]=Au_1+\\cdots+Au_n$，找 $f(x)\\in A[x]$。\n\n$$\n\\times b\\colon A[b]\\longrightarrow A[b],\\qquad a\\longmapsto b\\cdot a.\n$$",
+    "page_ids": [
+      "p0002",
+      "p0003"
+    ],
+    "source_labels": [
+      "p0002 最下 ⇒、设 A[b] 的生成写法",
+      "p0002 最下「找 f(x)∈A[x]」",
+      "p0003 页顶 ×b 的箭头与元素箭头"
+    ],
+    "origin": "source",
+    "status": "resolved",
+    "explanation": "跨页接在寻求首一多项式之后，域与陪域均为 A[b]。"
+  },
+  {
+    "text": "$\\varphi_b(a\\cdot a)=\\text{〔a/n〕}\\,\\varphi_b(a)$。〔疑 M3.1〕\n\n对比〔疑 M3.2〕。\n\n$$\n\\varphi_b(a_i)=d_{i,1}a_i+\\cdots+d_{ni}a_i,\\qquad\nD=(d_{ij})_{k\\times n}\\in M_nA.\n$$\n\n原括号列式，首行 $bu_1=d_{11}u_1\\ \\cdots\\ d_{1,\\text{〔疑 M3.3〕}}u_k$，中有纵点，末行 $bu_{\\text{〔3/k 形〕}}=$，右边只有列笔与残式。\n\n$$\nM_n(A)\\ \\text{〔疑 M3.4〕}\\ C^*\\qquad\n\\frac{C^*C}{\\det(C)}=I.\n$$",
+    "page_ids": [
+      "p0003"
+    ],
+    "source_labels": [
+      "p0003 页顶 φ_b 乘积关系",
+      "p0003 中段短标题、φ_b(a_i) 展开",
+      "p0003 中段 D=(d_ij) 的尺寸与矩阵环",
+      "p0003 中下大括号残式：bu₁、纵点、bu 下标末行",
+      "p0003 中下 M_n(A) 字样及 C*C/det(C)=I"
+    ],
+    "origin": "source",
+    "status": "unresolved",
+    "explanation": "保留形式上冲突的索引及一般环分式；斜线/竖笔保作疑项。"
+  },
+  {
+    "text": "<span style=\"color:#bf3030\">原待填｜（找一个简易的方法）</span>",
+    "page_ids": [
+      "p0003"
+    ],
+    "source_labels": [
+      "p0003 下方红笔括句「找一个简易的方法」"
+    ],
+    "origin": "source",
+    "status": "resolved",
+    "explanation": "原稿明确的红笔求法，紧邻蓝色完整解答。"
+  },
+  {
+    "text": "> [!note] 补证与订正｜行列式技巧回答原待填\n>\n> 记 $\\varphi_b(u)=bu$。对 $\\lambda\\in A$、$u,v\\in A[b]$，分配律给出 $\\varphi_b(u+v)=\\varphi_b(u)+\\varphi_b(v)$，交换律给出 $\\varphi_b(\\lambda u)=\\lambda\\varphi_b(u)$，所以 $\\varphi_b$ 是 $A$ 线性自映射。\n>\n> 对每个 $i=1,\\ldots,n$ 选定 $d_{ij}\\in A$ 使 $bu_i=\\sum_{j=1}^n d_{ij}u_j$。用行表示「第 $i$ 个生成元的像」，令 $D=(d_{ij})_{1\\le i,j\\le n}$，$U=(u_1,\\ldots,u_n)^{\\mathsf T}$。于是\n>\n> $$\n> (bI_n-D)U=0.\n> $$\n>\n> 在 $A[b]$ 中用伴随矩阵左乘，得到 $\\det(bI_n-D)U=0$。本步使用 $\\operatorname{adj}(C)C=\\det(C)I$，适用于行列式为零或非单位。$F(T)=\\det(TI_n-D)\\in A[T]$ 首一，行列式展开中 $T^n$ 只来自主对角线上各取一个 $T$。求值与行列式展开可交换，所以 $F(b)u_i=0$。由于 $1\\in A[b]$，存在 $\\lambda_i\\in A$ 使 $1=\\sum_i\\lambda_i u_i$。因此 $F(b)=\\sum_i\\lambda_i F(b)u_i=0$，证得 $b$ 在 $A$ 上整。生成元不必是基，矩阵 $D$ 也可以随所选系数而变。",
+    "page_ids": [
+      "p0002",
+      "p0003",
+      "p0004"
+    ],
+    "source_labels": [
+      "p0002 最下 ⇒ 与生成列",
+      "p0003 ×b 的箭头与元素箭头",
+      "p0003 φ_b 记号、D 及残式",
+      "p0003 C* 分式与红笔找法",
+      "p0004 右侧 det(TI−D) 二次例"
+    ],
+    "origin": "supplement",
+    "status": "resolved",
+    "explanation": "保留原乘法路线并补齐线性、方阵、伴随恒等式、首一性和从消去生成元到消去 1 的步骤。"
+  },
+  {
+    "text": "## 中间环与忠实模判据",
+    "page_ids": [],
+    "source_labels": [],
+    "origin": "editorial",
+    "status": "resolved",
+    "explanation": "学习稿标题。"
+  },
+  {
+    "text": "Thm\n\n1. $b$ 整于 $A$。\n2. $A[b]$ 有限 $A$ 模。\n3. $A[b]\\subseteq C\\subseteq B$，$C$ 有限 $A$ 模。\n4. $\\exists$ 有限 $A$ 模 $M$，使 $M$ 是忠实 $A[b]$ 模。\n\n$R$ 环，$M$ 是 $R$ 模，$\\operatorname{Ann}_M=\\{r\\in R\\mid rm=0\\}$。〔记号疑 M4.3〕\n\n当 $\\operatorname{Ann}_M=(0)$，称 $M$ 是忠实 $R$ 模。",
+    "page_ids": [
+      "p0004"
+    ],
+    "source_labels": [
+      "p0004 中段 Thm、四条条件",
+      "p0004 R 环 M 是 R 模与 Ann 零化集合",
+      "p0004 当零化子为 (0) 称忠实 R 模"
+    ],
+    "origin": "source",
+    "status": "unresolved",
+    "explanation": "学习排版的 1–4 对应四个原分行；原记号末笔及量词以原图为据，蓝块给出准确语义。"
+  },
+  {
+    "text": "> [!note] 释义｜定理中的环、标量与零化子\n>\n> 第（3）条的 $C$ 取中间子环，单位与 $A[b]$ 一致。第（4）条的 $A$ 模作用是限制 $A[b]$ 作用到 $A$ 得到的。\n>\n> 零化子是对所有 $m\\in M$ 同时要求 $rm=0$ 的那些 $r$。若 $r,s$ 均零化 $M$，则 $(r-s)m=0$ 对所有 $m$ 成立。对任意 $u\\in R$ 也有 $(ur)m=u(rm)=0$，故零化子是 $R$ 的理想。忠实性还等价于作用同态 $R\\to\\operatorname{End}_R(M)$，$r\\mapsto(m\\mapsto rm)$，是单射。",
+    "page_ids": [
+      "p0004"
+    ],
+    "source_labels": [
+      "p0004 Thm (3)、(4)",
+      "p0004 零化子定义与忠实条件"
+    ],
+    "origin": "supplement",
+    "status": "resolved",
+    "explanation": "明示中间环及兼容作用，补足对所有 m 的量词与理想性质；系数环交换性保证乘法作用落在该自同态环。"
+  },
+  {
+    "text": "$(2)\\to(3)\\to(4)$。$C=A[b]$，$M=C$。\n\n$(3)\\Rightarrow(4)$。$A[b]\\subseteq M$，$M$ 有 $Ab$ 模〔记号疑 M4.4〕，$m\\in M$，$a\\in A[b]$。\n\n$am$ 在 $C$ 中做乘法。若 $\\exists a$ s.t. $a\\in A[b]$，原式写 $a\\cdot M=0$ 和 $a\\cdot1=0$，下方弯箭从前式下指向后一式。",
+    "page_ids": [
+      "p0004",
+      "p0005"
+    ],
+    "source_labels": [
+      "p0004 下部 (2)→(3)→(4)",
+      "p0004 下部 C=A[b] 与 M=C",
+      "p0004 末行 (3)⇒(4)、A[b]⊆M、M 有 Ab 模、m 与 a 的条件",
+      "p0005 首行 am 在 C 中做乘法",
+      "p0005 第二行 若∃a、a∈A[b]、a·M=0、a·1=0",
+      "p0005 弯箭指向 a·1=0"
+    ],
+    "origin": "source",
+    "status": "unresolved",
+    "explanation": "原稿的箭头与下一页首段连读，M=C 的限定在下方解释。"
+  },
+  {
+    "text": "<span style=\"color:#bf3030\">原问｜1 哪来的</span>",
+    "page_ids": [
+      "p0005"
+    ],
+    "source_labels": [
+      "p0005 a·1=0 下的红笔「1 哪来的」"
+    ],
+    "origin": "source",
+    "status": "resolved",
+    "explanation": "原红笔明确提问，放在原零式后。"
+  },
+  {
+    "text": "> [!note] 补证｜取中间环本身作模\n>\n> $(2)\\Rightarrow(3)$ 取 $C=A[b]$。给定（3），取 $M=C$，并把 $a\\in A[b]$ 对 $m\\in C$ 的作用定义成 $C$ 中的乘积 $am$。因为 $C$ 是子环，这一积仍在 $C$ 中，并满足模公理。又因为 $C$ 作为 $A$ 模有限生成，$M$ 满足（4）的有限性要求。\n>\n> 这里的 $1$ 是 $A[b]\\subseteq C=M$ 中的单位 $1_C$。若 $aM=0$，取模中的元素 $m=1_C$，即得 $0=a\\cdot1_C=a$。所以 $M=C$ 是忠实的 $A[b]$ 模。对（4）中任意给出的模，证明要用忠实性，不能直接取一个默认存在的模元 $1$。",
+    "page_ids": [
+      "p0004",
+      "p0005"
+    ],
+    "source_labels": [
+      "p0004 下部 M=C 与 A[b]⊆M",
+      "p0005 am 在 C 中做乘法",
+      "p0005 a·M=0 至 a·1=0 及红问"
+    ],
+    "origin": "supplement",
+    "status": "resolved",
+    "explanation": "完整回答红笔 1 的来历，并补足原箭头第一步与第二步。"
+  },
+  {
+    "text": "$M$ 是忠实 $A[b]$ 模，也是有限生成 $A$ 模。",
+    "page_ids": [
+      "p0005"
+    ],
+    "source_labels": [
+      "p0005 红笔问句下「M 是忠实 A[b] 模，也是有限生成 A 模」"
+    ],
+    "origin": "source",
+    "status": "resolved",
+    "explanation": "保留原稿在红问后另起的一条结论。"
+  },
+  {
+    "text": "> [!note] 补证｜从忠实模推出首一关系\n>\n> 给定（4），取有限 $A$ 生成元 $u_1,\\ldots,u_n$。若 $M=0$，忠实性推出 $A[b]$ 为零环，可用首一关系 $T$；否则可取 $n\\ge1$。按乘以 $b$ 的作用选 $d_{ij}\\in A$，使 $b u_i=\\sum_j d_{ij}u_j$，记 $D=(d_{ij})$。与前面相同，$\\operatorname{adj}(bI-D)(bI-D)U=0$，于是 $F(b)u_i=0$，其中 $F(T)=\\det(TI-D)\\in A[T]$ 首一。\n>\n> 每个 $m\\in M$ 是这些 $u_i$ 的 $A$ 线性组合，故 $F(b)m=0$ 对所有 $m$ 成立。由忠实性，$F(b)=0$ 在 $A[b]$ 中成立，所以（4）推出（1）。连同两条 $(1)\\Rightarrow(2)$ 的证明和原稿的 $(2)\\Rightarrow(3)\\Rightarrow(4)$，四条等价。",
+    "page_ids": [
+      "p0002",
+      "p0003",
+      "p0004",
+      "p0005"
+    ],
+    "source_labels": [
+      "p0002 iff 与页末 ⇒",
+      "p0003 ×b、D 与伴随路线",
+      "p0004 Thm 四条",
+      "p0004 原链及忠实结论",
+      "p0005 忠实有限句"
+    ],
+    "origin": "supplement",
+    "status": "resolved",
+    "explanation": "补齐原手写四等价所需的闭环，使用忠实性替代 m=1 的特殊论证。"
+  },
+  {
+    "text": "## 二次例题与尖点曲线",
+    "page_ids": [],
+    "source_labels": [],
+    "origin": "editorial",
+    "status": "resolved",
+    "explanation": "学习稿标题。"
+  },
+  {
+    "text": "eg. $\\omega^2=1+\\omega$〔字形疑 M4.1〕，$\\mathbb Z[\\omega]$。\n\n$$\n\\omega u_1=u_2,\\qquad \\omega u_2=u_1+u_2.\n$$\n\n$$\nD=\\begin{pmatrix}\\text{〔0 形〕}&1\\\\1&1\\end{pmatrix},\\qquad\n\\det(TI-D)=T^2-T-1.\n$$",
+    "page_ids": [
+      "p0004"
+    ],
+    "source_labels": [
+      "p0004 上部 eg. ω/w 的平方式",
+      "p0004 上部 Z[ω]",
+      "p0004 上部两个 ωu_i 等式",
+      "p0004 左侧 D 的矩阵",
+      "p0004 右侧 det(TI−D) 展开"
+    ],
+    "origin": "source",
+    "status": "unresolved",
+    "explanation": "原稿例式及分置左右的矩阵与展开；暂不把开放弧当作完整闭读的 0。"
+  },
+  {
+    "text": "> [!note] 解答｜用乘法矩阵求二次关系\n>\n> 取 $u_1=1$，$u_2=\\omega$。关系 $\\omega^2=1+\\omega$ 使所有更高幂都能归约为 $1,\\omega$ 的整数线性组合，所以这两元生成 $\\mathbb Z[\\omega]$。两个像的系数给出\n>\n> $$\n> D=\\begin{pmatrix}0&1\\\\1&1\\end{pmatrix},\\qquad\n> TI-D=\\begin{pmatrix}T&-1\\\\-1&T-1\\end{pmatrix}.\n> $$\n>\n> 展开得 $T(T-1)-(-1)(-1)=T^2-T-1$。代入 $\\omega$ 得 $\\omega^2-\\omega-1=0$，也检验了原起点。若把 $\\omega$ 取为复数中的任一根，则它不在 $\\mathbb Q$，因为有理根定理给出的 $\\pm1$ 都不是根。于是 $1,\\omega$ 在 $\\mathbb Q$ 及 $\\mathbb Z$ 上独立，此处也确实构成 $\\mathbb Z[\\omega]$ 的 $\\mathbb Z$ 基。",
+    "page_ids": [
+      "p0004"
+    ],
+    "source_labels": [
+      "p0004 上部平方关系",
+      "p0004 上部两个 ωu_i 等式、D 与 det(TI−D)"
+    ],
+    "origin": "supplement",
+    "status": "resolved",
+    "explanation": "完整求系数矩阵、展开及代回验证，选取 u_i 是蓝色补充。"
+  },
+  {
+    "text": "$X=V(y^2-x^3)$ 在 $\\mathbb A^2$ 中，〔疑 M1.4〕。同一行右方有粗分叉图样，两曲笔共一左接点，无轴标。\n\n$$\nk[x,y]/(y^2-x^3)\\cong k[t^2,t^3]\\subseteq k(t).\n$$\n\n〔起字疑 M1.5〕$k[t^{\\text{〔?〕}},t^{\\text{〔?〕}}]$ 中，$t^2-a^2=0$ 不可能〔末变量疑 M1.5〕$\\in k$。",
+    "page_ids": [
+      "p0001"
+    ],
+    "source_labels": [
+      "p0001 中上 X=V(y²−x³) 在 A² 中、右接短句",
+      "p0001 同行右端粗分叉笔迹和小点",
+      "p0001 中部尖点商环同构和 k(t) 包含",
+      "p0001 中下「记」样开头、k[t,…] 中、t²−a²=0、不可能、末∈k"
+    ],
+    "origin": "source",
+    "status": "unresolved",
+    "explanation": "保留例题所属原文及草图形状；分叉系图还是标记、右尾字和记号都待定向复核。"
+  },
+  {
+    "text": "> [!note] 解答｜参数环中的整元素\n>\n> 记 $R=k[t^2,t^3]$。把 $x,y$ 分别映成 $t^2,t^3$，所得 $k$ 代数同态 $k[x,y]\\to k[t]$ 的像为 $R$，且消去 $y^2-x^3$。在 $k[x][y]$ 中除以这个关于 $y$ 的首一式后，余式为 $P(x)+yQ(x)$。它映为 $P(t^2)+t^3Q(t^2)$。第一项只含偶数次数，第二项只含不小于 $3$ 的奇数次数，互相不能抵消。若像为零，则 $P=Q=0$，所以同态的核恰为 $(y^2-x^3)$，得到原商环的同构。\n>\n> $t=t^3/t^2\\in\\operatorname{Frac}(R)$，所以 $\\operatorname{Frac}(R)=k(t)$。$R$ 中的多项式没有一次项，故 $t\\notin R$。但在形式变量 $T$ 中，$T^2-t^2\\in R[T]$ 首一，在 $T=t$ 处为零。因此 $t$ 对 $R$ 整。按「在分式域中整于 $R$ 的元素都属于 $R$」定义整闭，这个 $R$ 不是整闭的。\n>\n> 若原句是考虑 $t^2-a^2=0$ 且 $a\\in k$，因为 $t$ 是不定元，次数为 $2$ 的多项式不能与常数相等。即便取 $a\\in R$，在域 $k(t)$ 中也有 $(t-a)(t+a)=0$，故只可能 $a=\\pm t$，这两者都不属于 $R$。这与在扩环中让 $t$ 满足首一关系并不冲突。\n>\n> 在实数参数的示意图中，$x=t^2$ 非负，$t$ 的两种符号给出上下各一支。对 $t\\ne0$ 有 $y/x=t$。当 $t\\to0$ 时这个斜率趋于 $0$，两支沿 $x$ 轴在原点相接。",
+    "page_ids": [
+      "p0001"
+    ],
+    "source_labels": [
+      "p0001 尖点方程与坐标商环",
+      "p0001 尖点参数环与 k(t)",
+      "p0001 尖点后写 t²−a²=0 及 ∈k"
+    ],
+    "origin": "supplement",
+    "status": "resolved",
+    "explanation": "证明核与分式域、给出整闭反例，并分别解释依原可见 t²−a² 做的两种自然判断。"
+  },
+  {
+    "text": "## 线性算子与零化子商环",
+    "page_ids": [],
+    "source_labels": [],
+    "origin": "editorial",
+    "status": "resolved",
+    "explanation": "学习稿标题。"
+  },
+  {
+    "text": "$M$ 是 $R$ 模。\n\n$$\n\\overline R=R/\\operatorname{Ann}(R)(M)\\quad\\text{〔括号层级疑 M6.3〕}.\n$$\n\n$M$ 是 $R$ 模。\n\n$$\n\\overline R=R/\\operatorname{Ann}_R(M).\n$$\n\nStep 1. $M$ 具一个 $\\overline R$ 模结构。\n\nStep 2. $M$ 的 $\\overline R$ 模〔忠实字样疑 M6.4〕的。",
+    "page_ids": [
+      "p0006"
+    ],
+    "source_labels": [
+      "p0006 中部第一次 M 是 R 模",
+      "p0006 第一次 R̄=R/Ann(R)(M) 样商式",
+      "p0006 紧接重复 M 是 R 模",
+      "p0006 紧接重复 R̄=R/Ann_R(M) 样商式",
+      "p0006 Step1 模结构、Step2 忠实"
+    ],
+    "origin": "source",
+    "status": "unresolved",
+    "explanation": "两组同义原笔分别呈现；把抽象商模两步放在算子应用之前，读法见原页。"
+  },
+  {
+    "text": "> [!note] 补证｜商环作用与忠实性\n>\n> 令 $I=\\operatorname{Ann}_R(M)$。在同一个加法群 $M$ 上定义 $(r+I)\\cdot m=rm$。若 $r+I=r'+I$，则 $r-r'\\in I$，因此 $(r-r')m=0$，作用与代表元无关。两条分配律、结合律和 $(1+I)m=m$ 均由原 $R$ 作用继承，例如 $((r+I)(s+I))m=(rs)m=r(sm)$。这给出第 1 步。\n>\n> 若 $r+I$ 在此作用下使每个 $m$ 都变零，则 $r\\in I$，陪集 $r+I=0+I$。所以 $M$ 对 $\\overline R$ 忠实，这给出第 2 步。此处原稿重复写的两个商式都对应同一个商环 $R/I$。",
+    "page_ids": [
+      "p0004",
+      "p0006"
+    ],
+    "source_labels": [
+      "p0004 零化子定义两行",
+      "p0006 R 模与零化子商的两套重复书写",
+      "p0006 Step1、Step2"
+    ],
+    "origin": "supplement",
+    "status": "resolved",
+    "explanation": "补足复核所需的良定义、模公理与忠实性；原稿两次写法仍分别保留。"
+  },
+  {
+    "text": "eg. $V$ 是有限维 $k$ 空间〔原简称疑 M5.2〕，$\\sigma\\in\\operatorname{End}_k(V)$。\n\n$$\nk[\\sigma]=\\{f(\\sigma)\\mid f\\in A[T]\\},\\qquad f(\\sigma)\\cdot v=f(\\sigma)(v).\n$$\n\n$V$ 是 $k$ 有限的，$V$ 有一个 $k[\\sigma]$ 模。\n\n$V$ 是一个忠实 $k[\\sigma]$ 模。",
+    "page_ids": [
+      "p0005"
+    ],
+    "source_labels": [
+      "p0005 例题 V 有限维 k 空间与 σ∈End_k(V)",
+      "p0005 例题 k[σ] 的定义，f∈A[T] 样",
+      "p0005 f(σ)·v=f(σ)(v)",
+      "p0005 V 是 k 有限的与 V 有一个 k[σ] 模",
+      "p0005 独立 V 是一个忠实 k[σ] 模"
+    ],
+    "origin": "source",
+    "status": "unresolved",
+    "explanation": "保留手写系数字符的 A 形及有限/忠实两处各自断行。"
+  },
+  {
+    "text": "> [!note] 解答与订正｜算子子代数作用\n>\n> 例的系数来自 $k$。把 $f(T)=\\sum_i a_iT^i\\in k[T]$ 送到 $\\sum_i a_i\\sigma^i$，其常数项作 $a_0\\operatorname{id}_V$。这些算子组成 $k[\\sigma]$。标量自同态和 $\\sigma$ 可交换，因此这个像虽处在可能不交换的 $\\operatorname{End}_k(V)$ 中，仍是交换的。\n>\n> 用算子在向量上的求值定义作用。对算子 $S,U\\in k[\\sigma]$，$(SU)\\cdot v=S(U(v))$，恒等算子作用为恒等，两条分配律来自算子加法和线性性，故得到模。若 $S$ 使每个 $v$ 都变为零，则 $S$ 本身就是零映射，证得 $V$ 忠实。$V$ 有有限 $k$ 基，故满足有限 $k$ 模条件。",
+    "page_ids": [
+      "p0005"
+    ],
+    "source_labels": [
+      "p0005 V 的有限维条件和 End_k(V)",
+      "p0005 k[σ] 定义与 f(σ)·v",
+      "p0005 V 的两条模叙述"
+    ],
+    "origin": "supplement",
+    "status": "resolved",
+    "explanation": "给出 k[σ] 的系数环和自然作用，从零算子的定义补足忠实性。"
+  },
+  {
+    "text": "$k[t]$ 多项式。在 $V$ 上有 $k[\\text{〔疑 M5.3〕}]$ 模结构样短句。\n\n$$\nv\\in V,\\qquad T\\cdot v=\\sigma(v).\n$$\n\n$$\nm_{\\text{〔疑 M6.1〕}}=\\{f(x)\\mid f(x)=0\\}\\ \\lhd\\ k[T],\\qquad\nk[\\sigma]\\cong k[T]/\\operatorname{Ann}.\n$$",
+    "page_ids": [
+      "p0005",
+      "p0006"
+    ],
+    "source_labels": [
+      "p0005 下方「k[t] 多项式」",
+      "p0005 下方「在 V 上有 k[?] 模」",
+      "p0005 末行 v∈V，T·v=σ(v)",
+      "p0006 顶第一行 m_σ、集合条件和理想符号",
+      "p0006 顶第二行 k[σ]≅k[T]/Ann"
+    ],
+    "origin": "source",
+    "status": "unresolved",
+    "explanation": "保留底部 k[t] 与上页作用定义，p6 顶的 x 值、下标、理想尾符和商环分母据首读呈现。"
+  },
+  {
+    "text": "> [!note] 解答与订正｜评价同态的核\n>\n> 把 $v\\in V$ 上的作用定义为 $f(T)\\cdot v=f(\\sigma)(v)$，于是 $T\\cdot v=\\sigma(v)$。定义 $\\operatorname{ev}_\\sigma\\colon k[T]\\to k[\\sigma]$ 为 $f\\mapsto f(\\sigma)$，加法显然保留，乘法由 $\\sigma^i\\sigma^j=\\sigma^{i+j}$ 及系数与 $\\sigma$ 交换得到。它按像的定义满射。\n>\n> 商环的分母是这个同态的核\n>\n> $$\n> I_\\sigma=\\{f(T)\\in k[T]\\mid f(\\sigma)=0\\text{ 作为算子}\\}\n> =\\operatorname{Ann}_{k[T]}(V).\n> $$\n>\n> 两个多项式的值相同恰当它们之差属于 $I_\\sigma$。因此 $f+I_\\sigma\\mapsto f(\\sigma)$ 良定义、单射且满射，给出 $k[T]/I_\\sigma\\cong k[\\sigma]$。把纸面 $f(x)=0$ 读成多项式恒等式只会留下零多项式，无法给出此核。例如 $\\sigma=0$ 且 $V\\ne0$ 时，$T$ 已在核中。\n>\n> 若 $\\dim_kV=d>0$，则 $1,\\sigma,\\ldots,\\sigma^{d^2}$ 在维数 $d^2$ 的 $\\operatorname{End}_k(V)$ 中线性相关，故 $I_\\sigma$ 含非零多项式。选其中最低次数的首一式 $m_\\sigma(T)$，任一 $g\\in I_\\sigma$ 除以 $m_\\sigma$ 的余式仍在核中，若非零则次数矛盾。因此 $I_\\sigma=(m_\\sigma)$。$V=0$ 时核是整个 $k[T]$，可取 $m_\\sigma=1$。这也解释了 $V$ 对 $k[T]$ 的作用与对其像 $k[\\sigma]$ 的忠实作用之间的关系。",
+    "page_ids": [
+      "p0005",
+      "p0006"
+    ],
+    "source_labels": [
+      "p0005 末行 T·v=σ(v)",
+      "p0005 k[σ] 定义与本征作用",
+      "p0006 顶理想定义和商同构",
+      "p0006 Step1/2"
+    ],
+    "origin": "supplement",
+    "status": "resolved",
+    "explanation": "按源理想/商环区分集合 m 和最小多项式的主理想，完整证明求值满射、核和同构。"
+  },
+  {
+    "text": "## 有限多个整元、有限型与代数整数的运算",
+    "page_ids": [],
+    "source_labels": [],
+    "origin": "editorial",
+    "status": "resolved",
+    "explanation": "学习稿标题。"
+  },
+  {
+    "text": "有限个整元。$A$。\n\n$$\nA[b_1,\\ldots,b_s]=\\sum A\\,b_1^{e_1}\\cdots b_s^{e_{\\text{〔疑 M6.5〕}}}.\n$$\n\n$A[b_1,\\ldots,b_s]$，$b_1,\\ldots,b_s$ 整元 $\\Rightarrow A[b_1,\\ldots,\\text{〔b/d〕}_s]$ 有限 $A$ 模。〔疑 M7.2〕",
+    "page_ids": [
+      "p0006",
+      "p0007"
+    ],
+    "source_labels": [
+      "p0006 页脚「有限个整元。A.」样短句",
+      "p0006 页脚 A[b₁…b_s] 等于幂积和",
+      "p0007 末行整元推出有限 A 模"
+    ],
+    "origin": "source",
+    "status": "unresolved",
+    "explanation": "合并相关相邻纸页关联，保留 p6 无界的和式及 p7 重现的结论。"
+  },
+  {
+    "text": "> [!note] 补证｜幂积的有限指数范围\n>\n> 分别给每个 $b_i$ 选一个次数为 $n_i\\ge1$ 的首一关系。任一元素是 $b_1^{e_1}\\cdots b_s^{e_s}$ 的有限 $A$ 线性组合。对第 $i$ 个因子应用单元素的降幂关系，把所有 $e_i\\ge n_i$ 的幂逐次降到低于 $n_i$ 的 $A$ 线性组合。由于环交换，可以把各因子的展开相乘，得到\n>\n> $$\n> A[b_1,\\ldots,b_s]=\\sum_{0\\le e_i<n_i\\, (1\\le i\\le s)}\n>    A\\,b_1^{e_1}\\cdots b_s^{e_s}.\n> $$\n>\n> 这些幂积本来就在左边，故等式两包含都成立，且最多有 $\\prod_i n_i$ 个生成元。若 $s=0$，空乘积对应 $1$，代数是 $A$。",
+    "page_ids": [
+      "p0006",
+      "p0007",
+      "p0002"
+    ],
+    "source_labels": [
+      "p0006 末行有限整元的幂积",
+      "p0007 末行整元生成有限 A 模",
+      "p0002 两条首一降幂证明"
+    ],
+    "origin": "supplement",
+    "status": "resolved",
+    "explanation": "保留了原直接幂积路线，补全指数范围和任意单项式降幂。"
+  },
+  {
+    "text": "有限型，整与模有限。\n\n$A$ 环，$B$ 是 $A$ 代数。有限型，$A$ 代数。\n\n$$\nA[x_1,\\ldots,x_s]\\xrightarrow{\\varphi}B\n$$\n\n箭头下记「满同态」。\n\n$$\nB\\cong A[x_1,\\ldots,x_s]/\\ker\\varphi.\n$$\n\n有限型＋整 $\\Leftrightarrow$ 模有限。",
+    "page_ids": [
+      "p0007"
+    ],
+    "source_labels": [
+      "p0007 题签「有限型，整与模有限」",
+      "p0007 「A环，B是A-代数」",
+      "p0007 「有限型：A 代数」行、φ 箭头及下旁「满同态」",
+      "p0007 B 的商式与 ker φ",
+      "p0007 「有限型＋整⇔模有限」"
+    ],
+    "origin": "source",
+    "status": "unresolved",
+    "explanation": "原稿对箭及满同态文字各自保留。末变量在 x_s 形的手写中待核，不影响蓝色证明。"
+  },
+  {
+    "text": "> [!note] 补证｜有限型、整与模有限的等价\n>\n> 设结构同态为 $\\iota\\colon A\\to B$。若 $B$ 由 $b_1,\\ldots,b_s$ 作为 $A$ 代数生成，替换变量 $x_i\\mapsto b_i$、系数 $a\\mapsto\\iota(a)$ 就定义了满的 $A$ 代数同态 $\\varphi\\colon A[x_1,\\ldots,x_s]\\to B$。反过来给这样的满同态，$b_i=\\varphi(x_i)$ 生成 $B$。$\\varphi$ 的核是理想，两个原像多项式映到同一个元素恰当它们之差在核中，于是 $f+\\ker\\varphi\\mapsto\\varphi(f)$ 给出商环同构。\n>\n> 若 $B$ 有限型且整于 $A$，有限代数生成元 $b_i$ 都满足首一关系。前一节的有界幂积为出发点，直接给出 $B$ 的有限 $A$ 模生成元。\n>\n> 若 $B$ 是有限 $A$ 模，取 $y_1,\\ldots,y_r$ 为模生成元。含 $\\iota(A)$ 和全部 $y_j$ 的子代数含它们的每个 $A$ 线性组合，故等于 $B$，给出有限型。任取 $b\\in B$，以 $A'=\\iota(A)$，$C=B$，中间环有限模判据给出 $b$ 在 $A'$ 上整。首一式低次系数可逐一沿 $\\iota$ 提升为 $A$ 的元素，首项用 $1_A$，所以 $b$ 在 $A$ 上整。此处 $A$ 的作用只通过 $A'$，因此有限性在两环表述下相同。",
+    "page_ids": [
+      "p0007",
+      "p0004"
+    ],
+    "source_labels": [
+      "p0007 题签、A 代数、有限型的满同态、商式",
+      "p0007 末行整元推出有限模",
+      "p0007 有限型＋整⇔模有限",
+      "p0004 Thm (1)、(3)"
+    ],
+    "origin": "supplement",
+    "status": "resolved",
+    "explanation": "逐向补全结论，并加上一般 A 代数结构映射的类型。"
+  },
+  {
+    "text": "〔首笔及集合标记疑 M1.3〕的和是代数整数，两数之积亦为整数〔字样疑 M1.3〕。",
+    "page_ids": [
+      "p0001"
+    ],
+    "source_labels": [
+      "p0001 整数组下「∪(Q_k) 的和是代数整数」形术语",
+      "p0001 下一行两数的积也是整数样"
+    ],
+    "origin": "source",
+    "status": "unresolved",
+    "explanation": "延后到证明工具之后；两条原说法均保留，未按同一公式替换两行。"
+  },
+  {
+    "text": "> [!note] 补证｜代数整数的和、积\n>\n> 设 $\\alpha,\\beta\\in\\mathcal O_k$。两者各自满足一个首一整系数关系，故 $\\mathbb Z[\\alpha,\\beta]\\subseteq k$ 由有界幂积生成，作为 $\\mathbb Z$ 模有限。若 $\\gamma=\\alpha+\\beta$ 或 $\\gamma=\\alpha\\beta$，则 $\\mathbb Z[\\gamma]\\subseteq\\mathbb Z[\\alpha,\\beta]$，以该有限中间环应用判据，得到 $\\gamma\\in\\mathcal O_k$。\n>\n> $0,1$ 分别满足 $T$ 和 $T-1$。若 $\\alpha$ 满足次数 $n$ 的首一式 $f(T)$，则 $-\\alpha$ 满足首一式 $(-1)^nf(-T)$，故这些代数整数构成 $k$ 的子环。此处原句所称整数处于代数整数语境。",
+    "page_ids": [
+      "p0001",
+      "p0006",
+      "p0007",
+      "p0004"
+    ],
+    "source_labels": [
+      "p0001 代数整数集合与和、积短句",
+      "p0006 末行幂积",
+      "p0007 有限个整元的推论与有限型整等价",
+      "p0004 Thm (3)"
+    ],
+    "origin": "supplement",
+    "status": "resolved",
+    "explanation": "证明原有加法与乘法两条，附子环封闭性及词义。"
+  },
+  {
+    "text": "原 PDF 的物理第 8 页为空白。",
+    "page_ids": [],
+    "source_labels": [],
+    "origin": "editorial",
+    "status": "resolved",
+    "explanation": "普通空页只作编排说明，无有效正文内容单元。"
+  }
+]
