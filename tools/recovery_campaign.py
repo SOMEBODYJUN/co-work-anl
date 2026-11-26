@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import argparse
 from datetime import datetime, timezone
+import hashlib
 import json
 from pathlib import Path
 from typing import Any
@@ -112,6 +113,13 @@ def validate(repo: Path, subject: str, plan_path: Path | None = None) -> dict[st
         if plan.get("manual_intervention") is not False:
             errors.append("plan permits manual intervention")
         logs = {record.get("note_id"): record for record in plan.get("execution_log", [])}
+        ordered_logs = plan.get("execution_log", [])
+        if [record.get("note_id") for record in ordered_logs] != CAMPAIGNS[subject]["notes"]:
+            errors.append("execution log must contain each campaign note exactly once in the required order")
+        all_agents = [agent for record in ordered_logs for agent in record.get('subagents', [])]
+        if len(all_agents) != len(set(all_agents)):
+            errors.append("subagents must be replaced between notes; an identity was reused")
+        tasks = load_tasks(repo)
         for note_id in CAMPAIGNS[subject]["notes"]:
             record = logs.get(note_id)
             if not record:
@@ -123,6 +131,21 @@ def validate(repo: Path, subject: str, plan_path: Path | None = None) -> dict[st
                 errors.append("execution log does not mark the note complete: " + note_id)
             if record.get("unresolved_after") != 0:
                 errors.append("execution log still has unresolved records: " + note_id)
+            if subject == 'ra12-then-commutative-algebra':
+                task = tasks[note_id]
+                completion = task.get('completion', {})
+                if task.get('run') != plan.get('boss_run'):
+                    errors.append('task is not completed under the campaign RUN: ' + note_id)
+                if record.get('model') != 'gpt-6.2-sol' or record.get('reasoning_effort') != 'max':
+                    errors.append('execution log does not record the requested agent configuration: ' + note_id)
+                if not record.get('snapshot_sha256') or record.get('snapshot_sha256') != completion.get('snapshot_sha256'):
+                    errors.append('final snapshot differs from the submitted task: ' + note_id)
+                for relative, expected_hash in completion.get('files', {}).items():
+                    path = repo / relative
+                    if not path.is_file() or hashlib.sha256(path.read_bytes()).hexdigest() != expected_hash:
+                        errors.append('submitted content/report hash changed: ' + relative)
+                if not completion.get('files'):
+                    errors.append('task has no verified submission files: ' + note_id)
     complete = (
         current["notes_remaining"] == 0
         and current["unresolved_audit_records"] == 0

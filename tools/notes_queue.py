@@ -195,6 +195,10 @@ def audit_submission(repo, args, task, rt):
     if old_hashes != sorted(a['sha256'] for a in task['previous_markdowns']):
         raise ValueError('Old-note audit scope differs from the registered input scope')
     script = repo / '.agents/skills/math-notes-evidence-audit/scripts/audit.py'
+    if record.get('review_policy', {}).get('mode') == 'user_requested_fixed_trio':
+        # The requested campaign retains three actual agents throughout a note.
+        # Its separate auditor discloses this and keeps all content/hash gates.
+        script = repo / 'tools/campaign_audit.py'
     result = subprocess.run([sys.executable, str(script), 'check', '--manifest', str(manifest),
         '--ledger', str(ledger), '--report', str(report)], cwd=repo, capture_output=True, timeout=600)
     if result.returncode:

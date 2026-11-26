@@ -1,0 +1,26 @@
+{
+  "note_id": "RA12",
+  "run": "notes-f86b97e0dd5e406a",
+  "boss_id": "BossNotes-2ff3215d6446",
+  "boss_task": "/root",
+  "model": "gpt-6.2-sol",
+  "reasoning_effort": "max",
+  "context_isolation": "fork_turns=none",
+  "subagents": [
+    {
+      "id": "/root/ra12_visual",
+      "role": "high_resolution_visual_reading"
+    },
+    {
+      "id": "/root/ra12_math",
+      "role": "mathematical_context_recovery"
+    },
+    {
+      "id": "/root/ra12_adversarial",
+      "role": "adversarial_audit"
+    }
+  ],
+  "authorization": "用户明确要求：每篇固定三名新的 subagent，只处理当前这一篇。当前篇通过审计并记录完成后，三人退出，下一篇换三名新 subagent；三人继续第二遍检查和疑点恢复，并在最新快照上完成三轮独立终审。",
+  "independence_scope": "Three distinct actual agents independently inspect the current note. They continue across phases within the same note, as explicitly required for this campaign; they are not represented as previously uninvolved fresh reviewers at the final phase.",
+  "previous_history_preserved": true
+}

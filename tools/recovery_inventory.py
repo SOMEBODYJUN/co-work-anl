@@ -43,6 +43,9 @@ def report_score(path: Path) -> tuple[int, int, str]:
 
 
 def latest_report(repo: Path, note_id: str) -> tuple[Path | None, dict[str, Any] | None]:
+    task = load(repo / 'tasks' / (note_id + '.json')) or {}
+    workspace = task.get('workspace')
+    completion_files = task.get('completion', {}).get('files', {})
     candidates: list[tuple[tuple[int, int, str], Path, dict[str, Any]]] = []
     for run in (repo / "work").glob("notes-*"):
         note = run / "notes" / note_id
@@ -51,7 +54,13 @@ def latest_report(repo: Path, note_id: str) -> tuple[Path | None, dict[str, Any]
         for path in note.rglob("*.json"):
             value = load(path)
             if isinstance(value, dict) and "content_resolved" in value and "unresolved_count" in value:
-                candidates.append((report_score(path), path, value))
+                score, mtime, name = report_score(path)
+                relative = path.relative_to(repo).as_posix()
+                if workspace and relative.startswith(workspace + '/'):
+                    score += 1000
+                if relative in completion_files:
+                    score += 10000
+                candidates.append(((score, mtime, name), path, value))
     if not candidates:
         return None, None
     _, path, value = max(candidates, key=lambda item: item[0])

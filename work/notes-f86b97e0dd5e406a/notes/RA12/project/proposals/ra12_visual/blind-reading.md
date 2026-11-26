@@ -1,0 +1,82 @@
+# RA12 原图独立初读
+
+角色为高分辨率读图员，实际代理路径 /root/ra12_visual。本阶段只打开原件的 manifest、400 dpi 整页及区域图，并读取作业合同。以下清单保存后才打开既有转写、学习稿、台账与恢复计划。记录初读所见，原式缺漏及数学疑点另经定向读图和验证。
+
+原件 source.pdf，SHA-256 832de7c38426479bae23211cf7474ea637963941d73ccc3cb5ce7d35be6f9065。用 view_image 逐页先查看 pages/p0001.png 至 pages/p0007.png，再分别查看各页 regions 中六张对应图。以下每一小点对应此次实际打开的图。默认区域切边能由同页重叠区拼接，第 5 页 Remark 右端和第 6 页“考察”前一字则达到物理页边。第 7 页所有区域另查浅印与四周。
+
+## p0001
+
+布局：左上有 Littlewood 3 定律式标题及编号三条；题面占一整行，下有独立对称差式；中至下有开覆盖拼接引理、记号“定义”、子空间开集说明和证毕符；页尾是闭覆盖的局部有限定义及可测函数逼近旁句。左、右、下正常留边，页 2 另起 Lusin。
+
+- p0001-r1c1｜首“Littlewood 3 定律”末“Ex. 设 $E\in M$，$m(E)<+\infty$”后量词前部。三条大意“每一个可测集几乎是有限个开区间并”“每一个可测函数几乎连续”“每个可测收敛列几乎一致收敛”。左上和公式间有留空。
+- p0001-r1c2｜首“区间并”的末部，最后“$\forall\varepsilon>0,\ \exists I_i\cdots I_n$ 开区间 s.t.”。大量普通空白，底行与 r2c2 重叠。
+- p0001-r2c1｜首例题前件，随后 $m(E\mathbin{\Delta}(\bigcup I_i))<\varepsilon$；引理“设 $f:X\to Y$”，若各 $f_\alpha:X_\alpha\to Y$ 连续；见逆像第一段与“定义”。最后“注意 $f|_{X_\alpha}$ 连续”上缘与 r3c1 重合。
+- p0001-r2c2｜首题面后半，见“$X$ 有一个开覆盖，$X=\bigcup_{i\in I}X_i$”“则 $f:X\to Y$ 连续”和逆像第二个并尾。最后子空间拓扑等式上缘进入 r3c2，右边余白。
+- p0001-r3c1｜首“注意 $f|_{X_\alpha}$ 连续”，再读“由 $X_\alpha$ 均 $\in\tau_X$”及交集，末见“可测函数逼近，要求可数个覆盖”近页脚。中间“但若要闭覆盖。无限个，”及“给定 $x\in X$，$\exists U\in N(x)$”与右区接。
+- p0001-r3c2｜首“$\in\tau_{X_\alpha}=C\cap X_\alpha,\ C\in\tau_X$”近似记法；“$X$ 中开集”后有斜线证毕样墨迹；“但改成局部有限闭覆盖”，最后“$U$ 只与有限多个 $X_\alpha$ 相交”与“覆盖”末字。最下白。此处并非第二个不同类型的箭头。
+
+## p0002
+
+布局：首写 “Lusin”，定理陈述跨左右，随后闭集构造提示；证明（1）简单函数，量词、内正规性和闭集构造，横跨左右的测度链；证明（2）从可测函数的简单逼近起，接 p0003 首。页脚余白。
+
+- p0002-r1c1｜从 “Lusin”到“闭集构造 $F_\delta$ 的表达式”。可读 $f$ 在 $E$ 上 a.e. 有限且可测、$m(E\setminus F_\delta)<\delta$，右手边的限制式被截至 $f|_F$。顶有普通空白。
+- p0002-r1c2｜首“测函数 $\forall\delta>0\ \exists F_\delta\overset{\text{闭}}\subset E$”，中间 $f|_{F_\delta}\in C(F_\delta)$，末是提示行“式”尾。闭字写在包含号上方，其余右部白。
+- p0002-r2c1｜首构造提示，随后 Pf. (1) $f\in S(E)$ 到 $\exists E_1$；$f=\sum_{i=1}^{\ell}c_i\chi_{E_i}$，对每个 $\delta$ 引 Lebesgue 内正规性，$F_{i,\delta}$ 上方注“紧闭/闭”，行尾进入右区，最底见 $F_\delta$ 并的顶部。
+- p0002-r2c2｜首提示行尾，见“$\exists E_1,\ldots,E_\ell\in M$ s.t. $E=\cup X_i$”字形右量末字貌似 $X_i/\chi_i$，需回图；末是 $m(E_i\setminus F_{i,\delta})<\delta/\ell$，其下留白。
+- p0002-r3c1｜首 $F_\delta=\bigcup_{i=1}^{\ell}F_{i,\delta}$；下一行始 $m(E\setminus F_\delta)=m(E\setminus\cup F_{i,\delta})$；随后（2）$f\in M(E)$，至“$\exists\{\varphi_k\}\subset S(E)$ s.t. lim”左半，接右区下行。
+- p0002-r3c2｜首测度链余部，纸上末和项的 $E$ 未见下标，且并的测度到和写等号；末 $\lim_{k\to\infty}\varphi_k(x)=f(x)$，$\forall x\in E$。页 3 从“由 (1)”续，不重复另立定理。
+
+## p0003
+
+布局：上接简单函数逼近的闭交路线，正文右栏出现长式的末部；下移到有限测度、a.e. 有限、归一化与逆式，然后“或用 Egorov 定理”另一段。页脚 \(m(E\setminus F_\delta)\) 之后有短横待填；页 4 直接续此路线。
+
+- p0003-r1c1｜首“由 (1) $\forall\delta,\forall k\in\mathbb N^*$，$F_\delta\overset{\text{闭}}\subset E$”（字面下标形似 $\delta$，右区为 $F_k$），“且 $\varphi_k\in C(F_k)$，令 $F_\delta=\bigcap F_k$”，接测度并式，末“$\varphi_k$ 在 $F_k$ 上连续，$\varphi_k$ 在 $\bigcap\ldots$”被右界接走。
+- p0003-r1c2｜首“s.t. $m(E\setminus F_k)<\delta/2^k$”，$\bigcap_{k=1}^\infty F_k$ 后“则”，测度估计“$\le\sum\delta/2^k$”原分母右 $k$ 高低待核；最后“$\bigcap F_k$ 上连续，下证一致收敛”。右侧皆有正常留白。
+- p0003-r2c1｜首连续性重复，继见“但 Egorov 要求 $m(E)<+\infty$”“因 $f$ a.e. 有限 $m(E(|f|=+\infty))=0$”，定义 $g(x)=f(x)/(1+|f(x)|)$，下方逆式分母写 $1-g(x)$，及“$g(x)$ 有界”。最后“或用 Egorov 定理”上缘入 r3c1。
+- p0003-r2c2｜连续性尾“下证一致收敛”开头，接零测等式尾和 $|f(x)|=|g(x)|/(1-|g(x)|)$，末是“有界”后笔。此区右大段裸纸。
+- p0003-r3c1｜首“或用 Egorov 定理”，再“当 $m(E)<+\infty$”“$\exists\varphi_k\to f$”，末 $F_\delta$ 上方注“闭”，$m(E\setminus$ 的右部接 r3c2；页脚有余白。
+- p0003-r3c2｜只有左下 $m(E\setminus F_\delta)$ 末端及其右的待填横线，其他白。页 4 首“用 Egorov”续行。
+
+## p0004
+
+布局：有两条明确待填横线，第一条接 Egorov 选择 $G_\delta$ 行，第二条在内正规性量化右端；其后 $\widehat F_\delta$ 交集与补集估算。下部为无限测度情形、环带和局部有限拼接。页 5 首另起 Lusin 逆定理。
+
+- p0004-r1c1｜首“用 Egorov $\exists G_\delta\subset E$ s.t.”，$m(E\setminus G_\delta)$ 后短横，随后 $\varphi_k$ 在 $E\setminus G_\delta$ 上一致 $f$、“考虑 $F_\delta\cap(E\setminus G_\delta)$”。末 $H_\delta$ 闭包含行和右界 $m(\cdots)$ 左部。
+- p0004-r1c2｜首 “$f$.” 是一致那一行末尾，继“由可测的内正规性”，末 $m((E\setminus G_\delta)\setminus H_\delta)<$ 后粗横。大片右上余白。
+- p0004-r2c1｜首重复闭集 $H_\delta\subset E\setminus G_\delta$；见 $\widehat F_\delta=F_\delta\cap H_\delta$、并集的测度与左端写尖括号的不等式、$E\setminus H_\delta$ 的分解左部。最后接右区并的后一项。
+- p0004-r2c2｜首不等式和粗长横，继三行在最左的公式余部，末 $\cup(G_\delta\setminus H_\delta)$。中央和右侧白。
+- p0004-r3c1｜首 $m(E)=+\infty$，继 $A_k=B(0,k)\setminus B(0,k-1)$、$E=\bigcup_{k=1}^\infty(A_k\cap E)$；末“需要用局部有限性质”。并式右方中文续 r3c2。
+- p0004-r3c2｜首球半径 $k-1$ 的末部，只另有“在 $A_k\cap E$ 上的有一个闭集”字形；中右和下边留白。页尾无明画线。
+
+## p0005
+
+布局：先“Lusin 逆定理也成立”，随后拓扑空间中的三个等价条件、Tietze/Urysohn 名注，外测度 Remark 达纸面右边和 $C=A\cup B$ 独行；下面有可测、简单逐点和连续 a.e. 逼近三条等价命题。页 6 从（1）到（3）续证明。
+
+- p0005-r1c1｜首“Lusin 逆定理也成立”；“Th. 设 $(X,\tau)$，则下述等价”，继 (1) $X$ 正规；末 (2) $E$ 闭包含和 $f\in C(F)$ 字形，需复查 \(F\) 与 \(E\)。
+- p0005-r1c2｜首“述等价”尾，上区其他普通空白；末“则 $\exists F\in C(X)$ s.t. $F|_E=f$”，与左下重叠。(2) 的域字形像 F。
+- p0005-r2c1｜首（2）左半和 Tietze 名注的左部；继（3）闭的 $A,B\subset X$、$A\cap B=\varnothing$ 和端值 $f|_A=0,\ f|_B=1$。外测度 Remark 起句之后独行 $C=A\cup B$，末下个 Th. 左部与 r3c1 接合。
+- p0005-r2c2｜首（2）尾和 Tietze 末字；连续函数箭头 $f:X\to[0,1)$ 右笔弯曲，Urysohn 名注；真正右缘是“$m^*(A\cup B)$ 除非 $A\& B$ 可被可测集分〔贴边〕”。末新题 \(E\in M\)。
+- p0005-r3c1｜首“设 $f$ 是 $E$ 上几乎处处有限函数”，继（1）$f$ 可测，（2）$\exists\{\varphi_k\}\subset S(E)$，独行 $\varphi_k\to f$ 逐点，末（3）$\exists\{\varphi_k\}\subset C(\mathbb R^n)$ s.t. 的左段。
+- p0005-r3c2｜首“有限函数，$E\in M$”，中只有 s.t. 末部，末（3）$\varphi_k\xrightarrow{\mathrm{a.e.}}f$。右页边仅 Remark 有紧贴和断笔，命题右尾仍在纸内。
+
+## p0006
+
+布局：左主栏，顶部 Pf. (1) ⇒ (3) 及 Tietze 延拓，下移到 Borel–Cantelli；坏集包含左端有一字紧贴物理边，往后 limsup 两写，取补集和最终相等。尾部大片白。页 7 白。
+
+- p0006-r1c1｜首 Pf. (1) ⇒ (3)，次 $\exists g\in C(\mathbb R^n)$ 与 $g|_{F_\delta}$ 左端，后 $\forall k$、闭 \(F_k\)、\(g_k\in C(\mathbb R^n)\) 和底 $m(E\setminus F_k)<1/2^k$。局部箭头向右。
+- p0006-r1c2｜首 $g|_{F_\delta}=f$ 的竖和等式，末 $g|_{F_k}=f$ 的字形，未见右侧 $g$ 有下标；上、右空白。
+- p0006-r2c1｜首误差式尾，随后“由 Borel Cantell”及 $m(\limsup_{n\to\infty}E_n)=0$；左边一字部分裁切，接“考察/考虑”以及坏集包含，再写坏集 limsup 零，末有展开式上缘。
+- p0006-r2c2｜首可见是本行边缘 $(\ldots F_k)$ 的余部，继零测式 \(=0\)，末下一行的 \(=0\) 部分。区域最右、最上普通留白。
+- p0006-r3c1｜首展开 $m(\bigcap_{N=1}^\infty\bigcup_{k=N}E(g_k\ne f))=0$；内并的上标没见墨迹。次行“（几乎处处）”与 $x\in\bigcup_{N=1}^\infty\bigcap_{k=N}^\infty E(f=g_k)$；末 $\exists N(x)$ s.t. \(k\ge N\)，右行余部入 r3c2。
+- p0006-r3c2｜首展开式结尾 $=0$，再 $g_k)$ 尾，末 “$f=g_k$ 恒等.”，底和右白。上下外运算在两行对调，不能古怪配对成同样的并交。
+
+## p0007
+
+布局：整页无手写。未见页码、印痕、横线、图或待填题目标记。p0006 的延拓证明最终行在 p0006 已收束，p0007 未续笔。
+
+- p0007-r1c1｜无首末可见内容；上边、左边和 r2c1 上界均白。
+- p0007-r1c2｜无首末可见内容；上和右物理边及与 r1c1 的中缝都白。
+- p0007-r2c1｜无首末可见内容；左页边和页心均无淡笔迹，三带重叠区白。
+- p0007-r2c2｜无首末可见内容；页心及右页边白，无续行。
+- p0007-r3c1｜无首末可见内容；左下角、下边与 r2c1 重合处白。
+- p0007-r3c2｜无首末可见内容；右下角和下边白，无脚注。
