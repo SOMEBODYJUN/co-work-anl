@@ -1,0 +1,72 @@
+{
+  "boss_id": "BossNotes-2ff3215d6446",
+  "stage": "actual readonly text/premise/original800 check; formal unchanged",
+  "recovery_ids": [
+    "CA07-R028",
+    "CA07-R029",
+    "CA07-R030"
+  ],
+  "target_id": "CA07-TRANSCRIPTION-V-016",
+  "actual_images_opened": [
+    {
+      "path": "audit/source-units-800/CA07-P004-U10-800.png",
+      "sha256": "a9cfbb8622771edfadccbff5657677c669316c85a2b3de89658285c0c34771a0"
+    },
+    {
+      "path": "audit/source-units-800/CA07-P004-U19-800.png",
+      "sha256": "a69a9ab216ba49d3ff611ed39486628d91cdd17dab48a1d02b42310b1c654831"
+    },
+    {
+      "path": "audit/source-units-800/CA07-P004-U22-800.png",
+      "sha256": "d8d211a1898fd50c64c25ebf296757534d5ad8fd5413b97eb2e5ed3cd89fa7e3"
+    },
+    {
+      "path": "audit/source-units-800/CA07-P004-U23-800.png",
+      "sha256": "be7987e7cf39318b57cdf82e4afc998498bbbfdcb5961dc2cdd65450d1cc5709"
+    },
+    {
+      "path": "audit/source-units-800/CA07-P005-U01-800.png",
+      "sha256": "ebd8b811018fc95a9f2a597d05d0d4c8f70d98279e2ca684ac08f4ce85fe77b9"
+    },
+    {
+      "path": "audit/source-units-800/CA07-P005-U03-800.png",
+      "sha256": "04162d558f18959b9344123260696fe16da9aa6ba97c77d14cb249a5f7ce0a2c"
+    },
+    {
+      "path": "audit/source-units-800/CA07-P005-U05-800.png",
+      "sha256": "2d19a5692a2f313e7139cc60fcb3c32d550a9ff3b42ec1e5a972d2e07bb4e677"
+    }
+  ],
+  "observations": [
+    "U10 records A[b] contained in C contained in B. It does not itself write closure; the subring or b-stable interpretation remains the explicitly stated mathematical correction.",
+    "U19 records M=C. U22 writes the Ab-module phrase without separate brackets; U23 gives m in M and the a leftward shape.",
+    "P5U03 separately gives a in A[b], P5U01 names multiplication inside C, and P5U05 is a times 1 equals zero.",
+    "R028/R030 directly use M=C, scalar type and intermediate containment in their stated validation; R029 cites M=C and multiplication by 1 only to contrast the special source construction with the independent general faithful-module proof.",
+    "T-V016 explicitly says C is an intermediate subring containing A[b]; U10 is a direct original contextual source. U11 finite generation is not used in this local containment or action check."
+  ],
+  "candidates": [
+    {
+      "id": "add-used-premises-only",
+      "text": "各条只补其实际引用的M=C、中间包含、标量所属或乘1来源，保留一般证明与特例的区别。"
+    },
+    {
+      "id": "rewrite-to-conditional-only",
+      "text": "删去原构造引用并将各条改成抽象条件证明；可避免相应来源依赖，但会丢去有用且原图支持的对照。"
+    },
+    {
+      "id": "add-entire-page",
+      "text": "不分用途加入第四、五页所有来源；会带入未使用的有限性等内容，不采。"
+    }
+  ],
+  "preferred_candidate_id": "add-used-premises-only",
+  "forward_validation": {
+    "method": "explicit dependency trace",
+    "result": "R028/R030需要取M=C后把A[b]标量作用在C内；U10的包含及正文注明的封闭/稳定条件共同保障闭合。R029的一般行列式检验没有用M=C，只需为其原链对照登记U19与U05。"
+  },
+  "backward_validation": {
+    "method": "remove-premise and overrestriction checks",
+    "result": "若脱去M=C就不能把原a·1说成任意模中的取元；若把M=C强加于一般忠实模则错误缩小命题。U11有限性与此处乘法闭合无关，不机械追加。"
+  },
+  "formal_changed": false,
+  "local_validation_choice": "R028的本条正向检验明确采用含幺中间子环分支。关于C为A子模且b稳定的推广仍保留在既有R027及正式补充中；不把单纯集合的b稳定误作完整模结构，也不为此处未使用的有限性机械添加U11。"
+}
