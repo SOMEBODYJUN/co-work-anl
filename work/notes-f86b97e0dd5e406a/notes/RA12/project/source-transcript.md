@@ -1,206 +1,258 @@
-# 实分析 12：原稿保真转写
+# 实分析 12｜原稿保真转写
 
-> 识读说明：本稿按 PDF 物理页序排列。黑色文字是原稿可读内容或在同页重复出现的原式。疑字 RA12-Px-Uy 是原笔画无法唯一恢复的位置。页边空白、整页空白和图示按页保留。
+按原 PDF 的 7 个物理页排列。正文保留笔误、重复、旁注和三处原待填横线；蓝色说明用于识读或规范化，红色只标原稿明确留空。原有编号与本文来源编号分别保留。英文姓名按通行拼法排印；手写异体在说明中登记。数学订正及完整补证见独立的《study-notes.md》。
+
+来源：本项目只读的 source.pdf。精确坐标、图片、裁图及双向去向见 manifest.json、source-target-map.json、ledger.json。
 
 ## 第 1 页
 
-页首写有 **Littlewood 3 原则**。
+### Littlewood 3 定律
 
-1. 每一个可测函数几乎处处连续。[疑字 RA12-P001-U01：原行中“处处”之后的连接字不够清楚，按上下文保留为“连续”。]
-2. 每一列函数几乎处处一致收敛。[疑字 RA12-P001-U02：原行“列/列函数”的字形较连，原稿只写了一行原则性短句。]
-3. 每一个可测集的近似于有限区间，[原句在逗号处结束，后续留白。]
+1. 每一个可测集几乎是有限个开区间并。
+2. 每一个可测函数几乎连续。
+3. 每个可测收敛的几乎一致收敛。
 
-**Ex：** 设 \(E\in M\)，\(m(E)<+\infty\)，取 \(\varepsilon>0\)，则存在有限个区间 \(I_1,\ldots,I_n\)，使
-\[
- m\!\left(E\setminus \bigcup_{i=1}^{n} I_i\right)<\varepsilon .
-\]
-原稿在 \(I_i\) 的种类（开区间或闭区间）处没有另作说明。[疑字 RA12-P001-U03]
+> [!note] <span style="color:blue">识读说明</span>
+> 标题尾字按“律”形排印；第三句的“收敛的”保留原口语省略，数学意思是收敛的可测函数列。此处没有把原“几乎”改写为“几乎处处”。
 
-**Lemma.** 页底可辨出“若 \(a\in A\)，则 \(f_a:X_a\to Y\) 连续；若 \(f:X\to Y\) 连续”一类句子；首个对象和其余条件仍有疑字。原稿并在页底写有极限与交集形式的表达式。可辨部分为
-\[
- f(u)=\bigcup_{a\to ?} f_a(u\cap x_a),
- \qquad
- (f|_{X_a})^{-1}(u)=\bigcap X_a\subseteq X,
-\]
-以及“\(X\) 中存在 …”的说明。[疑字 RA12-P001-U04：这一段的对象 \(X_a,X_i,x_a\) 与映射方向在原图中连写，不能唯一恢复。]
+**Ex.** 设 $E\in M$，$m(E)<+\infty$。$\forall\varepsilon>0$，$\exists I_i,\ldots,I_n$ 开区间，s.t.
+$$
+m\left(E\mathbin{\Delta}\left(\bigcup_{i=1}^n I_i\right)\right)<\varepsilon.
+$$
 
-页底旁注写道“他们使实值函数近似连续。无限大时，函数在部分有限测度集上可控制。”[疑字 RA12-P001-U05]
+> [!note] <span style="color:blue">识读说明</span>
+> 题面第一个区间下标形近 $i$，公式的并从 $1$ 到 $n$；学习稿规范成 $I_1,\ldots,I_n$。原运算是对称差，原区间确写“开”。
 
-原稿右下还有一行例题提示，能辨认出“存在 \(x\in X\)，\(\exists u\in M(X)\)，\(u\) … 有界，要求可测性/测度控制”。[疑字 RA12-P001-U06]
+**Lemma.** 设 $f:X\to Y$。$X$ 有一个开覆盖，$X=\bigcup_{i\in A}X_i$。
+
+若 $\forall a\in A$，$f_a:X_a\to Y$ 连续，则 $f:X\to Y$ 连续。
+$$
+f^{-1}(U)=\bigcup_{a\in A}\bigl(f^{-1}(U)\cap X_a\bigr)
+\overset{\text{定义}}{=}\bigcup_{a\in A}(f|_{X_a})^{-1}(U).
+$$
+
+> [!note] <span style="color:blue">识读与上下文恢复</span>
+> 覆盖的索引全集写出了 $A/\Delta/\Lambda$ 样的不同笔形，本段统一排作 $A$，保留先 $i$ 后 $a$ 的索引变化。首个逆像上标的 $1$ 笔画极短；后两项的 $-1$ 和限制线共同确认逆像。$f_a=f|_{X_a}$ 是从同段定义等号与限制记号恢复的关系，不是原题另写的一行。
+
+注意 $f|_{X_a}$ 连续，
+$$
+(f|_{X_a})^{-1}(U)\in\tau_{X_a}=C\cap X_a,\qquad C\in\tau_X.
+$$
+由 $X_a$ 都 $\in\tau_X$，$C\cap X_a$ 是 $X$ 中开集。〔段末证毕样收笔〕
+
+但即使是闭覆盖，无限个，但改成局部有限闭覆盖。
+
+即：给定 $x\in X$，$\exists U\in N(x)$，$U$ 只与有限多个 $X_a$ 相交。
+
+可测也类似，要求可数个覆盖。
+
+> [!note] <span style="color:blue">暂存识读说明</span>
+> 末句以“可测也类似，要求可数个覆盖”作上下文恢复；初读另有“可测函数逼近”候选，待追加字形复查记录统一裁决。这里的主题是分片拼接的可测版本。
 
 ## 第 2 页
 
-页首标题 **Lusin**。
+### Lusin
 
-原稿先写定理的开头
+设 $f$ 是 $E$ 上 a.e. 有限的可测函数。$\forall\delta>0$，$\exists F_\delta\overset{\text{闭}}{\subset}E$，满足
+$$
+m(E\setminus F_\delta)<\delta,\qquad f|_{F_\delta}\in C(F_\delta).
+$$
 
-> 设 \(f\) 是在 \(E\) 上 a.e. 有限的可测函数，给定 \(\delta>0\)，则存在 \(F_\delta\subset E\)，使
-> \[
-> m(E\setminus F_\delta)<\delta,
-> \qquad f|_{F_\delta}\in C(F_\delta).
-> \]
+并给出闭集构造 $F_\delta$ 的表达式。
 
-原稿在 \(F_\delta\) 前后可辨出“闭集”字样；其余集合条件与下一页的 \(F_k\) 接续。[疑字 RA12-P002-U01：闭集二字的笔画与行间连写较轻。]
+**Pf. (1)** $f\in S(E)$。$\exists E_1,\ldots,E_\ell\in M$，s.t. $E=\cup X_i$，
+$$
+f=\sum_{i=1}^{\ell}c_i\chi_{E_i}.
+$$
+$\forall\delta$，由 Lebesgue 的内正规性，
+$$
+\exists F_{i,\delta}\overset{\text{紧闭}}{\subset}E_i,\qquad
+m(E_i\setminus F_{i,\delta})<\frac{\delta}{\ell}.
+$$
 
-原稿写“等结论由简单函数的表达式”，随后给出简单函数情形。若 \(f\in S(E)\)，则存在 \(E_i\in M\)，并写成
-\[
-E=\bigcup_{i=1}^{\ell}E_i,
-\qquad
-f=\sum_{i=1}^{\ell}a_i\chi_{E_i}.
-\]
-对每个 \(E_i\) 选择 \(F_i\subset E_i\)，使
-\[
- m(E_i\setminus F_i)<\frac{\delta}{\ell}.
-\]
-原稿把 \(F_i\) 的来源记作“由前面结论”。
+> [!note] <span style="color:blue">原记号说明</span>
+> 覆盖式右端按交叉笔形记 $X_i$，上下文数学对象为 $E_i$；“紧闭”两字可见。原稿暂未区分有限与无限测度，紧集逼近在学习稿中先限定有限测度，随后使用第 4 页局部化。
 
-页中部转入一般可测函数
+令
+$$
+F_\delta=\bigcup_{i=1}^{\ell}F_{i,\delta}.
+$$
+$$
+\begin{aligned}
+m(E\setminus F_\delta)
+&=m(E\setminus\cup F_{i,\delta})\\
+&=m\left(\bigcup_{i=1}^{\ell}(E\setminus F_{i,\delta})\right)
+=\sum m(E\setminus F_{i,\delta})<\delta.
+\end{aligned}
+$$
 
-> 2）\(f\in M(E)\)。则 \(\exists\varphi_k\in S(E)\)，使
-> \[
-> \lim_{k\to\infty}\varphi_k(x)=f(x),\qquad x\in E.
-> \]
+> [!note] <span style="color:blue">原稿错误标识</span>
+> 后两个 $E$ 未见下标 $i$，链中的等号保留。这是原稿集合运算错误，不在保真稿内暗改成正确式。
 
-“\(f\in M(E)\)”原稿以编号“2）”单列，保留其与上段的分节关系。
+**(2)** $f\in M(E)$，则 $\exists\{\varphi_k\}\subset S(E)$，s.t.
+$$
+\lim_{k\to\infty}\varphi_k(x)=f(x),\qquad\forall x\in E.
+$$
 
 ## 第 3 页
 
-页首接续上一页的简单函数近似。可读内容为
-\[
-\text{对每个 }k\in\mathbb N^*，\quad
-F_k\subset E,
-\qquad
+由 (1)，$\forall\delta$、$\forall k\in\mathbb N^*$，
+$$
+F_\delta\overset{\text{闭}}{\subset}E,\qquad
 m(E\setminus F_k)<\frac{\delta}{2^k}.
-\]
-原稿这里先写的是集合关系“\(F_k\subset E\)”，随后才写 \(\varphi_k\in C(F_k)\)。[疑字 RA12-P003-U01：行首的量词和下标仍有连写。]
+$$
+且 $\varphi_k\in C(F_k)$。令 $F_\delta=\bigcap_{k=1}^{\infty}F_k$，则
+$$
+m(E\setminus F_\delta)
+=m\left(\bigcup_{k=1}^{\infty}(E\setminus F_k)\right)
+\le\sum\frac{\delta}{2k}.
+$$
 
-原稿接着写
-\[
-\varphi_k\in C(F_k),
-\]
-并用递减交集构造
-\[
-F=\bigcap_{k=1}^{\infty}F_k.
-\]
-对补集的测度估计写成
-\[
-\begin{aligned}
-m(E\setminus F)
- &=m\!\left(E\setminus\bigcap_{k=1}^{\infty}F_k\right) \\
- &=m\!\left(\bigcup_{k=1}^{\infty}(E\setminus F_k)\right) \\
- &\le \sum_{k=1}^{\infty}m(E\setminus F_k)
- <\sum_{k=1}^{\infty}\frac{\delta}{2^k}
- =\delta.
-\end{aligned}
-\]
+$\varphi_k$ 在 $F_k$ 上连续。$\varphi_k$ 在 $\bigcap F_k$ 上连续，下证一致收敛。
 
-原稿在这一段旁边写有“他们使实值函数连续；无限时，函数在部分有界测度集上可逼近”。[疑字 RA12-P003-U02]
+> [!note] <span style="color:blue">识读说明</span>
+> 首行左侧字面为 $F_\delta$，同一行右侧与下一行是 $F_k$。末和的 $k$ 位于较低处，按 $2k$ 笔形存留；预期几何预算由首行 $2^k$ 恢复。$\varphi_k\in C(F_k)$ 是省写限制。
 
-页下接续 Egoroff 论证的入口
+但 Egorov 要求 $m(E)<+\infty$。
 
-> 例：设 \(f_n\to f\)，且 \(m(E)<+\infty\)。
-> \(\exists\varphi_k\to f\)，并且对给定 \(\delta>0\)，可取 \(F_\delta\subset E\)，使 \(m(E\setminus F_\delta)<\delta\)。
+因 $f$ a.e. 有限，$m(E(|f|=+\infty))=0$。
 
-原稿下方另写“令 \(g(x)=f(x)/(1+|f(x)|)\)，则 \(g\) 有界；反之 \(f(x)=g(x)/(1-|g(x)|)\)”。[疑字 RA12-P003-U03：分式分母在原图中为 \(1+|f|\) 与 \(1-|g|\)，前者有清楚的括号，后者可能省略绝对值。]
+令
+$$
+g(x)=\frac{f(x)}{1+|f(x)|},
+\qquad |f(x)|=\frac{|g(x)|}{1-|g(x)|}.
+$$
+则 $g$ 有界。
+$$
+f(x)=\frac{g(x)}{1-g(x)}.
+$$
+$g(x)$ 有界。
 
-页末写“放即 Egorov 定理”，并记
-\[
-m(E)<+\infty,
-\qquad
-\exists\varphi_k\to f,
-\]
-以及“若 \(\delta>0\)，则 \(F_\delta\subset E\)，\(m(E\setminus F_\delta)\) …”的待续句。[疑字 RA12-P003-U04]
+> [!note] <span style="color:blue">识读说明</span>
+> Egorov 手写有 Englov/Engrov 样连写，依本段指称统一姓名。带符号逆式分母原未写绝对值，保留原式；模值逆式中确有绝对值。两个“有界”提示都保留。
+
+或用 Egorov 定理。
+
+当 $m(E)<+\infty$，$\exists\varphi_k\to f$，
+$\forall\delta>0$，$\exists F_\delta\overset{\text{闭}}{\subset}E$，s.t.
+$$
+m(E\setminus F_\delta)\quad\underline{\hspace{1.5cm}}
+$$
+<span style="color:red">〔原稿待填 B1：测度后的比较号及界值〕</span>
 
 ## 第 4 页
 
-页首标题写 **例 Egor.**。原稿写出目标集合的符号
-\[
-G_\delta\subset E\ \text{（也可能写作 }\overline E\text{）},
-\qquad
-m(E\setminus G_\delta)<\delta,
-\]
-并写“\(\varphi_k\) 在 \(E\setminus G_\delta\) 上 … \(f\)”的接续句。[疑字 RA12-P004-U01]
+用 Egorov，$\exists G_\delta\subset E$，s.t.
+$$
+m(E\setminus G_\delta)\quad\underline{\hspace{1.5cm}}
+$$
+<span style="color:red">〔原稿待填 B2：测度后的比较号及界值〕</span>
 
-正文中的可读证明骨架如下。
+$\varphi_k$ 在 $E\setminus G_\delta$ 上一致 $f$。
 
-1. 先对每个 \(k\) 选取 \(F_k\subset E\)，使 \(m(E\setminus F_k)<\delta/2^k\)，并令 \(\varphi_k\) 在 \(F_k\) 上连续。
-2. 令 \(F=\bigcap_{k\ge1}F_k\)。由可数次可加性
-\[
-m(E\setminus F)
-\le \sum_{k=1}^{\infty}m(E\setminus F_k)
-<\delta.
-\]
-3. 原稿用“闭集的有限交仍闭”及逐点收敛，说明在 \(F\) 上保留 \(\varphi_k\to f\)。
+考虑 $F_\delta\cap(E\setminus G_\delta)$，由可测的内正规性，
+$$
+H_\delta\overset{\text{闭}}{\subset}E\setminus G_\delta,\qquad
+m((E\setminus G_\delta)\setminus H_\delta)<\underline{\hspace{2cm}}.
+$$
+<span style="color:red">〔原稿待填 B3：不等号后的界值〕</span>
 
-页中下部另起无限测度的情形，清楚可辨
-\[
-m(E)=+\infty,
-\qquad
-A_k=B(0,k)\setminus B(0,k-1),
-\]
-并用 \(A_k\) 写出对 \(E\) 的分解（并集下标及是否带与 \(E\) 的交仍有省写）。旁注提到“有限测度”。页右下另有一条横线作为证明分隔。
+$$
+\widehat F_\delta=F_\delta\cap H_\delta.
+$$
+要估
+$$
+\begin{aligned}
+&m\bigl((E\setminus F_\delta)\cup(E\setminus H_\delta)\bigr)\\
+&\qquad <m(E\setminus F_\delta)+m(E\setminus H_\delta).
+\end{aligned}
+$$
+$$
+E\setminus H_\delta
+=((E\setminus G_\delta)\setminus H_\delta)\cup(G_\delta\setminus H_\delta).
+$$
+
+> [!note] <span style="color:blue">识读说明</span>
+> “要估”对应原引导字的估／求候选，不影响后面的完整公式；测度次可加位置原写严格小于号，学习稿另订正。
+
+$m(E)=+\infty$：
+$$
+A_k=B(0,k)\setminus B(0,k-1),\qquad
+E=\bigcup_{k=1}^{\infty}(A_k\cap E).
+$$
+但在 $A_k\cap E$ 上的有一个闭集。
+
+需要用局部有限性质。
 
 ## 第 5 页
 
-页首再次写 **Lusin 逆定理**（“逆定理”三字按原稿保留，可能是“逆定理/逆方向”的课堂标题）。
+Lusin 逆定理也成立。
 
-原稿写
+**Th.** 设 $(X,\tau)$，则下述等价：
 
-> Th. 设 \((A,\mu)\)，其中 \(A\) 为 …，则下列条件成立。
+1. $X$ 正规。
+2. $\forall E\overset{\text{闭}}{\subset}X$，若 $f\in C(F)$，则 $\exists F\in C(X)$，s.t. $F|_E=f$。（Tietze）
+3. $\forall A,B\overset{\text{闭}}{\subset}X$，$A\cap B=\varnothing$，则存在连续函数 $f:X\to[0,1)$，s.t. $f|_A=0$ 且 $f|_B=1$。（Urysohn）
 
-列出的三条为
+> [!note] <span style="color:blue">原稿记号错误</span>
+> 第 (2) 条括号内的原字为两横的 $F$，第 (3) 条区间右端形如圆括号。两处数学订正分别为 $C(E)$ 和 $[0,1]$，在学习稿标明。
 
-1. \(x\in A\)。
-2. 可辨为“\(E\subset X\)”（首个集合关系仍带疑字）；若 \(f\in C(X)\)，则 \(\exists F\subset C(X)\) 使 \(F|_E=f\)。（原稿在此处同时出现 \(F\)、\(f\) 与 \(E\)，对象关系不唯一。）
-3. 若 \(A,B\subset X\) 为闭集且 \(A\cap B=\varnothing\)，则存在连续函数 \(f:X\to[0,1]\)，满足
-\[
-f|_A=0,
-\qquad
-f|_B=1.
-\]
+**Remark.** 外测度中不对，$m^*(A\cup B)$ 除非 $A$ 和 $B$ 可被可测集分〔本行止于右缘〕。
+$$
+C=A\cup B.
+$$
 
-第 3 条旁注明确写出 **Urysohn**。
+> [!note] <span style="color:blue">暂存识读说明</span>
+> 此行连接词与起句仍在追加定向复核，暂按当前候选排印；右缘只有“分”及末笔，没有可确认的完整后续字。“分开／分隔”仅能作为上下文补足，不声称原图写出了这些字。$C=A\cup B$ 原为下一独立行。
 
-原稿继续写“Remark：另外的定理中有 \(m^*(A\cup B)\) 的闭性/可测性可用”，并给出 \(C=A\cup B\) 的记号。[疑字 RA12-P005-U01]
+**Th.** 设 $f$ 是 $E$ 上几乎处处有限函数，$E\in M$：
 
-页底开启 Lusin 证明的下一步
-
-> Th. 设 \(f\) 是在 \(E\) 上有界的函数，且 \(E\in M\)。
-> 1）\(f\) 可测；
-> 2）\(\exists \varphi_k\in S(E)\)，s.t. \(\varphi_k\to f\)；
-> 3）\(\exists\{\varphi_k\}\subset C(I^n)\)，并令 \(\varphi_k\) … 延拓到 \(f\)。
-
-第 3 条中的 \(C(I^n)\) 清楚可读，延拓箭头在页末接到下一页。[疑字 RA12-P005-U02]
+1. $f$ 可测。
+2. $\exists\{\varphi_k\}\subset S(E)$，s.t. $\varphi_k\to f$ 逐点。
+3. $\exists\{\varphi_k\}\subset C(\mathbb R^n)$，s.t. $\varphi_k\xrightarrow{\mathrm{a.e.}}f$。
 
 ## 第 6 页
 
-页首接上页
-\[
-\varphi_k\in C(I^n)
-\quad\Longrightarrow\quad
-g\in C(I^n),
-\qquad
-g|_{F_\delta}=f.
-\]
-原稿另一行写“对 \(k=1,\ldots,n\)，存在 \(g_k\in C(I^n)\)，使 \(g_k|_{F_k}=f\)”。这里 \(n\) 与 \(k\) 的范围在原图中交替出现。[疑字 RA12-P006-U01]
+**Pf. (1) $\Rightarrow$ (3).**
+$$
+\exists g\in C(\mathbb R^n),\qquad g|_{F_\delta}=f.
+$$
+$\forall k\in\mathbb N^+$，$\exists F_k\overset{\text{闭}}{\subset}E$，
+$$
+g_k\in C(\mathbb R^n),\qquad g|_{F_k}=f,\qquad
+m(E\setminus F_k)<\frac1{2^k}.
+$$
 
-下一行再给出 \(g_k\) 的限制关系。接着给出测度误差
-\[
-m(E\setminus F_k)<\frac{1}{2^k}\quad\text{（图面分子像数字 1；与前文的 \(\delta\) 预算不一致）}.
-\]
-旁注写 **Borel Cantelli**，并记
-\[
-m\!\left(\limsup_{k\to\infty}(E\setminus F_k)\right)=0
-\quad\text{（集合内容按笔画恢复，仍保留疑点）}.
-\]
-原稿随后写出
-\[
-m\!\left(\limsup_{k\to\infty}(g_k\ ?\ f)\right)=0,
-\]
-以及“（几乎处处）\(g_k\to f\)”的说明。原图中 \(g_k\) 与 \(f\) 之间的运算符以及后续并/交集下标无法唯一辨认，故保留“\(?\)”而不以标准公式替换。[疑字 RA12-P006-U02]
+> [!note] <span style="color:blue">识读说明</span>
+> 量词中的自然数上标按正整数语境恢复为 $+$。存在式写 $g_k$，右侧限制式只见 $g$，保留原漏下标。右端 $f$ 原省写限制。
 
-页末写“\(g_k\) 在 \(F\) 上一致收敛；\(\exists\) 取 \(g\) 使 …”，证明在此页下缘结束，没有下一页接续。
+由 Borel–Cantelli：
+$$
+m\left(\limsup_{n\to\infty}E_n\right)=0.
+$$
+〔页边截字〕考察
+$$
+E\{g_k\ne f\}\subset E\setminus F_k.
+$$
+仍有
+$$
+m\left(\limsup_{k\to\infty}E(g_k\ne f)\right)=0.
+$$
+
+$$
+m\left(\bigcap_{N=1}^{\infty}\bigcup_{k=N}E(g_k\ne f)\right)=0.
+$$
+（几乎处处）
+$$
+x\in\bigcup_{N=1}^{\infty}\bigcap_{k=N}^{\infty}E(f=g_k).
+$$
+$$
+\exists N(x)\ \text{s.t.}\ k\ge N,\qquad f=g_k\ \text{恒等}.
+$$
+
+> [!note] <span style="color:blue">识读与省记说明</span>
+> 首式的 $E_n$ 没有在这一行定义；后文以失配事件明确其用途。花括／圆括均作原谓词集合写法保存。上式内并原只有下标 $k=N$，未另写上标无穷；下式两个无穷上标均可见。页边引导字发生物理截切，未猜填“易”；数学事件本身完整。末行阈值可排作 $k\ge N$，若按另一候选 $k>N$ 读，只差起点平移，均是逐点最终恒等。
 
 ## 第 7 页
 
-整页空白。页边、中央和底部均未见可辨笔迹或浅色公式。
+本物理页为空白页。整页与六个重叠区均无正文、页码、旁注、图形或原待填标记。

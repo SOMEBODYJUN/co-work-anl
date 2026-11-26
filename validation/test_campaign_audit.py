@@ -139,6 +139,28 @@ class FixedTrioTests(unittest.TestCase):
         artifact['sha256'] = standard.sha256_file(path)
         self.assert_blocked(self.report(), 'ARTIFACT_INVALID')
 
+    def test_expanded_pdf_viewport_is_reproducible_and_cannot_hide_pixel_edits(self):
+        path = self.project / 'synthetic-outside-media.png'
+        with fitz.open(self.project / 'source.pdf') as doc:
+            box = list(doc[0].mediabox)
+            box[0] -= 10
+            doc[0].set_mediabox(fitz.Rect(box))
+            clip = [0, 0, 50, 25]
+            doc[0].get_pixmap(dpi=800, clip=fitz.Rect(clip),
+                             colorspace=fitz.csRGB, alpha=False).save(path)
+        artifact = {'id': 'synthetic-viewport', 'path': path.name,
+            'sha256': standard.sha256_file(path), 'kind': 'evidence', 'format': 'image',
+            'pdf_viewport': {'page_id': 'p0001', 'mediabox_pdf_pt': box,
+                             'clip_pdf_pt': clip, 'dpi': 800}}
+        self.ledger['artifacts'].append(artifact)
+        self.assertTrue(self.report()['audit_pass'])
+        with Image.open(path) as image:
+            changed = image.convert('RGB')
+        changed.putpixel((10, 10), (1, 2, 3))
+        changed.save(path)
+        artifact['sha256'] = standard.sha256_file(path)
+        self.assert_blocked(self.report(), 'ARTIFACT_INVALID')
+
 
 if __name__ == '__main__':
     unittest.main(verbosity=2)

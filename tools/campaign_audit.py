@@ -45,6 +45,21 @@ class CampaignAuditor(standard.Auditor):
             schema['required'].append('review_policy')
             crop = schema['properties']['artifacts']['items']['properties']['source_crop']
             crop['properties']['dpi'] = {'type': 'integer', 'minimum': 72, 'maximum': 1200}
+            # Some source PDFs retain strokes beyond their physical MediaBox.
+            # This explicitly declared viewport exposes only existing PDF marks;
+            # it is not an ordinary in-page source crop.
+            schema['properties']['artifacts']['items']['properties']['pdf_viewport'] = {
+                'type': 'object', 'additionalProperties': False,
+                'required': ['page_id', 'mediabox_pdf_pt', 'clip_pdf_pt', 'dpi'],
+                'properties': {
+                    'page_id': {'type': 'string', 'minLength': 1},
+                    'mediabox_pdf_pt': {'type': 'array', 'minItems': 4, 'maxItems': 4,
+                                       'items': {'type': 'number'}},
+                    'clip_pdf_pt': {'type': 'array', 'minItems': 4, 'maxItems': 4,
+                                   'items': {'type': 'number'}},
+                    'dpi': {'type': 'integer', 'minimum': 72, 'maximum': 1200},
+                },
+            }
         errors = sorted(Draft202012Validator(schema).iter_errors(value), key=lambda e: str(e.path))
         for error in errors:
             self.error('SCHEMA', f'{filename} {list(error.path)}: {error.message}')
@@ -58,9 +73,10 @@ class CampaignAuditor(standard.Auditor):
         seen_paths = set()
         for identifier, artifact in artifacts.items():
             path = self.checked_file(self.ledger_path.parent, artifact, f'artifact:{identifier}')
-            if path in seen_paths:
+            if path and path in seen_paths:
                 self.error('ARTIFACT_ALIAS', f'different artifacts use the same file: {artifact["path"]}')
-            seen_paths.add(path)
+            if path:
+                seen_paths.add(path)
             if artifact['kind'] != 'evidence' and artifact['format'] != 'text':
                 self.error('ARTIFACT_FORMAT', f'content artifact {identifier} must be UTF-8 text')
             if not path:
@@ -72,6 +88,34 @@ class CampaignAuditor(standard.Auditor):
                         raise ValueError('empty evidence file')
                     continue
                 crop = artifact.get('source_crop')
+                viewport = artifact.get('pdf_viewport')
+                if viewport:
+                    if crop or artifact['kind'] != 'evidence':
+                        raise ValueError('a PDF viewport is distinct from a normal source crop')
+                    page = next((p for p in self.manifest['pages'] if p['id'] == viewport['page_id']), None)
+                    if page is None:
+                        raise ValueError('PDF viewport references an unknown page')
+                    pdf_path = standard.safe_path(self.manifest_path.parent, self.manifest['source_pdf']['path'])
+                    with fitz.open(pdf_path) as document:
+                        pdf_page = document[page['number'] - 1]
+                        original = pdf_page.mediabox
+                        expanded = fitz.Rect(viewport['mediabox_pdf_pt'])
+                        if (not expanded.contains(original) or expanded.is_empty or
+                            max(abs(expanded[i] - original[i]) for i in range(4)) > 72):
+                            raise ValueError('supplementary viewport must only expand the physical page by at most 72 pt')
+                        pdf_page.set_mediabox(expanded)
+                        clip = fitz.Rect(viewport['clip_pdf_pt'])
+                        if clip.is_empty or not pdf_page.rect.contains(clip):
+                            raise ValueError('viewport clip lies outside the declared expanded page')
+                        pix = pdf_page.get_pixmap(dpi=viewport['dpi'], clip=clip,
+                                                  colorspace=fitz.csRGB, alpha=False)
+                        expected = Image.frombytes('RGB', [pix.width, pix.height], pix.samples)
+                    with Image.open(path) as image:
+                        image.load()
+                        if (image.format != 'PNG' or image.size != expected.size or
+                            image.convert('RGB').tobytes() != expected.tobytes()):
+                            raise ValueError('viewport pixels differ from the declared original-PDF render')
+                    continue
                 page = next((p for p in self.manifest['pages'] if crop and p['id'] == crop['page_id']), None)
                 if artifact['kind'] != 'evidence' or not crop or page is None:
                     raise ValueError('image evidence needs a source_crop page and bbox')
