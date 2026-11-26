@@ -1,0 +1,210 @@
+{
+  "boss_id": "BossNotes-2ff3215d6446",
+  "status": "authored after all three independent records",
+  "document_hashes_before": {
+    "source-transcript.md": "376ba572a25a48a39487bbfb80ce96bdeaf4e405e4fb5c32e04255f6572e3b64",
+    "study-notes.md": "43c1bce76087b71ca5df2c9032e5fbda3ed8677e7d30ec4a41f615d0bb93e7ce",
+    "source-target-map.json": "d003ebfed40cfaa6f7dacc42abf1ea15a40b3f3b57b6eef357fe6c95ddc4efbd"
+  },
+  "ledger_sha256_before": "c867f5d3cca99a1625bf2e50dd908f09cf0edb37086581e8b88c285d450c2bb0",
+  "content_plan_sha256_before": "03540f018fe112bbed1dec189789628d87f8bcf5d086dabab8fea09cd1648afc",
+  "source_observation_record": "proposals/ca07_visual/second-pass-4/reconciled-source-observations.json",
+  "recoveries": [
+    {
+      "recovery_id": "CA07-R004",
+      "add_source_ids": [
+        "CA07-P001-U11",
+        "CA07-P001-U14"
+      ],
+      "correction": "补入实际曲线式和右侧尖点图。x=t²、y=t³明确是由曲线关系数学试取，U16并无x/y赋值，故不将它增列为本检验的直接来源。",
+      "evidence_paths": [
+        "audit/boss-recovery-8/readonly-explicit-context-sources.json",
+        "audit/second-pass-4-merge/independent-frozen-receipts.json",
+        "audit/source-units-800/CA07-P001-U11-800.png",
+        "audit/source-units-800/CA07-P001-U14-800.png",
+        "proposals/ca07_adversarial/second-pass-4/second-pass-report.json",
+        "proposals/ca07_math/post-second-pass-4/context-source-check.json",
+        "proposals/ca07_visual/post-second-pass-4/context-source-check.json"
+      ],
+      "forward_validation": {
+        "inputs": "P001-U11 的原曲线式 X=V(y²−x³) 与 P001-U14 的右侧尖点图；为检验题意，从 y²=x³ 数学试取 x=t²、y=t³。",
+        "result": "代入有(t³)²−(t²)³=0，为形式恒等式。若取实参数，两支向右上和右下展开，与原图相符。参数赋值是试取，原图本身未写坐标或参数标号。"
+      }
+    },
+    {
+      "recovery_id": "CA07-R011",
+      "add_source_ids": [
+        "CA07-P002-U10",
+        "CA07-P002-U11"
+      ],
+      "correction": "移项检验实际依赖同一个首一f的原展开和f(b)=0，分别登记U10、U11；纸面a_i与规范a_k的区分保持。",
+      "evidence_paths": [
+        "audit/boss-recovery-8/readonly-explicit-context-sources.json",
+        "audit/second-pass-4-merge/independent-frozen-receipts.json",
+        "audit/source-units-800/CA07-P002-U10-800.png",
+        "audit/source-units-800/CA07-P002-U11-800.png",
+        "proposals/ca07_adversarial/second-pass-4/second-pass-report.json",
+        "proposals/ca07_math/post-second-pass-4/context-source-check.json",
+        "proposals/ca07_visual/post-second-pass-4/context-source-check.json"
+      ]
+    },
+    {
+      "recovery_id": "CA07-R013",
+      "add_source_ids": [
+        "CA07-P002-U10",
+        "CA07-P002-U11",
+        "CA07-P002-U17"
+      ],
+      "correction": "长除与求值分成两步；补g的类型、首一除式及f(b)=0的原行，明确非零环正次数分支和求值零条件。原两g及蓝商q不改。",
+      "evidence_paths": [
+        "audit/boss-recovery-8/readonly-explicit-context-sources.json",
+        "audit/second-pass-4-merge/independent-frozen-receipts.json",
+        "audit/source-units-800/CA07-P002-U10-800.png",
+        "audit/source-units-800/CA07-P002-U11-800.png",
+        "audit/source-units-800/CA07-P002-U17-800.png",
+        "proposals/ca07_adversarial/second-pass-4/second-pass-report.json",
+        "proposals/ca07_math/post-second-pass-4/context-source-check.json",
+        "proposals/ca07_visual/post-second-pass-4/context-source-check.json"
+      ],
+      "forward_validation": {
+        "inputs": "正文已分开的A非零分支：g(x)∈A[x]（P002-U17），f(x)∈A[x]为首一、deg f=n≥1（P002-U10），且f(b)=0（P002-U11）。",
+        "result": "逐次消去最高项得g=qf+r，r=0或deg r<n。代入先得g(b)=q(b)f(b)+r(b)，再由f(b)=0得g(b)=r(b)。"
+      },
+      "backward_validation": {
+        "inputs": "字面g=gf+r、deg r<deg f；另检验仅有首一性是否足以在b处消去q(b)f(b)。",
+        "result": "g=1且正次数f时，字面式迫使r=1−f，次数不小于deg f。另取g=f=T、b=1，首一长除有q=1、r=0，但g(1)=1≠0；因此求值结论不能省f(b)=0。"
+      }
+    },
+    {
+      "recovery_id": "CA07-R022",
+      "add_source_ids": [
+        "CA07-P005-U01"
+      ],
+      "correction": "同手法字比较实际使用P5U01，将其加入R/I和定向证据。第三页原伴随分式照录，蓝证明直接用伴随恒等式，不求det(C)的逆；第二页的首一长除仍保留为独立路线。",
+      "evidence_paths": [
+        "audit/boss-recovery-3/p3-method-fa-1200.png",
+        "audit/boss-recovery-3/p5-multiplication-fa-1200.png",
+        "audit/boss-recovery-8/readonly-explicit-context-sources.json",
+        "audit/second-pass-4-merge/independent-frozen-receipts.json",
+        "audit/source-units-800/CA07-P005-U01-800.png",
+        "proposals/ca07_adversarial/second-pass-4/second-pass-report.json",
+        "proposals/ca07_math/post-second-pass-4/context-source-check.json",
+        "proposals/ca07_visual/post-second-pass-4/context-source-check.json"
+      ],
+      "backward_validation": {
+        "result": "缺第二竹头和便的亻更分部；一有独立发笔；法在p5同位置重复长末点。第三页纸面的伴随分式照录，蓝证明不用det(C)的逆；例如A=Z、b=0、生成列(1)时det(bI−D)=0，不能求逆。第二页首一多项式长除仍是一条独立原路线。"
+      }
+    },
+    {
+      "recovery_id": "CA07-R030",
+      "add_source_ids": [
+        "CA07-P003-U12"
+      ],
+      "correction": "法末长笔的同手判断实际引用P3红问U12，将其列入R/I，结合原生800及两张1200比较；含幺中间子环C的作用条件保持。",
+      "evidence_paths": [
+        "audit/boss-recovery-3/p3-method-fa-1200.png",
+        "audit/boss-recovery-3/p5-multiplication-fa-1200.png",
+        "audit/boss-recovery-8/readonly-R030-same-hand-source.json",
+        "audit/second-pass-4-merge/independent-frozen-receipts.json",
+        "audit/source-units-800/CA07-P003-U12-800.png",
+        "proposals/ca07_adversarial/second-pass-4/second-pass-report.json",
+        "proposals/ca07_math/post-second-pass-4/context-source-check.json",
+        "proposals/ca07_visual/post-second-pass-4/context-source-check.json"
+      ]
+    },
+    {
+      "recovery_id": "CA07-R045",
+      "add_source_ids": [
+        "CA07-P007-U05"
+      ],
+      "correction": "回图所说A[x_i]箭头源由P7U05直接提供，须挂源；评价满射明确以前提B=ι(A)[b_1,…,b_s]为依据，任意选取b_i不足以保证满射。",
+      "evidence_paths": [
+        "audit/boss-recovery-8/readonly-explicit-context-sources.json",
+        "audit/second-pass-4-merge/independent-frozen-receipts.json",
+        "audit/source-units-800/CA07-P007-U05-800.png",
+        "proposals/ca07_adversarial/second-pass-4/second-pass-report.json",
+        "proposals/ca07_math/post-second-pass-4/context-source-check.json",
+        "proposals/ca07_visual/post-second-pass-4/context-source-check.json"
+      ],
+      "forward_validation": {
+        "inputs": "结构同态ι:A→B，并选A-代数生成元b_1,…,b_s，使B=ι(A)[b_1,…,b_s]；评价映射x_i↦b_i。",
+        "result": "评价同态的像正是ι(A)[b_1,…,b_s]=B，故为A代数满射；同像当且仅当差在核，故商到B为同构。"
+      },
+      "backward_validation": {
+        "inputs": "结构同态Z→Z/2Z；另取A=Z、B=Z[t]且评价x_1↦0。",
+        "result": "Z→Z/2Z也是A代数，不能静默要求结构同态单射，蓝用像环保留一般性。第二例评价像仅Z，不满到Z[t]，表明具体的代数生成前提不可省。"
+      }
+    },
+    {
+      "recovery_id": "CA07-R049",
+      "add_source_ids": [
+        "CA07-P003-U01"
+      ],
+      "correction": "回图所说下一页乘b自映射直接来自P3U01，须挂源。D明确为给定A[b]有限A模生成元后独立构造的系数矩阵，不声称某个未引用的原矩阵作为本条的直接文本来源。",
+      "evidence_paths": [
+        "audit/boss-recovery-8/readonly-explicit-context-sources.json",
+        "audit/second-pass-4-merge/independent-frozen-receipts.json",
+        "audit/source-units-800/CA07-P003-U01-800.png",
+        "proposals/ca07_adversarial/second-pass-4/second-pass-report.json",
+        "proposals/ca07_math/post-second-pass-4/context-source-check.json",
+        "proposals/ca07_visual/post-second-pass-4/context-source-check.json"
+      ],
+      "forward_validation": {
+        "inputs": "正文A≠0分支：给定A[b]的一组有限非空A模生成元，按乘b作用独立构造系数矩阵D。"
+      }
+    },
+    {
+      "recovery_id": "CA07-R050",
+      "add_source_ids": [
+        "CA07-P005-U05"
+      ],
+      "correction": "原页实际取单位的a·1=0行P5U05是检验引用的原依据，须挂源；受b乘法稳定的有限A子模/含幺中间子环解释及反例保持。",
+      "evidence_paths": [
+        "audit/boss-recovery-8/readonly-explicit-context-sources.json",
+        "audit/second-pass-4-merge/independent-frozen-receipts.json",
+        "audit/source-units-800/CA07-P005-U05-800.png",
+        "proposals/ca07_adversarial/second-pass-4/second-pass-report.json",
+        "proposals/ca07_math/post-second-pass-4/context-source-check.json",
+        "proposals/ca07_visual/post-second-pass-4/context-source-check.json"
+      ]
+    },
+    {
+      "recovery_id": "CA07-R054",
+      "add_source_ids": [
+        "CA07-P002-U10",
+        "CA07-P002-U11"
+      ],
+      "correction": "两处上限不同但生成同一个A模的检验实际调用原首一零关系，补U10与U11；不把同张成误作同一生成元列。",
+      "evidence_paths": [
+        "audit/boss-recovery-8/readonly-explicit-context-sources.json",
+        "audit/second-pass-4-merge/independent-frozen-receipts.json",
+        "audit/source-units-800/CA07-P002-U10-800.png",
+        "audit/source-units-800/CA07-P002-U11-800.png",
+        "proposals/ca07_adversarial/second-pass-4/second-pass-report.json",
+        "proposals/ca07_math/post-second-pass-4/context-source-check.json",
+        "proposals/ca07_visual/post-second-pass-4/context-source-check.json"
+      ]
+    },
+    {
+      "recovery_id": "CA07-R055",
+      "add_source_ids": [
+        "CA07-P002-U16",
+        "CA07-P002-U18",
+        "CA07-P002-U20"
+      ],
+      "correction": "检验实际提到原第二路线的起点、余式和低幂结论，分别回挂U16、U18、U20；具体长除前提另在R013记录，不扩造原文。",
+      "evidence_paths": [
+        "audit/boss-recovery-8/readonly-explicit-context-sources.json",
+        "audit/second-pass-4-merge/independent-frozen-receipts.json",
+        "audit/source-units-800/CA07-P002-U16-800.png",
+        "audit/source-units-800/CA07-P002-U18-800.png",
+        "audit/source-units-800/CA07-P002-U20-800.png",
+        "proposals/ca07_adversarial/second-pass-4/second-pass-report.json",
+        "proposals/ca07_math/post-second-pass-4/context-source-check.json",
+        "proposals/ca07_visual/post-second-pass-4/context-source-check.json"
+      ]
+    }
+  ],
+  "scope": "10恢复及对应问题、17直接来源边、精确检验前提和active观察；正文、映射、原候选不变。",
+  "remaining_gate": "原三人的合并后精确确认、非作者第二遍绑定和三轮最新快照终审尚未完成。"
+}
