@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>study-notes</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="notes.css" />
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">study-notes</h1>
+</header>
+<h1 id="实分析-12从几乎连续到连续函数逼近">实分析
+12｜从“几乎连续”到连续函数逼近</h1>
+<h2 id="目录">目录</h2>
+<ol type="1">
+<li>术语、记号与 Littlewood 三原则</li>
+<li>有限测度集合的开区间近似</li>
+<li>开覆盖、局部有限闭覆盖及可数可测覆盖的拼接</li>
+<li>Egorov 定理：有限测度下的工具</li>
+<li>Lusin 定理：简单函数、有界化、Egorov 与无限测度四段</li>
+<li>Lusin 的逆命题</li>
+<li>正规性、Urysohn 与 Tietze</li>
+<li>外测度旁注</li>
+<li>可测性与两种函数逼近的等价</li>
+<li>原稿订正与物理页对照</li>
+</ol>
+<p>原稿内容以通常文字保留；蓝色 note
+块标明解释、补证或订正。原稿明确留空处保留红色 B1–B3
+标记，其完整补答紧随其后。来源编号与精确映射独立保存在
+source-target-map.json，本文不能替代原序保真稿。</p>
+<h2 id="术语记号与-littlewood-三原则">1. 术语、记号与 Littlewood
+三原则</h2>
+<blockquote>
+<p>[!note] <span style="color:blue">记号说明</span> | 原记号／术语 |
+本文含义及适用范围 | | — | — | |
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>M</mi><annotation encoding="application/x-tex">M</annotation></semantics></math>、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>E</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">M(E)</annotation></semantics></math>
+| Lebesgue
+可测集合族、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>E</mi><annotation encoding="application/x-tex">E</annotation></semantics></math>
+上可测函数族；原记号按上下文区分 | |
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>S</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>E</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">S(E)</annotation></semantics></math>
+|
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>E</mi><annotation encoding="application/x-tex">E</annotation></semantics></math>
+上有限值简单函数 | |
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>F</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">C(F)</annotation></semantics></math>
+| 拓扑子空间
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>F</mi><annotation encoding="application/x-tex">F</annotation></semantics></math>
+上的实值连续函数 | |
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>χ</mi><mi>A</mi></msub><annotation encoding="application/x-tex">\chi_A</annotation></semantics></math>
+| 集合
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>A</mi><annotation encoding="application/x-tex">A</annotation></semantics></math>
+的示性函数 | |
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mi>Δ</mi><mi>B</mi></mrow><annotation encoding="application/x-tex">A\Delta B</annotation></semantics></math>
+|
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">(</mo><mi>A</mi><mo>\</mo><mi>B</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>∪</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>B</mi><mo>\</mo><mi>A</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">(A\setminus B)\cup(B\setminus A)</annotation></semantics></math>，对称差
+| |
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>P</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">E(P)</annotation></semantics></math>、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><mo stretchy="false" form="prefix">{</mo><mi>P</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">E\{P\}</annotation></semantics></math>
+|
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mi>x</mi><mo>∈</mo><mi>E</mi><mo>:</mo><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{x\in E:P(x)\}</annotation></semantics></math>，原作者的谓词集合省写
+| | a.e. | 关于 Lebesgue 测度，除一个零测集外成立 | | 几乎一致收敛 |
+对任意正误差可删去测度小于该误差的集合，余集上一致收敛 | | 局部有限族 |
+每一点有邻域只交有限多个成员 | | 正规性 |
+本文指不交闭集可由不交开集分离；若课程定义还包含
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>T</mi><mn>1</mn></msub><annotation encoding="application/x-tex">T_1</annotation></semantics></math>，则下文同时以
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>T</mi><mn>1</mn></msub><annotation encoding="application/x-tex">T_1</annotation></semantics></math>
+为前提 | |
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>limsup</mo><msub><mi>D</mi><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">\limsup D_k</annotation></semantics></math>
+|
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>⋂</mo><mi>N</mi></msub><msub><mo>⋃</mo><mrow><mi>k</mi><mo>≥</mo><mi>N</mi></mrow></msub><msub><mi>D</mi><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">\bigcap_N\bigcup_{k\ge N}D_k</annotation></semantics></math>，无穷多次属于
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>D</mi><mi>k</mi></msub><annotation encoding="application/x-tex">D_k</annotation></semantics></math>
+的点 | |
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>liminf</mo><msub><mi>A</mi><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">\liminf A_k</annotation></semantics></math>
+|
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>⋃</mo><mi>N</mi></msub><msub><mo>⋂</mo><mrow><mi>k</mi><mo>≥</mo><mi>N</mi></mrow></msub><msub><mi>A</mi><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">\bigcup_N\bigcap_{k\ge N}A_k</annotation></semantics></math>，最终总属于
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>A</mi><mi>k</mi></msub><annotation encoding="application/x-tex">A_k</annotation></semantics></math>
+的点 |</p>
+</blockquote>
+<p>原题为 <strong>Littlewood 3 定律</strong>，依原序：</p>
+<ol type="1">
+<li>每一个可测集几乎是有限个开区间并。</li>
+<li>每一个可测函数几乎连续。</li>
+<li>每个可测收敛的几乎一致收敛。</li>
+</ol>
+<blockquote>
+<p>[!note] <span style="color:blue">解释</span>
+这三句是原则式概括。第一句在下一题的有限测度条件下以对称差度量；第二句由
+Lusin 精确化；第三句的收敛可测函数列在有限测度条件下由 Egorov
+精确化。“几乎连续”不等于“函数在几乎处处的点上按整个定义域连续”，而是删去任意小测度部分后，限制在余下闭集上连续。</p>
+</blockquote>
+<h2 id="有限测度集合的开区间近似">2. 有限测度集合的开区间近似</h2>
+<p><strong>原题。</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><mo>∈</mo><mi>M</mi></mrow><annotation encoding="application/x-tex">E\in M</annotation></semantics></math>、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>E</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>&lt;</mo><mi>∞</mi></mrow><annotation encoding="application/x-tex">m(E)&lt;\infty</annotation></semantics></math>，给定
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ε</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\varepsilon&gt;0</annotation></semantics></math>，求有限个开区间
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>I</mi><mn>1</mn></msub><mo>,</mo><mi>…</mi><mo>,</mo><msub><mi>I</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">I_1,\ldots,I_n</annotation></semantics></math>，使
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>E</mi><mi>Δ</mi><munderover><mo>⋃</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></munderover><msub><mi>I</mi><mi>i</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>&lt;</mo><mi>ε</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
+m\left(E\Delta\bigcup_{i=1}^nI_i\right)&lt;\varepsilon.
+</annotation></semantics></math></p>
+<blockquote>
+<p>[!note] <span style="color:blue">题目完整解答</span> 这里的区间版本在
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>ℝ</mi><annotation encoding="application/x-tex">\mathbb R</annotation></semantics></math>
+上表述。由外正规性取开集
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>G</mi><mo>⊃</mo><mi>E</mi></mrow><annotation encoding="application/x-tex">G\supset E</annotation></semantics></math>，满足
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>G</mi><mo>\</mo><mi>E</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>&lt;</mo><mi>ε</mi><mi>/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">m(G\setminus E)&lt;\varepsilon/2</annotation></semantics></math>，因而
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>G</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>&lt;</mo><mi>∞</mi></mrow><annotation encoding="application/x-tex">m(G)&lt;\infty</annotation></semantics></math>。将
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>G</mi><annotation encoding="application/x-tex">G</annotation></semantics></math>
+写成至多可数个两两不交开区间的并
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>G</mi><mo>=</mo><msub><mo>⋃</mo><mrow><mi>j</mi><mo>≥</mo><mn>1</mn></mrow></msub><msub><mi>I</mi><mi>j</mi></msub></mrow><annotation encoding="application/x-tex">G=\bigcup_{j\ge1}I_j</annotation></semantics></math>；有限个分支时直接取尽。无限个分支时由测度可加性选
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>
+使
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>G</mi><mo>\</mo><msubsup><mo>⋃</mo><mrow><mi>j</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></msubsup><msub><mi>I</mi><mi>j</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>&lt;</mo><mi>ε</mi><mi>/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">m(G\setminus\bigcup_{j=1}^nI_j)&lt;\varepsilon/2</annotation></semantics></math>。记该有限并为
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>U</mi><annotation encoding="application/x-tex">U</annotation></semantics></math>，则
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><mi>Δ</mi><mi>U</mi><mo>⊂</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>G</mi><mo>\</mo><mi>E</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>∪</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>G</mi><mo>\</mo><mi>U</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo><mspace width="2.0em"></mspace><mi>m</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>E</mi><mi>Δ</mi><mi>U</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>&lt;</mo><mi>ε</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
+E\Delta U\subset(G\setminus E)\cup(G\setminus U),
+\qquad m(E\Delta U)&lt;\varepsilon.
+</annotation></semantics></math> 只控制
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><mo>\</mo><mi>U</mi></mrow><annotation encoding="application/x-tex">E\setminus U</annotation></semantics></math>
+不足以排除
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>U</mi><annotation encoding="application/x-tex">U</annotation></semantics></math>
+伸到
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>E</mi><annotation encoding="application/x-tex">E</annotation></semantics></math>
+外的大块，故原三角符号不可改作单侧集合差。</p>
+</blockquote>
+<h2 id="三种分片拼接">3. 三种分片拼接</h2>
+<h3 id="原稿的开覆盖引理">3.1 原稿的开覆盖引理</h3>
+<p>设
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo>:</mo><mi>X</mi><mo>→</mo><mi>Y</mi></mrow><annotation encoding="application/x-tex">f:X\to Y</annotation></semantics></math>，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>X</mi><mo>=</mo><msub><mo>⋃</mo><mrow><mi>a</mi><mo>∈</mo><mi>A</mi></mrow></msub><msub><mi>X</mi><mi>a</mi></msub></mrow><annotation encoding="application/x-tex">X=\bigcup_{a\in A}X_a</annotation></semantics></math>
+为开覆盖。若每个
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>f</mi><mi>a</mi></msub><mo>:</mo><msub><mi>X</mi><mi>a</mi></msub><mo>→</mo><mi>Y</mi></mrow><annotation encoding="application/x-tex">f_a:X_a\to Y</annotation></semantics></math>
+连续，则
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>
+连续。原稿用
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>f</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>U</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><munder><mo>⋃</mo><mi>a</mi></munder><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>f</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>U</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>∩</mo><msub><mi>X</mi><mi>a</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><munder><mo>⋃</mo><mi>a</mi></munder><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>f</mi><msub><mo stretchy="false" form="prefix">|</mo><msub><mi>X</mi><mi>a</mi></msub></msub><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mi>−</mi><mn>1</mn></mrow></msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>U</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">
+f^{-1}(U)=\bigcup_a(f^{-1}(U)\cap X_a)
+=\bigcup_a(f|_{X_a})^{-1}(U)
+</annotation></semantics></math> 说明，并在等号上注“定义”。</p>
+<blockquote>
+<p>[!note] <span style="color:blue">补全条件与证明</span> 必须明确
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>f</mi><mi>a</mi></msub><mo>=</mo><mi>f</mi><msub><mo stretchy="false" form="prefix">|</mo><msub><mi>X</mi><mi>a</mi></msub></msub></mrow><annotation encoding="application/x-tex">f_a=f|_{X_a}</annotation></semantics></math>。任取
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>U</mi><mo>∈</mo><msub><mi>τ</mi><mi>Y</mi></msub></mrow><annotation encoding="application/x-tex">U\in\tau_Y</annotation></semantics></math>，每个限制逆像在
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>X</mi><mi>a</mi></msub><annotation encoding="application/x-tex">X_a</annotation></semantics></math>
+的子空间拓扑中开，故存在
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>C</mi><mi>a</mi></msub><mo>∈</mo><msub><mi>τ</mi><mi>X</mi></msub></mrow><annotation encoding="application/x-tex">C_a\in\tau_X</annotation></semantics></math>
+使它等于
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>C</mi><mi>a</mi></msub><mo>∩</mo><msub><mi>X</mi><mi>a</mi></msub></mrow><annotation encoding="application/x-tex">C_a\cap X_a</annotation></semantics></math>。由于
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>X</mi><mi>a</mi></msub><annotation encoding="application/x-tex">X_a</annotation></semantics></math>
+本身在
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>
+中开，该交集在
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>
+中开；任意并仍开，得到
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>
+连续。</p>
+<p>原稿写
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>f</mi><msub><mo stretchy="false" form="prefix">|</mo><msub><mi>X</mi><mi>a</mi></msub></msub><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mi>−</mi><mn>1</mn></mrow></msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>U</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>∈</mo><msub><mi>τ</mi><msub><mi>X</mi><mi>a</mi></msub></msub><mo>=</mo><mi>C</mi><mo>∩</mo><msub><mi>X</mi><mi>a</mi></msub></mrow><annotation encoding="application/x-tex">(f|_{X_a})^{-1}(U)\in\tau_{X_a}=C\cap X_a</annotation></semantics></math>，是把“拓扑族”与“族中一个成员”的等式并写。严格式为
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>τ</mi><msub><mi>X</mi><mi>a</mi></msub></msub><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mi>C</mi><mo>∩</mo><msub><mi>X</mi><mi>a</mi></msub><mo>:</mo><mi>C</mi><mo>∈</mo><msub><mi>τ</mi><mi>X</mi></msub><mo stretchy="false" form="postfix">}</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+\tau_{X_a}=\{C\cap X_a:C\in\tau_X\}.
+</annotation></semantics></math>
+原“注意限制连续”“由两者都开”“<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>
+中开集”和证毕收笔对应上述三步。若各
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>f</mi><mi>a</mi></msub><annotation encoding="application/x-tex">f_a</annotation></semantics></math>
+是另行给出的映射，则还须在相交处一致，才能先拼成
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>；原题已先给定了
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>。</p>
+</blockquote>
+<h3 id="局部有限闭覆盖">3.2 局部有限闭覆盖</h3>
+<p>原稿补充：无限个闭覆盖时改用“局部有限闭覆盖”。局部有限的定义是：给定
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∈</mo><mi>X</mi></mrow><annotation encoding="application/x-tex">x\in X</annotation></semantics></math>，存在
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>U</mi><mo>∈</mo><mi>N</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">U\in N(x)</annotation></semantics></math>，只与有限多个
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>X</mi><mi>a</mi></msub><annotation encoding="application/x-tex">X_a</annotation></semantics></math>
+相交。</p>
+<blockquote>
+<p>[!note] <span style="color:blue">补证与条件检验</span> 若
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>X</mi><mi>a</mi></msub><annotation encoding="application/x-tex">X_a</annotation></semantics></math>
+在
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>
+中闭、构成局部有限覆盖，且每个限制连续，则对
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Y</mi><annotation encoding="application/x-tex">Y</annotation></semantics></math>
+中任意闭集
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>D</mi><annotation encoding="application/x-tex">D</annotation></semantics></math>，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>f</mi><msub><mo stretchy="false" form="prefix">|</mo><msub><mi>X</mi><mi>a</mi></msub></msub><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mi>−</mi><mn>1</mn></mrow></msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>D</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">(f|_{X_a})^{-1}(D)</annotation></semantics></math>
+在
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>X</mi><mi>a</mi></msub><annotation encoding="application/x-tex">X_a</annotation></semantics></math>
+中闭，也在
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>
+中闭。这些闭集仍局部有限，它们的并为
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>f</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>D</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">f^{-1}(D)</annotation></semantics></math>。</p>
+<p>局部有限闭集的并为何闭？若
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>
+不在并中，先取只交有限多个成员的邻域，再逐一避开这有限多个闭集，就得到不交整个并的开邻域。因此逆像闭，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>
+连续。</p>
+<p>不能删去局部有限条件：在
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>X</mi><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mn>0</mn><mo stretchy="false" form="postfix">}</mo><mo>∪</mo><mo stretchy="false" form="prefix">{</mo><mn>1</mn><mi>/</mi><mi>n</mi><mo>:</mo><mi>n</mi><mo>≥</mo><mn>1</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">X=\{0\}\cup\{1/n:n\ge1\}</annotation></semantics></math>
+的单点闭覆盖上，每个限制都连续；但令
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mn>0</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">f(0)=0</annotation></semantics></math>、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mi>/</mi><mi>n</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">f(1/n)=1</annotation></semantics></math>，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>
+在
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>0</mn><annotation encoding="application/x-tex">0</annotation></semantics></math>
+不连续。第 4 页的环带论证正需要这一工具。</p>
+</blockquote>
+<h3 id="原页末的可测覆盖旁注">3.3 原页末的可测覆盖旁注</h3>
+<p>“可测也类似，要求可数个覆盖。”</p>
+<blockquote>
+<p>[!note] <span style="color:blue">旁注补证</span> 设可测空间
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>
+被可数个可测子集
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>X</mi><mi>j</mi></msub><annotation encoding="application/x-tex">X_j</annotation></semantics></math>
+覆盖，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><msub><mo stretchy="false" form="prefix">|</mo><msub><mi>X</mi><mi>j</mi></msub></msub></mrow><annotation encoding="application/x-tex">f|_{X_j}</annotation></semantics></math>
+对迹
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>σ</mi><annotation encoding="application/x-tex">\sigma</annotation></semantics></math>-代数可测。对靶空间任意可测集
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>B</mi><annotation encoding="application/x-tex">B</annotation></semantics></math>，
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>f</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>B</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><munder><mo>⋃</mo><mrow><mi>j</mi><mo>≥</mo><mn>1</mn></mrow></munder><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>f</mi><msub><mo stretchy="false" form="prefix">|</mo><msub><mi>X</mi><mi>j</mi></msub></msub><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mi>−</mi><mn>1</mn></mrow></msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>B</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">
+f^{-1}(B)=\bigcup_{j\ge1}(f|_{X_j})^{-1}(B).
+</annotation></semantics></math> 各项都是
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>
+中可测集，可数并可测，故
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>
+可测。这里用的是可数并封闭；无需把旁注改写为有界测度控制或任意不可数可测拼接。</p>
+</blockquote>
+<h2 id="egorov-定理有限测度下的工具">4. Egorov
+定理：有限测度下的工具</h2>
+<p>原稿在一般可测函数的 Lusin 证明中提醒：“但 Egorov 要求
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>E</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>&lt;</mo><mi>+</mi><mi>∞</mi></mrow><annotation encoding="application/x-tex">m(E)&lt;+\infty</annotation></semantics></math>”，随后又开列“或用
+Egorov 定理”的路线。</p>
+<blockquote>
+<p>[!note] <span style="color:blue">前置工具及完整补证</span>
+<strong>工具定理。</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>E</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>&lt;</mo><mi>∞</mi></mrow><annotation encoding="application/x-tex">m(E)&lt;\infty</annotation></semantics></math>，可测函数
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>f</mi><mi>k</mi></msub><mo>→</mo><mi>f</mi></mrow><annotation encoding="application/x-tex">f_k\to f</annotation></semantics></math>
+几乎处处，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>
+几乎处处有限。给定
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>η</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\eta&gt;0</annotation></semantics></math>，存在可测例外集
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>G</mi><mo>⊂</mo><mi>E</mi></mrow><annotation encoding="application/x-tex">G\subset E</annotation></semantics></math>，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>G</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>&lt;</mo><mi>η</mi></mrow><annotation encoding="application/x-tex">m(G)&lt;\eta</annotation></semantics></math>，使
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>f</mi><mi>k</mi></msub><mo>→</mo><mi>f</mi></mrow><annotation encoding="application/x-tex">f_k\to f</annotation></semantics></math>
+在
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><mo>\</mo><mi>G</mi></mrow><annotation encoding="application/x-tex">E\setminus G</annotation></semantics></math>
+上一致收敛。</p>
+<p>先将收敛或有限性失败的零测集
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Z</mi><annotation encoding="application/x-tex">Z</annotation></semantics></math>
+放入
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>G</mi><annotation encoding="application/x-tex">G</annotation></semantics></math>。对
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi><mo>,</mo><mi>N</mi><mo>≥</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">r,N\ge1</annotation></semantics></math>
+定义
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>A</mi><mrow><mi>r</mi><mo>,</mo><mi>N</mi></mrow></msub><mo>=</mo><munder><mo>⋃</mo><mrow><mi>k</mi><mo>≥</mo><mi>N</mi></mrow></munder><mo stretchy="false" form="prefix">{</mo><mi>x</mi><mo>∈</mo><mi>E</mi><mo>\</mo><mi>Z</mi><mo>:</mo><mrow><mo stretchy="true" form="prefix">|</mo><msub><mi>f</mi><mi>k</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>−</mo><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">|</mo></mrow><mo>≥</mo><mn>1</mn><mi>/</mi><mi>r</mi><mo stretchy="false" form="postfix">}</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+A_{r,N}=\bigcup_{k\ge N}\{x\in E\setminus Z:|f_k(x)-f(x)|\ge1/r\}.
+</annotation></semantics></math> 固定
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>r</mi><annotation encoding="application/x-tex">r</annotation></semantics></math>，这些集合随
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>
+递减且交为空；因为第一项测度有限，由测度从上连续性得
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>A</mi><mrow><mi>r</mi><mo>,</mo><mi>N</mi></mrow></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>→</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">m(A_{r,N})\to0</annotation></semantics></math>。选
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>N</mi><mi>r</mi></msub><annotation encoding="application/x-tex">N_r</annotation></semantics></math>
+使
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>A</mi><mrow><mi>r</mi><mo>,</mo><msub><mi>N</mi><mi>r</mi></msub></mrow></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>&lt;</mo><mi>η</mi><mi>/</mi><msup><mn>2</mn><mrow><mi>r</mi><mo>+</mo><mn>1</mn></mrow></msup></mrow><annotation encoding="application/x-tex">m(A_{r,N_r})&lt;\eta/2^{r+1}</annotation></semantics></math>，令
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>G</mi><mo>=</mo><mi>Z</mi><mo>∪</mo><msub><mo>⋃</mo><mi>r</mi></msub><msub><mi>A</mi><mrow><mi>r</mi><mo>,</mo><msub><mi>N</mi><mi>r</mi></msub></mrow></msub></mrow><annotation encoding="application/x-tex">G=Z\cup\bigcup_rA_{r,N_r}</annotation></semantics></math>，则
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>G</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>&lt;</mo><mi>η</mi></mrow><annotation encoding="application/x-tex">m(G)&lt;\eta</annotation></semantics></math>。给定
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ε</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\varepsilon&gt;0</annotation></semantics></math>，选
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mi>/</mi><mi>r</mi><mo>&lt;</mo><mi>ε</mi></mrow><annotation encoding="application/x-tex">1/r&lt;\varepsilon</annotation></semantics></math>；对所有
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>≥</mo><msub><mi>N</mi><mi>r</mi></msub></mrow><annotation encoding="application/x-tex">k\ge N_r</annotation></semantics></math>
+与
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∉</mo><mi>G</mi></mrow><annotation encoding="application/x-tex">x\notin G</annotation></semantics></math>，误差小于
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mi>/</mi><mi>r</mi></mrow><annotation encoding="application/x-tex">1/r</annotation></semantics></math>，即一致收敛。</p>
+<p>有限测度条件不能删除：<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">[</mo><mn>0</mn><mo>,</mo><mi>∞</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">[0,\infty)</annotation></semantics></math>
+上的
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>χ</mi><mrow><mo stretchy="false" form="prefix">[</mo><mi>k</mi><mo>,</mo><mi>∞</mi><mo stretchy="false" form="postfix">)</mo></mrow></msub><annotation encoding="application/x-tex">\chi_{[k,\infty)}</annotation></semantics></math>
+逐点趋于
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>0</mn><annotation encoding="application/x-tex">0</annotation></semantics></math>，但删任一有限测度集后仍有尾部点令误差为
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>1</mn><annotation encoding="application/x-tex">1</annotation></semantics></math>。这里补的是
+Egorov 的证明，不把它冒充原稿已完整写出的证明。</p>
+</blockquote>
+<h2 id="lusin-定理">5. Lusin 定理</h2>
+<h3 id="原定理与构造任务">5.1 原定理与构造任务</h3>
+<p>设
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><mo>∈</mo><mi>M</mi></mrow><annotation encoding="application/x-tex">E\in M</annotation></semantics></math>，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>
+在
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>E</mi><annotation encoding="application/x-tex">E</annotation></semantics></math>
+上可测且 a.e. 有限。对每个
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>δ</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\delta&gt;0</annotation></semantics></math>，存在闭集
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>F</mi><mi>δ</mi></msub><mo>⊂</mo><mi>E</mi></mrow><annotation encoding="application/x-tex">F_\delta\subset E</annotation></semantics></math>，使
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>E</mi><mo>\</mo><msub><mi>F</mi><mi>δ</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>&lt;</mo><mi>δ</mi><mo>,</mo><mspace width="2.0em"></mspace><mi>f</mi><msub><mo stretchy="false" form="prefix">|</mo><msub><mi>F</mi><mi>δ</mi></msub></msub><mo>∈</mo><mi>C</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>F</mi><mi>δ</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">
+m(E\setminus F_\delta)&lt;\delta,\qquad f|_{F_\delta}\in C(F_\delta).
+</annotation></semantics></math> 原稿紧接要求：“并给出闭集构造
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>F</mi><mi>δ</mi></msub><annotation encoding="application/x-tex">F_\delta</annotation></semantics></math>
+的表达式。”</p>
+<blockquote>
+<p>[!note] <span style="color:blue">适用条件</span> 以下先在
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>E</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>&lt;</mo><mi>∞</mi></mrow><annotation encoding="application/x-tex">m(E)&lt;\infty</annotation></semantics></math>
+时使用紧集内近似，最后按原第 4 页的环带处理
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>E</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>∞</mi></mrow><annotation encoding="application/x-tex">m(E)=\infty</annotation></semantics></math>。若
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>
+允许扩展实值，先令
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Z</mi><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mi>x</mi><mo>∈</mo><mi>E</mi><mo>:</mo><mrow><mo stretchy="true" form="prefix">|</mo><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">|</mo></mrow><mo>=</mo><mi>∞</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">Z=\{x\in E:|f(x)|=\infty\}</annotation></semantics></math>，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>Z</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">m(Z)=0</annotation></semantics></math>，在
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><mo>\</mo><mi>Z</mi></mrow><annotation encoding="application/x-tex">E\setminus Z</annotation></semantics></math>
+上作构造；最终闭集取在该集内，测度损失仍按原
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>E</mi><annotation encoding="application/x-tex">E</annotation></semantics></math>
+计算。</p>
+</blockquote>
+<h3 id="简单函数情形">5.2 简单函数情形</h3>
+<p>原稿设
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo>∈</mo><mi>S</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>E</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">f\in S(E)</annotation></semantics></math>，取
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>E</mi><mn>1</mn></msub><mo>,</mo><mi>…</mi><mo>,</mo><msub><mi>E</mi><mo>ℓ</mo></msub><mo>∈</mo><mi>M</mi></mrow><annotation encoding="application/x-tex">E_1,\ldots,E_\ell\in M</annotation></semantics></math>，写
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><mo>=</mo><mi>∪</mi><msub><mi>X</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">E=\cup X_i</annotation></semantics></math>，并写
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo>=</mo><munderover><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mo accent="false">ℓ</mo></munderover><msub><mi>c</mi><mi>i</mi></msub><msub><mi>χ</mi><msub><mi>E</mi><mi>i</mi></msub></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">
+f=\sum_{i=1}^{\ell}c_i\chi_{E_i}.
+</annotation></semantics></math> 由 Lebesgue 内正规性取
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>F</mi><mrow><mi>i</mi><mo>,</mo><mi>δ</mi></mrow></msub><mover><mo>⊂</mo><mtext mathvariant="normal">紧闭</mtext></mover><msub><mi>E</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">F_{i,\delta}\overset{\text{紧闭}}{\subset}E_i</annotation></semantics></math>，满足
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>E</mi><mi>i</mi></msub><mo>\</mo><msub><mi>F</mi><mrow><mi>i</mi><mo>,</mo><mi>δ</mi></mrow></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>&lt;</mo><mi>δ</mi><mi>/</mi><mo>ℓ</mo><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>F</mi><mi>δ</mi></msub><mo>=</mo><munderover><mo>⋃</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mo accent="false">ℓ</mo></munderover><msub><mi>F</mi><mrow><mi>i</mi><mo>,</mo><mi>δ</mi></mrow></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">
+m(E_i\setminus F_{i,\delta})&lt;\delta/\ell,\qquad
+F_\delta=\bigcup_{i=1}^{\ell}F_{i,\delta}.
+</annotation></semantics></math></p>
+<blockquote>
+<p>[!note] <span style="color:blue">构造解答与原式订正</span> 将
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>E</mi><mi>i</mi></msub><annotation encoding="application/x-tex">E_i</annotation></semantics></math>
+取为
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>
+的互不相交值层，则
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><mo>=</mo><msub><mo>⨆</mo><mi>i</mi></msub><msub><mi>E</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">E=\bigsqcup_iE_i</annotation></semantics></math>；原覆盖式的
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>X</mi><mi>i</mi></msub><annotation encoding="application/x-tex">X_i</annotation></semantics></math>
+订正为
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>E</mi><mi>i</mi></msub><annotation encoding="application/x-tex">E_i</annotation></semantics></math>。在有限测度条件下，内正规性给出所需紧集
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>F</mi><mrow><mi>i</mi><mo>,</mo><mi>δ</mi></mrow></msub><annotation encoding="application/x-tex">F_{i,\delta}</annotation></semantics></math>。有限并
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>F</mi><mi>δ</mi></msub><annotation encoding="application/x-tex">F_\delta</annotation></semantics></math>
+紧且闭，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>
+在每个
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>F</mi><mrow><mi>i</mi><mo>,</mo><mi>δ</mi></mrow></msub><annotation encoding="application/x-tex">F_{i,\delta}</annotation></semantics></math>
+为常数，有限闭覆盖拼接给出
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><msub><mo stretchy="false" form="prefix">|</mo><msub><mi>F</mi><mi>δ</mi></msub></msub></mrow><annotation encoding="application/x-tex">f|_{F_\delta}</annotation></semantics></math>
+连续。</p>
+<p>原稿测度链写了
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>⋃</mo><mi>i</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>E</mi><mo>\</mo><msub><mi>F</mi><mrow><mi>i</mi><mo>,</mo><mi>δ</mi></mrow></msub><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\bigcup_i(E\setminus F_{i,\delta})</annotation></semantics></math>
+和
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>∑</mo><mi>i</mi></msub><mi>m</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>E</mi><mo>\</mo><msub><mi>F</mi><mrow><mi>i</mi><mo>,</mo><mi>δ</mi></mrow></msub><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\sum_i m(E\setminus F_{i,\delta})</annotation></semantics></math>。正确计算为
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><mo>\</mo><msub><mi>F</mi><mi>δ</mi></msub><mo>=</mo><munderover><mo>⨆</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mo accent="false">ℓ</mo></munderover><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>E</mi><mi>i</mi></msub><mo>\</mo><msub><mi>F</mi><mrow><mi>i</mi><mo>,</mo><mi>δ</mi></mrow></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo><mspace width="2.0em"></mspace><mi>m</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>E</mi><mo>\</mo><msub><mi>F</mi><mi>δ</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><munder><mo>∑</mo><mi>i</mi></munder><mi>m</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>E</mi><mi>i</mi></msub><mo>\</mo><msub><mi>F</mi><mrow><mi>i</mi><mo>,</mo><mi>δ</mi></mrow></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>&lt;</mo><mi>δ</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
+E\setminus F_\delta=\bigsqcup_{i=1}^{\ell}(E_i\setminus F_{i,\delta}),
+\qquad
+m(E\setminus F_\delta)=\sum_i m(E_i\setminus F_{i,\delta})&lt;\delta.
+</annotation></semantics></math> 原式不能按字面成立：取
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><mo>=</mo><mrow><mo stretchy="true" form="prefix">[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="true" form="postfix">]</mo></mrow><mo>∪</mo><mrow><mo stretchy="true" form="prefix">[</mo><mn>2</mn><mo>,</mo><mn>3</mn><mo stretchy="true" form="postfix">]</mo></mrow></mrow><annotation encoding="application/x-tex">E=[0,1]\cup[2,3]</annotation></semantics></math>、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>F</mi><mrow><mn>1</mn><mo>,</mo><mi>δ</mi></mrow></msub><mo>=</mo><mrow><mo stretchy="true" form="prefix">[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="true" form="postfix">]</mo></mrow></mrow><annotation encoding="application/x-tex">F_{1,\delta}=[0,1]</annotation></semantics></math>、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>F</mi><mrow><mn>2</mn><mo>,</mo><mi>δ</mi></mrow></msub><mo>=</mo><mrow><mo stretchy="true" form="prefix">[</mo><mn>2</mn><mo>,</mo><mn>3</mn><mo stretchy="true" form="postfix">]</mo></mrow></mrow><annotation encoding="application/x-tex">F_{2,\delta}=[2,3]</annotation></semantics></math>，左边的损失为
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>0</mn><annotation encoding="application/x-tex">0</annotation></semantics></math>，而
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>⋃</mo><mi>i</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>E</mi><mo>\</mo><msub><mi>F</mi><mrow><mi>i</mi><mo>,</mo><mi>δ</mi></mrow></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>E</mi></mrow><annotation encoding="application/x-tex">\bigcup_i(E\setminus F_{i,\delta})=E</annotation></semantics></math>。不相交值层同时解释了正确链中的等号。</p>
+</blockquote>
+<h3 id="一般函数的共同闭集">5.3 一般函数的共同闭集</h3>
+<p>原稿从
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><msub><mi>φ</mi><mi>k</mi></msub><mo stretchy="false" form="postfix">}</mo><mo>⊂</mo><mi>S</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>E</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\{\varphi_k\}\subset S(E)</annotation></semantics></math>、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>φ</mi><mi>k</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>→</mo><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\varphi_k(x)\to f(x)</annotation></semantics></math>（<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∀</mo><mi>x</mi><mo>∈</mo><mi>E</mi></mrow><annotation encoding="application/x-tex">\forall x\in E</annotation></semantics></math>）出发。由简单函数情形，逐
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>k</mi><annotation encoding="application/x-tex">k</annotation></semantics></math>
+选闭集，原首行写
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>F</mi><mi>δ</mi></msub><mo>⊂</mo><mi>E</mi></mrow><annotation encoding="application/x-tex">F_\delta\subset E</annotation></semantics></math>、右端写
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>E</mi><mo>\</mo><msub><mi>F</mi><mi>k</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>&lt;</mo><mi>δ</mi><mi>/</mi><msup><mn>2</mn><mi>k</mi></msup></mrow><annotation encoding="application/x-tex">m(E\setminus F_k)&lt;\delta/2^k</annotation></semantics></math>，并写
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>φ</mi><mi>k</mi></msub><mo>∈</mo><mi>C</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>F</mi><mi>k</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\varphi_k\in C(F_k)</annotation></semantics></math>。再令
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>F</mi><mi>δ</mi></msub><mo>=</mo><msub><mo>⋂</mo><mi>k</mi></msub><msub><mi>F</mi><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">F_\delta=\bigcap_kF_k</annotation></semantics></math>，重复说明
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>φ</mi><mi>k</mi></msub><annotation encoding="application/x-tex">\varphi_k</annotation></semantics></math>
+在各
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>F</mi><mi>k</mi></msub><annotation encoding="application/x-tex">F_k</annotation></semantics></math>
+及共同交集上连续，接“下证一致收敛”。</p>
+<blockquote>
+<p>[!note] <span style="color:blue">下标、限制与估计订正</span>
+固定总误差
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>η</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\eta&gt;0</annotation></semantics></math>，为每个
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>k</mi><annotation encoding="application/x-tex">k</annotation></semantics></math>
+分别选
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>F</mi><mrow><mi>k</mi><mo>,</mo><mi>η</mi></mrow></msub><annotation encoding="application/x-tex">F_{k,\eta}</annotation></semantics></math>，以下简记
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>F</mi><mi>k</mi></msub><annotation encoding="application/x-tex">F_k</annotation></semantics></math>。原
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>φ</mi><mi>k</mi></msub><mo>∈</mo><mi>C</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>F</mi><mi>k</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\varphi_k\in C(F_k)</annotation></semantics></math>
+精写为
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>φ</mi><mi>k</mi></msub><msub><mo stretchy="false" form="prefix">|</mo><msub><mi>F</mi><mi>k</mi></msub></msub><mo>∈</mo><mi>C</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>F</mi><mi>k</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\varphi_k|_{F_k}\in C(F_k)</annotation></semantics></math>；函数原先定义在整个
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>E</mi><annotation encoding="application/x-tex">E</annotation></semantics></math>，不是只定义在
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>F</mi><mi>k</mi></msub><annotation encoding="application/x-tex">F_k</annotation></semantics></math>。令
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>F</mi><mi>η</mi></msub><mo>=</mo><msub><mo>⋂</mo><mi>k</mi></msub><msub><mi>F</mi><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">F_\eta=\bigcap_kF_k</annotation></semantics></math>，则闭性、限制连续性和测度估计分别为
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>F</mi><mi>η</mi></msub><mspace width="0.222em"></mspace><mtext mathvariant="normal">闭</mtext><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>φ</mi><mi>k</mi></msub><msub><mo stretchy="false" form="prefix">|</mo><msub><mi>F</mi><mi>η</mi></msub></msub><mo>∈</mo><mi>C</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>F</mi><mi>η</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo><mspace width="2.0em"></mspace><mi>m</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>E</mi><mo>\</mo><msub><mi>F</mi><mi>η</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>≤</mo><munder><mo>∑</mo><mi>k</mi></munder><mi>m</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>E</mi><mo>\</mo><msub><mi>F</mi><mi>k</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>&lt;</mo><munder><mo>∑</mo><mi>k</mi></munder><mi>η</mi><msup><mn>2</mn><mrow><mi>−</mi><mi>k</mi></mrow></msup><mo>=</mo><mi>η</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
+F_\eta\ \text{闭},\qquad
+\varphi_k|_{F_\eta}\in C(F_\eta),\qquad
+m(E\setminus F_\eta)\le\sum_km(E\setminus F_k)&lt;\sum_k\eta2^{-k}=\eta.
+</annotation></semantics></math>
+最后严格号可由第一项严格余量与其余项的弱上界得到。原第三行的低位
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mi>k</mi></mrow><annotation encoding="application/x-tex">2k</annotation></semantics></math>
+必须按前一行几何预算订正为
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mn>2</mn><mi>k</mi></msup><annotation encoding="application/x-tex">2^k</annotation></semantics></math>；<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>∑</mo><mi>k</mi></msub><mn>1</mn><mi>/</mi><mrow><mo stretchy="true" form="prefix">(</mo><mn>2</mn><mi>k</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\sum_k1/(2k)</annotation></semantics></math>
+发散，不能提供所需总损失界。</p>
+<p>逐点收敛与每项连续仍不足以推出极限连续，例如
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>x</mi><mi>k</mi></msup><annotation encoding="application/x-tex">x^k</annotation></semantics></math>
+在
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="true" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">[0,1]</annotation></semantics></math>
+上逐点收敛到在
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>1</mn><annotation encoding="application/x-tex">1</annotation></semantics></math>
+不连续的函数。因此必须保留原稿之后的两条路线，不能在此处直接宣布连续。</p>
+</blockquote>
+<h3 id="路线-a有界化再作一致简单逼近">5.4 路线
+A：有界化再作一致简单逼近</h3>
+<p>原稿用 a.e. 有限性写
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>E</mi><mrow><mo stretchy="true" form="prefix">(</mo><mrow><mo stretchy="true" form="prefix">|</mo><mi>f</mi><mo stretchy="true" form="postfix">|</mo></mrow><mo>=</mo><mi>+</mi><mi>∞</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">m(E(|f|=+\infty))=0</annotation></semantics></math>，令
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>g</mi><mo>=</mo><mfrac><mi>f</mi><mrow><mn>1</mn><mo>+</mo><mrow><mo stretchy="true" form="prefix">|</mo><mi>f</mi><mo stretchy="true" form="postfix">|</mo></mrow></mrow></mfrac><mo>,</mo><mspace width="2.0em"></mspace><mrow><mo stretchy="true" form="prefix">|</mo><mi>f</mi><mo stretchy="true" form="postfix">|</mo></mrow><mo>=</mo><mfrac><mrow><mo stretchy="true" form="prefix">|</mo><mi>g</mi><mo stretchy="true" form="postfix">|</mo></mrow><mrow><mn>1</mn><mo>−</mo><mrow><mo stretchy="true" form="prefix">|</mo><mi>g</mi><mo stretchy="true" form="postfix">|</mo></mrow></mrow></mfrac><mo>,</mo></mrow><annotation encoding="application/x-tex">
+g=\frac{f}{1+|f|},\qquad |f|=\frac{|g|}{1-|g|},
+</annotation></semantics></math> 说明
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>g</mi><annotation encoding="application/x-tex">g</annotation></semantics></math>
+有界；另写
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo>=</mo><mi>g</mi><mi>/</mi><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>−</mo><mi>g</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">f=g/(1-g)</annotation></semantics></math>，并再次提示
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>g</mi><annotation encoding="application/x-tex">g</annotation></semantics></math>
+有界。</p>
+<blockquote>
+<p>[!note] <span style="color:blue">路线 A 完整补证</span> 在已去掉
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Z</mi><annotation encoding="application/x-tex">Z</annotation></semantics></math>
+的有限值点上，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">|</mo><mi>g</mi><mo stretchy="true" form="postfix">|</mo></mrow><mo>&lt;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">|g|&lt;1</annotation></semantics></math>，准确的带符号逆变换为
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo>=</mo><mfrac><mi>g</mi><mrow><mn>1</mn><mo>−</mo><mrow><mo stretchy="true" form="prefix">|</mo><mi>g</mi><mo stretchy="true" form="postfix">|</mo></mrow></mrow></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">
+f=\frac{g}{1-|g|}.
+</annotation></semantics></math> 这是因为
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>−</mo><mrow><mo stretchy="true" form="prefix">|</mo><mi>g</mi><mo stretchy="true" form="postfix">|</mo></mrow><mo>=</mo><mn>1</mn><mi>/</mi><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>+</mo><mrow><mo stretchy="true" form="prefix">|</mo><mi>f</mi><mo stretchy="true" form="postfix">|</mo></mrow><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">1-|g|=1/(1+|f|)</annotation></semantics></math>。原
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>g</mi><mi>/</mi><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>−</mo><mi>g</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">g/(1-g)</annotation></semantics></math>
+对负值错误：<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo>=</mo><mi>−</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">f=-2</annotation></semantics></math>
+时
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>g</mi><mo>=</mo><mi>−</mi><mn>2</mn><mi>/</mi><mn>3</mn></mrow><annotation encoding="application/x-tex">g=-2/3</annotation></semantics></math>，该原式给
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mn>2</mn><mi>/</mi><mn>5</mn></mrow><annotation encoding="application/x-tex">-2/5</annotation></semantics></math>，正确逆式才给
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">-2</annotation></semantics></math>。</p>
+<p>取有界
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>g</mi><annotation encoding="application/x-tex">g</annotation></semantics></math>
+的简单量化
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>ψ</mi><mi>k</mi></msub><mo>=</mo><msup><mn>2</mn><mrow><mi>−</mi><mi>k</mi></mrow></msup><mo stretchy="false" form="prefix">⌊</mo><msup><mn>2</mn><mi>k</mi></msup><mi>g</mi><mo stretchy="false" form="postfix">⌋</mo></mrow><annotation encoding="application/x-tex">\psi_k=2^{-k}\lfloor2^kg\rfloor</annotation></semantics></math>。每个
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>ψ</mi><mi>k</mi></msub><annotation encoding="application/x-tex">\psi_k</annotation></semantics></math>
+有有限多个值，且
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>≤</mo><mi>g</mi><mo>−</mo><msub><mi>ψ</mi><mi>k</mi></msub><mo>&lt;</mo><msup><mn>2</mn><mrow><mi>−</mi><mi>k</mi></mrow></msup></mrow><annotation encoding="application/x-tex">0\le g-\psi_k&lt;2^{-k}</annotation></semantics></math>，所以在整个定义域上一致逼近。按上一小节为每个
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>ψ</mi><mi>k</mi></msub><annotation encoding="application/x-tex">\psi_k</annotation></semantics></math>
+取闭集并总交，得到损失小于
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>δ</mi><annotation encoding="application/x-tex">\delta</annotation></semantics></math>
+的闭
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>F</mi><mi>δ</mi></msub><annotation encoding="application/x-tex">F_\delta</annotation></semantics></math>，每个
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>ψ</mi><mi>k</mi></msub><annotation encoding="application/x-tex">\psi_k</annotation></semantics></math>
+在其上连续，且
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>ψ</mi><mi>k</mi></msub><mo>→</mo><mi>g</mi></mrow><annotation encoding="application/x-tex">\psi_k\to g</annotation></semantics></math>
+一致。因此
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>g</mi><msub><mo stretchy="false" form="prefix">|</mo><msub><mi>F</mi><mi>δ</mi></msub></msub></mrow><annotation encoding="application/x-tex">g|_{F_\delta}</annotation></semantics></math>
+连续；函数
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mo>↦</mo><mi>t</mi><mi>/</mi><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>−</mo><mrow><mo stretchy="true" form="prefix">|</mo><mi>t</mi><mo stretchy="true" form="postfix">|</mo></mrow><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">t\mapsto t/(1-|t|)</annotation></semantics></math>
+在
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mi>−</mi><mn>1</mn><mo>,</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(-1,1)</annotation></semantics></math>
+连续，复合即得
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><msub><mo stretchy="false" form="prefix">|</mo><msub><mi>F</mi><mi>δ</mi></msub></msub></mrow><annotation encoding="application/x-tex">f|_{F_\delta}</annotation></semantics></math>
+连续。</p>
+<p>这条路线补全了原稿有界化后省略的“一致”环节。它不声称任意逐点简单逼近都会自动一致，也不把无穷值直接代入分式。</p>
+</blockquote>
+<h3 id="路线-begorov内正规性和三项误差">5.5 路线
+B：Egorov、内正规性和三项误差</h3>
+<p>原稿另起“或用 Egorov 定理”，设
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>E</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>&lt;</mo><mi>∞</mi></mrow><annotation encoding="application/x-tex">m(E)&lt;\infty</annotation></semantics></math>，并在闭集
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>F</mi><mi>δ</mi></msub><annotation encoding="application/x-tex">F_\delta</annotation></semantics></math>
+后留下：</p>
+<p><span
+style="color:red">B1：<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>E</mi><mo>\</mo><msub><mi>F</mi><mi>δ</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">m(E\setminus F_\delta)</annotation></semantics></math>
+后的界值留空。</span></p>
+<p>下一页以
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>G</mi><mi>δ</mi></msub><mo>⊂</mo><mi>E</mi></mrow><annotation encoding="application/x-tex">G_\delta\subset E</annotation></semantics></math>
+配合
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>φ</mi><mi>k</mi></msub><annotation encoding="application/x-tex">\varphi_k</annotation></semantics></math>
+在
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><mo>\</mo><msub><mi>G</mi><mi>δ</mi></msub></mrow><annotation encoding="application/x-tex">E\setminus G_\delta</annotation></semantics></math>
+上一致趋于
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>，并留下：</p>
+<p><span
+style="color:red">B2：<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>E</mi><mo>\</mo><msub><mi>G</mi><mi>δ</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">m(E\setminus G_\delta)</annotation></semantics></math>
+后的界值留空。</span></p>
+<p>再考虑
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>F</mi><mi>δ</mi></msub><mo>∩</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>E</mi><mo>\</mo><msub><mi>G</mi><mi>δ</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">F_\delta\cap(E\setminus G_\delta)</annotation></semantics></math>，由内正规性取闭
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>H</mi><mi>δ</mi></msub><mo>⊂</mo><mi>E</mi><mo>\</mo><msub><mi>G</mi><mi>δ</mi></msub></mrow><annotation encoding="application/x-tex">H_\delta\subset E\setminus G_\delta</annotation></semantics></math>，留下：</p>
+<p><span
+style="color:red">B3：<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mrow><mo stretchy="true" form="prefix">(</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>E</mi><mo>\</mo><msub><mi>G</mi><mi>δ</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>\</mo><msub><mi>H</mi><mi>δ</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>&lt;</mo></mrow><annotation encoding="application/x-tex">m((E\setminus G_\delta)\setminus H_\delta)&lt;</annotation></semantics></math>
+后的界值留空。</span></p>
+<p>原稿定义
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mover><mi>F</mi><mo accent="true">̂</mo></mover><mi>δ</mi></msub><mo>=</mo><msub><mi>F</mi><mi>δ</mi></msub><mo>∩</mo><msub><mi>H</mi><mi>δ</mi></msub></mrow><annotation encoding="application/x-tex">\widehat F_\delta=F_\delta\cap H_\delta</annotation></semantics></math>，用两个补集之并估计损失，并写
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><mo>\</mo><msub><mi>H</mi><mi>δ</mi></msub><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>E</mi><mo>\</mo><msub><mi>G</mi><mi>δ</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>\</mo><msub><mi>H</mi><mi>δ</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>∪</mo><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>G</mi><mi>δ</mi></msub><mo>\</mo><msub><mi>H</mi><mi>δ</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">
+E\setminus H_\delta=((E\setminus G_\delta)\setminus H_\delta)
+\cup(G_\delta\setminus H_\delta).
+</annotation></semantics></math></p>
+<blockquote>
+<p>[!note] <span style="color:blue">三处待填完整解答与订正</span>
+三处可按相同总预算
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>δ</mi><annotation encoding="application/x-tex">\delta</annotation></semantics></math>
+补成：</p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>原待填</th>
+<th>一组相容的完整补答</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>B1</td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>E</mi><mo>\</mo><msub><mi>F</mi><mi>δ</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>&lt;</mo><mi>δ</mi><mi>/</mi><mn>3</mn></mrow><annotation encoding="application/x-tex">m(E\setminus F_\delta)&lt;\delta/3</annotation></semantics></math>，用共同闭集步骤时将误差参数取为
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>δ</mi><mi>/</mi><mn>3</mn></mrow><annotation encoding="application/x-tex">\delta/3</annotation></semantics></math></td>
+</tr>
+<tr class="even">
+<td>B2</td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>E</mi><mo>\</mo><msub><mi>G</mi><mi>δ</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>&gt;</mo><mi>m</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>E</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>−</mo><mi>δ</mi><mi>/</mi><mn>3</mn></mrow><annotation encoding="application/x-tex">m(E\setminus G_\delta)&gt;m(E)-\delta/3</annotation></semantics></math>，等价于
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>G</mi><mi>δ</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>&lt;</mo><mi>δ</mi><mi>/</mi><mn>3</mn></mrow><annotation encoding="application/x-tex">m(G_\delta)&lt;\delta/3</annotation></semantics></math></td>
+</tr>
+<tr class="odd">
+<td>B3</td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mrow><mo stretchy="true" form="prefix">(</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>E</mi><mo>\</mo><msub><mi>G</mi><mi>δ</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>\</mo><msub><mi>H</mi><mi>δ</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>&lt;</mo><mi>δ</mi><mi>/</mi><mn>3</mn></mrow><annotation encoding="application/x-tex">m((E\setminus G_\delta)\setminus H_\delta)&lt;\delta/3</annotation></semantics></math></td>
+</tr>
+</tbody>
+</table>
+<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>G</mi><mi>δ</mi></msub><annotation encoding="application/x-tex">G_\delta</annotation></semantics></math>
+在原后续式中是要删掉的坏集；故不能把 B2 填成
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>E</mi><mo>\</mo><msub><mi>G</mi><mi>δ</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>&lt;</mo><mi>δ</mi><mi>/</mi><mn>3</mn></mrow><annotation encoding="application/x-tex">m(E\setminus G_\delta)&lt;\delta/3</annotation></semantics></math>。因为此处
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>E</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>&lt;</mo><mi>∞</mi></mrow><annotation encoding="application/x-tex">m(E)&lt;\infty</annotation></semantics></math>，表内
+B2 在保留原左端的同时正确表述 Egorov 的小坏集条件。</p>
+<p>由 B1，所有
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>φ</mi><mi>k</mi></msub><annotation encoding="application/x-tex">\varphi_k</annotation></semantics></math>
+在
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>F</mi><mi>δ</mi></msub><annotation encoding="application/x-tex">F_\delta</annotation></semantics></math>
+上连续；由 Egorov，它们在
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><mo>\</mo><msub><mi>G</mi><mi>δ</mi></msub></mrow><annotation encoding="application/x-tex">E\setminus G_\delta</annotation></semantics></math>
+上一致趋于
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>。内正规性给出
+B3 中的闭
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>H</mi><mi>δ</mi></msub><annotation encoding="application/x-tex">H_\delta</annotation></semantics></math>（此处可取紧集），故
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mover><mi>F</mi><mo accent="true">̂</mo></mover><mi>δ</mi></msub><mo>=</mo><msub><mi>F</mi><mi>δ</mi></msub><mo>∩</mo><msub><mi>H</mi><mi>δ</mi></msub></mrow><annotation encoding="application/x-tex">\widehat F_\delta=F_\delta\cap H_\delta</annotation></semantics></math>
+闭，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>φ</mi><mi>k</mi></msub><msub><mo stretchy="false" form="prefix">|</mo><msub><mover><mi>F</mi><mo accent="true">̂</mo></mover><mi>δ</mi></msub></msub></mrow><annotation encoding="application/x-tex">\varphi_k|_{\widehat F_\delta}</annotation></semantics></math>
+连续并一致趋于
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><msub><mo stretchy="false" form="prefix">|</mo><msub><mover><mi>F</mi><mo accent="true">̂</mo></mover><mi>δ</mi></msub></msub></mrow><annotation encoding="application/x-tex">f|_{\widehat F_\delta}</annotation></semantics></math>，于是该限制连续。</p>
+<p>原稿联合估计处的严格号应先写成次可加性的弱号：
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="right" style="text-align: right"><mi>m</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>E</mi><mo>\</mo><msub><mover><mi>F</mi><mo accent="true">̂</mo></mover><mi>δ</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow></mtd><mtd columnalign="left" style="text-align: left"><mo>≤</mo><mi>m</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>E</mi><mo>\</mo><msub><mi>F</mi><mi>δ</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><mi>m</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>E</mi><mo>\</mo><msub><mi>H</mi><mi>δ</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><mi>m</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>E</mi><mo>\</mo><msub><mi>F</mi><mi>δ</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><mi>m</mi><mrow><mo stretchy="true" form="prefix">(</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>E</mi><mo>\</mo><msub><mi>G</mi><mi>δ</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>\</mo><msub><mi>H</mi><mi>δ</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><mi>m</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>G</mi><mi>δ</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"></mtd><mtd columnalign="left" style="text-align: left"><mo>&lt;</mo><mi>δ</mi><mi>.</mi></mtd></mtr></mtable><annotation encoding="application/x-tex">
+\begin{aligned}
+m(E\setminus\widehat F_\delta)
+&amp;\le m(E\setminus F_\delta)+m(E\setminus H_\delta)\\
+&amp;=m(E\setminus F_\delta)
+ +m((E\setminus G_\delta)\setminus H_\delta)+m(G_\delta)\\
+&amp;&lt;\delta.
+\end{aligned}
+</annotation></semantics></math> 第二行用
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>H</mi><mi>δ</mi></msub><mo>⊂</mo><mi>E</mi><mo>\</mo><msub><mi>G</mi><mi>δ</mi></msub></mrow><annotation encoding="application/x-tex">H_\delta\subset E\setminus G_\delta</annotation></semantics></math>，所以分解中的
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>G</mi><mi>δ</mi></msub><mo>\</mo><msub><mi>H</mi><mi>δ</mi></msub><mo>=</mo><msub><mi>G</mi><mi>δ</mi></msub></mrow><annotation encoding="application/x-tex">G_\delta\setminus H_\delta=G_\delta</annotation></semantics></math>，且两块不交。三项各自的严格预算才产生末行严格号。</p>
+</blockquote>
+<h3 id="无限测度原稿的环带与局部有限">5.6
+无限测度：原稿的环带与局部有限</h3>
+<p>当
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>E</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>+</mi><mi>∞</mi></mrow><annotation encoding="application/x-tex">m(E)=+\infty</annotation></semantics></math>，原稿写
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>A</mi><mi>k</mi></msub><mo>=</mo><mi>B</mi><mrow><mo stretchy="true" form="prefix">(</mo><mn>0</mn><mo>,</mo><mi>k</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>\</mo><mi>B</mi><mrow><mo stretchy="true" form="prefix">(</mo><mn>0</mn><mo>,</mo><mi>k</mi><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo><mspace width="2.0em"></mspace><mi>E</mi><mo>=</mo><munderover><mo>⋃</mo><mrow><mi>k</mi><mo>=</mo><mn>1</mn></mrow><mo accent="false">∞</mo></munderover><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>A</mi><mi>k</mi></msub><mo>∩</mo><mi>E</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo></mrow><annotation encoding="application/x-tex">
+A_k=B(0,k)\setminus B(0,k-1),\qquad
+E=\bigcup_{k=1}^{\infty}(A_k\cap E),
+</annotation></semantics></math> 并提示每个
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>A</mi><mi>k</mi></msub><mo>∩</mo><mi>E</mi></mrow><annotation encoding="application/x-tex">A_k\cap E</annotation></semantics></math>
+上有闭集，“需要用局部有限性质”。</p>
+<blockquote>
+<p>[!note] <span style="color:blue">无限测度情形补证</span> 约定
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>B</mi><mrow><mo stretchy="true" form="prefix">(</mo><mn>0</mn><mo>,</mo><mn>0</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>⌀</mi></mrow><annotation encoding="application/x-tex">B(0,0)=\varnothing</annotation></semantics></math>，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>≥</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">k\ge1</annotation></semantics></math>。每个
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>E</mi><mi>k</mi></msub><mo>=</mo><mi>E</mi><mo>∩</mo><msub><mi>A</mi><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">E_k=E\cap A_k</annotation></semantics></math>
+有限测度。将有限测度 Lusin 用于
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>E</mi><mi>k</mi></msub><annotation encoding="application/x-tex">E_k</annotation></semantics></math>，取在
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>ℝ</mi><mi>n</mi></msup><annotation encoding="application/x-tex">\mathbb R^n</annotation></semantics></math>
+中闭的
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>K</mi><mi>k</mi></msub><mo>⊂</mo><msub><mi>E</mi><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">K_k\subset E_k</annotation></semantics></math>，使
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>E</mi><mi>k</mi></msub><mo>\</mo><msub><mi>K</mi><mi>k</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>&lt;</mo><mi>δ</mi><msup><mn>2</mn><mrow><mi>−</mi><mi>k</mi></mrow></msup><mo>,</mo><mspace width="2.0em"></mspace><mi>f</mi><msub><mo stretchy="false" form="prefix">|</mo><msub><mi>K</mi><mi>k</mi></msub></msub><mo>∈</mo><mi>C</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>K</mi><mi>k</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">
+m(E_k\setminus K_k)&lt;\delta2^{-k},\qquad f|_{K_k}\in C(K_k).
+</annotation></semantics></math>
+环带族局部有限：任一点的一个有界小邻域只会遇到半径有限范围内的环带。因此子族
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><msub><mi>K</mi><mi>k</mi></msub><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{K_k\}</annotation></semantics></math>
+局部有限，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>K</mi><mo>=</mo><msub><mo>⋃</mo><mi>k</mi></msub><msub><mi>K</mi><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">K=\bigcup_kK_k</annotation></semantics></math>
+闭。<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><msub><mo stretchy="false" form="prefix">|</mo><mi>K</mi></msub></mrow><annotation encoding="application/x-tex">f|_K</annotation></semantics></math>
+在各
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>K</mi><mi>k</mi></msub><annotation encoding="application/x-tex">K_k</annotation></semantics></math>
+上连续，由第 3 节的局部有限闭覆盖拼接连续；此外
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>E</mi><mo>\</mo><mi>K</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>≤</mo><munder><mo>∑</mo><mi>k</mi></munder><mi>m</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>E</mi><mi>k</mi></msub><mo>\</mo><msub><mi>K</mi><mi>k</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>&lt;</mo><mi>δ</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
+m(E\setminus K)\le\sum_km(E_k\setminus K_k)&lt;\delta.
+</annotation></semantics></math>
+这就完成原定理在无限测度上的部分。这里拼接的是限制函数的连续性；没有把
+Egorov 错扩张为无限测度上的全局几乎一致收敛。</p>
+</blockquote>
+<h2 id="lusin-的逆命题">6. Lusin 的逆命题</h2>
+<p>原稿第 5 页首句：“Lusin 逆定理也成立。”</p>
+<blockquote>
+<p>[!note] <span style="color:blue">逆命题补证</span> 设
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>E</mi><annotation encoding="application/x-tex">E</annotation></semantics></math>
+Lebesgue
+可测，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>
+a.e. 有限，且对每个
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>η</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\eta&gt;0</annotation></semantics></math>
+有闭
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>F</mi><mi>η</mi></msub><mo>⊂</mo><mi>E</mi></mrow><annotation encoding="application/x-tex">F_\eta\subset E</annotation></semantics></math>，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>E</mi><mo>\</mo><msub><mi>F</mi><mi>η</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>&lt;</mo><mi>η</mi></mrow><annotation encoding="application/x-tex">m(E\setminus F_\eta)&lt;\eta</annotation></semantics></math>、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><msub><mo stretchy="false" form="prefix">|</mo><msub><mi>F</mi><mi>η</mi></msub></msub></mrow><annotation encoding="application/x-tex">f|_{F_\eta}</annotation></semantics></math>
+连续。取
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>η</mi><mo>=</mo><mn>1</mn><mi>/</mi><mi>n</mi></mrow><annotation encoding="application/x-tex">\eta=1/n</annotation></semantics></math>，记
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>F</mi><mi>n</mi></msub><mo>=</mo><msub><mi>F</mi><mrow><mn>1</mn><mi>/</mi><mi>n</mi></mrow></msub></mrow><annotation encoding="application/x-tex">F_n=F_{1/n}</annotation></semantics></math>，则
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Z</mi><mo>=</mo><mi>E</mi><mo>\</mo><munder><mo>⋃</mo><mrow><mi>n</mi><mo>≥</mo><mn>1</mn></mrow></munder><msub><mi>F</mi><mi>n</mi></msub><mspace width="1.0em"></mspace><mtext mathvariant="normal">满足</mtext><mspace width="1.0em"></mspace><mi>m</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>Z</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>≤</mo><mi>m</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>E</mi><mo>\</mo><msub><mi>F</mi><mi>n</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>&lt;</mo><mn>1</mn><mi>/</mi><mi>n</mi><mo>,</mo></mrow><annotation encoding="application/x-tex">
+Z=E\setminus\bigcup_{n\ge1}F_n
+\quad\text{满足}\quad m(Z)\le m(E\setminus F_n)&lt;1/n,
+</annotation></semantics></math> 所以
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>Z</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">m(Z)=0</annotation></semantics></math>。对任意实直线开集
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>O</mi><annotation encoding="application/x-tex">O</annotation></semantics></math>，集合
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mi>x</mi><mo>∈</mo><msub><mi>F</mi><mi>n</mi></msub><mo>:</mo><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>∈</mo><mi>O</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{x\in F_n:f(x)\in O\}</annotation></semantics></math>
+在闭子空间
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>F</mi><mi>n</mi></msub><annotation encoding="application/x-tex">F_n</annotation></semantics></math>
+中开，故是 Borel
+集。<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>f</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>O</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">f^{-1}(O)</annotation></semantics></math>
+等于这些集合的可数并再加上
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Z</mi><annotation encoding="application/x-tex">Z</annotation></semantics></math>
+的一个子集，后者由 Lebesgue
+测度完备性可测。无穷值层也至多落在已剔除零测异常集。故
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>
+可测。</p>
+<p>这给出逆命题的完整理由；原纸上只有提示，补证属于模型新增。</p>
+</blockquote>
+<h2 id="正规性urysohn-与-tietze">7. 正规性、Urysohn 与 Tietze</h2>
+<h3 id="原稿三个等价条件">7.1 原稿三个等价条件</h3>
+<p>原稿对
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mi>X</mi><mo>,</mo><mi>τ</mi><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(X,\tau)</annotation></semantics></math>
+列出：(1)
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>
+正规；(2) 闭
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><mo>⊂</mo><mi>X</mi></mrow><annotation encoding="application/x-tex">E\subset X</annotation></semantics></math>
+上的连续实值函数可延拓到
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>（Tietze）；(3)
+不交闭集
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>,</mo><mi>B</mi></mrow><annotation encoding="application/x-tex">A,B</annotation></semantics></math>
+可由连续函数分离，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><msub><mo stretchy="false" form="prefix">|</mo><mi>A</mi></msub><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">f|_A=0</annotation></semantics></math>、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><msub><mo stretchy="false" form="prefix">|</mo><mi>B</mi></msub><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">f|_B=1</annotation></semantics></math>（Urysohn）。</p>
+<p>原第 (2) 条字面写
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo>∈</mo><mi>C</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>F</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">f\in C(F)</annotation></semantics></math>、所求
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi><mo>∈</mo><mi>C</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>X</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">F\in C(X)</annotation></semantics></math>、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi><msub><mo stretchy="false" form="prefix">|</mo><mi>E</mi></msub><mo>=</mo><mi>f</mi></mrow><annotation encoding="application/x-tex">F|_E=f</annotation></semantics></math>；原第
+(3) 条的值域右端笔形为
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">[0,1)</annotation></semantics></math>。</p>
+<blockquote>
+<p>[!note] <span style="color:blue">订正与第一方向</span> 第 (2)
+条的输入域应为
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>E</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">C(E)</annotation></semantics></math>；令延拓名为
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mover><mi>f</mi><mo accent="true">̃</mo></mover><annotation encoding="application/x-tex">\widetilde f</annotation></semantics></math>
+可避开原字母
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>F</mi><annotation encoding="application/x-tex">F</annotation></semantics></math>
+的双重用途。第 (3) 条必须用
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="true" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">[0,1]</annotation></semantics></math>：若
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>B</mi><mo>≠</mo><mi>⌀</mi></mrow><annotation encoding="application/x-tex">B\ne\varnothing</annotation></semantics></math>，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><msub><mo stretchy="false" form="prefix">|</mo><mi>B</mi></msub><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">f|_B=1</annotation></semantics></math>
+与
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo>:</mo><mi>X</mi><mo>→</mo><mo stretchy="false" form="prefix">[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">f:X\to[0,1)</annotation></semantics></math>
+不相容。</p>
+<p><strong>Urysohn
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>⇒</mo><annotation encoding="application/x-tex">\Rightarrow</annotation></semantics></math>
+正规。</strong> 对不交闭集
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>,</mo><mi>B</mi></mrow><annotation encoding="application/x-tex">A,B</annotation></semantics></math>，取分离函数
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>u</mi><mo>:</mo><mi>X</mi><mo>→</mo><mrow><mo stretchy="true" form="prefix">[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="true" form="postfix">]</mo></mrow></mrow><annotation encoding="application/x-tex">u:X\to[0,1]</annotation></semantics></math>；开集
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>u</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mrow><mo stretchy="true" form="prefix">(</mo><mo stretchy="false" form="prefix">[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mi>/</mi><mn>3</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">u^{-1}([0,1/3))</annotation></semantics></math>、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>u</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mo stretchy="false" form="prefix">(</mo><mrow><mo stretchy="true" form="prefix">(</mo><mn>2</mn><mi>/</mi><mn>3</mn><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">]</mo><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">u^{-1}((2/3,1])</annotation></semantics></math>
+不交，分别含
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>,</mo><mi>B</mi></mrow><annotation encoding="application/x-tex">A,B</annotation></semantics></math>。区间在值域子空间中开，故原像在
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>
+开。</p>
+</blockquote>
+<blockquote>
+<p>[!note] <span style="color:blue">Urysohn 完整补证</span> <strong>正规
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>⇒</mo><annotation encoding="application/x-tex">\Rightarrow</annotation></semantics></math>
+Urysohn。</strong> 先用正规性得到收缩性质：若闭
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>K</mi><mo>⊂</mo><mi>O</mi></mrow><annotation encoding="application/x-tex">K\subset O</annotation></semantics></math>
+且
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>O</mi><annotation encoding="application/x-tex">O</annotation></semantics></math>
+开，分离
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>K</mi><annotation encoding="application/x-tex">K</annotation></semantics></math>
+与
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>X</mi><mo>\</mo><mi>O</mi></mrow><annotation encoding="application/x-tex">X\setminus O</annotation></semantics></math>，可取开
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>V</mi><annotation encoding="application/x-tex">V</annotation></semantics></math>
+使
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>K</mi><mo>⊂</mo><mi>V</mi><mo>⊂</mo><mover><mi>V</mi><mo accent="true">¯</mo></mover><mo>⊂</mo><mi>O</mi></mrow><annotation encoding="application/x-tex">K\subset V\subset\overline V\subset O</annotation></semantics></math>。对不交闭
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>,</mo><mi>B</mi></mrow><annotation encoding="application/x-tex">A,B</annotation></semantics></math>，取
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>U</mi><mn>1</mn></msub><mo>=</mo><mi>X</mi><mo>\</mo><mi>B</mi></mrow><annotation encoding="application/x-tex">U_1=X\setminus B</annotation></semantics></math>，再取
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>⊂</mo><msub><mi>U</mi><mn>0</mn></msub><mo>⊂</mo><mover><msub><mi>U</mi><mn>0</mn></msub><mo accent="true">¯</mo></mover><mo>⊂</mo><msub><mi>U</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">A\subset U_0\subset\overline{U_0}\subset U_1</annotation></semantics></math>。按二进有理数逐层插入开集，利用收缩性质使
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><msub><mi>U</mi><mi>r</mi></msub><mo accent="true">¯</mo></mover><mo>⊂</mo><msub><mi>U</mi><mi>s</mi></msub><mspace width="2.0em"></mspace><mrow><mo stretchy="true" form="prefix">(</mo><mn>0</mn><mo>≤</mo><mi>r</mi><mo>&lt;</mo><mi>s</mi><mo>≤</mo><mn>1</mn><mo>,</mo><mspace width="0.222em"></mspace><mi>r</mi><mo>,</mo><mi>s</mi><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> 为二进有理数</mtext></mrow><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">
+\overline{U_r}\subset U_s\qquad(0\le r&lt;s\le1,\ r,s\text{ 为二进有理数}).
+</annotation></semantics></math> 令
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>u</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mo>inf</mo><mo stretchy="false" form="prefix">{</mo><mi>r</mi><mo>:</mo><mi>x</mi><mo>∈</mo><msub><mi>U</mi><mi>r</mi></msub><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">u(x)=\inf\{r:x\in U_r\}</annotation></semantics></math>，空集的下确界在此约定为
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>1</mn><annotation encoding="application/x-tex">1</annotation></semantics></math>。于是
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>u</mi><msub><mo stretchy="false" form="prefix">|</mo><mi>A</mi></msub><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">u|_A=0</annotation></semantics></math>、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>u</mi><msub><mo stretchy="false" form="prefix">|</mo><mi>B</mi></msub><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">u|_B=1</annotation></semantics></math>。对
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>&lt;</mo><mi>t</mi><mo>≤</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">0&lt;t\le1</annotation></semantics></math>，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mi>u</mi><mo>&lt;</mo><mi>t</mi><mo stretchy="false" form="postfix">}</mo><mo>=</mo><msub><mo>⋃</mo><mrow><mi>r</mi><mo>&lt;</mo><mi>t</mi></mrow></msub><msub><mi>U</mi><mi>r</mi></msub></mrow><annotation encoding="application/x-tex">\{u&lt;t\}=\bigcup_{r&lt;t}U_r</annotation></semantics></math>
+为开集。对
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>≤</mo><mi>t</mi><mo>&lt;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">0\le t&lt;1</annotation></semantics></math>，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mi>u</mi><mo>&gt;</mo><mi>t</mi><mo stretchy="false" form="postfix">}</mo><mo>=</mo><msub><mo>⋃</mo><mrow><mi>r</mi><mo>&gt;</mo><mi>t</mi></mrow></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>X</mi><mo>\</mo><mover><msub><mi>U</mi><mi>r</mi></msub><mo accent="true">¯</mo></mover><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\{u&gt;t\}=\bigcup_{r&gt;t}(X\setminus\overline{U_r})</annotation></semantics></math>
+也是开集：若
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>u</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>&gt;</mo><mi>t</mi></mrow><annotation encoding="application/x-tex">u(x)&gt;t</annotation></semantics></math>，可取
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mo>&lt;</mo><mi>r</mi><mo>&lt;</mo><mi>s</mi><mo>&lt;</mo><mi>u</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">t&lt;r&lt;s&lt;u(x)</annotation></semantics></math>，若
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∈</mo><mover><msub><mi>U</mi><mi>r</mi></msub><mo accent="true">¯</mo></mover></mrow><annotation encoding="application/x-tex">x\in\overline{U_r}</annotation></semantics></math>
+则
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∈</mo><msub><mi>U</mi><mi>s</mi></msub></mrow><annotation encoding="application/x-tex">x\in U_s</annotation></semantics></math>
+矛盾；反向利用嵌套关系得到
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>u</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>≥</mo><mi>r</mi><mo>&gt;</mo><mi>t</mi></mrow><annotation encoding="application/x-tex">u(x)\ge r&gt;t</annotation></semantics></math>。端点以外原像为空或全空间，故
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>u</mi><annotation encoding="application/x-tex">u</annotation></semantics></math>
+连续。</p>
+</blockquote>
+<blockquote>
+<p>[!note] <span style="color:blue">Tietze 完整补证</span>
+<strong>Urysohn
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>⇒</mo><annotation encoding="application/x-tex">\Rightarrow</annotation></semantics></math>
+Tietze（有界情形）。</strong> 设闭
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><mo>⊂</mo><mi>X</mi></mrow><annotation encoding="application/x-tex">E\subset X</annotation></semantics></math>，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi><mo>:</mo><mi>E</mi><mo>→</mo><mrow><mo stretchy="true" form="prefix">[</mo><mi>−</mi><mi>a</mi><mo>,</mo><mi>a</mi><mo stretchy="true" form="postfix">]</mo></mrow></mrow><annotation encoding="application/x-tex">h:E\to[-a,a]</annotation></semantics></math>
+连续，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">a&gt;0</annotation></semantics></math>。<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mi>h</mi><mo>≤</mo><mi>−</mi><mi>a</mi><mi>/</mi><mn>3</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">A=\{h\le-a/3\}</annotation></semantics></math>、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>B</mi><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mi>h</mi><mo>≥</mo><mi>a</mi><mi>/</mi><mn>3</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">B=\{h\ge a/3\}</annotation></semantics></math>
+是
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>
+中不交闭集。由 Urysohn 取连续
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>v</mi><mo>:</mo><mi>X</mi><mo>→</mo><mrow><mo stretchy="true" form="prefix">[</mo><mi>−</mi><mi>a</mi><mi>/</mi><mn>3</mn><mo>,</mo><mi>a</mi><mi>/</mi><mn>3</mn><mo stretchy="true" form="postfix">]</mo></mrow></mrow><annotation encoding="application/x-tex">v:X\to[-a/3,a/3]</annotation></semantics></math>，在
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>A</mi><annotation encoding="application/x-tex">A</annotation></semantics></math>、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>B</mi><annotation encoding="application/x-tex">B</annotation></semantics></math>
+分别取端点
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mi>a</mi><mi>/</mi><mn>3</mn></mrow><annotation encoding="application/x-tex">-a/3</annotation></semantics></math>、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mi>/</mi><mn>3</mn></mrow><annotation encoding="application/x-tex">a/3</annotation></semantics></math>。在
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>E</mi><annotation encoding="application/x-tex">E</annotation></semantics></math>
+上分三段检验得到
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">|</mo><mi>h</mi><mo>−</mo><mi>v</mi><mo stretchy="true" form="postfix">|</mo></mrow><mo>≤</mo><mn>2</mn><mi>a</mi><mi>/</mi><mn>3</mn></mrow><annotation encoding="application/x-tex">|h-v|\le2a/3</annotation></semantics></math>。</p>
+<p>对余差重复此步骤，得到连续
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>v</mi><mi>j</mi></msub><annotation encoding="application/x-tex">v_j</annotation></semantics></math>，满足
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="postfix">∥</mo><msub><mi>v</mi><mi>j</mi></msub><msub><mo stretchy="false" form="postfix">∥</mo><mi>∞</mi></msub><mo>≤</mo><mfrac><mi>a</mi><mn>3</mn></mfrac><msup><mrow><mo stretchy="true" form="prefix">(</mo><mn>2</mn><mi>/</mi><mn>3</mn><mo stretchy="true" form="postfix">)</mo></mrow><mi>j</mi></msup><mo>,</mo><mspace width="2.0em"></mspace><msub><mrow><mo stretchy="true" form="prefix">|</mo><mi>h</mi><mo>−</mo><munderover><mo>∑</mo><mrow><mi>j</mi><mo>=</mo><mn>0</mn></mrow><mi>N</mi></munderover><msub><mi>v</mi><mi>j</mi></msub><mo stretchy="true" form="postfix">|</mo></mrow><mi>E</mi></msub><mo>≤</mo><mi>a</mi><msup><mrow><mo stretchy="true" form="prefix">(</mo><mn>2</mn><mi>/</mi><mn>3</mn><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mi>N</mi><mo>+</mo><mn>1</mn></mrow></msup><mi>.</mi></mrow><annotation encoding="application/x-tex">
+\|v_j\|_\infty\le\frac a3(2/3)^j,\qquad
+\left|h-\sum_{j=0}^{N}v_j\right|_E\le a(2/3)^{N+1}.
+</annotation></semantics></math> 几何上界保证
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>∑</mo><mi>j</mi></msub><msub><mi>v</mi><mi>j</mi></msub></mrow><annotation encoding="application/x-tex">\sum_jv_j</annotation></semantics></math>
+在
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>
+一致收敛，和函数连续；在
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>E</mi><annotation encoding="application/x-tex">E</annotation></semantics></math>
+上余差趋零，故它延拓
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>h</mi><annotation encoding="application/x-tex">h</annotation></semantics></math>。零函数情形直接处理。</p>
+<p><strong>无界实值情形。</strong> 给定
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo>∈</mo><mi>C</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>E</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">f\in C(E)</annotation></semantics></math>，先令
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi><mo>=</mo><mi>f</mi><mi>/</mi><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>+</mo><mrow><mo stretchy="true" form="prefix">|</mo><mi>f</mi><mo stretchy="true" form="postfix">|</mo></mrow><mo stretchy="true" form="postfix">)</mo></mrow><mo>∈</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>−</mi><mn>1</mn><mo>,</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">h=f/(1+|f|)\in(-1,1)</annotation></semantics></math>，由有界情形延拓为
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>H</mi><mo>:</mo><mi>X</mi><mo>→</mo><mrow><mo stretchy="true" form="prefix">[</mo><mi>−</mi><mn>1</mn><mo>,</mo><mn>1</mn><mo stretchy="true" form="postfix">]</mo></mrow></mrow><annotation encoding="application/x-tex">H:X\to[-1,1]</annotation></semantics></math>。闭集
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mi>x</mi><mo>:</mo><mrow><mo stretchy="true" form="prefix">|</mo><mi>H</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">|</mo></mrow><mo>=</mo><mn>1</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">D=\{x:|H(x)|=1\}</annotation></semantics></math>
+与
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>E</mi><annotation encoding="application/x-tex">E</annotation></semantics></math>
+不交。再用 Urysohn 取
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>v</mi><mo>:</mo><mi>X</mi><mo>→</mo><mrow><mo stretchy="true" form="prefix">[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="true" form="postfix">]</mo></mrow></mrow><annotation encoding="application/x-tex">v:X\to[0,1]</annotation></semantics></math>，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>v</mi><msub><mo stretchy="false" form="prefix">|</mo><mi>E</mi></msub><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">v|_E=1</annotation></semantics></math>、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>v</mi><msub><mo stretchy="false" form="prefix">|</mo><mi>D</mi></msub><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">v|_D=0</annotation></semantics></math>。于是
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>K</mi><mo>=</mo><mi>v</mi><mi>H</mi></mrow><annotation encoding="application/x-tex">K=vH</annotation></semantics></math>
+在所有点都满足
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">|</mo><mi>K</mi><mo stretchy="true" form="postfix">|</mo></mrow><mo>&lt;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">|K|&lt;1</annotation></semantics></math>，且
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>K</mi><msub><mo stretchy="false" form="prefix">|</mo><mi>E</mi></msub><mo>=</mo><mi>h</mi></mrow><annotation encoding="application/x-tex">K|_E=h</annotation></semantics></math>，故
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi>f</mi><mo accent="true">̃</mo></mover><mo>=</mo><mfrac><mi>K</mi><mrow><mn>1</mn><mo>−</mo><mrow><mo stretchy="true" form="prefix">|</mo><mi>K</mi><mo stretchy="true" form="postfix">|</mo></mrow></mrow></mfrac></mrow><annotation encoding="application/x-tex">
+\widetilde f=\frac{K}{1-|K|}
+</annotation></semantics></math> 为
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>
+上连续实值延拓。</p>
+<p><strong>Tietze
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>⇒</mo><annotation encoding="application/x-tex">\Rightarrow</annotation></semantics></math>
+Urysohn。</strong> 在闭集
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi><mo>=</mo><mi>A</mi><mo>∪</mo><mi>B</mi></mrow><annotation encoding="application/x-tex">C=A\cup B</annotation></semantics></math>
+上分别定义
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi><msub><mo stretchy="false" form="prefix">|</mo><mi>A</mi></msub><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">h|_A=0</annotation></semantics></math>、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi><msub><mo stretchy="false" form="prefix">|</mo><mi>B</mi></msub><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">h|_B=1</annotation></semantics></math>，有限闭覆盖拼接表明
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>h</mi><annotation encoding="application/x-tex">h</annotation></semantics></math>
+连续。延拓后再复合截断函数
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mo>↦</mo><mo>max</mo><mrow><mo stretchy="true" form="prefix">(</mo><mn>0</mn><mo>,</mo><mo>min</mo><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>,</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">t\mapsto\max(0,\min(1,t))</annotation></semantics></math>，即得到所需
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="true" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">[0,1]</annotation></semantics></math>
+值分离函数。至此三条件等价。</p>
+</blockquote>
+<h2 id="外测度旁注">8. 外测度旁注</h2>
+<p>原稿在拓扑等价条件下另写
+Remark，含“外测度”“<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>m</mi><mo>*</mo></msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>A</mi><mo>∪</mo><mi>B</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">m^*(A\cup B)</annotation></semantics></math>”“<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>A</mi><annotation encoding="application/x-tex">A</annotation></semantics></math>
+和
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>B</mi><annotation encoding="application/x-tex">B</annotation></semantics></math>
+可被可测集分〔止于右缘〕”，下一独立行是
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi><mo>=</mo><mi>A</mi><mo>∪</mo><mi>B</mi></mrow><annotation encoding="application/x-tex">C=A\cup B</annotation></semantics></math>。连接词的原字形与保真排印见原序稿及对应恢复记录。</p>
+<blockquote>
+<p>[!note] <span style="color:blue">旁注的数学解释</span>
+可确认数学语义是“可测分离”与外测度的可加性。若存在 Lebesgue 可测集
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>M</mi><annotation encoding="application/x-tex">M</annotation></semantics></math>，使
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>⊂</mo><mi>M</mi></mrow><annotation encoding="application/x-tex">A\subset M</annotation></semantics></math>、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>B</mi><mo>⊂</mo><msup><mi>M</mi><mi>c</mi></msup></mrow><annotation encoding="application/x-tex">B\subset M^c</annotation></semantics></math>，取
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi><mo>=</mo><mi>A</mi><mo>∪</mo><mi>B</mi></mrow><annotation encoding="application/x-tex">C=A\cup B</annotation></semantics></math>，由可测性的
+Carathéodory 分割性质，
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>m</mi><mo>*</mo></msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>C</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msup><mi>m</mi><mo>*</mo></msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>C</mi><mo>∩</mo><mi>M</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><msup><mi>m</mi><mo>*</mo></msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>C</mi><mo>\</mo><mi>M</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msup><mi>m</mi><mo>*</mo></msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>A</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><msup><mi>m</mi><mo>*</mo></msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>B</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">
+m^*(C)=m^*(C\cap M)+m^*(C\setminus M)
+=m^*(A)+m^*(B).
+</annotation></semantics></math>
+这是充分条件，不能把旁注擅自加强为无条件的外测度可加性或必要充分条件。仅有
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>∩</mo><mi>B</mi><mo>=</mo><mi>⌀</mi></mrow><annotation encoding="application/x-tex">A\cap B=\varnothing</annotation></semantics></math>，可数次可加性只给“<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>≤</mo><annotation encoding="application/x-tex">\le</annotation></semantics></math>”。</p>
+<p>对于上一节 Urysohn 分离的闭
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>,</mo><mi>B</mi><mo>⊂</mo><msup><mi>ℝ</mi><mi>n</mi></msup></mrow><annotation encoding="application/x-tex">A,B\subset\mathbb R^n</annotation></semantics></math>，连续
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>u</mi><annotation encoding="application/x-tex">u</annotation></semantics></math>
+给出可测分隔集
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>u</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mrow><mo stretchy="true" form="prefix">(</mo><mo stretchy="false" form="prefix">[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mi>/</mi><mn>2</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">u^{-1}([0,1/2))</annotation></semantics></math>。这说明旁注与相邻拓扑工具的联系；原稿没有把这段推导写完整。右缘“分”后的“开／隔”属于语义补足，不算看见原字。</p>
+</blockquote>
+<h2 id="可测性与函数逼近">9. 可测性与函数逼近</h2>
+<h3 id="原稿的等价命题">9.1 原稿的等价命题</h3>
+<p>设
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><mo>∈</mo><mi>M</mi></mrow><annotation encoding="application/x-tex">E\in M</annotation></semantics></math>，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>
+是
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>E</mi><annotation encoding="application/x-tex">E</annotation></semantics></math>
+上几乎处处有限的函数。下列条件等价：</p>
+<ol type="1">
+<li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>
+可测。</li>
+<li>存在
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><msub><mi>φ</mi><mi>k</mi></msub><mo stretchy="false" form="postfix">}</mo><mo>⊂</mo><mi>S</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>E</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\{\varphi_k\}\subset S(E)</annotation></semantics></math>，使
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>φ</mi><mi>k</mi></msub><mo>→</mo><mi>f</mi></mrow><annotation encoding="application/x-tex">\varphi_k\to f</annotation></semantics></math>
+逐点。</li>
+<li>存在
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><msub><mi>φ</mi><mi>k</mi></msub><mo stretchy="false" form="postfix">}</mo><mo>⊂</mo><mi>C</mi><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>ℝ</mi><mi>n</mi></msup><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\{\varphi_k\}\subset C(\mathbb R^n)</annotation></semantics></math>，使
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>φ</mi><mi>k</mi></msub><mo>→</mo><mi>f</mi></mrow><annotation encoding="application/x-tex">\varphi_k\to f</annotation></semantics></math>
+几乎处处。</li>
+</ol>
+<p>原第 (2) 条为逐点，第 (3) 条为 a.e.，定义域确为
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>ℝ</mi><mi>n</mi></msup><annotation encoding="application/x-tex">\mathbb R^n</annotation></semantics></math>，不是紧方块。</p>
+<blockquote>
+<p>[!note] <span style="color:blue">简单逼近两方向</span> <strong>(1)
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>⇒</mo><annotation encoding="application/x-tex">\Rightarrow</annotation></semantics></math>
+(2)。</strong> 对实值点令
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>φ</mi><mi>k</mi></msub><mo>=</mo><msup><mn>2</mn><mrow><mi>−</mi><mi>k</mi></mrow></msup><mrow><mo stretchy="true" form="prefix">⌊</mo><msup><mn>2</mn><mi>k</mi></msup><mo>max</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>−</mi><mi>k</mi><mo>,</mo><mo>min</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>f</mi><mo>,</mo><mi>k</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">⌋</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">
+\varphi_k=2^{-k}\left\lfloor2^k\max(-k,\min(f,k))\right\rfloor.
+</annotation></semantics></math>
+它取有限多个值，值层可测，故为简单函数。对任意有限
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">f(x)</annotation></semantics></math>，最终截断失效且量化误差小于
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mn>2</mn><mrow><mi>−</mi><mi>k</mi></mrow></msup><annotation encoding="application/x-tex">2^{-k}</annotation></semantics></math>，所以趋于
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">f(x)</annotation></semantics></math>。若保留扩展值点，令截断在
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>+</mi><mi>∞</mi></mrow><annotation encoding="application/x-tex">+\infty</annotation></semantics></math>、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mi>∞</mi></mrow><annotation encoding="application/x-tex">-\infty</annotation></semantics></math>
+分别为
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>k</mi><annotation encoding="application/x-tex">k</annotation></semantics></math>、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mi>k</mi></mrow><annotation encoding="application/x-tex">-k</annotation></semantics></math>，同样按扩展实值意义逐点收敛。</p>
+<p><strong>(2)
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>⇒</mo><annotation encoding="application/x-tex">\Rightarrow</annotation></semantics></math>
+(1)。</strong> 可测函数列的逐点极限可测；具体可写为
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>limsup</mo><mi>k</mi></msub><msub><mi>φ</mi><mi>k</mi></msub><mo>=</mo><msub><mo>inf</mo><mi>N</mi></msub><msub><mo>sup</mo><mrow><mi>k</mi><mo>≥</mo><mi>N</mi></mrow></msub><msub><mi>φ</mi><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">\limsup_k\varphi_k=\inf_N\sup_{k\ge N}\varphi_k</annotation></semantics></math>，可数上确界、下确界保持可测。这补足原稿未展开的两个方向。</p>
+</blockquote>
+<h3 id="原稿的-1-rightarrow-3">9.2 原稿的 (1)
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>⇒</mo><annotation encoding="application/x-tex">\Rightarrow</annotation></semantics></math>
+(3)</h3>
+<p>原证明先用延拓得到
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>g</mi><mo>∈</mo><mi>C</mi><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>ℝ</mi><mi>n</mi></msup><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">g\in C(\mathbb R^n)</annotation></semantics></math>、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>g</mi><msub><mo stretchy="false" form="prefix">|</mo><msub><mi>F</mi><mi>δ</mi></msub></msub><mo>=</mo><mi>f</mi></mrow><annotation encoding="application/x-tex">g|_{F_\delta}=f</annotation></semantics></math>。再逐
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>k</mi><annotation encoding="application/x-tex">k</annotation></semantics></math>
+选闭
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>F</mi><mi>k</mi></msub><mo>⊂</mo><mi>E</mi></mrow><annotation encoding="application/x-tex">F_k\subset E</annotation></semantics></math>
+与
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>g</mi><mi>k</mi></msub><mo>∈</mo><mi>C</mi><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>ℝ</mi><mi>n</mi></msup><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">g_k\in C(\mathbb R^n)</annotation></semantics></math>，满足
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>E</mi><mo>\</mo><msub><mi>F</mi><mi>k</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>&lt;</mo><msup><mn>2</mn><mrow><mi>−</mi><mi>k</mi></mrow></msup><mi>.</mi></mrow><annotation encoding="application/x-tex">
+m(E\setminus F_k)&lt;2^{-k}.
+</annotation></semantics></math> 原限制行仍写
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>g</mi><msub><mo stretchy="false" form="prefix">|</mo><msub><mi>F</mi><mi>k</mi></msub></msub><mo>=</mo><mi>f</mi></mrow><annotation encoding="application/x-tex">g|_{F_k}=f</annotation></semantics></math>。</p>
+<blockquote>
+<p>[!note] <span style="color:blue">延拓步骤与下标订正</span> 对每个
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>≥</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">k\ge1</annotation></semantics></math>，由
+Lusin 取闭
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>F</mi><mi>k</mi></msub><mo>⊂</mo><mi>E</mi></mrow><annotation encoding="application/x-tex">F_k\subset E</annotation></semantics></math>，使
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>E</mi><mo>\</mo><msub><mi>F</mi><mi>k</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>&lt;</mo><msup><mn>2</mn><mrow><mi>−</mi><mi>k</mi></mrow></msup></mrow><annotation encoding="application/x-tex">m(E\setminus F_k)&lt;2^{-k}</annotation></semantics></math>
+且
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><msub><mo stretchy="false" form="prefix">|</mo><msub><mi>F</mi><mi>k</mi></msub></msub></mrow><annotation encoding="application/x-tex">f|_{F_k}</annotation></semantics></math>
+连续；<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>ℝ</mi><mi>n</mi></msup><annotation encoding="application/x-tex">\mathbb R^n</annotation></semantics></math>
+是正规空间，由 Tietze 将其延拓为
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>g</mi><mi>k</mi></msub><mo>∈</mo><mi>C</mi><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>ℝ</mi><mi>n</mi></msup><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">g_k\in C(\mathbb R^n)</annotation></semantics></math>。因此原漏标精写为
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>g</mi><mi>k</mi></msub><msub><mrow><mo stretchy="true" form="prefix">|</mo><msub><mi></mi><msub><mi>F</mi><mi>k</mi></msub></msub><mo>=</mo><mi>f</mi><mo stretchy="true" form="postfix">|</mo></mrow><msub><mi>F</mi><mi>k</mi></msub></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">
+g_k|_{F_k}=f|_{F_k}.
+</annotation></semantics></math> 这里的预算是新选的
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mn>2</mn><mrow><mi>−</mi><mi>k</mi></mrow></msup><annotation encoding="application/x-tex">2^{-k}</annotation></semantics></math>，不需要沿用第
+3 页某个固定的
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>δ</mi><annotation encoding="application/x-tex">\delta</annotation></semantics></math>。如果
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>
+有无穷值零测集，Lusin
+的闭集已选在有限值部分中，所以延拓输入为实值连续函数。</p>
+</blockquote>
+<p>原稿接 Borel–Cantelli：先写
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mo>limsup</mo><mi>n</mi></msub><msub><mi>E</mi><mi>n</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">m(\limsup_n E_n)=0</annotation></semantics></math>，再考察
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><mo stretchy="false" form="prefix">{</mo><msub><mi>g</mi><mi>k</mi></msub><mo>≠</mo><mi>f</mi><mo stretchy="false" form="postfix">}</mo><mo>⊂</mo><mi>E</mi><mo>\</mo><msub><mi>F</mi><mi>k</mi></msub><mo>,</mo></mrow><annotation encoding="application/x-tex">
+E\{g_k\ne f\}\subset E\setminus F_k,
+</annotation></semantics></math> 仍有
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mrow><mo stretchy="true" form="prefix">(</mo><munder><mo>limsup</mo><mi>k</mi></munder><mi>E</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>g</mi><mi>k</mi></msub><mo>≠</mo><mi>f</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>m</mi><mrow><mo stretchy="true" form="prefix">(</mo><munder><mo>⋂</mo><mrow><mi>N</mi><mo>≥</mo><mn>1</mn></mrow></munder><munder><mo>⋃</mo><mrow><mi>k</mi><mo>≥</mo><mi>N</mi></mrow></munder><mi>E</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>g</mi><mi>k</mi></msub><mo>≠</mo><mi>f</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>0</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">
+m(\limsup_k E(g_k\ne f))
+=m\left(\bigcap_{N\ge1}\bigcup_{k\ge N}E(g_k\ne f)\right)=0.
+</annotation></semantics></math> 随后取好集，写几乎处处
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∈</mo><munder><mo>⋃</mo><mrow><mi>N</mi><mo>≥</mo><mn>1</mn></mrow></munder><munder><mo>⋂</mo><mrow><mi>k</mi><mo>≥</mo><mi>N</mi></mrow></munder><mi>E</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>f</mi><mo>=</mo><msub><mi>g</mi><mi>k</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo></mrow><annotation encoding="application/x-tex">
+x\in\bigcup_{N\ge1}\bigcap_{k\ge N}E(f=g_k),
+</annotation></semantics></math> 即存在
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">N(x)</annotation></semantics></math>，当
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>≥</mo><mi>N</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">k\ge N(x)</annotation></semantics></math>
+时
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msub><mi>g</mi><mi>k</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">f(x)=g_k(x)</annotation></semantics></math>
+恒等。</p>
+<blockquote>
+<p>[!note] <span style="color:blue">Borel–Cantelli 与量词补证</span>
+明确原未定义的泛称：令
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>E</mi><mi>k</mi></msub><mo>=</mo><mi>E</mi><mo>\</mo><msub><mi>F</mi><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">E_k=E\setminus F_k</annotation></semantics></math>，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>D</mi><mi>k</mi></msub><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mi>x</mi><mo>∈</mo><mi>E</mi><mo>:</mo><msub><mi>g</mi><mi>k</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>≠</mo><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">D_k=\{x\in E:g_k(x)\ne f(x)\}</annotation></semantics></math>。由延拓相等关系，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>D</mi><mi>k</mi></msub><mo>⊂</mo><msub><mi>E</mi><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">D_k\subset E_k</annotation></semantics></math>。对每个
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>，
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mrow><mo stretchy="true" form="prefix">(</mo><munder><mo>limsup</mo><mi>k</mi></munder><msub><mi>D</mi><mi>k</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>≤</mo><mi>m</mi><mrow><mo stretchy="true" form="prefix">(</mo><munder><mo>⋃</mo><mrow><mi>k</mi><mo>≥</mo><mi>N</mi></mrow></munder><msub><mi>D</mi><mi>k</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>≤</mo><munder><mo>∑</mo><mrow><mi>k</mi><mo>≥</mo><mi>N</mi></mrow></munder><mi>m</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>E</mi><mi>k</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>≤</mo><munder><mo>∑</mo><mrow><mi>k</mi><mo>≥</mo><mi>N</mi></mrow></munder><msup><mn>2</mn><mrow><mi>−</mi><mi>k</mi></mrow></msup><mo>=</mo><msup><mn>2</mn><mrow><mn>1</mn><mo>−</mo><mi>N</mi></mrow></msup><mi>.</mi></mrow><annotation encoding="application/x-tex">
+m(\limsup_kD_k)\le m\left(\bigcup_{k\ge N}D_k\right)
+\le\sum_{k\ge N}m(E_k)
+\le\sum_{k\ge N}2^{-k}=2^{1-N}.
+</annotation></semantics></math> 令
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo>→</mo><mi>∞</mi></mrow><annotation encoding="application/x-tex">N\to\infty</annotation></semantics></math>
+得零测，这就是此处所用的 Borel–Cantelli 第一部分，不需要事件独立。</p>
+<p>相对于
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>E</mi><annotation encoding="application/x-tex">E</annotation></semantics></math>
+取补集，De Morgan 律给
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><mo>\</mo><munder><mo>⋂</mo><mi>N</mi></munder><munder><mo>⋃</mo><mrow><mi>k</mi><mo>≥</mo><mi>N</mi></mrow></munder><msub><mi>D</mi><mi>k</mi></msub><mo>=</mo><munder><mo>⋃</mo><mi>N</mi></munder><munder><mo>⋂</mo><mrow><mi>k</mi><mo>≥</mo><mi>N</mi></mrow></munder><mrow><mo stretchy="true" form="prefix">(</mo><mi>E</mi><mo>\</mo><msub><mi>D</mi><mi>k</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><munder><mo>⋃</mo><mi>N</mi></munder><munder><mo>⋂</mo><mrow><mi>k</mi><mo>≥</mo><mi>N</mi></mrow></munder><mo stretchy="false" form="prefix">{</mo><mi>x</mi><mo>∈</mo><mi>E</mi><mo>:</mo><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msub><mi>g</mi><mi>k</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="false" form="postfix">}</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+E\setminus\bigcap_N\bigcup_{k\ge N}D_k
+=\bigcup_N\bigcap_{k\ge N}(E\setminus D_k)
+=\bigcup_N\bigcap_{k\ge N}\{x\in E:f(x)=g_k(x)\}.
+</annotation></semantics></math>
+逐点量词由“<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∀</mo><mi>N</mi><mspace width="0.167em"></mspace><mo>∃</mo><mi>k</mi><mo>≥</mo><mi>N</mi></mrow><annotation encoding="application/x-tex">\forall N\,\exists k\ge N</annotation></semantics></math>
+失配”取否定变成“<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∃</mo><mi>N</mi><mspace width="0.167em"></mspace><mo>∀</mo><mi>k</mi><mo>≥</mo><mi>N</mi></mrow><annotation encoding="application/x-tex">\exists N\,\forall k\ge N</annotation></semantics></math>
+相等”。故结论是几乎处处最终逐点恒等，强于单纯 a.e.
+收敛，却不能推出一个与
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>
+无关的共同阈值，更不能据此宣称一致收敛。</p>
+<p>反查并交次序：若某点只在偶数项失配，它在坏集的
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>limsup</mo><annotation encoding="application/x-tex">\limsup</annotation></semantics></math>
+中而不在
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>liminf</mo><annotation encoding="application/x-tex">\liminf</annotation></semantics></math>
+中；把零测式写成外并内交会漏掉此类无限次失配。页边截掉的引导字不影响完整事件公式。原展开式内并省写上限，本文用
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>≥</mo><mi>N</mi></mrow><annotation encoding="application/x-tex">k\ge N</annotation></semantics></math>
+明确无限尾部。</p>
+</blockquote>
+<blockquote>
+<p>[!note] <span style="color:blue">剩余方向与结论边界</span>
+<strong>(3)
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>⇒</mo><annotation encoding="application/x-tex">\Rightarrow</annotation></semantics></math>
+(1)。</strong> 连续
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>g</mi><mi>k</mi></msub><annotation encoding="application/x-tex">g_k</annotation></semantics></math>
+的限制到可测
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>E</mi><annotation encoding="application/x-tex">E</annotation></semantics></math>
+都可测，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi><mo>=</mo><msub><mo>limsup</mo><mi>k</mi></msub><msub><mi>g</mi><mi>k</mi></msub><msub><mo stretchy="false" form="prefix">|</mo><mi>E</mi></msub></mrow><annotation encoding="application/x-tex">h=\limsup_k g_k|_E</annotation></semantics></math>
+作为扩展实值函数可测。在给定的全测度收敛集上
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi><mo>=</mo><mi>f</mi></mrow><annotation encoding="application/x-tex">h=f</annotation></semantics></math>；两者仅在一个
+Lebesgue 零测集上可能不同，完备性保证其任意子集可测，所以
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>
+仍可测。结合前述各方向即得等价。</p>
+<p>上述最终逐点恒等不蕴含一致收敛的直观例子是
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>g</mi><mi>k</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mo>max</mo><mrow><mo stretchy="true" form="prefix">(</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo>−</mo><mrow><mo stretchy="true" form="prefix">|</mo><mn>2</mn><mi>k</mi><mi>x</mi><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">|</mo></mrow><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">g_k(x)=\max(0,1-|2kx-1|)</annotation></semantics></math>（<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∈</mo><mrow><mo stretchy="true" form="prefix">[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="true" form="postfix">]</mo></mrow></mrow><annotation encoding="application/x-tex">x\in[0,1]</annotation></semantics></math>）。每个固定点最终取
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>0</mn><annotation encoding="application/x-tex">0</annotation></semantics></math>，但每项在
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mi>/</mi><mrow><mo stretchy="true" form="prefix">(</mo><mn>2</mn><mi>k</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">1/(2k)</annotation></semantics></math>
+的值为
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>1</mn><annotation encoding="application/x-tex">1</annotation></semantics></math>，故
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>sup</mo><mrow><mo stretchy="true" form="prefix">|</mo><msub><mi>g</mi><mi>k</mi></msub><mo stretchy="true" form="postfix">|</mo></mrow><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\sup|g_k|=1</annotation></semantics></math>。此例是新增的量词检验，不属于原稿。</p>
+</blockquote>
+<h2 id="原稿订正与物理页对照">10. 原稿订正与物理页对照</h2>
+<blockquote>
+<p>[!note] <span style="color:blue">对照索引</span> | 原位置 |
+保留的原写法／现象 | 学习时的处理 | | — | — | — | | 第 1 页 |
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>f</mi><mi>a</mi></msub><annotation encoding="application/x-tex">f_a</annotation></semantics></math>
+与限制关系省写；索引全集笔形不一；<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>τ</mi><msub><mi>X</mi><mi>a</mi></msub></msub><mo>=</mo><mi>C</mi><mo>∩</mo><msub><mi>X</mi><mi>a</mi></msub></mrow><annotation encoding="application/x-tex">\tau_{X_a}=C\cap X_a</annotation></semantics></math>
+并写 |
+明示限制关系，区分拓扑族与其中成员，保留开／局部有限闭／可数可测三类拼接
+| | 第 2 页 |
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><mo>=</mo><mi>∪</mi><msub><mi>X</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">E=\cup X_i</annotation></semantics></math>；测度链中两个
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>E</mi><annotation encoding="application/x-tex">E</annotation></semantics></math>
+漏
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>i</mi><annotation encoding="application/x-tex">i</annotation></semantics></math>；“紧闭”
+| 取不交值层
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>E</mi><mi>i</mi></msub><annotation encoding="application/x-tex">E_i</annotation></semantics></math>，修正为值层差集，在有限测度部分先取紧集
+| | 第 3 页 | 首
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>F</mi><mi>δ</mi></msub><annotation encoding="application/x-tex">F_\delta</annotation></semantics></math>
+与后
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>F</mi><mi>k</mi></msub><annotation encoding="application/x-tex">F_k</annotation></semantics></math>；<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>φ</mi><mi>k</mi></msub><mo>∈</mo><mi>C</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>F</mi><mi>k</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\varphi_k\in C(F_k)</annotation></semantics></math>；低位
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mi>k</mi></mrow><annotation encoding="application/x-tex">2k</annotation></semantics></math>
+| 逐
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>k</mi><annotation encoding="application/x-tex">k</annotation></semantics></math>
+选
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>F</mi><mrow><mi>k</mi><mo>,</mo><mi>δ</mi></mrow></msub><annotation encoding="application/x-tex">F_{k,\delta}</annotation></semantics></math>，明示限制，使用可求和几何预算
+| | 第 3 页 |
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo>=</mo><mi>g</mi><mi>/</mi><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>−</mo><mi>g</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">f=g/(1-g)</annotation></semantics></math>；有界提示重复；B1
+横线 | 原错误与重复均保留，带符号逆式补
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">|</mo><mi>g</mi><mo stretchy="true" form="postfix">|</mo></mrow><annotation encoding="application/x-tex">|g|</annotation></semantics></math>；B1
+在路线 B 就地补答 | | 第 4 页 |
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>E</mi><mo>\</mo><msub><mi>G</mi><mi>δ</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">m(E\setminus G_\delta)</annotation></semantics></math>
+后 B2；内近似后 B3；并集估计写
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>&lt;</mo><annotation encoding="application/x-tex">&lt;</annotation></semantics></math>
+| 以小坏集解释并补等价下界，三项预算，次可加性用
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>≤</mo><annotation encoding="application/x-tex">\le</annotation></semantics></math>
+| | 第 5 页 |
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>F</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">C(F)</annotation></semantics></math>；区间右端如圆括；外测度旁注到“分”止
+| 输入域改
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>E</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">C(E)</annotation></semantics></math>，值域改
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="true" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">[0,1]</annotation></semantics></math>；旁注保留可见残句，语义解释独立标注
+| | 第 6 页 | 延拓限制式
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>g</mi><annotation encoding="application/x-tex">g</annotation></semantics></math>
+漏
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>k</mi><annotation encoding="application/x-tex">k</annotation></semantics></math>；未定义泛称
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>E</mi><mi>n</mi></msub><annotation encoding="application/x-tex">E_n</annotation></semantics></math>；内并上限省写
+| 明确
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>g</mi><mi>k</mi></msub><annotation encoding="application/x-tex">g_k</annotation></semantics></math>、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>E</mi><mi>k</mi></msub><annotation encoding="application/x-tex">E_k</annotation></semantics></math>
+与失配集
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>D</mi><mi>k</mi></msub><annotation encoding="application/x-tex">D_k</annotation></semantics></math>；取补集的并交与最终恒等完整保留
+| | 第 7 页 | 普通空白物理页 | 记录来源，不制造红色待填题 |</p>
+</blockquote>
+</body>
+</html>

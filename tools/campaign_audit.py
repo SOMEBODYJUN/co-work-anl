@@ -10,6 +10,8 @@ from __future__ import annotations
 
 import copy
 import json
+import hashlib
+import re
 from pathlib import Path
 import sys
 
@@ -58,6 +60,19 @@ class CampaignAuditor(standard.Auditor):
                     'clip_pdf_pt': {'type': 'array', 'minItems': 4, 'maxItems': 4,
                                    'items': {'type': 'number'}},
                     'dpi': {'type': 'integer', 'minimum': 72, 'maximum': 1200},
+                    'form_expansion': {
+                        'type': 'object', 'additionalProperties': False,
+                        'required': ['xref', 'bbox_original', 'bbox_expanded',
+                                     'clip_original', 'clip_expanded', 'original_stream_sha256'],
+                        'properties': {
+                            'xref': {'type': 'integer', 'minimum': 1},
+                            'bbox_original': {'type': 'string'},
+                            'bbox_expanded': {'type': 'string'},
+                            'clip_original': {'type': 'string'},
+                            'clip_expanded': {'type': 'string'},
+                            'original_stream_sha256': {'type': 'string', 'pattern': '^[0-9a-f]{64}$'},
+                        },
+                    },
                 },
             }
         errors = sorted(Draft202012Validator(schema).iter_errors(value), key=lambda e: str(e.path))
@@ -104,6 +119,50 @@ class CampaignAuditor(standard.Auditor):
                             max(abs(expanded[i] - original[i]) for i in range(4)) > 72):
                             raise ValueError('supplementary viewport must only expand the physical page by at most 72 pt')
                         pdf_page.set_mediabox(expanded)
+                        form = viewport.get('form_expansion')
+                        if form:
+                            # Permit only expansion of an existing Form's BBox and
+                            # its single rectangular clip. All drawing bytes stay
+                            # identical; no general PDF code replacement occurs.
+                            xref = form['xref']
+                            if xref not in {item[0] for item in pdf_page.get_xobjects()}:
+                                raise ValueError('expanded Form is not an XObject of the source page')
+                            if document.xref_get_key(xref, 'BBox') != ('array', form['bbox_original']):
+                                raise ValueError('original Form BBox differs')
+                            stream = document.xref_stream(xref)
+                            if hashlib.sha256(stream).hexdigest() != form['original_stream_sha256']:
+                                raise ValueError('original Form stream hash differs')
+                            number = r'-?(?:\d+(?:\.\d*)?|\.\d+)'
+                            rect_pattern = rf'({number}) ({number}) ({number}) ({number}) re\nW\* n\n'
+                            parsed = []
+                            for key in ('clip_original', 'clip_expanded'):
+                                match = re.fullmatch(rect_pattern, form[key])
+                                if not match:
+                                    raise ValueError('Form edit must contain only one rectangular clip')
+                                x, y, width, height = map(float, match.groups())
+                                parsed.append(fitz.Rect(x, y, x + width, y + height))
+                            before, after = parsed
+                            if (not after.contains(before) or after.is_empty or
+                                max(abs(after[i] - before[i]) for i in range(4)) > 288):
+                                raise ValueError('Form clip must only expand by at most 288 local units')
+                            bboxes = []
+                            for key in ('bbox_original', 'bbox_expanded'):
+                                match = re.fullmatch(rf'\[({number}) ({number}) ({number}) ({number})\]', form[key])
+                                if not match:
+                                    raise ValueError('Form BBox must be a four-number rectangle')
+                                bboxes.append(fitz.Rect(*map(float, match.groups())))
+                            if (not bboxes[1].contains(bboxes[0]) or bboxes[1].is_empty or
+                                max(abs(bboxes[1][i] - bboxes[0][i]) for i in range(4)) > 288):
+                                raise ValueError('Form BBox must only expand by at most 288 local units')
+                            old_clip, new_clip = form['clip_original'].encode(), form['clip_expanded'].encode()
+                            if stream.count(old_clip) != 1:
+                                raise ValueError('original clipping instruction is not unique')
+                            changed = stream.replace(old_clip, new_clip, 1)
+                            if changed.replace(new_clip, old_clip, 1) != stream:
+                                raise ValueError('Form edit changes bytes outside its clipping rectangle')
+                            document.xref_set_key(xref, 'BBox', form['bbox_expanded'])
+                            document.update_stream(xref, changed)
+                            pdf_page = document.reload_page(pdf_page)
                         clip = fitz.Rect(viewport['clip_pdf_pt'])
                         if clip.is_empty or not pdf_page.rect.contains(clip):
                             raise ValueError('viewport clip lies outside the declared expanded page')

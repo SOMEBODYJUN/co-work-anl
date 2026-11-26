@@ -10,14 +10,20 @@ plan=load(P/"authored-content.json")
 ids=load(P/"audit/campaign/source-id-migration.json")
 artifacts=[]
 path_to_id={}
-def artifact(path, aid=None, crop=None):
+def artifact(path, aid=None, crop=None, viewport=None):
     path=str(path)
     if path in path_to_id:
         return "artifact:"+path_to_id[path]
     aid=aid or ("record-"+hashlib.sha256(path.encode()).hexdigest()[:16])
+    if any(item["id"] == aid for item in artifacts):
+        aid += "-" + Path(path).suffix.lstrip(".")
+        if any(item["id"] == aid for item in artifacts):
+            raise ValueError(f"duplicate artifact id: {aid}")
     item={"id":aid,"path":path,"kind":"evidence","format":"image" if path.endswith(".png") else "text"}
     if crop:
         item["source_crop"]={k:crop[k] for k in ("page_id","bbox_px","dpi")}
+    if viewport:
+        item["pdf_viewport"] = viewport
     artifacts.append(item);path_to_id[path]=aid
     return "artifact:"+aid
 
@@ -32,6 +38,33 @@ for role in ("visual","math","adversarial"):
     index=load(folder/"crop-index.json")
     for c in (index if isinstance(index,list) else index["crops"]):
         artifact(c["path"], f"{role}-crop-{Path(c['path']).stem}", c)
+    extra_paths = set(folder.glob("*crop*index*.json")) | set(folder.glob("**/index.json"))
+    for extra_path in sorted(extra_paths):
+        suffix = hashlib.sha256(str(extra_path.relative_to(P)).encode()).hexdigest()[:12]
+        artifact(extra_path.relative_to(P), f"{role}-extra-{suffix}")
+        extra_index = load(extra_path)
+        for c in (extra_index if isinstance(extra_index,list) else extra_index["crops"]):
+            artifact(c["path"], f"{role}-crop-{Path(c['path']).stem}", c)
+outside = load(P/"proposals/ra12_visual/supplemental-outside-page-evidence.json")
+viewport = {"page_id":outside["page_id"], "mediabox_pdf_pt":outside["media_expanded_pdf_pt"],
+            "clip_pdf_pt":outside["render_clip_shifted_pdf_pt"],"dpi":outside["render_dpi"]}
+artifact(outside["media_only_path"],"visual-p6-expanded-media",viewport=viewport)
+viewport = {**viewport,"form_expansion":{
+    "xref":outside["form_xref"],"bbox_original":outside["form_bbox_original"],
+    "bbox_expanded":outside["form_bbox_expanded"],
+    "clip_original":outside["form_stream_clip_original"]+"\n",
+    "clip_expanded":outside["form_stream_clip_expanded"]+"\n",
+    "original_stream_sha256":outside["form_stream_original_sha256"]}}
+artifact(outside["path"],"visual-p6-original-unclipped-vectors",viewport=viewport)
+ad_outside = load(P/"proposals/ra12_adversarial/outside-page-evidence.json")
+artifact(ad_outside["path"],"adversarial-p6-original-unclipped-vectors",viewport={
+    "page_id":"p0006","mediabox_pdf_pt":[-10,0,595,842],
+    "clip_pdf_pt":ad_outside["expanded_page_clip_pt"],"dpi":1200,
+    "form_expansion":{"xref":33,"bbox_original":"[0 0 2380 3368]",
+        "bbox_expanded":"[-40 0 2380 3368]",
+        "clip_original":"0 0 2380 3368 re\nW* n\n",
+        "clip_expanded":"-40 0 2420 3368 re\nW* n\n",
+        "original_stream_sha256":outside["form_stream_original_sha256"]}})
 for c in load(P/"audit/campaign/boss-crop-index.json"):
     artifact(c["path"],"boss-crop-"+Path(c["path"]).stem,c)
 artifact("audit/campaign/boss-crop-index.json","boss-crop-index")
@@ -55,14 +88,48 @@ plan["observations"]=[{"pass":1,"reviewer_id":"/root/ra12_visual","session_id":"
 recoveries=[]
 issues=[]
 vr=load(P/"proposals/ra12_visual/recoveries.json")["records"]
+supp = load(P/"proposals/ra12_visual/supplemental-recovery.json")["items"]
+supp_crops = load(P/"proposals/ra12_visual/supplemental-crop-index.json")
+first = supp[0]
+vr.append({"issue_id":"V-P001-MEASURABLE-COVERAGE","suggested_source_units":["V-P001-19"],
+    "crop_evidence":[c for c in supp_crops if c["page_id"]=="p0001"],
+    "candidates":[{"reading":c["reading"]} for c in first["candidate_readings"]],
+    "selected_reading":first["selected"],"context":first["context_check"],
+    "visual_evidence":first["confidence_note"],
+    "forward_math":"若可测 X_j 可数覆盖 X，各限制可测，则每个开集的原像等于各片可测原像的可数并，故总体可测。",
+    "backward_math":"不可数可测单点覆盖上任何限制可测，无法推出任意总体函数可测；此反例确认可数条件，但单凭数学不能证明作者写的是近似或类似。"})
+synthesis_path = P/"audit/campaign/boss-recovery-synthesis.json"
+synthesis = load(synthesis_path)["decisions"] if synthesis_path.exists() else {}
+if synthesis:
+    artifact(synthesis_path.relative_to(P),"boss-recovery-synthesis")
 for n,r in enumerate(vr,1):
     ev=[artifact(c["path"]) for c in r["crop_evidence"]]
     ev+=["artifact:visual-recoveries","artifact:visual-detailed-reading"]
     if n<=3:
         ev+=["artifact:math-recoveries","artifact:math-recovery-report",
              "artifact:adversarial-recoveries","artifact:adversarial-adversarial-report"]
+    if n in (3,5,11,13,14):
+        ev += ["artifact:visual-supplemental-recovery"]
+        relevant = {3:"p0006",5:"p0002",11:"p0005",13:"p0006",14:"p0001"}[n]
+        ev += [artifact(c["path"]) for c in supp_crops if c["page_id"]==relevant]
+    if n in (3,13):
+        ev += ["artifact:visual-p6-original-unclipped-vectors",
+               "artifact:adversarial-p6-original-unclipped-vectors",
+               "artifact:visual-supplemental-outside-page-evidence",
+               "artifact:adversarial-outside-page-evidence"]
+    if n == 5:
+        r = {**r,"selected_reading":r["selected_reading"].replace("举例，闭集构造", "并给出闭集构造")}
+    decision = synthesis.get(f"RA12-REC-{n:02d}")
+    if decision:
+        r = {**r, **{key:value for key,value in decision.items()
+                     if key in ("selected_reading","visual_evidence","context","forward_math","backward_math")}}
+        ev += ["artifact:boss-recovery-synthesis"] + decision.get("evidence_ids",[])
+    ev = list(dict.fromkeys(ev))
     candidates=[{"id":f"candidate-{j}","text":c["reading"],"evidence_ids":ev}
                 for j,c in enumerate(r["candidates"],1)]
+    if decision:
+        candidates += [{"id":f"additional-{j}","text":text,"evidence_ids":ev}
+                       for j,text in enumerate(decision.get("additional_candidates",[]),1)]
     candidates.append({"id":"selected-reading","text":r["selected_reading"],"evidence_ids":ev})
     # The author of the initial proposal is recorded truthfully. The required
     # nonauthor review is pending and must replace this only after actual review.

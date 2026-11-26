@@ -7,6 +7,7 @@ This file does not create pass-2 observations or final-review findings.
 from pathlib import Path
 import json
 import hashlib
+import re
 
 P = Path(__file__).resolve().parents[2]
 load = lambda p: json.loads(p.read_text(encoding="utf-8"))
@@ -30,15 +31,49 @@ for u in vunits:
 def refs(p, first, last=None):
     return [ids[f"V-P{p:03d}-{n:02d}"] for n in range(first, (last or first) + 1)]
 
+for source in sources:
+    if source["id"] == "RA12-P002-U06":
+        source["label"] = "并给出闭集构造 F_delta 的表达式；1200 dpi 与长框确认首语并给出。"
+    if source["id"] == "RA12-P001-U19":
+        source["label"] = "可测函数〔校读：近似〕，要求可数个覆盖；优势字形候选，解释另标补充。"
+    if source["id"] == "RA12-P006-U10":
+        source["label"] = "〔左缘边字；原矢量补证、择优校读：易〕 考察；原 PDF 页外矢量为首字提供补证。"
+
 trans, study = [], []
 def block(dest, text, source_ids=(), origin="source", label=""):
+    # Keep display equations and tables valid in both Obsidian and standard
+    # Markdown parsers; this does not change the mathematical text.
+    lines = text.strip().splitlines()
+    normalized = []
+    in_math = False
+    for i, line in enumerate(lines):
+        if re.fullmatch(r"(?:> ?)?\$\$", line):
+            blank = ">" if line.startswith(">") else ""
+            if not in_math:
+                if normalized and normalized[-1].lstrip("> "):
+                    normalized.append(blank)
+                normalized.append(line)
+                in_math = True
+            else:
+                normalized.append(line)
+                in_math = False
+                if i + 1 < len(lines) and lines[i + 1].lstrip("> "):
+                    normalized.append(blank)
+        else:
+            normalized.append(line)
+    text = "\n".join(normalized)
     dest.append({"text": text.strip(), "source_ids": list(source_ids),
                  "origin": origin, "status": "resolved",
                  "explanation": label or ("原图所列内容，保持页内顺序与笔迹区别。" if origin == "source"
                                           else "Boss依据三份独立原图记录所加的明确编辑说明或数学补证。")})
 
 def blue(dest, text, source_ids=(), title="模型补充"):
-    body = f"> [!note] <span style=\"color:blue\">{title}</span>\n"
+    lines = text.strip().splitlines()
+    for i, line in enumerate(lines):
+        if line.startswith("|"):
+            lines[i] = re.sub(r"\$[^$]+\$", lambda m:m[0].replace("|",r"\vert{}"), line)
+    text = "\n".join(lines)
+    body = f"> [!note] <span style=\"color:blue\">{title}</span>\n>\n"
     body += "\n".join("> " + x if x else ">" for x in text.strip().splitlines())
     block(dest, body, source_ids, "supplement")
 
@@ -69,7 +104,7 @@ $$
 f^{-1}(U)=\bigcup_{a\in A}\bigl(f^{-1}(U)\cap X_a\bigr)
 \overset{\text{定义}}{=}\bigcup_{a\in A}(f|_{X_a})^{-1}(U).
 $$""", refs(1,7,11))
-blue(trans, "覆盖的索引全集写出了 $A/\\Delta/\\Lambda$ 样的不同笔形，本段统一排作 $A$，保留先 $i$ 后 $a$ 的索引变化。首个逆像上标的 $1$ 笔画极短；后两项的 $-1$ 和限制线共同确认逆像。$f_a=f|_{X_a}$ 是从同段定义等号与限制记号恢复的关系，不是原题另写的一行。", refs(1,7,11), "识读与上下文恢复")
+blue(trans, "覆盖的索引全集写出了 $A/\\Delta/\\Lambda$ 样的不同笔形，本段统一排作 $A$，保留先 $i$ 后 $a$ 的索引变化。首项上标只见短横，减号旁没有可分辨的独立 $1$；据后两项清楚的 $-1$、限制线和等式含义恢复为逆像，不声称首项的 $1$ 已逐笔读出。$f_a=f|_{X_a}$ 是从同段定义等号与限制记号恢复的关系，不是原题另写的一行。", refs(1,7,11), "识读与上下文恢复")
 block(trans, r"""注意 $f|_{X_a}$ 连续，
 $$
 (f|_{X_a})^{-1}(U)\in\tau_{X_a}=C\cap X_a,\qquad C\in\tau_X.
@@ -79,8 +114,8 @@ block(trans, r"""但即使是闭覆盖，无限个，但改成局部有限闭覆
 
 即：给定 $x\in X$，$\exists U\in N(x)$，$U$ 只与有限多个 $X_a$ 相交。
 
-可测也类似，要求可数个覆盖。""", refs(1,16,19))
-blue(trans, "末句以“可测也类似，要求可数个覆盖”作上下文恢复；初读另有“可测函数逼近”候选，待追加字形复查记录统一裁决。这里的主题是分片拼接的可测版本。", refs(1,19), "暂存识读说明")
+可测函数〔校读：近似〕，要求可数个覆盖。""", refs(1,16,19))
+blue(trans, "1200 dpi 与作者同页‘函’‘数’及走之笔对照后，择优校读‘近似’：前一字有独立低位底捺，后一字更像亻加以，缺少第二条走之，故优于‘逼近’；‘类似’虽符合拼接语境，却欠清楚的米、大结构。此为有依据的字形校读，置信度中等，不称逐笔唯一。‘要求可数个覆盖’可由可测拼接解释，但孤句本身没有给出一条完整的函数近似定理；学习稿中的可测拼接证明单独标为补充。", refs(1,19), "字形校读及解释范围")
 ed(trans, "## 第 2 页")
 block(trans, r"""### Lusin
 
@@ -99,7 +134,7 @@ $$
 \exists F_{i,\delta}\overset{\text{紧闭}}{\subset}E_i,\qquad
 m(E_i\setminus F_{i,\delta})<\frac{\delta}{\ell}.
 $$""", refs(2,7,12))
-blue(trans, "覆盖式右端按交叉笔形记 $X_i$，上下文数学对象为 $E_i$；“紧闭”两字可见。原稿暂未区分有限与无限测度，紧集逼近在学习稿中先限定有限测度，随后使用第 4 页局部化。", refs(2,8,12), "原记号说明")
+blue(trans, "覆盖式右端按交叉笔形记 $X_i$，上下文数学对象为 $E_i$；函数展开式的 $f$ 后原见上下两点，本文以等式规范排印，不声称原图有两横。“紧闭”两字可见。原稿暂未区分有限与无限测度，紧集逼近在学习稿中先限定有限测度，随后使用第 4 页局部化。", refs(2,8,12), "原记号说明")
 block(trans, r"""令
 $$
 F_\delta=\bigcup_{i=1}^{\ell}F_{i,\delta}.
@@ -131,7 +166,7 @@ m(E\setminus F_\delta)
 $$
 
 $\varphi_k$ 在 $F_k$ 上连续。$\varphi_k$ 在 $\bigcap F_k$ 上连续，下证一致收敛。""", refs(3,1,8))
-blue(trans, "首行左侧字面为 $F_\\delta$，同一行右侧与下一行是 $F_k$。末和的 $k$ 位于较低处，按 $2k$ 笔形存留；预期几何预算由首行 $2^k$ 恢复。$\\varphi_k\\in C(F_k)$ 是省写限制。", refs(3,1,8), "识读说明")
+blue(trans, "首行左侧字面为 $F_\\delta$，同一行右侧与下一行是 $F_k$。末和的 $k$ 起笔与 $2$ 近乎等高，按 $2k$ 笔形存留；另有低写指数 $2^k$ 候选，预期几何预算由首行明确的 $2^k$ 恢复。$\\varphi_k\\in C(F_k)$ 是省写限制。", refs(3,1,8), "识读说明")
 block(trans, r"""但 Egorov 要求 $m(E)<+\infty$。
 
 因 $f$ a.e. 有限，$m(E(|f|=+\infty))=0$。
@@ -152,13 +187,13 @@ block(trans, r"""或用 Egorov 定理。
 当 $m(E)<+\infty$，$\exists\varphi_k\to f$，
 $\forall\delta>0$，$\exists F_\delta\overset{\text{闭}}{\subset}E$，s.t.
 $$
-m(E\setminus F_\delta)\quad\underline{\hspace{1.5cm}}
+m(E\setminus F_\delta)\quad\underline{\hspace{1cm}}
 $$
 <span style="color:red">〔原稿待填 B1：测度后的比较号及界值〕</span>""", refs(3,16,20))
 ed(trans, "## 第 4 页")
 block(trans, r"""用 Egorov，$\exists G_\delta\subset E$，s.t.
 $$
-m(E\setminus G_\delta)\quad\underline{\hspace{1.5cm}}
+m(E\setminus G_\delta)\quad\underline{\hspace{1cm}}
 $$
 <span style="color:red">〔原稿待填 B2：测度后的比较号及界值〕</span>
 
@@ -199,12 +234,12 @@ block(trans, r"""**Th.** 设 $(X,\tau)$，则下述等价：
 1. $X$ 正规。
 2. $\forall E\overset{\text{闭}}{\subset}X$，若 $f\in C(F)$，则 $\exists F\in C(X)$，s.t. $F|_E=f$。（Tietze）
 3. $\forall A,B\overset{\text{闭}}{\subset}X$，$A\cap B=\varnothing$，则存在连续函数 $f:X\to[0,1)$，s.t. $f|_A=0$ 且 $f|_B=1$。（Urysohn）""", refs(5,2,11))
-blue(trans, "第 (2) 条括号内的原字为两横的 $F$，第 (3) 条区间右端形如圆括号。两处数学订正分别为 $C(E)$ 和 $[0,1]$，在学习稿标明。", refs(5,4,11), "原稿记号错误")
-block(trans, r"""**Remark.** 外测度中不对，$m^*(A\cup B)$ 除非 $A$ 和 $B$ 可被可测集分〔本行止于右缘〕。
+blue(trans, "第 (2) 条括号内的原字为两横的 $F$，第 (3) 条区间右端形如圆括号。两处数学订正分别为 $C(E)$ 和 $[0,1]$，在学习稿标明。两个限制等式之间原有形近 $B$ 的独写连接记号，本文依语法校读为‘且’；该字形与同页字母 $B$、第 3 页‘且’分别比较后仍不称逐笔唯一，不把它当作额外集合运算。", refs(5,4,11), "原稿记号及校读说明")
+block(trans, r"""**Remark.** 外测度中不对，$m^*(A\cup B)$〔上下文恢复：除非〕$A$ 和 $B$ 可被可测集分〔本行止于右缘〕。
 $$
 C=A\cup B.
 $$""", refs(5,12,13))
-blue(trans, "此行连接词与起句仍在追加定向复核，暂按当前候选排印；右缘只有“分”及末笔，没有可确认的完整后续字。“分开／分隔”仅能作为上下文补足，不声称原图写出了这些字。$C=A\\cup B$ 原为下一独立行。", refs(5,12,13), "暂存识读说明")
+blue(trans, "起句校读为‘外测度中不对’。连接词取优势候选‘除非’：首形的阝与余形连笔、次形双竖及后接条件的语法共同支持，‘所谓’欠斤、讠和胃结构，‘可加性’的字数及笔形不合。其置信度中等，恢复性质已就地标明。右缘只写到‘分’，原 PDF 右页外没有后续绘画路径，故不把‘分开／分隔’补成已写原文。$C=A\\cup B$ 原为下一独立行。学习稿仅给出可测分离推出加性的充分条件，不从残句反推无条件的必要性。", refs(5,12,13), "上下文恢复及残句范围")
 block(trans, r"""**Th.** 设 $f$ 是 $E$ 上几乎处处有限函数，$E\in M$：
 
 1. $f$ 可测。
@@ -225,7 +260,7 @@ block(trans, r"""由 Borel–Cantelli：
 $$
 m\left(\limsup_{n\to\infty}E_n\right)=0.
 $$
-〔页边截字〕考察
+〔左缘边字；原矢量补证、择优校读：易〕 考察
 $$
 E\{g_k\ne f\}\subset E\setminus F_k.
 $$
@@ -243,7 +278,7 @@ $$
 $$
 \exists N(x)\ \text{s.t.}\ k\ge N,\qquad f=g_k\ \text{恒等}.
 $$""", refs(6,13,17))
-blue(trans, "首式的 $E_n$ 没有在这一行定义；后文以失配事件明确其用途。花括／圆括均作原谓词集合写法保存。上式内并原只有下标 $k=N$，未另写上标无穷；下式两个无穷上标均可见。页边引导字发生物理截切，未猜填“易”；数学事件本身完整。末行阈值可排作 $k\\ge N$，若按另一候选 $k>N$ 读，只差起点平移，均是逐点最终恒等。", refs(6,8,17), "识读与省记说明")
+blue(trans, "首式的 $E_n$ 没有在这一行定义；后文以失配事件明确其用途。花括／圆括均作原谓词集合写法保存；包含式的右端 $F_k$ 后原另有孤立闭圆括样笔，左端没有成对开括，排式未把它当作运算。上式内并原只有下标 $k=N$，未另写上标无穷；下式两个无穷上标均可见。左缘首字受页面及 Form 裁框截切，在内存放宽裁框后补见原有矢量笔画，未改绘画路径；下部围笔内两处墨迹支持‘易’优于‘另’，上部仍潦草，故取低至中等置信的字形择优校读；左缘边字可能独立于‘考察’，不强行连成一句。‘考察’与第 4 页‘考虑’中的‘考’的对照及宀、示笔形相符。末行阈值择优排作 $k\\ge N$，另有 $k>N$ 候选，只差起点平移，均是逐点最终恒等。", refs(6,8,17), "识读与省记说明")
 ed(trans, "## 第 7 页\n\n本物理页为空白页。整页与六个重叠区均无正文、页码、旁注、图形或原待填标记。")
 
 ed(study, """# 实分析 12｜从“几乎连续”到连续函数逼近
@@ -319,8 +354,10 @@ blue(study, r"""若 $X_a$ 在 $X$ 中闭、构成局部有限覆盖，且每个�
 局部有限闭集的并为何闭？若 $x$ 不在并中，先取只交有限多个成员的邻域，再逐一避开这有限多个闭集，就得到不交整个并的开邻域。因此逆像闭，$f$ 连续。
 
 不能删去局部有限条件：在 $X=\{0\}\cup\{1/n:n\ge1\}$ 的单点闭覆盖上，每个限制都连续；但令 $f(0)=0$、$f(1/n)=1$，$f$ 在 $0$ 不连续。第 4 页的环带论证正需要这一工具。""", refs(1,16,18), "补证与条件检验")
-block(study, "### 3.3 原页末的可测覆盖旁注\n\n“可测也类似，要求可数个覆盖。”", refs(1,19))
-blue(study, r"""设可测空间 $X$ 被可数个可测子集 $X_j$ 覆盖，$f|_{X_j}$ 对迹 $\sigma$-代数可测。对靶空间任意可测集 $B$，
+block(study, "### 3.3 原页末的可测覆盖旁注\n\n“可测函数〔校读：近似〕，要求可数个覆盖。”", refs(1,19))
+blue(study, r"""两疑字采用 1200 dpi 笔形对照后的优势读法，备选“类似／逼近”及理由见保真稿与恢复台账。下面解释可数覆盖在可测拼接中的作用，不把孤句改写成已经陈述的近似定理。
+
+设可测空间 $X$ 被可数个可测子集 $X_j$ 覆盖，$f|_{X_j}$ 对迹 $\sigma$-代数可测。对靶空间任意可测集 $B$，
 $$
 f^{-1}(B)=\bigcup_{j\ge1}(f|_{X_j})^{-1}(B).
 $$
@@ -397,11 +434,11 @@ block(study, r"""### 5.5 路线 B：Egorov、内正规性和三项误差
 
 原稿另起“或用 Egorov 定理”，设 $m(E)<\infty$，并在闭集 $F_\delta$ 后留下：
 
-<span style="color:red">B1：$m(E\setminus F_\delta)$ 后的界值留空。</span>
+<span style="color:red">B1：$m(E\setminus F_\delta)$ 后的比较号及界值留空。</span>
 
 下一页以 $G_\delta\subset E$ 配合 $\varphi_k$ 在 $E\setminus G_\delta$ 上一致趋于 $f$，并留下：
 
-<span style="color:red">B2：$m(E\setminus G_\delta)$ 后的界值留空。</span>
+<span style="color:red">B2：$m(E\setminus G_\delta)$ 后的比较号及界值留空。</span>
 
 再考虑 $F_\delta\cap(E\setminus G_\delta)$，由内正规性取闭 $H_\delta\subset E\setminus G_\delta$，留下：
 
@@ -422,7 +459,7 @@ blue(study, r"""三处可按相同总预算 $\delta$ 补成：
 
 $G_\delta$ 在原后续式中是要删掉的坏集；故不能把 B2 填成 $m(E\setminus G_\delta)<\delta/3$。因为此处 $m(E)<\infty$，表内 B2 在保留原左端的同时正确表述 Egorov 的小坏集条件。
 
-由 B1，所有 $\varphi_k$ 在 $F_\delta$ 上连续；由 Egorov，它们在 $E\setminus G_\delta$ 上一致趋于 $f$。内正规性给出 B3 中的闭 $H_\delta$（此处可取紧集），故 $\widehat F_\delta=F_\delta\cap H_\delta$ 闭，$\varphi_k|_{\widehat F_\delta}$ 连续并一致趋于 $f|_{\widehat F_\delta}$，于是该限制连续。
+按 §5.3 的共同闭集构造，同时满足 B1 的测度预算和所有 $\varphi_k|_{F_\delta}$ 的连续性；连续性并非由 B1 单独的不等式推出。由 Egorov，它们在 $E\setminus G_\delta$ 上一致趋于 $f$。内正规性给出 B3 中的闭 $H_\delta$（此处可取紧集），故 $\widehat F_\delta=F_\delta\cap H_\delta$ 闭，$\varphi_k|_{\widehat F_\delta}$ 连续并一致趋于 $f|_{\widehat F_\delta}$，于是该限制连续。
 
 原稿联合估计处的严格号应先写成次可加性的弱号：
 $$
@@ -494,7 +531,7 @@ $$
 **Tietze $\Rightarrow$ Urysohn。** 在闭集 $C=A\cup B$ 上分别定义 $h|_A=0$、$h|_B=1$，有限闭覆盖拼接表明 $h$ 连续。延拓后再复合截断函数 $t\mapsto\max(0,\min(1,t))$，即得到所需 $[0,1]$ 值分离函数。至此三条件等价。""", refs(5,2,11)+refs(5,13), "Tietze 完整补证")
 ed(study, "## 8. 外测度旁注")
 block(study, r"""原稿在拓扑等价条件下另写 Remark，含“外测度”“$m^*(A\cup B)$”“$A$ 和 $B$ 可被可测集分〔止于右缘〕”，下一独立行是 $C=A\cup B$。连接词的原字形与保真排印见原序稿及对应恢复记录。""", refs(5,12,13))
-blue(study, r"""可确认数学语义是“可测分离”与外测度的可加性。若存在 Lebesgue 可测集 $M$，使 $A\subset M$、$B\subset M^c$，取 $C=A\cup B$，由可测性的 Carathéodory 分割性质，
+blue(study, r"""由可见关键词可解释为可测分离给出外测度加性。以下是对残句的数学解释，未声称原作者写出了完整命题。若存在 Lebesgue 可测集 $M$，使 $A\subset M$、$B\subset M^c$，取 $C=A\cup B$，由可测性的 Carathéodory 分割性质，
 $$
 m^*(C)=m^*(C\cap M)+m^*(C\setminus M)
 =m^*(A)+m^*(B).
@@ -561,7 +598,7 @@ E\setminus\bigcap_N\bigcup_{k\ge N}D_k
 $$
 逐点量词由“$\forall N\,\exists k\ge N$ 失配”取否定变成“$\exists N\,\forall k\ge N$ 相等”。故结论是几乎处处最终逐点恒等，强于单纯 a.e. 收敛，却不能推出一个与 $x$ 无关的共同阈值，更不能据此宣称一致收敛。
 
-反查并交次序：若某点只在偶数项失配，它在坏集的 $\limsup$ 中而不在 $\liminf$ 中；把零测式写成外并内交会漏掉此类无限次失配。页边截掉的引导字不影响完整事件公式。原展开式内并省写上限，本文用 $k\ge N$ 明确无限尾部。""", refs(6,8,17), "Borel–Cantelli 与量词补证")
+反查并交次序：若某点只在偶数项失配，它在坏集的 $\limsup$ 中而不在 $\liminf$ 中；把零测式写成外并内交会漏掉此类无限次失配。左缘裁切的边字不影响完整事件公式。原展开式内并省写上限，本文用 $k\ge N$ 明确无限尾部。""", refs(6,8,17), "Borel–Cantelli 与量词补证")
 blue(study, r"""**(3) $\Rightarrow$ (1)。** 连续 $g_k$ 的限制到可测 $E$ 都可测，$h=\limsup_k g_k|_E$ 作为扩展实值函数可测。在给定的全测度收敛集上 $h=f$；两者仅在一个 Lebesgue 零测集上可能不同，完备性保证其任意子集可测，所以 $f$ 仍可测。结合前述各方向即得等价。
 
 上述最终逐点恒等不蕴含一致收敛的直观例子是 $g_k(x)=\max(0,1-|2kx-1|)$（$x\in[0,1]$）。每个固定点最终取 $0$，但每项在 $1/(2k)$ 的值为 $1$，故 $\sup|g_k|=1$。此例是新增的量词检验，不属于原稿。""", refs(5,14,19)+refs(6,13,17), "剩余方向与结论边界")
@@ -575,7 +612,7 @@ blue(study, r"""| 原位置 | 保留的原写法／现象 | 学习时的处理 |
 | 第 4 页 | $m(E\setminus G_\delta)$ 后 B2；内近似后 B3；并集估计写 $<$ | 以小坏集解释并补等价下界，三项预算，次可加性用 $\le$ |
 | 第 5 页 | $C(F)$；区间右端如圆括；外测度旁注到“分”止 | 输入域改 $C(E)$，值域改 $[0,1]$；旁注保留可见残句，语义解释独立标注 |
 | 第 6 页 | 延拓限制式 $g$ 漏 $k$；未定义泛称 $E_n$；内并上限省写 | 明确 $g_k$、$E_k$ 与失配集 $D_k$；取补集的并交与最终恒等完整保留 |
-| 第 7 页 | 普通空白物理页 | 记录来源，不制造红色待填题 |""", list(ids.values()), "对照索引")
+| 第 7 页 | 普通空白物理页 | 记录来源，不制造红色待填题 |""", refs(1,7,19)+refs(2,8,15)+refs(3,1,20)+refs(4,1,13)+refs(5,4,13)+refs(6,4,17), "对照索引")
 
 plan = {
     "note_id": "RA12",
