@@ -642,6 +642,15 @@ plan = {
     "sources": sources, "transcription_blocks": trans, "study_blocks": study,
     "evidence_artifacts": [], "observations": [], "recoveries": [], "issues": []
 }
+overrides_path = P / "audit/provenance-update/overrides.json"
+if overrides_path.exists():
+    overrides = json.loads(overrides_path.read_text(encoding="utf-8"))
+    for field, additions in [("source_ids", overrides["source_additions"]),
+                             ("evidence_ids", overrides["evidence_additions"])]:
+        for target_id, values in additions.items():
+            key = "transcription_blocks" if "-TRANSCRIPTION-" in target_id else "study_blocks"
+            target = plan[key][int(target_id.rsplit("-", 1)[1]) - 1]
+            target[field] = list(dict.fromkeys(target.get(field, []) + values))
 write(P / "authored-content.json", plan)
 write(P / "audit/campaign/source-id-migration.json", ids)
 print(json.dumps({"source_units": len(sources), "transcription_blocks": len(trans), "study_blocks": len(study)}))
