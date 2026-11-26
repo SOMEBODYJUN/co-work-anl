@@ -38,6 +38,10 @@ for source in sources:
         source["label"] = "可测函数〔校读：近似〕，要求可数个覆盖；优势字形候选，解释另标补充。"
     if source["id"] == "RA12-P006-U10":
         source["label"] = "〔左缘边字；原矢量补证、择优校读：易〕 考察；原 PDF 页外矢量为首字提供补证。"
+    if source["id"] == "RA12-P001-U11":
+        source["label"] = "逆像并分解与定义等号；首项上标只辨短横，无独立1，据后两处清楚的-1及限制线规范为逆像；内交与外并明确。"
+    if source["id"] == "RA12-P004-U01":
+        source["label"] = "〔校读：用〕Egorov，存在G_delta包含于E；同为备选，与P3或用及P4需要用的内轴下探笔形比较后择优用。"
 
 trans, study = [], []
 def block(dest, text, source_ids=(), origin="source", label=""):
@@ -173,10 +177,12 @@ block(trans, r"""但 Egorov 要求 $m(E)<+\infty$。
 
 令
 $$
-g(x)=\frac{f(x)}{1+|f(x)|},
-\qquad |f(x)|=\frac{|g(x)|}{1-|g(x)|}.
+g(x)=\frac{f(x)}{1+|f(x)|}.
 $$
 则 $g$ 有界。
+$$
+|f(x)|=\frac{|g(x)|}{1-|g(x)|}.
+$$
 $$
 f(x)=\frac{g(x)}{1-g(x)}.
 $$
@@ -191,7 +197,7 @@ m(E\setminus F_\delta)\quad\underline{\hspace{1cm}}
 $$
 <span style="color:red">〔原稿待填 B1：测度后的比较号及界值〕</span>""", refs(3,16,20))
 ed(trans, "## 第 4 页")
-block(trans, r"""用 Egorov，$\exists G_\delta\subset E$，s.t.
+block(trans, r"""〔校读：用〕Egorov，$\exists G_\delta\subset E$，s.t.
 $$
 m(E\setminus G_\delta)\quad\underline{\hspace{1cm}}
 $$
@@ -218,7 +224,7 @@ $$
 E\setminus H_\delta
 =((E\setminus G_\delta)\setminus H_\delta)\cup(G_\delta\setminus H_\delta).
 $$""", refs(4,10,13))
-blue(trans, "“要估”对应原引导字的估／求候选，不影响后面的完整公式；测度次可加位置原写严格小于号，学习稿另订正。", refs(4,11,12), "识读说明")
+blue(trans, "页首字有‘用／同’两候选。与第 3 页‘或用’和本页末‘需要用’对比，内部长轴均下探到右钩之下，且欠‘同’的清楚内口，故择优校读‘用’，另一个候选保留；此处是承接有限测度 Egorov 的选集步骤。“要估”对应原引导字的估／求候选，不影响后面的完整公式；测度次可加位置原写严格小于号，学习稿另订正。", refs(4,1)+refs(4,11,12), "识读说明")
 block(trans, r"""$m(E)=+\infty$：
 $$
 A_k=B(0,k)\setminus B(0,k-1),\qquad
@@ -530,7 +536,7 @@ $$
 
 **Tietze $\Rightarrow$ Urysohn。** 在闭集 $C=A\cup B$ 上分别定义 $h|_A=0$、$h|_B=1$，有限闭覆盖拼接表明 $h$ 连续。延拓后再复合截断函数 $t\mapsto\max(0,\min(1,t))$，即得到所需 $[0,1]$ 值分离函数。至此三条件等价。""", refs(5,2,11)+refs(5,13), "Tietze 完整补证")
 ed(study, "## 8. 外测度旁注")
-block(study, r"""原稿在拓扑等价条件下另写 Remark，含“外测度”“$m^*(A\cup B)$”“$A$ 和 $B$ 可被可测集分〔止于右缘〕”，下一独立行是 $C=A\cup B$。连接词的原字形与保真排印见原序稿及对应恢复记录。""", refs(5,12,13))
+block(study, r"""原稿在拓扑等价条件下另写 Remark：“外测度中不对，$m^*(A\cup B)$〔上下文恢复：除非〕$A$ 和 $B$ 可被可测集分〔止于右缘〕。”下一独立行是 $C=A\cup B$。""", refs(5,12,13))
 blue(study, r"""由可见关键词可解释为可测分离给出外测度加性。以下是对残句的数学解释，未声称原作者写出了完整命题。若存在 Lebesgue 可测集 $M$，使 $A\subset M$、$B\subset M^c$，取 $C=A\cup B$，由可测性的 Carathéodory 分割性质，
 $$
 m^*(C)=m^*(C\cap M)+m^*(C\setminus M)
@@ -540,16 +546,16 @@ $$
 
 对于上一节 Urysohn 分离的闭 $A,B\subset\mathbb R^n$，连续 $u$ 给出可测分隔集 $u^{-1}([0,1/2))$。这说明旁注与相邻拓扑工具的联系；原稿没有把这段推导写完整。右缘“分”后的“开／隔”属于语义补足，不算看见原字。""", refs(5,12,13), "旁注的数学解释")
 ed(study, "## 9. 可测性与函数逼近")
-block(study, r"""### 9.1 原稿的等价命题
+block(study, r"""### 9.1 原稿列出的三个条件
 
-设 $E\in M$，$f$ 是 $E$ 上几乎处处有限的函数。下列条件等价：
+设 $E\in M$，$f$ 是 $E$ 上几乎处处有限的函数。原稿列出：
 
 1. $f$ 可测。
 2. 存在 $\{\varphi_k\}\subset S(E)$，使 $\varphi_k\to f$ 逐点。
-3. 存在 $\{\varphi_k\}\subset C(\mathbb R^n)$，使 $\varphi_k\to f$ 几乎处处。
+3. 存在 $\{\varphi_k\}\subset C(\mathbb R^n)$，使 $\varphi_k\to f$ 几乎处处。""", refs(5,14,19))
+blue(study, r"""原第 (2) 条写逐点，第 (3) 条写 a.e.，定义域确为 $\mathbb R^n$。第 5 页的三项列表没有另写“等价”二字；第 6 页明写并证明 (1) $\Rightarrow$ (3)。本节将它们整理为等价命题，其余方向在蓝色补证中补全，不冒充原稿已经写出的证明。
 
-原第 (2) 条为逐点，第 (3) 条为 a.e.，定义域确为 $\mathbb R^n$，不是紧方块。""", refs(5,14,19))
-blue(study, r"""**(1) $\Rightarrow$ (2)。** 对实值点令
+**(1) $\Rightarrow$ (2)。** 对实值点令
 $$
 \varphi_k=2^{-k}\left\lfloor2^k\max(-k,\min(f,k))\right\rfloor.
 $$

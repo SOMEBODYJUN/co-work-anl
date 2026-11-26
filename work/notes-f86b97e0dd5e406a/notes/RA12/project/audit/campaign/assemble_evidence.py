@@ -30,6 +30,8 @@ def artifact(path, aid=None, crop=None, viewport=None):
 artifact("audit/campaign/participants.json","campaign-participants")
 artifact("audit/campaign/boss-counterexamples.json","boss-counterexamples")
 artifact("audit/campaign/source-id-migration.json","source-id-migration")
+if (P/"audit/layout/layout-review.json").exists():
+    artifact("audit/layout/layout-review.json","layout-review")
 for role in ("visual","math","adversarial"):
     folder=P/f"proposals/ra12_{role}"
     for f in sorted(folder.iterdir()):
@@ -38,13 +40,20 @@ for role in ("visual","math","adversarial"):
     index=load(folder/"crop-index.json")
     for c in (index if isinstance(index,list) else index["crops"]):
         artifact(c["path"], f"{role}-crop-{Path(c['path']).stem}", c)
-    extra_paths = set(folder.glob("*crop*index*.json")) | set(folder.glob("**/index.json"))
+    extra_paths = set(folder.glob("**/*index*.json"))
     for extra_path in sorted(extra_paths):
         suffix = hashlib.sha256(str(extra_path.relative_to(P)).encode()).hexdigest()[:12]
         artifact(extra_path.relative_to(P), f"{role}-extra-{suffix}")
         extra_index = load(extra_path)
-        for c in (extra_index if isinstance(extra_index,list) else extra_index["crops"]):
-            artifact(c["path"], f"{role}-crop-{Path(c['path']).stem}", c)
+        for c in (extra_index if isinstance(extra_index,list) else extra_index.get("crops",[])):
+            if all(key in c for key in ("path","page_id","bbox_px","dpi")):
+                artifact(c["path"], f"{role}-crop-{Path(c['path']).stem}", c)
+    for record_path in sorted(folder.glob("*.json")):
+        data = load(record_path)
+        if isinstance(data,dict) and isinstance(data.get("crops"),list):
+            for c in data["crops"]:
+                if all(key in c for key in ("path","page_id","bbox_px","dpi")):
+                    artifact(c["path"], f"{role}-crop-{Path(c['path']).stem}", c)
 outside = load(P/"proposals/ra12_visual/supplemental-outside-page-evidence.json")
 viewport = {"page_id":outside["page_id"], "mediabox_pdf_pt":outside["media_expanded_pdf_pt"],
             "clip_pdf_pt":outside["render_clip_shifted_pdf_pt"],"dpi":outside["render_dpi"]}
@@ -65,6 +74,24 @@ artifact(ad_outside["path"],"adversarial-p6-original-unclipped-vectors",viewport
         "clip_original":"0 0 2380 3368 re\nW* n\n",
         "clip_expanded":"-40 0 2420 3368 re\nW* n\n",
         "original_stream_sha256":outside["form_stream_original_sha256"]}})
+math_replay_path = P/"proposals/ra12_math/second-review-crops/p6-vector-replay.json"
+if math_replay_path.exists():
+    replay = load(math_replay_path)
+    artifact(math_replay_path.relative_to(P),"math-p6-vector-replay")
+    rectangle = lambda values: "["+" ".join(str(x) for x in values)+"]"
+    for output in replay["outputs"]:
+        selected_clip = (replay["expanded_unique_form_rectangle_clip"]
+                         if output["form_rectangle_clip_modified"]
+                         else replay["original_unique_form_rectangle_clip"])
+        artifact(output["path"],"math-p6-replay-"+output["id"],viewport={
+            "page_id":replay["page_id"],"mediabox_pdf_pt":replay["expanded_media_box_pdf_pt"],
+            "clip_pdf_pt":replay["clip_pdf_pt"],"dpi":replay["dpi"],
+            "form_expansion":{"xref":replay["form_xref"],
+                "bbox_original":rectangle(replay["original_form_bbox"]),
+                "bbox_expanded":rectangle(replay["expanded_form_bbox"]),
+                "clip_original":replay["original_unique_form_rectangle_clip"]+"\n",
+                "clip_expanded":selected_clip+"\n",
+                "original_stream_sha256":replay["original_form_stream_sha256_decoded"]}})
 for c in load(P/"audit/campaign/boss-crop-index.json"):
     artifact(c["path"],"boss-crop-"+Path(c["path"]).stem,c)
 artifact("audit/campaign/boss-crop-index.json","boss-crop-index")

@@ -48,6 +48,15 @@ def main() -> None:
         assert plan["status"] == "ready"
         assert plan["records"][0]["crop_paths"]
         assert (project / plan["records"][0]["crop_paths"][0]).is_file()
+        report_path.write_text(json.dumps({"audit_pass": True, "content_resolved": True,
+                                           "unresolved": []}), encoding="utf-8")
+        completed = json.loads(build(project, report_path, project / "completed").read_text())
+        assert completed["status"] == "completed"
+        assert completed["unresolved_count"] == 0 and completed["next_actions"] == []
+        report_path.write_text(json.dumps({"audit_pass": False, "content_resolved": False,
+                                           "unresolved": []}), encoding="utf-8")
+        unsigned = json.loads(build(project, report_path, project / "unsigned").read_text())
+        assert unsigned["status"] == "ready"
     print(json.dumps({"autonomous_recovery_queue": True, "manual_intervention": False}))
 
 

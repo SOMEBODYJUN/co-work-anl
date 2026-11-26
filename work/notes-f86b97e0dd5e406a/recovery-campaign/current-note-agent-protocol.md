@@ -15,6 +15,8 @@
 必要时 1200 dpi。不得把 400 dpi 图片放大后声称是 800 dpi 原 PDF 渲染。
 裁图 bbox_px 使用 manifest 基准 DPI 坐标，换算点坐标后 get_pixmap(dpi=800/1200, clip=...)。
 每条裁图登记 page_id、bbox_px、dpi、path、sha256，并实际打开。
+裁图索引使用 JSON 数组，或含 `crops` 数组的对象；`path` 始终相对当前 project 根目录。
+候选记录中的 `evidence_paths` 同样使用 project 相对路径，便于 Boss 登记真实文件而不猜测图号。
 
 所有三人的独立初读记录完成后才由 Boss 合并。原文错误保真照录，学习稿就地蓝色订正。
 “直接可读”“上下文恢复”“原稿错误”“未能裁决”必须区别。
@@ -39,6 +41,9 @@ source 保持原序与原错误；supplement 明示蓝色说明；editorial 的 
 几行相关公式可以共用一目标块，但来源仍保持细分。
 每一来源必须在转写中出现。正文用 Obsidian 的 $...$、$$...$$；callout 每行含 >。
 模型补证用蓝色 note/info callout，原明确留空用红色标记并紧接蓝色解答。
+callout 标题后放一行单独的 `>`，正文与表格才正常分开。展示公式的 `$$`
+只在外侧加空行，两个定界符之间不能插空行。表格内数学竖线用 `\vert{}`
+等 TeX 命令，不写会切开单元格的裸竖线，也不在闭合 `$` 前留下空格。
 目录、编辑标题与来源解释不要伪装成原稿。
 
 观察文件 observations.json 的格式：
@@ -70,6 +75,33 @@ second-pass-report.json 写实际 reviewer_id、开始与结束的两份正文/m
 每个已复核 recovery_id 的结论，以及完整 pages/regions 实查观察。
 没有完整复核或仍有实质发现，就明确返回 findings，不能预先填空发现。
 
+恢复提议可统一使用以下字段；不确定处保留实际未决，不能为了适配格式编造结论：
+
+    {"local_id":"本线程自己的记录号","page_id":"p0001",
+     "source_labels":["精确到原行的定位"],"source_ids":[],
+     "problem":"需要判定的具体字、公式、条件或证明省略",
+     "candidates":[{"id":"c1","text":"候选读法及含义","evidence_paths":["真实图或报告路径"]},
+                   {"id":"c2","text":"另一实质候选","evidence_paths":["真实图或报告路径"]}],
+     "selected_candidate_id":"已有决定依据时的候选ID，否则null",
+     "confidence":"实际置信度及仍需保留的限定",
+     "forward_validation":{"method":"具体正向方法","inputs":"实际前提","result":"实际推导"},
+     "backward_validation":{"method":"不同的逆向方法","inputs":"候选后果","result":"类型/反例/后文引用检验"},
+     "return_to_image":{"observation":"实际字形、位置和作者记号的检验","evidence_paths":["实际800/1200dpi图"]},
+     "evidence_paths":["支撑整个记录的真实文件"]}
+
+非作者第二遍完整 JSON 使用以下字段，观察格式与初读相同；完整 ID 清单从实际当前 ledger 核对后登记：
+
+    {"reviewer_id":"实际线程ID","session_id":"实际线程ID",
+     "document_hashes_start":{"source-transcript.md":"实际SHA","study-notes.md":"实际SHA","source-target-map.json":"实际SHA"},
+     "document_hashes_end":{"source-transcript.md":"实际SHA","study-notes.md":"实际SHA","source-target-map.json":"实际SHA"},
+     "reviewed_scope":{"source_unit_ids":[],"target_unit_ids":[],"recovery_ids":[],"issue_ids":[]},
+     "pages":[],"regions":[],"accepted_recovery_ids":[],
+     "recovery_reviews":[{"recovery_id":"真实ID","decision":"接受或实际发现","reason":"独立核验依据"}],
+     "findings":[]}
+
+示意里的空数组不能代替实查清单。第二遍需同时保存详细叙述报告，记录正文与映射核对、
+每条恢复的独立判断及真实新增发现。首遍完成后 Boss 会明确通知第二遍的当前版本。
+
 ## 最新快照的终审
 
 只有 Boss 明确给出冻结 snapshot、scope 和两份正文 SHA 后才开始。
@@ -79,3 +111,23 @@ second-pass-report.json 写实际 reviewer_id、开始与结束的两份正文/m
 报告包括 snapshot_sha256、document_hashes、scope、page_notes、findings 和实际 evidence_ids。
 有新发现必须报告；Boss 修订后旧终审链失效。只有最新内容的三份无新发现独立记录才可封链。
 正文以外的审计结构检查不能替代视觉/数学检查。
+
+终审记录写在自己目录的新子目录 `final-快照前12位/`，不覆写前阶段记录。
+先实际逐张重看原整页与全部重叠区（不以低清缩略接触表代替），再保存
+`source-first-reread.md`，最后核对两稿和完整范围并保存 `final-report.json`。
+终审 JSON 格式：
+
+    {"reviewer_id":"实际代理ID","session_id":"实际代理ID",
+     "snapshot_sha256":"Boss给出的冻结快照",
+     "document_hashes_start":{"source-transcript.md":"实际哈希","study-notes.md":"实际哈希","source-target-map.json":"实际哈希"},
+     "document_hashes_end":{"source-transcript.md":"实际哈希","study-notes.md":"实际哈希","source-target-map.json":"实际哈希"},
+     "scope": "将实际完整核过的冻结scope对象放在这里，不是字符串",
+     "findings": "真实发现ID数组；只有实查没有新发现才为空数组",
+     "evidence_ids":["全部实际重看的image:页/区ID及实际使用的artifact:裁图ID"],
+     "page_notes":[{"page_id":"p0001","observation":"该物理页实查的具体内容及数学/来源核对"}],
+     "notes":"本轮实际复查范围、证明检验、结论及此前参与此篇的披露",
+     "blind_reading":{"path":"自己source-first-reread.md的项目相对路径","sha256":"真实文件字节哈希"}}
+
+上述示意中的说明字符串不可原样当数据填写。实际发现须有具体说明，不能为了封链预填通过。
+不把其他人的终审报告或“已通过”当证据，不更改正文、ledger、既有证据、冻结文件或其他人的记录。
+三份实际报告由 Boss 按顺序登记与封链；任何实质修订后，以新快照重新完成三份独立终审。

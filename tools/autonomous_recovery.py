@@ -197,6 +197,8 @@ def build(project: Path, report_path: Path, out: Path, dpi: int = 800, ledger_pa
     out.mkdir(parents=True, exist_ok=True)
     render_crops(project, manifest, entries, out, dpi)
     missing = [entry["id"] for entry in entries if not entry["crop_paths"]]
+    completed = (report.get("audit_pass") is True and
+                 report.get("content_resolved") is True and not entries)
     plan = {
         "schema_version": "1.0",
         "mode": "autonomous_model_recovery",
@@ -207,8 +209,8 @@ def build(project: Path, report_path: Path, out: Path, dpi: int = 800, ledger_pa
         "audit_pass": report.get("audit_pass"),
         "content_resolved": report.get("content_resolved"),
         "unresolved_count": len(entries),
-        "status": "tool_blocked" if missing else "ready",
-        "next_actions": [
+        "status": "completed" if completed else "tool_blocked" if missing else "ready",
+        "next_actions": [] if completed else [
             "Read every crop at native resolution and compare against the full page.",
             "Write at least two visual candidates for each glyph or mathematical ambiguity.",
             "Run independent forward and backward mathematical checks, then return to the source image.",

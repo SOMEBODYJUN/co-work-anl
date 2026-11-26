@@ -4,8 +4,153 @@
   <meta charset="utf-8" />
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <title>source-transcript</title>
+  <title>RA12 internal layout inspection</title>
   <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
     div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -21,11 +166,10 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="notes.css" />
 </head>
 <body>
 <header id="title-block-header">
-<h1 class="title">source-transcript</h1>
+<h1 class="title">RA12 internal layout inspection</h1>
 </header>
 <h1 id="实分析-12原稿保真转写">实分析 12｜原稿保真转写</h1>
 <p>按原 PDF 的 7
@@ -40,18 +184,18 @@ manifest.json、source-target-map.json、ledger.json。</p>
 <li>每个可测收敛的几乎一致收敛。</li>
 </ol>
 <blockquote>
-<p>[!note] <span style="color:blue">识读说明</span>
-标题尾字按“律”形排印；第三句的“收敛的”保留原口语省略，数学意思是收敛的可测函数列。此处没有把原“几乎”改写为“几乎处处”。</p>
+<p>[!note] <span style="color:blue">识读说明</span></p>
+<p>标题尾字按“律”形排印；第三句的“收敛的”保留原口语省略，数学意思是收敛的可测函数列。此处没有把原“几乎”改写为“几乎处处”。</p>
 </blockquote>
 <p><strong>Ex.</strong> 设
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><mo>∈</mo><mi>M</mi></mrow><annotation encoding="application/x-tex">E\in M</annotation></semantics></math>，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>E</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>&lt;</mo><mi>+</mi><mi>∞</mi></mrow><annotation encoding="application/x-tex">m(E)&lt;+\infty</annotation></semantics></math>。<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∀</mo><mi>ε</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\forall\varepsilon&gt;0</annotation></semantics></math>，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∃</mo><msub><mi>I</mi><mi>i</mi></msub><mo>,</mo><mi>…</mi><mo>,</mo><msub><mi>I</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">\exists I_i,\ldots,I_n</annotation></semantics></math>
-开区间，s.t.
-<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>E</mi><mo>Δ</mo><mrow><mo stretchy="true" form="prefix">(</mo><munderover><mo>⋃</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></munderover><msub><mi>I</mi><mi>i</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">)</mo></mrow><mo>&lt;</mo><mi>ε</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
+开区间，s.t.</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>E</mi><mo>Δ</mo><mrow><mo stretchy="true" form="prefix">(</mo><munderover><mo>⋃</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></munderover><msub><mi>I</mi><mi>i</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">)</mo></mrow><mo>&lt;</mo><mi>ε</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
 m\left(E\mathbin{\Delta}\left(\bigcup_{i=1}^n I_i\right)\right)&lt;\varepsilon.
 </annotation></semantics></math></p>
 <blockquote>
-<p>[!note] <span style="color:blue">识读说明</span>
-题面第一个区间下标形近
+<p>[!note] <span style="color:blue">识读说明</span></p>
+<p>题面第一个区间下标形近
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>i</mi><annotation encoding="application/x-tex">i</annotation></semantics></math>，公式的并从
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>1</mn><annotation encoding="application/x-tex">1</annotation></semantics></math>
 到
@@ -65,33 +209,34 @@ m\left(E\mathbin{\Delta}\left(\bigcup_{i=1}^n I_i\right)\right)&lt;\varepsilon.
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∀</mo><mi>a</mi><mo>∈</mo><mi>A</mi></mrow><annotation encoding="application/x-tex">\forall a\in A</annotation></semantics></math>，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>f</mi><mi>a</mi></msub><mo>:</mo><msub><mi>X</mi><mi>a</mi></msub><mo>→</mo><mi>Y</mi></mrow><annotation encoding="application/x-tex">f_a:X_a\to Y</annotation></semantics></math>
 连续，则
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo>:</mo><mi>X</mi><mo>→</mo><mi>Y</mi></mrow><annotation encoding="application/x-tex">f:X\to Y</annotation></semantics></math>
-连续。
-<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>f</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>U</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><munder><mo>⋃</mo><mrow><mi>a</mi><mo>∈</mo><mi>A</mi></mrow></munder><mo minsize="1.2" maxsize="1.2" stretchy="false" form="prefix">(</mo><msup><mi>f</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>U</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>∩</mo><msub><mi>X</mi><mi>a</mi></msub><mo minsize="1.2" maxsize="1.2" stretchy="false" form="postfix">)</mo><mover><mo>=</mo><mtext mathvariant="normal">定义</mtext></mover><munder><mo>⋃</mo><mrow><mi>a</mi><mo>∈</mo><mi>A</mi></mrow></munder><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>f</mi><msub><mo stretchy="false" form="prefix">|</mo><msub><mi>X</mi><mi>a</mi></msub></msub><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mi>−</mi><mn>1</mn></mrow></msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>U</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">
+连续。</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>f</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>U</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><munder><mo>⋃</mo><mrow><mi>a</mi><mo>∈</mo><mi>A</mi></mrow></munder><mo minsize="1.2" maxsize="1.2" stretchy="false" form="prefix">(</mo><msup><mi>f</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>U</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>∩</mo><msub><mi>X</mi><mi>a</mi></msub><mo minsize="1.2" maxsize="1.2" stretchy="false" form="postfix">)</mo><mover><mo>=</mo><mtext mathvariant="normal">定义</mtext></mover><munder><mo>⋃</mo><mrow><mi>a</mi><mo>∈</mo><mi>A</mi></mrow></munder><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>f</mi><msub><mo stretchy="false" form="prefix">|</mo><msub><mi>X</mi><mi>a</mi></msub></msub><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mi>−</mi><mn>1</mn></mrow></msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>U</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">
 f^{-1}(U)=\bigcup_{a\in A}\bigl(f^{-1}(U)\cap X_a\bigr)
 \overset{\text{定义}}{=}\bigcup_{a\in A}(f|_{X_a})^{-1}(U).
 </annotation></semantics></math></p>
 <blockquote>
-<p>[!note] <span style="color:blue">识读与上下文恢复</span>
-覆盖的索引全集写出了
+<p>[!note] <span style="color:blue">识读与上下文恢复</span></p>
+<p>覆盖的索引全集写出了
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mi>/</mi><mi>Δ</mi><mi>/</mi><mi>Λ</mi></mrow><annotation encoding="application/x-tex">A/\Delta/\Lambda</annotation></semantics></math>
 样的不同笔形，本段统一排作
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>A</mi><annotation encoding="application/x-tex">A</annotation></semantics></math>，保留先
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>i</mi><annotation encoding="application/x-tex">i</annotation></semantics></math>
 后
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>
-的索引变化。首个逆像上标的
+的索引变化。首项上标只见短横，减号旁没有可分辨的独立
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>1</mn><annotation encoding="application/x-tex">1</annotation></semantics></math>；据后两项清楚的
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mn>1</mn></mrow><annotation encoding="application/x-tex">-1</annotation></semantics></math>、限制线和等式含义恢复为逆像，不声称首项的
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>1</mn><annotation encoding="application/x-tex">1</annotation></semantics></math>
-笔画极短；后两项的
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mn>1</mn></mrow><annotation encoding="application/x-tex">-1</annotation></semantics></math>
-和限制线共同确认逆像。<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>f</mi><mi>a</mi></msub><mo>=</mo><mi>f</mi><msub><mo stretchy="false" form="prefix">|</mo><msub><mi>X</mi><mi>a</mi></msub></msub></mrow><annotation encoding="application/x-tex">f_a=f|_{X_a}</annotation></semantics></math>
+已逐笔读出。<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>f</mi><mi>a</mi></msub><mo>=</mo><mi>f</mi><msub><mo stretchy="false" form="prefix">|</mo><msub><mi>X</mi><mi>a</mi></msub></msub></mrow><annotation encoding="application/x-tex">f_a=f|_{X_a}</annotation></semantics></math>
 是从同段定义等号与限制记号恢复的关系，不是原题另写的一行。</p>
 </blockquote>
 <p>注意
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><msub><mo stretchy="false" form="prefix">|</mo><msub><mi>X</mi><mi>a</mi></msub></msub></mrow><annotation encoding="application/x-tex">f|_{X_a}</annotation></semantics></math>
-连续，
-<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>f</mi><msub><mo stretchy="false" form="prefix">|</mo><msub><mi>X</mi><mi>a</mi></msub></msub><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mi>−</mi><mn>1</mn></mrow></msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>U</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>∈</mo><msub><mi>τ</mi><msub><mi>X</mi><mi>a</mi></msub></msub><mo>=</mo><mi>C</mi><mo>∩</mo><msub><mi>X</mi><mi>a</mi></msub><mo>,</mo><mspace width="2.0em"></mspace><mi>C</mi><mo>∈</mo><msub><mi>τ</mi><mi>X</mi></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">
+连续，</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>f</mi><msub><mo stretchy="false" form="prefix">|</mo><msub><mi>X</mi><mi>a</mi></msub></msub><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mi>−</mi><mn>1</mn></mrow></msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>U</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>∈</mo><msub><mi>τ</mi><msub><mi>X</mi><mi>a</mi></msub></msub><mo>=</mo><mi>C</mi><mo>∩</mo><msub><mi>X</mi><mi>a</mi></msub><mo>,</mo><mspace width="2.0em"></mspace><mi>C</mi><mo>∈</mo><msub><mi>τ</mi><mi>X</mi></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">
 (f|_{X_a})^{-1}(U)\in\tau_{X_a}=C\cap X_a,\qquad C\in\tau_X.
-</annotation></semantics></math> 由
+</annotation></semantics></math></p>
+<p>由
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>X</mi><mi>a</mi></msub><annotation encoding="application/x-tex">X_a</annotation></semantics></math>
 都
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∈</mo><msub><mi>τ</mi><mi>X</mi></msub></mrow><annotation encoding="application/x-tex">\in\tau_X</annotation></semantics></math>，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi><mo>∩</mo><msub><mi>X</mi><mi>a</mi></msub></mrow><annotation encoding="application/x-tex">C\cap X_a</annotation></semantics></math>
@@ -104,10 +249,11 @@ f^{-1}(U)=\bigcup_{a\in A}\bigl(f^{-1}(U)\cap X_a\bigr)
 只与有限多个
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>X</mi><mi>a</mi></msub><annotation encoding="application/x-tex">X_a</annotation></semantics></math>
 相交。</p>
-<p>可测也类似，要求可数个覆盖。</p>
+<p>可测函数〔校读：近似〕，要求可数个覆盖。</p>
 <blockquote>
-<p>[!note] <span style="color:blue">暂存识读说明</span>
-末句以“可测也类似，要求可数个覆盖”作上下文恢复；初读另有“可测函数逼近”候选，待追加字形复查记录统一裁决。这里的主题是分片拼接的可测版本。</p>
+<p>[!note] <span style="color:blue">字形校读及解释范围</span></p>
+<p>1200 dpi
+与作者同页‘函’‘数’及走之笔对照后，择优校读‘近似’：前一字有独立低位底捺，后一字更像亻加以，缺少第二条走之，故优于‘逼近’；’类似’虽符合拼接语境，却欠清楚的米、大结构。此为有依据的字形校读，置信度中等，不称逐笔唯一。’要求可数个覆盖’可由可测拼接解释，但孤句本身没有给出一条完整的函数近似定理；学习稿中的可测拼接证明单独标为补充。</p>
 </blockquote>
 <h2 id="第-2-页">第 2 页</h2>
 <h3 id="lusin">Lusin</h3>
@@ -116,8 +262,8 @@ f^{-1}(U)=\bigcup_{a\in A}\bigl(f^{-1}(U)\cap X_a\bigr)
 是
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>E</mi><annotation encoding="application/x-tex">E</annotation></semantics></math>
 上 a.e.
-有限的可测函数。<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∀</mo><mi>δ</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\forall\delta&gt;0</annotation></semantics></math>，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∃</mo><msub><mi>F</mi><mi>δ</mi></msub><mover><mo>⊂</mo><mtext mathvariant="normal">闭</mtext></mover><mi>E</mi></mrow><annotation encoding="application/x-tex">\exists F_\delta\overset{\text{闭}}{\subset}E</annotation></semantics></math>，满足
-<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>E</mi><mo>\</mo><msub><mi>F</mi><mi>δ</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>&lt;</mo><mi>δ</mi><mo>,</mo><mspace width="2.0em"></mspace><mi>f</mi><msub><mo stretchy="false" form="prefix">|</mo><msub><mi>F</mi><mi>δ</mi></msub></msub><mo>∈</mo><mi>C</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>F</mi><mi>δ</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">
+有限的可测函数。<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∀</mo><mi>δ</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\forall\delta&gt;0</annotation></semantics></math>，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∃</mo><msub><mi>F</mi><mi>δ</mi></msub><mover><mo>⊂</mo><mtext mathvariant="normal">闭</mtext></mover><mi>E</mi></mrow><annotation encoding="application/x-tex">\exists F_\delta\overset{\text{闭}}{\subset}E</annotation></semantics></math>，满足</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>E</mi><mo>\</mo><msub><mi>F</mi><mi>δ</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>&lt;</mo><mi>δ</mi><mo>,</mo><mspace width="2.0em"></mspace><mi>f</mi><msub><mo stretchy="false" form="prefix">|</mo><msub><mi>F</mi><mi>δ</mi></msub></msub><mo>∈</mo><mi>C</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>F</mi><mi>δ</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">
 m(E\setminus F_\delta)&lt;\delta,\qquad f|_{F_\delta}\in C(F_\delta).
 </annotation></semantics></math></p>
 <p>并给出闭集构造
@@ -125,28 +271,30 @@ m(E\setminus F_\delta)&lt;\delta,\qquad f|_{F_\delta}\in C(F_\delta).
 的表达式。</p>
 <p><strong>Pf. (1)</strong>
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo>∈</mo><mi>S</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>E</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">f\in S(E)</annotation></semantics></math>。<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∃</mo><msub><mi>E</mi><mn>1</mn></msub><mo>,</mo><mi>…</mi><mo>,</mo><msub><mi>E</mi><mo>ℓ</mo></msub><mo>∈</mo><mi>M</mi></mrow><annotation encoding="application/x-tex">\exists E_1,\ldots,E_\ell\in M</annotation></semantics></math>，s.t.
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><mo>=</mo><mi>∪</mi><msub><mi>X</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">E=\cup X_i</annotation></semantics></math>，
-<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo>=</mo><munderover><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mo accent="false">ℓ</mo></munderover><msub><mi>c</mi><mi>i</mi></msub><msub><mi>χ</mi><msub><mi>E</mi><mi>i</mi></msub></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><mo>=</mo><mi>∪</mi><msub><mi>X</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">E=\cup X_i</annotation></semantics></math>，</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo>=</mo><munderover><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mo accent="false">ℓ</mo></munderover><msub><mi>c</mi><mi>i</mi></msub><msub><mi>χ</mi><msub><mi>E</mi><mi>i</mi></msub></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">
 f=\sum_{i=1}^{\ell}c_i\chi_{E_i}.
-</annotation></semantics></math>
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∀</mo><mi>δ</mi></mrow><annotation encoding="application/x-tex">\forall\delta</annotation></semantics></math>，由
-Lebesgue 的内正规性，
-<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∃</mo><msub><mi>F</mi><mrow><mi>i</mi><mo>,</mo><mi>δ</mi></mrow></msub><mover><mo>⊂</mo><mtext mathvariant="normal">紧闭</mtext></mover><msub><mi>E</mi><mi>i</mi></msub><mo>,</mo><mspace width="2.0em"></mspace><mi>m</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>E</mi><mi>i</mi></msub><mo>\</mo><msub><mi>F</mi><mrow><mi>i</mi><mo>,</mo><mi>δ</mi></mrow></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>&lt;</mo><mfrac><mi>δ</mi><mo>ℓ</mo></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">
+</annotation></semantics></math></p>
+<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∀</mo><mi>δ</mi></mrow><annotation encoding="application/x-tex">\forall\delta</annotation></semantics></math>，由
+Lebesgue 的内正规性，</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∃</mo><msub><mi>F</mi><mrow><mi>i</mi><mo>,</mo><mi>δ</mi></mrow></msub><mover><mo>⊂</mo><mtext mathvariant="normal">紧闭</mtext></mover><msub><mi>E</mi><mi>i</mi></msub><mo>,</mo><mspace width="2.0em"></mspace><mi>m</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>E</mi><mi>i</mi></msub><mo>\</mo><msub><mi>F</mi><mrow><mi>i</mi><mo>,</mo><mi>δ</mi></mrow></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>&lt;</mo><mfrac><mi>δ</mi><mo>ℓ</mo></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">
 \exists F_{i,\delta}\overset{\text{紧闭}}{\subset}E_i,\qquad
 m(E_i\setminus F_{i,\delta})&lt;\frac{\delta}{\ell}.
 </annotation></semantics></math></p>
 <blockquote>
-<p>[!note] <span style="color:blue">原记号说明</span>
-覆盖式右端按交叉笔形记
+<p>[!note] <span style="color:blue">原记号说明</span></p>
+<p>覆盖式右端按交叉笔形记
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>X</mi><mi>i</mi></msub><annotation encoding="application/x-tex">X_i</annotation></semantics></math>，上下文数学对象为
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>E</mi><mi>i</mi></msub><annotation encoding="application/x-tex">E_i</annotation></semantics></math>；“紧闭”两字可见。原稿暂未区分有限与无限测度，紧集逼近在学习稿中先限定有限测度，随后使用第
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>E</mi><mi>i</mi></msub><annotation encoding="application/x-tex">E_i</annotation></semantics></math>；函数展开式的
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>
+后原见上下两点，本文以等式规范排印，不声称原图有两横。“紧闭”两字可见。原稿暂未区分有限与无限测度，紧集逼近在学习稿中先限定有限测度，随后使用第
 4 页局部化。</p>
 </blockquote>
-<p>令
-<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>F</mi><mi>δ</mi></msub><mo>=</mo><munderover><mo>⋃</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mo accent="false">ℓ</mo></munderover><msub><mi>F</mi><mrow><mi>i</mi><mo>,</mo><mi>δ</mi></mrow></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">
+<p>令</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>F</mi><mi>δ</mi></msub><mo>=</mo><munderover><mo>⋃</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mo accent="false">ℓ</mo></munderover><msub><mi>F</mi><mrow><mi>i</mi><mo>,</mo><mi>δ</mi></mrow></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">
 F_\delta=\bigcup_{i=1}^{\ell}F_{i,\delta}.
-</annotation></semantics></math>
-<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="right" style="text-align: right"><mi>m</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>E</mi><mo>\</mo><msub><mi>F</mi><mi>δ</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><mi>m</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>E</mi><mo>\</mo><mi>∪</mi><msub><mi>F</mi><mrow><mi>i</mi><mo>,</mo><mi>δ</mi></mrow></msub><mo stretchy="true" form="postfix">)</mo></mrow></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><mi>m</mi><mrow><mo stretchy="true" form="prefix">(</mo><munderover><mo>⋃</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mo accent="false">ℓ</mo></munderover><mrow><mo stretchy="true" form="prefix">(</mo><mi>E</mi><mo>\</mo><msub><mi>F</mi><mrow><mi>i</mi><mo>,</mo><mi>δ</mi></mrow></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mo>∑</mo><mi>m</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>E</mi><mo>\</mo><msub><mi>F</mi><mrow><mi>i</mi><mo>,</mo><mi>δ</mi></mrow></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>&lt;</mo><mi>δ</mi><mi>.</mi></mtd></mtr></mtable><annotation encoding="application/x-tex">
+</annotation></semantics></math></p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="right" style="text-align: right"><mi>m</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>E</mi><mo>\</mo><msub><mi>F</mi><mi>δ</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><mi>m</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>E</mi><mo>\</mo><mi>∪</mi><msub><mi>F</mi><mrow><mi>i</mi><mo>,</mo><mi>δ</mi></mrow></msub><mo stretchy="true" form="postfix">)</mo></mrow></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><mi>m</mi><mrow><mo stretchy="true" form="prefix">(</mo><munderover><mo>⋃</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mo accent="false">ℓ</mo></munderover><mrow><mo stretchy="true" form="prefix">(</mo><mi>E</mi><mo>\</mo><msub><mi>F</mi><mrow><mi>i</mi><mo>,</mo><mi>δ</mi></mrow></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mo>∑</mo><mi>m</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>E</mi><mo>\</mo><msub><mi>F</mi><mrow><mi>i</mi><mo>,</mo><mi>δ</mi></mrow></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>&lt;</mo><mi>δ</mi><mi>.</mi></mtd></mtr></mtable><annotation encoding="application/x-tex">
 \begin{aligned}
 m(E\setminus F_\delta)
 &amp;=m(E\setminus\cup F_{i,\delta})\\
@@ -155,27 +303,29 @@ m(E\setminus F_\delta)
 \end{aligned}
 </annotation></semantics></math></p>
 <blockquote>
-<p>[!note] <span style="color:blue">原稿错误标识</span> 后两个
+<p>[!note] <span style="color:blue">原稿错误标识</span></p>
+<p>后两个
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>E</mi><annotation encoding="application/x-tex">E</annotation></semantics></math>
 未见下标
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>i</mi><annotation encoding="application/x-tex">i</annotation></semantics></math>，链中的等号保留。这是原稿集合运算错误，不在保真稿内暗改成正确式。</p>
 </blockquote>
 <p><strong>(2)</strong>
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo>∈</mo><mi>M</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>E</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">f\in M(E)</annotation></semantics></math>，则
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∃</mo><mo stretchy="false" form="prefix">{</mo><msub><mi>φ</mi><mi>k</mi></msub><mo stretchy="false" form="postfix">}</mo><mo>⊂</mo><mi>S</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>E</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\exists\{\varphi_k\}\subset S(E)</annotation></semantics></math>，s.t.
-<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><munder><mo>lim</mo><mrow><mi>k</mi><mo>→</mo><mi>∞</mi></mrow></munder><msub><mi>φ</mi><mi>k</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo><mspace width="2.0em"></mspace><mo>∀</mo><mi>x</mi><mo>∈</mo><mi>E</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∃</mo><mo stretchy="false" form="prefix">{</mo><msub><mi>φ</mi><mi>k</mi></msub><mo stretchy="false" form="postfix">}</mo><mo>⊂</mo><mi>S</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>E</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\exists\{\varphi_k\}\subset S(E)</annotation></semantics></math>，s.t.</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><munder><mo>lim</mo><mrow><mi>k</mi><mo>→</mo><mi>∞</mi></mrow></munder><msub><mi>φ</mi><mi>k</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo><mspace width="2.0em"></mspace><mo>∀</mo><mi>x</mi><mo>∈</mo><mi>E</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
 \lim_{k\to\infty}\varphi_k(x)=f(x),\qquad\forall x\in E.
 </annotation></semantics></math></p>
 <h2 id="第-3-页">第 3 页</h2>
 <p>由
-(1)，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∀</mo><mi>δ</mi></mrow><annotation encoding="application/x-tex">\forall\delta</annotation></semantics></math>、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∀</mo><mi>k</mi><mo>∈</mo><msup><mi>ℕ</mi><mo>*</mo></msup></mrow><annotation encoding="application/x-tex">\forall k\in\mathbb N^*</annotation></semantics></math>，
-<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>F</mi><mi>δ</mi></msub><mover><mo>⊂</mo><mtext mathvariant="normal">闭</mtext></mover><mi>E</mi><mo>,</mo><mspace width="2.0em"></mspace><mi>m</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>E</mi><mo>\</mo><msub><mi>F</mi><mi>k</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>&lt;</mo><mfrac><mi>δ</mi><msup><mn>2</mn><mi>k</mi></msup></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">
+(1)，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∀</mo><mi>δ</mi></mrow><annotation encoding="application/x-tex">\forall\delta</annotation></semantics></math>、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∀</mo><mi>k</mi><mo>∈</mo><msup><mi>ℕ</mi><mo>*</mo></msup></mrow><annotation encoding="application/x-tex">\forall k\in\mathbb N^*</annotation></semantics></math>，</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>F</mi><mi>δ</mi></msub><mover><mo>⊂</mo><mtext mathvariant="normal">闭</mtext></mover><mi>E</mi><mo>,</mo><mspace width="2.0em"></mspace><mi>m</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>E</mi><mo>\</mo><msub><mi>F</mi><mi>k</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>&lt;</mo><mfrac><mi>δ</mi><msup><mn>2</mn><mi>k</mi></msup></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">
 F_\delta\overset{\text{闭}}{\subset}E,\qquad
 m(E\setminus F_k)&lt;\frac{\delta}{2^k}.
-</annotation></semantics></math> 且
+</annotation></semantics></math></p>
+<p>且
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>φ</mi><mi>k</mi></msub><mo>∈</mo><mi>C</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>F</mi><mi>k</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\varphi_k\in C(F_k)</annotation></semantics></math>。令
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>F</mi><mi>δ</mi></msub><mo>=</mo><msubsup><mo>⋂</mo><mrow><mi>k</mi><mo>=</mo><mn>1</mn></mrow><mi>∞</mi></msubsup><msub><mi>F</mi><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">F_\delta=\bigcap_{k=1}^{\infty}F_k</annotation></semantics></math>，则
-<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>E</mi><mo>\</mo><msub><mi>F</mi><mi>δ</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>m</mi><mrow><mo stretchy="true" form="prefix">(</mo><munderover><mo>⋃</mo><mrow><mi>k</mi><mo>=</mo><mn>1</mn></mrow><mo accent="false">∞</mo></munderover><mrow><mo stretchy="true" form="prefix">(</mo><mi>E</mi><mo>\</mo><msub><mi>F</mi><mi>k</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">)</mo></mrow><mo>≤</mo><mo>∑</mo><mfrac><mi>δ</mi><mrow><mn>2</mn><mi>k</mi></mrow></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>F</mi><mi>δ</mi></msub><mo>=</mo><msubsup><mo>⋂</mo><mrow><mi>k</mi><mo>=</mo><mn>1</mn></mrow><mi>∞</mi></msubsup><msub><mi>F</mi><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">F_\delta=\bigcap_{k=1}^{\infty}F_k</annotation></semantics></math>，则</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>E</mi><mo>\</mo><msub><mi>F</mi><mi>δ</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>m</mi><mrow><mo stretchy="true" form="prefix">(</mo><munderover><mo>⋃</mo><mrow><mi>k</mi><mo>=</mo><mn>1</mn></mrow><mo accent="false">∞</mo></munderover><mrow><mo stretchy="true" form="prefix">(</mo><mi>E</mi><mo>\</mo><msub><mi>F</mi><mi>k</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">)</mo></mrow><mo>≤</mo><mo>∑</mo><mfrac><mi>δ</mi><mrow><mn>2</mn><mi>k</mi></mrow></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">
 m(E\setminus F_\delta)
 =m\left(\bigcup_{k=1}^{\infty}(E\setminus F_k)\right)
 \le\sum\frac{\delta}{2k}.
@@ -188,13 +338,18 @@ m(E\setminus F_\delta)
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>⋂</mo><msub><mi>F</mi><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">\bigcap F_k</annotation></semantics></math>
 上连续，下证一致收敛。</p>
 <blockquote>
-<p>[!note] <span style="color:blue">识读说明</span> 首行左侧字面为
+<p>[!note] <span style="color:blue">识读说明</span></p>
+<p>首行左侧字面为
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>F</mi><mi>δ</mi></msub><annotation encoding="application/x-tex">F_\delta</annotation></semantics></math>，同一行右侧与下一行是
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>F</mi><mi>k</mi></msub><annotation encoding="application/x-tex">F_k</annotation></semantics></math>。末和的
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>k</mi><annotation encoding="application/x-tex">k</annotation></semantics></math>
-位于较低处，按
+起笔与
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>2</mn><annotation encoding="application/x-tex">2</annotation></semantics></math>
+近乎等高，按
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mi>k</mi></mrow><annotation encoding="application/x-tex">2k</annotation></semantics></math>
-笔形存留；预期几何预算由首行
+笔形存留；另有低写指数
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mn>2</mn><mi>k</mi></msup><annotation encoding="application/x-tex">2^k</annotation></semantics></math>
+候选，预期几何预算由首行明确的
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mn>2</mn><mi>k</mi></msup><annotation encoding="application/x-tex">2^k</annotation></semantics></math>
 恢复。<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>φ</mi><mi>k</mi></msub><mo>∈</mo><mi>C</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>F</mi><mi>k</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\varphi_k\in C(F_k)</annotation></semantics></math>
 是省写限制。</p>
@@ -205,37 +360,41 @@ m(E\setminus F_\delta)
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>
 a.e.
 有限，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>E</mi><mrow><mo stretchy="true" form="prefix">(</mo><mrow><mo stretchy="true" form="prefix">|</mo><mi>f</mi><mo stretchy="true" form="postfix">|</mo></mrow><mo>=</mo><mi>+</mi><mi>∞</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">m(E(|f|=+\infty))=0</annotation></semantics></math>。</p>
-<p>令
-<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>g</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mfrac><mrow><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><mrow><mn>1</mn><mo>+</mo><mrow><mo stretchy="true" form="prefix">|</mo><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">|</mo></mrow></mrow></mfrac><mo>,</mo><mspace width="2.0em"></mspace><mrow><mo stretchy="true" form="prefix">|</mo><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">|</mo></mrow><mo>=</mo><mfrac><mrow><mo stretchy="true" form="prefix">|</mo><mi>g</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">|</mo></mrow><mrow><mn>1</mn><mo>−</mo><mrow><mo stretchy="true" form="prefix">|</mo><mi>g</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">|</mo></mrow></mrow></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">
-g(x)=\frac{f(x)}{1+|f(x)|},
-\qquad |f(x)|=\frac{|g(x)|}{1-|g(x)|}.
-</annotation></semantics></math> 则
+<p>令</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>g</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mfrac><mrow><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><mrow><mn>1</mn><mo>+</mo><mrow><mo stretchy="true" form="prefix">|</mo><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">|</mo></mrow></mrow></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">
+g(x)=\frac{f(x)}{1+|f(x)|}.
+</annotation></semantics></math></p>
+<p>则
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>g</mi><annotation encoding="application/x-tex">g</annotation></semantics></math>
-有界。
-<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mfrac><mrow><mi>g</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><mrow><mn>1</mn><mo>−</mo><mi>g</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">
+有界。</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">|</mo><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">|</mo></mrow><mo>=</mo><mfrac><mrow><mo stretchy="true" form="prefix">|</mo><mi>g</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">|</mo></mrow><mrow><mn>1</mn><mo>−</mo><mrow><mo stretchy="true" form="prefix">|</mo><mi>g</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">|</mo></mrow></mrow></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">
+|f(x)|=\frac{|g(x)|}{1-|g(x)|}.
+</annotation></semantics></math></p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mfrac><mrow><mi>g</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><mrow><mn>1</mn><mo>−</mo><mi>g</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">
 f(x)=\frac{g(x)}{1-g(x)}.
-</annotation></semantics></math>
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>g</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">g(x)</annotation></semantics></math>
+</annotation></semantics></math></p>
+<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>g</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">g(x)</annotation></semantics></math>
 有界。</p>
 <blockquote>
-<p>[!note] <span style="color:blue">识读说明</span> Egorov 手写有
-Englov/Engrov
+<p>[!note] <span style="color:blue">识读说明</span></p>
+<p>Egorov 手写有 Englov/Engrov
 样连写，依本段指称统一姓名。带符号逆式分母原未写绝对值，保留原式；模值逆式中确有绝对值。两个“有界”提示都保留。</p>
 </blockquote>
 <p>或用 Egorov 定理。</p>
 <p>当
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>E</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>&lt;</mo><mi>+</mi><mi>∞</mi></mrow><annotation encoding="application/x-tex">m(E)&lt;+\infty</annotation></semantics></math>，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∃</mo><msub><mi>φ</mi><mi>k</mi></msub><mo>→</mo><mi>f</mi></mrow><annotation encoding="application/x-tex">\exists\varphi_k\to f</annotation></semantics></math>，
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∀</mo><mi>δ</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\forall\delta&gt;0</annotation></semantics></math>，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∃</mo><msub><mi>F</mi><mi>δ</mi></msub><mover><mo>⊂</mo><mtext mathvariant="normal">闭</mtext></mover><mi>E</mi></mrow><annotation encoding="application/x-tex">\exists F_\delta\overset{\text{闭}}{\subset}E</annotation></semantics></math>，s.t.
-<span class="math display">$$
-m(E\setminus F_\delta)\quad\underline{\hspace{1.5cm}}
-$$</span> <span style="color:red">〔原稿待填
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∀</mo><mi>δ</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\forall\delta&gt;0</annotation></semantics></math>，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∃</mo><msub><mi>F</mi><mi>δ</mi></msub><mover><mo>⊂</mo><mtext mathvariant="normal">闭</mtext></mover><mi>E</mi></mrow><annotation encoding="application/x-tex">\exists F_\delta\overset{\text{闭}}{\subset}E</annotation></semantics></math>，s.t.</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>E</mi><mo>\</mo><msub><mi>F</mi><mi>δ</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mspace width="1.0em"></mspace><munder><mspace width="2.381em"></mspace><mo accent="true">_</mo></munder></mrow><annotation encoding="application/x-tex">
+m(E\setminus F_\delta)\quad\underline{\hspace{1cm}}
+</annotation></semantics></math></p>
+<p><span style="color:red">〔原稿待填
 B1：测度后的比较号及界值〕</span></p>
 <h2 id="第-4-页">第 4 页</h2>
-<p>用
-Egorov，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∃</mo><msub><mi>G</mi><mi>δ</mi></msub><mo>⊂</mo><mi>E</mi></mrow><annotation encoding="application/x-tex">\exists G_\delta\subset E</annotation></semantics></math>，s.t.
-<span class="math display">$$
-m(E\setminus G_\delta)\quad\underline{\hspace{1.5cm}}
-$$</span> <span style="color:red">〔原稿待填
+<p>〔校读：用〕Egorov，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∃</mo><msub><mi>G</mi><mi>δ</mi></msub><mo>⊂</mo><mi>E</mi></mrow><annotation encoding="application/x-tex">\exists G_\delta\subset E</annotation></semantics></math>，s.t.</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>E</mi><mo>\</mo><msub><mi>G</mi><mi>δ</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mspace width="1.0em"></mspace><munder><mspace width="2.381em"></mspace><mo accent="true">_</mo></munder></mrow><annotation encoding="application/x-tex">
+m(E\setminus G_\delta)\quad\underline{\hspace{1cm}}
+</annotation></semantics></math></p>
+<p><span style="color:red">〔原稿待填
 B2：测度后的比较号及界值〕</span></p>
 <p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>φ</mi><mi>k</mi></msub><annotation encoding="application/x-tex">\varphi_k</annotation></semantics></math>
 在
@@ -243,34 +402,39 @@ B2：测度后的比较号及界值〕</span></p>
 上一致
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>。</p>
 <p>考虑
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>F</mi><mi>δ</mi></msub><mo>∩</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>E</mi><mo>\</mo><msub><mi>G</mi><mi>δ</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">F_\delta\cap(E\setminus G_\delta)</annotation></semantics></math>，由可测的内正规性，
-<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>H</mi><mi>δ</mi></msub><mover><mo>⊂</mo><mtext mathvariant="normal">闭</mtext></mover><mi>E</mi><mo>\</mo><msub><mi>G</mi><mi>δ</mi></msub><mo>,</mo><mspace width="2.0em"></mspace><mi>m</mi><mrow><mo stretchy="true" form="prefix">(</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>E</mi><mo>\</mo><msub><mi>G</mi><mi>δ</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>\</mo><msub><mi>H</mi><mi>δ</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>&lt;</mo><munder><mspace width="4.762em"></mspace><mo accent="true">_</mo></munder><mi>.</mi></mrow><annotation encoding="application/x-tex">
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>F</mi><mi>δ</mi></msub><mo>∩</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>E</mi><mo>\</mo><msub><mi>G</mi><mi>δ</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">F_\delta\cap(E\setminus G_\delta)</annotation></semantics></math>，由可测的内正规性，</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>H</mi><mi>δ</mi></msub><mover><mo>⊂</mo><mtext mathvariant="normal">闭</mtext></mover><mi>E</mi><mo>\</mo><msub><mi>G</mi><mi>δ</mi></msub><mo>,</mo><mspace width="2.0em"></mspace><mi>m</mi><mrow><mo stretchy="true" form="prefix">(</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>E</mi><mo>\</mo><msub><mi>G</mi><mi>δ</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>\</mo><msub><mi>H</mi><mi>δ</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>&lt;</mo><munder><mspace width="4.762em"></mspace><mo accent="true">_</mo></munder><mi>.</mi></mrow><annotation encoding="application/x-tex">
 H_\delta\overset{\text{闭}}{\subset}E\setminus G_\delta,\qquad
 m((E\setminus G_\delta)\setminus H_\delta)&lt;\underline{\hspace{2cm}}.
-</annotation></semantics></math> <span style="color:red">〔原稿待填
-B3：不等号后的界值〕</span></p>
+</annotation></semantics></math></p>
+<p><span style="color:red">〔原稿待填 B3：不等号后的界值〕</span></p>
 <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mover><mi>F</mi><mo accent="true">̂</mo></mover><mi>δ</mi></msub><mo>=</mo><msub><mi>F</mi><mi>δ</mi></msub><mo>∩</mo><msub><mi>H</mi><mi>δ</mi></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">
 \widehat F_\delta=F_\delta\cap H_\delta.
-</annotation></semantics></math> 要估
-<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="right" style="text-align: right"></mtd><mtd columnalign="left" style="text-align: left"><mi>m</mi><mo minsize="1.2" maxsize="1.2" stretchy="false" form="prefix">(</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>E</mi><mo>\</mo><msub><mi>F</mi><mi>δ</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>∪</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>E</mi><mo>\</mo><msub><mi>H</mi><mi>δ</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo minsize="1.2" maxsize="1.2" stretchy="false" form="postfix">)</mo></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"></mtd><mtd columnalign="left" style="text-align: left"><mspace width="2.0em"></mspace><mo>&lt;</mo><mi>m</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>E</mi><mo>\</mo><msub><mi>F</mi><mi>δ</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><mi>m</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>E</mi><mo>\</mo><msub><mi>H</mi><mi>δ</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mtd></mtr></mtable><annotation encoding="application/x-tex">
+</annotation></semantics></math></p>
+<p>要估</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="right" style="text-align: right"></mtd><mtd columnalign="left" style="text-align: left"><mi>m</mi><mo minsize="1.2" maxsize="1.2" stretchy="false" form="prefix">(</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>E</mi><mo>\</mo><msub><mi>F</mi><mi>δ</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>∪</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>E</mi><mo>\</mo><msub><mi>H</mi><mi>δ</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo minsize="1.2" maxsize="1.2" stretchy="false" form="postfix">)</mo></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"></mtd><mtd columnalign="left" style="text-align: left"><mspace width="2.0em"></mspace><mo>&lt;</mo><mi>m</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>E</mi><mo>\</mo><msub><mi>F</mi><mi>δ</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><mi>m</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>E</mi><mo>\</mo><msub><mi>H</mi><mi>δ</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mtd></mtr></mtable><annotation encoding="application/x-tex">
 \begin{aligned}
 &amp;m\bigl((E\setminus F_\delta)\cup(E\setminus H_\delta)\bigr)\\
 &amp;\qquad &lt;m(E\setminus F_\delta)+m(E\setminus H_\delta).
 \end{aligned}
-</annotation></semantics></math>
-<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><mo>\</mo><msub><mi>H</mi><mi>δ</mi></msub><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>E</mi><mo>\</mo><msub><mi>G</mi><mi>δ</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>\</mo><msub><mi>H</mi><mi>δ</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>∪</mo><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>G</mi><mi>δ</mi></msub><mo>\</mo><msub><mi>H</mi><mi>δ</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">
+</annotation></semantics></math></p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><mo>\</mo><msub><mi>H</mi><mi>δ</mi></msub><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>E</mi><mo>\</mo><msub><mi>G</mi><mi>δ</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>\</mo><msub><mi>H</mi><mi>δ</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>∪</mo><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>G</mi><mi>δ</mi></msub><mo>\</mo><msub><mi>H</mi><mi>δ</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">
 E\setminus H_\delta
 =((E\setminus G_\delta)\setminus H_\delta)\cup(G_\delta\setminus H_\delta).
 </annotation></semantics></math></p>
 <blockquote>
-<p>[!note] <span style="color:blue">识读说明</span>
-“要估”对应原引导字的估／求候选，不影响后面的完整公式；测度次可加位置原写严格小于号，学习稿另订正。</p>
+<p>[!note] <span style="color:blue">识读说明</span></p>
+<p>页首字有‘用／同’两候选。与第 3
+页‘或用’和本页末‘需要用’对比，内部长轴均下探到右钩之下，且欠‘同’的清楚内口，故择优校读‘用’，另一个候选保留；此处是承接有限测度
+Egorov
+的选集步骤。“要估”对应原引导字的估／求候选，不影响后面的完整公式；测度次可加位置原写严格小于号，学习稿另订正。</p>
 </blockquote>
-<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>E</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>+</mi><mi>∞</mi></mrow><annotation encoding="application/x-tex">m(E)=+\infty</annotation></semantics></math>：
-<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>A</mi><mi>k</mi></msub><mo>=</mo><mi>B</mi><mrow><mo stretchy="true" form="prefix">(</mo><mn>0</mn><mo>,</mo><mi>k</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>\</mo><mi>B</mi><mrow><mo stretchy="true" form="prefix">(</mo><mn>0</mn><mo>,</mo><mi>k</mi><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo><mspace width="2.0em"></mspace><mi>E</mi><mo>=</mo><munderover><mo>⋃</mo><mrow><mi>k</mi><mo>=</mo><mn>1</mn></mrow><mo accent="false">∞</mo></munderover><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>A</mi><mi>k</mi></msub><mo>∩</mo><mi>E</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">
+<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>E</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>+</mi><mi>∞</mi></mrow><annotation encoding="application/x-tex">m(E)=+\infty</annotation></semantics></math>：</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>A</mi><mi>k</mi></msub><mo>=</mo><mi>B</mi><mrow><mo stretchy="true" form="prefix">(</mo><mn>0</mn><mo>,</mo><mi>k</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>\</mo><mi>B</mi><mrow><mo stretchy="true" form="prefix">(</mo><mn>0</mn><mo>,</mo><mi>k</mi><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo><mspace width="2.0em"></mspace><mi>E</mi><mo>=</mo><munderover><mo>⋃</mo><mrow><mi>k</mi><mo>=</mo><mn>1</mn></mrow><mo accent="false">∞</mo></munderover><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>A</mi><mi>k</mi></msub><mo>∩</mo><mi>E</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">
 A_k=B(0,k)\setminus B(0,k-1),\qquad
 E=\bigcup_{k=1}^{\infty}(A_k\cap E).
-</annotation></semantics></math> 但在
+</annotation></semantics></math></p>
+<p>但在
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>A</mi><mi>k</mi></msub><mo>∩</mo><mi>E</mi></mrow><annotation encoding="application/x-tex">A_k\cap E</annotation></semantics></math>
 上的有一个闭集。</p>
 <p>需要用局部有限性质。</p>
@@ -292,28 +456,32 @@ E=\bigcup_{k=1}^{\infty}(A_k\cap E).
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><msub><mo stretchy="false" form="prefix">|</mo><mi>B</mi></msub><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">f|_B=1</annotation></semantics></math>。（Urysohn）</li>
 </ol>
 <blockquote>
-<p>[!note] <span style="color:blue">原稿记号错误</span> 第 (2)
-条括号内的原字为两横的
+<p>[!note] <span style="color:blue">原稿记号及校读说明</span></p>
+<p>第 (2) 条括号内的原字为两横的
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>F</mi><annotation encoding="application/x-tex">F</annotation></semantics></math>，第
 (3) 条区间右端形如圆括号。两处数学订正分别为
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>E</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">C(E)</annotation></semantics></math>
 和
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="true" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">[0,1]</annotation></semantics></math>，在学习稿标明。</p>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="true" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">[0,1]</annotation></semantics></math>，在学习稿标明。两个限制等式之间原有形近
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>B</mi><annotation encoding="application/x-tex">B</annotation></semantics></math>
+的独写连接记号，本文依语法校读为‘且’；该字形与同页字母
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>B</mi><annotation encoding="application/x-tex">B</annotation></semantics></math>、第
+3 页‘且’分别比较后仍不称逐笔唯一，不把它当作额外集合运算。</p>
 </blockquote>
 <p><strong>Remark.</strong>
-外测度中不对，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>m</mi><mo>*</mo></msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>A</mi><mo>∪</mo><mi>B</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">m^*(A\cup B)</annotation></semantics></math>
-除非
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>A</mi><annotation encoding="application/x-tex">A</annotation></semantics></math>
+外测度中不对，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>m</mi><mo>*</mo></msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>A</mi><mo>∪</mo><mi>B</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">m^*(A\cup B)</annotation></semantics></math>〔上下文恢复：除非〕<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>A</mi><annotation encoding="application/x-tex">A</annotation></semantics></math>
 和
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>B</mi><annotation encoding="application/x-tex">B</annotation></semantics></math>
-可被可测集分〔本行止于右缘〕。
-<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi><mo>=</mo><mi>A</mi><mo>∪</mo><mi>B</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
+可被可测集分〔本行止于右缘〕。</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi><mo>=</mo><mi>A</mi><mo>∪</mo><mi>B</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
 C=A\cup B.
 </annotation></semantics></math></p>
 <blockquote>
-<p>[!note] <span style="color:blue">暂存识读说明</span>
-此行连接词与起句仍在追加定向复核，暂按当前候选排印；右缘只有“分”及末笔，没有可确认的完整后续字。“分开／分隔”仅能作为上下文补足，不声称原图写出了这些字。<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi><mo>=</mo><mi>A</mi><mo>∪</mo><mi>B</mi></mrow><annotation encoding="application/x-tex">C=A\cup B</annotation></semantics></math>
-原为下一独立行。</p>
+<p>[!note] <span style="color:blue">上下文恢复及残句范围</span></p>
+<p>起句校读为‘外测度中不对’。连接词取优势候选‘除非’：首形的阝与余形连笔、次形双竖及后接条件的语法共同支持，‘所谓’欠斤、讠和胃结构，‘可加性’的字数及笔形不合。其置信度中等，恢复性质已就地标明。右缘只写到‘分’，原
+PDF
+右页外没有后续绘画路径，故不把‘分开／分隔’补成已写原文。<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi><mo>=</mo><mi>A</mi><mo>∪</mo><mi>B</mi></mrow><annotation encoding="application/x-tex">C=A\cup B</annotation></semantics></math>
+原为下一独立行。学习稿仅给出可测分离推出加性的充分条件，不从残句反推无条件的必要性。</p>
 </blockquote>
 <p><strong>Th.</strong> 设
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>
@@ -332,51 +500,60 @@ C=A\cup B.
 <h2 id="第-6-页">第 6 页</h2>
 <p><strong>Pf. (1)
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>⇒</mo><annotation encoding="application/x-tex">\Rightarrow</annotation></semantics></math>
-(3).</strong>
-<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∃</mo><mi>g</mi><mo>∈</mo><mi>C</mi><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>ℝ</mi><mi>n</mi></msup><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo><mspace width="2.0em"></mspace><mi>g</mi><msub><mo stretchy="false" form="prefix">|</mo><msub><mi>F</mi><mi>δ</mi></msub></msub><mo>=</mo><mi>f</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
+(3).</strong></p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∃</mo><mi>g</mi><mo>∈</mo><mi>C</mi><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>ℝ</mi><mi>n</mi></msup><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo><mspace width="2.0em"></mspace><mi>g</mi><msub><mo stretchy="false" form="prefix">|</mo><msub><mi>F</mi><mi>δ</mi></msub></msub><mo>=</mo><mi>f</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
 \exists g\in C(\mathbb R^n),\qquad g|_{F_\delta}=f.
-</annotation></semantics></math>
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∀</mo><mi>k</mi><mo>∈</mo><msup><mi>ℕ</mi><mo>+</mo></msup></mrow><annotation encoding="application/x-tex">\forall k\in\mathbb N^+</annotation></semantics></math>，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∃</mo><msub><mi>F</mi><mi>k</mi></msub><mover><mo>⊂</mo><mtext mathvariant="normal">闭</mtext></mover><mi>E</mi></mrow><annotation encoding="application/x-tex">\exists F_k\overset{\text{闭}}{\subset}E</annotation></semantics></math>，
-<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>g</mi><mi>k</mi></msub><mo>∈</mo><mi>C</mi><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>ℝ</mi><mi>n</mi></msup><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo><mspace width="2.0em"></mspace><mi>g</mi><msub><mo stretchy="false" form="prefix">|</mo><msub><mi>F</mi><mi>k</mi></msub></msub><mo>=</mo><mi>f</mi><mo>,</mo><mspace width="2.0em"></mspace><mi>m</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>E</mi><mo>\</mo><msub><mi>F</mi><mi>k</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>&lt;</mo><mfrac><mn>1</mn><msup><mn>2</mn><mi>k</mi></msup></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">
+</annotation></semantics></math></p>
+<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∀</mo><mi>k</mi><mo>∈</mo><msup><mi>ℕ</mi><mo>+</mo></msup></mrow><annotation encoding="application/x-tex">\forall k\in\mathbb N^+</annotation></semantics></math>，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∃</mo><msub><mi>F</mi><mi>k</mi></msub><mover><mo>⊂</mo><mtext mathvariant="normal">闭</mtext></mover><mi>E</mi></mrow><annotation encoding="application/x-tex">\exists F_k\overset{\text{闭}}{\subset}E</annotation></semantics></math>，</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>g</mi><mi>k</mi></msub><mo>∈</mo><mi>C</mi><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>ℝ</mi><mi>n</mi></msup><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo><mspace width="2.0em"></mspace><mi>g</mi><msub><mo stretchy="false" form="prefix">|</mo><msub><mi>F</mi><mi>k</mi></msub></msub><mo>=</mo><mi>f</mi><mo>,</mo><mspace width="2.0em"></mspace><mi>m</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>E</mi><mo>\</mo><msub><mi>F</mi><mi>k</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>&lt;</mo><mfrac><mn>1</mn><msup><mn>2</mn><mi>k</mi></msup></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">
 g_k\in C(\mathbb R^n),\qquad g|_{F_k}=f,\qquad
 m(E\setminus F_k)&lt;\frac1{2^k}.
 </annotation></semantics></math></p>
 <blockquote>
-<p>[!note] <span style="color:blue">识读说明</span>
-量词中的自然数上标按正整数语境恢复为
+<p>[!note] <span style="color:blue">识读说明</span></p>
+<p>量词中的自然数上标按正整数语境恢复为
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>+</mi><annotation encoding="application/x-tex">+</annotation></semantics></math>。存在式写
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>g</mi><mi>k</mi></msub><annotation encoding="application/x-tex">g_k</annotation></semantics></math>，右侧限制式只见
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>g</mi><annotation encoding="application/x-tex">g</annotation></semantics></math>，保留原漏下标。右端
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>
 原省写限制。</p>
 </blockquote>
-<p>由 Borel–Cantelli：
-<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mrow><mo stretchy="true" form="prefix">(</mo><munder><mo>limsup</mo><mrow><mi>n</mi><mo>→</mo><mi>∞</mi></mrow></munder><msub><mi>E</mi><mi>n</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>0</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">
+<p>由 Borel–Cantelli：</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mrow><mo stretchy="true" form="prefix">(</mo><munder><mo>limsup</mo><mrow><mi>n</mi><mo>→</mo><mi>∞</mi></mrow></munder><msub><mi>E</mi><mi>n</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>0</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">
 m\left(\limsup_{n\to\infty}E_n\right)=0.
-</annotation></semantics></math> 〔页边截字〕考察
-<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><mo stretchy="false" form="prefix">{</mo><msub><mi>g</mi><mi>k</mi></msub><mo>≠</mo><mi>f</mi><mo stretchy="false" form="postfix">}</mo><mo>⊂</mo><mi>E</mi><mo>\</mo><msub><mi>F</mi><mi>k</mi></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">
+</annotation></semantics></math></p>
+<p>〔左缘边字；原矢量补证、择优校读：易〕 考察</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><mo stretchy="false" form="prefix">{</mo><msub><mi>g</mi><mi>k</mi></msub><mo>≠</mo><mi>f</mi><mo stretchy="false" form="postfix">}</mo><mo>⊂</mo><mi>E</mi><mo>\</mo><msub><mi>F</mi><mi>k</mi></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">
 E\{g_k\ne f\}\subset E\setminus F_k.
-</annotation></semantics></math> 仍有
-<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mrow><mo stretchy="true" form="prefix">(</mo><munder><mo>limsup</mo><mrow><mi>k</mi><mo>→</mo><mi>∞</mi></mrow></munder><mi>E</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>g</mi><mi>k</mi></msub><mo>≠</mo><mi>f</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>0</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">
+</annotation></semantics></math></p>
+<p>仍有</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mrow><mo stretchy="true" form="prefix">(</mo><munder><mo>limsup</mo><mrow><mi>k</mi><mo>→</mo><mi>∞</mi></mrow></munder><mi>E</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>g</mi><mi>k</mi></msub><mo>≠</mo><mi>f</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>0</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">
 m\left(\limsup_{k\to\infty}E(g_k\ne f)\right)=0.
 </annotation></semantics></math></p>
 <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mrow><mo stretchy="true" form="prefix">(</mo><munderover><mo>⋂</mo><mrow><mi>N</mi><mo>=</mo><mn>1</mn></mrow><mo accent="false">∞</mo></munderover><munder><mo>⋃</mo><mrow><mi>k</mi><mo>=</mo><mi>N</mi></mrow></munder><mi>E</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>g</mi><mi>k</mi></msub><mo>≠</mo><mi>f</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>0</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">
 m\left(\bigcap_{N=1}^{\infty}\bigcup_{k=N}E(g_k\ne f)\right)=0.
-</annotation></semantics></math> （几乎处处）
-<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∈</mo><munderover><mo>⋃</mo><mrow><mi>N</mi><mo>=</mo><mn>1</mn></mrow><mo accent="false">∞</mo></munderover><munderover><mo>⋂</mo><mrow><mi>k</mi><mo>=</mo><mi>N</mi></mrow><mo accent="false">∞</mo></munderover><mi>E</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>f</mi><mo>=</mo><msub><mi>g</mi><mi>k</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">
+</annotation></semantics></math></p>
+<p>（几乎处处）</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∈</mo><munderover><mo>⋃</mo><mrow><mi>N</mi><mo>=</mo><mn>1</mn></mrow><mo accent="false">∞</mo></munderover><munderover><mo>⋂</mo><mrow><mi>k</mi><mo>=</mo><mi>N</mi></mrow><mo accent="false">∞</mo></munderover><mi>E</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>f</mi><mo>=</mo><msub><mi>g</mi><mi>k</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">
 x\in\bigcup_{N=1}^{\infty}\bigcap_{k=N}^{\infty}E(f=g_k).
-</annotation></semantics></math>
-<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∃</mo><mi>N</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mspace width="0.222em"></mspace><mtext mathvariant="normal">s.t.</mtext><mspace width="0.222em"></mspace><mi>k</mi><mo>≥</mo><mi>N</mi><mo>,</mo><mspace width="2.0em"></mspace><mi>f</mi><mo>=</mo><msub><mi>g</mi><mi>k</mi></msub><mspace width="0.222em"></mspace><mtext mathvariant="normal">恒等</mtext><mi>.</mi></mrow><annotation encoding="application/x-tex">
+</annotation></semantics></math></p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∃</mo><mi>N</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mspace width="0.222em"></mspace><mtext mathvariant="normal">s.t.</mtext><mspace width="0.222em"></mspace><mi>k</mi><mo>≥</mo><mi>N</mi><mo>,</mo><mspace width="2.0em"></mspace><mi>f</mi><mo>=</mo><msub><mi>g</mi><mi>k</mi></msub><mspace width="0.222em"></mspace><mtext mathvariant="normal">恒等</mtext><mi>.</mi></mrow><annotation encoding="application/x-tex">
 \exists N(x)\ \text{s.t.}\ k\ge N,\qquad f=g_k\ \text{恒等}.
 </annotation></semantics></math></p>
 <blockquote>
-<p>[!note] <span style="color:blue">识读与省记说明</span> 首式的
+<p>[!note] <span style="color:blue">识读与省记说明</span></p>
+<p>首式的
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>E</mi><mi>n</mi></msub><annotation encoding="application/x-tex">E_n</annotation></semantics></math>
-没有在这一行定义；后文以失配事件明确其用途。花括／圆括均作原谓词集合写法保存。上式内并原只有下标
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>=</mo><mi>N</mi></mrow><annotation encoding="application/x-tex">k=N</annotation></semantics></math>，未另写上标无穷；下式两个无穷上标均可见。页边引导字发生物理截切，未猜填“易”；数学事件本身完整。末行阈值可排作
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>≥</mo><mi>N</mi></mrow><annotation encoding="application/x-tex">k\ge N</annotation></semantics></math>，若按另一候选
+没有在这一行定义；后文以失配事件明确其用途。花括／圆括均作原谓词集合写法保存；包含式的右端
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>F</mi><mi>k</mi></msub><annotation encoding="application/x-tex">F_k</annotation></semantics></math>
+后原另有孤立闭圆括样笔，左端没有成对开括，排式未把它当作运算。上式内并原只有下标
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>=</mo><mi>N</mi></mrow><annotation encoding="application/x-tex">k=N</annotation></semantics></math>，未另写上标无穷；下式两个无穷上标均可见。左缘首字受页面及
+Form
+裁框截切，在内存放宽裁框后补见原有矢量笔画，未改绘画路径；下部围笔内两处墨迹支持‘易’优于‘另’，上部仍潦草，故取低至中等置信的字形择优校读；左缘边字可能独立于‘考察’，不强行连成一句。’考察’与第
+4 页‘考虑’中的‘考’的对照及宀、示笔形相符。末行阈值择优排作
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>≥</mo><mi>N</mi></mrow><annotation encoding="application/x-tex">k\ge N</annotation></semantics></math>，另有
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>&gt;</mo><mi>N</mi></mrow><annotation encoding="application/x-tex">k&gt;N</annotation></semantics></math>
-读，只差起点平移，均是逐点最终恒等。</p>
+候选，只差起点平移，均是逐点最终恒等。</p>
 </blockquote>
 <h2 id="第-7-页">第 7 页</h2>
 <p>本物理页为空白页。整页与六个重叠区均无正文、页码、旁注、图形或原待填标记。</p>
