@@ -651,6 +651,14 @@ if overrides_path.exists():
             key = "transcription_blocks" if "-TRANSCRIPTION-" in target_id else "study_blocks"
             target = plan[key][int(target_id.rsplit("-", 1)[1]) - 1]
             target[field] = list(dict.fromkeys(target.get(field, []) + values))
+granular_overrides_path = P / "audit/granular-followup/body-and-source-overrides.json"
+if granular_overrides_path.exists():
+    granular = load(granular_overrides_path)
+    for source in plan["sources"]:
+        source.update(granular["source_updates"].get(source["id"], {}))
+    for target_id, values in granular["block_updates"].items():
+        key = "transcription_blocks" if "-TRANSCRIPTION-" in target_id else "study_blocks"
+        plan[key][int(target_id.rsplit("-", 1)[1]) - 1].update(values)
 write(P / "authored-content.json", plan)
 write(P / "audit/campaign/source-id-migration.json", ids)
 print(json.dumps({"source_units": len(sources), "transcription_blocks": len(trans), "study_blocks": len(study)}))
