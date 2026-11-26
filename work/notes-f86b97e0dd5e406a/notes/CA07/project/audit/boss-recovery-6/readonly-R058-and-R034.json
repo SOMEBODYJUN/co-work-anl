@@ -1,0 +1,61 @@
+{
+  "boss_id": "BossNotes-2ff3215d6446",
+  "note_id": "CA07",
+  "phase": "read-only late second-pass-2 source checks",
+  "images_actually_opened": [
+    {
+      "path": "audit/source-units-800/CA07-P004-U23-800.png",
+      "sha256": "be7987e7cf39318b57cdf82e4afc998498bbbfdcb5961dc2cdd65450d1cc5709"
+    },
+    {
+      "path": "audit/source-units-800/CA07-P005-U13-800.png",
+      "sha256": "8e2dde44595abbeb5d7de56f3bd7710a3045e7d6f1bddd5a6b0b8528c98adf08"
+    },
+    {
+      "path": "audit/source-units-800/CA07-P006-U03-800.png",
+      "sha256": "7475621288e26752c9937d9c48bbf5e96305503a14a9e9c20beb2c08e6cef342"
+    }
+  ],
+  "findings": [
+    {
+      "prospective_recovery_id": "CA07-R058",
+      "prospective_issue_id": "CA07-I058",
+      "source_id": "CA07-P004-U23",
+      "target_ids": [
+        "CA07-TRANSCRIPTION-056",
+        "CA07-STUDY-022"
+      ],
+      "origin": "math reviewer independently reported, then Boss actually returned to image",
+      "observation": "After a, one long bar extends into the space before the left leg of A. Its left end has an upper slant and a short lower return, yielding a leftward form. Current raw bodies print an unqualified membership sign.",
+      "candidates": [
+        "Literal leftward sign, with the intended choice of a from A[b] explained in blue.",
+        "A highly compressed membership sign, read as a in A[b] but locally qualified by the actual long-bar/left-return shape."
+      ],
+      "forward_validation": "The multiplication on C uses a as a scalar in A[b] and m as a module element, so the mathematical domain condition is a in A[b].",
+      "backward_validation": "The paper does not define a ring target or a homomorphism with value/object a. A literal left arrow may be choice notation, so the domain test does not uniquely determine the handwritten glyph; preserve the form instead of silently changing it."
+    },
+    {
+      "recovery_id": "CA07-R034",
+      "source_id": "CA07-P005-U13",
+      "target_ids": [
+        "CA07-TRANSCRIPTION-064",
+        "CA07-STUDY-035"
+      ],
+      "origin": "math reviewer independently reported, then Boss actually returned to image",
+      "observation": "After T comes a separate right-folding bracket; farther right is a complete independent almost-vertical stroke, slightly bent to the right, with no distinct middle waist of a conventional right curly brace. Current bodies print a right curly brace without local qualification.",
+      "candidates": [
+        "The long terminal stroke is a reduced closing-set mark; print closure only with a stated contextual-restoration qualification.",
+        "Preserve the literal standalone vertical ending; complete the set notation in the blue mathematical definition."
+      ],
+      "forward_validation": "The preceding set-builder defining the evaluated image needs a closing delimiter; the algebra is the image of polynomial evaluation. The original coefficient letter A remains in the raw text and is corrected to k in the explanation.",
+      "backward_validation": "A structural need to close a set does not prove that a conventional three-bend curly brace is visible. Reading the extra stroke as a new scalar or a further condition lacks an operand or following condition."
+    }
+  ],
+  "additional_comparison": {
+    "recovery_id": "CA07-R035",
+    "path": "audit/source-units-800/CA07-P006-U03-800.png",
+    "observation": "The later bracketed operator letter has a tall diagonal stem and a low returning arc whose upper end does not quite close back to the stem. This supports the possibility of open handwritten b forms. U16/U17 still require their own lower open-curve qualification; an open loop is not automatically a new formal variable."
+  },
+  "formal_content_modified": false,
+  "status": "all three current independent reports and appendices pending; no completion claimed"
+}
