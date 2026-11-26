@@ -1,0 +1,81 @@
+{
+  "boss_id": "BossNotes-2ff3215d6446",
+  "stage": "actual readonly original800/text/recovery checks; formal unchanged",
+  "recovery_ids": [
+    "CA07-R009",
+    "CA07-R031",
+    "CA07-R032",
+    "CA07-R033",
+    "CA07-R041",
+    "CA07-R048"
+  ],
+  "actual_images_opened": [
+    {
+      "path": "audit/source-units-800/CA07-P002-U03-800.png",
+      "sha256": "3357565cc22d410411a468dd21ed5928c63810967cfed7087af798ba92515e39"
+    },
+    {
+      "path": "audit/source-units-800/CA07-P002-U04-800.png",
+      "sha256": "758a736b7954b3b15c4167a0adede286c9bf0fc30f291d44ea4876565d506813"
+    },
+    {
+      "path": "audit/source-units-800/CA07-P002-U10-800.png",
+      "sha256": "f9433519d07404bd78da2921e8f59bc9efd57c3d932f4f802f6b0c3928f2c722"
+    },
+    {
+      "path": "audit/source-units-800/CA07-P002-U20-800.png",
+      "sha256": "b70b10f5c071c1c39436ace7522ff297c6bdf211c5740c13bc2ff010ca56446a"
+    },
+    {
+      "path": "audit/source-units-800/CA07-P004-U21-800.png",
+      "sha256": "86bc63ec67dcd3a1170b6601ef04eba32a375318fd3fe638b34d01182d960655"
+    },
+    {
+      "path": "audit/source-units-800/CA07-P005-U04-800.png",
+      "sha256": "6028b1d53e852b3b95e57535b061cf7b697d783e2ca666cff3ca8db141a4b066"
+    },
+    {
+      "path": "audit/source-units-800/CA07-P006-U01-800.png",
+      "sha256": "a752fb73266202fa5feac4442613f2bab5edf33a0b17109bc76fe0a3186a4597"
+    },
+    {
+      "path": "audit/source-units-800/CA07-P006-U02-800.png",
+      "sha256": "4e7d8bbfe920b0c9ff88c04a1141d026ea5fab0a678beee8e33633d237242db9"
+    },
+    {
+      "path": "audit/source-units-800/CA07-P006-U07-800.png",
+      "sha256": "972478e11e2ddd7d4571b949d0a60483cc09f2ab174219f7e8218c53f43f3ee4"
+    }
+  ],
+  "observations": [
+    "P2U03 has one horizontal extending n with a high detached dot, not a complete equality; P2U10 writes the same monic f with first term x^n; P2U20 only confirms the intended n-1 bound.",
+    "P2U04 is the explicit finite power sum preceding the generation phrase.",
+    "P4U21 supplies A[b] contained in M. P5U04 is the a/q-shaped scalar times M equal to zero. These are the used premises of R031/R032, not a claim that every faithful module contains a unit.",
+    "P6U01 is the zeroing-polynomial set in the original f(x)/f(x) wording; U02 locates it in k[T]. They supply the later contextual reference used in R033; the actual nonzero-kernel claim follows from finite-dimensional End and is mathematical recovery.",
+    "P6U07 gives Rbar as R/Ann_R(M) with the lower R shape; R041 uses this immediately preceding quotient premise."
+  ],
+  "candidates": [
+    {
+      "id": "direct-actual-used-premises",
+      "text": "补列实际使用的原定义/上文包含/后文首一式，并保留字形限定；次数由首项证明。"
+    },
+    {
+      "id": "keep-incomplete-provenance",
+      "text": "只把已渲染图列在证据库而不把实际使用单元纳入恢复来源；不能给出完整直接依赖。"
+    },
+    {
+      "id": "generation-forces-degree",
+      "text": "以两组低幂张成同模反推deg f=n；被A=Z,b=2,f=T−2且使用上限4的例子反驳。"
+    }
+  ],
+  "preferred_candidate_id": "direct-actual-used-premises",
+  "forward_validation": {
+    "method": "direct premise trace and leading coefficient",
+    "result": "非零系数环上首项系数1非零，因此P2U10中的首一f的次数为n；原U03的单横仍按原形保留。R031/R032的取1只用于原M=C且A[b]包含于M的构造。R033补所引用P6定义；R041补所用商环式。"
+  },
+  "backward_validation": {
+    "method": "counterexample and removal of premises",
+    "result": "低幂生成上限可冗余，不能反推次数。例如Z[2]=Z由1,2,…,2^4张成，而f=T−2次数为1。抽象忠实模2Z不含原环单位1。任意商理想也未必给忠实作用，所以R041必须指定Ann_R(M)。"
+  },
+  "formal_changed": false
+}
