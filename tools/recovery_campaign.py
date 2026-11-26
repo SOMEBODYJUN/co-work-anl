@@ -12,6 +12,11 @@ from recovery_inventory import inventory
 
 
 CAMPAIGNS = {
+    "ra12-then-commutative-algebra": {
+        "label": "RA12 收尾后交换代数全量处理",
+        "notes": ["RA12", "CA07", "CA09", "CA10", "CA11", "CA12"],
+        "next_campaign": None,
+    },
     "real-analysis": {
         "label": "实分析疑点清扫",
         "notes": ["RA06", "RA07", "RA09", "RA10", "RA11", "RA12"],
