@@ -60,6 +60,10 @@ python work.py --workspace work/cn-v0 status
 
 具体职责、滚动派工和超边由谁裁决见 [专题协作手册](docs/AGENT_PLAYBOOK.md)；每组观点学什么、如何比较见 [观点研究程序](docs/VIEWPOINT_PROGRAM.md)；作者与独立复核者使用 [专题任务合同](prompts/06_SPECIALIST_TASK.md)。
 
+[分析者历史学习](docs/ANALYST_LEARNING.md)接入公开文章目录、逐篇观点与预测核验，再据此修订专题；[首批原文笔记](research/analysts/INITIAL_READING.md)包含实际竞争观点与失误检查，目录盘点不冒充全文蒸馏。`analysts inventory-wordpress`可持续更新公开博客目录。评分仅指建模后的输出。
+
+[Codespaces远端实测](docs/CODESPACES_VALIDATION.md)记录本账户实际可选的2核/8GB与4核/16GB，以及两档机器上的安装、适配器和真实训练执行。新增 `.devcontainer/devcontainer.json` 固定Python 3.12；可选 `python bootstrap.py --benchmark` 安装容量基准依赖。合成训练测试不充当中国危机模型结果。
+
 [实际整合状态](docs/INTEGRATION_STATUS.md)列出执行过的工具和输入、选段借入的方法、真实搜索查询、现有观点阅读范围，以及首轮将产出的实质专题。
 
 每阶段完成实质产物后由主代理保存：

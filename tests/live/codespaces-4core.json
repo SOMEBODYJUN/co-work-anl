@@ -1,0 +1,117 @@
+{
+  "schema": "cncrisis-runtime-benchmark.v1",
+  "executed_at": "2026-11-27T04:06:50.292027+00:00",
+  "environment": {
+    "python": "3.12.3",
+    "platform": "Linux-6.8.0-1070-azure-x86_64-with-glibc2.39",
+    "logical_cpus_visible": 4,
+    "cpu_affinity_count": 4,
+    "cgroup_cpu_max": "max 100000",
+    "cgroup_memory_max": "max",
+    "host_memory_total_bytes": 16770465792,
+    "codespaces": true,
+    "codespace_name": null,
+    "packages": {
+      "numpy": "2.3.5",
+      "pandas": "2.2.3",
+      "scipy": "1.17.0",
+      "statsmodels": "0.15.0",
+      "akshare": "1.20.70",
+      "scikit-learn": "1.9.1"
+    }
+  },
+  "adapter_replays": [
+    {
+      "name": "loan",
+      "elapsed_seconds": 3.4120004140000333,
+      "result": {
+        "input_kind": "synthetic_test",
+        "reference_error": 9.094947017729282e-13
+      }
+    },
+    {
+      "name": "stock-flow",
+      "elapsed_seconds": 3.3904000019902014e-05,
+      "result": {
+        "input_kind": "synthetic_test",
+        "debt_identity_residual": 0.0
+      }
+    },
+    {
+      "name": "bridge",
+      "elapsed_seconds": 3.54457172299999,
+      "result": {
+        "input_kind": "synthetic_test",
+        "n_test": 20
+      }
+    },
+    {
+      "name": "nowcast",
+      "elapsed_seconds": 11.61769093199996,
+      "result": {
+        "input_kind": "synthetic_test",
+        "converged": true,
+        "news_reconciliation_error": 1.8041124150158794e-16
+      }
+    },
+    {
+      "name": "akshare",
+      "elapsed_seconds": 0.21409043400001337,
+      "result": {
+        "input_kind": "observed_vendor_series",
+        "mode": "offline-replay",
+        "rows": 83
+      }
+    }
+  ],
+  "training": {
+    "input_kind": "synthetic_capacity_fixture",
+    "rows": 30000,
+    "features": 24,
+    "thread_limit": 4,
+    "seed": 20261126,
+    "models": [
+      {
+        "model": "regularized_logit",
+        "elapsed_seconds": 0.07857934599996952,
+        "training_rows": 18000,
+        "calibration_rows": 6000,
+        "test_rows": 6000,
+        "test_positive_count": 630,
+        "fixture_only_metrics": {
+          "average_precision": 0.33199073312748517,
+          "raw_brier": 0.0820355453895171,
+          "calibrated_brier": 0.08206476775166355,
+          "base_rate_brier": 0.0939764938271605,
+          "log_loss": 0.28252121238758954
+        },
+        "prediction_range": [
+          0.0007991360496880897,
+          0.8966959057362374
+        ]
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "elapsed_seconds": 0.36001082799998585,
+        "training_rows": 18000,
+        "calibration_rows": 6000,
+        "test_rows": 6000,
+        "test_positive_count": 630,
+        "fixture_only_metrics": {
+          "average_precision": 0.34267977966929786,
+          "raw_brier": 0.08146409344574554,
+          "calibrated_brier": 0.08153868846165734,
+          "base_rate_brier": 0.0939764938271605,
+          "log_loss": 0.2819242581757816
+        },
+        "prediction_range": [
+          0.010947599680784183,
+          0.7600062904341528
+        ]
+      }
+    ],
+    "interpretation": "Capacity and separate-fit-block exercise only. No Chinese data, event labels, country transfer, crisis-episode validation or economic forecast."
+  },
+  "peak_process_rss_mib": 198.7890625,
+  "scope": "Measured execution on the reported host; not a maximum capacity or economic-model validation claim."
+}
