@@ -37,4 +37,6 @@ python bootstrap.py
 
 本轮追加固定身份与验收循环：统一回归55项通过（含7项身份、分支、验收及恢复检查），20阶段首轮/8阶段增量/两次clone的63条CLI演练重新通过。收据见`tests/live/runtime-regression.json`与`tests/live/runtime-end-to-end.json`。正式经济研究完成要求九项实质验收和当前独立审查；这些工程收据不充当经济报告或家庭计算器已完成的证明。
 
+另从本轮代码提交实际建立两个Git clone：以Boss11创建并提交合成`s01_scope`断点，新clone保留原run_id与阶段，下一动作仍为`s02_inventory`；Boss1占用此工作区被拒绝，拒绝前后账本哈希一致；未完成的`session check`退出码为3。收据见`tests/live/runtime-identity-clone.json`。
+
 用户已明确允许完整包（含本次上传资料）公开发布。程序、提示词、研究输入、上游许可和测试记录已推送到 `SOMEBODYJUN/co-work-anl` 的 `work/cn-crisis` 分支，可直接clone并按启动词执行。完整源码ZIP及可直接clone的Git bundle也已交付。仓库外凭据不进入交付物。
