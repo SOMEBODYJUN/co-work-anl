@@ -140,6 +140,15 @@ class AuditCLI(unittest.TestCase):
         blobs[0].write_bytes(b'changed without source ingestion')
         self.release(ok=False)
 
+    def test_historical_raw_source_tampering_blocks_release(self):
+        self.call('ingest', '--file', self.write('input.json', self.source()))
+        self.call('ingest', '--file', self.write('revised.json', self.source(text='Output = 101', vintage='revised')))
+        self.complete_phases()
+        ledger = json.loads((self.workspace / 'research_state.json').read_text())
+        old = ledger['sources']['OBS']['versions'][0]['blob']
+        (self.workspace / old).write_bytes(b'historical evidence changed after review')
+        self.release(ok=False)
+
 
 if __name__ == '__main__':
     unittest.main()

@@ -199,6 +199,16 @@ class EngineFlows(unittest.TestCase):
         self.assertTrue(any(x['event'] == 'begin_update' and x['prior_release']['cycle'] == 1 for x in state['history']))
         self.assertEqual(len(state['sources']['F1']['versions']), 1)
 
+    def test_update_cannot_adopt_a_stale_release_as_its_baseline(self):
+        self.source()
+        self.release()
+        (self.root / 'formal/report.json').write_text('Modified after release without new review')
+        with self.assertRaisesRegex(engine.EngineError, 'Repair the current cycle before update'):
+            self.call('init', '--mode', 'update')
+        state = json.loads((self.root / 'research_state.json').read_text())
+        self.assertEqual(state['mode'], 'first')
+        self.assertEqual(state['cycle'], 1)
+
     def test_path_escape_and_writer_lock(self):
         self.write('p.json', {})
         with self.assertRaisesRegex(engine.EngineError, 'inside workspace'):

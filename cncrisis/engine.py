@@ -280,11 +280,13 @@ class Store:
     def source_blob_hashes(self):
         blobs = {}
         for source in self.state['sources'].values():
-            path = source['blob']
-            actual = self.files([path])[path]
-            if actual != source['body_sha256']:
-                raise EngineError(f'Raw source bytes changed: {path}')
-            blobs[path] = actual
+            # Historical originals are part of the evidence for later revisions.
+            for version in [source, *source.get('versions', [])]:
+                path = version['blob']
+                actual = self.files([path])[path]
+                if actual != version['body_sha256']:
+                    raise EngineError(f'Raw source bytes changed: {path}')
+                blobs[path] = actual
         return blobs
 
     def snapshot(self, extra):
@@ -308,6 +310,17 @@ def initialise(args):
         elif args.mode == 'update' and (db.state['mode'] != 'update' or db.state['release'] is not None):
             if not db.state['release']:
                 raise EngineError('Complete and release the current cycle before beginning an update')
+            reviewed = db.state['review']
+            valid, _ = db.valid_stages()
+            try:
+                current = (reviewed and reviewed['verdict'] == 'pass'
+                           and db.snapshot(reviewed['files']) == reviewed['snapshot']
+                           and not db.untracked_formal(reviewed['files'])
+                           and len(valid) == len(db.stages()))
+            except EngineError:
+                current = False
+            if not current:
+                raise EngineError('Repair the current cycle before update: its release snapshot is stale')
             prior = copy.deepcopy(db.state['release'])
             db.state['mode'] = 'update'
             db.state['cycle'] += 1

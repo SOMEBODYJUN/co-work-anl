@@ -6,7 +6,16 @@
 
 ## 直接启动
 
-本项目在同仓独立分支，下载时只取本分支：
+下载包包含完整源码及 `repository.bundle`，可立即在本地建立独立clone并持续提交：
+
+```sh
+git clone --branch work/cn-crisis /实际路径/cn-crisis/repository.bundle cn-crisis-run
+cd cn-crisis-run
+python bootstrap.py
+.venv-methods/bin/python work.py --help
+```
+
+公开发布的目标为同仓独立分支 `work/cn-crisis`。公开推送待确认；发布后使用：
 
 ```sh
 git clone --depth 1 --single-branch --branch work/cn-crisis https://github.com/SOMEBODYJUN/co-work-anl.git cn-crisis
