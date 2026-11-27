@@ -12,7 +12,7 @@
 git clone --depth 1 --single-branch --branch work/cn-crisis https://github.com/SOMEBODYJUN/co-work-anl.git cn-crisis
 cd cn-crisis
 python work.py --help
-python bootstrap.py
+python bootstrap.py --research
 .venv-methods/bin/python work.py methods doctor
 ```
 
@@ -22,7 +22,7 @@ python bootstrap.py
 git clone --branch work/cn-crisis /实际路径/cn-crisis/repository.bundle cn-crisis-run
 cd cn-crisis-run
 git remote set-url origin https://github.com/SOMEBODYJUN/co-work-anl.git
-python bootstrap.py
+python bootstrap.py --research
 .venv-methods/bin/python work.py --help
 ```
 
@@ -65,6 +65,8 @@ python work.py --workspace work/cn-v0 status
 [Codespaces远端实测](docs/CODESPACES_VALIDATION.md)记录本账户实际可选的2核/8GB与4核/16GB，以及两档机器上的安装、适配器和真实训练执行。新增 `.devcontainer/devcontainer.json` 固定Python 3.12；可选 `python bootstrap.py --benchmark` 安装容量基准依赖。合成训练测试不充当中国危机模型结果。
 
 [实际整合状态](docs/INTEGRATION_STATUS.md)列出执行过的工具和输入、选段借入的方法、真实搜索查询、现有观点阅读范围，以及首轮将产出的实质专题。
+
+[长期思考框架](docs/THINKING_FRAMEWORKS.md)把会计、制度前提、分析动作和当期判断分开；[模型研究程序](docs/MODEL_PROGRAM.md)接上真实历史训练和银行承损，保留较差模型的实际结果和明确采用范围；[计算预算与恢复](docs/COMPUTE_BUDGET.md)给180核小时的任务分配与 `compute plan/run`。启动后Pro使用这些已接好的工具，完成中国数据研究、裁决、报告和计算器。
 
 每阶段完成实质产物后由主代理保存：
 

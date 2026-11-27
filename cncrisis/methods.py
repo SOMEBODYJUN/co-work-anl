@@ -17,6 +17,8 @@ import warnings
 ROOT = Path(__file__).resolve().parents[1]
 FIXTURES = ROOT / "tests" / "fixtures" / "methods"
 REGISTRY = {
+    "early-warning": {"method": "Chronological, label-maturity-purged logit/HGB with separate sigmoid calibration and episode metrics", "state": "research-estimator; explicit panel and target required", "upstream": "scikit-learn; experiment design informed by BoE WP848", "version": "1"},
+    "bank-stress": {"method": "Reconciled opening balance sheet, allowance absorption, capital and liquidity/firesale stress", "state": "conditional accounting; explicit measured inputs and assumptions required", "upstream": "balance-sheet stress accounting; local implementation", "version": "1"},
     "loan": {"method": "Contractual amortization; numpy-financial pmt/ipmt/ppmt reference", "state": "runtime-tested", "upstream": "numpy/numpy-financial", "version": "1.0.0"},
     "bridge": {"method": "Expanding-window OLS bridge and lagged-observation baseline", "state": "runtime-tested-synthetic", "upstream": "numpy.linalg.lstsq", "version": "2.3.5"},
     "nowcast": {"method": "DynamicFactorMQ fit/apply/get_forecast/news", "state": "runtime-tested-synthetic", "upstream": "statsmodels/statsmodels", "version": "0.15.0"},
@@ -188,7 +190,8 @@ def doctor():
 
 
 def execute(name, data=None):
-    runners = {"loan": loan, "stock-flow": stock_flow, "bridge": bridge, "nowcast": nowcast, "akshare": akshare, "gmd-panel": gmd_panel}
+    from .models import early_warning, bank_stress
+    runners = {"early-warning": early_warning, "bank-stress": bank_stress, "loan": loan, "stock-flow": stock_flow, "bridge": bridge, "nowcast": nowcast, "akshare": akshare, "gmd-panel": gmd_panel}
     value = runners[name](data) if name in runners else references(name)
     return {"schema": "cncrisis-method-result.v1", "name": name, "capability": REGISTRY[name], "result": value}
 

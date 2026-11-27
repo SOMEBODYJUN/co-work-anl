@@ -10,8 +10,8 @@ def main():
     parser = argparse.ArgumentParser(description="中国经济危机研究工作台")
     parser.add_argument("--workspace", type=Path, default=Path("work/current"))
     commands = parser.add_subparsers(dest="command", required=True)
-    from cncrisis import engine, methods, collect, gitops, analysts
-    for module in (engine, methods, collect, gitops, analysts):
+    from cncrisis import engine, methods, collect, gitops, analysts, compute
+    for module in (engine, methods, collect, gitops, analysts, compute):
         module.register_cli(commands)
     args = parser.parse_args()
     args.workspace = args.workspace.resolve()

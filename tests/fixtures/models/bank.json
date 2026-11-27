@@ -1,0 +1,15 @@
+{
+  "input_kind": "synthetic_accounting_fixture",
+  "unit": "synthetic million CNY",
+  "banks": [{
+    "id": "fixture-bank", "cash": 10, "liquid_assets_book": 20, "other_assets": 3,
+    "deposits": 100, "other_liabilities": 20, "capital": 10,
+    "risk_weighted_assets": 100, "minimum_capital_ratio": 0.1,
+    "credit": {"property": {"gross": 60, "allowance": 2}, "lgfv": {"gross": 40, "allowance": 1}}
+  }],
+  "scenarios": [
+    {"id": "credit-loss", "loss_rates": {"property": 0.1, "lgfv": 0.05}, "deposit_runoff_fraction": 0, "liquid_asset_haircut": 0.1, "cash_retained_earnings": 1},
+    {"id": "credit-and-runoff", "loss_rates": {"property": 0.1, "lgfv": 0.05}, "deposit_runoff_fraction": 0.2, "liquid_asset_haircut": 0.1, "cash_retained_earnings": 1, "wholesale_due": 5},
+    {"id": "liquidity-support", "loss_rates": {"property": 0.1, "lgfv": 0.05}, "deposit_runoff_fraction": 0, "liquid_asset_haircut": 0.1, "cash_retained_earnings": 1, "liquidity_loan": 10}
+  ]
+}

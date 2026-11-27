@@ -15,6 +15,7 @@ def main():
     parser.add_argument("--offline", action="store_true")
     parser.add_argument("--wheelhouse", type=Path)
     parser.add_argument("--benchmark", action="store_true", help="Also install the optional capacity benchmark dependencies")
+    parser.add_argument("--research", action="store_true", help="Install CPU model training and evaluation dependencies")
     args = parser.parse_args()
     root = Path(__file__).resolve().parent
     destination = (root / args.environment).resolve()
@@ -45,7 +46,8 @@ def main():
                 break
         else:
             raise SystemExit("当前Python没有ensurepip，也未找到带pip的宿主Python；使用仓库的Python 3.12开发容器后重试。")
-    requirement = root / ("requirements-benchmark.txt" if args.benchmark else "requirements-methods-lock.txt")
+    requirement = root / ("requirements-benchmark.txt" if args.benchmark else
+                          "requirements-research.txt" if args.research else "requirements-methods-lock.txt")
     if not requirement.exists():
         requirement = root / "requirements-methods.txt"
     if not requirement.exists():

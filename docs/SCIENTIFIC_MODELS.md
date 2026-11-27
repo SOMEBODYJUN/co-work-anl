@@ -35,7 +35,7 @@
 
 - [BIS：Early warning indicators of banking crises: expanding the family](https://www.bis.org/publications/qr-201803/early-warning-indicators-banking-crises-expanding-family)：以历史危机检验信用缺口、DSR等预警变量，研究误报/漏报与窗口；本项目借鉴验证与阈值选择思路，不把其历史阈值当中国永久标准。
 - [BoE Staff Working Paper 848](https://www.bankofengland.co.uk/working-paper/2020/credit-growth-the-yield-curve-and-financial-crisis-prediction-evidence-from-a-machine-learning)：跨国历史预警、基线对照及非线性变量关系。当前仓库保留代码许可和方法参照，尚没有运行该上游完整训练或产出中国已校准分数。
-- [scikit-learn概率校准文档](https://scikit-learn.org/stable/modules/calibration.html)：校准定义、独立校准数据、可靠性图与Brier的解释。这里作为验证规范来源；本轮没有把scikit-learn训练器作为已执行模块登记。
+- [scikit-learn概率校准文档](https://scikit-learn.org/stable/modules/calibration.html)：校准定义、独立校准数据、可靠性图与Brier的解释。现已新增实际训练器，按标签成熟期剔除、独立校准段和事件ID运行历史实验；具体代码、实际结果与采用裁决见 `docs/MODEL_PROGRAM.md`。不把训练器可用等同于中国事件概率已校准。
 - 当前已执行的statsmodels DynamicFactorMQ回答经济活动与新增观测影响。危机评分应另建、另验证；不能把即时GDP模型的输出转换成银行危机概率。
 
 ## 模型卡与复核职责

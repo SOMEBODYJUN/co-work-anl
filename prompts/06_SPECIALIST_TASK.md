@@ -18,6 +18,7 @@ read_first:
 evidence_ids: ["<已有承重和反对证据ID>"]
 competing_explanation: "<真正有竞争力的替代机制>"
 analyst_context: "<原作者历史目录、原文背景、观点变化、失败预测、竞争解释和已读范围>"
+framework_questions: "<本题沿用的长期问题意识、慢变制度前提及改判条件；与当期观点分开>"
 search_scope: "<决策缺口、变量、地域、期数；先读已有查询>"
 methods: ["<采用的方法、输入和选择理由>"]
 neighbor_interface: "<需与哪个专题核对哪一笔资金/损失/收入/时间>"

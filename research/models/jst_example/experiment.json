@@ -1,0 +1,31 @@
+{
+  "input_kind": "observed_historical_panel",
+  "csv": "research/models/jst_example/panel.csv",
+  "target_definition": "JST systemic banking crisis onset during the next three calendar years; yearly end-date convention; current onset and four subsequent information-years excluded",
+  "information_mode": "retrospective_revised_lagged",
+  "label_observed_through": "2020-12-31",
+  "features": [
+    "credit_gdp",
+    "credit_gdp_change_5y",
+    "yield_curve",
+    "short_rate",
+    "real_house_price_growth_5y",
+    "public_debt_gdp"
+  ],
+  "threads": 2,
+  "models": [
+    "logit",
+    "hist_gradient_boosting"
+  ],
+  "split": {
+    "train_end": "1984-12-31",
+    "calibration_start": "1985-01-01",
+    "calibration_end": "1999-12-31",
+    "test_start": "2003-01-01",
+    "test_end": "2016-12-31"
+  },
+  "alarm_rule": {
+    "calibration_false_alarm_budget": 0.1,
+    "decision_rationale": "Predeclared research comparison at a 10% negative-period alarm budget; not a China or household action threshold"
+  }
+}
