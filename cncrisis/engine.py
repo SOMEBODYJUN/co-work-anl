@@ -773,25 +773,30 @@ def release(args):
 def status(args):
     with Store(args.workspace) as db:
         db.require()
-        valid, changed = db.valid_stages()
-        result = {'mode': db.state['mode'], 'cycle': db.state['cycle'], 'revision': db.state['revision'],
-                  'sources': len(db.state['sources']), 'repost_aliases': len(db.state['aliases']),
-                  'searches': len(db.state['searches']), 'nodes': len(db.state['nodes']),
-                  'edges': len(db.state['edges']), 'completed_stages': valid, 'remaining_stages': changed,
-                  'graph': db.graph_status(), 'review': db.state['review'], 'release': db.state['release']}
-        if result['release']:
-            review_state = db.state['review']
-            try:
-                current = review_state and db.snapshot(review_state['files']) == review_state['snapshot']
-                current = current and not db.untracked_formal(review_state['files']) and len(valid) == len(db.stages())
-            except EngineError:
-                current = False
-            if not current:
-                result['release'] = {**result['release'], 'current': False,
-                                     'reason': 'Workspace changed after release; repair and submit a new review'}
-            else:
-                result['release'] = {**result['release'], 'current': True}
-        return result
+        return status_result(db)
+
+
+def status_result(db):
+    """Inspect one locked ledger, also used by the resumable session entry."""
+    valid, changed = db.valid_stages()
+    result = {'mode': db.state['mode'], 'cycle': db.state['cycle'], 'revision': db.state['revision'],
+              'sources': len(db.state['sources']), 'repost_aliases': len(db.state['aliases']),
+              'searches': len(db.state['searches']), 'nodes': len(db.state['nodes']),
+              'edges': len(db.state['edges']), 'completed_stages': valid, 'remaining_stages': changed,
+              'graph': db.graph_status(), 'review': db.state['review'], 'release': db.state['release']}
+    if result['release']:
+        review_state = db.state['review']
+        try:
+            current = review_state and db.snapshot(review_state['files']) == review_state['snapshot']
+            current = current and not db.untracked_formal(review_state['files']) and len(valid) == len(db.stages())
+        except EngineError:
+            current = False
+        if not current:
+            result['release'] = {**result['release'], 'current': False,
+                                 'reason': 'Workspace changed after release; repair and submit a new review'}
+        else:
+            result['release'] = {**result['release'], 'current': True}
+    return result
 
 
 def register_cli(subparsers):

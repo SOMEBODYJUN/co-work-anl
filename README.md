@@ -32,6 +32,8 @@ python bootstrap.py --research
 
 ## 真实输入入库
 
+启动消息只需指定一个完整身份号。仓库根目录运行`python work.py session start --actor Boss11`，默认恢复`work/Boss11`，编号不会变成Boss1；后续研究命令显式使用`--workspace work/Boss11`。`session next`给实际缺项，`session check`在当前阶段、实质验收、独立复核及发布全部通过后才返回完成；未过继续修复。详见[固定身份与验收循环](docs/PRO_RUNTIME.md)和[数据、模型与框架如何协作](docs/RESEARCH_EXECUTION.md)。
+
 ```sh
 python work.py --workspace work/cn-v0 init
 python tools/import_seed.py --output work/cn-v0/intake/seed.json

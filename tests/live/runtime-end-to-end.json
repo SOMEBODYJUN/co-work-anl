@@ -1,0 +1,56 @@
+{
+  "status": "passed",
+  "input_kind": "synthetic_engineering_fixture",
+  "first_cycle_stages": 20,
+  "update_cycle_stages": 8,
+  "cli_commands": 63,
+  "fresh_clones": 2,
+  "initial_shortfall_month": 7,
+  "updated_shortfall_month": 13,
+  "search_reuse_and_scope_refresh": true,
+  "old_rejection_preserved": true,
+  "unreviewed_apply_blocked": true,
+  "unanswered_reversal_blocked": true,
+  "edge_and_claim_separately_reviewed": true,
+  "offline_replay_identical": true,
+  "first_release_snapshot": "c074123e996c9811242314fff725f6486681e938547220d017f535c171651b2d",
+  "update_release_snapshot": "c8164ef0d7c676d68874c582ac5683790c92801d1e039cf478c4981b80b952f0",
+  "blocked_cases": [
+    {
+      "command": [
+        "release",
+        "--files",
+        "formal/report.md",
+        "--judgment",
+        "合成测试家庭在给定收入8000元、月支出10000元、现金12000元下，第7月出现现金缺口。"
+      ],
+      "error": "{\"ok\": false, \"error\": \"An accepted current independent review is required\"}"
+    },
+    {
+      "command": [
+        "release",
+        "--files",
+        "formal/report.md",
+        "--judgment",
+        "合成测试家庭在给定收入8000元、月支出10000元、现金12000元下，第7月出现现金缺口。"
+      ],
+      "error": "{\"ok\": false, \"error\": \"Research or artifacts changed after the reviewed snapshot\"}"
+    },
+    {
+      "command": [
+        "apply",
+        "--id",
+        "P_CLAIM"
+      ],
+      "error": "{\"ok\": false, \"error\": \"Proposal requires an accepted review of its current target, evidence revision, and artifact bytes\"}"
+    },
+    {
+      "command": [
+        "proposal",
+        "--file",
+        "/workspace/scratch/62a9804c169a/cn-crisis-audit/cncrisis-e2e-bc_tenac/recovered/work/engineering/research/unanswered_reversal.json"
+      ],
+      "error": "{\"ok\": false, \"error\": \"A reversal must explicitly answer the previous accepted proposal in responds_to\"}"
+    }
+  ]
+}
