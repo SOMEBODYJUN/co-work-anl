@@ -7,6 +7,7 @@
 ```bash
 git clone --branch work/cn-crisis /解压目录/cn-crisis/repository.bundle cn-crisis-run
 cd cn-crisis-run
+git remote set-url origin https://github.com/SOMEBODYJUN/co-work-anl.git
 python bootstrap.py
 .venv-methods/bin/python work.py methods doctor
 ```

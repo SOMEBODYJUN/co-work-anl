@@ -11,6 +11,7 @@
 ```sh
 git clone --branch work/cn-crisis /实际路径/cn-crisis/repository.bundle cn-crisis-run
 cd cn-crisis-run
+git remote set-url origin https://github.com/SOMEBODYJUN/co-work-anl.git
 python bootstrap.py
 .venv-methods/bin/python work.py --help
 ```
