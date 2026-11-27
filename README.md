@@ -6,17 +6,7 @@
 
 ## 直接启动
 
-下载包包含完整源码及 `repository.bundle`，可立即在本地建立独立clone并持续提交：
-
-```sh
-git clone --branch work/cn-crisis /实际路径/cn-crisis/repository.bundle cn-crisis-run
-cd cn-crisis-run
-git remote set-url origin https://github.com/SOMEBODYJUN/co-work-anl.git
-python bootstrap.py
-.venv-methods/bin/python work.py --help
-```
-
-公开发布的目标为同仓独立分支 `work/cn-crisis`。公开推送待确认；发布后使用：
+完整工作台已发布到独立分支 `work/cn-crisis`。新环境直接克隆本分支：
 
 ```sh
 git clone --depth 1 --single-branch --branch work/cn-crisis https://github.com/SOMEBODYJUN/co-work-anl.git cn-crisis
@@ -24,6 +14,16 @@ cd cn-crisis
 python work.py --help
 python bootstrap.py
 .venv-methods/bin/python work.py methods doctor
+```
+
+已有下载包时，也可通过其中的 `repository.bundle` 建立本地clone并持续提交：
+
+```sh
+git clone --branch work/cn-crisis /实际路径/cn-crisis/repository.bundle cn-crisis-run
+cd cn-crisis-run
+git remote set-url origin https://github.com/SOMEBODYJUN/co-work-anl.git
+python bootstrap.py
+.venv-methods/bin/python work.py --help
 ```
 
 读取 [Pro首轮完整执行词](prompts/00_PRO_FIRST.md)，发送 [启动词](prompts/04_LAUNCH.md)。`bootstrap.py`从精确版本的PyPI包安装计算依赖；选定上游代码、许可、方法材料和本题适配器都在本仓，无须再clone其他GitHub仓库。

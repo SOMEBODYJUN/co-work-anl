@@ -35,4 +35,4 @@ python bootstrap.py
 
 ## 交付状态
 
-本地Git检查点、完整源码ZIP及可直接clone的Git bundle已准备。公开推送被自动审批拦下，待用户明确允许将本包中的程序、提示词、上传资料和测试记录发布到公开目标 `SOMEBODYJUN/co-work-anl` 的 `work/cn-crisis` 分支。仓库外凭据不进入交付物。
+用户已明确允许完整包（含本次上传资料）公开发布。程序、提示词、研究输入、上游许可和测试记录已推送到 `SOMEBODYJUN/co-work-anl` 的 `work/cn-crisis` 分支，可直接clone并按启动词执行。完整源码ZIP及可直接clone的Git bundle也已交付。仓库外凭据不进入交付物。
