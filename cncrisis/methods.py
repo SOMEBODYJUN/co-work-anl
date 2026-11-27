@@ -172,11 +172,11 @@ def references(name):
 
 def doctor():
     packages = {}
-    for name in ["numpy", "scipy", "pandas", "statsmodels", "numpy-financial", "akshare"]:
+    for name in ["numpy", "scipy", "pandas", "statsmodels", "numpy-financial", "akshare", "scikit-learn", "joblib", "threadpoolctl"]:
         try:
             packages[name] = {"installed": True, "version": importlib.metadata.version(name)}
         except importlib.metadata.PackageNotFoundError:
-            packages[name] = {"installed": False, "install": "python -m pip install -r requirements-methods.txt"}
+            packages[name] = {"installed": False, "install": "python bootstrap.py --research"}
     manifest = ROOT / "vendor" / "manifest.json"
     failures = []
     if manifest.exists():
