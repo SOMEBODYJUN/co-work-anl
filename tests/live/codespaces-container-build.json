@@ -1,0 +1,13 @@
+{
+  "schema": "cncrisis-container-build-check.v1",
+  "initial_configuration_result": "failed",
+  "initial_error": "SSH server feature apt update failed: the unused Yarn repository signing key was unavailable (NO_PUBKEY 62D54FD4003F6525).",
+  "observed_failure_environment": "Alpine Linux recovery container; not the requested Debian research environment",
+  "fix": "Pin the upstream Python 3.12 image digest, remove the unused Yarn apt source in a Dockerfile, then install sshd with normal repository signature verification.",
+  "fixed_rebuild_result": "pass",
+  "verified_os": "Debian GNU/Linux 12 (bookworm)",
+  "verified_python": "3.12.11",
+  "verified_libc": "glibc 2.36",
+  "all_adapter_and_training_replays": "pass",
+  "receipt": "tests/live/codespaces-rebuilt-4core.json"
+}

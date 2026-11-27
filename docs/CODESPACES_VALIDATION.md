@@ -33,7 +33,11 @@
 
 默认Codespaces镜像中的 `python` 为3.14.2，而系统另有3.12.3。直接用系统3.12创建虚拟环境失败，因为缺少ensurepip；失败还留下了没有pip的半成品环境。
 
-`bootstrap.py`现在检查环境中的pip，可用宿主pip的 `--python` 功能补齐这个环境，再按锁文件安装。该修复已经在上述真实失败的2核实例重跑成功，4核保留环境后也成功运行。实现参照[pip官方说明](https://pip.pypa.io/en/stable/topics/python-option/)。仓库新增Python 3.12容器配置，使新工作区固定同一Python系列；重建状态在最终执行记录中另列。
+`bootstrap.py`现在检查环境中的pip，可用宿主pip的 `--python` 功能补齐这个环境，再按锁文件安装。该修复已经在上述真实失败的2核实例重跑成功，4核保留环境后也成功运行。实现参照[pip官方说明](https://pip.pypa.io/en/stable/topics/python-option/)。
+
+随后真实重建并从已提交分支显式指定配置新建4核实例，发现基础镜像中未使用的Yarn apt源缺少签名公钥，导致sshd feature安装失败，Codespaces转入Alpine恢复容器。已从创建日志确认根因；恢复容器能连接不算研究环境成功。新增Dockerfile固定上游镜像摘要，并在安装feature前移除本项目不用的Yarn源，保留正常软件包签名校验。
+
+修复后在同一独立新建实例重新构建，实际系统为Debian 12/glibc 2.36、Python 3.12.11，postCreate虚拟环境已建立。再次安装可选基准依赖，完整重跑五条适配器及两类训练/校准/留出评估成功，峰值进程RSS约202MiB。见 `tests/live/codespaces-container-build.json` 和 `codespaces-rebuilt-4core.json`。最终配置为 `.devcontainer/devcontainer.json` 与 `.devcontainer/Dockerfile`；不要求用户手工安装系统包。
 
 可复现入口：
 
@@ -49,3 +53,5 @@ python bootstrap.py --benchmark
 [GitHub学生官方说明](https://docs.github.com/en/education/about-github-education/github-education-for-students/about-github-education-for-students)规定，认证学生个人账户享有每月180核小时，存储额度等同Pro；[计费说明](https://docs.github.com/en/billing/concepts/product-billing/github-codespaces)列出Pro的20GB-month。180核小时理论上对应2核90小时或4核45小时；其他实例的使用共同消耗额度。存储是按时间计量的用量，不是把32GB机器磁盘缩为20GB。
 
 当前结果支持先用2核/8GB建设真实面板、简单基线、表格机器学习和部门压力测试。需要多实验并行或更大内存时再选已验证的4核/16GB。现阶段不需要额外机器学习平台；长时间批处理、大规模文本模型或GPU训练出现明确负载时再配置外部计算。观点与原文的学习继续由研究者执行，扩容CPU不代替该工作。
+
+本轮创建的两个专用测试实例均已删除，并通过账户接口确认没有遗留测试实例。执行结果保存在上述收据中，见 `tests/live/codespaces-cleanup.json`；未删除任何本轮以外的实例。
