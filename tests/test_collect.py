@@ -24,10 +24,13 @@ class CollectionTests(unittest.TestCase):
             root = Path(tmp)
             source = root / 'search.json'
             source.write_text(json.dumps({'query': 'household debt', 'provider': 'host-built-in-search',
+                                         'executed_at': '2026-11-20T00:00:00+00:00',
                                          'results': [{'url': 'https://www.nber.org/papers/w31489', 'title': 'Sufi'}]}))
             result = bridge(argparse.Namespace(file=str(source), workspace=root))
             self.assertEqual(result['imported_results'], 1)
             self.assertFalse((root / 'state.json').exists())
+            stored = json.loads(Path(result['file']).read_text())
+            self.assertEqual(stored['executed_at'], '2026-11-20T00:00:00+00:00')
 
 
 if __name__ == '__main__':

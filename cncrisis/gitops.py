@@ -18,7 +18,7 @@ def checkpoint(args):
         path = (root / value).resolve()
         if not path.is_relative_to(root):
             raise ValueError("checkpoint路径须在当前仓库内")
-        if any(part.lower() in {".git", ".env", ".venv-methods", "cache", "githubtoken.txt", "credentials"} for part in path.relative_to(root).parts):
+        if any(part.lower() in {".git", ".env", ".venv-methods", "cache", "private", "githubtoken.txt", "credentials"} for part in path.relative_to(root).parts):
             raise ValueError("凭据、缓存和虚拟环境不进入研究提交")
         paths.append(str(path.relative_to(root)))
     git(root, "add", "--", *paths)

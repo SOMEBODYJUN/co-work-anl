@@ -113,7 +113,7 @@ def fetch(args):
 
 def discover(args):
     query = args.query
-    result = {"provider": args.provider, "query": query, "searched_at": now(),
+    result = {"provider": args.provider, "query": query, "executed_at": now(),
               "topic": args.topic, "period": args.period, "status": "failed", "results": []}
     try:
         if args.provider == "github":
@@ -148,8 +148,11 @@ def bridge(args):
         raise ValueError("bridge需JSON对象及results数组")
     if not source.get("query") or not source.get("provider"):
         raise ValueError("bridge需原查询query和实际provider")
+    executed = source.get("executed_at") or source.get("searched_at")
+    if not executed:
+        raise ValueError("bridge需原检索时间executed_at；不能把导入时间当检索时间")
+    source["executed_at"] = executed
     source["imported_at"] = now()
-    source.setdefault("searched_at", source["imported_at"])
     source.setdefault("status", "completed" if source["results"] else "zero_results")
     for row in source["results"]:
         row["url"] = canonical_url(row["url"])

@@ -15,7 +15,7 @@
   "query": "原样保留实际查询",
   "topic": "银行关注类与逾期贷款",
   "period": "2026Q3",
-  "searched_at": "2026-11-27T00:00:00+00:00",
+  "executed_at": "2026-11-27T00:00:00+00:00",
   "results": [
     {"url": "https://example.org/publication", "title": "原文标题", "host_reference": "工具实际返回的引用标识"}
   ],

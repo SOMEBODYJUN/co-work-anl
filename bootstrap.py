@@ -23,7 +23,9 @@ def main():
     executable = destination / ("Scripts/python.exe" if os.name == "nt" else "bin/python")
     if not executable.exists():
         venv.EnvBuilder(with_pip=True).create(destination)
-    requirement = root / "requirements-methods.txt"
+    requirement = root / "requirements-methods-lock.txt"
+    if not requirement.exists():
+        requirement = root / "requirements-methods.txt"
     if not requirement.exists():
         raise SystemExit("缺少requirements-methods.txt")
     command = [str(executable), "-m", "pip", "install", "-r", str(requirement)]

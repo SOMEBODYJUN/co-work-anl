@@ -1,0 +1,71 @@
+{
+  "schema": "cncrisis-method-execution-receipt.v1",
+  "executed_at": "2026-11-27T02:46:46.288605+00:00",
+  "python": "3.12",
+  "packages": {
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "pandas": "2.2.3",
+    "statsmodels": "0.15.0",
+    "numpy-financial": "1.0.0",
+    "akshare": "1.20.70"
+  },
+  "runs": [
+    {
+      "method": "loan",
+      "output": "tests/fixtures/methods/results/loan.json",
+      "output_sha256": "d7cc55a809e8ebfa92b7ee2cdf74f7b017b9c8c90bc221cb05073a06ba91882d",
+      "input_kind": "synthetic_test",
+      "result": "pass",
+      "network": "socket.connect disabled during all five replays"
+    },
+    {
+      "method": "stock-flow",
+      "output": "tests/fixtures/methods/results/stock-flow.json",
+      "output_sha256": "1f961d56096f942f9c15512ff5c5477d1e51247c346194fbf6da5e3f638e3392",
+      "input_kind": "synthetic_test",
+      "result": "pass",
+      "network": "socket.connect disabled during all five replays"
+    },
+    {
+      "method": "bridge",
+      "output": "tests/fixtures/methods/results/bridge.json",
+      "output_sha256": "f46745ec0ad74b13f3ae70775811b3ab4c1f1c43f5faa224eacf7002298825dc",
+      "input_kind": "synthetic_test",
+      "result": "pass",
+      "network": "socket.connect disabled during all five replays"
+    },
+    {
+      "method": "nowcast",
+      "output": "tests/fixtures/methods/results/nowcast.json",
+      "output_sha256": "df7cbe0fddb03470475846f037188a7535acf1827b4d7ddce51293b318b6e947",
+      "input_kind": "synthetic_test",
+      "result": "pass",
+      "network": "socket.connect disabled during all five replays"
+    },
+    {
+      "method": "akshare",
+      "output": "tests/fixtures/methods/results/akshare.json",
+      "output_sha256": "bff2e6ce8862a48c99b1c659ddc73f55843b44f8e59a79749ab63dafae94653c",
+      "input_kind": "observed_vendor_series",
+      "result": "pass",
+      "network": "socket.connect disabled during all five replays"
+    }
+  ],
+  "synthetic_scope": [
+    "loan",
+    "stock-flow",
+    "bridge",
+    "nowcast"
+  ],
+  "observed_scope": [
+    "akshare cached real endpoint table"
+  ],
+  "independent_checks": [
+    "pmt/ipmt/ppmt across zero-rate and one-period edge cases",
+    "debt stock-flow reconciliation and overpayment rejection",
+    "bridge future target exclusion",
+    "DynamicFactorMQ news impacts reconcile old/new same-target estimates",
+    "observed cache SHA equals actual-fetch receipt"
+  ]
+}
