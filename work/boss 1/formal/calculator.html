@@ -20,7 +20,7 @@ details.panel{padding:0}details.panel>summary{padding:12px 20px;cursor:pointer;f
 <main class="wrap"><div class="bar"><div class="control"><span id="kind" class="marker"></span><span id="status" class="status" role="status" aria-live="polite"></span></div><button id="run" class="primary">运行 120 个月</button></div>
 <section id="inputs" class="view"></section><section id="results" class="view" hidden></section><section id="ledger" class="view" hidden></section><section id="reverse" class="view" hidden></section>
 <div class="foot">账面资产、待到账款和可用现金分别列账。结果以元计，实际净资产按各路径通胀折回期初购买力。</div></main>
-<script id="scenario-data" type="application/json">[{"id":"continuity","name":"结构延续","role":"continuity","description":"人为压力测试。参数可编辑，数值用于比较指定路径下的家庭履约和现金，不表示中国经济预测或事件概率。","paths":[{"key":"propertyShock","mode":"shock","value":-0.06,"unit":"比例","start":1,"duration":1,"range":[-0.06,-0.06],"target":"*","sourceId":"design-continuity","assumption":"stress_test","editable":true},{"key":"propertyAnnual","mode":"annual","value":-0.015,"unit":"年率小数","start":1,"duration":36,"range":[-0.015,-0.015],"target":"*","sourceId":"design-continuity","assumption":"stress_test","editable":true},{"key":"rentFactor","mode":"level","value":0.95,"unit":"倍","start":1,"duration":36,"range":[0.95,0.95],"target":"*","sourceId":"design-continuity","assumption":"stress_test","editable":true},{"key":"vacancyAdd","mode":"level","value":0.04,"unit":"比例差","start":1,"duration":36,"range":[0.04,0.04],"target":"*","sourceId":"design-continuity","assumption":"stress_test","editable":true},{"key":"wageFactor","mode":"level","value":0.98,"unit":"倍","start":1,"duration":24,"range":[0.98,0.98],"target":"*","sourceId":"design-continuity","assumption":"stress_test","editable":true},{"key":"businessFactor","mode":"level","value":0.94,"unit":"倍","start":1,"duration":24,"range":[0.94,0.94],"target":"*","sourceId":"design-continuity","assumption":"stress_test","editable":true},{"key":"unemploymentMonths","mode":"event","value":0,"unit":"月","start":1,"duration":1,"range":[0,0],"target":"*","sourceId":"design-continuity","assumption":"stress_test","editable":true},{"key":"recoveryMonths","mode":"level","value":3,"unit":"月","start":1,"duration":120,"range":[3,3],"target":"*","sourceId":"design-continuity","assumption":"stress_test","editable":true},{"key":"reemploymentFactor","mode":"level","value":1,"unit":"倍","start":1,"duration":120,"range":[1,1],"target":"*","sourceId":"design-continuity","assumption":"stress_test","editable":true},{"key":"financialShock","mode":"shock","value":-0.08,"unit":"比例","start":1,"duration":1,"range":[-0.08,-0.08],"target":"*","sourceId":"design-continuity","assumption":"stress_test","editable":true},{"key":"securityAnnual","mode":"annual","value":0.01,"unit":"年率差","start":1,"duration":120,"range":[0.01,0.01],"target":"*","sourceId":"design-continuity","assumption":"stress_test","editable":true},{"key":"concentrationHaircut","mode":"shock","value":0.04,"unit":"比例","start":1,"duration":1,"range":[0.04,0.04],"target":"*","sourceId":"design-continuity","assumption":"stress_test","editable":true},{"key":"inflationAnnual","mode":"annual","value":0.015,"unit":"年率小数","start":1,"duration":120,"range":[0.015,0.015],"target":"*","sourceId":"design-continuity","assumption":"stress_test","editable":true},{"key":"cashRateDelta","mode":"annual","value":0,"unit":"年率差","start":1,"duration":120,"range":[0,0],"target":"*","sourceId":"design-continuity","assumption":"stress_test","editable":true},{"key":"loanRateDelta","mode":"annual","value":0,"unit":"年率差","start":1,"duration":120,"range":[0,0],"target":"*","sourceId":"design-continuity","assumption":"stress_test","editable":true},{"key":"saleHaircut","mode":"level","value":0.03,"unit":"比例","start":1,"duration":36,"range":[0.03,0.03],"target":"*","sourceId":"design-continuity","assumption":"stress_test","editable":true},{"key":"saleDelay","mode":"level","value":2,"unit":"月","start":1,"duration":36,"range":[2,2],"target":"*","sourceId":"design-continuity","assumption":"stress_test","editable":true}]},{"id":"severe","name":"严重下行与信用损失","role":"severe","description":"人为压力测试。参数可编辑，数值用于比较指定路径下的家庭履约和现金，不表示中国经济预测或事件概率。","paths":[{"key":"propertyShock","mode":"shock","value":-0.25,"unit":"比例","start":1,"duration":1,"range":[-0.25,-0.25],"target":"*","sourceId":"design-severe","assumption":"stress_test","editable":true},{"key":"propertyAnnual","mode":"annual","value":-0.025,"unit":"年率小数","start":1,"duration":36,"range":[-0.025,-0.025],"target":"*","sourceId":"design-severe","assumption":"stress_test","editable":true},{"key":"rentFactor","mode":"level","value":0.78,"unit":"倍","start":1,"duration":48,"range":[0.78,0.78],"target":"*","sourceId":"design-severe","assumption":"stress_test","editable":true},{"key":"vacancyAdd","mode":"level","value":0.12,"unit":"比例差","start":1,"duration":48,"range":[0.12,0.12],"target":"*","sourceId":"design-severe","assumption":"stress_test","editable":true},{"key":"wageFactor","mode":"level","value":0.82,"unit":"倍","start":1,"duration":36,"range":[0.82,0.82],"target":"*","sourceId":"design-severe","assumption":"stress_test","editable":true},{"key":"businessFactor","mode":"level","value":0.65,"unit":"倍","start":1,"duration":36,"range":[0.65,0.65],"target":"*","sourceId":"design-severe","assumption":"stress_test","editable":true},{"key":"unemploymentMonths","mode":"event","value":8,"unit":"月","start":4,"duration":1,"range":[8,8],"target":"*","sourceId":"design-severe","assumption":"stress_test","editable":true},{"key":"recoveryMonths","mode":"level","value":8,"unit":"月","start":1,"duration":120,"range":[8,8],"target":"*","sourceId":"design-severe","assumption":"stress_test","editable":true},{"key":"reemploymentFactor","mode":"level","value":0.88,"unit":"倍","start":1,"duration":120,"range":[0.88,0.88],"target":"*","sourceId":"design-severe","assumption":"stress_test","editable":true},{"key":"financialShock","mode":"shock","value":-0.35,"unit":"比例","start":1,"duration":1,"range":[-0.35,-0.35],"target":"*","sourceId":"design-severe","assumption":"stress_test","editable":true},{"key":"securityAnnual","mode":"annual","value":-0.025,"unit":"年率差","start":1,"duration":36,"range":[-0.025,-0.025],"target":"*","sourceId":"design-severe","assumption":"stress_test","editable":true},{"key":"concentrationHaircut","mode":"shock","value":0.12,"unit":"比例","start":1,"duration":1,"range":[0.12,0.12],"target":"*","sourceId":"design-severe","assumption":"stress_test","editable":true},{"key":"inflationAnnual","mode":"annual","value":0.025,"unit":"年率小数","start":1,"duration":120,"range":[0.025,0.025],"target":"*","sourceId":"design-severe","assumption":"stress_test","editable":true},{"key":"cashRateDelta","mode":"annual","value":-0.005,"unit":"年率差","start":1,"duration":120,"range":[-0.005,-0.005],"target":"*","sourceId":"design-severe","assumption":"stress_test","editable":true},{"key":"loanRateDelta","mode":"annual","value":0.015,"unit":"年率差","start":1,"duration":48,"range":[0.015,0.015],"target":"*","sourceId":"design-severe","assumption":"stress_test","editable":true},{"key":"saleHaircut","mode":"level","value":0.12,"unit":"比例","start":1,"duration":48,"range":[0.12,0.12],"target":"*","sourceId":"design-severe","assumption":"stress_test","editable":true},{"key":"saleDelay","mode":"level","value":7,"unit":"月","start":1,"duration":48,"range":[7,7],"target":"*","sourceId":"design-severe","assumption":"stress_test","editable":true}]},{"id":"recovery","name":"有效恢复","role":"recovery","description":"人为压力测试。参数可编辑，数值用于比较指定路径下的家庭履约和现金，不表示中国经济预测或事件概率。","paths":[{"key":"propertyAnnual","mode":"annual","value":0.02,"unit":"年率小数","start":1,"duration":60,"range":[0.02,0.02],"target":"*","sourceId":"design-recovery","assumption":"stress_test","editable":true},{"key":"rentFactor","mode":"level","value":1.04,"unit":"倍","start":1,"duration":48,"range":[1.04,1.04],"target":"*","sourceId":"design-recovery","assumption":"stress_test","editable":true},{"key":"vacancyAdd","mode":"level","value":-0.02,"unit":"比例差","start":1,"duration":48,"range":[-0.02,-0.02],"target":"*","sourceId":"design-recovery","assumption":"stress_test","editable":true},{"key":"wageFactor","mode":"level","value":1.06,"unit":"倍","start":1,"duration":60,"range":[1.06,1.06],"target":"*","sourceId":"design-recovery","assumption":"stress_test","editable":true},{"key":"businessFactor","mode":"level","value":1.12,"unit":"倍","start":1,"duration":60,"range":[1.12,1.12],"target":"*","sourceId":"design-recovery","assumption":"stress_test","editable":true},{"key":"unemploymentMonths","mode":"event","value":0,"unit":"月","start":1,"duration":1,"range":[0,0],"target":"*","sourceId":"design-recovery","assumption":"stress_test","editable":true},{"key":"recoveryMonths","mode":"level","value":2,"unit":"月","start":1,"duration":120,"range":[2,2],"target":"*","sourceId":"design-recovery","assumption":"stress_test","editable":true},{"key":"reemploymentFactor","mode":"level","value":1,"unit":"倍","start":1,"duration":120,"range":[1,1],"target":"*","sourceId":"design-recovery","assumption":"stress_test","editable":true},{"key":"securityAnnual","mode":"annual","value":0.035,"unit":"年率差","start":1,"duration":60,"range":[0.035,0.035],"target":"*","sourceId":"design-recovery","assumption":"stress_test","editable":true},{"key":"concentrationHaircut","mode":"shock","value":0,"unit":"比例","start":1,"duration":1,"range":[0,0],"target":"*","sourceId":"design-recovery","assumption":"stress_test","editable":true},{"key":"inflationAnnual","mode":"annual","value":0.02,"unit":"年率小数","start":1,"duration":120,"range":[0.02,0.02],"target":"*","sourceId":"design-recovery","assumption":"stress_test","editable":true},{"key":"cashRateDelta","mode":"annual","value":0,"unit":"年率差","start":1,"duration":120,"range":[0,0],"target":"*","sourceId":"design-recovery","assumption":"stress_test","editable":true},{"key":"loanRateDelta","mode":"annual","value":-0.005,"unit":"年率差","start":1,"duration":60,"range":[-0.005,-0.005],"target":"*","sourceId":"design-recovery","assumption":"stress_test","editable":true},{"key":"saleHaircut","mode":"level","value":0,"unit":"比例","start":1,"duration":120,"range":[0,0],"target":"*","sourceId":"design-recovery","assumption":"stress_test","editable":true},{"key":"saleDelay","mode":"level","value":0,"unit":"月","start":1,"duration":120,"range":[0,0],"target":"*","sourceId":"design-recovery","assumption":"stress_test","editable":true}]}]</script><script id="example-data" type="application/json">{"schema":"household-cny.v1","dataKind":"synthetic_example","rangeCase":"base","cash":280000,"cashAnnual":0.012,"reserveMonths":3,"minimumLiving":6000,"cutFraction":0.55,"maxSaleWait":24,"preference":"cash","incomes":[{"id":"pay","name":"成员甲税后工资","kind":"wage","monthly":15100,"from":1,"to":120,"every":1,"annualGrowth":0,"stability":"受所选情景失业路径影响","stressJob":true,"jobStart":1,"jobMonths":0,"jobPayFraction":0,"recoveryMonths":0,"returnFraction":1},{"id":"receipts","name":"成员乙已到账经营净收入","kind":"business","monthly":4800,"from":1,"to":120,"every":1,"annualGrowth":0,"stability":"按经营回款路径","stressJob":false,"jobStart":1,"jobMonths":0,"jobPayFraction":0,"recoveryMonths":0,"returnFraction":1},{"id":"bonus","name":"已存在年度奖金","kind":"bonus","monthly":6000,"from":12,"to":120,"every":12,"annualGrowth":0,"stability":"按期到账","stressJob":false,"jobStart":1,"jobMonths":0,"jobPayFraction":0,"recoveryMonths":0,"returnFraction":1}],"expenses":[{"id":"life","name":"生活必要开支","kind":"necessary","monthly":6000,"from":1,"to":120,"every":1,"annualGrowth":0,"inflationLinked":true},{"id":"care","name":"医疗及照护","kind":"medical","monthly":1100,"from":1,"to":120,"every":1,"annualGrowth":0,"inflationLinked":true},{"id":"flex","name":"可削减开支","kind":"discretionary","monthly":3200,"from":1,"to":120,"every":1,"annualGrowth":0,"inflationLinked":true},{"id":"repair","name":"第18个月突发支出","kind":"emergency","monthly":9000,"from":18,"to":18,"every":1,"annualGrowth":0,"inflationLinked":false}],"financial":[{"id":"shares","name":"权益组合","kind":"stock","value":128000,"annualReturn":0.025,"concentration":0.35,"fee":0.002,"settle":1,"unlock":1,"maturity":0,"restriction":"free","purpose":"家庭可用"},{"id":"deposit","name":"六个月后到期存款","kind":"deposit","value":65000,"annualReturn":0.018,"concentration":0,"fee":0,"settle":0,"unlock":1,"maturity":6,"restriction":"free","purpose":"家庭可用"},{"id":"lockfund","name":"限定用途资产","kind":"fund","value":26000,"annualReturn":0,"concentration":0,"fee":0,"settle":0,"unlock":1,"maturity":0,"restriction":"restricted","purpose":"指定教育用途，不动用"}],"properties":[{"id":"home","name":"自住房","city":"示例甲城","type":"住宅","use":"occupied","value":1250000,"saleValue":1160000,"saleLag":5,"lock":1,"canSell":false,"rent":0,"vacancy":0,"leaseLag":0,"discountRent":0.1,"discountLeaseLag":0,"carry":550,"saleFee":0.025,"closingFee":2500,"replacementAllowed":false,"replacementMonthly":null,"sourceId":""},{"id":"flat","name":"闲置小户型","city":"示例乙城","type":"住宅","use":"idle","value":{"low":650000,"base":720000,"high":780000},"saleValue":660000,"saleLag":4,"lock":1,"canSell":true,"rent":2500,"vacancy":0.08,"leaseLag":3,"discountRent":0.1,"discountLeaseLag":1,"carry":380,"saleFee":0.028,"closingFee":1800,"replacementAllowed":false,"replacementMonthly":null,"sourceId":""}],"vehicles":[{"id":"car","name":"通勤车","value":76000,"saleValue":69000,"annualDepreciation":0.1,"saleLag":1,"lock":1,"canSell":true,"necessary":true,"replacementAllowed":true,"replacementMonthly":450,"carry":920,"saleFee":0.02,"closingFee":400}],"loans":[{"id":"mort1","name":"自住房贷款","kind":"mortgage","collateral":"home","principal":510000,"annualRate":0.033,"rateType":"floating","resetFirst":12,"resetEvery":12,"months":228,"method":"annuity","payment":null,"canPrepay":true,"prepayFrom":1,"prepayMin":10000,"prepayFee":0.002,"settlementFee":0,"transferWithLien":false,"allowRecast":true,"allowShorten":true,"start":1,"monthlyFee":0},{"id":"mort2","name":"闲置房贷款","kind":"mortgage","collateral":"flat","principal":310000,"annualRate":0.037,"rateType":"floating","resetFirst":6,"resetEvery":12,"months":204,"method":"annuity","payment":null,"canPrepay":true,"prepayFrom":1,"prepayMin":5000,"prepayFee":0.003,"settlementFee":0,"transferWithLien":true,"allowRecast":true,"allowShorten":true,"start":1,"monthlyFee":0},{"id":"auto","name":"车贷","kind":"car","collateral":"car","principal":33000,"annualRate":0.045,"rateType":"fixed","resetFirst":12,"resetEvery":12,"months":36,"method":"annuity","payment":null,"canPrepay":true,"prepayFrom":1,"prepayMin":1000,"prepayFee":0,"settlementFee":180,"transferWithLien":true,"allowRecast":true,"allowShorten":true,"start":1,"monthlyFee":0}],"citySources":[]}</script>
+<script id="scenario-data" type="application/json">[{"id":"continuity","name":"结构延续","role":"continuity","description":"人为压力测试。参数可编辑，数值用于比较指定路径下的家庭履约和现金，不表示中国经济预测或事件概率。","paths":[{"key":"propertyShock","mode":"shock","value":-0.06,"unit":"比例","start":1,"duration":1,"range":[-0.06,-0.06],"target":"*","sourceId":"design-continuity","assumption":"stress_test","editable":true},{"key":"propertyAnnual","mode":"annual","value":-0.015,"unit":"年率小数","start":1,"duration":36,"range":[-0.015,-0.015],"target":"*","sourceId":"design-continuity","assumption":"stress_test","editable":true},{"key":"rentFactor","mode":"level","value":0.95,"unit":"倍","start":1,"duration":36,"range":[0.95,0.95],"target":"*","sourceId":"design-continuity","assumption":"stress_test","editable":true},{"key":"vacancyAdd","mode":"level","value":0.04,"unit":"比例差","start":1,"duration":36,"range":[0.04,0.04],"target":"*","sourceId":"design-continuity","assumption":"stress_test","editable":true},{"key":"wageFactor","mode":"level","value":0.98,"unit":"倍","start":1,"duration":24,"range":[0.98,0.98],"target":"*","sourceId":"design-continuity","assumption":"stress_test","editable":true},{"key":"businessFactor","mode":"level","value":0.94,"unit":"倍","start":1,"duration":24,"range":[0.94,0.94],"target":"*","sourceId":"design-continuity","assumption":"stress_test","editable":true},{"key":"unemploymentMonths","mode":"event","value":0,"unit":"月","start":1,"duration":1,"range":[0,0],"target":"*","sourceId":"design-continuity","assumption":"stress_test","editable":true},{"key":"recoveryMonths","mode":"level","value":3,"unit":"月","start":1,"duration":120,"range":[3,3],"target":"*","sourceId":"design-continuity","assumption":"stress_test","editable":true},{"key":"reemploymentFactor","mode":"level","value":1,"unit":"倍","start":1,"duration":120,"range":[1,1],"target":"*","sourceId":"design-continuity","assumption":"stress_test","editable":true},{"key":"financialShock","mode":"shock","value":-0.08,"unit":"比例","start":1,"duration":1,"range":[-0.08,-0.08],"target":"*","sourceId":"design-continuity","assumption":"stress_test","editable":true},{"key":"securityAnnual","mode":"annual","value":0.01,"unit":"年率差","start":1,"duration":120,"range":[0.01,0.01],"target":"*","sourceId":"design-continuity","assumption":"stress_test","editable":true},{"key":"concentrationHaircut","mode":"shock","value":0.04,"unit":"比例","start":1,"duration":1,"range":[0.04,0.04],"target":"*","sourceId":"design-continuity","assumption":"stress_test","editable":true},{"key":"inflationAnnual","mode":"annual","value":0.015,"unit":"年率小数","start":1,"duration":120,"range":[0.015,0.015],"target":"*","sourceId":"design-continuity","assumption":"stress_test","editable":true},{"key":"cashRateDelta","mode":"annual","value":0,"unit":"年率差","start":1,"duration":120,"range":[0,0],"target":"*","sourceId":"design-continuity","assumption":"stress_test","editable":true},{"key":"loanRateDelta","mode":"annual","value":0,"unit":"年率差","start":1,"duration":120,"range":[0,0],"target":"*","sourceId":"design-continuity","assumption":"stress_test","editable":true},{"key":"saleHaircut","mode":"level","value":0.03,"unit":"比例","start":1,"duration":36,"range":[0.03,0.03],"target":"*","sourceId":"design-continuity","assumption":"stress_test","editable":true},{"key":"saleDelay","mode":"level","value":2,"unit":"月","start":1,"duration":36,"range":[2,2],"target":"*","sourceId":"design-continuity","assumption":"stress_test","editable":true}]},{"id":"severe","name":"严重下行与信用损失","role":"severe","description":"人为压力测试。参数可编辑，数值用于比较指定路径下的家庭履约和现金，不表示中国经济预测或事件概率。","paths":[{"key":"propertyShock","mode":"shock","value":-0.25,"unit":"比例","start":1,"duration":1,"range":[-0.25,-0.25],"target":"*","sourceId":"design-severe","assumption":"stress_test","editable":true},{"key":"propertyAnnual","mode":"annual","value":-0.025,"unit":"年率小数","start":1,"duration":36,"range":[-0.025,-0.025],"target":"*","sourceId":"design-severe","assumption":"stress_test","editable":true},{"key":"rentFactor","mode":"level","value":0.78,"unit":"倍","start":1,"duration":48,"range":[0.78,0.78],"target":"*","sourceId":"design-severe","assumption":"stress_test","editable":true},{"key":"vacancyAdd","mode":"level","value":0.12,"unit":"比例差","start":1,"duration":48,"range":[0.12,0.12],"target":"*","sourceId":"design-severe","assumption":"stress_test","editable":true},{"key":"wageFactor","mode":"level","value":0.82,"unit":"倍","start":1,"duration":36,"range":[0.82,0.82],"target":"*","sourceId":"design-severe","assumption":"stress_test","editable":true},{"key":"businessFactor","mode":"level","value":0.65,"unit":"倍","start":1,"duration":36,"range":[0.65,0.65],"target":"*","sourceId":"design-severe","assumption":"stress_test","editable":true},{"key":"unemploymentMonths","mode":"event","value":8,"unit":"月","start":4,"duration":1,"range":[8,8],"target":"*","sourceId":"design-severe","assumption":"stress_test","editable":true},{"key":"recoveryMonths","mode":"level","value":8,"unit":"月","start":1,"duration":120,"range":[8,8],"target":"*","sourceId":"design-severe","assumption":"stress_test","editable":true},{"key":"reemploymentFactor","mode":"level","value":0.88,"unit":"倍","start":1,"duration":120,"range":[0.88,0.88],"target":"*","sourceId":"design-severe","assumption":"stress_test","editable":true},{"key":"financialShock","mode":"shock","value":-0.35,"unit":"比例","start":1,"duration":1,"range":[-0.35,-0.35],"target":"*","sourceId":"design-severe","assumption":"stress_test","editable":true},{"key":"securityAnnual","mode":"annual","value":-0.025,"unit":"年率差","start":1,"duration":36,"range":[-0.025,-0.025],"target":"*","sourceId":"design-severe","assumption":"stress_test","editable":true},{"key":"concentrationHaircut","mode":"shock","value":0.12,"unit":"比例","start":1,"duration":1,"range":[0.12,0.12],"target":"*","sourceId":"design-severe","assumption":"stress_test","editable":true},{"key":"inflationAnnual","mode":"annual","value":0.025,"unit":"年率小数","start":1,"duration":120,"range":[0.025,0.025],"target":"*","sourceId":"design-severe","assumption":"stress_test","editable":true},{"key":"cashRateDelta","mode":"annual","value":-0.005,"unit":"年率差","start":1,"duration":120,"range":[-0.005,-0.005],"target":"*","sourceId":"design-severe","assumption":"stress_test","editable":true},{"key":"loanRateDelta","mode":"annual","value":0.015,"unit":"年率差","start":1,"duration":48,"range":[0.015,0.015],"target":"*","sourceId":"design-severe","assumption":"stress_test","editable":true},{"key":"saleHaircut","mode":"level","value":0.12,"unit":"比例","start":1,"duration":48,"range":[0.12,0.12],"target":"*","sourceId":"design-severe","assumption":"stress_test","editable":true},{"key":"saleDelay","mode":"level","value":7,"unit":"月","start":1,"duration":48,"range":[7,7],"target":"*","sourceId":"design-severe","assumption":"stress_test","editable":true}]},{"id":"recovery","name":"有效恢复","role":"recovery","description":"人为压力测试。参数可编辑，数值用于比较指定路径下的家庭履约和现金，不表示中国经济预测或事件概率。","paths":[{"key":"propertyAnnual","mode":"annual","value":0.02,"unit":"年率小数","start":1,"duration":60,"range":[0.02,0.02],"target":"*","sourceId":"design-recovery","assumption":"stress_test","editable":true},{"key":"rentFactor","mode":"level","value":1.04,"unit":"倍","start":1,"duration":48,"range":[1.04,1.04],"target":"*","sourceId":"design-recovery","assumption":"stress_test","editable":true},{"key":"vacancyAdd","mode":"level","value":-0.02,"unit":"比例差","start":1,"duration":48,"range":[-0.02,-0.02],"target":"*","sourceId":"design-recovery","assumption":"stress_test","editable":true},{"key":"wageFactor","mode":"level","value":1.06,"unit":"倍","start":1,"duration":60,"range":[1.06,1.06],"target":"*","sourceId":"design-recovery","assumption":"stress_test","editable":true},{"key":"businessFactor","mode":"level","value":1.12,"unit":"倍","start":1,"duration":60,"range":[1.12,1.12],"target":"*","sourceId":"design-recovery","assumption":"stress_test","editable":true},{"key":"unemploymentMonths","mode":"event","value":0,"unit":"月","start":1,"duration":1,"range":[0,0],"target":"*","sourceId":"design-recovery","assumption":"stress_test","editable":true},{"key":"recoveryMonths","mode":"level","value":2,"unit":"月","start":1,"duration":120,"range":[2,2],"target":"*","sourceId":"design-recovery","assumption":"stress_test","editable":true},{"key":"reemploymentFactor","mode":"level","value":1,"unit":"倍","start":1,"duration":120,"range":[1,1],"target":"*","sourceId":"design-recovery","assumption":"stress_test","editable":true},{"key":"securityAnnual","mode":"annual","value":0.035,"unit":"年率差","start":1,"duration":60,"range":[0.035,0.035],"target":"*","sourceId":"design-recovery","assumption":"stress_test","editable":true},{"key":"concentrationHaircut","mode":"shock","value":0,"unit":"比例","start":1,"duration":1,"range":[0,0],"target":"*","sourceId":"design-recovery","assumption":"stress_test","editable":true},{"key":"inflationAnnual","mode":"annual","value":0.02,"unit":"年率小数","start":1,"duration":120,"range":[0.02,0.02],"target":"*","sourceId":"design-recovery","assumption":"stress_test","editable":true},{"key":"cashRateDelta","mode":"annual","value":0,"unit":"年率差","start":1,"duration":120,"range":[0,0],"target":"*","sourceId":"design-recovery","assumption":"stress_test","editable":true},{"key":"loanRateDelta","mode":"annual","value":-0.005,"unit":"年率差","start":1,"duration":60,"range":[-0.005,-0.005],"target":"*","sourceId":"design-recovery","assumption":"stress_test","editable":true},{"key":"saleHaircut","mode":"level","value":0,"unit":"比例","start":1,"duration":120,"range":[0,0],"target":"*","sourceId":"design-recovery","assumption":"stress_test","editable":true},{"key":"saleDelay","mode":"level","value":0,"unit":"月","start":1,"duration":120,"range":[0,0],"target":"*","sourceId":"design-recovery","assumption":"stress_test","editable":true}]}]</script><script id="example-data" type="application/json">{"schema":"household-cny.v1","dataKind":"synthetic_example","rangeCase":"base","cash":280000,"cashAnnual":0.012,"reserveMonths":3,"minimumLiving":6000,"cutFraction":0.55,"maxSaleWait":24,"preference":"cash","incomes":[{"id":"pay","name":"成员甲税后工资","kind":"wage","monthly":15100,"from":1,"to":120,"every":1,"annualGrowth":0,"stability":"受所选情景失业路径影响","stressJob":true,"jobStart":1,"jobMonths":0,"jobPayFraction":0,"recoveryMonths":0,"returnFraction":1},{"id":"receipts","name":"成员乙已到账经营净收入","kind":"business","monthly":4800,"from":1,"to":120,"every":1,"annualGrowth":0,"stability":"按经营回款路径","stressJob":false,"jobStart":1,"jobMonths":0,"jobPayFraction":0,"recoveryMonths":0,"returnFraction":1},{"id":"bonus","name":"已存在年度奖金","kind":"bonus","monthly":6000,"from":12,"to":120,"every":12,"annualGrowth":0,"stability":"按期到账","stressJob":false,"jobStart":1,"jobMonths":0,"jobPayFraction":0,"recoveryMonths":0,"returnFraction":1}],"expenses":[{"id":"life","name":"生活必要开支","kind":"necessary","monthly":6000,"from":1,"to":120,"every":1,"annualGrowth":0,"inflationLinked":true},{"id":"care","name":"医疗及照护","kind":"medical","monthly":1100,"from":1,"to":120,"every":1,"annualGrowth":0,"inflationLinked":true},{"id":"flex","name":"可削减开支","kind":"discretionary","monthly":3200,"from":1,"to":120,"every":1,"annualGrowth":0,"inflationLinked":true},{"id":"repair","name":"第18个月突发支出","kind":"emergency","monthly":9000,"from":18,"to":18,"every":1,"annualGrowth":0,"inflationLinked":false}],"financial":[{"id":"shares","name":"权益组合","kind":"stock","value":128000,"annualReturn":0.025,"concentration":0.35,"fee":0.002,"settle":1,"unlock":1,"maturity":0,"restriction":"free","purpose":"家庭可用"},{"id":"deposit","name":"六个月后到期存款","kind":"deposit","value":65000,"annualReturn":0.018,"concentration":0,"fee":0,"settle":0,"unlock":1,"maturity":6,"restriction":"free","purpose":"家庭可用"},{"id":"lockfund","name":"限定用途资产","kind":"fund","value":26000,"annualReturn":0,"concentration":0,"fee":0,"settle":0,"unlock":1,"maturity":0,"restriction":"restricted","purpose":"指定教育用途，不动用"}],"properties":[{"id":"home","name":"自住房","city":"示例甲城","type":"住宅","use":"occupied","value":1250000,"saleValue":1160000,"saleLag":5,"lock":1,"canSell":false,"rent":0,"vacancy":0,"leaseLag":0,"discountRent":0.1,"discountLeaseLag":0,"carry":550,"saleFee":0.025,"closingFee":2500,"replacementAllowed":false,"replacementMonthly":null,"sourceId":""},{"id":"flat","name":"闲置小户型","city":"示例乙城","type":"住宅","use":"idle","value":{"low":650000,"base":720000,"high":780000},"saleValue":660000,"saleLag":4,"lock":1,"canSell":true,"rent":2500,"vacancy":0.08,"leaseLag":3,"discountRent":0.1,"discountLeaseLag":1,"carry":380,"saleFee":0.028,"closingFee":1800,"replacementAllowed":false,"replacementMonthly":null,"sourceId":""}],"vehicles":[{"id":"car","name":"通勤车","value":76000,"saleValue":69000,"annualDepreciation":0.1,"saleLag":1,"lock":1,"canSell":true,"necessary":true,"replacementAllowed":true,"replacementMonthly":450,"carry":920,"saleFee":0.02,"closingFee":400}],"loans":[{"id":"mort1","name":"自住房贷款","kind":"mortgage","collateral":"home","principal":510000,"annualRate":0.033,"rateType":"floating","resetFirst":12,"resetEvery":12,"months":228,"method":"annuity","payment":null,"canPrepay":true,"prepayFrom":1,"prepayMin":10000,"prepayFee":0.002,"settlementFee":0,"transferWithLien":false,"allowRecast":true,"allowShorten":true,"allowFull":true,"prepayMax":"unlimited","prepayPeriodMax":"unlimited","prepayPeriodMonths":null,"prepayPeriodRemaining":null,"prepayPeriodUsed":null,"salePayoffRule":"same_terms","salePayoffFrom":null,"salePayoffFee":null,"saleSettlementFee":null,"salePayoffFeeBase":"balance","saleMaturityReleaseFee":"in_asset_cost","start":1,"monthlyFee":0},{"id":"mort2","name":"闲置房贷款","kind":"mortgage","collateral":"flat","principal":310000,"annualRate":0.037,"rateType":"floating","resetFirst":6,"resetEvery":12,"months":204,"method":"annuity","payment":null,"canPrepay":true,"prepayFrom":1,"prepayMin":5000,"prepayFee":0.003,"settlementFee":0,"transferWithLien":true,"allowRecast":true,"allowShorten":true,"allowFull":true,"prepayMax":"unlimited","prepayPeriodMax":"unlimited","prepayPeriodMonths":null,"prepayPeriodRemaining":null,"prepayPeriodUsed":null,"salePayoffRule":"same_terms","salePayoffFrom":null,"salePayoffFee":null,"saleSettlementFee":null,"salePayoffFeeBase":"balance","saleMaturityReleaseFee":"in_asset_cost","start":1,"monthlyFee":0},{"id":"auto","name":"车贷","kind":"car","collateral":"car","principal":33000,"annualRate":0.045,"rateType":"fixed","resetFirst":12,"resetEvery":12,"months":36,"method":"annuity","payment":null,"canPrepay":true,"prepayFrom":1,"prepayMin":1000,"prepayFee":0,"settlementFee":180,"transferWithLien":true,"allowRecast":true,"allowShorten":true,"allowFull":true,"prepayMax":"unlimited","prepayPeriodMax":"unlimited","prepayPeriodMonths":null,"prepayPeriodRemaining":null,"prepayPeriodUsed":null,"salePayoffRule":"same_terms","salePayoffFrom":null,"salePayoffFee":null,"saleSettlementFee":null,"salePayoffFeeBase":"balance","saleMaturityReleaseFee":180,"start":1,"monthlyFee":0}],"citySources":[]}</script>
 <script>/* Monthly CNY cash and contract ledger. Browser and CommonJS share this exact source. */
 (function (root, factory) {
   "use strict";
@@ -47,8 +47,11 @@ details.panel{padding:0}details.panel>summary{padding:12px 20px;cursor:pointer;f
     return value;
   };
   function num(value, name, lo=-Infinity, hi=Infinity, integer=false) {
-    if (typeof value !== "number" || !Number.isFinite(value) || value < lo || value > hi || (integer && !Number.isInteger(value)))
-      throw Error(name + " 需要范围内的" + (integer ? "整数" : "数字") + "（空值需填写）");
+    if (typeof value !== "number" || !Number.isFinite(value) || value < lo || value > hi || (integer && !Number.isInteger(value))){
+      const error=Error(name + " 需要范围内的" + (integer ? "整数" : "数字") + "（空值需填写）");
+      if(value==null)error.code="MISSING_VALUE";
+      throw error;
+    }
     return value;
   }
   function valueFor(value, choice, name) {
@@ -82,7 +85,9 @@ details.panel{padding:0}details.panel>summary{padding:12px 20px;cursor:pointer;f
       necessary:null,replacementAllowed:false,replacementMonthly:null,carry:null,saleFee:null,closingFee:null},
     loans:{id:"",name:"",kind:"mortgage",collateral:"",principal:null,annualRate:null,rateType:"fixed",
       resetFirst:12,resetEvery:12,months:null,method:"annuity",payment:null,canPrepay:null,prepayFrom:null,
-      prepayMin:null,prepayFee:null,settlementFee:null,transferWithLien:null,allowRecast:null,allowShorten:null,
+      prepayMin:null,prepayFee:null,settlementFee:null,transferWithLien:null,allowRecast:null,allowShorten:null,allowFull:null,
+      prepayMax:null,prepayPeriodMax:null,prepayPeriodMonths:null,prepayPeriodRemaining:null,prepayPeriodUsed:null,
+      salePayoffRule:"unknown",salePayoffFrom:null,salePayoffFee:null,saleSettlementFee:null,salePayoffFeeBase:"unknown",saleMaturityReleaseFee:"in_asset_cost",
       start:1,monthlyFee:0}
   };
   function validateHousehold(input) {
@@ -100,8 +105,12 @@ details.panel{padding:0}details.panel>summary{padding:12px 20px;cursor:pointer;f
       if(!Array.isArray(h[g]) || h[g].length>100) throw Error(g+" 应为不超过100条的清单");
       h[g]=h[g].map(original=>{
         if(!original || typeof original!=="object") throw Error(g+" 条目无效");
+        if(g==="loans"){
+          const extra=Object.keys(original).filter(k=>!Object.hasOwn(templates.loans,k)&&k!=="notes"&&k!=="metadata");
+          if(extra.length)throw Error("贷款 "+String(original.id)+" 含未支持的合同字段："+extra.join("、"));
+        }
         const x=Object.assign({},templates[g],original);
-        if(!idPattern.test(x.id)||ids.has(x.id)) throw Error("ID 为空、重复或有非法字符："+String(x.id));
+        if(typeof x.id!=="string"||!idPattern.test(x.id)||ids.has(x.id)) throw Error("ID 为空、重复或有非法字符："+String(x.id));
         ids.add(x.id);
         if(typeof x.name!=="string") throw Error(x.id+" 名称无效");
         const n=(k,lo=0,hi=1e15)=>x[k]=amount(x.id+"."+k,x[k],choice,lo,hi);
@@ -138,7 +147,16 @@ details.panel{padding:0}details.panel>summary{padding:12px 20px;cursor:pointer;f
           n("principal");n("annualRate",0,5);integer("months",1,1200);integer("resetFirst",1,1200);
           integer("resetEvery",1,1200);optional(integer,"prepayFrom",1,1200);integer("start",1,1200);
           if(x.kind!=="guarantee" && x.start!==1)throw Error(x.id+" 普通债务从期初入账；仅担保可设代偿月");
-          for(const k of ["canPrepay","transferWithLien","allowRecast","allowShorten"])optional(b,k);
+          for(const k of ["canPrepay","transferWithLien","allowRecast","allowShorten","allowFull"])optional(b,k);
+          for(const k of ["prepayMax","prepayPeriodMax"])if(x[k]!=null&&x[k]!=="unlimited")n(k);
+          optional(integer,"prepayPeriodMonths",1,1200);optional(integer,"prepayPeriodRemaining",1,x.prepayPeriodMonths||1200);
+          optional(n,"prepayPeriodUsed");
+          if(typeof x.prepayPeriodMax==="number"&&x.prepayPeriodUsed!=null&&x.prepayPeriodUsed>x.prepayPeriodMax)
+            throw Error(x.id+" 本期已用额度高于本期总额度，请校正合同");
+          option("抵押物出售清偿条款",["unknown","same_terms","sale_exception","forbidden"],x.salePayoffRule);
+          option("出售清偿计费本金口径",["unknown","balance","extra"],x.salePayoffFeeBase);
+          optional(integer,"salePayoffFrom",1,1200);optional(n,"salePayoffFee",0,1);optional(n,"saleSettlementFee");
+          if(x.saleMaturityReleaseFee!=="in_asset_cost")optional(n,"saleMaturityReleaseFee");
           for(const k of ["prepayMin","settlementFee"])optional(n,k);n("monthlyFee");
           optional(n,"prepayFee",0,1);
           if(x.payment!=null){n("payment");if(x.method!=="annuity")throw Error(x.id+" 自定固定月供仅适用等额本息");}
@@ -154,9 +172,53 @@ details.panel{padding:0}details.panel>summary{padding:12px 20px;cursor:pointer;f
     h.citySources.forEach(c=>{for(const k of ["id","city","period","source","scope"])if(typeof c[k]!=="string"||!c[k].trim())throw Error("城市资料缺字段 "+k);});
     return h;
   }
-  function validateScenario(input, choice="base") {
-    if(!input||!idPattern.test(input.id)||typeof input.name!=="string"||!Array.isArray(input.paths))throw Error("情景需要 ID、名称和 paths 清单");
+  const targetClasses={
+    wageFactor:"工资或奖金收入",businessFactor:"经营回款收入",otherIncomeFactor:"其他收入",
+    unemploymentMonths:"收入来源",recoveryMonths:"收入来源",reemploymentFactor:"收入来源",
+    propertyShock:"房产",propertyAnnual:"房产",rentFactor:"房产",vacancyAdd:"房产",
+    saleDelay:"房产或车辆",saleHaircut:"房产或车辆",financialShock:"非现金市价资产",
+    securityAnnual:"非现金市价资产",concentrationHaircut:"非现金市价资产",loanRateDelta:"浮动利率贷款",
+    inflationAnnual:"全户",cashRateDelta:"全户"
+  };
+  function targetIds(h,key){
+    if(!h)return [];
+    let items=[];
+    switch(targetClasses[key]){
+      case "工资或奖金收入":items=h.incomes.filter(i=>["wage","bonus"].includes(i.kind??templates.incomes.kind));break;
+      case "经营回款收入":items=h.incomes.filter(i=>i.kind==="business");break;
+      case "其他收入":items=h.incomes.filter(i=>i.kind==="other");break;
+      case "收入来源":items=h.incomes;break;
+      case "房产":items=h.properties;break;
+      case "房产或车辆":items=[...h.properties,...h.vehicles];break;
+      case "非现金市价资产":items=h.financial.filter(f=>["stock","fund","bond","gold","other"].includes(f.kind??templates.financial.kind));break;
+      case "浮动利率贷款":items=h.loans.filter(l=>l.rateType==="floating");break;
+    }
+    return items.map(a=>a.id);
+  }
+  function validateTargets(s,h){
+    if(h){
+      const seen=new Set();
+      for(const g of groupNames)for(const item of h[g]){
+        if(!item.id)continue;
+        if(seen.has(item.id))throw Error("家庭 ID 重复，情景目标可能歧义："+item.id);
+        seen.add(item.id);
+      }
+    }
+    for(const p of s.paths){
+      if(!p||typeof p!=="object")throw Error("情景 "+s.id+" 含无效参数行");
+      if(!Object.hasOwn(targetClasses,p.key))throw Error("情景 "+s.id+" 的参数不受支持："+p.key);
+      if(p.target==="*")continue;
+      if(typeof p.target!=="string"||!idPattern.test(p.target))throw Error("情景 "+s.id+" / "+p.key+" 需要明确的目标 ID 或 *");
+      if(targetClasses[p.key]==="全户")throw Error("情景 "+s.id+" / "+p.key+" 是全户参数，目标必须为 * ，不能是 "+p.target);
+      if(!h)continue; // Individual scenario templates may be parsed without household data; runs always bind targets.
+      const eligible=targetIds(h,p.key);
+      if(!eligible.includes(p.target))throw Error("情景 "+s.id+" / "+p.key+" 的目标 "+p.target+" 不存在或类型不符；应为"+targetClasses[p.key]+" ID（当前 "+(eligible.join("、")||"无")+"）或 *");
+    }
+  }
+  function validateScenario(input, choice="base",h=null) {
+    if(!input||typeof input.id!=="string"||!idPattern.test(input.id)||typeof input.name!=="string"||!Array.isArray(input.paths))throw Error("情景需要 ID、名称和 paths 清单");
     const s=clone(input), by={};
+    validateTargets(s,h);
     for(const p of s.paths) {
       if(!Object.hasOwn(modes,p.key)||!modes[p.key].includes(p.mode)||p.mode!==modes[p.key][0])throw Error("不支持的情景参数或施加方式 "+p.key);
       if(typeof p.sourceId!=="string"||!p.sourceId.trim()||p.unit!==modes[p.key][1]||typeof p.editable!=="boolean")throw Error("情景缺少来源、单位或可编辑字段 "+p.key);
@@ -171,8 +233,6 @@ details.panel{padding:0}details.panel>summary{padding:12px 20px;cursor:pointer;f
       if(["propertyShock","financialShock","vacancyAdd"].includes(p.key))num(p.value,p.key,-1,p.key==="vacancyAdd"?1:5);
       if(["propertyAnnual","inflationAnnual"].includes(p.key))num(p.value,p.key,-.99,5);
       if(["loanRateDelta","cashRateDelta","securityAnnual"].includes(p.key))num(p.value,p.key,-5,5);
-      p.target=p.target||"*";
-      if(p.target!=="*"&&!idPattern.test(p.target))throw Error("情景目标 ID 无效");
       const effectiveDuration=["event","shock"].includes(p.mode)?1:p.duration;
       if(effectiveDuration!==p.duration)throw Error("单次事件/水平冲击的 duration 必须等于1");
       const list=by[p.key]||(by[p.key]=[]);
@@ -191,7 +251,7 @@ details.panel{padding:0}details.panel>summary{padding:12px 20px;cursor:pointer;f
   function newLoan(c) {
     return {c,balance:c.start===1?c.principal:0,rate:c.annualRate/12,end:c.start+c.months-1,
       payment:c.payment==null?amortPayment(c.principal,c.annualRate/12,c.months):c.payment,
-      principalStep:c.principal/c.months,everActive:c.start===1};
+      principalStep:c.principal/c.months,everActive:c.start===1,quotaIndex:0,quotaUsed:c.prepayPeriodUsed||0};
   }
   function loanDue(l,m,s) {
     const c=l.c;
@@ -268,19 +328,77 @@ details.panel{padding:0}details.panel>summary{padding:12px 20px;cursor:pointer;f
     if(replacement(c)&&!c.replacementAllowed)return "缺少可行的住房或通勤替代";
     return "";
   }
+  function quotaUnknown(c){
+    if(c.prepayMax==null)return "单次提前还本上限尚未确认（没有上限须明确填写“不限”）";
+    if(c.prepayPeriodMax==null)return "期间累计预付额度尚未确认（没有上限须明确填写“不限”）";
+    if(typeof c.prepayPeriodMax==="number"&&[c.prepayPeriodMonths,c.prepayPeriodRemaining,c.prepayPeriodUsed].some(v=>v==null))
+      return "期间额度的周期、首期剩余月数或期初已用额尚未确认";
+    return "";
+  }
+  function quotaAt(l,m){
+    const c=l.c,age=m-c.start+1;
+    const single=c.prepayMax==="unlimited"?Infinity:c.prepayMax;
+    if(c.prepayPeriodMax==="unlimited")return {index:0,used:0,limit:single};
+    const index=age<=c.prepayPeriodRemaining?0:1+Math.floor((age-c.prepayPeriodRemaining-1)/c.prepayPeriodMonths);
+    const used=l.quotaIndex===index?l.quotaUsed:0;
+    return {index,used,limit:Math.min(single,Math.max(0,c.prepayPeriodMax-used))};
+  }
+  function recordQuota(l,m,amount){
+    if(l.c.prepayPeriodMax==="unlimited")return;
+    const q=quotaAt(l,m);l.quotaIndex=q.index;l.quotaUsed=q.used+amount;
+  }
   function prepayRestriction(c,mode){
     if(c.canPrepay!==true)return c.canPrepay===false?"合同禁止提前还款":"提前还款许可尚未确认";
     if(c.prepayFrom==null||c.prepayFee==null)return "提前还款窗口或费率尚未确认（零费率也须填写）";
-    if(mode==="full")return c.settlementFee==null?"结清固定费用尚未确认（零费用也须填写）":"";
+    const quotaReason=quotaUnknown(c);if(quotaReason)return quotaReason;
+    if(mode==="full"){
+      if(c.allowFull!==true)return c.allowFull===false?"合同仅允许部分预付，禁止自愿提前全清":"自愿提前全清许可尚未确认";
+      return c.settlementFee==null?"结清固定费用尚未确认（零费用也须填写）":"";
+    }
     const permission=mode==="recast"?c.allowRecast:c.allowShorten;
     if(permission!==true)return permission===false?"合同禁止该种部分预付方式":"该种部分预付方式许可尚未确认";
     if(c.prepayMin==null)return "最低部分预付金额尚未确认";
     return c.method==="bullet"?"到期还本合同没有可重摊的定期本金":"";
   }
+  function checkVoluntary(l,m,mode,amount,closes){
+    const c=l.c,r=prepayRestriction(c,mode)||(closes&&mode!=="full"?prepayRestriction(c,"full"):"");
+    if(r)return r;
+    if(m-c.start+1<c.prepayFrom)return "尚未到合同提前还款窗口";
+    if(amount>quotaAt(l,m).limit+EPS)return "超过合同单次上限或本期剩余预付额度";
+    if(!closes&&amount+EPS<c.prepayMin)return "低于合同最低部分预付金额";
+    return "";
+  }
+  function saleContract(c,age){
+    if(c.salePayoffRule==="unknown")return {reason:"抵押物提前出售清偿适用的合同条款尚未确认"};
+    if(c.salePayoffRule==="forbidden")return {reason:"合同不允许在到期前通过资产交割结清贷款"};
+    let rate,fixed,voluntary;
+    if(c.salePayoffRule==="same_terms"){
+      const reason=prepayRestriction(c,"full");if(reason)return {reason};
+      if(age<c.prepayFrom)return {reason:"尚未到合同提前清偿窗口"};
+      rate=c.prepayFee;fixed=c.settlementFee;voluntary=true;
+    }else{
+      if([c.salePayoffFrom,c.salePayoffFee,c.saleSettlementFee].some(v=>v==null))return {reason:"独立出售清偿例外的窗口或费用尚未确认"};
+      if(age<c.salePayoffFrom)return {reason:"未到独立出售解押窗口"};
+      rate=c.salePayoffFee;fixed=c.saleSettlementFee;voluntary=false;
+    }
+    if(rate>0&&c.salePayoffFeeBase==="unknown")return {reason:"资产交割提前清偿的计费本金口径尚未确认"};
+    return {rate,fixed,voluntary};
+  }
+  function saleLoanTerms(l,m,d){
+    const extra=Math.max(0,l.balance-d.principal),c=l.c;
+    if(extra<EPS){
+      if(c.saleMaturityReleaseFee==null)return {reason:"到期当月因出售发生的解押费用范围尚未确认"};
+      return {extra:0,fees:c.saleMaturityReleaseFee==="in_asset_cost"?0:c.saleMaturityReleaseFee,voluntary:false};
+    }
+    const terms=saleContract(c,m-c.start+1);
+    if(terms.reason)return terms;
+    if(terms.voluntary&&extra>quotaAt(l,m).limit+EPS)return {reason:"交割需提前清偿的本金超过单次上限或本期剩余额度"};
+    return {extra,fees:terms.fixed+terms.rate*(c.salePayoffFeeBase==="extra"?extra:l.balance),voluntary:terms.voluntary};
+  }
   function checkActions(h,strategy) {
     if(!strategy||!Array.isArray(strategy.actions))throw Error("策略需要 actions");
     const ids=a=>new Set(a.map(x=>x.id)),real=ids([...h.properties,...h.vehicles]),props=ids(h.properties),fin=ids(h.financial),liab=ids(h.loans);
-    const occupied=new Set(), expenseAction=new Set();
+    const occupied=new Set(), expenseAction=new Set(), prepayDates=new Set();
     for(const a of strategy.actions) {
       num(a.month,"动作月",1,H,true);
       if(a.kind==="list"||a.kind==="rent") {
@@ -297,8 +415,9 @@ details.panel{padding:0}details.panel>summary{padding:12px 20px;cursor:pointer;f
         if(!liab.has(a.loan))throw Error("债务不存在");
         option("提前还款",["full","recast","shorten"],a.mode);
         if(a.mode!=="full")num(a.amount,"提前还款额",EPS,1e15);
-        if(occupied.has(a.loan))throw Error("同一贷款动作重复");
-        occupied.add(a.loan);
+        const date=a.loan+"|"+a.month;
+        if(prepayDates.has(date))throw Error("同一笔贷款同月不可重复预付");
+        prepayDates.add(date);
       }else if(a.kind==="cut"){
         if(expenseAction.size)throw Error("支出动作重复");expenseAction.add("cut");num(a.fraction,"削减比例",0,h.cutFraction);
       }else throw Error("未知动作 "+a.kind);
@@ -371,23 +490,23 @@ details.panel{padding:0}details.panel>summary{padding:12px 20px;cursor:pointer;f
         const linked=activeLiens(id,loans),parts=[];
         let subtotal=0,priorFunding=0;
         for(const l of linked){
-          const c=l.c,d=due.get(c.id),early=m<l.end;
-          const reason=early?prepayRestriction(c,"full"):(c.settlementFee==null?"结清固定费用尚未确认":"");
-          if(reason||c.transferWithLien==null||(early&&m-c.start+1<c.prepayFrom))
-            return {reason:reason||(c.transferWithLien==null?"解押付款方式尚未确认":"交割时尚未到合同提前还款窗口"),need:0};
-          const fees=c.settlementFee+(early?l.balance*c.prepayFee:0),total=l.balance+d.interest+d.fee+fees;
-          subtotal+=total;if(c.transferWithLien===false)priorFunding+=total;
-          parts.push({l,d,fees});
+          const c=l.c,d=due.get(c.id),terms=saleLoanTerms(l,m,d);
+          if(terms.reason||(terms.extra>EPS&&c.transferWithLien==null))
+            return {reason:terms.reason||"解押付款方式尚未确认",need:0};
+          const total=l.balance+d.interest+d.fee+terms.fees;
+          subtotal+=total;if(c.transferWithLien!==true)priorFunding+=total;
+          parts.push({l,d,...terms});
         }
         const needed=Math.max(0,priorFunding,subtotal-netOfAssetFees);
         return {parts,subtotal,need:Math.max(0,needed-cash),reason:cash+EPS<needed?"交割前资金不足（补差或先行解押）":""};
       }
       function retireLiens(quote){
-        for(const {l,d,fees} of quote.parts){
+        for(const {l,d,fees,extra,voluntary} of quote.parts){
           pay("releaseFees",fees);pay("loanFees",d.fee);pay("closingInterest",d.interest);
           const paid=pay("closingPrincipal",l.balance);l.balance=Math.max(0,l.balance-paid);
+          if(voluntary&&extra>EPS)recordQuota(l,m,extra);
           if(l.balance<EPS)l.balance=0;
-          if(detail)byLoan[l.c.id].push({month:m,principal:paid,interest:d.interest,balance:l.balance,annualRate:l.rate*12,settled:true});
+          if(detail)byLoan[l.c.id].push({month:m,principal:paid,scheduledPrincipal:paid-extra,earlyPrincipal:extra,interest:d.interest,balance:l.balance,annualRate:l.rate*12,settled:true});
           due.set(l.c.id,{interest:0,principal:0,fee:0});
         }
       }
@@ -408,8 +527,11 @@ details.panel{padding:0}details.panel>summary{padding:12px 20px;cursor:pointer;f
         }
         const settleMonth=m+z.c.settle;
         if(settleMonth>H){reject(m,z.c.id,"质押交割超出可评估期限，继续持有");return;}
-        const denied=liens.find(l=>settleMonth<l.end&&(prepayRestriction(l.c,"full")||settleMonth-l.c.start+1<l.c.prepayFrom));
-        if(denied){reject(m,z.c.id,prepayRestriction(denied.c,"full")||"质押成交时尚未到提前还款窗口");return;}
+        for(const l of liens){
+          if(settleMonth>=l.end||due.get(l.c.id).principal>=l.balance-EPS)continue;
+          const terms=saleContract(l.c,settleMonth-l.c.start+1);
+          if(terms.reason){reject(m,z.c.id,terms.reason);return;}
+        }
         z.lienOrder={month:settleMonth,gross:z.mark*z.units};
         event(m,z.c.id,"pledged_order","整笔质押交易，锁定报价并等待第 "+settleMonth+" 月同步解押；交割前无可用卖款",z.lienOrder.gross);
         if(settleMonth===m)settlePledged(z);
@@ -514,14 +636,14 @@ details.panel{padding:0}details.panel>summary{padding:12px 20px;cursor:pointer;f
         const l=loanMap.get(a.loan),c=l.c;
         if(l.balance<=EPS){if(!l.everActive)reject(m,c.id,"担保尚未触发，无法预付");else event(m,c.id,"superseded","债务已偿清，保留现金");continue;}
         const p=a.mode==="full"?l.balance:a.amount;
-        const restriction=prepayRestriction(c,a.mode)||(p>=l.balance-EPS?prepayRestriction(c,"full"):"");
-        if(restriction||m-c.start+1<c.prepayFrom||p>l.balance+EPS||(p+EPS<c.prepayMin&&p<l.balance-EPS)){
+        const restriction=checkVoluntary(l,m,a.mode,p,p>=l.balance-EPS);
+        if(restriction||p>l.balance+EPS){
           reject(m,c.id,(restriction||"提前还款期数、起点、余额或最低金额未获合同允许")+"，按原合同还款");continue;
         }
         const fee=p*c.prepayFee+(p>=l.balance-EPS?c.settlementFee:0),available=Math.max(0,cash-reserve);
         if(p+fee>available+EPS){reject(m,c.id,"本月可用现金扣生活、到期款和储备后不足，保留现金",p+fee-available);continue;}
-        pay("prepaid",p);pay("prepayFees",fee);l.balance=Math.max(0,l.balance-p);recast(l,a.mode,m);
-        if(detail)byLoan[c.id].push({month:m,prepay:p,fee,balance:l.balance,end:l.end,nextPayment:c.method==="annuity"?l.payment:null});
+        pay("prepaid",p);pay("prepayFees",fee);recordQuota(l,m,p);l.balance=Math.max(0,l.balance-p);recast(l,a.mode,m);
+        if(detail)byLoan[c.id].push({month:m,prepay:p,fee,balance:l.balance,remainingQuota:typeof c.prepayPeriodMax==="number"?Math.max(0,c.prepayPeriodMax-l.quotaUsed):null,end:l.end,nextPayment:c.method==="annuity"?l.payment:null});
         event(m,c.id,"prepay","来自当月清算后的可支配现金",p);
       }
       const financial=sum(securities,z=>z.mark*z.units),property=sum(assets,z=>z.owned&&z.property?z.mark:0),
@@ -572,6 +694,14 @@ details.panel{padding:0}details.panel>summary{padding:12px 20px;cursor:pointer;f
   function firstPositive(n){return n>EPS?n:0;}
 
   const baseStrategy=()=>({id:"S000",actions:[]});
+  function neutralBalance(c,through){
+    const l=newLoan(c),scenario={by:{}};
+    for(let m=c.start;m<=through;m++){
+      const due=loanDue(l,m,scenario);
+      l.balance=Math.max(0,l.balance-due.principal);
+    }
+    return l.balance;
+  }
   function enumerate(h,limit=200) {
     num(limit,"策略上限",100,500,true);
     const dims=[],exclusions=[];
@@ -617,16 +747,43 @@ details.panel{padding:0}details.panel>summary{padding:12px 20px;cursor:pointer;f
       for(const reason of new Set([fullRestriction,recastRestriction,shortenRestriction].filter(Boolean)))why(l.id,reason);
       if(fullRestriction&&recastRestriction&&shortenRestriction)continue;
       if(l.principal<=EPS||l.months<2){why(l.id,"余额或到期期数不支持额外提前还款");continue;}
-      const month=l.start+l.prepayFrom-1;
-      if(month>=l.start+l.months-1||month>H){why(l.id,"提前还款窗口在到期或评估期以后");continue;}
-      const choices=fullRestriction?[]:[{kind:"prepay",loan:l.id,month,mode:"full"}];
-      const partialCap=Math.min(Math.max(liquidOpening,fundingAt(month))/(1+l.prepayFee),l.principal*.5);
-      for(const frac of [.5,1]){
-        const amount=Math.floor(partialCap*frac*100)/100;
-        if(amount<=EPS||amount<l.prepayMin||l.method==="bullet")continue;
-        for(const mode of ["recast","shorten"]){
-          if(mode==="recast"?recastRestriction:shortenRestriction)continue;
-          choices.push({kind:"prepay",loan:l.id,month,mode,amount});
+      const first=l.start+l.prepayFrom-1,last=Math.min(H,l.start+l.months-2);
+      if(first>last){why(l.id,"提前还款窗口在到期或评估期以后");continue;}
+      const dates=new Set([first]),contractLoan=newLoan(l);
+      if(typeof l.prepayPeriodMax==="number"){
+        const initialReset=l.start+l.prepayPeriodRemaining;
+        const next=first<initialReset?initialReset:initialReset+(1+Math.floor((first-initialReset)/l.prepayPeriodMonths))*l.prepayPeriodMonths;
+        if(next<=last)dates.add(next);
+      }
+      if(!fullRestriction&&Number.isFinite(quotaAt(contractLoan,first).limit)){
+        for(let m=first;m<=last;m++){
+          const remaining=neutralBalance(l,m);
+          if(remaining>EPS&&remaining<=quotaAt(contractLoan,m).limit+EPS){dates.add(m);break;}
+        }
+      }
+      const choices=[],recurring=new Map();
+      for(const month of [...dates].sort((a,b)=>a-b)){
+        const availableQuota=quotaAt(contractLoan,month).limit,contractBalance=neutralBalance(l,month);
+        const fullFits=!fullRestriction&&contractBalance>EPS&&contractBalance<=availableQuota+EPS;
+        if(month===first&&!fullRestriction&&!fullFits)why(l.id,"首个动作月全清的剩余本金超过合同额度或已到期");
+        if(fullFits)choices.push({kind:"prepay",loan:l.id,month,mode:"full"});
+        const partialCap=Math.min(Math.max(liquidOpening,fundingAt(month))/(1+l.prepayFee),l.principal*.5,availableQuota);
+        const distinctAmounts=new Set();
+        for(const frac of [.5,1]){
+          const amount=Math.floor(partialCap*frac*100)/100;
+          if(amount<=EPS||amount<l.prepayMin||amount>=contractBalance-EPS||l.method==="bullet"||distinctAmounts.has(amount))continue;
+          distinctAmounts.add(amount);
+          for(const mode of ["recast","shorten"]){
+            if(mode==="recast"?recastRestriction:shortenRestriction)continue;
+            const action={kind:"prepay",loan:l.id,month,mode,amount};choices.push(action);
+            if(typeof l.prepayPeriodMax==="number"&&frac===1){
+              const prev=recurring.get(mode);
+              if(!prev)recurring.set(mode,action);
+              else if(quotaAt(contractLoan,month).index!==quotaAt(contractLoan,prev.month).index){
+                choices.push([prev,action]);recurring.delete(mode);
+              }
+            }
+          }
         }
       }
       add(l.id,choices);
@@ -642,7 +799,7 @@ details.panel{padding:0}details.panel>summary{padding:12px 20px;cursor:pointer;f
       const key=digits.join(",");
       if(selected.length>=limit||seen.has(key))return;
       seen.add(key);
-      const actions=digits.map((v,i)=>dims[i].options[v]).filter(Boolean);
+      const actions=digits.map((v,i)=>dims[i].options[v]).filter(Boolean).flat();
       selected.push({id:"S"+String(selected.length).padStart(3,"0"),actions});
     }
     function decode(n){return dims.map(d=>{const b=BigInt(d.options.length),k=Number(n%b);n/=b;return k;});}
@@ -675,7 +832,7 @@ details.panel{padding:0}details.panel>summary{padding:12px 20px;cursor:pointer;f
   }
   function prepare(input,scenarios) {
     if(!Array.isArray(scenarios)||!scenarios.length||scenarios.length>12)throw Error("请输入1至12个情景");
-    const h=validateHousehold(input),paths=scenarios.map(s=>validateScenario(s,h.rangeCase));
+    const h=validateHousehold(input),paths=scenarios.map(s=>validateScenario(s,h.rangeCase,h));
     if(new Set(paths.map(s=>s.id)).size!==paths.length)throw Error("情景 ID 重复");
     return {h,scenarios:paths};
   }
@@ -826,7 +983,9 @@ details.panel{padding:0}details.panel>summary{padding:12px 20px;cursor:pointer;f
       const balance=ld?ld.balance:(loan.method==="bullet"&&month<loan.start+loan.months-1?loan.principal:0);
       if(month<=H)payoff={id:loan.id,...effect(actions,{kind:"prepay",loan:loan.id,month,mode:"full"})};
       if(r&&balance>EPS&&["full","recast","shorten"].some(mode=>!prepayRestriction(loan,mode))){
-        const upper=Math.min(balance,Math.max(0,r.cash-r.reserve)/(1+loan.prepayFee)),mode=loan.allowRecast?"recast":loan.allowShorten?"shorten":null;
+        const liquidityCeiling=Math.min(balance,Math.max(0,r.cash-r.reserve)/(1+loan.prepayFee));
+        const contractLimit=quotaAt(newLoan(loan),month).limit,upper=Math.min(liquidityCeiling,contractLimit);
+        const mode=!prepayRestriction(loan,"recast")?"recast":!prepayRestriction(loan,"shorten")?"shorten":null;
         const works=x=>{
           if(x<=EPS)return keep.summary.feasible;
           const useMode=x>=balance-EPS?"full":mode;
@@ -844,7 +1003,7 @@ details.panel{padding:0}details.panel>summary{padding:12px 20px;cursor:pointer;f
         }
         // A non-cent contractual payoff can be rounded to cents only for display.
         const cap=last?last.x:null;
-        affordablePrepay={id:loan.id,month,mode,largestTested:cap,liquidityCeiling:upper,balance,
+        affordablePrepay={id:loan.id,month,mode,largestTested:cap,liquidityCeiling,contractCeiling:Number.isFinite(contractLimit)?contractLimit:"unlimited",balance,
           coarseStep:upper/50,baselineFeasible:keep.summary.feasible};
       } else affordablePrepay={id:loan.id,month,largestTested:null,reason:prepayRestriction(loan,"full")||"窗口无可测试余额或现金已截断"};
     }else if(loan)affordablePrepay={id:loan.id,month:null,largestTested:null,reason:"提前还款窗口尚未确认，维持原合同"};
@@ -869,7 +1028,7 @@ details.panel{padding:0}details.panel>summary{padding:12px 20px;cursor:pointer;f
     }
     return {grid,base:base.summary,affordablePrepay,breakEven,liquidation,payoff};
   }
-  return {H,templates,blank,baseStrategy,modes,path,prepare,validateHousehold,validateScenario,enumerate,
+  return {H,templates,blank,baseStrategy,modes,path,prepare,validateHousehold,validateScenario,validateTargets,targetIds,targetClasses,enumerate,
     assess,simulate,rank,reverse,describe,nameOf,amortPayment,
     inspect:(study,strategyId,scenarioId)=>{
       const r=study.results.find(r=>r.strategy.id===strategyId),s=study.prepared.scenarios.find(s=>s.id===scenarioId);
@@ -896,6 +1055,9 @@ const labels={
   principal:"剩余本金 / 代偿额",annualRate:"合同年利率",rateType:"利率类型",resetFirst:"首次重定价期数",resetEvery:"重定价间隔（月）",
   months:"剩余合同期数",method:"合同还款方式",payment:"约定等额月供（留空按公式）",canPrepay:"允许提前还款",prepayFrom:"最早提前还款期数",
   prepayMin:"最低部分预付额",prepayFee:"预付本金费用率",settlementFee:"结清固定费用",transferWithLien:"可用交易款同步解押",
+  allowFull:"允许自愿提前全部结清",prepayMax:"每次预付本金上限",prepayPeriodMax:"每个合同期间累计预付上限",prepayPeriodMonths:"额度重置周期（月）",
+  prepayPeriodRemaining:"首个额度期间剩余月数（含首月）",prepayPeriodUsed:"首期开始前已用额度",salePayoffRule:"抵押物提前出售清偿规则",
+  salePayoffFrom:"独立出售例外最早贷款期数",salePayoffFee:"独立出售清偿费率",saleSettlementFee:"独立出售清偿固定费",salePayoffFeeBase:"资产交割清偿计费本金",saleMaturityReleaseFee:"到期当月交割另列解押费",
   allowRecast:"允许部分预付降月供",allowShorten:"允许部分预付缩期限",start:"担保代偿月（普通债务为1）",monthlyFee:"每期合同费用",
   cash:"期初可用现金",cashAnnual:"现金年收益率",reserveMonths:"目标储备月数",minimumLiving:"最低生活支出 / 月",cutFraction:"可选支出最大削减比例",
   maxSaleWait:"最长可接受成交等待（月）",rangeCase:"家庭区间取值",preference:"单项目标"
@@ -906,15 +1068,17 @@ const sels={
   financialKind:{deposit:"定期存款",instant:"随时可变现余额",stock:"股票",fund:"基金",bond:"债券",gold:"黄金",other:"其他计价资产"},
   loanKind:{mortgage:"住房贷款",car:"车贷",consumer:"消费贷",card:"信用卡",business:"经营贷",family:"亲友借款",margin:"证券杠杆",guarantee:"担保代偿",other:"其他债务"},
   restriction:{unknown:"交易与用途尚未确认",free:"可用于家庭支出",restricted:"专款/受限",pledged:"质押（依合同先行或同步解押）"},use:{idle:"闲置",occupied:"自住",let:"已出租"},
+  salePayoffRule:{unknown:"尚未确认",same_terms:"同普通提前全清条款与额度",sale_exception:"合同另准出售结清，不占普通额度",forbidden:"禁止提前通过出售结清"},
+  salePayoffFeeBase:{unknown:"尚未确认",balance:"按本金总余额计费",extra:"仅按超出本期应还的本金计费"},
   rateType:{fixed:"固定利率",floating:"按期重定价"},method:{annuity:"等额本息",principal:"等额本金",bullet:"按月付息、到期还本"},
   rangeCase:{low:"全部低端",base:"各项中心值",high:"全部高端"},preference:{cash:"最大化最坏路径最低现金",wealth:"最大化最坏十年实际净资产",debt:"最小化峰值偿债比",regret:"最小化最大后悔额"}
 };
 const fast={incomes:["id","name","kind","monthly","from","to"],expenses:["id","name","kind","monthly","from","to"],
   financial:["id","name","kind","value","annualReturn","settle"],properties:["id","name","city","use","value","saleValue","rent","carry"],
   vehicles:["id","name","value","saleValue","carry","necessary"],loans:["id","name","kind","collateral","principal","annualRate","months","method"]};
-const money=new Set(["monthly","value","saleValue","rent","carry","closingFee","replacementMonthly","principal","payment","prepayMin","settlementFee","monthlyFee","cash","minimumLiving"]);
-const percentages=new Set(["annualGrowth","jobPayFraction","returnFraction","annualReturn","concentration","fee","vacancy","discountRent","saleFee","annualDepreciation","annualRate","prepayFee","cashAnnual","cutFraction"]);
-const conditionalFlags=new Set(["canPrepay","allowRecast","allowShorten","transferWithLien","canSell","necessary"]);
+const money=new Set(["monthly","value","saleValue","rent","carry","closingFee","replacementMonthly","principal","payment","prepayMin","prepayMax","prepayPeriodMax","prepayPeriodUsed","saleSettlementFee","saleMaturityReleaseFee","settlementFee","monthlyFee","cash","minimumLiving"]);
+const percentages=new Set(["annualGrowth","jobPayFraction","returnFraction","annualReturn","concentration","fee","vacancy","discountRent","saleFee","annualDepreciation","annualRate","prepayFee","salePayoffFee","cashAnnual","cutFraction"]);
+const conditionalFlags=new Set(["canPrepay","allowFull","allowRecast","allowShorten","transferWithLien","canSell","necessary"]);
 const words=new Set(["id","name","stability","purpose","city","type","sourceId","collateral"]);
 const groupKind={incomes:"incomeKind",expenses:"expenseKind",financial:"financialKind",loans:"loanKind"};
 const pLabels={wageFactor:"工资/奖金倍数",businessFactor:"经营回款倍数",otherIncomeFactor:"其他收入倍数",unemploymentMonths:"失业事件时长",recoveryMonths:"复工过渡月数",
@@ -924,7 +1088,11 @@ const assumptions={observed:"观测",historical:"历史参照",research_estimate
 const opts=(xs,value)=>Object.entries(xs).map(([k,v])=>'<option value="'+html(k)+'" '+(String(value)===k?'selected':'')+'>'+html(v)+'</option>').join("");
 function say(msg,bad=false){$("status").textContent=msg;$("status").classList.toggle("error",bad);}
 function mark(){const e=$("kind"),example=h.dataKind==="synthetic_example";e.textContent=example?"合成示例 · 编辑后仍为示例":"家庭录入 · "+(h.cash==null?"金额待填":"本机数据");e.classList.toggle("sample",example);}
-function resetResults(){study=null;stressResult=null;mark();say("输入已修改，运行后更新方案。");}
+function invalidTargets(house,paths){
+  try{for(const s of paths)E.validateTargets(s,house);return "";}catch(error){return error.message;}
+}
+function invalidateVisible(){study=null;stressResult=null;if(active!=="inputs")renderView();}
+function resetResults(){invalidateVisible();mark();const issue=invalidTargets(h,scenarios);say(issue||"输入已修改，运行后更新方案。",Boolean(issue));}
 function valueText(v,mul){
   if(v==null)return "";
   const scale=x=>typeof x==="number"?String(Number((x*mul).toPrecision(14))):String(x);
@@ -944,6 +1112,8 @@ function field(group,index,key,obj){
   const ids=' id="f-'+group+'-'+index+'-'+key+'" data-group="'+group+'" data-index="'+index+'" data-key="'+key+'"';
   let control;
   if(conditionalFlags.has(key))control='<select'+ids+' data-contract-flag="true">'+opts({'':'尚未确认',true:'明确允许 / 是',false:'明确禁止 / 否'},v==null?'':v)+'</select>';
+  else if(key==="saleMaturityReleaseFee")control='<input type="text" list="maturity-cost-options"'+ids+' value="'+html(v==="in_asset_cost"?"已含成交成本":valueText(v,factor))+'" placeholder="附加金额 / 已含成交成本 / 未知">';
+  else if(key==="prepayMax"||key==="prepayPeriodMax")control='<input type="text" list="quota-options"'+ids+' value="'+html(v==="unlimited"?"不限":valueText(v,factor))+'" placeholder="金额 / 不限 / 留空未知">';
   else if(choice)control='<select'+ids+'>'+opts(choice,v)+'</select>';
   else if(typeof v==="boolean")control='<input type="checkbox"'+ids+(v?' checked':'')+'>';
   else control='<input type="text" '+(words.has(key)?'':'inputmode="decimal"')+ids+' value="'+html(valueText(v,factor))+'" '+(!words.has(key)&&v==null?'placeholder="填写或留空"':'')+'>';
@@ -960,10 +1130,10 @@ function drawInputs(openGroup=null,openRow=null){
   $("inputs").innerHTML='<div class="cols"><div><section class="panel"><div class="summaryline"><h2 class="sectiontitle">家庭底账</h2><label class="small">金额输入 <select id="unit"><option value="1">元</option><option value="10000">万元</option></select></label></div>'
     +'<p class="small">金额可填单值，或用 ~ 分开低值、中心值、高值。只有两端时选择低端或高端。比例输入框使用百分数。</p><div class="fields">'
     +["cash","minimumLiving","reserveMonths","cashAnnual","cutFraction","maxSaleWait","rangeCase","preference"].map(k=>field("base",0,k,h)).join("")+'</div></section>'+cards()
-    +'<details class="panel" id="g-scenario"><summary>情景参数 <span class="pill">'+scenarios.length+' 条路径</span></summary><div class="in"><p class="small">以下假设采用小数年率或倍数；一次冲击仅在起点生效。具体目标 ID 优先于通用目标 *。所有候选在每条路径下分别运行。</p><div id="scenarioEditor"></div></div></details>'
+    +'<details class="panel" id="g-scenario"><summary>情景参数 <span class="pill">'+scenarios.length+' 条路径</span></summary><div class="in"><p class="small">以下假设采用小数年率或倍数；一次冲击仅在起点生效。具体目标 ID 优先于通用目标 *。具体目标须对应家庭中适用的收入、资产或浮息贷款；全户通胀与现金利率只可填 *。所有候选在每条路径下分别运行。</p><div id="scenarioEditor"></div></div></details>'
     +'<details class="panel" id="g-city"><summary>城市资料与适用范围</summary><div class="in"><p class="small">每项填写 id、city、period、source、scope。房产按城市单独登记，城市资料随 JSON 离线导入。</p>'
     +'<textarea id="cities" rows="5" style="width:100%">'+html(JSON.stringify(h.citySources,null,2))+'</textarea><button id="applyCities">应用城市资料</button></div></details></div>'
-    +'<aside class="panel sticky"><h2 class="sectiontitle">试算设置</h2><label class="field">最多运行的不同方案<select id="limit">'+opts({"100":"100","200":"200","300":"300","400":"400","500":"500"},limit)+'</select></label>'
+    +'<aside class="panel sticky"><datalist id="maturity-cost-options"><option value="已含成交成本"></option></datalist><datalist id="quota-options"><option value="不限"></option></datalist><h2 class="sectiontitle">试算设置</h2><label class="field">最多运行的不同方案<select id="limit">'+opts({"100":"100","200":"200","300":"300","400":"400","500":"500"},limit)+'</select></label>'
     +'<p class="small">小于上限的组合全部运行。超过上限时覆盖基准、单项动作、跨资产两项动作和整个组合空间的分层样本。</p><p>先检查能否付清当月必需支出与债务，再对照储备目标和十年购买力。</p>'
     +'<button class="primary" id="runAside">运行 120 个月</button><hr style="border:0;border-top:1px solid var(--line);margin:17px 0"><button id="clearInputs" class="danger">新建空白家庭</button></aside></div>';
   $("unit").value=String(unit);$("runAside").onclick=doRun;$("limit").onchange=e=>{limit=Number(e.target.value);resetResults();};
@@ -973,16 +1143,20 @@ function drawInputs(openGroup=null,openRow=null){
   drawPathEditor();
   if(openGroup){$("g-"+openGroup).open=true;if(openRow!=null){const node=q('[data-row="'+openGroup+'-'+openRow+'"]');if(node)node.open=true;}}
 }
+function targetCell(p,i){
+  const values=["*",...E.targetIds(h,p.key)],bad=!values.includes(p.target);
+  return '<td><input aria-label="target" data-pp="target" data-pi="'+i+'" list="target-options-'+i+'" aria-invalid="'+bad+'" value="'+html(p.target)+'" '+(p.editable?'':'disabled')+' style="width:140px"><datalist id="target-options-'+i+'">'+values.map(v=>'<option value="'+html(v)+'"></option>').join("")+'</datalist></td>';
+}
 function drawPathEditor(){
   const s=scenarios.find(z=>z.id===scenarioId)||scenarios[0];
   const cell=(a,k,i,readonly=false)=>'<td><input aria-label="'+html(k)+'" data-pp="'+k+'" data-pi="'+i+'" value="'+html(a)+'" '+(readonly?'disabled':'')+' style="width:'+(['sourceId','target'].includes(k)?'140':'78')+'px"></td>';
   $("scenarioEditor").innerHTML='<label class="field">编辑情景<select id="editScenario">'+opts(Object.fromEntries(scenarios.map(z=>[z.id,z.name])),s.id)+'</select></label><p>'+html(s.description||"")+'</p><div class="scroll"><table class="compact"><thead><tr>'
     +["参数","数值","范围下限","范围上限","起点月","持续月","单位","目标 ID","来源 ID","假设类型"].map(k=>'<th>'+k+'</th>').join("")+'</tr></thead><tbody>'
     +s.paths.map((p,i)=>'<tr><th>'+html(pLabels[p.key])+'</th>'+cell(valueText(p.value,1),"value",i,!p.editable)+cell(p.range[0],"low",i,!p.editable)+cell(p.range[1],"high",i,!p.editable)
-    +cell(p.start,"start",i,!p.editable)+cell(p.duration,"duration",i,!p.editable)+ '<td>'+html(p.unit)+'</td>'+cell(p.target,"target",i,!p.editable)+cell(p.sourceId,"sourceId",i,!p.editable)
+    +cell(p.start,"start",i,!p.editable)+cell(p.duration,"duration",i,!p.editable)+ '<td>'+html(p.unit)+'</td>'+targetCell(p,i)+cell(p.sourceId,"sourceId",i,!p.editable)
     +'<td>'+html(assumptions[p.assumption])+'</td></tr>').join("")+'</tbody></table></div><details><summary>直接编辑全部情景 JSON</summary><textarea id="rawPaths" rows="8" style="width:100%">'+html(JSON.stringify(scenarios,null,2))+'</textarea><button id="applyPaths">应用情景 JSON</button></details>';
   $("editScenario").onchange=e=>{scenarioId=e.target.value;drawPathEditor();};
-  $("applyPaths").onclick=()=>{try{const v=JSON.parse($("rawPaths").value);if(!Array.isArray(v)||!v.length)throw Error("至少需要一个情景");v.forEach(s=>E.validateScenario(s,h.rangeCase));if(new Set(v.map(s=>s.id)).size!==v.length)throw Error("情景 ID 重复");scenarios=v;scenarioId=v[0].id;resetResults();drawPathEditor();say("情景输入已应用。");}catch(e){say(e.message,true);}};
+  $("applyPaths").onclick=()=>{try{const v=JSON.parse($("rawPaths").value);if(!Array.isArray(v)||!v.length)throw Error("至少需要一个情景");v.forEach(s=>E.validateScenario(s,h.rangeCase,h));if(new Set(v.map(s=>s.id)).size!==v.length)throw Error("情景 ID 重复");scenarios=v;scenarioId=v[0].id;resetResults();drawPathEditor();say("情景输入已应用。");}catch(e){invalidateVisible();say("新情景未应用，旧试算结果已清除 · "+e.message,true);}};
 }
 $("inputs").addEventListener("change",e=>{
   const t=e.target;
@@ -990,7 +1164,9 @@ $("inputs").addEventListener("change",e=>{
     const {group,index,key}=t.dataset,obj=group==="base"?h:h[group][index];
     const factor=money.has(key)?1/unit:percentages.has(key)?100:1;
     obj[key]=t.dataset.contractFlag?(t.value===""?null:t.value==="true"):t.type==="checkbox"?t.checked:t.tagName==="SELECT"||words.has(key)?t.value:parseNumber(t.value,factor);
-    if(key==="preference")objective=obj[key];resetResults();
+    if(key==="saleMaturityReleaseFee"&&["已含成交成本","in_asset_cost"].includes(t.value.trim()))obj[key]="in_asset_cost";
+    if((key==="prepayMax"||key==="prepayPeriodMax")&&["不限","unlimited"].includes(t.value.trim()))obj[key]="unlimited";
+    if(key==="preference")objective=obj[key];resetResults();if(["id","kind","rateType"].includes(key))drawPathEditor();
   }else if(t.dataset.pp){
     const s=scenarios.find(s=>s.id===scenarioId),p=s.paths[Number(t.dataset.pi)],k=t.dataset.pp;
     if(k==="value"){
@@ -1019,9 +1195,11 @@ $("importFile").onchange=async e=>{
   try{const f=e.target.files[0];if(!f)return;const data=JSON.parse(await f.text()),house=data.household||data,paths=data.scenarios||scenarios;
     // Permit reopening a deliberately incomplete draft; validate all amounts at run time.
     if(!house||house.schema!=="household-cny.v1"||!["household","synthetic_example"].includes(house.dataKind)||Object.keys(names).some(k=>!Array.isArray(house[k])||house[k].some(v=>!v||typeof v!=="object"||Array.isArray(v))))throw Error("家庭 JSON 结构不符");
-    if(!Array.isArray(paths)||!paths.length)throw Error("情景缺失");paths.forEach(z=>E.validateScenario(z,house.rangeCase));
+    if(!Array.isArray(paths)||!paths.length)throw Error("情景缺失");paths.forEach(z=>E.validateScenario(z,house.rangeCase,house));
+    if(new Set(paths.map(z=>z.id)).size!==paths.length)throw Error("情景 ID 重复");
+    try{E.validateHousehold(house);}catch(validation){if(validation.code!=="MISSING_VALUE")throw validation;}
     h=house;scenarios=paths;scenarioId=scenarios[0].id;objective=h.preference;resetResults();setTab("inputs");drawInputs();say("JSON 已载入，请运行当前输入。");
-  }catch(err){say("导入失败 · "+err.message,true);}e.target.value="";
+  }catch(err){invalidateVisible();say("导入失败，旧试算结果已清除 · "+err.message,true);}e.target.value="";
 };
 $("loadDemo").onclick=()=>{h=JSON.parse($("example-data").textContent);scenarios=originals();scenarioId=scenarios[0].id;objective=h.preference;
   resetResults();setTab("inputs");drawInputs();say("已载入合成示例，可修改后运行。");};
@@ -1149,7 +1327,7 @@ function drawStressOutput(){
   const b=v.breakEven,a=v.affordablePrepay;
   if(b)out+='<h3 class="sub">净租金与出售净款 · '+html(b.id)+'</h3>'+table(["交割月","卖房当月净款","持有期实际平均净租金/月","达到出售路径财富所需账面月租","相应平均净租金/月"],[[b.saleMonth??"—",yuan(b.saleNet),yuan(b.actualMonthlyNet),yuan(b.grossMonthlyThreshold),yuan(b.netMonthlyThreshold)]])
     +'<p class="small">以 120 月实际净资产、完整履约与储备为比较条件，出租路径保留期末房屋残值。搜索月租 '+yuan(b.testedRange[0])+' 至 '+yuan(b.testedRange[1])+' 元。'+html(b.reason)+'</p>';
-  if(a)out+='<h3 class="sub">可承受提前还款 · '+html(a.id)+'</h3><p>'+(a.month==null?'窗口尚未确认':'第 '+a.month+' 月')+'，最高已验证预付款 <b>'+yuan(a.largestTested)+' 元</b>。'+(a.liquidityCeiling==null?html(a.reason):'现金允许上限 '+yuan(a.liquidityCeiling)+' 元。当月上限内按 50 档试算，最后可行区间细化至分，跨区间结果以已测试点为限。')+'</p>';
+  if(a)out+='<h3 class="sub">可承受提前还款 · '+html(a.id)+'</h3><p>'+(a.month==null?'窗口尚未确认':'第 '+a.month+' 月')+'，最高已验证预付款 <b>'+yuan(a.largestTested)+' 元</b>。'+(a.liquidityCeiling==null?html(a.reason):'现金允许上限 '+yuan(a.liquidityCeiling)+' 元，合同单次及本期剩余额度上限 '+(a.contractCeiling==="unlimited"?"已确认不限":yuan(a.contractCeiling)+" 元")+'。两项约束取较低者后按 50 档试算，最后可行区间细化至分，跨区间结果以已测试点为限。')+'</p>';
   const effects=[["金融资产一次转现金",v.liquidation],["用现金提前结清贷款",v.payoff]].filter(x=>x[1]);
   if(effects.length)out+='<h3 class="sub">与保持其他动作相同的反事实比较</h3>'+table(["动作 / 对象","保留可支撑月数","执行可支撑月数","首月现金变化","已观察最低现金变化","动作状态"],effects.map(([name,e])=>[name+" · "+e.id,e.holdingSupport,e.actionSupport,yuan(e.changeFirstCash),yuan(e.changeMinCash),e.blocked.length?e.blocked[0].reason:e.actionFeasible?"满足本路径约束":"现金或储备未满足"]));
   $("stressOutput").innerHTML=out;

@@ -18,6 +18,9 @@ const labels={
   principal:"剩余本金 / 代偿额",annualRate:"合同年利率",rateType:"利率类型",resetFirst:"首次重定价期数",resetEvery:"重定价间隔（月）",
   months:"剩余合同期数",method:"合同还款方式",payment:"约定等额月供（留空按公式）",canPrepay:"允许提前还款",prepayFrom:"最早提前还款期数",
   prepayMin:"最低部分预付额",prepayFee:"预付本金费用率",settlementFee:"结清固定费用",transferWithLien:"可用交易款同步解押",
+  allowFull:"允许自愿提前全部结清",prepayMax:"每次预付本金上限",prepayPeriodMax:"每个合同期间累计预付上限",prepayPeriodMonths:"额度重置周期（月）",
+  prepayPeriodRemaining:"首个额度期间剩余月数（含首月）",prepayPeriodUsed:"首期开始前已用额度",salePayoffRule:"抵押物提前出售清偿规则",
+  salePayoffFrom:"独立出售例外最早贷款期数",salePayoffFee:"独立出售清偿费率",saleSettlementFee:"独立出售清偿固定费",salePayoffFeeBase:"资产交割清偿计费本金",saleMaturityReleaseFee:"到期当月交割另列解押费",
   allowRecast:"允许部分预付降月供",allowShorten:"允许部分预付缩期限",start:"担保代偿月（普通债务为1）",monthlyFee:"每期合同费用",
   cash:"期初可用现金",cashAnnual:"现金年收益率",reserveMonths:"目标储备月数",minimumLiving:"最低生活支出 / 月",cutFraction:"可选支出最大削减比例",
   maxSaleWait:"最长可接受成交等待（月）",rangeCase:"家庭区间取值",preference:"单项目标"
@@ -28,15 +31,17 @@ const sels={
   financialKind:{deposit:"定期存款",instant:"随时可变现余额",stock:"股票",fund:"基金",bond:"债券",gold:"黄金",other:"其他计价资产"},
   loanKind:{mortgage:"住房贷款",car:"车贷",consumer:"消费贷",card:"信用卡",business:"经营贷",family:"亲友借款",margin:"证券杠杆",guarantee:"担保代偿",other:"其他债务"},
   restriction:{unknown:"交易与用途尚未确认",free:"可用于家庭支出",restricted:"专款/受限",pledged:"质押（依合同先行或同步解押）"},use:{idle:"闲置",occupied:"自住",let:"已出租"},
+  salePayoffRule:{unknown:"尚未确认",same_terms:"同普通提前全清条款与额度",sale_exception:"合同另准出售结清，不占普通额度",forbidden:"禁止提前通过出售结清"},
+  salePayoffFeeBase:{unknown:"尚未确认",balance:"按本金总余额计费",extra:"仅按超出本期应还的本金计费"},
   rateType:{fixed:"固定利率",floating:"按期重定价"},method:{annuity:"等额本息",principal:"等额本金",bullet:"按月付息、到期还本"},
   rangeCase:{low:"全部低端",base:"各项中心值",high:"全部高端"},preference:{cash:"最大化最坏路径最低现金",wealth:"最大化最坏十年实际净资产",debt:"最小化峰值偿债比",regret:"最小化最大后悔额"}
 };
 const fast={incomes:["id","name","kind","monthly","from","to"],expenses:["id","name","kind","monthly","from","to"],
   financial:["id","name","kind","value","annualReturn","settle"],properties:["id","name","city","use","value","saleValue","rent","carry"],
   vehicles:["id","name","value","saleValue","carry","necessary"],loans:["id","name","kind","collateral","principal","annualRate","months","method"]};
-const money=new Set(["monthly","value","saleValue","rent","carry","closingFee","replacementMonthly","principal","payment","prepayMin","settlementFee","monthlyFee","cash","minimumLiving"]);
-const percentages=new Set(["annualGrowth","jobPayFraction","returnFraction","annualReturn","concentration","fee","vacancy","discountRent","saleFee","annualDepreciation","annualRate","prepayFee","cashAnnual","cutFraction"]);
-const conditionalFlags=new Set(["canPrepay","allowRecast","allowShorten","transferWithLien","canSell","necessary"]);
+const money=new Set(["monthly","value","saleValue","rent","carry","closingFee","replacementMonthly","principal","payment","prepayMin","prepayMax","prepayPeriodMax","prepayPeriodUsed","saleSettlementFee","saleMaturityReleaseFee","settlementFee","monthlyFee","cash","minimumLiving"]);
+const percentages=new Set(["annualGrowth","jobPayFraction","returnFraction","annualReturn","concentration","fee","vacancy","discountRent","saleFee","annualDepreciation","annualRate","prepayFee","salePayoffFee","cashAnnual","cutFraction"]);
+const conditionalFlags=new Set(["canPrepay","allowFull","allowRecast","allowShorten","transferWithLien","canSell","necessary"]);
 const words=new Set(["id","name","stability","purpose","city","type","sourceId","collateral"]);
 const groupKind={incomes:"incomeKind",expenses:"expenseKind",financial:"financialKind",loans:"loanKind"};
 const pLabels={wageFactor:"工资/奖金倍数",businessFactor:"经营回款倍数",otherIncomeFactor:"其他收入倍数",unemploymentMonths:"失业事件时长",recoveryMonths:"复工过渡月数",
@@ -46,7 +51,11 @@ const assumptions={observed:"观测",historical:"历史参照",research_estimate
 const opts=(xs,value)=>Object.entries(xs).map(([k,v])=>'<option value="'+html(k)+'" '+(String(value)===k?'selected':'')+'>'+html(v)+'</option>').join("");
 function say(msg,bad=false){$("status").textContent=msg;$("status").classList.toggle("error",bad);}
 function mark(){const e=$("kind"),example=h.dataKind==="synthetic_example";e.textContent=example?"合成示例 · 编辑后仍为示例":"家庭录入 · "+(h.cash==null?"金额待填":"本机数据");e.classList.toggle("sample",example);}
-function resetResults(){study=null;stressResult=null;mark();say("输入已修改，运行后更新方案。");}
+function invalidTargets(house,paths){
+  try{for(const s of paths)E.validateTargets(s,house);return "";}catch(error){return error.message;}
+}
+function invalidateVisible(){study=null;stressResult=null;if(active!=="inputs")renderView();}
+function resetResults(){invalidateVisible();mark();const issue=invalidTargets(h,scenarios);say(issue||"输入已修改，运行后更新方案。",Boolean(issue));}
 function valueText(v,mul){
   if(v==null)return "";
   const scale=x=>typeof x==="number"?String(Number((x*mul).toPrecision(14))):String(x);
@@ -66,6 +75,8 @@ function field(group,index,key,obj){
   const ids=' id="f-'+group+'-'+index+'-'+key+'" data-group="'+group+'" data-index="'+index+'" data-key="'+key+'"';
   let control;
   if(conditionalFlags.has(key))control='<select'+ids+' data-contract-flag="true">'+opts({'':'尚未确认',true:'明确允许 / 是',false:'明确禁止 / 否'},v==null?'':v)+'</select>';
+  else if(key==="saleMaturityReleaseFee")control='<input type="text" list="maturity-cost-options"'+ids+' value="'+html(v==="in_asset_cost"?"已含成交成本":valueText(v,factor))+'" placeholder="附加金额 / 已含成交成本 / 未知">';
+  else if(key==="prepayMax"||key==="prepayPeriodMax")control='<input type="text" list="quota-options"'+ids+' value="'+html(v==="unlimited"?"不限":valueText(v,factor))+'" placeholder="金额 / 不限 / 留空未知">';
   else if(choice)control='<select'+ids+'>'+opts(choice,v)+'</select>';
   else if(typeof v==="boolean")control='<input type="checkbox"'+ids+(v?' checked':'')+'>';
   else control='<input type="text" '+(words.has(key)?'':'inputmode="decimal"')+ids+' value="'+html(valueText(v,factor))+'" '+(!words.has(key)&&v==null?'placeholder="填写或留空"':'')+'>';
@@ -82,10 +93,10 @@ function drawInputs(openGroup=null,openRow=null){
   $("inputs").innerHTML='<div class="cols"><div><section class="panel"><div class="summaryline"><h2 class="sectiontitle">家庭底账</h2><label class="small">金额输入 <select id="unit"><option value="1">元</option><option value="10000">万元</option></select></label></div>'
     +'<p class="small">金额可填单值，或用 ~ 分开低值、中心值、高值。只有两端时选择低端或高端。比例输入框使用百分数。</p><div class="fields">'
     +["cash","minimumLiving","reserveMonths","cashAnnual","cutFraction","maxSaleWait","rangeCase","preference"].map(k=>field("base",0,k,h)).join("")+'</div></section>'+cards()
-    +'<details class="panel" id="g-scenario"><summary>情景参数 <span class="pill">'+scenarios.length+' 条路径</span></summary><div class="in"><p class="small">以下假设采用小数年率或倍数；一次冲击仅在起点生效。具体目标 ID 优先于通用目标 *。所有候选在每条路径下分别运行。</p><div id="scenarioEditor"></div></div></details>'
+    +'<details class="panel" id="g-scenario"><summary>情景参数 <span class="pill">'+scenarios.length+' 条路径</span></summary><div class="in"><p class="small">以下假设采用小数年率或倍数；一次冲击仅在起点生效。具体目标 ID 优先于通用目标 *。具体目标须对应家庭中适用的收入、资产或浮息贷款；全户通胀与现金利率只可填 *。所有候选在每条路径下分别运行。</p><div id="scenarioEditor"></div></div></details>'
     +'<details class="panel" id="g-city"><summary>城市资料与适用范围</summary><div class="in"><p class="small">每项填写 id、city、period、source、scope。房产按城市单独登记，城市资料随 JSON 离线导入。</p>'
     +'<textarea id="cities" rows="5" style="width:100%">'+html(JSON.stringify(h.citySources,null,2))+'</textarea><button id="applyCities">应用城市资料</button></div></details></div>'
-    +'<aside class="panel sticky"><h2 class="sectiontitle">试算设置</h2><label class="field">最多运行的不同方案<select id="limit">'+opts({"100":"100","200":"200","300":"300","400":"400","500":"500"},limit)+'</select></label>'
+    +'<aside class="panel sticky"><datalist id="maturity-cost-options"><option value="已含成交成本"></option></datalist><datalist id="quota-options"><option value="不限"></option></datalist><h2 class="sectiontitle">试算设置</h2><label class="field">最多运行的不同方案<select id="limit">'+opts({"100":"100","200":"200","300":"300","400":"400","500":"500"},limit)+'</select></label>'
     +'<p class="small">小于上限的组合全部运行。超过上限时覆盖基准、单项动作、跨资产两项动作和整个组合空间的分层样本。</p><p>先检查能否付清当月必需支出与债务，再对照储备目标和十年购买力。</p>'
     +'<button class="primary" id="runAside">运行 120 个月</button><hr style="border:0;border-top:1px solid var(--line);margin:17px 0"><button id="clearInputs" class="danger">新建空白家庭</button></aside></div>';
   $("unit").value=String(unit);$("runAside").onclick=doRun;$("limit").onchange=e=>{limit=Number(e.target.value);resetResults();};
@@ -95,16 +106,20 @@ function drawInputs(openGroup=null,openRow=null){
   drawPathEditor();
   if(openGroup){$("g-"+openGroup).open=true;if(openRow!=null){const node=q('[data-row="'+openGroup+'-'+openRow+'"]');if(node)node.open=true;}}
 }
+function targetCell(p,i){
+  const values=["*",...E.targetIds(h,p.key)],bad=!values.includes(p.target);
+  return '<td><input aria-label="target" data-pp="target" data-pi="'+i+'" list="target-options-'+i+'" aria-invalid="'+bad+'" value="'+html(p.target)+'" '+(p.editable?'':'disabled')+' style="width:140px"><datalist id="target-options-'+i+'">'+values.map(v=>'<option value="'+html(v)+'"></option>').join("")+'</datalist></td>';
+}
 function drawPathEditor(){
   const s=scenarios.find(z=>z.id===scenarioId)||scenarios[0];
   const cell=(a,k,i,readonly=false)=>'<td><input aria-label="'+html(k)+'" data-pp="'+k+'" data-pi="'+i+'" value="'+html(a)+'" '+(readonly?'disabled':'')+' style="width:'+(['sourceId','target'].includes(k)?'140':'78')+'px"></td>';
   $("scenarioEditor").innerHTML='<label class="field">编辑情景<select id="editScenario">'+opts(Object.fromEntries(scenarios.map(z=>[z.id,z.name])),s.id)+'</select></label><p>'+html(s.description||"")+'</p><div class="scroll"><table class="compact"><thead><tr>'
     +["参数","数值","范围下限","范围上限","起点月","持续月","单位","目标 ID","来源 ID","假设类型"].map(k=>'<th>'+k+'</th>').join("")+'</tr></thead><tbody>'
     +s.paths.map((p,i)=>'<tr><th>'+html(pLabels[p.key])+'</th>'+cell(valueText(p.value,1),"value",i,!p.editable)+cell(p.range[0],"low",i,!p.editable)+cell(p.range[1],"high",i,!p.editable)
-    +cell(p.start,"start",i,!p.editable)+cell(p.duration,"duration",i,!p.editable)+ '<td>'+html(p.unit)+'</td>'+cell(p.target,"target",i,!p.editable)+cell(p.sourceId,"sourceId",i,!p.editable)
+    +cell(p.start,"start",i,!p.editable)+cell(p.duration,"duration",i,!p.editable)+ '<td>'+html(p.unit)+'</td>'+targetCell(p,i)+cell(p.sourceId,"sourceId",i,!p.editable)
     +'<td>'+html(assumptions[p.assumption])+'</td></tr>').join("")+'</tbody></table></div><details><summary>直接编辑全部情景 JSON</summary><textarea id="rawPaths" rows="8" style="width:100%">'+html(JSON.stringify(scenarios,null,2))+'</textarea><button id="applyPaths">应用情景 JSON</button></details>';
   $("editScenario").onchange=e=>{scenarioId=e.target.value;drawPathEditor();};
-  $("applyPaths").onclick=()=>{try{const v=JSON.parse($("rawPaths").value);if(!Array.isArray(v)||!v.length)throw Error("至少需要一个情景");v.forEach(s=>E.validateScenario(s,h.rangeCase));if(new Set(v.map(s=>s.id)).size!==v.length)throw Error("情景 ID 重复");scenarios=v;scenarioId=v[0].id;resetResults();drawPathEditor();say("情景输入已应用。");}catch(e){say(e.message,true);}};
+  $("applyPaths").onclick=()=>{try{const v=JSON.parse($("rawPaths").value);if(!Array.isArray(v)||!v.length)throw Error("至少需要一个情景");v.forEach(s=>E.validateScenario(s,h.rangeCase,h));if(new Set(v.map(s=>s.id)).size!==v.length)throw Error("情景 ID 重复");scenarios=v;scenarioId=v[0].id;resetResults();drawPathEditor();say("情景输入已应用。");}catch(e){invalidateVisible();say("新情景未应用，旧试算结果已清除 · "+e.message,true);}};
 }
 $("inputs").addEventListener("change",e=>{
   const t=e.target;
@@ -112,7 +127,9 @@ $("inputs").addEventListener("change",e=>{
     const {group,index,key}=t.dataset,obj=group==="base"?h:h[group][index];
     const factor=money.has(key)?1/unit:percentages.has(key)?100:1;
     obj[key]=t.dataset.contractFlag?(t.value===""?null:t.value==="true"):t.type==="checkbox"?t.checked:t.tagName==="SELECT"||words.has(key)?t.value:parseNumber(t.value,factor);
-    if(key==="preference")objective=obj[key];resetResults();
+    if(key==="saleMaturityReleaseFee"&&["已含成交成本","in_asset_cost"].includes(t.value.trim()))obj[key]="in_asset_cost";
+    if((key==="prepayMax"||key==="prepayPeriodMax")&&["不限","unlimited"].includes(t.value.trim()))obj[key]="unlimited";
+    if(key==="preference")objective=obj[key];resetResults();if(["id","kind","rateType"].includes(key))drawPathEditor();
   }else if(t.dataset.pp){
     const s=scenarios.find(s=>s.id===scenarioId),p=s.paths[Number(t.dataset.pi)],k=t.dataset.pp;
     if(k==="value"){
@@ -141,9 +158,11 @@ $("importFile").onchange=async e=>{
   try{const f=e.target.files[0];if(!f)return;const data=JSON.parse(await f.text()),house=data.household||data,paths=data.scenarios||scenarios;
     // Permit reopening a deliberately incomplete draft; validate all amounts at run time.
     if(!house||house.schema!=="household-cny.v1"||!["household","synthetic_example"].includes(house.dataKind)||Object.keys(names).some(k=>!Array.isArray(house[k])||house[k].some(v=>!v||typeof v!=="object"||Array.isArray(v))))throw Error("家庭 JSON 结构不符");
-    if(!Array.isArray(paths)||!paths.length)throw Error("情景缺失");paths.forEach(z=>E.validateScenario(z,house.rangeCase));
+    if(!Array.isArray(paths)||!paths.length)throw Error("情景缺失");paths.forEach(z=>E.validateScenario(z,house.rangeCase,house));
+    if(new Set(paths.map(z=>z.id)).size!==paths.length)throw Error("情景 ID 重复");
+    try{E.validateHousehold(house);}catch(validation){if(validation.code!=="MISSING_VALUE")throw validation;}
     h=house;scenarios=paths;scenarioId=scenarios[0].id;objective=h.preference;resetResults();setTab("inputs");drawInputs();say("JSON 已载入，请运行当前输入。");
-  }catch(err){say("导入失败 · "+err.message,true);}e.target.value="";
+  }catch(err){invalidateVisible();say("导入失败，旧试算结果已清除 · "+err.message,true);}e.target.value="";
 };
 $("loadDemo").onclick=()=>{h=JSON.parse($("example-data").textContent);scenarios=originals();scenarioId=scenarios[0].id;objective=h.preference;
   resetResults();setTab("inputs");drawInputs();say("已载入合成示例，可修改后运行。");};
@@ -271,7 +290,7 @@ function drawStressOutput(){
   const b=v.breakEven,a=v.affordablePrepay;
   if(b)out+='<h3 class="sub">净租金与出售净款 · '+html(b.id)+'</h3>'+table(["交割月","卖房当月净款","持有期实际平均净租金/月","达到出售路径财富所需账面月租","相应平均净租金/月"],[[b.saleMonth??"—",yuan(b.saleNet),yuan(b.actualMonthlyNet),yuan(b.grossMonthlyThreshold),yuan(b.netMonthlyThreshold)]])
     +'<p class="small">以 120 月实际净资产、完整履约与储备为比较条件，出租路径保留期末房屋残值。搜索月租 '+yuan(b.testedRange[0])+' 至 '+yuan(b.testedRange[1])+' 元。'+html(b.reason)+'</p>';
-  if(a)out+='<h3 class="sub">可承受提前还款 · '+html(a.id)+'</h3><p>'+(a.month==null?'窗口尚未确认':'第 '+a.month+' 月')+'，最高已验证预付款 <b>'+yuan(a.largestTested)+' 元</b>。'+(a.liquidityCeiling==null?html(a.reason):'现金允许上限 '+yuan(a.liquidityCeiling)+' 元。当月上限内按 50 档试算，最后可行区间细化至分，跨区间结果以已测试点为限。')+'</p>';
+  if(a)out+='<h3 class="sub">可承受提前还款 · '+html(a.id)+'</h3><p>'+(a.month==null?'窗口尚未确认':'第 '+a.month+' 月')+'，最高已验证预付款 <b>'+yuan(a.largestTested)+' 元</b>。'+(a.liquidityCeiling==null?html(a.reason):'现金允许上限 '+yuan(a.liquidityCeiling)+' 元，合同单次及本期剩余额度上限 '+(a.contractCeiling==="unlimited"?"已确认不限":yuan(a.contractCeiling)+" 元")+'。两项约束取较低者后按 50 档试算，最后可行区间细化至分，跨区间结果以已测试点为限。')+'</p>';
   const effects=[["金融资产一次转现金",v.liquidation],["用现金提前结清贷款",v.payoff]].filter(x=>x[1]);
   if(effects.length)out+='<h3 class="sub">与保持其他动作相同的反事实比较</h3>'+table(["动作 / 对象","保留可支撑月数","执行可支撑月数","首月现金变化","已观察最低现金变化","动作状态"],effects.map(([name,e])=>[name+" · "+e.id,e.holdingSupport,e.actionSupport,yuan(e.changeFirstCash),yuan(e.changeMinCash),e.blocked.length?e.blocked[0].reason:e.actionFeasible?"满足本路径约束":"现金或储备未满足"]));
   $("stressOutput").innerHTML=out;

@@ -3,7 +3,7 @@ const fs=require("fs"),path=require("path"),assert=require("assert/strict"),E=re
 const tests=[],errors=[],flat={id:"flat",name:"无附加冲击",paths:[]};
 const eq=(a,b,tol=1e-7)=>assert.ok(Math.abs(a-b)<tol,"Expected "+b+" got "+a);
 const knownTerms={
-  loans:{canPrepay:true,prepayFrom:1,prepayMin:0,prepayFee:0,settlementFee:0,transferWithLien:false,allowRecast:true,allowShorten:true},
+  loans:{allowFull:true,prepayMax:"unlimited",prepayPeriodMax:"unlimited",salePayoffRule:"same_terms",salePayoffFeeBase:"balance",canPrepay:true,prepayFrom:1,prepayMin:0,prepayFee:0,settlementFee:0,transferWithLien:false,allowRecast:true,allowShorten:true},
   properties:{canSell:true,lock:1,saleLag:0,saleFee:0,closingFee:0},
   vehicles:{canSell:true,lock:1,saleLag:0,saleFee:0,closingFee:0,necessary:false},
   financial:{fee:0,settle:0,unlock:1,maturity:0,restriction:"free",purpose:"家庭可用"}
@@ -187,6 +187,89 @@ test("candidate amounts include current received wage after living cost and cont
   const h=dry({cash:0,minimumLiving:100,incomes:[income(1000)],loans:[loan({principal:5000,months:10,prepayMin:100})]});
   const study=E.assess(h,[flat],100),candidate=study.results.find(r=>r.strategy.actions.some(a=>a.mode==="recast"&&a.amount===200));
   assert.ok(candidate&&candidate.feasible);eq(E.inspect(study,candidate.strategy.id,"flat").rows[0].cash,200);
+});
+test("every concrete stress target is bound to an existing object of the kind that reads it",()=>{
+  const h=dry({minimumLiving:700,incomes:[income(1000,{id:"salary"}),income(0,{id:"business",kind:"business"}),income(0,{id:"gift",kind:"other"})],
+    expenses:[row("expenses",{id:"medical",kind:"medical",monthly:0})],properties:[home()],vehicles:[row("vehicles",{id:"v",value:0,saleValue:0,carry:0})],
+    financial:[sec(),sec({id:"td",kind:"deposit"})],loans:[loan({id:"fixed",principal:0}),loan({id:"float",principal:0,rateType:"floating"})]});
+  const wage=target=>({id:"stress",name:"工资冲击",paths:[E.path("wageFactor",.5,1,120,target)]});
+  const right=E.assess(h,[wage("salary")],100).results[0].outcomes.stress;eq(right.firstFailure,1);eq(right.worstGap,200);
+  for(const wrong of ["sallary","medical","business","p",""]){
+    const s=wage(wrong);assert.throws(()=>E.assess(h,[s],100),/目标/);assert.throws(()=>sim(h,undefined,s),/目标/);assert.throws(()=>E.reverse(h,s),/目标/);
+  }
+  const match={wageFactor:"salary",businessFactor:"business",otherIncomeFactor:"gift",unemploymentMonths:"salary",recoveryMonths:"business",reemploymentFactor:"gift",
+    propertyShock:"p",propertyAnnual:"p",rentFactor:"p",vacancyAdd:"p",saleHaircut:"v",saleDelay:"p",financialShock:"f",securityAnnual:"f",concentrationHaircut:"f",loanRateDelta:"float",cashRateDelta:"*",inflationAnnual:"*"};
+  for(const [key,target] of Object.entries(match)){
+    const p=E.path(key,0,1,1,target);E.validateScenario({id:"ok",name:"ok",paths:[p]},"base",h);
+    assert.throws(()=>E.validateScenario({id:"bad",name:"bad",paths:[{...p,target:"medical"}]},"base",h),/目标/);
+    E.validateScenario({id:"all",name:"all",paths:[{...p,target:"*"}]},"base",dry());
+  }
+  for(const [key,target] of [["loanRateDelta","fixed"],["financialShock","td"],["saleDelay","salary"],["rentFactor","v"]]){
+    assert.throws(()=>E.validateScenario({id:"wrong",name:"wrong",paths:[E.path(key,0,1,1,target)]},"base",h),/目标/);
+  }
+  const absent=wage("salary");delete absent.paths[0].target;assert.throws(()=>E.assess(h,[absent]),/目标/);
+  assert.throws(()=>E.validateTargets(wage("salary"),{...h,incomes:[...h.incomes,income(0,{id:"salary"})]}),/重复/);
+  return {validTargetFirstFailure:right.firstFailure,validTargetMissingCash:right.worstGap,parameterKinds:Object.keys(match).length};
+});
+test("1000 per-action cap, 1001 and full payoff interdiction apply to enumeration, manual actions and inverse cap",()=>{
+  const l=loan({principal:10000,annualRate:.12,months:12,prepayMin:100,allowFull:false,prepayMax:1000,prepayPeriodMax:"unlimited"});
+  const h=dry({cash:13000,loans:[l]}),a=E.assess(h,[flat],100);
+  assert.ok(a.results.flatMap(r=>r.strategy.actions).every(x=>x.mode!=="full"&&x.amount<=1000));
+  const run=(amount,mode="recast")=>sim(h,act({kind:"prepay",loan:"l",mode,month:1,amount}));
+  eq(run(1000).rows[0].prepaid,1000);eq(run(1001).rows[0].prepaid,0);assert.ok(run(1001).summary.blocked[0].reason.includes("额度"));
+  eq(run(0,"full").rows[0].prepaid,0);assert.ok(run(0,"full").summary.blocked[0].reason.includes("全清"));
+  const inv=E.reverse(h,flat).affordablePrepay;eq(inv.largestTested,1000);eq(inv.contractCeiling,1000);
+  for(const k of ["prepayMax","prepayPeriodMax"]){const missing={...l};delete missing[k];const r=E.assess({...h,loans:[missing]},[flat],100);eq(r.results.length,1);assert.equal(r.results[0].feasible,true);}
+  assert.throws(()=>E.prepare({...h,loans:[{...l,prepayMxa:100}]},[flat]),/未支持/);
+  return {largestTested:inv.largestTested,generated:a.results.map(r=>r.strategy.actions)};
+});
+test("prior period usage, remaining months, reset and multiple prepayments use the contractual period",()=>{
+  const l=loan({principal:5000,months:20,prepayMin:10,prepayMax:700,prepayPeriodMax:900,prepayPeriodMonths:3,prepayPeriodRemaining:2,prepayPeriodUsed:600});
+  const h=dry({cash:11000,loans:[l]});
+  const pay=(m,amount)=>({kind:"prepay",loan:"l",mode:"recast",month:m,amount});
+  const d=sim(h,act(pay(1,300),pay(2,1),pay(3,700),pay(4,201),pay(5,200),pay(6,700)));
+  assert.deepEqual(d.rows.slice(0,6).map(r=>r.prepaid),[300,0,700,0,200,700]);assert.equal(d.summary.blocked.length,1);
+  // A second run isolates the exact residual even though identical blocked-reason messages are deduplicated in a single run.
+  const z=sim(h,act(pay(1,299),pay(2,2)));eq(z.rows[1].prepaid,0);
+  const cap=E.reverse(h,flat).affordablePrepay;eq(cap.largestTested,300);
+  const c=E.enumerate(E.prepare(h,[flat]).h,100);assert.ok(c.strategies.some(s=>s.actions.some(a=>a.month===3&&a.amount===700)));
+  assert.ok(c.strategies.some(s=>s.actions.filter(a=>a.loan==="l").length===2));
+  const zero=E.assess({...h,loans:[{...l,prepayPeriodUsed:900}]},[flat],100);assert.ok(zero.results.some(r=>r.feasible&&r.strategy.actions.some(a=>a.month===3)));
+  for(const key of ["prepayPeriodMonths","prepayPeriodRemaining","prepayPeriodUsed"]){const q={...l};delete q[key];assert.equal(E.assess({...h,loans:[q]},[flat],100).results.length,1);}
+  return {prepaidByMonth:d.rows.slice(0,6).map(r=>r.prepaid),firstWindowRemaining:cap.largestTested};
+});
+test("contractual maturity remains payable, and a voluntary partial payment cannot sneak into full payoff",()=>{
+  const l=loan({principal:1200,months:12,allowFull:false,prepayMax:"unlimited"});
+  const h=dry({cash:1700,loans:[l]});
+  const d=sim(h,act({kind:"prepay",loan:"l",mode:"recast",month:1,amount:1100}));eq(d.rows[0].prepaid,0);eq(d.rows[11].debt,0);eq(d.rows[11].principal,100);
+  const noTerms={id:"q",kind:"consumer",principal:250,annualRate:0,months:1,method:"bullet"};
+  const r=sim(dry({cash:250,loans:[noTerms]}));eq(r.rows[0].principal,250);eq(r.rows[0].debt,0);eq(r.summary.supportMonths,120);
+});
+test("house car and pledged stock closings distinguish ordinary principal, quota, explicit sale exception and maturity",()=>{
+  const debt=loan({kind:"mortgage",principal:1200,months:12,method:"principal",collateral:"p",transferWithLien:true,prepayMax:1099});
+  for(const asset of ["house","car","stock"]){
+    const group=asset==="house"?"properties":asset==="car"?"vehicles":"financial";
+    const obj=asset==="house"?home({value:1500,saleValue:1500}):asset==="car"?row("vehicles",{id:"p",value:1500,saleValue:1500,carry:0}):sec({id:"p",value:1500,restriction:"pledged"});
+    const action=asset==="stock"?act({kind:"liquidate",asset:"p",mode:"all",month:1}):listed();
+    const run=(extra={})=>sim(dry({cash:100,[group]:[obj],loans:[{...debt,...extra}]}),action);
+    const denied=run();eq(denied.rows[0].closingPrincipal,0);eq(denied.rows[0].principal,100);assert.ok(denied.summary.blocked[0].reason.includes("额度"));
+    const exact=run({prepayMax:1100});eq(exact.rows[0].closingPrincipal,1200);eq(exact.rows[0].principal,0);eq(exact.byLoan.l[0].earlyPrincipal,1100);eq(exact.byLoan.l[0].scheduledPrincipal,100);
+    for(const salePayoffRule of ["unknown","forbidden","same_terms"]){const q=run({salePayoffRule,allowFull:false});eq(q.rows[0].closingPrincipal,0);}
+    const exception=run({salePayoffRule:"sale_exception",salePayoffFrom:1,salePayoffFee:.01,saleSettlementFee:7,salePayoffFeeBase:"extra",allowFull:false,canPrepay:false});
+    eq(exception.rows[0].closingPrincipal,1200);eq(exception.rows[0].releaseFees,18);eq(exception.rows[0].cash,382);
+    const undef=run({salePayoffRule:"sale_exception",salePayoffFee:null,saleSettlementFee:0});eq(undef.rows[0].closingPrincipal,0);
+    const natural=run({months:1,canPrepay:false,allowFull:null,prepayMax:null,prepayPeriodMax:null,salePayoffRule:"forbidden",settlementFee:null});
+    eq(natural.rows[0].closingPrincipal,1200);eq(natural.rows[0].releaseFees,0);eq(natural.byLoan.l[0].earlyPrincipal,0);eq(natural.rows[0].debt,0);
+    const titled=run({months:1,canPrepay:false,allowFull:false,salePayoffRule:"forbidden",saleMaturityReleaseFee:18});eq(titled.rows[0].releaseFees,18);eq(titled.rows[0].cash,382);
+    const unclear=run({months:1,saleMaturityReleaseFee:null});eq(unclear.rows[0].closingPrincipal,0);eq(unclear.rows[0].unpaid,1100);
+  }
+});
+test("asset release cannot bypass a period amount already used by a prior voluntary action",()=>{
+  const debt=loan({principal:1200,months:12,method:"principal",collateral:"p",transferWithLien:true,prepayMax:"unlimited",
+    prepayPeriodMax:1000,prepayPeriodMonths:12,prepayPeriodRemaining:12,prepayPeriodUsed:100});
+  const h=dry({cash:2000,properties:[home({saleValue:1500})],loans:[debt]});
+  const d=sim(h,act({kind:"prepay",loan:"l",mode:"recast",month:1,amount:200},{kind:"list",asset:"p",month:2}));
+  eq(d.rows[0].prepaid,200);eq(d.rows[1].saleGross,0);assert.ok(d.summary.blocked[0].reason.includes("额度"));
 });
 test("demo common feasible set, deterministic unique policies, regret and residuals",()=>{
   const a=E.assess(sample,scenarios,500),again=E.enumerate(a.prepared.h,500);

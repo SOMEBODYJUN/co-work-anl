@@ -11,6 +11,7 @@
 | ui.html、ui.js、build.py | 页面模板、纯本地控件、可重复构建程序 |
 | input_schema.md | 原始 JSON 字段、情景与函数契约 |
 | scenarios.json、synthetic_household.json、build_examples.js | 三条人工路径、标记明确的示例、确定性生成器 |
+| compare_migration.js、contract_migration_replay.json | 与旧冻结版 500 条规则、三路径逐月账目的迁移复算，显式新增三笔贷款的旧有合成合同假设 |
 | checks.js、checks.json | 回归代码与实际结果；同时生成样例策略和逐月结果 |
 | loan_input.json、loan_work_reference.json、compare_python.py、python_reference_checks.json | 仓库统一方法入口及独立逐期合同对照 |
 | sample_summary.json、synthetic_strategy_results.csv、sample_baseline_severe_months.json、legacy_cash_stress.json | 500 条规则及分币级逐月轨迹的三路径比较、第 101 月截断的基准台账、18 万元对照 |

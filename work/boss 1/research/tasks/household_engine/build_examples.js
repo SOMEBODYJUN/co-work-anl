@@ -2,7 +2,7 @@
 const fs=require("fs"),path=require("path"),E=require("./engine.js");
 function save(name,value){fs.writeFileSync(path.join(__dirname,name),JSON.stringify(value,null,2)+"\n");}
 const knownTerms={
-  loans:{canPrepay:true,prepayFrom:1,prepayMin:0,prepayFee:0,settlementFee:0,transferWithLien:false,allowRecast:true,allowShorten:true},
+  loans:{allowFull:true,prepayMax:"unlimited",prepayPeriodMax:"unlimited",salePayoffRule:"same_terms",salePayoffFeeBase:"balance",canPrepay:true,prepayFrom:1,prepayMin:0,prepayFee:0,settlementFee:0,transferWithLien:false,allowRecast:true,allowShorten:true},
   properties:{canSell:true,lock:1,saleLag:0,saleFee:0,closingFee:0},
   vehicles:{canSell:true,lock:1,saleLag:0,saleFee:0,closingFee:0,necessary:false},
   financial:{fee:0,settle:0,unlock:1,maturity:0,restriction:"free",purpose:"家庭可用"}
@@ -64,7 +64,7 @@ const h={...E.blank(),dataKind:"synthetic_example",cash:280000,cashAnnual:.012,r
     row("loans",{id:"mort2",name:"闲置房贷款",collateral:"flat",principal:310000,annualRate:.037,rateType:"floating",resetFirst:6,months:204,
       prepayMin:5000,prepayFee:.003,transferWithLien:true}),
     row("loans",{id:"auto",name:"车贷",kind:"car",collateral:"car",principal:33000,annualRate:.045,months:36,
-      prepayMin:1000,settlementFee:180,transferWithLien:true})
+      prepayMin:1000,settlementFee:180,saleMaturityReleaseFee:180,transferWithLien:true})
   ],citySources:[]};
 for(const s of paths)E.validateScenario(s);
 E.validateHousehold(h);

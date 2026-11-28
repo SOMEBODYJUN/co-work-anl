@@ -24,8 +24,11 @@
     return value;
   };
   function num(value, name, lo=-Infinity, hi=Infinity, integer=false) {
-    if (typeof value !== "number" || !Number.isFinite(value) || value < lo || value > hi || (integer && !Number.isInteger(value)))
-      throw Error(name + " 需要范围内的" + (integer ? "整数" : "数字") + "（空值需填写）");
+    if (typeof value !== "number" || !Number.isFinite(value) || value < lo || value > hi || (integer && !Number.isInteger(value))){
+      const error=Error(name + " 需要范围内的" + (integer ? "整数" : "数字") + "（空值需填写）");
+      if(value==null)error.code="MISSING_VALUE";
+      throw error;
+    }
     return value;
   }
   function valueFor(value, choice, name) {
@@ -59,7 +62,9 @@
       necessary:null,replacementAllowed:false,replacementMonthly:null,carry:null,saleFee:null,closingFee:null},
     loans:{id:"",name:"",kind:"mortgage",collateral:"",principal:null,annualRate:null,rateType:"fixed",
       resetFirst:12,resetEvery:12,months:null,method:"annuity",payment:null,canPrepay:null,prepayFrom:null,
-      prepayMin:null,prepayFee:null,settlementFee:null,transferWithLien:null,allowRecast:null,allowShorten:null,
+      prepayMin:null,prepayFee:null,settlementFee:null,transferWithLien:null,allowRecast:null,allowShorten:null,allowFull:null,
+      prepayMax:null,prepayPeriodMax:null,prepayPeriodMonths:null,prepayPeriodRemaining:null,prepayPeriodUsed:null,
+      salePayoffRule:"unknown",salePayoffFrom:null,salePayoffFee:null,saleSettlementFee:null,salePayoffFeeBase:"unknown",saleMaturityReleaseFee:"in_asset_cost",
       start:1,monthlyFee:0}
   };
   function validateHousehold(input) {
@@ -77,8 +82,12 @@
       if(!Array.isArray(h[g]) || h[g].length>100) throw Error(g+" 应为不超过100条的清单");
       h[g]=h[g].map(original=>{
         if(!original || typeof original!=="object") throw Error(g+" 条目无效");
+        if(g==="loans"){
+          const extra=Object.keys(original).filter(k=>!Object.hasOwn(templates.loans,k)&&k!=="notes"&&k!=="metadata");
+          if(extra.length)throw Error("贷款 "+String(original.id)+" 含未支持的合同字段："+extra.join("、"));
+        }
         const x=Object.assign({},templates[g],original);
-        if(!idPattern.test(x.id)||ids.has(x.id)) throw Error("ID 为空、重复或有非法字符："+String(x.id));
+        if(typeof x.id!=="string"||!idPattern.test(x.id)||ids.has(x.id)) throw Error("ID 为空、重复或有非法字符："+String(x.id));
         ids.add(x.id);
         if(typeof x.name!=="string") throw Error(x.id+" 名称无效");
         const n=(k,lo=0,hi=1e15)=>x[k]=amount(x.id+"."+k,x[k],choice,lo,hi);
@@ -115,7 +124,16 @@
           n("principal");n("annualRate",0,5);integer("months",1,1200);integer("resetFirst",1,1200);
           integer("resetEvery",1,1200);optional(integer,"prepayFrom",1,1200);integer("start",1,1200);
           if(x.kind!=="guarantee" && x.start!==1)throw Error(x.id+" 普通债务从期初入账；仅担保可设代偿月");
-          for(const k of ["canPrepay","transferWithLien","allowRecast","allowShorten"])optional(b,k);
+          for(const k of ["canPrepay","transferWithLien","allowRecast","allowShorten","allowFull"])optional(b,k);
+          for(const k of ["prepayMax","prepayPeriodMax"])if(x[k]!=null&&x[k]!=="unlimited")n(k);
+          optional(integer,"prepayPeriodMonths",1,1200);optional(integer,"prepayPeriodRemaining",1,x.prepayPeriodMonths||1200);
+          optional(n,"prepayPeriodUsed");
+          if(typeof x.prepayPeriodMax==="number"&&x.prepayPeriodUsed!=null&&x.prepayPeriodUsed>x.prepayPeriodMax)
+            throw Error(x.id+" 本期已用额度高于本期总额度，请校正合同");
+          option("抵押物出售清偿条款",["unknown","same_terms","sale_exception","forbidden"],x.salePayoffRule);
+          option("出售清偿计费本金口径",["unknown","balance","extra"],x.salePayoffFeeBase);
+          optional(integer,"salePayoffFrom",1,1200);optional(n,"salePayoffFee",0,1);optional(n,"saleSettlementFee");
+          if(x.saleMaturityReleaseFee!=="in_asset_cost")optional(n,"saleMaturityReleaseFee");
           for(const k of ["prepayMin","settlementFee"])optional(n,k);n("monthlyFee");
           optional(n,"prepayFee",0,1);
           if(x.payment!=null){n("payment");if(x.method!=="annuity")throw Error(x.id+" 自定固定月供仅适用等额本息");}
@@ -131,9 +149,53 @@
     h.citySources.forEach(c=>{for(const k of ["id","city","period","source","scope"])if(typeof c[k]!=="string"||!c[k].trim())throw Error("城市资料缺字段 "+k);});
     return h;
   }
-  function validateScenario(input, choice="base") {
-    if(!input||!idPattern.test(input.id)||typeof input.name!=="string"||!Array.isArray(input.paths))throw Error("情景需要 ID、名称和 paths 清单");
+  const targetClasses={
+    wageFactor:"工资或奖金收入",businessFactor:"经营回款收入",otherIncomeFactor:"其他收入",
+    unemploymentMonths:"收入来源",recoveryMonths:"收入来源",reemploymentFactor:"收入来源",
+    propertyShock:"房产",propertyAnnual:"房产",rentFactor:"房产",vacancyAdd:"房产",
+    saleDelay:"房产或车辆",saleHaircut:"房产或车辆",financialShock:"非现金市价资产",
+    securityAnnual:"非现金市价资产",concentrationHaircut:"非现金市价资产",loanRateDelta:"浮动利率贷款",
+    inflationAnnual:"全户",cashRateDelta:"全户"
+  };
+  function targetIds(h,key){
+    if(!h)return [];
+    let items=[];
+    switch(targetClasses[key]){
+      case "工资或奖金收入":items=h.incomes.filter(i=>["wage","bonus"].includes(i.kind??templates.incomes.kind));break;
+      case "经营回款收入":items=h.incomes.filter(i=>i.kind==="business");break;
+      case "其他收入":items=h.incomes.filter(i=>i.kind==="other");break;
+      case "收入来源":items=h.incomes;break;
+      case "房产":items=h.properties;break;
+      case "房产或车辆":items=[...h.properties,...h.vehicles];break;
+      case "非现金市价资产":items=h.financial.filter(f=>["stock","fund","bond","gold","other"].includes(f.kind??templates.financial.kind));break;
+      case "浮动利率贷款":items=h.loans.filter(l=>l.rateType==="floating");break;
+    }
+    return items.map(a=>a.id);
+  }
+  function validateTargets(s,h){
+    if(h){
+      const seen=new Set();
+      for(const g of groupNames)for(const item of h[g]){
+        if(!item.id)continue;
+        if(seen.has(item.id))throw Error("家庭 ID 重复，情景目标可能歧义："+item.id);
+        seen.add(item.id);
+      }
+    }
+    for(const p of s.paths){
+      if(!p||typeof p!=="object")throw Error("情景 "+s.id+" 含无效参数行");
+      if(!Object.hasOwn(targetClasses,p.key))throw Error("情景 "+s.id+" 的参数不受支持："+p.key);
+      if(p.target==="*")continue;
+      if(typeof p.target!=="string"||!idPattern.test(p.target))throw Error("情景 "+s.id+" / "+p.key+" 需要明确的目标 ID 或 *");
+      if(targetClasses[p.key]==="全户")throw Error("情景 "+s.id+" / "+p.key+" 是全户参数，目标必须为 * ，不能是 "+p.target);
+      if(!h)continue; // Individual scenario templates may be parsed without household data; runs always bind targets.
+      const eligible=targetIds(h,p.key);
+      if(!eligible.includes(p.target))throw Error("情景 "+s.id+" / "+p.key+" 的目标 "+p.target+" 不存在或类型不符；应为"+targetClasses[p.key]+" ID（当前 "+(eligible.join("、")||"无")+"）或 *");
+    }
+  }
+  function validateScenario(input, choice="base",h=null) {
+    if(!input||typeof input.id!=="string"||!idPattern.test(input.id)||typeof input.name!=="string"||!Array.isArray(input.paths))throw Error("情景需要 ID、名称和 paths 清单");
     const s=clone(input), by={};
+    validateTargets(s,h);
     for(const p of s.paths) {
       if(!Object.hasOwn(modes,p.key)||!modes[p.key].includes(p.mode)||p.mode!==modes[p.key][0])throw Error("不支持的情景参数或施加方式 "+p.key);
       if(typeof p.sourceId!=="string"||!p.sourceId.trim()||p.unit!==modes[p.key][1]||typeof p.editable!=="boolean")throw Error("情景缺少来源、单位或可编辑字段 "+p.key);
@@ -148,8 +210,6 @@
       if(["propertyShock","financialShock","vacancyAdd"].includes(p.key))num(p.value,p.key,-1,p.key==="vacancyAdd"?1:5);
       if(["propertyAnnual","inflationAnnual"].includes(p.key))num(p.value,p.key,-.99,5);
       if(["loanRateDelta","cashRateDelta","securityAnnual"].includes(p.key))num(p.value,p.key,-5,5);
-      p.target=p.target||"*";
-      if(p.target!=="*"&&!idPattern.test(p.target))throw Error("情景目标 ID 无效");
       const effectiveDuration=["event","shock"].includes(p.mode)?1:p.duration;
       if(effectiveDuration!==p.duration)throw Error("单次事件/水平冲击的 duration 必须等于1");
       const list=by[p.key]||(by[p.key]=[]);
@@ -168,7 +228,7 @@
   function newLoan(c) {
     return {c,balance:c.start===1?c.principal:0,rate:c.annualRate/12,end:c.start+c.months-1,
       payment:c.payment==null?amortPayment(c.principal,c.annualRate/12,c.months):c.payment,
-      principalStep:c.principal/c.months,everActive:c.start===1};
+      principalStep:c.principal/c.months,everActive:c.start===1,quotaIndex:0,quotaUsed:c.prepayPeriodUsed||0};
   }
   function loanDue(l,m,s) {
     const c=l.c;
@@ -245,19 +305,77 @@
     if(replacement(c)&&!c.replacementAllowed)return "缺少可行的住房或通勤替代";
     return "";
   }
+  function quotaUnknown(c){
+    if(c.prepayMax==null)return "单次提前还本上限尚未确认（没有上限须明确填写“不限”）";
+    if(c.prepayPeriodMax==null)return "期间累计预付额度尚未确认（没有上限须明确填写“不限”）";
+    if(typeof c.prepayPeriodMax==="number"&&[c.prepayPeriodMonths,c.prepayPeriodRemaining,c.prepayPeriodUsed].some(v=>v==null))
+      return "期间额度的周期、首期剩余月数或期初已用额尚未确认";
+    return "";
+  }
+  function quotaAt(l,m){
+    const c=l.c,age=m-c.start+1;
+    const single=c.prepayMax==="unlimited"?Infinity:c.prepayMax;
+    if(c.prepayPeriodMax==="unlimited")return {index:0,used:0,limit:single};
+    const index=age<=c.prepayPeriodRemaining?0:1+Math.floor((age-c.prepayPeriodRemaining-1)/c.prepayPeriodMonths);
+    const used=l.quotaIndex===index?l.quotaUsed:0;
+    return {index,used,limit:Math.min(single,Math.max(0,c.prepayPeriodMax-used))};
+  }
+  function recordQuota(l,m,amount){
+    if(l.c.prepayPeriodMax==="unlimited")return;
+    const q=quotaAt(l,m);l.quotaIndex=q.index;l.quotaUsed=q.used+amount;
+  }
   function prepayRestriction(c,mode){
     if(c.canPrepay!==true)return c.canPrepay===false?"合同禁止提前还款":"提前还款许可尚未确认";
     if(c.prepayFrom==null||c.prepayFee==null)return "提前还款窗口或费率尚未确认（零费率也须填写）";
-    if(mode==="full")return c.settlementFee==null?"结清固定费用尚未确认（零费用也须填写）":"";
+    const quotaReason=quotaUnknown(c);if(quotaReason)return quotaReason;
+    if(mode==="full"){
+      if(c.allowFull!==true)return c.allowFull===false?"合同仅允许部分预付，禁止自愿提前全清":"自愿提前全清许可尚未确认";
+      return c.settlementFee==null?"结清固定费用尚未确认（零费用也须填写）":"";
+    }
     const permission=mode==="recast"?c.allowRecast:c.allowShorten;
     if(permission!==true)return permission===false?"合同禁止该种部分预付方式":"该种部分预付方式许可尚未确认";
     if(c.prepayMin==null)return "最低部分预付金额尚未确认";
     return c.method==="bullet"?"到期还本合同没有可重摊的定期本金":"";
   }
+  function checkVoluntary(l,m,mode,amount,closes){
+    const c=l.c,r=prepayRestriction(c,mode)||(closes&&mode!=="full"?prepayRestriction(c,"full"):"");
+    if(r)return r;
+    if(m-c.start+1<c.prepayFrom)return "尚未到合同提前还款窗口";
+    if(amount>quotaAt(l,m).limit+EPS)return "超过合同单次上限或本期剩余预付额度";
+    if(!closes&&amount+EPS<c.prepayMin)return "低于合同最低部分预付金额";
+    return "";
+  }
+  function saleContract(c,age){
+    if(c.salePayoffRule==="unknown")return {reason:"抵押物提前出售清偿适用的合同条款尚未确认"};
+    if(c.salePayoffRule==="forbidden")return {reason:"合同不允许在到期前通过资产交割结清贷款"};
+    let rate,fixed,voluntary;
+    if(c.salePayoffRule==="same_terms"){
+      const reason=prepayRestriction(c,"full");if(reason)return {reason};
+      if(age<c.prepayFrom)return {reason:"尚未到合同提前清偿窗口"};
+      rate=c.prepayFee;fixed=c.settlementFee;voluntary=true;
+    }else{
+      if([c.salePayoffFrom,c.salePayoffFee,c.saleSettlementFee].some(v=>v==null))return {reason:"独立出售清偿例外的窗口或费用尚未确认"};
+      if(age<c.salePayoffFrom)return {reason:"未到独立出售解押窗口"};
+      rate=c.salePayoffFee;fixed=c.saleSettlementFee;voluntary=false;
+    }
+    if(rate>0&&c.salePayoffFeeBase==="unknown")return {reason:"资产交割提前清偿的计费本金口径尚未确认"};
+    return {rate,fixed,voluntary};
+  }
+  function saleLoanTerms(l,m,d){
+    const extra=Math.max(0,l.balance-d.principal),c=l.c;
+    if(extra<EPS){
+      if(c.saleMaturityReleaseFee==null)return {reason:"到期当月因出售发生的解押费用范围尚未确认"};
+      return {extra:0,fees:c.saleMaturityReleaseFee==="in_asset_cost"?0:c.saleMaturityReleaseFee,voluntary:false};
+    }
+    const terms=saleContract(c,m-c.start+1);
+    if(terms.reason)return terms;
+    if(terms.voluntary&&extra>quotaAt(l,m).limit+EPS)return {reason:"交割需提前清偿的本金超过单次上限或本期剩余额度"};
+    return {extra,fees:terms.fixed+terms.rate*(c.salePayoffFeeBase==="extra"?extra:l.balance),voluntary:terms.voluntary};
+  }
   function checkActions(h,strategy) {
     if(!strategy||!Array.isArray(strategy.actions))throw Error("策略需要 actions");
     const ids=a=>new Set(a.map(x=>x.id)),real=ids([...h.properties,...h.vehicles]),props=ids(h.properties),fin=ids(h.financial),liab=ids(h.loans);
-    const occupied=new Set(), expenseAction=new Set();
+    const occupied=new Set(), expenseAction=new Set(), prepayDates=new Set();
     for(const a of strategy.actions) {
       num(a.month,"动作月",1,H,true);
       if(a.kind==="list"||a.kind==="rent") {
@@ -274,8 +392,9 @@
         if(!liab.has(a.loan))throw Error("债务不存在");
         option("提前还款",["full","recast","shorten"],a.mode);
         if(a.mode!=="full")num(a.amount,"提前还款额",EPS,1e15);
-        if(occupied.has(a.loan))throw Error("同一贷款动作重复");
-        occupied.add(a.loan);
+        const date=a.loan+"|"+a.month;
+        if(prepayDates.has(date))throw Error("同一笔贷款同月不可重复预付");
+        prepayDates.add(date);
       }else if(a.kind==="cut"){
         if(expenseAction.size)throw Error("支出动作重复");expenseAction.add("cut");num(a.fraction,"削减比例",0,h.cutFraction);
       }else throw Error("未知动作 "+a.kind);
@@ -348,23 +467,23 @@
         const linked=activeLiens(id,loans),parts=[];
         let subtotal=0,priorFunding=0;
         for(const l of linked){
-          const c=l.c,d=due.get(c.id),early=m<l.end;
-          const reason=early?prepayRestriction(c,"full"):(c.settlementFee==null?"结清固定费用尚未确认":"");
-          if(reason||c.transferWithLien==null||(early&&m-c.start+1<c.prepayFrom))
-            return {reason:reason||(c.transferWithLien==null?"解押付款方式尚未确认":"交割时尚未到合同提前还款窗口"),need:0};
-          const fees=c.settlementFee+(early?l.balance*c.prepayFee:0),total=l.balance+d.interest+d.fee+fees;
-          subtotal+=total;if(c.transferWithLien===false)priorFunding+=total;
-          parts.push({l,d,fees});
+          const c=l.c,d=due.get(c.id),terms=saleLoanTerms(l,m,d);
+          if(terms.reason||(terms.extra>EPS&&c.transferWithLien==null))
+            return {reason:terms.reason||"解押付款方式尚未确认",need:0};
+          const total=l.balance+d.interest+d.fee+terms.fees;
+          subtotal+=total;if(c.transferWithLien!==true)priorFunding+=total;
+          parts.push({l,d,...terms});
         }
         const needed=Math.max(0,priorFunding,subtotal-netOfAssetFees);
         return {parts,subtotal,need:Math.max(0,needed-cash),reason:cash+EPS<needed?"交割前资金不足（补差或先行解押）":""};
       }
       function retireLiens(quote){
-        for(const {l,d,fees} of quote.parts){
+        for(const {l,d,fees,extra,voluntary} of quote.parts){
           pay("releaseFees",fees);pay("loanFees",d.fee);pay("closingInterest",d.interest);
           const paid=pay("closingPrincipal",l.balance);l.balance=Math.max(0,l.balance-paid);
+          if(voluntary&&extra>EPS)recordQuota(l,m,extra);
           if(l.balance<EPS)l.balance=0;
-          if(detail)byLoan[l.c.id].push({month:m,principal:paid,interest:d.interest,balance:l.balance,annualRate:l.rate*12,settled:true});
+          if(detail)byLoan[l.c.id].push({month:m,principal:paid,scheduledPrincipal:paid-extra,earlyPrincipal:extra,interest:d.interest,balance:l.balance,annualRate:l.rate*12,settled:true});
           due.set(l.c.id,{interest:0,principal:0,fee:0});
         }
       }
@@ -385,8 +504,11 @@
         }
         const settleMonth=m+z.c.settle;
         if(settleMonth>H){reject(m,z.c.id,"质押交割超出可评估期限，继续持有");return;}
-        const denied=liens.find(l=>settleMonth<l.end&&(prepayRestriction(l.c,"full")||settleMonth-l.c.start+1<l.c.prepayFrom));
-        if(denied){reject(m,z.c.id,prepayRestriction(denied.c,"full")||"质押成交时尚未到提前还款窗口");return;}
+        for(const l of liens){
+          if(settleMonth>=l.end||due.get(l.c.id).principal>=l.balance-EPS)continue;
+          const terms=saleContract(l.c,settleMonth-l.c.start+1);
+          if(terms.reason){reject(m,z.c.id,terms.reason);return;}
+        }
         z.lienOrder={month:settleMonth,gross:z.mark*z.units};
         event(m,z.c.id,"pledged_order","整笔质押交易，锁定报价并等待第 "+settleMonth+" 月同步解押；交割前无可用卖款",z.lienOrder.gross);
         if(settleMonth===m)settlePledged(z);
@@ -491,14 +613,14 @@
         const l=loanMap.get(a.loan),c=l.c;
         if(l.balance<=EPS){if(!l.everActive)reject(m,c.id,"担保尚未触发，无法预付");else event(m,c.id,"superseded","债务已偿清，保留现金");continue;}
         const p=a.mode==="full"?l.balance:a.amount;
-        const restriction=prepayRestriction(c,a.mode)||(p>=l.balance-EPS?prepayRestriction(c,"full"):"");
-        if(restriction||m-c.start+1<c.prepayFrom||p>l.balance+EPS||(p+EPS<c.prepayMin&&p<l.balance-EPS)){
+        const restriction=checkVoluntary(l,m,a.mode,p,p>=l.balance-EPS);
+        if(restriction||p>l.balance+EPS){
           reject(m,c.id,(restriction||"提前还款期数、起点、余额或最低金额未获合同允许")+"，按原合同还款");continue;
         }
         const fee=p*c.prepayFee+(p>=l.balance-EPS?c.settlementFee:0),available=Math.max(0,cash-reserve);
         if(p+fee>available+EPS){reject(m,c.id,"本月可用现金扣生活、到期款和储备后不足，保留现金",p+fee-available);continue;}
-        pay("prepaid",p);pay("prepayFees",fee);l.balance=Math.max(0,l.balance-p);recast(l,a.mode,m);
-        if(detail)byLoan[c.id].push({month:m,prepay:p,fee,balance:l.balance,end:l.end,nextPayment:c.method==="annuity"?l.payment:null});
+        pay("prepaid",p);pay("prepayFees",fee);recordQuota(l,m,p);l.balance=Math.max(0,l.balance-p);recast(l,a.mode,m);
+        if(detail)byLoan[c.id].push({month:m,prepay:p,fee,balance:l.balance,remainingQuota:typeof c.prepayPeriodMax==="number"?Math.max(0,c.prepayPeriodMax-l.quotaUsed):null,end:l.end,nextPayment:c.method==="annuity"?l.payment:null});
         event(m,c.id,"prepay","来自当月清算后的可支配现金",p);
       }
       const financial=sum(securities,z=>z.mark*z.units),property=sum(assets,z=>z.owned&&z.property?z.mark:0),
@@ -549,6 +671,14 @@
   function firstPositive(n){return n>EPS?n:0;}
 
   const baseStrategy=()=>({id:"S000",actions:[]});
+  function neutralBalance(c,through){
+    const l=newLoan(c),scenario={by:{}};
+    for(let m=c.start;m<=through;m++){
+      const due=loanDue(l,m,scenario);
+      l.balance=Math.max(0,l.balance-due.principal);
+    }
+    return l.balance;
+  }
   function enumerate(h,limit=200) {
     num(limit,"策略上限",100,500,true);
     const dims=[],exclusions=[];
@@ -594,16 +724,43 @@
       for(const reason of new Set([fullRestriction,recastRestriction,shortenRestriction].filter(Boolean)))why(l.id,reason);
       if(fullRestriction&&recastRestriction&&shortenRestriction)continue;
       if(l.principal<=EPS||l.months<2){why(l.id,"余额或到期期数不支持额外提前还款");continue;}
-      const month=l.start+l.prepayFrom-1;
-      if(month>=l.start+l.months-1||month>H){why(l.id,"提前还款窗口在到期或评估期以后");continue;}
-      const choices=fullRestriction?[]:[{kind:"prepay",loan:l.id,month,mode:"full"}];
-      const partialCap=Math.min(Math.max(liquidOpening,fundingAt(month))/(1+l.prepayFee),l.principal*.5);
-      for(const frac of [.5,1]){
-        const amount=Math.floor(partialCap*frac*100)/100;
-        if(amount<=EPS||amount<l.prepayMin||l.method==="bullet")continue;
-        for(const mode of ["recast","shorten"]){
-          if(mode==="recast"?recastRestriction:shortenRestriction)continue;
-          choices.push({kind:"prepay",loan:l.id,month,mode,amount});
+      const first=l.start+l.prepayFrom-1,last=Math.min(H,l.start+l.months-2);
+      if(first>last){why(l.id,"提前还款窗口在到期或评估期以后");continue;}
+      const dates=new Set([first]),contractLoan=newLoan(l);
+      if(typeof l.prepayPeriodMax==="number"){
+        const initialReset=l.start+l.prepayPeriodRemaining;
+        const next=first<initialReset?initialReset:initialReset+(1+Math.floor((first-initialReset)/l.prepayPeriodMonths))*l.prepayPeriodMonths;
+        if(next<=last)dates.add(next);
+      }
+      if(!fullRestriction&&Number.isFinite(quotaAt(contractLoan,first).limit)){
+        for(let m=first;m<=last;m++){
+          const remaining=neutralBalance(l,m);
+          if(remaining>EPS&&remaining<=quotaAt(contractLoan,m).limit+EPS){dates.add(m);break;}
+        }
+      }
+      const choices=[],recurring=new Map();
+      for(const month of [...dates].sort((a,b)=>a-b)){
+        const availableQuota=quotaAt(contractLoan,month).limit,contractBalance=neutralBalance(l,month);
+        const fullFits=!fullRestriction&&contractBalance>EPS&&contractBalance<=availableQuota+EPS;
+        if(month===first&&!fullRestriction&&!fullFits)why(l.id,"首个动作月全清的剩余本金超过合同额度或已到期");
+        if(fullFits)choices.push({kind:"prepay",loan:l.id,month,mode:"full"});
+        const partialCap=Math.min(Math.max(liquidOpening,fundingAt(month))/(1+l.prepayFee),l.principal*.5,availableQuota);
+        const distinctAmounts=new Set();
+        for(const frac of [.5,1]){
+          const amount=Math.floor(partialCap*frac*100)/100;
+          if(amount<=EPS||amount<l.prepayMin||amount>=contractBalance-EPS||l.method==="bullet"||distinctAmounts.has(amount))continue;
+          distinctAmounts.add(amount);
+          for(const mode of ["recast","shorten"]){
+            if(mode==="recast"?recastRestriction:shortenRestriction)continue;
+            const action={kind:"prepay",loan:l.id,month,mode,amount};choices.push(action);
+            if(typeof l.prepayPeriodMax==="number"&&frac===1){
+              const prev=recurring.get(mode);
+              if(!prev)recurring.set(mode,action);
+              else if(quotaAt(contractLoan,month).index!==quotaAt(contractLoan,prev.month).index){
+                choices.push([prev,action]);recurring.delete(mode);
+              }
+            }
+          }
         }
       }
       add(l.id,choices);
@@ -619,7 +776,7 @@
       const key=digits.join(",");
       if(selected.length>=limit||seen.has(key))return;
       seen.add(key);
-      const actions=digits.map((v,i)=>dims[i].options[v]).filter(Boolean);
+      const actions=digits.map((v,i)=>dims[i].options[v]).filter(Boolean).flat();
       selected.push({id:"S"+String(selected.length).padStart(3,"0"),actions});
     }
     function decode(n){return dims.map(d=>{const b=BigInt(d.options.length),k=Number(n%b);n/=b;return k;});}
@@ -652,7 +809,7 @@
   }
   function prepare(input,scenarios) {
     if(!Array.isArray(scenarios)||!scenarios.length||scenarios.length>12)throw Error("请输入1至12个情景");
-    const h=validateHousehold(input),paths=scenarios.map(s=>validateScenario(s,h.rangeCase));
+    const h=validateHousehold(input),paths=scenarios.map(s=>validateScenario(s,h.rangeCase,h));
     if(new Set(paths.map(s=>s.id)).size!==paths.length)throw Error("情景 ID 重复");
     return {h,scenarios:paths};
   }
@@ -803,7 +960,9 @@
       const balance=ld?ld.balance:(loan.method==="bullet"&&month<loan.start+loan.months-1?loan.principal:0);
       if(month<=H)payoff={id:loan.id,...effect(actions,{kind:"prepay",loan:loan.id,month,mode:"full"})};
       if(r&&balance>EPS&&["full","recast","shorten"].some(mode=>!prepayRestriction(loan,mode))){
-        const upper=Math.min(balance,Math.max(0,r.cash-r.reserve)/(1+loan.prepayFee)),mode=loan.allowRecast?"recast":loan.allowShorten?"shorten":null;
+        const liquidityCeiling=Math.min(balance,Math.max(0,r.cash-r.reserve)/(1+loan.prepayFee));
+        const contractLimit=quotaAt(newLoan(loan),month).limit,upper=Math.min(liquidityCeiling,contractLimit);
+        const mode=!prepayRestriction(loan,"recast")?"recast":!prepayRestriction(loan,"shorten")?"shorten":null;
         const works=x=>{
           if(x<=EPS)return keep.summary.feasible;
           const useMode=x>=balance-EPS?"full":mode;
@@ -821,7 +980,7 @@
         }
         // A non-cent contractual payoff can be rounded to cents only for display.
         const cap=last?last.x:null;
-        affordablePrepay={id:loan.id,month,mode,largestTested:cap,liquidityCeiling:upper,balance,
+        affordablePrepay={id:loan.id,month,mode,largestTested:cap,liquidityCeiling,contractCeiling:Number.isFinite(contractLimit)?contractLimit:"unlimited",balance,
           coarseStep:upper/50,baselineFeasible:keep.summary.feasible};
       } else affordablePrepay={id:loan.id,month,largestTested:null,reason:prepayRestriction(loan,"full")||"窗口无可测试余额或现金已截断"};
     }else if(loan)affordablePrepay={id:loan.id,month:null,largestTested:null,reason:"提前还款窗口尚未确认，维持原合同"};
@@ -846,7 +1005,7 @@
     }
     return {grid,base:base.summary,affordablePrepay,breakEven,liquidation,payoff};
   }
-  return {H,templates,blank,baseStrategy,modes,path,prepare,validateHousehold,validateScenario,enumerate,
+  return {H,templates,blank,baseStrategy,modes,path,prepare,validateHousehold,validateScenario,validateTargets,targetIds,targetClasses,enumerate,
     assess,simulate,rank,reverse,describe,nameOf,amortPayment,
     inspect:(study,strategyId,scenarioId)=>{
       const r=study.results.find(r=>r.strategy.id===strategyId),s=study.prepared.scenarios.find(s=>s.id===scenarioId);

@@ -1,6 +1,6 @@
 {
   "node": "v24.22.3",
-  "checks": 26,
+  "checks": 32,
   "failures": 0,
   "tests": [
     {
@@ -125,6 +125,91 @@
     },
     {
       "name": "candidate amounts include current received wage after living cost and contractual installment",
+      "verdict": "pass",
+      "result": null
+    },
+    {
+      "name": "every concrete stress target is bound to an existing object of the kind that reads it",
+      "verdict": "pass",
+      "result": {
+        "validTargetFirstFailure": 1,
+        "validTargetMissingCash": 200,
+        "parameterKinds": 18
+      }
+    },
+    {
+      "name": "1000 per-action cap, 1001 and full payoff interdiction apply to enumeration, manual actions and inverse cap",
+      "verdict": "pass",
+      "result": {
+        "largestTested": 1000,
+        "generated": [
+          [],
+          [
+            {
+              "kind": "prepay",
+              "loan": "l",
+              "month": 1,
+              "mode": "recast",
+              "amount": 500
+            }
+          ],
+          [
+            {
+              "kind": "prepay",
+              "loan": "l",
+              "month": 1,
+              "mode": "shorten",
+              "amount": 500
+            }
+          ],
+          [
+            {
+              "kind": "prepay",
+              "loan": "l",
+              "month": 1,
+              "mode": "recast",
+              "amount": 1000
+            }
+          ],
+          [
+            {
+              "kind": "prepay",
+              "loan": "l",
+              "month": 1,
+              "mode": "shorten",
+              "amount": 1000
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "name": "prior period usage, remaining months, reset and multiple prepayments use the contractual period",
+      "verdict": "pass",
+      "result": {
+        "prepaidByMonth": [
+          300,
+          0,
+          700,
+          0,
+          200,
+          700
+        ],
+        "firstWindowRemaining": 300
+      }
+    },
+    {
+      "name": "contractual maturity remains payable, and a voluntary partial payment cannot sneak into full payoff",
+      "verdict": "pass",
+      "result": null
+    },
+    {
+      "name": "house car and pledged stock closings distinguish ordinary principal, quota, explicit sale exception and maturity",
+      "verdict": "pass",
+      "result": null
+    },
+    {
+      "name": "asset release cannot bypass a period amount already used by a prior voluntary action",
       "verdict": "pass",
       "result": null
     },

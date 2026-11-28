@@ -76,7 +76,7 @@ manual_cash = [
 manual_script = r"""
 const E=require('./engine.js');
 const p={...E.templates.properties,id:'house',canSell:true,lock:1,use:'let',value:100,saleValue:200,rent:10,carry:0,saleLag:2,closingFee:4,saleFee:.02};
-const h={...E.blank(),cash:100,minimumLiving:0,properties:[p],loans:[[50,.12],[20,0]].map(([principal,annualRate],i)=>({...E.templates.loans,id:'L'+i,collateral:'house',method:'bullet',months:12,principal,annualRate,canPrepay:true,prepayFrom:1,prepayFee:0,settlementFee:0,transferWithLien:true}))};
+const h={...E.blank(),cash:100,minimumLiving:0,properties:[p],loans:[[50,.12],[20,0]].map(([principal,annualRate],i)=>({...E.templates.loans,id:'L'+i,collateral:'house',method:'bullet',months:12,principal,annualRate,canPrepay:true,allowFull:true,prepayMax:"unlimited",prepayPeriodMax:"unlimited",salePayoffRule:"same_terms",salePayoffFeeBase:"balance",prepayFrom:1,prepayFee:0,settlementFee:0,transferWithLien:true}))};
 const r=E.simulate(h,{id:'neutral',name:'平',paths:[]},{id:'sale',actions:[{kind:'list',asset:'house',month:1}]});
 console.log(JSON.stringify(r.rows.slice(0,3).map(r=>r.cash)));
 """
