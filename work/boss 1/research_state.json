@@ -4,7 +4,7 @@
   "edges": {
     "H-2027-CAPITAL": {
       "conditions": [
-        "以2026年9月披露RWA作静态参照，新增资本按实际入账时点认定。"
+        "以2026年9月披露RWA作静态参照，新增资本按实际入账认定；不将资本要求增量当现金提款。"
       ],
       "counterevidence": [
         "BK003",
@@ -15,11 +15,12 @@
       "head": "J-2027",
       "id": "H-2027-CAPITAL",
       "lag": "2027-01-01规则生效，实际注资与季度资本披露按月季核验。",
-      "mechanism": "2027年初大行附加资本要求上升占用缓冲；能否提前留存或实缴决定信贷扩张约束，不能从规则日期推断全国资不抵债。",
+      "last_proposal": "AUDIT-14",
+      "mechanism": "2027年工行附加资本要求增加50基点，按同日RWA静态增加资本需求1523.91亿元。真实可计入留存和实缴资本可补缓冲，RWA变化也会改变约束；监管要求增量不等于当天现金流出，规则日期本身不推出资不抵债。",
       "mode": "ALL",
       "research_status": "conditional_mechanism_not_estimated_causal_effect",
-      "revision": 1,
-      "status": "needs_review",
+      "revision": 2,
+      "status": "current",
       "tails": [
         "BK-ICBC-FLOOR",
         "J-BANKS"
@@ -27,25 +28,28 @@
     },
     "H-DECADE-REPAIR": {
       "conditions": [
-        "房地产存量过hang、地方收入结构与私人收入分配需要多年调整。",
-        "政策以展期、项目保交付和渐进承损为主，尚未全面转为及时可用的居民收入与损失重组。"
+        "存量房地产过剩、地方收入结构和私人收入分配需要多年调整，开发规模可在较低可持续水平稳定。",
+        "若政策以展期与渐进承损为主且收入修复慢，长期拖累延续；历史样本事后选取且共振，不可作中国概率。"
       ],
       "counterevidence": [
         "PF026",
         "PF037",
         "MA001",
         "MA003",
-        "MA006"
+        "MA006",
+        "HX009",
+        "HX002"
       ],
       "falsifier": "家庭收入份额和私人投资持续恢复、地产库存与债务负担可比下降、地方税基替代土地并正常付款，能把长期拖累缩短；不能以单日股价否证或证实。",
       "head": "J-DECADE",
       "id": "H-DECADE-REPAIR",
-      "lag": "地产2021高位到约2030的跨周期窗口，非从2026固定再数十年。",
-      "mechanism": "滚续避免集中清算但不创造原项目现金收益，损失会经利润、财政和收入逐年分担；结构替代与收入修复速度决定持续期，日历年本身不决定终点。",
+      "lag": "2021起至约2030前后的跨周期窗口；不保证2030结束，更不从2026固定追加整整十年。",
+      "last_proposal": "AUDIT-10",
+      "mechanism": "滚续可避免集中清算却不增加旧项目现金收益，损失经利润财政和收入分担。日本1991—2001与美国2007—2017实际住房都未回所选峰但工资股权路径不同，持续期由收入、损失确认和资源转移决定；中国2021起点是开发链规模而非同类房价。",
       "mode": "ALL",
       "research_status": "conditional_mechanism_not_estimated_causal_effect",
-      "revision": 1,
-      "status": "needs_review",
+      "revision": 2,
+      "status": "current",
       "tails": [
         "J-PROPERTY",
         "J-FISCAL",
@@ -81,21 +85,28 @@
     },
     "H-EQUITY-SEPARATION": {
       "conditions": [
-        "用含股息总回报、明确币种和持有窗口，上市企业与全国地产口径不同。"
+        "明确指数、币种、股息税费、名义实际和持有窗口；年历连乘与滚动十年另列。",
+        "历史峰后样本事后筛选；负总回报与每年下跌是不同命题。"
       ],
       "counterevidence": [
         "MA009",
-        "PF009"
+        "PF009",
+        "HX002",
+        "HX013",
+        "EQ001",
+        "EQ002",
+        "EQ003"
       ],
       "falsifier": "特定市场在固定币种/费用/窗口下的长期总回报可为负，但须由其盈利与估值路径证实，不能仅用宏观危机命名推出。",
       "head": "J-EQUITY",
       "id": "H-EQUITY-SEPARATION",
       "lag": "市场可提前定价；年度和十年复利分别检验。",
-      "mechanism": "利润、估值和股息共同决定股市回报，国内地产现金流不是全部上市利润；期初估值和政策反应可使弱宏观中的某些年份上涨。",
+      "last_proposal": "AUDIT-12",
+      "mechanism": "上市利润、估值和股息共同决定回报，国内地产不是全部上市利润。日本与美国所选住房峰后十年本币实际含息股权分别约-32.5%与+72.0%，显示机制可分离，不将任一端点移为中国参数。",
       "mode": "ALL",
       "research_status": "conditional_mechanism_not_estimated_causal_effect",
-      "revision": 1,
-      "status": "needs_review",
+      "revision": 2,
+      "status": "current",
       "tails": [
         "J-DECADE",
         "MA009",
@@ -104,24 +115,27 @@
     },
     "H-FISCAL-INCOME": {
       "conditions": [
-        "借款主体或雇主实际依赖土地/地方项目，且应收未兑现；非把全国基金支出减额均摊到所有家庭。",
-        "企业无充足现金、其他客户收入或已到账清欠资金抵补。"
+        "同一雇主或经营客户实际依赖地方项目，存在应收延付且缺其他现金抵补；不将全国土地毛款减额均摊。",
+        "置换节息、清欠到账、工资发放和新增消费各记一次，债务换券本身不计为家庭收入。"
       ],
       "counterevidence": [
         "MA003",
         "PF023",
         "PF026",
-        "MA001"
+        "MA001",
+        "HX006",
+        "HX007"
       ],
-      "falsifier": "同一批企业应收账龄缩短、拖欠实付、工资与招聘恢复且非靠新增高息短债维持，会切断本链。",
+      "falsifier": "同组供应商应收账龄缩短、实际清欠、工资招聘恢复且非靠高息短债；或成本节约和转移已完全补缺，切断本链。",
       "head": "J-JOBS",
       "id": "H-FISCAL-INCOME",
       "lag": "结算与工资1—6个月，招聘和投资3—12个月。",
-      "mechanism": "财政迟付或项目缩减增加供应商应收与周转占用，先约束招聘和可变工资，再传至家庭支出；账面利润上升可以与现金工资风险并存。",
+      "last_proposal": "AUDIT-06",
+      "mechanism": "实际财政迟付或项目缩减占用供应商周转，先影响可变工资和招聘，再传至家庭支出；2015置换可真实减息，但只有支付进入企业并转成工资或采购才构成下一步需求。",
       "mode": "ALL",
       "research_status": "conditional_mechanism_not_estimated_causal_effect",
-      "revision": 1,
-      "status": "needs_review",
+      "revision": 2,
+      "status": "current",
       "tails": [
         "J-FISCAL",
         "MA001",
@@ -130,22 +144,25 @@
     },
     "H-HOUSEHOLD-ACTION": {
       "conditions": [
-        "用户真实合同、可动用现金及资产处置限制明确；默认金额为空。",
-        "策略不可预知未来，只按预先动作或当期可见现金触发，未及时变现即记录失败。"
+        "真实合同、可动用现金和处置限制明确；提前还款、改供/缩期权限和费用只有明确确认才进入可行策略，未知不能默认允许或零。",
+        "策略只读当期可见信息；出售有等待、抵押解除与到账顺序，未及时到账记录缺口；初始金额为空。"
       ],
       "counterevidence": [
         "PF026",
-        "MA003"
+        "MA003",
+        "HX002",
+        "HX014"
       ],
-      "falsifier": "若用户所有压力路径现金持续满足储备且无近期支出，必要削债/出售结论可被否定；无一方案可行则明确补资缺口而非判安全。",
+      "falsifier": "所有压力路径都满足储备及合同支付则无需强制削债或出售；无可行策略须报告补资缺口。规则数量和分币级独特轨迹数量分别报告，不以重复动作凑可行策略。",
       "head": "A-HOUSEHOLD",
       "id": "H-HOUSEHOLD-ACTION",
       "lag": "现在核账，30—90天执行流动性安排，逐月120期与政策/收入变化时复算。",
-      "mechanism": "高净值但月度现金不足仍会失约，先保生活与合同付款可避免被迫低价出售；提前还贷省息与减少流动缓冲必须在同一台账比较。",
+      "last_proposal": "AUDIT-16",
+      "mechanism": "现金不足可能先表现为未完成可选支出，再成为合同本息未付，两者单列；正净值不能支付当月账单。先保生活与合同付款，再以同一台账比较提前还款省息、流动缓冲、出售和长期净值。",
       "mode": "ALL",
       "research_status": "conditional_mechanism_not_estimated_causal_effect",
-      "revision": 1,
-      "status": "needs_review",
+      "revision": 2,
+      "status": "current",
       "tails": [
         "J-JOBS",
         "J-PROPERTY",
@@ -162,17 +179,21 @@
         "PF026",
         "PF029",
         "MA003",
-        "BK004"
+        "BK004",
+        "HX006",
+        "HX009",
+        "HX014"
       ],
       "falsifier": "若大规模净新增可用财政资金实际转至居民/供应商并持续拉动私人回款与投资，转向有效恢复；若外需骤降与多地银行融资/资本缺口共振，转向严重下行。",
       "head": "J-MACRO",
       "id": "H-MACRO-SPLIT",
       "lag": "3—6个月看到账与订单，2027年看持续性，资产负债表修复跨3—5年。",
-      "mechanism": "旧开发链损失通过投资减少、财政收缩和私人修复压低内需；新制造与服务增加值支撑总量，渐进处置延长损失承担时间并保支付连续。",
+      "last_proposal": "AUDIT-08",
+      "mechanism": "旧开发链通过投资、地方实际支付和私人修复拖累内需；制造服务与出口增长提供缓冲，滚续保支付连续但不能制造旧项目收益。2015—16的置换和购买力支持说明可改变节奏，财政主导修复须见净资源实际到人到项目；外需、生产率或可持续私人现金、工资与投资自主改善也能独立形成有效恢复。",
       "mode": "ALL",
       "research_status": "conditional_mechanism_not_estimated_causal_effect",
-      "revision": 1,
-      "status": "needs_review",
+      "revision": 2,
+      "status": "current",
       "tails": [
         "J-PROPERTY",
         "J-FISCAL",
@@ -183,22 +204,24 @@
     },
     "H-PF-EXIT": {
       "conditions": [
-        "退平台后仍需营业回款和市场借款；未获无条件担保。"
+        "若退出削弱原有保证或市场支持预期，且无新资本、补贴或可执行融资替代，才可能传至借贷条件。"
       ],
       "counterevidence": [
         "PF026",
         "PF027",
         "PF032",
-        "PF033"
+        "PF033",
+        "HX004"
       ],
-      "falsifier": "同组弱平台退出后已补资本、获得长期可执行融资且经营现金足额，不出现额外续贷困难。",
+      "falsifier": "退出前后同一主体已获长期可执行融资、支持安排和经营现金足额，或报价期限并未恶化；均否定该主体由退出触发的融资收紧解释。",
       "head": "J-2027",
       "id": "H-PF-EXIT",
       "lag": "2026年末至2027年中看实际退出，之后按每个主体下一次到期/续贷看现金。",
-      "mechanism": "2027年6月底的名录安排会改变弱平台的再融资定价和承接部门；剥离政府融资职能与企业经营债合同届期分开核算。",
+      "last_proposal": "AUDIT-18",
+      "mechanism": "2027年6月底名录安排是合同与支持预期的核验窗口；只有退出实际削弱保证或融资支持，才可能影响弱主体下一次融资价格和期限。未取得同主体同贷款退出前后报价，不能把名录变化本身当已识别的融资冲击。",
       "mode": "ALL",
       "research_status": "conditional_mechanism_not_estimated_causal_effect",
-      "revision": 1,
+      "revision": 2,
       "status": "current",
       "tails": [
         "PF029",
@@ -1680,6 +1703,526 @@
         "research/tasks/history_framework_review/results.json": "5e93e7d7f5f021902348de0adce9bc6d32951891e90c559610035a5c854b4dbd"
       },
       "id": "s12_history"
+    },
+    {
+      "action": "strengthen",
+      "at": "2026-11-28T05:23:41+00:00",
+      "cycle": 1,
+      "event": "proposal",
+      "id": "AUDIT-01",
+      "target": "J-PROPERTY"
+    },
+    {
+      "at": "2026-11-28T05:23:41+00:00",
+      "cycle": 1,
+      "event": "proposal_review",
+      "id": "AUDIT-01",
+      "reviewer": "/root/research_independent_review",
+      "verdict": "pass"
+    },
+    {
+      "action": "strengthen",
+      "at": "2026-11-28T05:23:41+00:00",
+      "cycle": 1,
+      "event": "apply",
+      "id": "AUDIT-01",
+      "needs_review": [
+        "A-HOUSEHOLD",
+        "J-DECADE",
+        "J-EQUITY",
+        "J-MACRO",
+        "J-PROPERTY"
+      ],
+      "target": "J-PROPERTY"
+    },
+    {
+      "action": "strengthen",
+      "at": "2026-11-28T05:23:41+00:00",
+      "cycle": 1,
+      "event": "proposal",
+      "id": "AUDIT-02",
+      "target": "J-FISCAL"
+    },
+    {
+      "at": "2026-11-28T05:23:41+00:00",
+      "cycle": 1,
+      "event": "proposal_review",
+      "id": "AUDIT-02",
+      "reviewer": "/root/research_independent_review",
+      "verdict": "pass"
+    },
+    {
+      "action": "strengthen",
+      "at": "2026-11-28T05:23:42+00:00",
+      "cycle": 1,
+      "event": "apply",
+      "id": "AUDIT-02",
+      "needs_review": [
+        "A-HOUSEHOLD",
+        "J-DECADE",
+        "J-EQUITY",
+        "J-FISCAL",
+        "J-JOBS",
+        "J-MACRO"
+      ],
+      "target": "J-FISCAL"
+    },
+    {
+      "action": "strengthen",
+      "at": "2026-11-28T05:23:42+00:00",
+      "cycle": 1,
+      "event": "proposal",
+      "id": "AUDIT-03",
+      "target": "J-DEMAND"
+    },
+    {
+      "at": "2026-11-28T05:23:42+00:00",
+      "cycle": 1,
+      "event": "proposal_review",
+      "id": "AUDIT-03",
+      "reviewer": "/root/research_independent_review",
+      "verdict": "pass"
+    },
+    {
+      "action": "strengthen",
+      "at": "2026-11-28T05:23:42+00:00",
+      "cycle": 1,
+      "event": "apply",
+      "id": "AUDIT-03",
+      "needs_review": [
+        "A-HOUSEHOLD",
+        "J-DECADE",
+        "J-DEMAND",
+        "J-EQUITY",
+        "J-MACRO"
+      ],
+      "target": "J-DEMAND"
+    },
+    {
+      "action": "strengthen",
+      "at": "2026-11-28T05:23:42+00:00",
+      "cycle": 1,
+      "event": "proposal",
+      "id": "AUDIT-04",
+      "target": "J-BANKS"
+    },
+    {
+      "at": "2026-11-28T05:23:42+00:00",
+      "cycle": 1,
+      "event": "proposal_review",
+      "id": "AUDIT-04",
+      "reviewer": "/root/research_independent_review",
+      "verdict": "pass"
+    },
+    {
+      "action": "strengthen",
+      "at": "2026-11-28T05:23:42+00:00",
+      "cycle": 1,
+      "event": "apply",
+      "id": "AUDIT-04",
+      "needs_review": [
+        "J-2027",
+        "J-BANKS"
+      ],
+      "target": "J-BANKS"
+    },
+    {
+      "action": "replace",
+      "at": "2026-11-28T05:23:42+00:00",
+      "cycle": 1,
+      "event": "proposal",
+      "id": "AUDIT-05",
+      "target": "M-MODEL-USE"
+    },
+    {
+      "at": "2026-11-28T05:23:42+00:00",
+      "cycle": 1,
+      "event": "proposal_review",
+      "id": "AUDIT-05",
+      "reviewer": "/root/research_independent_review",
+      "verdict": "pass"
+    },
+    {
+      "action": "replace",
+      "at": "2026-11-28T05:23:43+00:00",
+      "cycle": 1,
+      "event": "apply",
+      "id": "AUDIT-05",
+      "needs_review": [
+        "M-MODEL-USE"
+      ],
+      "target": "M-MODEL-USE"
+    },
+    {
+      "action": "strengthen",
+      "at": "2026-11-28T05:23:43+00:00",
+      "cycle": 1,
+      "event": "proposal",
+      "id": "AUDIT-06",
+      "target": "H-FISCAL-INCOME"
+    },
+    {
+      "at": "2026-11-28T05:23:43+00:00",
+      "cycle": 1,
+      "event": "proposal_review",
+      "id": "AUDIT-06",
+      "reviewer": "/root/research_independent_review",
+      "verdict": "pass"
+    },
+    {
+      "action": "strengthen",
+      "at": "2026-11-28T05:23:43+00:00",
+      "cycle": 1,
+      "event": "apply",
+      "id": "AUDIT-06",
+      "needs_review": [
+        "A-HOUSEHOLD",
+        "J-JOBS"
+      ],
+      "target": "H-FISCAL-INCOME"
+    },
+    {
+      "action": "strengthen",
+      "at": "2026-11-28T05:23:43+00:00",
+      "cycle": 1,
+      "event": "proposal",
+      "id": "AUDIT-07",
+      "target": "J-JOBS"
+    },
+    {
+      "at": "2026-11-28T05:23:43+00:00",
+      "cycle": 1,
+      "event": "proposal_review",
+      "id": "AUDIT-07",
+      "reviewer": "/root/research_independent_review",
+      "verdict": "pass"
+    },
+    {
+      "action": "strengthen",
+      "at": "2026-11-28T05:23:43+00:00",
+      "cycle": 1,
+      "event": "apply",
+      "id": "AUDIT-07",
+      "needs_review": [
+        "A-HOUSEHOLD",
+        "J-JOBS"
+      ],
+      "target": "J-JOBS"
+    },
+    {
+      "action": "strengthen",
+      "at": "2026-11-28T05:23:43+00:00",
+      "cycle": 1,
+      "event": "proposal",
+      "id": "AUDIT-08",
+      "target": "H-MACRO-SPLIT"
+    },
+    {
+      "at": "2026-11-28T05:23:43+00:00",
+      "cycle": 1,
+      "event": "proposal_review",
+      "id": "AUDIT-08",
+      "reviewer": "/root/research_independent_review",
+      "verdict": "pass"
+    },
+    {
+      "action": "strengthen",
+      "at": "2026-11-28T05:23:44+00:00",
+      "cycle": 1,
+      "event": "apply",
+      "id": "AUDIT-08",
+      "needs_review": [
+        "J-MACRO"
+      ],
+      "target": "H-MACRO-SPLIT"
+    },
+    {
+      "action": "strengthen",
+      "at": "2026-11-28T05:23:44+00:00",
+      "cycle": 1,
+      "event": "proposal",
+      "id": "AUDIT-09",
+      "target": "J-MACRO"
+    },
+    {
+      "at": "2026-11-28T05:23:44+00:00",
+      "cycle": 1,
+      "event": "proposal_review",
+      "id": "AUDIT-09",
+      "reviewer": "/root/research_independent_review",
+      "verdict": "pass"
+    },
+    {
+      "action": "strengthen",
+      "at": "2026-11-28T05:23:44+00:00",
+      "cycle": 1,
+      "event": "apply",
+      "id": "AUDIT-09",
+      "needs_review": [
+        "J-MACRO"
+      ],
+      "target": "J-MACRO"
+    },
+    {
+      "action": "strengthen",
+      "at": "2026-11-28T05:23:44+00:00",
+      "cycle": 1,
+      "event": "proposal",
+      "id": "AUDIT-10",
+      "target": "H-DECADE-REPAIR"
+    },
+    {
+      "at": "2026-11-28T05:23:44+00:00",
+      "cycle": 1,
+      "event": "proposal_review",
+      "id": "AUDIT-10",
+      "reviewer": "/root/research_independent_review",
+      "verdict": "pass"
+    },
+    {
+      "action": "strengthen",
+      "at": "2026-11-28T05:23:44+00:00",
+      "cycle": 1,
+      "event": "apply",
+      "id": "AUDIT-10",
+      "needs_review": [
+        "A-HOUSEHOLD",
+        "J-DECADE",
+        "J-EQUITY"
+      ],
+      "target": "H-DECADE-REPAIR"
+    },
+    {
+      "action": "strengthen",
+      "at": "2026-11-28T05:23:44+00:00",
+      "cycle": 1,
+      "event": "proposal",
+      "id": "AUDIT-11",
+      "target": "J-DECADE"
+    },
+    {
+      "at": "2026-11-28T05:23:45+00:00",
+      "cycle": 1,
+      "event": "proposal_review",
+      "id": "AUDIT-11",
+      "reviewer": "/root/research_independent_review",
+      "verdict": "pass"
+    },
+    {
+      "action": "strengthen",
+      "at": "2026-11-28T05:23:45+00:00",
+      "cycle": 1,
+      "event": "apply",
+      "id": "AUDIT-11",
+      "needs_review": [
+        "A-HOUSEHOLD",
+        "J-DECADE",
+        "J-EQUITY"
+      ],
+      "target": "J-DECADE"
+    },
+    {
+      "action": "strengthen",
+      "at": "2026-11-28T05:23:45+00:00",
+      "cycle": 1,
+      "event": "proposal",
+      "id": "AUDIT-12",
+      "target": "H-EQUITY-SEPARATION"
+    },
+    {
+      "at": "2026-11-28T05:23:45+00:00",
+      "cycle": 1,
+      "event": "proposal_review",
+      "id": "AUDIT-12",
+      "reviewer": "/root/research_independent_review",
+      "verdict": "pass"
+    },
+    {
+      "action": "strengthen",
+      "at": "2026-11-28T05:23:45+00:00",
+      "cycle": 1,
+      "event": "apply",
+      "id": "AUDIT-12",
+      "needs_review": [
+        "A-HOUSEHOLD",
+        "J-EQUITY"
+      ],
+      "target": "H-EQUITY-SEPARATION"
+    },
+    {
+      "action": "strengthen",
+      "at": "2026-11-28T05:23:45+00:00",
+      "cycle": 1,
+      "event": "proposal",
+      "id": "AUDIT-13",
+      "target": "J-EQUITY"
+    },
+    {
+      "at": "2026-11-28T05:23:45+00:00",
+      "cycle": 1,
+      "event": "proposal_review",
+      "id": "AUDIT-13",
+      "reviewer": "/root/research_independent_review",
+      "verdict": "pass"
+    },
+    {
+      "action": "strengthen",
+      "at": "2026-11-28T05:23:45+00:00",
+      "cycle": 1,
+      "event": "apply",
+      "id": "AUDIT-13",
+      "needs_review": [
+        "A-HOUSEHOLD",
+        "J-EQUITY"
+      ],
+      "target": "J-EQUITY"
+    },
+    {
+      "action": "strengthen",
+      "at": "2026-11-28T05:23:45+00:00",
+      "cycle": 1,
+      "event": "proposal",
+      "id": "AUDIT-14",
+      "target": "H-2027-CAPITAL"
+    },
+    {
+      "at": "2026-11-28T05:23:46+00:00",
+      "cycle": 1,
+      "event": "proposal_review",
+      "id": "AUDIT-14",
+      "reviewer": "/root/research_independent_review",
+      "verdict": "pass"
+    },
+    {
+      "action": "strengthen",
+      "at": "2026-11-28T05:23:46+00:00",
+      "cycle": 1,
+      "event": "apply",
+      "id": "AUDIT-14",
+      "needs_review": [
+        "J-2027"
+      ],
+      "target": "H-2027-CAPITAL"
+    },
+    {
+      "action": "strengthen",
+      "at": "2026-11-28T05:23:46+00:00",
+      "cycle": 1,
+      "event": "proposal",
+      "id": "AUDIT-18",
+      "target": "H-PF-EXIT"
+    },
+    {
+      "at": "2026-11-28T05:23:46+00:00",
+      "cycle": 1,
+      "event": "proposal_review",
+      "id": "AUDIT-18",
+      "reviewer": "/root/research_independent_review",
+      "verdict": "pass"
+    },
+    {
+      "action": "strengthen",
+      "at": "2026-11-28T05:23:46+00:00",
+      "cycle": 1,
+      "event": "apply",
+      "id": "AUDIT-18",
+      "needs_review": [
+        "J-2027"
+      ],
+      "target": "H-PF-EXIT"
+    },
+    {
+      "action": "strengthen",
+      "at": "2026-11-28T05:23:46+00:00",
+      "cycle": 1,
+      "event": "proposal",
+      "id": "AUDIT-15",
+      "target": "J-2027"
+    },
+    {
+      "at": "2026-11-28T05:23:46+00:00",
+      "cycle": 1,
+      "event": "proposal_review",
+      "id": "AUDIT-15",
+      "reviewer": "/root/research_independent_review",
+      "verdict": "pass"
+    },
+    {
+      "action": "strengthen",
+      "at": "2026-11-28T05:23:46+00:00",
+      "cycle": 1,
+      "event": "apply",
+      "id": "AUDIT-15",
+      "needs_review": [
+        "J-2027"
+      ],
+      "target": "J-2027"
+    },
+    {
+      "action": "strengthen",
+      "at": "2026-11-28T05:23:47+00:00",
+      "cycle": 1,
+      "event": "proposal",
+      "id": "AUDIT-16",
+      "target": "H-HOUSEHOLD-ACTION"
+    },
+    {
+      "at": "2026-11-28T05:23:47+00:00",
+      "cycle": 1,
+      "event": "proposal_review",
+      "id": "AUDIT-16",
+      "reviewer": "/root/research_independent_review",
+      "verdict": "pass"
+    },
+    {
+      "action": "strengthen",
+      "at": "2026-11-28T05:23:47+00:00",
+      "cycle": 1,
+      "event": "apply",
+      "id": "AUDIT-16",
+      "needs_review": [
+        "A-HOUSEHOLD"
+      ],
+      "target": "H-HOUSEHOLD-ACTION"
+    },
+    {
+      "action": "strengthen",
+      "at": "2026-11-28T05:23:47+00:00",
+      "cycle": 1,
+      "event": "proposal",
+      "id": "AUDIT-17",
+      "target": "A-HOUSEHOLD"
+    },
+    {
+      "at": "2026-11-28T05:23:47+00:00",
+      "cycle": 1,
+      "event": "proposal_review",
+      "id": "AUDIT-17",
+      "reviewer": "/root/research_independent_review",
+      "verdict": "pass"
+    },
+    {
+      "action": "strengthen",
+      "at": "2026-11-28T05:23:47+00:00",
+      "cycle": 1,
+      "event": "apply",
+      "id": "AUDIT-17",
+      "needs_review": [
+        "A-HOUSEHOLD"
+      ],
+      "target": "A-HOUSEHOLD"
+    },
+    {
+      "at": "2026-11-28T05:24:15+00:00",
+      "cycle": 1,
+      "event": "stage",
+      "files": {
+        "research/framework_cards.md": "24d31dcc520f8440b5c91994c763760f8b9baf603db47ed0fcc49101c343bd8e",
+        "research/tasks/history_framework_review/framework_review.md": "540f7bc2a3d0a03d21926703e8b838bfa8d21cdcbb57081cf940253ce4fa7f08",
+        "research/tasks/history_framework_review/review_receipt.json": "f51b10b82a4039583bc50259fcb1ae2157c9175b9dba388584f4b0dcebdc5a73",
+        "research/tasks/property_fiscal/mechanisms_and_reading.md": "a00e1e41f9ed6197eb726e0e1c8a154a65174d311de7af552306c63a8d5b9da6"
+      },
+      "id": "s06_viewpoints"
     }
   ],
   "mode": "first",
@@ -1690,13 +2233,16 @@
         "MA008",
         "PF010",
         "PF028",
-        "FW003"
+        "FW003",
+        "HX002",
+        "HX014"
       ],
       "id": "A-HOUSEHOLD",
       "kind": "action",
-      "revision": 1,
-      "statement": "现在先核到账收入、必要支出、合同本息和资产真实变现时点，按120月逐情景现金失败先筛方案，再比较提前还贷与净资产；触发出售应早于资金耗尽，现金充足家庭保留长期分散投资选择。",
-      "status": "needs_review"
+      "last_proposal": "AUDIT-17",
+      "revision": 2,
+      "statement": "现在核对到账收入、必要支出、合同本息和资产变现时点，逐月120期先筛现金可执行方案，再比省息及净值。提前还款许可、费用和改供/缩期方式必须明确确认，未知不能视为允许或零费；可选预算不足和未付合同债务分列，出售启动早于资金耗尽。",
+      "status": "current"
     },
     "BK-GROUP-DISPERSION": {
       "evidence": [
@@ -1768,13 +2314,19 @@
         "PF032",
         "PF033",
         "BK003",
-        "BK007"
+        "BK007",
+        "HX001",
+        "HX002",
+        "HX004",
+        "HX006",
+        "HX015"
       ],
       "id": "J-2027",
       "kind": "judgment",
-      "revision": 1,
-      "statement": "2027是专门置换安排转换、平台退出名录、大行资本加码和部分首套贴息新增受理的复核窗口；已查期限与滚续支持地区分化，尚不足以判断全国同年集中爆发。",
-      "status": "needs_review"
+      "last_proposal": "AUDIT-15",
+      "revision": 2,
+      "statement": "2027是专门置换安排转换、平台名录退出、大行资本加码和部分首套贴息新增受理的复核窗口；合同期限与已执行滚续支持地区分化，不能据全国单一到期墙或日本第六年来定位系统危机。关键是同一债务人的可用现金、分币种剩余期限、承诺融资及真正到账是否覆盖支付。",
+      "status": "current"
     },
     "J-BANKS": {
       "evidence": [
@@ -1788,13 +2340,19 @@
         "BK008",
         "BK010",
         "BK011",
-        "PF029"
+        "PF029",
+        "HX001",
+        "HX003",
+        "HX004",
+        "HX011",
+        "HX012"
       ],
       "id": "J-BANKS",
       "kind": "judgment",
-      "revision": 1,
-      "statement": "中国银行业主路径是盈利能力承压、局部信用损失消化与资本补充，众邦银行已被依法接管，2026年11月27日前公开证据不支持全国系统性银行危机已发生。2027年只有实际本金/现金损失、分机构资本或融资缺口及承接时滞达到跨区域量级才上调判断，独立的跨行挤兑亦可触发。",
-      "status": "needs_review"
+      "last_proposal": "AUDIT-04",
+      "revision": 2,
+      "statement": "中国银行业首位路径仍是盈利承压、局部损失消化和资本补充；众邦已被接管，截至2026年11月27日公开证据不足以判全国系统危机已发生。升级须见跨地区重大银行困境与大规模应急干预或异常重大损失，亦核跨行外流、融资冻结和支付/授信失灵；不要求财报先完整确认。",
+      "status": "current"
     },
     "J-DECADE": {
       "evidence": [
@@ -1804,13 +2362,21 @@
         "FW001",
         "FW002",
         "FW003",
-        "MA009"
+        "MA009",
+        "HX001",
+        "HX002",
+        "HX003",
+        "HX012",
+        "HX013",
+        "HX017",
+        "HX018"
       ],
       "id": "J-DECADE",
       "kind": "judgment",
-      "revision": 1,
-      "statement": "从2021年地产高位起计，到约2030年前后的多年调整是应准备的长路径；从2026年再追加整整十年全面停滞或连续股市下跌，缺乏可迁移的历史和会计依据。",
-      "status": "needs_review"
+      "last_proposal": "AUDIT-11",
+      "revision": 2,
+      "statement": "从2021年开发链高位起，到约2030年前后的多年地产与债务修复是应准备的主时间尺度，终点取决于收入、损失确认与结构替代。日本、美国及统一历史筛选支持长期实际住房拖累可能，不支持从2026固定再加十年全面停滞或2027第六年必爆。",
+      "status": "current"
     },
     "J-DEMAND": {
       "evidence": [
@@ -1818,25 +2384,34 @@
         "MA004",
         "MA008",
         "FW002",
-        "FW003"
+        "FW003",
+        "HX014",
+        "HX002"
       ],
       "id": "J-DEMAND",
       "kind": "judgment",
-      "revision": 1,
-      "statement": "居民和内需小微的收入、回款与资产负债表约束共同抑制私人支出，信贷需求弱与脆弱借款人的供给约束并存，无法据总量识别各自份额。",
-      "status": "needs_review"
+      "last_proposal": "AUDIT-03",
+      "revision": 2,
+      "statement": "居民和内需小微的收入、回款及资产负债表约束共同抑制私人支出；部分主体融资需求弱、部分脆弱借款人受供给限制。全国银行贷款存款净流量不能识别同一借款人的主动偿债，也不等于全体私人部门资金流量表净借贷。",
+      "status": "current"
     },
     "J-EQUITY": {
       "evidence": [
         "MA009",
         "MA001",
-        "MA007"
+        "MA007",
+        "HX002",
+        "HX013",
+        "EQ001",
+        "EQ002",
+        "EQ003"
       ],
       "id": "J-EQUITY",
       "kind": "judgment",
-      "revision": 1,
-      "statement": "拒绝把地产与收入调整直接推出A股未来十年必熊。市场回报须分别看上市公司利润、估值、股息、币种和买入窗口；近期必要支出不得依赖权益反弹。",
-      "status": "needs_review"
+      "last_proposal": "AUDIT-13",
+      "revision": 2,
+      "statement": "拒绝从地产和收入调整直接推出A股未来十年必熊或每年下跌。日本与美国峰后十年实际含息回报不同，MSCI年历美元毛回报又是另一窗口；应分别核上市利润、估值、股息、币种及费用。近期必要支出不得依赖权益反弹，长期实际亏损仍须承受能力测试。",
+      "status": "current"
     },
     "J-FISCAL": {
       "evidence": [
@@ -1848,26 +2423,34 @@
         "PF023",
         "PF027",
         "PF035",
-        "PF036"
+        "PF036",
+        "HX006",
+        "HX007",
+        "HX019"
       ],
       "id": "J-FISCAL",
       "kind": "judgment",
-      "revision": 1,
-      "statement": "高土地依赖且转移、营运现金和可执行融资不足的市县将先调整项目与回款；全国一般预算支出受有效缓冲，两本账与成本须分列。",
-      "status": "needs_review"
+      "last_proposal": "AUDIT-02",
+      "revision": 2,
+      "statement": "高土地依赖且转移、营运现金和可执行融资不足的市县先调整项目与回款；全国一般预算支出存在实际缓冲。置换可降票息及推迟本金，却不自动形成同额净新增需求，中央融资能力和当地实际到账分别判断。",
+      "status": "current"
     },
     "J-JOBS": {
       "evidence": [
         "MA001",
         "MA002",
         "MA003",
-        "MA008"
+        "MA008",
+        "HX002",
+        "HX006",
+        "HX014"
       ],
       "id": "J-JOBS",
       "kind": "judgment",
-      "revision": 1,
-      "statement": "全国就业与实际居民收入总量并未显示同步塌陷，但地产、地方项目和小微相关家庭未来12—24个月的可变薪酬、招聘与回款风险高于总量读数。",
-      "status": "needs_review"
+      "last_proposal": "AUDIT-07",
+      "revision": 2,
+      "statement": "全国就业与实际居民收入未显示同步塌陷；地产、地方项目及小微相关家庭未来12—24个月的可变薪酬、招聘和回款风险高于总量读数。风险只在相关雇主缺口传至实际工资与经营收入时计入，不把房价或土地毛款下降直接分摊给每户。",
+      "status": "current"
     },
     "J-MACRO": {
       "evidence": [
@@ -1878,13 +2461,18 @@
         "PF026",
         "PF027",
         "BK001",
-        "BK002"
+        "BK002",
+        "HX006",
+        "HX007",
+        "HX009",
+        "HX014"
       ],
       "id": "J-MACRO",
       "kind": "judgment",
-      "revision": 1,
-      "statement": "未来12—24个月首位路径是渐进滚续与局部承损、地产财政拖累和制造出口增长并存，私人收入与资产修复不均；严重信用收缩次位，有效需求修复是可改变主路径的政策分支。",
-      "status": "needs_review"
+      "last_proposal": "AUDIT-09",
+      "revision": 2,
+      "statement": "未来12—24个月首位是渐进滚续与局部承损、地产财政拖累和制造出口增长并存，收入与资产修复不均；外需和弱地方金融共振的严重信用收缩列次位。净财政支出真正到账并带动私人收入、回款和投资，或没有新增财政转移而私人现金、工资与投资自主持续改善，均可将有效修复升为主路径。",
+      "status": "current"
     },
     "J-PROPERTY": {
       "evidence": [
@@ -1893,13 +2481,18 @@
         "PF009",
         "PF010",
         "PF028",
-        "PF037"
+        "PF037",
+        "HX008",
+        "HX009",
+        "HX010",
+        "HX016"
       ],
       "id": "J-PROPERTY",
       "kind": "judgment",
-      "revision": 1,
-      "statement": "中国新房开发与项目融资更可能在2027年继续收缩或低位运行，二手住房通过分城降价与换手出清，实际保交付与部分核心城市先行改善。",
-      "status": "needs_review"
+      "last_proposal": "AUDIT-01",
+      "revision": 2,
+      "statement": "中国新房开发与项目融资更可能在2027年继续收缩或低位运行，二手住房通过分城降价与换手出清；交付与核心城市可先改善。开发规模稳定在可持续低位也可结束持续恶化，不要求重回2021高点。",
+      "status": "current"
     },
     "M-MODEL-USE": {
       "evidence": [
@@ -1907,15 +2500,783 @@
       ],
       "id": "M-MODEL-USE",
       "kind": "method",
-      "revision": 1,
-      "statement": "本轮历史HGB拒用主预警，logit仅比较；中国PMI桥接和DFM未稳定胜过简单基线，拒绝中国危机概率与精确GDP点预测，采用可复算会计和条件敏感性完成裁决。",
-      "status": "needs_review"
+      "last_proposal": "AUDIT-05",
+      "revision": 2,
+      "statement": "旧JST实验保留，纠错35未知标签和3全特征缺失后新作业仍拒绝校准HGB主预警，logit只作历史比较。raw与校准结果分别披露，负校准斜率经独立重估确认；已见测试不得称新验证。中国桥接和DFM未稳定胜基线，拒绝中国危机概率与精确GDP预测，以可复算会计和条件敏感性完成裁决。",
+      "status": "current"
     }
   },
-  "proposals": {},
+  "proposals": {
+    "AUDIT-01": {
+      "action": "strengthen",
+      "applied_at": "2026-11-28T05:23:41+00:00",
+      "author": "boss 1",
+      "base_revision": 1,
+      "created_at": "2026-11-28T05:23:41+00:00",
+      "id": "AUDIT-01",
+      "new_evidence": [
+        "HX008",
+        "HX009",
+        "HX010",
+        "HX016"
+      ],
+      "new_method": "历史统一筛选、同币种/同主体现金和资本核对；数值及原文独立审计，保留失败记录并按具体机制改正。",
+      "new_statement": "中国新房开发与项目融资更可能在2027年继续收缩或低位运行，二手住房通过分城降价与换手出清；交付与核心城市可先改善。开发规模稳定在可持续低位也可结束持续恶化，不要求重回2021高点。",
+      "old_statement": "中国新房开发与项目融资更可能在2027年继续收缩或低位运行，二手住房通过分城降价与换手出清，实际保交付与部分核心城市先行改善。",
+      "reason": "2016库存、棚改与2023交付反例表明销售、库存、施工和交付可以不同步；保留本期负向主判断，补足出清结束条件。",
+      "review": {
+        "at": "2026-11-28T05:23:41+00:00",
+        "note": "2015/16同口径合同销售面积反升22.46%，待售面积只降3.22%；2023交付与房地产业增加值仍可方向不同。当前约半的开发规模损失和新房资金减少支撑低位路径。允许在较低水平稳定结束恶化，避免把历史峰当恢复门槛。 独立实读回执：research/tasks/research_independent_review/proposal_receipt.json SHA256 6cae5271c27b430a8ce6e7000d083a3681884e553c898907137fcacc0643fac0",
+        "reviewer": "/root/research_independent_review",
+        "snapshot": "f57556188c6b9e6a69a43f35bb3083bce90fbf5f761703859aebc9a7af277c28",
+        "verdict": "pass"
+      },
+      "review_artifacts": [
+        "research/historical_model_correction.md",
+        "research/tasks/history_framework_review/history.md",
+        "research/tasks/history_framework_review/framework_review.md",
+        "research/tasks/research_independent_review/independent_models.json"
+      ],
+      "status": "applied",
+      "target": "J-PROPERTY",
+      "target_type": "nodes"
+    },
+    "AUDIT-02": {
+      "action": "strengthen",
+      "applied_at": "2026-11-28T05:23:42+00:00",
+      "author": "boss 1",
+      "base_revision": 1,
+      "created_at": "2026-11-28T05:23:41+00:00",
+      "id": "AUDIT-02",
+      "new_evidence": [
+        "HX006",
+        "HX007",
+        "HX019"
+      ],
+      "new_method": "历史统一筛选、同币种/同主体现金和资本核对；数值及原文独立审计，保留失败记录并按具体机制改正。",
+      "new_statement": "高土地依赖且转移、营运现金和可执行融资不足的市县先调整项目与回款；全国一般预算支出存在实际缓冲。置换可降票息及推迟本金，却不自动形成同额净新增需求，中央融资能力和当地实际到账分别判断。",
+      "old_statement": "高土地依赖且转移、营运现金和可执行融资不足的市县将先调整项目与回款；全国一般预算支出受有效缓冲，两本账与成本须分列。",
+      "reason": "2015实际置换节息支持工具有效，但Setser债务率算例错误，不能以低利率自动推断稳定债务或家庭现金已改善。",
+      "review": {
+        "at": "2026-11-28T05:23:41+00:00",
+        "note": "2025/26年前十月土地毛款变化−6456、宽口径支出变化−5833，两项差−623亿元。定南同两项显性成本后的余额反向增加13421万元；2015置换以3.2万亿×6.5个百分点得约2080亿元静态全年节息。须逐市县核到账与同用途资源，不能以名义债额代替解困现金。 独立实读回执：research/tasks/research_independent_review/proposal_receipt.json SHA256 6cae5271c27b430a8ce6e7000d083a3681884e553c898907137fcacc0643fac0",
+        "reviewer": "/root/research_independent_review",
+        "snapshot": "7ab8a452dde7b3a02b11ba63f6dbc80e428b0cb696c7e625f2f4c9648acf3802",
+        "verdict": "pass"
+      },
+      "review_artifacts": [
+        "research/historical_model_correction.md",
+        "research/tasks/history_framework_review/history.md",
+        "research/tasks/history_framework_review/framework_review.md",
+        "research/tasks/research_independent_review/independent_models.json"
+      ],
+      "status": "applied",
+      "target": "J-FISCAL",
+      "target_type": "nodes"
+    },
+    "AUDIT-03": {
+      "action": "strengthen",
+      "applied_at": "2026-11-28T05:23:42+00:00",
+      "author": "boss 1",
+      "base_revision": 1,
+      "created_at": "2026-11-28T05:23:42+00:00",
+      "id": "AUDIT-03",
+      "new_evidence": [
+        "HX014",
+        "HX002"
+      ],
+      "new_method": "历史统一筛选、同币种/同主体现金和资本核对；数值及原文独立审计，保留失败记录并按具体机制改正。",
+      "new_statement": "居民和内需小微的收入、回款及资产负债表约束共同抑制私人支出；部分主体融资需求弱、部分脆弱借款人受供给限制。全国银行贷款存款净流量不能识别同一借款人的主动偿债，也不等于全体私人部门资金流量表净借贷。",
+      "old_statement": "居民和内需小微的收入、回款与资产负债表约束共同抑制私人支出，信贷需求弱与脆弱借款人的供给约束并存，无法据总量识别各自份额。",
+      "reason": "Sufi完整原文区分住房套现、消费和建筑错配；Koo净借贷口径不能被贷款总量替代，日本十年工资反例取消房价到普遍工资的机械映射。",
+      "review": {
+        "at": "2026-11-28T05:23:42+00:00",
+        "note": "即使净住户贷款负增长，同一总量也可由放款、到期和主动提前还款多种组合产生。Sufi全文关于抵押套现和行业错配支持分组；当前净流量未识别借贷双方各自贡献，修订保留这项限制。 独立实读回执：research/tasks/research_independent_review/proposal_receipt.json SHA256 6cae5271c27b430a8ce6e7000d083a3681884e553c898907137fcacc0643fac0",
+        "reviewer": "/root/research_independent_review",
+        "snapshot": "e2ed7206eed9ed5e66a1eb8754d94a9b4864797c6fe1aa87036f0686e07cc74a",
+        "verdict": "pass"
+      },
+      "review_artifacts": [
+        "research/historical_model_correction.md",
+        "research/tasks/history_framework_review/history.md",
+        "research/tasks/history_framework_review/framework_review.md",
+        "research/tasks/research_independent_review/independent_models.json"
+      ],
+      "status": "applied",
+      "target": "J-DEMAND",
+      "target_type": "nodes"
+    },
+    "AUDIT-04": {
+      "action": "strengthen",
+      "applied_at": "2026-11-28T05:23:42+00:00",
+      "author": "boss 1",
+      "base_revision": 1,
+      "created_at": "2026-11-28T05:23:42+00:00",
+      "id": "AUDIT-04",
+      "new_evidence": [
+        "HX001",
+        "HX003",
+        "HX004",
+        "HX011",
+        "HX012"
+      ],
+      "new_method": "历史统一筛选、同币种/同主体现金和资本核对；数值及原文独立审计，保留失败记录并按具体机制改正。",
+      "new_statement": "中国银行业首位路径仍是盈利承压、局部损失消化和资本补充；众邦已被接管，截至2026年11月27日公开证据不足以判全国系统危机已发生。升级须见跨地区重大银行困境与大规模应急干预或异常重大损失，亦核跨行外流、融资冻结和支付/授信失灵；不要求财报先完整确认。",
+      "old_statement": "中国银行业主路径是盈利能力承压、局部信用损失消化与资本补充，众邦银行已被依法接管，2026年11月27日前公开证据不支持全国系统性银行危机已发生。2027年只有实际本金/现金损失、分机构资本或融资缺口及承接时滞达到跨区域量级才上调判断，独立的跨行挤兑亦可触发。",
+      "reason": "历史确认损失滞后及短期融资骤停均真实存在；日本五年截尾不能当恢复，不能把无排队挤兑当无危机。",
+      "review": {
+        "at": "2026-11-28T05:23:42+00:00",
+        "note": "工行、兰州和监管分组资本／流动性不可互拨。日本FSA记载37家获12.4万亿日元注资；IMF日本1997—2001结尾受五年上限约束；韩国金融机构短借续作可先崩。跨地区重大困境／损失、支付或融资功能及政策介入共同限定系统升级，容许年报滞后。 独立实读回执：research/tasks/research_independent_review/proposal_receipt.json SHA256 6cae5271c27b430a8ce6e7000d083a3681884e553c898907137fcacc0643fac0",
+        "reviewer": "/root/research_independent_review",
+        "snapshot": "50525c2ee63de134f0ba763d0ee570761089a05195492aaec2415d5eb68df41b",
+        "verdict": "pass"
+      },
+      "review_artifacts": [
+        "research/historical_model_correction.md",
+        "research/tasks/history_framework_review/history.md",
+        "research/tasks/history_framework_review/framework_review.md",
+        "research/tasks/research_independent_review/independent_models.json"
+      ],
+      "status": "applied",
+      "target": "J-BANKS",
+      "target_type": "nodes"
+    },
+    "AUDIT-05": {
+      "action": "replace",
+      "applied_at": "2026-11-28T05:23:43+00:00",
+      "author": "boss 1",
+      "base_revision": 1,
+      "created_at": "2026-11-28T05:23:42+00:00",
+      "id": "AUDIT-05",
+      "new_evidence": [
+        "MT001"
+      ],
+      "new_method": "历史统一筛选、同币种/同主体现金和资本核对；数值及原文独立审计，保留失败记录并按具体机制改正。",
+      "new_statement": "旧JST实验保留，纠错35未知标签和3全特征缺失后新作业仍拒绝校准HGB主预警，logit只作历史比较。raw与校准结果分别披露，负校准斜率经独立重估确认；已见测试不得称新验证。中国桥接和DFM未稳定胜基线，拒绝中国危机概率与精确GDP预测，以可复算会计和条件敏感性完成裁决。",
+      "old_statement": "本轮历史HGB拒用主预警，logit仅比较；中国PMI桥接和DFM未稳定胜过简单基线，拒绝中国危机概率与精确GDP点预测，采用可复算会计和条件敏感性完成裁决。",
+      "reason": "实际审计定位标签与校准问题，新输入1703行和独立重估一致，模型表现不佳不取消经济裁决责任。",
+      "review": {
+        "at": "2026-11-28T05:23:42+00:00",
+        "note": "独立自JST重建旧/纠错预测，核35未知标签、另3个全特征空、当前1703行与逐行排除清单。新HGB原始7/13、校准1/13，logit校准3/13；自写二项似然确认负斜率及正类列。独立QR重算两份中国桥接，拒给中国概率或GDP精确点值。结果见independent_models.json。 独立实读回执：research/tasks/research_independent_review/proposal_receipt.json SHA256 6cae5271c27b430a8ce6e7000d083a3681884e553c898907137fcacc0643fac0",
+        "reviewer": "/root/research_independent_review",
+        "snapshot": "04e905909942735643bdf6123183620bf4a423a33415418c46cdfd16869bfa17",
+        "verdict": "pass"
+      },
+      "review_artifacts": [
+        "research/historical_model_correction.md",
+        "research/tasks/history_framework_review/history.md",
+        "research/tasks/history_framework_review/framework_review.md",
+        "research/tasks/research_independent_review/independent_models.json"
+      ],
+      "status": "applied",
+      "target": "M-MODEL-USE",
+      "target_type": "nodes"
+    },
+    "AUDIT-06": {
+      "action": "strengthen",
+      "applied_at": "2026-11-28T05:23:43+00:00",
+      "author": "boss 1",
+      "base_revision": 1,
+      "created_at": "2026-11-28T05:23:43+00:00",
+      "id": "AUDIT-06",
+      "new_evidence": [
+        "HX006",
+        "HX007"
+      ],
+      "new_method": "历史统一筛选、同币种/同主体现金和资本核对；数值及原文独立审计，保留失败记录并按具体机制改正。",
+      "old_statement": "财政迟付或项目缩减增加供应商应收与周转占用，先约束招聘和可变工资，再传至家庭支出；账面利润上升可以与现金工资风险并存。",
+      "reason": "新历史来源及独立实际复核检验本机制的边界、反证与到账顺序；保留条件机制，不声称估计因果效应。",
+      "replacement": {
+        "conditions": [
+          "同一雇主或经营客户实际依赖地方项目，存在应收延付且缺其他现金抵补；不将全国土地毛款减额均摊。",
+          "置换节息、清欠到账、工资发放和新增消费各记一次，债务换券本身不计为家庭收入。"
+        ],
+        "counterevidence": [
+          "MA003",
+          "PF023",
+          "PF026",
+          "MA001",
+          "HX006",
+          "HX007"
+        ],
+        "falsifier": "同组供应商应收账龄缩短、实际清欠、工资招聘恢复且非靠高息短债；或成本节约和转移已完全补缺，切断本链。",
+        "head": "J-JOBS",
+        "id": "H-FISCAL-INCOME",
+        "lag": "结算与工资1—6个月，招聘和投资3—12个月。",
+        "mechanism": "实际财政迟付或项目缩减占用供应商周转，先影响可变工资和招聘，再传至家庭支出；2015置换可真实减息，但只有支付进入企业并转成工资或采购才构成下一步需求。",
+        "mode": "ALL",
+        "research_status": "conditional_mechanism_not_estimated_causal_effect",
+        "tails": [
+          "J-FISCAL",
+          "MA001",
+          "MA008"
+        ]
+      },
+      "review": {
+        "at": "2026-11-28T05:23:43+00:00",
+        "note": "供应商欠款要与同一企业无现金抵补匹配；非因当地项目的工业应收上升是替代解释。1—6月结算、3—12月招聘是追踪窗口；旧债换券或清偿本金不直接增加工资。审查同一笔款仅计一次，支持条件现金传导。 独立实读回执：research/tasks/research_independent_review/proposal_receipt.json SHA256 6cae5271c27b430a8ce6e7000d083a3681884e553c898907137fcacc0643fac0",
+        "reviewer": "/root/research_independent_review",
+        "snapshot": "92b32e883670eb43645c00fe68d161ec4324c488ba165d07c16201f948c57d9b",
+        "verdict": "pass"
+      },
+      "review_artifacts": [
+        "research/historical_model_correction.md",
+        "research/tasks/history_framework_review/history.md",
+        "research/tasks/history_framework_review/framework_review.md",
+        "research/tasks/research_independent_review/independent_models.json"
+      ],
+      "status": "applied",
+      "target": "H-FISCAL-INCOME",
+      "target_type": "edges"
+    },
+    "AUDIT-07": {
+      "action": "strengthen",
+      "applied_at": "2026-11-28T05:23:43+00:00",
+      "author": "boss 1",
+      "base_revision": 1,
+      "created_at": "2026-11-28T05:23:43+00:00",
+      "id": "AUDIT-07",
+      "new_evidence": [
+        "HX002",
+        "HX006",
+        "HX014"
+      ],
+      "new_method": "历史统一筛选、同币种/同主体现金和资本核对；数值及原文独立审计，保留失败记录并按具体机制改正。",
+      "new_statement": "全国就业与实际居民收入未显示同步塌陷；地产、地方项目及小微相关家庭未来12—24个月的可变薪酬、招聘和回款风险高于总量读数。风险只在相关雇主缺口传至实际工资与经营收入时计入，不把房价或土地毛款下降直接分摊给每户。",
+      "old_statement": "全国就业与实际居民收入总量并未显示同步塌陷，但地产、地方项目和小微相关家庭未来12—24个月的可变薪酬、招聘与回款风险高于总量读数。",
+      "reason": "日本房价代理下降时名义工资仍可上升，2015置换可实际减息；本轮传导必须追雇主实付而非宏观比例移植。",
+      "review": {
+        "at": "2026-11-28T05:23:43+00:00",
+        "note": "名义工资指数在日本住房代理下行十年间仍上涨约3.2%，美国约24.4%；平均实际收入本轮也为正，受损雇主分组仍可承压。核实共同期间、雇主/客户范围后才影响家庭输入，不按房价跌幅换成工资。 独立实读回执：research/tasks/research_independent_review/proposal_receipt.json SHA256 6cae5271c27b430a8ce6e7000d083a3681884e553c898907137fcacc0643fac0",
+        "reviewer": "/root/research_independent_review",
+        "snapshot": "852e5b77a3374802088e42e87cc8a47c5361dc6ea7614f07db5f2051b60a8f5c",
+        "verdict": "pass"
+      },
+      "review_artifacts": [
+        "research/historical_model_correction.md",
+        "research/tasks/history_framework_review/history.md",
+        "research/tasks/history_framework_review/framework_review.md",
+        "research/tasks/research_independent_review/independent_models.json"
+      ],
+      "status": "applied",
+      "target": "J-JOBS",
+      "target_type": "nodes"
+    },
+    "AUDIT-08": {
+      "action": "strengthen",
+      "applied_at": "2026-11-28T05:23:44+00:00",
+      "author": "boss 1",
+      "base_revision": 1,
+      "created_at": "2026-11-28T05:23:43+00:00",
+      "id": "AUDIT-08",
+      "new_evidence": [
+        "HX006",
+        "HX009",
+        "HX014"
+      ],
+      "new_method": "历史统一筛选、同币种/同主体现金和资本核对；数值及原文独立审计，保留失败记录并按具体机制改正。",
+      "old_statement": "旧开发链损失通过投资减少、财政收缩和私人修复压低内需；新制造与服务增加值支撑总量，渐进处置延长损失承担时间并保支付连续。",
+      "reason": "新历史来源及独立实际复核检验本机制的边界、反证与到账顺序；保留条件机制，不声称估计因果效应。",
+      "replacement": {
+        "conditions": [
+          "出口与制造的实际增长部分延续，但对旧地产和地方就业的接替受地区、技能与收入分配约束。",
+          "债务滚续、资本补充和项目交付继续执行，没有发生跨区域支付失灵。"
+        ],
+        "counterevidence": [
+          "PF026",
+          "PF029",
+          "MA003",
+          "BK004",
+          "HX006",
+          "HX009",
+          "HX014"
+        ],
+        "falsifier": "若大规模净新增可用财政资金实际转至居民/供应商并持续拉动私人回款与投资，转向有效恢复；若外需骤降与多地银行融资/资本缺口共振，转向严重下行。",
+        "head": "J-MACRO",
+        "id": "H-MACRO-SPLIT",
+        "lag": "3—6个月看到账与订单，2027年看持续性，资产负债表修复跨3—5年。",
+        "mechanism": "旧开发链通过投资、地方实际支付和私人修复拖累内需；制造服务与出口增长提供缓冲，滚续保支付连续但不能制造旧项目收益。2015—16的置换和购买力支持说明可改变节奏，财政主导修复须见净资源实际到人到项目；外需、生产率或可持续私人现金、工资与投资自主改善也能独立形成有效恢复。",
+        "mode": "ALL",
+        "research_status": "conditional_mechanism_not_estimated_causal_effect",
+        "tails": [
+          "J-PROPERTY",
+          "J-FISCAL",
+          "J-DEMAND",
+          "MA001",
+          "MA007"
+        ]
+      },
+      "review": {
+        "at": "2026-11-28T05:23:43+00:00",
+        "note": "已发现无新增净财政转移的真实私人收入、生产率或出口修复亦能改变主路径。本版机制已纳入该独立分支；falsifier列举财政和急性例而非穷尽，9号节点同述私人修复。2016同时调整事实没有识别单独财政乘数。 独立实读回执：research/tasks/research_independent_review/proposal_receipt.json SHA256 6cae5271c27b430a8ce6e7000d083a3681884e553c898907137fcacc0643fac0",
+        "reviewer": "/root/research_independent_review",
+        "snapshot": "8e794e410befdc20785a6aa845a1a4116f5b9881bc726fdf48868fd0c6ccbcd6",
+        "verdict": "pass"
+      },
+      "review_artifacts": [
+        "research/historical_model_correction.md",
+        "research/tasks/history_framework_review/history.md",
+        "research/tasks/history_framework_review/framework_review.md",
+        "research/tasks/research_independent_review/independent_models.json"
+      ],
+      "status": "applied",
+      "target": "H-MACRO-SPLIT",
+      "target_type": "edges"
+    },
+    "AUDIT-09": {
+      "action": "strengthen",
+      "applied_at": "2026-11-28T05:23:44+00:00",
+      "author": "boss 1",
+      "base_revision": 1,
+      "created_at": "2026-11-28T05:23:44+00:00",
+      "id": "AUDIT-09",
+      "new_evidence": [
+        "HX006",
+        "HX007",
+        "HX009",
+        "HX014"
+      ],
+      "new_method": "历史统一筛选、同币种/同主体现金和资本核对；数值及原文独立审计，保留失败记录并按具体机制改正。",
+      "new_statement": "未来12—24个月首位是渐进滚续与局部承损、地产财政拖累和制造出口增长并存，收入与资产修复不均；外需和弱地方金融共振的严重信用收缩列次位。净财政支出真正到账并带动私人收入、回款和投资，或没有新增财政转移而私人现金、工资与投资自主持续改善，均可将有效修复升为主路径。",
+      "old_statement": "未来12—24个月首位路径是渐进滚续与局部承损、地产财政拖累和制造出口增长并存，私人收入与资产修复不均；严重信用收缩次位，有效需求修复是可改变主路径的政策分支。",
+      "reason": "2015—16说明有效需求和融资工具可改变方向，但非识别因果乘数；接受缓冲反证仍按当前资金和投资事实排序。",
+      "review": {
+        "at": "2026-11-28T05:23:44+00:00",
+        "note": "长调整在现有地产、付款与住户信贷材料下排第一。严重分支表达外需与多地信用问题共同出现；相对有效修复排第二是研究判断，不可解释为频率。财政到账或自主私人现金/工资/投资持续改善均可改判。 独立实读回执：research/tasks/research_independent_review/proposal_receipt.json SHA256 6cae5271c27b430a8ce6e7000d083a3681884e553c898907137fcacc0643fac0",
+        "reviewer": "/root/research_independent_review",
+        "snapshot": "0e0cfeb5ef172b90a393f828f65e46b88aaeceade84dec2cfc6e39929a76d573",
+        "verdict": "pass"
+      },
+      "review_artifacts": [
+        "research/historical_model_correction.md",
+        "research/tasks/history_framework_review/history.md",
+        "research/tasks/history_framework_review/framework_review.md",
+        "research/tasks/research_independent_review/independent_models.json"
+      ],
+      "status": "applied",
+      "target": "J-MACRO",
+      "target_type": "nodes"
+    },
+    "AUDIT-10": {
+      "action": "strengthen",
+      "applied_at": "2026-11-28T05:23:44+00:00",
+      "author": "boss 1",
+      "base_revision": 1,
+      "created_at": "2026-11-28T05:23:44+00:00",
+      "id": "AUDIT-10",
+      "new_evidence": [
+        "HX009",
+        "HX002"
+      ],
+      "new_method": "历史统一筛选、同币种/同主体现金和资本核对；数值及原文独立审计，保留失败记录并按具体机制改正。",
+      "old_statement": "滚续避免集中清算但不创造原项目现金收益，损失会经利润、财政和收入逐年分担；结构替代与收入修复速度决定持续期，日历年本身不决定终点。",
+      "reason": "新历史来源及独立实际复核检验本机制的边界、反证与到账顺序；保留条件机制，不声称估计因果效应。",
+      "replacement": {
+        "conditions": [
+          "存量房地产过剩、地方收入结构和私人收入分配需要多年调整，开发规模可在较低可持续水平稳定。",
+          "若政策以展期与渐进承损为主且收入修复慢，长期拖累延续；历史样本事后选取且共振，不可作中国概率。"
+        ],
+        "counterevidence": [
+          "PF026",
+          "PF037",
+          "MA001",
+          "MA003",
+          "MA006",
+          "HX009",
+          "HX002"
+        ],
+        "falsifier": "家庭收入份额和私人投资持续恢复、地产库存与债务负担可比下降、地方税基替代土地并正常付款，能把长期拖累缩短；不能以单日股价否证或证实。",
+        "head": "J-DECADE",
+        "id": "H-DECADE-REPAIR",
+        "lag": "2021起至约2030前后的跨周期窗口；不保证2030结束，更不从2026固定追加整整十年。",
+        "mechanism": "滚续可避免集中清算却不增加旧项目现金收益，损失经利润财政和收入分担。日本1991—2001与美国2007—2017实际住房都未回所选峰但工资股权路径不同，持续期由收入、损失确认和资源转移决定；中国2021起点是开发链规模而非同类房价。",
+        "mode": "ALL",
+        "research_status": "conditional_mechanism_not_estimated_causal_effect",
+        "tails": [
+          "J-PROPERTY",
+          "J-FISCAL",
+          "J-DEMAND",
+          "FW001",
+          "FW002"
+        ]
+      },
+      "review": {
+        "at": "2026-11-28T05:23:44+00:00",
+        "note": "JST实际住房代理在日本1991—2001约−27%、美国2007—2017约−6%，两地工资、股权分化。住房可在低位稳定，历史支持可能持续；约2030只是中国行动的计划窗口，现有跨国筛选不能识别中国结束年。 独立实读回执：research/tasks/research_independent_review/proposal_receipt.json SHA256 6cae5271c27b430a8ce6e7000d083a3681884e553c898907137fcacc0643fac0",
+        "reviewer": "/root/research_independent_review",
+        "snapshot": "2714dac2d354abcb4cc1a6fa6d113d7d1aa9bd0781b048a5e68ffc6b7c4313f4",
+        "verdict": "pass"
+      },
+      "review_artifacts": [
+        "research/historical_model_correction.md",
+        "research/tasks/history_framework_review/history.md",
+        "research/tasks/history_framework_review/framework_review.md",
+        "research/tasks/research_independent_review/independent_models.json"
+      ],
+      "status": "applied",
+      "target": "H-DECADE-REPAIR",
+      "target_type": "edges"
+    },
+    "AUDIT-11": {
+      "action": "strengthen",
+      "applied_at": "2026-11-28T05:23:45+00:00",
+      "author": "boss 1",
+      "base_revision": 1,
+      "created_at": "2026-11-28T05:23:44+00:00",
+      "id": "AUDIT-11",
+      "new_evidence": [
+        "HX001",
+        "HX002",
+        "HX003",
+        "HX012",
+        "HX013",
+        "HX017",
+        "HX018"
+      ],
+      "new_method": "历史统一筛选、同币种/同主体现金和资本核对；数值及原文独立审计，保留失败记录并按具体机制改正。",
+      "new_statement": "从2021年开发链高位起，到约2030年前后的多年地产与债务修复是应准备的主时间尺度，终点取决于收入、损失确认与结构替代。日本、美国及统一历史筛选支持长期实际住房拖累可能，不支持从2026固定再加十年全面停滞或2027第六年必爆。",
+      "old_statement": "从2021年地产高位起计，到约2030年前后的多年调整是应准备的长路径；从2026年再追加整整十年全面停滞或连续股市下跌，缺乏可迁移的历史和会计依据。",
+      "reason": "明确日本土地代理/美国住宅/中国开发量不同；17段事后筛选仅1段第六年危机且共振非独立；拒绝Pettis从无危机及现价美元份额降逾半旁证。",
+      "review": {
+        "at": "2026-11-28T05:23:45+00:00",
+        "note": "从JST原始文件独立重建全部筛选：10%跌幅组17个峰、15国、16个实际住房端点为负、恰第六年的样本只有日本。事后筛选且全球冲击相关。Pettis说日本无金融危机与公开编码抵触，修订拒绝固定历法。 独立实读回执：research/tasks/research_independent_review/proposal_receipt.json SHA256 6cae5271c27b430a8ce6e7000d083a3681884e553c898907137fcacc0643fac0",
+        "reviewer": "/root/research_independent_review",
+        "snapshot": "60edf1f8ae866901ec1373760f3835c35b677082e63de93eec41b1356d949927",
+        "verdict": "pass"
+      },
+      "review_artifacts": [
+        "research/historical_model_correction.md",
+        "research/tasks/history_framework_review/history.md",
+        "research/tasks/history_framework_review/framework_review.md",
+        "research/tasks/research_independent_review/independent_models.json"
+      ],
+      "status": "applied",
+      "target": "J-DECADE",
+      "target_type": "nodes"
+    },
+    "AUDIT-12": {
+      "action": "strengthen",
+      "applied_at": "2026-11-28T05:23:45+00:00",
+      "author": "boss 1",
+      "base_revision": 1,
+      "created_at": "2026-11-28T05:23:45+00:00",
+      "id": "AUDIT-12",
+      "new_evidence": [
+        "HX002",
+        "HX013"
+      ],
+      "new_method": "历史统一筛选、同币种/同主体现金和资本核对；数值及原文独立审计，保留失败记录并按具体机制改正。",
+      "old_statement": "利润、估值和股息共同决定股市回报，国内地产现金流不是全部上市利润；期初估值和政策反应可使弱宏观中的某些年份上涨。",
+      "reason": "新历史来源及独立实际复核检验本机制的边界、反证与到账顺序；保留条件机制，不声称估计因果效应。",
+      "replacement": {
+        "conditions": [
+          "明确指数、币种、股息税费、名义实际和持有窗口；年历连乘与滚动十年另列。",
+          "历史峰后样本事后筛选；负总回报与每年下跌是不同命题。"
+        ],
+        "counterevidence": [
+          "MA009",
+          "PF009",
+          "HX002",
+          "HX013",
+          "EQ001",
+          "EQ002",
+          "EQ003"
+        ],
+        "falsifier": "特定市场在固定币种/费用/窗口下的长期总回报可为负，但须由其盈利与估值路径证实，不能仅用宏观危机命名推出。",
+        "head": "J-EQUITY",
+        "id": "H-EQUITY-SEPARATION",
+        "lag": "市场可提前定价；年度和十年复利分别检验。",
+        "mechanism": "上市利润、估值和股息共同决定回报，国内地产不是全部上市利润。日本与美国所选住房峰后十年本币实际含息股权分别约-32.5%与+72.0%，显示机制可分离，不将任一端点移为中国参数。",
+        "mode": "ALL",
+        "research_status": "conditional_mechanism_not_estimated_causal_effect",
+        "tails": [
+          "J-DECADE",
+          "MA009",
+          "MA001"
+        ]
+      },
+      "review": {
+        "at": "2026-11-28T05:23:45+00:00",
+        "note": "独立重算所选两国峰后本币CPI折实含息投资回报，日−32.5%、美+72.0%；可与同跌的实际住房端点并存。EQ资料区分币种、税费及时间窗口；批准的是宏观—股权不具普适必然映射，不授予当前未来十年收益的方向或精度。 独立实读回执：research/tasks/research_independent_review/proposal_receipt.json SHA256 6cae5271c27b430a8ce6e7000d083a3681884e553c898907137fcacc0643fac0",
+        "reviewer": "/root/research_independent_review",
+        "snapshot": "9abd8f332980b3014157e508a472f2f97cf37508f411c5fc459420b0a50c4577",
+        "verdict": "pass"
+      },
+      "review_artifacts": [
+        "research/historical_model_correction.md",
+        "research/tasks/history_framework_review/history.md",
+        "research/tasks/history_framework_review/framework_review.md",
+        "research/tasks/research_independent_review/independent_models.json"
+      ],
+      "status": "applied",
+      "target": "H-EQUITY-SEPARATION",
+      "target_type": "edges"
+    },
+    "AUDIT-13": {
+      "action": "strengthen",
+      "applied_at": "2026-11-28T05:23:45+00:00",
+      "author": "boss 1",
+      "base_revision": 1,
+      "created_at": "2026-11-28T05:23:45+00:00",
+      "id": "AUDIT-13",
+      "new_evidence": [
+        "HX002",
+        "HX013",
+        "EQ001",
+        "EQ002",
+        "EQ003"
+      ],
+      "new_method": "历史统一筛选、同币种/同主体现金和资本核对；数值及原文独立审计，保留失败记录并按具体机制改正。",
+      "new_statement": "拒绝从地产和收入调整直接推出A股未来十年必熊或每年下跌。日本与美国峰后十年实际含息回报不同，MSCI年历美元毛回报又是另一窗口；应分别核上市利润、估值、股息、币种及费用。近期必要支出不得依赖权益反弹，长期实际亏损仍须承受能力测试。",
+      "old_statement": "拒绝把地产与收入调整直接推出A股未来十年必熊。市场回报须分别看上市公司利润、估值、股息、币种和买入窗口；近期必要支出不得依赖权益反弹。",
+      "reason": "统一历史筛选的住房与股票不同步及端点币种复算，强化资产不能机械等号；历史正回报不保证未来。",
+      "review": {
+        "at": "2026-11-28T05:23:45+00:00",
+        "note": "独立抄录2016—2025十条人民币指数净回报，复利因子1.309809612；月均CPI因子1.151209145，人民币实际净总回报约+13.78%。美元毛指数属于另一口径，年年跌与十年终点负不同。历史正值不消除未来十年实际为负的情景。 独立实读回执：research/tasks/research_independent_review/proposal_receipt.json SHA256 6cae5271c27b430a8ce6e7000d083a3681884e553c898907137fcacc0643fac0",
+        "reviewer": "/root/research_independent_review",
+        "snapshot": "9893f954f90c0eea116ca927906b16b25c01ac2621455a240471605cdb8d74fd",
+        "verdict": "pass"
+      },
+      "review_artifacts": [
+        "research/historical_model_correction.md",
+        "research/tasks/history_framework_review/history.md",
+        "research/tasks/history_framework_review/framework_review.md",
+        "research/tasks/research_independent_review/independent_models.json"
+      ],
+      "status": "applied",
+      "target": "J-EQUITY",
+      "target_type": "nodes"
+    },
+    "AUDIT-14": {
+      "action": "strengthen",
+      "applied_at": "2026-11-28T05:23:46+00:00",
+      "author": "boss 1",
+      "base_revision": 1,
+      "created_at": "2026-11-28T05:23:45+00:00",
+      "id": "AUDIT-14",
+      "new_evidence": [],
+      "new_method": "历史统一筛选、同币种/同主体现金和资本核对；数值及原文独立审计，保留失败记录并按具体机制改正。",
+      "old_statement": "2027年初大行附加资本要求上升占用缓冲；能否提前留存或实缴决定信贷扩张约束，不能从规则日期推断全国资不抵债。",
+      "reason": "新历史来源及独立实际复核检验本机制的边界、反证与到账顺序；保留条件机制，不声称估计因果效应。",
+      "replacement": {
+        "conditions": [
+          "以2026年9月披露RWA作静态参照，新增资本按实际入账认定；不将资本要求增量当现金提款。"
+        ],
+        "counterevidence": [
+          "BK003",
+          "BK009",
+          "BK014"
+        ],
+        "falsifier": "实际合格资本到位或RWA管理使各项要求持续满足，则该日期不产生现金或授信断点。",
+        "head": "J-2027",
+        "id": "H-2027-CAPITAL",
+        "lag": "2027-01-01规则生效，实际注资与季度资本披露按月季核验。",
+        "mechanism": "2027年工行附加资本要求增加50基点，按同日RWA静态增加资本需求1523.91亿元。真实可计入留存和实缴资本可补缓冲，RWA变化也会改变约束；监管要求增量不等于当天现金流出，规则日期本身不推出资不抵债。",
+        "mode": "ALL",
+        "research_status": "conditional_mechanism_not_estimated_causal_effect",
+        "tails": [
+          "BK-ICBC-FLOOR",
+          "J-BANKS"
+        ]
+      },
+      "review": {
+        "at": "2026-11-28T05:23:46+00:00",
+        "note": "已回读工行三季度KM1与脚注；同日RWA30,478,278百万元×0.5%=152,391.39百万元=1,523.91亿元。本版已移除无关的韩国/外币共同条件。静态新增要求与真实资本注入、负债现金流各列，符合原表。 独立实读回执：research/tasks/research_independent_review/proposal_receipt.json SHA256 6cae5271c27b430a8ce6e7000d083a3681884e553c898907137fcacc0643fac0",
+        "reviewer": "/root/research_independent_review",
+        "snapshot": "2b050faf912d8f8341bf928685af71d096ceac75f23f754ca476b434aa973f30",
+        "verdict": "pass"
+      },
+      "review_artifacts": [
+        "research/historical_model_correction.md",
+        "research/tasks/history_framework_review/history.md",
+        "research/tasks/history_framework_review/framework_review.md",
+        "research/tasks/research_independent_review/independent_models.json"
+      ],
+      "status": "applied",
+      "target": "H-2027-CAPITAL",
+      "target_type": "edges"
+    },
+    "AUDIT-15": {
+      "action": "strengthen",
+      "applied_at": "2026-11-28T05:23:46+00:00",
+      "author": "boss 1",
+      "base_revision": 1,
+      "created_at": "2026-11-28T05:23:46+00:00",
+      "id": "AUDIT-15",
+      "new_evidence": [
+        "HX001",
+        "HX002",
+        "HX004",
+        "HX006",
+        "HX015"
+      ],
+      "new_method": "历史统一筛选、同币种/同主体现金和资本核对；数值及原文独立审计，保留失败记录并按具体机制改正。",
+      "new_statement": "2027是专门置换安排转换、平台名录退出、大行资本加码和部分首套贴息新增受理的复核窗口；合同期限与已执行滚续支持地区分化，不能据全国单一到期墙或日本第六年来定位系统危机。关键是同一债务人的可用现金、分币种剩余期限、承诺融资及真正到账是否覆盖支付。",
+      "old_statement": "2027是专门置换安排转换、平台退出名录、大行资本加码和部分首套贴息新增受理的复核窗口；已查期限与滚续支持地区分化，尚不足以判断全国同年集中爆发。",
+      "reason": "历史融资危机须期限币种匹配，SAFE两个边际比例不可相乘；本期省级到期反例及已执行置换降低机械年份解释。",
+      "review": {
+        "at": "2026-11-28T05:23:46+00:00",
+        "note": "2026年10月财政部到期本金32770、28243再融资、4527其他，利息13337亿元。福建是存量本金，甘肃是本息，不能合全国或平台持仓。SAFE短期和币种是两个边际，不能相乘。受理期、名录期和合同到期是不同变量。 独立实读回执：research/tasks/research_independent_review/proposal_receipt.json SHA256 6cae5271c27b430a8ce6e7000d083a3681884e553c898907137fcacc0643fac0",
+        "reviewer": "/root/research_independent_review",
+        "snapshot": "1ab1ad90ace14ee6fed61766c84bc28f77a6ff45f83e1a8432ecf0051c8aceca",
+        "verdict": "pass"
+      },
+      "review_artifacts": [
+        "research/historical_model_correction.md",
+        "research/tasks/history_framework_review/history.md",
+        "research/tasks/history_framework_review/framework_review.md",
+        "research/tasks/research_independent_review/independent_models.json"
+      ],
+      "status": "applied",
+      "target": "J-2027",
+      "target_type": "nodes"
+    },
+    "AUDIT-16": {
+      "action": "strengthen",
+      "applied_at": "2026-11-28T05:23:47+00:00",
+      "author": "boss 1",
+      "base_revision": 1,
+      "created_at": "2026-11-28T05:23:47+00:00",
+      "id": "AUDIT-16",
+      "new_evidence": [
+        "HX002",
+        "HX014"
+      ],
+      "new_method": "历史统一筛选、同币种/同主体现金和资本核对；数值及原文独立审计，保留失败记录并按具体机制改正。",
+      "old_statement": "高净值但月度现金不足仍会失约，先保生活与合同付款可避免被迫低价出售；提前还贷省息与减少流动缓冲必须在同一台账比较。",
+      "reason": "新历史来源及独立实际复核检验本机制的边界、反证与到账顺序；保留条件机制，不声称估计因果效应。",
+      "replacement": {
+        "conditions": [
+          "真实合同、可动用现金和处置限制明确；提前还款、改供/缩期权限和费用只有明确确认才进入可行策略，未知不能默认允许或零。",
+          "策略只读当期可见信息；出售有等待、抵押解除与到账顺序，未及时到账记录缺口；初始金额为空。"
+        ],
+        "counterevidence": [
+          "PF026",
+          "MA003",
+          "HX002",
+          "HX014"
+        ],
+        "falsifier": "所有压力路径都满足储备及合同支付则无需强制削债或出售；无可行策略须报告补资缺口。规则数量和分币级独特轨迹数量分别报告，不以重复动作凑可行策略。",
+        "head": "A-HOUSEHOLD",
+        "id": "H-HOUSEHOLD-ACTION",
+        "lag": "现在核账，30—90天执行流动性安排，逐月120期与政策/收入变化时复算。",
+        "mechanism": "现金不足可能先表现为未完成可选支出，再成为合同本息未付，两者单列；正净值不能支付当月账单。先保生活与合同付款，再以同一台账比较提前还款省息、流动缓冲、出售和长期净值。",
+        "mode": "ALL",
+        "research_status": "conditional_mechanism_not_estimated_causal_effect",
+        "tails": [
+          "J-JOBS",
+          "J-PROPERTY",
+          "J-DEMAND",
+          "J-EQUITY"
+        ]
+      },
+      "review": {
+        "at": "2026-11-28T05:23:47+00:00",
+        "note": "认可作为规则：家庭现金阈值可在仍有正净资产时先触发，未付合同债务和未实现可选开支分开。已核独立家庭审计中例款200+2与生活预算14。未知许可、费率、重定价方案不得默认；这条经济规则通过不代表现有代码所有准入缺陷已修或实测离线UI。 独立实读回执：research/tasks/research_independent_review/proposal_receipt.json SHA256 6cae5271c27b430a8ce6e7000d083a3681884e553c898907137fcacc0643fac0",
+        "reviewer": "/root/research_independent_review",
+        "snapshot": "fb82154b22cbb37ffc1f26d1c613748e3a5523aceec59ad2c1a5c638b62f4ba6",
+        "verdict": "pass"
+      },
+      "review_artifacts": [
+        "research/historical_model_correction.md",
+        "research/tasks/history_framework_review/history.md",
+        "research/tasks/history_framework_review/framework_review.md",
+        "research/tasks/research_independent_review/independent_models.json"
+      ],
+      "status": "applied",
+      "target": "H-HOUSEHOLD-ACTION",
+      "target_type": "edges"
+    },
+    "AUDIT-17": {
+      "action": "strengthen",
+      "applied_at": "2026-11-28T05:23:47+00:00",
+      "author": "boss 1",
+      "base_revision": 1,
+      "created_at": "2026-11-28T05:23:47+00:00",
+      "id": "AUDIT-17",
+      "new_evidence": [
+        "HX002",
+        "HX014"
+      ],
+      "new_method": "历史统一筛选、同币种/同主体现金和资本核对；数值及原文独立审计，保留失败记录并按具体机制改正。",
+      "new_statement": "现在核对到账收入、必要支出、合同本息和资产变现时点，逐月120期先筛现金可执行方案，再比省息及净值。提前还款许可、费用和改供/缩期方式必须明确确认，未知不能视为允许或零费；可选预算不足和未付合同债务分列，出售启动早于资金耗尽。",
+      "old_statement": "现在先核到账收入、必要支出、合同本息和资产真实变现时点，按120月逐情景现金失败先筛方案，再比较提前还贷与净资产；触发出售应早于资金耗尽，现金充足家庭保留长期分散投资选择。",
+      "reason": "独立家庭审计发现未知合同默认允许/零费问题，必须改变动作准入；历史工资资产不同步强化家庭自己的现金日历。",
+      "review": {
+        "at": "2026-11-28T05:23:47+00:00",
+        "note": "缺确认的提前还款及费用不能当零手续费机会。已核独立家庭审计早期实际找到未知条件仍给可行策略；节点改为明确规范，工程实现与浏览器验收另列。失约前的卖出启动须扣结算、抵押释放与替代居住时间。 独立实读回执：research/tasks/research_independent_review/proposal_receipt.json SHA256 6cae5271c27b430a8ce6e7000d083a3681884e553c898907137fcacc0643fac0",
+        "reviewer": "/root/research_independent_review",
+        "snapshot": "c037133a1b60f5156b5d30516820c09b043dda848f6b468d112f9f2f49e45d90",
+        "verdict": "pass"
+      },
+      "review_artifacts": [
+        "research/historical_model_correction.md",
+        "research/tasks/history_framework_review/history.md",
+        "research/tasks/history_framework_review/framework_review.md",
+        "research/tasks/research_independent_review/independent_models.json"
+      ],
+      "status": "applied",
+      "target": "A-HOUSEHOLD",
+      "target_type": "nodes"
+    },
+    "AUDIT-18": {
+      "action": "strengthen",
+      "applied_at": "2026-11-28T05:23:46+00:00",
+      "author": "boss 1",
+      "base_revision": 1,
+      "created_at": "2026-11-28T05:23:46+00:00",
+      "id": "AUDIT-18",
+      "new_evidence": [
+        "HX004"
+      ],
+      "new_method": "历史统一筛选、同币种/同主体现金和资本核对；数值及原文独立审计，保留失败记录并按具体机制改正。",
+      "old_statement": "2027年6月底的名录安排会改变弱平台的再融资定价和承接部门；剥离政府融资职能与企业经营债合同届期分开核算。",
+      "reason": "新历史来源及独立实际复核检验本机制的边界、反证与到账顺序；保留条件机制，不声称估计因果效应。",
+      "replacement": {
+        "conditions": [
+          "若退出削弱原有保证或市场支持预期，且无新资本、补贴或可执行融资替代，才可能传至借贷条件。"
+        ],
+        "counterevidence": [
+          "PF026",
+          "PF027",
+          "PF032",
+          "PF033",
+          "HX004"
+        ],
+        "falsifier": "退出前后同一主体已获长期可执行融资、支持安排和经营现金足额，或报价期限并未恶化；均否定该主体由退出触发的融资收紧解释。",
+        "head": "J-2027",
+        "id": "H-PF-EXIT",
+        "lag": "2026年末至2027年中看实际退出，之后按每个主体下一次到期/续贷看现金。",
+        "mechanism": "2027年6月底名录安排是合同与支持预期的核验窗口；只有退出实际削弱保证或融资支持，才可能影响弱主体下一次融资价格和期限。未取得同主体同贷款退出前后报价，不能把名录变化本身当已识别的融资冲击。",
+        "mode": "ALL",
+        "research_status": "conditional_mechanism_not_estimated_causal_effect",
+        "tails": [
+          "PF029",
+          "PF030",
+          "PF031"
+        ]
+      },
+      "review": {
+        "at": "2026-11-28T05:23:46+00:00",
+        "note": "原版从退名录直接断言价格变化，反例是原保证仍有效、已有授信或新股权支持的同一主体。修订承认没取得退出前后同主体报价，只把2027年中及下一次合同滚续作为观察窗口。保留各地政策资料的层级与证据限制。 独立实读回执：research/tasks/research_independent_review/proposal_receipt.json SHA256 6cae5271c27b430a8ce6e7000d083a3681884e553c898907137fcacc0643fac0",
+        "reviewer": "/root/research_independent_review",
+        "snapshot": "1072655dbd7905acd1d284af276bc1e2500e77b331f026f865a9b74529168860",
+        "verdict": "pass"
+      },
+      "review_artifacts": [
+        "research/historical_model_correction.md",
+        "research/tasks/history_framework_review/history.md",
+        "research/tasks/history_framework_review/framework_review.md",
+        "research/tasks/research_independent_review/independent_models.json"
+      ],
+      "status": "applied",
+      "target": "H-PF-EXIT",
+      "target_type": "edges"
+    }
+  },
   "release": null,
   "review": null,
-  "revision": 12,
+  "revision": 30,
   "runtime": {
     "actor": "boss 1",
     "created_at": "2026-11-28T04:48:13+00:00",
@@ -8014,89 +9375,12 @@
         "research/framework_cards.md": "24d31dcc520f8440b5c91994c763760f8b9baf603db47ed0fcc49101c343bd8e",
         "research/tasks/history_framework_review/framework_review.md": "540f7bc2a3d0a03d21926703e8b838bfa8d21cdcbb57081cf940253ce4fa7f08",
         "research/tasks/history_framework_review/review_receipt.json": "f51b10b82a4039583bc50259fcb1ae2157c9175b9dba388584f4b0dcebdc5a73",
-        "research/tasks/property_fiscal/mechanisms_and_reading.md": "6e75e44944189d9467ddd4beb2918ecefcf04f6262dbc6bd571aa4c3035589ce"
+        "research/tasks/property_fiscal/mechanisms_and_reading.md": "a00e1e41f9ed6197eb726e0e1c8a154a65174d311de7af552306c63a8d5b9da6"
       },
       "id": "s06_viewpoints",
-      "note": "七组原文核读与独立反证，采用问题/制度/动作，纠正日本历史、债务算术及需求供给口径；不作作者评分。",
-      "revision": 12,
-      "submitted_at": "2026-11-28T05:22:31+00:00"
-    },
-    "s07_property": {
-      "files": {
-        "research/tasks/property_fiscal/analysis_property.md": "4b02867ac953fcab79618cf96a67145e279f576b7bb31fa9fc613c765a8a2b70",
-        "research/tasks/property_fiscal/cities_price_202610.csv": "5c37546af8705179d09022e9ed496c3bc507ca4eed4b15ea2f5c97e007bf9e4a",
-        "research/tasks/property_fiscal/property_releases.csv": "855217e08500c4c92f41752c7c4831081caa96ffac27c9708f8402afb938d849",
-        "research/tasks/property_fiscal/recompute.py": "556ca3f41968a0c408e5eceb19f579dc34dbf15a1c5cbbce713150fb68b52eba",
-        "research/tasks/property_fiscal/results.json": "7154fc52f7ac23a17dc678ca68e209a5c49a07285bf435435fc4934fa700d4b1"
-      },
-      "id": "s07_property",
-      "note": "实算开发链收缩、70城分化、二手与开发融资区别、新旧项目规则及交付反证。",
-      "revision": 12,
-      "submitted_at": "2026-11-28T05:22:31+00:00"
-    },
-    "s08_fiscal": {
-      "files": {
-        "research/tasks/property_fiscal/analysis_fiscal.md": "80cb0868109fa0ce6eb83a6fd3e7e3cea9e8089db20dd483528a854519568e6c",
-        "research/tasks/property_fiscal/fiscal_releases.csv": "bf9cad0e5e868cb873326cb4e18755f27edeff6b7d277b79306e0d1c98df9997",
-        "research/tasks/property_fiscal/results.json": "7154fc52f7ac23a17dc678ca68e209a5c49a07285bf435435fc4934fa700d4b1",
-        "research/tasks/property_fiscal/supplemental.csv": "4cc870ae1bf08976393d60d2a63ccc72e2ffce502047f9c5e70420adb3d4dc96"
-      },
-      "id": "s08_fiscal",
-      "note": "土地毛净资源、预算/实付、法定债滚续与两省到期、平台退出和地方成本反例完成。",
-      "revision": 12,
-      "submitted_at": "2026-11-28T05:22:32+00:00"
-    },
-    "s09_households": {
-      "files": {
-        "research/analysis_households.md": "e635118b188f9881334e8b49f5db69cc9b1d3d193551b1d67050b921d606e2b8",
-        "research/models/household_observations.json": "e781f0b5bc65256eb0e18606bdc322b3ab5a0b0843bc0811f92635de95889b37",
-        "research/models/household_observations.py": "f76a31f2bb82f2052687f310ad5b78ddf87fc1a2dd82f75abb5a3f64242dd024",
-        "research/models/household_observations_input.json": "df6b819529ae1e83039490b2b651fdd0bf739f02f27ae8488b341464b1715e7e"
-      },
-      "id": "s09_households",
-      "note": "居民实际收入与消费、小微调查范围、利润回款、就业和家庭收入关联完成；用户个人金额不臆填。",
-      "revision": 12,
-      "submitted_at": "2026-11-28T05:22:32+00:00"
-    },
-    "s10_banks": {
-      "files": {
-        "research/tasks/bank_research/bank_accounts.py": "45f0f0a5c4065ec45f7e106c1ad6acc00a49654c6d58e5cb90a161cb1f05a570",
-        "research/tasks/bank_research/banks.md": "3c8a791166218483ffa08d04f8eb733f5154b5b14ab81cfd59d2e5fd32f4909e",
-        "research/tasks/bank_research/capital_and_liquidity_results.json": "7d3906a9b242d2a9d77bd9bfac77a1e56f32b375087c0818d13faca78f675550",
-        "research/tasks/bank_research/compute_jobs.json": "ba75d2c3a260491b95d356f7f55cdf77d2d00a0ab28452db5781162defa56553",
-        "research/tasks/bank_research/mechanisms.md": "5b2008a9243506babf40208b19d4c9b416d330e1e22d4abdaa07a24ca30a51bb",
-        "research/tasks/bank_research/regulatory_series.csv": "7c20f167e877f9aaee82f68dc76fb2a6076d982f251402f496faf66a318de434",
-        "research/tasks/bank_research/statement_extract.csv": "4c89b1b20a61e70d3da624028f05b22a7a5e03f5abaaea5683323cff5cad2ea3"
-      },
-      "id": "s10_banks",
-      "note": "四份真实银行输入及披露CET1核算、条件额外损失/RWA敏感性、流动性/偿付区别、实际接管和承接完成。",
-      "revision": 12,
-      "submitted_at": "2026-11-28T05:22:32+00:00"
-    },
-    "s11_external": {
-      "files": {
-        "research/analysis_external.md": "a7c71af3dbbc177fc2652039fe28c4aab039cad31ea639cdeb4e280be105383f",
-        "research/models/activity/data_manifest.json": "b5e0fbcd7f72a5bcf5cf4c1a3131f476ecbc315880737a9a3f7e00e6efd510d7"
-      },
-      "id": "s11_external",
-      "note": "外需和制造缓冲、价格成本及政策净到账范围已核；保留外部共振与私人自主恢复两条竞争解释。",
-      "revision": 12,
-      "submitted_at": "2026-11-28T05:22:33+00:00"
-    },
-    "s12_history": {
-      "files": {
-        "research/historical_model_correction.md": "e69ef20b6552a6701e0d09af4f2bae96adcde043c875c92e4758bbdc67d95af1",
-        "research/tasks/history_framework_review/event_scan.csv": "21f348d4ad3037a17d9b00c709748c497dfe2087f0aececcb15dad942c3ac42a",
-        "research/tasks/history_framework_review/history.md": "7706737dfaad2ed5b2137caa996d6ecd05179826fa49a8365e81c4a406af811c",
-        "research/tasks/history_framework_review/named_paths.csv": "809c9138e6c49c2b4a7caff5c82caf79fae17e559d69c51e789bcfbe593112e6",
-        "research/tasks/history_framework_review/official_inputs.json": "3c11fc13aa56001fc19ed9cb21b908481934d094ca209adf244c1411e2f1a37c",
-        "research/tasks/history_framework_review/recompute.py": "2631c6c26be6979858471478392d619de6babcc1d16cdbd3e82681dc4345e4f8",
-        "research/tasks/history_framework_review/results.json": "5e93e7d7f5f021902348de0adce9bc6d32951891e90c559610035a5c854b4dbd"
-      },
-      "id": "s12_history",
-      "note": "日本美国逐年十年、18国规则筛选敏感性、韩国短外债、中国置换棚改实际历史完成；旧预警原结果与最新纠错另列。",
-      "revision": 12,
-      "submitted_at": "2026-11-28T05:22:33+00:00"
+      "note": "七组原文核读与独立反证，采用问题/制度/动作，纠正日本历史、债务算术及需求供给口径；不作作者评分。 按AUDIT-18收窄退出名录影响后续版本对齐，既有真实研究与原数未重做。",
+      "revision": 30,
+      "submitted_at": "2026-11-28T05:24:15+00:00"
     }
   }
 }
