@@ -36,3 +36,5 @@
 ## 新目录发现的路径缺陷与修复
 
 独立新clone发现历史纠错版experiment.json写死原工作树的绝对CSV路径，最初该项重跑虽读到相同字节，却不满足完全从新clone读取。原输入、原输出及这一失败记录保留。准备程序改为先解析绝对路径，再生成仓库相对引用；新目录 `models/jst_portable_20261127` 经同一原始文件重新准备，面板与原始DTA逐字节一致。`models/compute-portable-history.json` 实际执行第12条记录 `historical-warning-portable-v3`；与纠错版除执行时刻和两模型耗时三项外，全部输出字段严格相等。输入核验和结果差异保存在 `receipts/portable_input_repair.json`、`receipts/portable_experiment_replay.json`。这只是同一次研究实验的可移植复演，不把作业条数当作独立样本量；经济用途与拒用裁决保持原样。
+
+后续新目录的当前统一计划为 `models/compute-current.json`：原10项规格加相同数据的portable-v3，共11项，保留历史错误标签基线用于诚实比较、两项合成控制只作工程用途。旧 `compute-audited-history.json` 与其绝对路径输入仅作历史档案，不是当前复演入口。每个输入及CSV的仓库相对路径、哈希已经检查并写入 `receipts/current_plan_portability.json`。当前账本12条真实运行记录中，纠错JST和可移植复演是同一次研究规格，不能按两次独立检验计数。
