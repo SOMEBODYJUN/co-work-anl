@@ -1,0 +1,574 @@
+{
+  "utc": "2026-11-28T05:51:09.204171+00:00",
+  "reviewer": "/root/household_independent_audit",
+  "formalHTML": "f0c72e3baa689bdbb6e7c4e75e12186e0fc1e2f6d2d59308ecdd39013a3ca049",
+  "engine": "e89e241afd96b9ce24b5df343ea9d1e8b14880f17ab265a31690d34b379dbeaa",
+  "requests": 25,
+  "checks": 36,
+  "passed": 36,
+  "failed": 0,
+  "inputSHA256": "2c4a648244ee13f3a1a1234311fed4f98e220a1f67d3d5192ad5d8ade8069deb",
+  "uncompressedOutputSHA256": "238a4cd80c6fae9ddaf161cc9f4596611b1d33e37c19eb1332ae7fbbdf7cfd92",
+  "assertions": [
+    {
+      "check": "specific wage overrides wildcard only for A; business path stays separate",
+      "pass": true,
+      "observed": [
+        1440,
+        960,
+        1080,
+        1740
+      ],
+      "expected": [
+        1440,
+        960,
+        1080,
+        1740
+      ]
+    },
+    {
+      "check": "reject explicit invalid input typed_typo",
+      "pass": true,
+      "observed": true,
+      "expected": true
+    },
+    {
+      "check": "reject explicit invalid input typed_wrong",
+      "pass": true,
+      "observed": true,
+      "expected": true
+    },
+    {
+      "check": "reject explicit invalid input wrong_class_assess",
+      "pass": true,
+      "observed": true,
+      "expected": true
+    },
+    {
+      "check": "reject explicit invalid input wrong_class_reverse",
+      "pass": true,
+      "observed": true,
+      "expected": true
+    },
+    {
+      "check": "reject explicit invalid input household_only_wrong",
+      "pass": true,
+      "observed": true,
+      "expected": true
+    },
+    {
+      "check": "reject explicit invalid input missing_target",
+      "pass": true,
+      "observed": true,
+      "expected": true
+    },
+    {
+      "check": "explicit global wildcard may target an empty household category",
+      "pass": true,
+      "observed": [
+        727,
+        727
+      ],
+      "expected": [
+        727,
+        727
+      ]
+    },
+    {
+      "check": "six month independent Decimal contract prepaid",
+      "pass": true,
+      "observed": [
+        220,
+        130,
+        420,
+        180,
+        0,
+        250
+      ],
+      "expected": [
+        220.0,
+        130.0,
+        420.0,
+        180.0,
+        0.0,
+        250.0
+      ]
+    },
+    {
+      "check": "six month independent Decimal contract interest",
+      "pass": true,
+      "observed": [
+        90,
+        78.8,
+        68.5,
+        55.300000000000004,
+        44.5,
+        35.5
+      ],
+      "expected": [
+        90.0,
+        78.8,
+        68.5,
+        55.3,
+        44.5,
+        35.5
+      ]
+    },
+    {
+      "check": "six month independent Decimal contract cash",
+      "pass": true,
+      "observed": [
+        28790,
+        27681.2,
+        26292.7,
+        25157.4,
+        24212.9,
+        23027.4
+      ],
+      "expected": [
+        28790.0,
+        27681.2,
+        26292.7,
+        25157.4,
+        24212.9,
+        23027.4
+      ]
+    },
+    {
+      "check": "six month independent Decimal contract debt",
+      "pass": true,
+      "observed": [
+        7880,
+        6850,
+        5530,
+        4450,
+        3550,
+        2400
+      ],
+      "expected": [
+        7880.0,
+        6850.0,
+        5530.0,
+        4450.0,
+        3550.0,
+        2400.0
+      ]
+    },
+    {
+      "check": "consumed quota across three named calendar buckets",
+      "pass": true,
+      "observed": [
+        [
+          1,
+          220,
+          130
+        ],
+        [
+          2,
+          130,
+          0
+        ],
+        [
+          3,
+          420,
+          180
+        ],
+        [
+          4,
+          180,
+          0
+        ],
+        [
+          6,
+          250,
+          350
+        ]
+      ],
+      "expected": [
+        [
+          1,
+          220.0,
+          130.0
+        ],
+        [
+          2,
+          130.0,
+          0.0
+        ],
+        [
+          3,
+          420.0,
+          180.0
+        ],
+        [
+          4,
+          180.0,
+          0.0
+        ],
+        [
+          6,
+          250.0,
+          350.0
+        ]
+      ]
+    },
+    {
+      "check": "fifth month rejected without exhausting next interval",
+      "pass": true,
+      "observed": [
+        5
+      ],
+      "expected": [
+        5
+      ]
+    },
+    {
+      "check": "reverse cap is binding from historic usage and remaining component",
+      "pass": true,
+      "observed": 350,
+      "expected": 350
+    },
+    {
+      "check": "first lender unused balance stays independent",
+      "pass": true,
+      "observed": [
+        [
+          1,
+          300,
+          50
+        ]
+      ],
+      "expected": [
+        [
+          1,
+          300,
+          50
+        ]
+      ]
+    },
+    {
+      "check": "second lender unused balance stays independent",
+      "pass": true,
+      "observed": [
+        [
+          1,
+          450,
+          50
+        ],
+        [
+          2,
+          50,
+          0
+        ]
+      ],
+      "expected": [
+        [
+          1,
+          450,
+          50
+        ],
+        [
+          2,
+          50,
+          0
+        ]
+      ]
+    },
+    {
+      "check": "loan age, not household calendar origin, starts guarantee quota buckets",
+      "pass": true,
+      "observed": [
+        [
+          4,
+          250,
+          100
+        ],
+        [
+          5,
+          100,
+          0
+        ],
+        [
+          6,
+          420,
+          180
+        ]
+      ],
+      "expected": [
+        [
+          4,
+          250,
+          100
+        ],
+        [
+          5,
+          100,
+          0
+        ],
+        [
+          6,
+          420,
+          180
+        ]
+      ]
+    },
+    {
+      "check": "cap after reset discards prior period use",
+      "pass": true,
+      "observed": 420,
+      "expected": 420
+    },
+    {
+      "check": "first possible voluntary full only after contractual outstanding balance falls within 700",
+      "pass": true,
+      "observed": [
+        5
+      ],
+      "expected": [
+        5
+      ]
+    },
+    {
+      "check": "no finite-cap feasible partial over 700",
+      "pass": true,
+      "observed": true,
+      "expected": true
+    },
+    {
+      "check": "partial label cannot evade prohibition on clearing remaining 500",
+      "pass": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "expected": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "check": "sale extra uses selected base and separate principal",
+      "pass": true,
+      "observed": [
+        36,
+        2400,
+        24,
+        73,
+        5867,
+        0
+      ],
+      "expected": [
+        36,
+        2400,
+        24,
+        73,
+        5867,
+        0
+      ]
+    },
+    {
+      "check": "sale separates scheduled 600 and extra 1800 extra",
+      "pass": true,
+      "observed": [
+        600,
+        1800
+      ],
+      "expected": [
+        600,
+        1800
+      ]
+    },
+    {
+      "check": "sale balance uses selected base and separate principal",
+      "pass": true,
+      "observed": [
+        45,
+        2400,
+        24,
+        73,
+        5858,
+        0
+      ],
+      "expected": [
+        45,
+        2400,
+        24,
+        73,
+        5858,
+        0
+      ]
+    },
+    {
+      "check": "sale separates scheduled 600 and extra 1800 balance",
+      "pass": true,
+      "observed": [
+        600,
+        1800
+      ],
+      "expected": [
+        600,
+        1800
+      ]
+    },
+    {
+      "check": "one cent below extra balance prevents legal close while contractual debt is paid",
+      "pass": true,
+      "observed": [
+        0,
+        600,
+        24,
+        4376,
+        1800
+      ],
+      "expected": [
+        0,
+        600,
+        24,
+        4376,
+        1800
+      ]
+    },
+    {
+      "check": "sale exception waits until explicitly contracted month",
+      "pass": true,
+      "observed": [
+        0,
+        0
+      ],
+      "expected": [
+        0,
+        0
+      ]
+    },
+    {
+      "check": "separate sale-only fee on 1200 extra plus 11 despite voluntary full prohibition",
+      "pass": true,
+      "observed": [
+        1800,
+        35,
+        5865,
+        0
+      ],
+      "expected": [
+        1800,
+        35,
+        5865,
+        0
+      ]
+    },
+    {
+      "check": "administrative charge only on natural-maturity asset closing included",
+      "pass": true,
+      "observed": [
+        1800,
+        600,
+        18,
+        0,
+        3082
+      ],
+      "expected": [
+        1800,
+        600,
+        18,
+        0,
+        3082
+      ]
+    },
+    {
+      "check": "administrative charge only on natural-maturity asset closing additional",
+      "pass": true,
+      "observed": [
+        1800,
+        600,
+        18,
+        23,
+        3059
+      ],
+      "expected": [
+        1800,
+        600,
+        18,
+        23,
+        3059
+      ]
+    },
+    {
+      "check": "administrative charge only on natural-maturity asset closing unknown",
+      "pass": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0,
+        1300
+      ],
+      "expected": [
+        0,
+        0,
+        0,
+        0,
+        1300
+      ]
+    },
+    {
+      "check": "security settling before quota reset remains pledged at shocked price",
+      "pass": true,
+      "observed": [
+        0,
+        1650,
+        1200,
+        956
+      ],
+      "expected": [
+        0,
+        1650,
+        1200,
+        956
+      ]
+    },
+    {
+      "check": "no available sale proceeds in two months before settlement",
+      "pass": true,
+      "observed": [
+        0,
+        0
+      ],
+      "expected": [
+        0,
+        0
+      ]
+    },
+    {
+      "check": "quote locked at 3300 but 3rd-month release uses newly available 1200 quota",
+      "pass": true,
+      "observed": [
+        3267,
+        1200,
+        12,
+        0,
+        0,
+        3001
+      ],
+      "expected": [
+        3267,
+        1200,
+        12,
+        0,
+        0,
+        3001
+      ]
+    },
+    {
+      "check": "formal inline and CommonJS agree on every extension",
+      "pass": true,
+      "observed": "238a4cd80c6fae9ddaf161cc9f4596611b1d33e37c19eb1332ae7fbbdf7cfd92",
+      "expected": "238a4cd80c6fae9ddaf161cc9f4596611b1d33e37c19eb1332ae7fbbdf7cfd92"
+    }
+  ]
+}

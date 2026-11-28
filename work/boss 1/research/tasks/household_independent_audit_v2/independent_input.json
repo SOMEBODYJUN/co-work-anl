@@ -1,0 +1,7005 @@
+[
+  {
+    "id": "blank",
+    "op": "blank",
+    "household": null,
+    "scenarios": [
+      {
+        "id": "quiet",
+        "name": "quiet",
+        "role": "quiet",
+        "paths": []
+      }
+    ],
+    "strategy": {
+      "id": "independent",
+      "actions": []
+    },
+    "limit": 100
+  },
+  {
+    "id": "blank_rejected",
+    "op": "simulate",
+    "household": {
+      "schema": "household-cny.v1",
+      "dataKind": "synthetic_example",
+      "rangeCase": "base",
+      "cash": null,
+      "cashAnnual": 0,
+      "reserveMonths": 0,
+      "minimumLiving": null,
+      "cutFraction": 0,
+      "maxSaleWait": 120,
+      "preference": "cash",
+      "incomes": [],
+      "expenses": [],
+      "financial": [],
+      "properties": [],
+      "vehicles": [],
+      "loans": [],
+      "citySources": []
+    },
+    "scenarios": [
+      {
+        "id": "quiet",
+        "name": "quiet",
+        "role": "quiet",
+        "paths": []
+      }
+    ],
+    "strategy": {
+      "id": "independent",
+      "actions": []
+    },
+    "limit": 100
+  },
+  {
+    "id": "unknown_loan_permission",
+    "op": "assess",
+    "household": {
+      "schema": "household-cny.v1",
+      "dataKind": "synthetic_example",
+      "rangeCase": "base",
+      "cash": 20000,
+      "cashAnnual": 0,
+      "reserveMonths": 0,
+      "minimumLiving": 0,
+      "cutFraction": 0,
+      "maxSaleWait": 120,
+      "preference": "cash",
+      "incomes": [],
+      "expenses": [],
+      "financial": [],
+      "properties": [],
+      "vehicles": [],
+      "loans": [
+        {
+          "id": "Q",
+          "name": "only principal/rate/term entered",
+          "kind": "consumer",
+          "principal": 10000,
+          "annualRate": 0.1,
+          "months": 12
+        }
+      ],
+      "citySources": []
+    },
+    "scenarios": [
+      {
+        "id": "quiet",
+        "name": "quiet",
+        "role": "quiet",
+        "paths": []
+      }
+    ],
+    "strategy": {
+      "id": "independent",
+      "actions": []
+    },
+    "limit": 100
+  },
+  {
+    "id": "unknown_loan_fees",
+    "op": "assess",
+    "household": {
+      "schema": "household-cny.v1",
+      "dataKind": "synthetic_example",
+      "rangeCase": "base",
+      "cash": 20000,
+      "cashAnnual": 0,
+      "reserveMonths": 0,
+      "minimumLiving": 0,
+      "cutFraction": 0,
+      "maxSaleWait": 120,
+      "preference": "cash",
+      "incomes": [],
+      "expenses": [],
+      "financial": [],
+      "properties": [],
+      "vehicles": [],
+      "loans": [
+        {
+          "id": "Q",
+          "name": "only principal/rate/term entered",
+          "kind": "consumer",
+          "principal": 10000,
+          "annualRate": 0.1,
+          "months": 12,
+          "canPrepay": true,
+          "allowRecast": true,
+          "allowShorten": true
+        }
+      ],
+      "citySources": []
+    },
+    "scenarios": [
+      {
+        "id": "quiet",
+        "name": "quiet",
+        "role": "quiet",
+        "paths": []
+      }
+    ],
+    "strategy": {
+      "id": "independent",
+      "actions": []
+    },
+    "limit": 100
+  },
+  {
+    "id": "unknown_home_permission",
+    "op": "assess",
+    "household": {
+      "schema": "household-cny.v1",
+      "dataKind": "synthetic_example",
+      "rangeCase": "base",
+      "cash": 20000,
+      "cashAnnual": 0,
+      "reserveMonths": 0,
+      "minimumLiving": 0,
+      "cutFraction": 0,
+      "maxSaleWait": 120,
+      "preference": "cash",
+      "incomes": [],
+      "expenses": [],
+      "financial": [],
+      "properties": [
+        {
+          "id": "P",
+          "name": "audit property",
+          "city": "测试城",
+          "type": "住宅",
+          "use": "idle",
+          "value": 12000,
+          "saleValue": 11000,
+          "saleLag": 0,
+          "lock": 1,
+          "rent": 0,
+          "vacancy": 0,
+          "leaseLag": 0,
+          "discountRent": 0,
+          "discountLeaseLag": 0,
+          "carry": 0,
+          "saleFee": 0,
+          "closingFee": 0,
+          "replacementAllowed": false,
+          "replacementMonthly": null,
+          "sourceId": ""
+        }
+      ],
+      "vehicles": [],
+      "loans": [],
+      "citySources": []
+    },
+    "scenarios": [
+      {
+        "id": "quiet",
+        "name": "quiet",
+        "role": "quiet",
+        "paths": []
+      }
+    ],
+    "strategy": {
+      "id": "independent",
+      "actions": []
+    },
+    "limit": 100
+  },
+  {
+    "id": "unknown_home_fees",
+    "op": "assess",
+    "household": {
+      "schema": "household-cny.v1",
+      "dataKind": "synthetic_example",
+      "rangeCase": "base",
+      "cash": 20000,
+      "cashAnnual": 0,
+      "reserveMonths": 0,
+      "minimumLiving": 0,
+      "cutFraction": 0,
+      "maxSaleWait": 120,
+      "preference": "cash",
+      "incomes": [],
+      "expenses": [],
+      "financial": [],
+      "properties": [
+        {
+          "id": "P",
+          "name": "audit property",
+          "city": "测试城",
+          "type": "住宅",
+          "use": "idle",
+          "value": 12000,
+          "saleValue": 11000,
+          "lock": 1,
+          "canSell": true,
+          "rent": 0,
+          "vacancy": 0,
+          "leaseLag": 0,
+          "discountRent": 0,
+          "discountLeaseLag": 0,
+          "carry": 0,
+          "replacementAllowed": false,
+          "replacementMonthly": null,
+          "sourceId": ""
+        }
+      ],
+      "vehicles": [],
+      "loans": [],
+      "citySources": []
+    },
+    "scenarios": [
+      {
+        "id": "quiet",
+        "name": "quiet",
+        "role": "quiet",
+        "paths": []
+      }
+    ],
+    "strategy": {
+      "id": "independent",
+      "actions": []
+    },
+    "limit": 100
+  },
+  {
+    "id": "unknown_car_permission",
+    "op": "assess",
+    "household": {
+      "schema": "household-cny.v1",
+      "dataKind": "synthetic_example",
+      "rangeCase": "base",
+      "cash": 20000,
+      "cashAnnual": 0,
+      "reserveMonths": 0,
+      "minimumLiving": 0,
+      "cutFraction": 0,
+      "maxSaleWait": 120,
+      "preference": "cash",
+      "incomes": [],
+      "expenses": [],
+      "financial": [],
+      "properties": [],
+      "vehicles": [
+        {
+          "id": "C",
+          "name": "audit vehicle",
+          "value": 2000,
+          "saleValue": 1740,
+          "annualDepreciation": 0,
+          "saleLag": 1,
+          "lock": 1,
+          "necessary": false,
+          "replacementAllowed": false,
+          "replacementMonthly": null,
+          "carry": 35,
+          "saleFee": 0,
+          "closingFee": 0
+        }
+      ],
+      "loans": [],
+      "citySources": []
+    },
+    "scenarios": [
+      {
+        "id": "quiet",
+        "name": "quiet",
+        "role": "quiet",
+        "paths": []
+      }
+    ],
+    "strategy": {
+      "id": "independent",
+      "actions": []
+    },
+    "limit": 100
+  },
+  {
+    "id": "unknown_car_fees",
+    "op": "assess",
+    "household": {
+      "schema": "household-cny.v1",
+      "dataKind": "synthetic_example",
+      "rangeCase": "base",
+      "cash": 20000,
+      "cashAnnual": 0,
+      "reserveMonths": 0,
+      "minimumLiving": 0,
+      "cutFraction": 0,
+      "maxSaleWait": 120,
+      "preference": "cash",
+      "incomes": [],
+      "expenses": [],
+      "financial": [],
+      "properties": [],
+      "vehicles": [
+        {
+          "id": "C",
+          "name": "audit vehicle",
+          "value": 2000,
+          "saleValue": 1740,
+          "annualDepreciation": 0,
+          "lock": 1,
+          "canSell": true,
+          "necessary": false,
+          "replacementAllowed": false,
+          "replacementMonthly": null,
+          "carry": 35
+        }
+      ],
+      "loans": [],
+      "citySources": []
+    },
+    "scenarios": [
+      {
+        "id": "quiet",
+        "name": "quiet",
+        "role": "quiet",
+        "paths": []
+      }
+    ],
+    "strategy": {
+      "id": "independent",
+      "actions": []
+    },
+    "limit": 100
+  },
+  {
+    "id": "budget_not_debt",
+    "op": "simulate",
+    "household": {
+      "schema": "household-cny.v1",
+      "dataKind": "synthetic_example",
+      "rangeCase": "base",
+      "cash": 180,
+      "cashAnnual": 0,
+      "reserveMonths": 0,
+      "minimumLiving": 0,
+      "cutFraction": 0,
+      "maxSaleWait": 120,
+      "preference": "cash",
+      "incomes": [],
+      "expenses": [
+        {
+          "id": "wish",
+          "name": "wish",
+          "kind": "discretionary",
+          "monthly": 220,
+          "from": 1,
+          "to": 120,
+          "every": 1,
+          "annualGrowth": 0,
+          "inflationLinked": false
+        }
+      ],
+      "financial": [],
+      "properties": [],
+      "vehicles": [],
+      "loans": [
+        {
+          "id": "L",
+          "name": "audit loan",
+          "kind": "consumer",
+          "method": "annuity",
+          "principal": 20,
+          "annualRate": 0,
+          "months": 1,
+          "payment": null,
+          "rateType": "fixed",
+          "resetFirst": 12,
+          "resetEvery": 12,
+          "canPrepay": true,
+          "prepayFrom": 1,
+          "prepayMin": 0,
+          "prepayFee": 0,
+          "settlementFee": 0,
+          "transferWithLien": false,
+          "allowRecast": true,
+          "allowShorten": true,
+          "collateral": "",
+          "start": 1,
+          "monthlyFee": 0,
+          "allowFull": true,
+          "prepayMax": "unlimited",
+          "prepayPeriodMax": "unlimited",
+          "prepayPeriodMonths": null,
+          "prepayPeriodRemaining": null,
+          "prepayPeriodUsed": null,
+          "salePayoffRule": "unknown",
+          "salePayoffFrom": null,
+          "salePayoffFee": null,
+          "saleSettlementFee": null,
+          "salePayoffFeeBase": "unknown",
+          "saleMaturityReleaseFee": null
+        }
+      ],
+      "citySources": []
+    },
+    "scenarios": [
+      {
+        "id": "quiet",
+        "name": "quiet",
+        "role": "quiet",
+        "paths": []
+      }
+    ],
+    "strategy": {
+      "id": "independent",
+      "actions": []
+    },
+    "limit": 100
+  },
+  {
+    "id": "annuity_zero",
+    "op": "simulate",
+    "household": {
+      "schema": "household-cny.v1",
+      "dataKind": "synthetic_example",
+      "rangeCase": "base",
+      "cash": 100000,
+      "cashAnnual": 0,
+      "reserveMonths": 0,
+      "minimumLiving": 0,
+      "cutFraction": 0,
+      "maxSaleWait": 120,
+      "preference": "cash",
+      "incomes": [],
+      "expenses": [],
+      "financial": [],
+      "properties": [],
+      "vehicles": [],
+      "loans": [
+        {
+          "id": "L",
+          "name": "audit loan",
+          "kind": "consumer",
+          "method": "annuity",
+          "principal": 2940,
+          "annualRate": 0,
+          "months": 7,
+          "payment": null,
+          "rateType": "fixed",
+          "resetFirst": 12,
+          "resetEvery": 12,
+          "canPrepay": true,
+          "prepayFrom": 1,
+          "prepayMin": 0,
+          "prepayFee": 0,
+          "settlementFee": 0,
+          "transferWithLien": false,
+          "allowRecast": true,
+          "allowShorten": true,
+          "collateral": "",
+          "start": 1,
+          "monthlyFee": 0,
+          "allowFull": true,
+          "prepayMax": "unlimited",
+          "prepayPeriodMax": "unlimited",
+          "prepayPeriodMonths": null,
+          "prepayPeriodRemaining": null,
+          "prepayPeriodUsed": null,
+          "salePayoffRule": "unknown",
+          "salePayoffFrom": null,
+          "salePayoffFee": null,
+          "saleSettlementFee": null,
+          "salePayoffFeeBase": "unknown",
+          "saleMaturityReleaseFee": null
+        }
+      ],
+      "citySources": []
+    },
+    "scenarios": [
+      {
+        "id": "quiet",
+        "name": "quiet",
+        "role": "quiet",
+        "paths": []
+      }
+    ],
+    "strategy": {
+      "id": "independent",
+      "actions": []
+    },
+    "limit": 100
+  },
+  {
+    "id": "annuity_one",
+    "op": "simulate",
+    "household": {
+      "schema": "household-cny.v1",
+      "dataKind": "synthetic_example",
+      "rangeCase": "base",
+      "cash": 100000,
+      "cashAnnual": 0,
+      "reserveMonths": 0,
+      "minimumLiving": 0,
+      "cutFraction": 0,
+      "maxSaleWait": 120,
+      "preference": "cash",
+      "incomes": [],
+      "expenses": [],
+      "financial": [],
+      "properties": [],
+      "vehicles": [],
+      "loans": [
+        {
+          "id": "L",
+          "name": "audit loan",
+          "kind": "consumer",
+          "method": "annuity",
+          "principal": 2500,
+          "annualRate": 0.096,
+          "months": 1,
+          "payment": null,
+          "rateType": "fixed",
+          "resetFirst": 12,
+          "resetEvery": 12,
+          "canPrepay": true,
+          "prepayFrom": 1,
+          "prepayMin": 0,
+          "prepayFee": 0,
+          "settlementFee": 0,
+          "transferWithLien": false,
+          "allowRecast": true,
+          "allowShorten": true,
+          "collateral": "",
+          "start": 1,
+          "monthlyFee": 17,
+          "allowFull": true,
+          "prepayMax": "unlimited",
+          "prepayPeriodMax": "unlimited",
+          "prepayPeriodMonths": null,
+          "prepayPeriodRemaining": null,
+          "prepayPeriodUsed": null,
+          "salePayoffRule": "unknown",
+          "salePayoffFrom": null,
+          "salePayoffFee": null,
+          "saleSettlementFee": null,
+          "salePayoffFeeBase": "unknown",
+          "saleMaturityReleaseFee": null
+        }
+      ],
+      "citySources": []
+    },
+    "scenarios": [
+      {
+        "id": "quiet",
+        "name": "quiet",
+        "role": "quiet",
+        "paths": []
+      }
+    ],
+    "strategy": {
+      "id": "independent",
+      "actions": []
+    },
+    "limit": 100
+  },
+  {
+    "id": "full_prepay_fee",
+    "op": "simulate",
+    "household": {
+      "schema": "household-cny.v1",
+      "dataKind": "synthetic_example",
+      "rangeCase": "base",
+      "cash": 2000,
+      "cashAnnual": 0,
+      "reserveMonths": 0,
+      "minimumLiving": 0,
+      "cutFraction": 0,
+      "maxSaleWait": 120,
+      "preference": "cash",
+      "incomes": [],
+      "expenses": [],
+      "financial": [],
+      "properties": [],
+      "vehicles": [],
+      "loans": [
+        {
+          "id": "L",
+          "name": "audit loan",
+          "kind": "consumer",
+          "method": "annuity",
+          "principal": 1200,
+          "annualRate": 0,
+          "months": 3,
+          "payment": null,
+          "rateType": "fixed",
+          "resetFirst": 12,
+          "resetEvery": 12,
+          "canPrepay": true,
+          "prepayFrom": 1,
+          "prepayMin": 0,
+          "prepayFee": 0.01,
+          "settlementFee": 15,
+          "transferWithLien": false,
+          "allowRecast": true,
+          "allowShorten": true,
+          "collateral": "",
+          "start": 1,
+          "monthlyFee": 0,
+          "allowFull": true,
+          "prepayMax": "unlimited",
+          "prepayPeriodMax": "unlimited",
+          "prepayPeriodMonths": null,
+          "prepayPeriodRemaining": null,
+          "prepayPeriodUsed": null,
+          "salePayoffRule": "unknown",
+          "salePayoffFrom": null,
+          "salePayoffFee": null,
+          "saleSettlementFee": null,
+          "salePayoffFeeBase": "unknown",
+          "saleMaturityReleaseFee": null
+        }
+      ],
+      "citySources": []
+    },
+    "scenarios": [
+      {
+        "id": "quiet",
+        "name": "quiet",
+        "role": "quiet",
+        "paths": []
+      }
+    ],
+    "strategy": {
+      "id": "independent",
+      "actions": [
+        {
+          "kind": "prepay",
+          "loan": "L",
+          "mode": "full",
+          "month": 1
+        }
+      ]
+    },
+    "limit": 100
+  },
+  {
+    "id": "guarantee_call",
+    "op": "simulate",
+    "household": {
+      "schema": "household-cny.v1",
+      "dataKind": "synthetic_example",
+      "rangeCase": "base",
+      "cash": 100,
+      "cashAnnual": 0,
+      "reserveMonths": 0,
+      "minimumLiving": 0,
+      "cutFraction": 0,
+      "maxSaleWait": 120,
+      "preference": "cash",
+      "incomes": [
+        {
+          "id": "W",
+          "name": "W",
+          "kind": "wage",
+          "monthly": 200,
+          "from": 1,
+          "to": 120,
+          "every": 1,
+          "annualGrowth": 0,
+          "stability": "given",
+          "stressJob": false,
+          "jobStart": 1,
+          "jobMonths": 0,
+          "jobPayFraction": 0,
+          "recoveryMonths": 0,
+          "returnFraction": 1
+        }
+      ],
+      "expenses": [],
+      "financial": [],
+      "properties": [],
+      "vehicles": [],
+      "loans": [
+        {
+          "id": "L",
+          "name": "audit loan",
+          "kind": "guarantee",
+          "method": "annuity",
+          "principal": 500,
+          "annualRate": 0,
+          "months": 1,
+          "payment": null,
+          "rateType": "fixed",
+          "resetFirst": 12,
+          "resetEvery": 12,
+          "canPrepay": true,
+          "prepayFrom": 1,
+          "prepayMin": 0,
+          "prepayFee": 0,
+          "settlementFee": 0,
+          "transferWithLien": false,
+          "allowRecast": true,
+          "allowShorten": true,
+          "collateral": "",
+          "start": 3,
+          "monthlyFee": 0,
+          "allowFull": true,
+          "prepayMax": "unlimited",
+          "prepayPeriodMax": "unlimited",
+          "prepayPeriodMonths": null,
+          "prepayPeriodRemaining": null,
+          "prepayPeriodUsed": null,
+          "salePayoffRule": "unknown",
+          "salePayoffFrom": null,
+          "salePayoffFee": null,
+          "saleSettlementFee": null,
+          "salePayoffFeeBase": "unknown",
+          "saleMaturityReleaseFee": null
+        }
+      ],
+      "citySources": []
+    },
+    "scenarios": [
+      {
+        "id": "quiet",
+        "name": "quiet",
+        "role": "quiet",
+        "paths": []
+      }
+    ],
+    "strategy": {
+      "id": "independent",
+      "actions": []
+    },
+    "limit": 100
+  },
+  {
+    "id": "staged_sales",
+    "op": "simulate",
+    "household": {
+      "schema": "household-cny.v1",
+      "dataKind": "synthetic_example",
+      "rangeCase": "base",
+      "cash": 0,
+      "cashAnnual": 0,
+      "reserveMonths": 0,
+      "minimumLiving": 0,
+      "cutFraction": 0,
+      "maxSaleWait": 120,
+      "preference": "cash",
+      "incomes": [],
+      "expenses": [],
+      "financial": [
+        {
+          "id": "F",
+          "name": "audit security",
+          "kind": "stock",
+          "value": 4000,
+          "annualReturn": 0,
+          "concentration": 0,
+          "fee": 0.01,
+          "settle": 1,
+          "unlock": 1,
+          "maturity": 0,
+          "restriction": "free",
+          "purpose": "家庭可用"
+        }
+      ],
+      "properties": [],
+      "vehicles": [],
+      "loans": [],
+      "citySources": []
+    },
+    "scenarios": [
+      {
+        "id": "stages",
+        "name": "stages",
+        "role": "stages",
+        "paths": [
+          {
+            "key": "financialShock",
+            "mode": "shock",
+            "unit": "比例",
+            "start": 4,
+            "duration": 1,
+            "target": "*",
+            "value": -0.25,
+            "range": [
+              -0.25,
+              -0.25
+            ],
+            "sourceId": "independent-audit",
+            "editable": true,
+            "assumption": "stress_test"
+          }
+        ]
+      }
+    ],
+    "strategy": {
+      "id": "independent",
+      "actions": [
+        {
+          "kind": "liquidate",
+          "asset": "F",
+          "month": 1,
+          "mode": "stages"
+        }
+      ]
+    },
+    "limit": 100
+  },
+  {
+    "id": "annuity_standard",
+    "op": "simulate",
+    "household": {
+      "schema": "household-cny.v1",
+      "dataKind": "synthetic_example",
+      "rangeCase": "base",
+      "cash": 100000,
+      "cashAnnual": 0,
+      "reserveMonths": 0,
+      "minimumLiving": 0,
+      "cutFraction": 0,
+      "maxSaleWait": 120,
+      "preference": "cash",
+      "incomes": [],
+      "expenses": [],
+      "financial": [],
+      "properties": [],
+      "vehicles": [],
+      "loans": [
+        {
+          "id": "L",
+          "name": "audit loan",
+          "kind": "consumer",
+          "method": "annuity",
+          "principal": 15437,
+          "annualRate": 0.0547,
+          "months": 19,
+          "payment": null,
+          "rateType": "fixed",
+          "resetFirst": 12,
+          "resetEvery": 12,
+          "canPrepay": true,
+          "prepayFrom": 1,
+          "prepayMin": 0,
+          "prepayFee": 0,
+          "settlementFee": 0,
+          "transferWithLien": false,
+          "allowRecast": true,
+          "allowShorten": true,
+          "collateral": "",
+          "start": 1,
+          "monthlyFee": 0,
+          "allowFull": true,
+          "prepayMax": "unlimited",
+          "prepayPeriodMax": "unlimited",
+          "prepayPeriodMonths": null,
+          "prepayPeriodRemaining": null,
+          "prepayPeriodUsed": null,
+          "salePayoffRule": "unknown",
+          "salePayoffFrom": null,
+          "salePayoffFee": null,
+          "saleSettlementFee": null,
+          "salePayoffFeeBase": "unknown",
+          "saleMaturityReleaseFee": null
+        }
+      ],
+      "citySources": []
+    },
+    "scenarios": [
+      {
+        "id": "quiet",
+        "name": "quiet",
+        "role": "quiet",
+        "paths": []
+      }
+    ],
+    "strategy": {
+      "id": "independent",
+      "actions": []
+    },
+    "limit": 100
+  },
+  {
+    "id": "equal_principal",
+    "op": "simulate",
+    "household": {
+      "schema": "household-cny.v1",
+      "dataKind": "synthetic_example",
+      "rangeCase": "base",
+      "cash": 100000,
+      "cashAnnual": 0,
+      "reserveMonths": 0,
+      "minimumLiving": 0,
+      "cutFraction": 0,
+      "maxSaleWait": 120,
+      "preference": "cash",
+      "incomes": [],
+      "expenses": [],
+      "financial": [],
+      "properties": [],
+      "vehicles": [],
+      "loans": [
+        {
+          "id": "L",
+          "name": "audit loan",
+          "kind": "consumer",
+          "method": "principal",
+          "principal": 9720,
+          "annualRate": 0.072,
+          "months": 11,
+          "payment": null,
+          "rateType": "fixed",
+          "resetFirst": 12,
+          "resetEvery": 12,
+          "canPrepay": true,
+          "prepayFrom": 1,
+          "prepayMin": 0,
+          "prepayFee": 0,
+          "settlementFee": 0,
+          "transferWithLien": false,
+          "allowRecast": true,
+          "allowShorten": true,
+          "collateral": "",
+          "start": 1,
+          "monthlyFee": 0,
+          "allowFull": true,
+          "prepayMax": "unlimited",
+          "prepayPeriodMax": "unlimited",
+          "prepayPeriodMonths": null,
+          "prepayPeriodRemaining": null,
+          "prepayPeriodUsed": null,
+          "salePayoffRule": "unknown",
+          "salePayoffFrom": null,
+          "salePayoffFee": null,
+          "saleSettlementFee": null,
+          "salePayoffFeeBase": "unknown",
+          "saleMaturityReleaseFee": null
+        }
+      ],
+      "citySources": []
+    },
+    "scenarios": [
+      {
+        "id": "quiet",
+        "name": "quiet",
+        "role": "quiet",
+        "paths": []
+      }
+    ],
+    "strategy": {
+      "id": "independent",
+      "actions": []
+    },
+    "limit": 100
+  },
+  {
+    "id": "floating",
+    "op": "simulate",
+    "household": {
+      "schema": "household-cny.v1",
+      "dataKind": "synthetic_example",
+      "rangeCase": "base",
+      "cash": 100000,
+      "cashAnnual": 0,
+      "reserveMonths": 0,
+      "minimumLiving": 0,
+      "cutFraction": 0,
+      "maxSaleWait": 120,
+      "preference": "cash",
+      "incomes": [],
+      "expenses": [],
+      "financial": [],
+      "properties": [],
+      "vehicles": [],
+      "loans": [
+        {
+          "id": "L",
+          "name": "audit loan",
+          "kind": "consumer",
+          "method": "annuity",
+          "principal": 15600,
+          "annualRate": 0.06,
+          "months": 6,
+          "payment": null,
+          "rateType": "floating",
+          "resetFirst": 3,
+          "resetEvery": 2,
+          "canPrepay": true,
+          "prepayFrom": 1,
+          "prepayMin": 0,
+          "prepayFee": 0,
+          "settlementFee": 0,
+          "transferWithLien": false,
+          "allowRecast": true,
+          "allowShorten": true,
+          "collateral": "",
+          "start": 1,
+          "monthlyFee": 0,
+          "allowFull": true,
+          "prepayMax": "unlimited",
+          "prepayPeriodMax": "unlimited",
+          "prepayPeriodMonths": null,
+          "prepayPeriodRemaining": null,
+          "prepayPeriodUsed": null,
+          "salePayoffRule": "unknown",
+          "salePayoffFrom": null,
+          "salePayoffFee": null,
+          "saleSettlementFee": null,
+          "salePayoffFeeBase": "unknown",
+          "saleMaturityReleaseFee": null
+        }
+      ],
+      "citySources": []
+    },
+    "scenarios": [
+      {
+        "id": "reset",
+        "name": "reset",
+        "role": "reset",
+        "paths": [
+          {
+            "key": "loanRateDelta",
+            "mode": "annual",
+            "unit": "年率差",
+            "start": 2,
+            "duration": 3,
+            "target": "*",
+            "value": 0.12,
+            "range": [
+              0.12,
+              0.12
+            ],
+            "sourceId": "independent-audit",
+            "editable": true,
+            "assumption": "stress_test"
+          },
+          {
+            "key": "loanRateDelta",
+            "mode": "annual",
+            "unit": "年率差",
+            "start": 5,
+            "duration": 2,
+            "target": "*",
+            "value": -0.036,
+            "range": [
+              -0.036,
+              -0.036
+            ],
+            "sourceId": "independent-audit",
+            "editable": true,
+            "assumption": "stress_test"
+          }
+        ]
+      }
+    ],
+    "strategy": {
+      "id": "independent",
+      "actions": []
+    },
+    "limit": 100
+  },
+  {
+    "id": "fixed_rate_control",
+    "op": "simulate",
+    "household": {
+      "schema": "household-cny.v1",
+      "dataKind": "synthetic_example",
+      "rangeCase": "base",
+      "cash": 100000,
+      "cashAnnual": 0,
+      "reserveMonths": 0,
+      "minimumLiving": 0,
+      "cutFraction": 0,
+      "maxSaleWait": 120,
+      "preference": "cash",
+      "incomes": [],
+      "expenses": [],
+      "financial": [],
+      "properties": [],
+      "vehicles": [],
+      "loans": [
+        {
+          "id": "L",
+          "name": "audit loan",
+          "kind": "consumer",
+          "method": "annuity",
+          "principal": 15600,
+          "annualRate": 0.06,
+          "months": 6,
+          "payment": null,
+          "rateType": "fixed",
+          "resetFirst": 12,
+          "resetEvery": 12,
+          "canPrepay": true,
+          "prepayFrom": 1,
+          "prepayMin": 0,
+          "prepayFee": 0,
+          "settlementFee": 0,
+          "transferWithLien": false,
+          "allowRecast": true,
+          "allowShorten": true,
+          "collateral": "",
+          "start": 1,
+          "monthlyFee": 0,
+          "allowFull": true,
+          "prepayMax": "unlimited",
+          "prepayPeriodMax": "unlimited",
+          "prepayPeriodMonths": null,
+          "prepayPeriodRemaining": null,
+          "prepayPeriodUsed": null,
+          "salePayoffRule": "unknown",
+          "salePayoffFrom": null,
+          "salePayoffFee": null,
+          "saleSettlementFee": null,
+          "salePayoffFeeBase": "unknown",
+          "saleMaturityReleaseFee": null
+        }
+      ],
+      "citySources": []
+    },
+    "scenarios": [
+      {
+        "id": "reset",
+        "name": "reset",
+        "role": "reset",
+        "paths": [
+          {
+            "key": "loanRateDelta",
+            "mode": "annual",
+            "unit": "年率差",
+            "start": 2,
+            "duration": 3,
+            "target": "*",
+            "value": 0.12,
+            "range": [
+              0.12,
+              0.12
+            ],
+            "sourceId": "independent-audit",
+            "editable": true,
+            "assumption": "stress_test"
+          },
+          {
+            "key": "loanRateDelta",
+            "mode": "annual",
+            "unit": "年率差",
+            "start": 5,
+            "duration": 2,
+            "target": "*",
+            "value": -0.036,
+            "range": [
+              -0.036,
+              -0.036
+            ],
+            "sourceId": "independent-audit",
+            "editable": true,
+            "assumption": "stress_test"
+          }
+        ]
+      }
+    ],
+    "strategy": {
+      "id": "independent",
+      "actions": []
+    },
+    "limit": 100
+  },
+  {
+    "id": "prepay_recast",
+    "op": "simulate",
+    "household": {
+      "schema": "household-cny.v1",
+      "dataKind": "synthetic_example",
+      "rangeCase": "base",
+      "cash": 100000,
+      "cashAnnual": 0,
+      "reserveMonths": 0,
+      "minimumLiving": 0,
+      "cutFraction": 0,
+      "maxSaleWait": 120,
+      "preference": "cash",
+      "incomes": [],
+      "expenses": [],
+      "financial": [],
+      "properties": [],
+      "vehicles": [],
+      "loans": [
+        {
+          "id": "L",
+          "name": "audit loan",
+          "kind": "consumer",
+          "method": "annuity",
+          "principal": 14400,
+          "annualRate": 0.074,
+          "months": 8,
+          "payment": null,
+          "rateType": "fixed",
+          "resetFirst": 12,
+          "resetEvery": 12,
+          "canPrepay": true,
+          "prepayFrom": 1,
+          "prepayMin": 0,
+          "prepayFee": 0.007,
+          "settlementFee": 0,
+          "transferWithLien": false,
+          "allowRecast": true,
+          "allowShorten": true,
+          "collateral": "",
+          "start": 1,
+          "monthlyFee": 0,
+          "allowFull": true,
+          "prepayMax": "unlimited",
+          "prepayPeriodMax": "unlimited",
+          "prepayPeriodMonths": null,
+          "prepayPeriodRemaining": null,
+          "prepayPeriodUsed": null,
+          "salePayoffRule": "unknown",
+          "salePayoffFrom": null,
+          "salePayoffFee": null,
+          "saleSettlementFee": null,
+          "salePayoffFeeBase": "unknown",
+          "saleMaturityReleaseFee": null
+        }
+      ],
+      "citySources": []
+    },
+    "scenarios": [
+      {
+        "id": "quiet",
+        "name": "quiet",
+        "role": "quiet",
+        "paths": []
+      }
+    ],
+    "strategy": {
+      "id": "independent",
+      "actions": [
+        {
+          "kind": "prepay",
+          "loan": "L",
+          "mode": "recast",
+          "month": 2,
+          "amount": 2130
+        }
+      ]
+    },
+    "limit": 100
+  },
+  {
+    "id": "prepay_shorten",
+    "op": "simulate",
+    "household": {
+      "schema": "household-cny.v1",
+      "dataKind": "synthetic_example",
+      "rangeCase": "base",
+      "cash": 100000,
+      "cashAnnual": 0,
+      "reserveMonths": 0,
+      "minimumLiving": 0,
+      "cutFraction": 0,
+      "maxSaleWait": 120,
+      "preference": "cash",
+      "incomes": [],
+      "expenses": [],
+      "financial": [],
+      "properties": [],
+      "vehicles": [],
+      "loans": [
+        {
+          "id": "L",
+          "name": "audit loan",
+          "kind": "consumer",
+          "method": "annuity",
+          "principal": 14400,
+          "annualRate": 0.074,
+          "months": 8,
+          "payment": null,
+          "rateType": "fixed",
+          "resetFirst": 12,
+          "resetEvery": 12,
+          "canPrepay": true,
+          "prepayFrom": 1,
+          "prepayMin": 0,
+          "prepayFee": 0.007,
+          "settlementFee": 0,
+          "transferWithLien": false,
+          "allowRecast": true,
+          "allowShorten": true,
+          "collateral": "",
+          "start": 1,
+          "monthlyFee": 0,
+          "allowFull": true,
+          "prepayMax": "unlimited",
+          "prepayPeriodMax": "unlimited",
+          "prepayPeriodMonths": null,
+          "prepayPeriodRemaining": null,
+          "prepayPeriodUsed": null,
+          "salePayoffRule": "unknown",
+          "salePayoffFrom": null,
+          "salePayoffFee": null,
+          "saleSettlementFee": null,
+          "salePayoffFeeBase": "unknown",
+          "saleMaturityReleaseFee": null
+        }
+      ],
+      "citySources": []
+    },
+    "scenarios": [
+      {
+        "id": "quiet",
+        "name": "quiet",
+        "role": "quiet",
+        "paths": []
+      }
+    ],
+    "strategy": {
+      "id": "independent",
+      "actions": [
+        {
+          "kind": "prepay",
+          "loan": "L",
+          "mode": "shorten",
+          "month": 2,
+          "amount": 2130
+        }
+      ]
+    },
+    "limit": 100
+  },
+  {
+    "id": "prepay_hold",
+    "op": "simulate",
+    "household": {
+      "schema": "household-cny.v1",
+      "dataKind": "synthetic_example",
+      "rangeCase": "base",
+      "cash": 100000,
+      "cashAnnual": 0,
+      "reserveMonths": 0,
+      "minimumLiving": 0,
+      "cutFraction": 0,
+      "maxSaleWait": 120,
+      "preference": "cash",
+      "incomes": [],
+      "expenses": [],
+      "financial": [],
+      "properties": [],
+      "vehicles": [],
+      "loans": [
+        {
+          "id": "L",
+          "name": "audit loan",
+          "kind": "consumer",
+          "method": "annuity",
+          "principal": 14400,
+          "annualRate": 0.074,
+          "months": 8,
+          "payment": null,
+          "rateType": "fixed",
+          "resetFirst": 12,
+          "resetEvery": 12,
+          "canPrepay": true,
+          "prepayFrom": 1,
+          "prepayMin": 0,
+          "prepayFee": 0.007,
+          "settlementFee": 0,
+          "transferWithLien": false,
+          "allowRecast": true,
+          "allowShorten": true,
+          "collateral": "",
+          "start": 1,
+          "monthlyFee": 0,
+          "allowFull": true,
+          "prepayMax": "unlimited",
+          "prepayPeriodMax": "unlimited",
+          "prepayPeriodMonths": null,
+          "prepayPeriodRemaining": null,
+          "prepayPeriodUsed": null,
+          "salePayoffRule": "unknown",
+          "salePayoffFrom": null,
+          "salePayoffFee": null,
+          "saleSettlementFee": null,
+          "salePayoffFeeBase": "unknown",
+          "saleMaturityReleaseFee": null
+        }
+      ],
+      "citySources": []
+    },
+    "scenarios": [
+      {
+        "id": "quiet",
+        "name": "quiet",
+        "role": "quiet",
+        "paths": []
+      }
+    ],
+    "strategy": {
+      "id": "independent",
+      "actions": []
+    },
+    "limit": 100
+  },
+  {
+    "id": "contract_lock",
+    "op": "simulate",
+    "household": {
+      "schema": "household-cny.v1",
+      "dataKind": "synthetic_example",
+      "rangeCase": "base",
+      "cash": 100000,
+      "cashAnnual": 0,
+      "reserveMonths": 0,
+      "minimumLiving": 0,
+      "cutFraction": 0,
+      "maxSaleWait": 120,
+      "preference": "cash",
+      "incomes": [],
+      "expenses": [],
+      "financial": [],
+      "properties": [],
+      "vehicles": [],
+      "loans": [
+        {
+          "id": "L",
+          "name": "audit loan",
+          "kind": "consumer",
+          "method": "annuity",
+          "principal": 14400,
+          "annualRate": 0.074,
+          "months": 8,
+          "payment": null,
+          "rateType": "fixed",
+          "resetFirst": 12,
+          "resetEvery": 12,
+          "canPrepay": true,
+          "prepayFrom": 3,
+          "prepayMin": 0,
+          "prepayFee": 0,
+          "settlementFee": 0,
+          "transferWithLien": false,
+          "allowRecast": true,
+          "allowShorten": true,
+          "collateral": "",
+          "start": 1,
+          "monthlyFee": 0,
+          "allowFull": true,
+          "prepayMax": "unlimited",
+          "prepayPeriodMax": "unlimited",
+          "prepayPeriodMonths": null,
+          "prepayPeriodRemaining": null,
+          "prepayPeriodUsed": null,
+          "salePayoffRule": "unknown",
+          "salePayoffFrom": null,
+          "salePayoffFee": null,
+          "saleSettlementFee": null,
+          "salePayoffFeeBase": "unknown",
+          "saleMaturityReleaseFee": null
+        }
+      ],
+      "citySources": []
+    },
+    "scenarios": [
+      {
+        "id": "quiet",
+        "name": "quiet",
+        "role": "quiet",
+        "paths": []
+      }
+    ],
+    "strategy": {
+      "id": "independent",
+      "actions": [
+        {
+          "kind": "prepay",
+          "loan": "L",
+          "mode": "recast",
+          "month": 2,
+          "amount": 2130
+        }
+      ]
+    },
+    "limit": 100
+  },
+  {
+    "id": "contract_min",
+    "op": "simulate",
+    "household": {
+      "schema": "household-cny.v1",
+      "dataKind": "synthetic_example",
+      "rangeCase": "base",
+      "cash": 100000,
+      "cashAnnual": 0,
+      "reserveMonths": 0,
+      "minimumLiving": 0,
+      "cutFraction": 0,
+      "maxSaleWait": 120,
+      "preference": "cash",
+      "incomes": [],
+      "expenses": [],
+      "financial": [],
+      "properties": [],
+      "vehicles": [],
+      "loans": [
+        {
+          "id": "L",
+          "name": "audit loan",
+          "kind": "consumer",
+          "method": "annuity",
+          "principal": 14400,
+          "annualRate": 0.074,
+          "months": 8,
+          "payment": null,
+          "rateType": "fixed",
+          "resetFirst": 12,
+          "resetEvery": 12,
+          "canPrepay": true,
+          "prepayFrom": 1,
+          "prepayMin": 2500,
+          "prepayFee": 0,
+          "settlementFee": 0,
+          "transferWithLien": false,
+          "allowRecast": true,
+          "allowShorten": true,
+          "collateral": "",
+          "start": 1,
+          "monthlyFee": 0,
+          "allowFull": true,
+          "prepayMax": "unlimited",
+          "prepayPeriodMax": "unlimited",
+          "prepayPeriodMonths": null,
+          "prepayPeriodRemaining": null,
+          "prepayPeriodUsed": null,
+          "salePayoffRule": "unknown",
+          "salePayoffFrom": null,
+          "salePayoffFee": null,
+          "saleSettlementFee": null,
+          "salePayoffFeeBase": "unknown",
+          "saleMaturityReleaseFee": null
+        }
+      ],
+      "citySources": []
+    },
+    "scenarios": [
+      {
+        "id": "quiet",
+        "name": "quiet",
+        "role": "quiet",
+        "paths": []
+      }
+    ],
+    "strategy": {
+      "id": "independent",
+      "actions": [
+        {
+          "kind": "prepay",
+          "loan": "L",
+          "mode": "recast",
+          "month": 2,
+          "amount": 2130
+        }
+      ]
+    },
+    "limit": 100
+  },
+  {
+    "id": "contract_forbid",
+    "op": "simulate",
+    "household": {
+      "schema": "household-cny.v1",
+      "dataKind": "synthetic_example",
+      "rangeCase": "base",
+      "cash": 100000,
+      "cashAnnual": 0,
+      "reserveMonths": 0,
+      "minimumLiving": 0,
+      "cutFraction": 0,
+      "maxSaleWait": 120,
+      "preference": "cash",
+      "incomes": [],
+      "expenses": [],
+      "financial": [],
+      "properties": [],
+      "vehicles": [],
+      "loans": [
+        {
+          "id": "L",
+          "name": "audit loan",
+          "kind": "consumer",
+          "method": "annuity",
+          "principal": 14400,
+          "annualRate": 0.074,
+          "months": 8,
+          "payment": null,
+          "rateType": "fixed",
+          "resetFirst": 12,
+          "resetEvery": 12,
+          "canPrepay": true,
+          "prepayFrom": 1,
+          "prepayMin": 0,
+          "prepayFee": 0,
+          "settlementFee": 0,
+          "transferWithLien": false,
+          "allowRecast": true,
+          "allowShorten": false,
+          "collateral": "",
+          "start": 1,
+          "monthlyFee": 0,
+          "allowFull": true,
+          "prepayMax": "unlimited",
+          "prepayPeriodMax": "unlimited",
+          "prepayPeriodMonths": null,
+          "prepayPeriodRemaining": null,
+          "prepayPeriodUsed": null,
+          "salePayoffRule": "unknown",
+          "salePayoffFrom": null,
+          "salePayoffFee": null,
+          "saleSettlementFee": null,
+          "salePayoffFeeBase": "unknown",
+          "saleMaturityReleaseFee": null
+        }
+      ],
+      "citySources": []
+    },
+    "scenarios": [
+      {
+        "id": "quiet",
+        "name": "quiet",
+        "role": "quiet",
+        "paths": []
+      }
+    ],
+    "strategy": {
+      "id": "independent",
+      "actions": [
+        {
+          "kind": "prepay",
+          "loan": "L",
+          "mode": "shorten",
+          "month": 2,
+          "amount": 2130
+        }
+      ]
+    },
+    "limit": 100
+  },
+  {
+    "id": "contract_full_forbid",
+    "op": "simulate",
+    "household": {
+      "schema": "household-cny.v1",
+      "dataKind": "synthetic_example",
+      "rangeCase": "base",
+      "cash": 100000,
+      "cashAnnual": 0,
+      "reserveMonths": 0,
+      "minimumLiving": 0,
+      "cutFraction": 0,
+      "maxSaleWait": 120,
+      "preference": "cash",
+      "incomes": [],
+      "expenses": [],
+      "financial": [],
+      "properties": [],
+      "vehicles": [],
+      "loans": [
+        {
+          "id": "L",
+          "name": "audit loan",
+          "kind": "consumer",
+          "method": "annuity",
+          "principal": 14400,
+          "annualRate": 0.074,
+          "months": 8,
+          "payment": null,
+          "rateType": "fixed",
+          "resetFirst": 12,
+          "resetEvery": 12,
+          "canPrepay": false,
+          "prepayFrom": 1,
+          "prepayMin": 0,
+          "prepayFee": 0,
+          "settlementFee": 0,
+          "transferWithLien": false,
+          "allowRecast": true,
+          "allowShorten": true,
+          "collateral": "",
+          "start": 1,
+          "monthlyFee": 0
+        }
+      ],
+      "citySources": []
+    },
+    "scenarios": [
+      {
+        "id": "quiet",
+        "name": "quiet",
+        "role": "quiet",
+        "paths": []
+      }
+    ],
+    "strategy": {
+      "id": "independent",
+      "actions": [
+        {
+          "kind": "prepay",
+          "loan": "L",
+          "mode": "full",
+          "month": 2
+        }
+      ]
+    },
+    "limit": 100
+  },
+  {
+    "id": "closing_under",
+    "op": "simulate",
+    "household": {
+      "schema": "household-cny.v1",
+      "dataKind": "synthetic_example",
+      "rangeCase": "base",
+      "cash": 2488,
+      "cashAnnual": 0,
+      "reserveMonths": 0,
+      "minimumLiving": 0,
+      "cutFraction": 0,
+      "maxSaleWait": 120,
+      "preference": "cash",
+      "incomes": [],
+      "expenses": [],
+      "financial": [],
+      "properties": [
+        {
+          "id": "P",
+          "name": "audit property",
+          "city": "测试城",
+          "type": "住宅",
+          "use": "idle",
+          "value": 12000,
+          "saleValue": 9000,
+          "saleLag": 0,
+          "lock": 1,
+          "canSell": true,
+          "rent": 0,
+          "vacancy": 0,
+          "leaseLag": 0,
+          "discountRent": 0,
+          "discountLeaseLag": 0,
+          "carry": 0,
+          "saleFee": 0.02,
+          "closingFee": 50,
+          "replacementAllowed": false,
+          "replacementMonthly": null,
+          "sourceId": ""
+        }
+      ],
+      "vehicles": [],
+      "loans": [
+        {
+          "id": "L",
+          "name": "audit loan",
+          "kind": "mortgage",
+          "method": "bullet",
+          "principal": 11000,
+          "annualRate": 0.12,
+          "months": 10,
+          "payment": null,
+          "rateType": "fixed",
+          "resetFirst": 12,
+          "resetEvery": 12,
+          "canPrepay": true,
+          "prepayFrom": 1,
+          "prepayMin": 0,
+          "prepayFee": 0.01,
+          "settlementFee": 30,
+          "transferWithLien": true,
+          "allowRecast": true,
+          "allowShorten": true,
+          "collateral": "P",
+          "start": 1,
+          "monthlyFee": 9,
+          "allowFull": true,
+          "prepayMax": "unlimited",
+          "prepayPeriodMax": "unlimited",
+          "prepayPeriodMonths": null,
+          "prepayPeriodRemaining": null,
+          "prepayPeriodUsed": null,
+          "salePayoffRule": "same_terms",
+          "salePayoffFrom": null,
+          "salePayoffFee": null,
+          "saleSettlementFee": null,
+          "salePayoffFeeBase": "balance",
+          "saleMaturityReleaseFee": "in_asset_cost"
+        }
+      ],
+      "citySources": []
+    },
+    "scenarios": [
+      {
+        "id": "quiet",
+        "name": "quiet",
+        "role": "quiet",
+        "paths": []
+      }
+    ],
+    "strategy": {
+      "id": "independent",
+      "actions": [
+        {
+          "kind": "list",
+          "asset": "P",
+          "month": 1
+        }
+      ]
+    },
+    "limit": 100
+  },
+  {
+    "id": "closing_exact",
+    "op": "simulate",
+    "household": {
+      "schema": "household-cny.v1",
+      "dataKind": "synthetic_example",
+      "rangeCase": "base",
+      "cash": 2489,
+      "cashAnnual": 0,
+      "reserveMonths": 0,
+      "minimumLiving": 0,
+      "cutFraction": 0,
+      "maxSaleWait": 120,
+      "preference": "cash",
+      "incomes": [],
+      "expenses": [],
+      "financial": [],
+      "properties": [
+        {
+          "id": "P",
+          "name": "audit property",
+          "city": "测试城",
+          "type": "住宅",
+          "use": "idle",
+          "value": 12000,
+          "saleValue": 9000,
+          "saleLag": 0,
+          "lock": 1,
+          "canSell": true,
+          "rent": 0,
+          "vacancy": 0,
+          "leaseLag": 0,
+          "discountRent": 0,
+          "discountLeaseLag": 0,
+          "carry": 0,
+          "saleFee": 0.02,
+          "closingFee": 50,
+          "replacementAllowed": false,
+          "replacementMonthly": null,
+          "sourceId": ""
+        }
+      ],
+      "vehicles": [],
+      "loans": [
+        {
+          "id": "L",
+          "name": "audit loan",
+          "kind": "mortgage",
+          "method": "bullet",
+          "principal": 11000,
+          "annualRate": 0.12,
+          "months": 10,
+          "payment": null,
+          "rateType": "fixed",
+          "resetFirst": 12,
+          "resetEvery": 12,
+          "canPrepay": true,
+          "prepayFrom": 1,
+          "prepayMin": 0,
+          "prepayFee": 0.01,
+          "settlementFee": 30,
+          "transferWithLien": true,
+          "allowRecast": true,
+          "allowShorten": true,
+          "collateral": "P",
+          "start": 1,
+          "monthlyFee": 9,
+          "allowFull": true,
+          "prepayMax": "unlimited",
+          "prepayPeriodMax": "unlimited",
+          "prepayPeriodMonths": null,
+          "prepayPeriodRemaining": null,
+          "prepayPeriodUsed": null,
+          "salePayoffRule": "same_terms",
+          "salePayoffFrom": null,
+          "salePayoffFee": null,
+          "saleSettlementFee": null,
+          "salePayoffFeeBase": "balance",
+          "saleMaturityReleaseFee": "in_asset_cost"
+        }
+      ],
+      "citySources": []
+    },
+    "scenarios": [
+      {
+        "id": "quiet",
+        "name": "quiet",
+        "role": "quiet",
+        "paths": []
+      }
+    ],
+    "strategy": {
+      "id": "independent",
+      "actions": [
+        {
+          "kind": "list",
+          "asset": "P",
+          "month": 1
+        }
+      ]
+    },
+    "limit": 100
+  },
+  {
+    "id": "closing_escrow_under",
+    "op": "simulate",
+    "household": {
+      "schema": "household-cny.v1",
+      "dataKind": "synthetic_example",
+      "rangeCase": "base",
+      "cash": 11258,
+      "cashAnnual": 0,
+      "reserveMonths": 0,
+      "minimumLiving": 0,
+      "cutFraction": 0,
+      "maxSaleWait": 120,
+      "preference": "cash",
+      "incomes": [],
+      "expenses": [],
+      "financial": [],
+      "properties": [
+        {
+          "id": "P",
+          "name": "audit property",
+          "city": "测试城",
+          "type": "住宅",
+          "use": "idle",
+          "value": 12000,
+          "saleValue": 9000,
+          "saleLag": 0,
+          "lock": 1,
+          "canSell": true,
+          "rent": 0,
+          "vacancy": 0,
+          "leaseLag": 0,
+          "discountRent": 0,
+          "discountLeaseLag": 0,
+          "carry": 0,
+          "saleFee": 0.02,
+          "closingFee": 50,
+          "replacementAllowed": false,
+          "replacementMonthly": null,
+          "sourceId": ""
+        }
+      ],
+      "vehicles": [],
+      "loans": [
+        {
+          "id": "L",
+          "name": "audit loan",
+          "kind": "mortgage",
+          "method": "bullet",
+          "principal": 11000,
+          "annualRate": 0.12,
+          "months": 10,
+          "payment": null,
+          "rateType": "fixed",
+          "resetFirst": 12,
+          "resetEvery": 12,
+          "canPrepay": true,
+          "prepayFrom": 1,
+          "prepayMin": 0,
+          "prepayFee": 0.01,
+          "settlementFee": 30,
+          "transferWithLien": false,
+          "allowRecast": true,
+          "allowShorten": true,
+          "collateral": "P",
+          "start": 1,
+          "monthlyFee": 9,
+          "allowFull": true,
+          "prepayMax": "unlimited",
+          "prepayPeriodMax": "unlimited",
+          "prepayPeriodMonths": null,
+          "prepayPeriodRemaining": null,
+          "prepayPeriodUsed": null,
+          "salePayoffRule": "same_terms",
+          "salePayoffFrom": null,
+          "salePayoffFee": null,
+          "saleSettlementFee": null,
+          "salePayoffFeeBase": "balance",
+          "saleMaturityReleaseFee": "in_asset_cost"
+        }
+      ],
+      "citySources": []
+    },
+    "scenarios": [
+      {
+        "id": "quiet",
+        "name": "quiet",
+        "role": "quiet",
+        "paths": []
+      }
+    ],
+    "strategy": {
+      "id": "independent",
+      "actions": [
+        {
+          "kind": "list",
+          "asset": "P",
+          "month": 1
+        }
+      ]
+    },
+    "limit": 100
+  },
+  {
+    "id": "closing_escrow_exact",
+    "op": "simulate",
+    "household": {
+      "schema": "household-cny.v1",
+      "dataKind": "synthetic_example",
+      "rangeCase": "base",
+      "cash": 11259,
+      "cashAnnual": 0,
+      "reserveMonths": 0,
+      "minimumLiving": 0,
+      "cutFraction": 0,
+      "maxSaleWait": 120,
+      "preference": "cash",
+      "incomes": [],
+      "expenses": [],
+      "financial": [],
+      "properties": [
+        {
+          "id": "P",
+          "name": "audit property",
+          "city": "测试城",
+          "type": "住宅",
+          "use": "idle",
+          "value": 12000,
+          "saleValue": 9000,
+          "saleLag": 0,
+          "lock": 1,
+          "canSell": true,
+          "rent": 0,
+          "vacancy": 0,
+          "leaseLag": 0,
+          "discountRent": 0,
+          "discountLeaseLag": 0,
+          "carry": 0,
+          "saleFee": 0.02,
+          "closingFee": 50,
+          "replacementAllowed": false,
+          "replacementMonthly": null,
+          "sourceId": ""
+        }
+      ],
+      "vehicles": [],
+      "loans": [
+        {
+          "id": "L",
+          "name": "audit loan",
+          "kind": "mortgage",
+          "method": "bullet",
+          "principal": 11000,
+          "annualRate": 0.12,
+          "months": 10,
+          "payment": null,
+          "rateType": "fixed",
+          "resetFirst": 12,
+          "resetEvery": 12,
+          "canPrepay": true,
+          "prepayFrom": 1,
+          "prepayMin": 0,
+          "prepayFee": 0.01,
+          "settlementFee": 30,
+          "transferWithLien": false,
+          "allowRecast": true,
+          "allowShorten": true,
+          "collateral": "P",
+          "start": 1,
+          "monthlyFee": 9,
+          "allowFull": true,
+          "prepayMax": "unlimited",
+          "prepayPeriodMax": "unlimited",
+          "prepayPeriodMonths": null,
+          "prepayPeriodRemaining": null,
+          "prepayPeriodUsed": null,
+          "salePayoffRule": "same_terms",
+          "salePayoffFrom": null,
+          "salePayoffFee": null,
+          "saleSettlementFee": null,
+          "salePayoffFeeBase": "balance",
+          "saleMaturityReleaseFee": "in_asset_cost"
+        }
+      ],
+      "citySources": []
+    },
+    "scenarios": [
+      {
+        "id": "quiet",
+        "name": "quiet",
+        "role": "quiet",
+        "paths": []
+      }
+    ],
+    "strategy": {
+      "id": "independent",
+      "actions": [
+        {
+          "kind": "list",
+          "asset": "P",
+          "month": 1
+        }
+      ]
+    },
+    "limit": 100
+  },
+  {
+    "id": "unknown_lien_P_prepayFee",
+    "op": "simulate",
+    "household": {
+      "schema": "household-cny.v1",
+      "dataKind": "synthetic_example",
+      "rangeCase": "base",
+      "cash": 100000,
+      "cashAnnual": 0,
+      "reserveMonths": 0,
+      "minimumLiving": 0,
+      "cutFraction": 0,
+      "maxSaleWait": 120,
+      "preference": "cash",
+      "incomes": [],
+      "expenses": [],
+      "financial": [],
+      "properties": [
+        {
+          "id": "P",
+          "name": "audit property",
+          "city": "测试城",
+          "type": "住宅",
+          "use": "idle",
+          "value": 12000,
+          "saleValue": 9000,
+          "saleLag": 0,
+          "lock": 1,
+          "canSell": true,
+          "rent": 0,
+          "vacancy": 0,
+          "leaseLag": 0,
+          "discountRent": 0,
+          "discountLeaseLag": 0,
+          "carry": 0,
+          "saleFee": 0.02,
+          "closingFee": 50,
+          "replacementAllowed": false,
+          "replacementMonthly": null,
+          "sourceId": ""
+        }
+      ],
+      "vehicles": [],
+      "loans": [
+        {
+          "id": "L",
+          "name": "audit loan",
+          "kind": "mortgage",
+          "method": "bullet",
+          "principal": 11000,
+          "annualRate": 0.12,
+          "months": 10,
+          "payment": null,
+          "rateType": "fixed",
+          "resetFirst": 12,
+          "resetEvery": 12,
+          "canPrepay": true,
+          "prepayFrom": 1,
+          "prepayMin": 0,
+          "settlementFee": 30,
+          "transferWithLien": true,
+          "allowRecast": true,
+          "allowShorten": true,
+          "collateral": "P",
+          "start": 1,
+          "monthlyFee": 9,
+          "allowFull": true,
+          "prepayMax": "unlimited",
+          "prepayPeriodMax": "unlimited",
+          "prepayPeriodMonths": null,
+          "prepayPeriodRemaining": null,
+          "prepayPeriodUsed": null,
+          "salePayoffRule": "same_terms",
+          "salePayoffFrom": null,
+          "salePayoffFee": null,
+          "saleSettlementFee": null,
+          "salePayoffFeeBase": "balance",
+          "saleMaturityReleaseFee": "in_asset_cost"
+        }
+      ],
+      "citySources": []
+    },
+    "scenarios": [
+      {
+        "id": "quiet",
+        "name": "quiet",
+        "role": "quiet",
+        "paths": []
+      }
+    ],
+    "strategy": {
+      "id": "independent",
+      "actions": [
+        {
+          "kind": "list",
+          "asset": "P",
+          "month": 1
+        }
+      ]
+    },
+    "limit": 100
+  },
+  {
+    "id": "unknown_lien_P_settlementFee",
+    "op": "simulate",
+    "household": {
+      "schema": "household-cny.v1",
+      "dataKind": "synthetic_example",
+      "rangeCase": "base",
+      "cash": 100000,
+      "cashAnnual": 0,
+      "reserveMonths": 0,
+      "minimumLiving": 0,
+      "cutFraction": 0,
+      "maxSaleWait": 120,
+      "preference": "cash",
+      "incomes": [],
+      "expenses": [],
+      "financial": [],
+      "properties": [
+        {
+          "id": "P",
+          "name": "audit property",
+          "city": "测试城",
+          "type": "住宅",
+          "use": "idle",
+          "value": 12000,
+          "saleValue": 9000,
+          "saleLag": 0,
+          "lock": 1,
+          "canSell": true,
+          "rent": 0,
+          "vacancy": 0,
+          "leaseLag": 0,
+          "discountRent": 0,
+          "discountLeaseLag": 0,
+          "carry": 0,
+          "saleFee": 0.02,
+          "closingFee": 50,
+          "replacementAllowed": false,
+          "replacementMonthly": null,
+          "sourceId": ""
+        }
+      ],
+      "vehicles": [],
+      "loans": [
+        {
+          "id": "L",
+          "name": "audit loan",
+          "kind": "mortgage",
+          "method": "bullet",
+          "principal": 11000,
+          "annualRate": 0.12,
+          "months": 10,
+          "payment": null,
+          "rateType": "fixed",
+          "resetFirst": 12,
+          "resetEvery": 12,
+          "canPrepay": true,
+          "prepayFrom": 1,
+          "prepayMin": 0,
+          "prepayFee": 0.01,
+          "transferWithLien": true,
+          "allowRecast": true,
+          "allowShorten": true,
+          "collateral": "P",
+          "start": 1,
+          "monthlyFee": 9,
+          "allowFull": true,
+          "prepayMax": "unlimited",
+          "prepayPeriodMax": "unlimited",
+          "prepayPeriodMonths": null,
+          "prepayPeriodRemaining": null,
+          "prepayPeriodUsed": null,
+          "salePayoffRule": "same_terms",
+          "salePayoffFrom": null,
+          "salePayoffFee": null,
+          "saleSettlementFee": null,
+          "salePayoffFeeBase": "balance",
+          "saleMaturityReleaseFee": "in_asset_cost"
+        }
+      ],
+      "citySources": []
+    },
+    "scenarios": [
+      {
+        "id": "quiet",
+        "name": "quiet",
+        "role": "quiet",
+        "paths": []
+      }
+    ],
+    "strategy": {
+      "id": "independent",
+      "actions": [
+        {
+          "kind": "list",
+          "asset": "P",
+          "month": 1
+        }
+      ]
+    },
+    "limit": 100
+  },
+  {
+    "id": "unknown_lien_C_prepayFee",
+    "op": "simulate",
+    "household": {
+      "schema": "household-cny.v1",
+      "dataKind": "synthetic_example",
+      "rangeCase": "base",
+      "cash": 100000,
+      "cashAnnual": 0,
+      "reserveMonths": 0,
+      "minimumLiving": 0,
+      "cutFraction": 0,
+      "maxSaleWait": 120,
+      "preference": "cash",
+      "incomes": [],
+      "expenses": [],
+      "financial": [],
+      "properties": [],
+      "vehicles": [
+        {
+          "id": "C",
+          "name": "audit vehicle",
+          "value": 2000,
+          "saleValue": 1740,
+          "annualDepreciation": 0,
+          "saleLag": 0,
+          "lock": 1,
+          "canSell": true,
+          "necessary": false,
+          "replacementAllowed": false,
+          "replacementMonthly": null,
+          "carry": 35,
+          "saleFee": 0,
+          "closingFee": 0
+        }
+      ],
+      "loans": [
+        {
+          "id": "L",
+          "name": "audit loan",
+          "kind": "car",
+          "method": "bullet",
+          "principal": 11000,
+          "annualRate": 0.12,
+          "months": 10,
+          "payment": null,
+          "rateType": "fixed",
+          "resetFirst": 12,
+          "resetEvery": 12,
+          "canPrepay": true,
+          "prepayFrom": 1,
+          "prepayMin": 0,
+          "settlementFee": 30,
+          "transferWithLien": true,
+          "allowRecast": true,
+          "allowShorten": true,
+          "collateral": "C",
+          "start": 1,
+          "monthlyFee": 9,
+          "allowFull": true,
+          "prepayMax": "unlimited",
+          "prepayPeriodMax": "unlimited",
+          "prepayPeriodMonths": null,
+          "prepayPeriodRemaining": null,
+          "prepayPeriodUsed": null,
+          "salePayoffRule": "same_terms",
+          "salePayoffFrom": null,
+          "salePayoffFee": null,
+          "saleSettlementFee": null,
+          "salePayoffFeeBase": "balance",
+          "saleMaturityReleaseFee": "in_asset_cost"
+        }
+      ],
+      "citySources": []
+    },
+    "scenarios": [
+      {
+        "id": "quiet",
+        "name": "quiet",
+        "role": "quiet",
+        "paths": []
+      }
+    ],
+    "strategy": {
+      "id": "independent",
+      "actions": [
+        {
+          "kind": "list",
+          "asset": "C",
+          "month": 1
+        }
+      ]
+    },
+    "limit": 100
+  },
+  {
+    "id": "unknown_lien_C_settlementFee",
+    "op": "simulate",
+    "household": {
+      "schema": "household-cny.v1",
+      "dataKind": "synthetic_example",
+      "rangeCase": "base",
+      "cash": 100000,
+      "cashAnnual": 0,
+      "reserveMonths": 0,
+      "minimumLiving": 0,
+      "cutFraction": 0,
+      "maxSaleWait": 120,
+      "preference": "cash",
+      "incomes": [],
+      "expenses": [],
+      "financial": [],
+      "properties": [],
+      "vehicles": [
+        {
+          "id": "C",
+          "name": "audit vehicle",
+          "value": 2000,
+          "saleValue": 1740,
+          "annualDepreciation": 0,
+          "saleLag": 0,
+          "lock": 1,
+          "canSell": true,
+          "necessary": false,
+          "replacementAllowed": false,
+          "replacementMonthly": null,
+          "carry": 35,
+          "saleFee": 0,
+          "closingFee": 0
+        }
+      ],
+      "loans": [
+        {
+          "id": "L",
+          "name": "audit loan",
+          "kind": "car",
+          "method": "bullet",
+          "principal": 11000,
+          "annualRate": 0.12,
+          "months": 10,
+          "payment": null,
+          "rateType": "fixed",
+          "resetFirst": 12,
+          "resetEvery": 12,
+          "canPrepay": true,
+          "prepayFrom": 1,
+          "prepayMin": 0,
+          "prepayFee": 0.01,
+          "transferWithLien": true,
+          "allowRecast": true,
+          "allowShorten": true,
+          "collateral": "C",
+          "start": 1,
+          "monthlyFee": 9,
+          "allowFull": true,
+          "prepayMax": "unlimited",
+          "prepayPeriodMax": "unlimited",
+          "prepayPeriodMonths": null,
+          "prepayPeriodRemaining": null,
+          "prepayPeriodUsed": null,
+          "salePayoffRule": "same_terms",
+          "salePayoffFrom": null,
+          "salePayoffFee": null,
+          "saleSettlementFee": null,
+          "salePayoffFeeBase": "balance",
+          "saleMaturityReleaseFee": "in_asset_cost"
+        }
+      ],
+      "citySources": []
+    },
+    "scenarios": [
+      {
+        "id": "quiet",
+        "name": "quiet",
+        "role": "quiet",
+        "paths": []
+      }
+    ],
+    "strategy": {
+      "id": "independent",
+      "actions": [
+        {
+          "kind": "list",
+          "asset": "C",
+          "month": 1
+        }
+      ]
+    },
+    "limit": 100
+  },
+  {
+    "id": "closing_prohibited",
+    "op": "simulate",
+    "household": {
+      "schema": "household-cny.v1",
+      "dataKind": "synthetic_example",
+      "rangeCase": "base",
+      "cash": 100000,
+      "cashAnnual": 0,
+      "reserveMonths": 0,
+      "minimumLiving": 0,
+      "cutFraction": 0,
+      "maxSaleWait": 120,
+      "preference": "cash",
+      "incomes": [],
+      "expenses": [],
+      "financial": [],
+      "properties": [
+        {
+          "id": "P",
+          "name": "audit property",
+          "city": "测试城",
+          "type": "住宅",
+          "use": "idle",
+          "value": 12000,
+          "saleValue": 9000,
+          "saleLag": 0,
+          "lock": 1,
+          "canSell": true,
+          "rent": 0,
+          "vacancy": 0,
+          "leaseLag": 0,
+          "discountRent": 0,
+          "discountLeaseLag": 0,
+          "carry": 0,
+          "saleFee": 0.02,
+          "closingFee": 50,
+          "replacementAllowed": false,
+          "replacementMonthly": null,
+          "sourceId": ""
+        }
+      ],
+      "vehicles": [],
+      "loans": [
+        {
+          "id": "L",
+          "name": "audit loan",
+          "kind": "mortgage",
+          "method": "bullet",
+          "principal": 11000,
+          "annualRate": 0.12,
+          "months": 10,
+          "payment": null,
+          "rateType": "fixed",
+          "resetFirst": 12,
+          "resetEvery": 12,
+          "canPrepay": false,
+          "prepayFrom": 1,
+          "prepayMin": 0,
+          "prepayFee": 0.01,
+          "settlementFee": 30,
+          "transferWithLien": true,
+          "allowRecast": true,
+          "allowShorten": true,
+          "collateral": "P",
+          "start": 1,
+          "monthlyFee": 9
+        }
+      ],
+      "citySources": []
+    },
+    "scenarios": [
+      {
+        "id": "quiet",
+        "name": "quiet",
+        "role": "quiet",
+        "paths": []
+      }
+    ],
+    "strategy": {
+      "id": "independent",
+      "actions": [
+        {
+          "kind": "list",
+          "asset": "P",
+          "month": 1
+        }
+      ]
+    },
+    "limit": 100
+  },
+  {
+    "id": "closing_delay",
+    "op": "simulate",
+    "household": {
+      "schema": "household-cny.v1",
+      "dataKind": "synthetic_example",
+      "rangeCase": "base",
+      "cash": 1000,
+      "cashAnnual": 0,
+      "reserveMonths": 0,
+      "minimumLiving": 0,
+      "cutFraction": 0,
+      "maxSaleWait": 120,
+      "preference": "cash",
+      "incomes": [],
+      "expenses": [],
+      "financial": [],
+      "properties": [
+        {
+          "id": "P",
+          "name": "audit property",
+          "city": "测试城",
+          "type": "住宅",
+          "use": "let",
+          "value": 1100,
+          "saleValue": 1000,
+          "saleLag": 2,
+          "lock": 1,
+          "canSell": true,
+          "rent": 90,
+          "vacancy": 0,
+          "leaseLag": 0,
+          "discountRent": 0,
+          "discountLeaseLag": 0,
+          "carry": 12,
+          "saleFee": 0.01,
+          "closingFee": 0,
+          "replacementAllowed": false,
+          "replacementMonthly": null,
+          "sourceId": ""
+        }
+      ],
+      "vehicles": [],
+      "loans": [
+        {
+          "id": "L",
+          "name": "audit loan",
+          "kind": "mortgage",
+          "method": "principal",
+          "principal": 1000,
+          "annualRate": 0,
+          "months": 5,
+          "payment": null,
+          "rateType": "fixed",
+          "resetFirst": 12,
+          "resetEvery": 12,
+          "canPrepay": true,
+          "prepayFrom": 1,
+          "prepayMin": 0,
+          "prepayFee": 0,
+          "settlementFee": 0,
+          "transferWithLien": true,
+          "allowRecast": true,
+          "allowShorten": true,
+          "collateral": "P",
+          "start": 1,
+          "monthlyFee": 0,
+          "allowFull": true,
+          "prepayMax": "unlimited",
+          "prepayPeriodMax": "unlimited",
+          "prepayPeriodMonths": null,
+          "prepayPeriodRemaining": null,
+          "prepayPeriodUsed": null,
+          "salePayoffRule": "same_terms",
+          "salePayoffFrom": null,
+          "salePayoffFee": null,
+          "saleSettlementFee": null,
+          "salePayoffFeeBase": "balance",
+          "saleMaturityReleaseFee": "in_asset_cost"
+        }
+      ],
+      "citySources": []
+    },
+    "scenarios": [
+      {
+        "id": "quiet",
+        "name": "quiet",
+        "role": "quiet",
+        "paths": []
+      }
+    ],
+    "strategy": {
+      "id": "independent",
+      "actions": [
+        {
+          "kind": "list",
+          "asset": "P",
+          "month": 1
+        }
+      ]
+    },
+    "limit": 100
+  },
+  {
+    "id": "unsellable",
+    "op": "simulate",
+    "household": {
+      "schema": "household-cny.v1",
+      "dataKind": "synthetic_example",
+      "rangeCase": "base",
+      "cash": 65,
+      "cashAnnual": 0,
+      "reserveMonths": 0,
+      "minimumLiving": 40,
+      "cutFraction": 0,
+      "maxSaleWait": 120,
+      "preference": "cash",
+      "incomes": [],
+      "expenses": [],
+      "financial": [],
+      "properties": [
+        {
+          "id": "P",
+          "name": "audit property",
+          "city": "测试城",
+          "type": "住宅",
+          "use": "idle",
+          "value": 9000,
+          "saleValue": 8000,
+          "saleLag": 0,
+          "lock": 1,
+          "canSell": false,
+          "rent": 0,
+          "vacancy": 0,
+          "leaseLag": 0,
+          "discountRent": 0,
+          "discountLeaseLag": 0,
+          "carry": 0,
+          "saleFee": 0,
+          "closingFee": 0,
+          "replacementAllowed": false,
+          "replacementMonthly": null,
+          "sourceId": ""
+        }
+      ],
+      "vehicles": [],
+      "loans": [],
+      "citySources": []
+    },
+    "scenarios": [
+      {
+        "id": "quiet",
+        "name": "quiet",
+        "role": "quiet",
+        "paths": []
+      }
+    ],
+    "strategy": {
+      "id": "independent",
+      "actions": [
+        {
+          "kind": "list",
+          "asset": "P",
+          "month": 1
+        }
+      ]
+    },
+    "limit": 100
+  },
+  {
+    "id": "wait_limit",
+    "op": "simulate",
+    "household": {
+      "schema": "household-cny.v1",
+      "dataKind": "synthetic_example",
+      "rangeCase": "base",
+      "cash": 65,
+      "cashAnnual": 0,
+      "reserveMonths": 0,
+      "minimumLiving": 40,
+      "cutFraction": 0,
+      "maxSaleWait": 2,
+      "preference": "cash",
+      "incomes": [],
+      "expenses": [],
+      "financial": [],
+      "properties": [
+        {
+          "id": "P",
+          "name": "audit property",
+          "city": "测试城",
+          "type": "住宅",
+          "use": "idle",
+          "value": 9000,
+          "saleValue": 8000,
+          "saleLag": 1,
+          "lock": 1,
+          "canSell": true,
+          "rent": 0,
+          "vacancy": 0,
+          "leaseLag": 0,
+          "discountRent": 0,
+          "discountLeaseLag": 0,
+          "carry": 0,
+          "saleFee": 0,
+          "closingFee": 0,
+          "replacementAllowed": false,
+          "replacementMonthly": null,
+          "sourceId": ""
+        }
+      ],
+      "vehicles": [],
+      "loans": [],
+      "citySources": []
+    },
+    "scenarios": [
+      {
+        "id": "longer",
+        "name": "longer",
+        "role": "longer",
+        "paths": [
+          {
+            "key": "saleDelay",
+            "mode": "level",
+            "unit": "月",
+            "start": 1,
+            "duration": 120,
+            "target": "*",
+            "value": 3,
+            "range": [
+              3,
+              3
+            ],
+            "sourceId": "independent-audit",
+            "editable": true,
+            "assumption": "stress_test"
+          }
+        ]
+      }
+    ],
+    "strategy": {
+      "id": "independent",
+      "actions": [
+        {
+          "kind": "list",
+          "asset": "P",
+          "month": 1
+        }
+      ]
+    },
+    "limit": 100
+  },
+  {
+    "id": "occupied_no_alternative",
+    "op": "simulate",
+    "household": {
+      "schema": "household-cny.v1",
+      "dataKind": "synthetic_example",
+      "rangeCase": "base",
+      "cash": 100000,
+      "cashAnnual": 0,
+      "reserveMonths": 0,
+      "minimumLiving": 0,
+      "cutFraction": 0,
+      "maxSaleWait": 120,
+      "preference": "cash",
+      "incomes": [],
+      "expenses": [],
+      "financial": [],
+      "properties": [
+        {
+          "id": "P",
+          "name": "audit property",
+          "city": "测试城",
+          "type": "住宅",
+          "use": "occupied",
+          "value": 1000,
+          "saleValue": 1000,
+          "saleLag": 0,
+          "lock": 1,
+          "canSell": true,
+          "rent": 0,
+          "vacancy": 0,
+          "leaseLag": 0,
+          "discountRent": 0,
+          "discountLeaseLag": 0,
+          "carry": 0,
+          "saleFee": 0,
+          "closingFee": 0,
+          "replacementAllowed": false,
+          "replacementMonthly": null,
+          "sourceId": ""
+        }
+      ],
+      "vehicles": [],
+      "loans": [],
+      "citySources": []
+    },
+    "scenarios": [
+      {
+        "id": "quiet",
+        "name": "quiet",
+        "role": "quiet",
+        "paths": []
+      }
+    ],
+    "strategy": {
+      "id": "independent",
+      "actions": [
+        {
+          "kind": "list",
+          "asset": "P",
+          "month": 1
+        }
+      ]
+    },
+    "limit": 100
+  },
+  {
+    "id": "necessary_car",
+    "op": "simulate",
+    "household": {
+      "schema": "household-cny.v1",
+      "dataKind": "synthetic_example",
+      "rangeCase": "base",
+      "cash": 100000,
+      "cashAnnual": 0,
+      "reserveMonths": 0,
+      "minimumLiving": 0,
+      "cutFraction": 0,
+      "maxSaleWait": 120,
+      "preference": "cash",
+      "incomes": [],
+      "expenses": [],
+      "financial": [],
+      "properties": [],
+      "vehicles": [
+        {
+          "id": "C",
+          "name": "audit vehicle",
+          "value": 2000,
+          "saleValue": 1740,
+          "annualDepreciation": 0,
+          "saleLag": 1,
+          "lock": 1,
+          "canSell": true,
+          "necessary": true,
+          "replacementAllowed": false,
+          "replacementMonthly": null,
+          "carry": 35,
+          "saleFee": 0,
+          "closingFee": 0
+        }
+      ],
+      "loans": [],
+      "citySources": []
+    },
+    "scenarios": [
+      {
+        "id": "quiet",
+        "name": "quiet",
+        "role": "quiet",
+        "paths": []
+      }
+    ],
+    "strategy": {
+      "id": "independent",
+      "actions": [
+        {
+          "kind": "list",
+          "asset": "C",
+          "month": 1
+        }
+      ]
+    },
+    "limit": 100
+  },
+  {
+    "id": "replace_car",
+    "op": "simulate",
+    "household": {
+      "schema": "household-cny.v1",
+      "dataKind": "synthetic_example",
+      "rangeCase": "base",
+      "cash": 100000,
+      "cashAnnual": 0,
+      "reserveMonths": 0,
+      "minimumLiving": 0,
+      "cutFraction": 0,
+      "maxSaleWait": 120,
+      "preference": "cash",
+      "incomes": [],
+      "expenses": [],
+      "financial": [],
+      "properties": [],
+      "vehicles": [
+        {
+          "id": "C",
+          "name": "audit vehicle",
+          "value": 2000,
+          "saleValue": 1740,
+          "annualDepreciation": 0,
+          "saleLag": 1,
+          "lock": 1,
+          "canSell": true,
+          "necessary": true,
+          "replacementAllowed": true,
+          "replacementMonthly": 28,
+          "carry": 35,
+          "saleFee": 0,
+          "closingFee": 0
+        }
+      ],
+      "loans": [],
+      "citySources": []
+    },
+    "scenarios": [
+      {
+        "id": "quiet",
+        "name": "quiet",
+        "role": "quiet",
+        "paths": []
+      }
+    ],
+    "strategy": {
+      "id": "independent",
+      "actions": [
+        {
+          "kind": "list",
+          "asset": "C",
+          "month": 1
+        }
+      ]
+    },
+    "limit": 100
+  },
+  {
+    "id": "vacancy",
+    "op": "simulate",
+    "household": {
+      "schema": "household-cny.v1",
+      "dataKind": "synthetic_example",
+      "rangeCase": "base",
+      "cash": 100000,
+      "cashAnnual": 0,
+      "reserveMonths": 0,
+      "minimumLiving": 0,
+      "cutFraction": 0,
+      "maxSaleWait": 120,
+      "preference": "cash",
+      "incomes": [],
+      "expenses": [],
+      "financial": [],
+      "properties": [
+        {
+          "id": "P",
+          "name": "audit property",
+          "city": "测试城",
+          "type": "住宅",
+          "use": "let",
+          "value": 1000,
+          "saleValue": 1000,
+          "saleLag": 0,
+          "lock": 1,
+          "canSell": true,
+          "rent": 1250,
+          "vacancy": 0.2,
+          "leaseLag": 0,
+          "discountRent": 0,
+          "discountLeaseLag": 0,
+          "carry": 52,
+          "saleFee": 0,
+          "closingFee": 0,
+          "replacementAllowed": false,
+          "replacementMonthly": null,
+          "sourceId": ""
+        }
+      ],
+      "vehicles": [],
+      "loans": [],
+      "citySources": []
+    },
+    "scenarios": [
+      {
+        "id": "vacancy",
+        "name": "vacancy",
+        "role": "vacancy",
+        "paths": [
+          {
+            "key": "vacancyAdd",
+            "mode": "level",
+            "unit": "比例差",
+            "start": 1,
+            "duration": 3,
+            "target": "*",
+            "value": 0.8,
+            "range": [
+              0.8,
+              0.8
+            ],
+            "sourceId": "independent-audit",
+            "editable": true,
+            "assumption": "stress_test"
+          },
+          {
+            "key": "rentFactor",
+            "mode": "level",
+            "unit": "倍",
+            "start": 1,
+            "duration": 4,
+            "target": "*",
+            "value": 0.9,
+            "range": [
+              0.9,
+              0.9
+            ],
+            "sourceId": "independent-audit",
+            "editable": true,
+            "assumption": "stress_test"
+          }
+        ]
+      }
+    ],
+    "strategy": {
+      "id": "independent",
+      "actions": []
+    },
+    "limit": 100
+  },
+  {
+    "id": "rent_discount",
+    "op": "simulate",
+    "household": {
+      "schema": "household-cny.v1",
+      "dataKind": "synthetic_example",
+      "rangeCase": "base",
+      "cash": 100000,
+      "cashAnnual": 0,
+      "reserveMonths": 0,
+      "minimumLiving": 0,
+      "cutFraction": 0,
+      "maxSaleWait": 120,
+      "preference": "cash",
+      "incomes": [],
+      "expenses": [],
+      "financial": [],
+      "properties": [
+        {
+          "id": "P",
+          "name": "audit property",
+          "city": "测试城",
+          "type": "住宅",
+          "use": "idle",
+          "value": 1000,
+          "saleValue": 1000,
+          "saleLag": 0,
+          "lock": 1,
+          "canSell": true,
+          "rent": 1000,
+          "vacancy": 0,
+          "leaseLag": 3,
+          "discountRent": 0.1,
+          "discountLeaseLag": 1,
+          "carry": 20,
+          "saleFee": 0,
+          "closingFee": 0,
+          "replacementAllowed": false,
+          "replacementMonthly": null,
+          "sourceId": ""
+        }
+      ],
+      "vehicles": [],
+      "loans": [],
+      "citySources": []
+    },
+    "scenarios": [
+      {
+        "id": "quiet",
+        "name": "quiet",
+        "role": "quiet",
+        "paths": []
+      }
+    ],
+    "strategy": {
+      "id": "independent",
+      "actions": [
+        {
+          "kind": "rent",
+          "month": 1,
+          "asset": "P",
+          "discount": true
+        }
+      ]
+    },
+    "limit": 100
+  },
+  {
+    "id": "employment",
+    "op": "simulate",
+    "household": {
+      "schema": "household-cny.v1",
+      "dataKind": "synthetic_example",
+      "rangeCase": "base",
+      "cash": 100000,
+      "cashAnnual": 0,
+      "reserveMonths": 0,
+      "minimumLiving": 0,
+      "cutFraction": 0,
+      "maxSaleWait": 120,
+      "preference": "cash",
+      "incomes": [
+        {
+          "id": "A",
+          "name": "A",
+          "kind": "wage",
+          "monthly": 1500,
+          "from": 1,
+          "to": 120,
+          "every": 1,
+          "annualGrowth": 0,
+          "stability": "given",
+          "stressJob": true,
+          "jobStart": 1,
+          "jobMonths": 0,
+          "jobPayFraction": 0.1,
+          "recoveryMonths": 0,
+          "returnFraction": 1
+        },
+        {
+          "id": "B",
+          "name": "B",
+          "kind": "wage",
+          "monthly": 400,
+          "from": 1,
+          "to": 120,
+          "every": 1,
+          "annualGrowth": 0,
+          "stability": "given",
+          "stressJob": false,
+          "jobStart": 1,
+          "jobMonths": 0,
+          "jobPayFraction": 0,
+          "recoveryMonths": 0,
+          "returnFraction": 1
+        },
+        {
+          "id": "working",
+          "name": "working",
+          "kind": "business",
+          "monthly": 90,
+          "from": 1,
+          "to": 120,
+          "every": 1,
+          "annualGrowth": 0,
+          "stability": "given",
+          "stressJob": false,
+          "jobStart": 1,
+          "jobMonths": 0,
+          "jobPayFraction": 0,
+          "recoveryMonths": 0,
+          "returnFraction": 1
+        }
+      ],
+      "expenses": [],
+      "financial": [],
+      "properties": [],
+      "vehicles": [],
+      "loans": [],
+      "citySources": []
+    },
+    "scenarios": [
+      {
+        "id": "job",
+        "name": "job",
+        "role": "job",
+        "paths": [
+          {
+            "key": "unemploymentMonths",
+            "mode": "event",
+            "unit": "月",
+            "start": 2,
+            "duration": 1,
+            "target": "*",
+            "value": 2,
+            "range": [
+              2,
+              2
+            ],
+            "sourceId": "independent-audit",
+            "editable": true,
+            "assumption": "stress_test"
+          },
+          {
+            "key": "recoveryMonths",
+            "mode": "level",
+            "unit": "月",
+            "start": 1,
+            "duration": 8,
+            "target": "*",
+            "value": 3,
+            "range": [
+              3,
+              3
+            ],
+            "sourceId": "independent-audit",
+            "editable": true,
+            "assumption": "stress_test"
+          },
+          {
+            "key": "reemploymentFactor",
+            "mode": "level",
+            "unit": "倍",
+            "start": 1,
+            "duration": 8,
+            "target": "*",
+            "value": 0.7,
+            "range": [
+              0.7,
+              0.7
+            ],
+            "sourceId": "independent-audit",
+            "editable": true,
+            "assumption": "stress_test"
+          },
+          {
+            "key": "wageFactor",
+            "mode": "level",
+            "unit": "倍",
+            "start": 3,
+            "duration": 2,
+            "target": "B",
+            "value": 0.9,
+            "range": [
+              0.9,
+              0.9
+            ],
+            "sourceId": "independent-audit",
+            "editable": true,
+            "assumption": "stress_test"
+          }
+        ]
+      }
+    ],
+    "strategy": {
+      "id": "independent",
+      "actions": []
+    },
+    "limit": 100
+  },
+  {
+    "id": "total_return",
+    "op": "simulate",
+    "household": {
+      "schema": "household-cny.v1",
+      "dataKind": "synthetic_example",
+      "rangeCase": "base",
+      "cash": 85,
+      "cashAnnual": 0,
+      "reserveMonths": 0,
+      "minimumLiving": 0,
+      "cutFraction": 0,
+      "maxSaleWait": 120,
+      "preference": "cash",
+      "incomes": [],
+      "expenses": [],
+      "financial": [
+        {
+          "id": "F",
+          "name": "audit security",
+          "kind": "stock",
+          "value": 8100,
+          "annualReturn": 0.08,
+          "concentration": 0.4,
+          "fee": 0,
+          "settle": 0,
+          "unlock": 1,
+          "maturity": 0,
+          "restriction": "free",
+          "purpose": "家庭可用"
+        }
+      ],
+      "properties": [],
+      "vehicles": [],
+      "loans": [],
+      "citySources": []
+    },
+    "scenarios": [
+      {
+        "id": "markets",
+        "name": "markets",
+        "role": "markets",
+        "paths": [
+          {
+            "key": "financialShock",
+            "mode": "shock",
+            "unit": "比例",
+            "start": 2,
+            "duration": 1,
+            "target": "*",
+            "value": -0.25,
+            "range": [
+              -0.25,
+              -0.25
+            ],
+            "sourceId": "independent-audit",
+            "editable": true,
+            "assumption": "stress_test"
+          },
+          {
+            "key": "concentrationHaircut",
+            "mode": "shock",
+            "unit": "比例",
+            "start": 3,
+            "duration": 1,
+            "target": "*",
+            "value": 0.1,
+            "range": [
+              0.1,
+              0.1
+            ],
+            "sourceId": "independent-audit",
+            "editable": true,
+            "assumption": "stress_test"
+          }
+        ]
+      }
+    ],
+    "strategy": {
+      "id": "independent",
+      "actions": []
+    },
+    "limit": 100
+  },
+  {
+    "id": "security_settle",
+    "op": "simulate",
+    "household": {
+      "schema": "household-cny.v1",
+      "dataKind": "synthetic_example",
+      "rangeCase": "base",
+      "cash": 330,
+      "cashAnnual": 0,
+      "reserveMonths": 0,
+      "minimumLiving": 100,
+      "cutFraction": 0,
+      "maxSaleWait": 120,
+      "preference": "cash",
+      "incomes": [],
+      "expenses": [],
+      "financial": [
+        {
+          "id": "F",
+          "name": "audit security",
+          "kind": "stock",
+          "value": 4550,
+          "annualReturn": 0,
+          "concentration": 0,
+          "fee": 0.02,
+          "settle": 2,
+          "unlock": 1,
+          "maturity": 0,
+          "restriction": "free",
+          "purpose": "家庭可用"
+        }
+      ],
+      "properties": [],
+      "vehicles": [],
+      "loans": [],
+      "citySources": []
+    },
+    "scenarios": [
+      {
+        "id": "quiet",
+        "name": "quiet",
+        "role": "quiet",
+        "paths": []
+      }
+    ],
+    "strategy": {
+      "id": "independent",
+      "actions": [
+        {
+          "kind": "liquidate",
+          "asset": "F",
+          "month": 1,
+          "mode": "all"
+        }
+      ]
+    },
+    "limit": 100
+  },
+  {
+    "id": "security_late_failure",
+    "op": "simulate",
+    "household": {
+      "schema": "household-cny.v1",
+      "dataKind": "synthetic_example",
+      "rangeCase": "base",
+      "cash": 99,
+      "cashAnnual": 0,
+      "reserveMonths": 0,
+      "minimumLiving": 100,
+      "cutFraction": 0,
+      "maxSaleWait": 120,
+      "preference": "cash",
+      "incomes": [],
+      "expenses": [],
+      "financial": [
+        {
+          "id": "F",
+          "name": "audit security",
+          "kind": "stock",
+          "value": 4550,
+          "annualReturn": 0,
+          "concentration": 0,
+          "fee": 0.02,
+          "settle": 2,
+          "unlock": 1,
+          "maturity": 0,
+          "restriction": "free",
+          "purpose": "家庭可用"
+        }
+      ],
+      "properties": [],
+      "vehicles": [],
+      "loans": [],
+      "citySources": []
+    },
+    "scenarios": [
+      {
+        "id": "quiet",
+        "name": "quiet",
+        "role": "quiet",
+        "paths": []
+      }
+    ],
+    "strategy": {
+      "id": "independent",
+      "actions": [
+        {
+          "kind": "liquidate",
+          "asset": "F",
+          "month": 1,
+          "mode": "all"
+        }
+      ]
+    },
+    "limit": 100
+  },
+  {
+    "id": "restricted_deposit",
+    "op": "simulate",
+    "household": {
+      "schema": "household-cny.v1",
+      "dataKind": "synthetic_example",
+      "rangeCase": "base",
+      "cash": 16,
+      "cashAnnual": 0,
+      "reserveMonths": 0,
+      "minimumLiving": 10,
+      "cutFraction": 0,
+      "maxSaleWait": 120,
+      "preference": "cash",
+      "incomes": [],
+      "expenses": [],
+      "financial": [
+        {
+          "id": "F",
+          "name": "audit security",
+          "kind": "deposit",
+          "value": 1000,
+          "annualReturn": 0,
+          "concentration": 0,
+          "fee": 0,
+          "settle": 0,
+          "unlock": 1,
+          "maturity": 1,
+          "restriction": "restricted",
+          "purpose": "家庭可用"
+        }
+      ],
+      "properties": [],
+      "vehicles": [],
+      "loans": [],
+      "citySources": []
+    },
+    "scenarios": [
+      {
+        "id": "quiet",
+        "name": "quiet",
+        "role": "quiet",
+        "paths": []
+      }
+    ],
+    "strategy": {
+      "id": "independent",
+      "actions": [
+        {
+          "kind": "liquidate",
+          "asset": "F",
+          "month": 1,
+          "mode": "all"
+        }
+      ]
+    },
+    "limit": 100
+  },
+  {
+    "id": "free_deposit",
+    "op": "simulate",
+    "household": {
+      "schema": "household-cny.v1",
+      "dataKind": "synthetic_example",
+      "rangeCase": "base",
+      "cash": 35,
+      "cashAnnual": 0,
+      "reserveMonths": 0,
+      "minimumLiving": 10,
+      "cutFraction": 0,
+      "maxSaleWait": 120,
+      "preference": "cash",
+      "incomes": [],
+      "expenses": [],
+      "financial": [
+        {
+          "id": "F",
+          "name": "audit security",
+          "kind": "deposit",
+          "value": 1000,
+          "annualReturn": 0.12,
+          "concentration": 0,
+          "fee": 0,
+          "settle": 0,
+          "unlock": 1,
+          "maturity": 3,
+          "restriction": "free",
+          "purpose": "家庭可用"
+        }
+      ],
+      "properties": [],
+      "vehicles": [],
+      "loans": [],
+      "citySources": []
+    },
+    "scenarios": [
+      {
+        "id": "quiet",
+        "name": "quiet",
+        "role": "quiet",
+        "paths": []
+      }
+    ],
+    "strategy": {
+      "id": "independent",
+      "actions": []
+    },
+    "limit": 100
+  },
+  {
+    "id": "pledged",
+    "op": "simulate",
+    "household": {
+      "schema": "household-cny.v1",
+      "dataKind": "synthetic_example",
+      "rangeCase": "base",
+      "cash": 200,
+      "cashAnnual": 0,
+      "reserveMonths": 0,
+      "minimumLiving": 0,
+      "cutFraction": 0,
+      "maxSaleWait": 120,
+      "preference": "cash",
+      "incomes": [],
+      "expenses": [],
+      "financial": [
+        {
+          "id": "F",
+          "name": "audit security",
+          "kind": "stock",
+          "value": 900,
+          "annualReturn": 0,
+          "concentration": 0,
+          "fee": 0,
+          "settle": 0,
+          "unlock": 1,
+          "maturity": 0,
+          "restriction": "pledged",
+          "purpose": "家庭可用"
+        }
+      ],
+      "properties": [],
+      "vehicles": [],
+      "loans": [
+        {
+          "id": "L",
+          "name": "audit loan",
+          "kind": "consumer",
+          "method": "bullet",
+          "principal": 800,
+          "annualRate": 0,
+          "months": 10,
+          "payment": null,
+          "rateType": "fixed",
+          "resetFirst": 12,
+          "resetEvery": 12,
+          "canPrepay": true,
+          "prepayFrom": 1,
+          "prepayMin": 0,
+          "prepayFee": 0,
+          "settlementFee": 0,
+          "transferWithLien": false,
+          "allowRecast": true,
+          "allowShorten": true,
+          "collateral": "F",
+          "start": 1,
+          "monthlyFee": 0,
+          "allowFull": true,
+          "prepayMax": "unlimited",
+          "prepayPeriodMax": "unlimited",
+          "prepayPeriodMonths": null,
+          "prepayPeriodRemaining": null,
+          "prepayPeriodUsed": null,
+          "salePayoffRule": "same_terms",
+          "salePayoffFrom": null,
+          "salePayoffFee": null,
+          "saleSettlementFee": null,
+          "salePayoffFeeBase": "balance",
+          "saleMaturityReleaseFee": "in_asset_cost"
+        }
+      ],
+      "citySources": []
+    },
+    "scenarios": [
+      {
+        "id": "quiet",
+        "name": "quiet",
+        "role": "quiet",
+        "paths": []
+      }
+    ],
+    "strategy": {
+      "id": "independent",
+      "actions": [
+        {
+          "kind": "liquidate",
+          "asset": "F",
+          "month": 1,
+          "mode": "all"
+        }
+      ]
+    },
+    "limit": 100
+  },
+  {
+    "id": "margin_immediate",
+    "op": "simulate",
+    "household": {
+      "schema": "household-cny.v1",
+      "dataKind": "synthetic_example",
+      "rangeCase": "base",
+      "cash": 0,
+      "cashAnnual": 0,
+      "reserveMonths": 0,
+      "minimumLiving": 10,
+      "cutFraction": 0,
+      "maxSaleWait": 120,
+      "preference": "cash",
+      "incomes": [],
+      "expenses": [],
+      "financial": [
+        {
+          "id": "F",
+          "name": "audit security",
+          "kind": "stock",
+          "value": 3000,
+          "annualReturn": 0,
+          "concentration": 0,
+          "fee": 0,
+          "settle": 0,
+          "unlock": 1,
+          "maturity": 0,
+          "restriction": "pledged",
+          "purpose": "家庭可用"
+        }
+      ],
+      "properties": [],
+      "vehicles": [],
+      "loans": [
+        {
+          "id": "L",
+          "name": "audit loan",
+          "kind": "margin",
+          "method": "bullet",
+          "principal": 1000,
+          "annualRate": 0,
+          "months": 12,
+          "payment": null,
+          "rateType": "fixed",
+          "resetFirst": 12,
+          "resetEvery": 12,
+          "canPrepay": true,
+          "prepayFrom": 1,
+          "prepayMin": 0,
+          "prepayFee": 0,
+          "settlementFee": 0,
+          "transferWithLien": true,
+          "allowRecast": true,
+          "allowShorten": true,
+          "collateral": "F",
+          "start": 1,
+          "monthlyFee": 0,
+          "allowFull": true,
+          "prepayMax": "unlimited",
+          "prepayPeriodMax": "unlimited",
+          "prepayPeriodMonths": null,
+          "prepayPeriodRemaining": null,
+          "prepayPeriodUsed": null,
+          "salePayoffRule": "same_terms",
+          "salePayoffFrom": null,
+          "salePayoffFee": null,
+          "saleSettlementFee": null,
+          "salePayoffFeeBase": "balance",
+          "saleMaturityReleaseFee": "in_asset_cost"
+        }
+      ],
+      "citySources": []
+    },
+    "scenarios": [
+      {
+        "id": "quiet",
+        "name": "quiet",
+        "role": "quiet",
+        "paths": []
+      }
+    ],
+    "strategy": {
+      "id": "independent",
+      "actions": [
+        {
+          "kind": "liquidate",
+          "asset": "F",
+          "month": 1,
+          "mode": "all"
+        }
+      ]
+    },
+    "limit": 100
+  },
+  {
+    "id": "margin_delayed",
+    "op": "simulate",
+    "household": {
+      "schema": "household-cny.v1",
+      "dataKind": "synthetic_example",
+      "rangeCase": "base",
+      "cash": 100,
+      "cashAnnual": 0,
+      "reserveMonths": 0,
+      "minimumLiving": 10,
+      "cutFraction": 0,
+      "maxSaleWait": 120,
+      "preference": "cash",
+      "incomes": [],
+      "expenses": [],
+      "financial": [
+        {
+          "id": "F",
+          "name": "audit security",
+          "kind": "stock",
+          "value": 3000,
+          "annualReturn": 0,
+          "concentration": 0,
+          "fee": 0.02,
+          "settle": 2,
+          "unlock": 1,
+          "maturity": 0,
+          "restriction": "pledged",
+          "purpose": "家庭可用"
+        }
+      ],
+      "properties": [],
+      "vehicles": [],
+      "loans": [
+        {
+          "id": "L",
+          "name": "audit loan",
+          "kind": "margin",
+          "method": "bullet",
+          "principal": 1000,
+          "annualRate": 0.12,
+          "months": 12,
+          "payment": null,
+          "rateType": "fixed",
+          "resetFirst": 12,
+          "resetEvery": 12,
+          "canPrepay": true,
+          "prepayFrom": 1,
+          "prepayMin": 0,
+          "prepayFee": 0.01,
+          "settlementFee": 7,
+          "transferWithLien": true,
+          "allowRecast": true,
+          "allowShorten": true,
+          "collateral": "F",
+          "start": 1,
+          "monthlyFee": 0,
+          "allowFull": true,
+          "prepayMax": "unlimited",
+          "prepayPeriodMax": "unlimited",
+          "prepayPeriodMonths": null,
+          "prepayPeriodRemaining": null,
+          "prepayPeriodUsed": null,
+          "salePayoffRule": "same_terms",
+          "salePayoffFrom": null,
+          "salePayoffFee": null,
+          "saleSettlementFee": null,
+          "salePayoffFeeBase": "balance",
+          "saleMaturityReleaseFee": "in_asset_cost"
+        }
+      ],
+      "citySources": []
+    },
+    "scenarios": [
+      {
+        "id": "quiet",
+        "name": "quiet",
+        "role": "quiet",
+        "paths": []
+      }
+    ],
+    "strategy": {
+      "id": "independent",
+      "actions": [
+        {
+          "kind": "liquidate",
+          "asset": "F",
+          "month": 1,
+          "mode": "all"
+        }
+      ]
+    },
+    "limit": 100
+  },
+  {
+    "id": "margin_forbid_early",
+    "op": "simulate",
+    "household": {
+      "schema": "household-cny.v1",
+      "dataKind": "synthetic_example",
+      "rangeCase": "base",
+      "cash": 0,
+      "cashAnnual": 0,
+      "reserveMonths": 0,
+      "minimumLiving": 10,
+      "cutFraction": 0,
+      "maxSaleWait": 120,
+      "preference": "cash",
+      "incomes": [],
+      "expenses": [],
+      "financial": [
+        {
+          "id": "F",
+          "name": "audit security",
+          "kind": "stock",
+          "value": 3000,
+          "annualReturn": 0,
+          "concentration": 0,
+          "fee": 0,
+          "settle": 0,
+          "unlock": 1,
+          "maturity": 0,
+          "restriction": "pledged",
+          "purpose": "家庭可用"
+        }
+      ],
+      "properties": [],
+      "vehicles": [],
+      "loans": [
+        {
+          "id": "L",
+          "name": "audit loan",
+          "kind": "margin",
+          "method": "bullet",
+          "principal": 1000,
+          "annualRate": 0,
+          "months": 12,
+          "payment": null,
+          "rateType": "fixed",
+          "resetFirst": 12,
+          "resetEvery": 12,
+          "canPrepay": false,
+          "prepayFrom": 1,
+          "prepayMin": 0,
+          "prepayFee": 0,
+          "settlementFee": 0,
+          "transferWithLien": true,
+          "allowRecast": true,
+          "allowShorten": true,
+          "collateral": "F",
+          "start": 1,
+          "monthlyFee": 0
+        }
+      ],
+      "citySources": []
+    },
+    "scenarios": [
+      {
+        "id": "quiet",
+        "name": "quiet",
+        "role": "quiet",
+        "paths": []
+      }
+    ],
+    "strategy": {
+      "id": "independent",
+      "actions": [
+        {
+          "kind": "liquidate",
+          "asset": "F",
+          "month": 1,
+          "mode": "all"
+        }
+      ]
+    },
+    "limit": 100
+  },
+  {
+    "id": "margin_no_lien_transfer",
+    "op": "simulate",
+    "household": {
+      "schema": "household-cny.v1",
+      "dataKind": "synthetic_example",
+      "rangeCase": "base",
+      "cash": 0,
+      "cashAnnual": 0,
+      "reserveMonths": 0,
+      "minimumLiving": 10,
+      "cutFraction": 0,
+      "maxSaleWait": 120,
+      "preference": "cash",
+      "incomes": [],
+      "expenses": [],
+      "financial": [
+        {
+          "id": "F",
+          "name": "audit security",
+          "kind": "stock",
+          "value": 3000,
+          "annualReturn": 0,
+          "concentration": 0,
+          "fee": 0,
+          "settle": 0,
+          "unlock": 1,
+          "maturity": 0,
+          "restriction": "pledged",
+          "purpose": "家庭可用"
+        }
+      ],
+      "properties": [],
+      "vehicles": [],
+      "loans": [
+        {
+          "id": "L",
+          "name": "audit loan",
+          "kind": "margin",
+          "method": "bullet",
+          "principal": 1000,
+          "annualRate": 0,
+          "months": 12,
+          "payment": null,
+          "rateType": "fixed",
+          "resetFirst": 12,
+          "resetEvery": 12,
+          "canPrepay": true,
+          "prepayFrom": 1,
+          "prepayMin": 0,
+          "prepayFee": 0,
+          "settlementFee": 0,
+          "transferWithLien": false,
+          "allowRecast": true,
+          "allowShorten": true,
+          "collateral": "F",
+          "start": 1,
+          "monthlyFee": 0,
+          "allowFull": true,
+          "prepayMax": "unlimited",
+          "prepayPeriodMax": "unlimited",
+          "prepayPeriodMonths": null,
+          "prepayPeriodRemaining": null,
+          "prepayPeriodUsed": null,
+          "salePayoffRule": "same_terms",
+          "salePayoffFrom": null,
+          "salePayoffFee": null,
+          "saleSettlementFee": null,
+          "salePayoffFeeBase": "balance",
+          "saleMaturityReleaseFee": "in_asset_cost"
+        }
+      ],
+      "citySources": []
+    },
+    "scenarios": [
+      {
+        "id": "quiet",
+        "name": "quiet",
+        "role": "quiet",
+        "paths": []
+      }
+    ],
+    "strategy": {
+      "id": "independent",
+      "actions": [
+        {
+          "kind": "liquidate",
+          "asset": "F",
+          "month": 1,
+          "mode": "all"
+        }
+      ]
+    },
+    "limit": 100
+  },
+  {
+    "id": "margin_short_equity",
+    "op": "simulate",
+    "household": {
+      "schema": "household-cny.v1",
+      "dataKind": "synthetic_example",
+      "rangeCase": "base",
+      "cash": 0,
+      "cashAnnual": 0,
+      "reserveMonths": 0,
+      "minimumLiving": 10,
+      "cutFraction": 0,
+      "maxSaleWait": 120,
+      "preference": "cash",
+      "incomes": [],
+      "expenses": [],
+      "financial": [
+        {
+          "id": "F",
+          "name": "audit security",
+          "kind": "stock",
+          "value": 700,
+          "annualReturn": 0,
+          "concentration": 0,
+          "fee": 0,
+          "settle": 0,
+          "unlock": 1,
+          "maturity": 0,
+          "restriction": "pledged",
+          "purpose": "家庭可用"
+        }
+      ],
+      "properties": [],
+      "vehicles": [],
+      "loans": [
+        {
+          "id": "L",
+          "name": "audit loan",
+          "kind": "margin",
+          "method": "bullet",
+          "principal": 1000,
+          "annualRate": 0,
+          "months": 12,
+          "payment": null,
+          "rateType": "fixed",
+          "resetFirst": 12,
+          "resetEvery": 12,
+          "canPrepay": true,
+          "prepayFrom": 1,
+          "prepayMin": 0,
+          "prepayFee": 0,
+          "settlementFee": 0,
+          "transferWithLien": true,
+          "allowRecast": true,
+          "allowShorten": true,
+          "collateral": "F",
+          "start": 1,
+          "monthlyFee": 0,
+          "allowFull": true,
+          "prepayMax": "unlimited",
+          "prepayPeriodMax": "unlimited",
+          "prepayPeriodMonths": null,
+          "prepayPeriodRemaining": null,
+          "prepayPeriodUsed": null,
+          "salePayoffRule": "same_terms",
+          "salePayoffFrom": null,
+          "salePayoffFee": null,
+          "saleSettlementFee": null,
+          "salePayoffFeeBase": "balance",
+          "saleMaturityReleaseFee": "in_asset_cost"
+        }
+      ],
+      "citySources": []
+    },
+    "scenarios": [
+      {
+        "id": "quiet",
+        "name": "quiet",
+        "role": "quiet",
+        "paths": []
+      }
+    ],
+    "strategy": {
+      "id": "independent",
+      "actions": [
+        {
+          "kind": "liquidate",
+          "asset": "F",
+          "month": 1,
+          "mode": "all"
+        }
+      ]
+    },
+    "limit": 100
+  },
+  {
+    "id": "unknown_security_eligibility",
+    "op": "assess",
+    "household": {
+      "schema": "household-cny.v1",
+      "dataKind": "synthetic_example",
+      "rangeCase": "base",
+      "cash": 10000,
+      "cashAnnual": 0,
+      "reserveMonths": 0,
+      "minimumLiving": 0,
+      "cutFraction": 0,
+      "maxSaleWait": 120,
+      "preference": "cash",
+      "incomes": [],
+      "expenses": [],
+      "financial": [
+        {
+          "id": "F",
+          "name": "audit security",
+          "kind": "stock",
+          "value": 1000,
+          "annualReturn": 0,
+          "concentration": 0,
+          "fee": 0,
+          "settle": 0,
+          "maturity": 0,
+          "purpose": "家庭可用"
+        }
+      ],
+      "properties": [],
+      "vehicles": [],
+      "loans": [],
+      "citySources": []
+    },
+    "scenarios": [
+      {
+        "id": "quiet",
+        "name": "quiet",
+        "role": "quiet",
+        "paths": []
+      }
+    ],
+    "strategy": {
+      "id": "independent",
+      "actions": []
+    },
+    "limit": 100
+  },
+  {
+    "id": "unknown_security_cost_settlement",
+    "op": "assess",
+    "household": {
+      "schema": "household-cny.v1",
+      "dataKind": "synthetic_example",
+      "rangeCase": "base",
+      "cash": 10000,
+      "cashAnnual": 0,
+      "reserveMonths": 0,
+      "minimumLiving": 0,
+      "cutFraction": 0,
+      "maxSaleWait": 120,
+      "preference": "cash",
+      "incomes": [],
+      "expenses": [],
+      "financial": [
+        {
+          "id": "F",
+          "name": "audit security",
+          "kind": "stock",
+          "value": 1000,
+          "annualReturn": 0,
+          "concentration": 0,
+          "unlock": 1,
+          "maturity": 0,
+          "restriction": "free",
+          "purpose": "家庭可用"
+        }
+      ],
+      "properties": [],
+      "vehicles": [],
+      "loans": [],
+      "citySources": []
+    },
+    "scenarios": [
+      {
+        "id": "quiet",
+        "name": "quiet",
+        "role": "quiet",
+        "paths": []
+      }
+    ],
+    "strategy": {
+      "id": "independent",
+      "actions": []
+    },
+    "limit": 100
+  },
+  {
+    "id": "salary_funded_candidates",
+    "op": "assess",
+    "household": {
+      "schema": "household-cny.v1",
+      "dataKind": "synthetic_example",
+      "rangeCase": "base",
+      "cash": 0,
+      "cashAnnual": 0,
+      "reserveMonths": 0,
+      "minimumLiving": 100,
+      "cutFraction": 0,
+      "maxSaleWait": 120,
+      "preference": "cash",
+      "incomes": [
+        {
+          "id": "salary",
+          "name": "salary",
+          "kind": "wage",
+          "monthly": 1000,
+          "from": 1,
+          "to": 120,
+          "every": 1,
+          "annualGrowth": 0,
+          "stability": "given",
+          "stressJob": false,
+          "jobStart": 1,
+          "jobMonths": 0,
+          "jobPayFraction": 0,
+          "recoveryMonths": 0,
+          "returnFraction": 1
+        }
+      ],
+      "expenses": [],
+      "financial": [],
+      "properties": [],
+      "vehicles": [],
+      "loans": [
+        {
+          "id": "L",
+          "name": "audit loan",
+          "kind": "consumer",
+          "method": "annuity",
+          "principal": 5000,
+          "annualRate": 0,
+          "months": 10,
+          "payment": null,
+          "rateType": "fixed",
+          "resetFirst": 12,
+          "resetEvery": 12,
+          "canPrepay": true,
+          "prepayFrom": 1,
+          "prepayMin": 100,
+          "prepayFee": 0,
+          "settlementFee": 0,
+          "transferWithLien": false,
+          "allowRecast": true,
+          "allowShorten": true,
+          "collateral": "",
+          "start": 1,
+          "monthlyFee": 0,
+          "allowFull": true,
+          "prepayMax": "unlimited",
+          "prepayPeriodMax": "unlimited",
+          "prepayPeriodMonths": null,
+          "prepayPeriodRemaining": null,
+          "prepayPeriodUsed": null,
+          "salePayoffRule": "unknown",
+          "salePayoffFrom": null,
+          "salePayoffFee": null,
+          "saleSettlementFee": null,
+          "salePayoffFeeBase": "unknown",
+          "saleMaturityReleaseFee": null
+        }
+      ],
+      "citySources": []
+    },
+    "scenarios": [
+      {
+        "id": "quiet",
+        "name": "quiet",
+        "role": "quiet",
+        "paths": []
+      }
+    ],
+    "strategy": {
+      "id": "independent",
+      "actions": []
+    },
+    "limit": 100
+  },
+  {
+    "id": "salary_funded_control",
+    "op": "simulate",
+    "household": {
+      "schema": "household-cny.v1",
+      "dataKind": "synthetic_example",
+      "rangeCase": "base",
+      "cash": 0,
+      "cashAnnual": 0,
+      "reserveMonths": 0,
+      "minimumLiving": 100,
+      "cutFraction": 0,
+      "maxSaleWait": 120,
+      "preference": "cash",
+      "incomes": [
+        {
+          "id": "salary",
+          "name": "salary",
+          "kind": "wage",
+          "monthly": 1000,
+          "from": 1,
+          "to": 120,
+          "every": 1,
+          "annualGrowth": 0,
+          "stability": "given",
+          "stressJob": false,
+          "jobStart": 1,
+          "jobMonths": 0,
+          "jobPayFraction": 0,
+          "recoveryMonths": 0,
+          "returnFraction": 1
+        }
+      ],
+      "expenses": [],
+      "financial": [],
+      "properties": [],
+      "vehicles": [],
+      "loans": [
+        {
+          "id": "L",
+          "name": "audit loan",
+          "kind": "consumer",
+          "method": "annuity",
+          "principal": 5000,
+          "annualRate": 0,
+          "months": 10,
+          "payment": null,
+          "rateType": "fixed",
+          "resetFirst": 12,
+          "resetEvery": 12,
+          "canPrepay": true,
+          "prepayFrom": 1,
+          "prepayMin": 100,
+          "prepayFee": 0,
+          "settlementFee": 0,
+          "transferWithLien": false,
+          "allowRecast": true,
+          "allowShorten": true,
+          "collateral": "",
+          "start": 1,
+          "monthlyFee": 0,
+          "allowFull": true,
+          "prepayMax": "unlimited",
+          "prepayPeriodMax": "unlimited",
+          "prepayPeriodMonths": null,
+          "prepayPeriodRemaining": null,
+          "prepayPeriodUsed": null,
+          "salePayoffRule": "unknown",
+          "salePayoffFrom": null,
+          "salePayoffFee": null,
+          "saleSettlementFee": null,
+          "salePayoffFeeBase": "unknown",
+          "saleMaturityReleaseFee": null
+        }
+      ],
+      "citySources": []
+    },
+    "scenarios": [
+      {
+        "id": "quiet",
+        "name": "quiet",
+        "role": "quiet",
+        "paths": []
+      }
+    ],
+    "strategy": {
+      "id": "independent",
+      "actions": [
+        {
+          "kind": "prepay",
+          "loan": "L",
+          "mode": "recast",
+          "month": 1,
+          "amount": 200
+        }
+      ]
+    },
+    "limit": 100
+  },
+  {
+    "id": "monthly_inflation",
+    "op": "simulate",
+    "household": {
+      "schema": "household-cny.v1",
+      "dataKind": "synthetic_example",
+      "rangeCase": "base",
+      "cash": 585,
+      "cashAnnual": 0,
+      "reserveMonths": 0,
+      "minimumLiving": 1,
+      "cutFraction": 0,
+      "maxSaleWait": 120,
+      "preference": "cash",
+      "incomes": [
+        {
+          "id": "I",
+          "name": "I",
+          "kind": "wage",
+          "monthly": 100,
+          "from": 1,
+          "to": 120,
+          "every": 1,
+          "annualGrowth": 0,
+          "stability": "given",
+          "stressJob": false,
+          "jobStart": 1,
+          "jobMonths": 0,
+          "jobPayFraction": 0,
+          "recoveryMonths": 0,
+          "returnFraction": 1
+        }
+      ],
+      "expenses": [],
+      "financial": [
+        {
+          "id": "F",
+          "name": "audit security",
+          "kind": "stock",
+          "value": 200,
+          "annualReturn": 0,
+          "concentration": 0,
+          "fee": 0,
+          "settle": 0,
+          "unlock": 1,
+          "maturity": 0,
+          "restriction": "free",
+          "purpose": "家庭可用"
+        }
+      ],
+      "properties": [],
+      "vehicles": [],
+      "loans": [],
+      "citySources": []
+    },
+    "scenarios": [
+      {
+        "id": "inflation",
+        "name": "inflation",
+        "role": "inflation",
+        "paths": [
+          {
+            "key": "inflationAnnual",
+            "mode": "annual",
+            "unit": "年率小数",
+            "start": 1,
+            "duration": 120,
+            "target": "*",
+            "value": 0.12,
+            "range": [
+              0.12,
+              0.12
+            ],
+            "sourceId": "independent-audit",
+            "editable": true,
+            "assumption": "stress_test"
+          }
+        ]
+      }
+    ],
+    "strategy": {
+      "id": "independent",
+      "actions": []
+    },
+    "limit": 100
+  },
+  {
+    "id": "failure",
+    "op": "simulate",
+    "household": {
+      "schema": "household-cny.v1",
+      "dataKind": "synthetic_example",
+      "rangeCase": "base",
+      "cash": 140,
+      "cashAnnual": 0,
+      "reserveMonths": 0,
+      "minimumLiving": 50,
+      "cutFraction": 0,
+      "maxSaleWait": 120,
+      "preference": "cash",
+      "incomes": [],
+      "expenses": [],
+      "financial": [],
+      "properties": [],
+      "vehicles": [],
+      "loans": [
+        {
+          "id": "L",
+          "name": "audit loan",
+          "kind": "consumer",
+          "method": "bullet",
+          "principal": 200,
+          "annualRate": 0.12,
+          "months": 3,
+          "payment": null,
+          "rateType": "fixed",
+          "resetFirst": 12,
+          "resetEvery": 12,
+          "canPrepay": true,
+          "prepayFrom": 1,
+          "prepayMin": 0,
+          "prepayFee": 0,
+          "settlementFee": 0,
+          "transferWithLien": false,
+          "allowRecast": true,
+          "allowShorten": true,
+          "collateral": "",
+          "start": 1,
+          "monthlyFee": 0,
+          "allowFull": true,
+          "prepayMax": "unlimited",
+          "prepayPeriodMax": "unlimited",
+          "prepayPeriodMonths": null,
+          "prepayPeriodRemaining": null,
+          "prepayPeriodUsed": null,
+          "salePayoffRule": "unknown",
+          "salePayoffFrom": null,
+          "salePayoffFee": null,
+          "saleSettlementFee": null,
+          "salePayoffFeeBase": "unknown",
+          "saleMaturityReleaseFee": null
+        }
+      ],
+      "citySources": []
+    },
+    "scenarios": [
+      {
+        "id": "quiet",
+        "name": "quiet",
+        "role": "quiet",
+        "paths": []
+      }
+    ],
+    "strategy": {
+      "id": "independent",
+      "actions": []
+    },
+    "limit": 100
+  },
+  {
+    "id": "no_feasible",
+    "op": "assess",
+    "household": {
+      "schema": "household-cny.v1",
+      "dataKind": "synthetic_example",
+      "rangeCase": "base",
+      "cash": 10,
+      "cashAnnual": 0,
+      "reserveMonths": 0,
+      "minimumLiving": 70,
+      "cutFraction": 0,
+      "maxSaleWait": 120,
+      "preference": "cash",
+      "incomes": [],
+      "expenses": [],
+      "financial": [
+        {
+          "id": "F",
+          "name": "audit security",
+          "kind": "stock",
+          "value": 3000,
+          "annualReturn": 0,
+          "concentration": 0,
+          "fee": 0,
+          "settle": 0,
+          "unlock": 1,
+          "maturity": 0,
+          "restriction": "restricted",
+          "purpose": "家庭可用"
+        }
+      ],
+      "properties": [],
+      "vehicles": [],
+      "loans": [],
+      "citySources": []
+    },
+    "scenarios": [
+      {
+        "id": "quiet",
+        "name": "quiet",
+        "role": "quiet",
+        "paths": []
+      }
+    ],
+    "strategy": {
+      "id": "independent",
+      "actions": []
+    },
+    "limit": 100
+  },
+  {
+    "id": "mixed",
+    "op": "assess",
+    "household": {
+      "schema": "household-cny.v1",
+      "dataKind": "synthetic_example",
+      "rangeCase": "base",
+      "cash": 0,
+      "cashAnnual": 0,
+      "reserveMonths": 0,
+      "minimumLiving": 1,
+      "cutFraction": 0,
+      "maxSaleWait": 120,
+      "preference": "cash",
+      "incomes": [],
+      "expenses": [],
+      "financial": [
+        {
+          "id": "F",
+          "name": "audit security",
+          "kind": "stock",
+          "value": 200,
+          "annualReturn": 0,
+          "concentration": 0,
+          "fee": 0,
+          "settle": 0,
+          "unlock": 1,
+          "maturity": 0,
+          "restriction": "free",
+          "purpose": "家庭可用"
+        }
+      ],
+      "properties": [],
+      "vehicles": [],
+      "loans": [],
+      "citySources": []
+    },
+    "scenarios": [
+      {
+        "id": "quiet",
+        "name": "quiet",
+        "role": "quiet",
+        "paths": []
+      }
+    ],
+    "strategy": {
+      "id": "independent",
+      "actions": []
+    },
+    "limit": 100
+  },
+  {
+    "id": "minimum_floor",
+    "op": "simulate",
+    "household": {
+      "schema": "household-cny.v1",
+      "dataKind": "synthetic_example",
+      "rangeCase": "base",
+      "cash": 50,
+      "cashAnnual": 0,
+      "reserveMonths": 0,
+      "minimumLiving": 120,
+      "cutFraction": 0,
+      "maxSaleWait": 120,
+      "preference": "cash",
+      "incomes": [
+        {
+          "id": "I",
+          "name": "I",
+          "kind": "wage",
+          "monthly": 98,
+          "from": 1,
+          "to": 120,
+          "every": 1,
+          "annualGrowth": 0,
+          "stability": "given",
+          "stressJob": false,
+          "jobStart": 1,
+          "jobMonths": 0,
+          "jobPayFraction": 0,
+          "recoveryMonths": 0,
+          "returnFraction": 1
+        }
+      ],
+      "expenses": [
+        {
+          "id": "living",
+          "name": "living",
+          "kind": "necessary",
+          "monthly": 60,
+          "from": 1,
+          "to": 120,
+          "every": 1,
+          "annualGrowth": 0,
+          "inflationLinked": false
+        },
+        {
+          "id": "med",
+          "name": "med",
+          "kind": "medical",
+          "monthly": 13,
+          "from": 1,
+          "to": 120,
+          "every": 1,
+          "annualGrowth": 0,
+          "inflationLinked": false
+        }
+      ],
+      "financial": [],
+      "properties": [],
+      "vehicles": [],
+      "loans": [],
+      "citySources": []
+    },
+    "scenarios": [
+      {
+        "id": "quiet",
+        "name": "quiet",
+        "role": "quiet",
+        "paths": []
+      }
+    ],
+    "strategy": {
+      "id": "independent",
+      "actions": []
+    },
+    "limit": 100
+  },
+  {
+    "id": "reserve_short",
+    "op": "assess",
+    "household": {
+      "schema": "household-cny.v1",
+      "dataKind": "synthetic_example",
+      "rangeCase": "base",
+      "cash": 71,
+      "cashAnnual": 0,
+      "reserveMonths": 5,
+      "minimumLiving": 17,
+      "cutFraction": 0,
+      "maxSaleWait": 120,
+      "preference": "cash",
+      "incomes": [
+        {
+          "id": "I",
+          "name": "I",
+          "kind": "wage",
+          "monthly": 17,
+          "from": 1,
+          "to": 120,
+          "every": 1,
+          "annualGrowth": 0,
+          "stability": "given",
+          "stressJob": false,
+          "jobStart": 1,
+          "jobMonths": 0,
+          "jobPayFraction": 0,
+          "recoveryMonths": 0,
+          "returnFraction": 1
+        }
+      ],
+      "expenses": [],
+      "financial": [],
+      "properties": [],
+      "vehicles": [],
+      "loans": [],
+      "citySources": []
+    },
+    "scenarios": [
+      {
+        "id": "quiet",
+        "name": "quiet",
+        "role": "quiet",
+        "paths": []
+      }
+    ],
+    "strategy": {
+      "id": "independent",
+      "actions": []
+    },
+    "limit": 100
+  },
+  {
+    "id": "reserve_blocks_prepay",
+    "op": "simulate",
+    "household": {
+      "schema": "household-cny.v1",
+      "dataKind": "synthetic_example",
+      "rangeCase": "base",
+      "cash": 350,
+      "cashAnnual": 0,
+      "reserveMonths": 2,
+      "minimumLiving": 120,
+      "cutFraction": 0,
+      "maxSaleWait": 120,
+      "preference": "cash",
+      "incomes": [
+        {
+          "id": "I",
+          "name": "I",
+          "kind": "wage",
+          "monthly": 217,
+          "from": 1,
+          "to": 120,
+          "every": 1,
+          "annualGrowth": 0,
+          "stability": "given",
+          "stressJob": false,
+          "jobStart": 1,
+          "jobMonths": 0,
+          "jobPayFraction": 0,
+          "recoveryMonths": 0,
+          "returnFraction": 1
+        }
+      ],
+      "expenses": [],
+      "financial": [],
+      "properties": [],
+      "vehicles": [],
+      "loans": [
+        {
+          "id": "L",
+          "name": "audit loan",
+          "kind": "consumer",
+          "method": "annuity",
+          "principal": 600,
+          "annualRate": 0,
+          "months": 6,
+          "payment": null,
+          "rateType": "fixed",
+          "resetFirst": 12,
+          "resetEvery": 12,
+          "canPrepay": true,
+          "prepayFrom": 1,
+          "prepayMin": 0,
+          "prepayFee": 0,
+          "settlementFee": 0,
+          "transferWithLien": false,
+          "allowRecast": true,
+          "allowShorten": true,
+          "collateral": "",
+          "start": 1,
+          "monthlyFee": 0,
+          "allowFull": true,
+          "prepayMax": "unlimited",
+          "prepayPeriodMax": "unlimited",
+          "prepayPeriodMonths": null,
+          "prepayPeriodRemaining": null,
+          "prepayPeriodUsed": null,
+          "salePayoffRule": "unknown",
+          "salePayoffFrom": null,
+          "salePayoffFee": null,
+          "saleSettlementFee": null,
+          "salePayoffFeeBase": "unknown",
+          "saleMaturityReleaseFee": null
+        }
+      ],
+      "citySources": []
+    },
+    "scenarios": [
+      {
+        "id": "quiet",
+        "name": "quiet",
+        "role": "quiet",
+        "paths": []
+      }
+    ],
+    "strategy": {
+      "id": "independent",
+      "actions": [
+        {
+          "kind": "prepay",
+          "loan": "L",
+          "mode": "recast",
+          "month": 1,
+          "amount": 200
+        }
+      ]
+    },
+    "limit": 100
+  },
+  {
+    "id": "trigger_plain",
+    "op": "simulate",
+    "household": {
+      "schema": "household-cny.v1",
+      "dataKind": "synthetic_example",
+      "rangeCase": "base",
+      "cash": 1100,
+      "cashAnnual": 0,
+      "reserveMonths": 0,
+      "minimumLiving": 100,
+      "cutFraction": 0,
+      "maxSaleWait": 120,
+      "preference": "cash",
+      "incomes": [
+        {
+          "id": "I",
+          "name": "I",
+          "kind": "wage",
+          "monthly": 35,
+          "from": 1,
+          "to": 120,
+          "every": 1,
+          "annualGrowth": 0,
+          "stability": "given",
+          "stressJob": false,
+          "jobStart": 1,
+          "jobMonths": 0,
+          "jobPayFraction": 0,
+          "recoveryMonths": 0,
+          "returnFraction": 1
+        }
+      ],
+      "expenses": [],
+      "financial": [
+        {
+          "id": "F",
+          "name": "audit security",
+          "kind": "stock",
+          "value": 500,
+          "annualReturn": 0,
+          "concentration": 0,
+          "fee": 0,
+          "settle": 0,
+          "unlock": 1,
+          "maturity": 0,
+          "restriction": "free",
+          "purpose": "家庭可用"
+        }
+      ],
+      "properties": [
+        {
+          "id": "P",
+          "name": "audit property",
+          "city": "测试城",
+          "type": "住宅",
+          "use": "idle",
+          "value": 2200,
+          "saleValue": 2100,
+          "saleLag": 2,
+          "lock": 1,
+          "canSell": true,
+          "rent": 0,
+          "vacancy": 0,
+          "leaseLag": 0,
+          "discountRent": 0,
+          "discountLeaseLag": 0,
+          "carry": 0,
+          "saleFee": 0,
+          "closingFee": 0,
+          "replacementAllowed": false,
+          "replacementMonthly": null,
+          "sourceId": ""
+        }
+      ],
+      "vehicles": [],
+      "loans": [],
+      "citySources": []
+    },
+    "scenarios": [
+      {
+        "id": "quiet",
+        "name": "quiet",
+        "role": "quiet",
+        "paths": []
+      }
+    ],
+    "strategy": {
+      "id": "independent",
+      "actions": [
+        {
+          "kind": "list",
+          "asset": "P",
+          "month": 1,
+          "trigger": "reserve",
+          "buffer": 3
+        }
+      ]
+    },
+    "limit": 100
+  },
+  {
+    "id": "hold_plain",
+    "op": "simulate",
+    "household": {
+      "schema": "household-cny.v1",
+      "dataKind": "synthetic_example",
+      "rangeCase": "base",
+      "cash": 1100,
+      "cashAnnual": 0,
+      "reserveMonths": 0,
+      "minimumLiving": 100,
+      "cutFraction": 0,
+      "maxSaleWait": 120,
+      "preference": "cash",
+      "incomes": [
+        {
+          "id": "I",
+          "name": "I",
+          "kind": "wage",
+          "monthly": 35,
+          "from": 1,
+          "to": 120,
+          "every": 1,
+          "annualGrowth": 0,
+          "stability": "given",
+          "stressJob": false,
+          "jobStart": 1,
+          "jobMonths": 0,
+          "jobPayFraction": 0,
+          "recoveryMonths": 0,
+          "returnFraction": 1
+        }
+      ],
+      "expenses": [],
+      "financial": [
+        {
+          "id": "F",
+          "name": "audit security",
+          "kind": "stock",
+          "value": 500,
+          "annualReturn": 0,
+          "concentration": 0,
+          "fee": 0,
+          "settle": 0,
+          "unlock": 1,
+          "maturity": 0,
+          "restriction": "free",
+          "purpose": "家庭可用"
+        }
+      ],
+      "properties": [
+        {
+          "id": "P",
+          "name": "audit property",
+          "city": "测试城",
+          "type": "住宅",
+          "use": "idle",
+          "value": 2200,
+          "saleValue": 2100,
+          "saleLag": 2,
+          "lock": 1,
+          "canSell": true,
+          "rent": 0,
+          "vacancy": 0,
+          "leaseLag": 0,
+          "discountRent": 0,
+          "discountLeaseLag": 0,
+          "carry": 0,
+          "saleFee": 0,
+          "closingFee": 0,
+          "replacementAllowed": false,
+          "replacementMonthly": null,
+          "sourceId": ""
+        }
+      ],
+      "vehicles": [],
+      "loans": [],
+      "citySources": []
+    },
+    "scenarios": [
+      {
+        "id": "quiet",
+        "name": "quiet",
+        "role": "quiet",
+        "paths": []
+      }
+    ],
+    "strategy": {
+      "id": "independent",
+      "actions": []
+    },
+    "limit": 100
+  },
+  {
+    "id": "trigger_future",
+    "op": "simulate",
+    "household": {
+      "schema": "household-cny.v1",
+      "dataKind": "synthetic_example",
+      "rangeCase": "base",
+      "cash": 1100,
+      "cashAnnual": 0,
+      "reserveMonths": 0,
+      "minimumLiving": 100,
+      "cutFraction": 0,
+      "maxSaleWait": 120,
+      "preference": "cash",
+      "incomes": [
+        {
+          "id": "I",
+          "name": "I",
+          "kind": "wage",
+          "monthly": 35,
+          "from": 1,
+          "to": 120,
+          "every": 1,
+          "annualGrowth": 0,
+          "stability": "given",
+          "stressJob": false,
+          "jobStart": 1,
+          "jobMonths": 0,
+          "jobPayFraction": 0,
+          "recoveryMonths": 0,
+          "returnFraction": 1
+        }
+      ],
+      "expenses": [],
+      "financial": [
+        {
+          "id": "F",
+          "name": "audit security",
+          "kind": "stock",
+          "value": 500,
+          "annualReturn": 0,
+          "concentration": 0,
+          "fee": 0,
+          "settle": 0,
+          "unlock": 1,
+          "maturity": 0,
+          "restriction": "free",
+          "purpose": "家庭可用"
+        }
+      ],
+      "properties": [
+        {
+          "id": "P",
+          "name": "audit property",
+          "city": "测试城",
+          "type": "住宅",
+          "use": "idle",
+          "value": 2200,
+          "saleValue": 2100,
+          "saleLag": 2,
+          "lock": 1,
+          "canSell": true,
+          "rent": 0,
+          "vacancy": 0,
+          "leaseLag": 0,
+          "discountRent": 0,
+          "discountLeaseLag": 0,
+          "carry": 0,
+          "saleFee": 0,
+          "closingFee": 0,
+          "replacementAllowed": false,
+          "replacementMonthly": null,
+          "sourceId": ""
+        }
+      ],
+      "vehicles": [],
+      "loans": [],
+      "citySources": []
+    },
+    "scenarios": [
+      {
+        "id": "future",
+        "name": "future",
+        "role": "future",
+        "paths": [
+          {
+            "key": "propertyShock",
+            "mode": "shock",
+            "unit": "比例",
+            "start": 15,
+            "duration": 1,
+            "target": "*",
+            "value": -0.6,
+            "range": [
+              -0.6,
+              -0.6
+            ],
+            "sourceId": "independent-audit",
+            "editable": true,
+            "assumption": "stress_test"
+          },
+          {
+            "key": "wageFactor",
+            "mode": "level",
+            "unit": "倍",
+            "start": 15,
+            "duration": 20,
+            "target": "I",
+            "value": 0.5,
+            "range": [
+              0.5,
+              0.5
+            ],
+            "sourceId": "independent-audit",
+            "editable": true,
+            "assumption": "stress_test"
+          }
+        ]
+      }
+    ],
+    "strategy": {
+      "id": "independent",
+      "actions": [
+        {
+          "kind": "list",
+          "asset": "P",
+          "month": 1,
+          "trigger": "reserve",
+          "buffer": 3
+        }
+      ]
+    },
+    "limit": 100
+  },
+  {
+    "id": "hold_future",
+    "op": "simulate",
+    "household": {
+      "schema": "household-cny.v1",
+      "dataKind": "synthetic_example",
+      "rangeCase": "base",
+      "cash": 1100,
+      "cashAnnual": 0,
+      "reserveMonths": 0,
+      "minimumLiving": 100,
+      "cutFraction": 0,
+      "maxSaleWait": 120,
+      "preference": "cash",
+      "incomes": [
+        {
+          "id": "I",
+          "name": "I",
+          "kind": "wage",
+          "monthly": 35,
+          "from": 1,
+          "to": 120,
+          "every": 1,
+          "annualGrowth": 0,
+          "stability": "given",
+          "stressJob": false,
+          "jobStart": 1,
+          "jobMonths": 0,
+          "jobPayFraction": 0,
+          "recoveryMonths": 0,
+          "returnFraction": 1
+        }
+      ],
+      "expenses": [],
+      "financial": [
+        {
+          "id": "F",
+          "name": "audit security",
+          "kind": "stock",
+          "value": 500,
+          "annualReturn": 0,
+          "concentration": 0,
+          "fee": 0,
+          "settle": 0,
+          "unlock": 1,
+          "maturity": 0,
+          "restriction": "free",
+          "purpose": "家庭可用"
+        }
+      ],
+      "properties": [
+        {
+          "id": "P",
+          "name": "audit property",
+          "city": "测试城",
+          "type": "住宅",
+          "use": "idle",
+          "value": 2200,
+          "saleValue": 2100,
+          "saleLag": 2,
+          "lock": 1,
+          "canSell": true,
+          "rent": 0,
+          "vacancy": 0,
+          "leaseLag": 0,
+          "discountRent": 0,
+          "discountLeaseLag": 0,
+          "carry": 0,
+          "saleFee": 0,
+          "closingFee": 0,
+          "replacementAllowed": false,
+          "replacementMonthly": null,
+          "sourceId": ""
+        }
+      ],
+      "vehicles": [],
+      "loans": [],
+      "citySources": []
+    },
+    "scenarios": [
+      {
+        "id": "future",
+        "name": "future",
+        "role": "future",
+        "paths": [
+          {
+            "key": "propertyShock",
+            "mode": "shock",
+            "unit": "比例",
+            "start": 15,
+            "duration": 1,
+            "target": "*",
+            "value": -0.6,
+            "range": [
+              -0.6,
+              -0.6
+            ],
+            "sourceId": "independent-audit",
+            "editable": true,
+            "assumption": "stress_test"
+          },
+          {
+            "key": "wageFactor",
+            "mode": "level",
+            "unit": "倍",
+            "start": 15,
+            "duration": 20,
+            "target": "I",
+            "value": 0.5,
+            "range": [
+              0.5,
+              0.5
+            ],
+            "sourceId": "independent-audit",
+            "editable": true,
+            "assumption": "stress_test"
+          }
+        ]
+      }
+    ],
+    "strategy": {
+      "id": "independent",
+      "actions": []
+    },
+    "limit": 100
+  },
+  {
+    "id": "range_low",
+    "op": "simulate",
+    "household": {
+      "schema": "household-cny.v1",
+      "dataKind": "synthetic_example",
+      "rangeCase": "low",
+      "cash": {
+        "low": 50,
+        "base": 100,
+        "high": 250
+      },
+      "cashAnnual": 0,
+      "reserveMonths": 0,
+      "minimumLiving": 0,
+      "cutFraction": 0,
+      "maxSaleWait": 120,
+      "preference": "cash",
+      "incomes": [
+        {
+          "id": "I",
+          "name": "I",
+          "kind": "wage",
+          "monthly": 300,
+          "from": 1,
+          "to": 120,
+          "every": 1,
+          "annualGrowth": 0,
+          "stability": "given",
+          "stressJob": false,
+          "jobStart": 1,
+          "jobMonths": 0,
+          "jobPayFraction": 0,
+          "recoveryMonths": 0,
+          "returnFraction": 1
+        }
+      ],
+      "expenses": [],
+      "financial": [],
+      "properties": [],
+      "vehicles": [],
+      "loans": [],
+      "citySources": []
+    },
+    "scenarios": [
+      {
+        "id": "range",
+        "name": "range",
+        "role": "range",
+        "paths": [
+          {
+            "key": "wageFactor",
+            "mode": "level",
+            "unit": "倍",
+            "start": 1,
+            "duration": 1,
+            "target": "*",
+            "value": {
+              "low": 0.55,
+              "base": 0.8,
+              "high": 1.1
+            },
+            "range": [
+              0.55,
+              1.1
+            ],
+            "sourceId": "independent-audit",
+            "editable": true,
+            "assumption": "historical"
+          }
+        ]
+      }
+    ],
+    "strategy": {
+      "id": "independent",
+      "actions": []
+    },
+    "limit": 100
+  },
+  {
+    "id": "range_base",
+    "op": "simulate",
+    "household": {
+      "schema": "household-cny.v1",
+      "dataKind": "synthetic_example",
+      "rangeCase": "base",
+      "cash": {
+        "low": 50,
+        "base": 100,
+        "high": 250
+      },
+      "cashAnnual": 0,
+      "reserveMonths": 0,
+      "minimumLiving": 0,
+      "cutFraction": 0,
+      "maxSaleWait": 120,
+      "preference": "cash",
+      "incomes": [
+        {
+          "id": "I",
+          "name": "I",
+          "kind": "wage",
+          "monthly": 300,
+          "from": 1,
+          "to": 120,
+          "every": 1,
+          "annualGrowth": 0,
+          "stability": "given",
+          "stressJob": false,
+          "jobStart": 1,
+          "jobMonths": 0,
+          "jobPayFraction": 0,
+          "recoveryMonths": 0,
+          "returnFraction": 1
+        }
+      ],
+      "expenses": [],
+      "financial": [],
+      "properties": [],
+      "vehicles": [],
+      "loans": [],
+      "citySources": []
+    },
+    "scenarios": [
+      {
+        "id": "range",
+        "name": "range",
+        "role": "range",
+        "paths": [
+          {
+            "key": "wageFactor",
+            "mode": "level",
+            "unit": "倍",
+            "start": 1,
+            "duration": 1,
+            "target": "*",
+            "value": {
+              "low": 0.55,
+              "base": 0.8,
+              "high": 1.1
+            },
+            "range": [
+              0.55,
+              1.1
+            ],
+            "sourceId": "independent-audit",
+            "editable": true,
+            "assumption": "historical"
+          }
+        ]
+      }
+    ],
+    "strategy": {
+      "id": "independent",
+      "actions": []
+    },
+    "limit": 100
+  },
+  {
+    "id": "range_high",
+    "op": "simulate",
+    "household": {
+      "schema": "household-cny.v1",
+      "dataKind": "synthetic_example",
+      "rangeCase": "high",
+      "cash": {
+        "low": 50,
+        "base": 100,
+        "high": 250
+      },
+      "cashAnnual": 0,
+      "reserveMonths": 0,
+      "minimumLiving": 0,
+      "cutFraction": 0,
+      "maxSaleWait": 120,
+      "preference": "cash",
+      "incomes": [
+        {
+          "id": "I",
+          "name": "I",
+          "kind": "wage",
+          "monthly": 300,
+          "from": 1,
+          "to": 120,
+          "every": 1,
+          "annualGrowth": 0,
+          "stability": "given",
+          "stressJob": false,
+          "jobStart": 1,
+          "jobMonths": 0,
+          "jobPayFraction": 0,
+          "recoveryMonths": 0,
+          "returnFraction": 1
+        }
+      ],
+      "expenses": [],
+      "financial": [],
+      "properties": [],
+      "vehicles": [],
+      "loans": [],
+      "citySources": []
+    },
+    "scenarios": [
+      {
+        "id": "range",
+        "name": "range",
+        "role": "range",
+        "paths": [
+          {
+            "key": "wageFactor",
+            "mode": "level",
+            "unit": "倍",
+            "start": 1,
+            "duration": 1,
+            "target": "*",
+            "value": {
+              "low": 0.55,
+              "base": 0.8,
+              "high": 1.1
+            },
+            "range": [
+              0.55,
+              1.1
+            ],
+            "sourceId": "independent-audit",
+            "editable": true,
+            "assumption": "historical"
+          }
+        ]
+      }
+    ],
+    "strategy": {
+      "id": "independent",
+      "actions": []
+    },
+    "limit": 100
+  },
+  {
+    "id": "range_missing",
+    "op": "simulate",
+    "household": {
+      "schema": "household-cny.v1",
+      "dataKind": "synthetic_example",
+      "rangeCase": "base",
+      "cash": {
+        "low": 10,
+        "high": 55
+      },
+      "cashAnnual": 0,
+      "reserveMonths": 0,
+      "minimumLiving": 0,
+      "cutFraction": 0,
+      "maxSaleWait": 120,
+      "preference": "cash",
+      "incomes": [
+        {
+          "id": "I",
+          "name": "I",
+          "kind": "wage",
+          "monthly": 300,
+          "from": 1,
+          "to": 120,
+          "every": 1,
+          "annualGrowth": 0,
+          "stability": "given",
+          "stressJob": false,
+          "jobStart": 1,
+          "jobMonths": 0,
+          "jobPayFraction": 0,
+          "recoveryMonths": 0,
+          "returnFraction": 1
+        }
+      ],
+      "expenses": [],
+      "financial": [],
+      "properties": [],
+      "vehicles": [],
+      "loans": [],
+      "citySources": []
+    },
+    "scenarios": [
+      {
+        "id": "quiet",
+        "name": "quiet",
+        "role": "quiet",
+        "paths": []
+      }
+    ],
+    "strategy": {
+      "id": "independent",
+      "actions": []
+    },
+    "limit": 100
+  },
+  {
+    "id": "range_missing_high",
+    "op": "simulate",
+    "household": {
+      "schema": "household-cny.v1",
+      "dataKind": "synthetic_example",
+      "rangeCase": "high",
+      "cash": {
+        "low": 10,
+        "high": 55
+      },
+      "cashAnnual": 0,
+      "reserveMonths": 0,
+      "minimumLiving": 0,
+      "cutFraction": 0,
+      "maxSaleWait": 120,
+      "preference": "cash",
+      "incomes": [
+        {
+          "id": "I",
+          "name": "I",
+          "kind": "wage",
+          "monthly": 300,
+          "from": 1,
+          "to": 120,
+          "every": 1,
+          "annualGrowth": 0,
+          "stability": "given",
+          "stressJob": false,
+          "jobStart": 1,
+          "jobMonths": 0,
+          "jobPayFraction": 0,
+          "recoveryMonths": 0,
+          "returnFraction": 1
+        }
+      ],
+      "expenses": [],
+      "financial": [],
+      "properties": [],
+      "vehicles": [],
+      "loans": [],
+      "citySources": []
+    },
+    "scenarios": [
+      {
+        "id": "quiet",
+        "name": "quiet",
+        "role": "quiet",
+        "paths": []
+      }
+    ],
+    "strategy": {
+      "id": "independent",
+      "actions": []
+    },
+    "limit": 100
+  },
+  {
+    "id": "bad_assumption",
+    "op": "simulate",
+    "household": {
+      "schema": "household-cny.v1",
+      "dataKind": "synthetic_example",
+      "rangeCase": "base",
+      "cash": {
+        "low": 50,
+        "base": 100,
+        "high": 250
+      },
+      "cashAnnual": 0,
+      "reserveMonths": 0,
+      "minimumLiving": 0,
+      "cutFraction": 0,
+      "maxSaleWait": 120,
+      "preference": "cash",
+      "incomes": [
+        {
+          "id": "I",
+          "name": "I",
+          "kind": "wage",
+          "monthly": 300,
+          "from": 1,
+          "to": 120,
+          "every": 1,
+          "annualGrowth": 0,
+          "stability": "given",
+          "stressJob": false,
+          "jobStart": 1,
+          "jobMonths": 0,
+          "jobPayFraction": 0,
+          "recoveryMonths": 0,
+          "returnFraction": 1
+        }
+      ],
+      "expenses": [],
+      "financial": [],
+      "properties": [],
+      "vehicles": [],
+      "loans": [],
+      "citySources": []
+    },
+    "scenarios": [
+      {
+        "id": "bad",
+        "name": "bad",
+        "role": "bad",
+        "paths": [
+          {
+            "key": "wageFactor",
+            "mode": "level",
+            "unit": "倍",
+            "start": 1,
+            "duration": 120,
+            "target": "*",
+            "value": 1,
+            "range": [
+              1,
+              1
+            ],
+            "sourceId": "independent-audit",
+            "editable": true,
+            "assumption": "industry_average"
+          }
+        ]
+      }
+    ],
+    "strategy": {
+      "id": "independent",
+      "actions": []
+    },
+    "limit": 100
+  },
+  {
+    "id": "duplicate_action",
+    "op": "simulate",
+    "household": {
+      "schema": "household-cny.v1",
+      "dataKind": "synthetic_example",
+      "rangeCase": "base",
+      "cash": 100000,
+      "cashAnnual": 0,
+      "reserveMonths": 0,
+      "minimumLiving": 0,
+      "cutFraction": 0,
+      "maxSaleWait": 120,
+      "preference": "cash",
+      "incomes": [],
+      "expenses": [],
+      "financial": [],
+      "properties": [
+        {
+          "id": "P",
+          "name": "audit property",
+          "city": "测试城",
+          "type": "住宅",
+          "use": "idle",
+          "value": 1000,
+          "saleValue": 1000,
+          "saleLag": 0,
+          "lock": 1,
+          "canSell": true,
+          "rent": 0,
+          "vacancy": 0,
+          "leaseLag": 0,
+          "discountRent": 0,
+          "discountLeaseLag": 0,
+          "carry": 0,
+          "saleFee": 0,
+          "closingFee": 0,
+          "replacementAllowed": false,
+          "replacementMonthly": null,
+          "sourceId": ""
+        }
+      ],
+      "vehicles": [],
+      "loans": [],
+      "citySources": []
+    },
+    "scenarios": [
+      {
+        "id": "quiet",
+        "name": "quiet",
+        "role": "quiet",
+        "paths": []
+      }
+    ],
+    "strategy": {
+      "id": "independent",
+      "actions": [
+        {
+          "kind": "list",
+          "asset": "P",
+          "month": 1
+        },
+        {
+          "kind": "list",
+          "asset": "P",
+          "month": 2
+        }
+      ]
+    },
+    "limit": 100
+  },
+  {
+    "id": "two_sales",
+    "op": "simulate",
+    "household": {
+      "schema": "household-cny.v1",
+      "dataKind": "synthetic_example",
+      "rangeCase": "base",
+      "cash": 10000,
+      "cashAnnual": 0,
+      "reserveMonths": 0,
+      "minimumLiving": 0,
+      "cutFraction": 0,
+      "maxSaleWait": 120,
+      "preference": "cash",
+      "incomes": [],
+      "expenses": [],
+      "financial": [],
+      "properties": [
+        {
+          "id": "A",
+          "name": "audit property",
+          "city": "测试城",
+          "type": "住宅",
+          "use": "idle",
+          "value": 1500,
+          "saleValue": 1300,
+          "saleLag": 0,
+          "lock": 1,
+          "canSell": true,
+          "rent": 0,
+          "vacancy": 0,
+          "leaseLag": 0,
+          "discountRent": 0,
+          "discountLeaseLag": 0,
+          "carry": 0,
+          "saleFee": 0,
+          "closingFee": 0,
+          "replacementAllowed": false,
+          "replacementMonthly": null,
+          "sourceId": ""
+        },
+        {
+          "id": "B",
+          "name": "audit property",
+          "city": "测试城",
+          "type": "住宅",
+          "use": "idle",
+          "value": 2600,
+          "saleValue": 2300,
+          "saleLag": 0,
+          "lock": 1,
+          "canSell": true,
+          "rent": 0,
+          "vacancy": 0,
+          "leaseLag": 0,
+          "discountRent": 0,
+          "discountLeaseLag": 0,
+          "carry": 0,
+          "saleFee": 0,
+          "closingFee": 0,
+          "replacementAllowed": false,
+          "replacementMonthly": null,
+          "sourceId": ""
+        }
+      ],
+      "vehicles": [],
+      "loans": [],
+      "citySources": []
+    },
+    "scenarios": [
+      {
+        "id": "quiet",
+        "name": "quiet",
+        "role": "quiet",
+        "paths": []
+      }
+    ],
+    "strategy": {
+      "id": "independent",
+      "actions": [
+        {
+          "kind": "list",
+          "asset": "B",
+          "month": 1
+        },
+        {
+          "kind": "list",
+          "asset": "A",
+          "month": 3
+        }
+      ]
+    },
+    "limit": 100
+  },
+  {
+    "id": "simple_enumeration",
+    "op": "assess",
+    "household": {
+      "schema": "household-cny.v1",
+      "dataKind": "synthetic_example",
+      "rangeCase": "base",
+      "cash": 500,
+      "cashAnnual": 0,
+      "reserveMonths": 0,
+      "minimumLiving": 0,
+      "cutFraction": 0,
+      "maxSaleWait": 120,
+      "preference": "cash",
+      "incomes": [],
+      "expenses": [],
+      "financial": [],
+      "properties": [
+        {
+          "id": "P",
+          "name": "audit property",
+          "city": "测试城",
+          "type": "住宅",
+          "use": "idle",
+          "value": 1000,
+          "saleValue": 1000,
+          "saleLag": 0,
+          "lock": 1,
+          "canSell": true,
+          "rent": 0,
+          "vacancy": 0,
+          "leaseLag": 0,
+          "discountRent": 0,
+          "discountLeaseLag": 0,
+          "carry": 0,
+          "saleFee": 0,
+          "closingFee": 0,
+          "replacementAllowed": false,
+          "replacementMonthly": null,
+          "sourceId": ""
+        }
+      ],
+      "vehicles": [],
+      "loans": [],
+      "citySources": []
+    },
+    "scenarios": [
+      {
+        "id": "quiet",
+        "name": "quiet",
+        "role": "quiet",
+        "paths": []
+      }
+    ],
+    "strategy": {
+      "id": "independent",
+      "actions": []
+    },
+    "limit": 100
+  },
+  {
+    "id": "rich_enumeration",
+    "op": "assess",
+    "household": {
+      "schema": "household-cny.v1",
+      "dataKind": "synthetic_example",
+      "rangeCase": "base",
+      "cash": 25000,
+      "cashAnnual": 0,
+      "reserveMonths": 2,
+      "minimumLiving": 600,
+      "cutFraction": 0.4,
+      "maxSaleWait": 120,
+      "preference": "cash",
+      "incomes": [
+        {
+          "id": "W",
+          "name": "W",
+          "kind": "wage",
+          "monthly": 4400,
+          "from": 1,
+          "to": 120,
+          "every": 1,
+          "annualGrowth": 0,
+          "stability": "given",
+          "stressJob": true,
+          "jobStart": 1,
+          "jobMonths": 0,
+          "jobPayFraction": 0,
+          "recoveryMonths": 0,
+          "returnFraction": 1
+        },
+        {
+          "id": "R",
+          "name": "R",
+          "kind": "business",
+          "monthly": 1700,
+          "from": 1,
+          "to": 120,
+          "every": 1,
+          "annualGrowth": 0,
+          "stability": "given",
+          "stressJob": false,
+          "jobStart": 1,
+          "jobMonths": 0,
+          "jobPayFraction": 0,
+          "recoveryMonths": 0,
+          "returnFraction": 1
+        }
+      ],
+      "expenses": [
+        {
+          "id": "X",
+          "name": "X",
+          "kind": "necessary",
+          "monthly": 600,
+          "from": 1,
+          "to": 120,
+          "every": 1,
+          "annualGrowth": 0,
+          "inflationLinked": false
+        },
+        {
+          "id": "D",
+          "name": "D",
+          "kind": "discretionary",
+          "monthly": 500,
+          "from": 1,
+          "to": 120,
+          "every": 1,
+          "annualGrowth": 0,
+          "inflationLinked": false
+        }
+      ],
+      "financial": [
+        {
+          "id": "F",
+          "name": "audit security",
+          "kind": "stock",
+          "value": 12500,
+          "annualReturn": 0.06,
+          "concentration": 0,
+          "fee": 0.005,
+          "settle": 1,
+          "unlock": 1,
+          "maturity": 0,
+          "restriction": "free",
+          "purpose": "家庭可用"
+        }
+      ],
+      "properties": [
+        {
+          "id": "P",
+          "name": "audit property",
+          "city": "测试城",
+          "type": "住宅",
+          "use": "idle",
+          "value": 98000,
+          "saleValue": 93000,
+          "saleLag": 3,
+          "lock": 1,
+          "canSell": true,
+          "rent": 680,
+          "vacancy": 0,
+          "leaseLag": 3,
+          "discountRent": 0.12,
+          "discountLeaseLag": 1,
+          "carry": 70,
+          "saleFee": 0.021,
+          "closingFee": 0,
+          "replacementAllowed": false,
+          "replacementMonthly": null,
+          "sourceId": ""
+        }
+      ],
+      "vehicles": [
+        {
+          "id": "C",
+          "name": "audit vehicle",
+          "value": 2000,
+          "saleValue": 1740,
+          "annualDepreciation": 0,
+          "saleLag": 1,
+          "lock": 1,
+          "canSell": true,
+          "necessary": false,
+          "replacementAllowed": false,
+          "replacementMonthly": null,
+          "carry": 35,
+          "saleFee": 0,
+          "closingFee": 0
+        }
+      ],
+      "loans": [
+        {
+          "id": "L",
+          "name": "audit loan",
+          "kind": "consumer",
+          "method": "annuity",
+          "principal": 18800,
+          "annualRate": 0.078,
+          "months": 26,
+          "payment": null,
+          "rateType": "fixed",
+          "resetFirst": 12,
+          "resetEvery": 12,
+          "canPrepay": true,
+          "prepayFrom": 1,
+          "prepayMin": 300,
+          "prepayFee": 0.006,
+          "settlementFee": 0,
+          "transferWithLien": false,
+          "allowRecast": true,
+          "allowShorten": true,
+          "collateral": "",
+          "start": 1,
+          "monthlyFee": 0,
+          "allowFull": true,
+          "prepayMax": "unlimited",
+          "prepayPeriodMax": "unlimited",
+          "prepayPeriodMonths": null,
+          "prepayPeriodRemaining": null,
+          "prepayPeriodUsed": null,
+          "salePayoffRule": "unknown",
+          "salePayoffFrom": null,
+          "salePayoffFee": null,
+          "saleSettlementFee": null,
+          "salePayoffFeeBase": "unknown",
+          "saleMaturityReleaseFee": null
+        }
+      ],
+      "citySources": []
+    },
+    "scenarios": [
+      {
+        "id": "quiet",
+        "name": "quiet",
+        "role": "quiet",
+        "paths": []
+      },
+      {
+        "id": "squeeze",
+        "name": "squeeze",
+        "role": "squeeze",
+        "paths": [
+          {
+            "key": "wageFactor",
+            "mode": "level",
+            "unit": "倍",
+            "start": 3,
+            "duration": 22,
+            "target": "W",
+            "value": 0.82,
+            "range": [
+              0.82,
+              0.82
+            ],
+            "sourceId": "independent-audit",
+            "editable": true,
+            "assumption": "stress_test"
+          },
+          {
+            "key": "unemploymentMonths",
+            "mode": "event",
+            "unit": "月",
+            "start": 7,
+            "duration": 1,
+            "target": "*",
+            "value": 4,
+            "range": [
+              4,
+              4
+            ],
+            "sourceId": "independent-audit",
+            "editable": true,
+            "assumption": "stress_test"
+          },
+          {
+            "key": "recoveryMonths",
+            "mode": "level",
+            "unit": "月",
+            "start": 1,
+            "duration": 120,
+            "target": "*",
+            "value": 3,
+            "range": [
+              3,
+              3
+            ],
+            "sourceId": "independent-audit",
+            "editable": true,
+            "assumption": "stress_test"
+          },
+          {
+            "key": "financialShock",
+            "mode": "shock",
+            "unit": "比例",
+            "start": 3,
+            "duration": 1,
+            "target": "*",
+            "value": -0.23,
+            "range": [
+              -0.23,
+              -0.23
+            ],
+            "sourceId": "independent-audit",
+            "editable": true,
+            "assumption": "stress_test"
+          },
+          {
+            "key": "propertyShock",
+            "mode": "shock",
+            "unit": "比例",
+            "start": 2,
+            "duration": 1,
+            "target": "*",
+            "value": -0.12,
+            "range": [
+              -0.12,
+              -0.12
+            ],
+            "sourceId": "independent-audit",
+            "editable": true,
+            "assumption": "stress_test"
+          }
+        ]
+      },
+      {
+        "id": "recovery",
+        "name": "recovery",
+        "role": "recovery",
+        "paths": [
+          {
+            "key": "wageFactor",
+            "mode": "level",
+            "unit": "倍",
+            "start": 1,
+            "duration": 18,
+            "target": "W",
+            "value": 1.12,
+            "range": [
+              1.12,
+              1.12
+            ],
+            "sourceId": "independent-audit",
+            "editable": true,
+            "assumption": "stress_test"
+          },
+          {
+            "key": "propertyShock",
+            "mode": "shock",
+            "unit": "比例",
+            "start": 3,
+            "duration": 1,
+            "target": "*",
+            "value": 0.06,
+            "range": [
+              0.06,
+              0.06
+            ],
+            "sourceId": "independent-audit",
+            "editable": true,
+            "assumption": "stress_test"
+          }
+        ]
+      }
+    ],
+    "strategy": {
+      "id": "independent",
+      "actions": []
+    },
+    "limit": 350
+  },
+  {
+    "id": "reverse_unknown_price",
+    "op": "reverse",
+    "household": {
+      "schema": "household-cny.v1",
+      "dataKind": "synthetic_example",
+      "rangeCase": "base",
+      "cash": 1000,
+      "cashAnnual": 0,
+      "reserveMonths": 0,
+      "minimumLiving": 0,
+      "cutFraction": 0,
+      "maxSaleWait": 120,
+      "preference": "cash",
+      "incomes": [],
+      "expenses": [],
+      "financial": [],
+      "properties": [
+        {
+          "id": "P",
+          "name": "audit property",
+          "city": "测试城",
+          "type": "住宅",
+          "use": "idle",
+          "value": 1000,
+          "saleValue": null,
+          "saleLag": 0,
+          "lock": 1,
+          "canSell": true,
+          "rent": 0,
+          "vacancy": 0,
+          "leaseLag": 0,
+          "discountRent": 0,
+          "discountLeaseLag": 0,
+          "carry": 0,
+          "saleFee": 0,
+          "closingFee": 0,
+          "replacementAllowed": false,
+          "replacementMonthly": null,
+          "sourceId": ""
+        }
+      ],
+      "vehicles": [],
+      "loans": [],
+      "citySources": []
+    },
+    "scenarios": [
+      {
+        "id": "quiet",
+        "name": "quiet",
+        "role": "quiet",
+        "paths": []
+      }
+    ],
+    "strategy": {
+      "id": "independent",
+      "actions": [
+        {
+          "kind": "list",
+          "asset": "P",
+          "month": 1
+        }
+      ]
+    },
+    "limit": 100
+  },
+  {
+    "id": "reverse_unknown_delay",
+    "op": "reverse",
+    "household": {
+      "schema": "household-cny.v1",
+      "dataKind": "synthetic_example",
+      "rangeCase": "base",
+      "cash": 1000,
+      "cashAnnual": 0,
+      "reserveMonths": 0,
+      "minimumLiving": 0,
+      "cutFraction": 0,
+      "maxSaleWait": 120,
+      "preference": "cash",
+      "incomes": [],
+      "expenses": [],
+      "financial": [],
+      "properties": [
+        {
+          "id": "P",
+          "name": "audit property",
+          "city": "测试城",
+          "type": "住宅",
+          "use": "idle",
+          "value": 1000,
+          "saleValue": 1000,
+          "saleLag": null,
+          "lock": 1,
+          "canSell": true,
+          "rent": 0,
+          "vacancy": 0,
+          "leaseLag": 0,
+          "discountRent": 0,
+          "discountLeaseLag": 0,
+          "carry": 0,
+          "saleFee": 0,
+          "closingFee": 0,
+          "replacementAllowed": false,
+          "replacementMonthly": null,
+          "sourceId": ""
+        }
+      ],
+      "vehicles": [],
+      "loans": [],
+      "citySources": []
+    },
+    "scenarios": [
+      {
+        "id": "quiet",
+        "name": "quiet",
+        "role": "quiet",
+        "paths": []
+      }
+    ],
+    "strategy": {
+      "id": "independent",
+      "actions": [
+        {
+          "kind": "list",
+          "asset": "P",
+          "month": 1
+        }
+      ]
+    },
+    "limit": 100
+  },
+  {
+    "id": "reverse_price",
+    "op": "reverse",
+    "household": {
+      "schema": "household-cny.v1",
+      "dataKind": "synthetic_example",
+      "rangeCase": "base",
+      "cash": 0,
+      "cashAnnual": 0,
+      "reserveMonths": 0,
+      "minimumLiving": 10,
+      "cutFraction": 0,
+      "maxSaleWait": 120,
+      "preference": "cash",
+      "incomes": [],
+      "expenses": [],
+      "financial": [],
+      "properties": [
+        {
+          "id": "P",
+          "name": "audit property",
+          "city": "测试城",
+          "type": "住宅",
+          "use": "idle",
+          "value": 1500,
+          "saleValue": 1500,
+          "saleLag": 0,
+          "lock": 1,
+          "canSell": true,
+          "rent": 0,
+          "vacancy": 0,
+          "leaseLag": 0,
+          "discountRent": 0,
+          "discountLeaseLag": 0,
+          "carry": 0,
+          "saleFee": 0,
+          "closingFee": 0,
+          "replacementAllowed": false,
+          "replacementMonthly": null,
+          "sourceId": ""
+        }
+      ],
+      "vehicles": [],
+      "loans": [],
+      "citySources": []
+    },
+    "scenarios": [
+      {
+        "id": "quiet",
+        "name": "quiet",
+        "role": "quiet",
+        "paths": []
+      }
+    ],
+    "strategy": {
+      "id": "independent",
+      "actions": [
+        {
+          "kind": "list",
+          "asset": "P",
+          "month": 1
+        }
+      ]
+    },
+    "limit": 100
+  },
+  {
+    "id": "reverse_joint",
+    "op": "reverse",
+    "household": {
+      "schema": "household-cny.v1",
+      "dataKind": "synthetic_example",
+      "rangeCase": "base",
+      "cash": 0,
+      "cashAnnual": 0,
+      "reserveMonths": 0,
+      "minimumLiving": 150,
+      "cutFraction": 0,
+      "maxSaleWait": 120,
+      "preference": "cash",
+      "incomes": [
+        {
+          "id": "W",
+          "name": "W",
+          "kind": "wage",
+          "monthly": 100,
+          "from": 1,
+          "to": 120,
+          "every": 1,
+          "annualGrowth": 0,
+          "stability": "given",
+          "stressJob": false,
+          "jobStart": 1,
+          "jobMonths": 0,
+          "jobPayFraction": 0,
+          "recoveryMonths": 0,
+          "returnFraction": 1
+        }
+      ],
+      "expenses": [],
+      "financial": [],
+      "properties": [
+        {
+          "id": "P",
+          "name": "audit property",
+          "city": "测试城",
+          "type": "住宅",
+          "use": "let",
+          "value": 1000,
+          "saleValue": 1000,
+          "saleLag": 0,
+          "lock": 1,
+          "canSell": true,
+          "rent": 100,
+          "vacancy": 0,
+          "leaseLag": 0,
+          "discountRent": 0,
+          "discountLeaseLag": 0,
+          "carry": 0,
+          "saleFee": 0,
+          "closingFee": 0,
+          "replacementAllowed": false,
+          "replacementMonthly": null,
+          "sourceId": ""
+        }
+      ],
+      "vehicles": [],
+      "loans": [],
+      "citySources": []
+    },
+    "scenarios": [
+      {
+        "id": "quiet",
+        "name": "quiet",
+        "role": "quiet",
+        "paths": []
+      }
+    ],
+    "strategy": {
+      "id": "independent",
+      "actions": []
+    },
+    "limit": 100
+  },
+  {
+    "id": "reverse_wage",
+    "op": "reverse",
+    "household": {
+      "schema": "household-cny.v1",
+      "dataKind": "synthetic_example",
+      "rangeCase": "base",
+      "cash": 0,
+      "cashAnnual": 0,
+      "reserveMonths": 0,
+      "minimumLiving": 75,
+      "cutFraction": 0,
+      "maxSaleWait": 120,
+      "preference": "cash",
+      "incomes": [
+        {
+          "id": "I",
+          "name": "I",
+          "kind": "wage",
+          "monthly": 100,
+          "from": 1,
+          "to": 120,
+          "every": 1,
+          "annualGrowth": 0,
+          "stability": "given",
+          "stressJob": false,
+          "jobStart": 1,
+          "jobMonths": 0,
+          "jobPayFraction": 0,
+          "recoveryMonths": 0,
+          "returnFraction": 1
+        }
+      ],
+      "expenses": [],
+      "financial": [],
+      "properties": [],
+      "vehicles": [],
+      "loans": [],
+      "citySources": []
+    },
+    "scenarios": [
+      {
+        "id": "quiet",
+        "name": "quiet",
+        "role": "quiet",
+        "paths": []
+      }
+    ],
+    "strategy": {
+      "id": "independent",
+      "actions": []
+    },
+    "limit": 100
+  },
+  {
+    "id": "reverse_prepay",
+    "op": "reverse",
+    "household": {
+      "schema": "household-cny.v1",
+      "dataKind": "synthetic_example",
+      "rangeCase": "base",
+      "cash": 5000,
+      "cashAnnual": 0,
+      "reserveMonths": 0,
+      "minimumLiving": 50,
+      "cutFraction": 0,
+      "maxSaleWait": 120,
+      "preference": "cash",
+      "incomes": [
+        {
+          "id": "I",
+          "name": "I",
+          "kind": "wage",
+          "monthly": 500,
+          "from": 1,
+          "to": 120,
+          "every": 1,
+          "annualGrowth": 0,
+          "stability": "given",
+          "stressJob": false,
+          "jobStart": 1,
+          "jobMonths": 0,
+          "jobPayFraction": 0,
+          "recoveryMonths": 0,
+          "returnFraction": 1
+        }
+      ],
+      "expenses": [],
+      "financial": [],
+      "properties": [],
+      "vehicles": [],
+      "loans": [
+        {
+          "id": "L",
+          "name": "audit loan",
+          "kind": "consumer",
+          "method": "annuity",
+          "principal": 1200,
+          "annualRate": 0,
+          "months": 12,
+          "payment": null,
+          "rateType": "fixed",
+          "resetFirst": 12,
+          "resetEvery": 12,
+          "canPrepay": true,
+          "prepayFrom": 1,
+          "prepayMin": 0,
+          "prepayFee": 0,
+          "settlementFee": 0,
+          "transferWithLien": false,
+          "allowRecast": true,
+          "allowShorten": true,
+          "collateral": "",
+          "start": 1,
+          "monthlyFee": 0,
+          "allowFull": true,
+          "prepayMax": "unlimited",
+          "prepayPeriodMax": "unlimited",
+          "prepayPeriodMonths": null,
+          "prepayPeriodRemaining": null,
+          "prepayPeriodUsed": null,
+          "salePayoffRule": "unknown",
+          "salePayoffFrom": null,
+          "salePayoffFee": null,
+          "saleSettlementFee": null,
+          "salePayoffFeeBase": "unknown",
+          "saleMaturityReleaseFee": null
+        }
+      ],
+      "citySources": []
+    },
+    "scenarios": [
+      {
+        "id": "quiet",
+        "name": "quiet",
+        "role": "quiet",
+        "paths": []
+      }
+    ],
+    "strategy": {
+      "id": "independent",
+      "actions": []
+    },
+    "limit": 100
+  },
+  {
+    "id": "reverse_delay",
+    "op": "reverse",
+    "household": {
+      "schema": "household-cny.v1",
+      "dataKind": "synthetic_example",
+      "rangeCase": "base",
+      "cash": 200,
+      "cashAnnual": 0,
+      "reserveMonths": 0,
+      "minimumLiving": 100,
+      "cutFraction": 0,
+      "maxSaleWait": 120,
+      "preference": "cash",
+      "incomes": [],
+      "expenses": [],
+      "financial": [],
+      "properties": [
+        {
+          "id": "P",
+          "name": "audit property",
+          "city": "测试城",
+          "type": "住宅",
+          "use": "idle",
+          "value": 12000,
+          "saleValue": 12000,
+          "saleLag": 0,
+          "lock": 1,
+          "canSell": true,
+          "rent": 0,
+          "vacancy": 0,
+          "leaseLag": 0,
+          "discountRent": 0,
+          "discountLeaseLag": 0,
+          "carry": 0,
+          "saleFee": 0,
+          "closingFee": 0,
+          "replacementAllowed": false,
+          "replacementMonthly": null,
+          "sourceId": ""
+        }
+      ],
+      "vehicles": [],
+      "loans": [],
+      "citySources": []
+    },
+    "scenarios": [
+      {
+        "id": "quiet",
+        "name": "quiet",
+        "role": "quiet",
+        "paths": []
+      }
+    ],
+    "strategy": {
+      "id": "independent",
+      "actions": [
+        {
+          "kind": "list",
+          "asset": "P",
+          "month": 1
+        }
+      ]
+    },
+    "limit": 100
+  },
+  {
+    "id": "reverse_rent",
+    "op": "reverse",
+    "household": {
+      "schema": "household-cny.v1",
+      "dataKind": "synthetic_example",
+      "rangeCase": "base",
+      "cash": 20000,
+      "cashAnnual": 0,
+      "reserveMonths": 0,
+      "minimumLiving": 0,
+      "cutFraction": 0,
+      "maxSaleWait": 120,
+      "preference": "cash",
+      "incomes": [],
+      "expenses": [],
+      "financial": [],
+      "properties": [
+        {
+          "id": "P",
+          "name": "audit property",
+          "city": "测试城",
+          "type": "住宅",
+          "use": "idle",
+          "value": 12000,
+          "saleValue": 13000,
+          "saleLag": 0,
+          "lock": 1,
+          "canSell": true,
+          "rent": 25,
+          "vacancy": 0,
+          "leaseLag": 0,
+          "discountRent": 0,
+          "discountLeaseLag": 0,
+          "carry": 3,
+          "saleFee": 0,
+          "closingFee": 0,
+          "replacementAllowed": false,
+          "replacementMonthly": null,
+          "sourceId": ""
+        }
+      ],
+      "vehicles": [],
+      "loans": [],
+      "citySources": []
+    },
+    "scenarios": [
+      {
+        "id": "quiet",
+        "name": "quiet",
+        "role": "quiet",
+        "paths": []
+      }
+    ],
+    "strategy": {
+      "id": "independent",
+      "actions": []
+    },
+    "limit": 100
+  }
+]
