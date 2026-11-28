@@ -1,0 +1,19 @@
+{
+  "registered_at": "2026-11-28T04:51:34.906092+00:00",
+  "author": "boss 1",
+  "question": "中国活动描述：PMI调查桥接是否比上一季度GDP同比基线更能解释2016—2026各季实际GDP变化；新月度观察影响仅作为诊断。",
+  "target": "single-quarter real GDP year-on-year growth, percentage points; official NBS table 2",
+  "predictors": [
+    "manufacturing PMI level",
+    "non-manufacturing PMI business activity level"
+  ],
+  "reason": "均有连续月度同类指数；避免工业/社零1—2月合并口径被当独立单月和高维小样本。PMI调查与GDP不是同一变量，不强称因果。",
+  "information_mode": "retrospective_spliced_published_vintages_not_pseudo_real_time",
+  "period": "2016Q1—2026Q3, old NBS 2022-01-18 vintage for2016—2020, NBS2026-10-20 vintage for2021—2026",
+  "known_limit": "2016—2020与2021—2026属于不同核算修订版本；2021重叠可量化修订，但不是全史同版。PMI为当前下载版，无完整初始发布vintage。不能获得实时预测有效性。",
+  "baseline": "previous-quarter observed real GDP yoy",
+  "estimator": "existing work.py bridge OLS, initial12quarters and expanding window, no random split",
+  "sensitivity_predeclared": "same-vintage2021—2026 shortened sample; fixed final2026Q3 holdout for existing DynamicFactorMQ news exercise, no tuning after comparison",
+  "selection_rule": "report MAE and failures even if model inferior; China event probability disallowed; no single point forecast used for household paths; monthly-latent GDP readout not automatically quarterly GDP at non-quarter-end",
+  "use": "retrospective activity diagnostic/explicit model rejection if unsupported"
+}

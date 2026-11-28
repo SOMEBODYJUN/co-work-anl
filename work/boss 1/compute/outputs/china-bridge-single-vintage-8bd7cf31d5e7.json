@@ -1,0 +1,85 @@
+{
+  "schema": "cncrisis-method-result.v1",
+  "name": "bridge",
+  "capability": {
+    "method": "Expanding-window OLS bridge and lagged-observation baseline",
+    "state": "runtime-tested-synthetic",
+    "upstream": "numpy.linalg.lstsq",
+    "version": "2.3.5"
+  },
+  "result": {
+    "input_kind": "observed_china_retrospective_panel",
+    "evaluation": "Expanding-window completed-quarter bridge: each training sample ends before its evaluation quarter. For real-time nowcasts caller must provide publication-vintage panels.",
+    "n_test": 11,
+    "bridge_mae": 0.6434697522459562,
+    "lag_baseline_mae": 0.3454545454545456,
+    "predictions": [
+      {
+        "quarter": "2024Q1",
+        "bridge": 5.498893190657171,
+        "lag_baseline": 5.3,
+        "actual": 5.3
+      },
+      {
+        "quarter": "2024Q2",
+        "bridge": 5.811409146443732,
+        "lag_baseline": 5.3,
+        "actual": 4.7
+      },
+      {
+        "quarter": "2024Q3",
+        "bridge": 4.778524874880329,
+        "lag_baseline": 4.7,
+        "actual": 4.6
+      },
+      {
+        "quarter": "2024Q4",
+        "bridge": 6.697745577069595,
+        "lag_baseline": 4.6,
+        "actual": 5.4
+      },
+      {
+        "quarter": "2025Q1",
+        "bridge": 5.948280054975992,
+        "lag_baseline": 5.4,
+        "actual": 5.4
+      },
+      {
+        "quarter": "2025Q2",
+        "bridge": 4.55641662881967,
+        "lag_baseline": 5.4,
+        "actual": 5.2
+      },
+      {
+        "quarter": "2025Q3",
+        "bridge": 4.850399597583067,
+        "lag_baseline": 5.2,
+        "actual": 4.8
+      },
+      {
+        "quarter": "2025Q4",
+        "bridge": 4.679808005413058,
+        "lag_baseline": 4.8,
+        "actual": 4.5
+      },
+      {
+        "quarter": "2026Q1",
+        "bridge": 4.998512978928673,
+        "lag_baseline": 4.5,
+        "actual": 5.0
+      },
+      {
+        "quarter": "2026Q2",
+        "bridge": 6.5802755216592175,
+        "lag_baseline": 5.0,
+        "actual": 4.3
+      },
+      {
+        "quarter": "2026Q3",
+        "bridge": 5.087760913771699,
+        "lag_baseline": 4.3,
+        "actual": 4.5
+      }
+    ]
+  }
+}

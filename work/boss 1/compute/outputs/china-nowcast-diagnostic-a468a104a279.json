@@ -1,0 +1,33 @@
+{
+  "schema": "cncrisis-method-result.v1",
+  "name": "nowcast",
+  "capability": {
+    "method": "DynamicFactorMQ fit/apply/get_forecast/news",
+    "state": "runtime-tested-synthetic",
+    "upstream": "statsmodels/statsmodels",
+    "version": "0.15.0"
+  },
+  "result": {
+    "input_kind": "observed_china_retrospective_panel",
+    "model": "statsmodels DynamicFactorMQ(1 factor, AR(1), iid idiosyncratic)",
+    "target_period": "2026-09",
+    "target": "quarterly gdp latent monthly representation",
+    "previous_estimate": 3.587253216528215,
+    "updated_estimate": 3.5205981716808563,
+    "news_impact": -0.06665504484735858,
+    "news_reconciliation_error": 4.163336342344337e-17,
+    "next_month_forecast": {
+      "manufacturing_pmi": 49.912188614634964,
+      "nonmanufacturing_pmi": 51.95585661200388,
+      "gdp": 3.674195361425523
+    },
+    "n_new_observations": 2,
+    "parameters_held_fixed": true,
+    "converged": true,
+    "em_iterations": 12,
+    "em_tolerance": 0.0001,
+    "em_convergence_criterion": 7.208461687138272e-05,
+    "warnings": [],
+    "economic_interpretation": "Activity nowcast only. The synthetic fixture is an API/information-vintage exercise, not Chinese GDP or a crisis probability."
+  }
+}

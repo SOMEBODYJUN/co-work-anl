@@ -1,0 +1,62 @@
+{
+  "schema": "cncrisis-method-result.v1",
+  "name": "bank-stress",
+  "capability": {
+    "method": "Reconciled opening balance sheet, allowance absorption, capital and liquidity/firesale stress",
+    "state": "conditional accounting; explicit measured inputs and assumptions required",
+    "upstream": "balance-sheet stress accounting; local implementation",
+    "version": "1"
+  },
+  "result": {
+    "input_kind": "synthetic_accounting_fixture",
+    "unit": "synthetic million CNY",
+    "results": [
+      {
+        "bank": "fixture-bank",
+        "scenario": "credit-loss",
+        "gross_credit_loss": 8.0,
+        "opening_allowance_used": 3.0,
+        "new_credit_loss_charged_to_capital": 5.0,
+        "liquid_assets_sold_book": 0.0,
+        "fire_sale_loss": 0.0,
+        "ending_capital": 6.0,
+        "capital_ratio": 0.06,
+        "capital_shortfall": 4.0,
+        "cash_available_after_requested_outflows": 11.0,
+        "unmet_funding_need": 0,
+        "opening_balance_residual": 0.0
+      },
+      {
+        "bank": "fixture-bank",
+        "scenario": "credit-and-runoff",
+        "gross_credit_loss": 8.0,
+        "opening_allowance_used": 3.0,
+        "new_credit_loss_charged_to_capital": 5.0,
+        "liquid_assets_sold_book": 15.555555555555555,
+        "fire_sale_loss": 1.5555555555555556,
+        "ending_capital": 4.444444444444445,
+        "capital_ratio": 0.044444444444444446,
+        "capital_shortfall": 5.555555555555555,
+        "cash_available_after_requested_outflows": 0,
+        "unmet_funding_need": 0,
+        "opening_balance_residual": 0.0
+      },
+      {
+        "bank": "fixture-bank",
+        "scenario": "liquidity-support",
+        "gross_credit_loss": 8.0,
+        "opening_allowance_used": 3.0,
+        "new_credit_loss_charged_to_capital": 5.0,
+        "liquid_assets_sold_book": 0.0,
+        "fire_sale_loss": 0.0,
+        "ending_capital": 6.0,
+        "capital_ratio": 0.06,
+        "capital_shortfall": 4.0,
+        "cash_available_after_requested_outflows": 21.0,
+        "unmet_funding_need": 0,
+        "opening_balance_residual": 0.0
+      }
+    ],
+    "scope": "One-horizon conditional stress accounts: cash earnings are realized and retained; credit losses are not deducted from cash twice; liquidity loans add funding, not equity; assumed RWA is explicit. Unmet outflows are funding needs, not free borrowing. No estimated event probabilities or automatic interbank contagion."
+  }
+}

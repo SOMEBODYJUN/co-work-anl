@@ -230,6 +230,98 @@
         "research/inventory.md": "4087aaa458adec926825262be085e3967cf4e2915a71a7353bf09a0fc6d5a2e3"
       },
       "id": "s02_inventory"
+    },
+    {
+      "at": "2026-11-28T04:49:01+00:00",
+      "cycle": 1,
+      "event": "search_log",
+      "id": "Q00001",
+      "query": "2026年三季度 商业银行 监管指标 分机构 净息差 关注 资本",
+      "result_count": 1
+    },
+    {
+      "at": "2026-11-28T04:49:01+00:00",
+      "cycle": 1,
+      "event": "search_log",
+      "id": "Q00002",
+      "query": "2026年10月 国民经济 工业企业利润 居民收入 金融统计",
+      "result_count": 3
+    },
+    {
+      "at": "2026-11-28T04:49:01+00:00",
+      "cycle": 1,
+      "event": "search_log",
+      "id": "Q00003",
+      "query": "site.pbc.gov.cn 2026年10月 金融统计数据报告 11.42 住户",
+      "result_count": 1
+    },
+    {
+      "affected": [],
+      "at": "2026-11-28T04:50:32+00:00",
+      "cycle": 1,
+      "event": "ingest",
+      "records": [
+        {
+          "id": "MA001",
+          "status": "added"
+        },
+        {
+          "id": "MA002",
+          "status": "added"
+        },
+        {
+          "id": "MA003",
+          "status": "added"
+        },
+        {
+          "id": "MA004",
+          "status": "added"
+        },
+        {
+          "id": "MA005",
+          "status": "added"
+        },
+        {
+          "id": "MA006",
+          "status": "added"
+        },
+        {
+          "id": "MA007",
+          "status": "added"
+        }
+      ]
+    },
+    {
+      "at": "2026-11-28T04:50:51+00:00",
+      "cycle": 1,
+      "event": "search_log",
+      "id": "Q00004",
+      "query": "2026年10月金融统计数据报告 住户贷款 1.46 中国人民银行",
+      "result_count": 0
+    },
+    {
+      "at": "2026-11-28T04:50:52+00:00",
+      "cycle": 1,
+      "event": "search_log",
+      "id": "Q00005",
+      "query": "2026 10 16-24 17.2 失业率 国家统计局",
+      "result_count": 1
+    },
+    {
+      "at": "2026-11-28T04:50:52+00:00",
+      "cycle": 1,
+      "event": "search_log",
+      "id": "Q00006",
+      "query": "IMF 2026 China Article IV World Bank July 2026 China Economic Update growth 2027",
+      "result_count": 2
+    },
+    {
+      "at": "2026-11-28T04:50:52+00:00",
+      "cycle": 1,
+      "event": "search_log",
+      "id": "Q00007",
+      "query": "中国 历史月度 PMI 工业增加值 社零 季度 GDP 原始 发布版本 2016 2026",
+      "result_count": 2
     }
   ],
   "mode": "first",
@@ -237,7 +329,7 @@
   "proposals": {},
   "release": null,
   "review": null,
-  "revision": 1,
+  "revision": 2,
   "runtime": {
     "actor": "boss 1",
     "created_at": "2026-11-28T04:48:13+00:00",
@@ -249,7 +341,172 @@
     "schema": 1
   },
   "schema": 1,
-  "searches": [],
+  "searches": [
+    {
+      "decision": "原含itemId URL首开403，定向搜索同docId得到监管原文；取得分机构表入口后继续逐表。",
+      "executed_at": "2026-11-28T04:49:00.965978+00:00",
+      "id": "Q00001",
+      "key": [
+        "2026年三季度 商业银行 监管指标 分机构 净息差 关注 资本",
+        "banks",
+        "2026Q3"
+      ],
+      "next_gap": "分机构原表与真实银行敞口/资本口径",
+      "period": "2026Q3",
+      "provider": "host-built-in-search",
+      "query": "2026年三季度 商业银行 监管指标 分机构 净息差 关注 资本",
+      "results": [
+        {
+          "host_reference": "turn787747517search0",
+          "title": "2026年三季度银行业保险业主要监管指标数据情况",
+          "url": "https://www.nfra.gov.cn/cn/view/pages/ItemDetail.html?docId=1279786"
+        }
+      ],
+      "topic": "banks"
+    },
+    {
+      "decision": "新增11月27日10月利润版本替换原E35—37至9月的当前使用；收入增长与消费增速差异用于需求分化。",
+      "executed_at": "2026-11-28T04:49:00.965978+00:00",
+      "id": "Q00002",
+      "key": [
+        "2026年10月 国民经济 工业企业利润 居民收入 金融统计",
+        "households_macro",
+        "2026-10"
+      ],
+      "next_gap": "央行原表、居民债务/收入分组、长期活动面板",
+      "period": "2026-10",
+      "provider": "host-built-in-search",
+      "query": "2026年10月 国民经济 工业企业利润 居民收入 金融统计",
+      "results": [
+        {
+          "host_reference": "turn787747517view0",
+          "title": "2026年1—10月份全国规模以上工业企业利润增长16.0%",
+          "url": "https://www.stats.gov.cn/zwfwck/sjfb/202611/t20261127_1965949.html"
+        },
+        {
+          "host_reference": "turn958219890view1",
+          "title": "10月份国民经济运行",
+          "url": "https://www.stats.gov.cn/sj/zxfb/202611/t20261116_1965844.html"
+        },
+        {
+          "host_reference": "turn787747517view1",
+          "title": "前三季度居民收入和消费支出解读",
+          "url": "https://www.stats.gov.cn/xxgk/jd/sjjd2020/202610/t20261019_1965631.html"
+        }
+      ],
+      "topic": "households_macro"
+    },
+    {
+      "decision": "政府转载确认细分住户贷款负流量；仍追央行原发布并保留转载层级。",
+      "executed_at": "2026-11-28T04:49:00.965978+00:00",
+      "id": "Q00003",
+      "key": [
+        "site.pbc.gov.cn 2026年10月 金融统计数据报告 11.42 住户",
+        "credit",
+        "2026-10"
+      ],
+      "next_gap": "PBC原发URL及居民中长期贷款、按揭余额",
+      "period": "2026-10",
+      "provider": "host-built-in-search",
+      "query": "site.pbc.gov.cn 2026年10月 金融统计数据报告 11.42 住户",
+      "results": [
+        {
+          "host_reference": "turn787747517search2",
+          "title": "2026年10月金融统计数据报告（上海市委金融办转载央行）",
+          "url": "https://jrj.sh.gov.cn/SCGK194/20261116/00d09e641a1148d5bdee81e3f0f483de.html"
+        }
+      ],
+      "topic": "credit"
+    },
+    {
+      "decision": "PBC限定域定向两次均未返回可定位原发页面；同一统计报告已有上海政府转载。保留原发访问缺口而不是制造新来源。",
+      "executed_at": "2026-11-28T04:50:51.688722+00:00",
+      "id": "Q00004",
+      "key": [
+        "2026年10月金融统计数据报告 住户贷款 1.46 中国人民银行",
+        "credit",
+        "2026-10"
+      ],
+      "period": "2026-10",
+      "provider": "host-built-in-search-and-open",
+      "query": "2026年10月金融统计数据报告 住户贷款 1.46 中国人民银行",
+      "results": [],
+      "topic": "credit"
+    },
+    {
+      "decision": "只取得总体及30—59岁口径；E30青年17.2仍待直接表验证，不能用该结果冒充已验证青年数据。",
+      "executed_at": "2026-11-28T04:50:51.688722+00:00",
+      "id": "Q00005",
+      "key": [
+        "2026 10 16-24 17.2 失业率 国家统计局",
+        "household_distribution",
+        "2026Q3-10"
+      ],
+      "period": "2026Q3-10",
+      "provider": "host-built-in-search-and-open",
+      "query": "2026 10 16-24 17.2 失业率 国家统计局",
+      "results": [
+        {
+          "host_reference": "turn466016226search2",
+          "title": "统计局答记者问：就业与物价",
+          "url": "https://www.stats.gov.cn/sj/sjjd/202611/t20261116_1965869.html"
+        }
+      ],
+      "topic": "household_distribution"
+    },
+    {
+      "decision": "搜索未直达，打开已给官方URL成功。分别保留2月及7月预测版本，不冒充11月已实现。",
+      "executed_at": "2026-11-28T04:50:51.688722+00:00",
+      "id": "Q00006",
+      "key": [
+        "imf 2026 china article iv world bank july 2026 china economic update growth 2027",
+        "policy_external",
+        "2026-2027"
+      ],
+      "period": "2026-2027",
+      "provider": "host-built-in-search-and-open",
+      "query": "IMF 2026 China Article IV World Bank July 2026 China Economic Update growth 2027",
+      "results": [
+        {
+          "host_reference": "turn517086881view0",
+          "title": "IMF 2025 Article IV conclusion",
+          "url": "https://www.imf.org/en/news/articles/2026/02/18/pr-26053-china-imf-executive-board-concludes-2025-article-iv-consultation"
+        },
+        {
+          "host_reference": "turn466016226view1",
+          "title": "WorldBank Rebalancing Growth",
+          "url": "https://www.worldbank.org/en/news/press-release/2026/07/07/rebalancing-growth-china-economic-update"
+        }
+      ],
+      "topic": "policy_external"
+    },
+    {
+      "decision": "中国季度目标从NBS当季实际同比表提取，月度真实AKShare/Eastmoney序列另保存；工业字段发布时间实为统计月，不得用于伪实时信息时点。",
+      "executed_at": "2026-11-28T04:50:51.688722+00:00",
+      "id": "Q00007",
+      "key": [
+        "中国 历史月度 pmi 工业增加值 社零 季度 gdp 原始 发布版本 2016 2026",
+        "activity_models",
+        "2016-2026"
+      ],
+      "period": "2016-2026",
+      "provider": "host-built-in-search-and-open",
+      "query": "中国 历史月度 PMI 工业增加值 社零 季度 GDP 原始 发布版本 2016 2026",
+      "results": [
+        {
+          "host_reference": "turn147675651view0",
+          "title": "2026Q3 GDP release and revised historical quarterly table",
+          "url": "https://www.stats.gov.cn/sj/zxfb/202610/t20261020_1965658.html"
+        },
+        {
+          "host_reference": "turn155128147view0",
+          "title": "2021Q4 GDP release: 2016—2021 historical quarterly table",
+          "url": "https://www.stats.gov.cn/sj/zxfb/202302/t20230203_1901345.html"
+        }
+      ],
+      "topic": "activity_models"
+    }
+  ],
   "sources": {
     "E01": {
       "blob": "source_blobs/6a87c7635572de39b16f71e310aeb7f605e7a7f3a26140255ffe5cfbb61d9211.bin",
@@ -1189,6 +1446,160 @@
       "text": "{\"indicator\": \"成交额\", \"value_as_supplied\": \"13258.461462\", \"unit\": \"亿元\", \"observation_period\": \"2026-11-26\", \"interpretation_as_supplied\": \"含该供应商样本，不能与仅沪深口径混用\"}",
       "topic": "A股",
       "url": "05_market_snapshot.json",
+      "versions": []
+    },
+    "MA001": {
+      "blob": "source_blobs/0e28fb7870a42073a085ec20627b353a059d9d379b663e3676e1ad5407f29117.bin",
+      "body_sha256": "0e28fb7870a42073a085ec20627b353a059d9d379b663e3676e1ad5407f29117",
+      "canonical_url": "https://www.stats.gov.cn/zwfwck/sjfb/202611/t20261127_1965949.html",
+      "event_id": "NBS-MA001",
+      "id": "MA001",
+      "impact_note": "首轮正式机制图尚未建立；将在s13挂到所列主题的正式节点。",
+      "input_kind": "observed_publication",
+      "intended_targets": "J-DEMAND/J-JOBS",
+      "kind": "observation",
+      "observation_period": "2026-01/2026-10",
+      "published_at": "2026-11-27",
+      "received_at": "2026-11-28T04:50:32+00:00",
+      "retrieved_at": "2026-11-28T04:50:32.854024+00:00",
+      "revision": 1,
+      "source_family": "NBS",
+      "source_location": "表1—3及正文财务指标",
+      "targets": [],
+      "text": "规模以上工业利润67373.6亿元，同比16.0%；10月单月20.1%。营收118.41448万亿元同比6.7%；应收30.45万亿元同比10.5%，回收期72.2天同比加1.4天。私营规上工业利润11.4%，制造业17.5%，电子设备1.0倍，汽车-26.0%，非金属制品-46.7%。财务表按可比范围；经济类型重叠不可加总。",
+      "url": "https://www.stats.gov.cn/zwfwck/sjfb/202611/t20261127_1965949.html",
+      "versions": []
+    },
+    "MA002": {
+      "blob": "source_blobs/ac7149ccebf4f7e29c4a24f93c54c211c29130c278bfb465a3d228504cda190d.bin",
+      "body_sha256": "ac7149ccebf4f7e29c4a24f93c54c211c29130c278bfb465a3d228504cda190d",
+      "canonical_url": "https://www.stats.gov.cn/sj/zxfb/202611/t20261116_1965844.html",
+      "event_id": "NBS-MA002",
+      "id": "MA002",
+      "impact_note": "首轮正式机制图尚未建立；将在s13挂到所列主题的正式节点。",
+      "input_kind": "observed_publication",
+      "intended_targets": "J-DEMAND/J-JOBS/J-MACRO",
+      "kind": "observation",
+      "observation_period": "2026-10;2026-01/2026-10",
+      "published_at": "2026-11-16",
+      "received_at": "2026-11-28T04:50:32+00:00",
+      "retrieved_at": "2026-11-28T04:50:32.854024+00:00",
+      "revision": 1,
+      "source_family": "NBS",
+      "source_location": "正文第三—七节及附注1/5/6",
+      "targets": [],
+      "text": "10月工业增加值实际同比4.8%、社零名义0.4%；前十月商品与服务零售合计2.5%、服务零售4.9%；非房地产民间投资-7.8%。前十月人民币出口259866亿元同比17.6%、进口188234亿元同比23.6%；10月出口28.7%、进口34.7%。10月失业率5.1%、核心CPI0.8%、CPI0.7%、PPI5.7%、购进价格7.9%。投资改革存在上年同期可比修订，网上零售统计范围扩大。",
+      "url": "https://www.stats.gov.cn/sj/zxfb/202611/t20261116_1965844.html",
+      "versions": []
+    },
+    "MA003": {
+      "blob": "source_blobs/2cae9cfcaf523977a259d6261d264691cc50906e49c2d796d49677e0b6dc4e59.bin",
+      "body_sha256": "2cae9cfcaf523977a259d6261d264691cc50906e49c2d796d49677e0b6dc4e59",
+      "canonical_url": "https://www.stats.gov.cn/sj/zxfbhjd/202610/t20261019_1965612.html",
+      "event_id": "NBS-MA003",
+      "id": "MA003",
+      "impact_note": "首轮正式机制图尚未建立；将在s13挂到所列主题的正式节点。",
+      "input_kind": "observed_publication",
+      "intended_targets": "J-DEMAND/J-JOBS",
+      "kind": "observation",
+      "observation_period": "2026Q1-Q3",
+      "published_at": "2026-10-19",
+      "received_at": "2026-11-28T04:50:32+00:00",
+      "retrieved_at": "2026-11-28T04:50:32.854024+00:00",
+      "revision": 1,
+      "source_family": "NBS",
+      "source_location": "收入/消费正文、表1、调查方法",
+      "targets": [],
+      "text": "全国人均可支配收入34230元名义5.3%实际4.4%；中位数28388元名义4.6%。城镇44945元实际3.6%，中位39728元名义3.9%；农村18809元实际5.6%。人均消费22354元名义3.6%实际2.7%，城镇实际2.1%。工资19653元名义5.3%、经营净收入5542元6.6%、财产净收入2671元1.6%、转移6364元5.7%。近2000县16万户概率抽样，不同于线上小微经营者调查；调查是收入含实物口径，不直接等于家庭每月到账现金。",
+      "url": "https://www.stats.gov.cn/sj/zxfbhjd/202610/t20261019_1965612.html",
+      "versions": []
+    },
+    "MA004": {
+      "blob": "source_blobs/d61769f668cf008f20abe87f8b2e31bdc86b84da661f2ffbf370017ed725e93e.bin",
+      "body_sha256": "d61769f668cf008f20abe87f8b2e31bdc86b84da661f2ffbf370017ed725e93e",
+      "canonical_url": "https://jrj.sh.gov.cn/SCGK194/20261116/00d09e641a1148d5bdee81e3f0f483de.html",
+      "event_id": "PBC-official-reprint-MA004",
+      "id": "MA004",
+      "impact_note": "首轮正式机制图尚未建立；将在s13挂到所列主题的正式节点。",
+      "input_kind": "observed_publication",
+      "intended_targets": "J-DEMAND/J-FISCAL",
+      "kind": "observation",
+      "observation_period": "2026-10;2026-01/2026-10",
+      "published_at": "2026-11-16",
+      "received_at": "2026-11-28T04:50:32+00:00",
+      "retrieved_at": "2026-11-28T04:50:32.854024+00:00",
+      "revision": 1,
+      "source_family": "PBC-official-reprint",
+      "source_location": "第一/四/五/六节、附注5；PBC原发仍定向追索",
+      "targets": [],
+      "text": "上海市委金融办转载中国人民银行统计：前十月住户贷款减少1.46万亿元，其中短期减少1.41万亿、中长期减少501亿元；住户存款增加8.47万亿。企业贷款增加12.39万亿、其中中长6.69万亿。社融存量469.16万亿同比7.2%，对实体人民币贷款279.31万亿同比4.6%，政府债106.41万亿同比14.4%。同业拆借1.3%、质押回购1.33%。2025起M1口径修订。转载是同一PBC来源，不算新独立来源。",
+      "url": "https://jrj.sh.gov.cn/SCGK194/20261116/00d09e641a1148d5bdee81e3f0f483de.html",
+      "versions": []
+    },
+    "MA005": {
+      "blob": "source_blobs/666d76232af2d165e30f6c002e02d055284c375e66f380c0f54fae68c2944cd8.bin",
+      "body_sha256": "666d76232af2d165e30f6c002e02d055284c375e66f380c0f54fae68c2944cd8",
+      "canonical_url": "https://www.imf.org/en/news/articles/2026/02/18/pr-26053-china-imf-executive-board-concludes-2025-article-iv-consultation",
+      "event_id": "IMF-MA005",
+      "id": "MA005",
+      "impact_note": "首轮正式机制图尚未建立；将在s13挂到所列主题的正式节点。",
+      "input_kind": "published_analysis",
+      "intended_targets": "J-MACRO/J-DECADE",
+      "kind": "opinion",
+      "observation_period": "2025actual/2026projection",
+      "published_at": "2026-02-18",
+      "received_at": "2026-11-28T04:50:32+00:00",
+      "retrieved_at": "2026-11-28T04:50:32.854024+00:00",
+      "revision": 1,
+      "source_family": "IMF",
+      "source_location": "Overview及Outlook",
+      "targets": [],
+      "text": "IMF2025 Article IV：2025实际增长5%、平均CPI0、GDP平减指数继续下降；2026预测4.5%为发布时机构预测，强调房地产、地方债及内需弱、外需韧性、贸易不确定性和转型。中期劳动人口减少、投资回报与生产率制约增长。机构预测不当2026已实现数据。",
+      "url": "https://www.imf.org/en/news/articles/2026/02/18/pr-26053-china-imf-executive-board-concludes-2025-article-iv-consultation",
+      "versions": []
+    },
+    "MA006": {
+      "blob": "source_blobs/e3b2eb448589c7624b10df7f021671ac66e0484a1a6c338ae8809674942335ec.bin",
+      "body_sha256": "e3b2eb448589c7624b10df7f021671ac66e0484a1a6c338ae8809674942335ec",
+      "canonical_url": "https://www.worldbank.org/en/news/press-release/2026/07/07/rebalancing-growth-china-economic-update",
+      "event_id": "WorldBank-MA006",
+      "id": "MA006",
+      "impact_note": "首轮正式机制图尚未建立；将在s13挂到所列主题的正式节点。",
+      "input_kind": "published_analysis",
+      "intended_targets": "J-MACRO/J-2027",
+      "kind": "opinion",
+      "observation_period": "2026-2027projection",
+      "published_at": "2026-07-07",
+      "received_at": "2026-11-28T04:50:32+00:00",
+      "retrieved_at": "2026-11-28T04:50:32.854024+00:00",
+      "revision": 1,
+      "source_family": "WorldBank",
+      "source_location": "发布正文第1—4段",
+      "targets": [],
+      "text": "世界银行7月中国更新预测2026/2027增长4.4%/4.3%；高技术投资、出口和能源缓冲部分抵消弱需求；消费转型缓慢和房地产调整约束增长。更强财政与AI投资构成上行条件，不能把预测当已发生。",
+      "url": "https://www.worldbank.org/en/news/press-release/2026/07/07/rebalancing-growth-china-economic-update",
+      "versions": []
+    },
+    "MA007": {
+      "blob": "source_blobs/fa32a2e1ede3781a312950c508e716100c01ee76be3154e25fd39a77294b36c2.bin",
+      "body_sha256": "fa32a2e1ede3781a312950c508e716100c01ee76be3154e25fd39a77294b36c2",
+      "canonical_url": "https://www.stats.gov.cn/sj/zxfb/202610/t20261020_1965658.html",
+      "event_id": "NBS-MA007",
+      "id": "MA007",
+      "impact_note": "首轮正式机制图尚未建立；将在s13挂到所列主题的正式节点。",
+      "input_kind": "observed_publication",
+      "intended_targets": "J-MACRO/J-PROPERTY",
+      "kind": "observation",
+      "observation_period": "2021Q1-2026Q3",
+      "published_at": "2026-10-20",
+      "received_at": "2026-11-28T04:50:32+00:00",
+      "retrieved_at": "2026-11-28T04:50:32.854024+00:00",
+      "revision": 1,
+      "source_family": "NBS",
+      "source_location": "表1—3、核算说明3",
+      "targets": [],
+      "text": "2026Q3实际GDP同比4.5%、前三季度4.6%；2026Q1/Q2为5.0%/4.3%。Q3建筑增加值-4.4%、房地产-0.4%、制造业5.9%。表2提供2021—2026季度实际同比，表3提供季调环比；现价绝对值不能和不变价增速混用。2026不变价基期换为2025；GDP有初核/终核/经济普查修订。",
+      "url": "https://www.stats.gov.cn/sj/zxfb/202610/t20261020_1965658.html",
       "versions": []
     }
   },
