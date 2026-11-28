@@ -1,0 +1,33 @@
+{
+  "schema": "cncrisis-environment-blocker.v1",
+  "recorded_at": "2026-11-28T05:21:37.531615+00:00",
+  "actor": "boss 1",
+  "item": "offline_ui",
+  "status": "blocked",
+  "observed": [
+    {
+      "route": "local Chromium",
+      "result": "/usr/bin/chromium wrapper exists, /usr/lib/chromium/chromium executable missing; browser location empty. Independently checked by household auditor."
+    },
+    {
+      "route": "official Playwright install chromium --only-shell",
+      "result": "Actual process session50215 exited1. Official cdn.playwright.dev Chrome151 headless-shell download returned403 Site Unavailable; installer retried automatically five times. No binary installed."
+    },
+    {
+      "route": "provided cloud browser file URL",
+      "result": "createBrowserTab(file:///.../calculator.html) explicitly rejected by security policy. No tab created. Stopped without localhost/proxy/CDP/alternate-route workaround."
+    }
+  ],
+  "passed_claims": [],
+  "not_established": [
+    "rendered layout",
+    "real offline browser controls",
+    "browser import/export and mobile interactions"
+  ],
+  "resumable_steps": [
+    "Use a normally available authorized local browser environment with the same frozen artifact.",
+    "Run saved verify_offline_ui.py including browser reload and no-network interaction checks; independently inspect actual screenshots.",
+    "Only after the check succeeds bind its evidence to acceptance, final review and same-version release."
+  ],
+  "effect": "Numerical Node/Python checks do not satisfy offline_ui. Remains incomplete; no release pass may be fabricated."
+}

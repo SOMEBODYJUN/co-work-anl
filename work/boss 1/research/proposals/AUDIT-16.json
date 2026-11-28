@@ -1,0 +1,45 @@
+{
+  "id": "AUDIT-16",
+  "author": "boss 1",
+  "target": "H-HOUSEHOLD-ACTION",
+  "base_revision": 1,
+  "old_statement": "高净值但月度现金不足仍会失约，先保生活与合同付款可避免被迫低价出售；提前还贷省息与减少流动缓冲必须在同一台账比较。",
+  "action": "strengthen",
+  "replacement": {
+    "conditions": [
+      "真实合同、可动用现金和处置限制明确；提前还款、改供/缩期权限和费用只有明确确认才进入可行策略，未知不能默认允许或零。",
+      "策略只读当期可见信息；出售有等待、抵押解除与到账顺序，未及时到账记录缺口；初始金额为空。"
+    ],
+    "counterevidence": [
+      "PF026",
+      "MA003",
+      "HX002",
+      "HX014"
+    ],
+    "falsifier": "所有压力路径都满足储备及合同支付则无需强制削债或出售；无可行策略须报告补资缺口。规则数量和分币级独特轨迹数量分别报告，不以重复动作凑可行策略。",
+    "head": "A-HOUSEHOLD",
+    "id": "H-HOUSEHOLD-ACTION",
+    "lag": "现在核账，30—90天执行流动性安排，逐月120期与政策/收入变化时复算。",
+    "mechanism": "现金不足可能先表现为未完成可选支出，再成为合同本息未付，两者单列；正净值不能支付当月账单。先保生活与合同付款，再以同一台账比较提前还款省息、流动缓冲、出售和长期净值。",
+    "mode": "ALL",
+    "research_status": "conditional_mechanism_not_estimated_causal_effect",
+    "tails": [
+      "J-JOBS",
+      "J-PROPERTY",
+      "J-DEMAND",
+      "J-EQUITY"
+    ]
+  },
+  "new_evidence": [
+    "HX002",
+    "HX014"
+  ],
+  "reason": "新历史来源及独立实际复核检验本机制的边界、反证与到账顺序；保留条件机制，不声称估计因果效应。",
+  "new_method": "历史统一筛选、同币种/同主体现金和资本核对；数值及原文独立审计，保留失败记录并按具体机制改正。",
+  "review_artifacts": [
+    "research/historical_model_correction.md",
+    "research/tasks/history_framework_review/history.md",
+    "research/tasks/history_framework_review/framework_review.md",
+    "research/tasks/research_independent_review/independent_models.json"
+  ]
+}

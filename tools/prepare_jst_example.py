@@ -3,6 +3,7 @@
 import argparse
 import hashlib
 import json
+import math
 from pathlib import Path
 import shutil
 import sys
@@ -19,6 +20,7 @@ def prepare(source, output):
     if source.resolve() != local_source.resolve():
         shutil.copyfile(source, local_source)
     records = []
+    excluded = []
     features = ["credit_gdp", "credit_gdp_change_5y", "yield_curve", "short_rate", "real_house_price_growth_5y", "public_debt_gdp"]
     all_events = []
     for country, group in data.groupby("iso", sort=True):
@@ -35,17 +37,36 @@ def prepare(source, output):
                 continue
             if any(e <= year <= e + 4 for e in events):
                 continue
+            # An unobserved crisis indicator is not evidence of no crisis.  Require
+            # the information year and every year of the complete label window.
+            label_years = list(range(year, year + 4))
+            labels = g.crisisJST.reindex(label_years)
+            if labels.isna().any() or not labels.isin([0, 1]).all():
+                excluded.append({"country": country, "year": year,
+                    "reason": "unobserved_or_invalid_crisis_label",
+                    "label_years": label_years})
+                continue
             prev, old = g.loc[year - 1], g.loc[year - 6]
             future = [e for e in events if year < e <= year + 3]
             event_year = future[0] if future else None
-            records.append({"country": country, "as_of": f"{year}-12-31", "horizon_end": f"{year + 3}-12-31",
+            record = {"country": country, "as_of": f"{year}-12-31", "horizon_end": f"{year + 3}-12-31",
                 "event": int(event_year is not None), "event_id": f"{country}-{event_year}" if event_year else "",
                 "event_date": f"{event_year}-12-31" if event_year else "",
                 "credit_gdp": float(ratios.loc[year - 1]),
                 "credit_gdp_change_5y": float(ratios.loc[year - 1] - ratios.loc[year - 6]),
                 "yield_curve": float(prev.ltrate - prev.stir), "short_rate": float(prev.stir),
                 "real_house_price_growth_5y": float(real_house.loc[year - 1] / real_house.loc[year - 6] - 1),
-                "public_debt_gdp": float(prev.debtgdp)})
+                "public_debt_gdp": float(prev.debtgdp)}
+            # Partial predictor gaps remain eligible for train-only imputation.
+            # A row with no observed predictor contains no country-year signal.
+            for feature in features:
+                if not math.isfinite(record[feature]):
+                    record[feature] = float("nan")
+            if all(pd.isna(record[feature]) for feature in features):
+                excluded.append({"country": country, "year": year,
+                    "reason": "all_predictors_unobserved"})
+                continue
+            records.append(record)
     panel = pd.DataFrame(records)
     csv = output / "panel.csv"
     panel.to_csv(csv, index=False)
@@ -69,7 +90,10 @@ def prepare(source, output):
         "prepared_rows": len(panel), "positive_rows": int(panel.event.sum()),
         "distinct_targeted_episodes": int(panel.loc[panel.event == 1, "event_id"].nunique()),
         "feature_timing": "All predictors use year t-1 or earlier at information year t. These are revised historical data: no claim of verified first-release vintages.",
-        "filters": "No information/prediction years overlapping 1914-1919 or 1939-1949; onset year through onset+4 excluded; first onset in next 3 years is the target.",
+        "filters": "No information/prediction years overlapping 1914-1919 or 1939-1949; onset year through onset+4 excluded; first onset in next 3 years is the target. Information-year and all three future crisis indicators must be observed as 0/1; wholly unobserved predictor rows excluded. Partial predictor gaps are retained for train-only imputation.",
+        "preparation_script_sha256": hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
+        "audit_exclusions": excluded,
+        "audit_exclusion_counts": {reason: sum(x["reason"] == reason for x in excluded) for reason in sorted({x["reason"] for x in excluded})},
         "coverage_limit": "Episode metrics cover eligible forecast rows. War, post-onset and missing-history exclusions can omit source episodes. Countries share global shocks; episode counts are not claims of statistical independence.",
         "license": "CC BY-NC-SA 4.0; this data/example folder only. See NOTICE.md.",
         "china": "China is not included. This experiment tests an actual historical research pipeline, not China probability calibration or an exact reproduction of BoE WP848."}

@@ -1,0 +1,278 @@
+{
+  "splits": {
+    "train": {
+      "rows": 1188,
+      "countries": [
+        "AUS",
+        "BEL",
+        "CAN",
+        "CHE",
+        "DEU",
+        "DNK",
+        "ESP",
+        "FIN",
+        "FRA",
+        "GBR",
+        "IRL",
+        "ITA",
+        "JPN",
+        "NLD",
+        "NOR",
+        "PRT",
+        "SWE",
+        "USA"
+      ],
+      "as_of_min": "1876-12-31",
+      "as_of_max": "1981-12-31",
+      "last_label_maturity": "1984-12-31",
+      "distinct_country_episodes": 51
+    },
+    "calibration": {
+      "rows": 223,
+      "countries": [
+        "AUS",
+        "BEL",
+        "CAN",
+        "CHE",
+        "DEU",
+        "DNK",
+        "ESP",
+        "FIN",
+        "FRA",
+        "GBR",
+        "IRL",
+        "ITA",
+        "JPN",
+        "NLD",
+        "NOR",
+        "PRT",
+        "SWE",
+        "USA"
+      ],
+      "as_of_min": "1985-12-31",
+      "as_of_max": "1999-12-31",
+      "last_label_maturity": "2002-12-31",
+      "distinct_country_episodes": 9
+    },
+    "test": {
+      "rows": 187,
+      "countries": [
+        "AUS",
+        "BEL",
+        "CAN",
+        "CHE",
+        "DEU",
+        "DNK",
+        "ESP",
+        "FIN",
+        "FRA",
+        "GBR",
+        "IRL",
+        "ITA",
+        "JPN",
+        "NLD",
+        "NOR",
+        "PRT",
+        "SWE",
+        "USA"
+      ],
+      "as_of_min": "2003-12-31",
+      "as_of_max": "2016-12-31",
+      "last_label_maturity": "2019-12-31",
+      "distinct_country_episodes": 13
+    }
+  },
+  "baseline": {
+    "rows": 187,
+    "positive_rows": 39,
+    "distinct_country_episodes": 13,
+    "brier": 0.17591375563251177,
+    "log_loss": 0.558529172628303,
+    "average_precision": 0.20855614973262032,
+    "roc_auc": 0.5,
+    "false_alarm_fraction_negative_periods": 0.0,
+    "detected_episodes": 0,
+    "missed_episodes": 13,
+    "reliability_bins": [
+      {
+        "lower": 0.1,
+        "upper": 0.2,
+        "rows": 187,
+        "mean_score": 0.10437710437710437,
+        "observed_frequency": 0.20855614973262032
+      }
+    ]
+  },
+  "models": {
+    "logit": {
+      "raw_test": {
+        "rows": 187,
+        "positive_rows": 39,
+        "distinct_country_episodes": 13,
+        "brier": 0.17214986884011405,
+        "log_loss": 0.5402301142176745,
+        "average_precision": 0.261366431879569,
+        "roc_auc": 0.6027373527373527,
+        "false_alarm_fraction_negative_periods": 0.0472972972972973,
+        "detected_episodes": 3,
+        "missed_episodes": 10,
+        "reliability_bins": [
+          {
+            "lower": 0.0,
+            "upper": 0.1,
+            "rows": 75,
+            "mean_score": 0.06991849802260104,
+            "observed_frequency": 0.14666666666666667
+          },
+          {
+            "lower": 0.1,
+            "upper": 0.2,
+            "rows": 105,
+            "mean_score": 0.12981168469403495,
+            "observed_frequency": 0.2571428571428571
+          },
+          {
+            "lower": 0.2,
+            "upper": 0.30000000000000004,
+            "rows": 7,
+            "mean_score": 0.23860515229411608,
+            "observed_frequency": 0.14285714285714285
+          }
+        ]
+      },
+      "calibrated_test": {
+        "rows": 187,
+        "positive_rows": 39,
+        "distinct_country_episodes": 13,
+        "brier": 0.1703160536314038,
+        "log_loss": 0.5312262244341912,
+        "average_precision": 0.261366431879569,
+        "roc_auc": 0.6027373527373527,
+        "false_alarm_fraction_negative_periods": 0.0472972972972973,
+        "detected_episodes": 3,
+        "missed_episodes": 10,
+        "reliability_bins": [
+          {
+            "lower": 0.0,
+            "upper": 0.1,
+            "rows": 55,
+            "mean_score": 0.07162041336515546,
+            "observed_frequency": 0.12727272727272726
+          },
+          {
+            "lower": 0.1,
+            "upper": 0.2,
+            "rows": 125,
+            "mean_score": 0.13295729940936105,
+            "observed_frequency": 0.248
+          },
+          {
+            "lower": 0.2,
+            "upper": 0.30000000000000004,
+            "rows": 7,
+            "mean_score": 0.23747466755676075,
+            "observed_frequency": 0.14285714285714285
+          }
+        ]
+      },
+      "alarm_threshold": 0.1897818969319594,
+      "raw_alarm_threshold": 0.18517221932996905
+    },
+    "hist_gradient_boosting": {
+      "raw_test": {
+        "rows": 187,
+        "positive_rows": 39,
+        "distinct_country_episodes": 13,
+        "brier": 0.15650600634226716,
+        "log_loss": 0.5354176107340491,
+        "average_precision": 0.4858826584796293,
+        "roc_auc": 0.7305959805959806,
+        "false_alarm_fraction_negative_periods": 0.12162162162162163,
+        "detected_episodes": 7,
+        "missed_episodes": 6,
+        "reliability_bins": [
+          {
+            "lower": 0.0,
+            "upper": 0.1,
+            "rows": 124,
+            "mean_score": 0.03132362910315162,
+            "observed_frequency": 0.13709677419354838
+          },
+          {
+            "lower": 0.1,
+            "upper": 0.2,
+            "rows": 29,
+            "mean_score": 0.13628439757337033,
+            "observed_frequency": 0.20689655172413793
+          },
+          {
+            "lower": 0.2,
+            "upper": 0.30000000000000004,
+            "rows": 19,
+            "mean_score": 0.24000513977262092,
+            "observed_frequency": 0.3684210526315789
+          },
+          {
+            "lower": 0.30000000000000004,
+            "upper": 0.4,
+            "rows": 8,
+            "mean_score": 0.3443486208483336,
+            "observed_frequency": 0.5
+          },
+          {
+            "lower": 0.4,
+            "upper": 0.5,
+            "rows": 5,
+            "mean_score": 0.4237483697996554,
+            "observed_frequency": 0.6
+          },
+          {
+            "lower": 0.5,
+            "upper": 0.6000000000000001,
+            "rows": 2,
+            "mean_score": 0.5482792838408035,
+            "observed_frequency": 1.0
+          }
+        ]
+      },
+      "calibrated_test": {
+        "rows": 187,
+        "positive_rows": 39,
+        "distinct_country_episodes": 13,
+        "brier": 0.1853986785124339,
+        "log_loss": 0.6112961197017027,
+        "average_precision": 0.14065748964024552,
+        "roc_auc": 0.26940401940401937,
+        "false_alarm_fraction_negative_periods": 0.2905405405405405,
+        "detected_episodes": 1,
+        "missed_episodes": 12,
+        "reliability_bins": [
+          {
+            "lower": 0.0,
+            "upper": 0.1,
+            "rows": 75,
+            "mean_score": 0.08018390318172171,
+            "observed_frequency": 0.32
+          },
+          {
+            "lower": 0.1,
+            "upper": 0.2,
+            "rows": 101,
+            "mean_score": 0.14146527661567132,
+            "observed_frequency": 0.1485148514851485
+          },
+          {
+            "lower": 0.2,
+            "upper": 0.30000000000000004,
+            "rows": 11,
+            "mean_score": 0.2084429847067146,
+            "observed_frequency": 0.0
+          }
+        ]
+      },
+      "alarm_threshold": 0.15601196456959968,
+      "raw_alarm_threshold": 0.1992892833057217
+    }
+  },
+  "probability_admission": "Scores are research outputs. China transfer and probability use require an independent model-card decision; fitting/calibration alone does not grant that use."
+}

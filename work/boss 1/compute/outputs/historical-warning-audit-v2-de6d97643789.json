@@ -1,0 +1,5443 @@
+{
+  "schema": "cncrisis-method-result.v1",
+  "name": "early-warning",
+  "capability": {
+    "method": "Chronological, label-maturity-purged logit/HGB with separate sigmoid calibration and episode metrics",
+    "state": "research-estimator; explicit panel and target required",
+    "upstream": "scikit-learn; experiment design informed by BoE WP848",
+    "version": "1"
+  },
+  "result": {
+    "input_kind": "observed_historical_panel",
+    "target_definition": "JST systemic banking crisis onset during the next three calendar years; yearly end-date convention; current onset and four subsequent information-years excluded",
+    "information_mode": "retrospective_revised_lagged",
+    "data_sha256": "2f64f12bd435510666480dc15d44c3ef4abd59648ff1eaa7b49e505d9222c3bf",
+    "features": [
+      "credit_gdp",
+      "credit_gdp_change_5y",
+      "yield_curve",
+      "short_rate",
+      "real_house_price_growth_5y",
+      "public_debt_gdp"
+    ],
+    "splits": {
+      "train": {
+        "rows": 1188,
+        "countries": [
+          "AUS",
+          "BEL",
+          "CAN",
+          "CHE",
+          "DEU",
+          "DNK",
+          "ESP",
+          "FIN",
+          "FRA",
+          "GBR",
+          "IRL",
+          "ITA",
+          "JPN",
+          "NLD",
+          "NOR",
+          "PRT",
+          "SWE",
+          "USA"
+        ],
+        "as_of_min": "1876-12-31",
+        "as_of_max": "1981-12-31",
+        "last_label_maturity": "1984-12-31",
+        "distinct_country_episodes": 51
+      },
+      "calibration": {
+        "rows": 223,
+        "countries": [
+          "AUS",
+          "BEL",
+          "CAN",
+          "CHE",
+          "DEU",
+          "DNK",
+          "ESP",
+          "FIN",
+          "FRA",
+          "GBR",
+          "IRL",
+          "ITA",
+          "JPN",
+          "NLD",
+          "NOR",
+          "PRT",
+          "SWE",
+          "USA"
+        ],
+        "as_of_min": "1985-12-31",
+        "as_of_max": "1999-12-31",
+        "last_label_maturity": "2002-12-31",
+        "distinct_country_episodes": 9
+      },
+      "test": {
+        "rows": 187,
+        "countries": [
+          "AUS",
+          "BEL",
+          "CAN",
+          "CHE",
+          "DEU",
+          "DNK",
+          "ESP",
+          "FIN",
+          "FRA",
+          "GBR",
+          "IRL",
+          "ITA",
+          "JPN",
+          "NLD",
+          "NOR",
+          "PRT",
+          "SWE",
+          "USA"
+        ],
+        "as_of_min": "2003-12-31",
+        "as_of_max": "2016-12-31",
+        "last_label_maturity": "2019-12-31",
+        "distinct_country_episodes": 13
+      }
+    },
+    "baseline": {
+      "rows": 187,
+      "positive_rows": 39,
+      "distinct_country_episodes": 13,
+      "brier": 0.17591375563251177,
+      "log_loss": 0.558529172628303,
+      "average_precision": 0.20855614973262032,
+      "roc_auc": 0.5,
+      "false_alarm_fraction_negative_periods": 0.0,
+      "detected_episodes": 0,
+      "missed_episodes": 13,
+      "reliability_bins": [
+        {
+          "lower": 0.1,
+          "upper": 0.2,
+          "rows": 187,
+          "mean_score": 0.10437710437710437,
+          "observed_frequency": 0.20855614973262032
+        }
+      ]
+    },
+    "models": {
+      "logit": {
+        "parameters": {
+          "estimator": "Pipeline(steps=[('simpleimputer', SimpleImputer(strategy='median')),\n                ('standardscaler', StandardScaler()),\n                ('logisticregression', LogisticRegression(C=1, max_iter=500))])",
+          "calibrator": "sigmoid fit only in calibration block"
+        },
+        "alarm_threshold": 0.1897818969319594,
+        "raw_alarm_threshold": 0.18517221932996905,
+        "threshold_operator": ">",
+        "elapsed_seconds": 0.0272107689997938,
+        "raw_test": {
+          "rows": 187,
+          "positive_rows": 39,
+          "distinct_country_episodes": 13,
+          "brier": 0.17214986884011405,
+          "log_loss": 0.5402301142176745,
+          "average_precision": 0.261366431879569,
+          "roc_auc": 0.6027373527373527,
+          "false_alarm_fraction_negative_periods": 0.0472972972972973,
+          "detected_episodes": 3,
+          "missed_episodes": 10,
+          "reliability_bins": [
+            {
+              "lower": 0.0,
+              "upper": 0.1,
+              "rows": 75,
+              "mean_score": 0.06991849802260104,
+              "observed_frequency": 0.14666666666666667
+            },
+            {
+              "lower": 0.1,
+              "upper": 0.2,
+              "rows": 105,
+              "mean_score": 0.12981168469403495,
+              "observed_frequency": 0.2571428571428571
+            },
+            {
+              "lower": 0.2,
+              "upper": 0.30000000000000004,
+              "rows": 7,
+              "mean_score": 0.23860515229411608,
+              "observed_frequency": 0.14285714285714285
+            }
+          ]
+        },
+        "calibrated_test": {
+          "rows": 187,
+          "positive_rows": 39,
+          "distinct_country_episodes": 13,
+          "brier": 0.1703160536314038,
+          "log_loss": 0.5312262244341912,
+          "average_precision": 0.261366431879569,
+          "roc_auc": 0.6027373527373527,
+          "false_alarm_fraction_negative_periods": 0.0472972972972973,
+          "detected_episodes": 3,
+          "missed_episodes": 10,
+          "reliability_bins": [
+            {
+              "lower": 0.0,
+              "upper": 0.1,
+              "rows": 55,
+              "mean_score": 0.07162041336515546,
+              "observed_frequency": 0.12727272727272726
+            },
+            {
+              "lower": 0.1,
+              "upper": 0.2,
+              "rows": 125,
+              "mean_score": 0.13295729940936105,
+              "observed_frequency": 0.248
+            },
+            {
+              "lower": 0.2,
+              "upper": 0.30000000000000004,
+              "rows": 7,
+              "mean_score": 0.23747466755676075,
+              "observed_frequency": 0.14285714285714285
+            }
+          ]
+        },
+        "by_country": {
+          "AUS": {
+            "rows": 14,
+            "positive_rows": 0,
+            "distinct_country_episodes": 0,
+            "brier": 0.02081507523318512,
+            "log_loss": 0.15349813161262713,
+            "average_precision": null,
+            "roc_auc": null,
+            "false_alarm_fraction_negative_periods": 0.0,
+            "detected_episodes": 0,
+            "missed_episodes": 0,
+            "reliability_bins": [
+              {
+                "lower": 0.1,
+                "upper": 0.2,
+                "rows": 14,
+                "mean_score": 0.14190071706198815,
+                "observed_frequency": 0.0
+              }
+            ]
+          },
+          "BEL": {
+            "rows": 9,
+            "positive_rows": 3,
+            "distinct_country_episodes": 1,
+            "brier": 0.2666731318448587,
+            "log_loss": 0.7897249678892595,
+            "average_precision": 0.5138888888888888,
+            "roc_auc": 0.6111111111111112,
+            "false_alarm_fraction_negative_periods": 0.0,
+            "detected_episodes": 0,
+            "missed_episodes": 1,
+            "reliability_bins": [
+              {
+                "lower": 0.0,
+                "upper": 0.1,
+                "rows": 3,
+                "mean_score": 0.09451108170906312,
+                "observed_frequency": 0.3333333333333333
+              },
+              {
+                "lower": 0.1,
+                "upper": 0.2,
+                "rows": 6,
+                "mean_score": 0.12252959027786836,
+                "observed_frequency": 0.3333333333333333
+              }
+            ]
+          },
+          "CAN": {
+            "rows": 14,
+            "positive_rows": 0,
+            "distinct_country_episodes": 0,
+            "brier": 0.012436755200240956,
+            "log_loss": 0.11413498840107035,
+            "average_precision": null,
+            "roc_auc": null,
+            "false_alarm_fraction_negative_periods": 0.0,
+            "detected_episodes": 0,
+            "missed_episodes": 0,
+            "reliability_bins": [
+              {
+                "lower": 0.0,
+                "upper": 0.1,
+                "rows": 5,
+                "mean_score": 0.0731156055442699,
+                "observed_frequency": 0.0
+              },
+              {
+                "lower": 0.1,
+                "upper": 0.2,
+                "rows": 9,
+                "mean_score": 0.1263676005525272,
+                "observed_frequency": 0.0
+              }
+            ]
+          },
+          "CHE": {
+            "rows": 9,
+            "positive_rows": 3,
+            "distinct_country_episodes": 1,
+            "brier": 0.2687326326729276,
+            "log_loss": 0.797246840220867,
+            "average_precision": 0.3595238095238096,
+            "roc_auc": 0.4444444444444444,
+            "false_alarm_fraction_negative_periods": 0.0,
+            "detected_episodes": 0,
+            "missed_episodes": 1,
+            "reliability_bins": [
+              {
+                "lower": 0.0,
+                "upper": 0.1,
+                "rows": 3,
+                "mean_score": 0.08853636784528858,
+                "observed_frequency": 0.3333333333333333
+              },
+              {
+                "lower": 0.1,
+                "upper": 0.2,
+                "rows": 6,
+                "mean_score": 0.13573573963550317,
+                "observed_frequency": 0.3333333333333333
+              }
+            ]
+          },
+          "DEU": {
+            "rows": 9,
+            "positive_rows": 3,
+            "distinct_country_episodes": 1,
+            "brier": 0.2816342897788581,
+            "log_loss": 0.8657765415822326,
+            "average_precision": 0.28888888888888886,
+            "roc_auc": 0.22222222222222224,
+            "false_alarm_fraction_negative_periods": 0.0,
+            "detected_episodes": 0,
+            "missed_episodes": 1,
+            "reliability_bins": [
+              {
+                "lower": 0.0,
+                "upper": 0.1,
+                "rows": 4,
+                "mean_score": 0.09287583620092144,
+                "observed_frequency": 0.5
+              },
+              {
+                "lower": 0.1,
+                "upper": 0.2,
+                "rows": 5,
+                "mean_score": 0.11945544574841142,
+                "observed_frequency": 0.2
+              }
+            ]
+          },
+          "DNK": {
+            "rows": 9,
+            "positive_rows": 3,
+            "distinct_country_episodes": 1,
+            "brier": 0.24646123913912912,
+            "log_loss": 0.7083814065548977,
+            "average_precision": 0.8095238095238095,
+            "roc_auc": 0.7777777777777778,
+            "false_alarm_fraction_negative_periods": 0.0,
+            "detected_episodes": 1,
+            "missed_episodes": 0,
+            "reliability_bins": [
+              {
+                "lower": 0.0,
+                "upper": 0.1,
+                "rows": 1,
+                "mean_score": 0.09890761726146503,
+                "observed_frequency": 0.0
+              },
+              {
+                "lower": 0.1,
+                "upper": 0.2,
+                "rows": 8,
+                "mean_score": 0.13269082907719032,
+                "observed_frequency": 0.375
+              }
+            ]
+          },
+          "ESP": {
+            "rows": 9,
+            "positive_rows": 3,
+            "distinct_country_episodes": 1,
+            "brier": 0.23384895154973354,
+            "log_loss": 0.6497253598628192,
+            "average_precision": 1.0,
+            "roc_auc": 1.0,
+            "false_alarm_fraction_negative_periods": 0.0,
+            "detected_episodes": 1,
+            "missed_episodes": 0,
+            "reliability_bins": [
+              {
+                "lower": 0.0,
+                "upper": 0.1,
+                "rows": 4,
+                "mean_score": 0.05718906366274569,
+                "observed_frequency": 0.0
+              },
+              {
+                "lower": 0.1,
+                "upper": 0.2,
+                "rows": 4,
+                "mean_score": 0.1332138355850257,
+                "observed_frequency": 0.5
+              },
+              {
+                "lower": 0.2,
+                "upper": 0.30000000000000004,
+                "rows": 1,
+                "mean_score": 0.21576628439045742,
+                "observed_frequency": 1.0
+              }
+            ]
+          },
+          "FIN": {
+            "rows": 14,
+            "positive_rows": 0,
+            "distinct_country_episodes": 0,
+            "brier": 0.009648191533075562,
+            "log_loss": 0.09161185282458094,
+            "average_precision": null,
+            "roc_auc": null,
+            "false_alarm_fraction_negative_periods": 0.0,
+            "detected_episodes": 0,
+            "missed_episodes": 0,
+            "reliability_bins": [
+              {
+                "lower": 0.0,
+                "upper": 0.1,
+                "rows": 10,
+                "mean_score": 0.060894714830415884,
+                "observed_frequency": 0.0
+              },
+              {
+                "lower": 0.1,
+                "upper": 0.2,
+                "rows": 4,
+                "mean_score": 0.14985773856086143,
+                "observed_frequency": 0.0
+              }
+            ]
+          },
+          "FRA": {
+            "rows": 9,
+            "positive_rows": 3,
+            "distinct_country_episodes": 1,
+            "brier": 0.26277228341739667,
+            "log_loss": 0.7714185602198883,
+            "average_precision": 0.6805555555555556,
+            "roc_auc": 0.6666666666666666,
+            "false_alarm_fraction_negative_periods": 0.0,
+            "detected_episodes": 0,
+            "missed_episodes": 1,
+            "reliability_bins": [
+              {
+                "lower": 0.0,
+                "upper": 0.1,
+                "rows": 1,
+                "mean_score": 0.09529693410032174,
+                "observed_frequency": 0.0
+              },
+              {
+                "lower": 0.1,
+                "upper": 0.2,
+                "rows": 8,
+                "mean_score": 0.1187578088765637,
+                "observed_frequency": 0.375
+              }
+            ]
+          },
+          "GBR": {
+            "rows": 9,
+            "positive_rows": 3,
+            "distinct_country_episodes": 1,
+            "brier": 0.23453149133302864,
+            "log_loss": 0.6505652798833799,
+            "average_precision": 1.0,
+            "roc_auc": 1.0,
+            "false_alarm_fraction_negative_periods": 0.0,
+            "detected_episodes": 1,
+            "missed_episodes": 0,
+            "reliability_bins": [
+              {
+                "lower": 0.0,
+                "upper": 0.1,
+                "rows": 5,
+                "mean_score": 0.06966676758968868,
+                "observed_frequency": 0.0
+              },
+              {
+                "lower": 0.1,
+                "upper": 0.2,
+                "rows": 4,
+                "mean_score": 0.15866630030933768,
+                "observed_frequency": 0.75
+              }
+            ]
+          },
+          "IRL": {
+            "rows": 9,
+            "positive_rows": 3,
+            "distinct_country_episodes": 1,
+            "brier": 0.24914660543204578,
+            "log_loss": 0.7066968133799599,
+            "average_precision": 0.8666666666666667,
+            "roc_auc": 0.888888888888889,
+            "false_alarm_fraction_negative_periods": 0.0,
+            "detected_episodes": 0,
+            "missed_episodes": 1,
+            "reliability_bins": [
+              {
+                "lower": 0.0,
+                "upper": 0.1,
+                "rows": 4,
+                "mean_score": 0.04952207115794899,
+                "observed_frequency": 0.0
+              },
+              {
+                "lower": 0.1,
+                "upper": 0.2,
+                "rows": 5,
+                "mean_score": 0.12949453237137115,
+                "observed_frequency": 0.6
+              }
+            ]
+          },
+          "ITA": {
+            "rows": 9,
+            "positive_rows": 3,
+            "distinct_country_episodes": 1,
+            "brier": 0.2545353010843983,
+            "log_loss": 0.7326518679276093,
+            "average_precision": 0.8333333333333333,
+            "roc_auc": 0.8333333333333333,
+            "false_alarm_fraction_negative_periods": 0.0,
+            "detected_episodes": 0,
+            "missed_episodes": 1,
+            "reliability_bins": [
+              {
+                "lower": 0.0,
+                "upper": 0.1,
+                "rows": 3,
+                "mean_score": 0.07890565274817717,
+                "observed_frequency": 0.0
+              },
+              {
+                "lower": 0.1,
+                "upper": 0.2,
+                "rows": 6,
+                "mean_score": 0.12706071279027942,
+                "observed_frequency": 0.5
+              }
+            ]
+          },
+          "JPN": {
+            "rows": 14,
+            "positive_rows": 0,
+            "distinct_country_episodes": 0,
+            "brier": 0.03814528575021368,
+            "log_loss": 0.21162853572895246,
+            "average_precision": null,
+            "roc_auc": null,
+            "false_alarm_fraction_negative_periods": 0.42857142857142855,
+            "detected_episodes": 0,
+            "missed_episodes": 0,
+            "reliability_bins": [
+              {
+                "lower": 0.1,
+                "upper": 0.2,
+                "rows": 9,
+                "mean_score": 0.157014381045665,
+                "observed_frequency": 0.0
+              },
+              {
+                "lower": 0.2,
+                "upper": 0.30000000000000004,
+                "rows": 5,
+                "mean_score": 0.24736035660095362,
+                "observed_frequency": 0.0
+              }
+            ]
+          },
+          "NLD": {
+            "rows": 9,
+            "positive_rows": 3,
+            "distinct_country_episodes": 1,
+            "brier": 0.2592879512607056,
+            "log_loss": 0.7550380644966416,
+            "average_precision": 0.8095238095238095,
+            "roc_auc": 0.7777777777777778,
+            "false_alarm_fraction_negative_periods": 0.0,
+            "detected_episodes": 0,
+            "missed_episodes": 1,
+            "reliability_bins": [
+              {
+                "lower": 0.1,
+                "upper": 0.2,
+                "rows": 9,
+                "mean_score": 0.12598984824340012,
+                "observed_frequency": 0.3333333333333333
+              }
+            ]
+          },
+          "NOR": {
+            "rows": 14,
+            "positive_rows": 0,
+            "distinct_country_episodes": 0,
+            "brier": 0.02151767943849498,
+            "log_loss": 0.1561594124868817,
+            "average_precision": null,
+            "roc_auc": null,
+            "false_alarm_fraction_negative_periods": 0.07142857142857142,
+            "detected_episodes": 0,
+            "missed_episodes": 0,
+            "reliability_bins": [
+              {
+                "lower": 0.1,
+                "upper": 0.2,
+                "rows": 13,
+                "mean_score": 0.13908648004761812,
+                "observed_frequency": 0.0
+              },
+              {
+                "lower": 0.2,
+                "upper": 0.30000000000000004,
+                "rows": 1,
+                "mean_score": 0.20975460550209965,
+                "observed_frequency": 0.0
+              }
+            ]
+          },
+          "PRT": {
+            "rows": 9,
+            "positive_rows": 3,
+            "distinct_country_episodes": 1,
+            "brier": 0.2621076452650176,
+            "log_loss": 0.757187711038122,
+            "average_precision": 0.7555555555555555,
+            "roc_auc": 0.8333333333333334,
+            "false_alarm_fraction_negative_periods": 0.0,
+            "detected_episodes": 0,
+            "missed_episodes": 1,
+            "reliability_bins": [
+              {
+                "lower": 0.0,
+                "upper": 0.1,
+                "rows": 4,
+                "mean_score": 0.052184198394156,
+                "observed_frequency": 0.0
+              },
+              {
+                "lower": 0.1,
+                "upper": 0.2,
+                "rows": 5,
+                "mean_score": 0.12272891797396221,
+                "observed_frequency": 0.6
+              }
+            ]
+          },
+          "SWE": {
+            "rows": 9,
+            "positive_rows": 3,
+            "distinct_country_episodes": 1,
+            "brier": 0.27587557970275367,
+            "log_loss": 0.8344180753252206,
+            "average_precision": 0.31746031746031744,
+            "roc_auc": 0.27777777777777773,
+            "false_alarm_fraction_negative_periods": 0.0,
+            "detected_episodes": 0,
+            "missed_episodes": 1,
+            "reliability_bins": [
+              {
+                "lower": 0.0,
+                "upper": 0.1,
+                "rows": 1,
+                "mean_score": 0.08780913357806244,
+                "observed_frequency": 1.0
+              },
+              {
+                "lower": 0.1,
+                "upper": 0.2,
+                "rows": 8,
+                "mean_score": 0.1217814885730969,
+                "observed_frequency": 0.25
+              }
+            ]
+          },
+          "USA": {
+            "rows": 9,
+            "positive_rows": 3,
+            "distinct_country_episodes": 1,
+            "brier": 0.2836395873968771,
+            "log_loss": 0.8879288532231231,
+            "average_precision": 0.5535714285714286,
+            "roc_auc": 0.4444444444444444,
+            "false_alarm_fraction_negative_periods": 0.0,
+            "detected_episodes": 0,
+            "missed_episodes": 1,
+            "reliability_bins": [
+              {
+                "lower": 0.0,
+                "upper": 0.1,
+                "rows": 7,
+                "mean_score": 0.07732943594272494,
+                "observed_frequency": 0.2857142857142857
+              },
+              {
+                "lower": 0.1,
+                "upper": 0.2,
+                "rows": 2,
+                "mean_score": 0.1087192156912996,
+                "observed_frequency": 0.5
+              }
+            ]
+          }
+        }
+      },
+      "hist_gradient_boosting": {
+        "parameters": {
+          "estimator": "Pipeline(steps=[('simpleimputer', SimpleImputer(strategy='median')),\n                ('histgradientboostingclassifier',\n                 HistGradientBoostingClassifier(l2_regularization=1,\n                                                max_leaf_nodes=7,\n                                                random_state=20261126))])",
+          "calibrator": "sigmoid fit only in calibration block"
+        },
+        "alarm_threshold": 0.15601196456959968,
+        "raw_alarm_threshold": 0.1992892833057217,
+        "threshold_operator": ">",
+        "elapsed_seconds": 0.08413903400014533,
+        "raw_test": {
+          "rows": 187,
+          "positive_rows": 39,
+          "distinct_country_episodes": 13,
+          "brier": 0.15650600634226716,
+          "log_loss": 0.5354176107340491,
+          "average_precision": 0.4858826584796293,
+          "roc_auc": 0.7305959805959806,
+          "false_alarm_fraction_negative_periods": 0.12162162162162163,
+          "detected_episodes": 7,
+          "missed_episodes": 6,
+          "reliability_bins": [
+            {
+              "lower": 0.0,
+              "upper": 0.1,
+              "rows": 124,
+              "mean_score": 0.03132362910315162,
+              "observed_frequency": 0.13709677419354838
+            },
+            {
+              "lower": 0.1,
+              "upper": 0.2,
+              "rows": 29,
+              "mean_score": 0.13628439757337033,
+              "observed_frequency": 0.20689655172413793
+            },
+            {
+              "lower": 0.2,
+              "upper": 0.30000000000000004,
+              "rows": 19,
+              "mean_score": 0.24000513977262092,
+              "observed_frequency": 0.3684210526315789
+            },
+            {
+              "lower": 0.30000000000000004,
+              "upper": 0.4,
+              "rows": 8,
+              "mean_score": 0.3443486208483336,
+              "observed_frequency": 0.5
+            },
+            {
+              "lower": 0.4,
+              "upper": 0.5,
+              "rows": 5,
+              "mean_score": 0.4237483697996554,
+              "observed_frequency": 0.6
+            },
+            {
+              "lower": 0.5,
+              "upper": 0.6000000000000001,
+              "rows": 2,
+              "mean_score": 0.5482792838408035,
+              "observed_frequency": 1.0
+            }
+          ]
+        },
+        "calibrated_test": {
+          "rows": 187,
+          "positive_rows": 39,
+          "distinct_country_episodes": 13,
+          "brier": 0.1853986785124339,
+          "log_loss": 0.6112961197017027,
+          "average_precision": 0.14065748964024552,
+          "roc_auc": 0.26940401940401937,
+          "false_alarm_fraction_negative_periods": 0.2905405405405405,
+          "detected_episodes": 1,
+          "missed_episodes": 12,
+          "reliability_bins": [
+            {
+              "lower": 0.0,
+              "upper": 0.1,
+              "rows": 75,
+              "mean_score": 0.08018390318172171,
+              "observed_frequency": 0.32
+            },
+            {
+              "lower": 0.1,
+              "upper": 0.2,
+              "rows": 101,
+              "mean_score": 0.14146527661567132,
+              "observed_frequency": 0.1485148514851485
+            },
+            {
+              "lower": 0.2,
+              "upper": 0.30000000000000004,
+              "rows": 11,
+              "mean_score": 0.2084429847067146,
+              "observed_frequency": 0.0
+            }
+          ]
+        },
+        "by_country": {
+          "AUS": {
+            "rows": 14,
+            "positive_rows": 0,
+            "distinct_country_episodes": 0,
+            "brier": 0.006920796020930609,
+            "log_loss": 0.08505441077891543,
+            "average_precision": null,
+            "roc_auc": null,
+            "false_alarm_fraction_negative_periods": 0.0,
+            "detected_episodes": 0,
+            "missed_episodes": 0,
+            "reliability_bins": [
+              {
+                "lower": 0.0,
+                "upper": 0.1,
+                "rows": 12,
+                "mean_score": 0.07580515091895743,
+                "observed_frequency": 0.0
+              },
+              {
+                "lower": 0.1,
+                "upper": 0.2,
+                "rows": 2,
+                "mean_score": 0.11478224455555747,
+                "observed_frequency": 0.0
+              }
+            ]
+          },
+          "BEL": {
+            "rows": 9,
+            "positive_rows": 3,
+            "distinct_country_episodes": 1,
+            "brier": 0.2694173742840123,
+            "log_loss": 0.7964269397186137,
+            "average_precision": 0.3206349206349206,
+            "roc_auc": 0.33333333333333337,
+            "false_alarm_fraction_negative_periods": 0.3333333333333333,
+            "detected_episodes": 0,
+            "missed_episodes": 1,
+            "reliability_bins": [
+              {
+                "lower": 0.0,
+                "upper": 0.1,
+                "rows": 2,
+                "mean_score": 0.08788900274144038,
+                "observed_frequency": 0.0
+              },
+              {
+                "lower": 0.1,
+                "upper": 0.2,
+                "rows": 7,
+                "mean_score": 0.14699863291679555,
+                "observed_frequency": 0.42857142857142855
+              }
+            ]
+          },
+          "CAN": {
+            "rows": 14,
+            "positive_rows": 0,
+            "distinct_country_episodes": 0,
+            "brier": 0.01674929177303153,
+            "log_loss": 0.1349282639563955,
+            "average_precision": null,
+            "roc_auc": null,
+            "false_alarm_fraction_negative_periods": 0.07142857142857142,
+            "detected_episodes": 0,
+            "missed_episodes": 0,
+            "reliability_bins": [
+              {
+                "lower": 0.0,
+                "upper": 0.1,
+                "rows": 4,
+                "mean_score": 0.08032507810745082,
+                "observed_frequency": 0.0
+              },
+              {
+                "lower": 0.1,
+                "upper": 0.2,
+                "rows": 10,
+                "mean_score": 0.14382720682166375,
+                "observed_frequency": 0.0
+              }
+            ]
+          },
+          "CHE": {
+            "rows": 9,
+            "positive_rows": 3,
+            "distinct_country_episodes": 1,
+            "brier": 0.27603716495194036,
+            "log_loss": 0.8374926186278618,
+            "average_precision": 0.4111111111111111,
+            "roc_auc": 0.4444444444444444,
+            "false_alarm_fraction_negative_periods": 0.0,
+            "detected_episodes": 0,
+            "missed_episodes": 1,
+            "reliability_bins": [
+              {
+                "lower": 0.0,
+                "upper": 0.1,
+                "rows": 5,
+                "mean_score": 0.09109577576115199,
+                "observed_frequency": 0.4
+              },
+              {
+                "lower": 0.1,
+                "upper": 0.2,
+                "rows": 4,
+                "mean_score": 0.12152979229336036,
+                "observed_frequency": 0.25
+              }
+            ]
+          },
+          "DEU": {
+            "rows": 9,
+            "positive_rows": 3,
+            "distinct_country_episodes": 1,
+            "brier": 0.24967575253055502,
+            "log_loss": 0.7169066924552152,
+            "average_precision": 0.7,
+            "roc_auc": 0.7777777777777779,
+            "false_alarm_fraction_negative_periods": 0.3333333333333333,
+            "detected_episodes": 1,
+            "missed_episodes": 0,
+            "reliability_bins": [
+              {
+                "lower": 0.1,
+                "upper": 0.2,
+                "rows": 9,
+                "mean_score": 0.1424598851904066,
+                "observed_frequency": 0.3333333333333333
+              }
+            ]
+          },
+          "DNK": {
+            "rows": 9,
+            "positive_rows": 3,
+            "distinct_country_episodes": 1,
+            "brier": 0.3025545147770315,
+            "log_loss": 1.006956415498384,
+            "average_precision": 0.24206349206349206,
+            "roc_auc": 0.0,
+            "false_alarm_fraction_negative_periods": 0.16666666666666666,
+            "detected_episodes": 0,
+            "missed_episodes": 1,
+            "reliability_bins": [
+              {
+                "lower": 0.0,
+                "upper": 0.1,
+                "rows": 5,
+                "mean_score": 0.06716362701048212,
+                "observed_frequency": 0.6
+              },
+              {
+                "lower": 0.1,
+                "upper": 0.2,
+                "rows": 4,
+                "mean_score": 0.13581620389912916,
+                "observed_frequency": 0.0
+              }
+            ]
+          },
+          "ESP": {
+            "rows": 9,
+            "positive_rows": 3,
+            "distinct_country_episodes": 1,
+            "brier": 0.28569916236210047,
+            "log_loss": 0.9111537158582625,
+            "average_precision": 0.5277777777777778,
+            "roc_auc": 0.3333333333333333,
+            "false_alarm_fraction_negative_periods": 0.0,
+            "detected_episodes": 0,
+            "missed_episodes": 1,
+            "reliability_bins": [
+              {
+                "lower": 0.0,
+                "upper": 0.1,
+                "rows": 3,
+                "mean_score": 0.07505140868082714,
+                "observed_frequency": 0.6666666666666666
+              },
+              {
+                "lower": 0.1,
+                "upper": 0.2,
+                "rows": 6,
+                "mean_score": 0.12556102093562246,
+                "observed_frequency": 0.16666666666666666
+              }
+            ]
+          },
+          "FIN": {
+            "rows": 14,
+            "positive_rows": 0,
+            "distinct_country_episodes": 0,
+            "brier": 0.020021541529809707,
+            "log_loss": 0.14658754124068435,
+            "average_precision": null,
+            "roc_auc": null,
+            "false_alarm_fraction_negative_periods": 0.5714285714285714,
+            "detected_episodes": 0,
+            "missed_episodes": 0,
+            "reliability_bins": [
+              {
+                "lower": 0.0,
+                "upper": 0.1,
+                "rows": 6,
+                "mean_score": 0.08952876613067144,
+                "observed_frequency": 0.0
+              },
+              {
+                "lower": 0.1,
+                "upper": 0.2,
+                "rows": 8,
+                "mean_score": 0.16975913091504516,
+                "observed_frequency": 0.0
+              }
+            ]
+          },
+          "FRA": {
+            "rows": 9,
+            "positive_rows": 3,
+            "distinct_country_episodes": 1,
+            "brier": 0.2892117534611014,
+            "log_loss": 0.896069937770932,
+            "average_precision": 0.2757936507936508,
+            "roc_auc": 0.16666666666666663,
+            "false_alarm_fraction_negative_periods": 0.6666666666666666,
+            "detected_episodes": 0,
+            "missed_episodes": 1,
+            "reliability_bins": [
+              {
+                "lower": 0.0,
+                "upper": 0.1,
+                "rows": 3,
+                "mean_score": 0.08422736483138338,
+                "observed_frequency": 0.6666666666666666
+              },
+              {
+                "lower": 0.1,
+                "upper": 0.2,
+                "rows": 6,
+                "mean_score": 0.15347589288647137,
+                "observed_frequency": 0.16666666666666666
+              }
+            ]
+          },
+          "GBR": {
+            "rows": 9,
+            "positive_rows": 3,
+            "distinct_country_episodes": 1,
+            "brier": 0.2919713009927596,
+            "log_loss": 0.9003648973835647,
+            "average_precision": 0.24206349206349206,
+            "roc_auc": 0.0,
+            "false_alarm_fraction_negative_periods": 0.8333333333333334,
+            "detected_episodes": 0,
+            "missed_episodes": 1,
+            "reliability_bins": [
+              {
+                "lower": 0.0,
+                "upper": 0.1,
+                "rows": 1,
+                "mean_score": 0.09090667333125789,
+                "observed_frequency": 1.0
+              },
+              {
+                "lower": 0.1,
+                "upper": 0.2,
+                "rows": 6,
+                "mean_score": 0.14156369266625252,
+                "observed_frequency": 0.3333333333333333
+              },
+              {
+                "lower": 0.2,
+                "upper": 0.30000000000000004,
+                "rows": 2,
+                "mean_score": 0.21116995810463646,
+                "observed_frequency": 0.0
+              }
+            ]
+          },
+          "IRL": {
+            "rows": 9,
+            "positive_rows": 3,
+            "distinct_country_episodes": 1,
+            "brier": 0.30318994691317436,
+            "log_loss": 1.0087893401170855,
+            "average_precision": 0.24206349206349206,
+            "roc_auc": 0.0,
+            "false_alarm_fraction_negative_periods": 0.3333333333333333,
+            "detected_episodes": 0,
+            "missed_episodes": 1,
+            "reliability_bins": [
+              {
+                "lower": 0.0,
+                "upper": 0.1,
+                "rows": 4,
+                "mean_score": 0.07310835997529043,
+                "observed_frequency": 0.75
+              },
+              {
+                "lower": 0.1,
+                "upper": 0.2,
+                "rows": 5,
+                "mean_score": 0.1447843435412696,
+                "observed_frequency": 0.0
+              }
+            ]
+          },
+          "ITA": {
+            "rows": 9,
+            "positive_rows": 3,
+            "distinct_country_episodes": 1,
+            "brier": 0.299389479129791,
+            "log_loss": 0.9849282152577129,
+            "average_precision": 0.25,
+            "roc_auc": 0.05555555555555554,
+            "false_alarm_fraction_negative_periods": 0.0,
+            "detected_episodes": 0,
+            "missed_episodes": 1,
+            "reliability_bins": [
+              {
+                "lower": 0.0,
+                "upper": 0.1,
+                "rows": 5,
+                "mean_score": 0.06911899675111316,
+                "observed_frequency": 0.6
+              },
+              {
+                "lower": 0.1,
+                "upper": 0.2,
+                "rows": 4,
+                "mean_score": 0.12769725645057253,
+                "observed_frequency": 0.0
+              }
+            ]
+          },
+          "JPN": {
+            "rows": 14,
+            "positive_rows": 0,
+            "distinct_country_episodes": 0,
+            "brier": 0.036121428594925745,
+            "log_loss": 0.20944045162823116,
+            "average_precision": null,
+            "roc_auc": null,
+            "false_alarm_fraction_negative_periods": 0.9285714285714286,
+            "detected_episodes": 0,
+            "missed_episodes": 0,
+            "reliability_bins": [
+              {
+                "lower": 0.1,
+                "upper": 0.2,
+                "rows": 8,
+                "mean_score": 0.17492930984972288,
+                "observed_frequency": 0.0
+              },
+              {
+                "lower": 0.2,
+                "upper": 0.30000000000000004,
+                "rows": 6,
+                "mean_score": 0.20692077582905896,
+                "observed_frequency": 0.0
+              }
+            ]
+          },
+          "NLD": {
+            "rows": 9,
+            "positive_rows": 3,
+            "distinct_country_episodes": 1,
+            "brier": 0.2972964518412633,
+            "log_loss": 0.9699499581283509,
+            "average_precision": 0.28888888888888886,
+            "roc_auc": 0.22222222222222224,
+            "false_alarm_fraction_negative_periods": 0.0,
+            "detected_episodes": 0,
+            "missed_episodes": 1,
+            "reliability_bins": [
+              {
+                "lower": 0.0,
+                "upper": 0.1,
+                "rows": 5,
+                "mean_score": 0.06910698369351297,
+                "observed_frequency": 0.6
+              },
+              {
+                "lower": 0.1,
+                "upper": 0.2,
+                "rows": 4,
+                "mean_score": 0.12763728625198753,
+                "observed_frequency": 0.0
+              }
+            ]
+          },
+          "NOR": {
+            "rows": 14,
+            "positive_rows": 0,
+            "distinct_country_episodes": 0,
+            "brier": 0.010617105962052278,
+            "log_loss": 0.10749262490668454,
+            "average_precision": null,
+            "roc_auc": null,
+            "false_alarm_fraction_negative_periods": 0.0,
+            "detected_episodes": 0,
+            "missed_episodes": 0,
+            "reliability_bins": [
+              {
+                "lower": 0.0,
+                "upper": 0.1,
+                "rows": 7,
+                "mean_score": 0.08961800533684906,
+                "observed_frequency": 0.0
+              },
+              {
+                "lower": 0.1,
+                "upper": 0.2,
+                "rows": 7,
+                "mean_score": 0.11392266768234183,
+                "observed_frequency": 0.0
+              }
+            ]
+          },
+          "PRT": {
+            "rows": 9,
+            "positive_rows": 3,
+            "distinct_country_episodes": 1,
+            "brier": 0.2897275992713032,
+            "log_loss": 0.9198277286541917,
+            "average_precision": 0.3194444444444444,
+            "roc_auc": 0.3333333333333333,
+            "false_alarm_fraction_negative_periods": 0.0,
+            "detected_episodes": 0,
+            "missed_episodes": 1,
+            "reliability_bins": [
+              {
+                "lower": 0.0,
+                "upper": 0.1,
+                "rows": 8,
+                "mean_score": 0.080714887500128,
+                "observed_frequency": 0.375
+              },
+              {
+                "lower": 0.1,
+                "upper": 0.2,
+                "rows": 1,
+                "mean_score": 0.13506091537718676,
+                "observed_frequency": 0.0
+              }
+            ]
+          },
+          "SWE": {
+            "rows": 9,
+            "positive_rows": 3,
+            "distinct_country_episodes": 1,
+            "brier": 0.27885933301402277,
+            "log_loss": 0.8574114226700437,
+            "average_precision": 0.5277777777777778,
+            "roc_auc": 0.3333333333333333,
+            "false_alarm_fraction_negative_periods": 0.0,
+            "detected_episodes": 0,
+            "missed_episodes": 1,
+            "reliability_bins": [
+              {
+                "lower": 0.0,
+                "upper": 0.1,
+                "rows": 5,
+                "mean_score": 0.09064630513912156,
+                "observed_frequency": 0.4
+              },
+              {
+                "lower": 0.1,
+                "upper": 0.2,
+                "rows": 4,
+                "mean_score": 0.11033186775564366,
+                "observed_frequency": 0.25
+              }
+            ]
+          },
+          "USA": {
+            "rows": 9,
+            "positive_rows": 3,
+            "distinct_country_episodes": 1,
+            "brier": 0.27847356508146026,
+            "log_loss": 0.8318697055337443,
+            "average_precision": 0.24206349206349206,
+            "roc_auc": 0.0,
+            "false_alarm_fraction_negative_periods": 0.8333333333333334,
+            "detected_episodes": 0,
+            "missed_episodes": 1,
+            "reliability_bins": [
+              {
+                "lower": 0.1,
+                "upper": 0.2,
+                "rows": 6,
+                "mean_score": 0.1465708142021499,
+                "observed_frequency": 0.5
+              },
+              {
+                "lower": 0.2,
+                "upper": 0.30000000000000004,
+                "rows": 3,
+                "mean_score": 0.20966942019674453,
+                "observed_frequency": 0.0
+              }
+            ]
+          }
+        }
+      }
+    },
+    "test_predictions": [
+      {
+        "model": "logit",
+        "country": "AUS",
+        "as_of": "2003-12-31",
+        "horizon_end": "2006-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.09292455116095315,
+        "score": 0.10350599593862142,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "AUS",
+        "as_of": "2004-12-31",
+        "horizon_end": "2007-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.127646819738383,
+        "score": 0.13677769452722005,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "AUS",
+        "as_of": "2005-12-31",
+        "horizon_end": "2008-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.13629565772579078,
+        "score": 0.14488964530607348,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "AUS",
+        "as_of": "2006-12-31",
+        "horizon_end": "2009-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.15448595289905187,
+        "score": 0.1617689133196198,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "AUS",
+        "as_of": "2007-12-31",
+        "horizon_end": "2010-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.16268597816187608,
+        "score": 0.16930643434212672,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "AUS",
+        "as_of": "2008-12-31",
+        "horizon_end": "2011-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.17149049644362488,
+        "score": 0.17735564642002472,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "AUS",
+        "as_of": "2009-12-31",
+        "horizon_end": "2012-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.18506246602522314,
+        "score": 0.1896825829223558,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "AUS",
+        "as_of": "2010-12-31",
+        "horizon_end": "2013-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.09149959710978556,
+        "score": 0.10211183897283349,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "AUS",
+        "as_of": "2011-12-31",
+        "horizon_end": "2014-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.1153546473412367,
+        "score": 0.1251384735074559,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "AUS",
+        "as_of": "2012-12-31",
+        "horizon_end": "2015-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.13272783989035267,
+        "score": 0.14155057831316328,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "AUS",
+        "as_of": "2013-12-31",
+        "horizon_end": "2016-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.14221044128535285,
+        "score": 0.15040382246312342,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "AUS",
+        "as_of": "2014-12-31",
+        "horizon_end": "2017-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.10458907052425989,
+        "score": 0.11482516581857675,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "AUS",
+        "as_of": "2015-12-31",
+        "horizon_end": "2018-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.10812206077151269,
+        "score": 0.11822299673647252,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "AUS",
+        "as_of": "2016-12-31",
+        "horizon_end": "2019-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.14292716068091757,
+        "score": 0.15107025028016655,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "BEL",
+        "as_of": "2003-12-31",
+        "horizon_end": "2006-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.0975862589343156,
+        "score": 0.10804909917854867,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "BEL",
+        "as_of": "2004-12-31",
+        "horizon_end": "2007-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.09323431732035671,
+        "score": 0.10380872259770597,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "BEL",
+        "as_of": "2005-12-31",
+        "horizon_end": "2008-12-31",
+        "event": 1,
+        "event_id": "BEL-2008",
+        "raw_score": 0.08450025439976912,
+        "score": 0.09522441231889066,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "BEL",
+        "as_of": "2006-12-31",
+        "horizon_end": "2009-12-31",
+        "event": 1,
+        "event_id": "BEL-2008",
+        "raw_score": 0.11253631377292184,
+        "score": 0.12244996520290499,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "BEL",
+        "as_of": "2007-12-31",
+        "horizon_end": "2010-12-31",
+        "event": 1,
+        "event_id": "BEL-2008",
+        "raw_score": 0.13257401985625172,
+        "score": 0.1414063947737417,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "BEL",
+        "as_of": "2013-12-31",
+        "horizon_end": "2016-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.07907179945019568,
+        "score": 0.08983468798647691,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "BEL",
+        "as_of": "2014-12-31",
+        "horizon_end": "2017-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.08779431696957085,
+        "score": 0.09847414482182176,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "BEL",
+        "as_of": "2015-12-31",
+        "horizon_end": "2018-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.10771107076607665,
+        "score": 0.11782841614983425,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "BEL",
+        "as_of": "2016-12-31",
+        "horizon_end": "2019-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.13281785324457177,
+        "score": 0.14163494376447464,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "CAN",
+        "as_of": "2003-12-31",
+        "horizon_end": "2006-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.051169655812723716,
+        "score": 0.061307778781590015,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "CAN",
+        "as_of": "2004-12-31",
+        "horizon_end": "2007-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.06280296209493409,
+        "score": 0.07339064847443513,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "CAN",
+        "as_of": "2005-12-31",
+        "horizon_end": "2008-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.05929817744822906,
+        "score": 0.06978241848165698,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "CAN",
+        "as_of": "2006-12-31",
+        "horizon_end": "2009-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.09294961060734845,
+        "score": 0.10353049044990782,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "CAN",
+        "as_of": "2007-12-31",
+        "horizon_end": "2010-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.1457473332142124,
+        "score": 0.1536889823397257,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "CAN",
+        "as_of": "2008-12-31",
+        "horizon_end": "2011-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.15358751958828148,
+        "score": 0.16094052179172788,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "CAN",
+        "as_of": "2009-12-31",
+        "horizon_end": "2012-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.10749071253270347,
+        "score": 0.11761678250509688,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "CAN",
+        "as_of": "2010-12-31",
+        "horizon_end": "2013-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.0648752550428111,
+        "score": 0.07551223158408711,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "CAN",
+        "as_of": "2011-12-31",
+        "horizon_end": "2014-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.07482352146201467,
+        "score": 0.08558495039958021,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "CAN",
+        "as_of": "2012-12-31",
+        "horizon_end": "2015-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.09188759651092376,
+        "score": 0.10249171225245188,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "CAN",
+        "as_of": "2013-12-31",
+        "horizon_end": "2016-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.1218527989467612,
+        "score": 0.13130841495074852,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "CAN",
+        "as_of": "2014-12-31",
+        "horizon_end": "2017-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.10598389504474531,
+        "score": 0.11616823611599979,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "CAN",
+        "as_of": "2015-12-31",
+        "horizon_end": "2018-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.10808643703874223,
+        "score": 0.118188802390228,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "CAN",
+        "as_of": "2016-12-31",
+        "horizon_end": "2019-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.1240378746549924,
+        "score": 0.13337446217685794,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "CHE",
+        "as_of": "2003-12-31",
+        "horizon_end": "2006-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.06883899661652303,
+        "score": 0.079547044034843,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "CHE",
+        "as_of": "2004-12-31",
+        "horizon_end": "2007-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.07779008009302542,
+        "score": 0.08855556695681038,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "CHE",
+        "as_of": "2005-12-31",
+        "horizon_end": "2008-12-31",
+        "event": 1,
+        "event_id": "CHE-2008",
+        "raw_score": 0.08681185728000787,
+        "score": 0.09750649254421234,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "CHE",
+        "as_of": "2006-12-31",
+        "horizon_end": "2009-12-31",
+        "event": 1,
+        "event_id": "CHE-2008",
+        "raw_score": 0.11079124669619224,
+        "score": 0.12078132106523423,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "CHE",
+        "as_of": "2007-12-31",
+        "horizon_end": "2010-12-31",
+        "event": 1,
+        "event_id": "CHE-2008",
+        "raw_score": 0.13175658162319676,
+        "score": 0.1406398492248386,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "CHE",
+        "as_of": "2013-12-31",
+        "horizon_end": "2016-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.14091686445694757,
+        "score": 0.14920007345898778,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "CHE",
+        "as_of": "2014-12-31",
+        "horizon_end": "2017-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.1387137527228557,
+        "score": 0.14714711945337566,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "CHE",
+        "as_of": "2015-12-31",
+        "horizon_end": "2018-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.08977136879541678,
+        "score": 0.10041741256252051,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "CHE",
+        "as_of": "2016-12-31",
+        "horizon_end": "2019-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.1484880927287669,
+        "score": 0.15622866204806227,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "DEU",
+        "as_of": "2003-12-31",
+        "horizon_end": "2006-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.08655976288967857,
+        "score": 0.09725798243910419,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "DEU",
+        "as_of": "2004-12-31",
+        "horizon_end": "2007-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.08176299870860887,
+        "score": 0.09251218330721452,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "DEU",
+        "as_of": "2005-12-31",
+        "horizon_end": "2008-12-31",
+        "event": 1,
+        "event_id": "DEU-2008",
+        "raw_score": 0.07169753143467252,
+        "score": 0.08243886477625709,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "DEU",
+        "as_of": "2006-12-31",
+        "horizon_end": "2009-12-31",
+        "event": 1,
+        "event_id": "DEU-2008",
+        "raw_score": 0.0886280900445606,
+        "score": 0.09929431428110988,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "DEU",
+        "as_of": "2007-12-31",
+        "horizon_end": "2010-12-31",
+        "event": 1,
+        "event_id": "DEU-2008",
+        "raw_score": 0.09370094423484185,
+        "score": 0.10426451524676689,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "DEU",
+        "as_of": "2013-12-31",
+        "horizon_end": "2016-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.11210155023545289,
+        "score": 0.12203452865497756,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "DEU",
+        "as_of": "2014-12-31",
+        "horizon_end": "2017-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.10141145622067597,
+        "score": 0.11175741003475975,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "DEU",
+        "as_of": "2015-12-31",
+        "horizon_end": "2018-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.11010668937565316,
+        "score": 0.12012589825771322,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "DEU",
+        "as_of": "2016-12-31",
+        "horizon_end": "2019-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.13011078290148986,
+        "score": 0.1390948765478397,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "DNK",
+        "as_of": "2003-12-31",
+        "horizon_end": "2006-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.11567598514161503,
+        "score": 0.12544451641894525,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "DNK",
+        "as_of": "2004-12-31",
+        "horizon_end": "2007-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.10452230289627489,
+        "score": 0.11476082222207667,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "DNK",
+        "as_of": "2005-12-31",
+        "horizon_end": "2008-12-31",
+        "event": 1,
+        "event_id": "DNK-2008",
+        "raw_score": 0.10279379796096418,
+        "score": 0.11309335284207299,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "DNK",
+        "as_of": "2006-12-31",
+        "horizon_end": "2009-12-31",
+        "event": 1,
+        "event_id": "DNK-2008",
+        "raw_score": 0.1513259082376892,
+        "score": 0.15885291484912115,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "DNK",
+        "as_of": "2007-12-31",
+        "horizon_end": "2010-12-31",
+        "event": 1,
+        "event_id": "DNK-2008",
+        "raw_score": 0.19378719318752394,
+        "score": 0.19756017376758203,
+        "alarm": true
+      },
+      {
+        "model": "logit",
+        "country": "DNK",
+        "as_of": "2013-12-31",
+        "horizon_end": "2016-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.10392511267424887,
+        "score": 0.11418509470045858,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "DNK",
+        "as_of": "2014-12-31",
+        "horizon_end": "2017-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.08823485931196164,
+        "score": 0.09890761726146503,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "DNK",
+        "as_of": "2015-12-31",
+        "horizon_end": "2018-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.09980432908397777,
+        "score": 0.11020147724017759,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "DNK",
+        "as_of": "2016-12-31",
+        "horizon_end": "2019-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.1177614124052835,
+        "score": 0.1274282805770883,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "ESP",
+        "as_of": "2003-12-31",
+        "horizon_end": "2006-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.10313734153966123,
+        "score": 0.11342503058741041,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "ESP",
+        "as_of": "2004-12-31",
+        "horizon_end": "2007-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.11024376375772586,
+        "score": 0.12025717726603906,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "ESP",
+        "as_of": "2005-12-31",
+        "horizon_end": "2008-12-31",
+        "event": 1,
+        "event_id": "ESP-2008",
+        "raw_score": 0.11434321587451844,
+        "score": 0.12417453010238044,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "ESP",
+        "as_of": "2006-12-31",
+        "horizon_end": "2009-12-31",
+        "event": 1,
+        "event_id": "ESP-2008",
+        "raw_score": 0.16890735738856283,
+        "score": 0.17499860438427287,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "ESP",
+        "as_of": "2007-12-31",
+        "horizon_end": "2010-12-31",
+        "event": 1,
+        "event_id": "ESP-2008",
+        "raw_score": 0.2140879249340588,
+        "score": 0.21576628439045742,
+        "alarm": true
+      },
+      {
+        "model": "logit",
+        "country": "ESP",
+        "as_of": "2013-12-31",
+        "horizon_end": "2016-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.02618091763939878,
+        "score": 0.03400470207435914,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "ESP",
+        "as_of": "2014-12-31",
+        "horizon_end": "2017-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.034201601791256864,
+        "score": 0.043023505938170156,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "ESP",
+        "as_of": "2015-12-31",
+        "horizon_end": "2018-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.05924089942262487,
+        "score": 0.06972323277237356,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "ESP",
+        "as_of": "2016-12-31",
+        "horizon_end": "2019-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.07126755945129408,
+        "score": 0.0820048138660799,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "FIN",
+        "as_of": "2003-12-31",
+        "horizon_end": "2006-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.05997359999723859,
+        "score": 0.07047980038911093,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "FIN",
+        "as_of": "2004-12-31",
+        "horizon_end": "2007-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.07650911768172715,
+        "score": 0.08727460075104253,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "FIN",
+        "as_of": "2005-12-31",
+        "horizon_end": "2008-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.07889547204839169,
+        "score": 0.08965887057825368,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "FIN",
+        "as_of": "2006-12-31",
+        "horizon_end": "2009-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.13381672491119084,
+        "score": 0.1425707088823151,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "FIN",
+        "as_of": "2007-12-31",
+        "horizon_end": "2010-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.17227464134698534,
+        "score": 0.17807044027111887,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "FIN",
+        "as_of": "2008-12-31",
+        "horizon_end": "2011-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.15765520977316422,
+        "score": 0.16468701424877727,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "FIN",
+        "as_of": "2009-12-31",
+        "horizon_end": "2012-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.05457885542185878,
+        "score": 0.06488122271828868,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "FIN",
+        "as_of": "2010-12-31",
+        "horizon_end": "2013-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.040034193593812634,
+        "score": 0.04941407129105797,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "FIN",
+        "as_of": "2011-12-31",
+        "horizon_end": "2014-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.041164334416110414,
+        "score": 0.0506383927750859,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "FIN",
+        "as_of": "2012-12-31",
+        "horizon_end": "2015-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.008320687207131906,
+        "score": 0.012363238295555691,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "FIN",
+        "as_of": "2013-12-31",
+        "horizon_end": "2016-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.02442633385099135,
+        "score": 0.031988997784815336,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "FIN",
+        "as_of": "2014-12-31",
+        "horizon_end": "2017-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.05374457358603863,
+        "score": 0.06400939373318082,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "FIN",
+        "as_of": "2015-12-31",
+        "horizon_end": "2018-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.07747282987024218,
+        "score": 0.0882385599877673,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "FIN",
+        "as_of": "2016-12-31",
+        "horizon_end": "2019-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.10383977399638966,
+        "score": 0.11410279084123444,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "FRA",
+        "as_of": "2003-12-31",
+        "horizon_end": "2006-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.09185411961913237,
+        "score": 0.10245894418301217,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "FRA",
+        "as_of": "2004-12-31",
+        "horizon_end": "2007-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.09215721481548697,
+        "score": 0.10275556897603733,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "FRA",
+        "as_of": "2005-12-31",
+        "horizon_end": "2008-12-31",
+        "event": 1,
+        "event_id": "FRA-2008",
+        "raw_score": 0.0907764129630497,
+        "score": 0.10140327743137321,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "FRA",
+        "as_of": "2006-12-31",
+        "horizon_end": "2009-12-31",
+        "event": 1,
+        "event_id": "FRA-2008",
+        "raw_score": 0.12103187883239398,
+        "score": 0.13053111018799807,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "FRA",
+        "as_of": "2007-12-31",
+        "horizon_end": "2010-12-31",
+        "event": 1,
+        "event_id": "FRA-2008",
+        "raw_score": 0.13947061210709424,
+        "score": 0.14785279935752055,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "FRA",
+        "as_of": "2013-12-31",
+        "horizon_end": "2016-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.08457359648035258,
+        "score": 0.09529693410032174,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "FRA",
+        "as_of": "2014-12-31",
+        "horizon_end": "2017-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.09115045870346294,
+        "score": 0.10176984541881684,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "FRA",
+        "as_of": "2015-12-31",
+        "horizon_end": "2018-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.11203282434651457,
+        "score": 0.12196884055517176,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "FRA",
+        "as_of": "2016-12-31",
+        "horizon_end": "2019-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.1324840844870598,
+        "score": 0.14132208490257966,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "GBR",
+        "as_of": "2003-12-31",
+        "horizon_end": "2006-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.11572275769263002,
+        "score": 0.12548905440779762,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "GBR",
+        "as_of": "2004-12-31",
+        "horizon_end": "2007-12-31",
+        "event": 1,
+        "event_id": "GBR-2007",
+        "raw_score": 0.12388563642742496,
+        "score": 0.13323065374806423,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "GBR",
+        "as_of": "2005-12-31",
+        "horizon_end": "2008-12-31",
+        "event": 1,
+        "event_id": "GBR-2007",
+        "raw_score": 0.17670664328388583,
+        "score": 0.18210435291743288,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "GBR",
+        "as_of": "2006-12-31",
+        "horizon_end": "2009-12-31",
+        "event": 1,
+        "event_id": "GBR-2007",
+        "raw_score": 0.1896634641731837,
+        "score": 0.19384114016405596,
+        "alarm": true
+      },
+      {
+        "model": "logit",
+        "country": "GBR",
+        "as_of": "2012-12-31",
+        "horizon_end": "2015-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.04903208155148352,
+        "score": 0.05905211091953012,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "GBR",
+        "as_of": "2013-12-31",
+        "horizon_end": "2016-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.05890870646913957,
+        "score": 0.0693798348014057,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "GBR",
+        "as_of": "2014-12-31",
+        "horizon_end": "2017-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.05173842640141479,
+        "score": 0.0619059694648431,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "GBR",
+        "as_of": "2015-12-31",
+        "horizon_end": "2018-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.05663101200588974,
+        "score": 0.06701871538737114,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "GBR",
+        "as_of": "2016-12-31",
+        "horizon_end": "2019-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.08021880977298851,
+        "score": 0.09097720737529333,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "IRL",
+        "as_of": "2003-12-31",
+        "horizon_end": "2006-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.10533654153613965,
+        "score": 0.11554516594871023,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "IRL",
+        "as_of": "2004-12-31",
+        "horizon_end": "2007-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.09270742227550147,
+        "score": 0.10329372837750894,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "IRL",
+        "as_of": "2005-12-31",
+        "horizon_end": "2008-12-31",
+        "event": 1,
+        "event_id": "IRL-2008",
+        "raw_score": 0.09150985454981504,
+        "score": 0.10212188410052722,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "IRL",
+        "as_of": "2006-12-31",
+        "horizon_end": "2009-12-31",
+        "event": 1,
+        "event_id": "IRL-2008",
+        "raw_score": 0.13245949614794308,
+        "score": 0.14129903344893455,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "IRL",
+        "as_of": "2007-12-31",
+        "horizon_end": "2010-12-31",
+        "event": 1,
+        "event_id": "IRL-2008",
+        "raw_score": 0.18012950376369766,
+        "score": 0.18521284998117485,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "IRL",
+        "as_of": "2013-12-31",
+        "horizon_end": "2016-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.019135283313145873,
+        "score": 0.025795635323421055,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "IRL",
+        "as_of": "2014-12-31",
+        "horizon_end": "2017-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.03639837222451454,
+        "score": 0.045445237872944175,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "IRL",
+        "as_of": "2015-12-31",
+        "horizon_end": "2018-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.046733046412405894,
+        "score": 0.056612279712570795,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "IRL",
+        "as_of": "2016-12-31",
+        "horizon_end": "2019-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.05973652685199296,
+        "score": 0.07023513172285994,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "ITA",
+        "as_of": "2003-12-31",
+        "horizon_end": "2006-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.10794708504643745,
+        "score": 0.11805502898580189,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "ITA",
+        "as_of": "2004-12-31",
+        "horizon_end": "2007-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.10583186585103599,
+        "score": 0.1160219506189764,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "ITA",
+        "as_of": "2005-12-31",
+        "horizon_end": "2008-12-31",
+        "event": 1,
+        "event_id": "ITA-2008",
+        "raw_score": 0.10242519267324511,
+        "score": 0.11273733147810566,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "ITA",
+        "as_of": "2006-12-31",
+        "horizon_end": "2009-12-31",
+        "event": 1,
+        "event_id": "ITA-2008",
+        "raw_score": 0.13164521282107475,
+        "score": 0.14053537250576711,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "ITA",
+        "as_of": "2007-12-31",
+        "horizon_end": "2010-12-31",
+        "event": 1,
+        "event_id": "ITA-2008",
+        "raw_score": 0.15281386223861257,
+        "score": 0.1602267625447002,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "ITA",
+        "as_of": "2013-12-31",
+        "horizon_end": "2016-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.05925003544405362,
+        "score": 0.06973267355385344,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "ITA",
+        "as_of": "2014-12-31",
+        "horizon_end": "2017-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.060611347137897426,
+        "score": 0.07113738275231388,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "ITA",
+        "as_of": "2015-12-31",
+        "horizon_end": "2018-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.08513003832955933,
+        "score": 0.09584690193836413,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "ITA",
+        "as_of": "2016-12-31",
+        "horizon_end": "2019-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.10455032815632069,
+        "score": 0.11478783060832526,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "JPN",
+        "as_of": "2003-12-31",
+        "horizon_end": "2006-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.13531167361664395,
+        "score": 0.1439697420644326,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "JPN",
+        "as_of": "2004-12-31",
+        "horizon_end": "2007-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.1425740805958419,
+        "score": 0.15074199173094255,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "JPN",
+        "as_of": "2005-12-31",
+        "horizon_end": "2008-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.12272985416381814,
+        "score": 0.1321382035230426,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "JPN",
+        "as_of": "2006-12-31",
+        "horizon_end": "2009-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.13281435146654502,
+        "score": 0.14163166182689685,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "JPN",
+        "as_of": "2007-12-31",
+        "horizon_end": "2010-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.1250557922751853,
+        "score": 0.13433549465215483,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "JPN",
+        "as_of": "2008-12-31",
+        "horizon_end": "2011-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.14338500414507643,
+        "score": 0.15149577424662516,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "JPN",
+        "as_of": "2009-12-31",
+        "horizon_end": "2012-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.1671241271613169,
+        "score": 0.17336930843576126,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "JPN",
+        "as_of": "2010-12-31",
+        "horizon_end": "2013-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.18043496822529184,
+        "score": 0.185489974551761,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "JPN",
+        "as_of": "2011-12-31",
+        "horizon_end": "2014-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.19644951778604114,
+        "score": 0.19995727837936839,
+        "alarm": true
+      },
+      {
+        "model": "logit",
+        "country": "JPN",
+        "as_of": "2012-12-31",
+        "horizon_end": "2015-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.21514087144228983,
+        "score": 0.21670631894056888,
+        "alarm": true
+      },
+      {
+        "model": "logit",
+        "country": "JPN",
+        "as_of": "2013-12-31",
+        "horizon_end": "2016-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.24100973582851887,
+        "score": 0.23968814377724698,
+        "alarm": true
+      },
+      {
+        "model": "logit",
+        "country": "JPN",
+        "as_of": "2014-12-31",
+        "horizon_end": "2017-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.2522765095525138,
+        "score": 0.24963799273389828,
+        "alarm": true
+      },
+      {
+        "model": "logit",
+        "country": "JPN",
+        "as_of": "2015-12-31",
+        "horizon_end": "2018-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.26569525632595575,
+        "score": 0.2614491987343707,
+        "alarm": true
+      },
+      {
+        "model": "logit",
+        "country": "JPN",
+        "as_of": "2016-12-31",
+        "horizon_end": "2019-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.27466098987778,
+        "score": 0.2693201288186832,
+        "alarm": true
+      },
+      {
+        "model": "logit",
+        "country": "NLD",
+        "as_of": "2003-12-31",
+        "horizon_end": "2006-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.12740256808536396,
+        "score": 0.1365477166722438,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "NLD",
+        "as_of": "2004-12-31",
+        "horizon_end": "2007-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.11771621891165272,
+        "score": 0.12738533396282545,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "NLD",
+        "as_of": "2005-12-31",
+        "horizon_end": "2008-12-31",
+        "event": 1,
+        "event_id": "NLD-2008",
+        "raw_score": 0.10763468672751147,
+        "score": 0.1177550621914889,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "NLD",
+        "as_of": "2006-12-31",
+        "horizon_end": "2009-12-31",
+        "event": 1,
+        "event_id": "NLD-2008",
+        "raw_score": 0.1310447390568796,
+        "score": 0.13997188635340022,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "NLD",
+        "as_of": "2007-12-31",
+        "horizon_end": "2010-12-31",
+        "event": 1,
+        "event_id": "NLD-2008",
+        "raw_score": 0.13927544742205797,
+        "score": 0.14767087275421958,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "NLD",
+        "as_of": "2013-12-31",
+        "horizon_end": "2016-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.11211195731222236,
+        "score": 0.12204447530938468,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "NLD",
+        "as_of": "2014-12-31",
+        "horizon_end": "2017-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.0947833111288399,
+        "score": 0.10532069546424187,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "NLD",
+        "as_of": "2015-12-31",
+        "horizon_end": "2018-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.10023438200916181,
+        "score": 0.1106181238387191,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "NLD",
+        "as_of": "2016-12-31",
+        "horizon_end": "2019-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.11688433852775786,
+        "score": 0.12659446764407759,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "NOR",
+        "as_of": "2003-12-31",
+        "horizon_end": "2006-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.1615485376548177,
+        "score": 0.16826332721342388,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "NOR",
+        "as_of": "2004-12-31",
+        "horizon_end": "2007-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.1291130028008125,
+        "score": 0.13815714322005423,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "NOR",
+        "as_of": "2005-12-31",
+        "horizon_end": "2008-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.09188708212509625,
+        "score": 0.1024912087689363,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "NOR",
+        "as_of": "2006-12-31",
+        "horizon_end": "2009-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.1097907157711655,
+        "score": 0.11982321005609385,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "NOR",
+        "as_of": "2007-12-31",
+        "horizon_end": "2010-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.1269919960839501,
+        "score": 0.13616102437106395,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "NOR",
+        "as_of": "2008-12-31",
+        "horizon_end": "2011-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.16967608232304957,
+        "score": 0.17570042599904945,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "NOR",
+        "as_of": "2009-12-31",
+        "horizon_end": "2012-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.20736477809769557,
+        "score": 0.20975460550209965,
+        "alarm": true
+      },
+      {
+        "model": "logit",
+        "country": "NOR",
+        "as_of": "2010-12-31",
+        "horizon_end": "2013-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.11242483676464518,
+        "score": 0.12234346184235269,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "NOR",
+        "as_of": "2011-12-31",
+        "horizon_end": "2014-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.12639216433997508,
+        "score": 0.13559582262715938,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "NOR",
+        "as_of": "2012-12-31",
+        "horizon_end": "2015-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.12089488679012324,
+        "score": 0.13040133716976723,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "NOR",
+        "as_of": "2013-12-31",
+        "horizon_end": "2016-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.12145256781840415,
+        "score": 0.1309295240171099,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "NOR",
+        "as_of": "2014-12-31",
+        "horizon_end": "2017-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.1221763176079823,
+        "score": 0.13161457848924638,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "NOR",
+        "as_of": "2015-12-31",
+        "horizon_end": "2018-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.13179089161588628,
+        "score": 0.14067203392030422,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "NOR",
+        "as_of": "2016-12-31",
+        "horizon_end": "2019-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.16997270135316186,
+        "score": 0.1759711429244743,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "PRT",
+        "as_of": "2003-12-31",
+        "horizon_end": "2006-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.11852555954418023,
+        "score": 0.12815414656786597,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "PRT",
+        "as_of": "2004-12-31",
+        "horizon_end": "2007-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.10975887250716461,
+        "score": 0.11979269996167115,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "PRT",
+        "as_of": "2005-12-31",
+        "horizon_end": "2008-12-31",
+        "event": 1,
+        "event_id": "PRT-2008",
+        "raw_score": 0.09329496552157203,
+        "score": 0.10386797826371001,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "PRT",
+        "as_of": "2006-12-31",
+        "horizon_end": "2009-12-31",
+        "event": 1,
+        "event_id": "PRT-2008",
+        "raw_score": 0.11448803526287414,
+        "score": 0.12431261115600181,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "PRT",
+        "as_of": "2007-12-31",
+        "horizon_end": "2010-12-31",
+        "event": 1,
+        "event_id": "PRT-2008",
+        "raw_score": 0.1284325359115278,
+        "score": 0.13751715392056207,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "PRT",
+        "as_of": "2013-12-31",
+        "horizon_end": "2016-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.008285051755043585,
+        "score": 0.012316404757174606,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "PRT",
+        "as_of": "2014-12-31",
+        "horizon_end": "2017-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.028927150452701923,
+        "score": 0.037126732119248315,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "PRT",
+        "as_of": "2015-12-31",
+        "horizon_end": "2018-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.0586939034790372,
+        "score": 0.069157657763763,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "PRT",
+        "as_of": "2016-12-31",
+        "horizon_end": "2019-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.07937409706696777,
+        "score": 0.09013599893643807,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "SWE",
+        "as_of": "2003-12-31",
+        "horizon_end": "2006-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.10325103363137808,
+        "score": 0.11353476669194217,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "SWE",
+        "as_of": "2004-12-31",
+        "horizon_end": "2007-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.09220049964437893,
+        "score": 0.10279792009312934,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "SWE",
+        "as_of": "2005-12-31",
+        "horizon_end": "2008-12-31",
+        "event": 1,
+        "event_id": "SWE-2008",
+        "raw_score": 0.07704332960088443,
+        "score": 0.08780913357806244,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "SWE",
+        "as_of": "2006-12-31",
+        "horizon_end": "2009-12-31",
+        "event": 1,
+        "event_id": "SWE-2008",
+        "raw_score": 0.10296955456315716,
+        "score": 0.11326305543021743,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "SWE",
+        "as_of": "2007-12-31",
+        "horizon_end": "2010-12-31",
+        "event": 1,
+        "event_id": "SWE-2008",
+        "raw_score": 0.11140403837957352,
+        "score": 0.12136762695874627,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "SWE",
+        "as_of": "2013-12-31",
+        "horizon_end": "2016-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.13954656758324172,
+        "score": 0.14792359509293146,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "SWE",
+        "as_of": "2014-12-31",
+        "horizon_end": "2017-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.10807211958020943,
+        "score": 0.11817505903677791,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "SWE",
+        "as_of": "2015-12-31",
+        "horizon_end": "2018-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.11109547039607336,
+        "score": 0.1210724434595966,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "SWE",
+        "as_of": "2016-12-31",
+        "horizon_end": "2019-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.1269457316608379,
+        "score": 0.13611744182143398,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "USA",
+        "as_of": "2003-12-31",
+        "horizon_end": "2006-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.055234506928013974,
+        "score": 0.06556521290075837,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "USA",
+        "as_of": "2004-12-31",
+        "horizon_end": "2007-12-31",
+        "event": 1,
+        "event_id": "USA-2007",
+        "raw_score": 0.05861518801956012,
+        "score": 0.06907621465386989,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "USA",
+        "as_of": "2005-12-31",
+        "horizon_end": "2008-12-31",
+        "event": 1,
+        "event_id": "USA-2007",
+        "raw_score": 0.06029211057202723,
+        "score": 0.0708083257743441,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "USA",
+        "as_of": "2006-12-31",
+        "horizon_end": "2009-12-31",
+        "event": 1,
+        "event_id": "USA-2007",
+        "raw_score": 0.10676079765554404,
+        "score": 0.11691539821501087,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "USA",
+        "as_of": "2012-12-31",
+        "horizon_end": "2015-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.060712234082026695,
+        "score": 0.07124132818654313,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "USA",
+        "as_of": "2013-12-31",
+        "horizon_end": "2016-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.08488970131424498,
+        "score": 0.09560941535695358,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "USA",
+        "as_of": "2014-12-31",
+        "horizon_end": "2017-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.07380865657397306,
+        "score": 0.08456537870876465,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "USA",
+        "as_of": "2015-12-31",
+        "horizon_end": "2018-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.07368415037318882,
+        "score": 0.08444017601784093,
+        "alarm": false
+      },
+      {
+        "model": "logit",
+        "country": "USA",
+        "as_of": "2016-12-31",
+        "horizon_end": "2019-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.08987897894091129,
+        "score": 0.10052303316758832,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "AUS",
+        "as_of": "2003-12-31",
+        "horizon_end": "2006-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.09373744394464685,
+        "score": 0.09592582250563551,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "AUS",
+        "as_of": "2004-12-31",
+        "horizon_end": "2007-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.04070128166527464,
+        "score": 0.11826000296370379,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "AUS",
+        "as_of": "2005-12-31",
+        "horizon_end": "2008-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.05217603668465619,
+        "score": 0.11130448614741116,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "AUS",
+        "as_of": "2006-12-31",
+        "horizon_end": "2009-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.21329863084113812,
+        "score": 0.07608688607146429,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "AUS",
+        "as_of": "2007-12-31",
+        "horizon_end": "2010-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.24502609184838015,
+        "score": 0.07282847055278109,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "AUS",
+        "as_of": "2008-12-31",
+        "horizon_end": "2011-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.20407459474808196,
+        "score": 0.07712600836179234,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "AUS",
+        "as_of": "2009-12-31",
+        "horizon_end": "2012-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.4314451600821539,
+        "score": 0.05911269776210849,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "AUS",
+        "as_of": "2010-12-31",
+        "horizon_end": "2013-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.114596994519611,
+        "score": 0.09093315675154753,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "AUS",
+        "as_of": "2011-12-31",
+        "horizon_end": "2014-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.24740257620177972,
+        "score": 0.07260143242095422,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "AUS",
+        "as_of": "2012-12-31",
+        "horizon_end": "2015-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.4115894813815921,
+        "score": 0.060315102889505735,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "AUS",
+        "as_of": "2013-12-31",
+        "horizon_end": "2016-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.24905665283918083,
+        "score": 0.07244465524350348,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "AUS",
+        "as_of": "2014-12-31",
+        "horizon_end": "2017-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.12146973611387,
+        "score": 0.08950787545905184,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "AUS",
+        "as_of": "2015-12-31",
+        "horizon_end": "2018-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.18054424892243867,
+        "score": 0.08001258637536265,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "AUS",
+        "as_of": "2016-12-31",
+        "horizon_end": "2019-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.37311525201901546,
+        "score": 0.06276711663378186,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "BEL",
+        "as_of": "2003-12-31",
+        "horizon_end": "2006-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.10452536786113478,
+        "score": 0.09320376216760555,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "BEL",
+        "as_of": "2004-12-31",
+        "horizon_end": "2007-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.16204204449434378,
+        "score": 0.0825742433152752,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "BEL",
+        "as_of": "2005-12-31",
+        "horizon_end": "2008-12-31",
+        "event": 1,
+        "event_id": "BEL-2008",
+        "raw_score": 0.027929700413901932,
+        "score": 0.12937319996063226,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "BEL",
+        "as_of": "2006-12-31",
+        "horizon_end": "2009-12-31",
+        "event": 1,
+        "event_id": "BEL-2008",
+        "raw_score": 0.024709286790790017,
+        "score": 0.13314567571833225,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "BEL",
+        "as_of": "2007-12-31",
+        "horizon_end": "2010-12-31",
+        "event": 1,
+        "event_id": "BEL-2008",
+        "raw_score": 0.05429745904307657,
+        "score": 0.11021427374329876,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "BEL",
+        "as_of": "2013-12-31",
+        "horizon_end": "2016-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.013697139840919026,
+        "score": 0.15247344500733553,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "BEL",
+        "as_of": "2014-12-31",
+        "horizon_end": "2017-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.006942622678610284,
+        "score": 0.1772843960011911,
+        "alarm": true
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "BEL",
+        "as_of": "2015-12-31",
+        "horizon_end": "2018-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.008147032397183595,
+        "score": 0.1711865908595295,
+        "alarm": true
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "BEL",
+        "as_of": "2016-12-31",
+        "horizon_end": "2019-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.012620828602158326,
+        "score": 0.15531284912724935,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "CAN",
+        "as_of": "2003-12-31",
+        "horizon_end": "2006-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.00918744747513364,
+        "score": 0.16671078438131826,
+        "alarm": true
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "CAN",
+        "as_of": "2004-12-31",
+        "horizon_end": "2007-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.021406579986557876,
+        "score": 0.13766640872669503,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "CAN",
+        "as_of": "2005-12-31",
+        "horizon_end": "2008-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.13898566270924392,
+        "score": 0.08624453778499777,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "CAN",
+        "as_of": "2006-12-31",
+        "horizon_end": "2009-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.05150760919536842,
+        "score": 0.1116586905677186,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "CAN",
+        "as_of": "2007-12-31",
+        "horizon_end": "2010-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.17747439646172639,
+        "score": 0.08041785256834318,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "CAN",
+        "as_of": "2008-12-31",
+        "horizon_end": "2011-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.22134392332480074,
+        "score": 0.07521705915265808,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "CAN",
+        "as_of": "2009-12-31",
+        "horizon_end": "2012-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.1851268833866057,
+        "score": 0.07942086292380424,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "CAN",
+        "as_of": "2010-12-31",
+        "horizon_end": "2013-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.018484698168580595,
+        "score": 0.14240773874183862,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "CAN",
+        "as_of": "2011-12-31",
+        "horizon_end": "2014-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.018484698168580595,
+        "score": 0.14240773874183862,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "CAN",
+        "as_of": "2012-12-31",
+        "horizon_end": "2015-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.018484698168580595,
+        "score": 0.14240773874183862,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "CAN",
+        "as_of": "2013-12-31",
+        "horizon_end": "2016-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.01712946012515894,
+        "score": 0.14491554877437182,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "CAN",
+        "as_of": "2014-12-31",
+        "horizon_end": "2017-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.01320992232283672,
+        "score": 0.1537251595877212,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "CAN",
+        "as_of": "2015-12-31",
+        "horizon_end": "2018-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.016963402455660512,
+        "score": 0.14523877562358878,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "CAN",
+        "as_of": "2016-12-31",
+        "horizon_end": "2019-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.01424221042905725,
+        "score": 0.15113348432970777,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "CHE",
+        "as_of": "2003-12-31",
+        "horizon_end": "2006-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.025417958445060895,
+        "score": 0.13226787365076634,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "CHE",
+        "as_of": "2004-12-31",
+        "horizon_end": "2007-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.039822236020446704,
+        "score": 0.11888523075094451,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "CHE",
+        "as_of": "2005-12-31",
+        "horizon_end": "2008-12-31",
+        "event": 1,
+        "event_id": "CHE-2008",
+        "raw_score": 0.03148668547364905,
+        "score": 0.12575798339207217,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "CHE",
+        "as_of": "2006-12-31",
+        "horizon_end": "2009-12-31",
+        "event": 1,
+        "event_id": "CHE-2008",
+        "raw_score": 0.08494928029876801,
+        "score": 0.0984193458378706,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "CHE",
+        "as_of": "2007-12-31",
+        "horizon_end": "2010-12-31",
+        "event": 1,
+        "event_id": "CHE-2008",
+        "raw_score": 0.15174634670762868,
+        "score": 0.08413851644373489,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "CHE",
+        "as_of": "2013-12-31",
+        "horizon_end": "2016-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.11180102446409489,
+        "score": 0.09154043596810231,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "CHE",
+        "as_of": "2014-12-31",
+        "horizon_end": "2017-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.11180102446409489,
+        "score": 0.09154043596810231,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "CHE",
+        "as_of": "2015-12-31",
+        "horizon_end": "2018-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.05634458120635878,
+        "score": 0.10920808137965844,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "CHE",
+        "as_of": "2016-12-31",
+        "horizon_end": "2019-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.11982755852742606,
+        "score": 0.08984014458794994,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "DEU",
+        "as_of": "2003-12-31",
+        "horizon_end": "2006-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.022598451925735497,
+        "score": 0.13594605244660812,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "DEU",
+        "as_of": "2004-12-31",
+        "horizon_end": "2007-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.07704107143578079,
+        "score": 0.10092813748291993,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "DEU",
+        "as_of": "2005-12-31",
+        "horizon_end": "2008-12-31",
+        "event": 1,
+        "event_id": "DEU-2008",
+        "raw_score": 0.006329539683646031,
+        "score": 0.180882172170885,
+        "alarm": true
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "DEU",
+        "as_of": "2006-12-31",
+        "horizon_end": "2009-12-31",
+        "event": 1,
+        "event_id": "DEU-2008",
+        "raw_score": 0.013951301444849587,
+        "score": 0.15184100379783189,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "DEU",
+        "as_of": "2007-12-31",
+        "horizon_end": "2010-12-31",
+        "event": 1,
+        "event_id": "DEU-2008",
+        "raw_score": 0.02140727737975911,
+        "score": 0.13766536950335004,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "DEU",
+        "as_of": "2013-12-31",
+        "horizon_end": "2016-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.008210081789137406,
+        "score": 0.17089679430771987,
+        "alarm": true
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "DEU",
+        "as_of": "2014-12-31",
+        "horizon_end": "2017-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.011527645484787014,
+        "score": 0.15850288147342043,
+        "alarm": true
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "DEU",
+        "as_of": "2015-12-31",
+        "horizon_end": "2018-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.03717723426173052,
+        "score": 0.1208683037333782,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "DEU",
+        "as_of": "2016-12-31",
+        "horizon_end": "2019-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.032727265836066576,
+        "score": 0.12460825179754598,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "DNK",
+        "as_of": "2003-12-31",
+        "horizon_end": "2006-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.24409494211358487,
+        "score": 0.07291801256253834,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "DNK",
+        "as_of": "2004-12-31",
+        "horizon_end": "2007-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.2264342769051232,
+        "score": 0.07468295366862872,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "DNK",
+        "as_of": "2005-12-31",
+        "horizon_end": "2008-12-31",
+        "event": 1,
+        "event_id": "DNK-2008",
+        "raw_score": 0.264510843974088,
+        "score": 0.07102643463363031,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "DNK",
+        "as_of": "2006-12-31",
+        "horizon_end": "2009-12-31",
+        "event": 1,
+        "event_id": "DNK-2008",
+        "raw_score": 0.5105345049032103,
+        "score": 0.054628364961571224,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "DNK",
+        "as_of": "2007-12-31",
+        "horizon_end": "2010-12-31",
+        "event": 1,
+        "event_id": "DNK-2008",
+        "raw_score": 0.37622102863539986,
+        "score": 0.06256236922604204,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "DNK",
+        "as_of": "2013-12-31",
+        "horizon_end": "2016-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.018660286598764904,
+        "score": 0.14209865410088673,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "DNK",
+        "as_of": "2014-12-31",
+        "horizon_end": "2017-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.007077272736583411,
+        "score": 0.1765436780606419,
+        "alarm": true
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "DNK",
+        "as_of": "2015-12-31",
+        "horizon_end": "2018-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.0503020204111504,
+        "score": 0.112311241717494,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "DNK",
+        "as_of": "2016-12-31",
+        "horizon_end": "2019-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.0503020204111504,
+        "score": 0.112311241717494,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "ESP",
+        "as_of": "2003-12-31",
+        "horizon_end": "2006-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.05901778668096526,
+        "score": 0.10795610930078671,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "ESP",
+        "as_of": "2004-12-31",
+        "horizon_end": "2007-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.09029364850751768,
+        "score": 0.09687003853623269,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "ESP",
+        "as_of": "2005-12-31",
+        "horizon_end": "2008-12-31",
+        "event": 1,
+        "event_id": "ESP-2008",
+        "raw_score": 0.018301222846794304,
+        "score": 0.14273440708516572,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "ESP",
+        "as_of": "2006-12-31",
+        "horizon_end": "2009-12-31",
+        "event": 1,
+        "event_id": "ESP-2008",
+        "raw_score": 0.43493022331677844,
+        "score": 0.05890545145752647,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "ESP",
+        "as_of": "2007-12-31",
+        "horizon_end": "2010-12-31",
+        "event": 1,
+        "event_id": "ESP-2008",
+        "raw_score": 0.2836040342498979,
+        "score": 0.06937873604872226,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "ESP",
+        "as_of": "2013-12-31",
+        "horizon_end": "2016-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.024732513242791562,
+        "score": 0.13311644036759573,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "ESP",
+        "as_of": "2014-12-31",
+        "horizon_end": "2017-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.0437574622772872,
+        "score": 0.11620292150256782,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "ESP",
+        "as_of": "2015-12-31",
+        "horizon_end": "2018-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.04718649320110495,
+        "score": 0.11408541452168161,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "ESP",
+        "as_of": "2016-12-31",
+        "horizon_end": "2019-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.020360970428795193,
+        "score": 0.13927083283593705,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "FIN",
+        "as_of": "2003-12-31",
+        "horizon_end": "2006-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.12309481794626795,
+        "score": 0.08918392701623551,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "FIN",
+        "as_of": "2004-12-31",
+        "horizon_end": "2007-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.08933688696797855,
+        "score": 0.09713962125113389,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "FIN",
+        "as_of": "2005-12-31",
+        "horizon_end": "2008-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.08426592579120268,
+        "score": 0.09862541215292969,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "FIN",
+        "as_of": "2006-12-31",
+        "horizon_end": "2009-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.128202175793274,
+        "score": 0.08819576724587273,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "FIN",
+        "as_of": "2007-12-31",
+        "horizon_end": "2010-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.2575388157631766,
+        "score": 0.07165615489420342,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "FIN",
+        "as_of": "2008-12-31",
+        "horizon_end": "2011-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.10809639666124551,
+        "score": 0.09237171422365338,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "FIN",
+        "as_of": "2009-12-31",
+        "horizon_end": "2012-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.01116806349168491,
+        "score": 0.15963034228515433,
+        "alarm": true
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "FIN",
+        "as_of": "2010-12-31",
+        "horizon_end": "2013-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.01189850325848183,
+        "score": 0.1573823744885366,
+        "alarm": true
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "FIN",
+        "as_of": "2011-12-31",
+        "horizon_end": "2014-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.011455951277078042,
+        "score": 0.15872436369034554,
+        "alarm": true
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "FIN",
+        "as_of": "2012-12-31",
+        "horizon_end": "2015-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.010620176347229468,
+        "score": 0.16143250149820676,
+        "alarm": true
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "FIN",
+        "as_of": "2013-12-31",
+        "horizon_end": "2016-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.006884617811942668,
+        "score": 0.17760865477132765,
+        "alarm": true
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "FIN",
+        "as_of": "2014-12-31",
+        "horizon_end": "2017-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.005272186670170469,
+        "score": 0.18815574898992302,
+        "alarm": true
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "FIN",
+        "as_of": "2015-12-31",
+        "horizon_end": "2018-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.0052699311090678245,
+        "score": 0.18817302897197735,
+        "alarm": true
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "FIN",
+        "as_of": "2016-12-31",
+        "horizon_end": "2019-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.009124096919902054,
+        "score": 0.16696603262489018,
+        "alarm": true
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "FRA",
+        "as_of": "2003-12-31",
+        "horizon_end": "2006-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.040782312519746865,
+        "score": 0.11820316367112464,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "FRA",
+        "as_of": "2004-12-31",
+        "horizon_end": "2007-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.24367629835275403,
+        "score": 0.07295837900558694,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "FRA",
+        "as_of": "2005-12-31",
+        "horizon_end": "2008-12-31",
+        "event": 1,
+        "event_id": "FRA-2008",
+        "raw_score": 0.0702306033159082,
+        "score": 0.10333714193581259,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "FRA",
+        "as_of": "2006-12-31",
+        "horizon_end": "2009-12-31",
+        "event": 1,
+        "event_id": "FRA-2008",
+        "raw_score": 0.15694719476073937,
+        "score": 0.08333455108423271,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "FRA",
+        "as_of": "2007-12-31",
+        "horizon_end": "2010-12-31",
+        "event": 1,
+        "event_id": "FRA-2008",
+        "raw_score": 0.09202927587450346,
+        "score": 0.09638916440433046,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "FRA",
+        "as_of": "2013-12-31",
+        "horizon_end": "2016-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.005732710155454202,
+        "score": 0.18479671630955358,
+        "alarm": true
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "FRA",
+        "as_of": "2014-12-31",
+        "horizon_end": "2017-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.005285950015185463,
+        "score": 0.18805049263211565,
+        "alarm": true
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "FRA",
+        "as_of": "2015-12-31",
+        "horizon_end": "2018-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.010902723346003847,
+        "score": 0.160489892618422,
+        "alarm": true
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "FRA",
+        "as_of": "2016-12-31",
+        "horizon_end": "2019-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.009372205118591761,
+        "score": 0.16597795015179986,
+        "alarm": true
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "GBR",
+        "as_of": "2003-12-31",
+        "horizon_end": "2006-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.04775758468379312,
+        "score": 0.11375018199834985,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "GBR",
+        "as_of": "2004-12-31",
+        "horizon_end": "2007-12-31",
+        "event": 1,
+        "event_id": "GBR-2007",
+        "raw_score": 0.07819934286514002,
+        "score": 0.10054275825928018,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "GBR",
+        "as_of": "2005-12-31",
+        "horizon_end": "2008-12-31",
+        "event": 1,
+        "event_id": "GBR-2007",
+        "raw_score": 0.06050709661176476,
+        "score": 0.10728672939303945,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "GBR",
+        "as_of": "2006-12-31",
+        "horizon_end": "2009-12-31",
+        "event": 1,
+        "event_id": "GBR-2007",
+        "raw_score": 0.11472068757049993,
+        "score": 0.09090667333125789,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "GBR",
+        "as_of": "2012-12-31",
+        "horizon_end": "2015-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.0027614601685365266,
+        "score": 0.21562868502281235,
+        "alarm": true
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "GBR",
+        "as_of": "2013-12-31",
+        "horizon_end": "2016-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.003382931348034325,
+        "score": 0.20671123118646054,
+        "alarm": true
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "GBR",
+        "as_of": "2014-12-31",
+        "horizon_end": "2017-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.00500550585251352,
+        "score": 0.19026045723281795,
+        "alarm": true
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "GBR",
+        "as_of": "2015-12-31",
+        "horizon_end": "2018-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.008690384555044242,
+        "score": 0.16877101455701385,
+        "alarm": true
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "GBR",
+        "as_of": "2016-12-31",
+        "horizon_end": "2019-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.008690384555044242,
+        "score": 0.16877101455701385,
+        "alarm": true
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "IRL",
+        "as_of": "2003-12-31",
+        "horizon_end": "2006-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.05301029928789128,
+        "score": 0.11086972202894406,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "IRL",
+        "as_of": "2004-12-31",
+        "horizon_end": "2007-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.11223649558130806,
+        "score": 0.09144474621611216,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "IRL",
+        "as_of": "2005-12-31",
+        "horizon_end": "2008-12-31",
+        "event": 1,
+        "event_id": "IRL-2008",
+        "raw_score": 0.11871598514226067,
+        "score": 0.0900679326101303,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "IRL",
+        "as_of": "2006-12-31",
+        "horizon_end": "2009-12-31",
+        "event": 1,
+        "event_id": "IRL-2008",
+        "raw_score": 0.5860240627783966,
+        "score": 0.050626149964182826,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "IRL",
+        "as_of": "2007-12-31",
+        "horizon_end": "2010-12-31",
+        "event": 1,
+        "event_id": "IRL-2008",
+        "raw_score": 0.4119225640576995,
+        "score": 0.06029461111073643,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "IRL",
+        "as_of": "2013-12-31",
+        "horizon_end": "2016-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.025678103328487512,
+        "score": 0.13195281746569543,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "IRL",
+        "as_of": "2014-12-31",
+        "horizon_end": "2017-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.021486965717431618,
+        "score": 0.1375468823880128,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "IRL",
+        "as_of": "2015-12-31",
+        "horizon_end": "2018-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.005631201753161219,
+        "score": 0.18550954091662242,
+        "alarm": true
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "IRL",
+        "as_of": "2016-12-31",
+        "horizon_end": "2019-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.011678274385507123,
+        "score": 0.15804275490707315,
+        "alarm": true
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "ITA",
+        "as_of": "2003-12-31",
+        "horizon_end": "2006-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.17184784255319535,
+        "score": 0.08118018538033943,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "ITA",
+        "as_of": "2004-12-31",
+        "horizon_end": "2007-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.31498427619334685,
+        "score": 0.06687924670106428,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "ITA",
+        "as_of": "2005-12-31",
+        "horizon_end": "2008-12-31",
+        "event": 1,
+        "event_id": "ITA-2008",
+        "raw_score": 0.2802425258044629,
+        "score": 0.06966118380613674,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "ITA",
+        "as_of": "2006-12-31",
+        "horizon_end": "2009-12-31",
+        "event": 1,
+        "event_id": "ITA-2008",
+        "raw_score": 0.357397734273381,
+        "score": 0.06382415567689996,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "ITA",
+        "as_of": "2007-12-31",
+        "horizon_end": "2010-12-31",
+        "event": 1,
+        "event_id": "ITA-2008",
+        "raw_score": 0.35410564877296863,
+        "score": 0.06405021219112539,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "ITA",
+        "as_of": "2013-12-31",
+        "horizon_end": "2016-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.04237900267829531,
+        "score": 0.11710930639573165,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "ITA",
+        "as_of": "2014-12-31",
+        "horizon_end": "2017-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.022929688286945592,
+        "score": 0.13548678018683985,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "ITA",
+        "as_of": "2015-12-31",
+        "horizon_end": "2018-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.022929688286945592,
+        "score": 0.13548678018683985,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "ITA",
+        "as_of": "2016-12-31",
+        "horizon_end": "2019-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.03490755518510577,
+        "score": 0.12270615903287882,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "JPN",
+        "as_of": "2003-12-31",
+        "horizon_end": "2006-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.03490755518510577,
+        "score": 0.12270615903287882,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "JPN",
+        "as_of": "2004-12-31",
+        "horizon_end": "2007-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.0037262241331796862,
+        "score": 0.20255996190376277,
+        "alarm": true
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "JPN",
+        "as_of": "2005-12-31",
+        "horizon_end": "2008-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.0037262241331796862,
+        "score": 0.20255996190376277,
+        "alarm": true
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "JPN",
+        "as_of": "2006-12-31",
+        "horizon_end": "2009-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.0037262241331796862,
+        "score": 0.20255996190376277,
+        "alarm": true
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "JPN",
+        "as_of": "2007-12-31",
+        "horizon_end": "2010-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.003492282422986406,
+        "score": 0.20533810780746745,
+        "alarm": true
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "JPN",
+        "as_of": "2008-12-31",
+        "horizon_end": "2011-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.0024827639577345664,
+        "score": 0.22041048722277393,
+        "alarm": true
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "JPN",
+        "as_of": "2009-12-31",
+        "horizon_end": "2012-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.00327661302303647,
+        "score": 0.2080961742328241,
+        "alarm": true
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "JPN",
+        "as_of": "2010-12-31",
+        "horizon_end": "2013-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.00464244950938535,
+        "score": 0.19334451724620655,
+        "alarm": true
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "JPN",
+        "as_of": "2011-12-31",
+        "horizon_end": "2014-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.008745983501137367,
+        "score": 0.16853381942655296,
+        "alarm": true
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "JPN",
+        "as_of": "2012-12-31",
+        "horizon_end": "2015-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.008007164529472428,
+        "score": 0.17183891433207737,
+        "alarm": true
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "JPN",
+        "as_of": "2013-12-31",
+        "horizon_end": "2016-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.007235254288760857,
+        "score": 0.17569525328741561,
+        "alarm": true
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "JPN",
+        "as_of": "2014-12-31",
+        "horizon_end": "2017-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.005478971749918181,
+        "score": 0.18660698582620722,
+        "alarm": true
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "JPN",
+        "as_of": "2015-12-31",
+        "horizon_end": "2018-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.004558019376320723,
+        "score": 0.19410184382023746,
+        "alarm": true
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "JPN",
+        "as_of": "2016-12-31",
+        "horizon_end": "2019-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.005478971749918181,
+        "score": 0.18660698582620722,
+        "alarm": true
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "NLD",
+        "as_of": "2003-12-31",
+        "horizon_end": "2006-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.26363185378796267,
+        "score": 0.07110495061595878,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "NLD",
+        "as_of": "2004-12-31",
+        "horizon_end": "2007-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.3053292532058437,
+        "score": 0.06762362865745247,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "NLD",
+        "as_of": "2005-12-31",
+        "horizon_end": "2008-12-31",
+        "event": 1,
+        "event_id": "NLD-2008",
+        "raw_score": 0.24602404558180319,
+        "score": 0.07273287130702627,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "NLD",
+        "as_of": "2006-12-31",
+        "horizon_end": "2009-12-31",
+        "event": 1,
+        "event_id": "NLD-2008",
+        "raw_score": 0.4288544201600529,
+        "score": 0.059267465639821555,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "NLD",
+        "as_of": "2007-12-31",
+        "horizon_end": "2010-12-31",
+        "event": 1,
+        "event_id": "NLD-2008",
+        "raw_score": 0.225251277006911,
+        "score": 0.07480600224730577,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "NLD",
+        "as_of": "2013-12-31",
+        "horizon_end": "2016-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.02593384444482492,
+        "score": 0.1316467209018144,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "NLD",
+        "as_of": "2014-12-31",
+        "horizon_end": "2017-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.03880010246705006,
+        "score": 0.11963280857260096,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "NLD",
+        "as_of": "2015-12-31",
+        "horizon_end": "2018-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.02769110026976945,
+        "score": 0.12963480776676736,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "NLD",
+        "as_of": "2016-12-31",
+        "horizon_end": "2019-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.02769110026976945,
+        "score": 0.12963480776676736,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "NOR",
+        "as_of": "2003-12-31",
+        "horizon_end": "2006-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.06856714983345129,
+        "score": 0.10396643383030302,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "NOR",
+        "as_of": "2004-12-31",
+        "horizon_end": "2007-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.08875414038585219,
+        "score": 0.09730542934110747,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "NOR",
+        "as_of": "2005-12-31",
+        "horizon_end": "2008-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.05618743328211128,
+        "score": 0.10928381036092201,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "NOR",
+        "as_of": "2006-12-31",
+        "horizon_end": "2009-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.060028348098739456,
+        "score": 0.10749980980624918,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "NOR",
+        "as_of": "2007-12-31",
+        "horizon_end": "2010-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.0665446010643143,
+        "score": 0.10475565482641068,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "NOR",
+        "as_of": "2008-12-31",
+        "horizon_end": "2011-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.18675652955815406,
+        "score": 0.07921412140280124,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "NOR",
+        "as_of": "2009-12-31",
+        "horizon_end": "2012-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.12919162178879665,
+        "score": 0.08800935399647784,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "NOR",
+        "as_of": "2010-12-31",
+        "horizon_end": "2013-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.09360172885259183,
+        "score": 0.0959622846492884,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "NOR",
+        "as_of": "2011-12-31",
+        "horizon_end": "2014-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.04065531086084745,
+        "score": 0.11829230803318806,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "NOR",
+        "as_of": "2012-12-31",
+        "horizon_end": "2015-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.1716007907535316,
+        "score": 0.08121425996871601,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "NOR",
+        "as_of": "2013-12-31",
+        "horizon_end": "2016-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.05689250883455374,
+        "score": 0.10894593773401937,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "NOR",
+        "as_of": "2014-12-31",
+        "horizon_end": "2017-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.017233596348234966,
+        "score": 0.14471471918530046,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "NOR",
+        "as_of": "2015-12-31",
+        "horizon_end": "2018-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.09050016488724945,
+        "score": 0.09681227429870924,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "NOR",
+        "as_of": "2016-12-31",
+        "horizon_end": "2019-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.1250092462777118,
+        "score": 0.08880831370084329,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "PRT",
+        "as_of": "2003-12-31",
+        "horizon_end": "2006-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.2102521636443981,
+        "score": 0.07642494105993877,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "PRT",
+        "as_of": "2004-12-31",
+        "horizon_end": "2007-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.34863209131903783,
+        "score": 0.06442985048297202,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "PRT",
+        "as_of": "2005-12-31",
+        "horizon_end": "2008-12-31",
+        "event": 1,
+        "event_id": "PRT-2008",
+        "raw_score": 0.32500368236767596,
+        "score": 0.06612753372216229,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "PRT",
+        "as_of": "2006-12-31",
+        "horizon_end": "2009-12-31",
+        "event": 1,
+        "event_id": "PRT-2008",
+        "raw_score": 0.20077827060311632,
+        "score": 0.07750902252815399,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "PRT",
+        "as_of": "2007-12-31",
+        "horizon_end": "2010-12-31",
+        "event": 1,
+        "event_id": "PRT-2008",
+        "raw_score": 0.12786118297619692,
+        "score": 0.08826037818767334,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "PRT",
+        "as_of": "2013-12-31",
+        "horizon_end": "2016-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.15328572668808343,
+        "score": 0.08389749993275925,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "PRT",
+        "as_of": "2014-12-31",
+        "horizon_end": "2017-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.08589779831005928,
+        "score": 0.09813642423381334,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "PRT",
+        "as_of": "2015-12-31",
+        "horizon_end": "2018-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.11459562639309583,
+        "score": 0.09093344985355091,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "PRT",
+        "as_of": "2016-12-31",
+        "horizon_end": "2019-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.023241928541810477,
+        "score": 0.13506091537718676,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "SWE",
+        "as_of": "2003-12-31",
+        "horizon_end": "2006-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.11149382697881736,
+        "score": 0.09160818961109078,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "SWE",
+        "as_of": "2004-12-31",
+        "horizon_end": "2007-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.07426552752743242,
+        "score": 0.10187924957712656,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "SWE",
+        "as_of": "2005-12-31",
+        "horizon_end": "2008-12-31",
+        "event": 1,
+        "event_id": "SWE-2008",
+        "raw_score": 0.11865009357234253,
+        "score": 0.09008150960041056,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "SWE",
+        "as_of": "2006-12-31",
+        "horizon_end": "2009-12-31",
+        "event": 1,
+        "event_id": "SWE-2008",
+        "raw_score": 0.03078926785382697,
+        "score": 0.12642786651807722,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "SWE",
+        "as_of": "2007-12-31",
+        "horizon_end": "2010-12-31",
+        "event": 1,
+        "event_id": "SWE-2008",
+        "raw_score": 0.23385583808915636,
+        "score": 0.0739252873427426,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "SWE",
+        "as_of": "2013-12-31",
+        "horizon_end": "2016-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.051486843825920885,
+        "score": 0.11166977961510488,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "SWE",
+        "as_of": "2014-12-31",
+        "horizon_end": "2017-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.07579390448034576,
+        "score": 0.10135057531226599,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "SWE",
+        "as_of": "2015-12-31",
+        "horizon_end": "2018-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.08401803823279927,
+        "score": 0.0987006335661958,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "SWE",
+        "as_of": "2016-12-31",
+        "horizon_end": "2019-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.08331319894108226,
+        "score": 0.09891590557516802,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "USA",
+        "as_of": "2003-12-31",
+        "horizon_end": "2006-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.012593276271803455,
+        "score": 0.15538922058829452,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "USA",
+        "as_of": "2004-12-31",
+        "horizon_end": "2007-12-31",
+        "event": 1,
+        "event_id": "USA-2007",
+        "raw_score": 0.01505314122554559,
+        "score": 0.1492473284350245,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "USA",
+        "as_of": "2005-12-31",
+        "horizon_end": "2008-12-31",
+        "event": 1,
+        "event_id": "USA-2007",
+        "raw_score": 0.03546528853037049,
+        "score": 0.12224185110514531,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "USA",
+        "as_of": "2006-12-31",
+        "horizon_end": "2009-12-31",
+        "event": 1,
+        "event_id": "USA-2007",
+        "raw_score": 0.059824659672583866,
+        "score": 0.10759106337285482,
+        "alarm": false
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "USA",
+        "as_of": "2012-12-31",
+        "horizon_end": "2015-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.0029538473184428063,
+        "score": 0.2126399482978086,
+        "alarm": true
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "USA",
+        "as_of": "2013-12-31",
+        "horizon_end": "2016-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.0033459459638334097,
+        "score": 0.20718726297143047,
+        "alarm": true
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "USA",
+        "as_of": "2014-12-31",
+        "horizon_end": "2017-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.003196011094647975,
+        "score": 0.20918104932099463,
+        "alarm": true
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "USA",
+        "as_of": "2015-12-31",
+        "horizon_end": "2018-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.0066299066979954,
+        "score": 0.17907115953690167,
+        "alarm": true
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "country": "USA",
+        "as_of": "2016-12-31",
+        "horizon_end": "2019-12-31",
+        "event": 0,
+        "event_id": "",
+        "raw_score": 0.009396136584437515,
+        "score": 0.16588426217467858,
+        "alarm": true
+      }
+    ],
+    "alarm_rule": {
+      "calibration_false_alarm_budget": 0.1,
+      "decision_rationale": "Predeclared research comparison at a 10% negative-period alarm budget; not a China or household action threshold"
+    },
+    "probability_admission": "Scores are research outputs. China transfer and probability use require an independent model-card decision; fitting/calibration alone does not grant that use.",
+    "versions": {
+      "numpy": "2.3.5",
+      "pandas": "2.2.3",
+      "scikit-learn": "1.9.1"
+    },
+    "executed_at": "2026-11-28T05:18:38.223295+00:00"
+  }
+}

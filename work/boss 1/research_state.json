@@ -1,7 +1,344 @@
 {
   "aliases": {},
   "cycle": 1,
-  "edges": {},
+  "edges": {
+    "H-2027-CAPITAL": {
+      "conditions": [
+        "以2026年9月披露RWA作静态参照，新增资本按实际入账时点认定。"
+      ],
+      "counterevidence": [
+        "BK003",
+        "BK009",
+        "BK014"
+      ],
+      "falsifier": "实际合格资本到位或RWA管理使各项要求持续满足，则该日期不产生现金或授信断点。",
+      "head": "J-2027",
+      "id": "H-2027-CAPITAL",
+      "lag": "2027-01-01规则生效，实际注资与季度资本披露按月季核验。",
+      "mechanism": "2027年初大行附加资本要求上升占用缓冲；能否提前留存或实缴决定信贷扩张约束，不能从规则日期推断全国资不抵债。",
+      "mode": "ALL",
+      "research_status": "conditional_mechanism_not_estimated_causal_effect",
+      "revision": 1,
+      "status": "needs_review",
+      "tails": [
+        "BK-ICBC-FLOOR",
+        "J-BANKS"
+      ]
+    },
+    "H-DECADE-REPAIR": {
+      "conditions": [
+        "房地产存量过hang、地方收入结构与私人收入分配需要多年调整。",
+        "政策以展期、项目保交付和渐进承损为主，尚未全面转为及时可用的居民收入与损失重组。"
+      ],
+      "counterevidence": [
+        "PF026",
+        "PF037",
+        "MA001",
+        "MA003",
+        "MA006"
+      ],
+      "falsifier": "家庭收入份额和私人投资持续恢复、地产库存与债务负担可比下降、地方税基替代土地并正常付款，能把长期拖累缩短；不能以单日股价否证或证实。",
+      "head": "J-DECADE",
+      "id": "H-DECADE-REPAIR",
+      "lag": "地产2021高位到约2030的跨周期窗口，非从2026固定再数十年。",
+      "mechanism": "滚续避免集中清算但不创造原项目现金收益，损失会经利润、财政和收入逐年分担；结构替代与收入修复速度决定持续期，日历年本身不决定终点。",
+      "mode": "ALL",
+      "research_status": "conditional_mechanism_not_estimated_causal_effect",
+      "revision": 1,
+      "status": "needs_review",
+      "tails": [
+        "J-PROPERTY",
+        "J-FISCAL",
+        "J-DEMAND",
+        "FW001",
+        "FW002"
+      ]
+    },
+    "H-DEMAND-REPAIR": {
+      "conditions": [
+        "借款与消费意愿受回款、收入和资产负债表影响，非简单认为降息必然创造净新增贷款。",
+        "调查均值、样本构成与宏观净流量保留边界，不把同一家庭的行为从总量配对出来。"
+      ],
+      "counterevidence": [
+        "MA001",
+        "MA002",
+        "MA003"
+      ],
+      "falsifier": "私人非地产投资、家庭实际消费/收入、同框小微回款与借款意愿在多个季度共同恢复，将削弱持续修复主张；仅总社融上升不足以识别私人需求。",
+      "head": "J-DEMAND",
+      "id": "H-DEMAND-REPAIR",
+      "lag": "实际订单与回款按月，投资与债务存量修复按季度至数年。",
+      "mechanism": "收入预期与抵押品/净值约束促使部分家庭偿债、增储备，企业需求弱降低投资和外部融资意愿；已有高债与无现金者仍可能被信贷配给。",
+      "mode": "ALL",
+      "research_status": "conditional_mechanism_not_estimated_causal_effect",
+      "revision": 1,
+      "status": "current",
+      "tails": [
+        "MA003",
+        "MA004",
+        "MA008"
+      ]
+    },
+    "H-EQUITY-SEPARATION": {
+      "conditions": [
+        "用含股息总回报、明确币种和持有窗口，上市企业与全国地产口径不同。"
+      ],
+      "counterevidence": [
+        "MA009",
+        "PF009"
+      ],
+      "falsifier": "特定市场在固定币种/费用/窗口下的长期总回报可为负，但须由其盈利与估值路径证实，不能仅用宏观危机命名推出。",
+      "head": "J-EQUITY",
+      "id": "H-EQUITY-SEPARATION",
+      "lag": "市场可提前定价；年度和十年复利分别检验。",
+      "mechanism": "利润、估值和股息共同决定股市回报，国内地产现金流不是全部上市利润；期初估值和政策反应可使弱宏观中的某些年份上涨。",
+      "mode": "ALL",
+      "research_status": "conditional_mechanism_not_estimated_causal_effect",
+      "revision": 1,
+      "status": "needs_review",
+      "tails": [
+        "J-DECADE",
+        "MA009",
+        "MA001"
+      ]
+    },
+    "H-FISCAL-INCOME": {
+      "conditions": [
+        "借款主体或雇主实际依赖土地/地方项目，且应收未兑现；非把全国基金支出减额均摊到所有家庭。",
+        "企业无充足现金、其他客户收入或已到账清欠资金抵补。"
+      ],
+      "counterevidence": [
+        "MA003",
+        "PF023",
+        "PF026",
+        "MA001"
+      ],
+      "falsifier": "同一批企业应收账龄缩短、拖欠实付、工资与招聘恢复且非靠新增高息短债维持，会切断本链。",
+      "head": "J-JOBS",
+      "id": "H-FISCAL-INCOME",
+      "lag": "结算与工资1—6个月，招聘和投资3—12个月。",
+      "mechanism": "财政迟付或项目缩减增加供应商应收与周转占用，先约束招聘和可变工资，再传至家庭支出；账面利润上升可以与现金工资风险并存。",
+      "mode": "ALL",
+      "research_status": "conditional_mechanism_not_estimated_causal_effect",
+      "revision": 1,
+      "status": "needs_review",
+      "tails": [
+        "J-FISCAL",
+        "MA001",
+        "MA008"
+      ]
+    },
+    "H-HOUSEHOLD-ACTION": {
+      "conditions": [
+        "用户真实合同、可动用现金及资产处置限制明确；默认金额为空。",
+        "策略不可预知未来，只按预先动作或当期可见现金触发，未及时变现即记录失败。"
+      ],
+      "counterevidence": [
+        "PF026",
+        "MA003"
+      ],
+      "falsifier": "若用户所有压力路径现金持续满足储备且无近期支出，必要削债/出售结论可被否定；无一方案可行则明确补资缺口而非判安全。",
+      "head": "A-HOUSEHOLD",
+      "id": "H-HOUSEHOLD-ACTION",
+      "lag": "现在核账，30—90天执行流动性安排，逐月120期与政策/收入变化时复算。",
+      "mechanism": "高净值但月度现金不足仍会失约，先保生活与合同付款可避免被迫低价出售；提前还贷省息与减少流动缓冲必须在同一台账比较。",
+      "mode": "ALL",
+      "research_status": "conditional_mechanism_not_estimated_causal_effect",
+      "revision": 1,
+      "status": "needs_review",
+      "tails": [
+        "J-JOBS",
+        "J-PROPERTY",
+        "J-DEMAND",
+        "J-EQUITY"
+      ]
+    },
+    "H-MACRO-SPLIT": {
+      "conditions": [
+        "出口与制造的实际增长部分延续，但对旧地产和地方就业的接替受地区、技能与收入分配约束。",
+        "债务滚续、资本补充和项目交付继续执行，没有发生跨区域支付失灵。"
+      ],
+      "counterevidence": [
+        "PF026",
+        "PF029",
+        "MA003",
+        "BK004"
+      ],
+      "falsifier": "若大规模净新增可用财政资金实际转至居民/供应商并持续拉动私人回款与投资，转向有效恢复；若外需骤降与多地银行融资/资本缺口共振，转向严重下行。",
+      "head": "J-MACRO",
+      "id": "H-MACRO-SPLIT",
+      "lag": "3—6个月看到账与订单，2027年看持续性，资产负债表修复跨3—5年。",
+      "mechanism": "旧开发链损失通过投资减少、财政收缩和私人修复压低内需；新制造与服务增加值支撑总量，渐进处置延长损失承担时间并保支付连续。",
+      "mode": "ALL",
+      "research_status": "conditional_mechanism_not_estimated_causal_effect",
+      "revision": 1,
+      "status": "needs_review",
+      "tails": [
+        "J-PROPERTY",
+        "J-FISCAL",
+        "J-DEMAND",
+        "MA001",
+        "MA007"
+      ]
+    },
+    "H-PF-EXIT": {
+      "conditions": [
+        "退平台后仍需营业回款和市场借款；未获无条件担保。"
+      ],
+      "counterevidence": [
+        "PF026",
+        "PF027",
+        "PF032",
+        "PF033"
+      ],
+      "falsifier": "同组弱平台退出后已补资本、获得长期可执行融资且经营现金足额，不出现额外续贷困难。",
+      "head": "J-2027",
+      "id": "H-PF-EXIT",
+      "lag": "2026年末至2027年中看实际退出，之后按每个主体下一次到期/续贷看现金。",
+      "mechanism": "2027年6月底的名录安排会改变弱平台的再融资定价和承接部门；剥离政府融资职能与企业经营债合同届期分开核算。",
+      "mode": "ALL",
+      "research_status": "conditional_mechanism_not_estimated_causal_effect",
+      "revision": 1,
+      "status": "current",
+      "tails": [
+        "PF029",
+        "PF030",
+        "PF031"
+      ]
+    },
+    "H-PF-LAND": {
+      "conditions": [
+        "同地块实收扣成本实际下降，承诺的基本支出无法自由推迟。",
+        "县级在可调用途内的转移、现金和融资不足以补上缺口。"
+      ],
+      "counterevidence": [
+        "PF021",
+        "PF023",
+        "PF034",
+        "PF036"
+      ],
+      "falsifier": "同城分项目净资源仍稳、付款期限改善且未通过积压应付账款释放现金，或到账足以持续抵补。",
+      "head": "J-FISCAL",
+      "id": "H-PF-LAND",
+      "lag": "土地入库和成本结算跨月季，当年项目支出与以后年度拖欠分开跟踪。",
+      "mechanism": "毛款收缩与征地成本节省同时发生，只有未被成本及实际可用资金抵消的部分才压缩新立项、已完工程结算或供应商付款。",
+      "mode": "ALL",
+      "research_status": "conditional_mechanism_not_estimated_causal_effect",
+      "revision": 1,
+      "status": "current",
+      "tails": [
+        "PF017",
+        "PF018",
+        "PF019",
+        "PF020",
+        "PF035",
+        "PF036"
+      ]
+    },
+    "H-PF-NEW": {
+      "conditions": [
+        "新房合同销售和开发商实际资金疲弱延续；旧房卖家回款用于换新的比例没有显著跃升。",
+        "新增项目按规划许可分组；旧项目保留原规则。"
+      ],
+      "counterevidence": [
+        "PF037",
+        "PF029",
+        "PF038",
+        "PF026"
+      ],
+      "falsifier": "全国可比新房面积和实际定金按揭回款连续两季同比转正，空间上扩至多数主要城市且土地入库和开工同时改善。",
+      "head": "J-PROPERTY",
+      "id": "H-PF-NEW",
+      "lag": "签约回款按月，拿地与施工按未来两个至六个季度观察。",
+      "mechanism": "二手换手先给旧业主及其抵押银行；适用新规的开发商须多承担预售前的建设融资与自有资金购地。若销售慢，拿地、开工先压缩。",
+      "mode": "ALL",
+      "research_status": "conditional_mechanism_not_estimated_causal_effect",
+      "revision": 1,
+      "status": "current",
+      "tails": [
+        "PF009",
+        "PF010",
+        "PF028"
+      ]
+    },
+    "H-PF-ROLL": {
+      "conditions": [
+        "法定债能续借，适当期限并获明确用途的转移和项目现金可执行。",
+        "不将省级样本当成全体平台合同。"
+      ],
+      "counterevidence": [
+        "PF018",
+        "PF030",
+        "PF031"
+      ],
+      "falsifier": "数省相同季度的未续到期本金加利息超过国库可用现金及可实施融资，出现供应商延付和同业融资条件恶化。",
+      "head": "J-2027",
+      "id": "H-PF-ROLL",
+      "lag": "2027预算和上半年发债；存量按各债券合同分年到期。",
+      "mechanism": "2024—26专项置换授权用完会降低增量工具供给，已换债务的偿付被延长，法定债的历史滚续和样本分年到期分布减弱全国同日挤兑解释。",
+      "mode": "ALL",
+      "research_status": "conditional_mechanism_not_estimated_causal_effect",
+      "revision": 1,
+      "status": "current",
+      "tails": [
+        "PF025",
+        "PF026",
+        "PF027",
+        "PF032",
+        "PF033"
+      ]
+    },
+    "HBK-LOSS-CAPITAL": {
+      "conditions": [
+        "贷款损失超过已占用的期初准备，额外部分达到本行实际前三季计提费用的年化额35.89亿元",
+        "9月底RWA额外增长5%，没有新增留存或实缴股权，账面到监管差额维持不变"
+      ],
+      "counterevidence": [
+        "BK004",
+        "BK006"
+      ],
+      "falsifier": "RWA不增时同一损失后仍有7.81%，或可用普通股/可计入留存超过2.44亿元，或重组后现金回收使新增费用不足；均可切断该情景。",
+      "head": "BK-LOCAL-CAPITAL",
+      "id": "HBK-LOSS-CAPITAL",
+      "lag": "关注和30—90日逾期先出现；季度计提与监管资本披露通常相隔一个报告期，最终回款可能跨年。",
+      "mechanism": "兰州关注和逾期为事前观察；若损失按条件确认则扣减CET1。相对于公开7.5%参照的CET1相对缓冲线的缺口约2.44亿元。参见mechanisms.md。",
+      "mode": "ALL",
+      "research_status": "conditional_mechanism_not_estimated_causal_effect",
+      "revision": 1,
+      "status": "current",
+      "tails": [
+        "BK-LOCAL-QUALITY",
+        "BK004",
+        "BK007"
+      ]
+    },
+    "HBK-SYSTEM": {
+      "conditions": [
+        "截至2026-11-27，样本资金流和资本披露仍匹配分化路径；不以单家机构或行业平均外推全部小银行",
+        "按季度重新核对多家跨地区机构的实际支付、新增信贷、净损失及重大应急干预"
+      ],
+      "counterevidence": [
+        "BK001",
+        "BK004",
+        "BK006",
+        "PF029"
+      ],
+      "falsifier": "跨区域多家银行普通股/留存和可用流动性无法覆盖确定损失与支付需求，紧急政策干预伴实际功能受损；即使期报资本未显著下降，跨行融资冻结与支付失灵的证据亦足以升级。",
+      "head": "J-BANKS",
+      "id": "HBK-SYSTEM",
+      "lag": "融资可在数日到30日集中；计提、注资、承接和信贷功能核验按季度到一年。",
+      "mechanism": "行业损失承接能力分布不均，受压地方银行可先缩表或补普通股，工行附加资本变化本身不足以造成系统困境。区域共振的融资冻结，或资本缺口叠加承接延迟，是升级条件。",
+      "mode": "ALL",
+      "research_status": "conditional_mechanism_not_estimated_causal_effect",
+      "revision": 1,
+      "status": "current",
+      "tails": [
+        "BK-GROUP-DISPERSION",
+        "BK-LIQUIDITY",
+        "BK-ICBC-FLOOR"
+      ]
+    }
+  },
   "history": [
     {
       "at": "2026-11-28T04:48:13+00:00",
@@ -810,14 +1147,601 @@
       "id": "Q00026",
       "query": "国务院关于金融工作情况的报告 众邦银行 接管 2026年11月3日",
       "result_count": 1
+    },
+    {
+      "affected": [],
+      "at": "2026-11-28T05:10:08+00:00",
+      "cycle": 1,
+      "event": "ingest",
+      "records": [
+        {
+          "id": "MT001",
+          "status": "added"
+        },
+        {
+          "id": "design-continuity",
+          "status": "added"
+        },
+        {
+          "id": "design-severe",
+          "status": "added"
+        },
+        {
+          "id": "design-recovery",
+          "status": "added"
+        }
+      ]
+    },
+    {
+      "added": [
+        "J-PROPERTY",
+        "J-FISCAL",
+        "J-2027",
+        "BK-GROUP-DISPERSION",
+        "BK-LOCAL-QUALITY",
+        "BK-LOCAL-CAPITAL",
+        "BK-LIQUIDITY",
+        "BK-ICBC-FLOOR",
+        "J-BANKS",
+        "J-DEMAND",
+        "J-JOBS",
+        "J-MACRO",
+        "J-DECADE",
+        "J-EQUITY",
+        "A-HOUSEHOLD",
+        "M-MODEL-USE",
+        "H-PF-NEW",
+        "H-PF-LAND",
+        "H-PF-ROLL",
+        "H-PF-EXIT",
+        "HBK-LOSS-CAPITAL",
+        "HBK-SYSTEM",
+        "H-DEMAND-REPAIR",
+        "H-FISCAL-INCOME",
+        "H-MACRO-SPLIT",
+        "H-2027-CAPITAL",
+        "H-DECADE-REPAIR",
+        "H-EQUITY-SEPARATION",
+        "H-HOUSEHOLD-ACTION"
+      ],
+      "at": "2026-11-28T05:10:08+00:00",
+      "cycle": 1,
+      "event": "graph_put"
+    },
+    {
+      "affected": [
+        "A-HOUSEHOLD",
+        "J-2027",
+        "J-BANKS",
+        "J-DECADE",
+        "J-DEMAND",
+        "J-EQUITY",
+        "J-FISCAL",
+        "J-JOBS",
+        "J-MACRO",
+        "J-PROPERTY",
+        "M-MODEL-USE"
+      ],
+      "at": "2026-11-28T05:13:55+00:00",
+      "cycle": 1,
+      "event": "ingest",
+      "records": [
+        {
+          "id": "HX001",
+          "status": "added"
+        },
+        {
+          "id": "HX002",
+          "status": "added"
+        },
+        {
+          "id": "HX003",
+          "status": "added"
+        },
+        {
+          "id": "HX004",
+          "status": "added"
+        },
+        {
+          "id": "HX005",
+          "status": "added"
+        },
+        {
+          "id": "HX006",
+          "status": "added"
+        },
+        {
+          "id": "HX007",
+          "status": "added"
+        },
+        {
+          "id": "HX008",
+          "status": "added"
+        },
+        {
+          "id": "HX009",
+          "status": "added"
+        },
+        {
+          "id": "HX010",
+          "status": "added"
+        },
+        {
+          "id": "HX011",
+          "status": "added"
+        },
+        {
+          "id": "HX012",
+          "status": "added"
+        },
+        {
+          "id": "HX013",
+          "status": "added"
+        },
+        {
+          "id": "HX014",
+          "status": "added"
+        },
+        {
+          "id": "HX015",
+          "status": "added"
+        },
+        {
+          "id": "HX016",
+          "status": "added"
+        },
+        {
+          "id": "HX017",
+          "status": "added"
+        },
+        {
+          "id": "HX018",
+          "status": "added"
+        },
+        {
+          "id": "HX019",
+          "status": "added"
+        }
+      ]
+    },
+    {
+      "at": "2026-11-28T05:14:02+00:00",
+      "cycle": 1,
+      "event": "search_log",
+      "id": "Q00027",
+      "query": "1997 Korea banking system short-term foreign currency debt rollover 1998 1999 growth Korea IMF reserve Korea detailed crisis exchange rates official IMF corporate financial restructuring liquidity\n2015 地方政府债券 3.2万亿 利息 2015 置换 财政部 2016 棚改 货币化 安置 48.5 去库存 国家统计局 2016 商品房待售面积\nJapan 1990s banking crisis 1997 bank failures 1998 recapitalization disposal non-performing loans 2002 2005 Japan Financial Services Agency BOJ NPL ratio Japan financial crisis 2002 2005\nJorda Schularick Taylor macrohistory release 6 variable description house price index nominal wage gdp equity total return house price Japan US annual index full documentation",
+      "result_count": 31
+    },
+    {
+      "at": "2026-11-28T05:14:03+00:00",
+      "cycle": 1,
+      "event": "search_log",
+      "id": "Q00028",
+      "query": "open https://www.imf.org/-/media/files/publications/wp/2026/english/wpiea2026094-source-pdf.pdf\nopen https://www.macrohistory.net/database/\nopen https://www.fsa.go.jp/en/announce/state/20081025.html\nopen https://www.mof.gov.cn/zhengwuxinxi/caizhengxinwen/201512/t20151223_1626635.htm\nopen https://www.mof.gov.cn/gp/xxgkml/bgt/201607/t20160701_2510110.htm\nopen https://www.elibrary.imf.org/view/journals/002/2000/011/article-A001-en.xml",
+      "result_count": 5
+    },
+    {
+      "at": "2026-11-28T05:14:03+00:00",
+      "cycle": 1,
+      "event": "search_log",
+      "id": "Q00029",
+      "query": "Atif Mian Amir Sufi Housing Household Debt and the Business Cycle An Application to China and Korea 2023 PDF consumption unlikely severe financial crisis Korea China Amir Sufi bfi full working paper Sufi\n2016 年全国房地产开发投资和销售情况 国家统计局 2016 年 商品房待售面积 2015 年 71853 万平方米 69539 商品房销售面积 2016 22.5 去库存\nFederal Reserve History Great Recession 2007 2009 mortgage funding securitization runs short term wholesale FCIC report US 2007 asset backed commercial paper FDIC",
+      "result_count": 8
+    },
+    {
+      "at": "2026-11-28T05:14:03+00:00",
+      "cycle": 1,
+      "event": "search_log",
+      "id": "Q00030",
+      "query": "open https://bfi.uchicago.cn/wp-content/uploads/2023/08/BFI_WP_2023-109.pdf\nopen https://www.imf.org/external/pubs/ft/scr/2000/cr0011.pdf\nfind \"Japan 1997\" https://www.imf.org/-/media/files/publications/wp/2026/english/wpiea2026094-source-pdf.pdf\nfind \"Korea, Republic of\" https://www.imf.org/-/media/files/publications/wp/2026/english/wpiea2026094-source-pdf.pdf\nfind \"United States 2007\" https://www.imf.org/-/media/files/publications/wp/2026/english/wpiea2026094-source-pdf.pdf\nfind \"two conditions\" https://www.imf.org/-/media/files/publications/wp/2026/english/wpiea2026094-source-pdf.pdf\nfind \"five years\" https://www.imf.org/-/media/files/publications/wp/2026/english/wpiea2026094-source-pdf.pdf\nclick https://www.macrohistory.net/database/ link 15\nclick https://www.macrohistory.net/database/ link 14\nclick https://www.macrohistory.net/database/ link 16",
+      "result_count": 10
+    },
+    {
+      "at": "2026-11-28T05:14:03+00:00",
+      "cycle": 1,
+      "event": "search_log",
+      "id": "Q00031",
+      "query": "open https://www.imf.org/-/media/files/publications/wp/2026/english/wpiea2026094-source-pdf.pdf L128\nopen https://www.imf.org/-/media/files/publications/wp/2026/english/wpiea2026094-source-pdf.pdf L533\nfind \"Japan Real Estate Institute\" https://www.macrohistory.net/app/download/9834516269/NPLH_documentation.pdf?t=1763503850\nfind \"Federal Housing Finance Agency\" https://www.macrohistory.net/app/download/9834516269/NPLH_documentation.pdf?t=1763503850\nfind \"Monthly Labour Survey\" https://www.macrohistory.net/app/download/9834516169/JST_documentationR6.pdf?t=1676279836\nfind \"TOPIX\" https://www.macrohistory.net/app/download/9834516469/RORE_documentation.pdf?t=1614633099\nfind \"Korea 1997\" https://www.imf.org/-/media/files/publications/wp/2026/english/wpiea2026094-source-pdf.pdf\nfind \"China 1998\" https://www.imf.org/-/media/files/publications/wp/2026/english/wpiea2026094-source-pdf.pdf\nfind \"home equity\" https://bfi.uchicago.cn/wp-content/uploads/2023/08/BFI_WP_2023-109.pdf\nfind \"full-blown\" https://bfi.uchicago.cn/wp-content/uploads/2023/08/BFI_WP_2023-109.pdf",
+      "result_count": 10
+    },
+    {
+      "at": "2026-11-28T05:14:03+00:00",
+      "cycle": 1,
+      "event": "search_log",
+      "id": "Q00032",
+      "query": "open https://carnegieendowment.org/china-financial-markets/2015/09/if-we-dont-understand-both-sides-of-chinas-balance-sheet-we-understand-neither\nopen https://cepr.org/voxeu/columns/balance-sheet-recession-reason-secular-stagnation\nopen https://andrewbatson.com/2023/05/18/beijing-qa-on-growth-and-security/\nopen https://www.cfr.org/articles/beijing-still-has-fiscal-space\nopen https://rhg.com/research/chinas-harsh-fiscal-winter/\nopen https://rhg.com/research/chinas-financial-and-fiscal-decay/\nopen https://www.cf40.org.cn/article/1/4752\nopen https://www.cf40.org.cn/article/1/289274",
+      "result_count": 8
+    },
+    {
+      "at": "2026-11-28T05:14:04+00:00",
+      "cycle": 1,
+      "event": "search_log",
+      "id": "Q00033",
+      "query": "open https://www.imf.org/-/media/files/publications/wp/2026/english/wpiea2026094-source-pdf.pdf L138\nopen https://www.macrohistory.net/app/download/9834516269/NPLH_documentation.pdf?t=1763503850 L2794\nfind \"Japan never\" https://carnegieendowment.org/china-financial-markets/2015/09/if-we-dont-understand-both-sides-of-chinas-balance-sheet-we-understand-neither\nfind \"3-4%\" https://carnegieendowment.org/china-financial-markets/2015/09/if-we-dont-understand-both-sides-of-chinas-balance-sheet-we-understand-neither\nfind \"3-4 percent\" https://carnegieendowment.org/china-financial-markets/2015/09/if-we-dont-understand-both-sides-of-chinas-balance-sheet-we-understand-neither\nfind \"sales\" https://andrewbatson.com/2023/05/18/beijing-qa-on-growth-and-security/\nfind \"borrowers\" https://cepr.org/voxeu/columns/balance-sheet-recession-reason-secular-stagnation\nfind \"contingent\" https://www.cfr.org/articles/beijing-still-has-fiscal-space\nfind \"deflation\" https://rhg.com/research/chinas-financial-and-fiscal-decay/\nfind \"Setser\" https://rhg.com/research/chinas-harsh-fiscal-winter/",
+      "result_count": 10
+    },
+    {
+      "at": "2026-11-28T05:14:04+00:00",
+      "cycle": 1,
+      "event": "search_log",
+      "id": "Q00034",
+      "query": "2026年6月末 我国 全口径 外债余额 短期 外债 外汇储备 2026 国家外汇管理局 短期外债与外汇储备的比例 本币外债\n2016 棚改货币化安置比例 48.5% 去库存 2.5亿平方米 2016 住建部 国务院 2017 发布会\n国家统计局 2023年四季度和全年国内生产总值初步核算结果 房地产业 2023 全年 -1.3 建筑业 增加值 2024 一月 房地产业\nKorea IMF from crisis to recovery Korea 1998 1999 real GDP 6.7 10.9 2001 154 GDP table recovery domestic demand investment bank recapitalisation credible financing",
+      "result_count": 35
+    },
+    {
+      "at": "2026-11-28T05:14:04+00:00",
+      "cycle": 1,
+      "event": "search_log",
+      "id": "Q00035",
+      "query": "open https://www.imf.org/-/media/files/publications/wp/2026/english/wpiea2026094-source-pdf.pdf L121\nfind \"短期外债\" https://www.safe.gov.cn/safe/2026/0929/27934.html\nfind \"房地产业\" https://www.stats.gov.cn/sj/zxfb/202401/t20240118_1946691.html\nfind \"69539\" https://www.stats.gov.cn/sj/zxfb/202302/t20230203_1899399.html\nfind \"48.5%\" https://zjt.ln.gov.cn/zjt/zfxxgk/fdzdgknr/zdmsxx/ssqk/76E8DA53AD894BDDAD14536108214D1C/index.shtml\nfind \"not overheated\" https://www.imf.org/-/media/websites/imf/imported-full-text-pdf/external/pubs/ft/wp/2001/_wp01154.pdf\nfind \"ABCP\" https://www.federalreserve.gov/newsevents/speech/fischer20150330a.htm\nfind \"2.93%\" https://www5.cao.go.jp/zenbun/wp-e/wp-je05/05-00103.html\nfind \"1955\\u00152012\" https://www.macrohistory.net/app/download/9834516269/NPLH_documentation.pdf?t=1763503850",
+      "result_count": 9
+    },
+    {
+      "at": "2026-11-28T05:14:04+00:00",
+      "cycle": 1,
+      "event": "search_log",
+      "id": "Q00036",
+      "query": "open https://www.safe.gov.cn/safe/2026/0929/27934.html L42\nopen https://zjt.ln.gov.cn/zjt/zfxxgk/fdzdgknr/zdmsxx/ssqk/76E8DA53AD894BDDAD14536108214D1C/index.shtml L120\nopen https://www.stats.gov.cn/sj/zxfb/202302/t20230203_1899021.html L119\nopen https://www.imf.org/-/media/websites/imf/imported-full-text-pdf/external/pubs/ft/wp/2001/_wp01154.pdf L1518\nopen https://www.stats.gov.cn/sj/zxfb/202401/t20240116_1946623.html\nopen https://andrewbatson.com/2020/05/03/why-china-isnt-sending-money-to-everyone/\nopen https://www.cf40.org.cn/article/1/289274 L116",
+      "result_count": 7
+    },
+    {
+      "at": "2026-11-28T05:14:04+00:00",
+      "cycle": 1,
+      "event": "search_log",
+      "id": "Q00037",
+      "query": "2017年2月23日 棚改货币化 48.5 陈政高 新闻发布会 scio gov.cn 国务院 住建部 2016 实录\nJordà Schularick Taylor macrohistory database release 6 July 2024 last update release 6 2022 data 2020 JSTdatabase JSTdataset release pdf date\nIMF Republic of Korea Economic and Policy Developments February 2000 00/11 publication date From Crisis to Recovery Korea WP/01/154 publication October 1 2001 dates\nJapan Cabinet Office Annual Report Japanese Economy Public Finance 2005 August publication date non performing loans ratio 2.93 March 2005 FSA Japanese major banks 8.4 March 2002 FSA release 2005",
+      "result_count": 11
+    },
+    {
+      "at": "2026-11-28T05:14:05+00:00",
+      "cycle": 1,
+      "event": "search_log",
+      "id": "Q00038",
+      "query": "open https://api.worldbank.org/v2/country/JPN;WLD/indicator/NY.GDP.MKTP.CD?date=1990:2010&format=json&per_page=60\nopen https://api.worldbank.org/v2/country/JPN;WLD/indicator/NY.GDP.MKTP.PP.CD?date=1990:2010&format=json&per_page=60\nopen https://www5.cao.go.jp/zenbun/wp-e/wp-je05/05-00001.html L14\nopen https://www.mof.gov.cn/gp/xxgkml/bgt/201607/t20160701_2510110.htm L25\nopen https://www.imf.org/external/pubs/ft/scr/2000/cr0011.pdf L2\nopen https://zjj.baoji.gov.cn/zzzb/zcjd/202012/t20201214_856354.html L36",
+      "result_count": 4
+    },
+    {
+      "at": "2026-11-28T05:14:05+00:00",
+      "cycle": 1,
+      "event": "search_log",
+      "id": "Q00039",
+      "query": "site:fred.stlouisfed.org/data World Gross Domestic Product Current US Dollars GDP Japan 1990 2010 World Bank MKTGDPJPA646NWDB MKTGDP1WA646NWDB table data 1990 2010\nworld bank WDI Japan Japan share world GDP 1990 2010 current dollars Japan 13.9 8.6 World Development Indicators 1990 2010 world Nominal GDP macrotrends world bank GDP Japan WITS world GDP current US 1990 2010",
+      "result_count": 33
+    },
+    {
+      "at": "2026-11-28T05:14:05+00:00",
+      "cycle": 1,
+      "event": "search_log",
+      "id": "Q00040",
+      "query": "open https://data.worldbank.org/indicator/NY.GDP.MKTP.CD?locations=JP-1W L35\nfind \"1990-01-01\" https://fred.stlouisfed.org/data/MKTGDPJPA646NWDB\nfind \"2010-01-01\" https://fred.stlouisfed.org/data/MKTGDPJPA646NWDB\nfind \"1990-01-01\" https://fred.stlouisfed.org/data/NYGDPMKTPCDWLD\nfind \"2010-01-01\" https://fred.stlouisfed.org/data/NYGDPMKTPCDWLD",
+      "result_count": 5
+    },
+    {
+      "at": "2026-11-28T05:14:05+00:00",
+      "cycle": 1,
+      "event": "search_log",
+      "id": "Q00041",
+      "query": "open https://fred.stlouisfed.org/data/NYGDPMKTPPPCDJPN\nopen https://fred.stlouisfed.org/data/NYGDPMKTPPPCDWLD\nopen https://data.worldbank.org/indicator/NY.GDP.MKTP.PP.CD?locations=JP-1W",
+      "result_count": 0
+    },
+    {
+      "at": "2026-11-28T05:14:05+00:00",
+      "cycle": 1,
+      "event": "search_log",
+      "id": "Q00042",
+      "query": "open https://www.macrohistory.net/app/download/9834516269/NPLH_documentation.pdf?t=1763503850 L4\nopen https://www.mof.gov.cn/zhengwuxinxi/caizhengxinwen/201512/t20151223_1626635.htm L26\nopen https://fred.stlouisfed.org/data/MKTGDPJPA646NWDB L17\nopen https://www.imf.org/en/publications/wp/issues/2026/05/14/systemic-banking-crises-database-1970-2025-576036\nopen https://www.imf.org/en/publications/cr/issues/2016/12/30/republic-of-korea-economic-and-policy-developments-3446",
+      "result_count": 4
+    },
+    {
+      "at": "2026-11-28T05:14:06+00:00",
+      "cycle": 1,
+      "event": "search_log",
+      "id": "Q00043",
+      "query": "IMF debt dynamics government budget identity overall deficit stock flow adjustment difference debt ratio overall deficit previous debt nominal GDP growth debt to GDP formula overall deficit debt stabilising fiscal monitor",
+      "result_count": 25
+    },
+    {
+      "at": "2026-11-28T05:14:06+00:00",
+      "cycle": 1,
+      "event": "search_log",
+      "id": "Q00044",
+      "query": "open https://www.imf.org/external/pubs/ft/wp/2012/wp1239.pdf L0\nopen https://www.imf.org/-/media/files/publications/howtonotes/howtonote1808.pdf L0\nfind \"We start with the accounting identity\" https://www.imf.org/-/media/files/publications/howtonotes/howtonote1808.pdf",
+      "result_count": 3
+    },
+    {
+      "affected": [
+        "M-MODEL-USE"
+      ],
+      "at": "2026-11-28T05:16:12+00:00",
+      "cycle": 1,
+      "event": "ingest",
+      "records": [
+        {
+          "id": "MT001",
+          "status": "updated"
+        }
+      ]
+    },
+    {
+      "affected": [
+        "M-MODEL-USE"
+      ],
+      "at": "2026-11-28T05:19:23+00:00",
+      "cycle": 1,
+      "event": "ingest",
+      "records": [
+        {
+          "id": "MT001",
+          "status": "updated"
+        }
+      ]
+    },
+    {
+      "affected": [
+        "A-HOUSEHOLD",
+        "J-EQUITY"
+      ],
+      "at": "2026-11-28T05:20:45+00:00",
+      "cycle": 1,
+      "event": "ingest",
+      "records": [
+        {
+          "id": "EQ001",
+          "status": "added"
+        },
+        {
+          "id": "EQ002",
+          "status": "added"
+        },
+        {
+          "id": "EQ003",
+          "status": "added"
+        }
+      ]
+    },
+    {
+      "at": "2026-11-28T05:20:58+00:00",
+      "cycle": 1,
+      "event": "search_log",
+      "id": "Q00045",
+      "query": "Open and find: MSCI China A Onshore CNY NET annual 2016–2025; OECD CPI 2015-12/2024-12; NBS December 2025 CPI",
+      "result_count": 3
     }
   ],
   "mode": "first",
-  "nodes": {},
+  "nodes": {
+    "A-HOUSEHOLD": {
+      "evidence": [
+        "MA003",
+        "MA008",
+        "PF010",
+        "PF028",
+        "FW003"
+      ],
+      "id": "A-HOUSEHOLD",
+      "kind": "action",
+      "revision": 1,
+      "statement": "现在先核到账收入、必要支出、合同本息和资产真实变现时点，按120月逐情景现金失败先筛方案，再比较提前还贷与净资产；触发出售应早于资金耗尽，现金充足家庭保留长期分散投资选择。",
+      "status": "needs_review"
+    },
+    "BK-GROUP-DISPERSION": {
+      "evidence": [
+        "BK001",
+        "BK010",
+        "BK012"
+      ],
+      "id": "BK-GROUP-DISPERSION",
+      "kind": "fact",
+      "revision": 1,
+      "statement": "截至2026年9月，大行、股份、城商、农商四组不良率为1.21%、1.24%、1.95%、2.90%，总资本充足率为18.00%、13.62%、12.39%、13.02%；2026年前三季城商行利润上升且农商行显著下降。",
+      "status": "current"
+    },
+    "BK-ICBC-FLOOR": {
+      "evidence": [
+        "BK003",
+        "BK007"
+      ],
+      "id": "BK-ICBC-FLOOR",
+      "kind": "fact",
+      "revision": 1,
+      "statement": "工行G-SIB附加资本要求于2027年1月1日从1.5%增至2.0%，按9月底RWA静置追加1523.91亿元的资本要求。",
+      "status": "current"
+    },
+    "BK-LIQUIDITY": {
+      "evidence": [
+        "BK002",
+        "BK003",
+        "BK004",
+        "BK008"
+      ],
+      "id": "BK-LIQUIDITY",
+      "kind": "fact",
+      "revision": 1,
+      "statement": "2026年三季汇总LCR155.67%覆盖资产在2000亿元以上的银行；两例均超过100%，但兰州存款结构、季间净流出与资本变化并不同步。",
+      "status": "current"
+    },
+    "BK-LOCAL-CAPITAL": {
+      "evidence": [
+        "BK004",
+        "BK006",
+        "BK007"
+      ],
+      "id": "BK-LOCAL-CAPITAL",
+      "kind": "judgment",
+      "revision": 1,
+      "statement": "给定2026年9月集团资产负债起点及市场公布的最低加储备资本参考线，兰州银行下一年度额外贷款损失若等于本行前三季计提的年化额，RWA增长5%且无新留存，CET1为7.43%，仍高于法定最低5%。",
+      "status": "current"
+    },
+    "BK-LOCAL-QUALITY": {
+      "evidence": [
+        "BK004",
+        "BK006"
+      ],
+      "id": "BK-LOCAL-QUALITY",
+      "kind": "fact",
+      "revision": 1,
+      "statement": "兰州银行关注类占比从2025年末5.64%升至2026年9月末7.46%，中报逾期占5.37%且以3个月以内为主，期内有回收和核销。",
+      "status": "current"
+    },
+    "J-2027": {
+      "evidence": [
+        "PF024",
+        "PF025",
+        "PF026",
+        "PF027",
+        "PF029",
+        "PF030",
+        "PF032",
+        "PF033",
+        "BK003",
+        "BK007"
+      ],
+      "id": "J-2027",
+      "kind": "judgment",
+      "revision": 1,
+      "statement": "2027是专门置换安排转换、平台退出名录、大行资本加码和部分首套贴息新增受理的复核窗口；已查期限与滚续支持地区分化，尚不足以判断全国同年集中爆发。",
+      "status": "needs_review"
+    },
+    "J-BANKS": {
+      "evidence": [
+        "BK001",
+        "BK002",
+        "BK003",
+        "BK004",
+        "BK005",
+        "BK006",
+        "BK007",
+        "BK008",
+        "BK010",
+        "BK011",
+        "PF029"
+      ],
+      "id": "J-BANKS",
+      "kind": "judgment",
+      "revision": 1,
+      "statement": "中国银行业主路径是盈利能力承压、局部信用损失消化与资本补充，众邦银行已被依法接管，2026年11月27日前公开证据不支持全国系统性银行危机已发生。2027年只有实际本金/现金损失、分机构资本或融资缺口及承接时滞达到跨区域量级才上调判断，独立的跨行挤兑亦可触发。",
+      "status": "needs_review"
+    },
+    "J-DECADE": {
+      "evidence": [
+        "PF003",
+        "PF007",
+        "PF009",
+        "FW001",
+        "FW002",
+        "FW003",
+        "MA009"
+      ],
+      "id": "J-DECADE",
+      "kind": "judgment",
+      "revision": 1,
+      "statement": "从2021年地产高位起计，到约2030年前后的多年调整是应准备的长路径；从2026年再追加整整十年全面停滞或连续股市下跌，缺乏可迁移的历史和会计依据。",
+      "status": "needs_review"
+    },
+    "J-DEMAND": {
+      "evidence": [
+        "MA003",
+        "MA004",
+        "MA008",
+        "FW002",
+        "FW003"
+      ],
+      "id": "J-DEMAND",
+      "kind": "judgment",
+      "revision": 1,
+      "statement": "居民和内需小微的收入、回款与资产负债表约束共同抑制私人支出，信贷需求弱与脆弱借款人的供给约束并存，无法据总量识别各自份额。",
+      "status": "needs_review"
+    },
+    "J-EQUITY": {
+      "evidence": [
+        "MA009",
+        "MA001",
+        "MA007"
+      ],
+      "id": "J-EQUITY",
+      "kind": "judgment",
+      "revision": 1,
+      "statement": "拒绝把地产与收入调整直接推出A股未来十年必熊。市场回报须分别看上市公司利润、估值、股息、币种和买入窗口；近期必要支出不得依赖权益反弹。",
+      "status": "needs_review"
+    },
+    "J-FISCAL": {
+      "evidence": [
+        "PF017",
+        "PF018",
+        "PF019",
+        "PF020",
+        "PF021",
+        "PF023",
+        "PF027",
+        "PF035",
+        "PF036"
+      ],
+      "id": "J-FISCAL",
+      "kind": "judgment",
+      "revision": 1,
+      "statement": "高土地依赖且转移、营运现金和可执行融资不足的市县将先调整项目与回款；全国一般预算支出受有效缓冲，两本账与成本须分列。",
+      "status": "needs_review"
+    },
+    "J-JOBS": {
+      "evidence": [
+        "MA001",
+        "MA002",
+        "MA003",
+        "MA008"
+      ],
+      "id": "J-JOBS",
+      "kind": "judgment",
+      "revision": 1,
+      "statement": "全国就业与实际居民收入总量并未显示同步塌陷，但地产、地方项目和小微相关家庭未来12—24个月的可变薪酬、招聘与回款风险高于总量读数。",
+      "status": "needs_review"
+    },
+    "J-MACRO": {
+      "evidence": [
+        "MA001",
+        "MA002",
+        "MA007",
+        "PF018",
+        "PF026",
+        "PF027",
+        "BK001",
+        "BK002"
+      ],
+      "id": "J-MACRO",
+      "kind": "judgment",
+      "revision": 1,
+      "statement": "未来12—24个月首位路径是渐进滚续与局部承损、地产财政拖累和制造出口增长并存，私人收入与资产修复不均；严重信用收缩次位，有效需求修复是可改变主路径的政策分支。",
+      "status": "needs_review"
+    },
+    "J-PROPERTY": {
+      "evidence": [
+        "PF003",
+        "PF007",
+        "PF009",
+        "PF010",
+        "PF028",
+        "PF037"
+      ],
+      "id": "J-PROPERTY",
+      "kind": "judgment",
+      "revision": 1,
+      "statement": "中国新房开发与项目融资更可能在2027年继续收缩或低位运行，二手住房通过分城降价与换手出清，实际保交付与部分核心城市先行改善。",
+      "status": "needs_review"
+    },
+    "M-MODEL-USE": {
+      "evidence": [
+        "MT001"
+      ],
+      "id": "M-MODEL-USE",
+      "kind": "method",
+      "revision": 1,
+      "statement": "本轮历史HGB拒用主预警，logit仅比较；中国PMI桥接和DFM未稳定胜过简单基线，拒绝中国危机概率与精确GDP点预测，采用可复算会计和条件敏感性完成裁决。",
+      "status": "needs_review"
+    }
+  },
   "proposals": {},
   "release": null,
   "review": null,
-  "revision": 6,
+  "revision": 12,
   "runtime": {
     "actor": "boss 1",
     "created_at": "2026-11-28T04:48:13+00:00",
@@ -1884,6 +2808,1598 @@
       ],
       "retrieval_timezone": "UTC",
       "topic": "banks"
+    },
+    {
+      "access_errors": [],
+      "engine": "OpenAI web.run system2_search_query",
+      "executed_at": "2026-11-28T05:05:12Z",
+      "id": "Q00027",
+      "key": [
+        "1997 korea banking system short-term foreign currency debt rollover 1998 1999 growth korea imf reserve korea detailed crisis exchange rates official imf corporate financial restructuring liquidity 2015 地方政府债券 3.2万亿 利息 2015 置换 财政部 2016 棚改 货币化 安置 48.5 去库存 国家统计局 2016 商品房待售面积 japan 1990s banking crisis 1997 bank failures 1998 recapitalization disposal non-performing loans 2002 2005 japan financial services agency boj npl ratio japan financial crisis 2002 2005 jorda schularick taylor macrohistory release 6 variable description house price index nominal wage gdp equity total return house price japan us annual index full documentation",
+        "跨国历史、作者复核与危机起点",
+        "1970—2026，具体统计期见各原件"
+      ],
+      "limitations": "初查只用来定位原件；韩国增长当时值与事后修订值分别保留。",
+      "period": "1970—2026，具体统计期见各原件",
+      "provider": "OpenAI web.run system2_search_query",
+      "purpose": "逐项实际查询见 cmd.system2_search_query；韩国外币续借、日本不良确认、中方置换棚改、JST 变量",
+      "query": "1997 Korea banking system short-term foreign currency debt rollover 1998 1999 growth Korea IMF reserve Korea detailed crisis exchange rates official IMF corporate financial restructuring liquidity\n2015 地方政府债券 3.2万亿 利息 2015 置换 财政部 2016 棚改 货币化 安置 48.5 去库存 国家统计局 2016 商品房待售面积\nJapan 1990s banking crisis 1997 bank failures 1998 recapitalization disposal non-performing loans 2002 2005 Japan Financial Services Agency BOJ NPL ratio Japan financial crisis 2002 2005\nJorda Schularick Taylor macrohistory release 6 variable description house price index nominal wage gdp equity total return house price Japan US annual index full documentation",
+      "result_ids": [
+        "HX004",
+        "HX006",
+        "HX007",
+        "HX002",
+        "HX003",
+        "HX012"
+      ],
+      "results": [
+        {
+          "ref": "turn576848844search47",
+          "title": "IMF Occasional Paper 188 -- Financial Sector Crisis and Restructuring--Lessons from Asia",
+          "url": "https://www.imf.org/external/pubs/ft/op/opfinsec/op188.pdf"
+        },
+        {
+          "ref": "turn576848844search0",
+          "title": "2015：中国地方债务管理改革元年",
+          "url": "https://www.mof.gov.cn/zhengwuxinxi/caijingshidian/zgcjb/201602/t20160205_1664668.htm"
+        },
+        {
+          "ref": "turn576848844search48",
+          "title": "Republic of Korea: Economic and Policy Developments - ISCR/00/11",
+          "url": "https://www.imf.org/external/pubs/ft/scr/2000/cr0011.pdf"
+        },
+        {
+          "ref": "turn576848844search1",
+          "title": "国务院关于规范地方政府债务管理工作情况的报告",
+          "url": "https://www.mof.gov.cn/zhengwuxinxi/caizhengxinwen/201512/t20151223_1626635.htm"
+        },
+        {
+          "ref": "turn576848844search2",
+          "title": "Public Information Notice: IMF Concludes Article IV Consultation with Korea",
+          "url": "https://www.imf.org/en/news/articles/2015/09/28/04/53/pn99115"
+        },
+        {
+          "ref": "turn576848844search3",
+          "title": "VIII Countries That Experienced a Financial Crisis",
+          "url": "https://www.elibrary.imf.org/display/book/9781589060852/ch008.xml"
+        },
+        {
+          "ref": "turn576848844search49",
+          "title": "World Bank Document",
+          "url": "https://ppp.worldbank.org/sites/default/files/2022-06/multi0page.pdf"
+        },
+        {
+          "ref": "turn576848844search4",
+          "title": "Building financial stability: Korea’s crisis resolution strategy aims to restore confidence and promote sustained recovery",
+          "url": "https://www.elibrary.imf.org/view/journals/023/0029/005/article-A010-en.xml"
+        },
+        {
+          "ref": "turn576848844search50",
+          "title": "IMF Survey: March 6, 2000",
+          "url": "https://www.imf.org/external/pubs/ft/survey/2000/030600.pdf"
+        },
+        {
+          "ref": "turn576848844search5",
+          "title": "关于2015年中央决算的报告",
+          "url": "https://www.mof.gov.cn/gp/xxgkml/bgt/201607/t20160701_2510110.htm"
+        },
+        {
+          "ref": "turn576848844search6",
+          "title": "VIII Conclusions and Lessons",
+          "url": "https://www.elibrary.imf.org/display/book/9781557758712/ch08.xml"
+        },
+        {
+          "ref": "turn576848844search7",
+          "title": "DOWNLOAD - MacroFinance & MacroHistory Lab",
+          "url": "https://www.macrohistory.net/database/"
+        },
+        {
+          "ref": "turn576848844search8",
+          "title": "Ministry of Finance and Economy",
+          "url": "https://english.mofe.go.kr/pc/selectTbPressCenterDtl.do?boardCd=N0001&seq=939"
+        },
+        {
+          "ref": "turn576848844search9",
+          "title": "Republic of Korea: Economic and Policy Developments",
+          "url": "https://www.elibrary.imf.org/view/journals/002/2000/011/article-A001-en.xml"
+        },
+        {
+          "ref": "turn576848844search10",
+          "title": "Lessons from Japan's Banking Crisis, 1991–2005",
+          "url": "https://www.adb.org/publications/lessons-japans-banking-crisis-1991-2005"
+        },
+        {
+          "ref": "turn576848844search11",
+          "title": "12 Restructuring Korean Banks’ Short-Term Debts",
+          "url": "https://www.elibrary.imf.org/display/book/9781589060685/C12.xml"
+        },
+        {
+          "ref": "turn576848844search12",
+          "title": "Credit Allocation and Financial Crisis in Korea",
+          "url": "https://www.elibrary.imf.org/view/journals/001/1999/020/article-A001-en.xml"
+        },
+        {
+          "ref": "turn576848844search13",
+          "title": "财政部有关负责人就政府债务问题答记者问",
+          "url": "https://www.mof.gov.cn/zhengwuxinxi/zhengcejiedu/2016zcjd/201605/t20160526_2037679.htm"
+        },
+        {
+          "ref": "turn576848844search14",
+          "title": "Back Matter",
+          "url": "https://www.elibrary.imf.org/display/book/9781589060821/back-1.xml"
+        },
+        {
+          "ref": "turn576848844search15",
+          "title": "Fiscal Policy for the Crisis",
+          "url": "https://www.elibrary.imf.org/view/journals/007/2008/075/article-A001-en.xml"
+        },
+        {
+          "ref": "turn576848844search16",
+          "title": "I Overview",
+          "url": "https://www.elibrary.imf.org/display/book/9781557757838/ch01.xml"
+        },
+        {
+          "ref": "turn576848844search51",
+          "title": "From Crisis to Recovery in Korea:  Strategy, Achievements, and Lessons - WP/01/154",
+          "url": "https://www.imf.org/external/pubs/ft/wp/2001/wp01154.pdf"
+        },
+        {
+          "ref": "turn576848844search17",
+          "title": "Press Information Notice: IMF Concludes Article IV Consultation with Korea",
+          "url": "https://www.imf.org/en/news/articles/2015/09/28/04/53/pn9839"
+        },
+        {
+          "ref": "turn576848844search18",
+          "title": "Global financial crisis and Japan’s experience in the 1990s : FSA",
+          "url": "https://www.fsa.go.jp/en/announce/state/20081025.html"
+        },
+        {
+          "ref": "turn576848844search19",
+          "title": "来源原件",
+          "url": "https://www.everycrsreport.com/files/20090504_RS22960_45d0bcf4c96e68f27501f2f1e32773c5eadb8b31.html"
+        },
+        {
+          "ref": "turn576848844search20",
+          "title": "IV. Revisiting Japan’s Lost Decade",
+          "url": "https://www.elibrary.imf.org/abstract/book/9781589068407/ch04.xml"
+        },
+        {
+          "ref": "turn576848844search21",
+          "title": "The Resolution and Collection Corporation of Japan | New Bagehot",
+          "url": "https://newbagehot.yale.edu/docs/resolution-and-collection-corporation-japan"
+        },
+        {
+          "ref": "turn576848844search22",
+          "title": "Japan: Economic and Policy Developments",
+          "url": "https://www.elibrary.imf.org/view/journals/002/1999/114/article-A004-en.xml"
+        },
+        {
+          "ref": "turn576848844search23",
+          "title": "Recapitalization of banks helps ease credit crunch in Japan",
+          "url": "https://www.elibrary.imf.org/view/IMF023/14340-9781451933086/14340-9781451933086/14340-9781451933086_A006.xml"
+        },
+        {
+          "ref": "turn576848844search24",
+          "title": "Section 3 From an Intensive Adjustment Period to a Concentrated Consolidation Period - Cabinet Office Home Page",
+          "url": "https://www5.cao.go.jp/zenbun/wp-e/wp-je05/05-00103.html"
+        },
+        {
+          "ref": "turn576848844search25",
+          "title": "Systemic Banking Crises: A New Database",
+          "url": "https://www.elibrary.imf.org/abstract/journals/001/2008/224/article-A001-en.xml"
+        }
+      ],
+      "topic": "跨国历史、作者复核与危机起点"
+    },
+    {
+      "access_errors": [
+        "Failed to fetch https://www.elibrary.imf.org/view/journals/002/2000/011/article-A001-en.xml: (403) Forbidden"
+      ],
+      "engine": "OpenAI web.run 原文定点 open/find/click",
+      "executed_at": "2026-11-28T05:05:21Z",
+      "id": "Q00028",
+      "key": [
+        "open https://www.imf.org/-/media/files/publications/wp/2026/english/wpiea2026094-source-pdf.pdf open https://www.macrohistory.net/database/ open https://www.fsa.go.jp/en/announce/state/20081025.html open https://www.mof.gov.cn/zhengwuxinxi/caizhengxinwen/201512/t20151223_1626635.htm open https://www.mof.gov.cn/gp/xxgkml/bgt/201607/t20160701_2510110.htm open https://www.elibrary.imf.org/view/journals/002/2000/011/article-a001-en.xml",
+        "跨国历史、作者复核与危机起点",
+        "1970—2026，具体统计期见各原件"
+      ],
+      "limitations": "韩国电子期刊HTML返回403，转同报告官方PDF；决算的利息节约属预计。",
+      "period": "1970—2026，具体统计期见各原件",
+      "provider": "OpenAI web.run 原文定点 open/find/click",
+      "purpose": "定点核读 IMF WP26/94 表格与定义、JST口径、日本金融厅政策、韩国 Article IV、2015下达与2016决算。",
+      "query": "open https://www.imf.org/-/media/files/publications/wp/2026/english/wpiea2026094-source-pdf.pdf\nopen https://www.macrohistory.net/database/\nopen https://www.fsa.go.jp/en/announce/state/20081025.html\nopen https://www.mof.gov.cn/zhengwuxinxi/caizhengxinwen/201512/t20151223_1626635.htm\nopen https://www.mof.gov.cn/gp/xxgkml/bgt/201607/t20160701_2510110.htm\nopen https://www.elibrary.imf.org/view/journals/002/2000/011/article-A001-en.xml",
+      "result_ids": [
+        "HX001",
+        "HX002",
+        "HX003",
+        "HX006",
+        "HX007"
+      ],
+      "results": [
+        {
+          "ref": "turn210294517view0",
+          "title": "Systemic Banking Crises Database: 1970-2025, WP/26/94, May 2026",
+          "url": "https://www.imf.org/-/media/files/publications/wp/2026/english/wpiea2026094-source-pdf.pdf"
+        },
+        {
+          "ref": "turn210294517view1",
+          "title": "DOWNLOAD - MacroFinance & MacroHistory Lab",
+          "url": "https://www.macrohistory.net/database/"
+        },
+        {
+          "ref": "turn210294517view2",
+          "title": "Global financial crisis and Japan’s experience in the 1990s : FSA",
+          "url": "https://www.fsa.go.jp/en/announce/state/20081025.html"
+        },
+        {
+          "ref": "turn210294517view3",
+          "title": "国务院关于规范地方政府债务管理工作情况的报告",
+          "url": "https://www.mof.gov.cn/zhengwuxinxi/caizhengxinwen/201512/t20151223_1626635.htm"
+        },
+        {
+          "ref": "turn210294517view4",
+          "title": "关于2015年中央决算的报告",
+          "url": "https://www.mof.gov.cn/gp/xxgkml/bgt/201607/t20160701_2510110.htm"
+        }
+      ],
+      "topic": "跨国历史、作者复核与危机起点"
+    },
+    {
+      "access_errors": [],
+      "engine": "OpenAI web.run system1_search_query",
+      "executed_at": "2026-11-28T05:05:55Z",
+      "id": "Q00029",
+      "key": [
+        "atif mian amir sufi housing household debt and the business cycle an application to china and korea 2023 pdf consumption unlikely severe financial crisis korea china amir sufi bfi full working paper sufi 2016 年全国房地产开发投资和销售情况 国家统计局 2016 年 商品房待售面积 2015 年 71853 万平方米 69539 商品房销售面积 2016 22.5 去库存 federal reserve history great recession 2007 2009 mortgage funding securitization runs short term wholesale fcic report us 2007 asset backed commercial paper fdic",
+        "跨国历史、作者复核与危机起点",
+        "1970—2026，具体统计期见各原件"
+      ],
+      "limitations": "工作论文封面月份与论文内页相差一月；国内年度库存不覆盖在建，住房成交仅限新建商品房。",
+      "period": "1970—2026，具体统计期见各原件",
+      "provider": "OpenAI web.run system1_search_query",
+      "purpose": "检索Sufi全文、2015/16去库存可比结果，以及美国官方融资链。",
+      "query": "Atif Mian Amir Sufi Housing Household Debt and the Business Cycle An Application to China and Korea 2023 PDF consumption unlikely severe financial crisis Korea China Amir Sufi bfi full working paper Sufi\n2016 年全国房地产开发投资和销售情况 国家统计局 2016 年 商品房待售面积 2015 年 71853 万平方米 69539 商品房销售面积 2016 22.5 去库存\nFederal Reserve History Great Recession 2007 2009 mortgage funding securitization runs short term wholesale FCIC report US 2007 asset backed commercial paper FDIC",
+      "result_ids": [
+        "HX014",
+        "HX009",
+        "HX008",
+        "HX011"
+      ],
+      "results": [
+        {
+          "ref": "turn306169501search7",
+          "title": "WORKING PAPER · NO. 2023-109",
+          "url": "https://bfi.uchicago.cn/wp-content/uploads/2023/08/BFI_WP_2023-109.pdf"
+        },
+        {
+          "ref": "turn306169501search0",
+          "title": "Housing, Household Debt, and the Business Cycle: An Application to China and Korea",
+          "url": "https://www.nber.org/papers/w31489"
+        },
+        {
+          "ref": "turn306169501search1",
+          "title": "Housing, Household Debt, and the Business Cycle: An Application to China and Korea | Becker Friedman Institute",
+          "url": "https://bfi.uchicago.edu/insight/research-summary/housing-household-debt-and-the-business-cycle-an-application-to-china-and-korea/?occurrence_id=0"
+        },
+        {
+          "ref": "turn306169501search2",
+          "title": "2016年全国房地产开发投资和销售情况 - 国家统计局",
+          "url": "https://www.stats.gov.cn/sj/zxfb/202302/t20230203_1899399.html"
+        },
+        {
+          "ref": "turn306169501search3",
+          "title": "2015年全国房地产开发投资和销售情况 - 国家统计局",
+          "url": "https://www.stats.gov.cn/sj/zxfb/202302/t20230203_1899021.html"
+        },
+        {
+          "ref": "turn306169501search4",
+          "title": "The Great Recession and Its Aftermath",
+          "url": "https://www.federalreservehistory.org/essays/great-recession-and-its-aftermath"
+        },
+        {
+          "ref": "turn306169501search5",
+          "title": "Speech by Vice Chairman Fischer on nonbank financial intermediation, financial stability, and the road forward - Federal Reserve Board",
+          "url": "https://www.federalreserve.gov/newsevents/speech/fischer20150330a.htm"
+        },
+        {
+          "ref": "turn306169501search6",
+          "title": "FRB: Annual Report 2007, Recent Economic and Financial Developments",
+          "url": "https://www.federalreserve.gov/boarddocs/RptCongress/annual07/sec1/c2.htm"
+        }
+      ],
+      "topic": "跨国历史、作者复核与危机起点"
+    },
+    {
+      "access_errors": [],
+      "engine": "OpenAI web.run 原文定点 open/find/click",
+      "executed_at": "2026-11-28T05:06:05Z",
+      "id": "Q00030",
+      "key": [
+        "open https://bfi.uchicago.cn/wp-content/uploads/2023/08/bfi_wp_2023-109.pdf open https://www.imf.org/external/pubs/ft/scr/2000/cr0011.pdf find \"japan 1997\" https://www.imf.org/-/media/files/publications/wp/2026/english/wpiea2026094-source-pdf.pdf find \"korea, republic of\" https://www.imf.org/-/media/files/publications/wp/2026/english/wpiea2026094-source-pdf.pdf find \"united states 2007\" https://www.imf.org/-/media/files/publications/wp/2026/english/wpiea2026094-source-pdf.pdf find \"two conditions\" https://www.imf.org/-/media/files/publications/wp/2026/english/wpiea2026094-source-pdf.pdf find \"five years\" https://www.imf.org/-/media/files/publications/wp/2026/english/wpiea2026094-source-pdf.pdf click https://www.macrohistory.net/database/ link 15 click https://www.macrohistory.net/database/ link 14 click https://www.macrohistory.net/database/ link 16",
+        "跨国历史、作者复核与危机起点",
+        "1970—2026，具体统计期见各原件"
+      ],
+      "limitations": "使用附录表A1；日本结束年带五年截尾，韩国必须单查Korea行。",
+      "period": "1970—2026，具体统计期见各原件",
+      "provider": "OpenAI web.run 原文定点 open/find/click",
+      "purpose": "读 IMF 日本/美国/韩国分期与截尾、JST底层房/股/工资和Sufi大学PDF、韩国2000报告PDF。",
+      "query": "open https://bfi.uchicago.cn/wp-content/uploads/2023/08/BFI_WP_2023-109.pdf\nopen https://www.imf.org/external/pubs/ft/scr/2000/cr0011.pdf\nfind \"Japan 1997\" https://www.imf.org/-/media/files/publications/wp/2026/english/wpiea2026094-source-pdf.pdf\nfind \"Korea, Republic of\" https://www.imf.org/-/media/files/publications/wp/2026/english/wpiea2026094-source-pdf.pdf\nfind \"United States 2007\" https://www.imf.org/-/media/files/publications/wp/2026/english/wpiea2026094-source-pdf.pdf\nfind \"two conditions\" https://www.imf.org/-/media/files/publications/wp/2026/english/wpiea2026094-source-pdf.pdf\nfind \"five years\" https://www.imf.org/-/media/files/publications/wp/2026/english/wpiea2026094-source-pdf.pdf\nclick https://www.macrohistory.net/database/ link 15\nclick https://www.macrohistory.net/database/ link 14\nclick https://www.macrohistory.net/database/ link 16",
+      "result_ids": [
+        "HX014",
+        "HX004",
+        "HX013",
+        "HX001"
+      ],
+      "results": [
+        {
+          "ref": "turn528653062view0",
+          "title": "WORKING PAPER · NO. 2023-109",
+          "url": "https://bfi.uchicago.cn/wp-content/uploads/2023/08/BFI_WP_2023-109.pdf"
+        },
+        {
+          "ref": "turn528653062view1",
+          "title": "Republic of Korea: Economic and Policy Developments - ISCR/00/11",
+          "url": "https://www.imf.org/external/pubs/ft/scr/2000/cr0011.pdf"
+        },
+        {
+          "ref": "turn528653062view2",
+          "title": "来源原件",
+          "url": "https://www.macrohistory.net/app/download/9834516269/NPLH_documentation.pdf?t=1763503850"
+        },
+        {
+          "ref": "turn528653062view3",
+          "title": "来源原件",
+          "url": "https://www.macrohistory.net/app/download/9834516169/JST_documentationR6.pdf?t=1676279836"
+        },
+        {
+          "ref": "turn528653062view4",
+          "title": "来源原件",
+          "url": "https://www.macrohistory.net/app/download/9834516469/RORE_documentation.pdf?t=1614633099"
+        },
+        {
+          "ref": "turn528653062view5",
+          "title": "Systemic Banking Crises Database: 1970-2025, WP/26/94, May 2026",
+          "url": "https://www.imf.org/-/media/files/publications/wp/2026/english/wpiea2026094-source-pdf.pdf"
+        },
+        {
+          "ref": "turn528653062view6",
+          "title": "Systemic Banking Crises Database: 1970-2025, WP/26/94, May 2026",
+          "url": "https://www.imf.org/-/media/files/publications/wp/2026/english/wpiea2026094-source-pdf.pdf"
+        },
+        {
+          "ref": "turn528653062view7",
+          "title": "Systemic Banking Crises Database: 1970-2025, WP/26/94, May 2026",
+          "url": "https://www.imf.org/-/media/files/publications/wp/2026/english/wpiea2026094-source-pdf.pdf"
+        },
+        {
+          "ref": "turn528653062view8",
+          "title": "Systemic Banking Crises Database: 1970-2025, WP/26/94, May 2026",
+          "url": "https://www.imf.org/-/media/files/publications/wp/2026/english/wpiea2026094-source-pdf.pdf"
+        },
+        {
+          "ref": "turn528653062view9",
+          "title": "Systemic Banking Crises Database: 1970-2025, WP/26/94, May 2026",
+          "url": "https://www.imf.org/-/media/files/publications/wp/2026/english/wpiea2026094-source-pdf.pdf"
+        }
+      ],
+      "topic": "跨国历史、作者复核与危机起点"
+    },
+    {
+      "access_errors": [
+        "No matching text found for \"Monthly Labour Survey\"",
+        "No matching text found for \"TOPIX\""
+      ],
+      "engine": "OpenAI web.run 原文定点 open/find/click",
+      "executed_at": "2026-11-28T05:06:21Z",
+      "id": "Q00031",
+      "key": [
+        "open https://www.imf.org/-/media/files/publications/wp/2026/english/wpiea2026094-source-pdf.pdf l128 open https://www.imf.org/-/media/files/publications/wp/2026/english/wpiea2026094-source-pdf.pdf l533 find \"japan real estate institute\" https://www.macrohistory.net/app/download/9834516269/nplh_documentation.pdf?t=1763503850 find \"federal housing finance agency\" https://www.macrohistory.net/app/download/9834516269/nplh_documentation.pdf?t=1763503850 find \"monthly labour survey\" https://www.macrohistory.net/app/download/9834516169/jst_documentationr6.pdf?t=1676279836 find \"topix\" https://www.macrohistory.net/app/download/9834516469/rore_documentation.pdf?t=1614633099 find \"korea 1997\" https://www.imf.org/-/media/files/publications/wp/2026/english/wpiea2026094-source-pdf.pdf find \"china 1998\" https://www.imf.org/-/media/files/publications/wp/2026/english/wpiea2026094-source-pdf.pdf find \"home equity\" https://bfi.uchicago.cn/wp-content/uploads/2023/08/bfi_wp_2023-109.pdf find \"full-blown\" https://bfi.uchicago.cn/wp-content/uploads/2023/08/bfi_wp_2023-109.pdf",
+        "跨国历史、作者复核与危机起点",
+        "1970—2026，具体统计期见各原件"
+      ],
+      "limitations": "TOPIX及Monthly Labour Survey搜索词未命中，股票和工资保留JST定义，不称TOPIX或家庭可支配收入。",
+      "period": "1970—2026，具体统计期见各原件",
+      "provider": "OpenAI web.run 原文定点 open/find/click",
+      "purpose": "核对日本住宅地价代理/美国房价及Sufi到底如何限定危机，IMF规则、中国历史事件与韩国起止。",
+      "query": "open https://www.imf.org/-/media/files/publications/wp/2026/english/wpiea2026094-source-pdf.pdf L128\nopen https://www.imf.org/-/media/files/publications/wp/2026/english/wpiea2026094-source-pdf.pdf L533\nfind \"Japan Real Estate Institute\" https://www.macrohistory.net/app/download/9834516269/NPLH_documentation.pdf?t=1763503850\nfind \"Federal Housing Finance Agency\" https://www.macrohistory.net/app/download/9834516269/NPLH_documentation.pdf?t=1763503850\nfind \"Monthly Labour Survey\" https://www.macrohistory.net/app/download/9834516169/JST_documentationR6.pdf?t=1676279836\nfind \"TOPIX\" https://www.macrohistory.net/app/download/9834516469/RORE_documentation.pdf?t=1614633099\nfind \"Korea 1997\" https://www.imf.org/-/media/files/publications/wp/2026/english/wpiea2026094-source-pdf.pdf\nfind \"China 1998\" https://www.imf.org/-/media/files/publications/wp/2026/english/wpiea2026094-source-pdf.pdf\nfind \"home equity\" https://bfi.uchicago.cn/wp-content/uploads/2023/08/BFI_WP_2023-109.pdf\nfind \"full-blown\" https://bfi.uchicago.cn/wp-content/uploads/2023/08/BFI_WP_2023-109.pdf",
+      "result_ids": [
+        "HX001",
+        "HX013",
+        "HX014"
+      ],
+      "results": [
+        {
+          "ref": "turn476273862view0",
+          "title": "Systemic Banking Crises Database: 1970-2025, WP/26/94, May 2026",
+          "url": "https://www.imf.org/-/media/files/publications/wp/2026/english/wpiea2026094-source-pdf.pdf"
+        },
+        {
+          "ref": "turn476273862view1",
+          "title": "Systemic Banking Crises Database: 1970-2025, WP/26/94, May 2026",
+          "url": "https://www.imf.org/-/media/files/publications/wp/2026/english/wpiea2026094-source-pdf.pdf"
+        },
+        {
+          "ref": "turn476273862view2",
+          "title": "来源原件",
+          "url": "https://www.macrohistory.net/app/download/9834516269/NPLH_documentation.pdf?t=1763503850"
+        },
+        {
+          "ref": "turn476273862view3",
+          "title": "来源原件",
+          "url": "https://www.macrohistory.net/app/download/9834516269/NPLH_documentation.pdf?t=1763503850"
+        },
+        {
+          "ref": "turn476273862view4",
+          "title": "来源原件",
+          "url": "https://www.macrohistory.net/app/download/9834516169/JST_documentationR6.pdf?t=1676279836"
+        },
+        {
+          "ref": "turn476273862view5",
+          "title": "来源原件",
+          "url": "https://www.macrohistory.net/app/download/9834516469/RORE_documentation.pdf?t=1614633099"
+        },
+        {
+          "ref": "turn476273862view6",
+          "title": "Systemic Banking Crises Database: 1970-2025, WP/26/94, May 2026",
+          "url": "https://www.imf.org/-/media/files/publications/wp/2026/english/wpiea2026094-source-pdf.pdf"
+        },
+        {
+          "ref": "turn476273862view7",
+          "title": "Systemic Banking Crises Database: 1970-2025, WP/26/94, May 2026",
+          "url": "https://www.imf.org/-/media/files/publications/wp/2026/english/wpiea2026094-source-pdf.pdf"
+        },
+        {
+          "ref": "turn476273862view8",
+          "title": "WORKING PAPER · NO. 2023-109",
+          "url": "https://bfi.uchicago.cn/wp-content/uploads/2023/08/BFI_WP_2023-109.pdf"
+        },
+        {
+          "ref": "turn476273862view9",
+          "title": "WORKING PAPER · NO. 2023-109",
+          "url": "https://bfi.uchicago.cn/wp-content/uploads/2023/08/BFI_WP_2023-109.pdf"
+        }
+      ],
+      "topic": "跨国历史、作者复核与危机起点"
+    },
+    {
+      "access_errors": [],
+      "engine": "OpenAI web.run 原文定点 open/find/click",
+      "executed_at": "2026-11-28T05:06:30Z",
+      "id": "Q00032",
+      "key": [
+        "open https://carnegieendowment.org/china-financial-markets/2015/09/if-we-dont-understand-both-sides-of-chinas-balance-sheet-we-understand-neither open https://cepr.org/voxeu/columns/balance-sheet-recession-reason-secular-stagnation open https://andrewbatson.com/2023/05/18/beijing-qa-on-growth-and-security/ open https://www.cfr.org/articles/beijing-still-has-fiscal-space open https://rhg.com/research/chinas-harsh-fiscal-winter/ open https://rhg.com/research/chinas-financial-and-fiscal-decay/ open https://www.cf40.org.cn/article/1/4752 open https://www.cf40.org.cn/article/1/289274",
+        "跨国历史、作者复核与危机起点",
+        "1970—2026，具体统计期见各原件"
+      ],
+      "limitations": "各原文只核问题相关正文与上下文，同一作者材料未重新计作独立事实。",
+      "period": "1970—2026，具体统计期见各原件",
+      "provider": "OpenAI web.run 原文定点 open/find/click",
+      "purpose": "按已存FW001/2/5—10逐个重读承重观点的原发网页与条件。",
+      "query": "open https://carnegieendowment.org/china-financial-markets/2015/09/if-we-dont-understand-both-sides-of-chinas-balance-sheet-we-understand-neither\nopen https://cepr.org/voxeu/columns/balance-sheet-recession-reason-secular-stagnation\nopen https://andrewbatson.com/2023/05/18/beijing-qa-on-growth-and-security/\nopen https://www.cfr.org/articles/beijing-still-has-fiscal-space\nopen https://rhg.com/research/chinas-harsh-fiscal-winter/\nopen https://rhg.com/research/chinas-financial-and-fiscal-decay/\nopen https://www.cf40.org.cn/article/1/4752\nopen https://www.cf40.org.cn/article/1/289274",
+      "result_ids": [
+        "FW001",
+        "FW002",
+        "FW005",
+        "FW006",
+        "FW007",
+        "FW008",
+        "FW009",
+        "FW010"
+      ],
+      "results": [
+        {
+          "ref": "turn733321248view0",
+          "title": "If We Don’t Understand Both Sides of China’s Balance Sheet, We Understand Neither | Carnegie Endowment for International Peace",
+          "url": "https://carnegieendowment.org/china-financial-markets/2015/09/if-we-dont-understand-both-sides-of-chinas-balance-sheet-we-understand-neither"
+        },
+        {
+          "ref": "turn733321248view1",
+          "title": "Balance sheet recession is the reason for ‘secular stagnation’ | CEPR",
+          "url": "https://cepr.org/voxeu/columns/balance-sheet-recession-reason-secular-stagnation"
+        },
+        {
+          "ref": "turn733321248view2",
+          "title": "Beijing Q&A on growth and security | The Tangled Woof",
+          "url": "https://andrewbatson.com/2023/05/18/beijing-qa-on-growth-and-security/"
+        },
+        {
+          "ref": "turn733321248view3",
+          "title": "Beijing Still Has Fiscal Space | Council on Foreign Relations",
+          "url": "https://www.cfr.org/articles/beijing-still-has-fiscal-space"
+        },
+        {
+          "ref": "turn733321248view4",
+          "title": "China’s Harsh Fiscal Winter – Rhodium Group",
+          "url": "https://rhg.com/research/chinas-harsh-fiscal-winter/"
+        },
+        {
+          "ref": "turn733321248view5",
+          "title": "China’s Financial and Fiscal Decay – Rhodium Group",
+          "url": "https://rhg.com/research/chinas-financial-and-fiscal-decay/"
+        },
+        {
+          "ref": "turn733321248view6",
+          "title": "www.cf40.org.cn",
+          "url": "https://www.cf40.org.cn/article/1/4752"
+        },
+        {
+          "ref": "turn733321248view7",
+          "title": "www.cf40.org.cn",
+          "url": "https://www.cf40.org.cn/article/1/289274"
+        }
+      ],
+      "topic": "跨国历史、作者复核与危机起点"
+    },
+    {
+      "access_errors": [
+        "No matching text found for \"3-4%\""
+      ],
+      "engine": "OpenAI web.run 原文定点 open/find/click",
+      "executed_at": "2026-11-28T05:06:40Z",
+      "id": "Q00033",
+      "key": [
+        "open https://www.imf.org/-/media/files/publications/wp/2026/english/wpiea2026094-source-pdf.pdf l138 open https://www.macrohistory.net/app/download/9834516269/nplh_documentation.pdf?t=1763503850 l2794 find \"japan never\" https://carnegieendowment.org/china-financial-markets/2015/09/if-we-dont-understand-both-sides-of-chinas-balance-sheet-we-understand-neither find \"3-4%\" https://carnegieendowment.org/china-financial-markets/2015/09/if-we-dont-understand-both-sides-of-chinas-balance-sheet-we-understand-neither find \"3-4 percent\" https://carnegieendowment.org/china-financial-markets/2015/09/if-we-dont-understand-both-sides-of-chinas-balance-sheet-we-understand-neither find \"sales\" https://andrewbatson.com/2023/05/18/beijing-qa-on-growth-and-security/ find \"borrowers\" https://cepr.org/voxeu/columns/balance-sheet-recession-reason-secular-stagnation find \"contingent\" https://www.cfr.org/articles/beijing-still-has-fiscal-space find \"deflation\" https://rhg.com/research/chinas-financial-and-fiscal-decay/ find \"setser\" https://rhg.com/research/chinas-harsh-fiscal-winter/",
+        "跨国历史、作者复核与危机起点",
+        "1970—2026，具体统计期见各原件"
+      ],
+      "limitations": "3-4%的符号写法未检出，英文拼字形式命中；Pettis任内增长预测有未固定终点/转移条件。",
+      "period": "1970—2026，具体统计期见各原件",
+      "provider": "OpenAI web.run 原文定点 open/find/click",
+      "purpose": "定点核验Pettis增长年限/危机、日本指数选源、Batson销售措辞，以及Koo、Wright、Setser的先决条件。",
+      "query": "open https://www.imf.org/-/media/files/publications/wp/2026/english/wpiea2026094-source-pdf.pdf L138\nopen https://www.macrohistory.net/app/download/9834516269/NPLH_documentation.pdf?t=1763503850 L2794\nfind \"Japan never\" https://carnegieendowment.org/china-financial-markets/2015/09/if-we-dont-understand-both-sides-of-chinas-balance-sheet-we-understand-neither\nfind \"3-4%\" https://carnegieendowment.org/china-financial-markets/2015/09/if-we-dont-understand-both-sides-of-chinas-balance-sheet-we-understand-neither\nfind \"3-4 percent\" https://carnegieendowment.org/china-financial-markets/2015/09/if-we-dont-understand-both-sides-of-chinas-balance-sheet-we-understand-neither\nfind \"sales\" https://andrewbatson.com/2023/05/18/beijing-qa-on-growth-and-security/\nfind \"borrowers\" https://cepr.org/voxeu/columns/balance-sheet-recession-reason-secular-stagnation\nfind \"contingent\" https://www.cfr.org/articles/beijing-still-has-fiscal-space\nfind \"deflation\" https://rhg.com/research/chinas-financial-and-fiscal-decay/\nfind \"Setser\" https://rhg.com/research/chinas-harsh-fiscal-winter/",
+      "result_ids": [
+        "HX001",
+        "HX013",
+        "FW001",
+        "FW005",
+        "FW002",
+        "FW006",
+        "FW008",
+        "FW007"
+      ],
+      "results": [
+        {
+          "ref": "turn730605832view0",
+          "title": "Systemic Banking Crises Database: 1970-2025, WP/26/94, May 2026",
+          "url": "https://www.imf.org/-/media/files/publications/wp/2026/english/wpiea2026094-source-pdf.pdf"
+        },
+        {
+          "ref": "turn730605832view1",
+          "title": "来源原件",
+          "url": "https://www.macrohistory.net/app/download/9834516269/NPLH_documentation.pdf?t=1763503850"
+        },
+        {
+          "ref": "turn730605832view2",
+          "title": "If We Don’t Understand Both Sides of China’s Balance Sheet, We Understand Neither | Carnegie Endowment for International Peace",
+          "url": "https://carnegieendowment.org/china-financial-markets/2015/09/if-we-dont-understand-both-sides-of-chinas-balance-sheet-we-understand-neither"
+        },
+        {
+          "ref": "turn730605832view3",
+          "title": "If We Don’t Understand Both Sides of China’s Balance Sheet, We Understand Neither | Carnegie Endowment for International Peace",
+          "url": "https://carnegieendowment.org/china-financial-markets/2015/09/if-we-dont-understand-both-sides-of-chinas-balance-sheet-we-understand-neither"
+        },
+        {
+          "ref": "turn730605832view4",
+          "title": "If We Don’t Understand Both Sides of China’s Balance Sheet, We Understand Neither | Carnegie Endowment for International Peace",
+          "url": "https://carnegieendowment.org/china-financial-markets/2015/09/if-we-dont-understand-both-sides-of-chinas-balance-sheet-we-understand-neither"
+        },
+        {
+          "ref": "turn730605832view5",
+          "title": "Beijing Q&A on growth and security | The Tangled Woof",
+          "url": "https://andrewbatson.com/2023/05/18/beijing-qa-on-growth-and-security/"
+        },
+        {
+          "ref": "turn730605832view6",
+          "title": "Balance sheet recession is the reason for ‘secular stagnation’ | CEPR",
+          "url": "https://cepr.org/voxeu/columns/balance-sheet-recession-reason-secular-stagnation"
+        },
+        {
+          "ref": "turn730605832view7",
+          "title": "Beijing Still Has Fiscal Space | Council on Foreign Relations",
+          "url": "https://www.cfr.org/articles/beijing-still-has-fiscal-space"
+        },
+        {
+          "ref": "turn730605832view8",
+          "title": "China’s Financial and Fiscal Decay – Rhodium Group",
+          "url": "https://rhg.com/research/chinas-financial-and-fiscal-decay/"
+        },
+        {
+          "ref": "turn730605832view9",
+          "title": "China’s Harsh Fiscal Winter – Rhodium Group",
+          "url": "https://rhg.com/research/chinas-harsh-fiscal-winter/"
+        }
+      ],
+      "topic": "跨国历史、作者复核与危机起点"
+    },
+    {
+      "access_errors": [],
+      "engine": "OpenAI web.run system2_search_query",
+      "executed_at": "2026-11-28T05:07:16Z",
+      "id": "Q00034",
+      "key": [
+        "2026年6月末 我国 全口径 外债余额 短期 外债 外汇储备 2026 国家外汇管理局 短期外债与外汇储备的比例 本币外债 2016 棚改货币化安置比例 48.5% 去库存 2.5亿平方米 2016 住建部 国务院 2017 发布会 国家统计局 2023年四季度和全年国内生产总值初步核算结果 房地产业 2023 全年 -1.3 建筑业 增加值 2024 一月 房地产业 korea imf from crisis to recovery korea 1998 1999 real gdp 6.7 10.9 2001 154 gdp table recovery domestic demand investment bank recapitalisation credible financing",
+        "跨国历史、作者复核与危机起点",
+        "1970—2026，具体统计期见各原件"
+      ],
+      "limitations": "韩国同一年的GDP读数随版本变化；明确选2001工作论文的两年同版值。",
+      "period": "1970—2026，具体统计期见各原件",
+      "provider": "OpenAI web.run system2_search_query",
+      "purpose": "中国当前短外债/储备、实际棚改安置、Batson行业产出检验、韩国1998/99 GDP历史版本。",
+      "query": "2026年6月末 我国 全口径 外债余额 短期 外债 外汇储备 2026 国家外汇管理局 短期外债与外汇储备的比例 本币外债\n2016 棚改货币化安置比例 48.5% 去库存 2.5亿平方米 2016 住建部 国务院 2017 发布会\n国家统计局 2023年四季度和全年国内生产总值初步核算结果 房地产业 2023 全年 -1.3 建筑业 增加值 2024 一月 房地产业\nKorea IMF from crisis to recovery Korea 1998 1999 real GDP 6.7 10.9 2001 154 GDP table recovery domestic demand investment bank recapitalisation credible financing",
+      "result_ids": [
+        "HX015",
+        "HX016",
+        "HX005",
+        "HX004"
+      ],
+      "results": [
+        {
+          "ref": "turn613922804search0",
+          "title": "国家外汇管理局公布2026年6月末中国全口径外债数据_数据解读_国家外汇管理局门户网站",
+          "url": "https://www.safe.gov.cn/safe/2026/0929/27934.html"
+        },
+        {
+          "ref": "turn613922804search1",
+          "title": "2023年四季度和全年国内生产总值初步核算结果 - 国家统计局",
+          "url": "https://www.stats.gov.cn/sj/zxfb/202401/t20240118_1946691.html"
+        },
+        {
+          "ref": "turn613922804search2",
+          "title": "国家统计局信息公开",
+          "url": "https://www.stats.gov.cn/xxgk/sjfb/zxfb2020/202401/t20240118_1946692.html"
+        },
+        {
+          "ref": "turn613922804search3",
+          "title": "2024年四季度和全年国内生产总值初步核算结果 - 国家统计局",
+          "url": "https://www.stats.gov.cn/sj/zxfb/202501/t20250118_1958363.html"
+        },
+        {
+          "ref": "turn613922804search4",
+          "title": "From Crisis to Recovery in Korea: Strategy, Achievements, and Lessons",
+          "url": "https://www.elibrary.imf.org/view/journals/001/2001/154/article-A001-en.xml"
+        },
+        {
+          "ref": "turn613922804search5",
+          "title": "2 From Crisis to Recovery in Korea: Strategy, Achievements, and Lessons",
+          "url": "https://www.elibrary.imf.org/display/book/9781589060685/C02.xml"
+        },
+        {
+          "ref": "turn613922804search6",
+          "title": "国家统计局信息公开",
+          "url": "https://www.stats.gov.cn/xxgk/sjfb/zxfb2020/202501/t20250118_1958363.html"
+        },
+        {
+          "ref": "turn613922804search7",
+          "title": "中国房地产估价师",
+          "url": "https://www.cirea.org.cn/content/8146"
+        },
+        {
+          "ref": "turn613922804search35",
+          "title": "The Three Crisis Cases",
+          "url": "https://ieo.imf.org/-/media/IEO/Files/evaluations/completed/07-28-2003-imf-and-recent-capital-account-crises-indonesia-korea-brazil/capital-account-crises-chapter-2.ashx"
+        },
+        {
+          "ref": "turn613922804search8",
+          "title": "Public Information Notice: IMF Concludes Post-Program Monitoring Discussion on Korea",
+          "url": "https://www.imf.org/en/news/articles/2015/09/28/04/53/pn0179"
+        },
+        {
+          "ref": "turn613922804search36",
+          "title": "From Crisis to Recovery in Korea:  Strategy, Achievements, and Lessons - WP/01/154",
+          "url": "https://www.imf.org/-/media/websites/imf/imported-full-text-pdf/external/pubs/ft/wp/2001/_wp01154.pdf"
+        },
+        {
+          "ref": "turn613922804search9",
+          "title": "Public Information Notice: IMF Concludes Article IV Consultation with Korea",
+          "url": "https://www.imf.org/en/news/articles/2015/09/28/04/53/pn99115"
+        },
+        {
+          "ref": "turn613922804search10",
+          "title": "Press Information Notice: IMF Concludes Article IV Consultation with Korea",
+          "url": "https://www.imf.org/en/news/articles/2015/09/28/04/53/pn9839"
+        },
+        {
+          "ref": "turn613922804search11",
+          "title": "2023年四季度和全年国内生产总值初步核算结果_统计信息_林芝市政府信息公开平台",
+          "url": "https://www.linzhi.gov.cn/zfxxgkpt/c105932/202401/d4fe112db2214e0b922bfa707cc99c4d.shtml"
+        },
+        {
+          "ref": "turn613922804search12",
+          "title": "3 What Have We Learned from the Korean Economic Adjustment Program?",
+          "url": "https://www.elibrary.imf.org/view/IMF072/04151-9781589060685/04151-9781589060685/C03.xml"
+        },
+        {
+          "ref": "turn613922804search13",
+          "title": "Chapter 2 The Three Crisis Cases",
+          "url": "https://www.elibrary.imf.org/abstract/book/9781589061880/ch002.xml"
+        },
+        {
+          "ref": "turn613922804search14",
+          "title": "2023年一季度国内生产总值初步核算结果 - 国家统计局",
+          "url": "https://www.stats.gov.cn/sj/zxfb/202304/t20230419_1938791.html"
+        },
+        {
+          "ref": "turn613922804search15",
+          "title": "Republic of Korea: Staff Report for the 2002 Article IV Consultation",
+          "url": "https://www.elibrary.imf.org/view/journals/002/2003/079/article-A001-en.xml"
+        },
+        {
+          "ref": "turn613922804search16",
+          "title": "国家统计局信息公开",
+          "url": "https://www.stats.gov.cn/xxgk/sjfb/zxfb2020/202304/t20230419_1938797.html"
+        },
+        {
+          "ref": "turn613922804search17",
+          "title": "3 What Have We Learned from the Korean Economic Adjustment Program?",
+          "url": "https://www.elibrary.imf.org/display/book/9781589060685/C03.xml"
+        },
+        {
+          "ref": "turn613922804search18",
+          "title": "国家统计局关于修订2023年国内生产总值数据的公告 - 国家统计局",
+          "url": "https://www.stats.gov.cn/sj/zxfb/202412/t20241227_1957915.html"
+        },
+        {
+          "ref": "turn613922804search19",
+          "title": "Recovery from the Asian Crisis and the Role of the IMF -- An IMF Issues Brief",
+          "url": "https://www.imf.org/external/np/exr/ib/2000/062300.htm"
+        },
+        {
+          "ref": "turn613922804search20",
+          "title": "3 What Have We Learned from the Korean Economic Adjustment Program?",
+          "url": "https://www.elibrary.imf.org/abstract/book/9781589060685/C03.xml"
+        },
+        {
+          "ref": "turn613922804search37",
+          "title": "IMF Survey: March 6, 2000",
+          "url": "https://www.imf.org/external/pubs/ft/survey/2000/030600.pdf"
+        },
+        {
+          "ref": "turn613922804search38",
+          "title": "Republic of Korea: Economic and Policy Developments - ISCR/00/11",
+          "url": "https://www.imf.org/external/pubs/ft/scr/2000/cr0011.pdf"
+        },
+        {
+          "ref": "turn613922804search39",
+          "title": "OECD Territorial Reviews: Korea 2001 (EN)",
+          "url": "https://www.oecd.org/content/dam/oecd/en/publications/reports/2001/12/oecd-territorial-reviews-korea-2001_g1ghg309/9789264195684-en.pdf"
+        },
+        {
+          "ref": "turn613922804search21",
+          "title": "CHAPTER 25 Responding to Currency Crises in Emerging Market Economies: The IMF in Indonesia, Korea, and Brazil",
+          "url": "https://www.elibrary.imf.org/display/book/9781589065079/ch025.xml"
+        },
+        {
+          "ref": "turn613922804search22",
+          "title": "国家统计局关于2024年国内生产总值最终核实的公告 - 国家统计局",
+          "url": "https://www.stats.gov.cn/sj/zxfb/202512/t20251226_1962144.html"
+        },
+        {
+          "ref": "turn613922804search23",
+          "title": "国新办举行房地产和棚户区改造有关情况新闻发布会",
+          "url": "https://zjt.ln.gov.cn/zjt/zfxxgk/fdzdgknr/zdmsxx/ssqk/76E8DA53AD894BDDAD14536108214D1C/index.shtml"
+        },
+        {
+          "ref": "turn613922804search24",
+          "title": "国家统计局信息公开",
+          "url": "https://www.stats.gov.cn/xxgk/sjfb/zxfb2020/202404/t20240429_1948771.html"
+        },
+        {
+          "ref": "turn613922804search25",
+          "title": "2022年四季度和全年国内生产总值初步核算结果 - 国家统计局",
+          "url": "https://www.stats.gov.cn/sj/zxfb/202302/t20230203_1901718.html"
+        },
+        {
+          "ref": "turn613922804search40",
+          "title": "South Korea-U.S. Economic Relations: Cooperation, Friction, and Prospects for a Free Trade Agreement (FTA)",
+          "url": "https://www.everycrsreport.com/files/20060209_RL30566_5a9a73153b960ec3dbaa7b6be4e7e1aa27baf4a6.pdf"
+        },
+        {
+          "ref": "turn613922804search26",
+          "title": "国新办就房地产和棚户区改造有关情况举行新闻发布会",
+          "url": "https://025jnj.com/html/zwgk_43012fgwj_43043zcjd_43047201708t20170802_1462633.html"
+        },
+        {
+          "ref": "turn613922804search27",
+          "title": "住建部:房地产去库存取得初步成效 棚户区改造顺利完成",
+          "url": "https://news.cri.cn/chinanews/20170223/5cee54dc-c131-fffa-888c-c484ed2c3d6e.html"
+        },
+        {
+          "ref": "turn613922804search28",
+          "title": "住建部回应房地产税及房价走势等热点问题（实录）_中证网",
+          "url": "https://www.cs.com.cn/xwzx/hg/201702/t20170223_5186126.html"
+        }
+      ],
+      "topic": "跨国历史、作者复核与危机起点"
+    },
+    {
+      "access_errors": [
+        "No matching text found for \"48.5%\""
+      ],
+      "engine": "OpenAI web.run 原文定点 open/find/click",
+      "executed_at": "2026-11-28T05:07:24Z",
+      "id": "Q00035",
+      "key": [
+        "open https://www.imf.org/-/media/files/publications/wp/2026/english/wpiea2026094-source-pdf.pdf l121 find \"短期外债\" https://www.safe.gov.cn/safe/2026/0929/27934.html find \"房地产业\" https://www.stats.gov.cn/sj/zxfb/202401/t20240118_1946691.html find \"69539\" https://www.stats.gov.cn/sj/zxfb/202302/t20230203_1899399.html find \"48.5%\" https://zjt.ln.gov.cn/zjt/zfxxgk/fdzdgknr/zdmsxx/ssqk/76e8da53ad894bddad14536108214d1c/index.shtml find \"not overheated\" https://www.imf.org/-/media/websites/imf/imported-full-text-pdf/external/pubs/ft/wp/2001/_wp01154.pdf find \"abcp\" https://www.federalreserve.gov/newsevents/speech/fischer20150330a.htm find \"2.93%\" https://www5.cao.go.jp/zenbun/wp-e/wp-je05/05-00103.html find \"1955\\u00152012\" https://www.macrohistory.net/app/download/9834516269/nplh_documentation.pdf?t=1763503850",
+        "跨国历史、作者复核与危机起点",
+        "1970—2026，具体统计期见各原件"
+      ],
+      "limitations": "发布会转载页面的半角百分号匹配失败，两个政府转载及原文段落另核；NBS与住房发布会出现的笔误按NBS表取值。",
+      "period": "1970—2026，具体统计期见各原件",
+      "provider": "OpenAI web.run 原文定点 open/find/click",
+      "purpose": "核查住房两期库存、棚改比例、美国证券化、现行中国外债分币种期限、韩国建筑存量与日本金融厅后续不良率。",
+      "query": "open https://www.imf.org/-/media/files/publications/wp/2026/english/wpiea2026094-source-pdf.pdf L121\nfind \"短期外债\" https://www.safe.gov.cn/safe/2026/0929/27934.html\nfind \"房地产业\" https://www.stats.gov.cn/sj/zxfb/202401/t20240118_1946691.html\nfind \"69539\" https://www.stats.gov.cn/sj/zxfb/202302/t20230203_1899399.html\nfind \"48.5%\" https://zjt.ln.gov.cn/zjt/zfxxgk/fdzdgknr/zdmsxx/ssqk/76E8DA53AD894BDDAD14536108214D1C/index.shtml\nfind \"not overheated\" https://www.imf.org/-/media/websites/imf/imported-full-text-pdf/external/pubs/ft/wp/2001/_wp01154.pdf\nfind \"ABCP\" https://www.federalreserve.gov/newsevents/speech/fischer20150330a.htm\nfind \"2.93%\" https://www5.cao.go.jp/zenbun/wp-e/wp-je05/05-00103.html\nfind \"1955\\u00152012\" https://www.macrohistory.net/app/download/9834516269/NPLH_documentation.pdf?t=1763503850",
+      "result_ids": [
+        "HX001",
+        "HX015",
+        "HX016",
+        "HX009",
+        "HX005",
+        "HX011",
+        "HX012",
+        "HX013"
+      ],
+      "results": [
+        {
+          "ref": "turn238520726view0",
+          "title": "Systemic Banking Crises Database: 1970-2025, WP/26/94, May 2026",
+          "url": "https://www.imf.org/-/media/files/publications/wp/2026/english/wpiea2026094-source-pdf.pdf"
+        },
+        {
+          "ref": "turn238520726view1",
+          "title": "国家外汇管理局公布2026年6月末中国全口径外债数据_数据解读_国家外汇管理局门户网站",
+          "url": "https://www.safe.gov.cn/safe/2026/0929/27934.html"
+        },
+        {
+          "ref": "turn238520726view2",
+          "title": "2023年四季度和全年国内生产总值初步核算结果 - 国家统计局",
+          "url": "https://www.stats.gov.cn/sj/zxfb/202401/t20240118_1946691.html"
+        },
+        {
+          "ref": "turn238520726view3",
+          "title": "2016年全国房地产开发投资和销售情况 - 国家统计局",
+          "url": "https://www.stats.gov.cn/sj/zxfb/202302/t20230203_1899399.html"
+        },
+        {
+          "ref": "turn238520726view4",
+          "title": "国新办举行房地产和棚户区改造有关情况新闻发布会",
+          "url": "https://zjt.ln.gov.cn/zjt/zfxxgk/fdzdgknr/zdmsxx/ssqk/76E8DA53AD894BDDAD14536108214D1C/index.shtml"
+        },
+        {
+          "ref": "turn238520726view5",
+          "title": "From Crisis to Recovery in Korea:  Strategy, Achievements, and Lessons - WP/01/154",
+          "url": "https://www.imf.org/-/media/websites/imf/imported-full-text-pdf/external/pubs/ft/wp/2001/_wp01154.pdf"
+        },
+        {
+          "ref": "turn238520726view6",
+          "title": "Speech by Vice Chairman Fischer on nonbank financial intermediation, financial stability, and the road forward - Federal Reserve Board",
+          "url": "https://www.federalreserve.gov/newsevents/speech/fischer20150330a.htm"
+        },
+        {
+          "ref": "turn238520726view7",
+          "title": "Section 3 From an Intensive Adjustment Period to a Concentrated Consolidation Period - Cabinet Office Home Page",
+          "url": "https://www5.cao.go.jp/zenbun/wp-e/wp-je05/05-00103.html"
+        },
+        {
+          "ref": "turn238520726view8",
+          "title": "来源原件",
+          "url": "https://www.macrohistory.net/app/download/9834516269/NPLH_documentation.pdf?t=1763503850"
+        }
+      ],
+      "topic": "跨国历史、作者复核与危机起点"
+    },
+    {
+      "access_errors": [],
+      "engine": "OpenAI web.run 原文定点 open/find/click",
+      "executed_at": "2026-11-28T05:07:32Z",
+      "id": "Q00036",
+      "key": [
+        "open https://www.safe.gov.cn/safe/2026/0929/27934.html l42 open https://zjt.ln.gov.cn/zjt/zfxxgk/fdzdgknr/zdmsxx/ssqk/76e8da53ad894bddad14536108214d1c/index.shtml l120 open https://www.stats.gov.cn/sj/zxfb/202302/t20230203_1899021.html l119 open https://www.imf.org/-/media/websites/imf/imported-full-text-pdf/external/pubs/ft/wp/2001/_wp01154.pdf l1518 open https://www.stats.gov.cn/sj/zxfb/202401/t20240116_1946623.html open https://andrewbatson.com/2020/05/03/why-china-isnt-sending-money-to-everyone/ open https://www.cf40.org.cn/article/1/289274 l116",
+        "跨国历史、作者复核与危机起点",
+        "1970—2026，具体统计期见各原件"
+      ],
+      "limitations": "本外币期限仅边际分布；行业增加值不能替代开发投资或全建筑链。",
+      "period": "1970—2026，具体统计期见各原件",
+      "provider": "OpenAI web.run 原文定点 open/find/click",
+      "purpose": "直接核官方原表、2016实录、Sufi与中国外债的币种/期限、Wright/张斌历史判断边界。",
+      "query": "open https://www.safe.gov.cn/safe/2026/0929/27934.html L42\nopen https://zjt.ln.gov.cn/zjt/zfxxgk/fdzdgknr/zdmsxx/ssqk/76E8DA53AD894BDDAD14536108214D1C/index.shtml L120\nopen https://www.stats.gov.cn/sj/zxfb/202302/t20230203_1899021.html L119\nopen https://www.imf.org/-/media/websites/imf/imported-full-text-pdf/external/pubs/ft/wp/2001/_wp01154.pdf L1518\nopen https://www.stats.gov.cn/sj/zxfb/202401/t20240116_1946623.html\nopen https://andrewbatson.com/2020/05/03/why-china-isnt-sending-money-to-everyone/\nopen https://www.cf40.org.cn/article/1/289274 L116",
+      "result_ids": [
+        "HX015",
+        "HX008",
+        "HX005",
+        "PF005",
+        "FW004",
+        "FW010"
+      ],
+      "results": [
+        {
+          "ref": "turn774342812view0",
+          "title": "国家外汇管理局公布2026年6月末中国全口径外债数据_数据解读_国家外汇管理局门户网站",
+          "url": "https://www.safe.gov.cn/safe/2026/0929/27934.html"
+        },
+        {
+          "ref": "turn774342812view1",
+          "title": "国新办举行房地产和棚户区改造有关情况新闻发布会",
+          "url": "https://zjt.ln.gov.cn/zjt/zfxxgk/fdzdgknr/zdmsxx/ssqk/76E8DA53AD894BDDAD14536108214D1C/index.shtml"
+        },
+        {
+          "ref": "turn774342812view2",
+          "title": "2015年全国房地产开发投资和销售情况 - 国家统计局",
+          "url": "https://www.stats.gov.cn/sj/zxfb/202302/t20230203_1899021.html"
+        },
+        {
+          "ref": "turn774342812view3",
+          "title": "From Crisis to Recovery in Korea:  Strategy, Achievements, and Lessons - WP/01/154",
+          "url": "https://www.imf.org/-/media/websites/imf/imported-full-text-pdf/external/pubs/ft/wp/2001/_wp01154.pdf"
+        },
+        {
+          "ref": "turn774342812view4",
+          "title": "2023年全国房地产市场基本情况 - 国家统计局",
+          "url": "https://www.stats.gov.cn/sj/zxfb/202401/t20240116_1946623.html"
+        },
+        {
+          "ref": "turn774342812view5",
+          "title": "Why China isn’t sending money to everyone | The Tangled Woof",
+          "url": "https://andrewbatson.com/2020/05/03/why-china-isnt-sending-money-to-everyone/"
+        },
+        {
+          "ref": "turn774342812view6",
+          "title": "www.cf40.org.cn",
+          "url": "https://www.cf40.org.cn/article/1/289274"
+        }
+      ],
+      "topic": "跨国历史、作者复核与危机起点"
+    },
+    {
+      "access_errors": [],
+      "engine": "OpenAI web.run system1_search_query",
+      "executed_at": "2026-11-28T05:09:42Z",
+      "id": "Q00037",
+      "key": [
+        "2017年2月23日 棚改货币化 48.5 陈政高 新闻发布会 scio gov.cn 国务院 住建部 2016 实录 jordà schularick taylor macrohistory database release 6 july 2024 last update release 6 2022 data 2020 jstdatabase jstdataset release pdf date imf republic of korea economic and policy developments february 2000 00/11 publication date from crisis to recovery korea wp/01/154 publication october 1 2001 dates japan cabinet office annual report japanese economy public finance 2005 august publication date non performing loans ratio 2.93 march 2005 fsa japanese major banks 8.4 march 2002 fsa release 2005",
+        "跨国历史、作者复核与危机起点",
+        "1970—2026，具体统计期见各原件"
+      ],
+      "limitations": "查到两个政府转载版本及住建部会议材料，均源自同一发布主体。JST版年与站点附件版本戳不混用。",
+      "period": "1970—2026，具体统计期见各原件",
+      "provider": "OpenAI web.run system1_search_query",
+      "purpose": "补直接发布机构与版本年月，核棚改实录转录、JST R6发布日期边界及日、韩报告日期。",
+      "query": "2017年2月23日 棚改货币化 48.5 陈政高 新闻发布会 scio gov.cn 国务院 住建部 2016 实录\nJordà Schularick Taylor macrohistory database release 6 July 2024 last update release 6 2022 data 2020 JSTdatabase JSTdataset release pdf date\nIMF Republic of Korea Economic and Policy Developments February 2000 00/11 publication date From Crisis to Recovery Korea WP/01/154 publication October 1 2001 dates\nJapan Cabinet Office Annual Report Japanese Economy Public Finance 2005 August publication date non performing loans ratio 2.93 March 2005 FSA Japanese major banks 8.4 March 2002 FSA release 2005",
+      "result_ids": [
+        "HX010",
+        "HX002",
+        "HX012"
+      ],
+      "results": [
+        {
+          "ref": "turn319530622search0",
+          "title": "住建部回应房地产税及房价走势等热点问题（实录）_中证网",
+          "url": "https://www.cs.com.cn/xwzx/hg/201702/t20170223_5186126.html"
+        },
+        {
+          "ref": "turn319530622search1",
+          "title": "国新办就房地产和棚户区改造有关情况举行新闻发布会",
+          "url": "https://025jnj.com/html/zwgk_43012fgwj_43043zcjd_43047201708t20170802_1462633.html"
+        },
+        {
+          "ref": "turn319530622search2",
+          "title": "国新办就房地产和棚户区改造有关情况举行新闻发布会 宝鸡市住房和城乡建设局",
+          "url": "https://zjj.baoji.gov.cn/zzzb/zcjd/202012/t20201214_856354.html"
+        },
+        {
+          "ref": "turn319530622search3",
+          "title": "国新办举行房地产和棚户区改造有关情况新闻发布会",
+          "url": "https://zjt.ln.gov.cn/zjt/zfxxgk/fdzdgknr/zdmsxx/ssqk/76E8DA53AD894BDDAD14536108214D1C/index.shtml"
+        },
+        {
+          "ref": "turn319530622search4",
+          "title": "DOWNLOAD - MacroFinance & MacroHistory Lab",
+          "url": "https://www.macrohistory.net/database/"
+        },
+        {
+          "ref": "turn319530622search5",
+          "title": "Front Matter",
+          "url": "https://www.elibrary.imf.org/view/journals/002/2000/011/article-A000-en.xml"
+        },
+        {
+          "ref": "turn319530622search6",
+          "title": "From Crisis to Recovery in Korea: Strategy, Achievements, and Lessons",
+          "url": "https://www.imf.org/en/publications/wp/issues/2016/12/30/from-crisis-to-recovery-in-korea-strategy-achievements-and-lessons-15396"
+        },
+        {
+          "ref": "turn319530622search7",
+          "title": "Annual Report on the Japanese Economy and Public Finance 2005 - Cabinet Office Home Page",
+          "url": "https://www5.cao.go.jp/zenbun/wp-e/wp-je05/05-00001.html"
+        },
+        {
+          "ref": "turn319530622search10",
+          "title": "FSA Newsletter October 2005",
+          "url": "https://www.fsa.go.jp/en/newsletter/2005/10.pdf"
+        },
+        {
+          "ref": "turn319530622search8",
+          "title": "Section 3 From an Intensive Adjustment Period to a Concentrated Consolidation Period - Cabinet Office Home Page",
+          "url": "https://www5.cao.go.jp/zenbun/wp-e/wp-je05/05-00103.html"
+        },
+        {
+          "ref": "turn319530622search9",
+          "title": "不忘初心 再接再厉 奋力谱写住房城乡建设事业新篇章--陈政高部长在全国住房城乡建设工作会议上的要求",
+          "url": "https://zjt.ln.gov.cn/zjt/jsyw/F46820657C954D7485A447689CEDF4D0/index.shtml"
+        }
+      ],
+      "topic": "跨国历史、作者复核与危机起点"
+    },
+    {
+      "access_errors": [
+        "URL https://api.worldbank.org/v2/country/JPN%3BWLD/indicator/NY.GDP.MKTP.CD?date=1990%3A2010&format=json&per_page=60 is not accessible via this tool.",
+        "URL https://api.worldbank.org/v2/country/JPN%3BWLD/indicator/NY.GDP.MKTP.PP.CD?date=1990%3A2010&format=json&per_page=60 is not accessible via this tool."
+      ],
+      "engine": "OpenAI web.run 原文定点 open/find/click",
+      "executed_at": "2026-11-28T05:09:58Z",
+      "id": "Q00038",
+      "key": [
+        "open https://api.worldbank.org/v2/country/jpn;wld/indicator/ny.gdp.mktp.cd?date=1990:2010&format=json&per_page=60 open https://api.worldbank.org/v2/country/jpn;wld/indicator/ny.gdp.mktp.pp.cd?date=1990:2010&format=json&per_page=60 open https://www5.cao.go.jp/zenbun/wp-e/wp-je05/05-00001.html l14 open https://www.mof.gov.cn/gp/xxgkml/bgt/201607/t20160701_2510110.htm l25 open https://www.imf.org/external/pubs/ft/scr/2000/cr0011.pdf l2 open https://zjj.baoji.gov.cn/zzzb/zcjd/202012/t20201214_856354.html l36",
+        "跨国历史、作者复核与危机起点",
+        "1970—2026，具体统计期见各原件"
+      ],
+      "limitations": "世行API将多国/区间参数重写后不可访问；未从错误页录数，改查世行序列传播表。",
+      "period": "1970—2026，具体统计期见各原件",
+      "provider": "OpenAI web.run 原文定点 open/find/click",
+      "purpose": "复核Pettis所说日本世界GDP份额，尝试WDI现价美元与PPP的1990/2010两端，补相关文件原发时间。",
+      "query": "open https://api.worldbank.org/v2/country/JPN;WLD/indicator/NY.GDP.MKTP.CD?date=1990:2010&format=json&per_page=60\nopen https://api.worldbank.org/v2/country/JPN;WLD/indicator/NY.GDP.MKTP.PP.CD?date=1990:2010&format=json&per_page=60\nopen https://www5.cao.go.jp/zenbun/wp-e/wp-je05/05-00001.html L14\nopen https://www.mof.gov.cn/gp/xxgkml/bgt/201607/t20160701_2510110.htm L25\nopen https://www.imf.org/external/pubs/ft/scr/2000/cr0011.pdf L2\nopen https://zjj.baoji.gov.cn/zzzb/zcjd/202012/t20201214_856354.html L36",
+      "result_ids": [
+        "HX007",
+        "HX004",
+        "HX010"
+      ],
+      "results": [
+        {
+          "ref": "turn321475582view2",
+          "title": "Annual Report on the Japanese Economy and Public Finance 2005 - Cabinet Office Home Page",
+          "url": "https://www5.cao.go.jp/zenbun/wp-e/wp-je05/05-00001.html"
+        },
+        {
+          "ref": "turn321475582view3",
+          "title": "关于2015年中央决算的报告",
+          "url": "https://www.mof.gov.cn/gp/xxgkml/bgt/201607/t20160701_2510110.htm"
+        },
+        {
+          "ref": "turn321475582view4",
+          "title": "Republic of Korea: Economic and Policy Developments - ISCR/00/11",
+          "url": "https://www.imf.org/external/pubs/ft/scr/2000/cr0011.pdf"
+        },
+        {
+          "ref": "turn321475582view5",
+          "title": "国新办就房地产和棚户区改造有关情况举行新闻发布会 宝鸡市住房和城乡建设局",
+          "url": "https://zjj.baoji.gov.cn/zzzb/zcjd/202012/t20201214_856354.html"
+        }
+      ],
+      "topic": "跨国历史、作者复核与危机起点"
+    },
+    {
+      "access_errors": [],
+      "engine": "OpenAI web.run system2_search_query",
+      "executed_at": "2026-11-28T05:10:10Z",
+      "id": "Q00039",
+      "key": [
+        "site:fred.stlouisfed.org/data world gross domestic product current us dollars gdp japan 1990 2010 world bank mktgdpjpa646nwdb mktgdp1wa646nwdb table data 1990 2010 world bank wdi japan japan share world gdp 1990 2010 current dollars japan 13.9 8.6 world development indicators 1990 2010 world nominal gdp macrotrends world bank gdp japan wits world gdp current us 1990 2010",
+        "跨国历史、作者复核与危机起点",
+        "1970—2026，具体统计期见各原件"
+      ],
+      "limitations": "仅保留当前WDI指标与官方FRED分发，弃用已停更世界序列及其他非官方估算。",
+      "period": "1970—2026，具体统计期见各原件",
+      "provider": "OpenAI web.run system2_search_query",
+      "purpose": "改查世行发布的日、全球现价美元序列及联储数据分发镜像；异时点的全球份额不用于增长预测。",
+      "query": "site:fred.stlouisfed.org/data World Gross Domestic Product Current US Dollars GDP Japan 1990 2010 World Bank MKTGDPJPA646NWDB MKTGDP1WA646NWDB table data 1990 2010\nworld bank WDI Japan Japan share world GDP 1990 2010 current dollars Japan 13.9 8.6 World Development Indicators 1990 2010 world Nominal GDP macrotrends world bank GDP Japan WITS world GDP current US 1990 2010",
+      "result_ids": [
+        "HX017",
+        "HX018"
+      ],
+      "results": [
+        {
+          "ref": "turn918190356search0",
+          "title": "Table Data - Gross Domestic Product for Japan | FRED | St. Louis Fed",
+          "url": "https://fred.stlouisfed.org/data/MKTGDPJPA646NWDB"
+        },
+        {
+          "ref": "turn918190356search1",
+          "title": "Gross Domestic Product for Japan",
+          "url": "https://fred.stlouisfed.org/series/MKTGDPJPA646NWDB"
+        },
+        {
+          "ref": "turn918190356search2",
+          "title": "Table Data - Gross Domestic Product for World | FRED | St. Louis Fed",
+          "url": "https://fred.stlouisfed.org/data/NYGDPMKTPCDWLD"
+        },
+        {
+          "ref": "turn918190356search3",
+          "title": "Table Data - Gross Domestic Product for World (DISCONTINUED) | FRED | St. Louis Fed",
+          "url": "https://fred.stlouisfed.org/data/MKTGDP1WA646NWDB"
+        },
+        {
+          "ref": "turn918190356search4",
+          "title": "World Development Indicators | DataBank",
+          "url": "https://databank.worldbank.org/data/id/1f185c25?Report_Name=GDP-all-countries"
+        },
+        {
+          "ref": "turn918190356search5",
+          "title": "Gross Domestic Product for Japan",
+          "url": "https://fred.stlouisfed.org/graph/?id=MKTGDPJPA646NWDB%2C"
+        },
+        {
+          "ref": "turn918190356search6",
+          "title": "World Development Indicators | DataBank",
+          "url": "https://databank.worldbank.org/Japan-Economic-Profile/id/64d42e50"
+        },
+        {
+          "ref": "turn918190356search7",
+          "title": "Gross Domestic Product for United States",
+          "url": "https://fred.stlouisfed.org/graph/?m=REtF"
+        },
+        {
+          "ref": "turn918190356search24",
+          "title": "12 | 1 Introduction",
+          "url": "https://application.wiley-vch.de/books/sample/3527344217_c01.pdf"
+        },
+        {
+          "ref": "turn918190356search8",
+          "title": "UNdata | record view | GDP, PPP (current international $)",
+          "url": "https://data.un.org/Data.aspx?d=WDI&f=Indicator_Code%3ANY.GDP.MKTP.PP.CD%3BCountry_Code%3AJPN&q=GDP+japan"
+        },
+        {
+          "ref": "turn918190356search9",
+          "title": "GDP (current US$) - Japan, World | Data",
+          "url": "https://data.worldbank.org/indicator/NY.GDP.MKTP.CD?locations=JP-1W"
+        },
+        {
+          "ref": "turn918190356search25",
+          "title": "Annual Report on National Accounts for 2020 Summary(Flow Accounts)",
+          "url": "https://www.esri.cao.go.jp/en/sna/data/kakuhou/files/2020/pdf/point_flow_en20211224.pdf"
+        },
+        {
+          "ref": "turn918190356search10",
+          "title": "World Development Indicators | DataBank",
+          "url": "https://databank.worldbank.org/id/64d42e50"
+        },
+        {
+          "ref": "turn918190356search11",
+          "title": "Gross Domestic Product for United States/Gross Domestic Product for World | FRED | St. Louis Fed",
+          "url": "https://fred.stlouisfed.org/graph/?graph_id=489583"
+        },
+        {
+          "ref": "turn918190356search26",
+          "title": "Annual Report on National Accounts for 2023(Flow Accounts)",
+          "url": "https://www.esri.cao.go.jp/en/sna/data/kakuhou/files/2023/pdf/point_flow_en20241223.pdf"
+        },
+        {
+          "ref": "turn918190356search12",
+          "title": "Gross Domestic Product for World",
+          "url": "https://fred.stlouisfed.org/series/NYGDPMKTPCDWLD"
+        },
+        {
+          "ref": "turn918190356search27",
+          "title": "# Table: Major Economic Indicators",
+          "url": "https://au.int/sites/default/files/documents/29941-doc-3rd_congress_vol_1_new_dec_10_1418_for_approval_0.pdf"
+        },
+        {
+          "ref": "turn918190356search28",
+          "title": "Microsoft Word - 14,第3章1節.doc",
+          "url": "https://www.meti.go.jp/english/report/downloadfiles/2009WhitePaper/3-1.pdf"
+        },
+        {
+          "ref": "turn918190356search13",
+          "title": "Gross National Product/Gross Domestic Product | FRED | St. Louis Fed",
+          "url": "https://fred.stlouisfed.org/graph/?g=p1vX"
+        },
+        {
+          "ref": "turn918190356search29",
+          "title": "C O R P O R A T I O N",
+          "url": "https://www.rand.org/content/dam/rand/pubs/research_reports/RR4100/RR4188/RAND_RR4188.pdf"
+        },
+        {
+          "ref": "turn918190356search14",
+          "title": "Gross Domestic Product for World",
+          "url": "https://fred.stlouisfed.org/graph/?graph_id=802157"
+        },
+        {
+          "ref": "turn918190356search15",
+          "title": "World Development Indicators | DataBank",
+          "url": "https://databank.worldbank.org/id/f0fe124"
+        },
+        {
+          "ref": "turn918190356search16",
+          "title": "Gross Domestic Product for World",
+          "url": "https://fred.stlouisfed.org/graph/?g=UwhC"
+        },
+        {
+          "ref": "turn918190356search17",
+          "title": "GDP (current US$) - Japan | Data",
+          "url": "https://data.worldbank.org/indicator/NY.GDP.MKTP.CD?locations=JP&quantity=1"
+        },
+        {
+          "ref": "turn918190356search18",
+          "title": "CountryProfile",
+          "url": "https://databank.worldbank.org/views/reports/reportwidget.aspx?Id=b450fd57&Report_Name=CountryProfile&country=JPN&dd=y&inf=n&tbar=y&zm=n"
+        },
+        {
+          "ref": "turn918190356search19",
+          "title": "World Development Indicators | DataBank",
+          "url": "https://databank.worldbank.org/reports.aspx?country=JPN%2CWLD&series=NY.GDP.MKTP.KD.ZG&source=2"
+        },
+        {
+          "ref": "turn918190356search20",
+          "title": "Gross Domestic Product for Japan | FRED | St. Louis Fed",
+          "url": "https://fred.stlouisfed.org/graph/?g=dajv"
+        },
+        {
+          "ref": "turn918190356search21",
+          "title": "World Development Indicators | DataBank",
+          "url": "https://databank.worldbank.org/reports.aspx?country=JPN%2CTLS&series=NY.GDP.MKTP.CD&source=2"
+        },
+        {
+          "ref": "turn918190356search22",
+          "title": "World Development Indicators | DataBank",
+          "url": "https://databank.worldbank.org/reports.aspx?country=JPN&source=2"
+        },
+        {
+          "ref": "turn918190356search23",
+          "title": "Japan Trade Indicators 2010 | WITS Data",
+          "url": "https://wits.worldbank.org/CountryProfile/en/Country/JPN/Year/2010"
+        },
+        {
+          "ref": "turn918190356youtube30",
+          "title": "Share of World GDP, Current US$: US 26.24%, China 1.57% to 16.77%, India 3.37% (1990 to 2024) - YouTube",
+          "url": "https://www.youtube.com/watch?v=twiNX1gNfq0"
+        },
+        {
+          "ref": "turn918190356search31",
+          "title": "List of countries by GDP (PPP)",
+          "url": "https://en.wikipedia.org/wiki/List_of_countries_by_GDP_%28PPP%29"
+        },
+        {
+          "ref": "turn918190356search32",
+          "title": "List of countries by GDP (nominal)",
+          "url": "https://en.wikipedia.org/wiki/List_of_countries_by_GDP_%28nominal%29"
+        }
+      ],
+      "topic": "跨国历史、作者复核与危机起点"
+    },
+    {
+      "access_errors": [],
+      "engine": "OpenAI web.run 原文定点 open/find/click",
+      "executed_at": "2026-11-28T05:10:16Z",
+      "id": "Q00040",
+      "key": [
+        "open https://data.worldbank.org/indicator/ny.gdp.mktp.cd?locations=jp-1w l35 find \"1990-01-01\" https://fred.stlouisfed.org/data/mktgdpjpa646nwdb find \"2010-01-01\" https://fred.stlouisfed.org/data/mktgdpjpa646nwdb find \"1990-01-01\" https://fred.stlouisfed.org/data/nygdpmktpcdwld find \"2010-01-01\" https://fred.stlouisfed.org/data/nygdpmktpcdwld",
+        "跨国历史、作者复核与危机起点",
+        "1970—2026，具体统计期见各原件"
+      ],
+      "limitations": "相同WDI指标，以截点所见版本为准；日本表和世界表的末次本地更新时间并不相同。",
+      "period": "1970—2026，具体统计期见各原件",
+      "provider": "OpenAI web.run 原文定点 open/find/click",
+      "purpose": "世行NY.GDP.MKTP.CD现价美元：按日、全球相同WDI系列标识读取1990与2010四个分子分母。",
+      "query": "open https://data.worldbank.org/indicator/NY.GDP.MKTP.CD?locations=JP-1W L35\nfind \"1990-01-01\" https://fred.stlouisfed.org/data/MKTGDPJPA646NWDB\nfind \"2010-01-01\" https://fred.stlouisfed.org/data/MKTGDPJPA646NWDB\nfind \"1990-01-01\" https://fred.stlouisfed.org/data/NYGDPMKTPCDWLD\nfind \"2010-01-01\" https://fred.stlouisfed.org/data/NYGDPMKTPCDWLD",
+      "result_ids": [
+        "HX017",
+        "HX018"
+      ],
+      "results": [
+        {
+          "ref": "turn603559272view0",
+          "title": "GDP (current US$) - Japan, World | Data",
+          "url": "https://data.worldbank.org/indicator/NY.GDP.MKTP.CD?locations=JP-1W"
+        },
+        {
+          "ref": "turn603559272view1",
+          "title": "Table Data - Gross Domestic Product for Japan | FRED | St. Louis Fed",
+          "url": "https://fred.stlouisfed.org/data/MKTGDPJPA646NWDB"
+        },
+        {
+          "ref": "turn603559272view2",
+          "title": "Table Data - Gross Domestic Product for Japan | FRED | St. Louis Fed",
+          "url": "https://fred.stlouisfed.org/data/MKTGDPJPA646NWDB"
+        },
+        {
+          "ref": "turn603559272view3",
+          "title": "Table Data - Gross Domestic Product for World | FRED | St. Louis Fed",
+          "url": "https://fred.stlouisfed.org/data/NYGDPMKTPCDWLD"
+        },
+        {
+          "ref": "turn603559272view4",
+          "title": "Table Data - Gross Domestic Product for World | FRED | St. Louis Fed",
+          "url": "https://fred.stlouisfed.org/data/NYGDPMKTPCDWLD"
+        }
+      ],
+      "topic": "跨国历史、作者复核与危机起点"
+    },
+    {
+      "access_errors": [
+        "URL https://fred.stlouisfed.org/data/NYGDPMKTPPPCDJPN is not accessible via this tool.",
+        "URL https://fred.stlouisfed.org/data/NYGDPMKTPPPCDWLD is not accessible via this tool.",
+        "URL https://data.worldbank.org/indicator/NY.GDP.MKTP.PP.CD?locations=JP-1W is not accessible via this tool."
+      ],
+      "engine": "OpenAI web.run 原文定点 open/find/click",
+      "executed_at": "2026-11-28T05:10:24Z",
+      "id": "Q00041",
+      "key": [
+        "open https://fred.stlouisfed.org/data/nygdpmktpppcdjpn open https://fred.stlouisfed.org/data/nygdpmktpppcdwld open https://data.worldbank.org/indicator/ny.gdp.mktp.pp.cd?locations=jp-1w",
+        "跨国历史、作者复核与危机起点",
+        "1970—2026，具体统计期见各原件"
+      ],
+      "limitations": "PPP三个候选链接不可访问，没有拿现价美元结果冒充PPP结果。",
+      "period": "1970—2026，具体统计期见各原件",
+      "provider": "OpenAI web.run 原文定点 open/find/click",
+      "purpose": "核对PPP日/全球是否同版取得；不可取得时保留为未判口径。",
+      "query": "open https://fred.stlouisfed.org/data/NYGDPMKTPPPCDJPN\nopen https://fred.stlouisfed.org/data/NYGDPMKTPPPCDWLD\nopen https://data.worldbank.org/indicator/NY.GDP.MKTP.PP.CD?locations=JP-1W",
+      "result_ids": [],
+      "results": [],
+      "topic": "跨国历史、作者复核与危机起点"
+    },
+    {
+      "access_errors": [
+        "URL https://www.imf.org/en/publications/cr/issues/2016/12/30/republic-of-korea-economic-and-policy-developments-3446 is not accessible via this tool."
+      ],
+      "engine": "OpenAI web.run 原文定点 open/find/click",
+      "executed_at": "2026-11-28T05:11:01Z",
+      "id": "Q00042",
+      "key": [
+        "open https://www.macrohistory.net/app/download/9834516269/nplh_documentation.pdf?t=1763503850 l4 open https://www.mof.gov.cn/zhengwuxinxi/caizhengxinwen/201512/t20151223_1626635.htm l26 open https://fred.stlouisfed.org/data/mktgdpjpa646nwdb l17 open https://www.imf.org/en/publications/wp/issues/2026/05/14/systemic-banking-crises-database-1970-2025-576036 open https://www.imf.org/en/publications/cr/issues/2016/12/30/republic-of-korea-economic-and-policy-developments-3446",
+        "跨国历史、作者复核与危机起点",
+        "1970—2026，具体统计期见各原件"
+      ],
+      "limitations": "日本FRED分发版本为2026-07-07，世界为10-13；韩国推测发布入口不可访问，最终按已查PDF的2000年2月登记。",
+      "period": "1970—2026，具体统计期见各原件",
+      "provider": "OpenAI web.run 原文定点 open/find/click",
+      "purpose": "版本出处与已核查PDF的发布日期、源表更新日和原作者署名；韩国完整日期在缺日时按月保留。",
+      "query": "open https://www.macrohistory.net/app/download/9834516269/NPLH_documentation.pdf?t=1763503850 L4\nopen https://www.mof.gov.cn/zhengwuxinxi/caizhengxinwen/201512/t20151223_1626635.htm L26\nopen https://fred.stlouisfed.org/data/MKTGDPJPA646NWDB L17\nopen https://www.imf.org/en/publications/wp/issues/2026/05/14/systemic-banking-crises-database-1970-2025-576036\nopen https://www.imf.org/en/publications/cr/issues/2016/12/30/republic-of-korea-economic-and-policy-developments-3446",
+      "result_ids": [
+        "HX013",
+        "HX006",
+        "HX017"
+      ],
+      "results": [
+        {
+          "ref": "turn301986472view0",
+          "title": "来源原件",
+          "url": "https://www.macrohistory.net/app/download/9834516269/NPLH_documentation.pdf?t=1763503850"
+        },
+        {
+          "ref": "turn301986472view1",
+          "title": "国务院关于规范地方政府债务管理工作情况的报告",
+          "url": "https://www.mof.gov.cn/zhengwuxinxi/caizhengxinwen/201512/t20151223_1626635.htm"
+        },
+        {
+          "ref": "turn301986472view2",
+          "title": "Table Data - Gross Domestic Product for Japan | FRED | St. Louis Fed",
+          "url": "https://fred.stlouisfed.org/data/MKTGDPJPA646NWDB"
+        },
+        {
+          "ref": "turn301986472view3",
+          "title": "Systemic Banking Crises Database: 1970-2025",
+          "url": "https://www.imf.org/en/publications/wp/issues/2026/05/14/systemic-banking-crises-database-1970-2025-576036"
+        }
+      ],
+      "topic": "跨国历史、作者复核与危机起点"
+    },
+    {
+      "access_errors": [],
+      "engine": "OpenAI web.run system2_search_query",
+      "executed_at": "2026-11-28T05:11:15Z",
+      "id": "Q00043",
+      "key": [
+        "imf debt dynamics government budget identity overall deficit stock flow adjustment difference debt ratio overall deficit previous debt nominal gdp growth debt to gdp formula overall deficit debt stabilising fiscal monitor",
+        "跨国历史、作者复核与危机起点",
+        "1970—2026，具体统计期见各原件"
+      ],
+      "limitations": "财政规则恒等式只决定算术；既有CFR观点保留FW006，不以新方法作为另一份经济观测。",
+      "period": "1970—2026，具体统计期见各原件",
+      "provider": "OpenAI web.run system2_search_query",
+      "purpose": "补Setser债务率恒等重算的方法原文，避免将重读同一CFR正文算新增事实。",
+      "query": "IMF debt dynamics government budget identity overall deficit stock flow adjustment difference debt ratio overall deficit previous debt nominal GDP growth debt to GDP formula overall deficit debt stabilising fiscal monitor",
+      "result_ids": [
+        "HX019"
+      ],
+      "results": [
+        {
+          "ref": "turn232503915search12",
+          "title": "Fiscal Policy: How to Calibrate Fiscal Rules, A Primer; How-to Note No. 8; March 2018",
+          "url": "https://www.imf.org/-/media/files/publications/howtonotes/howtonote1808.pdf"
+        },
+        {
+          "ref": "turn232503915search0",
+          "title": "Stock-Flow Adjustments and Fiscal Transparency: A Cross-Country Comparison1",
+          "url": "https://www.elibrary.imf.org/view/journals/001/2012/039/article-A001-en.xml"
+        },
+        {
+          "ref": "turn232503915search13",
+          "title": "WP/12/39IMF Working PaperStock-Flow Adjustments and Fiscal",
+          "url": "https://www.imf.org/external/pubs/ft/wp/2012/wp1239.pdf"
+        },
+        {
+          "ref": "turn232503915search1",
+          "title": "Defining the Government's Debt and Deficit",
+          "url": "https://www.elibrary.imf.org/view/journals/001/2015/238/article-A001-en.xml"
+        },
+        {
+          "ref": "turn232503915search14",
+          "title": "World Bank Document",
+          "url": "https://documents1.worldbank.org/curated/en/300741468233088579/pdf/35846v10P09121600Fiscal0report01PUBLIC1.pdf"
+        },
+        {
+          "ref": "turn232503915search15",
+          "title": "Chapter 4. Public Debt Sustainability1 by Xavier Debrun, Jonathan D. Ostry, Tim Willems, Charles Wyplosz,presented at the IMF Conference on Sovereign Debt, Septermber 13 - 14, 2018",
+          "url": "https://www.imf.org/-/media/files/news/seminars/2018/091318sovdebt-conference/chapter-4-debt-sustainability.pdf"
+        },
+        {
+          "ref": "turn232503915search2",
+          "title": "How to Calibrate Fiscal Rules: A Primer",
+          "url": "https://www.elibrary.imf.org/view/journals/061/2018/002/article-A001-en.xml"
+        },
+        {
+          "ref": "turn232503915search16",
+          "title": "Defining the Government's Debt and Deficit; by Timothy C. Irwin; IMF Working Paper WP/15/238; November 2015",
+          "url": "https://www.imf.org/external/pubs/ft/wp/2015/wp15238.pdf"
+        },
+        {
+          "ref": "turn232503915search17",
+          "title": "Chapter 1 Online Annexes. IMF Fiscal Monitor, October 2024",
+          "url": "https://meetings.imf.org/en/-/media/files/publications/fiscal-monitor/2024/october/english/onlineannexes.pdf"
+        },
+        {
+          "ref": "turn232503915search3",
+          "title": "A Guide and Tool for Projecting Public Debt and Fiscal Adjustment Paths with Local- and Foreign-Currency Debt",
+          "url": "https://www.elibrary.imf.org/abstract/journals/005/2021/005/article-A001-en.xml"
+        },
+        {
+          "ref": "turn232503915search4",
+          "title": "Fiscal Sustainability: A 21st Century Guide for the Perplexed",
+          "url": "https://www.elibrary.imf.org/view/journals/001/2013/089/article-A001-en.xml"
+        },
+        {
+          "ref": "turn232503915search5",
+          "title": "IV Public Finances, Adjustment Programs, and Debt Dynamics",
+          "url": "https://www.elibrary.imf.org/abstract/book/9781557754868/ch04.xml"
+        },
+        {
+          "ref": "turn232503915search6",
+          "title": "The Blind Side of Public Debt Spikes1",
+          "url": "https://www.elibrary.imf.org/view/journals/001/2016/202/article-A001-en.xml"
+        },
+        {
+          "ref": "turn232503915search7",
+          "title": "Playing by the Rules: Reforming Fiscal Governance in Europe1",
+          "url": "https://www.elibrary.imf.org/view/journals/001/2015/067/article-A001-en.xml"
+        },
+        {
+          "ref": "turn232503915search8",
+          "title": "A Guide and Tool for Projecting Public Debt and Fiscal Adjustment Paths with Local- and Foreign-Currency Debt",
+          "url": "https://www.elibrary.imf.org/view/journals/005/2021/005/article-A001-en.xml"
+        },
+        {
+          "ref": "turn232503915search9",
+          "title": "Cameroon: Selected Issues and Statistical Appendix",
+          "url": "https://www.elibrary.imf.org/view/journals/002/1999/046/article-A003-en.xml"
+        },
+        {
+          "ref": "turn232503915search10",
+          "title": "Sovereign Debt Sustainability and Central Bank Credibility",
+          "url": "https://www.elibrary.imf.org/view/journals/001/2022/016/article-A001.xml"
+        },
+        {
+          "ref": "turn232503915search11",
+          "title": "Fiscal R-Star: Fiscal-Monetary Tensions and Implications for Policy",
+          "url": "https://www.elibrary.imf.org/abstract/journals/001/2024/174/article-A001-en.xml"
+        },
+        {
+          "ref": "turn232503915search18",
+          "title": "Government budget balance",
+          "url": "https://en.wikipedia.org/wiki/Government_budget_balance"
+        },
+        {
+          "ref": "turn232503915search19",
+          "title": "Debt-to-GDP ratio",
+          "url": "https://en.wikipedia.org/wiki/Debt-to-GDP_ratio"
+        },
+        {
+          "ref": "turn232503915news20",
+          "title": "Transcript: Has the US finally borrowed too much?",
+          "url": "https://www.ft.com/content/7b0c183e-6d3f-4899-9860-2f05cf862542"
+        },
+        {
+          "ref": "turn232503915search21",
+          "title": "Fiscal sustainability",
+          "url": "https://en.wikipedia.org/wiki/Fiscal_sustainability"
+        },
+        {
+          "ref": "turn232503915search22",
+          "title": "Balanced budget",
+          "url": "https://en.wikipedia.org/wiki/Balanced_budget"
+        },
+        {
+          "ref": "turn232503915search23",
+          "title": "External debt",
+          "url": "https://en.wikipedia.org/wiki/External_debt"
+        },
+        {
+          "ref": "turn232503915news24",
+          "title": "U.S. Debt Tops 100% of GDP",
+          "url": "https://www.wsj.com/economy/u-s-debt-tops-100-of-gdp-81c013d7"
+        }
+      ],
+      "topic": "跨国历史、作者复核与危机起点"
+    },
+    {
+      "access_errors": [],
+      "engine": "OpenAI web.run 原文定点 open/find/click",
+      "executed_at": "2026-11-28T05:11:21Z",
+      "id": "Q00044",
+      "key": [
+        "open https://www.imf.org/external/pubs/ft/wp/2012/wp1239.pdf l0 open https://www.imf.org/-/media/files/publications/howtonotes/howtonote1808.pdf l0 find \"we start with the accounting identity\" https://www.imf.org/-/media/files/publications/howtonotes/howtonote1808.pdf",
+        "跨国历史、作者复核与危机起点",
+        "1970—2026，具体统计期见各原件"
+      ],
+      "limitations": "总赤字与初级赤字分别重算，全例假设无存流调整；未据此估计中国未来债务路径。",
+      "period": "1970—2026，具体统计期见各原件",
+      "provider": "OpenAI web.run 原文定点 open/find/click",
+      "purpose": "核原方法附录的总赤字/初级赤字和债务动态，不将算法正确性或融资能力当成可预测支出效果。",
+      "query": "open https://www.imf.org/external/pubs/ft/wp/2012/wp1239.pdf L0\nopen https://www.imf.org/-/media/files/publications/howtonotes/howtonote1808.pdf L0\nfind \"We start with the accounting identity\" https://www.imf.org/-/media/files/publications/howtonotes/howtonote1808.pdf",
+      "result_ids": [
+        "HX019"
+      ],
+      "results": [
+        {
+          "ref": "turn728562044view0",
+          "title": "WP/12/39IMF Working PaperStock-Flow Adjustments and Fiscal",
+          "url": "https://www.imf.org/external/pubs/ft/wp/2012/wp1239.pdf"
+        },
+        {
+          "ref": "turn728562044view1",
+          "title": "Fiscal Policy: How to Calibrate Fiscal Rules, A Primer; How-to Note No. 8; March 2018",
+          "url": "https://www.imf.org/-/media/files/publications/howtonotes/howtonote1808.pdf"
+        },
+        {
+          "ref": "turn728562044view2",
+          "title": "Fiscal Policy: How to Calibrate Fiscal Rules, A Primer; How-to Note No. 8; March 2018",
+          "url": "https://www.imf.org/-/media/files/publications/howtonotes/howtonote1808.pdf"
+        }
+      ],
+      "topic": "跨国历史、作者复核与危机起点"
+    },
+    {
+      "executed_at": "2026-11-28T05:20:32.453598+00:00",
+      "id": "Q00045",
+      "key": [
+        "open and find: msci china a onshore cny net annual 2016–2025; oecd cpi 2015-12/2024-12; nbs december 2025 cpi",
+        "A股同币种含息实际回报",
+        "2015年末至2025年末"
+      ],
+      "limitations": "公开年率四舍五入，月均CPI近似年末；非用户实现回报。",
+      "period": "2015年末至2025年末",
+      "provider": "OpenAI web.run open/find",
+      "purpose": "实际同币种含息回报与消费价格端点核对",
+      "query": "Open and find: MSCI China A Onshore CNY NET annual 2016–2025; OECD CPI 2015-12/2024-12; NBS December 2025 CPI",
+      "result_ids": [
+        "EQ001",
+        "EQ002",
+        "EQ003"
+      ],
+      "results": [
+        {
+          "ref": "turn628539583view0",
+          "title": "MSCI",
+          "url": "https://www.msci.com/documents/10199/255599/msci-china-a-onshore-index-cny-net.pdf"
+        },
+        {
+          "ref": "turn628539583view1",
+          "title": "OECD via FRED",
+          "url": "https://fred.stlouisfed.org/data/CHNCPIALLMINMEI"
+        },
+        {
+          "ref": "turn628539583view2",
+          "title": "NBS",
+          "url": "https://www.stats.gov.cn/xxgk/sjfb/zxfb2020/202601/t20260119_1962330.html"
+        }
+      ],
+      "topic": "A股同币种含息实际回报"
     }
   ],
   "sources": {
@@ -3187,6 +5703,69 @@
       "url": "05_market_snapshot.json",
       "versions": []
     },
+    "EQ001": {
+      "blob": "source_blobs/744b4305eefe7db4f247bdc5ea9b5fda60468c1448d54c319cb1378943ec80f5.bin",
+      "body_sha256": "744b4305eefe7db4f247bdc5ea9b5fda60468c1448d54c319cb1378943ec80f5",
+      "canonical_url": "https://www.msci.com/documents/10199/255599/msci-china-a-onshore-index-cny-net.pdf",
+      "event_id": "",
+      "id": "EQ001",
+      "impact_note": "独立审计提出人民币含息实际回报口径，主负责人另开原表核值；校正币种与价格窗口，不作为未来回报估计。",
+      "kind": "dataset",
+      "observation_period": "2016—2025年历及2026-10-30滚动窗口",
+      "published_at": "2026-10-30",
+      "received_at": "2026-11-28T05:20:45+00:00",
+      "retrieved_at": "2026-11-28T05:20:32.453598+00:00",
+      "revision": 1,
+      "source_family": "MSCI",
+      "targets": [
+        "J-EQUITY"
+      ],
+      "text": "MSCI China A Onshore CNY NET事实表实际读取版本2026-10-30，第1页年历2016—2025回报%依次-13.43,12.71,-29.35,39.48,31.48,1.38,-20.63,-9.87,14.85,24.39。NET为指数净股息税约定；滚动截至2026-10-30十年年化2.36%，不与上述年历窗口混合。",
+      "url": "https://www.msci.com/documents/10199/255599/msci-china-a-onshore-index-cny-net.pdf",
+      "versions": []
+    },
+    "EQ002": {
+      "blob": "source_blobs/51f621b880ab29c7a4d01e69c4f30274030fe2a88bb76d8903112704ccc016cb.bin",
+      "body_sha256": "51f621b880ab29c7a4d01e69c4f30274030fe2a88bb76d8903112704ccc016cb",
+      "canonical_url": "https://fred.stlouisfed.org/data/CHNCPIALLMINMEI",
+      "event_id": "",
+      "id": "EQ002",
+      "impact_note": "独立审计提出人民币含息实际回报口径，主负责人另开原表核值；校正币种与价格窗口，不作为未来回报估计。",
+      "kind": "dataset",
+      "observation_period": "2015-12与2024-12",
+      "published_at": "2025-05-15",
+      "received_at": "2026-11-28T05:20:45+00:00",
+      "retrieved_at": "2026-11-28T05:20:32.453598+00:00",
+      "revision": 1,
+      "source_family": "OECD via FRED",
+      "targets": [
+        "J-EQUITY"
+      ],
+      "text": "FRED转载OECD中国CPI全国总项，月度未季调2015=100，原表更新2025-05-15；2015-12=100.6、2024-12=114.8925。两端均为月均消费价格，不是金融日收盘。",
+      "url": "https://fred.stlouisfed.org/data/CHNCPIALLMINMEI",
+      "versions": []
+    },
+    "EQ003": {
+      "blob": "source_blobs/7363b9ae59b1ca39e91eabf1606fd419738772129c8e47d9a3424cf15c5b9b3f.bin",
+      "body_sha256": "7363b9ae59b1ca39e91eabf1606fd419738772129c8e47d9a3424cf15c5b9b3f",
+      "canonical_url": "https://www.stats.gov.cn/xxgk/sjfb/zxfb2020/202601/t20260119_1962330.html",
+      "event_id": "",
+      "id": "EQ003",
+      "impact_note": "独立审计提出人民币含息实际回报口径，主负责人另开原表核值；校正币种与价格窗口，不作为未来回报估计。",
+      "kind": "dataset",
+      "observation_period": "2025-12同比",
+      "published_at": "2026-01-19",
+      "received_at": "2026-11-28T05:20:45+00:00",
+      "retrieved_at": "2026-11-28T05:20:32.453598+00:00",
+      "revision": 1,
+      "source_family": "NBS",
+      "targets": [
+        "J-EQUITY"
+      ],
+      "text": "NBS2026-01-19全年初报第七节：2025年12月全国居民消费价格同比+0.8%，环比+0.2%，全年均价持平。此处使用12月同比衔接2024-12到2025-12，不使用全年均价。",
+      "url": "https://www.stats.gov.cn/xxgk/sjfb/zxfb2020/202601/t20260119_1962330.html",
+      "versions": []
+    },
     "FW001": {
       "blob": "source_blobs/5e500a58b8c3e599a338fadbcea466e33084e4756b439b50cb21e953324ad41d.bin",
       "body_sha256": "5e500a58b8c3e599a338fadbcea466e33084e4756b439b50cb21e953324ad41d",
@@ -3395,6 +5974,509 @@
       "targets": [],
       "text": "以快变量阻断支出收入反馈，提出公共投资等政策；与直接居民转移路线保留分歧，须核执行、净增量与供给约束。",
       "url": "https://www.cf40.org.cn/article/1/289274",
+      "versions": []
+    },
+    "HX001": {
+      "blob": "source_blobs/1d48317d8c45030a2235a2187a6a3f58ba53dc48f206d8899e9b550ef74135b0.bin",
+      "body_sha256": "1d48317d8c45030a2235a2187a6a3f58ba53dc48f206d8899e9b550ef74135b0",
+      "canonical_url": "https://www.imf.org/-/media/files/publications/wp/2026/english/wpiea2026094-source-pdf.pdf",
+      "claim": "系统性危机的一般规则同时看显著银行困境和重大政策干预；十分严重的损失或清算另可单独满足。结束参照实际产出和信贷且最多计五年，日本表A1的结束年份带截尾。",
+      "event_id": "",
+      "id": "HX001",
+      "impact_note": "排除把地产峰当危机开端或把日本2001作全国全部修复年；承重日期和阈值须共同核验。",
+      "kind": "dataset",
+      "limit": "研究者事后编码；含临界案例；截尾与资产质量完全修复没有等号；未覆盖2026。",
+      "locator": "方法第II、VI节；附录表A1（打印页约26—29），日本行尾旁的5/标在结束年。",
+      "observation_period": "1970—2025。重点为日本1997—2001、美国2007—11、韩国1997—98、中国1998。",
+      "publication_date": "2026-05-15",
+      "published_at": "2026-05-15",
+      "received_at": "2026-11-28T05:13:55+00:00",
+      "revision": 1,
+      "scope": "1970—2025。重点为日本1997—2001、美国2007—11、韩国1997—98、中国1998。",
+      "source_family": "IMF-Laeven-Valencia-WP26-94",
+      "targets": [
+        "J-BANKS",
+        "J-2027",
+        "J-DECADE"
+      ],
+      "text": "系统性危机的一般规则同时看显著银行困境和重大政策干预；十分严重的损失或清算另可单独满足。结束参照实际产出和信贷且最多计五年，日本表A1的结束年份带截尾。",
+      "url": "https://www.imf.org/-/media/files/publications/wp/2026/english/wpiea2026094-source-pdf.pdf",
+      "versions": []
+    },
+    "HX002": {
+      "blob": "source_blobs/76d91ce95b816cdaa56100aef80188dcc0d151b90585ca29c993c3e6a81870ff.bin",
+      "body_sha256": "76d91ce95b816cdaa56100aef80188dcc0d151b90585ca29c993c3e6a81870ff",
+      "canonical_url": "https://www.macrohistory.net/database",
+      "claim": "具有本币名义房地产价格代理、工资、CPI、实际人均GDP、年度本币股票总回报、资本利得、汇率及银行危机起点。",
+      "event_id": "",
+      "id": "HX002",
+      "impact_note": "提供可重复的事件筛选与资产/收入分期；仅把计数作历史对照。",
+      "kind": "dataset",
+      "limit": "日中韩结构有差异，中国及韩国不在该库。房地产分国定义不同，数据经事后修订。",
+      "locator": "R6官方文档注明2022版；固定Stata文件下载版本戳1720600177；仓库 research/models/jst_example/JSTdatasetR6.dta。",
+      "observation_period": "1870—2020，18个发达经济体、2718国年。",
+      "publication_date": "2022",
+      "published_at": "2022",
+      "received_at": "2026-11-28T05:13:55+00:00",
+      "revision": 1,
+      "scope": "1870—2020，18个发达经济体、2718国年。",
+      "source_family": "JST-Macrohistory-R6",
+      "targets": [
+        "J-DECADE",
+        "J-2027",
+        "J-EQUITY",
+        "M-MODEL-USE"
+      ],
+      "text": "具有本币名义房地产价格代理、工资、CPI、实际人均GDP、年度本币股票总回报、资本利得、汇率及银行危机起点。",
+      "url": "https://www.macrohistory.net/database/",
+      "versions": []
+    },
+    "HX003": {
+      "blob": "source_blobs/ffb14a3f268378c4ab40f774cf48fdf73c74a53a42fb4711694e6cc9969dccdd.bin",
+      "body_sha256": "ffb14a3f268378c4ab40f774cf48fdf73c74a53a42fb4711694e6cc9969dccdd",
+      "canonical_url": "https://www.fsa.go.jp/en/announce/state/20081025.html",
+      "claim": "日本金融厅回顾损失确认延后、收购不良、政府最终向37家银行注入12.4万亿日元；1990年代实行存款全额保护。",
+      "event_id": "",
+      "id": "HX003",
+      "impact_note": "说明存款获得保护与系统性危机可以并存，支持承损和时点分析。",
+      "kind": "fact",
+      "limit": "37家累计注资为毛额，包含未来收回的资产，不能写成财政最终损失；讲话是事后总结。",
+      "locator": "金融厅长佐藤隆文讲话，Lessons 第1—4项、Differences 第1—3项。",
+      "observation_period": "日本1990年代至2008-03；美国2007—08对照。",
+      "publication_date": "2008-10-25",
+      "published_at": "2008-10-25",
+      "received_at": "2026-11-28T05:13:55+00:00",
+      "revision": 1,
+      "scope": "日本1990年代至2008-03；美国2007—08对照。",
+      "source_family": "JPN-FSA-Sato-2008",
+      "targets": [
+        "J-BANKS",
+        "J-DECADE"
+      ],
+      "text": "日本金融厅回顾损失确认延后、收购不良、政府最终向37家银行注入12.4万亿日元；1990年代实行存款全额保护。",
+      "url": "https://www.fsa.go.jp/en/announce/state/20081025.html",
+      "versions": []
+    },
+    "HX004": {
+      "blob": "source_blobs/662956c3d455a6c37d8774544fe22267423e8e188e8023bf8df9cadfe4d1459d.bin",
+      "body_sha256": "662956c3d455a6c37d8774544fe22267423e8e188e8023bf8df9cadfe4d1459d",
+      "canonical_url": "https://www.imf.org/external/pubs/ft/scr/2000/cr0011.pdf",
+      "claim": "韩国国内金融机构外债展期率从1997年12月平均30—35%升至1998年3月超过95%；总可用储备/剩余期限短债1997年底12%、1999年11月底101%。",
+      "event_id": "",
+      "id": "HX004",
+      "impact_note": "外币负债骤停须观察同币可用资金、债主续借与币种敞口，区别人民币境内平台债。",
+      "kind": "observation",
+      "limit": "短债按剩余期限的比率与按原签约期限不同。展期、官方资金、经常账户与其他政策同期发生。",
+      "locator": "第III.B节第29—30段；III.C第33段为对外短借长用。报告署1999年12月批准、2000年2月出版。",
+      "observation_period": "1997-12、1998-03、1999-11。",
+      "publication_date": "2000-02",
+      "published_at": "2000-02",
+      "received_at": "2026-11-28T05:13:55+00:00",
+      "revision": 1,
+      "scope": "1997-12、1998-03、1999-11。",
+      "source_family": "IMF-KOR-CR00-11",
+      "targets": [
+        "J-2027",
+        "J-BANKS"
+      ],
+      "text": "韩国国内金融机构外债展期率从1997年12月平均30—35%升至1998年3月超过95%；总可用储备/剩余期限短债1997年底12%、1999年11月底101%。",
+      "url": "https://www.imf.org/external/pubs/ft/scr/2000/cr0011.pdf",
+      "versions": []
+    },
+    "HX005": {
+      "blob": "source_blobs/b69a11f9c0f972025169d2c9c65168bf80fa06e314c417a24c1c21475bcd843f.bin",
+      "body_sha256": "b69a11f9c0f972025169d2c9c65168bf80fa06e314c417a24c1c21475bcd843f",
+      "canonical_url": "https://www.imf.org/-/media/websites/imf/imported-full-text-pdf/external/pubs/ft/wp/2001/_wp01154.pdf",
+      "claim": "2001研究版本列实际GDP 1998年−6.7%、1999年+10.9%。回升与补库存、电子周期、政策及金融重组有关；文章指出危机前该国建设热潮已消退。",
+      "event_id": "",
+      "id": "HX005",
+      "impact_note": "提供重组后较快恢复的反例及中国难以复制的建设库存与外需条件。",
+      "kind": "dataset",
+      "limit": "1999年当期对1998年的估计为−5.8%，不与本篇修订数混拼。全国GDP恢复不等于家庭和银行资产均已恢复。",
+      "locator": "表1，Conclusions/Lessons对瑞典芬兰的比较，第VII节约第71—73页。",
+      "observation_period": "实际GDP 1998及1999；韩国危机前后。",
+      "publication_date": "2001-10-01",
+      "published_at": "2001-10-01",
+      "received_at": "2026-11-28T05:13:55+00:00",
+      "revision": 1,
+      "scope": "实际GDP 1998及1999；韩国危机前后。",
+      "source_family": "IMF-KOR-WP01-154",
+      "targets": [
+        "J-DECADE",
+        "J-MACRO",
+        "J-2027"
+      ],
+      "text": "2001研究版本列实际GDP 1998年−6.7%、1999年+10.9%。回升与补库存、电子周期、政策及金融重组有关；文章指出危机前该国建设热潮已消退。",
+      "url": "https://www.imf.org/-/media/websites/imf/imported-full-text-pdf/external/pubs/ft/wp/2001/_wp01154.pdf",
+      "versions": []
+    },
+    "HX006": {
+      "blob": "source_blobs/774ea2b8d61f601c2edf0a64debb9c993f9cb9b777713663161dddca09d7b11d.bin",
+      "body_sha256": "774ea2b8d61f601c2edf0a64debb9c993f9cb9b777713663161dddca09d7b11d",
+      "canonical_url": "https://www.mof.gov.cn/zhengwuxinxi/caizhengxinwen/201512/t20151223_1626635.htm",
+      "claim": "下达置换额度3.2万亿元，12月11日实际发行3.18万亿；所换债平均融资成本约10%转约3.5%，预期每年节息约2000亿元；另有新增债6000亿元。",
+      "event_id": "",
+      "id": "HX006",
+      "impact_note": "把本金替换与直接支出逐笔分开，新增政策资源不能用置换面值计量。",
+      "kind": "fact",
+      "limit": "是已甄别纳入预算的存量和特定利差，不得将2015利差用于2026平台及三年额度。",
+      "locator": "国务院报告，第二项‘发行地方政府债券置换存量债务’及下一项。",
+      "observation_period": "2015年额度、截至12月11日发行量；全年省息为当时测算。",
+      "publication_date": "2015-12-23",
+      "published_at": "2015-12-23",
+      "received_at": "2026-11-28T05:13:55+00:00",
+      "revision": 1,
+      "scope": "2015年额度、截至12月11日发行量；全年省息为当时测算。",
+      "source_family": "MOF-2015-swap-State-Council-report",
+      "targets": [
+        "J-FISCAL",
+        "J-MACRO",
+        "J-2027"
+      ],
+      "text": "下达置换额度3.2万亿元，12月11日实际发行3.18万亿；所换债平均融资成本约10%转约3.5%，预期每年节息约2000亿元；另有新增债6000亿元。",
+      "url": "https://www.mof.gov.cn/zhengwuxinxi/caizhengxinwen/201512/t20151223_1626635.htm",
+      "versions": []
+    },
+    "HX007": {
+      "blob": "source_blobs/b440a27a070ec3c5672b85c902b510b8cc3fb0653b492d54e9c9b4efa9bb223a.bin",
+      "body_sha256": "b440a27a070ec3c5672b85c902b510b8cc3fb0653b492d54e9c9b4efa9bb223a",
+      "canonical_url": "https://www.mof.gov.cn/gp/xxgkml/bgt/201607/t20160701_2510110.htm",
+      "claim": "财政部2015中央决算报告确认实际发行3.2万亿元地方政府债券置换到期存量；2016年6月29日向人大常委会报告。",
+      "event_id": "",
+      "id": "HX007",
+      "impact_note": "将2015额度与全年已发行分开核对，形成静态省息而非支出乘数复算。",
+      "kind": "fact",
+      "limit": "核实发行与旧债本金性质，报告未逐户披露实际利息入账。",
+      "locator": "预算执行管理第（二）项正文，财政部网页发文时间2016-07-01。",
+      "observation_period": "2015年度决算。",
+      "publication_date": "2016-07-01",
+      "published_at": "2016-07-01",
+      "received_at": "2026-11-28T05:13:55+00:00",
+      "revision": 1,
+      "scope": "2015年度决算。",
+      "source_family": "MOF-2015-final-accounts",
+      "targets": [
+        "J-FISCAL",
+        "J-2027"
+      ],
+      "text": "财政部2015中央决算报告确认实际发行3.2万亿元地方政府债券置换到期存量；2016年6月29日向人大常委会报告。",
+      "url": "https://www.mof.gov.cn/gp/xxgkml/bgt/201607/t20160701_2510110.htm",
+      "versions": []
+    },
+    "HX008": {
+      "blob": "source_blobs/3e78177ac7192ebb8fa60beb7c30f91eda1c91dccc323a75a62f978db9f531e6.bin",
+      "body_sha256": "3e78177ac7192ebb8fa60beb7c30f91eda1c91dccc323a75a62f978db9f531e6",
+      "canonical_url": "https://www.stats.gov.cn/sj/zxfb/202302/t20230203_1899021.html",
+      "claim": "商品房合同销售面积128495万平方米，已竣工待售面积71853万平方米。",
+      "event_id": "",
+      "id": "HX008",
+      "impact_note": "作为中国2016去库存时期的同比起点。",
+      "kind": "dataset",
+      "limit": "商品房含住宅办公商业；待售为已竣工可售（出租）但年末仍未售（出租）的面积，不涵盖全部在建存量。",
+      "locator": "表1及指标解释。",
+      "observation_period": "2015年商品房全年销售、年末待售。",
+      "publication_date": "2016-01-19",
+      "published_at": "2016-01-19",
+      "received_at": "2026-11-28T05:13:55+00:00",
+      "revision": 1,
+      "scope": "2015年商品房全年销售、年末待售。",
+      "source_family": "NBS-real-estate-2015",
+      "targets": [
+        "J-PROPERTY",
+        "J-DECADE"
+      ],
+      "text": "商品房合同销售面积128495万平方米，已竣工待售面积71853万平方米。",
+      "url": "https://www.stats.gov.cn/sj/zxfb/202302/t20230203_1899021.html",
+      "versions": []
+    },
+    "HX009": {
+      "blob": "source_blobs/736c012ea58fdd787fdda75033f4a4e578ca09be687991a39e64e57adbbfad9b.bin",
+      "body_sha256": "736c012ea58fdd787fdda75033f4a4e578ca09be687991a39e64e57adbbfad9b",
+      "canonical_url": "https://www.stats.gov.cn/sj/zxfb/202302/t20230203_1899399.html",
+      "claim": "全年商品房销售面积157349万平方米、同比22.5%，年末待售69539万平方米、同比−3.2%；住宅待售−11.0%，办公楼待售+10.8%。",
+      "event_id": "",
+      "id": "HX009",
+      "impact_note": "同国历史显示需求与交易可以大幅反弹，且物业用途间方向不同。",
+      "kind": "dataset",
+      "limit": "当时的库存与成交同时受信贷、供地、城市化和棚改政策影响，不能由同比识别棚改乘数。",
+      "locator": "表1、附注统计定义。",
+      "observation_period": "2016年商品房全年销售、年末待售。",
+      "publication_date": "2017-01-20",
+      "published_at": "2017-01-20",
+      "received_at": "2026-11-28T05:13:55+00:00",
+      "revision": 1,
+      "scope": "2016年商品房全年销售、年末待售。",
+      "source_family": "NBS-real-estate-2016",
+      "targets": [
+        "J-PROPERTY",
+        "J-DECADE",
+        "J-MACRO"
+      ],
+      "text": "全年商品房销售面积157349万平方米、同比22.5%，年末待售69539万平方米、同比−3.2%；住宅待售−11.0%，办公楼待售+10.8%。",
+      "url": "https://www.stats.gov.cn/sj/zxfb/202302/t20230203_1899399.html",
+      "versions": []
+    },
+    "HX010": {
+      "blob": "source_blobs/a1e7a9a5ecabe9ef6e10e3dfdf2d8947a052a90b85d42ecee0433472ca6d6186.bin",
+      "body_sha256": "a1e7a9a5ecabe9ef6e10e3dfdf2d8947a052a90b85d42ecee0433472ca6d6186",
+      "canonical_url": "https://zjj.baoji.gov.cn/zzzb/zcjd/202012/t20201214_856354.html",
+      "claim": "住建部部长在国新办发布会披露2016年棚改货币化安置占48.5%，较2015提高18.6个百分点。",
+      "event_id": "",
+      "id": "HX010",
+      "impact_note": "识别旧周期的需求端购买渠道，当前若是只续借而没有终端购买，不能借其反弹斜率。",
+      "kind": "fact",
+      "limit": "原话所指安置比例的分母是棚改对象。面积文字有单位误录，库存绝对值用国家统计局原表。",
+      "locator": "实录10:04、10:48；地方住建局转载，注明源自住建部，页面转载时点2017-05-31。",
+      "observation_period": "2016年棚户改造安置。",
+      "publication_date": "2017-02-23",
+      "published_at": "2017-02-23",
+      "received_at": "2026-11-28T05:13:55+00:00",
+      "revision": 1,
+      "scope": "2016年棚户改造安置。",
+      "source_family": "MOHURD-SCIO-2017-shantytown-transcript",
+      "targets": [
+        "J-PROPERTY",
+        "J-DEMAND",
+        "J-DECADE"
+      ],
+      "text": "住建部部长在国新办发布会披露2016年棚改货币化安置占48.5%，较2015提高18.6个百分点。",
+      "url": "https://zjj.baoji.gov.cn/zzzb/zcjd/202012/t20201214_856354.html",
+      "versions": []
+    },
+    "HX011": {
+      "blob": "source_blobs/74eb4c1226868d81cff4de47c90c496a6b461e409f6759402098fd8e18b4b3bc.bin",
+      "body_sha256": "74eb4c1226868d81cff4de47c90c496a6b461e409f6759402098fd8e18b4b3bc",
+      "canonical_url": "https://www.federalreserve.gov/newsevents/speech/fischer20150330a.htm",
+      "claim": "美国资产支持商业票据工具以短期票据出资持有较长期证券。2007年夏末买方撤资，承诺流动性后援的银行也受压。",
+      "event_id": "",
+      "id": "HX011",
+      "impact_note": "补出美国骤停需要短负债拒绝续借这一步，不能由住宅下跌直接复制。",
+      "kind": "fact",
+      "limit": "美国证券化/货币市场结构；不等价于中国全部按揭、预售或大行存款结构。",
+      "locator": "Fischer讲话，ABCP与银行流动性承诺段。",
+      "observation_period": "美国2007—09。",
+      "publication_date": "2015-03-30",
+      "published_at": "2015-03-30",
+      "received_at": "2026-11-28T05:13:55+00:00",
+      "revision": 1,
+      "scope": "美国2007—09。",
+      "source_family": "Federal-Reserve-Board-Fischer-ABCP-2015",
+      "targets": [
+        "J-BANKS",
+        "J-2027"
+      ],
+      "text": "美国资产支持商业票据工具以短期票据出资持有较长期证券。2007年夏末买方撤资，承诺流动性后援的银行也受压。",
+      "url": "https://www.federalreserve.gov/newsevents/speech/fischer20150330a.htm",
+      "versions": []
+    },
+    "HX012": {
+      "blob": "source_blobs/7a25b51086e85ea26d7f3bf92dd8fa77a71d778c2b25e75c87147db0f0e38938.bin",
+      "body_sha256": "7a25b51086e85ea26d7f3bf92dd8fa77a71d778c2b25e75c87147db0f0e38938",
+      "canonical_url": "https://www5.cao.go.jp/zenbun/wp-e/wp-je05/05-00103.html",
+      "claim": "日本内阁府称主要银行2002年3月不良贷款率在8%水平，2005年3月为2.93%，2002年度后持续处置。",
+      "event_id": "",
+      "id": "HX012",
+      "impact_note": "将数据库的危机结束年和之后实际资产质量修复分开。",
+      "kind": "observation",
+      "limit": "主要银行监管不良比率，不与Laeven–Valencia历史峰值或全体系损失混用。",
+      "locator": "2005年日本经济财政白书第1章第3节，摘要第2项和不良贷款处置段；前言署2005年7月。",
+      "observation_period": "2002-03至2005-03；日本主要银行。",
+      "publication_date": "2005-07",
+      "published_at": "2005-07",
+      "received_at": "2026-11-28T05:13:55+00:00",
+      "revision": 1,
+      "scope": "2002-03至2005-03；日本主要银行。",
+      "source_family": "JPN-Cabinet-Office-Annual-2005",
+      "targets": [
+        "J-BANKS",
+        "J-DECADE"
+      ],
+      "text": "日本内阁府称主要银行2002年3月不良贷款率在8%水平，2005年3月为2.93%，2002年度后持续处置。",
+      "url": "https://www5.cao.go.jp/zenbun/wp-e/wp-je05/05-00103.html",
+      "versions": []
+    },
+    "HX013": {
+      "blob": "source_blobs/931c38e573af65c82073701a53021432f1442ccbe43d3bddde41b19cde35062c.bin",
+      "body_sha256": "931c38e573af65c82073701a53021432f1442ccbe43d3bddde41b19cde35062c",
+      "canonical_url": "https://www.macrohistory.net/app/download/9834516269/NPLH_documentation.pdf?t=1763503850",
+      "claim": "日本在考察期采用把城市住宅地块视为空地的估价，不含建筑物；美国数据以FHFA等机构的单户住宅重复观察序列为基础。",
+      "event_id": "",
+      "id": "HX013",
+      "impact_note": "收窄跨国比较的房价分母；市场价格、工资现金和股权总回报逐项定义。",
+      "kind": "method",
+      "limit": "同名hpnom的统计对象不同，尤其日本土地不能代表中国所有住宅的价格跌幅。",
+      "locator": "JST作者组所附Knoll、Schularick、Steger《No Price Like Home》Online Appendix，Table 19及US Table 31。年份为配套论文，网页现有附件更新时点另见版本参数。",
+      "observation_period": "日本1955—2012段及美国1975年后。",
+      "publication_date": "2017",
+      "published_at": "2017",
+      "received_at": "2026-11-28T05:13:55+00:00",
+      "revision": 1,
+      "scope": "日本1955—2012段及美国1975年后。",
+      "source_family": "JST-Knoll-Schularick-Steger-house-documentation",
+      "targets": [
+        "J-PROPERTY",
+        "J-DECADE",
+        "J-EQUITY"
+      ],
+      "text": "日本在考察期采用把城市住宅地块视为空地的估价，不含建筑物；美国数据以FHFA等机构的单户住宅重复观察序列为基础。",
+      "url": "https://www.macrohistory.net/app/download/9834516269/NPLH_documentation.pdf?t=1763503850",
+      "versions": []
+    },
+    "HX014": {
+      "blob": "source_blobs/87393226efe71bef165927e45ff1ccd896d0e2925bf58693b2066df1f4f0c77c.bin",
+      "body_sha256": "87393226efe71bef165927e45ff1ccd896d0e2925bf58693b2066df1f4f0c77c",
+      "canonical_url": "https://bfi.uchicago.cn/wp-content/uploads/2023/08/BFI_WP_2023-109.pdf",
+      "claim": "Sufi正文认为中韩广泛金融危机不大可能但未排除，强调政府意愿、经常账户、消费下行及中国产出/就业再配置，中国的抵押增值套现渠道受限。",
+      "event_id": "",
+      "id": "HX014",
+      "impact_note": "以完整工作论文纠正‘无任何危机风险’的读法，增补中国财富到现金传导的制度条件。",
+      "kind": "opinion",
+      "limit": "有条件的论断与引用估算不是银行披露或风险校准。文中异国制度不能直接用为2026合约参数。",
+      "locator": "正文第9—11页及结语；封面2023年8月，内页署7月；与原FW003简报同一作者命题。",
+      "observation_period": "2015—2021家庭加杠杆；作者2023年展望。",
+      "publication_date": "2023-08",
+      "published_at": "2023-08",
+      "received_at": "2026-11-28T05:13:55+00:00",
+      "revision": 1,
+      "scope": "2015—2021家庭加杠杆；作者2023年展望。",
+      "source_family": "Sufi-BFI-WP2023-109",
+      "targets": [
+        "J-DEMAND",
+        "J-BANKS",
+        "J-DECADE"
+      ],
+      "text": "Sufi正文认为中韩广泛金融危机不大可能但未排除，强调政府意愿、经常账户、消费下行及中国产出/就业再配置，中国的抵押增值套现渠道受限。",
+      "url": "https://bfi.uchicago.cn/wp-content/uploads/2023/08/BFI_WP_2023-109.pdf",
+      "versions": []
+    },
+    "HX015": {
+      "blob": "source_blobs/9dda96ec1a7a0fb4f8bb9530de2f6ee14f18f1da6d3b16db332e62d72908c4b9.bin",
+      "body_sha256": "9dda96ec1a7a0fb4f8bb9530de2f6ee14f18f1da6d3b16db332e62d72908c4b9",
+      "canonical_url": "https://www.safe.gov.cn/safe/2026/0929/27934.html",
+      "claim": "外债总额24982亿美元，签约短期14686亿美元（59%），本币外债占56%、外币占44%。短期中贸易相关占41%。",
+      "event_id": "",
+      "id": "HX015",
+      "impact_note": "给韩国外债续作类比设币种和剩余期限边界。",
+      "kind": "dataset",
+      "limit": "没有短期×外币×同一债务人×剩余期限交叉表及可动用外币资产，不能用边际比例相乘。",
+      "locator": "主表前期限、部门、币种段，附注按签约期限。",
+      "observation_period": "2026-06-30；中国内地全口径外债。",
+      "publication_date": "2026-09-29",
+      "published_at": "2026-09-29",
+      "received_at": "2026-11-28T05:13:55+00:00",
+      "revision": 1,
+      "scope": "2026-06-30；中国内地全口径外债。",
+      "source_family": "SAFE-2026Q2-external-debt",
+      "targets": [
+        "J-2027",
+        "J-BANKS"
+      ],
+      "text": "外债总额24982亿美元，签约短期14686亿美元（59%），本币外债占56%、外币占44%。短期中贸易相关占41%。",
+      "url": "https://www.safe.gov.cn/safe/2026/0929/27934.html",
+      "versions": []
+    },
+    "HX016": {
+      "blob": "source_blobs/2170040d6a782d6c7ab700f9d64b7209804bc9879e1308178077bcff035d15ff.bin",
+      "body_sha256": "2170040d6a782d6c7ab700f9d64b7209804bc9879e1308178077bcff035d15ff",
+      "canonical_url": "https://www.stats.gov.cn/sj/zxfb/202401/t20240118_1946691.html",
+      "claim": "房地产业增加值按不变价同比−1.3%，建筑业+7.1%。房地产业增加值现价73723亿元。",
+      "event_id": "",
+      "id": "HX016",
+      "impact_note": "事后核对Batson 2023关于当年增长贡献的明确判断，并将销售与增加值拆分。",
+      "kind": "dataset",
+      "limit": "初步发布；房地产业和横跨其他项目的建筑业不合并算房地产对GDP贡献，后续五经普统计修订。",
+      "locator": "表1；增长按不变价，数值按现价。",
+      "observation_period": "2023全年初步核算。",
+      "publication_date": "2024-01-18",
+      "published_at": "2024-01-18",
+      "received_at": "2026-11-28T05:13:55+00:00",
+      "revision": 1,
+      "scope": "2023全年初步核算。",
+      "source_family": "NBS-GDP-2023-Q4-preliminary",
+      "targets": [
+        "J-PROPERTY",
+        "J-MACRO"
+      ],
+      "text": "房地产业增加值按不变价同比−1.3%，建筑业+7.1%。房地产业增加值现价73723亿元。",
+      "url": "https://www.stats.gov.cn/sj/zxfb/202401/t20240118_1946691.html",
+      "versions": []
+    },
+    "HX017": {
+      "blob": "source_blobs/a5c8cca08b065f24f88d46a1b768b1f99eeaef6afb3b542b8ec8d34ca1a77181.bin",
+      "body_sha256": "a5c8cca08b065f24f88d46a1b768b1f99eeaef6afb3b542b8ec8d34ca1a77181",
+      "canonical_url": "https://fred.stlouisfed.org/data/MKTGDPJPA646NWDB",
+      "claim": "日本GDP为3252994239867.40和5811578109447.07美元。",
+      "event_id": "",
+      "id": "HX017",
+      "impact_note": "与同源世界分母复算Pettis的日本世界份额命题；不将份额损失当福利损失。",
+      "kind": "dataset",
+      "limit": "不是PPP或实际增长；修订版并非2015原作者当时版本。",
+      "locator": "世行WDI NY.GDP.MKTP.CD在圣路易联储分发的日本表，1990和2010行。日期为当前传播版本。",
+      "observation_period": "1990、2010，日历年、现价美元。",
+      "publication_date": "2026-07-07",
+      "published_at": "2026-07-07",
+      "received_at": "2026-11-28T05:13:55+00:00",
+      "revision": 1,
+      "scope": "1990、2010，日历年、现价美元。",
+      "source_family": "World-Bank-WDI-FRED-Japan-current-USD",
+      "targets": [
+        "J-DECADE",
+        "J-MACRO"
+      ],
+      "text": "日本GDP为3252994239867.40和5811578109447.07美元。",
+      "url": "https://fred.stlouisfed.org/data/MKTGDPJPA646NWDB",
+      "versions": []
+    },
+    "HX018": {
+      "blob": "source_blobs/24fcc81f8309de7e06853d864ecba094ca13610236b097b1b36b4d1231ff2ced.bin",
+      "body_sha256": "24fcc81f8309de7e06853d864ecba094ca13610236b097b1b36b4d1231ff2ced",
+      "canonical_url": "https://fred.stlouisfed.org/data/NYGDPMKTPCDWLD",
+      "claim": "世界GDP为22991895905266.20和66893676131662.70美元。",
+      "event_id": "",
+      "id": "HX018",
+      "impact_note": "校正1990—2010现价美元份额相对降幅；与日本分子共同支撑，不独立加票。",
+      "kind": "dataset",
+      "limit": "世界分母含别国增长和汇率变动；同指标按本次截点获取，日本和世界两个FRED序列的末次更新时间分别为7月及10月。",
+      "locator": "世行WDI NY.GDP.MKTP.CD在圣路易联储分发的世界表，1990和2010行。日期为当前传播版本。",
+      "observation_period": "1990、2010，日历年、现价美元。",
+      "publication_date": "2026-10-13",
+      "published_at": "2026-10-13",
+      "received_at": "2026-11-28T05:13:55+00:00",
+      "revision": 1,
+      "scope": "1990、2010，日历年、现价美元。",
+      "source_family": "World-Bank-WDI-FRED-world-current-USD",
+      "targets": [
+        "J-DECADE",
+        "J-MACRO"
+      ],
+      "text": "世界GDP为22991895905266.20和66893676131662.70美元。",
+      "url": "https://fred.stlouisfed.org/data/NYGDPMKTPCDWLD",
+      "versions": []
+    },
+    "HX019": {
+      "blob": "source_blobs/0a05b331768b9d83efe6163c68f8ce36b0b9683b3707a009e612a278c61466de.bin",
+      "body_sha256": "0a05b331768b9d83efe6163c68f8ce36b0b9683b3707a009e612a278c61466de",
+      "canonical_url": "https://www.imf.org/-/media/files/publications/howtonotes/howtonote1808.pdf",
+      "claim": "附录2从总财政余额或初级余额分别推导期末债务/GDP。总赤字为当期GDP份额时，前期债务率先除以1+名义增长率，再加本期赤字率（本例设存流调节为零）。",
+      "event_id": "",
+      "id": "HX019",
+      "impact_note": "直接检验FW006 Setser举例而不重复入库其文章；应排除‘按所举数字赤字不增加债务’这一前提。",
+      "kind": "method",
+      "limit": "恒等关系不能决定市场承接规模或项目效果；资产变卖、汇兑等存流调整另列。",
+      "locator": "IMF财政事务部财政规则校准手册，Appendix 2，公式A.2.1、A.2.2前后。",
+      "observation_period": "不限国家；会计方法。",
+      "publication_date": "2018-03",
+      "published_at": "2018-03",
+      "received_at": "2026-11-28T05:13:55+00:00",
+      "revision": 1,
+      "scope": "不限国家；会计方法。",
+      "source_family": "IMF-fiscal-rules-primer-2018",
+      "targets": [
+        "J-FISCAL",
+        "J-MACRO"
+      ],
+      "text": "附录2从总财政余额或初级余额分别推导期末债务/GDP。总赤字为当期GDP份额时，前期债务率先除以1+名义增长率，再加本期赤字率（本例设存流调节为零）。",
+      "url": "https://www.imf.org/-/media/files/publications/howtonotes/howtonote1808.pdf",
       "versions": []
     },
     "MA001": {
@@ -3637,6 +6719,60 @@
       "text": "同PF026发布会：新购特定首套住房贷款贴息9/29发布10/1起实施，政策暂定1年，符合条件贴息不超过5年；按月抵扣，经办行反馈非全国实际财政支付总额。5500亿结存限额分3000亿县区一般预算保障及2500亿项目专项；宣布下达不能当已支付。前三季基金中央支出基数含2025大行注资5000亿，2026安排3000亿计划Q4拨付。",
       "url": "https://www.mof.gov.cn/zhengwuxinxi/caizhengxinwen/202610/t20261023_4003429.htm",
       "versions": []
+    },
+    "MT001": {
+      "blob": "source_blobs/8894960df50be174c498a519f2e277622a3c4d5198c1ffb25c1fb75a854ed076.bin",
+      "body_sha256": "8894960df50be174c498a519f2e277622a3c4d5198c1ffb25c1fb75a854ed076",
+      "canonical_url": "research/method_runs.md",
+      "event_id": "",
+      "id": "MT001",
+      "impact_note": "独立审计发现未知标签被当负例，原实验保留；新作业纠错并定位校准负斜率，需更新模型用途节点。",
+      "kind": "method",
+      "published_at": "2026-11-28T05:19:23.240176+00:00",
+      "received_at": "2026-11-28T05:19:23+00:00",
+      "revision": 3,
+      "source_family": "boss1-actual-model-runs",
+      "targets": [
+        "M-MODEL-USE"
+      ],
+      "text": "实际已完成11个compute作业。旧JST输入1741行含35未知危机标签及3全特征缺失；修复后的1703行训练1188/校准223/测试187。纠错后logit校准Brier0.170316,AUC0.602737,检出3漏10,误报7/148；HGB raw Brier0.156506,AUC0.730596,检出7漏6,误报18/148；HGB校准Brier0.185399,AUC0.269404,检出1漏12,误报43/148；基准Brier0.175914。独立重估确认类别[0,1]无错列，校准斜率负，旧-0.196335/新-0.262958。保持原切分与参数，已见测试只作审计纠错不得称新验证，拒绝校准HGB主用途及全部中国概率。中国桥接同版MAE0.64347对基线0.34545。银行资本另作披露CET1桥接。详情historical_model_correction.md和compute账本。",
+      "url": "research/method_runs.md",
+      "versions": [
+        {
+          "blob": "source_blobs/3342e58bd81f95dfb5166dba7fc5c1d93e42d248e12dea67c594b538009aeffa.bin",
+          "body_sha256": "3342e58bd81f95dfb5166dba7fc5c1d93e42d248e12dea67c594b538009aeffa",
+          "canonical_url": "research/method_runs.md",
+          "event_id": "",
+          "id": "MT001",
+          "impact_note": "初始图尚未登记；该方法记录用于M-MODEL-USE节点，非给经济主张新增统计样本。",
+          "kind": "method",
+          "published_at": "2026-11-28T05:10:08.515051+00:00",
+          "received_at": "2026-11-28T05:10:08+00:00",
+          "revision": 1,
+          "source_family": "boss1-actual-model-runs",
+          "targets": [],
+          "text": "本地9CPU、compute账本10个真实运行完成。JST logit Brier0.1704865、HGB0.1831729、基准0.1765983；13事件分别检出3和0。中国同GDP发布版本桥接MAE0.64347、基准0.34545。拒绝中国概率及GDP点预测；银行原生capital_ratio用账面权益，CET1另桥接。输入输出及代码环境hash见compute/ledger.json。",
+          "url": "research/method_runs.md"
+        },
+        {
+          "blob": "source_blobs/8880fc05c7e93981ead374ee9cc9d547d4bc20859a679d9bb50a1ad1f6bc0536.bin",
+          "body_sha256": "8880fc05c7e93981ead374ee9cc9d547d4bc20859a679d9bb50a1ad1f6bc0536",
+          "canonical_url": "research/method_runs.md",
+          "event_id": "",
+          "id": "MT001",
+          "impact_note": "独立research_independent_review发现旧报告未区分raw与校准链，更新明确用途并保留旧源版本；不重跑改参数。",
+          "kind": "method",
+          "published_at": "2026-11-28T05:16:12.047553+00:00",
+          "received_at": "2026-11-28T05:16:12+00:00",
+          "revision": 2,
+          "source_family": "boss1-actual-model-runs",
+          "targets": [
+            "M-MODEL-USE"
+          ],
+          "text": "本地9CPU、compute账本10个真实运行完成。JST最终187行/13事件：logit raw Brier0.1724883,calibrated0.1704865；HGB raw Brier0.1559469,AUC0.7392585,检出8漏5,假警报14.86%；预注册sigmoid校准后Brier0.1831729,AUC0.2607415,检出0漏13,假警报26.35%。校准223行9事件，排序翻转需调查不稳性或实现；不在已见测试上改选raw宣布新验证。拒绝预注册校准HGB主用途和全部China概率。中国同GDP发布版本桥接MAE0.64347、基准0.34545，拒精确GDP。银行原生capital_ratio是权益/RWA，CET1另桥接。实际输入输出、代码环境hash见compute/ledger.json。",
+          "url": "research/method_runs.md"
+        }
+      ]
     },
     "PF001": {
       "blob": "source_blobs/2b10869c3d093f175aa9618e2b72aad94d1fe3fb339ebfc53a902ac86d6c3a9a.bin",
@@ -4539,6 +7675,57 @@
       "targets": [],
       "text": "作者比较展期与重组、不可持续平台的财政金融分担，以及地方税收与转移制度改革；研究不是当年逐省到期统计。",
       "url": "https://www.imf.org/en/publications/departmental-papers-policy-papers/issues/2026/09/24/local-government-finances-in-china-policy-options-to-tackle-the-debt-overhang-576484",
+      "versions": []
+    },
+    "design-continuity": {
+      "blob": "source_blobs/5f427d1ac656ddd8fced2fad33bc1ef479a092a84d4e26101376cbfb8ff318f2.bin",
+      "body_sha256": "5f427d1ac656ddd8fced2fad33bc1ef479a092a84d4e26101376cbfb8ff318f2",
+      "canonical_url": "research/scenario_design.md#continuity",
+      "event_id": "",
+      "id": "design-continuity",
+      "impact_note": "初始图尚未登记，服务家庭条件测算，任何数值不提升宏观判断概率。",
+      "kind": "method",
+      "published_at": "2026-11-27",
+      "received_at": "2026-11-28T05:10:08+00:00",
+      "revision": 1,
+      "source_family": "boss1-household-conditional-design",
+      "targets": [],
+      "text": "结构延续情景采用本轮机制方向作为联合压力路径；路径幅度、年率、持续月数和贷款利差全部人为可修改压力假设，非中国全国观测、预测或概率。来源事实只定传导接口，不验证具体数值。以同一外生路径比较同一家庭策略。",
+      "url": "research/scenario_design.md#continuity",
+      "versions": []
+    },
+    "design-recovery": {
+      "blob": "source_blobs/404388c56c46003e9c4ac177bbe7540eae3e30fb17aa2636c22fce2e2188a698.bin",
+      "body_sha256": "404388c56c46003e9c4ac177bbe7540eae3e30fb17aa2636c22fce2e2188a698",
+      "canonical_url": "research/scenario_design.md#recovery",
+      "event_id": "",
+      "id": "design-recovery",
+      "impact_note": "初始图尚未登记，服务家庭条件测算，任何数值不提升宏观判断概率。",
+      "kind": "method",
+      "published_at": "2026-11-27",
+      "received_at": "2026-11-28T05:10:08+00:00",
+      "revision": 1,
+      "source_family": "boss1-household-conditional-design",
+      "targets": [],
+      "text": "有效恢复情景采用本轮机制方向作为联合压力路径；路径幅度、年率、持续月数和贷款利差全部人为可修改压力假设，非中国全国观测、预测或概率。来源事实只定传导接口，不验证具体数值。以同一外生路径比较同一家庭策略。",
+      "url": "research/scenario_design.md#recovery",
+      "versions": []
+    },
+    "design-severe": {
+      "blob": "source_blobs/fd986a47dc0427dde72ee5d2819e8f42240fb4c5a3c1a5bd5d0152da9ce5e728.bin",
+      "body_sha256": "fd986a47dc0427dde72ee5d2819e8f42240fb4c5a3c1a5bd5d0152da9ce5e728",
+      "canonical_url": "research/scenario_design.md#severe",
+      "event_id": "",
+      "id": "design-severe",
+      "impact_note": "初始图尚未登记，服务家庭条件测算，任何数值不提升宏观判断概率。",
+      "kind": "method",
+      "published_at": "2026-11-27",
+      "received_at": "2026-11-28T05:10:08+00:00",
+      "revision": 1,
+      "source_family": "boss1-household-conditional-design",
+      "targets": [],
+      "text": "严重下行与信用损失情景采用本轮机制方向作为联合压力路径；路径幅度、年率、持续月数和贷款利差全部人为可修改压力假设，非中国全国观测、预测或概率。来源事实只定传导接口，不验证具体数值。以同一外生路径比较同一家庭策略。",
+      "url": "research/scenario_design.md#severe",
       "versions": []
     }
   },
