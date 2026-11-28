@@ -13,7 +13,7 @@ import uuid
 
 from . import engine
 
-ACTOR = re.compile(r"[A-Za-z0-9][A-Za-z0-9_.-]{0,63}\Z")
+ACTOR = re.compile(r"[A-Za-z0-9][A-Za-z0-9_. -]{0,63}\Z")
 ACCEPTANCE = "research/acceptance.json"
 DELIVERABLES = ("formal/report.md", "formal/calculator.html",
                 "formal/judgments.json", "formal/scenarios.json", "research/final_review.md")
@@ -22,8 +22,8 @@ CHECKS = ("sources", "frameworks", "models", "hyperedges", "judgments",
 
 
 def checked_actor(value):
-    if not ACTOR.fullmatch(value):
-        raise argparse.ArgumentTypeError("身份号须为1—64位字母、数字、点、下划线或连字符，首位为字母或数字")
+    if not ACTOR.fullmatch(value) or value.endswith(" "):
+        raise argparse.ArgumentTypeError("身份号须为1—64位ASCII字母、数字、点、下划线、连字符或普通空格，首位为字母或数字，末位不能是空格")
     return value
 
 

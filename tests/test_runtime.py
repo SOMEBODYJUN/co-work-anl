@@ -51,6 +51,41 @@ class RuntimeTests(unittest.TestCase):
         with self.assertRaisesRegex(engine.EngineError, "Boss11"):
             runtime.start(argparse.Namespace(workspace=self.root, actor="Boss1"))
 
+    def test_spaced_actor_binding_and_default_workspace_restore(self):
+        actor = "boss 1"
+        workspace = self.root.with_name(actor)
+        first = runtime.start(argparse.Namespace(workspace=workspace, actor=actor))
+        saved = json.loads((workspace / "research_state.json").read_text())["runtime"]
+        self.assertEqual(saved["actor"], actor)
+        self.assertEqual(saved["location"]["workspace_key"], str(Path("work") / actor))
+
+        fresh = Path(self.temp.name) / "fresh checkout"
+        subprocess.run(["git", "init", "-q", "-b", "work/cn-crisis", str(fresh)], check=True)
+        restored = fresh / "work" / actor
+        shutil.copytree(workspace, restored)
+        script = Path(__file__).resolve().parents[1] / "work.py"
+        result = subprocess.run([sys.executable, str(script), "session", "next", "--actor", actor],
+                                cwd=fresh, capture_output=True, text=True)
+        self.assertEqual(result.returncode, 0, result.stderr)
+        resumed = json.loads(result.stdout)
+        self.assertEqual(resumed["actor"], actor)
+        self.assertEqual(Path(resumed["workspace"]), restored)
+        self.assertEqual(resumed["run_id"], first["run_id"])
+        self.assertEqual(resumed["cycle"], first["cycle"])
+        self.assertFalse(resumed["complete"])
+        with self.assertRaisesRegex(engine.EngineError, actor):
+            runtime.progress(argparse.Namespace(workspace=restored, actor="boss1"))
+
+    def test_actor_character_and_length_boundaries(self):
+        for actor in ("a", "A0._-", "boss  1", "a" + " " * 62 + "z"):
+            with self.subTest(actor=actor):
+                self.assertEqual(runtime.checked_actor(actor), actor)
+        for actor in ("", " boss", "boss ", "..", "../boss", "a/../b", "a\\b",
+                      "a\tb", "a\nb", "a\x00b", "a\u00a0b", "a" * 65):
+            with self.subTest(actor=actor):
+                with self.assertRaises(argparse.ArgumentTypeError):
+                    runtime.checked_actor(actor)
+
     def test_synthetic_release_does_not_pass_research_acceptance(self):
         self.register_complete_fixture()
         result = runtime.progress(self.args)
