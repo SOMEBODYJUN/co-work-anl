@@ -20,6 +20,19 @@ from datetime import datetime, timezone
 from urllib.parse import parse_qsl, urlencode, urlsplit, urlunsplit
 
 FIRST_STAGES = tuple('s01_scope s02_inventory s03_acquisition s04_vintages s05_methods s06_viewpoints s07_property s08_fiscal s09_households s10_banks s11_external s12_history s13_graph s14_models s15_adversarial s16_verdict s17_writing s18_calculator s19_audit s20_release'.split())
+REPORT_STAGES = tuple('s18_editorial' if x == 's18_calculator' else x for x in FIRST_STAGES)
+REPORT_DEPS = {
+    's01_scope': (), 's02_inventory': ('s01_scope',), 's03_acquisition': ('s02_inventory',),
+    's04_vintages': ('s03_acquisition',), 's05_methods': ('s01_scope',),
+    's06_viewpoints': ('s03_acquisition',),
+    **{x: ('s04_vintages', 's06_viewpoints') for x in
+       ('s07_property', 's08_fiscal', 's09_households', 's10_banks', 's11_external')},
+    's12_history': ('s06_viewpoints',),
+    's13_graph': ('s07_property', 's08_fiscal', 's09_households', 's10_banks', 's11_external', 's12_history'),
+    's14_models': ('s05_methods', 's13_graph'), 's15_adversarial': ('s13_graph', 's14_models'),
+    's16_verdict': ('s15_adversarial',), 's17_writing': ('s16_verdict',),
+    's18_editorial': ('s17_writing',), 's19_audit': ('s18_editorial',), 's20_release': ('s19_audit',),
+}
 UPDATE_STAGES = tuple('i01_restore i02_delta i03_research i04_proposal i05_review i06_merge i07_replay i08_release'.split())
 FACT_KINDS = {'fact', 'observation', 'dataset'}
 SOURCE_KINDS = FACT_KINDS | {'opinion', 'method'}
@@ -153,7 +166,17 @@ class Store:
         self.rollbacks.clear()
 
     def stages(self):
-        return FIRST_STAGES if self.state['mode'] == 'first' else UPDATE_STAGES
+        if self.state['mode'] != 'first':
+            return UPDATE_STAGES
+        return REPORT_STAGES if self.report_first() else FIRST_STAGES
+
+    def report_first(self):
+        return self.state.get('runtime', {}).get('profile') == 'report-first'
+
+    def stage_dependencies(self, stage_id):
+        if self.report_first() and self.state['mode'] == 'first':
+            return REPORT_DEPS[stage_id]
+        return self.stages()[:self.stages().index(stage_id)]
 
     def event(self, kind, details):
         self.state['history'].append({'event': kind, 'at': now(), 'cycle': self.state['cycle'], **details})
@@ -161,8 +184,11 @@ class Store:
     def invalidate(self, first, update):
         phases = self.stages()
         cutoff = first if self.state['mode'] == 'first' else update
-        for stage_id in phases[cutoff:]:
-            self.state['stages'].pop(stage_id, None)
+        # Report research uses bound artifacts + declared dependencies. Preserve
+        # unrelated work instead of deleting every later receipt on any intake.
+        if not self.report_first():
+            for stage_id in phases[cutoff:]:
+                self.state['stages'].pop(stage_id, None)
         self.state['review'] = None
         self.state['release'] = None
 
@@ -264,9 +290,15 @@ class Store:
             if current != stage['files']:
                 changed[key] = 'artifact changed after stage submission'
                 continue
-            if any(x not in valid for x in self.stages()[:self.stages().index(key)]):
-                changed[key] = 'earlier stage is stale'
+            if any(x not in valid for x in self.stage_dependencies(key)):
+                changed[key] = 'required dependency is stale'
                 continue
+            if self.report_first():
+                expected = {x: digest(self.state['stages'][x])
+                            for x in self.stage_dependencies(key)}
+                if stage.get('dependency_receipts') != expected:
+                    changed[key] = 'dependency was revised after this stage'
+                    continue
             valid.append(key)
         return valid, changed
 
@@ -274,8 +306,10 @@ class Store:
         directory = self.root / 'formal'
         if not directory.exists():
             return []
+        out_of_scope = {'formal/calculator.html', 'formal/scenarios.json'} if self.report_first() else set()
         return sorted(str(p.relative_to(self.root)) for p in directory.rglob('*')
-                      if p.is_file() and str(p.relative_to(self.root)) not in known)
+                      if p.is_file() and str(p.relative_to(self.root)) not in known
+                      and str(p.relative_to(self.root)) not in out_of_scope)
 
     def source_blob_hashes(self):
         blobs = {}
@@ -694,14 +728,18 @@ def stage(args):
             raise EngineError(f'Unknown stage; expected one of {", ".join(phases)}')
         valid, _ = db.valid_stages()
         index = phases.index(args.id)
-        missing = [x for x in phases[:index] if x not in valid]
+        missing = [x for x in db.stage_dependencies(args.id) if x not in valid]
         if missing:
             raise EngineError(f'Complete or repair earlier stages first: {", ".join(missing)}')
         receipt = {'id': args.id, 'files': db.files(args.files), 'note': nonempty(args.note, 'stage.note'),
                    'submitted_at': now(), 'revision': db.state['revision']}
+        if db.report_first():
+            receipt['dependency_receipts'] = {
+                x: digest(db.state['stages'][x]) for x in db.stage_dependencies(args.id)}
         db.state['stages'][args.id] = receipt
-        for later in phases[index + 1:]:
-            db.state['stages'].pop(later, None)
+        if not db.report_first():
+            for later in phases[index + 1:]:
+                db.state['stages'].pop(later, None)
         db.state['review'] = None
         db.state['release'] = None
         db.event('stage', {'id': args.id, 'files': receipt['files']})
@@ -713,8 +751,12 @@ def review(args):
     with Store(args.workspace) as db:
         db.require()
         if args.verdict == 'reject':
+            names = sorted(db.all_stage_files() | set(args.files))
+            files = db.files(names) if names else {}
             db.state['review'] = {'verdict': 'reject', 'reviewer': args.reviewer,
-                                  'note': nonempty(args.note, 'review.note'), 'at': now()}
+                                  'author': args.author, 'files': files,
+                                  'note': nonempty(args.note, 'review.note'), 'at': now(),
+                                  'snapshot': db.snapshot(names) if names else None}
             db.state['release'] = None
             db.event('review', copy.deepcopy(db.state['review']))
             db.save()

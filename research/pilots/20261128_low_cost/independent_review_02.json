@@ -1,0 +1,141 @@
+{
+  "schema": "cncrisis-pilot-semantic-review.v2",
+  "reviewer": "/root/v4_design_challenge",
+  "scope": "仅复核首审PS01—PS06及其对应修订图、查询说明和brief；不扩展到其他条目，不评定完整中国经济研究。",
+  "verdict": "pass_for_local_thinking_extraction_example",
+  "original_blockers_resolved": true,
+  "publishable_as_local_example": true,
+  "macro_empirical_validation": false,
+  "reviewed_files": {
+    "documents.json": "98fdf75feb564be90ca22aa852b4efe38f8a3eb7c18936a9848abd9885d3db30",
+    "result.json": "06415951391502b77ab4151811f12293e3d44ed9f8b22174c3e50ef9e0d382e3",
+    "semantic_repairs.json": "11b0837d5847053fb521cd56a4ffc50f2eda613f3114a4207213aed759245dfd",
+    "brief.txt": "164f1529e28021052d1b36c993a79bec320099f18addb047a84d02db98fe2f60",
+    "graph_use.txt": "4fe7e260313d6172324bd0995e3fa4fb02c72e2967f7939ff1d636e9dbc73cb7",
+    "reading-graph.json": "dd7709599fff290f2789e1696f5d3cc3f1cb876f930e762ce334f61093b7bbb3"
+  },
+  "comparison_baseline": "repo-audit/work/v4-pilot/cache/weak-packet/baseline-01/",
+  "findings": [
+    {
+      "id": "PS01",
+      "original_severity": "blocking",
+      "status": "resolved",
+      "locations": [
+        "claims/C8",
+        "claims/C13",
+        "claims/C14",
+        "mechanisms/M3",
+        "graph_use.txt/M3段",
+        "brief.txt/需求反馈段"
+      ],
+      "what_changed": "原同一C12兼当前提与后件的自证已取消。M3现从C7、C8、C13推至C14，t0—t3对应初始减支、交易方收入下降、二轮行为、收入回传。C9政策建议不再用来证明反馈成立。",
+      "source_check": [
+        "Z24:p0011-p0013,p0017,p0020",
+        "Z26:p0040-p0043"
+      ],
+      "assessment": "原文明确含主体间逐轮反馈及快慢变量；新时间标签只标次序，没有捏造精确季度滞后。一般反馈过程可保留为局部机制，当前量级未由此得到证明。"
+    },
+    {
+      "id": "PS02",
+      "original_severity": "blocking",
+      "status": "resolved",
+      "locations": [
+        "mechanisms/M1/head=C2",
+        "mechanisms/M2/head=C17",
+        "mechanisms/M2-policy/head=C12",
+        "mechanisms/M3/head=C14"
+      ],
+      "what_changed": "历史家庭承损、政策优先序、容量约束论证、调查框架和反馈后果已拆开，不再由每条边推出同一个包罗全部机制的复合C12。",
+      "source_check": [
+        "P26:p0022-p0024,p0026,p0032",
+        "B20:p0010,p0012",
+        "W25:p0016-p0017",
+        "S24:p0015,p0048",
+        "Z24:p0011-p0013"
+      ],
+      "assessment": "四条边的后件现在与各自能支持的范围一致；跨作者综合保留在verdict中，并标出历史、当前候选和作者主张的归属。"
+    },
+    {
+      "id": "PS03",
+      "original_severity": "major",
+      "status": "resolved",
+      "locations": [
+        "claims/C12",
+        "claims/C15",
+        "claims/C17",
+        "mechanisms/M2",
+        "mechanisms/M2-policy",
+        "graph_use.txt/M2及M2-policy段",
+        "brief.txt/政策解释段"
+      ],
+      "what_changed": "M2以analytical_inference记录有争议的作者输入，只导出分层调查。M2-policy另以causal_hypothesis提出资源可用条件下的政策优先序；竞争解释改成偏好相同但资源/承接容量不足。",
+      "source_check": [
+        "W25:p0016-p0017",
+        "S24:p0015,p0048",
+        "B20:p0010,p0012"
+      ],
+      "assessment": "没有把Setser中央财政空间与Wright银行承接约束当作同一已验证因果触发条件。主竞争解释的观察对照现在有区分力：资源可用但家庭项目持续不优先，对比多类支出普遍随可用资源不足而未兑现。该对照是后续调查设计，尚不是已完成识别。"
+    },
+    {
+      "id": "PS04",
+      "original_severity": "major",
+      "status": "resolved",
+      "locations": [
+        "claims/C11",
+        "claims/C16",
+        "claims/C2",
+        "mechanisms/M1",
+        "verdict",
+        "brief.txt/AMC段"
+      ],
+      "what_changed": "C11只记录AMC换债、财政部安慰函与央行流动性；C16单列历史受压存款回报；C2记录Pettis解释中的收入/消费份额后果。图和正文不再以公共部门账面转移等同最终承担。",
+      "source_check": [
+        "P26:p0018-p0019,p0022-p0024,p0026,p0032"
+      ],
+      "assessment": "账面持有人、公共支持和最终经济负担已经分开，符合本次原文核对。M1明确限定历史范围，未直接推成当前同等程度的事实。"
+    },
+    {
+      "id": "PS05",
+      "original_severity": "major",
+      "status": "resolved",
+      "locations": [
+        "thinking/actor_models/居民家庭",
+        "verdict/why",
+        "brief.txt/AMC段"
+      ],
+      "what_changed": "删除由低实际存款回报或福利有限直接推出预防性储蓄动机上升的行为归因；现在保留净储蓄者、购买力转移、收入消费份额与福利可及性。",
+      "source_check": [
+        "P26:p0022-p0024,p0026,p0032",
+        "B20:p0010,p0012"
+      ],
+      "assessment": "当前段落与引用支持的机制一致，没有把国家储蓄、家庭动机、存款和还贷当成同一对象。"
+    },
+    {
+      "id": "PS06",
+      "original_severity": "minor",
+      "status": "resolved",
+      "locations": [
+        "claims/C5",
+        "claims/C15",
+        "mechanisms/M2"
+      ],
+      "what_changed": "C5只保留Wright报告的税收、土地和银行持债数值，并注明作者报告归属；C15以author_claim保存银行资本/盈利及挤出解释。",
+      "source_check": [
+        "W25:p0003,p0016-p0017"
+      ],
+      "assessment": "观察和解释已拆分。此项只核原文归属与推断层次，没有将原始统计独立复核包装成已完成。"
+    }
+  ],
+  "remaining_blockers": [],
+  "acceptance_meaning": "这8篇文章的小规模试跑已能示范：把作者的制度认识、负担归宿、主体行为与反馈顺序提成有归属的主张，分开竞争解释，再用图查询产出区分性调查任务。通过的是原六项返修后的局部语义合同。",
+  "does_not_certify": [
+    "三种机制在当期中国的实际权重或预测力",
+    "所有原始统计、正文捕获完整性与全部文章事实的独立复核",
+    "完整研究地图、500个节点、成熟思维上下文或彭博/BBC级报告已经完成"
+  ],
+  "nonblocking_notes": [
+    "brief的中心认识可以前置并作有边界的排序；“最强的政策解释”属于本语料包的解释性判断，本复核不把它认证为已实证测得的当期机制权重。",
+    "思想成熟度和成稿质量仍需后续更多有实质分歧的文章、原始调查与编辑训练；这不撤销本次已修复六项的局部通过。"
+  ],
+  "stop_rule": "原六项已解决，结束本轮语义复核；不因本地范例尚未承担完整宏观研究任务而重开全研究。"
+}

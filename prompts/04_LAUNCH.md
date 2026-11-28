@@ -1,40 +1,60 @@
-# 复制给 Pro 的启动消息
+# 给研究执行者的启动消息：报告优先
 
-使用我在启动消息中给出的完整身份号，之后始终保持原样。编号11不能变成1，数字身份也不能截断；不按日期重分角色。先读`docs/PRO_RUNTIME.md`。在仓库根目录运行`python work.py session start --actor <我给出的身份号>`，默认工作区是`work/<完整身份号>`；已有指定路径就用全局`--workspace`恢复它。下面所有研究、模型、阶段和提交都针对这一工作区。此命令只恢复状态，你必须继续实际执行研究。
+保持用户给出的完整身份号，恢复同一工作区和run_id。先读本文件、
+`docs/RESEARCH_OPERATIONS.md`、`docs/THINKING_EXTRACTION.md`、`docs/REPORT_WRITING.md`、`docs/PRO_RUNTIME.md`，
+再读工作区现有报告、判断、研究图和未决任务。使用经济仓库根目录的work.py；
+附带的旧数学启动器不是本研究入口。新环境取得本次交付的经济分支后再运行。
 
-必须形成明确主判断，并说明机制、时间窗口和家庭行动含义；不得以防御性话术回避裁决。允许按科学建模规范建立评分或概率模型，禁止任意赋权、未经检验把分数映射为概率和虚报精度。
-
-检查已有clone和工作区；存在时运行状态命令恢复原断点，不覆盖或重复创建。新环境直接克隆本项目的公开分支：
-
-```bash
-git clone --depth 1 --single-branch --branch work/cn-crisis https://github.com/SOMEBODYJUN/co-work-anl.git cn-crisis
-cd cn-crisis
-python bootstrap.py --research
-.venv-methods/bin/python work.py methods doctor
+```sh
+python work.py session start --actor "<完整身份号>" --profile report-first
+python work.py session next --actor "<完整身份号>"
 ```
 
-若使用附带的 `CN_crisis_workbench.zip`，先解压并读取其中完整源码；也可通过包内 `repository.bundle` 建立真正的Git clone：
+已有指定工作区时，在work.py后加`--workspace "work/<原路径>"`。旧周期的失败记录保留。
+report-first明确将计算器移出报告验收，用s18_editorial检查报告；这是交付范围调整，
+不能据此宣称旧计算器已通过。计算器可另交普通编码执行者，不占本次研究时间。
 
-```bash
-git clone --branch work/cn-crisis /解压目录/cn-crisis/repository.bundle cn-crisis-run
-cd cn-crisis-run
-git remote set-url origin https://github.com/SOMEBODYJUN/co-work-anl.git
-python bootstrap.py --research
-.venv-methods/bin/python work.py methods doctor
-```
+主要产物是有主判断、解释力和事实支持的中文深度报道。读者应能看见经济主体为什么
+这样行动、哪些制度约束支配选择、成本怎样落到别人身上、什么现象暴露隐藏机制，
+以及为什么主解释胜过最强对手。先给最重要的发现，再用决定性事实和推理展开。
+程序检查、验收账、失败日志、每一条方法限制放后台文件，不能挤占报告正文。
 
-若直接使用解压的源码目录，先 `git init -b work/cn-crisis` 建立本地提交历史；不要覆盖已有Git工作区。本地提交使用当前Git身份；若新clone没有身份配置，则设置本仓库研究身份 `git config user.name 'Research Workbench'` 与 `git config user.email 'research@users.noreply.github.com'`。公开读取本分支不需要令牌。后续推送使用已给的仓库外凭据，不把凭据写入项目或结果。已有工作区先用 `.venv-methods/bin/python work.py --workspace work/<实际run> status` 读取状态，再接续。
+先接住真实输入：`research/program/questions.json`的48题是争议地图种子，不是范围
+上限或已做完的研究；`article_selection.json`是13篇实际复读的甄别记录，
+`article_manifest.json`给原文地址。依研究缺口继续搜来源、追连续文章、补不同立场。
+官方表格用于核观察、政策原文用于核制度与承诺；思维教材按实际论证选择。
+不依机构名、措辞激烈或赞成人数认定文章好坏。
 
-完整读取 `prompts/00_PRO_FIRST.md`、`docs/WORKFLOW.md`、`docs/RESEARCH_DESIGN.md`、`docs/AGENT_PLAYBOOK.md`、`docs/SCIENTIFIC_MODELS.md`、`docs/VIEWPOINT_PROGRAM.md`、`docs/METHODS.md` 与 `prompts/05_CALCULATOR_SPEC.md`，专题派工使用 `prompts/06_SPECIALIST_TASK.md`，再读 `inputs/01`—`05`。用仓库自己的 `work.py` / `crisis.py` 统一入口恢复或创建首轮工作区，按真实20阶段完成资料、观点方法学习、专题分析、可修改因果超边、测算、对抗裁决、报告写作、离线计算器、独立复核与发布。每个实质批次保存，阶段结束提交；必要时用真实子代理独立研究与复核。
+按`docs/RESEARCH_OPERATIONS.md`实际取得全文、检查阅读范围、装配reading-packet。
+把填好的TASK.txt、完整段落和提炼合同交给阅读者。阅读者提炼连贯的经济认识、
+主体模型、问题优先级、从反常线索推解释的动作与跨作者争论；保持作者原意、
+项目重构和观察的区别。不能用一篇摘要冒充作者多年思想，也不能把未读目录算实读。
 
-同时读 `docs/THINKING_FRAMEWORKS.md`、`docs/ANALYST_LEARNING.md`、`docs/MODEL_PROGRAM.md` 和 `docs/COMPUTE_BUDGET.md`。从稳定分析动作与制度约束学习，更新当期结论；先跑已接好的历史训练和银行核算，读取真实成绩及未通过项，再部署中国研究实验。使用 `compute plan/run` 保存实际输入、模型输出、代码版本和预算检查点，断点后恢复。必须作出主判断，不能只列无排序情景；不用扩大模型数量代替调查、数据和机制研究。
+普通候选尽快入图。候选机制保留方向、全部共同条件、行为选择、时间和相反解释，
+随后查询整条超边，产生可领取的下一项取证/比较/计算任务。宏观反馈可形成跨期循环；
+同一命题不能同时作为同一时点的前提与后件。禁止模型自评分、同源重复累加和
+把相互矛盾的观点抹成一句“综合认为”。承重机制由其他实际读者核论证和量级。
 
-使用Codespaces时，按计算预算文档的实际CLI连接步骤核对终端、仓库外认证、实例分支、空闲超时和本批预算；不能仅凭提示词宣称已连接。计算批次结束同步产物并主动停止对应实例。若当前执行环境具备本地CPU运行条件，也可原样执行仓库方法，明确登记实际运行位置。
+数值工具按`docs/SCIENTIFIC_MODELS.md`、`docs/MODEL_PROGRAM.md`使用。既有模型先看
+真实基线、训练/验证时间、成绩与用途；不合适就取消该预测用途并继续经济调查。
+经济裁决需要综合不完备事实、行为和制度解释，统计估计不能替代这项工作。
+计算环境和预算按`docs/COMPUTE_BUDGET.md`，计算批次结束主动停止实例。
 
-本次授权先完整贯通首轮。按`docs/RESEARCH_EXECUTION.md`分别使用数值模型、作者思考框架和机制超边；长期学习问题意识、约束和分析动作，当期观点随新事实修订。模型差就明确拒绝该用途并继续经济裁决；情绪词、目录盘点、接口测试和合成用例不能当完整分析。每批实际研究或运行，保存文件，读取`session next`的缺项并继续修复、补采和复算。
+按问题派工并行采集和研究，依赖约束的是结论合成，不是禁止提前搜索。每批保存
+来源、读书成果、候选机制、图查询用途、判断变化和下一任务。暂时取不到原文、
+下载失败或某个环境不可用时，保存可重试路线，先推进其他实质题；每批回查失败项。
+真正缺必要输入时精确记阻塞范围，不围绕一个可分离的工具耗掉整轮研究。
 
-实际完成检查后，按`examples/acceptance-template.json`结构写工作区的`research/acceptance.json`，不得预填通过。将验收记录和所有引用的检查证据纳入当前独立review，用完整身份号作`--author`，实际独立执行者作`--reviewer`，然后发布同一版本。持续执行`session check --actor <完整身份号>`；只有`complete: true`才按完成交付停止。未通过就处理具体缺项，不停在计划，不请求重复授权。遇到实际环境、输入或权限阻塞，保存可恢复断点并报告未完成，不能自造通过或承诺脱离执行环境无限运行。
+不断用新材料检验和改写主解释。报告须覆盖当前危机、最可能的传导路径、2027窗口、
+长调整假说及家庭实际处境；以可辩护的判断结束，不能仅列无排序情景。
+不拿节点数、测试数、目录数或流程结束替代经济研究完成。
 
-选定上游工具、适配器和使用说明已在本仓库；先运行自己的工具并读取已有检索与事件记录，复用适用资料。新材料通过 `targets` 挂到受影响节点；确无影响写空列表与具体 `impact_note`。新增机制与方法通过有历史依据的提案修改当前版本，独立 `proposal-review` 通过后才 `apply`，不重复搭架子、不无理由来回翻转。后续改进在已发布工作区 `init --mode update`，使用 `01_INCREMENTAL_AGENT.md`，不要把首轮流程每次重跑。
+报告profile正式文件为：formal/report.md、formal/judgments.json、
+research/thinking_context.txt、research/article_selection.json、research/question_map.json、
+research/final_review.md。实际检查后填写`examples/acceptance-report-template.json`，
+原文、框架、覆盖、模型用途、超边、主判断、编辑、独立复核和新目录恢复均须有
+同版本证据。未完成具体项就继续研究、修复和复核，不请求重复授权。
+只在当前委托范围实质完成且session check返回complete:true后声明完成。
 
-交付实质中文报告和真实可离线计算的家庭HTML，同时提交可接续源文件与当前研究状态。继续推进到成品，不停在计划。最后直接写出你的核心裁决：当前危机、最可能路径、2027年窗口、十年假说及家庭行动。必须下判断；不用免责或自造百分比收尾。
+这套CLI装配、记账与检查任务；它不自行启动付费模型，不会在会话结束后自动工作。
+若环境被强制中断，提交同一身份的精确断点；下一次继续未完成研究，而非改号重跑。

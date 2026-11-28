@@ -1,0 +1,728 @@
+{
+  "version": "v4-primary-corpus-curation-1",
+  "created_at": "2026-11-28T08:25:33.249702+00:00",
+  "purpose": "将具体作者在公开正文中如何发现问题、构造解释、作出判断和修改认识，提取为可检验的经济思维上下文。",
+  "scope": {
+    "articles": 13,
+    "new_to_scanned_project": 3,
+    "new_viewpoints": [
+      "Lardy：社会保障分项、劳动供给与消费结构变化",
+      "Chang/Wang/Xiong：地方财政与抵押融资激励内生影响价格形成"
+    ],
+    "language_originals": {
+      "Chinese": [
+        "Z24",
+        "Z26"
+      ],
+      "English": [
+        "B20",
+        "B22",
+        "B23P",
+        "B23Q",
+        "P15",
+        "P26",
+        "W23",
+        "W25",
+        "S24",
+        "L25",
+        "X25"
+      ]
+    },
+    "not_claimed": [
+      "不是500篇完成",
+      "不是作者全史蒸馏",
+      "不是独立因果识别",
+      "不是将作者立场固化为模型价值观"
+    ]
+  },
+  "selection_principles": [
+    "看文章是否真的解释一个经济异常、给出行动者的目标与约束、展示推断和对手解释；不按机构或名气选。",
+    "同一材料既可提供可迁移思考，也可含错误预测、算术或未经识别的因果主张，逐命题采用。",
+    "避免只选同向论者；保留财政空间、公共投资、消费变化和稳价代价的真实争论。",
+    "法规与统计口径用于复核事实，不能由“官方发布”推出分析见解优良。",
+    "正文先取得并定位，再提取；仅搜索摘要、目录和引文不算读过。"
+  ],
+  "ingestion_notes": [
+    "所有第三方全文仅在本地cache/raw/texts研究缓存；未授权推远端全文。",
+    "Batson通过公开WordPress正文API取得；HTML去导航。CF40直连仅24字软失败，不能算正文，已从相同原站公开阅读器恢复全文并保留原行号。",
+    "PDF保留页码；L25第一页侧栏作者简介造成的串栏已用阅读顺序提取修复。",
+    "X25公开NBER PDF成功；旧Princeton地址404和作者站尝试均有记录；最终缓存PDF封面是NBER34303，日期2025-09。"
+  ],
+  "independent_checks": [
+    {
+      "id": "check_batson_2023_sales",
+      "source": "https://www.stats.gov.cn/sj/zxfb/202401/t20240116_1946623.html",
+      "source_date": "2024-01-17",
+      "location": "原站第43、51、59行",
+      "status": "本轮回到原站正文复核",
+      "result": "全年销售面积−8.5%、销售额−6.5%，不支持B23Q当年销售乐观；竣工+17.0%须另列。"
+    },
+    {
+      "id": "check_wright_2025_revenue",
+      "source": "https://www.mof.gov.cn/zhengwuxinxi/caizhengxinwen/202601/t20260130_3983013.htm",
+      "source_date": "2026-01-30",
+      "location": "原站第41、45、48、50、74行",
+      "status": "本轮回到原站正文复核",
+      "result": "一般预算收入−1.7%，土地收入−14.7%，支持组合收入下降方向；非税−11.3%主要有中央一次性高基数因素，地方本级收入+2.4%、基金预算支出+11.3%，不能由收入方向直接推同额支出下降。"
+    },
+    {
+      "id": "check_setser_debt_arithmetic",
+      "source_article": "S24",
+      "location": {
+        "paragraph_id": "p0027"
+      },
+      "status": "本轮独立简单算术复算",
+      "assumptions": "期初债务率0.30，总赤字为当期GDP的0.03，无存流调整。",
+      "formula": "d1=0.30/(1+g)+0.03",
+      "results": {
+        "0.03": 0.3212621359223301,
+        "0.04": 0.31846153846153846
+      },
+      "result": "存量、比率均增加；这句错误不取消中央承接或有损失的分析价值。"
+    },
+    {
+      "id": "check_xiong_did_arithmetic",
+      "source_article": "X25",
+      "location": {
+        "paragraph_id": "p0124",
+        "pdf_page": 50
+      },
+      "status": "本轮回到论文主表复算",
+      "formula": "2022 adjusted LGFV log premium = -0.090 + 0.117 = 0.027; exp(0.027)-1",
+      "result": 0.02736780276348938,
+      "caveat": "这是基于已报告点估计的合成；论文未给二者协方差，不能据此断言合成项显著。0.117是相对基年的差异变化，不是2022绝对溢价。"
+    },
+    {
+      "id": "check_social_consumption_denominator",
+      "articles": [
+        "P26",
+        "L25"
+      ],
+      "status": "本轮原文口径对照",
+      "result": "P26多处讨论总消费、L25讨论家庭消费并另加实物社会转移；先统一口径，再争论方向和机制。"
+    }
+  ],
+  "cross_article_disagreements": [
+    {
+      "id": "fiscal_capacity_execution",
+      "articles": [
+        "S24",
+        "W25",
+        "B20"
+      ],
+      "disagreement": "中央资产负债表空间是否足以构成有效刺激；地方和银行约束是否压住传导。",
+      "thinking_lesson": "先分融资能力、政治偏好、执行能力、收入效果，再裁决何处真正堵塞。"
+    },
+    {
+      "id": "investment_complements_or_delays_rebalancing",
+      "articles": [
+        "P15",
+        "P26",
+        "Z24",
+        "Z26"
+      ],
+      "disagreement": "新增投资是在闲置资源条件下带动收入，还是进一步压低家庭份额、延长低回报旧模式。",
+      "thinking_lesson": "固定项目、受益人、净新增、时滞、供给约束和承损者，条件清楚后给主判断。"
+    },
+    {
+      "id": "consumer_path_is_not_oneway",
+      "articles": [
+        "P26",
+        "L25",
+        "B20"
+      ],
+      "disagreement": "金融压抑、保障制度扩张、工资份额与消费变化的因果权重。",
+      "thinking_lesson": "统一口径，按时期与群体拆开，再识别哪些制度与行为改变；不能把任一历史阶段定调永久化。"
+    },
+    {
+      "id": "stable_price_is_not_liquid_market",
+      "articles": [
+        "B22",
+        "X25",
+        "W23"
+      ],
+      "disagreement": "稳价可维护抵押融资，却也压缩成交和开发商回款；保障交付与抬资产价格不是同一政策。",
+      "thinking_lesson": "同一动作对各资产负债表的不同后果放在一起推，不能以单指标改善宣布修复。"
+    }
+  ],
+  "coverage_limits": [
+    "选样偏重地产、财政和内需，新增视角仍仅两组；制造替代、贸易政治、地方执行、人事激励、就业分层等还需系统扩展。",
+    "作者历史改判不能只靠两篇推断：这里显示Batson可核的失误、同作者跨期延续与延伸，没有伪造其道歉或改判。",
+    "文本缓存可用于真实提取试跑；提取器输出仍须抽样逐项核原文，不能因全流水线可运行就宣称学会经济思维。"
+  ],
+  "articles": [
+    {
+      "id": "B20",
+      "title": "Why China isn't sending money to everyone",
+      "author": "Andrew Batson",
+      "published_at": "2020-05-03",
+      "url": "https://andrewbatson.com/2020/05/03/why-china-isnt-sending-money-to-everyone/",
+      "text_sha256": "59b2580c0962589555a0f64aa1353f280afad6d46232fb62aadaf1af3cb5f350",
+      "prior_project_reading": true,
+      "prior_project_note": "旧项目已登记阅读；本轮重新取得原文并扩大/核对阅读，不计为新增文章。",
+      "read_scope": "逐段通读缓存正文；HTML图片图表未逐图复算，引用的第三方事实未全部回溯原始记录。",
+      "author_argument_paraphrase": "作者从中国没有采取普遍现金救助、香港却采取现金救助的差异出发，排除笼统文化解释；再从财政保守、历史福利分层和生产者优先解释政策选择。原文最后明确，这种制度遗产能够改变。",
+      "selection_reason": "同一大文化背景下的政策反例，迫使解释落到决策者的目标、受益者排序和制度历史；不是把某种价值判断当经济结论。",
+      "decision": "局部采用，具体命题分别裁决",
+      "original_locations": [
+        {
+          "purpose": "排除文化解释",
+          "paragraph_id": "p0002"
+        },
+        {
+          "purpose": "历史生产者倾向",
+          "paragraph_id": "p0010"
+        },
+        {
+          "purpose": "明确允许更新",
+          "paragraph_id": "p0012"
+        }
+      ],
+      "adopt": [
+        "采用对照案例排除空泛文化归因；把实际救助对象作为政策偏好的观察入口。",
+        "采用生产者偏好作为可更新的制度先验。"
+      ],
+      "do_not_adopt_or_still_test": [
+        "不采用“中国永远不支持家庭”的推论。",
+        "Jia Kang等人的公开建议不是最终决策者动机的直接观测。"
+      ],
+      "thinking_context_our_extraction": {
+        "transferable_habit": "当政策看起来不合经济效率时，先追谁认为哪种支出值得、谁先得到资源，再解释其目标函数如何形成。",
+        "what_question_it_adds_to_research_map": "地方财政紧张时，首先保项目、保机构、保就业还是给家庭现金？这种排序是否发生实质改变？",
+        "distinguishing_observation": "比较预算、受益范围与真实拨付；2025新增育儿补贴意味着生产者偏好不能设为永久规则。",
+        "attribution": "这些可迁移操作由本轮从原文推理结构中提取，属于我们的归纳；不是作者原句，也不是已证因果。"
+      }
+    },
+    {
+      "id": "B22",
+      "title": "China’s housing crisis is an institutional crisis",
+      "author": "Andrew Batson",
+      "published_at": "2022-07-31",
+      "url": "https://andrewbatson.com/2022/07/31/chinas-housing-crisis-is-an-institutional-crisis/",
+      "text_sha256": "49afd33c4debe91a3503bf8b068311983285d70af575faf6c0a6c6d334c24a71",
+      "prior_project_reading": true,
+      "prior_project_note": "旧项目已登记阅读；本轮重新取得原文并扩大/核对阅读，不计为新增文章。",
+      "read_scope": "逐段通读缓存正文；HTML图片图表未逐图复算，引用的第三方事实未全部回溯原始记录。",
+      "author_argument_paraphrase": "作者把2022地产危机的关键落在预售付款与交付制度：购房者先付全款，开发商能挪用资金，原有监管又未有效执行。由此解释交付不信任如何反过来压低新销售。",
+      "selection_reason": "文章给出合同、账户控制、监管放款与执行者利益之间的连接，能从“杠杆太高”推进到可调查的行为链。",
+      "decision": "局部采用，具体命题分别裁决",
+      "original_locations": [
+        {
+          "purpose": "危机的特定制度入口",
+          "paragraph_id": "p0002"
+        },
+        {
+          "purpose": "风险转移与执行失败",
+          "paragraph_id": "p0008"
+        },
+        {
+          "purpose": "可能的规避动作",
+          "paragraph_id": "p0013"
+        }
+      ],
+      "adopt": [
+        "采用区分制度设计缺陷与执行失败；逐笔追风险何时、如何转给购房者。",
+        "采用新销售与旧项目交付相互影响的机制。"
+      ],
+      "do_not_adopt_or_still_test": [
+        "文中财新与任泽平的转述只是一条引用链，不能算三份独立证据。",
+        "不把预售风险当成所有城市、所有项目完全一致。"
+      ],
+      "thinking_context_our_extraction": {
+        "transferable_habit": "法规写了什么与利益相关者实际能做什么分开；找出谁控制现金、谁承担无法交付的尾部损失。",
+        "what_question_it_adds_to_research_map": "项目账户的钱由谁批准释放？保交付为何没有自动恢复新项目购买意愿？",
+        "distinguishing_observation": "按项目查监管账户、工程进度、付款批准、实际交付与购房合同；同类项目做制度执行差异比较。",
+        "attribution": "这些可迁移操作由本轮从原文推理结构中提取，属于我们的归纳；不是作者原句，也不是已证因果。"
+      }
+    },
+    {
+      "id": "B23P",
+      "title": "The political economy of financial discipline",
+      "author": "Andrew Batson",
+      "published_at": "2023-03-09",
+      "url": "https://andrewbatson.com/2023/03/09/the-political-economy-of-financial-discipline/",
+      "text_sha256": "570d90d247378bd918cc9481731d6507d9056a151cf3c3b717a11a54924573a8",
+      "prior_project_reading": true,
+      "prior_project_note": "旧项目已登记阅读；本轮重新取得原文并扩大/核对阅读，不计为新增文章。",
+      "read_scope": "逐段通读缓存正文；HTML图片图表未逐图复算，引用的第三方事实未全部回溯原始记录。",
+      "author_argument_paraphrase": "作者以去杠杆政策的强硬为谜，提出一种政策联盟解释：重市场效率的改革派与重党的控制力的一派，目标不同却都支持金融纪律。作者自己把派别模型称为推测。",
+      "selection_reason": "价值在于展示如何从看似矛盾的政策行动推测多方利益的交集，并把潜在解释保留为可竞争命题。",
+      "decision": "局部采用，具体命题分别裁决",
+      "original_locations": [
+        {
+          "purpose": "作者对假设性质的定位",
+          "paragraph_id": "p0005"
+        },
+        {
+          "purpose": "模型可错而需更新",
+          "paragraph_id": "p0010"
+        }
+      ],
+      "adopt": [
+        "采用“同意一项政策不等于同意其目的”的联盟思考。",
+        "采用目标改变会使政策联盟失稳这一动态问题。"
+      ],
+      "do_not_adopt_or_still_test": [
+        "不把两种派别、成员边界或内部意图登记为已观察事实。",
+        "金融资产占GDP变化与政治联盟之间不能仅凭同步变动认定因果。"
+      ],
+      "thinking_context_our_extraction": {
+        "transferable_habit": "不要给整个国家安一个恒定、单一、理性的偏好；寻找暂时利益交集，以及交集破裂后的执行变化。",
+        "what_question_it_adds_to_research_map": "限制地方与私人杠杆分别服务谁的目标？为什么同一工具会被不同部门共同推动？",
+        "distinguishing_observation": "查同一时期的任命、监管实施、豁免与执法对象变化，并与单纯风险控制解释比较。",
+        "attribution": "这些可迁移操作由本轮从原文推理结构中提取，属于我们的归纳；不是作者原句，也不是已证因果。"
+      }
+    },
+    {
+      "id": "B23Q",
+      "title": "Beijing Q&A on growth and security",
+      "author": "Andrew Batson",
+      "published_at": "2023-05-18",
+      "url": "https://andrewbatson.com/2023/05/18/beijing-qa-on-growth-and-security/",
+      "text_sha256": "15728ccf42dcebcfb5113a6cb42ccb87859208875d685e620b9f674d5501af95",
+      "prior_project_reading": true,
+      "prior_project_note": "旧项目已登记阅读；本轮重新取得原文并扩大/核对阅读，不计为新增文章。",
+      "read_scope": "逐段通读缓存正文；HTML图片图表未逐图复算，引用的第三方事实未全部回溯原始记录。",
+      "author_argument_paraphrase": "作者同时谈疫情后恢复、地产长期需求峰值、当年销售改善、安全导向产业政策和GDP目标的约束功能。2023当年销售乐观与长期地产收缩是两个不同命题，不能互相替代。",
+      "selection_reason": "保留同一作者的真实失误而不抹去其他洞见；且全文包含税制、就业错配、外资布局和安全目标，不能只抽一段地产。",
+      "decision": "局部采用，具体命题分别裁决",
+      "original_locations": [
+        {
+          "purpose": "销售预测",
+          "paragraph_id": "p0038"
+        },
+        {
+          "purpose": "增长目标也能约束其他行为",
+          "paragraph_id": "p0062"
+        },
+        {
+          "purpose": "安全与增长排序",
+          "paragraph_id": "p0043"
+        }
+      ],
+      "adopt": [
+        "采用短期现金恢复与长期需求平台分开；安全、控制和增长目标的排序会改变投资选择。",
+        "采用GDP目标既能造成激励扭曲，也能限制其他政策对增长冲击的双重作用。"
+      ],
+      "do_not_adopt_or_still_test": [
+        "不采用当年销售乐观为成功预测：NBS全年销售面积−8.5%、销售额−6.5%。",
+        "2023疫情后恢复材料不能直接充当2026现状证据。"
+      ],
+      "thinking_context_our_extraction": {
+        "transferable_habit": "遇到矛盾数据时先区分时间尺度和决策目标，再判断哪个机制主导；同一政策可同时产生约束与扭曲。",
+        "what_question_it_adds_to_research_map": "新产业的资本、工资和税基替代，能否在受损地区、受损群体和同一时期发生？",
+        "distinguishing_observation": "跟踪新销售、施工、交付、用工、工资、税源分别变化；不以竣工改善冲销销售预测失误。",
+        "attribution": "这些可迁移操作由本轮从原文推理结构中提取，属于我们的归纳；不是作者原句，也不是已证因果。"
+      }
+    },
+    {
+      "id": "P15",
+      "title": "If We Don’t Understand Both Sides of China’s Balance Sheet, We Understand Neither",
+      "author": "Michael Pettis",
+      "published_at": "2015-09-02",
+      "url": "https://carnegieendowment.org/china-financial-markets/2015/09/if-we-dont-understand-both-sides-of-chinas-balance-sheet-we-understand-neither",
+      "text_sha256": "1357462ffb769e732ef97d2e186435c017cdb44722e6739354f0f61917f90706",
+      "prior_project_reading": true,
+      "prior_project_note": "旧项目已登记阅读；本轮重新取得原文并扩大/核对阅读，不计为新增文章。",
+      "read_scope": "逐段通读缓存正文；HTML图片图表未逐图复算，引用的第三方事实未全部回溯原始记录。",
+      "author_argument_paraphrase": "作者与Lardy对同一批事实得出不同判断，原因在于如何理解资产负债表反馈：增长、信用与抵押价值同向时放大繁荣，逆转后放大收缩；即使没有突然银行崩溃，承损分配的不确定也会使各方自保并压低活动。",
+      "selection_reason": "它直接展示经济认识如何改变事实解释：总债务与崩盘概率只是入口，关键是相互联结的资产负债表和行动者的自保行为。",
+      "decision": "局部采用，具体命题分别裁决",
+      "original_locations": [
+        {
+          "purpose": "作者自己呈现与Lardy的分歧",
+          "paragraph_id": "p0009"
+        },
+        {
+          "purpose": "承损不确定与行为",
+          "paragraph_id": "p0035"
+        },
+        {
+          "purpose": "必须拒绝的历史概括",
+          "paragraph_id": "p0017"
+        }
+      ],
+      "adopt": [
+        "采用债务结构、再融资和承损归属共同决定行为的解释。",
+        "采用持续损害可以先于、也不必以突然银行危机的形式发生。"
+      ],
+      "do_not_adopt_or_still_test": [
+        "拒绝将“日本从无金融危机”当事实：旧项目已与日本1997危机标签核对不符；本轮未重做该历史数据库。",
+        "强增长预测必须固定窗口另验；不因后来的放缓追认全文正确。"
+      ],
+      "thinking_context_our_extraction": {
+        "transferable_habit": "先画出谁的收入是别人的资产回报、谁的抵押物与偿债收入一起下跌，再推每个主体为自保会做什么，以及这些行动如何互相伤害。",
+        "what_question_it_adds_to_research_map": "在没有银行挤兑时，什么真实损失正在经低利息、欠款、工资、税费与减少投资分配？",
+        "distinguishing_observation": "观察资金外流、到期缩短、私人投资、地方保护与银行向有担保主体集中，辨认是否同一反馈链。",
+        "attribution": "这些可迁移操作由本轮从原文推理结构中提取，属于我们的归纳；不是作者原句，也不是已证因果。"
+      }
+    },
+    {
+      "id": "P26",
+      "title": "Who Paid for China’s Last Debt Cleanup, and Who Will Pay for the Next?",
+      "author": "Michael Pettis",
+      "published_at": "2026-08-25",
+      "url": "https://carnegieendowment.org/china-financial-markets/2026/08/who-paid-for-chinas-last-debt-cleanup-and-who-will-pay-for-the-next",
+      "text_sha256": "eab26a146d1a71f93c96569bac8fd7b5e5052e061141eaaeb6c8d3fd877a7a20",
+      "prior_project_reading": false,
+      "prior_project_note": "未在已扫描的 INITIAL_READING.md / boss 1 framework_cards.md 找到这篇；属于本轮新增原文。",
+      "read_scope": "逐段通读缓存正文；HTML图片图表未逐图复算，引用的第三方事实未全部回溯原始记录。",
+      "author_argument_paraphrase": "作者以2000年代银行清理为线索，主张坏债转给AMC不等于损失消失，主要成本通过压低储蓄回报由家庭吸收，并影响消费、投资与外部盈余；今天再用同样办法的空间更小。",
+      "selection_reason": "补足P15之后的历史解释：同一“清理成功”事件要同时看银行账目改善与谁持续支付成本，显示政策成功标准会因观察对象而变。",
+      "decision": "局部采用，具体命题分别裁决",
+      "original_locations": [
+        {
+          "purpose": "承损分配框架",
+          "paragraph_id": "p0010"
+        },
+        {
+          "purpose": "量级主张待复算",
+          "paragraph_id": "p0024"
+        },
+        {
+          "purpose": "政府承担路径",
+          "paragraph_id": "p0043"
+        }
+      ],
+      "adopt": [
+        "采用穿透AMC、银行、政府与家庭的最终承损追踪。",
+        "采用“修复金融机构”可能加深收入结构失衡的跨目标权衡。"
+      ],
+      "do_not_adopt_or_still_test": [
+        "文中金融压抑每年最多5%GDP的量级和主导因果贡献，本轮未独立估计，不进入模型参数。",
+        "P26用总消费，Lardy多处用家庭消费；先统一分母，不能制造假矛盾。",
+        "不从必须承损推出损失只能靠家庭支付，也不把资产出售的效率排序当已证事实。"
+      ],
+      "thinking_context_our_extraction": {
+        "transferable_habit": "一个部门账面问题解决后，追第二轮分配与行为后果；政策的“成功”必须追踪谁付钱、付多久和因此放弃什么。",
+        "what_question_it_adds_to_research_map": "这次地方债与银行修复的实际成本是否转成低储蓄收益、私人欠款或工资压力？是否出现不同承损安排？",
+        "distinguishing_observation": "跟踪净转移、存贷实际利差、资产出售、减记和家庭收入份额；与劳动力供给及生产率解释比较。",
+        "attribution": "这些可迁移操作由本轮从原文推理结构中提取，属于我们的归纳；不是作者原句，也不是已证因果。"
+      }
+    },
+    {
+      "id": "W23",
+      "title": "The End of China’s Magical Credit Machine",
+      "author": "Logan Wright",
+      "published_at": "2023-01-05",
+      "url": "https://rhg.com/research/magical-credit-machine/",
+      "text_sha256": "15311813fd23522e1069db8afd6dbe891088eb644905fa560167833620bddae6",
+      "prior_project_reading": true,
+      "prior_project_note": "旧项目已登记阅读；本轮重新取得原文并扩大/核对阅读，不计为新增文章。",
+      "read_scope": "逐段通读缓存正文；HTML图片图表未逐图复算，引用的第三方事实未全部回溯原始记录。",
+      "author_argument_paraphrase": "作者把信用放缓拆为私人借款需求下降、担保可信度下降后的放贷者避险、银行资本与盈利约束。低票据利率等细节被用于辨认缺借款需求，资产类型违约的扩展被用于辨认担保信念变化。",
+      "selection_reason": "不是把信用增速低作为单一结论，而是把同一观察背后的三种机制拆开，给出不同可观察迹象。",
+      "decision": "局部采用，具体命题分别裁决",
+      "original_locations": [
+        {
+          "purpose": "低票据利率这一线索",
+          "paragraph_id": "p0012"
+        },
+        {
+          "purpose": "地域担保边界",
+          "paragraph_id": "p0021"
+        },
+        {
+          "purpose": "资本约束",
+          "paragraph_id": "p0024"
+        }
+      ],
+      "adopt": [
+        "采用需求、风险配置和供给资本三种信用机制的区分。",
+        "采用违约顺序与地域对手风险来观察隐性担保的边界变化。"
+      ],
+      "do_not_adopt_or_still_test": [
+        "12%—13%信用增速上限是作者当时预测，不是会计定律。",
+        "总量信用弱不代表所有私人、国有、地方与家庭主体同样收缩；需分组。"
+      ],
+      "thinking_context_our_extraction": {
+        "transferable_habit": "从小市场价格、交易对象和违约次序辨认资金为何没有流动，不把一项总量变化直接当成唯一原因。",
+        "what_question_it_adds_to_research_map": "银行不放款是没人借、怕损失、受资本限制，还是把额度交给了政治上更安全的主体？",
+        "distinguishing_observation": "并看票据利率、贷款意愿、拒贷、风险溢价、银行资本和借款人分组，而非只看贷款余额。",
+        "attribution": "这些可迁移操作由本轮从原文推理结构中提取，属于我们的归纳；不是作者原句，也不是已证因果。"
+      }
+    },
+    {
+      "id": "W25",
+      "title": "China’s Harsh Fiscal Winter",
+      "author": "Logan Wright",
+      "published_at": "2025-03-24",
+      "url": "https://rhg.com/research/chinas-harsh-fiscal-winter/",
+      "text_sha256": "68526c2291526b22e8cdd54b72585339b5f33c810dd8e38cd2452274539947b9",
+      "prior_project_reading": true,
+      "prior_project_note": "旧项目已登记阅读；本轮重新取得原文并扩大/核对阅读，不计为新增文章。",
+      "read_scope": "逐段通读缓存正文；HTML图片图表未逐图复算，引用的第三方事实未全部回溯原始记录。",
+      "author_argument_paraphrase": "作者从预算隐含的微弱收入增长和已有土地收入下降，推断财政权衡已经到来；随后直接回应Setser，追问中央能融资之后，银行能否吸收、地方如何执行、支出能否形成增长。",
+      "selection_reason": "正文包含真实对手观点和政策传导约束，可训练“能力—选择—执行—效果”四个问题分开裁决。",
+      "decision": "局部采用，具体命题分别裁决",
+      "original_locations": [
+        {
+          "purpose": "预算中被埋的线索",
+          "paragraph_id": "p0002"
+        },
+        {
+          "purpose": "直接回应Setser",
+          "paragraph_id": "p0017"
+        },
+        {
+          "purpose": "银行吸收问题",
+          "paragraph_id": "p0016"
+        }
+      ],
+      "adopt": [
+        "采用从预算中的隐含数量寻找官方叙事以外的约束。",
+        "采用中央融资与地方执行不是同一问题；收入减少不直接等于同额支出减少。"
+      ],
+      "do_not_adopt_or_still_test": [
+        "一般预算收入下降方向获得2025MOF数据支持，但非税下降有中央一次性基数因素，不能全部解释为地方少征收。",
+        "国债吸收不必一元挤出一元私人贷款；要检查风险权重、资本、准备金与借款需求。",
+        "央行“其他投资者”代理与买断式回购的解释不能等同已披露的永久国债持仓。"
+      ],
+      "thinking_context_our_extraction": {
+        "transferable_habit": "在大叙事里找一处不相容的预算数，再向财政来源、银行账户和实际付款追查；同时问这条约束是否能被其他行动者改变。",
+        "what_question_it_adds_to_research_map": "收入约束到底落在中央融资、地方支出、拖欠还是银行资产配置？哪些地区和群体最先受影响？",
+        "distinguishing_observation": "核分级财政收入、转移、债券净融资、实际拨付与欠款；同时核银行资本和私人贷款需求。",
+        "attribution": "这些可迁移操作由本轮从原文推理结构中提取，属于我们的归纳；不是作者原句，也不是已证因果。"
+      }
+    },
+    {
+      "id": "S24",
+      "title": "Beijing Still Has Fiscal Space",
+      "author": "Brad W. Setser",
+      "published_at": "2024-09-30",
+      "url": "https://www.cfr.org/articles/beijing-still-has-fiscal-space",
+      "text_sha256": "5d3d49fd0e69df9304ee855c97ec62beed5455f1217818bbb1bba342dbc43ad9",
+      "prior_project_reading": true,
+      "prior_project_note": "旧项目已登记阅读；本轮重新取得原文并扩大/核对阅读，不计为新增文章。",
+      "read_scope": "逐段通读缓存正文；HTML图片图表未逐图复算，引用的第三方事实未全部回溯原始记录。",
+      "author_argument_paraphrase": "作者反对把所有地方与平台债务整额加到中央，主张从中央直接债务、资产和须承担的或有损失来算财政空间；他把是否扩大国内需求与未来对贸易伙伴的压力连在一起。",
+      "selection_reason": "它构成Wright强约束论的明确竞争解释，并把财政分析从单国债务率扩展到全球需求的相互约束。",
+      "decision": "局部采用，具体命题分别裁决",
+      "original_locations": [
+        {
+          "purpose": "或有责任而非全额相加",
+          "paragraph_id": "p0022"
+        },
+        {
+          "purpose": "需要纠错的债务算术",
+          "paragraph_id": "p0027"
+        },
+        {
+          "purpose": "资产和净债务",
+          "paragraph_id": "p0014"
+        }
+      ],
+      "adopt": [
+        "采用显性债务、或有损失、公共资产分别列账。",
+        "采用中央具有承接能力与地方现金受限能够同时成立。"
+      ],
+      "do_not_adopt_or_still_test": [
+        "损失率为作者情景假设，本轮不当作经验参数。",
+        "拒绝文中30%债务率、3%总赤字、3%—4%名义增长不增债的算术；期末债务率约31.85%—32.13%。",
+        "公共股权估值不是当天可支配现金，资产与负债可能受同一冲击。"
+      ],
+      "thinking_context_our_extraction": {
+        "transferable_habit": "改变账目边界可能改变结论，先问法律偿债主体、政治承接对象和资产可动用性；再追本国调整需要别人吸收什么。",
+        "what_question_it_adds_to_research_map": "中央实际选择承接多少损失、以什么工具给地方或家庭支付？如果不做，外需会被要求承担多大调整？",
+        "distinguishing_observation": "核债务归属、减记、增资、净拨付和外部收支；比较财政扩张与出口依赖的替代路径。",
+        "attribution": "这些可迁移操作由本轮从原文推理结构中提取，属于我们的归纳；不是作者原句，也不是已证因果。"
+      }
+    },
+    {
+      "id": "Z24",
+      "title": "理解需求不足才能阻断需求不足",
+      "author": "张斌",
+      "published_at": "2024-09-11",
+      "url": "https://cf40.org.cn/article/1/4821",
+      "text_sha256": "2da2d81e12f845401e29f8f75f3bf20dc4d92573ecbc2f260a32e3e96eea9737",
+      "prior_project_reading": true,
+      "prior_project_note": "旧项目已登记阅读；本轮重新取得原文并扩大/核对阅读，不计为新增文章。",
+      "read_scope": "逐段通读缓存正文；HTML图片图表未逐图复算，引用的第三方事实未全部回溯原始记录。",
+      "author_argument_paraphrase": "作者把需求不足的最初诱因与随后自我延续的支出—收入—信贷反馈分开；强调微观主体合理自保可能使整体更坏，政策应先打断投资、利润和信用等快变量的下行。",
+      "selection_reason": "中文原文给出了清晰的问题重构，不只列宏观指标；短期反馈治理与长期结构改革有不同时间尺度。",
+      "decision": "局部采用，具体命题分别裁决",
+      "original_locations": [
+        {
+          "purpose": "分解并不能直接识别因果",
+          "paragraph_id": "p0015"
+        },
+        {
+          "purpose": "触发与反馈",
+          "paragraph_id": "p0016"
+        },
+        {
+          "purpose": "快慢变量",
+          "paragraph_id": "p0020"
+        }
+      ],
+      "adopt": [
+        "采用触发原因与持续机制分开、微观理性与整体结果分开。",
+        "采用快变量与慢变量的时滞差异来选择调查顺序和干预入口。"
+      ],
+      "do_not_adopt_or_still_test": [
+        "广义信用与GDP的会计分解不能识别信用下降是原因还是收入预期变化的结果。",
+        "原文对日本2013以后结果的强归因，本轮未完成独立历史识别。"
+      ],
+      "thinking_context_our_extraction": {
+        "transferable_habit": "调查开始问什么触发了问题，推进后必须再问：即使移除触发物，哪些相互反应仍会让它继续？",
+        "what_question_it_adds_to_research_map": "地产冲击以后，谁的削减支出转为谁的收入减少，反馈现在由利润、信用、工资还是财政拖欠主导？",
+        "distinguishing_observation": "比较触发因素消退后的持续性与分组资金流；观察政策何时打断同一链条。",
+        "attribution": "这些可迁移操作由本轮从原文推理结构中提取，属于我们的归纳；不是作者原句，也不是已证因果。"
+      }
+    },
+    {
+      "id": "Z26",
+      "title": "打破需求不足的政策选择",
+      "author": "张斌",
+      "published_at": "2026-04-06",
+      "url": "https://www.cf40.org.cn/article/1/289274",
+      "text_sha256": "1e0810327a0c8a76b5523d489865d28e79d12dc17a1866d5e54ad43ede98295c",
+      "prior_project_reading": true,
+      "prior_project_note": "旧项目已登记阅读；本轮重新取得原文并扩大/核对阅读，不计为新增文章。",
+      "read_scope": "逐段通读缓存正文；HTML图片图表未逐图复算，引用的第三方事实未全部回溯原始记录。",
+      "author_argument_paraphrase": "作者把需求不足扩展到营商环境、弱势就业、外贸摩擦和金融稳定，并主张资源闲置时投资和消费可以互补，短期应以强逆周期政策阻断反馈，而非等待结构改革全部完成。",
+      "selection_reason": "和Pettis的投资再平衡框架存在真分歧：新增公共投资究竟是填补闲置需求，还是延长旧模式，要靠条件区分，不能把双方摘要合成一句空话。",
+      "decision": "局部采用，具体命题分别裁决",
+      "original_locations": [
+        {
+          "purpose": "微观理性与整体恶化",
+          "paragraph_id": "p0041"
+        },
+        {
+          "purpose": "快慢传导",
+          "paragraph_id": "p0043"
+        },
+        {
+          "purpose": "与投资压缩论的真分歧",
+          "paragraph_id": "p0059"
+        }
+      ],
+      "adopt": [
+        "采用主体自保会内生恶化整体、政策时点影响总成本。",
+        "采用需求不足下的投资消费互补作为竞争机制。"
+      ],
+      "do_not_adopt_or_still_test": [
+        "不把“快变量”自动等同所有公共投资更有效；需看项目、到账对象和时滞。",
+        "投资消费共变不能单独证明互补因果；不把足够强政策可迅速解决问题当无条件保证。"
+      ],
+      "thinking_context_our_extraction": {
+        "transferable_habit": "在不同约束状态下，同一个政策的经济意义会变：资源闲置、供给受限、外部受限和债务负担高不能用同一反应函数。",
+        "what_question_it_adds_to_research_map": "当前约束是需求还是供给？新增支出修复私人收入还是只滚续旧债？",
+        "distinguishing_observation": "比较净新增现金、闲置产能、盈利、工资与私人投资的先后变化，并对公共项目和居民转移作可比分析。",
+        "attribution": "这些可迁移操作由本轮从原文推理结构中提取，属于我们的归纳；不是作者原句，也不是已证因果。"
+      }
+    },
+    {
+      "id": "L25",
+      "title": "Does a Weak Social Safety Net Hold Back Private Consumption in China?",
+      "author": "Nicholas R. Lardy",
+      "published_at": "2025-12",
+      "url": "https://www.piie.com/sites/default/files/2025-12/pb25-7.pdf",
+      "text_sha256": "038b18c29f635464ab250b9014056fc8917975b69f8f51b7a2f40717c6d4eca0",
+      "prior_project_reading": false,
+      "prior_project_note": "未在已扫描的 INITIAL_READING.md / boss 1 framework_cards.md 找到这篇；属于本轮新增原文。",
+      "read_scope": "通读PDF第1—15页正文与第4—5页表1、表2；第16—17页参考文献已保留但未逐条回溯，未重新估计消费因果效应。",
+      "author_argument_paraphrase": "作者反驳“保障一直很弱、消费一直恶化”的固定叙事：展示保障覆盖和支出扩张、2010后家庭消费占比回升，并以劳动力供给、工资份额和储蓄行为解释分期变化；也列出农村低待遇、失业保障窄和财政不可持续等缺口。",
+      "selection_reason": "新增相反视角，且给出分项制度、同发展阶段比较及可追溯表格；允许在经济压力中看到真实改善，避免先定悲观结论再选材料。",
+      "decision": "局部采用，具体命题分别裁决",
+      "original_locations": [
+        {
+          "purpose": "挑战固定叙事",
+          "paragraph_id": "p0004",
+          "pdf_page": 1
+        },
+        {
+          "purpose": "劳动力与工资机制",
+          "paragraph_id": "p0059",
+          "pdf_page": 12
+        },
+        {
+          "purpose": "金融压抑与目标储蓄",
+          "paragraph_id": "p0073",
+          "pdf_page": 13
+        },
+        {
+          "purpose": "制度待遇差异",
+          "paragraph_id": "p0035",
+          "pdf_page": 5
+        }
+      ],
+      "adopt": [
+        "采用水平、变化方向和群体分配分开；加入同发展阶段比较。",
+        "采用低利率可能使目标储蓄者增加储蓄的行为机制，而非假定利率下降总能刺激消费。"
+      ],
+      "do_not_adopt_or_still_test": [
+        "2010后共变没有单独识别保障支出的消费因果贡献。",
+        "劳动人口减少不保证工资份额必升：需求、议价和就业结构也会变化。",
+        "平均覆盖率不等于待遇充分；表2退休人数与待遇含估算。"
+      ],
+      "thinking_context_our_extraction": {
+        "transferable_habit": "强叙事也要找被它遮住的改进；把制度覆盖、待遇、可持续融资和实际行为四项拆开，借变化点检验机制是否换了。",
+        "what_question_it_adds_to_research_map": "谁从保障扩张获得真实收入，谁仍被排除？工资份额和目标储蓄如何改变消费，而不是只问消费信心低不低？",
+        "distinguishing_observation": "对照不同养老金与医疗计划、退休及劳动收入，核同口径消费与实物社会转移；检验2010前后解释是否成立。",
+        "attribution": "这些可迁移操作由本轮从原文推理结构中提取，属于我们的归纳；不是作者原句，也不是已证因果。"
+      }
+    },
+    {
+      "id": "X25",
+      "title": "Price and Volume Divergence in China’s Real Estate Markets: The Role of Local Governments",
+      "author": [
+        "Jeffery (Jinfan) Chang",
+        "Yuheng Wang",
+        "Wei Xiong"
+      ],
+      "published_at": "2025-09",
+      "url": "https://www.nber.org/system/files/working_papers/w34303/w34303.pdf",
+      "text_sha256": "79d5281b051494d81b40b630b7fb9e59883949f4b67d53895b9049538fcfb748",
+      "prior_project_reading": false,
+      "prior_project_note": "未在已扫描的 INITIAL_READING.md / boss 1 framework_cards.md 找到这篇；属于本轮新增原文。",
+      "read_scope": "通读PDF第1—37页（正文页1—35含封面），核第50页表8；其他主表与网络附录只作定位浏览，未逐行审计、未重估商业底层数据。",
+      "author_argument_paraphrase": "作者从地产价格上升而成交减少的异常出发，推测地方政府为保土地收入和抵押融资而托价；再用高财政依赖城市、平台买地、流拍与销售许可的差异检验，并考察对开发商现金的代价。",
+      "selection_reason": "新增地方激励与价格形成视角，完整展示“异常—行动者约束—竞争解释—判别线索—跨主体代价”的经济推理。",
+      "decision": "局部采用，具体命题分别裁决",
+      "original_locations": [
+        {
+          "purpose": "区分供给短缺解释",
+          "paragraph_id": "p0060",
+          "pdf_page": 19
+        },
+        {
+          "purpose": "准实验与条件",
+          "paragraph_id": "p0074",
+          "pdf_page": 22
+        },
+        {
+          "purpose": "地块质量竞争解释",
+          "paragraph_id": "p0086",
+          "pdf_page": 27
+        },
+        {
+          "purpose": "银行融资关联的识别边界",
+          "paragraph_id": "p0101",
+          "pdf_page": 32
+        },
+        {
+          "purpose": "需重算的表8",
+          "paragraph_id": "p0124",
+          "pdf_page": 50
+        }
+      ],
+      "adopt": [
+        "采用先解释价格由谁形成，再把稳价与流动性、抵押融资及开发商回款分开。",
+        "采用流拍、平台买地、地块质量与城市财政暴露联合检验单一解释。"
+      ],
+      "do_not_adopt_or_still_test": [
+        "疫情是共同冲击；财政依赖非随机，平行趋势未拒绝不等于已经证明唯一因果。",
+        "同一论文多项结果不算独立来源；部分数据来自商业库，本轮未重新取得底层样本。",
+        "摘要把2022交互项0.117写成绝对溢价，按表8须与基线−0.090相加；不照抄11.7%绝对溢价。",
+        "制度背景“所有土地国有”的笼统句不采用；本文对象是城市一级住宅土地市场。"
+      ],
+      "thinking_context_our_extraction": {
+        "transferable_habit": "先抓违反常见机制预期的细节，再找谁为保住哪项账面指标愿意牺牲交易；提出能把自己和其他解释区分开的联合观察。",
+        "what_question_it_adds_to_research_map": "稳住地价保护了谁的融资，又压住了谁的现金回流？为什么更脆弱的地方反而更想守价格？",
+        "distinguishing_observation": "同一城市联合查供地、流拍、买方身份、抵押估值、平台杠杆与开发商实际成交，比较财政依赖不同城市。",
+        "attribution": "这些可迁移操作由本轮从原文推理结构中提取，属于我们的归纳；不是作者原句，也不是已证因果。"
+      }
+    }
+  ]
+}

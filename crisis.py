@@ -23,6 +23,8 @@ def main():
             print(json.dumps(result, ensure_ascii=False, indent=2, default=str))
         if args.command == "session" and args.session_command == "check" and not result["complete"]:
             return 3
+        if args.command == 'analysts' and args.analyst_command == 'check-result' and not result['ok']:
+            return 3
     except (ValueError, RuntimeError, OSError, KeyError) as exc:
         print(json.dumps({"ok": False, "error": str(exc)}, ensure_ascii=False), file=sys.stderr)
         return 2

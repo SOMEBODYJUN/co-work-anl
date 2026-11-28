@@ -2,7 +2,9 @@
 
 从明确判断出发，把材料、分析、计算、写作和持续修订接成一个能恢复的研究过程。
 
-首轮Pro执行 **20阶段**，交付经济报告、离线家庭计算器和可接续源文件。后续研究agent执行 **8阶段**，从旧结论、检索记录、因果传导链和修改历史出发，补充、加强、替换或撤回具体内容。所有核心问题都要给主判断；允许科学建模和评分，禁止任意赋权、未经检验映射概率和伪精确数值。评分与概率模型遵守 [科学建模规范](docs/SCIENTIFIC_MODELS.md)。
+当前首轮采用**报告优先**：经济思维、争议研究图与深度报告是主要交付，计算器另作编码任务。显式使用`session start --actor "<完整身份>" --profile report-first`，第18阶段改为报告编辑。旧20阶段合并模式保留重放记录。后续研究agent执行 **8阶段**，从旧结论、检索记录、机制和修改历史出发，补充、加强、替换或撤回具体内容。所有核心问题都要给主判断；科学评分与概率模型遵守 [科学建模规范](docs/SCIENTIFIC_MODELS.md)。
+
+先看[实际研究入口](docs/RESEARCH_OPERATIONS.md)、[真实文章清单](research/program/READING_LIST.md)、[思维提炼合同](docs/THINKING_EXTRACTION.md)与[48个研究问题](research/program/questions.json)。题目是起始任务，不是已完成的分析。后台验收不代替经济认识。
 
 ## 直接启动
 
@@ -26,13 +28,13 @@ python bootstrap.py --research
 .venv-methods/bin/python work.py --help
 ```
 
-读取 [Pro首轮完整执行词](prompts/00_PRO_FIRST.md)，发送 [启动词](prompts/04_LAUNCH.md)。`bootstrap.py`从精确版本的PyPI包安装计算依赖；选定上游代码、许可、方法材料和本题适配器都在本仓，无须再clone其他GitHub仓库。
+发送[当前启动词](prompts/04_LAUNCH.md)。`bootstrap.py`从精确版本的PyPI包安装计算依赖；正文HTML提取使用环境内的lxml，PDF提取需pdftotext或实际阅读器桥接。选定上游方法的具体取用见思维提炼合同。
 
 核心账本、来源采集、检索复用、超边和版本管理使用Python标准库。可先不安装计算环境，直接 `python work.py --workspace work/cn-v0 init`。完整模型计算再用 `.venv-methods/bin/python` 运行。Windows对应 `.venv-methods/Scripts/python.exe`。
 
 ## 真实输入入库
 
-启动消息只需指定一个完整身份号。仓库根目录运行`python work.py session start --actor Boss11`，默认恢复`work/Boss11`，编号不会变成Boss1；后续研究命令显式使用`--workspace work/Boss11`。`session next`给实际缺项，`session check`在当前阶段、实质验收、独立复核及发布全部通过后才返回完成；未过继续修复。详见[固定身份与验收循环](docs/PRO_RUNTIME.md)和[数据、模型与框架如何协作](docs/RESEARCH_EXECUTION.md)。
+启动消息只需指定一个完整身份号。仓库根目录运行`python work.py session start --actor Boss11 --profile report-first`，默认恢复`work/Boss11`，编号不会变成Boss1；后续研究命令显式使用`--workspace work/Boss11`。`session next`给实际缺项，`session check`在当前阶段、实质验收、独立复核及发布全部通过后才返回完成；未过继续修复。详见[固定身份与验收循环](docs/PRO_RUNTIME.md)和[数据、模型与框架如何协作](docs/RESEARCH_EXECUTION.md)。
 
 ```sh
 python work.py --workspace work/cn-v0 init

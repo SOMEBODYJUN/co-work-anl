@@ -2,9 +2,14 @@
 
 本分支只服务中国经济危机研究，与同仓数学分支独立。入口 `python work.py --help`。
 
+当前报告优先工作按`docs/RESEARCH_OPERATIONS.md`和`docs/THINKING_EXTRACTION.md`。
+显式`session start --profile report-first`移除计算器/离线UI的报告门槛；旧默认周期保留原验收语义。
+先给工作者真实正文、段落定位、明确问题与可执行命令；几十字摘要不充当原文。
+主题起始任务见`research/program/questions.json`，不是研究范围上限。暂时补采失败只影响该子任务。
+
 固定身份和验收执行`docs/PRO_RUNTIME.md`。`session start/next/check --actor <完整身份号>`恢复同一工作区、run_id和周期，编号不截断、不按日期重派。首轮先完整贯通，再据新证据增量深化；可完成工作继续到实质验收通过。数值模型、观点框架与超边职责见`docs/RESEARCH_EXECUTION.md`；当前超边不是已经训练并验证的神经网络。
 
-首轮读 `prompts/00_PRO_FIRST.md`，增量轮读 `prompts/01_INCREMENTAL_AGENT.md`。主代理处理Git提交和正式版本合并；工作者分别保存观点、证据、机制、替换文字与复算结果。
+首轮先读 `prompts/04_LAUNCH.md`；`prompts/00_PRO_FIRST.md`仅保留旧合并模式说明，增量轮读 `prompts/01_INCREMENTAL_AGENT.md`。主代理处理Git提交和正式版本合并；工作者分别保存观点、证据、机制、替换文字与复算结果。
 
 每个核心问题必须给出主判断、机制、时间窗口和行动含义。用实际研究消解争议；不要用免责话语代替分析。允许建立有机制依据、估计方法和独立验证的评分或概率模型；禁止任意赋权、未经检验把分数映射为概率和虚报精度。正常财务会计、合同还款和可复现的新模型照常研究，执行 `docs/SCIENTIFIC_MODELS.md`。
 

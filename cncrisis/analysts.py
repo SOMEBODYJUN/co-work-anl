@@ -71,3 +71,5 @@ def register_cli(subparsers):
     p.add_argument("--output", required=True)
     p.add_argument("--max-pages", type=int, choices=range(1, 101), default=30)
     p.set_defaults(func=inventory)
+    from . import reading
+    reading.register_cli(subs)

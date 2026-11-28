@@ -1,0 +1,113 @@
+{
+  "model": "gpt-6-luna/low",
+  "api_used": false,
+  "reading_scope": {
+    "method": "分批读取 documents.json 中全部 articles[].paragraphs[].text 原文；对输出截断风险较高的Z26、S24再次单篇完整读取。",
+    "articles": [
+      {
+        "article_id": "P15",
+        "paragraphs": "p0001-p0042",
+        "characters": 25205,
+        "complete": true
+      },
+      {
+        "article_id": "B20",
+        "paragraphs": "p0001-p0013",
+        "characters": 7393,
+        "complete": true
+      },
+      {
+        "article_id": "B23P",
+        "paragraphs": "p0001-p0010",
+        "characters": 5066,
+        "complete": true
+      },
+      {
+        "article_id": "W25",
+        "paragraphs": "p0001-p0028",
+        "characters": 14327,
+        "complete": true
+      },
+      {
+        "article_id": "Z26",
+        "paragraphs": "p0001-p0062",
+        "characters": 5528,
+        "complete": true
+      },
+      {
+        "article_id": "S24",
+        "paragraphs": "p0001-p0068",
+        "characters": 18890,
+        "complete": true
+      },
+      {
+        "article_id": "Z24",
+        "paragraphs": "p0001-p0028",
+        "characters": 3532,
+        "complete": true
+      },
+      {
+        "article_id": "P26",
+        "paragraphs": "p0001-p0045",
+        "characters": 18585,
+        "complete": true
+      }
+    ],
+    "total_characters": 98526
+  },
+  "commands": [
+    "python work.py analysts --help",
+    "python work.py analysts check-result --help",
+    "python work.py analysts compile-result --help",
+    "python work.py analysts build-reading-graph --help",
+    "python work.py analysts query-reading-graph --help",
+    "python work.py analysts check-result --packet /workspace/scratch/953f1365ff9f/repo-audit/work/v4-pilot/cache/weak-packet --result /workspace/scratch/953f1365ff9f/repo-audit/work/v4-pilot/cache/weak-packet/result.json",
+    "python work.py analysts compile-result --packet /workspace/scratch/953f1365ff9f/repo-audit/work/v4-pilot/cache/weak-packet --result /workspace/scratch/953f1365ff9f/repo-audit/work/v4-pilot/cache/weak-packet/result.json --output /workspace/scratch/953f1365ff9f/repo-audit/work/v4-pilot/cache/weak-packet/compiled.json",
+    "python work.py analysts build-reading-graph --packet /workspace/scratch/953f1365ff9f/repo-audit/work/v4-pilot/cache/weak-packet --result /workspace/scratch/953f1365ff9f/repo-audit/work/v4-pilot/cache/weak-packet/result.json --output /workspace/scratch/953f1365ff9f/repo-audit/work/v4-pilot/cache/weak-packet/reading-graph.json",
+    "python work.py analysts query-reading-graph --graph /workspace/scratch/953f1365ff9f/repo-audit/work/v4-pilot/cache/weak-packet/reading-graph.json --node M2",
+    "读取packet.json的documents_sha256，将其写入result.json顶层input_documents_sha256（版本绑定修正；未改经济内容）。",
+    "python work.py analysts check-result --packet /workspace/scratch/953f1365ff9f/repo-audit/work/v4-pilot/cache/weak-packet --result /workspace/scratch/953f1365ff9f/repo-audit/work/v4-pilot/cache/weak-packet/result.json",
+    "python work.py analysts compile-result --packet /workspace/scratch/953f1365ff9f/repo-audit/work/v4-pilot/cache/weak-packet --result /workspace/scratch/953f1365ff9f/repo-audit/work/v4-pilot/cache/weak-packet/result.json --output /workspace/scratch/953f1365ff9f/repo-audit/work/v4-pilot/cache/weak-packet/compiled.json",
+    "python work.py analysts build-reading-graph --packet /workspace/scratch/953f1365ff9f/repo-audit/work/v4-pilot/cache/weak-packet --result /workspace/scratch/953f1365ff9f/repo-audit/work/v4-pilot/cache/weak-packet/result.json --output /workspace/scratch/953f1365ff9f/repo-audit/work/v4-pilot/cache/weak-packet/reading-graph.json",
+    "python work.py analysts query-reading-graph --graph /workspace/scratch/953f1365ff9f/repo-audit/work/v4-pilot/cache/weak-packet/reading-graph.json --node M2",
+    "python -m py_compile work/v4-pilot/cache/weak-packet/repair.py",
+    "python work/v4-pilot/cache/weak-packet/repair.py (reads baseline-01/result.json and writes current result.json)",
+    "python work.py analysts check-result --packet /workspace/scratch/953f1365ff9f/repo-audit/work/v4-pilot/cache/weak-packet --result /workspace/scratch/953f1365ff9f/repo-audit/work/v4-pilot/cache/weak-packet/result.json",
+    "python work.py analysts compile-result --packet /workspace/scratch/953f1365ff9f/repo-audit/work/v4-pilot/cache/weak-packet --result /workspace/scratch/953f1365ff9f/repo-audit/work/v4-pilot/cache/weak-packet/result.json --output /workspace/scratch/953f1365ff9f/repo-audit/work/v4-pilot/cache/weak-packet/thinking_context.txt",
+    "python work.py analysts build-reading-graph --packet /workspace/scratch/953f1365ff9f/repo-audit/work/v4-pilot/cache/weak-packet --result /workspace/scratch/953f1365ff9f/repo-audit/work/v4-pilot/cache/weak-packet/result.json --output /workspace/scratch/953f1365ff9f/repo-audit/work/v4-pilot/cache/weak-packet/reading-graph.json",
+    "python work.py analysts query-reading-graph --graph /workspace/scratch/953f1365ff9f/repo-audit/work/v4-pilot/cache/weak-packet/reading-graph.json --node M1",
+    "python work.py analysts query-reading-graph --graph /workspace/scratch/953f1365ff9f/repo-audit/work/v4-pilot/cache/weak-packet/reading-graph.json --node M2",
+    "python work.py analysts query-reading-graph --graph /workspace/scratch/953f1365ff9f/repo-audit/work/v4-pilot/cache/weak-packet/reading-graph.json --node M2-policy",
+    "python work.py analysts query-reading-graph --graph /workspace/scratch/953f1365ff9f/repo-audit/work/v4-pilot/cache/weak-packet/reading-graph.json --node M3"
+  ],
+  "errors_and_repairs": [
+    {
+      "command_or_action": "初次尝试将生成脚本写入 /tmp/make_result.py 并执行",
+      "error": "/bin/bash: line 1: /tmp/make_result.py: No such file or directory；随后 check-result 因任务包内尚无 result.json 报 FileNotFoundError。",
+      "repair": "将 make_result.py 写入获准的 weak-packet 目录，运行生成脚本后重新执行 check-result。"
+    },
+    {
+      "command_or_action": "主代理同步输入版本绑定要求后，result.json需补充顶层input_documents_sha256。",
+      "error": "初版result.json缺少新schema要求的输入正文哈希字段。",
+      "repair": "从packet.json读取documents_sha256并写入result.json顶层，保留全部经济内容不变；按要求重跑check-result、compile-result、build-reading-graph与query-reading-graph。"
+    },
+    {
+      "command_or_action": "首个返修内联Python草稿未能解析。",
+      "error": "SyntaxError: unmatched ' } '；该命令在执行任何文件写入之前失败。",
+      "repair": "改用任务包内repair.py，先用python -m py_compile检查语法，再从baseline-01/result.json生成修订result.json并运行check-result。"
+    }
+  ],
+  "validation": {
+    "check_result": "返修后通过；ok=true，issues=[]，articles=8，claims=17，mechanisms=4；含relation_kind字段。",
+    "compile_result": "通过；thinking_context.txt为编译后的完整可读思维上下文，7866字符/17500字节。",
+    "build_reading_graph": "通过；reading-graph.json含28节点、4条边。",
+    "query_reading_graph": "M1、M2、M2-policy、M3均完成查询；分别保存完整前提和来源定位。"
+  },
+  "remaining_limits": [
+    "未独立复核文章所引用的财政、银行及宏观统计口径，相关观察仍属作者报告。",
+    "未计算不同机制的因果贡献或财政乘数；所列区分性调查尚未执行。",
+    "本次只回答任务包所限定的局部机制问题，不代表完整中国债务/经济危机研究。"
+  ],
+  "reproducibility_note": "语义分析由gpt-6-luna/low在完整实读八篇正文后完成。早期一次性make_result.py辅助文件已删除，故不作为可重放步骤；返修由packet目录repair.py从baseline-01/result.json生成当前result.json。repair.py本身已保留。",
+  "artifact_changes": "原compiled.json保留在baseline-01/；当前编译输出为thinking_context.txt。"
+}

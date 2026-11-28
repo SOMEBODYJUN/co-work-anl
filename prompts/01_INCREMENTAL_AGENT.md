@@ -1,3 +1,9 @@
+# 当前报告范围
+
+若原工作区采用report-first，延续该profile和`prompts/04_LAUNCH.md`的报告范围，
+计算器及离线浏览器另作编码任务。实质验收使用`examples/acceptance-report-template.json`；
+本文件旧计算器交付条款仅用于旧合并模式。先恢复原身份与工作区，再研究新材料。
+
 # 增量专题 agent 执行词
 
 先读`docs/PRO_RUNTIME.md`。主负责人沿用原完整身份号和工作区，以`session start/next --actor <原身份号>`恢复；不得改号、按日期重派身份或新建首轮替代旧断点。只有上一周期验收完成且有新证据/新任务，才`init --mode update`进入8阶段；尚未验收则修复原周期。本轮继续到更新后的实质验收、独立复核、发布及`session check`通过，检查不通过就处理具体缺项。专题工作者保留自己的作者身份，通过提案交主负责人合并，不覆盖主负责人的绑定。

@@ -1,0 +1,252 @@
+{
+  "schema": "cncrisis-pilot-semantic-review.v1",
+  "reviewer": "/root/v4_design_challenge",
+  "scope": "仅本次8篇文章包、弱模型result/brief/graph_use；不评定完整中国经济研究，不认证原站正文捕获完整性",
+  "verdict": "revise_not_pass",
+  "reviewed_files": {
+    "documents.json": "98fdf75feb564be90ca22aa852b4efe38f8a3eb7c18936a9848abd9885d3db30",
+    "result.json": "6051c57c7f7e9f477ba56259fd5340636cc52be88d7c6616fc0a626abb74fbc4",
+    "brief.txt": "3ca4739e74dfc700d7e84c1d2bc298a2f160f1befdb9c340283d165b37e52cbc",
+    "graph_use.txt": "38efb0337d1b439b9057afdb7482777856566a4f409424a9932aef41098a04e9"
+  },
+  "positive_findings": [
+    "结果已经实际提取作者的制度/行为认识和跨作者分歧，超过只列几条安全原则；C1/C2/C3/C4/C7/C8/C9的核心归属与所给段落大体一致。",
+    "C4保留了Batson对2017金融纪律联盟解释的推测性质，未把猜测直接登记成政治事实。",
+    "Setser与Wright之间确有可核对的公开争论：W25 p0017直接回应Setser2024文章，不是凭空拼出对手。",
+    "graph_use确实把关系查询转成政策支出归宿与融资来源调查；但当前图边的语义问题使这个消费结果尚不能按已通过机制使用。",
+    "brief最后限定为局部机制比较，没有声称八篇文章已证明当前中国经济全局。"
+  ],
+  "findings": [
+    {
+      "id": "PS01",
+      "severity": "blocking",
+      "locations": [
+        "result.json: mechanisms[M3].premises",
+        "result.json: mechanisms[M3].head",
+        "result.json: claims[C12]"
+      ],
+      "issue": "M3以C12为共同前提，又以同一个C12为后件；未展开时间的自支持关系不能表达已经得到的新解释。C9是作者政策主张，也不是证明当期反馈已经发生的观测前提。",
+      "source_checks": [
+        {
+          "article_id": "Z24",
+          "paragraph_ids": [
+            "p0011",
+            "p0012",
+            "p0017",
+            "p0020",
+            "p0021",
+            "p0022"
+          ],
+          "supports": "作者说明支出收入信贷的循环及干预主张。"
+        },
+        {
+          "article_id": "Z26",
+          "paragraph_ids": [
+            "p0040",
+            "p0041",
+            "p0042",
+            "p0043",
+            "p0050",
+            "p0058"
+          ],
+          "supports": "快变量带动慢变量、慢变量再反馈的分阶段机制，而非同一结论立即支持自身。"
+        }
+      ],
+      "repair": "拆出初始支出冲击、t阶段投资/信贷/利润、t+1劳动收入与消费、t+2再反馈等不同状态节点；t仅表示因果次序，不伪装成已估计季度时滞。把C9改挂为待检验干预分支。机制的经验证据与理论关系分别保存。",
+      "acceptance": "该机制有明确外部起点和状态变化，不再用同一命题ID支持自己；正常反馈被保留，不能仅为过检查删掉经济反馈。"
+    },
+    {
+      "id": "PS02",
+      "severity": "blocking",
+      "locations": [
+        "result.json: mechanisms[M1].head",
+        "result.json: mechanisms[M2].head",
+        "result.json: mechanisms[M3].head",
+        "result.json: claims[C12]"
+      ],
+      "issue": "C12同时包含生产者偏向、损失分配、需求循环及融资不自动修复收入。M1/M2/M3各支持其中不同片段，却都指向整个C12，导致局部支持被当成整句推出。",
+      "source_checks": [
+        {
+          "article_id": "P26",
+          "paragraph_ids": [
+            "p0024",
+            "p0032",
+            "p0034"
+          ],
+          "supports": "历史金融抑制将收入从家庭转向生产部门，未由此证明所有企业收入也修复慢。"
+        },
+        {
+          "article_id": "Z26",
+          "paragraph_ids": [
+            "p0042",
+            "p0043",
+            "p0044"
+          ],
+          "supports": "负反馈的快慢变量传递，是另一条机制。"
+        }
+      ],
+      "repair": "将C12原子化：历史成本转移对家庭收入份额的作用；政策资源归宿；私人企业和家庭的分组收入变化；动态需求反馈分别用独立节点。只在明确综合关系中连接它们，写出哪一部分已经支持、哪一部分仍待观测。",
+      "acceptance": "每条边的前提与推理覆盖其整个后件，不因一个子句有出处就把复合宏观句整体标为成立；居民与生产者/企业不能无分组地合并。"
+    },
+    {
+      "id": "PS03",
+      "severity": "major",
+      "locations": [
+        "result.json: mechanisms[M2].premises",
+        "result.json: mechanisms[M2].conditions",
+        "result.json: mechanisms[M2].competing_explanation",
+        "graph_use.txt: first and second paragraphs"
+      ],
+      "issue": "M2主解释包含生产者优先和真实容量受限，对手却是中央有空间但决策犹豫/误判。后者仍属于政策选择，不能有效反驳主解释。C5与C6分别是对可用空间的不同论证，不宜直接作为一条因果ALL边的已同时满足条件。",
+      "source_checks": [
+        {
+          "article_id": "B20",
+          "paragraph_ids": [
+            "p0007",
+            "p0008",
+            "p0010",
+            "p0012"
+          ],
+          "supports": "作者从政策偏好解释2020救助选择，并明确偏好可变。"
+        },
+        {
+          "article_id": "W25",
+          "paragraph_ids": [
+            "p0015",
+            "p0016",
+            "p0017",
+            "p0018"
+          ],
+          "supports": "Wright从银行容量、信用取舍和支出效能质疑财政空间。"
+        },
+        {
+          "article_id": "S24",
+          "paragraph_ids": [
+            "p0015",
+            "p0021",
+            "p0024",
+            "p0048",
+            "p0054"
+          ],
+          "supports": "Setser强调中央可用空间与自设约束。"
+        }
+      ],
+      "repair": "分开比较：A在资源可用时仍优先生产/保支付；B希望或尝试支持收入但真实融资/可用现金约束限制执行。分别列可观测预测与共同控制条件，再将Setser/Wright作为两条解释的依据，不把作者意见同时当触发条件。2020、2024、2025的状态要分别定位。",
+      "acceptance": "对手能解释同组事实且在可调查观察上与主解释不同；查询回执显示哪项结果真正改变排序，而非把相容观点称为不同解释。"
+    },
+    {
+      "id": "PS04",
+      "severity": "major",
+      "locations": [
+        "result.json: claims[C11].text",
+        "result.json: verdict.main",
+        "brief.txt: opening paragraph"
+      ],
+      "issue": "C11称国家把损失“在公共部门资产负债表内延后或重排”，混淆了账面承接工具和最终经济承损者。其所引P26随后明确将最终成本落到居民家庭。",
+      "source_checks": [
+        {
+          "article_id": "P26",
+          "paragraph_ids": [
+            "p0018",
+            "p0019",
+            "p0020"
+          ],
+          "supports": "AMC债券与原坏账替换，改变持有结构与分摊过程，不消除损失。"
+        },
+        {
+          "article_id": "P26",
+          "paragraph_ids": [
+            "p0022",
+            "p0023",
+            "p0024",
+            "p0026"
+          ],
+          "supports": "作者的最终成本机制是对家庭储蓄回报的压低与购买力转移，超出公共部门内部。"
+        },
+        {
+          "article_id": "P15",
+          "paragraph_ids": [
+            "p0035",
+            "p0036"
+          ],
+          "supports": "成本可能分配给许多不同部门，政府担保影响再融资。"
+        }
+      ],
+      "repair": "将“通过公共部门/受控金融体系重排法律债权和支付时点”与“经济成本最终由居民、企业、财政等谁承担”分成两步。删去只在公共部门内发生的范围暗示；若结论保留相同主线，说明其支持来自不同环节。",
+      "acceptance": "正文和图都能区分债权账面持有人、支付资金来源、真实损失及最终承担者，不用同一个“转表”代替全部过程。"
+    },
+    {
+      "id": "PS05",
+      "severity": "major",
+      "locations": [
+        "result.json: thinking.actor_models[居民家庭].goals_constraints",
+        "brief.txt: final demand-feedback account"
+      ],
+      "issue": "将低存款回报、收入不确定或缺少普惠转移合并为“减少消费、增加预防性储蓄”的统一行为反应。所列段落支持收入转移、消费受压、少借款/多偿债，但没有充分支持低存款回报导致家庭预防性储蓄必然增加；国民储蓄率、家庭储蓄率、存款余额和还贷也不是一个量。",
+      "source_checks": [
+        {
+          "article_id": "P26",
+          "paragraph_ids": [
+            "p0022",
+            "p0024",
+            "p0026",
+            "p0032",
+            "p0038"
+          ],
+          "supports": "收入和购买力转移及宏观结构后果，不能单独确定家庭储蓄率的行为弹性方向。"
+        },
+        {
+          "article_id": "B20",
+          "paragraph_ids": [
+            "p0003",
+            "p0008",
+            "p0010",
+            "p0011"
+          ],
+          "supports": "政策选择和福利结构，不是家庭预防性储蓄的估计。"
+        },
+        {
+          "article_id": "Z24",
+          "paragraph_ids": [
+            "p0012",
+            "p0018"
+          ],
+          "supports": "预期下降后的少举债与偿还贷款及自我保护，未等同于同户存款或储蓄率增加。"
+        }
+      ],
+      "repair": "把作者支持的收入转移/消费能力下降、偿债行为与本项目提出的预防性储蓄假说分开；后者改为需分组/同户数据检验的行为假说。不要把净储蓄者角色推给所有家庭。",
+      "acceptance": "每个行为方向都有对应出处或明确假说状态；新增调查能区分消费压缩、偿债、存款转移及财富集中。"
+    },
+    {
+      "id": "PS06",
+      "severity": "minor",
+      "locations": [
+        "result.json: claims[C5].kind",
+        "result.json: claims[C5].text",
+        "brief.txt: paragraph about fiscal capacity"
+      ],
+      "issue": "C5把Wright报告的数据和“财政扩张受银行容量约束”的解释装入同一个observation。正文有时将这一解释写成已证实现实约束，读者可能失去作者归属与事实/推断分层。",
+      "source_checks": [
+        {
+          "article_id": "W25",
+          "paragraph_ids": [
+            "p0016",
+            "p0017",
+            "p0018"
+          ],
+          "supports": "同段包含作者报告的银行资产数据与对挤出/财政效能的因果解释。"
+        }
+      ],
+      "repair": "拆为attributed reported observations与author_claim，保留Wright归属；银行容量或挤出作为待独立核验的机制，不因数据共现自动成为观察事实。",
+      "acceptance": "数字、作者机制与项目综合三种归属清晰，但不妨碍依据现有材料比较解释。"
+    }
+  ],
+  "minimum_repair_batch": [
+    "原result/brief/graph_use保持不变，新建revision输出并绑定本次输入和修订记录。",
+    "先修PS01/02的机制范围与时序，再修PS03竞争解释；这是图消费能够成立的最低条件。",
+    "仅修PS04/05/06涉及的主张、主体行为与对应正文，保留已经可用的作者论证提取。",
+    "用修后的M2查询一次，交一个真正区分资源约束与选择优先级的具体下一任务；不要再扩大成“核全国所有资产”的泛任务。"
+  ],
+  "review_stop_rule": "本次已定位足以返修的具体问题；修后只复核受影响条目和查询结果，不因格式/登记再无限追加八篇全文终审。",
+  "overall_interpretation": "这是一次真实的局部读取与综合尝试，已有可用思想材料，但当前机制图与部分经济归因尚不能通过语义验收。结构合格或引用有效不等于这些机制已经成立。"
+}
