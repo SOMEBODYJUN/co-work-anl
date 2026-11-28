@@ -24,3 +24,7 @@ boss 1修复 `tools/prepare_jst_example.py`：要求信息当年及未来三年�
 用途裁决：拒绝本轮HGB校准链作主预警；logit仅作历史比较；所有模型拒绝用于中国事件概率。raw HGB在已见测试表现较好必须披露，但不能据此事后选择raw、重新调参再宣称独立验证通过。本次是有完整追踪的审计纠错重估，不是新的未见测试，不增加独立证据数量。
 
 历史专题 `tasks/history_framework_review/history.md` 中3/13与0/13指旧实验校准后结果，冻结文稿保留当时版本；当前裁决和正式报告采用本纠错记录，并同时披露原结果。所有事件计数按预测窗内至少一次报警计，不是独立危机概率；187国年也不是187个独立事件。
+
+## 可移植性复演（第三份运行记录）
+
+最终新目录恢复发现上述纠错输入的CSV字段仍为旧树绝对路径；初次新clone运行这一项不足以证明输入隔离。原文件与输出保留。`tools/prepare_jst_example.py`现对输出路径先resolve再relative_to，使仓库内相对输出也生成仓库内相对CSV引用。新 `models/jst_portable_20261127` 的DTA与1703行面板均逐字节匹配纠错输入，模型、切分与阈值完全相同。统一入口实际作业 `historical-warning-portable-v3`，输出 `compute/outputs/historical-warning-portable-v3-933f425819ff.json`。逐字段对比只出现执行时刻与两模型运行秒数的变化，数值结果全部严格相同。两份输入和复算记录都保留；这不增加一份独立经济验证，不改变上表任何成绩或中国概率用途裁决。详见 `receipts/portable_input_repair.json` 和 `receipts/portable_experiment_replay.json`。

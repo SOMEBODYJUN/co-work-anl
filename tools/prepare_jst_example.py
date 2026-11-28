@@ -71,7 +71,7 @@ def prepare(source, output):
     csv = output / "panel.csv"
     panel.to_csv(csv, index=False)
     try:
-        csv_ref = str(csv.relative_to(ROOT))
+        csv_ref = str(csv.resolve().relative_to(ROOT))
     except ValueError:
         csv_ref = str(csv.resolve())
     spec = {"input_kind": "observed_historical_panel", "csv": csv_ref,

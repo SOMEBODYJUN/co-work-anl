@@ -43,8 +43,8 @@
     },
     {
       "id": "models",
-      "verdict": "pass",
-      "evidence": "逐项核11作业指纹；独立重建训练/校准、事件检出、QR和银行20个条件行。JST原错及修复保留；新HGB校准1/13、Brier0.18540，负斜率非错列，logit3/13不足授中国概率。单版桥接0.64347劣于0.34545。通过限于这些用途裁决。",
+      "verdict": "pending",
+      "evidence": "旧11作业的用途审查已通过；独立新clone又发现纠错JST配置含旧树绝对路径，修复并实际追加第12条可移植复演，除三处时刻/耗时外所有输出严格相等。原经济回执的旧账本哈希保留，等待实际独立执行者对当前追加账本/输入与准备程序补delta审查，不能用旧哈希覆盖新文件。",
       "artifacts": [
         "research/model_results.md",
         "research/method_runs.md",
@@ -62,7 +62,13 @@
         "research/tasks/research_independent_review/independent_accounts.json",
         "research/tasks/research_independent_review/history_audit.py",
         "research/tasks/research_independent_review/independent_history.json",
-        "research/tasks/research_independent_review/economic_checks.json"
+        "research/tasks/research_independent_review/economic_checks.json",
+        "research/receipts/portable_input_repair.json",
+        "research/receipts/portable_experiment_replay.json",
+        "research/models/jst_portable_20261127/experiment.json",
+        "research/models/jst_portable_20261127/data_manifest.json",
+        "research/models/compute-portable-history.json",
+        "compute/outputs/historical-warning-portable-v3-933f425819ff.json"
       ]
     },
     {
@@ -100,8 +106,8 @@
     },
     {
       "id": "household_engine",
-      "verdict": "pass",
-      "evidence": "实际独立执行者/root/household_independent_audit对最终HTML内联引擎构造87请求、179项参考核对全部通过；含合同未知、质押结清、部分预付、失败截断、120个月现金、反向压力、同情景比较和轨迹去重。通过仅限合成工程验证，不代表真实家庭安全或界面通过。",
+      "verdict": "fail",
+      "evidence": "旧87请求/179项核对均真实通过，但最终独立发布审计发现其未覆盖的两项实测反例：未知或类型不匹配的情景target静默忽略冲击；提前还款最高额度和仅部分偿付限制无法编码、导入prepayMax被忽略并推荐超额动作。完整引擎验收已撤回，实施者正修复。旧回执只证明旧算例覆盖范围，不能覆盖新增反例。",
       "artifacts": [
         "research/tasks/household_independent_audit/engine_receipt.json",
         "research/tasks/household_independent_audit/analysis.md",
@@ -150,7 +156,7 @@
     {
       "id": "fresh_restore",
       "verdict": "pending",
-      "evidence": "/root/fresh_restore已报告新clone实际重跑11作业与24产物，但最终原始命令、环境清单及哈希回执尚在整理；作者尚未读取完整回执，不预填通过。",
+      "evidence": "独立执行者对1580e869旧冻结版实际复现11作业及24产物，待原始回执落盘。最终审计新发现家庭合同与情景目标缺陷，修复后的HTML还须另行在新clone恢复并重放受影响部分；旧版成功不覆盖新版本。",
       "artifacts": []
     }
   ],
@@ -162,6 +168,6 @@
     "formal/scenarios.json": "0133496a1354d514372e6bd9ed35efd83eb3ea6e914b5a2074a0e8bedaa7ae9b",
     "formal/calculator.html": "9b4e215c09195bdf0ddcda0713f513b3899c7ced87596e67818a975f398d666b"
   },
-  "recorded_at_utc": "2026-11-28T05:35:22.356174+00:00",
-  "note": "按实际完成情况记录；s18离线UI未过，不注册s18—s20为完成、不授予发布。"
+  "recorded_at_utc": "2026-11-28T05:39:10.479471+00:00",
+  "note": "实际最终审计新增两项可修复家庭缺陷，已撤回整项通过并继续修复；离线UI另有真实环境阻塞。不得登记s18—s20完成。"
 }
