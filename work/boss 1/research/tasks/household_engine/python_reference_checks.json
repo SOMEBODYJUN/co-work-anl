@@ -1,0 +1,81 @@
+{
+  "scope": "Contract checks and independently calculated synthetic transactions",
+  "python": "3.12.14",
+  "numpy": "2.3.5",
+  "numpy_financial_distribution": "1.0.0",
+  "source": "vendor/numpy-financial/_financial.py",
+  "source_sha256": "345a52c076648ba5530f826143fcabcf374b852cc25577f5671ce9f344914684",
+  "engine_sha256": "4a0e486acf12693213c8ea2e715689fed5f532f1f27ff37acb1e1d523fd24fd9",
+  "work_py_command": "python work.py --workspace 'work/boss 1' methods run --name loan --input INPUT --output RESULTS",
+  "work_reference_sha256": "567343ef985facd4083f37648dc344fb892d9f96741c5b128c8ea00660933af0",
+  "comparisons": [
+    {
+      "contract": {
+        "principal": 120000,
+        "annual_rate": 0.042,
+        "months": 36,
+        "input_kind": "synthetic_contract_check"
+      },
+      "compared_periods": 36,
+      "max_abs_error_cny": {
+        "payment": 5.820766091346741e-11,
+        "interest": 5.968558980384842e-13,
+        "principal": 5.866240826435387e-11,
+        "balance": 2.08092387765646e-09
+      }
+    },
+    {
+      "contract": {
+        "principal": 1200,
+        "annual_rate": 0,
+        "months": 12
+      },
+      "compared_periods": 12,
+      "max_abs_error_cny": {
+        "payment": 0.0,
+        "interest": 0.0,
+        "principal": 0.0,
+        "balance": 0.0
+      }
+    },
+    {
+      "contract": {
+        "principal": 12345,
+        "annual_rate": 0.0576,
+        "months": 1
+      },
+      "compared_periods": 1,
+      "max_abs_error_cny": {
+        "payment": 2.1827872842550278e-10,
+        "interest": 0.0,
+        "principal": 2.1827872842550278e-10,
+        "balance": 2.1827872842550278e-10
+      }
+    },
+    {
+      "contract": {
+        "principal": 92761.21,
+        "annual_rate": 0.0345,
+        "months": 97
+      },
+      "compared_periods": 97,
+      "max_abs_error_cny": {
+        "payment": 3.728928277269006e-11,
+        "interest": 1.9895196601282805e-13,
+        "principal": 3.728928277269006e-11,
+        "balance": 1.280568540096283e-09
+      }
+    }
+  ],
+  "decimal_sale_cash": [
+    "109.5",
+    "119.0",
+    "240.5"
+  ],
+  "js_sale_cash": [
+    109.5,
+    119,
+    240.5
+  ],
+  "verdict": "pass"
+}

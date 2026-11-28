@@ -1,0 +1,100 @@
+{
+  "inputKind": "synthetic_example",
+  "coverage": {
+    "rawCombinations": "151200",
+    "evaluated": 500,
+    "limit": 500,
+    "method": "先保留基准，轮转单动作、跨资产双动作，再按混合进位全空间等距覆盖",
+    "dimensions": [
+      {
+        "id": "flat",
+        "choices": 7
+      },
+      {
+        "id": "car",
+        "choices": 5
+      },
+      {
+        "id": "shares",
+        "choices": 5
+      },
+      {
+        "id": "mort1",
+        "choices": 6
+      },
+      {
+        "id": "mort2",
+        "choices": 6
+      },
+      {
+        "id": "auto",
+        "choices": 6
+      },
+      {
+        "id": "discretionary",
+        "choices": 4
+      }
+    ],
+    "exclusions": [
+      {
+        "id": "home",
+        "reason": "明确限制出售"
+      },
+      {
+        "id": "deposit",
+        "reason": "资产无市值、超出期限，或定存按到期自动兑付"
+      },
+      {
+        "id": "lockfund",
+        "reason": "资金用途受限"
+      }
+    ],
+    "distinctMonthlyTrajectories": 416,
+    "distinctFeasibleMonthlyTrajectories": 105
+  },
+  "common": 134,
+  "distinctFeasibleMonthlyTrajectories": 105,
+  "distinctMonthlyTrajectories": 416,
+  "pareto": 6,
+  "shortlist": [
+    "S254",
+    "S247",
+    "S432",
+    "S001",
+    "S102",
+    "S283",
+    "S015",
+    "S075",
+    "S093",
+    "S456",
+    "S122",
+    "S050",
+    "S391",
+    "S319",
+    "S039"
+  ],
+  "winners": {
+    "baseline": "S000",
+    "robust": "S254",
+    "cash": "S254",
+    "regret": "S247",
+    "wealth": "S247",
+    "debt": "S432",
+    "leastGap": "S001"
+  },
+  "atLeastOneCashFailure": 125,
+  "perScenario": {
+    "continuity": {
+      "feasible": 238,
+      "cashFailed": 0
+    },
+    "severe": {
+      "feasible": 134,
+      "cashFailed": 125
+    },
+    "recovery": {
+      "feasible": 240,
+      "cashFailed": 0
+    }
+  }
+}

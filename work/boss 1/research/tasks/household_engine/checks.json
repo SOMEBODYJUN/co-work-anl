@@ -1,0 +1,237 @@
+{
+  "node": "v24.22.3",
+  "checks": 26,
+  "failures": 0,
+  "tests": [
+    {
+      "name": "blank inputs reject and synthetic fixture separately marked",
+      "verdict": "pass",
+      "result": null
+    },
+    {
+      "name": "whole cash ledger, independent no-shock arithmetic",
+      "verdict": "pass",
+      "result": 91500
+    },
+    {
+      "name": "basic living floor plus medical and a one-off not capitalized into reserve",
+      "verdict": "pass",
+      "result": null
+    },
+    {
+      "name": "zero rate and one-period annuity, equal-principal and bullet",
+      "verdict": "pass",
+      "result": null
+    },
+    {
+      "name": "independent equal principal, bullet, and contractual custom last balloon",
+      "verdict": "pass",
+      "result": null
+    },
+    {
+      "name": "recurring and one-off income rows, independent job loss and linear return",
+      "verdict": "pass",
+      "result": null
+    },
+    {
+      "name": "floating rate only reprices as the contract prescribes; fixed rate unchanged",
+      "verdict": "pass",
+      "result": null
+    },
+    {
+      "name": "prepayment lowers payment or shortens term and does not double charge",
+      "verdict": "pass",
+      "result": null
+    },
+    {
+      "name": "prepay minimum, mandatory reserve and explicit early termination fee",
+      "verdict": "pass",
+      "result": null
+    },
+    {
+      "name": "negative equity sale requires top-up, and prior discharge may require gross prefunding",
+      "verdict": "pass",
+      "result": null
+    },
+    {
+      "name": "economic sale closes once after lag, removes rent and settles every lien once",
+      "verdict": "pass",
+      "result": null
+    },
+    {
+      "name": "vacancy, alternative housing/transport and locked/unmarketable assets",
+      "verdict": "pass",
+      "result": null
+    },
+    {
+      "name": "financial settlement and one-time loss, deposit maturity and pledged/restricted use",
+      "verdict": "pass",
+      "result": null
+    },
+    {
+      "name": "staged security sale, total return without duplicated dividends",
+      "verdict": "pass",
+      "result": null
+    },
+    {
+      "name": "cash exhaustion leaves principal and unpaid interest; pending receipts cannot fund today",
+      "verdict": "pass",
+      "result": null
+    },
+    {
+      "name": "unfunded voluntary consumption stops the planned path without inventing payable debt",
+      "verdict": "pass",
+      "result": null
+    },
+    {
+      "name": "guarantee call and debts appear at the specified month",
+      "verdict": "pass",
+      "result": null
+    },
+    {
+      "name": "small actual policy set, no feasible candidate, no terminal/regret ranking",
+      "verdict": "pass",
+      "result": null
+    },
+    {
+      "name": "input intervals must have explicit center or use an endpoint; scenario units and overlaps checked",
+      "verdict": "pass",
+      "result": null
+    },
+    {
+      "name": "reverse thresholds are reruns, not a score, rent-sale equality and cash prepayment bound",
+      "verdict": "pass",
+      "result": null
+    },
+    {
+      "name": "unconfirmed loan permissions, windows and fees suppress optional actions but preserve contract",
+      "verdict": "pass",
+      "result": null
+    },
+    {
+      "name": "unknown asset release, fees, wait and mortgage fees are never imputed to allow a sale",
+      "verdict": "pass",
+      "result": null
+    },
+    {
+      "name": "same-month approved pledged liquidation retires margin once, including transaction and contract charges",
+      "verdict": "pass",
+      "result": null
+    },
+    {
+      "name": "pledged delayed closing, locked quote and top-up are reconciled at cash settlement",
+      "verdict": "pass",
+      "result": null
+    },
+    {
+      "name": "candidate amounts include current received wage after living cost and contractual installment",
+      "verdict": "pass",
+      "result": null
+    },
+    {
+      "name": "demo common feasible set, deterministic unique policies, regret and residuals",
+      "verdict": "pass",
+      "result": {
+        "inputKind": "synthetic_example",
+        "coverage": {
+          "rawCombinations": "151200",
+          "evaluated": 500,
+          "limit": 500,
+          "method": "先保留基准，轮转单动作、跨资产双动作，再按混合进位全空间等距覆盖",
+          "dimensions": [
+            {
+              "id": "flat",
+              "choices": 7
+            },
+            {
+              "id": "car",
+              "choices": 5
+            },
+            {
+              "id": "shares",
+              "choices": 5
+            },
+            {
+              "id": "mort1",
+              "choices": 6
+            },
+            {
+              "id": "mort2",
+              "choices": 6
+            },
+            {
+              "id": "auto",
+              "choices": 6
+            },
+            {
+              "id": "discretionary",
+              "choices": 4
+            }
+          ],
+          "exclusions": [
+            {
+              "id": "home",
+              "reason": "明确限制出售"
+            },
+            {
+              "id": "deposit",
+              "reason": "资产无市值、超出期限，或定存按到期自动兑付"
+            },
+            {
+              "id": "lockfund",
+              "reason": "资金用途受限"
+            }
+          ],
+          "distinctMonthlyTrajectories": 416,
+          "distinctFeasibleMonthlyTrajectories": 105
+        },
+        "common": 134,
+        "distinctFeasibleMonthlyTrajectories": 105,
+        "distinctMonthlyTrajectories": 416,
+        "pareto": 6,
+        "shortlist": [
+          "S254",
+          "S247",
+          "S432",
+          "S001",
+          "S102",
+          "S283",
+          "S015",
+          "S075",
+          "S093",
+          "S456",
+          "S122",
+          "S050",
+          "S391",
+          "S319",
+          "S039"
+        ],
+        "winners": {
+          "baseline": "S000",
+          "robust": "S254",
+          "cash": "S254",
+          "regret": "S247",
+          "wealth": "S247",
+          "debt": "S432",
+          "leastGap": "S001"
+        },
+        "atLeastOneCashFailure": 125,
+        "perScenario": {
+          "continuity": {
+            "feasible": 238,
+            "cashFailed": 0
+          },
+          "severe": {
+            "feasible": 134,
+            "cashFailed": 125
+          },
+          "recovery": {
+            "feasible": 240,
+            "cashFailed": 0
+          }
+        }
+      }
+    }
+  ],
+  "errors": []
+}
