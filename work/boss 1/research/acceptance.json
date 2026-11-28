@@ -22,7 +22,10 @@
         "research/tasks/research_independent_review/economics_review.md",
         "research/tasks/research_independent_review/independent_accounts.json",
         "research/tasks/research_independent_review/independent_history.json",
-        "research/tasks/research_independent_review/economic_checks.json"
+        "research/tasks/research_independent_review/economic_checks.json",
+        "research/tasks/research_independent_review/economic_delta.json",
+        "research/tasks/research_independent_review/economic_delta.md",
+        "research/tasks/research_independent_review/verify_economic_delta.py"
       ]
     },
     {
@@ -38,13 +41,16 @@
         "research/tasks/research_independent_review/economics_review.md",
         "research/tasks/research_independent_review/history_audit.py",
         "research/tasks/research_independent_review/independent_history.json",
-        "research/tasks/research_independent_review/economic_checks.json"
+        "research/tasks/research_independent_review/economic_checks.json",
+        "research/tasks/research_independent_review/economic_delta.json",
+        "research/tasks/research_independent_review/economic_delta.md",
+        "research/tasks/research_independent_review/verify_economic_delta.py"
       ]
     },
     {
       "id": "models",
-      "verdict": "pending",
-      "evidence": "旧11作业的用途审查已通过；独立新clone又发现纠错JST配置含旧树绝对路径，修复并实际追加第12条可移植复演，除三处时刻/耗时外所有输出严格相等。原经济回执的旧账本哈希保留，等待实际独立执行者对当前追加账本/输入与准备程序补delta审查，不能用旧哈希覆盖新文件。",
+      "verdict": "pass",
+      "evidence": "旧五项回执加真实独立delta已审当前12条账本/11规格，独立从DTA另目录准备并调用统一方法重估。原绝对路径问题保留，可移植面板/模型参数及全数值相同，差异仅3运行时间字段；信息年与标签成熟年已明确更正。校准HGB仍拒用，中国概率和精确GDP预测仍拒用。两项合成控制及重复运行不当独立经济证据。",
       "artifacts": [
         "research/model_results.md",
         "research/method_runs.md",
@@ -68,7 +74,10 @@
         "research/models/jst_portable_20261127/experiment.json",
         "research/models/jst_portable_20261127/data_manifest.json",
         "research/models/compute-portable-history.json",
-        "compute/outputs/historical-warning-portable-v3-933f425819ff.json"
+        "compute/outputs/historical-warning-portable-v3-933f425819ff.json",
+        "research/tasks/research_independent_review/economic_delta.json",
+        "research/tasks/research_independent_review/economic_delta.md",
+        "research/tasks/research_independent_review/verify_economic_delta.py"
       ]
     },
     {
@@ -84,7 +93,10 @@
         "research/audit_proposal_pack.json",
         "research/tasks/research_independent_review/economics_review.md",
         "research/tasks/research_independent_review/proposal_receipt.json",
-        "research/tasks/research_independent_review/economic_checks.json"
+        "research/tasks/research_independent_review/economic_checks.json",
+        "research/tasks/research_independent_review/economic_delta.json",
+        "research/tasks/research_independent_review/economic_delta.md",
+        "research/tasks/research_independent_review/verify_economic_delta.py"
       ]
     },
     {
@@ -101,7 +113,10 @@
         "research/tasks/research_independent_review/economics_review.md",
         "research/tasks/research_independent_review/independent_history.json",
         "research/tasks/research_independent_review/proposal_receipt.json",
-        "research/tasks/research_independent_review/economic_checks.json"
+        "research/tasks/research_independent_review/economic_checks.json",
+        "research/tasks/research_independent_review/economic_delta.json",
+        "research/tasks/research_independent_review/economic_delta.md",
+        "research/tasks/research_independent_review/verify_economic_delta.py"
       ]
     },
     {
@@ -156,18 +171,34 @@
     {
       "id": "fresh_restore",
       "verdict": "pending",
-      "evidence": "独立执行者对1580e869旧冻结版实际复现11作业及24产物，待原始回执落盘。最终审计新发现家庭合同与情景目标缺陷，修复后的HTML还须另行在新clone恢复并重放受影响部分；旧版成功不覆盖新版本。",
-      "artifacts": []
+      "evidence": "原1580冻结版实际新clone恢复回执判fail：11重跑中1项读取旧树绝对CSV；其余10项本地，补单项相对路径重跑数值全等。原失败和补跑均保留。当前主仓已修可移植入口及程序，家庭仍在修订，最终冻结版新clone恢复尚待完成。",
+      "artifacts": [
+        "research/tasks/fresh_restore/receipt.json",
+        "research/tasks/fresh_restore/fresh_restore.md",
+        "research/tasks/fresh_restore/commands.md",
+        "research/tasks/fresh_restore/replay_plan.json",
+        "research/tasks/fresh_restore/portable-jst-plan.json",
+        "research/tasks/fresh_restore/portable-jst-experiment.json",
+        "research/tasks/fresh_restore/replay_supplements.py",
+        "research/tasks/fresh_restore/verify_replay.py",
+        "research/tasks/fresh_restore/resolved-environment.txt",
+        "research/tasks/fresh_restore/environment.json",
+        "research/tasks/fresh_restore/supplementary-runs.json",
+        "research/tasks/fresh_restore/comparisons.json",
+        "research/tasks/fresh_restore/raw_evidence.zip"
+      ]
     }
   ],
   "overall_verdict": "blocked",
-  "reviewed_content_commit": "1580e869769a9410b88d040acf08bab394c6f9d2",
+  "reviewed_content_commit": null,
   "formal_sha256": {
-    "formal/report.md": "50e282d8084bfbe13ce214cfc905be7f07b0a89d1883ced9ba42919f7971667e",
+    "formal/report.md": "65afc995b3031ffbdff967633fd0aa37274629cad40b7880bae663cbb20f7b4c",
     "formal/judgments.json": "af04fefc8348bf50902501082b6cce62d386d91d7336699461cf71d35986049a",
     "formal/scenarios.json": "0133496a1354d514372e6bd9ed35efd83eb3ea6e914b5a2074a0e8bedaa7ae9b",
     "formal/calculator.html": "9b4e215c09195bdf0ddcda0713f513b3899c7ced87596e67818a975f398d666b"
   },
   "recorded_at_utc": "2026-11-28T05:39:10.479471+00:00",
-  "note": "实际最终审计新增两项可修复家庭缺陷，已撤回整项通过并继续修复；离线UI另有真实环境阻塞。不得登记s18—s20完成。"
+  "note": "实际最终审计新增两项可修复家庭缺陷，已撤回整项通过并继续修复；离线UI另有真实环境阻塞。不得登记s18—s20完成。",
+  "initial_frozen_commit": "1580e869769a9410b88d040acf08bab394c6f9d2",
+  "revision_state": "repair_in_progress"
 }

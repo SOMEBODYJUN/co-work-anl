@@ -1,0 +1,265 @@
+{
+  "schema": "independent-economic-delta.v1",
+  "author": "boss 1",
+  "reviewer": "/root/research_independent_review",
+  "cycle": 1,
+  "as_of": "2026-11-27 America/Los_Angeles",
+  "scope": "经济五项的路径、时间字段、来源分组及报告增量；不签家庭HTML、数值实现、离线浏览器、最终恢复和正式发布。",
+  "supersedes_in_part": {
+    "previous_economic_receipt_sha256": "f9387a47cfd3ad6151516e1daa60828ad6855edf09ff33f9c0f99d1e94fe94a3",
+    "corrected_statement": "此前独立正文“最后信息年分别1984、2002、2019”表述错误；这三年是最后标签成熟年。信息年应为1981、1999、2016。原签名原文保留。"
+  },
+  "split_recomputed_from_1703_csv_rows": {
+    "train": {
+      "rows": 1188,
+      "as_of_min": "1876-12-31",
+      "as_of_max": "1981-12-31",
+      "last_label_maturity": "1984-12-31",
+      "distinct_country_episodes": 51
+    },
+    "calibration": {
+      "rows": 223,
+      "as_of_min": "1985-12-31",
+      "as_of_max": "1999-12-31",
+      "last_label_maturity": "2002-12-31",
+      "distinct_country_episodes": 9
+    },
+    "test": {
+      "rows": 187,
+      "as_of_min": "2003-12-31",
+      "as_of_max": "2016-12-31",
+      "last_label_maturity": "2019-12-31",
+      "distinct_country_episodes": 13
+    }
+  },
+  "numerical_uses": {
+    "logit_raw": {
+      "brier": 0.17214986884011405,
+      "auc": 0.6027373527373527,
+      "detected_episodes": 3,
+      "missed_episodes": 10,
+      "false_alarms": 7,
+      "negative_periods": 148
+    },
+    "logit_calibrated": {
+      "brier": 0.1703160536314038,
+      "auc": 0.6027373527373527,
+      "detected_episodes": 3,
+      "missed_episodes": 10,
+      "false_alarms": 7,
+      "negative_periods": 148
+    },
+    "hist_gradient_boosting_raw": {
+      "brier": 0.15650600634226716,
+      "auc": 0.7305959805959806,
+      "detected_episodes": 7,
+      "missed_episodes": 6,
+      "false_alarms": 18,
+      "negative_periods": 148
+    },
+    "hist_gradient_boosting_calibrated": {
+      "brier": 0.1853986785124339,
+      "auc": 0.26940401940401937,
+      "detected_episodes": 1,
+      "missed_episodes": 12,
+      "false_alarms": 43,
+      "negative_periods": 148
+    }
+  },
+  "current_plan_11_specs": [
+    {
+      "id": "historical-warning-v1",
+      "spec": "research/models/jst_example/experiment.json",
+      "spec_sha256": "49fefdc452323dc51cb975b0619d5fce5c95207fb72dc7c3a23e390129b26286",
+      "csv": "research/models/jst_example/panel.csv",
+      "csv_sha256": "c86b1d9d77b95c2c09fcae547dadbaa41aa529b8c37521c1eae8516102d65740",
+      "input_kind": "observed_historical_panel",
+      "output_sha256": "3e3cc7eeaa2c9fcdae2eb54424cd4b035bb834b0590964ba2b003d6fac96bae6"
+    },
+    {
+      "id": "bank-accounting-check",
+      "spec": "tests/fixtures/models/bank.json",
+      "spec_sha256": "b28ffc094312e634029c0b66e9b4b4551049b3107d76e5c10b2ef99529506461",
+      "input_kind": "synthetic_accounting_fixture",
+      "output_sha256": "0c7c800f973ebbe69bddb15ed69e417c2eed312bf6d68a5f451e1a053cc95819"
+    },
+    {
+      "id": "mixed-frequency-interface",
+      "spec": "tests/fixtures/methods/synthetic_panel.json",
+      "spec_sha256": "28f7c045e5553365320b70be519070fad08638ce4436a754046f7723e4145757",
+      "input_kind": "synthetic_test",
+      "output_sha256": "df7cbe0fddb03470475846f037188a7535acf1827b4d7ddce51293b318b6e947"
+    },
+    {
+      "id": "china-bridge-long",
+      "spec": "work/boss 1/research/models/activity/panel_long.json",
+      "spec_sha256": "521ee28638f52878a36ad6fa07e446e20d00111cebb70b43feac54f0da711bba",
+      "input_kind": "observed_china_retrospective_panel",
+      "output_sha256": "6e30a889f03bc9d4044626b9552af8f58eb5e83e6690903f94d25fef1fe1141d"
+    },
+    {
+      "id": "china-bridge-single-vintage",
+      "spec": "work/boss 1/research/models/activity/panel_same_vintage.json",
+      "spec_sha256": "9d2831482df0c4f78fcf26d1cccf72429e3fb5b205310145b5fdda9bcb008912",
+      "input_kind": "observed_china_retrospective_panel",
+      "output_sha256": "44075450be1c122e46d9a55150b65e7f9e62bf5c75a303234ff59ec475585bb5"
+    },
+    {
+      "id": "china-nowcast-diagnostic",
+      "spec": "work/boss 1/research/models/activity/panel_long.json",
+      "spec_sha256": "521ee28638f52878a36ad6fa07e446e20d00111cebb70b43feac54f0da711bba",
+      "input_kind": "observed_china_retrospective_panel",
+      "output_sha256": "7b5c86b59be383ee51e2b21662fdc0422082f626f65d714f284b11a97f05ce95"
+    },
+    {
+      "id": "china-bank-icbc-h1",
+      "spec": "work/boss 1/research/tasks/bank_research/icbc_h1_input.json",
+      "spec_sha256": "7464ddd1957433ede9072ed1ee030cce8413d898c6d5d3423f24f1bd8e42d88b",
+      "input_kind": "observed_chinese_public_bank_financials_with_conditional_shocks",
+      "output_sha256": "81bb7dd4c67ad97474c3a1b24b8463d026a970f011444ec4a1413519de5f0093"
+    },
+    {
+      "id": "china-bank-lanzhou-h1",
+      "spec": "work/boss 1/research/tasks/bank_research/lanzhou_h1_input.json",
+      "spec_sha256": "19c258238d602cf853a5af2cdc3ec55ca12d2857c2a472dd106e7b7e1db874ca",
+      "input_kind": "observed_chinese_public_bank_financials_with_conditional_shocks",
+      "output_sha256": "f4a765cecf4c4f9da27c54c0a006595a927682ac4211048d80100ed0ac29fbd9"
+    },
+    {
+      "id": "china-bank-icbc-q3",
+      "spec": "work/boss 1/research/tasks/bank_research/icbc_q3_input.json",
+      "spec_sha256": "9d3dd323bc71a842f457b3c8c91ff086c822fb54b46675ffba8a7748683f2cb2",
+      "input_kind": "observed_chinese_public_bank_financials_with_conditional_shocks",
+      "output_sha256": "d65793557a7b50ff133733829360057dbca859b59d91c95525f720e6499db1a1"
+    },
+    {
+      "id": "china-bank-lanzhou-q3",
+      "spec": "work/boss 1/research/tasks/bank_research/lanzhou_q3_input.json",
+      "spec_sha256": "61c82556caf1264b530d4fd98d4daf89007a72465a74925432c3c6933460e866",
+      "input_kind": "observed_chinese_public_bank_financials_with_conditional_shocks",
+      "output_sha256": "0f2f4f1c434f839019d8c0ef93b75b0eec2f3db63bb2b4c2e04abe8c219802dd"
+    },
+    {
+      "id": "historical-warning-portable-v3",
+      "spec": "work/boss 1/research/models/jst_portable_20261127/experiment.json",
+      "spec_sha256": "53631351a731da8bec503eb20acb32caf0fb16839b40b51ab10ffd9bbf793483",
+      "csv": "work/boss 1/research/models/jst_portable_20261127/panel.csv",
+      "csv_sha256": "2f64f12bd435510666480dc15d44c3ef4abd59648ff1eaa7b49e505d9222c3bf",
+      "input_kind": "observed_historical_panel",
+      "output_sha256": "726b2feb148ab90bd3bdd4d9fbf43c0853c3407f7d875840a55864568eb2f4d0"
+    }
+  ],
+  "principal_ledger_actual_runs": 12,
+  "principal_ledger_sessions": 5,
+  "runner_reported_core_hours": 0.029110082635000936,
+  "two_outputs_differ_only_in": [
+    "/result/executed_at",
+    "/result/models/hist_gradient_boosting/elapsed_seconds",
+    "/result/models/logit/elapsed_seconds"
+  ],
+  "portable_input_changed_fields": [
+    "/csv"
+  ],
+  "portable_manifest_changed_fields": [
+    "/preparation_script_sha256"
+  ],
+  "origin_source_groups": {
+    "source_records": 157,
+    "publication_locator_groups": 113,
+    "event_or_publication_groups": 105,
+    "case": "PF029和QA001两稿同一众邦接管事实，只按一案。105是混合索引组数，不是独立危机或宏观观察数。",
+    "publication_index_rows": [
+      {
+        "event_id": "publication-02d5de2e82d4",
+        "evidence_ids": [
+          "PF029"
+        ],
+        "rationale": "在未识别其他共同事件时按出版物归并；不声称经济或统计独立。"
+      },
+      {
+        "event_id": "publication-c531cf90c31b",
+        "evidence_ids": [
+          "QA001"
+        ],
+        "rationale": "在未识别其他共同事件时按出版物归并；不声称经济或统计独立。"
+      }
+    ]
+  },
+  "actual_separate_reviewer_replay": {
+    "input_path_was_relative": true,
+    "own_temporary_csv_resolved_in_reviewer_directory": true,
+    "prepare_exit_code": 0,
+    "prepare_result": {
+      "raw_rows": 2718,
+      "prepared_rows": 1703,
+      "positive_rows": 192,
+      "distinct_targeted_episodes": 73,
+      "raw_sha256": "b0ebb74a8d1b5b1bc9033fc46a6dcc578736afff8ce1e1086b7840f2649e79b3"
+    },
+    "temporary_regenerated_dta_sha256": "b0ebb74a8d1b5b1bc9033fc46a6dcc578736afff8ce1e1086b7840f2649e79b3",
+    "temporary_regenerated_panel_sha256": "2f64f12bd435510666480dc15d44c3ef4abd59648ff1eaa7b49e505d9222c3bf",
+    "temporary_regenerated_manifest_sha256": "d1a1f7738bb160b858e3d68e11d92c518ac245c56d3ebe6b149a5a3e0f8d710c",
+    "method_exit_code": 0,
+    "execution_utc": "2026-11-28T05:45:19.628179+00:00",
+    "reviewer_method_raw_output_sha256": "cb43aed53e12173918cc636a779823573a8308a034060fd2e90609ed0ac4354b",
+    "output_delta_vs_portable": [
+      "/result/executed_at",
+      "/result/models/hist_gradient_boosting/elapsed_seconds",
+      "/result/models/logit/elapsed_seconds"
+    ],
+    "commands": [
+      ".venv-methods/bin/python tools/prepare_jst_example.py --source work/boss 1/research/models/jst_portable_20261127/JSTdatasetR6.dta --output <new repository-relative directory>/panel",
+      ".venv-methods/bin/python work.py methods run --name early-warning --input <new directory>/panel/experiment.json --output <new directory>/replay.json"
+    ],
+    "main_compute_ledger_modified_by_reviewer": false
+  },
+  "reviewed_at_utc": "2026-11-28T05:45:19.796578+00:00",
+  "reviewed_worktree_head_at_read": "5f5f74bebfe8c725fca774efaf19b304f05c4f00",
+  "current_file_sha256": {
+    "formal/report.md": "65afc995b3031ffbdff967633fd0aa37274629cad40b7880bae663cbb20f7b4c",
+    "formal/judgments.json": "af04fefc8348bf50902501082b6cce62d386d91d7336699461cf71d35986049a",
+    "formal/scenarios.json": "0133496a1354d514372e6bd9ed35efd83eb3ea6e914b5a2074a0e8bedaa7ae9b",
+    "compute/ledger.json": "3097bb3644e5e1d36f58f994e62a947946f2d8524b10b2bf46e497d7acb8ca41",
+    "research/graph_current.json": "5a65a18192b1ae471234ccfb0faa1a64e3604c824b9fa5904b0e618840f1028e",
+    "research/model_results.md": "0f8aef02da2e49a31175e066ccc166284e5f80da13e2346b2cae3c31093aa3c1",
+    "research/method_runs.md": "568d843081f1f3ca09089181ce501bb04ecdd9c2c225dc6c39c799da473b6238",
+    "research/challenges.md": "e8271fcd846bdbd136981c17de3e93f893f1149913bfb2572158762d34ec84fd",
+    "research/tasks/release_audit/pre_repair_cases.json": "008faf57a0d9891b3b7d7f763615a1b400fe2106b8a1cbb00327f1624d9e8952",
+    "research/tasks/release_audit/pre_repair_results.json": "54056ceb897509749b4fbf031bb6cebb97b9d0179cf2c457348c09de08f274cf",
+    "research/tasks/fresh_restore/receipt.json": "ad736d10d0e1e8661de6ea47cfce18027d01b2de4d9ea84e641c777067335c06",
+    "research/historical_model_correction.md": "a06e18161c8a05f244a95b9c031458e2fd457cc3dcc294f45453d53cc8b2aefc",
+    "research/models/model_decisions.md": "2d79e2e025333af3ace0e1493f21cfe94d09609372d6c34916f975c0be591d6d",
+    "research/source_lineage.json": "cc7269bc29ae19b57a63a914bee72235db55cec5f51df258a2c7223064924ec6",
+    "research/models/compute-current.json": "ad983f5d4fcbdbf79538427d8b3aa32093fc836d5989c69a590b225c91658ca7",
+    "research/models/compute-portable-history.json": "4cb457c423566edc337b490f46b5fa8580b5087db6abdca8ba4a10f03f81983e",
+    "research/models/compute-audited-history.json": "18ad394619ead81f0b4072b908ab91fe932125634e146fc96c35f4f520bdb8e1",
+    "research/receipts/portable_input_repair.json": "377bf18d2e7f562de9b0238b1f830450c0800586787c50676540ac0208fa03c8",
+    "research/receipts/portable_experiment_replay.json": "54da3204acbebb86cb73a1337f0d84d8cb85682ae2e5d0d0fabf54a3c57d06cd",
+    "research/receipts/current_plan_portability.json": "26938450d3a3066ce4e50e8c13188178574e79f59902a60596990356726a5e2e",
+    "research/RESUME.md": "f721595466fbf49fa75b018a2f4ea337dc0341f54106e4570d49878e0a02db7a",
+    "research/data/audit_crosscheck_record.json": "a5a522d3ebee8d1b24324d4227c5366397da7670935c9a29e69368a2e784fe61",
+    "research/models/jst_audited_20261127/experiment.json": "e9af3567bc6a9ca9c16c2857b69b6f0945ca7118adfd56f9532927e76a25766e",
+    "research/models/jst_audited_20261127/data_manifest.json": "4166d0695b02bfc64c42c874fb3a7990092a00b06aa8ac1378921359275036bc",
+    "research/models/jst_audited_20261127/JSTdatasetR6.dta": "b0ebb74a8d1b5b1bc9033fc46a6dcc578736afff8ce1e1086b7840f2649e79b3",
+    "research/models/jst_audited_20261127/panel.csv": "2f64f12bd435510666480dc15d44c3ef4abd59648ff1eaa7b49e505d9222c3bf",
+    "research/models/jst_portable_20261127/experiment.json": "53631351a731da8bec503eb20acb32caf0fb16839b40b51ab10ffd9bbf793483",
+    "research/models/jst_portable_20261127/data_manifest.json": "d1a1f7738bb160b858e3d68e11d92c518ac245c56d3ebe6b149a5a3e0f8d710c",
+    "research/models/jst_portable_20261127/JSTdatasetR6.dta": "b0ebb74a8d1b5b1bc9033fc46a6dcc578736afff8ce1e1086b7840f2649e79b3",
+    "research/models/jst_portable_20261127/panel.csv": "2f64f12bd435510666480dc15d44c3ef4abd59648ff1eaa7b49e505d9222c3bf",
+    "compute/outputs/historical-warning-audit-v2-de6d97643789.json": "a243a21a3dd730ab2db28d240747f040548122dde53f15a63a5a5ae5c1e22c3b",
+    "compute/outputs/historical-warning-portable-v3-933f425819ff.json": "726b2feb148ab90bd3bdd4d9fbf43c0853c3407f7d875840a55864568eb2f4d0",
+    "research/tasks/research_independent_review/economic_checks.json": "f9387a47cfd3ad6151516e1daa60828ad6855edf09ff33f9c0f99d1e94fe94a3",
+    "research/tasks/research_independent_review/economics_review.md": "b3ff6b4fa4ce0bc4815fa61cd3c1f8cebcfff5656d504b4ceae9a5b22efce849",
+    "research/tasks/research_independent_review/economic_delta.md": "09fe223b7e865762ed2ba2d54e5adb2154d7674a345f647604707c633dd3d3e8",
+    "research/tasks/research_independent_review/verify_economic_delta.py": "851208437417fbf00550a84e5aa8f6490ce9173af6d35036295e1c52033cd3c7"
+  },
+  "repository_prepare_sha256": "f26751a26717067df27aea2af4b7939acc61b75dc0267a7b39490bc1a3fc13cb",
+  "economic_verdicts": {
+    "sources": "pass",
+    "frameworks": "pass",
+    "models": "pass",
+    "hyperedges": "pass",
+    "judgments": "pass"
+  },
+  "final_release_verdict": "outside_delta_scope"
+}

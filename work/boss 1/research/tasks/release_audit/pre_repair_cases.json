@@ -1,0 +1,29 @@
+{
+  "scope": "Independently constructed synthetic contracts, no observed household or macroeconomic claim.",
+  "as_tested": "1580e869769a9410b88d040acf08bab394c6f9d2",
+  "html_sha256": "9b4e215c09195bdf0ddcda0713f513b3899c7ced87596e67818a975f398d666b",
+  "wage_household": {
+    "cash": 0, "minimumLiving": 700,
+    "incomes": [{"id":"salary", "name":"工资", "kind":"wage", "monthly":1000}]
+  },
+  "targets": [
+    {"id":"salary","meaning":"existing wage"},
+    {"id":"sallary","meaning":"absent wage ID"},
+    {"id":"medical","meaning":"existing zero-valued medical expense, wrong class"}
+  ],
+  "wage_path": {"key":"wageFactor", "value":0.5, "start":1, "duration":120},
+  "contract_household": {
+    "cash":13000, "minimumLiving":0,
+    "loans":[{
+      "id":"loan", "name":"每次提前还款最多1000元，仅获准部分预付", "kind":"mortgage",
+      "principal":10000, "annualRate":0.12, "months":12, "canPrepay":true,
+      "prepayFrom":1, "prepayMin":100, "prepayFee":0, "settlementFee":0,
+      "allowRecast":true, "allowShorten":true, "prepayMax":1000, "allowFull":false
+    }]
+  },
+  "contract_expected": {
+    "max_early_principal_per_action":1000, "full_early_settlement_authorized":false,
+    "ordinary_contract_payment_remains_due":true,
+    "note":"The pre-repair schema has no full-payment or maximum-amount field. The two illustrative import keys cannot supply those terms on the old page. The contractual terms are independently specified above."
+  }
+}

@@ -1,0 +1,100 @@
+{
+  "scope": "Synthetic negative controls on the immutable pre-repair HTML. Node VM; no real browser.",
+  "reviewer": "/root/release_audit",
+  "frozenCommit": "1580e869769a9410b88d040acf08bab394c6f9d2",
+  "htmlSha256": "9b4e215c09195bdf0ddcda0713f513b3899c7ced87596e67818a975f398d666b",
+  "engineSha256": "4a0e486acf12693213c8ea2e715689fed5f532f1f27ff37acb1e1d523fd24fd9",
+  "casesSha256": "008faf57a0d9891b3b7d7f763615a1b400fe2106b8a1cbb00327f1624d9e8952",
+  "scriptSha256": "0c4e7cee289a6b7133ecdfbd0f95ffa46a0e6116bccc83b98073936504492b96",
+  "node": "v24.22.3",
+  "targetCases": [
+    {
+      "target": "salary",
+      "meaning": "existing wage",
+      "acceptedWithoutError": true,
+      "feasibleRules": 0,
+      "firstFailure": 1,
+      "firstMonthCash": 0,
+      "fundingGap": 200,
+      "terminal": null
+    },
+    {
+      "target": "sallary",
+      "meaning": "absent wage ID",
+      "acceptedWithoutError": true,
+      "feasibleRules": 1,
+      "firstFailure": null,
+      "firstMonthCash": 300,
+      "fundingGap": 0,
+      "terminal": 36000
+    },
+    {
+      "target": "medical",
+      "meaning": "existing zero-valued medical expense, wrong class",
+      "acceptedWithoutError": true,
+      "feasibleRules": 1,
+      "firstFailure": null,
+      "firstMonthCash": 300,
+      "fundingGap": 0,
+      "terminal": 36000
+    }
+  ],
+  "policies": [
+    {
+      "id": "S000",
+      "mode": "baseline",
+      "feasible": true,
+      "extraPrincipal": 0,
+      "endingRealWealth": 2338.1453585989957
+    },
+    {
+      "id": "S001",
+      "mode": "full",
+      "feasible": true,
+      "extraPrincipal": 9211.512113216582,
+      "endingRealWealth": 2900
+    },
+    {
+      "id": "S002",
+      "mode": "recast",
+      "feasible": true,
+      "extraPrincipal": 2500,
+      "endingRealWealth": 2490.632440658754
+    },
+    {
+      "id": "S003",
+      "mode": "shorten",
+      "feasible": true,
+      "extraPrincipal": 2500,
+      "endingRealWealth": 2597.7210511814387
+    },
+    {
+      "id": "S004",
+      "mode": "recast",
+      "feasible": true,
+      "extraPrincipal": 5000,
+      "endingRealWealth": 2643.1195227185126
+    },
+    {
+      "id": "S005",
+      "mode": "shorten",
+      "feasible": true,
+      "extraPrincipal": 5000,
+      "endingRealWealth": 2774.912283997503
+    }
+  ],
+  "winners": {
+    "baseline": "S000",
+    "robust": "S001",
+    "cash": "S001",
+    "regret": "S001",
+    "wealth": "S001",
+    "debt": "S001",
+    "leastGap": "S000"
+  },
+  "overQuotaDirect": {
+    "principal": 1001,
+    "feasible": true
+  },
+  "largestTestedEarlyPayment": 9211.512113216582
+}
