@@ -1,5 +1,7 @@
 # 中国经济危机研究工作台
 
+当前委托先完成“窥市寻真”作者学习与复刻，入口为 [作者学习启动](prompts/05_AUTHOR_CLONE_FIRST.md)。[逐项要求](docs/AUTHOR_CLONE_REQUIREMENTS.md)、[上游源码审计](docs/AUTHOR_CLONE_SOURCE_AUDIT.md)与 [实际状态](research/author_clone/status.json) 区分输入准备、原生链运行、正式全库学习及复刻效果。作者学习未完成时，先执行该入口；下面的报告优先流程用于后续经济研究。
+
 从明确判断出发，把材料、分析、计算、写作和持续修订接成一个能恢复的研究过程。
 
 当前首轮采用**报告优先**：经济思维、争议研究图与深度报告是主要交付，计算器另作编码任务。显式使用`session start --actor "<完整身份>" --profile report-first`，第18阶段改为报告编辑。旧20阶段合并模式保留重放记录。后续研究agent执行 **8阶段**，从旧结论、检索记录、机制和修改历史出发，补充、加强、替换或撤回具体内容。所有核心问题都要给主判断；科学评分与概率模型遵守 [科学建模规范](docs/SCIENTIFIC_MODELS.md)。

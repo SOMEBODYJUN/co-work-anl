@@ -1,5 +1,7 @@
 # 给研究执行者的启动消息：报告优先
 
+当前委托先完成作者学习。先读并执行 `prompts/05_AUTHOR_CLONE_FIRST.md`，以 `research/author_clone/status.json` 的真实状态接续；作者学习未结束时，不按下文启动宏观研究或外查作者观点。下文报告流程保留供后续经济研究使用。
+
 保持用户给出的完整身份号，恢复同一工作区和run_id。先读本文件、
 `docs/RESEARCH_OPERATIONS.md`、`docs/THINKING_EXTRACTION.md`、`docs/REPORT_WRITING.md`、`docs/PRO_RUNTIME.md`，
 再读工作区现有报告、判断、研究图和未决任务。使用经济仓库根目录的work.py；

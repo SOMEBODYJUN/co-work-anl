@@ -1,0 +1,20 @@
+{
+  "event": "first_utterance_parser_failure_and_resume",
+  "original_failed_response_retained_as_separate_file": false,
+  "original_failed_response_path": "/workspace/scratch/83e1f6a58092/author_rebuild/runs/reading/requests/b76028c94d570d75c050d31f7ecd6d55e56b30e3cd8cfd76d9ffbd14547a424f.response.json",
+  "original_failed_response_status": "The original contents were overwritten in place during repair; no pre-repair backup exists. The original generation command and its text appear in the task tool transcript, but no independent original response artifact is claimed.",
+  "corrected_response_path": "/workspace/scratch/83e1f6a58092/author_rebuild/runs/reading/requests/b76028c94d570d75c050d31f7ecd6d55e56b30e3cd8cfd76d9ffbd14547a424f.response.json",
+  "request_path": "/workspace/scratch/83e1f6a58092/author_rebuild/runs/reading/requests/b76028c94d570d75c050d31f7ecd6d55e56b30e3cd8cfd76d9ffbd14547a424f.request.json",
+  "failure": "Initial run reached upstream interaction.py _func_clean_up; extract_first_json_dict(gpt_response) returned None, then indexing [\"utterance\"] raised TypeError: NoneType object is not subscriptable. The upstream parser replaces Unicode curly double quotation marks globally, including those inside the utterance string, thereby making this otherwise valid JSON text unparsable.",
+  "repair": "In the same existing response file, only Chinese curly double quotation marks within the utterance were replaced with corner brackets: “记得” became 「记得」 and “阅读实验单” became 「阅读实验单」. request_id, model, agent_id and substantive utterance were preserved. The corrected text was checked with the upstream extract_first_json_dict parser.",
+  "execution": "First process exited 1 after six observation scoring calls, reflection generation, reflection scoring, and one utterance call. A restart loaded saved native state and consumed the corrected existing utterance response; it exited 0, generated DONE, and verified save/reload.",
+  "different_native_request_count": 9,
+  "response_file_count": 9,
+  "actual_model_generation_count": 9,
+  "transport_request_invocation_count_across_both_processes": 10,
+  "restart_transport_invocations": 1,
+  "restart_used_corrected_cached_response": true,
+  "restart_was_new_model_generation": false,
+  "execution_json_native_calls_scope": "The native_calls value of 1 in execution.json counts only the successful restart process, not all transport calls across both processes.",
+  "original_execution_json_preserved": true
+}
