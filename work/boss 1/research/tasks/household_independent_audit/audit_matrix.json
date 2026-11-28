@@ -1,0 +1,345 @@
+{
+  "reviewer": "/root/household_independent_audit",
+  "implementationAuthor": "/root/household_engine",
+  "projectActor": "boss 1",
+  "completedAt": "2026-11-28T05:28:11.852900+00:00",
+  "numericEngineVerdict": "pass",
+  "offlineUIVerdict": "blocked",
+  "realDataScope": "Independent engineering checks use invented CNY values. They do not calibrate scenarios or model the user’s household.",
+  "binding": {
+    "engine": "4a0e486acf12693213c8ea2e715689fed5f532f1f27ff37acb1e1d523fd24fd9",
+    "packagedHTML": "9b4e215c09195bdf0ddcda0713f513b3899c7ced87596e67818a975f398d666b",
+    "independentInput": "3e0f3157af50ea21873a8fa1777c4c32ac92e29d0ac7bd97f58f80c5c8a8a991",
+    "uncompressedResults": "03dbcad0bf389b78f925c6a11ba9dcc5ff37ded3f1e3216466c8d3edc5527f81"
+  },
+  "items": [
+    {
+      "criterion": "起始金额与显式区间",
+      "verdict": "pass",
+      "tested": 8,
+      "failedChecks": [],
+      "evidence": "numeric_report.json",
+      "checkPrefixes": [
+        "empty household",
+        "empty original",
+        "editable recorded",
+        "unknown center",
+        "explicit upper",
+        "invalid assumption"
+      ]
+    },
+    {
+      "criterion": "等额本息、零利率与一期",
+      "verdict": "pass",
+      "tested": 18,
+      "failedChecks": [],
+      "evidence": "numeric_report.json",
+      "checkPrefixes": [
+        "annuity_zero",
+        "annuity_one",
+        "annuity_standard"
+      ]
+    },
+    {
+      "criterion": "等额本金、浮息重定价与定息对照",
+      "verdict": "pass",
+      "tested": 14,
+      "failedChecks": [],
+      "evidence": "numeric_report.json",
+      "checkPrefixes": [
+        "equal principal",
+        "floating only",
+        "floating contract",
+        "fixed_rate_control"
+      ]
+    },
+    {
+      "criterion": "部分预付降供缩期与现金来源",
+      "verdict": "pass",
+      "tested": 21,
+      "failedChecks": [],
+      "evidence": "numeric_report.json",
+      "checkPrefixes": [
+        "prepay_",
+        "recast reduces",
+        "shorten saves",
+        "fully prepaid",
+        "salary-funded",
+        "small enumerated universe"
+      ]
+    },
+    {
+      "criterion": "合同限制、费用与未知许可",
+      "verdict": "pass",
+      "tested": 21,
+      "failedChecks": [],
+      "evidence": "numeric_report.json",
+      "checkPrefixes": [
+        "contract_",
+        "unknown_loan",
+        "unknown_home",
+        "unknown_car",
+        "unknown_security",
+        "unknown_lien",
+        "contract can prohibit"
+      ]
+    },
+    {
+      "criterion": "负资产、解押先行、出售交割与关联贷款只扣一次",
+      "verdict": "pass",
+      "tested": 14,
+      "failedChecks": [],
+      "evidence": "numeric_report.json",
+      "checkPrefixes": [
+        "closing_",
+        "sale delayed",
+        "rent and carry",
+        "sale normal",
+        "closing month",
+        "closing proceeds",
+        "multiple sales",
+        "two-property",
+        "same property cannot"
+      ]
+    },
+    {
+      "criterion": "无法出售、必要车与替代出行、住房处理",
+      "verdict": "pass",
+      "tested": 5,
+      "failedChecks": [],
+      "evidence": "numeric_report.json",
+      "checkPrefixes": [
+        "unsellable",
+        "wait_limit",
+        "occupied_no_alternative",
+        "necessary_car",
+        "replacement mobility"
+      ]
+    },
+    {
+      "criterion": "空置、成交净额、待收款与受限金融资产",
+      "verdict": "pass",
+      "tested": 11,
+      "failedChecks": [],
+      "evidence": "numeric_report.json",
+      "checkPrefixes": [
+        "full vacancy",
+        "vacancy carry",
+        "discounted lease",
+        "trade financial",
+        "four staged sales",
+        "pending financial",
+        "restricted deposit",
+        "free deposit",
+        "pledged security"
+      ]
+    },
+    {
+      "criterion": "证券杠杆同步还贷、延迟结算与禁止解押",
+      "verdict": "pass",
+      "tested": 8,
+      "failedChecks": [],
+      "evidence": "numeric_report.json",
+      "checkPrefixes": [
+        "contract-authorized margin",
+        "security liquidation",
+        "delayed margin"
+      ]
+    },
+    {
+      "criterion": "失业、复工、投资总回报与通胀购买力",
+      "verdict": "pass",
+      "tested": 7,
+      "failedChecks": [],
+      "evidence": "numeric_report.json",
+      "checkPrefixes": [
+        "independent wage",
+        "investment total",
+        "one-off loss",
+        "real wealth deflation"
+      ]
+    },
+    {
+      "criterion": "失败截断、欠款保留、消费预算分类与失败后不得比较终值",
+      "verdict": "pass",
+      "tested": 9,
+      "failedChecks": [],
+      "evidence": "numeric_report.json",
+      "checkPrefixes": [
+        "guarantee call",
+        "failed cash",
+        "failed month",
+        "failure source",
+        "unfunded optional",
+        "failed rich",
+        "no feasible",
+        "all failed or"
+      ]
+    },
+    {
+      "criterion": "最低生活与储备约束",
+      "verdict": "pass",
+      "tested": 3,
+      "failedChecks": [],
+      "evidence": "numeric_report.json",
+      "checkPrefixes": [
+        "mandatory minimum",
+        "reserve breach",
+        "discretionary loan"
+      ]
+    },
+    {
+      "criterion": "跨策略同外生输入与无未来信息",
+      "verdict": "pass",
+      "tested": 8,
+      "failedChecks": [],
+      "evidence": "numeric_report.json",
+      "checkPrefixes": [
+        "no knowledge",
+        "order before",
+        "threshold lists",
+        "future loss",
+        "identical exogenous"
+      ]
+    },
+    {
+      "criterion": "小组合全量，大组合分层、经济轨迹与逐月实跑",
+      "verdict": "pass",
+      "tested": 10,
+      "failedChecks": [],
+      "evidence": "numeric_report.json",
+      "checkPrefixes": [
+        "small universe",
+        "small complete",
+        "rich stratified",
+        "rich reported",
+        "rich exported",
+        "rich at least",
+        "all simulated monthly",
+        "shortlist unique",
+        "baseline has",
+        "raw Cartesian"
+      ]
+    },
+    {
+      "criterion": "排序按目标、同可行集后悔比较",
+      "verdict": "pass",
+      "tested": 8,
+      "failedChecks": [],
+      "evidence": "numeric_report.json",
+      "checkPrefixes": [
+        "best feasible",
+        "regret equals",
+        "winner target",
+        "independent Pareto"
+      ]
+    },
+    {
+      "criterion": "逆向压力、租售盈亏与预付款上限",
+      "verdict": "pass",
+      "tested": 10,
+      "failedChecks": [],
+      "evidence": "numeric_report.json",
+      "checkPrefixes": [
+        "reverse wage",
+        "reverse retains",
+        "reverse price",
+        "reverse rent",
+        "reverse joint",
+        "reverse months",
+        "reverse prepayment",
+        "reverse sale",
+        "gross breakeven"
+      ]
+    },
+    {
+      "criterion": "多进程复现及单文件内置代码重放",
+      "verdict": "pass",
+      "tested": 4,
+      "failedChecks": [],
+      "evidence": "numeric_report.json",
+      "checkPrefixes": [
+        "identical fresh",
+        "formal calculator bytes",
+        "same exposed browser-global",
+        "same engine from"
+      ]
+    },
+    {
+      "criterion": "默认合成演示跨全部情景实际不同的可行月度轨迹",
+      "verdict": "pass",
+      "engineDefaultDisplayLimit": 500,
+      "actual": {
+        "differentRules": 500,
+        "commonFeasibleRules": 134,
+        "differentMonthlyTracesInCommon": 105,
+        "allDifferentMonthlyTraces": 416,
+        "raw": "151200",
+        "allScenarios": 3,
+        "allPathReplays": 1500,
+        "observedMonths": 168216,
+        "shortlist": [
+          "S254",
+          "S247",
+          "S432",
+          "S001",
+          "S102",
+          "S283",
+          "S015",
+          "S075",
+          "S093",
+          "S456",
+          "S122",
+          "S050",
+          "S391",
+          "S319",
+          "S039"
+        ],
+        "fullReplayedResultSHA256": "46a3307f4248dcd758a9d937baa2e831259006bf6c5c6fddf663598a56bacd0e"
+      },
+      "evidence": "demo_crosscheck.json"
+    },
+    {
+      "criterion": "版本、脚本、原始输入和输出哈希一致",
+      "verdict": "pass",
+      "artifactsMatch": true,
+      "inputOutputCodeMatch": true,
+      "evidence": "numeric_report.json, packaging_report.json, offline_attempt.json"
+    },
+    {
+      "criterion": "单文件源码、内联参数和静态网络依赖",
+      "verdict": "pass",
+      "evidence": "packaging_report.json"
+    },
+    {
+      "criterion": "真实 file:// 离线打开及真实浏览器请求与 console 监听",
+      "verdict": "blocked",
+      "evidence": "offline_attempt.json",
+      "completedBrowserActions": 0
+    },
+    {
+      "criterion": "显式示例、收入/区间与房产、车辆、贷款增删后重算",
+      "verdict": "blocked",
+      "evidence": "offline_attempt.json",
+      "completedBrowserActions": 0
+    },
+    {
+      "criterion": "界面情景/目标/假设类型可编辑且切换结果生效",
+      "verdict": "blocked",
+      "evidence": "offline_attempt.json",
+      "completedBrowserActions": 0
+    },
+    {
+      "criterion": "JSON 往返、全策略与各月 CSV 下载内容",
+      "verdict": "blocked",
+      "evidence": "offline_attempt.json",
+      "completedBrowserActions": 0
+    },
+    {
+      "criterion": "实际月表与图表数据切换、桌面和 390/320px 手机截图目检",
+      "verdict": "blocked",
+      "evidence": "offline_attempt.json",
+      "completedBrowserActions": 0
+    }
+  ]
+}

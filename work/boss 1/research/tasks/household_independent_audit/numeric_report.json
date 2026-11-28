@@ -1,0 +1,3168 @@
+{
+  "reviewer": "/root/household_independent_audit",
+  "author": "/root/household_engine",
+  "auditKind": "engineering_only_independently_created_synthetic_cases",
+  "utc": "2026-11-28T05:27:53.443304+00:00",
+  "python": "3.12.14",
+  "numpyFinancial": "1.0.0",
+  "node": "v24.22.3",
+  "reviewedArtifacts": {
+    "engine.js": "4a0e486acf12693213c8ea2e715689fed5f532f1f27ff37acb1e1d523fd24fd9",
+    "ui.js": "d4ccd10f8cb0c2caba79e2dd4106895ba30a35a69bd1444c73da3013d13808ec",
+    "ui.html": "9042f545bfe9c91c9967ec101c1d27ab72d28cdb86873066f1ae9cb4632db620",
+    "synthetic_household.json": "53423d158dfc93930e8f1d717e479ed6099465d058375cec646fa229530c6b60",
+    "scenarios.json": "0133496a1354d514372e6bd9ed35efd83eb3ea6e914b5a2074a0e8bedaa7ae9b",
+    "calculator.html": "9b4e215c09195bdf0ddcda0713f513b3899c7ced87596e67818a975f398d666b"
+  },
+  "inputSHA256": "3e0f3157af50ea21873a8fa1777c4c32ac92e29d0ac7bd97f58f80c5c8a8a991",
+  "uncompressedOutputSHA256": "03dbcad0bf389b78f925c6a11ba9dcc5ff37ded3f1e3216466c8d3edc5527f81",
+  "scriptSHA256": "e72de0f3e7890058d695744ddfe8093a9957c7c4ba53aa131c84b9f955c1d9e6",
+  "adapterSHA256": "e96fb653a7dedeb6d2190d6ec5bf1fa4899d8f9b5d35cc5a2d4834f3c15f40d3",
+  "requests": 87,
+  "checksRun": 179,
+  "passed": 179,
+  "failed": 0,
+  "coverage": {
+    "testedPolicies": 350,
+    "rawActionCombinations": 4200,
+    "commonFeasiblePolicyRules": 350,
+    "distinctCentLevelMonthlyOutcomesAmongCommon": 231,
+    "distinctAllRealizedLedgers": 231,
+    "fullPathLedgerInspections": 1050,
+    "inspectedRealizedMonths": 126000,
+    "shortlist": [
+      "S000",
+      "S152",
+      "S151",
+      "S156",
+      "S026",
+      "S005",
+      "S032",
+      "S041",
+      "S062",
+      "S070",
+      "S077",
+      "S146",
+      "S147",
+      "S148",
+      "S149"
+    ]
+  },
+  "checks": [
+    {
+      "check": "empty household cash / required floor",
+      "pass": true,
+      "observed": [
+        null,
+        null,
+        [],
+        "household"
+      ],
+      "expected": [
+        null,
+        null,
+        [],
+        "household"
+      ],
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "empty original amounts cannot run",
+      "pass": true,
+      "observed": true,
+      "expected": true,
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "annuity_zero interest",
+      "pass": true,
+      "observed": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "expected": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "annuity_zero principal",
+      "pass": true,
+      "observed": [
+        420,
+        420,
+        420,
+        420,
+        420,
+        420,
+        420
+      ],
+      "expected": [
+        420.0,
+        420.0,
+        420.0,
+        420.0,
+        420.0,
+        420.0,
+        420.0
+      ],
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "annuity_zero regularDue",
+      "pass": true,
+      "observed": [
+        420,
+        420,
+        420,
+        420,
+        420,
+        420,
+        420
+      ],
+      "expected": [
+        420.0,
+        420.0,
+        420.0,
+        420.0,
+        420.0,
+        420.0,
+        420.0
+      ],
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "annuity_zero debt",
+      "pass": true,
+      "observed": [
+        2520,
+        2100,
+        1680,
+        1260,
+        840,
+        420,
+        0
+      ],
+      "expected": [
+        2520.0,
+        2100.0,
+        1680.0,
+        1260.0,
+        840.0,
+        420.0,
+        0
+      ],
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "annuity_zero final paid",
+      "pass": true,
+      "observed": [
+        0,
+        0
+      ],
+      "expected": [
+        0,
+        0
+      ],
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "annuity_zero 120 months",
+      "pass": true,
+      "observed": 120,
+      "expected": 120,
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "annuity_one interest",
+      "pass": true,
+      "observed": [
+        20
+      ],
+      "expected": [
+        20.0
+      ],
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "annuity_one principal",
+      "pass": true,
+      "observed": [
+        2500
+      ],
+      "expected": [
+        2499.9999999999977
+      ],
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "annuity_one regularDue",
+      "pass": true,
+      "observed": [
+        2537
+      ],
+      "expected": [
+        2536.9999999999977
+      ],
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "annuity_one debt",
+      "pass": true,
+      "observed": [
+        0
+      ],
+      "expected": [
+        2.2737367544323206e-12
+      ],
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "annuity_one final paid",
+      "pass": true,
+      "observed": [
+        0,
+        0
+      ],
+      "expected": [
+        0,
+        0
+      ],
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "annuity_one 120 months",
+      "pass": true,
+      "observed": 120,
+      "expected": 120,
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "annuity_standard interest",
+      "pass": true,
+      "observed": {
+        "count": 19,
+        "first": [
+          70.36699166666666,
+          66.81309987115824,
+          63.24300825221528,
+          59.65664296564264
+        ],
+        "last": [
+          11.518771994871543,
+          7.696630398025846,
+          3.8570662057345273
+        ],
+        "sha256": "3e1756c54f3618fec0efc2928815b92cd72337283331e16bd37d75babfcdd1fe"
+      },
+      "expected": {
+        "count": 19,
+        "first": [
+          70.36699166666666,
+          66.81309987115823,
+          63.24300825221534,
+          59.656642965642696
+        ],
+        "last": [
+          11.518771994871564,
+          7.696630398025832,
+          3.8570662057345446
+        ],
+        "sha256": "03360e93913cc60b2dfcfa2ec5af65553d6a5d4396a001ad05493a84fc59349c"
+      },
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "annuity_standard principal",
+      "pass": true,
+      "observed": {
+        "count": 19,
+        "first": [
+          779.6471946270781,
+          783.2010864225865,
+          786.7711780415294,
+          790.3575433281021
+        ],
+        "last": [
+          838.4954142988731,
+          842.3175558957189,
+          846.1571200880132
+        ],
+        "sha256": "4ce7d8d1db0a1b54022ff5653231aa8b737e89b794eaebe75507595e37b6a9e3"
+      },
+      "expected": {
+        "count": 19,
+        "first": [
+          779.6471946270597,
+          783.2010864225681,
+          786.771178041511,
+          790.3575433280836
+        ],
+        "last": [
+          838.4954142988547,
+          842.3175558957005,
+          846.1571200879918
+        ],
+        "sha256": "ea07bc22e3e2fa14f21cb8ef4c55571cd3b691ad6826bcdfbd92068bf6cb8907"
+      },
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "annuity_standard regularDue",
+      "pass": true,
+      "observed": {
+        "count": 19,
+        "first": [
+          850.0141862937447,
+          850.0141862937447,
+          850.0141862937447,
+          850.0141862937447
+        ],
+        "last": [
+          850.0141862937446,
+          850.0141862937447,
+          850.0141862937478
+        ],
+        "sha256": "2ed9a4582f6558579b3f1cc124edbd0335f1e681273c39466d446a2cc0824db1"
+      },
+      "expected": {
+        "count": 19,
+        "first": [
+          850.0141862937263,
+          850.0141862937263,
+          850.0141862937263,
+          850.0141862937263
+        ],
+        "last": [
+          850.0141862937263,
+          850.0141862937263,
+          850.0141862937263
+        ],
+        "sha256": "97f6a440a7c7a7c18ffc7ec085d604053cd3a483e450142c68baf458b33b0a95"
+      },
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "annuity_standard debt",
+      "pass": true,
+      "observed": {
+        "count": 19,
+        "first": [
+          14657.352805372922,
+          13874.151718950336,
+          13087.380540908805,
+          12297.022997580703
+        ],
+        "last": [
+          1688.4746759837321,
+          846.1571200880132,
+          0
+        ],
+        "sha256": "15ad616a5a23683904d62abde519b1e211d22d15a96e962268fe48cc36e56172"
+      },
+      "expected": {
+        "count": 19,
+        "first": [
+          14657.35280537294,
+          13874.151718950372,
+          13087.380540908862,
+          12297.022997580778
+        ],
+        "last": [
+          1688.4746759840434,
+          846.1571200883429,
+          3.511786417220719e-10
+        ],
+        "sha256": "003eaba2a79be726a757c2bec41e867c46c8813f4b6b0ca82e62db6e497f7301"
+      },
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "annuity_standard final paid",
+      "pass": true,
+      "observed": [
+        0,
+        0
+      ],
+      "expected": [
+        0,
+        0
+      ],
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "annuity_standard 120 months",
+      "pass": true,
+      "observed": 120,
+      "expected": 120,
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "fixed_rate_control interest",
+      "pass": true,
+      "observed": [
+        78,
+        65.16155445975964,
+        52.25891669181808,
+        39.291765735036805,
+        26.25977902347163,
+        13.162632378348626
+      ],
+      "expected": [
+        78.0,
+        65.16155445975967,
+        52.258916691818285,
+        39.29176573503701,
+        26.259779023471747,
+        13.16263237834899
+      ],
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "fixed_rate_control principal",
+      "pass": true,
+      "observed": [
+        2567.6891080480723,
+        2580.5275535883125,
+        2593.430191356254,
+        2606.3973423130356,
+        2619.4293290246005,
+        2632.526475669725
+      ],
+      "expected": [
+        2567.6891080481214,
+        2580.5275535883616,
+        2593.430191356303,
+        2606.397342313084,
+        2619.4293290246496,
+        2632.5264756697725
+      ],
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "fixed_rate_control regularDue",
+      "pass": true,
+      "observed": [
+        2645.6891080480723,
+        2645.6891080480723,
+        2645.6891080480723,
+        2645.6891080480723,
+        2645.6891080480723,
+        2645.6891080480736
+      ],
+      "expected": [
+        2645.6891080481214,
+        2645.6891080481214,
+        2645.6891080481214,
+        2645.6891080481214,
+        2645.6891080481214,
+        2645.6891080481214
+      ],
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "fixed_rate_control debt",
+      "pass": true,
+      "observed": [
+        13032.310891951927,
+        10451.783338363615,
+        7858.353147007361,
+        5251.955804694326,
+        2632.526475669725,
+        0
+      ],
+      "expected": [
+        13032.310891951878,
+        10451.783338363517,
+        7858.353147007214,
+        5251.955804694129,
+        2632.5264756694796,
+        0
+      ],
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "fixed_rate_control final paid",
+      "pass": true,
+      "observed": [
+        0,
+        0
+      ],
+      "expected": [
+        0,
+        0
+      ],
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "fixed_rate_control 120 months",
+      "pass": true,
+      "observed": 120,
+      "expected": 120,
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "fully prepaid remaining principal plus variable and fixed fee checked once",
+      "pass": true,
+      "observed": [
+        400,
+        800,
+        23,
+        0,
+        777
+      ],
+      "expected": [
+        400,
+        800,
+        23,
+        0,
+        777
+      ],
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "fully prepaid loan has no later installments",
+      "pass": true,
+      "observed": [
+        400,
+        0,
+        0,
+        0
+      ],
+      "expected": [
+        400,
+        0,
+        0,
+        0
+      ],
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "guarantee call creates a due debt without cash drawdown proceeds",
+      "pass": true,
+      "observed": [
+        [
+          0,
+          0,
+          500,
+          0
+        ],
+        [
+          300,
+          500,
+          200,
+          400
+        ]
+      ],
+      "expected": [
+        [
+          0,
+          0,
+          500,
+          0
+        ],
+        [
+          300,
+          500,
+          200,
+          400
+        ]
+      ],
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "four staged sales each sell one quarter of initial shares at prevailing prices",
+      "pass": true,
+      "observed": [
+        [
+          1,
+          990
+        ],
+        [
+          4,
+          742.5
+        ],
+        [
+          7,
+          742.5
+        ],
+        [
+          10,
+          742.5
+        ]
+      ],
+      "expected": [
+        [
+          1,
+          990
+        ],
+        [
+          4,
+          742.5
+        ],
+        [
+          7,
+          742.5
+        ],
+        [
+          10,
+          742.5
+        ]
+      ],
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "four staged sales do not settle early or sell a second time",
+      "pass": true,
+      "observed": [
+        [
+          2,
+          990
+        ],
+        [
+          5,
+          742.5
+        ],
+        [
+          8,
+          742.5
+        ],
+        [
+          11,
+          742.5
+        ]
+      ],
+      "expected": [
+        [
+          2,
+          990
+        ],
+        [
+          5,
+          742.5
+        ],
+        [
+          8,
+          742.5
+        ],
+        [
+          11,
+          742.5
+        ]
+      ],
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "four staged sales total cash net of fees",
+      "pass": true,
+      "observed": 3217.5,
+      "expected": 3217.5,
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "equal principal constant installment",
+      "pass": true,
+      "observed": [
+        883.6363636363636,
+        883.6363636363636,
+        883.6363636363636,
+        883.6363636363636,
+        883.6363636363636,
+        883.6363636363636,
+        883.6363636363636,
+        883.6363636363636,
+        883.6363636363636,
+        883.6363636363636,
+        883.636363636362
+      ],
+      "expected": [
+        883.6363636363636,
+        883.6363636363636,
+        883.6363636363636,
+        883.6363636363636,
+        883.6363636363636,
+        883.6363636363636,
+        883.6363636363636,
+        883.6363636363636,
+        883.6363636363636,
+        883.6363636363636,
+        883.6363636363636
+      ],
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "equal principal interest by opening balance",
+      "pass": true,
+      "observed": [
+        58.31999999999999,
+        53.01818181818181,
+        47.716363636363624,
+        42.41454545454544,
+        37.11272727272726,
+        31.810909090909078,
+        26.509090909090894,
+        21.207272727272713,
+        15.905454545454534,
+        10.603636363636353,
+        5.301818181818172
+      ],
+      "expected": [
+        58.31999999999999,
+        53.01818181818181,
+        47.71636363636363,
+        42.41454545454545,
+        37.11272727272727,
+        31.81090909090909,
+        26.509090909090904,
+        21.207272727272727,
+        15.905454545454544,
+        10.60363636363636,
+        5.3018181818181835
+      ],
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "equal principal last balance",
+      "pass": true,
+      "observed": 0,
+      "expected": 0,
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "floating only at resets regularDue",
+      "pass": true,
+      "observed": [
+        2645.6891080480723,
+        2645.6891080480723,
+        2711.6606914160675,
+        2711.6606914160675,
+        2659.8042857728847,
+        2659.804285772884
+      ],
+      "expected": [
+        2645.6891080481214,
+        2645.6891080481214,
+        2711.660691416055,
+        2711.660691416055,
+        2659.8042857729138,
+        2659.8042857729138
+      ],
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "floating only at resets principal",
+      "pass": true,
+      "observed": [
+        2567.6891080480723,
+        2580.5275535883125,
+        2554.883941340613,
+        2593.2072004607226,
+        2649.19690137976,
+        2654.4952951825194
+      ],
+      "expected": [
+        2567.6891080481214,
+        2580.527553588362,
+        2554.8839413406026,
+        2593.2072004607116,
+        2649.1969013797893,
+        2654.495295182549
+      ],
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "floating only at resets interest",
+      "pass": true,
+      "observed": [
+        78,
+        65.16155445975964,
+        156.77675007545423,
+        118.45349095534503,
+        10.60738439312456,
+        5.308990590365039
+      ],
+      "expected": [
+        78.0,
+        65.16155445975939,
+        156.77675007545272,
+        118.4534909553437,
+        10.607384393124404,
+        5.308990590364824
+      ],
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "floating only at resets debt",
+      "pass": true,
+      "observed": [
+        13032.310891951927,
+        10451.783338363615,
+        7896.899397023002,
+        5303.69219656228,
+        2654.4952951825194,
+        0
+      ],
+      "expected": [
+        13032.310891951878,
+        10451.783338363515,
+        7896.899397022913,
+        5303.692196562201,
+        2654.495295182412,
+        0
+      ],
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "floating contract annual path",
+      "pass": true,
+      "observed": [
+        0.06,
+        0.06,
+        0.18,
+        0.18,
+        0.024,
+        0.024
+      ],
+      "expected": [
+        0.06,
+        0.06,
+        0.18,
+        0.18,
+        0.024,
+        0.024
+      ],
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "prepay_hold principal_balance",
+      "pass": true,
+      "observed": [
+        12638.491755667848,
+        10866.120877162315,
+        9082.820378239332,
+        7288.5228595729905,
+        5483.160506208206,
+        3666.6650849976727,
+        1838.9679420230075,
+        0
+      ],
+      "expected": [
+        12638.491755667847,
+        10866.120877162311,
+        9082.820378239327,
+        7288.522859572983,
+        5483.160506208197,
+        3666.6650849976613,
+        1838.967942022994,
+        0
+      ],
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "prepay_hold interest",
+      "pass": true,
+      "observed": [
+        88.8,
+        77.9373658266184,
+        67.00774540916761,
+        56.01072566580921,
+        44.94589096736677,
+        33.81282312161727,
+        22.611101357485648,
+        11.34030230914188
+      ],
+      "expected": [
+        88.8,
+        77.93736582661839,
+        67.00774540916758,
+        56.01072566580918,
+        44.94589096736673,
+        33.812823121617214,
+        22.611101357485577,
+        11.340302309141796
+      ],
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "prepay_hold regularDue",
+      "pass": true,
+      "observed": [
+        1850.308244332151,
+        1850.308244332151,
+        1850.308244332151,
+        1850.308244332151,
+        1850.308244332151,
+        1850.308244332151,
+        1850.308244332151,
+        1850.3082443321493
+      ],
+      "expected": [
+        1850.3082443321528,
+        1850.3082443321528,
+        1850.3082443321528,
+        1850.3082443321528,
+        1850.3082443321528,
+        1850.3082443321528,
+        1850.3082443321528,
+        1850.308244332136
+      ],
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "prepay_hold cash",
+      "pass": true,
+      "observed": [
+        98149.69175566785,
+        96299.3835113357,
+        94449.07526700356,
+        92598.76702267141,
+        90748.45877833926,
+        88898.15053400712,
+        87047.84228967497,
+        85197.53404534282
+      ],
+      "expected": [
+        98149.69175566785,
+        96299.3835113357,
+        94449.07526700356,
+        92598.76702267141,
+        90748.45877833926,
+        88898.15053400712,
+        87047.84228967497,
+        85197.53404534284
+      ],
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "prepay_hold final loan installment month",
+      "pass": true,
+      "observed": 8,
+      "expected": 8,
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "prepay_recast principal_balance",
+      "pass": true,
+      "observed": [
+        12638.491755667848,
+        8736.120877162315,
+        7302.386714344541,
+        5859.811190856059,
+        4408.33978497273,
+        2947.9176387531206,
+        1478.489555965157,
+        0
+      ],
+      "expected": [
+        12638.491755667847,
+        8736.120877162311,
+        7302.386714344534,
+        5859.811190856047,
+        4408.3397849727135,
+        2947.9176387531,
+        1478.4895559651325,
+        0
+      ],
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "prepay_recast interest",
+      "pass": true,
+      "observed": [
+        88.8,
+        77.9373658266184,
+        53.87274540916761,
+        45.031384738458,
+        36.13550234361236,
+        27.184762007331834,
+        18.178825438977576,
+        9.117352261785134
+      ],
+      "expected": [
+        88.8,
+        77.93736582661839,
+        53.872745409167585,
+        45.03138473845796,
+        36.13550234361229,
+        27.184762007331734,
+        18.17882543897745,
+        9.117352261784983
+      ],
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "prepay_recast regularDue",
+      "pass": true,
+      "observed": [
+        1850.308244332151,
+        1850.308244332151,
+        1487.6069082269412,
+        1487.6069082269412,
+        1487.6069082269412,
+        1487.6069082269412,
+        1487.6069082269412,
+        1487.606908226942
+      ],
+      "expected": [
+        1850.3082443321528,
+        1850.3082443321528,
+        1487.606908226945,
+        1487.606908226945,
+        1487.606908226945,
+        1487.606908226945,
+        1487.606908226945,
+        1487.6069082269175
+      ],
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "prepay_recast cash",
+      "pass": true,
+      "observed": [
+        98149.69175566785,
+        94154.4735113357,
+        92666.86660310876,
+        91179.25969488182,
+        89691.65278665487,
+        88204.04587842792,
+        86716.43897020096,
+        85228.83206197401
+      ],
+      "expected": [
+        98149.69175566785,
+        94154.4735113357,
+        92666.86660310876,
+        91179.25969488182,
+        89691.65278665489,
+        88204.04587842795,
+        86716.43897020101,
+        85228.83206197408
+      ],
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "prepay_recast final loan installment month",
+      "pass": true,
+      "observed": 8,
+      "expected": 8,
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "prepay_shorten principal_balance",
+      "pass": true,
+      "observed": [
+        12638.491755667848,
+        8736.120877162315,
+        6939.685378239332,
+        5132.1718604063235,
+        3313.5120092133448,
+        1483.6370889380094,
+        0,
+        0
+      ],
+      "expected": [
+        12638.491755667847,
+        8736.120877162311,
+        6939.685378239326,
+        5132.171860406316,
+        3313.5120092133357,
+        1483.6370889379984,
+        0,
+        0
+      ],
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "prepay_shorten interest",
+      "pass": true,
+      "observed": [
+        88.8,
+        77.9373658266184,
+        53.87274540916761,
+        42.79472649914255,
+        31.648393139172327,
+        20.433324056815625,
+        9.149095381784392,
+        0
+      ],
+      "expected": [
+        88.8,
+        77.93736582661839,
+        53.872745409167585,
+        42.79472649914251,
+        31.648393139172285,
+        20.433324056815568,
+        9.149095381784324,
+        0.0
+      ],
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "prepay_shorten regularDue",
+      "pass": true,
+      "observed": [
+        1850.308244332151,
+        1850.308244332151,
+        1850.308244332151,
+        1850.308244332151,
+        1850.308244332151,
+        1850.308244332151,
+        1492.7861843197938,
+        0
+      ],
+      "expected": [
+        1850.3082443321528,
+        1850.3082443321528,
+        1850.3082443321528,
+        1850.3082443321528,
+        1850.3082443321528,
+        1850.3082443321528,
+        1492.7861843197827,
+        0.0
+      ],
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "prepay_shorten cash",
+      "pass": true,
+      "observed": [
+        98149.69175566785,
+        94154.4735113357,
+        92304.16526700355,
+        90453.85702267141,
+        88603.54877833926,
+        86753.24053400711,
+        85260.45434968732,
+        85260.45434968732
+      ],
+      "expected": [
+        98149.69175566785,
+        94154.4735113357,
+        92304.16526700355,
+        90453.85702267141,
+        88603.54877833926,
+        86753.24053400711,
+        85260.45434968732,
+        85260.45434968732
+      ],
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "prepay_shorten final loan installment month",
+      "pass": true,
+      "observed": 7,
+      "expected": 7,
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "recast reduces next payment; shorten keeps scheduled amount",
+      "pass": true,
+      "observed": [
+        true,
+        1850.308244332151
+      ],
+      "expected": [
+        true,
+        1850.3082443321528
+      ],
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "shorten saves more interest",
+      "pass": true,
+      "observed": true,
+      "expected": true,
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "contract_lock blocked/paid/ongoing",
+      "pass": true,
+      "observed": [
+        1,
+        0,
+        true,
+        false
+      ],
+      "expected": [
+        1,
+        0,
+        true,
+        false
+      ],
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "contract_lock unchanged schedule",
+      "pass": true,
+      "observed": [
+        12638.491755667848,
+        10866.120877162315,
+        9082.820378239332,
+        7288.5228595729905,
+        5483.160506208206,
+        3666.6650849976727,
+        1838.9679420230075,
+        0
+      ],
+      "expected": [
+        12638.491755667848,
+        10866.120877162315,
+        9082.820378239332,
+        7288.5228595729905,
+        5483.160506208206,
+        3666.6650849976727,
+        1838.9679420230075,
+        0
+      ],
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "contract_min blocked/paid/ongoing",
+      "pass": true,
+      "observed": [
+        1,
+        0,
+        true,
+        false
+      ],
+      "expected": [
+        1,
+        0,
+        true,
+        false
+      ],
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "contract_min unchanged schedule",
+      "pass": true,
+      "observed": [
+        12638.491755667848,
+        10866.120877162315,
+        9082.820378239332,
+        7288.5228595729905,
+        5483.160506208206,
+        3666.6650849976727,
+        1838.9679420230075,
+        0
+      ],
+      "expected": [
+        12638.491755667848,
+        10866.120877162315,
+        9082.820378239332,
+        7288.5228595729905,
+        5483.160506208206,
+        3666.6650849976727,
+        1838.9679420230075,
+        0
+      ],
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "contract_forbid blocked/paid/ongoing",
+      "pass": true,
+      "observed": [
+        1,
+        0,
+        true,
+        false
+      ],
+      "expected": [
+        1,
+        0,
+        true,
+        false
+      ],
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "contract_forbid unchanged schedule",
+      "pass": true,
+      "observed": [
+        12638.491755667848,
+        10866.120877162315,
+        9082.820378239332,
+        7288.5228595729905,
+        5483.160506208206,
+        3666.6650849976727,
+        1838.9679420230075,
+        0
+      ],
+      "expected": [
+        12638.491755667848,
+        10866.120877162315,
+        9082.820378239332,
+        7288.5228595729905,
+        5483.160506208206,
+        3666.6650849976727,
+        1838.9679420230075,
+        0
+      ],
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "contract_full_forbid blocked/paid/ongoing",
+      "pass": true,
+      "observed": [
+        1,
+        0,
+        true,
+        false
+      ],
+      "expected": [
+        1,
+        0,
+        true,
+        false
+      ],
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "contract_full_forbid unchanged schedule",
+      "pass": true,
+      "observed": [
+        12638.491755667848,
+        10866.120877162315,
+        9082.820378239332,
+        7288.5228595729905,
+        5483.160506208206,
+        3666.6650849976727,
+        1838.9679420230075,
+        0
+      ],
+      "expected": [
+        12638.491755667848,
+        10866.120877162315,
+        9082.820378239332,
+        7288.5228595729905,
+        5483.160506208206,
+        3666.6650849976727,
+        1838.9679420230075,
+        0
+      ],
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "closing_under no sale/no secured discharge",
+      "pass": true,
+      "observed": [
+        0,
+        0,
+        12000,
+        11000,
+        1
+      ],
+      "expected": [
+        0,
+        0,
+        12000,
+        11000,
+        1
+      ],
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "closing_escrow_under no sale/no secured discharge",
+      "pass": true,
+      "observed": [
+        0,
+        0,
+        12000,
+        11000,
+        1
+      ],
+      "expected": [
+        0,
+        0,
+        12000,
+        11000,
+        1
+      ],
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "closing_exact cash after separate fees and secured debt",
+      "pass": true,
+      "observed": [
+        0,
+        9000,
+        230,
+        11000,
+        110,
+        140,
+        9,
+        0,
+        0,
+        0
+      ],
+      "expected": [
+        0,
+        9000,
+        230,
+        11000,
+        110,
+        140,
+        9,
+        0,
+        0,
+        0
+      ],
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "closing_exact settlement once",
+      "pass": true,
+      "observed": 11000,
+      "expected": 11000,
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "closing_escrow_exact cash after separate fees and secured debt",
+      "pass": true,
+      "observed": [
+        8770,
+        9000,
+        230,
+        11000,
+        110,
+        140,
+        9,
+        0,
+        0,
+        0
+      ],
+      "expected": [
+        8770,
+        9000,
+        230,
+        11000,
+        110,
+        140,
+        9,
+        0,
+        0,
+        0
+      ],
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "closing_escrow_exact settlement once",
+      "pass": true,
+      "observed": 11000,
+      "expected": 11000,
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "unknown_lien_P_prepayFee cannot indirectly close an unconfirmed loan at zero cost",
+      "pass": true,
+      "observed": [
+        0,
+        0,
+        1,
+        true
+      ],
+      "expected": [
+        0,
+        0,
+        1,
+        true
+      ],
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "unknown_lien_P_settlementFee cannot indirectly close an unconfirmed loan at zero cost",
+      "pass": true,
+      "observed": [
+        0,
+        0,
+        1,
+        true
+      ],
+      "expected": [
+        0,
+        0,
+        1,
+        true
+      ],
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "unknown_lien_C_prepayFee cannot indirectly close an unconfirmed loan at zero cost",
+      "pass": true,
+      "observed": [
+        0,
+        0,
+        1,
+        true
+      ],
+      "expected": [
+        0,
+        0,
+        1,
+        true
+      ],
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "unknown_lien_C_settlementFee cannot indirectly close an unconfirmed loan at zero cost",
+      "pass": true,
+      "observed": [
+        0,
+        0,
+        1,
+        true
+      ],
+      "expected": [
+        0,
+        0,
+        1,
+        true
+      ],
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "contract can prohibit mortgage discharge",
+      "pass": true,
+      "observed": [
+        0,
+        1
+      ],
+      "expected": [
+        0,
+        1
+      ],
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "sale delayed by two full monthly intervals",
+      "pass": true,
+      "observed": [
+        0,
+        0,
+        1000,
+        0
+      ],
+      "expected": [
+        0,
+        0,
+        1000,
+        0
+      ],
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "rent and carry disappear at closing",
+      "pass": true,
+      "observed": [
+        [
+          90,
+          90,
+          0,
+          0
+        ],
+        [
+          12,
+          12,
+          0,
+          0
+        ]
+      ],
+      "expected": [
+        [
+          90,
+          90,
+          0,
+          0
+        ],
+        [
+          12,
+          12,
+          0,
+          0
+        ]
+      ],
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "sale normal + closing principal reconcile",
+      "pass": true,
+      "observed": [
+        [
+          200,
+          0,
+          800
+        ],
+        [
+          200,
+          0,
+          600
+        ],
+        [
+          0,
+          600,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "expected": [
+        [
+          200,
+          0,
+          800
+        ],
+        [
+          200,
+          0,
+          600
+        ],
+        [
+          0,
+          600,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "closing month cash including fees",
+      "pass": true,
+      "observed": [
+        878,
+        756,
+        1146,
+        1146
+      ],
+      "expected": [
+        878,
+        756,
+        1146,
+        1146
+      ],
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "closing proceeds net",
+      "pass": true,
+      "observed": 390,
+      "expected": 390,
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "unsellable fallback and failure",
+      "pass": true,
+      "observed": [
+        2,
+        15,
+        null,
+        0,
+        1
+      ],
+      "expected": [
+        2,
+        15,
+        null,
+        0,
+        1
+      ],
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "wait_limit fallback and failure",
+      "pass": true,
+      "observed": [
+        2,
+        15,
+        null,
+        0,
+        1
+      ],
+      "expected": [
+        2,
+        15,
+        null,
+        0,
+        1
+      ],
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "occupied_no_alternative law or replacement constraint",
+      "pass": true,
+      "observed": [
+        0,
+        1,
+        false
+      ],
+      "expected": [
+        0,
+        1,
+        false
+      ],
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "necessary_car law or replacement constraint",
+      "pass": true,
+      "observed": [
+        0,
+        1,
+        false
+      ],
+      "expected": [
+        0,
+        1,
+        false
+      ],
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "replacement mobility starts on closing",
+      "pass": true,
+      "observed": [
+        [
+          0,
+          35,
+          0
+        ],
+        [
+          1740,
+          0,
+          28
+        ],
+        [
+          0,
+          0,
+          28
+        ]
+      ],
+      "expected": [
+        [
+          0,
+          35,
+          0
+        ],
+        [
+          1740,
+          0,
+          28
+        ],
+        [
+          0,
+          0,
+          28
+        ]
+      ],
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "full vacancy still incurs carrying cost",
+      "pass": true,
+      "observed": [
+        0,
+        0,
+        0,
+        900,
+        1000
+      ],
+      "expected": [
+        0,
+        0,
+        0,
+        900,
+        1000
+      ],
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "vacancy carry",
+      "pass": true,
+      "observed": [
+        52,
+        52,
+        52,
+        52,
+        52
+      ],
+      "expected": [
+        52,
+        52,
+        52,
+        52,
+        52
+      ],
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "discounted lease pays only once lease begins",
+      "pass": true,
+      "observed": [
+        0,
+        900,
+        900,
+        900
+      ],
+      "expected": [
+        0,
+        900,
+        900,
+        900
+      ],
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "independent wage loss, unaffected business and gradual recovery",
+      "pass": true,
+      "observed": [
+        1990,
+        640,
+        600,
+        900,
+        1240,
+        1540,
+        1540
+      ],
+      "expected": [
+        1990,
+        640,
+        600,
+        900,
+        1240,
+        1540,
+        1540
+      ],
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "investment total return includes distributions, no second dividend cash",
+      "pass": true,
+      "observed": [
+        85,
+        85,
+        85,
+        85,
+        85,
+        85,
+        85,
+        85,
+        85,
+        85,
+        85,
+        85,
+        85
+      ],
+      "expected": [
+        85,
+        85,
+        85,
+        85,
+        85,
+        85,
+        85,
+        85,
+        85,
+        85,
+        85,
+        85,
+        85
+      ],
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "one-off loss and concentration, compounded annual return",
+      "pass": true,
+      "observed": [
+        8152.1156438910275,
+        6153.424951053039,
+        5945.29562156905,
+        5983.547832611097,
+        6022.046159530762,
+        6060.792185845014,
+        6099.7875052592135,
+        6139.033721732674,
+        6178.532449544628,
+        6218.285313360632,
+        6258.293948299387,
+        6298.559999999998,
+        6339.085124689661
+      ],
+      "expected": [
+        8152.1156438910275,
+        6153.424951053039,
+        5945.295621569051,
+        5983.547832611098,
+        6022.046159530763,
+        6060.792185845015,
+        6099.787505259216,
+        6139.033721732675,
+        6178.53244954463,
+        6218.285313360634,
+        6258.293948299389,
+        6298.5599999999995,
+        6339.085124689663
+      ],
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "trade financial position at order; proceeds only at T+2",
+      "pass": true,
+      "observed": [
+        [
+          230,
+          130,
+          4489
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          4459,
+          4459,
+          0
+        ],
+        [
+          0,
+          0,
+          4459
+        ],
+        [
+          91,
+          0,
+          0
+        ]
+      ],
+      "expected": [
+        [
+          230,
+          130,
+          4489
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          4459,
+          4459,
+          0
+        ],
+        [
+          0,
+          0,
+          4459
+        ],
+        [
+          91,
+          0,
+          0
+        ]
+      ],
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "pending financial proceeds cannot pay current obligation",
+      "pass": true,
+      "observed": [
+        1,
+        4459,
+        1,
+        null
+      ],
+      "expected": [
+        1,
+        4459,
+        1,
+        null
+      ],
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "restricted deposit never becomes usable",
+      "pass": true,
+      "observed": [
+        2,
+        4,
+        1000,
+        0
+      ],
+      "expected": [
+        2,
+        4,
+        1000,
+        0
+      ],
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "free deposit maturity and cumulative accrued interest",
+      "pass": true,
+      "observed": [
+        0,
+        0,
+        1028.7373447220805,
+        0
+      ],
+      "expected": [
+        0,
+        0,
+        1028.7373447220803,
+        0
+      ],
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "pledged security held before release",
+      "pass": true,
+      "observed": [
+        900,
+        0,
+        1
+      ],
+      "expected": [
+        900,
+        0,
+        1
+      ],
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "contract-authorized margin liquidation retires loan and covers monthly needs",
+      "pass": true,
+      "observed": [
+        1990,
+        0,
+        0,
+        0,
+        800,
+        null
+      ],
+      "expected": [
+        1990,
+        0,
+        0,
+        0,
+        800,
+        null
+      ],
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "security liquidation with unresolved debt forbid_early",
+      "pass": true,
+      "observed": [
+        1,
+        10,
+        1000,
+        1
+      ],
+      "expected": [
+        1,
+        10,
+        1000,
+        1
+      ],
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "security liquidation with unresolved debt no_lien_transfer",
+      "pass": true,
+      "observed": [
+        1,
+        10,
+        1000,
+        1
+      ],
+      "expected": [
+        1,
+        10,
+        1000,
+        1
+      ],
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "security liquidation with unresolved debt short_equity",
+      "pass": true,
+      "observed": [
+        1,
+        10,
+        1000,
+        1
+      ],
+      "expected": [
+        1,
+        10,
+        1000,
+        1
+      ],
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "delayed margin cash, principal and spending m1",
+      "pass": true,
+      "observed": [
+        80,
+        1000,
+        0
+      ],
+      "expected": [
+        80,
+        1000,
+        0
+      ],
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "delayed margin cash, principal and spending m2",
+      "pass": true,
+      "observed": [
+        60,
+        1000,
+        0
+      ],
+      "expected": [
+        60,
+        1000,
+        0
+      ],
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "delayed margin cash, principal and spending m3",
+      "pass": true,
+      "observed": [
+        1963,
+        0,
+        0
+      ],
+      "expected": [
+        1963,
+        0,
+        0
+      ],
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "delayed margin proceeds paid once after 2 months; transaction and release fees plus all 3 months of interest",
+      "pass": true,
+      "observed": 793,
+      "expected": 793,
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "salary-funded feasible control after necessities and first due installment",
+      "pass": true,
+      "observed": [
+        1000,
+        200,
+        500,
+        200
+      ],
+      "expected": [
+        1000,
+        200,
+        500,
+        200
+      ],
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "small enumerated universe includes an executable partial repayment from already contracted income",
+      "pass": true,
+      "observed": true,
+      "expected": true,
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "real wealth deflation m1",
+      "pass": true,
+      "observed": [
+        1.009488792934583,
+        883.9905112070654,
+        875.681352179558
+      ],
+      "expected": [
+        1.009488792934583,
+        883.9905112070654,
+        875.681352179558
+      ],
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "real wealth deflation m12",
+      "pass": true,
+      "observed": [
+        1.120000000000001,
+        1972.2335020916466,
+        1760.922769724683
+      ],
+      "expected": [
+        1.12,
+        1972.2335020916469,
+        1760.9227697246845
+      ],
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "real wealth deflation m36",
+      "pass": true,
+      "observed": [
+        1.4049280000000037,
+        4341.920729458054,
+        3090.4934127998317
+      ],
+      "expected": [
+        1.4049280000000004,
+        4341.920729458053,
+        3090.4934127998386
+      ],
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "real wealth deflation m120",
+      "pass": true,
+      "observed": [
+        3.105848208344235,
+        12560.964110440533,
+        4044.2942693380796
+      ],
+      "expected": [
+        3.105848208344212,
+        12560.964110440536,
+        4044.294269338111
+      ],
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "failed cash stops; unpaid non-principal and principal survive as liabilities",
+      "pass": true,
+      "observed": [
+        3,
+        2,
+        216,
+        2,
+        200,
+        3,
+        null,
+        null,
+        null
+      ],
+      "expected": [
+        3,
+        2,
+        216,
+        2,
+        200,
+        3,
+        null,
+        null,
+        null
+      ],
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "failed month book balance remains available only as diagnostic",
+      "pass": true,
+      "observed": [
+        0,
+        null,
+        null,
+        -202
+      ],
+      "expected": [
+        0,
+        null,
+        null,
+        -202
+      ],
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "failure source for each unpaid yuan",
+      "pass": true,
+      "observed": [
+        216,
+        202,
+        14,
+        0,
+        2
+      ],
+      "expected": [
+        216,
+        202,
+        14,
+        0,
+        2
+      ],
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "unfunded optional spending is a failed budget, not a new lender balance",
+      "pass": true,
+      "observed": [
+        60,
+        0,
+        0,
+        0,
+        60,
+        0
+      ],
+      "expected": [
+        60,
+        0,
+        0,
+        0,
+        60,
+        0
+      ],
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "unknown_loan_permission baseline possible; no unconfirmed economic action marked feasible",
+      "pass": true,
+      "observed": [
+        true,
+        0
+      ],
+      "expected": [
+        true,
+        0
+      ],
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "unknown_loan_fees baseline possible; no unconfirmed economic action marked feasible",
+      "pass": true,
+      "observed": [
+        true,
+        0
+      ],
+      "expected": [
+        true,
+        0
+      ],
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "unknown_home_permission baseline possible; no unconfirmed economic action marked feasible",
+      "pass": true,
+      "observed": [
+        true,
+        0
+      ],
+      "expected": [
+        true,
+        0
+      ],
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "unknown_home_fees baseline possible; no unconfirmed economic action marked feasible",
+      "pass": true,
+      "observed": [
+        true,
+        0
+      ],
+      "expected": [
+        true,
+        0
+      ],
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "unknown_car_permission baseline possible; no unconfirmed economic action marked feasible",
+      "pass": true,
+      "observed": [
+        true,
+        0
+      ],
+      "expected": [
+        true,
+        0
+      ],
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "unknown_car_fees baseline possible; no unconfirmed economic action marked feasible",
+      "pass": true,
+      "observed": [
+        true,
+        0
+      ],
+      "expected": [
+        true,
+        0
+      ],
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "unknown_security_eligibility baseline possible; no unconfirmed economic action marked feasible",
+      "pass": true,
+      "observed": [
+        true,
+        0
+      ],
+      "expected": [
+        true,
+        0
+      ],
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "unknown_security_cost_settlement baseline possible; no unconfirmed economic action marked feasible",
+      "pass": true,
+      "observed": [
+        true,
+        0
+      ],
+      "expected": [
+        true,
+        0
+      ],
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "no feasible household, only first unfunded obligations, no wealth prize",
+      "pass": true,
+      "observed": [
+        1,
+        0,
+        "S000",
+        60,
+        [],
+        null,
+        null,
+        null
+      ],
+      "expected": [
+        1,
+        0,
+        "S000",
+        60,
+        [],
+        null,
+        null,
+        null
+      ],
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "no feasible default role output",
+      "pass": true,
+      "observed": [
+        null,
+        null,
+        null,
+        null
+      ],
+      "expected": [
+        null,
+        null,
+        null,
+        null
+      ],
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "failed rich book balance never ranks with fulfilling strategies",
+      "pass": true,
+      "observed": true,
+      "expected": true,
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "mandatory minimum applies independently of declared regular costs",
+      "pass": true,
+      "observed": [
+        133,
+        15,
+        2,
+        20
+      ],
+      "expected": [
+        133,
+        15,
+        2,
+        20
+      ],
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "reserve breach without a payment failure",
+      "pass": true,
+      "observed": [
+        0,
+        14,
+        true
+      ],
+      "expected": [
+        0,
+        14,
+        true
+      ],
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "discretionary loan prepayment cannot spend reserve",
+      "pass": true,
+      "observed": [
+        0,
+        1,
+        93
+      ],
+      "expected": [
+        0,
+        1,
+        93
+      ],
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "no knowledge of later path / hold",
+      "pass": true,
+      "observed": true,
+      "expected": true,
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "order before month 15 follows same observed funds / hold",
+      "pass": true,
+      "observed": [],
+      "expected": [],
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "no knowledge of later path / trigger",
+      "pass": true,
+      "observed": true,
+      "expected": true,
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "order before month 15 follows same observed funds / trigger",
+      "pass": true,
+      "observed": [
+        {
+          "month": 14,
+          "asset": "P",
+          "type": "list",
+          "note": "预计交割月 16",
+          "amount": 0
+        }
+      ],
+      "expected": [
+        {
+          "month": 14,
+          "asset": "P",
+          "type": "list",
+          "note": "预计交割月 16",
+          "amount": 0
+        }
+      ],
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "threshold lists in month 14 before the month-15 price shock",
+      "pass": true,
+      "observed": [
+        14
+      ],
+      "expected": [
+        14
+      ],
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "future loss priced at actual settlement not anticipated",
+      "pass": true,
+      "observed": [
+        840,
+        2100
+      ],
+      "expected": [
+        840,
+        2100
+      ],
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "identical exogenous income under rival actions / plain",
+      "pass": true,
+      "observed": {
+        "count": 17,
+        "first": [
+          35,
+          35,
+          35,
+          35
+        ],
+        "last": [
+          35,
+          35,
+          35
+        ],
+        "sha256": "28f394352e987aa865887186cfc905c06a2659a795784a96bda07416aecf7754"
+      },
+      "expected": {
+        "count": 17,
+        "first": [
+          35,
+          35,
+          35,
+          35
+        ],
+        "last": [
+          35,
+          35,
+          35
+        ],
+        "sha256": "28f394352e987aa865887186cfc905c06a2659a795784a96bda07416aecf7754"
+      },
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "identical exogenous income under rival actions / future",
+      "pass": true,
+      "observed": {
+        "count": 17,
+        "first": [
+          35,
+          35,
+          35,
+          35
+        ],
+        "last": [
+          17.5,
+          17.5,
+          17.5
+        ],
+        "sha256": "ba7a67c5e838a6be4ca3f868eb8ef6b27c356c79f6323cf2c122381d121c098c"
+      },
+      "expected": {
+        "count": 17,
+        "first": [
+          35,
+          35,
+          35,
+          35
+        ],
+        "last": [
+          17.5,
+          17.5,
+          17.5
+        ],
+        "sha256": "ba7a67c5e838a6be4ca3f868eb8ef6b27c356c79f6323cf2c122381d121c098c"
+      },
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "editable recorded household + scenario uncertainty low",
+      "pass": true,
+      "observed": [
+        50,
+        165
+      ],
+      "expected": [
+        50,
+        165
+      ],
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "editable recorded household + scenario uncertainty base",
+      "pass": true,
+      "observed": [
+        100,
+        240
+      ],
+      "expected": [
+        100,
+        240
+      ],
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "editable recorded household + scenario uncertainty high",
+      "pass": true,
+      "observed": [
+        250,
+        330
+      ],
+      "expected": [
+        250,
+        330
+      ],
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "unknown center requires explicit choice",
+      "pass": true,
+      "observed": true,
+      "expected": true,
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "explicit upper endpoint with no center",
+      "pass": true,
+      "observed": 55,
+      "expected": 55,
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "invalid assumption type rejected",
+      "pass": true,
+      "observed": true,
+      "expected": true,
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "same property cannot be disposed twice",
+      "pass": true,
+      "observed": true,
+      "expected": true,
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "multiple sales sequence follows specified asset and month",
+      "pass": true,
+      "observed": [
+        "B",
+        "A"
+      ],
+      "expected": [
+        "B",
+        "A"
+      ],
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "two-property proceeds only enter once",
+      "pass": true,
+      "observed": 3600,
+      "expected": 3600,
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "small universe complete count",
+      "pass": true,
+      "observed": [
+        "4",
+        4,
+        4,
+        4
+      ],
+      "expected": [
+        "4",
+        4,
+        4,
+        4
+      ],
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "small complete action months",
+      "pass": true,
+      "observed": [
+        1,
+        6,
+        12
+      ],
+      "expected": [
+        1,
+        6,
+        12
+      ],
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "rich stratified actual count",
+      "pass": true,
+      "observed": [
+        350,
+        350,
+        "4200",
+        350
+      ],
+      "expected": [
+        350,
+        350,
+        "4200",
+        350
+      ],
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "rich at least 100 actually distinct feasible monthly cash and portfolio histories",
+      "pass": true,
+      "observed": true,
+      "expected": true,
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "all simulated monthly records or explicit failure cutoff",
+      "pass": true,
+      "observed": true,
+      "expected": true,
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "shortlist unique real outcome and within 10-20",
+      "pass": true,
+      "observed": true,
+      "expected": true,
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "rich reported distinct actual paths agrees with independent ledger fingerprints",
+      "pass": true,
+      "observed": [
+        231,
+        231
+      ],
+      "expected": [
+        231,
+        231
+      ],
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "rich exported economic groups are a one-to-one match to independent cent-level monthly ledgers",
+      "pass": true,
+      "observed": true,
+      "expected": true,
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "independent Pareto non-dominance across minimum cash, real wealth and peak DS ratio",
+      "pass": true,
+      "observed": [
+        "S152",
+        "S156",
+        "S165",
+        "S169",
+        "S174",
+        "S191",
+        "S200"
+      ],
+      "expected": [
+        "S152",
+        "S156",
+        "S165",
+        "S169",
+        "S174",
+        "S191",
+        "S200"
+      ],
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "baseline has no actions",
+      "pass": true,
+      "observed": [],
+      "expected": [],
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "raw Cartesian product exceeds actual bounded sample",
+      "pass": true,
+      "observed": true,
+      "expected": true,
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "best feasible actual wealth in quiet",
+      "pass": true,
+      "observed": 823219.5924407197,
+      "expected": 823219.5924407197,
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "best feasible actual wealth in squeeze",
+      "pass": true,
+      "observed": 770846.905313159,
+      "expected": 770846.905313159,
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "best feasible actual wealth in recovery",
+      "pass": true,
+      "observed": 838603.5924407197,
+      "expected": 838603.5924407197,
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "regret equals max gap against same feasible set, currency only",
+      "pass": true,
+      "observed": true,
+      "expected": true,
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "all failed or implementation-blocked excluded from usable wealth",
+      "pass": true,
+      "observed": true,
+      "expected": true,
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "winner target cash",
+      "pass": true,
+      "observed": 29306.761011001014,
+      "expected": 29306.761011001014,
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "winner target wealth",
+      "pass": true,
+      "observed": 770846.905313159,
+      "expected": 770846.905313159,
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "winner target regret",
+      "pass": true,
+      "observed": 0,
+      "expected": 0,
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "reverse retains unknown assumption price",
+      "pass": true,
+      "observed": [
+        1,
+        0,
+        0
+      ],
+      "expected": [
+        1,
+        0,
+        0
+      ],
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "reverse retains unknown assumption delay",
+      "pass": true,
+      "observed": [
+        1,
+        0,
+        0
+      ],
+      "expected": [
+        1,
+        0,
+        0
+      ],
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "reverse price threshold on actual sale; first gap is at month 119",
+      "pass": true,
+      "observed": {
+        "value": 21,
+        "failureMonth": 119,
+        "gap": 5,
+        "previousSafe": 20
+      },
+      "expected": {
+        "value": 21,
+        "failureMonth": 119,
+        "gap": 5,
+        "previousSafe": 20
+      },
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "reverse rent threshold with other wage intact",
+      "pass": true,
+      "observed": {
+        "value": 51,
+        "failureMonth": 1,
+        "gap": 1,
+        "previousSafe": 50
+      },
+      "expected": {
+        "value": 51,
+        "failureMonth": 1,
+        "gap": 1,
+        "previousSafe": 50
+      },
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "reverse joint wage and rent threshold",
+      "pass": true,
+      "observed": {
+        "value": 26,
+        "failureMonth": 1,
+        "gap": 2,
+        "previousSafe": 25
+      },
+      "expected": {
+        "value": 26,
+        "failureMonth": 1,
+        "gap": 2,
+        "previousSafe": 25
+      },
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "reverse wage, only 26% fails at 75 yuan obligations and 100 wage",
+      "pass": true,
+      "observed": {
+        "value": 26,
+        "failureMonth": 1,
+        "gap": 1,
+        "previousSafe": 25
+      },
+      "expected": {
+        "value": 26,
+        "failureMonth": 1,
+        "gap": 1,
+        "previousSafe": 25
+      },
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "reverse months without pay first failure month 1",
+      "pass": true,
+      "observed": {
+        "value": 1,
+        "failureMonth": 1,
+        "gap": 75,
+        "previousSafe": 0
+      },
+      "expected": {
+        "value": 1,
+        "failureMonth": 1,
+        "gap": 75,
+        "previousSafe": 0
+      },
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "reverse prepayment cap after first principal installment",
+      "pass": true,
+      "observed": 1100,
+      "expected": 1100,
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "reverse sale delay first loses liquidity at three months",
+      "pass": true,
+      "observed": {
+        "value": 3,
+        "failureMonth": 3,
+        "gap": 100,
+        "previousSafe": 2
+      },
+      "expected": {
+        "value": 3,
+        "failureMonth": 3,
+        "gap": 100,
+        "previousSafe": 2
+      },
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "gross breakeven rent from 120-month residual wealth with carrying costs",
+      "pass": true,
+      "observed": [
+        11.333624521891275,
+        8.333624521891284,
+        13000
+      ],
+      "expected": [
+        11.333333333333334,
+        8.333333333333334,
+        13000
+      ],
+      "absoluteTolerance": 0.005
+    },
+    {
+      "check": "identical fresh Node process, fixed input output hashes",
+      "pass": true,
+      "observed": {
+        "closing_exact": "7660804b3397394473b10137086511f3457a926e32a7da628712f20ee4585edf",
+        "failure": "dc03a74df91a1f528c736f3ac1c6d14c5eaa400ba0ce980c71b6145362508fa4",
+        "trigger_future": "22d021c2bea0b6670b6098407e72fd5612976548ed32572a324bbfdeb3a07dc8",
+        "rich_enumeration": "5c7b45578a21c95f423098c3ae1c66ec437da5010a9656f1f96d6669aecd431f"
+      },
+      "expected": {
+        "closing_exact": "7660804b3397394473b10137086511f3457a926e32a7da628712f20ee4585edf",
+        "failure": "dc03a74df91a1f528c736f3ac1c6d14c5eaa400ba0ce980c71b6145362508fa4",
+        "trigger_future": "22d021c2bea0b6670b6098407e72fd5612976548ed32572a324bbfdeb3a07dc8",
+        "rich_enumeration": "5c7b45578a21c95f423098c3ae1c66ec437da5010a9656f1f96d6669aecd431f"
+      },
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "formal calculator bytes equal frozen author artifact",
+      "pass": true,
+      "observed": "9b4e215c09195bdf0ddcda0713f513b3899c7ced87596e67818a975f398d666b",
+      "expected": "9b4e215c09195bdf0ddcda0713f513b3899c7ced87596e67818a975f398d666b",
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "same exposed browser-global ledger embedded in deliverable and source module",
+      "pass": true,
+      "observed": {
+        "blank": "0ddd135978b8411826eef27e96c8529a0f1154b41648a413959c59516c776f7c",
+        "unknown_loan_permission": "9c0c6f46323ed49f8964fd7e709ddcc015a86bf9c89810d92e4ea2b81604d67f",
+        "annuity_standard": "69d015b60ea2478e07313dc54f6734c06424ec31faa1fb1f977c28be5b6d9d9b",
+        "prepay_shorten": "249b1815e142123ebd71755eaabcc41d1f20eb37dfeae36bfc828cf97a87708b",
+        "closing_exact": "7660804b3397394473b10137086511f3457a926e32a7da628712f20ee4585edf",
+        "employment": "56ef6eac219eba3fe1939d6a02c2cf484df49d7397ab47e84796e48149da7a7b",
+        "security_late_failure": "b8d0b13a747e71e140860c62ff66b305a39a4a361f2d50b139f7fd2110d8516e",
+        "failure": "dc03a74df91a1f528c736f3ac1c6d14c5eaa400ba0ce980c71b6145362508fa4",
+        "range_high": "0454210dae582251aec7aebdb121d42e99392e85b0797330b80d6d4a7f065fa4",
+        "simple_enumeration": "2d6c4f6a667fbdbbbecd66f6f3e0d9e367087ef6e4045d8fb6f21fe59caa93ca",
+        "reverse_wage": "4991cbfc228e219fb5c6f4a69e3e1f324eb82a2494a36641dc827ddcfc102e5b"
+      },
+      "expected": {
+        "blank": "0ddd135978b8411826eef27e96c8529a0f1154b41648a413959c59516c776f7c",
+        "unknown_loan_permission": "9c0c6f46323ed49f8964fd7e709ddcc015a86bf9c89810d92e4ea2b81604d67f",
+        "annuity_standard": "69d015b60ea2478e07313dc54f6734c06424ec31faa1fb1f977c28be5b6d9d9b",
+        "prepay_shorten": "249b1815e142123ebd71755eaabcc41d1f20eb37dfeae36bfc828cf97a87708b",
+        "closing_exact": "7660804b3397394473b10137086511f3457a926e32a7da628712f20ee4585edf",
+        "employment": "56ef6eac219eba3fe1939d6a02c2cf484df49d7397ab47e84796e48149da7a7b",
+        "security_late_failure": "b8d0b13a747e71e140860c62ff66b305a39a4a361f2d50b139f7fd2110d8516e",
+        "failure": "dc03a74df91a1f528c736f3ac1c6d14c5eaa400ba0ce980c71b6145362508fa4",
+        "range_high": "0454210dae582251aec7aebdb121d42e99392e85b0797330b80d6d4a7f065fa4",
+        "simple_enumeration": "2d6c4f6a667fbdbbbecd66f6f3e0d9e367087ef6e4045d8fb6f21fe59caa93ca",
+        "reverse_wage": "4991cbfc228e219fb5c6f4a69e3e1f324eb82a2494a36641dc827ddcfc102e5b"
+      },
+      "absoluteTolerance": 1e-06
+    },
+    {
+      "check": "same engine from initial replay to final fresh-process replay",
+      "pass": true,
+      "observed": "4a0e486acf12693213c8ea2e715689fed5f532f1f27ff37acb1e1d523fd24fd9",
+      "expected": "4a0e486acf12693213c8ea2e715689fed5f532f1f27ff37acb1e1d523fd24fd9",
+      "absoluteTolerance": 1e-06
+    }
+  ]
+}
