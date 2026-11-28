@@ -1,0 +1,219 @@
+{
+  "reviewer": "/root/release_audit",
+  "scope": "Real executable product; invented household",
+  "htmlSha256": "f0c72e3baa689bdbb6e7c4e75e12186e0fc1e2f6d2d59308ecdd39013a3ca049",
+  "oldHTMLSha256": "9b4e215c09195bdf0ddcda0713f513b3899c7ced87596e67818a975f398d666b",
+  "sourceCodeSha256": "e89e241afd96b9ce24b5df343ea9d1e8b14880f17ab265a31690d34b379dbeaa",
+  "uiSourceSha256": "d86be5f23682a8369b6aa454e17090e7751e07c8301f2efbb23c9a009d26225a",
+  "formalScenarioSha256": "0133496a1354d514372e6bd9ed35efd83eb3ea6e914b5a2074a0e8bedaa7ae9b",
+  "scriptSha256": "1fd45fbb133c0a71a13849c71df75848650f9bbad5ee42648a487031e2b6bda7",
+  "inspectedHTMLDataMatch": [
+    true,
+    true
+  ],
+  "node": "v24.22.3",
+  "observed": {
+    "rules": 500,
+    "commonFeasible": 134,
+    "allDistinct": 416,
+    "commonFeasibleDistinct": 105,
+    "paretoRules": 6,
+    "uniqueShortlist": 15,
+    "monthlyRows": 168216,
+    "baselineSevereFirstFailure": 101,
+    "baselineSevereGap": {
+      "month": 101,
+      "unpaid": 1871.7278249683736,
+      "missedPrincipal": 0,
+      "missedDebtService": 0,
+      "unfundedEssential": 0,
+      "unfundedDiscretionary": 1871.7278249683736
+    },
+    "baselineSevereTerminal": null
+  },
+  "winners": {
+    "baseline": "S000",
+    "robust": "S254",
+    "cash": "S254",
+    "regret": "S247",
+    "wealth": "S247",
+    "debt": "S432",
+    "leastGap": "S001"
+  },
+  "oldAndCurrentDemoClosing": {
+    "before": {
+      "loan": {
+        "id": "auto",
+        "name": "车贷",
+        "kind": "car",
+        "collateral": "car",
+        "principal": 33000,
+        "annualRate": 0.045,
+        "rateType": "fixed",
+        "resetFirst": 12,
+        "resetEvery": 12,
+        "months": 36,
+        "method": "annuity",
+        "payment": null,
+        "canPrepay": true,
+        "prepayFrom": 1,
+        "prepayMin": 1000,
+        "prepayFee": 0,
+        "settlementFee": 180,
+        "transferWithLien": true,
+        "allowRecast": true,
+        "allowShorten": true,
+        "start": 1,
+        "monthlyFee": 0
+      },
+      "actions": [
+        {
+          "kind": "list",
+          "asset": "flat",
+          "month": 1,
+          "trigger": "reserve",
+          "buffer": 3
+        },
+        {
+          "kind": "list",
+          "asset": "car",
+          "month": 1,
+          "trigger": "reserve",
+          "buffer": 3
+        },
+        {
+          "kind": "liquidate",
+          "asset": "shares",
+          "mode": "stages",
+          "month": 1
+        },
+        {
+          "kind": "prepay",
+          "loan": "mort1",
+          "month": 1,
+          "mode": "recast",
+          "amount": 127500
+        },
+        {
+          "kind": "prepay",
+          "loan": "mort2",
+          "month": 1,
+          "mode": "shorten",
+          "amount": 77500
+        },
+        {
+          "kind": "prepay",
+          "loan": "auto",
+          "month": 1,
+          "mode": "shorten",
+          "amount": 8250
+        },
+        {
+          "kind": "cut",
+          "month": 1,
+          "fraction": 0.55,
+          "trigger": "reserve",
+          "buffer": 6
+        }
+      ],
+      "month": 27,
+      "releaseFees": 180,
+      "closingPrincipal": 557.756630583241,
+      "cash": 48862.99798478501,
+      "vehicle": 0
+    },
+    "after": {
+      "loan": {
+        "id": "auto",
+        "name": "车贷",
+        "kind": "car",
+        "collateral": "car",
+        "principal": 33000,
+        "annualRate": 0.045,
+        "rateType": "fixed",
+        "resetFirst": 12,
+        "resetEvery": 12,
+        "months": 36,
+        "method": "annuity",
+        "payment": null,
+        "canPrepay": true,
+        "prepayFrom": 1,
+        "prepayMin": 1000,
+        "prepayFee": 0,
+        "settlementFee": 180,
+        "transferWithLien": true,
+        "allowRecast": true,
+        "allowShorten": true,
+        "allowFull": true,
+        "prepayMax": "unlimited",
+        "prepayPeriodMax": "unlimited",
+        "prepayPeriodMonths": null,
+        "prepayPeriodRemaining": null,
+        "prepayPeriodUsed": null,
+        "salePayoffRule": "same_terms",
+        "salePayoffFrom": null,
+        "salePayoffFee": null,
+        "saleSettlementFee": null,
+        "salePayoffFeeBase": "balance",
+        "saleMaturityReleaseFee": 180,
+        "start": 1,
+        "monthlyFee": 0
+      },
+      "actions": [
+        {
+          "kind": "list",
+          "asset": "flat",
+          "month": 1,
+          "trigger": "reserve",
+          "buffer": 3
+        },
+        {
+          "kind": "list",
+          "asset": "car",
+          "month": 1,
+          "trigger": "reserve",
+          "buffer": 3
+        },
+        {
+          "kind": "liquidate",
+          "asset": "shares",
+          "mode": "stages",
+          "month": 1
+        },
+        {
+          "kind": "prepay",
+          "loan": "mort1",
+          "month": 1,
+          "mode": "recast",
+          "amount": 127500
+        },
+        {
+          "kind": "prepay",
+          "loan": "mort2",
+          "month": 1,
+          "mode": "shorten",
+          "amount": 77500
+        },
+        {
+          "kind": "prepay",
+          "loan": "auto",
+          "month": 1,
+          "mode": "shorten",
+          "amount": 8250
+        },
+        {
+          "kind": "cut",
+          "month": 1,
+          "fraction": 0.55,
+          "trigger": "reserve",
+          "buffer": 6
+        }
+      ],
+      "month": 27,
+      "releaseFees": 180,
+      "closingPrincipal": 557.756630583241,
+      "cash": 48862.99798478501,
+      "vehicle": 0
+    }
+  }
+}

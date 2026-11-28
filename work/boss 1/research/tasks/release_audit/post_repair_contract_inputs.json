@@ -1,0 +1,15 @@
+{
+  "scope": "Synthetic contracts for independent reruns of the targeted-input and payment-cap repair",
+  "old_inputs": "pre_repair_cases.json",
+  "old_inputs_sha256": "008faf57a0d9891b3b7d7f763615a1b400fe2106b8a1cbb00327f1624d9e8952",
+  "old_evidence_rationale": "The human contract allowed at most CNY 1,000 per voluntary transaction and only partial prepayment. The old UI had no cap or full-settlement field. Its handling is preserved unchanged.",
+  "per_action_only_patch": {"allowFull":false,"prepayMax":1000,"prepayPeriodMax":"unlimited"},
+  "patch_rationale": "For the separately stated, known synthetic contract with a per-action cap only, explicitly confirm there is no periodic cap. This permits the positive CNY 1,000 control. A legacy contract without that assertion is separately tested as unknown.",
+  "one_month_left_period": {"prepayPeriodMax":1200,"prepayPeriodMonths":12,"prepayPeriodRemaining":1,"prepayPeriodUsed":950},
+  "three_months_left_period": {"prepayPeriodMax":1200,"prepayPeriodMonths":12,"prepayPeriodRemaining":3,"prepayPeriodUsed":900},
+  "sale_under_ordinary_early_payment_terms": {"salePayoffRule":"same_terms"},
+  "sale_with_independent_closing_clause": {"allowFull":false,"salePayoffRule":"sale_exception","salePayoffFrom":1,"salePayoffFee":0.1,"salePayoffFeeBase":"balance","saleSettlementFee":5},
+  "scheduled_due_without_early_permissions": {"canPrepay":false,"allowFull":false,"prepayMax":null,"prepayPeriodMax":null,"salePayoffRule":"unknown"},
+  "distinct_car_release_costs": {"carValue":4000,"openingCash":13000,"loanPrincipal":2000,"loanTermMonths":2,"ordinaryEarlyClosingFee":23,"additionalReleaseFeeOnlyForSaleInContractMaturityMonth":180},
+  "synthetic_asset_and_counts_note": "The script explicitly specifies each tested household, asset value, protection and scenario target. These are laboratory cash-flow cases, without observed family or macro calibration."
+}

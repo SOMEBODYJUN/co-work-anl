@@ -1,0 +1,1366 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'; img-src data:; connect-src 'none'; base-uri 'none'; form-action 'none'">
+<title>家庭现金流压力测试</title>
+<style>
+:root{--paper:#f5f3ed;--white:#fffeFA;--ink:#163b39;--muted:#546765;--line:#cdd5cb;--forest:#11685c;--mint:#dcece2;--rust:#963e2f;--pink:#fae4da;--ochre:#a16b25;--mono:ui-monospace,"SFMono-Regular",Consolas,monospace}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.6 system-ui,-apple-system,"Microsoft YaHei","PingFang SC",sans-serif}header{background:var(--ink);color:#f8f7ee}
+.head,.wrap,.tabs{max-width:1390px;margin:auto}.head{padding:28px clamp(16px,4vw,60px) 27px;display:flex;gap:22px;align-items:center;justify-content:space-between}.eyebrow{font-size:12px;letter-spacing:.12em;color:#a4d7be;font-weight:650}.head h1{font-family:Georgia,"Songti SC","SimSun",serif;font-size:clamp(32px,4vw,54px);line-height:1.2;margin:5px 0 9px;font-weight:550;letter-spacing:.015em}.head p{margin:0;color:#d3e2d7}.wrap{padding:20px clamp(12px,3vw,46px) 54px}.tabsBar{background:var(--white);border-bottom:1px solid var(--line)}.tabs{padding:0 clamp(12px,3vw,46px);display:flex;gap:5px;overflow-x:auto}.tabs button{background:none;border:0;border-radius:0;border-bottom:3px solid transparent;white-space:nowrap;padding:13px 15px;color:var(--muted)}.tabs button[aria-selected=true]{border-color:var(--forest);color:var(--forest);font-weight:750}
+button,.filebtn,select,input,textarea{font:inherit}button,.filebtn{cursor:pointer;background:var(--white);color:var(--ink);border:1px solid #a5b7aa;border-radius:6px;padding:7px 12px;line-height:1.45;font-weight:600}button:hover,.filebtn:hover{background:#edf2e9}button:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible,textarea:focus-visible{outline:3px solid #dcac57;outline-offset:2px}button:disabled{opacity:.55;cursor:wait}.primary{background:var(--forest);color:white;border-color:var(--forest)}.primary:hover{background:#0a5148}.danger{color:var(--rust);border-color:#dcb7aa}.bar,.control,.cardhead,.pair{display:flex;align-items:center;gap:9px;flex-wrap:wrap}.bar{justify-content:space-between;margin:0 0 17px}.head .control{justify-content:flex-end}.head button,.head .filebtn{background:#254b47;color:#f8f7ee;border-color:#78998d}.head button:hover,.head .filebtn:hover{background:#315d55}.marker{padding:3px 10px;border-radius:3px;background:#d8e5dc;color:#284e43;font-weight:650;white-space:nowrap}.marker.sample{background:#f8d8a0;color:#613c0c}.small,small,.muted{color:var(--muted);font-size:13px}.status{min-height:1.4em;font-size:14px;color:var(--muted)}.error{color:var(--rust);font-weight:650}.panel{background:var(--white);border:1px solid var(--line);border-radius:10px;padding:18px 22px;margin:0 0 14px}.sectiontitle{font-size:24px;font-family:Georgia,"Songti SC","SimSun",serif;font-weight:650;line-height:1.35;margin:0 0 8px}.sub{font-size:17px;margin:9px 0 6px}p{margin:.45em 0 .8em}.cols{display:grid;grid-template-columns:minmax(0,2.25fr) minmax(245px,1fr);gap:16px;align-items:start}.fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(172px,100%),1fr));gap:9px 14px}.field{display:flex;flex-direction:column;gap:2px;color:var(--muted);font-size:13px;min-width:0}.field input,.field select,textarea,select{border:1px solid #acbab0;background:white;color:var(--ink);border-radius:5px;min-width:0;padding:6px 7px}.field input,.field select{width:100%;height:35px;font-size:14px}.field input[aria-invalid=true]{border-color:var(--rust)}.field input[type=checkbox]{width:18px;height:18px;margin-top:7px}
+details.panel{padding:0}details.panel>summary{padding:12px 20px;cursor:pointer;font-weight:700}details.panel[open]>summary{border-bottom:1px solid var(--line)}.in{padding:12px 20px 17px}.item{padding:11px 0;border-bottom:1px solid var(--line)}.item:last-of-type{margin-bottom:8px}.item>summary{cursor:pointer;color:var(--forest);font-weight:650}.item .fields{padding:9px 0}.item details{margin:7px 0}.item details>summary{cursor:pointer;color:var(--muted);font-size:13px}.sticky{position:sticky;top:10px}.metricgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:9px;margin:10px 0}.metric{border:1px solid var(--line);border-radius:6px;padding:10px 12px;background:#f4f7ee}.metric strong{display:block;font-size:clamp(19px,2vw,30px);font-variant-numeric:tabular-nums}.metric span{color:var(--muted);font-size:12px}.verdict{border-left:5px solid var(--forest);background:var(--mint);padding:12px 15px;margin:10px 0}.verdict.fail{border-left-color:var(--rust);background:var(--pink)}.scroll{overflow:auto;max-width:100%;margin:6px 0 10px}.tall{max-height:450px}.compact th,.compact td{padding:5px 8px}table{width:100%;border-collapse:collapse;text-align:left;font-size:13px}th,td{padding:7px 9px;border-bottom:1px solid #d9ded5;vertical-align:top}th{background:#edf2e9;white-space:nowrap;font-weight:650}td.num{font-family:var(--mono);white-space:nowrap;text-align:right}thead{position:sticky;top:0;z-index:1}tr.selected{background:#e2f0e6}.linkbtn,.tag{padding:3px 8px;font-size:13px}.tag{background:#e7f1e7;border-color:#c6d6c9;margin:2px}.chart{width:100%;height:auto;display:block;background:#fafbf5;border-radius:6px}.chart text{font:12px system-ui,sans-serif;fill:#4d615b}.chip{display:inline-block;background:#e8eee6;color:#38584c;border-radius:4px;padding:2px 6px;font-size:12px}.selectrow{display:flex;gap:9px;align-items:end;flex-wrap:wrap;margin:8px 0}.selectrow label{min-width:120px;max-width:100%}.selectrow select{max-width:100%}.foot{color:var(--muted);font-size:12px;border-top:1px solid var(--line);padding-top:12px;margin-top:25px}.hidden,[hidden]{display:none!important}.rowactions{margin:9px 0}.mono{font-family:var(--mono);font-size:13px}.summaryline{display:flex;align-items:center;justify-content:space-between;gap:8px}.pill{color:var(--forest);font-size:13px;font-weight:600}.filebtn input{display:none}.explain{padding-left:19px}.explain li{margin:4px 0}
+@media(max-width:760px){.head{display:block;padding:18px 15px}.head .control{justify-content:flex-start;margin-top:12px}.wrap{padding-top:12px}.cols{display:block}.sticky{position:static}.panel{padding:13px 12px}.in{padding:10px 12px}.tabs{gap:0}.tabs button{padding:10px;font-size:14px}.metricgrid{grid-template-columns:repeat(2,minmax(0,1fr))}.fields{grid-template-columns:repeat(2,minmax(0,1fr))}.field{font-size:12px}.bar{align-items:start}.chart text{font-size:15px}.head p{font-size:13px}th,td{padding:5px 6px}.tall{max-height:370px}}
+@media(max-width:360px){.fields{grid-template-columns:1fr}.tabs button{padding:8px 6px}}
+</style></head>
+<body>
+<header><div class="head"><div><div class="eyebrow">家庭决策工作表</div><h1>家庭现金流压力测试</h1><p>逐月核对到账、生活支出和合同还款，查看家庭能维持履约的时间。</p></div>
+<div class="control"><button id="loadDemo">载入合成示例</button><label class="filebtn">导入 JSON<input id="importFile" type="file" accept=".json,application/json"></label><button id="exportJSON">导出 JSON</button></div></div></header>
+<div class="tabsBar"><nav class="tabs" aria-label="工作表"><button data-tab="inputs" aria-selected="true">家庭与情景</button><button data-tab="results" aria-selected="false">方案比较</button><button data-tab="ledger" aria-selected="false">逐月台账</button><button data-tab="reverse" aria-selected="false">逆向压力</button></nav></div>
+<main class="wrap"><div class="bar"><div class="control"><span id="kind" class="marker"></span><span id="status" class="status" role="status" aria-live="polite"></span></div><button id="run" class="primary">运行 120 个月</button></div>
+<section id="inputs" class="view"></section><section id="results" class="view" hidden></section><section id="ledger" class="view" hidden></section><section id="reverse" class="view" hidden></section>
+<div class="foot">账面资产、待到账款和可用现金分别列账。结果以元计，实际净资产按各路径通胀折回期初购买力。</div></main>
+<script id="scenario-data" type="application/json">[{"id":"continuity","name":"结构延续","role":"continuity","description":"人为压力测试。参数可编辑，数值用于比较指定路径下的家庭履约和现金，不表示中国经济预测或事件概率。","paths":[{"key":"propertyShock","mode":"shock","value":-0.06,"unit":"比例","start":1,"duration":1,"range":[-0.06,-0.06],"target":"*","sourceId":"design-continuity","assumption":"stress_test","editable":true},{"key":"propertyAnnual","mode":"annual","value":-0.015,"unit":"年率小数","start":1,"duration":36,"range":[-0.015,-0.015],"target":"*","sourceId":"design-continuity","assumption":"stress_test","editable":true},{"key":"rentFactor","mode":"level","value":0.95,"unit":"倍","start":1,"duration":36,"range":[0.95,0.95],"target":"*","sourceId":"design-continuity","assumption":"stress_test","editable":true},{"key":"vacancyAdd","mode":"level","value":0.04,"unit":"比例差","start":1,"duration":36,"range":[0.04,0.04],"target":"*","sourceId":"design-continuity","assumption":"stress_test","editable":true},{"key":"wageFactor","mode":"level","value":0.98,"unit":"倍","start":1,"duration":24,"range":[0.98,0.98],"target":"*","sourceId":"design-continuity","assumption":"stress_test","editable":true},{"key":"businessFactor","mode":"level","value":0.94,"unit":"倍","start":1,"duration":24,"range":[0.94,0.94],"target":"*","sourceId":"design-continuity","assumption":"stress_test","editable":true},{"key":"unemploymentMonths","mode":"event","value":0,"unit":"月","start":1,"duration":1,"range":[0,0],"target":"*","sourceId":"design-continuity","assumption":"stress_test","editable":true},{"key":"recoveryMonths","mode":"level","value":3,"unit":"月","start":1,"duration":120,"range":[3,3],"target":"*","sourceId":"design-continuity","assumption":"stress_test","editable":true},{"key":"reemploymentFactor","mode":"level","value":1,"unit":"倍","start":1,"duration":120,"range":[1,1],"target":"*","sourceId":"design-continuity","assumption":"stress_test","editable":true},{"key":"financialShock","mode":"shock","value":-0.08,"unit":"比例","start":1,"duration":1,"range":[-0.08,-0.08],"target":"*","sourceId":"design-continuity","assumption":"stress_test","editable":true},{"key":"securityAnnual","mode":"annual","value":0.01,"unit":"年率差","start":1,"duration":120,"range":[0.01,0.01],"target":"*","sourceId":"design-continuity","assumption":"stress_test","editable":true},{"key":"concentrationHaircut","mode":"shock","value":0.04,"unit":"比例","start":1,"duration":1,"range":[0.04,0.04],"target":"*","sourceId":"design-continuity","assumption":"stress_test","editable":true},{"key":"inflationAnnual","mode":"annual","value":0.015,"unit":"年率小数","start":1,"duration":120,"range":[0.015,0.015],"target":"*","sourceId":"design-continuity","assumption":"stress_test","editable":true},{"key":"cashRateDelta","mode":"annual","value":0,"unit":"年率差","start":1,"duration":120,"range":[0,0],"target":"*","sourceId":"design-continuity","assumption":"stress_test","editable":true},{"key":"loanRateDelta","mode":"annual","value":0,"unit":"年率差","start":1,"duration":120,"range":[0,0],"target":"*","sourceId":"design-continuity","assumption":"stress_test","editable":true},{"key":"saleHaircut","mode":"level","value":0.03,"unit":"比例","start":1,"duration":36,"range":[0.03,0.03],"target":"*","sourceId":"design-continuity","assumption":"stress_test","editable":true},{"key":"saleDelay","mode":"level","value":2,"unit":"月","start":1,"duration":36,"range":[2,2],"target":"*","sourceId":"design-continuity","assumption":"stress_test","editable":true}]},{"id":"severe","name":"严重下行与信用损失","role":"severe","description":"人为压力测试。参数可编辑，数值用于比较指定路径下的家庭履约和现金，不表示中国经济预测或事件概率。","paths":[{"key":"propertyShock","mode":"shock","value":-0.25,"unit":"比例","start":1,"duration":1,"range":[-0.25,-0.25],"target":"*","sourceId":"design-severe","assumption":"stress_test","editable":true},{"key":"propertyAnnual","mode":"annual","value":-0.025,"unit":"年率小数","start":1,"duration":36,"range":[-0.025,-0.025],"target":"*","sourceId":"design-severe","assumption":"stress_test","editable":true},{"key":"rentFactor","mode":"level","value":0.78,"unit":"倍","start":1,"duration":48,"range":[0.78,0.78],"target":"*","sourceId":"design-severe","assumption":"stress_test","editable":true},{"key":"vacancyAdd","mode":"level","value":0.12,"unit":"比例差","start":1,"duration":48,"range":[0.12,0.12],"target":"*","sourceId":"design-severe","assumption":"stress_test","editable":true},{"key":"wageFactor","mode":"level","value":0.82,"unit":"倍","start":1,"duration":36,"range":[0.82,0.82],"target":"*","sourceId":"design-severe","assumption":"stress_test","editable":true},{"key":"businessFactor","mode":"level","value":0.65,"unit":"倍","start":1,"duration":36,"range":[0.65,0.65],"target":"*","sourceId":"design-severe","assumption":"stress_test","editable":true},{"key":"unemploymentMonths","mode":"event","value":8,"unit":"月","start":4,"duration":1,"range":[8,8],"target":"*","sourceId":"design-severe","assumption":"stress_test","editable":true},{"key":"recoveryMonths","mode":"level","value":8,"unit":"月","start":1,"duration":120,"range":[8,8],"target":"*","sourceId":"design-severe","assumption":"stress_test","editable":true},{"key":"reemploymentFactor","mode":"level","value":0.88,"unit":"倍","start":1,"duration":120,"range":[0.88,0.88],"target":"*","sourceId":"design-severe","assumption":"stress_test","editable":true},{"key":"financialShock","mode":"shock","value":-0.35,"unit":"比例","start":1,"duration":1,"range":[-0.35,-0.35],"target":"*","sourceId":"design-severe","assumption":"stress_test","editable":true},{"key":"securityAnnual","mode":"annual","value":-0.025,"unit":"年率差","start":1,"duration":36,"range":[-0.025,-0.025],"target":"*","sourceId":"design-severe","assumption":"stress_test","editable":true},{"key":"concentrationHaircut","mode":"shock","value":0.12,"unit":"比例","start":1,"duration":1,"range":[0.12,0.12],"target":"*","sourceId":"design-severe","assumption":"stress_test","editable":true},{"key":"inflationAnnual","mode":"annual","value":0.025,"unit":"年率小数","start":1,"duration":120,"range":[0.025,0.025],"target":"*","sourceId":"design-severe","assumption":"stress_test","editable":true},{"key":"cashRateDelta","mode":"annual","value":-0.005,"unit":"年率差","start":1,"duration":120,"range":[-0.005,-0.005],"target":"*","sourceId":"design-severe","assumption":"stress_test","editable":true},{"key":"loanRateDelta","mode":"annual","value":0.015,"unit":"年率差","start":1,"duration":48,"range":[0.015,0.015],"target":"*","sourceId":"design-severe","assumption":"stress_test","editable":true},{"key":"saleHaircut","mode":"level","value":0.12,"unit":"比例","start":1,"duration":48,"range":[0.12,0.12],"target":"*","sourceId":"design-severe","assumption":"stress_test","editable":true},{"key":"saleDelay","mode":"level","value":7,"unit":"月","start":1,"duration":48,"range":[7,7],"target":"*","sourceId":"design-severe","assumption":"stress_test","editable":true}]},{"id":"recovery","name":"有效恢复","role":"recovery","description":"人为压力测试。参数可编辑，数值用于比较指定路径下的家庭履约和现金，不表示中国经济预测或事件概率。","paths":[{"key":"propertyAnnual","mode":"annual","value":0.02,"unit":"年率小数","start":1,"duration":60,"range":[0.02,0.02],"target":"*","sourceId":"design-recovery","assumption":"stress_test","editable":true},{"key":"rentFactor","mode":"level","value":1.04,"unit":"倍","start":1,"duration":48,"range":[1.04,1.04],"target":"*","sourceId":"design-recovery","assumption":"stress_test","editable":true},{"key":"vacancyAdd","mode":"level","value":-0.02,"unit":"比例差","start":1,"duration":48,"range":[-0.02,-0.02],"target":"*","sourceId":"design-recovery","assumption":"stress_test","editable":true},{"key":"wageFactor","mode":"level","value":1.06,"unit":"倍","start":1,"duration":60,"range":[1.06,1.06],"target":"*","sourceId":"design-recovery","assumption":"stress_test","editable":true},{"key":"businessFactor","mode":"level","value":1.12,"unit":"倍","start":1,"duration":60,"range":[1.12,1.12],"target":"*","sourceId":"design-recovery","assumption":"stress_test","editable":true},{"key":"unemploymentMonths","mode":"event","value":0,"unit":"月","start":1,"duration":1,"range":[0,0],"target":"*","sourceId":"design-recovery","assumption":"stress_test","editable":true},{"key":"recoveryMonths","mode":"level","value":2,"unit":"月","start":1,"duration":120,"range":[2,2],"target":"*","sourceId":"design-recovery","assumption":"stress_test","editable":true},{"key":"reemploymentFactor","mode":"level","value":1,"unit":"倍","start":1,"duration":120,"range":[1,1],"target":"*","sourceId":"design-recovery","assumption":"stress_test","editable":true},{"key":"securityAnnual","mode":"annual","value":0.035,"unit":"年率差","start":1,"duration":60,"range":[0.035,0.035],"target":"*","sourceId":"design-recovery","assumption":"stress_test","editable":true},{"key":"concentrationHaircut","mode":"shock","value":0,"unit":"比例","start":1,"duration":1,"range":[0,0],"target":"*","sourceId":"design-recovery","assumption":"stress_test","editable":true},{"key":"inflationAnnual","mode":"annual","value":0.02,"unit":"年率小数","start":1,"duration":120,"range":[0.02,0.02],"target":"*","sourceId":"design-recovery","assumption":"stress_test","editable":true},{"key":"cashRateDelta","mode":"annual","value":0,"unit":"年率差","start":1,"duration":120,"range":[0,0],"target":"*","sourceId":"design-recovery","assumption":"stress_test","editable":true},{"key":"loanRateDelta","mode":"annual","value":-0.005,"unit":"年率差","start":1,"duration":60,"range":[-0.005,-0.005],"target":"*","sourceId":"design-recovery","assumption":"stress_test","editable":true},{"key":"saleHaircut","mode":"level","value":0,"unit":"比例","start":1,"duration":120,"range":[0,0],"target":"*","sourceId":"design-recovery","assumption":"stress_test","editable":true},{"key":"saleDelay","mode":"level","value":0,"unit":"月","start":1,"duration":120,"range":[0,0],"target":"*","sourceId":"design-recovery","assumption":"stress_test","editable":true}]}]</script><script id="example-data" type="application/json">{"schema":"household-cny.v1","dataKind":"synthetic_example","rangeCase":"base","cash":280000,"cashAnnual":0.012,"reserveMonths":3,"minimumLiving":6000,"cutFraction":0.55,"maxSaleWait":24,"preference":"cash","incomes":[{"id":"pay","name":"成员甲税后工资","kind":"wage","monthly":15100,"from":1,"to":120,"every":1,"annualGrowth":0,"stability":"受所选情景失业路径影响","stressJob":true,"jobStart":1,"jobMonths":0,"jobPayFraction":0,"recoveryMonths":0,"returnFraction":1},{"id":"receipts","name":"成员乙已到账经营净收入","kind":"business","monthly":4800,"from":1,"to":120,"every":1,"annualGrowth":0,"stability":"按经营回款路径","stressJob":false,"jobStart":1,"jobMonths":0,"jobPayFraction":0,"recoveryMonths":0,"returnFraction":1},{"id":"bonus","name":"已存在年度奖金","kind":"bonus","monthly":6000,"from":12,"to":120,"every":12,"annualGrowth":0,"stability":"按期到账","stressJob":false,"jobStart":1,"jobMonths":0,"jobPayFraction":0,"recoveryMonths":0,"returnFraction":1}],"expenses":[{"id":"life","name":"生活必要开支","kind":"necessary","monthly":6000,"from":1,"to":120,"every":1,"annualGrowth":0,"inflationLinked":true},{"id":"care","name":"医疗及照护","kind":"medical","monthly":1100,"from":1,"to":120,"every":1,"annualGrowth":0,"inflationLinked":true},{"id":"flex","name":"可削减开支","kind":"discretionary","monthly":3200,"from":1,"to":120,"every":1,"annualGrowth":0,"inflationLinked":true},{"id":"repair","name":"第18个月突发支出","kind":"emergency","monthly":9000,"from":18,"to":18,"every":1,"annualGrowth":0,"inflationLinked":false}],"financial":[{"id":"shares","name":"权益组合","kind":"stock","value":128000,"annualReturn":0.025,"concentration":0.35,"fee":0.002,"settle":1,"unlock":1,"maturity":0,"restriction":"free","purpose":"家庭可用"},{"id":"deposit","name":"六个月后到期存款","kind":"deposit","value":65000,"annualReturn":0.018,"concentration":0,"fee":0,"settle":0,"unlock":1,"maturity":6,"restriction":"free","purpose":"家庭可用"},{"id":"lockfund","name":"限定用途资产","kind":"fund","value":26000,"annualReturn":0,"concentration":0,"fee":0,"settle":0,"unlock":1,"maturity":0,"restriction":"restricted","purpose":"指定教育用途，不动用"}],"properties":[{"id":"home","name":"自住房","city":"示例甲城","type":"住宅","use":"occupied","value":1250000,"saleValue":1160000,"saleLag":5,"lock":1,"canSell":false,"rent":0,"vacancy":0,"leaseLag":0,"discountRent":0.1,"discountLeaseLag":0,"carry":550,"saleFee":0.025,"closingFee":2500,"replacementAllowed":false,"replacementMonthly":null,"sourceId":""},{"id":"flat","name":"闲置小户型","city":"示例乙城","type":"住宅","use":"idle","value":{"low":650000,"base":720000,"high":780000},"saleValue":660000,"saleLag":4,"lock":1,"canSell":true,"rent":2500,"vacancy":0.08,"leaseLag":3,"discountRent":0.1,"discountLeaseLag":1,"carry":380,"saleFee":0.028,"closingFee":1800,"replacementAllowed":false,"replacementMonthly":null,"sourceId":""}],"vehicles":[{"id":"car","name":"通勤车","value":76000,"saleValue":69000,"annualDepreciation":0.1,"saleLag":1,"lock":1,"canSell":true,"necessary":true,"replacementAllowed":true,"replacementMonthly":450,"carry":920,"saleFee":0.02,"closingFee":400}],"loans":[{"id":"mort1","name":"自住房贷款","kind":"mortgage","collateral":"home","principal":510000,"annualRate":0.033,"rateType":"floating","resetFirst":12,"resetEvery":12,"months":228,"method":"annuity","payment":null,"canPrepay":true,"prepayFrom":1,"prepayMin":10000,"prepayFee":0.002,"settlementFee":0,"transferWithLien":false,"allowRecast":true,"allowShorten":true,"allowFull":true,"prepayMax":"unlimited","prepayPeriodMax":"unlimited","prepayPeriodMonths":null,"prepayPeriodRemaining":null,"prepayPeriodUsed":null,"salePayoffRule":"same_terms","salePayoffFrom":null,"salePayoffFee":null,"saleSettlementFee":null,"salePayoffFeeBase":"balance","saleMaturityReleaseFee":"in_asset_cost","start":1,"monthlyFee":0},{"id":"mort2","name":"闲置房贷款","kind":"mortgage","collateral":"flat","principal":310000,"annualRate":0.037,"rateType":"floating","resetFirst":6,"resetEvery":12,"months":204,"method":"annuity","payment":null,"canPrepay":true,"prepayFrom":1,"prepayMin":5000,"prepayFee":0.003,"settlementFee":0,"transferWithLien":true,"allowRecast":true,"allowShorten":true,"allowFull":true,"prepayMax":"unlimited","prepayPeriodMax":"unlimited","prepayPeriodMonths":null,"prepayPeriodRemaining":null,"prepayPeriodUsed":null,"salePayoffRule":"same_terms","salePayoffFrom":null,"salePayoffFee":null,"saleSettlementFee":null,"salePayoffFeeBase":"balance","saleMaturityReleaseFee":"in_asset_cost","start":1,"monthlyFee":0},{"id":"auto","name":"车贷","kind":"car","collateral":"car","principal":33000,"annualRate":0.045,"rateType":"fixed","resetFirst":12,"resetEvery":12,"months":36,"method":"annuity","payment":null,"canPrepay":true,"prepayFrom":1,"prepayMin":1000,"prepayFee":0,"settlementFee":180,"transferWithLien":true,"allowRecast":true,"allowShorten":true,"allowFull":true,"prepayMax":"unlimited","prepayPeriodMax":"unlimited","prepayPeriodMonths":null,"prepayPeriodRemaining":null,"prepayPeriodUsed":null,"salePayoffRule":"same_terms","salePayoffFrom":null,"salePayoffFee":null,"saleSettlementFee":null,"salePayoffFeeBase":"balance","saleMaturityReleaseFee":180,"start":1,"monthlyFee":0}],"citySources":[]}</script>
+<script>/* Monthly CNY cash and contract ledger. Browser and CommonJS share this exact source. */
+(function (root, factory) {
+  "use strict";
+  if (typeof module === "object" && module.exports) module.exports = factory();
+  else root.HouseholdEngine = factory();
+})(typeof globalThis === "object" ? globalThis : this, function () {
+  "use strict";
+  const H = 120, EPS = 1e-7;
+  const clone = value => JSON.parse(JSON.stringify(value));
+  const sum = (array, fn) => array.reduce((n, item) => n + fn(item), 0);
+  const clip = (n, lo, hi) => Math.max(lo, Math.min(hi, n));
+  const groupNames = ["incomes", "expenses", "financial", "properties", "vehicles", "loans"];
+  const modes = {
+    wageFactor: ["level","倍"], businessFactor: ["level","倍"], otherIncomeFactor: ["level","倍"],
+    unemploymentMonths: ["event","月"], recoveryMonths: ["level","月"], reemploymentFactor: ["level","倍"],
+    inflationAnnual: ["annual","年率小数"], cashRateDelta: ["annual","年率差"],
+    loanRateDelta: ["annual","年率差"], propertyShock: ["shock","比例"], propertyAnnual: ["annual","年率小数"],
+    rentFactor: ["level","倍"], vacancyAdd: ["level","比例差"], financialShock: ["shock","比例"],
+    securityAnnual: ["annual","年率差"], concentrationHaircut: ["shock","比例"],
+    saleHaircut: ["level","比例"], saleDelay: ["level","月"]
+  };
+  const option = (name, allowed, value) => {
+    if (!allowed.includes(value)) throw Error(name + " 取值无效");
+    return value;
+  };
+  function num(value, name, lo=-Infinity, hi=Infinity, integer=false) {
+    if (typeof value !== "number" || !Number.isFinite(value) || value < lo || value > hi || (integer && !Number.isInteger(value))){
+      const error=Error(name + " 需要范围内的" + (integer ? "整数" : "数字") + "（空值需填写）");
+      if(value==null)error.code="MISSING_VALUE";
+      throw error;
+    }
+    return value;
+  }
+  function valueFor(value, choice, name) {
+    if (!value || typeof value !== "object" || Array.isArray(value)) return value;
+    const lo = num(value.low, name + ".low"), hi = num(value.high, name + ".high", lo);
+    if (value.base != null) num(value.base, name + ".base", lo, hi);
+    if (choice === "low") return lo;
+    if (choice === "high") return hi;
+    if (value.base == null) throw Error(name + " 需要填写中心值或选择区间端点");
+    return value.base;
+  }
+  const amount = (name, value, choice, lo=0, hi=1e15) => num(valueFor(value, choice, name), name, lo, hi);
+  const bool = (value,name) => {if (typeof value !== "boolean") throw Error(name+" 需要是/否"); return value;};
+  const monthlyRate = r => Math.expm1(Math.log1p(r) / 12);
+  const idPattern = /^[A-Za-z\u3400-\u9fff0-9][A-Za-z\u3400-\u9fff0-9_.-]{0,59}$/;
+  const blank = () => ({
+    schema:"household-cny.v1", dataKind:"household", rangeCase:"base", cash:null, cashAnnual:0,
+    reserveMonths:0, minimumLiving:null, cutFraction:0, maxSaleWait:120, preference:"cash",
+    incomes:[], expenses:[], financial:[], properties:[], vehicles:[], loans:[], citySources:[]
+  });
+  const templates = {
+    incomes:{id:"",name:"",kind:"wage",monthly:null,from:1,to:120,every:1,annualGrowth:0,stability:"未填写",
+      stressJob:false,jobStart:1,jobMonths:0,jobPayFraction:0,recoveryMonths:0,returnFraction:1},
+    expenses:{id:"",name:"",kind:"necessary",monthly:null,from:1,to:120,every:1,annualGrowth:0,inflationLinked:true},
+    financial:{id:"",name:"",kind:"stock",value:null,annualReturn:0,concentration:0,fee:null,settle:null,
+      unlock:null,maturity:null,restriction:"unknown",purpose:""},
+    properties:{id:"",name:"",city:"",type:"",use:"idle",value:null,saleValue:null,saleLag:null,lock:null,
+      canSell:null,rent:null,vacancy:0,leaseLag:0,discountRent:0.10,discountLeaseLag:0,
+      carry:null,saleFee:null,closingFee:null,replacementAllowed:false,replacementMonthly:null,sourceId:""},
+    vehicles:{id:"",name:"",value:null,saleValue:null,annualDepreciation:0,saleLag:null,lock:null,canSell:null,
+      necessary:null,replacementAllowed:false,replacementMonthly:null,carry:null,saleFee:null,closingFee:null},
+    loans:{id:"",name:"",kind:"mortgage",collateral:"",principal:null,annualRate:null,rateType:"fixed",
+      resetFirst:12,resetEvery:12,months:null,method:"annuity",payment:null,canPrepay:null,prepayFrom:null,
+      prepayMin:null,prepayFee:null,settlementFee:null,transferWithLien:null,allowRecast:null,allowShorten:null,allowFull:null,
+      prepayMax:null,prepayPeriodMax:null,prepayPeriodMonths:null,prepayPeriodRemaining:null,prepayPeriodUsed:null,
+      salePayoffRule:"unknown",salePayoffFrom:null,salePayoffFee:null,saleSettlementFee:null,salePayoffFeeBase:"unknown",saleMaturityReleaseFee:"in_asset_cost",
+      start:1,monthlyFee:0}
+  };
+  function validateHousehold(input) {
+    if (!input || input.schema !== "household-cny.v1") throw Error("家庭输入格式应为 household-cny.v1");
+    const h = clone(input), choice=option("区间端点",["low","base","high"],h.rangeCase);
+    option("输入类型",["household","synthetic_example"],h.dataKind);
+    option("目标",["cash","wealth","debt","regret"],h.preference);
+    h.cash=amount("期初现金",h.cash,choice); h.minimumLiving=amount("最低生活",h.minimumLiving,choice);
+    h.cashAnnual=amount("现金年利率",h.cashAnnual,choice,-0.99,5);
+    h.reserveMonths=num(h.reserveMonths,"储备月数",0,H,true);
+    h.cutFraction=amount("可削减比例",h.cutFraction,choice,0,1);
+    h.maxSaleWait=num(h.maxSaleWait,"可接受成交等待",0,H,true);
+    const ids=new Set();
+    for(const g of groupNames) {
+      if(!Array.isArray(h[g]) || h[g].length>100) throw Error(g+" 应为不超过100条的清单");
+      h[g]=h[g].map(original=>{
+        if(!original || typeof original!=="object") throw Error(g+" 条目无效");
+        if(g==="loans"){
+          const extra=Object.keys(original).filter(k=>!Object.hasOwn(templates.loans,k)&&k!=="notes"&&k!=="metadata");
+          if(extra.length)throw Error("贷款 "+String(original.id)+" 含未支持的合同字段："+extra.join("、"));
+        }
+        const x=Object.assign({},templates[g],original);
+        if(typeof x.id!=="string"||!idPattern.test(x.id)||ids.has(x.id)) throw Error("ID 为空、重复或有非法字符："+String(x.id));
+        ids.add(x.id);
+        if(typeof x.name!=="string") throw Error(x.id+" 名称无效");
+        const n=(k,lo=0,hi=1e15)=>x[k]=amount(x.id+"."+k,x[k],choice,lo,hi);
+        const integer=(k,lo,hi)=>x[k]=num(x[k],x.id+"."+k,lo,hi,true);
+        const b=k=>bool(x[k],x.id+"."+k);
+        const optional=(fn,k,...bounds)=>{if(x[k]!=null)fn(k,...bounds);};
+        if (g==="incomes" || g==="expenses") {
+          n("monthly"); integer("from",1,H);integer("to",x.from,H);integer("every",1,H);
+          n("annualGrowth",-.99,5);
+          if(g==="incomes") {
+            option("收入类别",["wage","bonus","business","other"],x.kind);b("stressJob");
+            integer("jobStart",1,H);integer("jobMonths",0,H);integer("recoveryMonths",0,H);
+            n("jobPayFraction",0,1);n("returnFraction",0,5);
+          } else {
+            option("支出类别",["necessary","education","medical","elder","insurance","discretionary","emergency"],x.kind);b("inflationLinked");
+          }
+        } else if(g==="financial") {
+          option("金融类别",["deposit","instant","stock","fund","bond","gold","other"],x.kind);
+          option("用途限制",["unknown","free","restricted","pledged"],x.restriction);
+          n("value");n("annualReturn",-.99,5);n("concentration",0,1);optional(n,"fee",0,1);
+          optional(integer,"settle",0,H);optional(integer,"unlock",1,1200);optional(integer,"maturity",0,1200);
+        } else if(g==="properties"||g==="vehicles") {
+          n("value");optional(n,"saleValue");n("carry");optional(n,"closingFee");optional(n,"saleFee",0,1);
+          optional(integer,"saleLag",0,1200);optional(integer,"lock",1,1200);optional(b,"canSell");b("replacementAllowed");
+          if(x.replacementMonthly!=null)n("replacementMonthly");
+          if(g==="properties") {
+            option("房产用途",["occupied","let","idle"],x.use);n("rent");n("vacancy",0,1);
+            integer("leaseLag",0,1200);n("discountRent",0,1);integer("discountLeaseLag",0,1200);
+          }else{n("annualDepreciation",0,.99);optional(b,"necessary");}
+          if(x.replacementAllowed&&x.replacementMonthly==null)throw Error(x.id+" 请填写替代支出（可填0）");
+        }else{
+          option("债务类别",["mortgage","car","consumer","card","business","family","margin","guarantee","other"],x.kind);
+          option("还款方式",["annuity","principal","bullet"],x.method);option("利率类型",["fixed","floating"],x.rateType);
+          n("principal");n("annualRate",0,5);integer("months",1,1200);integer("resetFirst",1,1200);
+          integer("resetEvery",1,1200);optional(integer,"prepayFrom",1,1200);integer("start",1,1200);
+          if(x.kind!=="guarantee" && x.start!==1)throw Error(x.id+" 普通债务从期初入账；仅担保可设代偿月");
+          for(const k of ["canPrepay","transferWithLien","allowRecast","allowShorten","allowFull"])optional(b,k);
+          for(const k of ["prepayMax","prepayPeriodMax"])if(x[k]!=null&&x[k]!=="unlimited")n(k);
+          optional(integer,"prepayPeriodMonths",1,1200);optional(integer,"prepayPeriodRemaining",1,x.prepayPeriodMonths||1200);
+          optional(n,"prepayPeriodUsed");
+          if(typeof x.prepayPeriodMax==="number"&&x.prepayPeriodUsed!=null&&x.prepayPeriodUsed>x.prepayPeriodMax)
+            throw Error(x.id+" 本期已用额度高于本期总额度，请校正合同");
+          option("抵押物出售清偿条款",["unknown","same_terms","sale_exception","forbidden"],x.salePayoffRule);
+          option("出售清偿计费本金口径",["unknown","balance","extra"],x.salePayoffFeeBase);
+          optional(integer,"salePayoffFrom",1,1200);optional(n,"salePayoffFee",0,1);optional(n,"saleSettlementFee");
+          if(x.saleMaturityReleaseFee!=="in_asset_cost")optional(n,"saleMaturityReleaseFee");
+          for(const k of ["prepayMin","settlementFee"])optional(n,k);n("monthlyFee");
+          optional(n,"prepayFee",0,1);
+          if(x.payment!=null){n("payment");if(x.method!=="annuity")throw Error(x.id+" 自定固定月供仅适用等额本息");}
+          if(x.payment!=null&&x.principal>0&&x.payment<=x.principal*x.annualRate/12)throw Error(x.id+" 约定月供须足以支付利息并还本");
+        }
+        return x;
+      });
+    }
+    const assets=new Set([...h.properties,...h.vehicles,...h.financial].map(x=>x.id));
+    h.loans.forEach(l=>{if(l.collateral&&!assets.has(l.collateral))throw Error(l.id+" 关联资产不存在："+l.collateral);});
+    h.financial.forEach(a=>{if(a.restriction==="pledged"&&!h.loans.some(l=>l.collateral===a.id))throw Error(a.id+" 质押状态需关联贷款，可改为受限用途");});
+    if(!Array.isArray(h.citySources))throw Error("城市资料应为清单");
+    h.citySources.forEach(c=>{for(const k of ["id","city","period","source","scope"])if(typeof c[k]!=="string"||!c[k].trim())throw Error("城市资料缺字段 "+k);});
+    return h;
+  }
+  const targetClasses={
+    wageFactor:"工资或奖金收入",businessFactor:"经营回款收入",otherIncomeFactor:"其他收入",
+    unemploymentMonths:"收入来源",recoveryMonths:"收入来源",reemploymentFactor:"收入来源",
+    propertyShock:"房产",propertyAnnual:"房产",rentFactor:"房产",vacancyAdd:"房产",
+    saleDelay:"房产或车辆",saleHaircut:"房产或车辆",financialShock:"非现金市价资产",
+    securityAnnual:"非现金市价资产",concentrationHaircut:"非现金市价资产",loanRateDelta:"浮动利率贷款",
+    inflationAnnual:"全户",cashRateDelta:"全户"
+  };
+  function targetIds(h,key){
+    if(!h)return [];
+    let items=[];
+    switch(targetClasses[key]){
+      case "工资或奖金收入":items=h.incomes.filter(i=>["wage","bonus"].includes(i.kind??templates.incomes.kind));break;
+      case "经营回款收入":items=h.incomes.filter(i=>i.kind==="business");break;
+      case "其他收入":items=h.incomes.filter(i=>i.kind==="other");break;
+      case "收入来源":items=h.incomes;break;
+      case "房产":items=h.properties;break;
+      case "房产或车辆":items=[...h.properties,...h.vehicles];break;
+      case "非现金市价资产":items=h.financial.filter(f=>["stock","fund","bond","gold","other"].includes(f.kind??templates.financial.kind));break;
+      case "浮动利率贷款":items=h.loans.filter(l=>l.rateType==="floating");break;
+    }
+    return items.map(a=>a.id);
+  }
+  function validateTargets(s,h){
+    if(h){
+      const seen=new Set();
+      for(const g of groupNames)for(const item of h[g]){
+        if(!item.id)continue;
+        if(seen.has(item.id))throw Error("家庭 ID 重复，情景目标可能歧义："+item.id);
+        seen.add(item.id);
+      }
+    }
+    for(const p of s.paths){
+      if(!p||typeof p!=="object")throw Error("情景 "+s.id+" 含无效参数行");
+      if(!Object.hasOwn(targetClasses,p.key))throw Error("情景 "+s.id+" 的参数不受支持："+p.key);
+      if(p.target==="*")continue;
+      if(typeof p.target!=="string"||!idPattern.test(p.target))throw Error("情景 "+s.id+" / "+p.key+" 需要明确的目标 ID 或 *");
+      if(targetClasses[p.key]==="全户")throw Error("情景 "+s.id+" / "+p.key+" 是全户参数，目标必须为 * ，不能是 "+p.target);
+      if(!h)continue; // Individual scenario templates may be parsed without household data; runs always bind targets.
+      const eligible=targetIds(h,p.key);
+      if(!eligible.includes(p.target))throw Error("情景 "+s.id+" / "+p.key+" 的目标 "+p.target+" 不存在或类型不符；应为"+targetClasses[p.key]+" ID（当前 "+(eligible.join("、")||"无")+"）或 *");
+    }
+  }
+  function validateScenario(input, choice="base",h=null) {
+    if(!input||typeof input.id!=="string"||!idPattern.test(input.id)||typeof input.name!=="string"||!Array.isArray(input.paths))throw Error("情景需要 ID、名称和 paths 清单");
+    const s=clone(input), by={};
+    validateTargets(s,h);
+    for(const p of s.paths) {
+      if(!Object.hasOwn(modes,p.key)||!modes[p.key].includes(p.mode)||p.mode!==modes[p.key][0])throw Error("不支持的情景参数或施加方式 "+p.key);
+      if(typeof p.sourceId!=="string"||!p.sourceId.trim()||p.unit!==modes[p.key][1]||typeof p.editable!=="boolean")throw Error("情景缺少来源、单位或可编辑字段 "+p.key);
+      option("假设类型",["observed","historical","research_estimate","stress_test"],p.assumption);
+      num(p.start,"情景起点",1,H,true);num(p.duration,"情景时长",1,H,true);
+      if(!Array.isArray(p.range)||p.range.length!==2)throw Error("情景需给区间 "+p.key);
+      const [lo,hi]=p.range;num(lo,"范围下限");num(hi,"范围上限",lo);
+      p.value=num(valueFor(p.value,choice,p.key),p.key,lo,hi);
+      if(["unemploymentMonths","recoveryMonths","saleDelay"].includes(p.key))num(p.value,p.key,0,H,true);
+      if(["wageFactor","businessFactor","otherIncomeFactor","rentFactor","reemploymentFactor"].includes(p.key))num(p.value,p.key,0,10);
+      if(["saleHaircut","concentrationHaircut"].includes(p.key))num(p.value,p.key,0,1);
+      if(["propertyShock","financialShock","vacancyAdd"].includes(p.key))num(p.value,p.key,-1,p.key==="vacancyAdd"?1:5);
+      if(["propertyAnnual","inflationAnnual"].includes(p.key))num(p.value,p.key,-.99,5);
+      if(["loanRateDelta","cashRateDelta","securityAnnual"].includes(p.key))num(p.value,p.key,-5,5);
+      const effectiveDuration=["event","shock"].includes(p.mode)?1:p.duration;
+      if(effectiveDuration!==p.duration)throw Error("单次事件/水平冲击的 duration 必须等于1");
+      const list=by[p.key]||(by[p.key]=[]);
+      if(list.some(old=>old.target===p.target&&p.start<old.start+old.duration&&old.start<p.start+p.duration))throw Error("同一目标的情景参数存在重叠 "+p.key);
+      list.push(p);
+    }
+    return {...s,by};
+  }
+  function parameter(s,key,m,id,def=0) {
+    const group=s.by[key];if(!group)return def;
+    let wildcard;
+    for(const p of group)if(m>=p.start&&m<p.start+p.duration){if(id&&p.target===id)return p.value;if(p.target==="*")wildcard=p.value;}
+    return wildcard==null?def:wildcard;
+  }
+  function amortPayment(p,r,n){return r===0?p/n:p*r/-Math.expm1(-n*Math.log1p(r));}
+  function newLoan(c) {
+    return {c,balance:c.start===1?c.principal:0,rate:c.annualRate/12,end:c.start+c.months-1,
+      payment:c.payment==null?amortPayment(c.principal,c.annualRate/12,c.months):c.payment,
+      principalStep:c.principal/c.months,everActive:c.start===1,quotaIndex:0,quotaUsed:c.prepayPeriodUsed||0};
+  }
+  function loanDue(l,m,s) {
+    const c=l.c;
+    if(!l.everActive&&m===c.start){l.balance=c.principal;l.everActive=true;}
+    if(l.balance<=EPS)return {interest:0,principal:0,fee:0};
+    const age=m-c.start+1, remaining=Math.max(1,l.end-m+1);
+    if(c.rateType==="floating"&&age>=c.resetFirst&&(age-c.resetFirst)%c.resetEvery===0){
+      l.rate=Math.max(0,c.annualRate+parameter(s,"loanRateDelta",m,c.id))/12;
+      l.payment=amortPayment(l.balance,l.rate,remaining);
+    }
+    const interest=l.balance*l.rate;
+    let principal;
+    if(remaining===1)principal=l.balance;
+    else if(c.method==="bullet")principal=0;
+    else if(c.method==="principal")principal=l.principalStep;
+    else principal=Math.max(0,l.payment-interest);
+    return {interest,principal:Math.min(l.balance,principal),fee:c.monthlyFee};
+  }
+  function recast(l,mode,m) {
+    const n=Math.max(1,l.end-m);
+    if(l.balance<=EPS){l.balance=0;return;}
+    if(mode==="recast"){
+      l.payment=amortPayment(l.balance,l.rate,n);l.principalStep=l.balance/n;
+    } else if(mode==="shorten"){
+      let years=n;
+      if(l.c.method==="principal")years=Math.ceil(l.balance/l.principalStep-1e-10);
+      else if(l.c.method==="annuity")years=l.rate===0?Math.ceil(l.balance/l.payment-1e-10):Math.ceil(-Math.log1p(-l.balance*l.rate/l.payment)/Math.log1p(l.rate)-1e-10);
+      l.end=m+Math.max(1,Math.min(n,years));
+    }
+  }
+  function incomeAt(i,m,s) {
+    if(m<i.from||m>i.to||(m-i.from)%i.every)return 0;
+    const key={wage:"wageFactor",bonus:"wageFactor",business:"businessFactor",other:"otherIncomeFactor"}[i.kind];
+    let factor=Infinity;
+    const jobs=i.jobMonths?[{start:i.jobStart,length:i.jobMonths,rec:i.recoveryMonths,ret:i.returnFraction}]:[];
+    for(const p of s.by.unemploymentMonths||[]){
+      if(p.value<=0 || !(p.target===i.id || (p.target==="*"&&i.stressJob)))continue;
+      jobs.push({start:p.start,length:p.value,rec:parameter(s,"recoveryMonths",p.start,i.id,i.recoveryMonths),ret:parameter(s,"reemploymentFactor",p.start,i.id,i.returnFraction)});
+    }
+    for(const j of jobs){
+      const elapsed=m-j.start;
+      if(elapsed<0)continue;
+      const since=elapsed-j.length;
+      const wage=since<0?i.jobPayFraction:j.rec>0&&since<j.rec?i.jobPayFraction+(j.ret-i.jobPayFraction)*(since+1)/j.rec:j.ret;
+      factor=Math.min(factor,wage);
+    }
+    return i.monthly*Math.pow(1+i.annualGrowth,(m-i.from)/12)*(factor===Infinity?1:factor)*parameter(s,key,m,i.id,1);
+  }
+  function expensesAt(h,m,cpi) {
+    let living=0,recurring=0,emergency=0,disc=0;
+    for(const e of h.expenses) {
+      if(m<e.from||m>e.to||(m-e.from)%e.every)continue;
+      const val=e.monthly*Math.pow(1+e.annualGrowth,(m-e.from)/12)*(e.inflationLinked?cpi:1);
+      if(e.kind==="discretionary")disc+=val;else if(e.kind==="necessary")living+=val;else if(e.kind==="emergency")emergency+=val;else recurring+=val;
+    }
+    const reserveBase=Math.max(h.minimumLiving*cpi,living)+recurring;
+    return {required:reserveBase+emergency,reserveBase,disc};
+  }
+  function securityRestriction(c){
+    if(c.restriction==="restricted")return "资金用途受限";
+    if(c.restriction==="unknown"||c.fee==null||c.settle==null||c.unlock==null||(c.kind==="deposit"&&c.maturity==null))
+      return "交易用途、费用、到账时间、解锁条件或定存到期日尚未确认";
+    return "";
+  }
+  function availableOnDate(c,m){
+    return !securityRestriction(c)&&m>=c.unlock&&(!c.maturity||m>=c.maturity);
+  }
+  function activeLiens(id,loans){return loans.filter(l=>l.c.collateral===id&&l.balance>EPS);}
+  function replacement(c){return c.use==="occupied"||c.necessary===true;}
+  function saleRestriction(c){
+    if(c.canSell!==true)return c.canSell===false?"明确限制出售":"出售许可尚未确认";
+    if([c.saleValue,c.saleFee,c.closingFee,c.saleLag,c.lock].some(v=>v==null))return "保守成交价、交易费用、等待月数或解锁月尚未确认";
+    if(c.use==null&&c.necessary==null)return "车辆通勤或生产必要性尚未确认";
+    if(replacement(c)&&!c.replacementAllowed)return "缺少可行的住房或通勤替代";
+    return "";
+  }
+  function quotaUnknown(c){
+    if(c.prepayMax==null)return "单次提前还本上限尚未确认（没有上限须明确填写“不限”）";
+    if(c.prepayPeriodMax==null)return "期间累计预付额度尚未确认（没有上限须明确填写“不限”）";
+    if(typeof c.prepayPeriodMax==="number"&&[c.prepayPeriodMonths,c.prepayPeriodRemaining,c.prepayPeriodUsed].some(v=>v==null))
+      return "期间额度的周期、首期剩余月数或期初已用额尚未确认";
+    return "";
+  }
+  function quotaAt(l,m){
+    const c=l.c,age=m-c.start+1;
+    const single=c.prepayMax==="unlimited"?Infinity:c.prepayMax;
+    if(c.prepayPeriodMax==="unlimited")return {index:0,used:0,limit:single};
+    const index=age<=c.prepayPeriodRemaining?0:1+Math.floor((age-c.prepayPeriodRemaining-1)/c.prepayPeriodMonths);
+    const used=l.quotaIndex===index?l.quotaUsed:0;
+    return {index,used,limit:Math.min(single,Math.max(0,c.prepayPeriodMax-used))};
+  }
+  function recordQuota(l,m,amount){
+    if(l.c.prepayPeriodMax==="unlimited")return;
+    const q=quotaAt(l,m);l.quotaIndex=q.index;l.quotaUsed=q.used+amount;
+  }
+  function prepayRestriction(c,mode){
+    if(c.canPrepay!==true)return c.canPrepay===false?"合同禁止提前还款":"提前还款许可尚未确认";
+    if(c.prepayFrom==null||c.prepayFee==null)return "提前还款窗口或费率尚未确认（零费率也须填写）";
+    const quotaReason=quotaUnknown(c);if(quotaReason)return quotaReason;
+    if(mode==="full"){
+      if(c.allowFull!==true)return c.allowFull===false?"合同仅允许部分预付，禁止自愿提前全清":"自愿提前全清许可尚未确认";
+      return c.settlementFee==null?"结清固定费用尚未确认（零费用也须填写）":"";
+    }
+    const permission=mode==="recast"?c.allowRecast:c.allowShorten;
+    if(permission!==true)return permission===false?"合同禁止该种部分预付方式":"该种部分预付方式许可尚未确认";
+    if(c.prepayMin==null)return "最低部分预付金额尚未确认";
+    return c.method==="bullet"?"到期还本合同没有可重摊的定期本金":"";
+  }
+  function checkVoluntary(l,m,mode,amount,closes){
+    const c=l.c,r=prepayRestriction(c,mode)||(closes&&mode!=="full"?prepayRestriction(c,"full"):"");
+    if(r)return r;
+    if(m-c.start+1<c.prepayFrom)return "尚未到合同提前还款窗口";
+    if(amount>quotaAt(l,m).limit+EPS)return "超过合同单次上限或本期剩余预付额度";
+    if(!closes&&amount+EPS<c.prepayMin)return "低于合同最低部分预付金额";
+    return "";
+  }
+  function saleContract(c,age){
+    if(c.salePayoffRule==="unknown")return {reason:"抵押物提前出售清偿适用的合同条款尚未确认"};
+    if(c.salePayoffRule==="forbidden")return {reason:"合同不允许在到期前通过资产交割结清贷款"};
+    let rate,fixed,voluntary;
+    if(c.salePayoffRule==="same_terms"){
+      const reason=prepayRestriction(c,"full");if(reason)return {reason};
+      if(age<c.prepayFrom)return {reason:"尚未到合同提前清偿窗口"};
+      rate=c.prepayFee;fixed=c.settlementFee;voluntary=true;
+    }else{
+      if([c.salePayoffFrom,c.salePayoffFee,c.saleSettlementFee].some(v=>v==null))return {reason:"独立出售清偿例外的窗口或费用尚未确认"};
+      if(age<c.salePayoffFrom)return {reason:"未到独立出售解押窗口"};
+      rate=c.salePayoffFee;fixed=c.saleSettlementFee;voluntary=false;
+    }
+    if(rate>0&&c.salePayoffFeeBase==="unknown")return {reason:"资产交割提前清偿的计费本金口径尚未确认"};
+    return {rate,fixed,voluntary};
+  }
+  function saleLoanTerms(l,m,d){
+    const extra=Math.max(0,l.balance-d.principal),c=l.c;
+    if(extra<EPS){
+      if(c.saleMaturityReleaseFee==null)return {reason:"到期当月因出售发生的解押费用范围尚未确认"};
+      return {extra:0,fees:c.saleMaturityReleaseFee==="in_asset_cost"?0:c.saleMaturityReleaseFee,voluntary:false};
+    }
+    const terms=saleContract(c,m-c.start+1);
+    if(terms.reason)return terms;
+    if(terms.voluntary&&extra>quotaAt(l,m).limit+EPS)return {reason:"交割需提前清偿的本金超过单次上限或本期剩余额度"};
+    return {extra,fees:terms.fixed+terms.rate*(c.salePayoffFeeBase==="extra"?extra:l.balance),voluntary:terms.voluntary};
+  }
+  function checkActions(h,strategy) {
+    if(!strategy||!Array.isArray(strategy.actions))throw Error("策略需要 actions");
+    const ids=a=>new Set(a.map(x=>x.id)),real=ids([...h.properties,...h.vehicles]),props=ids(h.properties),fin=ids(h.financial),liab=ids(h.loans);
+    const occupied=new Set(), expenseAction=new Set(), prepayDates=new Set();
+    for(const a of strategy.actions) {
+      num(a.month,"动作月",1,H,true);
+      if(a.kind==="list"||a.kind==="rent") {
+        if(!(a.kind==="list"?real:props).has(a.asset))throw Error("处置对象不存在");
+        if(a.kind==="rent")bool(a.discount,"议租折让");
+        if(occupied.has(a.asset))throw Error("同一实物资产动作重复");
+        occupied.add(a.asset);
+      }else if(a.kind==="liquidate"){
+        if(!fin.has(a.asset))throw Error("金融资产不存在");
+        if(occupied.has(a.asset))throw Error("同一金融资产动作重复");
+        occupied.add(a.asset);
+        option("证券操作",["all","stages","reserve"],a.mode);
+      }else if(a.kind==="prepay"){
+        if(!liab.has(a.loan))throw Error("债务不存在");
+        option("提前还款",["full","recast","shorten"],a.mode);
+        if(a.mode!=="full")num(a.amount,"提前还款额",EPS,1e15);
+        const date=a.loan+"|"+a.month;
+        if(prepayDates.has(date))throw Error("同一笔贷款同月不可重复预付");
+        prepayDates.add(date);
+      }else if(a.kind==="cut"){
+        if(expenseAction.size)throw Error("支出动作重复");expenseAction.add("cut");num(a.fraction,"削减比例",0,h.cutFraction);
+      }else throw Error("未知动作 "+a.kind);
+      if(a.trigger!=null)option("触发规则",["now","reserve"],a.trigger);
+      if(a.buffer!=null)num(a.buffer,"触发储备月数",0,H,true);
+    }
+  }
+  function execute(h,s,strategy,detail=false,tracePool=null) {
+    const actions=strategy.actions, loans=h.loans.map(newLoan);
+    const assets=[...h.properties,...h.vehicles].map(c=>({c,property:c.use!=null,owned:true,mark:c.value,saleMark:c.saleValue,
+      listed:null,sold:null,leaseFrom:c.use==="let"?1:null,rentFraction:1}));
+    const securities=h.financial.map(c=>({c,mark:c.value,units:c.value?1:0}));
+    const assetMap=new Map(assets.map(x=>[x.c.id,x])), secMap=new Map(securities.map(x=>[x.c.id,x]));
+    const loanMap=new Map(loans.map(x=>[x.c.id,x])), pending=[], rows=[], events=[], blocked=[];
+    const finished=new Set(), blockers=new Set(), byLoan=Object.fromEntries(loans.map(l=>[l.c.id,[]]));
+    const propertyFlows=Object.fromEntries(assets.filter(z=>z.property).map(z=>[z.c.id,{rent:0,carry:0,saleNet:0}]));
+    const event=(m,asset,type,note,amount=0)=>{if(detail)events.push({month:m,asset,type,note,amount});};
+    const reject=(m,id,reason,need=0)=>{
+      const signature=id+"|"+reason;
+      if(!blockers.has(signature)){blocked.push({month:m,id,reason,need});blockers.add(signature);event(m,id,"blocked",reason,need);}
+    };
+    let lastCut=0,cash=h.cash,cpi=1,receivables=0,arrears=0,failed=null,maxReserveGap=0,peak=0,drawdown=0,drawdownPct=null;
+    let peakDsr=0,peakDsrInfinite=false,interestTotal=0,rentNet=0,saleNet=0,prepaid=0,securityNet=0;
+    const openingDebt=sum(loans,l=>l.balance),openingNet=h.cash+sum(assets,a=>a.mark)+sum(securities,f=>f.mark*f.units)-openingDebt;
+    peak=openingNet;
+    let maxCashResidual=0,maxNetResidual=0;
+    for(let m=1;m<=H;m++){
+      const open=cash,oldDebt=sum(loans,l=>l.balance),oldFin=sum(securities,z=>z.mark*z.units)+receivables,
+        oldReal=sum(assets,a=>a.owned?a.mark:0),oldArrears=arrears;
+      const inc={income:0,rent:0,cashInterest:0,securityReceipts:0,saleGross:0};
+      const out={essential:0,discretionary:0,carry:0,replacement:0,interest:0,principal:0,loanFees:0,
+        closingInterest:0,closingPrincipal:0,saleFees:0,releaseFees:0,prepaid:0,prepayFees:0};
+      let tradeloss=0,assetDisposalDifference=0,gains=0,called=0,unpaid=0,missedPrincipal=0,missedDebtService=0,unfundedEssential=0,unfundedDiscretionary=0;
+      function pay(k,x){const available=Math.max(0,cash),paid=Math.min(available,Math.max(0,x));cash-=paid;out[k]+=paid;return paid;}
+      function receive(k,x){inc[k]+=x;cash+=x;}
+      const due=new Map();
+      for(const l of loans){const already=l.everActive;due.set(l.c.id,loanDue(l,m,s));if(!already&&l.everActive)called+=l.balance;}
+      cpi*=1+monthlyRate(parameter(s,"inflationAnnual",m,""));
+      const budget=expensesAt(h,m,cpi), triggerMonths=a=>a.buffer==null?h.reserveMonths:a.buffer;
+      const triggered=a=>a.trigger!=="reserve"||open<=budget.reserveBase*triggerMonths(a)+EPS;
+      const scheduledDue=()=>sum(loans,l=>{const d=due.get(l.c.id);return d.interest+d.principal+d.fee;});
+      const cashRate=Math.max(-.99,h.cashAnnual+parameter(s,"cashRateDelta",m,""));
+      receive("cashInterest",open*monthlyRate(cashRate));receive("income",sum(h.incomes,i=>incomeAt(i,m,s)));
+      for(let j=pending.length-1;j>=0;j--)if(pending[j].month===m){
+        receive("securityReceipts",pending[j].net);receivables-=pending[j].net;securityNet+=pending[j].net;
+        event(m,pending[j].id,"settle","净交易款到账",pending[j].net);pending.splice(j,1);
+      }
+      for(const a of assets)if(a.owned){
+        let multiplier;
+        if(a.property)multiplier=(1+monthlyRate(parameter(s,"propertyAnnual",m,a.c.id)))*(1+parameter(s,"propertyShock",m,a.c.id));
+        else multiplier=1+monthlyRate(-a.c.annualDepreciation);
+        gains+=a.mark*(multiplier-1);a.mark*=multiplier;if(a.saleMark!=null)a.saleMark*=multiplier;
+      }
+      for(const a of securities)if(a.units>EPS){
+        const market=!["deposit","instant"].includes(a.c.kind);
+        const annual=Math.max(-.99,a.c.annualReturn+(market?parameter(s,"securityAnnual",m,a.c.id):0));
+        const factor=(1+monthlyRate(annual))*(market?1+parameter(s,"financialShock",m,a.c.id):1)
+          *(market?1-a.c.concentration*parameter(s,"concentrationHaircut",m,a.c.id):1);
+        gains+=a.mark*a.units*(factor-1);a.mark*=factor;
+      }
+      function trade(z,units){
+        units=Math.min(z.units,Math.max(0,units));if(units<=EPS)return;
+        const gross=z.mark*units,fee=gross*z.c.fee,net=gross-fee;tradeloss+=fee;z.units-=units;
+        if(z.units<EPS)z.units=0;
+        if(z.c.settle===0){receive("securityReceipts",net);securityNet+=net;}
+        else{pending.push({month:m+z.c.settle,net,id:z.c.id});receivables+=net;}
+        event(m,z.c.id,"trade","卖出/到期，到账月 "+(m+z.c.settle),net);
+      }
+      function closingQuote(id,netOfAssetFees){
+        const linked=activeLiens(id,loans),parts=[];
+        let subtotal=0,priorFunding=0;
+        for(const l of linked){
+          const c=l.c,d=due.get(c.id),terms=saleLoanTerms(l,m,d);
+          if(terms.reason||(terms.extra>EPS&&c.transferWithLien==null))
+            return {reason:terms.reason||"解押付款方式尚未确认",need:0};
+          const total=l.balance+d.interest+d.fee+terms.fees;
+          subtotal+=total;if(c.transferWithLien!==true)priorFunding+=total;
+          parts.push({l,d,...terms});
+        }
+        const needed=Math.max(0,priorFunding,subtotal-netOfAssetFees);
+        return {parts,subtotal,need:Math.max(0,needed-cash),reason:cash+EPS<needed?"交割前资金不足（补差或先行解押）":""};
+      }
+      function retireLiens(quote){
+        for(const {l,d,fees,extra,voluntary} of quote.parts){
+          pay("releaseFees",fees);pay("loanFees",d.fee);pay("closingInterest",d.interest);
+          const paid=pay("closingPrincipal",l.balance);l.balance=Math.max(0,l.balance-paid);
+          if(voluntary&&extra>EPS)recordQuota(l,m,extra);
+          if(l.balance<EPS)l.balance=0;
+          if(detail)byLoan[l.c.id].push({month:m,principal:paid,scheduledPrincipal:paid-extra,earlyPrincipal:extra,interest:d.interest,balance:l.balance,annualRate:l.rate*12,settled:true});
+          due.set(l.c.id,{interest:0,principal:0,fee:0});
+        }
+      }
+      function settlePledged(z){
+        const order=z.lienOrder,gross=order.gross,fee=gross*z.c.fee,net=gross-fee;
+        z.lienOrder=null;
+        const quote=closingQuote(z.c.id,net);
+        if(quote.reason){reject(m,z.c.id,quote.reason+"，质押交易未交割，保留持仓",quote.need);return;}
+        assetDisposalDifference+=gross-z.mark*z.units;tradeloss+=fee;z.units=0;
+        receive("securityReceipts",net);securityNet+=net;retireLiens(quote);
+        event(m,z.c.id,"settle","质押证券交割并结清关联债务，家庭可得净款",net-quote.subtotal);
+      }
+      function orderFull(z){
+        const liens=activeLiens(z.c.id,loans);
+        if(!liens.length){trade(z,z.units);return;}
+        if(liens.some(l=>l.c.transferWithLien!==true)){
+          reject(m,z.c.id,"尚有质押余额且未明确允许用交易款同步解押，请先结清杠杆",0);return;
+        }
+        const settleMonth=m+z.c.settle;
+        if(settleMonth>H){reject(m,z.c.id,"质押交割超出可评估期限，继续持有");return;}
+        for(const l of liens){
+          if(settleMonth>=l.end||due.get(l.c.id).principal>=l.balance-EPS)continue;
+          const terms=saleContract(l.c,settleMonth-l.c.start+1);
+          if(terms.reason){reject(m,z.c.id,terms.reason);return;}
+        }
+        z.lienOrder={month:settleMonth,gross:z.mark*z.units};
+        event(m,z.c.id,"pledged_order","整笔质押交易，锁定报价并等待第 "+settleMonth+" 月同步解押；交割前无可用卖款",z.lienOrder.gross);
+        if(settleMonth===m)settlePledged(z);
+      }
+      for(const z of securities){
+        if(z.lienOrder?.month===m)settlePledged(z);
+        if(z.units>EPS&&!z.lienOrder&&z.c.kind==="deposit"&&z.c.maturity>0&&m>=z.c.maturity&&availableOnDate(z.c,m)){
+          if(!activeLiens(z.c.id,loans).length)trade(z,z.units);
+        }
+      }
+      for(const a of actions) {
+        if(m<a.month || finished.has(a))continue;
+        if(a.kind==="liquidate"){
+          const z=secMap.get(a.asset);
+          if(z.units<=EPS||z.lienOrder){finished.add(a);continue;}
+          if(!availableOnDate(z.c,m)){
+            reject(m,z.c.id,securityRestriction(z.c)||"交易尚未解锁或未到期，继续持有");
+            if(a.mode!=="reserve")finished.add(a);continue;
+          }
+          let units=z.units;
+          if(a.mode==="stages"){
+            const offset=m-a.month;
+            if(offset%3||offset>9)continue;
+            units=Math.min(.25,z.units);
+          }else if(a.mode==="reserve"){
+            const cashNeed=budget.required+budget.reserveBase*triggerMonths(a)+budget.disc+scheduledDue()-cash;
+            if(cashNeed<=EPS)continue;
+            const inTransit=sum(pending,p=>p.id===a.asset?p.net:0);
+            if(cashNeed-inTransit<=EPS)continue;
+            units=z.mark*(1-z.c.fee)>0?(cashNeed-inTransit)/(z.mark*(1-z.c.fee)):z.units;
+          }
+          if(a.mode==="all"){orderFull(z);finished.add(a);continue;}
+          if(activeLiens(z.c.id,loans).length){
+            reject(m,z.c.id,"分批交易缺少部分解除质押安排，保留持仓");if(a.mode==="stages")finished.add(a);continue;
+          }
+          trade(z,units);if(z.units<=EPS)finished.add(a);
+        }else if(a.kind==="list"||a.kind==="rent"){
+          const z=assetMap.get(a.asset),c=z.c;
+          if(!triggered(a))continue;
+          finished.add(a);
+          if(a.kind==="rent"){
+            if(!z.property||c.use!=="idle"){reject(m,c.id,"仅闲置房允许新增出租");continue;}
+            z.rentFraction=a.discount?1-c.discountRent:1;
+            z.leaseFrom=m+(a.discount?c.discountLeaseLag:c.leaseLag);
+            event(m,c.id,"lease","起租月 "+z.leaseFrom+"；议租比例 "+z.rentFraction);continue;
+          }
+          const lag=c.saleLag+parameter(s,"saleDelay",m,c.id);
+          const restriction=saleRestriction(c);
+          if(restriction||m<c.lock||lag>h.maxSaleWait||m+lag>H){
+            reject(m,c.id,(restriction||"锁定、成交等待期限或评估期限不允许")+"，继续持有");continue;
+          }
+          z.listed=m+lag;event(m,c.id,"list","预计交割月 "+z.listed);
+        }
+      }
+      for(const z of assets)if(z.owned&&z.listed===m){
+        const c=z.c,gross=z.saleMark*(1-parameter(s,"saleHaircut",m,c.id)),fee=gross*c.saleFee+c.closingFee;
+        const quote=closingQuote(c.id,gross-fee);
+        if(quote.reason){
+          reject(m,c.id,quote.reason+"，继续持有",quote.need);z.listed=null;continue;
+        }
+        receive("saleGross",gross);pay("saleFees",fee);retireLiens(quote);
+        const net=gross-fee-quote.subtotal;saleNet+=net;if(z.property)propertyFlows[c.id].saleNet+=net;assetDisposalDifference+=gross-z.mark;
+        z.owned=false;z.sold=m;event(m,c.id,"close","交割，扣交易成本和关联债务后",net);
+      }
+      let ownershipCosts=0,replaceCosts=0;
+      for(const z of assets) {
+        const c=z.c;
+        if(!z.owned){if(replacement(c))replaceCosts+=c.replacementMonthly*cpi;continue;}
+        ownershipCosts+=c.carry*cpi;if(z.property)propertyFlows[c.id].carry+=c.carry*cpi;
+        if(z.property&&z.leaseFrom!==null&&m>=z.leaseFrom){
+          const rent=c.rent*z.rentFraction*parameter(s,"rentFactor",m,c.id,1)*(1-clip(c.vacancy+parameter(s,"vacancyAdd",m,c.id),0,1));
+          receive("rent",rent);propertyFlows[c.id].rent+=rent;
+        }
+      }
+      let cut=0;
+      for(const a of actions)if(a.kind==="cut"&&m>=a.month&&triggered(a))cut=a.fraction;
+      if(cut!==lastCut){event(m,"discretionary","cut",cut>0?"按规则削减本月可选开支":"现金条件恢复，回到原可选开支",budget.disc*cut);lastCut=cut;}
+      const disc=budget.disc*(1-cut);
+      function obligation(k,x,isPrincipal=false) {
+        const paid=pay(k,x),gap=Math.max(0,x-paid);
+        unpaid+=gap;
+        if(isPrincipal){missedPrincipal+=gap;missedDebtService+=gap;}
+        else if(k==="loanFees"||k==="interest"){arrears+=gap;missedDebtService+=gap;}
+        else if(k==="discretionary")unfundedDiscretionary+=gap;
+        else{unfundedEssential+=gap;if(k==="carry"||k==="replacement")arrears+=gap;}
+        return paid;
+      }
+      obligation("essential",budget.required);obligation("carry",ownershipCosts);obligation("replacement",replaceCosts);
+      let regularDue=0;
+      for(const l of loans){
+        const d=due.get(l.c.id);
+        if(!d.interest&&!d.principal&&!d.fee)continue;
+        regularDue+=d.interest+d.principal+d.fee;
+        obligation("loanFees",d.fee);const interest=obligation("interest",d.interest);
+        const principal=obligation("principal",d.principal,true);l.balance=Math.max(0,l.balance-principal);
+        if(l.balance<EPS)l.balance=0;
+        if(detail)byLoan[l.c.id].push({month:m,principal,interest,balance:l.balance,annualRate:l.rate*12,settled:false});
+      }
+      obligation("discretionary",disc);
+      const reserve=budget.reserveBase*h.reserveMonths;
+      if(unpaid<EPS)for(const a of actions)if(a.kind==="prepay"&&m===a.month){
+        const l=loanMap.get(a.loan),c=l.c;
+        if(l.balance<=EPS){if(!l.everActive)reject(m,c.id,"担保尚未触发，无法预付");else event(m,c.id,"superseded","债务已偿清，保留现金");continue;}
+        const p=a.mode==="full"?l.balance:a.amount;
+        const restriction=checkVoluntary(l,m,a.mode,p,p>=l.balance-EPS);
+        if(restriction||p>l.balance+EPS){
+          reject(m,c.id,(restriction||"提前还款期数、起点、余额或最低金额未获合同允许")+"，按原合同还款");continue;
+        }
+        const fee=p*c.prepayFee+(p>=l.balance-EPS?c.settlementFee:0),available=Math.max(0,cash-reserve);
+        if(p+fee>available+EPS){reject(m,c.id,"本月可用现金扣生活、到期款和储备后不足，保留现金",p+fee-available);continue;}
+        pay("prepaid",p);pay("prepayFees",fee);recordQuota(l,m,p);l.balance=Math.max(0,l.balance-p);recast(l,a.mode,m);
+        if(detail)byLoan[c.id].push({month:m,prepay:p,fee,balance:l.balance,remainingQuota:typeof c.prepayPeriodMax==="number"?Math.max(0,c.prepayPeriodMax-l.quotaUsed):null,end:l.end,nextPayment:c.method==="annuity"?l.payment:null});
+        event(m,c.id,"prepay","来自当月清算后的可支配现金",p);
+      }
+      const financial=sum(securities,z=>z.mark*z.units),property=sum(assets,z=>z.owned&&z.property?z.mark:0),
+        vehicle=sum(assets,z=>z.owned&&!z.property?z.mark:0),debt=sum(loans,l=>l.balance);
+      const cashIn=sum(Object.values(inc),x=>x),cashOut=sum(Object.values(out),x=>x);
+      const cashResidual=cash-(open+cashIn-cashOut),net=cash+financial+receivables+property+vehicle-debt-arrears;
+      const previousNet=open+oldFin+oldReal-oldDebt-oldArrears;
+      const noncapitalOut=out.essential+out.discretionary+out.carry+out.replacement+out.interest+out.closingInterest+out.loanFees+out.saleFees+out.releaseFees+out.prepayFees;
+      const predicted=previousNet+inc.income+inc.rent+inc.cashInterest+gains+assetDisposalDifference
+        -tradeloss-called-noncapitalOut-(arrears-oldArrears);
+      const netResidual=net-predicted;
+      maxCashResidual=Math.max(maxCashResidual,Math.abs(cashResidual));maxNetResidual=Math.max(maxNetResidual,Math.abs(netResidual));
+      if(Math.abs(cashResidual)>1e-6*Math.max(1,Math.abs(open),cashIn,cashOut)||Math.abs(netResidual)>1e-6*Math.max(1,Math.abs(net),Math.abs(predicted)))throw Error("逐月会计未勾稽，月 "+m);
+      const cashIncome=inc.income+inc.rent;
+      const dsr=cashIncome>EPS?regularDue/cashIncome:null,dsrInfinite=cashIncome<=EPS&&regularDue>EPS;
+      if(dsr!=null)peakDsr=Math.max(peakDsr,dsr);peakDsrInfinite=peakDsrInfinite||dsrInfinite;
+      if(net>peak)peak=net;drawdown=Math.max(drawdown,peak-net);
+      if(peak>EPS)drawdownPct=Math.max(drawdownPct||0,(peak-net)/peak);
+      maxReserveGap=Math.max(maxReserveGap,Math.max(0,reserve-cash));
+      const earnedInterest=out.interest+out.closingInterest;
+      interestTotal+=earnedInterest;prepaid+=out.prepaid;
+      const propertyCarry=sum(assets,z=>z.owned&&z.property?z.c.carry*cpi:0);
+      rentNet+=inc.rent-propertyCarry;
+      if(unpaid>EPS)failed={month:m,unpaid,missedPrincipal,missedDebtService,unfundedEssential,unfundedDiscretionary};
+      rows.push({month:m,openingCash:open,cash,netWorth:failed?null:net,realNetWorth:failed?null:net/cpi,bookNetWorth:net,cpi,
+        financial,receivables:Math.max(0,receivables),property,vehicle,debt,arrears,regularDue,dsr,dsrInfinite,reserve,
+        unpaid:firstPositive(unpaid),missedDebtService:firstPositive(missedDebtService),unfundedEssential:firstPositive(unfundedEssential),unfundedDiscretionary:firstPositive(unfundedDiscretionary),cashResidual,netResidual,...inc,...out,securityTradeFees:tradeloss,valuationGain:gains});
+      if(failed)break;
+    }
+    function minimum(n){return rows.length>=n?Math.min(...rows.slice(0,n).map(x=>x.cash)):null;}
+    const end=rows[rows.length-1],points={};
+    for(const m of [12,36,60,120]){const r=rows[m-1];points[m]=r?{nominal:r.netWorth,real:r.realNetWorth,cash:r.cash,debt:r.debt,due:r.regularDue,dsr:r.dsr}:null;}
+    const summary={completed:!failed,feasible:!failed&&!blocked.length&&maxReserveGap<EPS,firstFailure:failed?failed.month:null,
+      failureBreakdown:failed,worstGap:failed?failed.unpaid:0,supportMonths:failed?failed.month-1:H,minCash12:minimum(12),minCash36:minimum(36),minCash120:minimum(120),
+      minCashObserved:Math.min(...rows.map(r=>r.cash)),firstCash:rows[0].cash,endCash:end.cash,terminalReal:failed?null:end.realNetWorth,
+      terminalNominal:failed?null:end.netWorth,endDebt:end.debt,endDue:end.regularDue,endDsr:end.dsr,endDsrInfinite:end.dsrInfinite,
+      peakDsr,peakDsrInfinite,interestTotal,prepaid,rentNet,saleNet,securityNet,drawdown,drawdownPct,maxReserveGap,
+      maxBlockedFunding:Math.max(0,...blocked.map(b=>b.need)),blocked,points,maxCashResidual,maxNetResidual,openingNet,arrears:end.arrears};
+    if(tracePool){
+      // Intern the complete cent-level ledger, not its endpoints or an approximate hash.
+      const key=rows.map(r=>[r.cash,r.debt,r.financial,r.property,r.vehicle,r.rent,r.receivables,r.netWorth,r.unpaid,r.prepaid,r.saleGross,r.discretionary]
+        .map(v=>v==null?"null":Math.round(v*100)).join(",")).join(";");
+      if(!tracePool.has(key))tracePool.set(key,tracePool.size+1);
+      summary.traceNumber=tracePool.get(key);
+    }
+    return detail?{summary,rows,events,byLoan,propertyFlows}:{summary};
+  }
+  function firstPositive(n){return n>EPS?n:0;}
+
+  const baseStrategy=()=>({id:"S000",actions:[]});
+  function neutralBalance(c,through){
+    const l=newLoan(c),scenario={by:{}};
+    for(let m=c.start;m<=through;m++){
+      const due=loanDue(l,m,scenario);
+      l.balance=Math.max(0,l.balance-due.principal);
+    }
+    return l.balance;
+  }
+  function enumerate(h,limit=200) {
+    num(limit,"策略上限",100,500,true);
+    const dims=[],exclusions=[];
+    const add=(id,choices)=>{if(choices.length)dims.push({id,options:[null,...choices]});};
+    const why=(id,reason)=>exclusions.push({id,reason});
+    const currentEssential=expensesAt(h,1,1).reserveBase;
+    const liquidOpening=Math.max(0,h.cash-currentEssential*h.reserveMonths);
+    let neutralBudget=null;
+    function fundingAt(month){
+      if(!neutralBudget)neutralBudget=execute(h,{id:"contract_budget",by:{}},baseStrategy(),true).rows;
+      const r=neutralBudget[month-1];
+      return r&&!r.unpaid?Math.max(0,r.cash-r.reserve):0;
+    }
+    for(const p of [...h.properties,...h.vehicles]) {
+      const choices=[];
+      if(p.use==="idle"&&p.rent>0){
+        choices.push({kind:"rent",asset:p.id,month:1,discount:false});
+        if(p.discountRent>0&&p.discountRent<1&&p.discountLeaseLag<p.leaseLag)choices.push({kind:"rent",asset:p.id,month:1,discount:true});
+        else why(p.id,"议租仅在可缩短空置时生成");
+      }
+      const restriction=saleRestriction(p);
+      if(restriction||p.lock>H||p.saleLag>h.maxSaleWait||p.saleLag+p.lock>H)
+        why(p.id,restriction||"出售受锁定、可接受成交期限约束");
+      else{
+        for(const month of new Set([p.lock,6,12]))if(month>=p.lock&&month+p.saleLag<=H)choices.push({kind:"list",asset:p.id,month});
+        if(currentEssential>0)choices.push({kind:"list",asset:p.id,month:p.lock,trigger:"reserve",buffer:Math.max(3,h.reserveMonths)});
+      }
+      add(p.id,choices);
+    }
+    for(const z of h.financial){
+      const restriction=securityRestriction(z);
+      if(restriction||z.value<=0||z.kind==="deposit"&&z.maturity>0||z.unlock>H){
+        why(z.id,restriction||"资产无市值、超出期限，或定存按到期自动兑付");continue;
+      }
+      const choices=[{kind:"liquidate",asset:z.id,mode:"all",month:z.unlock}];
+      if(z.unlock+9<=H)choices.push({kind:"liquidate",asset:z.id,mode:"stages",month:z.unlock});
+      if(currentEssential>0)for(const buffer of new Set([Math.max(3,h.reserveMonths),Math.max(6,h.reserveMonths)]))
+        choices.push({kind:"liquidate",asset:z.id,mode:"reserve",month:z.unlock,buffer});
+      add(z.id,choices);
+    }
+    for(const l of h.loans){
+      const fullRestriction=prepayRestriction(l,"full"),recastRestriction=prepayRestriction(l,"recast"),shortenRestriction=prepayRestriction(l,"shorten");
+      for(const reason of new Set([fullRestriction,recastRestriction,shortenRestriction].filter(Boolean)))why(l.id,reason);
+      if(fullRestriction&&recastRestriction&&shortenRestriction)continue;
+      if(l.principal<=EPS||l.months<2){why(l.id,"余额或到期期数不支持额外提前还款");continue;}
+      const first=l.start+l.prepayFrom-1,last=Math.min(H,l.start+l.months-2);
+      if(first>last){why(l.id,"提前还款窗口在到期或评估期以后");continue;}
+      const dates=new Set([first]),contractLoan=newLoan(l);
+      if(typeof l.prepayPeriodMax==="number"){
+        const initialReset=l.start+l.prepayPeriodRemaining;
+        const next=first<initialReset?initialReset:initialReset+(1+Math.floor((first-initialReset)/l.prepayPeriodMonths))*l.prepayPeriodMonths;
+        if(next<=last)dates.add(next);
+      }
+      if(!fullRestriction&&Number.isFinite(quotaAt(contractLoan,first).limit)){
+        for(let m=first;m<=last;m++){
+          const remaining=neutralBalance(l,m);
+          if(remaining>EPS&&remaining<=quotaAt(contractLoan,m).limit+EPS){dates.add(m);break;}
+        }
+      }
+      const choices=[],recurring=new Map();
+      for(const month of [...dates].sort((a,b)=>a-b)){
+        const availableQuota=quotaAt(contractLoan,month).limit,contractBalance=neutralBalance(l,month);
+        const fullFits=!fullRestriction&&contractBalance>EPS&&contractBalance<=availableQuota+EPS;
+        if(month===first&&!fullRestriction&&!fullFits)why(l.id,"首个动作月全清的剩余本金超过合同额度或已到期");
+        if(fullFits)choices.push({kind:"prepay",loan:l.id,month,mode:"full"});
+        const partialCap=Math.min(Math.max(liquidOpening,fundingAt(month))/(1+l.prepayFee),l.principal*.5,availableQuota);
+        const distinctAmounts=new Set();
+        for(const frac of [.5,1]){
+          const amount=Math.floor(partialCap*frac*100)/100;
+          if(amount<=EPS||amount<l.prepayMin||amount>=contractBalance-EPS||l.method==="bullet"||distinctAmounts.has(amount))continue;
+          distinctAmounts.add(amount);
+          for(const mode of ["recast","shorten"]){
+            if(mode==="recast"?recastRestriction:shortenRestriction)continue;
+            const action={kind:"prepay",loan:l.id,month,mode,amount};choices.push(action);
+            if(typeof l.prepayPeriodMax==="number"&&frac===1){
+              const prev=recurring.get(mode);
+              if(!prev)recurring.set(mode,action);
+              else if(quotaAt(contractLoan,month).index!==quotaAt(contractLoan,prev.month).index){
+                choices.push([prev,action]);recurring.delete(mode);
+              }
+            }
+          }
+        }
+      }
+      add(l.id,choices);
+    }
+    if(h.cutFraction>0&&h.expenses.some(e=>e.kind==="discretionary"&&e.monthly>0)){
+      const choices=[{kind:"cut",month:1,fraction:h.cutFraction}];
+      if(currentEssential>0)for(const buffer of new Set([Math.max(3,h.reserveMonths),Math.max(6,h.reserveMonths)]))
+        choices.push({kind:"cut",month:1,fraction:h.cutFraction,trigger:"reserve",buffer});
+      add("discretionary",choices);
+    }
+    const total=dims.reduce((a,d)=>a*BigInt(d.options.length),1n),selected=[],seen=new Set();
+    function insert(digits){
+      const key=digits.join(",");
+      if(selected.length>=limit||seen.has(key))return;
+      seen.add(key);
+      const actions=digits.map((v,i)=>dims[i].options[v]).filter(Boolean).flat();
+      selected.push({id:"S"+String(selected.length).padStart(3,"0"),actions});
+    }
+    function decode(n){return dims.map(d=>{const b=BigInt(d.options.length),k=Number(n%b);n/=b;return k;});}
+    const zeros=dims.map(()=>0);insert(zeros);
+    if(total<=BigInt(limit)){for(let i=1n;i<total;i++)insert(decode(i));}
+    else{
+      // Round-robin one-action policies first; reserve capacity for cross-family interactions.
+      const singleBudget=Math.max(1,Math.floor(limit*.38));
+      const length=Math.max(1,...dims.map(d=>d.options.length));
+      for(let j=1;j<length&&selected.length<singleBudget;j++)for(let k=0;k<dims.length&&selected.length<singleBudget;k++)
+        if(j<dims[k].options.length){const d=zeros.slice();d[k]=j;insert(d);}
+      // Cover light-touch, executable pairs before sampling the much denser full product.
+      for(let depth=1;depth<length&&selected.length<Math.floor(limit*.67);depth++)
+        for(let offset=1;offset<dims.length&&selected.length<Math.floor(limit*.67);offset++)
+          for(let i=0;i<dims.length-offset&&selected.length<Math.floor(limit*.67);i++) {
+            const j=i+offset,d=zeros.slice();
+            d[i]=1+(depth-1)%(dims[i].options.length-1);d[j]=1+(depth+offset-2)%(dims[j].options.length-1);insert(d);
+          }
+      const slots=limit-selected.length;
+      for(let k=1;k<=slots;k++)insert(decode((total-1n)*BigInt(k)/BigInt(slots)));
+      // Multiplicative stride visits all indices when coprime to the exact product.
+      let stride=total/BigInt(limit)+1n;
+      const gcd=(a,b)=>{while(b){const c=a%b;a=b;b=c;}return a;};
+      while(gcd(stride,total)!==1n)stride++;
+      for(let i=0n;selected.length<limit;i++)insert(decode((i*stride)%total));
+    }
+    return {strategies:selected,coverage:{rawCombinations:total.toString(),evaluated:selected.length,limit,
+      method:total<=BigInt(limit)?"完整笛卡尔积":"先保留基准，轮转单动作、跨资产双动作，再按混合进位全空间等距覆盖",
+      dimensions:dims.map(d=>({id:d.id,choices:d.options.length})),exclusions}};
+  }
+  function prepare(input,scenarios) {
+    if(!Array.isArray(scenarios)||!scenarios.length||scenarios.length>12)throw Error("请输入1至12个情景");
+    const h=validateHousehold(input),paths=scenarios.map(s=>validateScenario(s,h.rangeCase,h));
+    if(new Set(paths.map(s=>s.id)).size!==paths.length)throw Error("情景 ID 重复");
+    return {h,scenarios:paths};
+  }
+  function assess(input,scenarios,limit=500){
+    const p=prepare(input,scenarios),set=enumerate(p.h,limit),cache=new Map(),tracePool=new Map();
+    function cached(actions,s){
+      const k=s.id+"|"+JSON.stringify(actions);
+      if(!cache.has(k))cache.set(k,execute(p.h,s,{actions},false,tracePool).summary);
+      return cache.get(k);
+    }
+    const evaluated=set.strategies.map(strategy=>{
+      const outcomes={};
+      for(const s of p.scenarios){
+        const summary={...cached(strategy.actions,s)};
+        const without=strategy.actions.filter(a=>a.kind!=="prepay");
+        const ref=without.length===strategy.actions.length?summary:cached(without,s);
+        const comparable=summary.completed&&ref.completed&&!summary.blocked.length&&!ref.blocked.length;
+        summary.interestSaved=comparable?ref.interestTotal-summary.interestTotal:null;
+        summary.prepayCashChangeMonth1=summary.firstCash-ref.firstCash;
+        summary.prepayMinCashChange=comparable?summary.minCash120-ref.minCash120:null;
+        outcomes[s.id]=summary;
+      }
+      const all=Object.values(outcomes),ok=all.every(x=>x.feasible);
+      return {strategy,outcomes,feasible:ok,
+        minCash:ok?Math.min(...all.map(x=>x.minCash120)):null,
+        worstWealth:ok?Math.min(...all.map(x=>x.terminalReal)):null,
+        peakDsr:ok?Math.max(...all.map(x=>x.peakDsrInfinite?Infinity:x.peakDsr)):null,
+        maxDebt:ok?Math.max(...all.map(x=>x.endDebt)):null,
+        support:Math.min(...all.map(x=>x.supportMonths)),gap:Math.max(...all.map(x=>x.worstGap)),
+        funding:Math.max(...all.map(x=>Math.max(x.worstGap,x.maxReserveGap,x.maxBlockedFunding))),
+        blockedCount:sum(all,x=>x.blocked.length),regret:null,recoveryCost:null,pareto:false};
+    });
+    const groups=new Map();
+    for(const r of evaluated){
+      const key=p.scenarios.map(s=>r.outcomes[s.id].traceNumber).join("/");
+      if(!groups.has(key))groups.set(key,"T"+String(groups.size+1).padStart(3,"0"));
+      r.trajectory=groups.get(key);
+    }
+    const common=evaluated.filter(x=>x.feasible),best={};
+    set.coverage.distinctMonthlyTrajectories=groups.size;
+    set.coverage.distinctFeasibleMonthlyTrajectories=new Set(common.map(r=>r.trajectory)).size;
+    for(const s of p.scenarios)best[s.id]=common.length?Math.max(...common.map(x=>x.outcomes[s.id].terminalReal)):null;
+    const recovery=p.scenarios.find(s=>s.role==="recovery");
+    for(const r of common){
+      r.regret=Math.max(...p.scenarios.map(s=>best[s.id]-r.outcomes[s.id].terminalReal));
+      r.recoveryCost=recovery?best[recovery.id]-r.outcomes[recovery.id].terminalReal:null;
+    }
+    for(const r of common)r.pareto=!common.some(t=>t!==r&&t.minCash>=r.minCash-EPS&&t.worstWealth>=r.worstWealth-EPS&&t.peakDsr<=r.peakDsr+EPS
+      &&(t.minCash>r.minCash+EPS||t.worstWealth>r.worstWealth+EPS||t.peakDsr<r.peakDsr-EPS));
+    const min=(items,c)=>items.length?items.slice().sort(c)[0].strategy.id:null;
+    const preferred=(k)=>Object.values(k.outcomes).reduce((v,x)=>Math.min(v,x.endCash),Infinity);
+    const winners={baseline:evaluated[0].strategy.id,
+      robust:min(common,(a,b)=>b.minCash-a.minCash||b.worstWealth-a.worstWealth),
+      cash:min(common,(a,b)=>b.minCash-a.minCash||preferred(b)-preferred(a)),
+      regret:min(common,(a,b)=>a.regret-b.regret||b.minCash-a.minCash),
+      wealth:min(common,(a,b)=>b.worstWealth-a.worstWealth||b.minCash-a.minCash),
+      debt:min(common,(a,b)=>(a.peakDsr-b.peakDsr)||a.maxDebt-b.maxDebt||b.minCash-a.minCash),
+      leastGap:min(evaluated,(a,b)=>a.funding-b.funding||a.blockedCount-b.blockedCount||b.support-a.support||a.gap-b.gap)};
+    const ordered=rank(evaluated,p.h.preference),signatures=new Set(),shortlist=[];
+    for(const r of [...Object.values(winners).map(id=>evaluated.find(x=>x.strategy.id===id)).filter(Boolean),...ordered]){
+      if(!r.feasible||shortlist.includes(r.strategy.id))continue;
+      // Equal cent-level outcomes across every scenario do not multiply the shortlist.
+      const fingerprint=r.trajectory;
+      if(signatures.has(fingerprint))continue;signatures.add(fingerprint);shortlist.push(r.strategy.id);if(shortlist.length===15)break;
+    }
+    return {prepared:p,results:evaluated,coverage:set.coverage,best,winners,commonCount:common.length,shortlist};
+  }
+  function rank(items,objective="cash"){
+    const order={cash:(a,b)=>b.minCash-a.minCash,wealth:(a,b)=>b.worstWealth-a.worstWealth,
+      debt:(a,b)=>a.peakDsr-b.peakDsr||a.maxDebt-b.maxDebt,regret:(a,b)=>a.regret-b.regret};
+    option("排序目标",Object.keys(order),objective);
+    return items.slice().sort((a,b)=>Number(b.feasible)-Number(a.feasible)||
+      (a.feasible?order[objective](a,b):a.funding-b.funding||a.blockedCount-b.blockedCount||b.support-a.support)||
+      a.strategy.id.localeCompare(b.strategy.id));
+  }
+  function simulate(input,scenario,strategy=baseStrategy()){
+    const p=prepare(input,[scenario]);checkActions(p.h,strategy);return execute(p.h,p.scenarios[0],strategy,true);
+  }
+  function path(key,value,start=1,duration=H,target="*",sourceId="manual-stress") {
+    const [mode,unit]=modes[key];
+    return {key,mode,value,unit,start,duration:mode==="event"||mode==="shock"?1:duration,
+      range:[value,value],target,sourceId,assumption:"stress_test",editable:true};
+  }
+  function describe(a){
+    const t=a.trigger==="reserve"?"自第"+a.month+"月起，期初现金不超过必要支出×"+a.buffer+"时":"第"+a.month+"月";
+    if(a.kind==="list")return t+"挂牌 "+a.asset;
+    if(a.kind==="rent")return t+(a.discount?"议价出租 ":"出租 ")+a.asset;
+    if(a.kind==="liquidate")return t+" "+a.asset+({all:"全部转为现金",stages:"分四次各减持原份额25%（相隔3个月）",reserve:"按现金缺口卖出，缓冲 "+a.buffer+" 个月"}[a.mode]);
+    if(a.kind==="prepay")return t+"用可用现金"+(a.mode==="full"?"结清 ":a.mode==="recast"?"预付并降月供 ":"预付并缩期限 ")+a.loan+(a.mode==="full"?"":" "+a.amount.toLocaleString("zh-CN")+"元");
+    return t+"削减可选支出 "+Math.round(a.fraction*100)+"%";
+  }
+  function nameOf(s){
+    const phase={liquidate:0,list:1,rent:1,cut:2,prepay:3};
+    return s.actions.length?s.actions.slice().sort((a,b)=>a.month-b.month||phase[a.kind]-phase[b.kind]).map(describe).join("；"):"不行动（维持原合同与持有方式）";
+  }
+
+  function reverse(input,scenario,strategy=baseStrategy(),selection={}) {
+    const p=prepare(input,[scenario]),h=p.h,s=p.scenarios[0];checkActions(h,strategy);
+    const wage=h.incomes.find(x=>x.id===selection.incomeId)||h.incomes.filter(i=>["wage","bonus"].includes(i.kind)).sort((a,b)=>b.monthly-a.monthly)[0];
+    const property=h.properties.find(x=>x.id===selection.propertyId)||h.properties.find(x=>x.use!=="occupied");
+    const loan=h.loans.find(x=>x.id===selection.loanId)||h.loans[0],security=h.financial.find(x=>x.id===selection.financialId)||h.financial.find(x=>!["deposit","instant"].includes(x.kind));
+    const base=execute(h,s,strategy,true);
+    const typeNames={wage:"所有工资/奖金额外下降",job:"指定收入中断",delay:"所有实物成交额外延迟",price:"房产估值与可成交价额外下跌",rent:"租金额外下降",joint:"工资、房价、租金同比例额外下调"};
+    const grid={};
+    function measure(key,x){
+      let hh=h,ss=s;
+      if(key==="wage"||key==="joint")hh={...hh,incomes:h.incomes.map(i=>["wage","bonus"].includes(i.kind)?{...i,monthly:i.monthly*(1-x/100)}:i)};
+      if(key==="job"&&wage&&x>0){
+        const extra=path("unemploymentMonths",x,1,1,wage.id);
+        ss={...s,by:{...s.by,unemploymentMonths:[...(s.by.unemploymentMonths||[]),extra]}};
+      }
+      if(key==="delay")hh={...hh,properties:hh.properties.map(c=>({...c,saleLag:c.saleLag==null?null:c.saleLag+x})),vehicles:hh.vehicles.map(c=>({...c,saleLag:c.saleLag==null?null:c.saleLag+x}))};
+      if(key==="rent"||key==="price"||key==="joint")hh={...hh,properties:hh.properties.map(c=>({...c,
+        rent:c.rent*(key!=="price"?1-x/100:1),value:c.value*(key!=="rent"?1-x/100:1),saleValue:c.saleValue==null?null:c.saleValue*(key!=="rent"?1-x/100:1)}))};
+      return execute(hh,ss,strategy).summary;
+    }
+    const anyWage=h.incomes.some(i=>["wage","bonus"].includes(i.kind)&&i.monthly>0);
+    for(const key of Object.keys(typeNames)){
+      const applicable=key==="job"?!!wage:key==="wage"?anyWage:key==="delay"?strategy.actions.some(a=>a.kind==="list"):key==="joint"?anyWage||h.properties.length>0:h.properties.length>0;
+      if(!applicable){grid[key]={label:typeNames[key],applicable:false};continue;}
+      const limit=key==="job"||key==="delay"?120:100;
+      let boundary=null,previousSafe=null,reentry=false,firstBlocked=null;
+      for(let x=0;x<=limit;x++){
+        const r=measure(key,x);
+        if(r.blocked.length&&firstBlocked==null)firstBlocked=x;
+        if(!r.completed&&boundary===null)boundary={value:x,failureMonth:r.firstFailure,gap:r.worstGap,previousSafe};
+        if(r.completed){if(boundary)reentry=true;previousSafe=x;}
+      }
+      grid[key]={label:typeNames[key],applicable:true,target:key==="job"?wage.id:"*",unit:limit===120?"月":"%",step:1,limit,
+        boundary,nonmonotone:reentry,firstBlocked};
+    }
+    let affordablePrepay=null,breakEven=null,liquidation=null,payoff=null;
+    const effect=(without,withAction)=>{
+      const a=execute(h,s,{actions:without}).summary,b=execute(h,s,{actions:[...without,withAction]}).summary;
+      return {holdingSupport:a.supportMonths,actionSupport:b.supportMonths,holdingFirstFailure:a.firstFailure,actionFirstFailure:b.firstFailure,
+        holdingMinCash:a.minCashObserved,actionMinCash:b.minCashObserved,changeFirstCash:b.firstCash-a.firstCash,changeMinCash:b.minCashObserved-a.minCashObserved,
+        actionFeasible:b.feasible,blocked:b.blocked};
+    };
+    if(security&&!securityRestriction(security)){
+      const actions=strategy.actions.filter(a=>a.asset!==security.id);
+      liquidation={id:security.id,...effect(actions,{kind:"liquidate",asset:security.id,month:Math.min(H,security.unlock),mode:"all"})};
+    }
+    if(loan&&loan.prepayFrom!=null){
+      const actions=strategy.actions.filter(a=>!(a.kind==="prepay"&&a.loan===loan.id));
+      const keep=execute(h,s,{actions},true),month=loan.start+loan.prepayFrom-1,r=keep.rows[month-1];
+      const ld=(keep.byLoan[loan.id]||[]).find(t=>t.month===month&&"principal" in t);
+      // A bullet may have no installment at zero interest; track its contractual opening balance.
+      const balance=ld?ld.balance:(loan.method==="bullet"&&month<loan.start+loan.months-1?loan.principal:0);
+      if(month<=H)payoff={id:loan.id,...effect(actions,{kind:"prepay",loan:loan.id,month,mode:"full"})};
+      if(r&&balance>EPS&&["full","recast","shorten"].some(mode=>!prepayRestriction(loan,mode))){
+        const liquidityCeiling=Math.min(balance,Math.max(0,r.cash-r.reserve)/(1+loan.prepayFee));
+        const contractLimit=quotaAt(newLoan(loan),month).limit,upper=Math.min(liquidityCeiling,contractLimit);
+        const mode=!prepayRestriction(loan,"recast")?"recast":!prepayRestriction(loan,"shorten")?"shorten":null;
+        const works=x=>{
+          if(x<=EPS)return keep.summary.feasible;
+          const useMode=x>=balance-EPS?"full":mode;
+          if(!useMode||loan.method==="bullet"&&useMode!=="full")return false;
+          return execute(h,s,{actions:[...actions,{kind:"prepay",loan:loan.id,month,amount:x,mode:useMode}]}).summary.feasible;
+        };
+        const candidates=[0,upper,Math.min(upper,loan.prepayMin)];
+        for(let j=1;j<50;j++)candidates.push(upper*j/50);
+        const tests=[...new Set(candidates)].sort((a,b)=>a-b).map(x=>({x,ok:works(x)}));
+        let last=tests.filter(t=>t.ok).at(-1),next=last?tests.find(t=>t.x>last.x):null;
+        if(last&&next&&next.x>last.x+.01){
+          let lo=last.x,hi=next.x;
+          for(let j=0;j<45&&hi-lo>.002;j++){const mid=(lo+hi)/2;if(works(mid))lo=mid;else hi=mid;}
+          last={x:lo};
+        }
+        // A non-cent contractual payoff can be rounded to cents only for display.
+        const cap=last?last.x:null;
+        affordablePrepay={id:loan.id,month,mode,largestTested:cap,liquidityCeiling,contractCeiling:Number.isFinite(contractLimit)?contractLimit:"unlimited",balance,
+          coarseStep:upper/50,baselineFeasible:keep.summary.feasible};
+      } else affordablePrepay={id:loan.id,month,largestTested:null,reason:prepayRestriction(loan,"full")||"窗口无可测试余额或现金已截断"};
+    }else if(loan)affordablePrepay={id:loan.id,month:null,largestTested:null,reason:"提前还款窗口尚未确认，维持原合同"};
+    if(property&&property.use!=="occupied"&&!saleRestriction(property)&&property.lock<=H){
+      const other=strategy.actions.filter(a=>a.asset!==property.id),list={kind:"list",asset:property.id,month:property.lock};
+      const sold=execute(h,s,{actions:[...other,list]},true),close=sold.events.find(e=>e.asset===property.id&&e.type==="close");
+      const lease=property.use==="idle"?[...other,{kind:"rent",asset:property.id,month:1,discount:false}]:other;
+      const tested=(rent,detail=false)=>execute({...h,properties:h.properties.map(c=>c.id===property.id?{...c,rent}:c)},s,{actions:lease},detail);
+      const upper=Math.max(property.rent*4,property.saleValue/12,1),initial=tested(property.rent,true), flow=initial.propertyFlows[property.id];
+      breakEven={id:property.id,term:H,actualMonthlyNet:(flow.rent-flow.carry)/initial.rows.length,
+        saleNet:close?close.amount:null,saleMonth:close?close.month:null,currentHoldReal:initial.summary.terminalReal,sellReal:sold.summary.terminalReal,
+        grossMonthlyThreshold:null,netMonthlyThreshold:null,testedRange:[0,upper],reason:""};
+      if(sold.summary.feasible&&close){
+        const beats=rent=>{const r=tested(rent).summary;return r.feasible&&r.terminalReal>=sold.summary.terminalReal;};
+        if(beats(upper)){
+          let lo=0,hi=upper;
+          if(beats(lo))hi=0;
+          else for(let i=0;i<55&&hi-lo>.004;i++){const mid=(hi+lo)/2;if(beats(mid))hi=mid;else lo=mid;}
+          const detail=tested(hi,true),f=detail.propertyFlows[property.id];breakEven.grossMonthlyThreshold=hi;breakEven.netMonthlyThreshold=(f.rent-f.carry)/H;
+        }else breakEven.reason="所列租金区间内未同时满足现金约束并达到出售路径的十年实际净资产";
+      }else breakEven.reason="立即依法挂牌路径未成交，或未通过现金/合同/储备约束";
+    }
+    return {grid,base:base.summary,affordablePrepay,breakEven,liquidation,payoff};
+  }
+  return {H,templates,blank,baseStrategy,modes,path,prepare,validateHousehold,validateScenario,validateTargets,targetIds,targetClasses,enumerate,
+    assess,simulate,rank,reverse,describe,nameOf,amortPayment,
+    inspect:(study,strategyId,scenarioId)=>{
+      const r=study.results.find(r=>r.strategy.id===strategyId),s=study.prepared.scenarios.find(s=>s.id===scenarioId);
+      if(!r||!s)throw Error("方案或情景不存在");return execute(study.prepared.h,s,r.strategy,true);
+    }};
+});
+</script><script>"use strict";
+const E=HouseholdEngine,$=id=>document.getElementById(id),q=(s,root=document)=>root.querySelector(s);
+const html=v=>String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const deepcopy=v=>JSON.parse(JSON.stringify(v));
+const originals=()=>JSON.parse($("scenario-data").textContent);
+let h=E.blank(),scenarios=originals(),study=null,active="inputs",scenarioId=scenarios[0].id,strategyId="S000",compareId="S000";
+let objective="cash",filter="all",unit=1,limit=500,chartKey="cash",stressResult=null;
+const names={incomes:"收入来源",expenses:"支出",financial:"金融及其他资产",properties:"房产",vehicles:"车辆",loans:"贷款与其他债务"};
+const labels={
+  id:"唯一 ID",name:"名称",kind:"类别",monthly:"每次到账 / 支出",from:"起始月",to:"结束月",every:"间隔月数",annualGrowth:"年增长率",
+  stability:"收入稳定性说明",stressJob:"采用情景整体失业事件",jobStart:"自行指定失业起点",jobMonths:"自行指定失业时长",jobPayFraction:"中断期间收入比例",
+  recoveryMonths:"恢复至复工水平用时（月）",returnFraction:"复工最终收入比例",inflationLinked:"随通胀调整",value:"期初账面市值",annualReturn:"年总回报（含股息）",
+  concentration:"集中持仓占比",fee:"交易成本率",settle:"卖出后到账月数",unlock:"最早解锁月",maturity:"到期兑付月（0无到期）",restriction:"资金限制",purpose:"资金用途",
+  city:"所在城市",type:"房屋类型",use:"住房用途",saleValue:"保守可成交总价",saleLag:"挂牌至交割月数",lock:"最早可挂牌月",canSell:"允许出售",
+  rent:"整月市场租金",vacancy:"预计空置比例",leaseLag:"正常议价起租等待（月）",discountRent:"快速出租租金折让",discountLeaseLag:"快速出租等待（月）",
+  carry:"每月持有费用",saleFee:"成交成本率",closingFee:"成交固定费用",replacementAllowed:"具备可行住房 / 出行替代",replacementMonthly:"替代方案每月费用",
+  sourceId:"城市资料 ID",annualDepreciation:"年折旧比例",necessary:"必要通勤 / 生产用车",collateral:"关联资产 ID（无则空）",
+  principal:"剩余本金 / 代偿额",annualRate:"合同年利率",rateType:"利率类型",resetFirst:"首次重定价期数",resetEvery:"重定价间隔（月）",
+  months:"剩余合同期数",method:"合同还款方式",payment:"约定等额月供（留空按公式）",canPrepay:"允许提前还款",prepayFrom:"最早提前还款期数",
+  prepayMin:"最低部分预付额",prepayFee:"预付本金费用率",settlementFee:"结清固定费用",transferWithLien:"可用交易款同步解押",
+  allowFull:"允许自愿提前全部结清",prepayMax:"每次预付本金上限",prepayPeriodMax:"每个合同期间累计预付上限",prepayPeriodMonths:"额度重置周期（月）",
+  prepayPeriodRemaining:"首个额度期间剩余月数（含首月）",prepayPeriodUsed:"首期开始前已用额度",salePayoffRule:"抵押物提前出售清偿规则",
+  salePayoffFrom:"独立出售例外最早贷款期数",salePayoffFee:"独立出售清偿费率",saleSettlementFee:"独立出售清偿固定费",salePayoffFeeBase:"资产交割清偿计费本金",saleMaturityReleaseFee:"到期当月交割另列解押费",
+  allowRecast:"允许部分预付降月供",allowShorten:"允许部分预付缩期限",start:"担保代偿月（普通债务为1）",monthlyFee:"每期合同费用",
+  cash:"期初可用现金",cashAnnual:"现金年收益率",reserveMonths:"目标储备月数",minimumLiving:"最低生活支出 / 月",cutFraction:"可选支出最大削减比例",
+  maxSaleWait:"最长可接受成交等待（月）",rangeCase:"家庭区间取值",preference:"单项目标"
+};
+const sels={
+  incomeKind:{wage:"税后工资",bonus:"税后奖金",business:"经营净回款",other:"其他已存在收入"},
+  expenseKind:{necessary:"必要生活",education:"教育",medical:"医疗",elder:"养老",insurance:"保险",discretionary:"可削减",emergency:"突发"},
+  financialKind:{deposit:"定期存款",instant:"随时可变现余额",stock:"股票",fund:"基金",bond:"债券",gold:"黄金",other:"其他计价资产"},
+  loanKind:{mortgage:"住房贷款",car:"车贷",consumer:"消费贷",card:"信用卡",business:"经营贷",family:"亲友借款",margin:"证券杠杆",guarantee:"担保代偿",other:"其他债务"},
+  restriction:{unknown:"交易与用途尚未确认",free:"可用于家庭支出",restricted:"专款/受限",pledged:"质押（依合同先行或同步解押）"},use:{idle:"闲置",occupied:"自住",let:"已出租"},
+  salePayoffRule:{unknown:"尚未确认",same_terms:"同普通提前全清条款与额度",sale_exception:"合同另准出售结清，不占普通额度",forbidden:"禁止提前通过出售结清"},
+  salePayoffFeeBase:{unknown:"尚未确认",balance:"按本金总余额计费",extra:"仅按超出本期应还的本金计费"},
+  rateType:{fixed:"固定利率",floating:"按期重定价"},method:{annuity:"等额本息",principal:"等额本金",bullet:"按月付息、到期还本"},
+  rangeCase:{low:"全部低端",base:"各项中心值",high:"全部高端"},preference:{cash:"最大化最坏路径最低现金",wealth:"最大化最坏十年实际净资产",debt:"最小化峰值偿债比",regret:"最小化最大后悔额"}
+};
+const fast={incomes:["id","name","kind","monthly","from","to"],expenses:["id","name","kind","monthly","from","to"],
+  financial:["id","name","kind","value","annualReturn","settle"],properties:["id","name","city","use","value","saleValue","rent","carry"],
+  vehicles:["id","name","value","saleValue","carry","necessary"],loans:["id","name","kind","collateral","principal","annualRate","months","method"]};
+const money=new Set(["monthly","value","saleValue","rent","carry","closingFee","replacementMonthly","principal","payment","prepayMin","prepayMax","prepayPeriodMax","prepayPeriodUsed","saleSettlementFee","saleMaturityReleaseFee","settlementFee","monthlyFee","cash","minimumLiving"]);
+const percentages=new Set(["annualGrowth","jobPayFraction","returnFraction","annualReturn","concentration","fee","vacancy","discountRent","saleFee","annualDepreciation","annualRate","prepayFee","salePayoffFee","cashAnnual","cutFraction"]);
+const conditionalFlags=new Set(["canPrepay","allowFull","allowRecast","allowShorten","transferWithLien","canSell","necessary"]);
+const words=new Set(["id","name","stability","purpose","city","type","sourceId","collateral"]);
+const groupKind={incomes:"incomeKind",expenses:"expenseKind",financial:"financialKind",loans:"loanKind"};
+const pLabels={wageFactor:"工资/奖金倍数",businessFactor:"经营回款倍数",otherIncomeFactor:"其他收入倍数",unemploymentMonths:"失业事件时长",recoveryMonths:"复工过渡月数",
+  reemploymentFactor:"复工后收入倍数",inflationAnnual:"通胀年率",cashRateDelta:"存款年率差",loanRateDelta:"浮息合同年率差",propertyShock:"一次性房价变动",propertyAnnual:"房价年变动率",
+  rentFactor:"租金倍数",vacancyAdd:"空置率变化",financialShock:"一次性金融市值变动",securityAnnual:"金融年总回报差",concentrationHaircut:"集中持仓一次性折价",saleHaircut:"成交折价",saleDelay:"额外成交等待"};
+const assumptions={observed:"观测",historical:"历史参照",research_estimate:"研究估计",stress_test:"人为压力测试"};
+const opts=(xs,value)=>Object.entries(xs).map(([k,v])=>'<option value="'+html(k)+'" '+(String(value)===k?'selected':'')+'>'+html(v)+'</option>').join("");
+function say(msg,bad=false){$("status").textContent=msg;$("status").classList.toggle("error",bad);}
+function mark(){const e=$("kind"),example=h.dataKind==="synthetic_example";e.textContent=example?"合成示例 · 编辑后仍为示例":"家庭录入 · "+(h.cash==null?"金额待填":"本机数据");e.classList.toggle("sample",example);}
+function invalidTargets(house,paths){
+  try{for(const s of paths)E.validateTargets(s,house);return "";}catch(error){return error.message;}
+}
+function invalidateVisible(){study=null;stressResult=null;if(active!=="inputs")renderView();}
+function resetResults(){invalidateVisible();mark();const issue=invalidTargets(h,scenarios);say(issue||"输入已修改，运行后更新方案。",Boolean(issue));}
+function valueText(v,mul){
+  if(v==null)return "";
+  const scale=x=>typeof x==="number"?String(Number((x*mul).toPrecision(14))):String(x);
+  if(typeof v==="object")return [scale(v.low),v.base==null?"":scale(v.base),scale(v.high)].join("~");
+  return scale(v);
+}
+function parseNumber(text,mul){
+  const x=text.trim();if(!x)return null;
+  const convert=s=>s.trim()!==""&&Number.isFinite(Number(s))?Number(s)/mul:s;
+  if(x.includes("~")){const v=x.split("~");if(v.length===2)return {low:convert(v[0]),high:convert(v[1])};
+    if(v.length===3)return {low:convert(v[0]),...(v[1].trim()?{base:convert(v[1])}:{}),high:convert(v[2])};return x;}
+  return convert(x);
+}
+function field(group,index,key,obj){
+  const v=obj[key],choice=sels[key==="kind"?groupKind[group]:key],factor=money.has(key)?1/unit:percentages.has(key)?100:1;
+  const useUnit=money.has(key)?"（"+(unit===10000?"万元":"元")+"）":percentages.has(key)?"（%）":"";
+  const ids=' id="f-'+group+'-'+index+'-'+key+'" data-group="'+group+'" data-index="'+index+'" data-key="'+key+'"';
+  let control;
+  if(conditionalFlags.has(key))control='<select'+ids+' data-contract-flag="true">'+opts({'':'尚未确认',true:'明确允许 / 是',false:'明确禁止 / 否'},v==null?'':v)+'</select>';
+  else if(key==="saleMaturityReleaseFee")control='<input type="text" list="maturity-cost-options"'+ids+' value="'+html(v==="in_asset_cost"?"已含成交成本":valueText(v,factor))+'" placeholder="附加金额 / 已含成交成本 / 未知">';
+  else if(key==="prepayMax"||key==="prepayPeriodMax")control='<input type="text" list="quota-options"'+ids+' value="'+html(v==="unlimited"?"不限":valueText(v,factor))+'" placeholder="金额 / 不限 / 留空未知">';
+  else if(choice)control='<select'+ids+'>'+opts(choice,v)+'</select>';
+  else if(typeof v==="boolean")control='<input type="checkbox"'+ids+(v?' checked':'')+'>';
+  else control='<input type="text" '+(words.has(key)?'':'inputmode="decimal"')+ids+' value="'+html(valueText(v,factor))+'" '+(!words.has(key)&&v==null?'placeholder="填写或留空"':'')+'>';
+  return '<label class="field"><span>'+html(labels[key]||key)+useUnit+'</span>'+control+'</label>';
+}
+function cards(){
+  return Object.keys(names).map(group=>'<details class="panel g" id="g-'+group+'"><summary>'+names[group]+' <span class="pill">'+h[group].length+' 项</span></summary><div class="in">'
+    +h[group].map((obj,i)=>'<details class="item" data-row="'+group+'-'+i+'"><summary>'+html(obj.name||obj.id||"未命名")+' <span class="small">'+html(obj.id)+'</span></summary><div class="fields">'
+    +fast[group].map(k=>field(group,i,k,obj)).join("")+'</div><details><summary>合同、限制与路径参数</summary><p class="small">可保留未知条件。相应处置和预付需确认许可、日期与费用，免手续费请填 0。</p><div class="fields">'
+    +Object.keys(E.templates[group]).filter(k=>!fast[group].includes(k)).map(k=>field(group,i,k,obj)).join("")+'</div></details><button class="danger" data-remove="'+group+'" data-i="'+i+'">删除此项</button></details>').join("")
+    +'<button data-add="'+group+'">添加'+names[group]+'</button></div></details>').join("");
+}
+function drawInputs(openGroup=null,openRow=null){
+  $("inputs").innerHTML='<div class="cols"><div><section class="panel"><div class="summaryline"><h2 class="sectiontitle">家庭底账</h2><label class="small">金额输入 <select id="unit"><option value="1">元</option><option value="10000">万元</option></select></label></div>'
+    +'<p class="small">金额可填单值，或用 ~ 分开低值、中心值、高值。只有两端时选择低端或高端。比例输入框使用百分数。</p><div class="fields">'
+    +["cash","minimumLiving","reserveMonths","cashAnnual","cutFraction","maxSaleWait","rangeCase","preference"].map(k=>field("base",0,k,h)).join("")+'</div></section>'+cards()
+    +'<details class="panel" id="g-scenario"><summary>情景参数 <span class="pill">'+scenarios.length+' 条路径</span></summary><div class="in"><p class="small">以下假设采用小数年率或倍数；一次冲击仅在起点生效。具体目标 ID 优先于通用目标 *。具体目标须对应家庭中适用的收入、资产或浮息贷款；全户通胀与现金利率只可填 *。所有候选在每条路径下分别运行。</p><div id="scenarioEditor"></div></div></details>'
+    +'<details class="panel" id="g-city"><summary>城市资料与适用范围</summary><div class="in"><p class="small">每项填写 id、city、period、source、scope。房产按城市单独登记，城市资料随 JSON 离线导入。</p>'
+    +'<textarea id="cities" rows="5" style="width:100%">'+html(JSON.stringify(h.citySources,null,2))+'</textarea><button id="applyCities">应用城市资料</button></div></details></div>'
+    +'<aside class="panel sticky"><datalist id="maturity-cost-options"><option value="已含成交成本"></option></datalist><datalist id="quota-options"><option value="不限"></option></datalist><h2 class="sectiontitle">试算设置</h2><label class="field">最多运行的不同方案<select id="limit">'+opts({"100":"100","200":"200","300":"300","400":"400","500":"500"},limit)+'</select></label>'
+    +'<p class="small">小于上限的组合全部运行。超过上限时覆盖基准、单项动作、跨资产两项动作和整个组合空间的分层样本。</p><p>先检查能否付清当月必需支出与债务，再对照储备目标和十年购买力。</p>'
+    +'<button class="primary" id="runAside">运行 120 个月</button><hr style="border:0;border-top:1px solid var(--line);margin:17px 0"><button id="clearInputs" class="danger">新建空白家庭</button></aside></div>';
+  $("unit").value=String(unit);$("runAside").onclick=doRun;$("limit").onchange=e=>{limit=Number(e.target.value);resetResults();};
+  $("unit").onchange=e=>{unit=Number(e.target.value);drawInputs();};
+  $("clearInputs").onclick=()=>{h=E.blank();scenarios=originals();study=null;stressResult=null;scenarioId=scenarios[0].id;drawInputs();mark();say("空白家庭已就绪。");};
+  $("applyCities").onclick=()=>{try{const v=JSON.parse($("cities").value);if(!Array.isArray(v))throw Error("城市资料应为数组");h.citySources=v;resetResults();say("城市资料已应用。");}catch(e){say(e.message,true);}};
+  drawPathEditor();
+  if(openGroup){$("g-"+openGroup).open=true;if(openRow!=null){const node=q('[data-row="'+openGroup+'-'+openRow+'"]');if(node)node.open=true;}}
+}
+function targetCell(p,i){
+  const values=["*",...E.targetIds(h,p.key)],bad=!values.includes(p.target);
+  return '<td><input aria-label="target" data-pp="target" data-pi="'+i+'" list="target-options-'+i+'" aria-invalid="'+bad+'" value="'+html(p.target)+'" '+(p.editable?'':'disabled')+' style="width:140px"><datalist id="target-options-'+i+'">'+values.map(v=>'<option value="'+html(v)+'"></option>').join("")+'</datalist></td>';
+}
+function drawPathEditor(){
+  const s=scenarios.find(z=>z.id===scenarioId)||scenarios[0];
+  const cell=(a,k,i,readonly=false)=>'<td><input aria-label="'+html(k)+'" data-pp="'+k+'" data-pi="'+i+'" value="'+html(a)+'" '+(readonly?'disabled':'')+' style="width:'+(['sourceId','target'].includes(k)?'140':'78')+'px"></td>';
+  $("scenarioEditor").innerHTML='<label class="field">编辑情景<select id="editScenario">'+opts(Object.fromEntries(scenarios.map(z=>[z.id,z.name])),s.id)+'</select></label><p>'+html(s.description||"")+'</p><div class="scroll"><table class="compact"><thead><tr>'
+    +["参数","数值","范围下限","范围上限","起点月","持续月","单位","目标 ID","来源 ID","假设类型"].map(k=>'<th>'+k+'</th>').join("")+'</tr></thead><tbody>'
+    +s.paths.map((p,i)=>'<tr><th>'+html(pLabels[p.key])+'</th>'+cell(valueText(p.value,1),"value",i,!p.editable)+cell(p.range[0],"low",i,!p.editable)+cell(p.range[1],"high",i,!p.editable)
+    +cell(p.start,"start",i,!p.editable)+cell(p.duration,"duration",i,!p.editable)+ '<td>'+html(p.unit)+'</td>'+targetCell(p,i)+cell(p.sourceId,"sourceId",i,!p.editable)
+    +'<td>'+html(assumptions[p.assumption])+'</td></tr>').join("")+'</tbody></table></div><details><summary>直接编辑全部情景 JSON</summary><textarea id="rawPaths" rows="8" style="width:100%">'+html(JSON.stringify(scenarios,null,2))+'</textarea><button id="applyPaths">应用情景 JSON</button></details>';
+  $("editScenario").onchange=e=>{scenarioId=e.target.value;drawPathEditor();};
+  $("applyPaths").onclick=()=>{try{const v=JSON.parse($("rawPaths").value);if(!Array.isArray(v)||!v.length)throw Error("至少需要一个情景");v.forEach(s=>E.validateScenario(s,h.rangeCase,h));if(new Set(v.map(s=>s.id)).size!==v.length)throw Error("情景 ID 重复");scenarios=v;scenarioId=v[0].id;resetResults();drawPathEditor();say("情景输入已应用。");}catch(e){invalidateVisible();say("新情景未应用，旧试算结果已清除 · "+e.message,true);}};
+}
+$("inputs").addEventListener("change",e=>{
+  const t=e.target;
+  if(t.dataset.group){
+    const {group,index,key}=t.dataset,obj=group==="base"?h:h[group][index];
+    const factor=money.has(key)?1/unit:percentages.has(key)?100:1;
+    obj[key]=t.dataset.contractFlag?(t.value===""?null:t.value==="true"):t.type==="checkbox"?t.checked:t.tagName==="SELECT"||words.has(key)?t.value:parseNumber(t.value,factor);
+    if(key==="saleMaturityReleaseFee"&&["已含成交成本","in_asset_cost"].includes(t.value.trim()))obj[key]="in_asset_cost";
+    if((key==="prepayMax"||key==="prepayPeriodMax")&&["不限","unlimited"].includes(t.value.trim()))obj[key]="unlimited";
+    if(key==="preference")objective=obj[key];resetResults();if(["id","kind","rateType"].includes(key))drawPathEditor();
+  }else if(t.dataset.pp){
+    const s=scenarios.find(s=>s.id===scenarioId),p=s.paths[Number(t.dataset.pi)],k=t.dataset.pp;
+    if(k==="value"){
+      const single=p.range[0]===p.value&&p.range[1]===p.value;
+      p.value=parseNumber(t.value,1);if(single&&typeof p.value==="number")p.range=[p.value,p.value];
+    }else if(k==="low"||k==="high")p.range[k==="low"?0:1]=parseNumber(t.value,1);
+    else p[k]=["target","sourceId"].includes(k)?t.value:parseNumber(t.value,1);
+    resetResults();drawPathEditor();
+  }
+});
+$("inputs").addEventListener("click",e=>{
+  const b=e.target.closest("button");if(!b)return;
+  const group=b.dataset.add||b.dataset.remove;if(!group)return;
+  if(b.dataset.add){
+    const pref={incomes:"inc",expenses:"exp",financial:"fin",properties:"house",vehicles:"car",loans:"loan"}[group];
+    const ids=new Set(Object.keys(names).flatMap(g=>h[g].map(x=>x.id)));let n=1;while(ids.has(pref+n))n++;
+    h[group].push({...deepcopy(E.templates[group]),id:pref+n});resetResults();drawInputs(group,h[group].length-1);
+  }else{h[group].splice(Number(b.dataset.i),1);resetResults();drawInputs(group);}
+});
+function download(name,content,type){
+  const blob=new Blob(Array.isArray(content)?content:[content],{type}),url=URL.createObjectURL(blob),a=document.createElement("a");
+  a.href=url;a.download=name;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),30000);
+}
+$("exportJSON").onclick=()=>{download("household-input.json",JSON.stringify({schema:"household-offline.bundle.v1",household:h,scenarios},null,2),"application/json");say("已导出当前家庭与情景。");};
+$("importFile").onchange=async e=>{
+  try{const f=e.target.files[0];if(!f)return;const data=JSON.parse(await f.text()),house=data.household||data,paths=data.scenarios||scenarios;
+    // Permit reopening a deliberately incomplete draft; validate all amounts at run time.
+    if(!house||house.schema!=="household-cny.v1"||!["household","synthetic_example"].includes(house.dataKind)||Object.keys(names).some(k=>!Array.isArray(house[k])||house[k].some(v=>!v||typeof v!=="object"||Array.isArray(v))))throw Error("家庭 JSON 结构不符");
+    if(!Array.isArray(paths)||!paths.length)throw Error("情景缺失");paths.forEach(z=>E.validateScenario(z,house.rangeCase,house));
+    if(new Set(paths.map(z=>z.id)).size!==paths.length)throw Error("情景 ID 重复");
+    try{E.validateHousehold(house);}catch(validation){if(validation.code!=="MISSING_VALUE")throw validation;}
+    h=house;scenarios=paths;scenarioId=scenarios[0].id;objective=h.preference;resetResults();setTab("inputs");drawInputs();say("JSON 已载入，请运行当前输入。");
+  }catch(err){invalidateVisible();say("导入失败，旧试算结果已清除 · "+err.message,true);}e.target.value="";
+};
+$("loadDemo").onclick=()=>{h=JSON.parse($("example-data").textContent);scenarios=originals();scenarioId=scenarios[0].id;objective=h.preference;
+  resetResults();setTab("inputs");drawInputs();say("已载入合成示例，可修改后运行。");};
+function setTab(tab){
+  active=tab;document.querySelectorAll(".view").forEach(v=>{v.hidden=v.id!==tab;if(v.hidden&&v.id!=="inputs")v.replaceChildren();});
+  document.querySelectorAll("[data-tab]").forEach(b=>b.setAttribute("aria-selected",String(b.dataset.tab===tab)));
+  if(tab!=="inputs")renderView();
+}
+document.querySelectorAll("[data-tab]").forEach(b=>b.onclick=()=>setTab(b.dataset.tab));
+function doRun(){
+  $("run").disabled=true;if($("runAside"))$("runAside").disabled=true;say("正在逐情景运行候选…");
+  setTimeout(()=>{try{
+    study=E.assess(h,scenarios,limit);stressResult=null;objective=h.preference;strategyId="S000";compareId="S000";filter="all";
+    if(!scenarios.some(s=>s.id===scenarioId))scenarioId=scenarios[0].id;
+    setTab("results");say("已运行 "+study.results.length+" 个方案 × "+scenarios.length+" 条情景。");mark();
+  }catch(err){study=null;say(err.message,true);setTab("inputs");}finally{$("run").disabled=false;if($("runAside"))$("runAside").disabled=false;}},25);
+}
+$("run").onclick=doRun;
+const yuan=n=>n==null||!Number.isFinite(n)?"—":Math.round(n).toLocaleString("zh-CN");
+const ratio=(n,inf=false)=>inf?"∞":n==null?"—":(n*100).toFixed(1)+"%";
+const table=(headers,rows)=>'<div class="scroll"><table><thead><tr>'+headers.map(h=>'<th>'+html(h)+'</th>').join("")+'</tr></thead><tbody>'+rows.map(row=>'<tr>'+row.map(v=>'<td>'+html(v)+'</td>').join("")+'</tr>').join("")+'</tbody></table></div>';
+const metric=(label,value)=>'<div class="metric"><span>'+html(label)+'</span><strong>'+html(value)+'</strong></div>';
+const rowById=id=>study.results.find(r=>r.strategy.id===id);
+const scenarioName=()=>scenarios.find(s=>s.id===scenarioId).name;
+const objectiveSelect=()=>'<label class="field">比较目标<select id="objective">'+opts(sels.preference,objective)+'</select></label>';
+const scenarioSelect=()=>'<label class="field">查看情景<select id="resultScenario">'+opts(Object.fromEntries(scenarios.map(z=>[z.id,z.name])),scenarioId)+'</select></label>';
+const policySelect=(id,value)=>'<label class="field">'+(id==="selectedPlan"?"查看方案":"并列方案")+'<select id="'+id+'">'+opts(Object.fromEntries(study.results.map(r=>[r.strategy.id,r.strategy.id+" · "+E.nameOf(r.strategy).slice(0,28)])),value)+'</select></label>';
+function renderView(){
+  const v=$(active);
+  if(!study){v.innerHTML='<div class="panel"><h2 class="sectiontitle">尚无当前输入的结果</h2><p>填写家庭底账，或载入合成示例，再运行 120 个月。</p><button id="toInput">返回家庭与情景</button></div>';$("toInput").onclick=()=>setTab("inputs");return;}
+  if(active==="results")drawResults();else if(active==="ledger")drawLedger();else if(active==="reverse")drawReverse();
+  if($("resultScenario"))$("resultScenario").onchange=e=>{scenarioId=e.target.value;stressResult=null;renderView();};
+  if($("selectedPlan"))$("selectedPlan").onchange=e=>{strategyId=e.target.value;stressResult=null;renderView();};
+  if($("comparePlan"))$("comparePlan").onchange=e=>{compareId=e.target.value;renderView();};
+  if($("objective"))$("objective").onchange=e=>{objective=e.target.value;renderView();};
+}
+function verdict(t){
+  if(t.firstFailure){const f=t.failureBreakdown;return '<div class="verdict fail"><b>第 '+t.firstFailure+' 月现金不足，还差 '+yuan(t.worstGap)+' 元。</b> 此前完整执行 '+t.supportMonths+' 个月。该月合同还款缺口 '+yuan(f.missedDebtService)+' 元、必要与持有开支缺口 '+yuan(f.unfundedEssential)+' 元、可选预算缺口 '+yuan(f.unfundedDiscretionary)+' 元。未付本金保留在债务余额中，十年终值空缺。</div>';}
+  if(t.blocked.length)return '<div class="verdict fail"><b>计划动作未能按约执行。</b> '+html(t.blocked[0].reason)+'。显示维持原安排后实际发生的收支。</div>';
+  if(t.maxReserveGap>.000001)return '<div class="verdict fail"><b>120 个月到期款已付，储备最多还差 '+yuan(t.maxReserveGap)+' 元。</b></div>';
+  return '<div class="verdict"><b>本路径下完整履约 120 个月，满足已录入储备条件。</b></div>';
+}
+
+function drawResults(){
+  const r=rowById(strategyId),t=r.outcomes[scenarioId],comp=rowById(compareId).outcomes[scenarioId],c=study.coverage;
+  const selected=E.rank(study.results,objective).filter(z=>filter==="all"||filter==="feasible"&&z.feasible||filter==="pareto"&&z.pareto||filter==="failed"&&!z.feasible);
+  const winNames={baseline:"不行动基准",robust:"跨情景较稳健",cash:"最坏现金最好",regret:"最大后悔最少",wealth:"十年财富潜力",debt:"债务压力最低"};
+  const chosen=Object.entries(winNames).map(([k,v])=>{const id=study.winners[k];return '<tr><th>'+v+'</th><td>'+(id?pick(id):"无共同可行方案")+'</td><td>'+html(id?E.nameOf(rowById(id).strategy):"—")+'</td></tr>';}).join("");
+  const risk=study.commonCount?'全部 '+study.prepared.scenarios.length+' 条路径均满足资金、合同、储备的规则有 '+study.commonCount+' 个，形成 '+c.distinctFeasibleMonthlyTrajectories+' 种不同逐月轨迹。':
+    '无共同可行方案。当前最小资金需求候选 '+study.winners.leastGap+'，其最坏单月缺口、储备或执行所需补资的最大值为 '+yuan(rowById(study.winners.leastGap).funding)+' 元；合同限制另列。';
+  const sr=(label,a,b,fmt=yuan)=>[label,fmt(a),fmt(b)];
+  $("results").innerHTML='<section class="panel"><h2 class="sectiontitle">方案比较</h2><p>'+html(risk)+'</p><div class="selectrow">'+scenarioSelect()+policySelect("selectedPlan",strategyId)+policySelect("comparePlan",compareId)+'</div><p><b>'+html(strategyId)+'</b>　'+html(E.nameOf(r.strategy))+'</p>'+verdict(t)
+    +'<div class="metricgrid">'+metric("可完整履约",t.supportMonths+" 个月")+metric("首次资金缺口",t.firstFailure?yuan(t.worstGap)+" 元":"无")+metric("12 个月最低现金",yuan(t.minCash12))+metric("十年实际净资产",yuan(t.terminalReal))+'</div>'
+    +'<details><summary>所选方案与并列方案的收支、还款和财富</summary>'+table(["指标（元，另注除外）",strategyId,compareId],[
+      sr("12个月最低现金",t.minCash12,comp.minCash12),sr("36个月最低现金",t.minCash36,comp.minCash36),sr("120个月最低现金",t.minCash120,comp.minCash120),
+      sr("已观察最坏缺口（截断后未知）",t.worstGap,comp.worstGap),sr("最后观察月剩余债务",t.endDebt,comp.endDebt),sr("最后观察月合同本息及固定费",t.endDue,comp.endDue),
+      ["最后观察月偿债比",ratio(t.endDsr,t.endDsrInfinite),ratio(comp.endDsr,comp.endDsrInfinite)],
+      ["峰值偿债比",ratio(t.peakDsr,t.peakDsrInfinite),ratio(comp.peakDsr,comp.peakDsrInfinite)],
+      sr("提前还本",t.prepaid,comp.prepaid),sr("同动作撤去预付后对照：省息",t.interestSaved,comp.interestSaved),
+      sr("预付导致首月现金变化",t.prepayCashChangeMonth1,comp.prepayCashChangeMonth1),sr("预付导致十年最低现金变化",t.prepayMinCashChange,comp.prepayMinCashChange),
+      sr("租金减全部房产持有费，累计",t.rentNet,comp.rentNet),sr("房车交割净款，累计",t.saleNet,comp.saleNet),sr("金融交易已到账净款，累计",t.securityNet,comp.securityNet),
+      sr("名义净资产最大峰谷回撤",t.drawdown,comp.drawdown),["峰谷回撤 / 正峰值",ratio(t.drawdownPct),ratio(comp.drawdownPct)],
+      sr("恢复情景机会成本（共同可行集，实际元）",r.recoveryCost,rowById(compareId).recoveryCost),
+      ...[12,36,60,120].flatMap(m=>[sr(m+"月名义净资产",t.points[m]?.nominal,comp.points[m]?.nominal),sr(m+"月实际净资产",t.points[m]?.real,comp.points[m]?.real)])
+    ])+'</details></section><section class="panel"><h2 class="sectiontitle">行动次序</h2><p class="small">现金比较采用各情景最低月末可用现金。较稳健方案并列时取最坏十年实际净资产较高者。后悔额以共同可行集内该情景最高十年实际净资产为参照，报告跨情景最大差额。偿债比为合同当月到期款 / 当月到账收入及租金。</p>'
+    +'<div class="scroll"><table><thead><tr><th>行动视角</th><th>方案</th><th>动作及月份</th></tr></thead><tbody>'+chosen+'</tbody></table></div>'
+    +'<p class="small">现金、实际净资产及峰值偿债比同时参与 Pareto 比较。仅下列已运行候选参与排名。</p><div><b>跨情景可行短名单</b>　'+(study.shortlist.length?study.shortlist.map(pick).join(" "):"无")+'</div></section>'
+    +'<section class="panel"><div class="cardhead"><h2 class="sectiontitle">全部候选</h2><span class="chip">'+c.evaluated+' / '+html(c.rawCombinations)+' 种原始组合</span></div><p class="small">'+html(c.method)+'。全部规则合计产生 '+c.distinctMonthlyTrajectories+' 种轨迹。相同情景中逐月现金、资产、债务和交易按分取整后完全相同，计作同一轨迹。短名单最多显示 15 种。</p>'
+    +'<div class="selectrow">'+objectiveSelect()+'<label class="field">筛选<select id="filter">'+opts({all:"全部",feasible:"共同可行",pareto:"Pareto 非支配",failed:"未满足约束"},filter)+'</select></label>'
+    +'<button id="allCSV">导出全部策略 CSV</button><button id="fullCSV">导出所有方案月表 CSV</button></div><div class="scroll tall"><table class="compact"><thead><tr><th>方案</th><th>共同可行</th><th>Pareto</th><th>最坏最低现金</th><th>最坏十年实际财富</th><th>最大后悔额</th><th>最坏资金需求</th><th>操作</th></tr></thead><tbody>'
+    +selected.map(v=>'<tr class="'+(v.strategy.id===strategyId?"selected":"")+'"><td>'+pick(v.strategy.id)+'</td><td>'+(v.feasible?"是":"否")+'</td><td>'+(v.pareto?"✓":"")+'</td><td class="num">'+yuan(v.minCash)+'</td><td class="num">'+yuan(v.worstWealth)+'</td><td class="num">'+yuan(v.regret)+'</td><td class="num">'+yuan(v.funding)+'</td><td>'+html(E.nameOf(v.strategy))+'</td></tr>').join("")+'</tbody></table></div><details><summary>覆盖与未生成的动作</summary>'
+    +table(["决策对象","选择数（含持有）"],c.dimensions.map(d=>[d.id,d.choices]))+table(["对象","原因"],c.exclusions.map(x=>[x.id,x.reason]))+'</details></section>';
+  $("filter").onchange=e=>{filter=e.target.value;renderView();};$("allCSV").onclick=exportStrategies;$("fullCSV").onclick=()=>exportMonths(true);
+  $("results").querySelectorAll("[data-pick]").forEach(b=>b.onclick=()=>{strategyId=b.dataset.pick;stressResult=null;renderView();});
+}
+function pick(id){return '<button class="tag" data-pick="'+html(id)+'">'+html(id)+'</button>';}
+const chartFields={cash:["Available cash","Cash (CNY)"],netWorth:["Net worth","Net worth (CNY)"],debt:["Debt balance","Debt (CNY)"],regularDue:["Debt service","Payment (CNY)"]};
+function chart(current,other,key){
+  const vals=[...current,...other].map(r=>r[key]).filter(v=>v!=null&&Number.isFinite(v));
+  if(!vals.length)return '<p class="small">此路径缺少可绘制的存续月份。</p>';
+  const W=710,H=255,x0=82,x1=679,y0=37,y1=207,min=Math.min(0,...vals),max=Math.max(1,...vals),dx=m=>x0+(m-1)*(x1-x0)/119,dy=v=>y1-(v-min)/(max-min||1)*(y1-y0);
+  const line=rows=>rows.filter(a=>a[key]!=null).map((r,i)=>(i?"L":"M")+dx(r.month).toFixed(1)+" "+dy(r[key]).toFixed(1)).join(" ");
+  const label=n=>Math.abs(n)>=1e6?(n/1e6).toFixed(2)+"m":Math.abs(n)>=1e3?(n/1e3).toFixed(0)+"k":n.toFixed(0);
+  const ticks=[0,1,2,3,4].map(j=>{const a=min+(max-min)*j/4,yy=dy(a);return '<line x1="'+x0+'" x2="'+x1+'" y1="'+yy+'" y2="'+yy+'" stroke="#d5ddd1"/><text x="'+(x0-10)+'" y="'+(yy+4)+'" text-anchor="end">'+label(a)+'</text>';}).join("");
+  return '<svg class="chart" role="img" aria-label="'+chartFields[key][0]+' by month" viewBox="0 0 '+W+' '+H+'"><title>'+chartFields[key][0]+' by month</title><text x="11" y="20">'+chartFields[key][1]+'</text>'+ticks
+    +[1,24,48,72,96,120].map(m=>'<text x="'+dx(m)+'" y="226" text-anchor="middle">'+m+'</text>').join("")+'<text x="360" y="248" text-anchor="middle">Month</text>'
+    +'<path d="'+line(other)+'" fill="none" stroke="#b37a39" stroke-width="2.4" stroke-dasharray="6 5"/><path d="'+line(current)+'" fill="none" stroke="#13675d" stroke-width="2.8"/>'
+    +'<line x1="395" y1="15" x2="417" y2="15" stroke="#13675d" stroke-width="3"/><text x="420" y="20">Selected</text><line x1="499" y1="15" x2="521" y2="15" stroke="#b37a39" stroke-dasharray="6 3"/><text x="526" y="20">Comparison</text></svg>';
+}
+function drawLedger(){
+  const sel=rowById(strategyId),d=E.inspect(study,strategyId,scenarioId),other=E.inspect(study,compareId,scenarioId);
+  const events=d.events.map(e=>[e.month,e.asset,e.note,yuan(e.amount)]);
+  const actions=sel.strategy.actions;
+  $("ledger").innerHTML='<section class="panel"><h2 class="sectiontitle">逐月台账</h2><div class="selectrow">'+scenarioSelect()+policySelect("selectedPlan",strategyId)+policySelect("comparePlan",compareId)
+    +'<label class="field">图表指标<select id="chartKey">'+opts({cash:"可用现金",netWorth:"名义净资产",debt:"剩余债务",regularDue:"合同月供"},chartKey)+'</select></label></div>'+verdict(d.summary)+chart(d.rows,other.rows,chartKey)+'</section>'
+    +'<section class="panel"><h2 class="sectiontitle">执行与到账</h2><p>'+html(E.nameOf(sel.strategy))+'</p><p class="small">挂牌与卖出指令和收款分开记录。月末结余是提前还款的资金来源。解押补差不够时继续持有，预付条件未满足时继续按合同付款，条件挂牌在触发前维持持有。</p>'
+    +(events.length?table(["月","对象","动作 / 资金去向","金额（元）"],events):'<p class="small">本路径未产生处置或提前还款事件。</p>')
+    +(d.summary.blocked.length?table(["月","对象","未执行原因","执行时资金还差"],d.summary.blocked.map(b=>[b.month,b.id,b.reason,yuan(b.need)])):"")
+    +'<details><summary>各笔贷款逐期本息</summary>'+Object.entries(d.byLoan).map(([id,ls])=>'<details><summary>'+html(id)+'</summary>'+table(["月","利息实付","按期或结清本金","额外提前本金","欠本余额","合同年利率"],ls.map(x=>[x.month,yuan(x.interest),yuan(x.principal),yuan(x.prepay),yuan(x.balance),ratio(x.annualRate)]))+'</details>').join("")+'</details></section>'
+    +'<section class="panel"><div class="cardhead"><h2 class="sectiontitle">月末收支与资产</h2><button id="oneCSV">导出当前月表 CSV</button></div><div class="scroll tall"><table class="compact"><thead><tr>'
+    +["月","期初现金","税后收入","租金","证券到账","房车成交毛款","必要支出","可选支出","持有/替代","合同月供实付","交割还本息","额外提前还本","期末现金","待到账","剩余债务","应付款","当期缺口","名义净资产","实际净资产"].map(k=>'<th>'+k+'</th>').join("")+'</tr></thead><tbody>'
+    +d.rows.map(z=>'<tr>'+[z.month,z.openingCash,z.income,z.rent,z.securityReceipts,z.saleGross,z.essential,z.discretionary,z.carry+z.replacement,z.interest+z.principal+z.loanFees,z.closingInterest+z.closingPrincipal,z.prepaid,z.cash,z.receivables,z.debt,z.arrears,z.unpaid,z.netWorth,z.realNetWorth].map(v=>'<td class="num">'+yuan(v)+'</td>').join("")+'</tr>').join("")+'</tbody></table></div><p class="small">现金勾稽最大绝对误差 '+html(d.summary.maxCashResidual.toExponential(2))+' 元，净资产变动勾稽 '+html(d.summary.maxNetResidual.toExponential(2))+' 元。完整 CSV 另列利息、各项手续费、实物与金融资产。</p></section>';
+  $("chartKey").onchange=e=>{chartKey=e.target.value;renderView();};$("oneCSV").onclick=()=>exportMonths(false);
+}
+let revChoices={};
+function drawReverse(){
+  const hh=study.prepared.h,sel=(key,arr)=>'<label class="field">'+({incomeId:"中断的收入",propertyId:"租售对比房产",loanId:"预付贷款",financialId:"减持资产"}[key])+'<select data-rev="'+key+'">'
+    +opts(Object.fromEntries(arr.map(a=>[a.id,(a.name||a.id)+" · "+a.id])),revChoices[key]||arr[0]?.id)+'</select></label>';
+  $("reverse").innerHTML='<section class="panel"><h2 class="sectiontitle">逆向压力测试</h2><div class="selectrow">'+scenarioSelect()+policySelect("selectedPlan",strategyId)+'</div><p>对当前路径追加冲击，逐档重跑同一方案，找到第一次现金不足的已测水平。失业与延迟按整月，工资、房价、租金按一个百分点。</p>'
+    +'<div class="selectrow">'+sel("incomeId",hh.incomes)+sel("propertyId",hh.properties.filter(p=>p.use!=="occupied"))+sel("loanId",hh.loans)+sel("financialId",hh.financial.filter(f=>f.kind!=="deposit"))+'</div><button class="primary" id="stressRun">计算压力边界</button><div id="stressOutput"></div></section>';
+  const controls=$("reverse").querySelectorAll("[data-rev]");controls.forEach(n=>{revChoices[n.dataset.rev]=n.value;n.onchange=()=>{revChoices[n.dataset.rev]=n.value;stressResult=null;drawReverse();};});
+  $("stressRun").onclick=()=>{
+    $("stressRun").disabled=true;say("正在逐档重跑压力路径…");
+    setTimeout(()=>{try{stressResult=E.reverse(h,scenarios.find(s=>s.id===scenarioId),rowById(strategyId).strategy,revChoices);drawStressOutput();say("逆向压力测试已完成。");}catch(e){say(e.message,true);}finally{$("stressRun").disabled=false;}},25);
+  };
+  if(stressResult)drawStressOutput();
+}
+function drawStressOutput(){
+  const v=stressResult,rows=Object.values(v.grid).map(t=>{
+    if(!t.applicable)return[t.label,"无适用收入、资产或挂牌动作","—","—","—"];
+    const b=t.boundary;
+    return [t.label+(t.target==="*"?"":" · "+t.target),b?b.value+t.unit:"测试至 "+t.limit+t.unit+" 仍可付清",b?b.failureMonth:"—",b?yuan(b.gap):"—",t.firstBlocked==null?"无":t.firstBlocked+t.unit+(t.nonmonotone?"；之后曾恢复履约":"")];
+  });
+  let out=table(["额外冲击","首次现金失败水平","失败月","缺口（元）","首次动作受阻水平"],rows);
+  const b=v.breakEven,a=v.affordablePrepay;
+  if(b)out+='<h3 class="sub">净租金与出售净款 · '+html(b.id)+'</h3>'+table(["交割月","卖房当月净款","持有期实际平均净租金/月","达到出售路径财富所需账面月租","相应平均净租金/月"],[[b.saleMonth??"—",yuan(b.saleNet),yuan(b.actualMonthlyNet),yuan(b.grossMonthlyThreshold),yuan(b.netMonthlyThreshold)]])
+    +'<p class="small">以 120 月实际净资产、完整履约与储备为比较条件，出租路径保留期末房屋残值。搜索月租 '+yuan(b.testedRange[0])+' 至 '+yuan(b.testedRange[1])+' 元。'+html(b.reason)+'</p>';
+  if(a)out+='<h3 class="sub">可承受提前还款 · '+html(a.id)+'</h3><p>'+(a.month==null?'窗口尚未确认':'第 '+a.month+' 月')+'，最高已验证预付款 <b>'+yuan(a.largestTested)+' 元</b>。'+(a.liquidityCeiling==null?html(a.reason):'现金允许上限 '+yuan(a.liquidityCeiling)+' 元，合同单次及本期剩余额度上限 '+(a.contractCeiling==="unlimited"?"已确认不限":yuan(a.contractCeiling)+" 元")+'。两项约束取较低者后按 50 档试算，最后可行区间细化至分，跨区间结果以已测试点为限。')+'</p>';
+  const effects=[["金融资产一次转现金",v.liquidation],["用现金提前结清贷款",v.payoff]].filter(x=>x[1]);
+  if(effects.length)out+='<h3 class="sub">与保持其他动作相同的反事实比较</h3>'+table(["动作 / 对象","保留可支撑月数","执行可支撑月数","首月现金变化","已观察最低现金变化","动作状态"],effects.map(([name,e])=>[name+" · "+e.id,e.holdingSupport,e.actionSupport,yuan(e.changeFirstCash),yuan(e.changeMinCash),e.blocked.length?e.blocked[0].reason:e.actionFeasible?"满足本路径约束":"现金或储备未满足"]));
+  $("stressOutput").innerHTML=out;
+}
+function csvCell(v){
+  if(v==null)return "";
+  if(typeof v==="object")v=JSON.stringify(v);
+  if(typeof v==="number")return Number.isFinite(v)?String(Number(v.toPrecision(14))):"Infinity";
+  let s=String(v);if(/^[=+@-]/.test(s))s="'"+s;return '"'+s.replace(/"/g,'""')+'"';
+}
+const csvLine=arr=>arr.map(csvCell).join(",")+"\r\n";
+function exportStrategies(){
+  const keys=["completed","feasible","firstFailure","failureBreakdown","worstGap","supportMonths","minCash12","minCash36","minCash120","minCashObserved","maxReserveGap","maxBlockedFunding","endDebt","endDue","endDsr","endDsrInfinite","peakDsr","peakDsrInfinite","interestTotal","prepaid","interestSaved","prepayCashChangeMonth1","prepayMinCashChange","rentNet","saleNet","securityNet","drawdown","drawdownPct","terminalNominal","terminalReal","points","blocked"];
+  const parts=["\ufeff",csvLine(["inputKind","strategy","actions","description","scenario","trajectoryGroup","commonFeasible","pareto","maxRegretReal","recoveryOpportunityCostReal",...keys])];
+  for(const r of study.results)for(const [s,t] of Object.entries(r.outcomes))parts.push(csvLine([h.dataKind,r.strategy.id,r.strategy.actions,E.nameOf(r.strategy),s,r.trajectory,r.feasible,r.pareto,r.regret,r.recoveryCost,...keys.map(k=>t[k])]));
+  download("household-strategies.csv",parts,"text/csv;charset=utf-8");say("已导出全部策略情景结果。");
+}
+function exportMonths(all){
+  const button=$(all?"fullCSV":"oneCSV");button.disabled=true;say("正在生成逐月账表…");
+  setTimeout(()=>{try{
+    const strategies=all?study.results:[rowById(strategyId)],paths=all?scenarios:[scenarios.find(z=>z.id===scenarioId)],parts=["\ufeff"];
+    let keys=null;
+    for(const r of strategies)for(const s of paths){
+      const rows=E.inspect(study,r.strategy.id,s.id).rows;
+      if(!keys){keys=Object.keys(rows[0]);parts.push(csvLine(["inputKind","strategy","scenario","state",...keys]));}
+      let str="";
+      for(let m=1;m<=E.H;m++){
+        const z=rows[m-1];str+=csvLine([h.dataKind,r.strategy.id,s.id,!z?"truncated":z.unpaid>0?"cash_failure":"observed",...keys.map(k=>z?z[k]:k==="month"?m:null)]);
+      }
+      parts.push(str);
+    }
+    download(all?"household-all-months.csv":"household-selected-months.csv",parts,"text/csv;charset=utf-8");say("月表 CSV 已生成。");
+  }catch(e){say(e.message,true);}finally{button.disabled=false;}},25);
+}
+drawInputs();mark();say("填写可用现金与必要支出，或载入示例。");
+</script></body></html>

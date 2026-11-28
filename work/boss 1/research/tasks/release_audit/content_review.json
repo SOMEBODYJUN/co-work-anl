@@ -1,0 +1,109 @@
+{
+  "schema": "independent-release-content-review.v1",
+  "author": "boss 1",
+  "reviewer": "/root/release_audit",
+  "identity": {
+    "workspace": "work/boss 1",
+    "branch": "work/cn-crisis",
+    "run_id": "35440ff34fc845dbaa2b3d94cf6d2c00",
+    "cycle": 1
+  },
+  "as_of": "2026-11-27 America/Los_Angeles",
+  "initial_content_commit": "1580e869769a9410b88d040acf08bab394c6f9d2",
+  "reviewed_content_commit": "7394ed770c1b47d134bc51e64aa3bb721dc157e0",
+  "formal_sha256": {
+    "formal/report.md": "65afc995b3031ffbdff967633fd0aa37274629cad40b7880bae663cbb20f7b4c",
+    "formal/judgments.json": "af04fefc8348bf50902501082b6cce62d386d91d7336699461cf71d35986049a",
+    "formal/scenarios.json": "0133496a1354d514372e6bd9ed35efd83eb3ea6e914b5a2074a0e8bedaa7ae9b",
+    "formal/calculator.html": "f0c72e3baa689bdbb6e7c4e75e12186e0fc1e2f6d2d59308ecdd39013a3ca049"
+  },
+  "acceptance_file": "research/acceptance.json",
+  "acceptance_sha256": "1d85686098bdd888e73b999cab438b0dd82af57b99900228b290a4aa354b5d4f",
+  "acceptance_check_count": 9,
+  "distinct_acceptance_artifacts": 143,
+  "substantive_process_evidence": "research/tasks/release_audit/review_process_evidence.json",
+  "substantive_process_evidence_sha256": "9a5e5b70f9f6a032a4cb3b8448600f8ff6d9f051eba160c00e5aff0bf130e430",
+  "checks": [
+    {
+      "id": "sources",
+      "verdict": "pass",
+      "reason": "对照两份财政发布、地产首次发布水平、两行四份财务原件指定页、六份监管XLS中770项观察及覆盖脚注。逐项复算数量级和币种后，土地两行差额变化为−623亿元，再融资偿还占86.19%。157条登记、113组出版物定位、105组事件或出版物，各为索引口径。PF029与QA001共同支持一件接管事项。",
+      "evidence": "research/tasks/release_audit/crosscheck_economy.json",
+      "direct_entries_reviewed": 16
+    },
+    {
+      "id": "frameworks",
+      "verdict": "pass",
+      "reason": "核对Pettis、Koo、Sufi、Batson、Setser、Wright与张斌的可检验论点、制约、历史反例及应用。Setser的30%期初债务率及3%当期总赤字，在3%至4%名义增长下得到31.846%至32.126%的期末债务率。日本1991和美国2007选定峰后十年的实际住房代理分别约−27.05%、−6.10%，实际股权总回报分别约−32.55%、+72.05%。",
+      "evidence": "research/tasks/research_independent_review/independent_history.json",
+      "direct_entries_reviewed": 12
+    },
+    {
+      "id": "models",
+      "verdict": "pass",
+      "reason": "将预测行重新按独立危机起点和非事件国家年汇总。纠错版校准树Brier 0.185399，命中1/13、误报43/148，取消主预警用途。校准Logit为0.170316、3/13、7/148。基准0.175914。桥接模型在31季与11季下的相对表现相反。混频末端诊断3.52%低于已公布4.5%。初版、纠错版及可移植重放清楚区分，使用权限限定历史/描述/会计压力检查。",
+      "evidence": "research/tasks/research_independent_review/economic_delta.json",
+      "direct_entries_reviewed": 26
+    },
+    {
+      "id": "hyperedges",
+      "verdict": "pass",
+      "reason": "核对图版本31的16个节点和13条ALL机制，逐读共同条件、传导、反例、时间和证伪指标，检查每一正式裁决在图和当前状态中的同文。18个实际提案的目标版本与独立评审映射、54项实际操作同步，无待处理对象。平台退出、财政缓冲和外币暴露的修订削弱了无根据的必要性或必然性。",
+      "evidence": "research/tasks/research_independent_review/proposal_receipt.json",
+      "direct_entries_reviewed": 12
+    },
+    {
+      "id": "judgments",
+      "verdict": "pass",
+      "reason": "报告五个问题均有明确裁决，九条正式部门判断对应当前图，三条情景分别有17、17、15项路径参数。渐进承损、恶化、修复有顺序。2027年按四类政策与合同窗口拆分，接近十年以2021起算。2016—2025人民币实际净股息回报约+13.78%提供历史反例。现有证据可以维持部门危机和分化的判断，未发现仍须逆转主判断的实质冲突。",
+      "evidence": "research/tasks/release_audit/crosscheck_economy.json",
+      "direct_entries_reviewed": 13
+    },
+    {
+      "id": "household_engine",
+      "verdict": "pass",
+      "reason": "在修复后正式HTML内联代码上重做自定77项和500规则三路径演示。独立家庭审计重跑87组/179项，加25组/36项，全部通过。每笔及周期额度、历史使用、全清、指定冲击目标、担保物出售例外、还本到期费用不重复等均有明确结果。旧误接收入冲击和越权还贷反例原样留存。示例134条共同可行、105种不同共同可行月账、416种总轨迹、6条Pareto。所有家庭检验使用合成输入。",
+      "evidence": "research/tasks/household_independent_audit_v2/engine_receipt.json",
+      "separate_release_controls": "research/tasks/release_audit/corrected_engine_results.json",
+      "direct_entries_reviewed": 57
+    },
+    {
+      "id": "offline_ui",
+      "verdict": "blocked",
+      "reason": "家庭独立执行者对f0c72e…正式HTML实际调用Playwright。本机包装器在执行/usr/lib/chromium/chromium前失败并退出127，页面、交互、截图、下载和布局读数均为0。另有官方分发下载403及云浏览器拒绝本地文件的实际记录。运行期间无网络及无控制台错误尚无真实浏览器观测。",
+      "evidence": "research/tasks/household_independent_audit_v2/offline_attempt.json",
+      "direct_entries_reviewed": 8
+    },
+    {
+      "id": "independent_review",
+      "verdict": "pass",
+      "reason": "经济、家庭、目录恢复与终审由实际不同执行者完成。我独立追到原材料、重算承重数量、发现会反转家庭决策的两个反例，检查修复、图和模型用途、正式内联及两次恢复的原输出。我已读最终九项正文并核对直接引用。这项记录已完成审查过程，发布继续受真实离线界面阻塞。",
+      "evidence": "research/tasks/release_audit/review_process_evidence.json",
+      "direct_entries_reviewed": 55
+    },
+    {
+      "id": "fresh_restore",
+      "verdict": "pass",
+      "reason": "接受7394提交的增量新目录恢复。无硬链接clone实际找回同一boss 1及run/cycle、17阶段144个文件登记，变更JST规格由原DTA重建并在clone内真跑。10个原规格按新旧输入、程序、环境、指纹及旧实跑raw输出逐项一致。核对新归档123项签入成员、新ID追加前后两账本和实际v3结果。抽读并解码无损43字段月账，核了各策略截断、168216实际月份和严重基准第101月金额。复用前次隔离环境，锁外版本有记录。旧1580原样恢复仍为fail。",
+      "evidence": "research/tasks/fresh_restore_v2/receipt.json",
+      "direct_entries_reviewed": 26
+    }
+  ],
+  "overall_acceptance": "blocked",
+  "overall_release_verdict": "reject",
+  "actual_release_record": null,
+  "completed_stages": 17,
+  "total_stages": 20,
+  "next_stage": "s18_calculator",
+  "observed_critical_points": {
+    "current_replacement_changes": "正式报告两处增补已由经济复核者重签。家庭源码及正式HTML在4bc7提交包含合同与情景修复。7394额外澄清第101月剩余本金与逾期的区别。",
+    "source_bytes": "原始监管XLS和样本银行PDF实际查阅的指定表/页与登记正文分别保存哈希。检索或逐字阅读状态无法从哈希清单推断。",
+    "main_ledger": "12次历史运行，11个当前规格。9个观察资料规格有样本重叠，2个为合成接口控制。",
+    "household_coverage": "独立审计者215项和终审者77项是各自记录的测试断言，覆盖可重叠；无真实个人家庭数据或安全概率。",
+    "current_restore": "新克隆的变更训练实际生成23c931ae…的JST结果，与当前726b2feb…结果仅有3个运行时间字段不同。未变10项于旧克隆真实计算。",
+    "pre_command_state_sha256": "4220c2aa350db7c346aaa4cc4a0c5c5bbfcb3d3daa76d63844c11b78506fcba0",
+    "administrative_resume_sha256": "dde2399174b1f88de8b81f66aa9725359c9792317c31ce9886d7bf8c407b726a",
+    "ui_resume": "在获准且已装真实本地浏览器的环境按RESUME.md复制独立脚本至新目录，真实打开冻结HTML并离线重载。留存桌面、390/320像素界面操作、错误与合同控件、数值与图表、JSON往返、全部/选中CSV审查、网络和控制台日志，以及独立查看的截图。"
+  },
+  "decision_scope": "首轮截至本审查未发布。随后CLI拒审、拒绝发布的实际返回和会话检查均为后续事件，在各自回执中记录。"
+}
