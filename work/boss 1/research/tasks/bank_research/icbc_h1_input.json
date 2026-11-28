@@ -1,0 +1,90 @@
+{
+  "input_kind": "observed_chinese_public_bank_financials_with_conditional_shocks",
+  "unit": "RMB million",
+  "source": "BK005",
+  "observed_as_of": "2026-06-30",
+  "scope": "Consolidated accounting balance sheet. The loan increment is a sensitivity around observed impairment expense. No forward probability. Credit-only runs have no liquidation bucket; funding is tested separately from disclosed LCR.",
+  "allowance_basis": "aggregate_principal_plus_interest_less_ac_allowance",
+  "existing_allowance_note": "OCI reserve is not deducted from the carrying amount a second time. For net_book_value_incremental_charge_only the reported opening asset is already net; extra undeducted allowance is zero, not total bank reserves.",
+  "book_to_regulatory": {
+    "book_equity": 4355844.0,
+    "cet1": 3940780.0,
+    "tier1": 4306278.0,
+    "total_regulatory_capital": 5539090.0,
+    "rwa": 29832780.0,
+    "public_cet1_reference_2027": 0.095,
+    "model_capital_is_book_equity": true,
+    "model_minimum_0_is_only_nonnegative_book_equity_check": true
+  },
+  "banks": [
+    {
+      "id": "icbc_h1",
+      "cash": 1874295.0,
+      "liquid_assets_book": 0,
+      "other_assets": 24033778.0,
+      "deposits": 39173265.0,
+      "other_liabilities": 13541484.0,
+      "capital": 4355844.0,
+      "risk_weighted_assets": 29832780.0,
+      "minimum_capital_ratio": 0,
+      "credit": {
+        "all_customer_loans_including_accrued_interest": {
+          "gross": 32058073.0,
+          "allowance": 895553.0
+        }
+      }
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "opening",
+      "loss_rates": {
+        "all_customer_loans_including_accrued_interest": 0.027935334728322568
+      },
+      "deposit_runoff_fraction": 0,
+      "liquid_asset_haircut": 0,
+      "cash_retained_earnings": 0.0,
+      "rwa_multiplier": 1
+    },
+    {
+      "id": "one_year_charge_no_new_income",
+      "loss_rates": {
+        "all_customer_loans_including_accrued_interest": 0.03561084286008083
+      },
+      "deposit_runoff_fraction": 0,
+      "liquid_asset_haircut": 0,
+      "cash_retained_earnings": 0.0,
+      "rwa_multiplier": 1
+    },
+    {
+      "id": "two_year_charges_no_new_income",
+      "loss_rates": {
+        "all_customer_loans_including_accrued_interest": 0.04328635099183909
+      },
+      "deposit_runoff_fraction": 0,
+      "liquid_asset_haircut": 0,
+      "cash_retained_earnings": 0.0,
+      "rwa_multiplier": 1
+    },
+    {
+      "id": "one_year_charge_rwa_plus_5pct",
+      "loss_rates": {
+        "all_customer_loans_including_accrued_interest": 0.03561084286008083
+      },
+      "deposit_runoff_fraction": 0,
+      "liquid_asset_haircut": 0,
+      "cash_retained_earnings": 0.0,
+      "rwa_multiplier": 1.05
+    },
+    {
+      "id": "one_year_charge_rwa_plus_5pct_with_income",
+      "loss_rates": {
+        "all_customer_loans_including_accrued_interest": 0.03561084286008083
+      },
+      "deposit_runoff_fraction": 0,
+      "liquid_asset_haircut": 0,
+      "cash_retained_earnings": 88237.5,
+      "rwa_multiplier": 1.05
+    }
+  ]
+}

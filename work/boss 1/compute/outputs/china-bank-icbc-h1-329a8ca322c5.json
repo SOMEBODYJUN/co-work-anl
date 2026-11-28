@@ -1,0 +1,92 @@
+{
+  "schema": "cncrisis-method-result.v1",
+  "name": "bank-stress",
+  "capability": {
+    "method": "Reconciled opening balance sheet, allowance absorption, capital and liquidity/firesale stress",
+    "state": "conditional accounting; explicit measured inputs and assumptions required",
+    "upstream": "balance-sheet stress accounting; local implementation",
+    "version": "1"
+  },
+  "result": {
+    "input_kind": "observed_chinese_public_bank_financials_with_conditional_shocks",
+    "unit": "RMB million",
+    "results": [
+      {
+        "bank": "icbc_h1",
+        "scenario": "opening",
+        "gross_credit_loss": 895553.0,
+        "opening_allowance_used": 895553.0,
+        "new_credit_loss_charged_to_capital": 0.0,
+        "liquid_assets_sold_book": 0.0,
+        "fire_sale_loss": 0.0,
+        "ending_capital": 4355844.0,
+        "capital_ratio": 0.14600865222751616,
+        "capital_shortfall": 0,
+        "cash_available_after_requested_outflows": 1874295.0,
+        "unmet_funding_need": 0,
+        "opening_balance_residual": 0.0
+      },
+      {
+        "bank": "icbc_h1",
+        "scenario": "one_year_charge_no_new_income",
+        "gross_credit_loss": 1141615.0,
+        "opening_allowance_used": 895553.0,
+        "new_credit_loss_charged_to_capital": 246062.0,
+        "liquid_assets_sold_book": 0.0,
+        "fire_sale_loss": 0.0,
+        "ending_capital": 4109782.0,
+        "capital_ratio": 0.1377606109789299,
+        "capital_shortfall": 0,
+        "cash_available_after_requested_outflows": 1874295.0,
+        "unmet_funding_need": 0,
+        "opening_balance_residual": 0.0
+      },
+      {
+        "bank": "icbc_h1",
+        "scenario": "two_year_charges_no_new_income",
+        "gross_credit_loss": 1387677.0,
+        "opening_allowance_used": 895553.0,
+        "new_credit_loss_charged_to_capital": 492124.0,
+        "liquid_assets_sold_book": 0.0,
+        "fire_sale_loss": 0.0,
+        "ending_capital": 3863720.0,
+        "capital_ratio": 0.1295125697303436,
+        "capital_shortfall": 0,
+        "cash_available_after_requested_outflows": 1874295.0,
+        "unmet_funding_need": 0,
+        "opening_balance_residual": 0.0
+      },
+      {
+        "bank": "icbc_h1",
+        "scenario": "one_year_charge_rwa_plus_5pct",
+        "gross_credit_loss": 1141615.0,
+        "opening_allowance_used": 895553.0,
+        "new_credit_loss_charged_to_capital": 246062.0,
+        "liquid_assets_sold_book": 0.0,
+        "fire_sale_loss": 0.0,
+        "ending_capital": 4109782.0,
+        "capital_ratio": 0.13120058188469513,
+        "capital_shortfall": 0,
+        "cash_available_after_requested_outflows": 1874295.0,
+        "unmet_funding_need": 0,
+        "opening_balance_residual": 0.0
+      },
+      {
+        "bank": "icbc_h1",
+        "scenario": "one_year_charge_rwa_plus_5pct_with_income",
+        "gross_credit_loss": 1141615.0,
+        "opening_allowance_used": 895553.0,
+        "new_credit_loss_charged_to_capital": 246062.0,
+        "liquid_assets_sold_book": 0.0,
+        "fire_sale_loss": 0.0,
+        "ending_capital": 4198019.5,
+        "capital_ratio": 0.13401747371595304,
+        "capital_shortfall": 0,
+        "cash_available_after_requested_outflows": 1962532.5,
+        "unmet_funding_need": 0,
+        "opening_balance_residual": 0.0
+      }
+    ],
+    "scope": "One-horizon conditional stress accounts: cash earnings are realized and retained; credit losses are not deducted from cash twice; liquidity loans add funding, not equity; assumed RWA is explicit. Unmet outflows are funding needs, not free borrowing. No estimated event probabilities or automatic interbank contagion."
+  }
+}

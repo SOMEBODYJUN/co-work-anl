@@ -1,0 +1,92 @@
+{
+  "schema": "cncrisis-method-result.v1",
+  "name": "bank-stress",
+  "capability": {
+    "method": "Reconciled opening balance sheet, allowance absorption, capital and liquidity/firesale stress",
+    "state": "conditional accounting; explicit measured inputs and assumptions required",
+    "upstream": "balance-sheet stress accounting; local implementation",
+    "version": "1"
+  },
+  "result": {
+    "input_kind": "observed_chinese_public_bank_financials_with_conditional_shocks",
+    "unit": "RMB million",
+    "results": [
+      {
+        "bank": "lanzhou_h1",
+        "scenario": "opening",
+        "gross_credit_loss": 9068.325,
+        "opening_allowance_used": 9068.325,
+        "new_credit_loss_charged_to_capital": 0.0,
+        "liquid_assets_sold_book": 0.0,
+        "fire_sale_loss": 0.0,
+        "ending_capital": 36458.488,
+        "capital_ratio": 0.10415052126183948,
+        "capital_shortfall": 0,
+        "cash_available_after_requested_outflows": 6391.041,
+        "unmet_funding_need": 0,
+        "opening_balance_residual": -4.3655745685100555e-11
+      },
+      {
+        "bank": "lanzhou_h1",
+        "scenario": "one_year_charge_no_new_income",
+        "gross_credit_loss": 13062.087000000001,
+        "opening_allowance_used": 9068.325,
+        "new_credit_loss_charged_to_capital": 3993.7620000000006,
+        "liquid_assets_sold_book": 0.0,
+        "fire_sale_loss": 0.0,
+        "ending_capital": 32464.725999999995,
+        "capital_ratio": 0.09274158970944688,
+        "capital_shortfall": 0,
+        "cash_available_after_requested_outflows": 6391.041,
+        "unmet_funding_need": 0,
+        "opening_balance_residual": -4.3655745685100555e-11
+      },
+      {
+        "bank": "lanzhou_h1",
+        "scenario": "two_year_charges_no_new_income",
+        "gross_credit_loss": 17055.849000000006,
+        "opening_allowance_used": 9068.325,
+        "new_credit_loss_charged_to_capital": 7987.524000000005,
+        "liquid_assets_sold_book": 0.0,
+        "fire_sale_loss": 0.0,
+        "ending_capital": 28470.963999999993,
+        "capital_ratio": 0.08133265815705429,
+        "capital_shortfall": 0,
+        "cash_available_after_requested_outflows": 6391.041,
+        "unmet_funding_need": 0,
+        "opening_balance_residual": -4.3655745685100555e-11
+      },
+      {
+        "bank": "lanzhou_h1",
+        "scenario": "one_year_charge_rwa_plus_5pct",
+        "gross_credit_loss": 13062.087000000001,
+        "opening_allowance_used": 9068.325,
+        "new_credit_loss_charged_to_capital": 3993.7620000000006,
+        "liquid_assets_sold_book": 0.0,
+        "fire_sale_loss": 0.0,
+        "ending_capital": 32464.725999999995,
+        "capital_ratio": 0.08832532353280655,
+        "capital_shortfall": 0,
+        "cash_available_after_requested_outflows": 6391.041,
+        "unmet_funding_need": 0,
+        "opening_balance_residual": -4.3655745685100555e-11
+      },
+      {
+        "bank": "lanzhou_h1",
+        "scenario": "one_year_charge_rwa_plus_5pct_with_income",
+        "gross_credit_loss": 13062.087000000001,
+        "opening_allowance_used": 9068.325,
+        "new_credit_loss_charged_to_capital": 3993.7620000000006,
+        "liquid_assets_sold_book": 0.0,
+        "fire_sale_loss": 0.0,
+        "ending_capital": 32915.083,
+        "capital_ratio": 0.08955058961791888,
+        "capital_shortfall": 0,
+        "cash_available_after_requested_outflows": 6841.398,
+        "unmet_funding_need": 0,
+        "opening_balance_residual": -4.3655745685100555e-11
+      }
+    ],
+    "scope": "One-horizon conditional stress accounts: cash earnings are realized and retained; credit losses are not deducted from cash twice; liquidity loans add funding, not equity; assumed RWA is explicit. Unmet outflows are funding needs, not free borrowing. No estimated event probabilities or automatic interbank contagion."
+  }
+}
